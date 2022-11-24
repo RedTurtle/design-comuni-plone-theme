@@ -5,8 +5,6 @@ FROM base as build
 WORKDIR /home/node/app
 USER root
 
-COPY . .
-
 ENV RAZZLE_API_PATH=VOLTO_API_PATH
 ENV RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH
 
@@ -14,6 +12,8 @@ ENV RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH
 RUN buildDeps="make" && \
     apt-get update && \
     apt-get install -y --no-install-recommends $buildDeps
+
+COPY . .
 
 RUN yarn set version 3.2.3 && \
     yarn --immutable && \
