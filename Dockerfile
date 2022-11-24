@@ -15,9 +15,10 @@ RUN buildDeps="make" && \
 
 COPY . .
 
-RUN yarn set version 3.2.3 && \
-    yarn --immutable && \
-    yarn build && \
+RUN --mount=type=cache,target=/root/.yarn \
+    yarn set version 3.2.3 && \
+    YARN_CACHE_FOLDER=/root/.yarn yarn --immutable && \
+    YARN_CACHE_FOLDER=/root/.yarn yarn build && \
     rm -rf /home/node/.cache
 
 #RUN apt-get purge $buildDeps -y && \
