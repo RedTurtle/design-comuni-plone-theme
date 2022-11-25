@@ -2,6 +2,12 @@
  * Html helper.
  * @module helpers/Html
  */
+/*
+ CUSTOMIZATIONS:
+ - Add <link rel="shortcut icon" href="/favicon.ico" />
+ - Add <meta property="og:type" content="website" />
+ - Add shrink-to-fit=no in viewport meta
+ */
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
