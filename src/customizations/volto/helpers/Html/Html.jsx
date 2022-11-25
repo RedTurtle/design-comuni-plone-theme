@@ -5,8 +5,8 @@
 /*
  CUSTOMIZATIONS:
  - Add <link rel="shortcut icon" href="/favicon.ico" />
- - Add <meta property="og:type" content="website" />
  - Add shrink-to-fit=no in viewport meta
+ - Remove link for manifest and svg/apple icons
  */
 
 import React, { Component } from 'react';
@@ -106,7 +106,6 @@ class Html extends Component {
           {head.meta.toComponent()}
           {head.link.toComponent()}
           {head.script.toComponent()}
-          <meta property="og:type" content="website" />
 
           <script
             dangerouslySetInnerHTML={{
@@ -124,14 +123,6 @@ class Html extends Component {
             }}
           />
           <link rel="shortcut icon" href="/favicon.ico" />
-          <link rel="icon" href="/favicon.ico" sizes="any" />
-          <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-touch-icon.png"
-          />
-          <link rel="manifest" href="/site.webmanifest" />
           <meta property="og:type" content="website" />
           <meta name="generator" content="Plone 6 - https://plone.org" />
           <meta
