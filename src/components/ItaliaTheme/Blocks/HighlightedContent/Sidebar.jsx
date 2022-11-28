@@ -127,7 +127,7 @@ const Sidebar = ({ block, data, onChangeBlock, openObjectBrowser }) => {
         <CheckboxWidget
           id="show_section"
           title={intl.formatMessage(messages.show_section)}
-          value={data.show_section ? data.show_section : false}
+          value={data.show_section ? data.show_section : true}
           onChange={(id, value) => {
             onChangeBlock(block, {
               ...data,
