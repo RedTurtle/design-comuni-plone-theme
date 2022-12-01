@@ -34,8 +34,8 @@ const messages = defineMessages({
     id: 'show_type',
     defaultMessage: 'Mostra il tipo',
   },
-  show_data: {
-    id: 'show_data',
+  show_date: {
+    id: 'show_date',
     defaultMessage: 'Mostra la data',
   },
   bg_color: {
@@ -62,12 +62,12 @@ const Sidebar = ({ block, data, onChangeBlock, openObjectBrowser }) => {
     if (
       data.show_type === undefined &&
       data.show_section === undefined &&
-      data.show_data === undefined
+      data.show_date === undefined
     ) {
       onChangeBlock(block, {
         ...data,
         show_type: true,
-        show_data: true,
+        show_date: true,
       });
     }
   }, []);
@@ -141,9 +141,9 @@ const Sidebar = ({ block, data, onChangeBlock, openObjectBrowser }) => {
           }}
         />
         <CheckboxWidget
-          id="show_data"
-          title={intl.formatMessage(messages.show_data)}
-          value={data.show_data ? data.show_data : false}
+          id="show_date"
+          title={intl.formatMessage(messages.show_date)}
+          value={data.show_date ? data.show_date : false}
           onChange={(id, value) => {
             onChangeBlock(block, {
               ...data,
