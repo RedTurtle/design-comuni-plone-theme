@@ -2916,7 +2916,7 @@ msgstr ""
 
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
 # defaultMessage: Mostra la data
-msgid "show_data"
+msgid "show_date"
 msgstr ""
 
 #: config/Blocks/ListingOptions/utils
