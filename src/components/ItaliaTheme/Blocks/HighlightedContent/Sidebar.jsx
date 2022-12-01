@@ -59,10 +59,15 @@ const messages = defineMessages({
 const Sidebar = ({ block, data, onChangeBlock, openObjectBrowser }) => {
   const intl = useIntl();
   useEffect(() => {
-    if (data.show_type === undefined && data.show_section === undefined) {
+    if (
+      data.show_type === undefined &&
+      data.show_section === undefined &&
+      data.show_data === undefined
+    ) {
       onChangeBlock(block, {
         ...data,
         show_type: true,
+        show_data: true,
       });
     }
   }, []);
@@ -127,7 +132,7 @@ const Sidebar = ({ block, data, onChangeBlock, openObjectBrowser }) => {
         <CheckboxWidget
           id="show_section"
           title={intl.formatMessage(messages.show_section)}
-          value={data.show_section ? data.show_section : true}
+          value={data.show_section ? data.show_section : false}
           onChange={(id, value) => {
             onChangeBlock(block, {
               ...data,
