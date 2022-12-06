@@ -66,11 +66,10 @@ const PageHeader = (props) => {
           </h1>
 
           <PageHeaderEventDates content={props.content} />
-
-          {props.content.stato_sevizio !== null && (
-            <div class="chip chip-simple chip-primary">
+          {props.content.stato_servizio !== null && (
+            <div class="chip chip-simple chip-primary mb-3">
               <span class="chip-label">
-                {props.content.stato_sevizio
+                {props.content.stato_servizio
                   ? intl.formatMessage(messages.service_on)
                   : intl.formatMessage(messages.service_off)}
               </span>
