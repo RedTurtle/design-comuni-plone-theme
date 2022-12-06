@@ -34,6 +34,14 @@ const messages = defineMessages({
     id: 'minutes',
     defaultMessage: 'min',
   },
+  service_on: {
+    id: 'service_on',
+    defaultMessage: 'Servizio attivo',
+  },
+  service_off: {
+    id: 'service_off',
+    defaultMessage: 'Servizio non attivo',
+  },
 });
 
 const PageHeader = (props) => {
@@ -58,6 +66,16 @@ const PageHeader = (props) => {
           </h1>
 
           <PageHeaderEventDates content={props.content} />
+
+          {props.content.stato_sevizio !== null && (
+            <div class="chip chip-simple chip-primary">
+              <span class="chip-label">
+                {props.content.stato_sevizio
+                  ? intl.formatMessage(messages.service_on)
+                  : intl.formatMessage(messages.service_off)}
+              </span>
+            </div>
+          )}
 
           {props.content.description && (
             <p
