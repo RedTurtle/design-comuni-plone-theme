@@ -69,7 +69,11 @@ export const getImageAttributes = (
             index ===
             array.findIndex((foundItem) => foundItem.width === scale.width),
         ) // avoid duplicates if image is small and original is smaller than scale
-        .sort((a, b) => (a.width > b.width ? 1 : a.width < b.width ? -1 : 0));
+        .sort((a, b) => {
+          if (a.width > b.width) return 1;
+          else if (a.width < b.width) return -1;
+          else return 0;
+        });
 
       const scale = sortedScales[0];
       attrs.src = flattenToAppURL(scale?.download ?? image.download);
