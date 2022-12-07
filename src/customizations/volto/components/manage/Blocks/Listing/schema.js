@@ -1,5 +1,7 @@
 /* https://raw.githubusercontent.com/plone/volto/16.3.0/src/components/manage/Blocks/Listing/schema.js
  *
+ * nascosti i field headline e headlinetag (headlinetag poteva anche essere nascosto mettendo in config una sola 
+ * opzione di tag)
  */
 
 import { defineMessages } from 'react-intl';
