@@ -28,7 +28,7 @@ const addonAliases = Object.keys(reg.packages).map((o) => [
 ]);
 
 // TODO deprecated: remove in version 8
-const italiaAddonsAliases = Object.keys(reg.packages).map((o) => [
+const italiaAddonAliases = Object.keys(reg.packages).map((o) => [
   `@italia/addons/${o}`,
   reg.packages[o].modulePath,
 ]);
@@ -42,8 +42,8 @@ module.exports = {
           ['@plone/volto', '@plone/volto/src'],
           ['@plone/volto-slate', '@plone/volto/packages/volto-slate/src'],
           ['design-comuni-plone-theme', `${__dirname}/src`],
-          ...addonsAliases,
-          ...italiaAddonsAliases,
+          ...addonAliases,
+          ...italiaAddonAliases,
           ['@package', `${__dirname}/src`],
           ['@italia', `${__dirname}/src`], // TODO deprecated: remove in version 8
           // TODO remove the next two when implemented in core
