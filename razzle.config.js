@@ -92,8 +92,6 @@ module.exports = Object.assign({}, volto_config, {
     };
 
     base_config.module.rules.push(IMG_LOADER);
-    // RegExp.prototype.toJSON = function() { return this.source; };
-    // console.log(JSON.stringify(base_config.module.rules, null, 2))
 
     base_config.resolve.alias = {
       // TODO remove the next two when implemented in core
@@ -104,7 +102,6 @@ module.exports = Object.assign({}, volto_config, {
       '@italia': `${projectRootPath}/src`, // TODO deprecated: remove in version 8
       'design-comuni-plone-theme': `${projectRootPath}/src`,
     };
-    console.log(JSON.stringify(base_config.resolve.alias, undefined, 2));
 
     // remove unused languages. (TODO: move to ENV at build time)
     base_config.plugins.push(
