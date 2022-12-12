@@ -1,1 +1,186 @@
+publiccodeYmlVersion: 0.3.0
+applicationSuite: io-Comune
+name: io-Comune - Il sito AgID per Comuni ed Enti
+# url: https://gitlab.com/...
+landingURL: https://www.io-comune.it/
+# releaseDate: '2022-12-07'
+# softwareVersion: 2.6.1
+developmentStatus: stable
+softwareType: standalone/web
+platforms:
+  - web
+# roadmap: 
+categories:
+  - content-management
+  - website-builder
+dependsOn:
+  open:
+    # - name: PHP
+    #   versionMin: '7.3'
+    # - name: PostgreSQL
+    #   versionMin: '10'
+    # - name: Apache
+    #   versionMin: '2.4'
+    # - name: Shibboleth
+    #   versionMin: '3'
+    # - name: Docker
+    #   versionMin: '18.03'
+    #   optional: true
+# logo: 
+maintenance:
+  # type: community
+  contacts:
+    - name: Stefano Marchetti
+      phone: +39 328 9508993
+      affiliation: REDTURTLE TECHNOLOGY SRL
+      email: stefano@redturtle.it
+legal:
+  # license: AGPL-3.0-or-later
+  mainCopyrightOwner: REDTURTLE TECHNOLOGY SRL
+  repoOwner: REDTURTLE TECHNOLOGY SRL
+intendedAudience:
+  scope:
+    - local-authorities
+  countries:
+    - it
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - it
+    # - de
+it:
+  piattaforme:
+    # spid: true
+    # pagopa: true
+    # AGGIUNGERE ALTRO?
+  conforme:
+    # lineeGuidaDesign: true
+    # gdpr: true
+    # misureMinimeSicurezza: true
+    # modelloInteroperabilita: true
+    # SIAMO TRUE IN TUTTI, CORRETTO?
+description:
+  it:
+    genericName: Gestore di contenuti avanzato e site builder
+    # apiDocumentation: 
+    # documentation: 
+    shortDescription: |
+      Crea con semplicità il nuovo sito del tuo Comune:
+      conforme alle nuove linee guida AgID, accessibile a tutti ed usabile da smartphone e da PC.
+      Disponibile anche in SaaS (marketplace qualificato AgID) 
+    longDescription: >
+      **io-Comune: pensato per i cittadini, costruito con i redattori**
+      io-Comune è la soluzione versatile e facile da usare per garantire ai cittadini un rapido accesso ai contenuti e ai servizi del tuo Comune, sia dal PC che da mobile.      
 
+      **AGID 2.0**
+      io-Comune segue le linee guida ufficiali per il design dei siti web dei Comuni italiani: layout grafico, architettura informativa, struttura dei contenuti e flussi di navigazione rispecchiano gli standard definiti da AGID.
+
+      **Trovabilità dei contenuti**
+      io-Comune integra componenti e flussi di navigazione suggeriti da AgID con l'esperienza ventennale di RedTurtle nella gestione di complesse basi informative per darti la migliore esperienza di fruizione e portarti velocemente al contenuto desiderato.
+
+      **La porta per i servizi online**
+      io-Comune supporta nativamente le piattaforme abilitanti, come la componente di autenticazione SPID e il sistema di pagamento pagoPA.
+      Inoltre, io-Comune permetterà l’integrazione con IO, l'app ufficiale dei servizi pubblici, per poter dialogare con i cittadini anche dal telefono.
+
+      **io-Comune è certificato, sicuro e si affida ad un CMS open source**
+      Puoi acquistare e utilizzare io-Comune in totale sicurezza perché ha seguito con successo il [percorso di qualificazione per i fornitori di Software as a Service (SaaS) della PA] (https://catalogocloud.agid.gov.it/service/1085).
+      Questo ti garantisce un servizio di qualità e libertà di cambiare piattaforma senza vincoli di lock-in.
+      io-Comune è una piattaforma disponibile nel cloud certificato della PA. In particolare il servizio viene erogato sulla piattaforma certificata IaaS (Infrastructure as a Service) Amazon Web Services presso la server farm di Milano, offrendo tutta la robustezza e sicurezza necessaria.
+      io-Comune è basato sul [CMS Open Source Plone] (https://www.redturtle.it/plone/): il CMS facile da usare, estensibile e che vanta il miglior “security track record”, usato per servire migliaia di utenti in ambito PA. Usato da piccoli Enti e anche da grandi PA come la Regione Emilia Romagna, l’Università di Bologna e la Guardia di Finanza per centinaia di siti.
+    features:
+      - PNRR
+      - PNRR/Misura/1.2
+      - PNRR/Misura/1.4.1
+      - PNRR/Beneficiari/Comuni
+      - |-
+        Sistema semplice ed intuitivo, non è richiesta nessuna conoscenza di 
+        programmazione da parte degli operatori addetti all'inserimento e gestione dei contenuti
+      - |-
+        Workflow di approvazione contenuti configurabili, possono essere impostati conformemente 
+        alle reali procedure di gestione dell’informazione in uso
+      - |-
+        Gestione diretta ed esclusiva tramite un semplice browser, 
+        tutta la struttura del portale ed i contenuti a prova di click
+      - |-
+        Possibilità potenzialmente illimitata di creazione pagine informative e relative categorie
+      - |-
+        Possibilità di modificare e gestire l’organizzazione delle pagine nel corso del tempo, 
+        a seconda delle nuove necessità ed evoluzioni
+      - |-
+        Editing in modalità "in context", ovvero avviene direttamente sui contenuti 
+        raggiunti tramite l’albero di navigazione
+      - |-
+        Sono integrati sistemi di aiuto per i redattori che permettono il ridimensionamento delle immagini
+      - |-
+        Ricerca full-text nei contenuti, compresi i file in formato pdf
+      - |-
+        Predisposizione per gestione contenuti multilingua, grazie al sistema di workflow e sicurezza è possibile 
+        assegnare la redazione delle lingue aggiuntive ad un gruppo di traduttori autonomo
+      - |-
+        Possibilità di integrazione con prodotti aggiuntivi gratuiti
+      - |-
+        Se desiderato, è possibile permettere ai visitatori del sito di registrarsi come utenti 
+        e fornire loro contenuti personalizzati o l’accesso ad aree riservate
+      - |-
+        La pubblicazione di un contenuto, e la cessazione della sua visibilità, 
+        sono temporizzabili con riferimento a date e ore predefinite
+      - |-
+        Controllo in tempo reale di collegamenti e dell'integrità referenziale
+      - |-
+        Meccanismo di lock automatico dei contenuti ad evitare 
+        sovrapposizione di modifiche da parte di più redattori su uno stesso contenuto
+      - |-
+        Si connette perfettamente con applicazioni specializzate e sistemi aziendali standard come CRM, Salesforce e Oracle. 
+        Integrabile con web server, database SQL e NoSQL, strumenti di continuous integration e webservice
+      - |-
+        Gestione redazionale avanzata per notizie, comunicati stampa ed avvisi
+      - |-
+        Calendario eventi con content-type dedicato per una migliore esperienza utente anonimo e redazionale
+      - |-
+        Gestione avanzata tramite content-type specifici conformi alle nuove linee guida
+    screenshots:
+      # - 
+      #   QUI METTERE ELENCO DEGLI SCREENSHOT
+usedBy:
+  - Comune di Bibbiano
+  - Comune di Campegine
+  - Comune di Camposanto
+  - Comune di Canossa
+  - Comune di Cantagallo
+  - Comune di Novellara
+  - Comune di Medolla
+  - Comune di Mirandola
+  - Comune di Modena
+  - Comune di Montecchio Emilia
+  - Comune di San Polo d'Enza
+  - Comune di San Possidonio
+  - Comune di Sant'Ilario d'Enza
+  - Comune di Vaiano
+  - Comune di Vernio
+  - Comune di Imola
+  - Comune di Parma
+  - Comune di Reggio Emilia
+  - Comune di San Lazzaro di Savena
+  - Azienda Unità Sanitaria Locale di Ferrara
+  - ASP Comuni Modenesi Area Nord
+  - AUSL Piacenza
+  - Biblioteche Pianura Est
+  - Camera di Commercio Industria Artigianato e Agricoltura di Reggio Emilia
+  - Camera di Commercio dell'Umbria
+  - Guardia di Finanza
+  - ISPRA
+  - Arcispedale S.Anna - Ferrara
+  - Provincia di Pisa
+  - Unioncamere Emilia-Romagna
+  - Unione Comuni Modenesi Area Nord
+  - Unione Val d'Enza
+  - Unione dei Comuni della Val di Bisenzio
+  - Nuovo Circondario Imolese
+  - Ente Ospedaliero Ospedali Galliera
+  - Ospedali Galliera - Sostenibilità
+  # - RaiWay
+  # - Giovazoom
+  # - Musei Cremona
+  # - Stradanove
+  # - Baccanale - Imola
+  # - RaiWay
