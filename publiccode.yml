@@ -26,7 +26,7 @@ dependsOn:
     # - name: Docker
     #   versionMin: '18.03'
     #   optional: true
-# logo: 
+logo: docs/logo-io-comune.png
 maintenance:
   # type: community
   contacts:
@@ -139,48 +139,40 @@ description:
       - |-
         Gestione avanzata tramite content-type specifici conformi alle nuove linee guida
     screenshots:
-      # - 
-      #   QUI METTERE ELENCO DEGLI SCREENSHOT
+      - docs/01-io-comune.png
+      - docs/02-io-comune.png
+      - docs/03-io-comune.png
+      - docs/04-io-comune.png
+      - docs/05-io-comune.png
 usedBy:
+  - ASP Comuni Modenesi Area Nord
+  - Azienda Ospedaliero-Universitaria di Ferrara
+  - Azienda USL di Ferrara
+  - Biblioteche Pianura Est
+  - Camera di Commercio dell'Umbria
+  - Camera di Commercio di Reggio Emilia
   - Comune di Bibbiano
-  - Comune di Campegine
   - Comune di Camposanto
-  - Comune di Canossa
   - Comune di Cantagallo
-  - Comune di Novellara
+  - Comune di Imola
   - Comune di Medolla
   - Comune di Mirandola
   - Comune di Modena
   - Comune di Montecchio Emilia
-  - Comune di San Polo d'Enza
-  - Comune di San Possidonio
-  - Comune di Sant'Ilario d'Enza
-  - Comune di Vaiano
-  - Comune di Vernio
-  - Comune di Imola
   - Comune di Parma
+  - Comune di Piacenza
   - Comune di Reggio Emilia
   - Comune di San Lazzaro di Savena
-  - Azienda Unità Sanitaria Locale di Ferrara
-  - ASP Comuni Modenesi Area Nord
-  - AUSL Piacenza
-  - Biblioteche Pianura Est
-  - Camera di Commercio Industria Artigianato e Agricoltura di Reggio Emilia
-  - Camera di Commercio dell'Umbria
-  - Guardia di Finanza
-  - ISPRA
-  - Arcispedale S.Anna - Ferrara
-  - Provincia di Pisa
-  - Unioncamere Emilia-Romagna
-  - Unione Comuni Modenesi Area Nord
-  - Unione Val d'Enza
-  - Unione dei Comuni della Val di Bisenzio
+  - Comune di San Polo d'Enza
+  - Comune di San Possidonio
+  - Comune di Santilario d'Enza
+  - Comune di Vaiano
+  - Comune di Vernio
+  - Comando Generale della Guardia di Finanza
+  - NNB Ispra Ambiente
   - Nuovo Circondario Imolese
-  - Ente Ospedaliero Ospedali Galliera
-  - Ospedali Galliera - Sostenibilità
-  # - RaiWay
-  # - Giovazoom
-  # - Musei Cremona
-  # - Stradanove
-  # - Baccanale - Imola
-  # - RaiWay
+  - Ospedali Galliera - Bilancio Sociale
+  - Provincia di Pisa
+  - UCMAN (Unione dei Comuni Modenesi Area Nord)
+  - Unione Val d'Enza
+  - Unione Val di Bisenzio
