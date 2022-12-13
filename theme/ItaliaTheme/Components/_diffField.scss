@@ -1,0 +1,35 @@
+.diffField {
+  .previous-state,
+  .current-state {
+    display: flex;
+    white-space: break-spaces;
+    // padding: 2rem 1rem;
+  }
+  .current-state {
+    ins {
+      background: lightgreen;
+      text-decoration: none;
+      img {
+        max-width: 100% !important;
+        object-fit: contain;
+      }
+    }
+  }
+  .current-state {
+    picture ins img {
+      max-width: 100% !important;
+      object-fit: contain;
+      min-height: 200px;
+      height: 200px;
+    }
+  }
+  .current-state {
+    del {
+      background: pink;
+
+      img {
+        display: none;
+      }
+    }
+  }
+}

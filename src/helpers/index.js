@@ -26,3 +26,8 @@ export {
   videoUrlHelper,
   checkIfValidVideoLink,
 } from 'design-comuni-plone-theme/helpers/videoUrlHelper';
+export {
+  blockIsNotEmptyPlaceholder,
+  simulateImageHTMLField,
+  SSRRenderHtml,
+} from 'design-comuni-plone-theme/helpers/htmlDiff';
