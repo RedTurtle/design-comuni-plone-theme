@@ -283,7 +283,6 @@ iframe {
     }
 
     h4 {
-      margin-bottom: 0.889rem !important;
       padding-bottom: 0.889rem;
       border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
       @media (max-width: #{map-get($grid-breakpoints, md)}) {
@@ -300,11 +299,11 @@ iframe {
     &::after {
       content: '';
       position: absolute;
-      width: calc(100% + 12px);
+      width: calc(100% + $grid-gutter-width);
       background: hsla(0, 0%, 100%, 0.5);
       height: 1px;
       bottom: -1px;
-      left: -12px;
+      left: -$grid-gutter-width;
       @media (max-width: #{map-get($grid-breakpoints, md)}) {
         content: none;
       }
