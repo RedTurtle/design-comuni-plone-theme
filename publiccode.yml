@@ -1,6 +1,6 @@
 publiccodeYmlVersion: 0.3.0
 applicationSuite: io-Comune
-name: io-Comune - Il sito AgID per Comuni ed Enti
+name: io-Comune - Il sito AgID per Comuni ed Enti Pubblici
 # url: https://gitlab.com/...
 landingURL: https://www.io-comune.it/
 # releaseDate: '2022-12-07'
@@ -28,41 +28,37 @@ dependsOn:
     #   optional: true
 logo: docs/logo-io-comune.png
 maintenance:
-  # type: community
+  type: internal
   contacts:
     - name: Stefano Marchetti
-      phone: 
-      affiliation: REDTURTLE TECHNOLOGY SRL
-      email: info@redturtle.it
+      phone: +39 0532 1915958
+      affiliation: RedTurtle Technology srl
+      email: info@io-comune.it
 legal:
-  # license: AGPL-3.0-or-later
-  mainCopyrightOwner: REDTURTLE TECHNOLOGY SRL
-  repoOwner: REDTURTLE TECHNOLOGY SRL
+  license: GNU General Public License v3.0
+  mainCopyrightOwner: RedTurtle Technology srl
+  repoOwner: RedTurtle Technology srl
 intendedAudience:
   scope:
     - local-authorities
+    - government
+    - healthcare
   countries:
     - it
 localisation:
   localisationReady: true
   availableLanguages:
     - it
-    # - de
+    - en
 it:
-  piattaforme:
-    # spid: true
-    # pagopa: true
-    # AGGIUNGERE ALTRO?
   conforme:
-    # lineeGuidaDesign: true
-    # gdpr: true
-    # misureMinimeSicurezza: true
+    lineeGuidaDesign: true
+    gdpr: true
+    misureMinimeSicurezza: true
     # modelloInteroperabilita: true
-    # SIAMO TRUE IN TUTTI, CORRETTO?
 description:
   it:
     genericName: Gestore di contenuti avanzato e site builder
-    # apiDocumentation: 
     documentation: https://docs.google.com/document/d/1SThuxa_ah0BuNXukWs564kKPfprK41WLQE8Mome-0xg/
     shortDescription: |
       Crea con semplicità il nuovo sito del tuo Comune:
@@ -72,7 +68,7 @@ description:
       **io-Comune: pensato per i cittadini, costruito con i redattori**
       io-Comune è la soluzione versatile e facile da usare per garantire ai cittadini un rapido accesso ai contenuti e ai servizi del tuo Comune, sia dal PC che da mobile.      
 
-      **AGID 2.0**
+      **AgID 2.0**
       io-Comune segue le linee guida ufficiali per il design dei siti web dei Comuni italiani: layout grafico, architettura informativa, struttura dei contenuti e flussi di navigazione rispecchiano gli standard definiti da AGID.
 
       **Trovabilità dei contenuti**
