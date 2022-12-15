@@ -1,10 +1,42 @@
-# Tema di Plone per la Pubblica Amministrazione
+# io-Comune: il tema di Plone per la Pubblica Amministrazione
 
-[io-Comune](https://www.io-comune.it/) è il tema Volto per il CMS [Plone](https://plone.org/) che permette di aderire al [modello di sito istituzionale dei Comuni Italiani](https://designers.italia.it/modello/comuni/),
-
-io-Comune non è solo un tema grafico ma gestisce e implementa anche tutte le tipologia di contenuto (Content Type) delle linee guida: di fatto consente la realizzazione di un sito istituzionale di un Comune (ma anche di altri tipi di Enti) conforme alle linee guida di design.
+Crea con semplicità il nuovo sito del tuo Comune o Ente Pubblico:\
+conforme alle nuove linee guida AgID, accessibile a tutti ed usabile da smartphone e da PC.
 
 ![io-comune](/docs/01-io-comune.png)
+
+### Pensato per i cittadini, costruito con i redattori
+
+io-Comune è la soluzione versatile e facile da usare per garantire ai cittadini un rapido accesso ai contenuti e ai servizi del tuo Comune, sia dal PC che da mobile.      
+      
+### AgID 2.0
+
+io-Comune segue le linee guida ufficiali per il design dei siti web dei Comuni italiani: layout grafico, architettura informativa, struttura dei contenuti e flussi di navigazione rispecchiano gli standard definiti da AgID.
+      
+### Trovabilità dei contenuti
+
+io-Comune integra componenti e flussi di navigazione suggeriti da AgID, con l'esperienza ventennale di [RedTurtle](https://www.redturtle.it/plone/) nella gestione di complesse basi informative per darti la migliore esperienza di fruizione e portarti velocemente al contenuto desiderato.
+
+### La porta per i servizi online
+      
+io-Comune supporta nativamente le piattaforme abilitanti, come la componente di autenticazione SPID e il sistema di pagamento pagoPA.\
+Inoltre, io-Comune permetterà l’integrazione con IO, l'app ufficiale dei servizi pubblici, per poter dialogare con i cittadini anche dal telefono.
+      
+### Certificato e sicuro, si affida ad un CMS open source
+      
+Puoi  utilizzare io-Comune in totale sicurezza perché ha seguito con successo il [percorso di qualificazione per i fornitori di Software as a Service](https://catalogocloud.agid.gov.it/service/1085) della PA (SaaS).
+
+Questo ti garantisce un servizio di qualità e libertà di cambiare piattaforma senza vincoli di lock-in.
+
+io-Comune è una piattaforma disponibile nel cloud certificato della PA. In particolare il servizio viene erogato sulla piattaforma certificata IaaS (Infrastructure as a Service) Amazon Web Services presso la server farm di Milano, offrendo tutta la robustezza e sicurezza necessaria.
+
+[io-Comune](https://www.io-comune.it/) è il tema Volto per il CMS [Plone](https://plone.org/) che permette di aderire al [modello di sito istituzionale dei Comuni Italiani](https://designers.italia.it/modello/comuni/).
+
+Quindi non solo un semplice tema grafico, gestisce ed implementa anche tutte le tipologia di contenuto (Content Type) delle linee guida: di fatto consente la realizzazione di un sito istituzionale di un Comune (ma anche di altri tipi di Enti Pubblici) conforme alle linee guida di design.
+
+Usato da piccoli Enti e anche da grandi PA come la **Regione Emilia Romagna**, l’**Università di Bologna** e la **Guardia di Finanza** per centinaia di siti.
+
+![io-comune](/docs/04-io-comune.png)
 
 ## Installazione e supporto
 
