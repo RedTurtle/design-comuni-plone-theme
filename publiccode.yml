@@ -126,7 +126,7 @@ description:
         Meccanismo di lock automatico dei contenuti ad evitare 
         sovrapposizione di modifiche da parte di più redattori su uno stesso contenuto
       - |-
-        Si connette perfettamente con applicazioni specializzate e sistemi aziendali standard come CRM, Salesforce e Oracle. 
+        Possibili connessioni con applicazioni specializzate e sistemi aziendali standard come CRM, Salesforce e Oracle. 
         Integrabile con web server, database SQL e NoSQL, strumenti di continuous integration e webservice
       - |-
         Gestione redazionale avanzata per notizie, comunicati stampa ed avvisi
