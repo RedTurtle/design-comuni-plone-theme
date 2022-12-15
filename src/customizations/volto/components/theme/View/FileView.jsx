@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from 'semantic-ui-react';
+import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
 import { DownloadFileFormat } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 /**
@@ -15,24 +15,32 @@ import { DownloadFileFormat } from 'design-comuni-plone-theme/components/ItaliaT
  * @params {object} content Content object.
  * @returns {string} Markup of the component.
  */
+
 const FileView = ({ content }) => (
   <Container className="view-wrapper px-4 my-4">
-    <h1 className="documentFirstHeading">
-      {content.title}
-      {content.subtitle && ` - ${content.subtitle}`}
-    </h1>
-    {content.description && (
-      <p className="documentDescription">{content.description}</p>
-    )}
+    <Row className="header-row">
+      <Col>
+        <h1 className="documentFirstHeading">
+          {content.title}
+          {content.subtitle && ` - ${content.subtitle}`}
+        </h1>
+        {content.description && (
+          <p className="documentDescription">{content.description}</p>
+        )}
+      </Col>
+    </Row>
+
     {content.file?.download && (
-      <div className="card-wrapper card-teaser-wrapper">
-        <div className="genericcard card card-teaser shadow p-4 mt-3 rounded">
-          <div className="card-body">
-            <h5 className="card-title">{content.file.filename}</h5>
-            <DownloadFileFormat file={content.file} iconSize="2x" />
+      <Row className="content-row">
+        <Col className="card-wrapper card-teaser-wrapper">
+          <div className="genericcard card card-teaser shadow p-4 mt-3 rounded">
+            <div className="card-body">
+              <h5 className="card-title">{content.file.filename}</h5>
+              <DownloadFileFormat file={content.file} iconSize="2x" />
+            </div>
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     )}
   </Container>
 );
