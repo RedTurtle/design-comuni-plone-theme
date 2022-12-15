@@ -1,31 +1,26 @@
 publiccodeYmlVersion: 0.3.0
 applicationSuite: io-Comune
 name: io-Comune - Il sito AgID per Comuni ed Enti Pubblici
-# url: https://gitlab.com/...
+url: https://github.com/italia/design-comuni-plone-theme
 landingURL: https://www.io-comune.it/
-# releaseDate: '2022-12-07'
-# softwareVersion: 2.6.1
+releaseDate: '2022-11-08'
+softwareVersion: 6.5.0
 developmentStatus: stable
 softwareType: standalone/web
 platforms:
   - web
-# roadmap: 
 categories:
   - content-management
   - website-builder
 dependsOn:
   open:
-    # - name: PHP
-    #   versionMin: '7.3'
-    # - name: PostgreSQL
-    #   versionMin: '10'
-    # - name: Apache
-    #   versionMin: '2.4'
-    # - name: Shibboleth
-    #   versionMin: '3'
-    # - name: Docker
-    #   versionMin: '18.03'
-    #   optional: true
+    - name: nodejs
+      versionMin: '14'
+    - name: Python
+      versionMin: '3.8'
+    - name: Docker
+      versionMin: '18.03'
+      optional: true
 logo: docs/logo-io-comune.png
 maintenance:
   type: internal
@@ -35,7 +30,7 @@ maintenance:
       affiliation: RedTurtle Technology srl
       email: info@io-comune.it
 legal:
-  license: GNU General Public License v3.0
+  license: GPL-3.0 license
   mainCopyrightOwner: RedTurtle Technology srl
   repoOwner: RedTurtle Technology srl
 intendedAudience:
