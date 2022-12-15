@@ -4,6 +4,8 @@
 
 io-Comune non è solo un tema grafico ma gestisce e implementa anche tutte le tipologia di contenuto (Content Type) delle linee guida: di fatto consente la realizzazione di un sito istituzionale di un Comune (ma anche di altri tipi di Enti) conforme alle linee guida di design.
 
+![io-comune](/docs/01-io-comune.png)
+
 ## Installazione e supporto
 
 Nel progetto è presente una configurazione docker compose per testare un sito Io-Comune semplicemente usando il comando::
