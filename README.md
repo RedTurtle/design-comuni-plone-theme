@@ -92,4 +92,4 @@ Si veda ad esempio:
 * [Documentazione tecnica per lo sviluppo del tema](DEVELOPMENT.md)
 * [Documentazione tecnica CMS Plone](https://6.docs.plone.org)
 * [Sito web progetto io-Comune](https://www.io-comune.it/)
-* [Modello di sito istituzionale dei Comuni Italiani](https://designers.italia.it/modello/comuni/),
+* [Modello di sito istituzionale dei Comuni Italiani](https://designers.italia.it/modello/comuni/)
