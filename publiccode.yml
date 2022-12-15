@@ -56,9 +56,7 @@ description:
     genericName: Gestore di contenuti e site builder
     documentation: https://docs.google.com/document/d/1SThuxa_ah0BuNXukWs564kKPfprK41WLQE8Mome-0xg/
     shortDescription: |
-      Crea con semplicità il nuovo sito del tuo Comune o Ente Pubblico:
-      conforme alle nuove linee guida AgID, accessibile a tutti ed usabile da smartphone e da PC.
-      Disponibile anche in SaaS (marketplace qualificato AgID) 
+      Crea con semplicità il nuovo sito del tuo Comune o Ente Pubblico: conforme alle nuove linee guida AgID, accessibile a tutti.
     longDescription: >
       **io-Comune: pensato per i cittadini, costruito con i redattori**
       io-Comune è la soluzione versatile e facile da usare per garantire ai cittadini un rapido accesso ai contenuti e ai servizi del tuo Comune, sia dal PC che da mobile.      
