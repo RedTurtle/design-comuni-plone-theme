@@ -30,7 +30,7 @@ maintenance:
       affiliation: RedTurtle Technology srl
       email: info@io-comune.it
 legal:
-  license: GPL-3.0 license
+  license: GPL-3.0
   mainCopyrightOwner: RedTurtle Technology srl
   repoOwner: RedTurtle Technology srl
 intendedAudience:
