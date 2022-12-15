@@ -15,7 +15,7 @@ io-Comune segue le linee guida ufficiali per il design dei siti web dei Comuni i
       
 ### Trovabilità dei contenuti
 
-io-Comune integra componenti e flussi di navigazione suggeriti da AgID, con l'esperienza ventennale di [RedTurtle](https://www.redturtle.it/plone/) nella gestione di complesse basi informative per darti la migliore esperienza di fruizione e portarti velocemente al contenuto desiderato.
+io-Comune integra componenti e flussi di navigazione suggeriti da AgID, con l'esperienza ventennale di [RedTurtle](https://www.redturtle.it/) nella gestione di complesse basi informative per darti la migliore esperienza di fruizione e portarti velocemente al contenuto desiderato.
 
 ### La porta per i servizi online
       
