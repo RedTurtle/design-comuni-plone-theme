@@ -2,7 +2,7 @@ import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import { Chip } from 'design-react-kit';
+import { Chip, ChipLabel } from 'design-react-kit';
 
 // eslint-disable-next-line import/no-unresolved
 import Image from '@plone/volto/components/theme/Image/Image';
@@ -70,11 +70,11 @@ const PageHeader = (props) => {
           <PageHeaderEventDates content={props.content} />
           {props.content.stato_servizio !== null && (
             <Chip tag="div" simple color="primary" className="ml-5">
-              <span className="chip-label p-3">
+              <ChipLabel className="p-3">
                 {props.content.stato_servizio
                   ? intl.formatMessage(messages.service_on)
                   : intl.formatMessage(messages.service_off)}
-              </span>
+              </ChipLabel>
             </Chip>
           )}
 
