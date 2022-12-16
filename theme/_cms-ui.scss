@@ -241,15 +241,6 @@ body.cms-ui {
     }
   }
 
-  // remove required from Title field
-  .footer-configuration-widget {
-    div.inline.required.field.text[class*='-title'] {
-      label:after {
-        content: none;
-      }
-    }
-  }
-
   .menu-configuration-widget {
     .menu-blocks-container {
       .DraftEditor-editorContainer .public-DraftEditor-content {
