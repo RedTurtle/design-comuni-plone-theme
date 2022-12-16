@@ -1,9 +1,7 @@
-import { flattenToAppURL } from '@plone/volto/helpers';
 import ReactDOMServer from 'react-dom/server';
 import { Provider } from 'react-intl-redux';
 import { DefaultView } from '@plone/volto/components';
 import { ConnectedRouter } from 'connected-react-router';
-import Image from 'design-comuni-plone-theme/components/Image/Image';
 
 export const blockIsNotEmptyPlaceholder = (blockField) => {
   return Object.values(blockField?.blocks)?.some((entry) => {
@@ -12,12 +10,6 @@ export const blockIsNotEmptyPlaceholder = (blockField) => {
     else if (type === 'image' && entry[type]?.url) return true;
     else return false;
   });
-};
-
-export const simulateImageHTMLField = (image) => {
-  return `<img src=${flattenToAppURL(image?.download ?? '#')} title="${
-    image?.filename
-  }"/>`;
 };
 
 export const SSRRenderHtml = (history, store, content, type) => {
@@ -29,9 +21,33 @@ export const SSRRenderHtml = (history, store, content, type) => {
         </ConnectedRouter>
       </Provider>,
     );
-  } else if (type === 'image') {
-    return content
-      ? ReactDOMServer.renderToStaticMarkup(<Image image={content} />)
-      : '<p></p>';
+  }
+  // Somehow not rendering correctly, defaulted to using filename
+  // else if (type === 'image') {
+  //   return content
+  //     ? ReactDOMServer.renderToStaticMarkup(
+  //         <Provider store={store}>
+  //           <ConnectedRouter history={history}>
+  //             <img
+  //               // image={content}
+  //               role="presentation"
+  //               src={content.image?.download}
+  //               key={content.image?.download}
+  //               alt={content.filename}
+  //             />
+  //           </ConnectedRouter>
+  //         </Provider>,
+  //       )
+  //     : '<p></p>';
+  // }
+  else if (type === 'image') {
+    return `<p>${content?.filename ?? ''}</p>`;
+  } else if (type === 'geolocation') {
+    const toRender = content
+      ? `Latitudine: ${content?.latitude ?? ''}, Longitudine: ${
+          content?.longitude ?? ''
+        }`
+      : '';
+    return `<p>${toRender}</p>`;
   } else return `<p>${content ?? ''}</p>`;
 };

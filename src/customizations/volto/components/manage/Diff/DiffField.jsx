@@ -13,10 +13,7 @@ import React, { useMemo } from 'react';
 import { isEqual } from 'lodash';
 import PropTypes from 'prop-types';
 import { Table } from 'semantic-ui-react';
-import { createBrowserHistory } from 'history';
 import { useSelector } from 'react-redux';
-import { Api } from '@plone/volto/helpers';
-import configureStore from '@plone/volto/store';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import {
   blockIsNotEmptyPlaceholder,
@@ -56,11 +53,11 @@ const DiffField = ({
   diffLib,
   htmlDiffLib,
   field,
+  store,
+  history,
 }) => {
   const language = useSelector((state) => state.intl.locale);
-  const api = new Api();
-  const history = createBrowserHistory();
-  const store = configureStore(window.__data, history, api);
+
   const diff2 = (prev, curr) =>
     htmlDiffLib.default.execute(
       prev ? String(prev) : '',
@@ -95,6 +92,7 @@ const DiffField = ({
 
           const first = SSRRenderHtml(history, store, one, schema.widget);
           const second = SSRRenderHtml(history, store, two, schema.widget);
+
           parts = diff2(first, second);
           break;
         default:
@@ -102,14 +100,9 @@ const DiffField = ({
           break;
       }
     } else if (schema.type === 'object') {
-      if (field === 'image') {
-        if (one?.filename !== two?.filename) {
-          const first = SSRRenderHtml(history, store, one, field);
-          // debugger;
-          const second = SSRRenderHtml(history, store, two, field);
-          parts = diff2(first, second);
-        }
-      }
+      const first = SSRRenderHtml(history, store, one, field);
+      const second = SSRRenderHtml(history, store, two, field);
+      parts = diff2(first, second);
     } else if (schema.type === 'array') {
       // debugger;
       const oneArray = (one || []).map((i) => i?.title || i).join(', ');
@@ -126,7 +119,6 @@ const DiffField = ({
     return parts;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [one, two, schema, field, language]);
-  if (diffs) console.log('my diffs for', field, ' are', diffs);
   return diffs ? (
     <Table compact data-testid="DiffField" className="diffField">
       <Table.Header>

@@ -23,7 +23,11 @@ import { Container, Button, Dropdown, Grid, Table } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { Portal } from 'react-portal';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import { updateGdprPrivacyConsent } from 'volto-gdpr-privacy/actions/gdprPrivacyConsent';
 import qs from 'query-string';
+import { createBrowserHistory } from 'history';
+import { Api } from '@plone/volto/helpers';
+import configureStore from '@plone/volto/store';
 
 import {
   getDiff,
@@ -124,7 +128,15 @@ class Diff extends Component {
     this.onChangeTwo = this.onChangeTwo.bind(this);
     this.onSelectView = this.onSelectView.bind(this);
     this.initialize = this.initialize.bind(this);
-    this.state = { isClient: false };
+    this.createStore = this.createStore.bind(this);
+    this.state = { isClient: false, store: null };
+  }
+  createStore() {
+    const api = new Api();
+    const history = createBrowserHistory();
+
+    const store = configureStore(this.props.reduxState, history, api);
+    this.setState((state) => ({ ...state, store, history }));
   }
   initialize(overriddenType = '') {
     // prevent type from being undefined, especially on reload
@@ -135,6 +147,7 @@ class Diff extends Component {
       this.props.one,
       this.props.two,
     );
+    this.createStore();
   }
   /**
    * Component did mount
@@ -148,6 +161,7 @@ class Diff extends Component {
     } else {
       this.initialize();
     }
+    this.createStore();
     this.setState({ isClient: true });
   }
 
@@ -253,7 +267,7 @@ class Diff extends Component {
             />
           </h1>
           <Grid>
-            <Grid.Column width={9}>
+            <Grid.Column computer={9} tablet={12} mobile={12}>
               <p className="description">
                 <FormattedMessage
                   id="You can view the difference of the revisions below."
@@ -261,8 +275,8 @@ class Diff extends Component {
                 />
               </p>
             </Grid.Column>
-            <Grid.Column width={3} textAlign="right">
-              <Button.Group>
+            <Grid.Column computer={3} tablet={12} mobile={12} textAlign="right">
+              <Button.Group size="small">
                 {map(
                   [
                     {
@@ -284,6 +298,8 @@ class Diff extends Component {
                         this.props.historyLoading && !this.props.historyLoaded
                       }
                       className="primary"
+                      size="tiny"
+                      compact
                     >
                       {view.label}
                     </Button>
@@ -346,6 +362,8 @@ class Diff extends Component {
                     schema={this.props.schema.properties[field]}
                     view={this.props.view}
                     field={field}
+                    store={this.state.store}
+                    history={this.state.history}
                   />
                 );
               }),
@@ -396,7 +414,8 @@ export default compose(
       contentLoaded: state.content?.get.loaded,
       historyLoading: state.diff.loading,
       historyLoaded: state.diff.loaded,
+      reduxState: state,
     }),
-    { getDiff, getSchema, getHistory, getContent },
+    { getDiff, getSchema, getHistory, getContent, updateGdprPrivacyConsent },
   ),
 )(Diff);
