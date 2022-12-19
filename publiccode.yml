@@ -215,7 +215,7 @@ it:
     spid: false
 landingURL: 'https://www.io-comune.it/'
 legal:
-  license: GPL-3.0-only
+  license: GPL-3.0
   mainCopyrightOwner: RedTurtle Technology srl
   repoOwner: RedTurtle Technology srl
 localisation:
