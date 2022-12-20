@@ -68,15 +68,24 @@ const PageHeader = (props) => {
           </h1>
 
           <PageHeaderEventDates content={props.content} />
-          {props.content.stato_servizio !== null && (
-            <Chip tag="div" simple color="primary" className="ml-5 my-4">
-              <ChipLabel>
-                {props.content.stato_servizio
-                  ? intl.formatMessage(messages.service_on)
-                  : intl.formatMessage(messages.service_off)}
-              </ChipLabel>
-            </Chip>
-          )}
+          <ul className="chip-wrapper list-unstyled my-4">
+            <li>
+              {props.content.stato_servizio !== null && (
+                <Chip
+                  tag="div"
+                  simple
+                  color="primary"
+                  data-element="service-status"
+                >
+                  <ChipLabel>
+                    {props.content.stato_servizio
+                      ? intl.formatMessage(messages.service_on)
+                      : intl.formatMessage(messages.service_off)}
+                  </ChipLabel>
+                </Chip>
+              )}
+            </li>
+          </ul>
 
           {props.content.description && (
             <p
