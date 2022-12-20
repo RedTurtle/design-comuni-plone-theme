@@ -325,6 +325,10 @@ export default function applyConfig(voltoConfig) {
       ...config.blocks.blocksConfig.slateTable,
       restricted: true,
     },
+    maps: {
+      ...config.blocks.blocksConfig.maps,
+      restricted: true,
+    },
   };
 
   config.blocks = {
