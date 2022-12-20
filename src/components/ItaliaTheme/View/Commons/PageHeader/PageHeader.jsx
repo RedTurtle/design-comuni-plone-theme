@@ -69,8 +69,8 @@ const PageHeader = (props) => {
 
           <PageHeaderEventDates content={props.content} />
           {props.content.stato_servizio !== null && (
-            <Chip tag="div" simple color="primary" className="ml-5">
-              <ChipLabel className="p-3">
+            <Chip tag="div" simple color="primary" className="ml-5 my-4">
+              <ChipLabel>
                 {props.content.stato_servizio
                   ? intl.formatMessage(messages.service_on)
                   : intl.formatMessage(messages.service_off)}
