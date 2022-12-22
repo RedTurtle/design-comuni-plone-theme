@@ -59,7 +59,6 @@ const GenericCard = ({
   }, [dispatch, key, showimage, url]);
 
   item_fo = locationContent?.[key]?.data || item;
-  console.log(item_fo);
 
   return item_fo ? (
     showimage && (item_fo.image || item_fo.preview_image) ? (
