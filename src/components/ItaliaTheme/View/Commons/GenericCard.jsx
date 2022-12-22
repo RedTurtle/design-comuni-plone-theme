@@ -59,9 +59,10 @@ const GenericCard = ({
   }, [dispatch, key, showimage, url]);
 
   item_fo = locationContent?.[key]?.data || item;
+  console.log(item_fo);
 
   return item_fo ? (
-    showimage && item_fo[image_field] ? (
+    showimage && (item_fo.image || item_fo.preview_image) ? (
       <div
         className={cx('genericcard card card-img shadow rounded mt-3 ', {
           'card-teaser': !showimage,
@@ -71,7 +72,7 @@ const GenericCard = ({
           <div className="img-responsive img-responsive-panoramic">
             <figure className="img-wrapper">
               <Image
-                image={item_fo[image_field]}
+                image={item_fo.image || item_fo.preview_image}
                 alt={item_fo.title}
                 title={item_fo.title}
               />
