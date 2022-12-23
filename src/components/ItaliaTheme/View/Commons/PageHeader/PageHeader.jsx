@@ -47,7 +47,6 @@ const messages = defineMessages({
 
 const PageHeader = (props) => {
   const intl = useIntl();
-  console.log(props);
 
   return (
     <div className="PageHeaderWrapper mb-4">
