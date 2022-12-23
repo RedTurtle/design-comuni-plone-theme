@@ -1,23 +1,22 @@
-import React from 'react';
-import { defineMessages, useIntl } from 'react-intl';
 import cx from 'classnames';
-import PropTypes from 'prop-types';
 import { Chip, ChipLabel } from 'design-react-kit';
+import PropTypes from 'prop-types';
+import { defineMessages, useIntl } from 'react-intl';
 
 // eslint-disable-next-line import/no-unresolved
 import Image from '@plone/volto/components/theme/Image/Image';
 
 import {
-  Sharing,
   Actions,
+  ArgumentIcon,
+  PageHeaderBando,
   PageHeaderDates,
   PageHeaderEventDates,
-  PageHeaderPersona,
-  PageHeaderBando,
-  PageHeaderNewsItem,
-  PageHeaderTassonomiaArgomenti,
   PageHeaderExtend,
-  ArgumentIcon,
+  PageHeaderNewsItem,
+  PageHeaderPersona,
+  PageHeaderTassonomiaArgomenti,
+  Sharing,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 /**
@@ -48,6 +47,7 @@ const messages = defineMessages({
 
 const PageHeader = (props) => {
   const intl = useIntl();
+  console.log(props);
 
   return (
     <div className="PageHeaderWrapper mb-4">
@@ -68,24 +68,26 @@ const PageHeader = (props) => {
           </h1>
 
           <PageHeaderEventDates content={props.content} />
-          <ul className="chip-wrapper list-unstyled my-4">
-            <li>
-              {props.content.stato_servizio !== null && (
-                <Chip
-                  tag="div"
-                  simple
-                  color="primary"
-                  data-element="service-status"
-                >
-                  <ChipLabel>
-                    {props.content.stato_servizio
-                      ? intl.formatMessage(messages.service_on)
-                      : intl.formatMessage(messages.service_off)}
-                  </ChipLabel>
-                </Chip>
-              )}
-            </li>
-          </ul>
+          {props.content['@type'] === 'Servizio' && (
+            <ul className="chip-wrapper list-unstyled my-4">
+              <li>
+                {props.content.stato_servizio !== null && (
+                  <Chip
+                    tag="div"
+                    simple
+                    color="primary"
+                    data-element="service-status"
+                  >
+                    <ChipLabel>
+                      {props.content.stato_servizio
+                        ? intl.formatMessage(messages.service_on)
+                        : intl.formatMessage(messages.service_off)}
+                    </ChipLabel>
+                  </Chip>
+                )}
+              </li>
+            </ul>
+          )}
 
           {props.content.description && (
             <p
