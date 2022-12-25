@@ -49,8 +49,11 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
         `dal ${Moment(content.start).format('DD-MM-Y')} al ${Moment(
           content.end,
         ).format('DD-MM-Y')}`}
-      {(wholeDay || openEnd || renderOnlyStart) &&
+      {(wholeDay || renderOnlyStart) &&
+        !openEnd &&
         `${Moment(content.start).format('DD-MM-Y')}`}
+      {openEnd &&
+        `dal ${Moment(content.start).format('DD-MM-Y')} fino a conclusione`}
       {eventRecurrenceText && (
         <div className="recurrence small">{eventRecurrenceText}</div>
       )}
