@@ -1,5 +1,6 @@
 import React from 'react';
-import CharCounterDescriptionWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CharCounterDescriptionWidget';
+import CharCounterTextareaWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CharCounterTextareaWidget';
+import CharCounterTextWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CharCounterTextWidget';
 import { DatetimeWidget } from '@plone/volto/config/Widgets';
 import { ArrayWidget, WysiwygWidget } from '@plone/volto/components';
 import { MultilingualWidget } from 'volto-multilingual-widget';
@@ -35,7 +36,8 @@ const getItaliaWidgets = (config) => {
   return {
     id: {
       ...config.widgets.id,
-      description: CharCounterDescriptionWidget,
+      title: CharCounterTextWidget,
+      description: CharCounterTextareaWidget,
       icona: (props) => (
         <IconWidget {...props} defaultOptions={defaultIconWidgetOptions} />
       ),
