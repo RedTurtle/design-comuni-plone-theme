@@ -79,8 +79,8 @@ const PageHeader = (props) => {
                   >
                     <ChipLabel>
                       {props.content.stato_servizio
-                        ? intl.formatMessage(messages.service_on)
-                        : intl.formatMessage(messages.service_off)}
+                        ? intl.formatMessage(messages.service_off)
+                        : intl.formatMessage(messages.service_on)}
                     </ChipLabel>
                   </Chip>
                 )}
