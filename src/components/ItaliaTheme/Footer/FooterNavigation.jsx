@@ -39,6 +39,11 @@ const FooterNavigation = () => {
     path = '/' + currentLang;
   }
 
+  let footerCollapsed = true;
+  if (config.settings.isFooterCollapsed !== (undefined || true)) {
+    footerCollapsed = false;
+  }
+
   useEffect(() => {
     dispatch(
       getNavigation(
@@ -75,7 +80,7 @@ const FooterNavigation = () => {
                   {item.title}
                 </Link>
               </h4>
-              {item.items && (
+              {footerCollapsed && item.items && (
                 <LinkList className="footer-list clearfix" tag="div">
                   {item.items.map((subitem) => {
                     return (
