@@ -25,26 +25,28 @@ const messages = defineMessages({
  * @params {object} location: object.
  * @returns {string} Markup of the component.
  */
-const Location = ({ location, show_icon }) => {
+const Location = ({ location, show_icon, retrieve_data }) => {
   const intl = useIntl();
   const url = flattenToAppURL(location['@id']);
   const key = `luogo${url}`;
+  let location_fo = location;
+  if (retrieve_data) {
+    const locationContent = useSelector(
+      (state) => state.content.subrequests?.[key],
+    );
+    const loaded = locationContent?.loading || locationContent?.loaded;
+    const dispatch = useDispatch();
 
-  const locationContent = useSelector(
-    (state) => state.content.subrequests?.[key],
-  );
-  const loaded = locationContent?.loading || locationContent?.loaded;
-  const dispatch = useDispatch();
+    useEffect(() => {
+      if (!loaded) {
+        dispatch(getContent(url, null, key));
+      }
+      return () => dispatch(resetContent(key));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [url]);
 
-  useEffect(() => {
-    if (!loaded) {
-      dispatch(getContent(url, null, key));
-    }
-    return () => dispatch(resetContent(key));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [url]);
-
-  let location_fo = locationContent?.data;
+    location_fo = locationContent?.data;
+  }
 
   return location_fo ? (
     <div className="card card-teaser shadow mt-3 rounded">
@@ -86,11 +88,16 @@ const Location = ({ location, show_icon }) => {
  * @params {object} content: Content object.
  * @returns {string} Markup of the component.
  */
-const VenuesSmall = ({ venues, show_icon }) => {
+const VenuesSmall = ({ venues, show_icon, retrieve_data = true }) => {
   return venues ? (
     <div className="card-wrapper card-teaser-wrapper">
       {venues.map((item, i) => (
-        <Location key={item['@id']} location={item} show_icon={show_icon} />
+        <Location
+          key={item['@id']}
+          location={item}
+          show_icon={show_icon}
+          retrieve_data={retrieve_data}
+        />
       ))}
     </div>
   ) : null;
