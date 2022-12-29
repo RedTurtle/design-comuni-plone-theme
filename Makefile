@@ -45,6 +45,15 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
+# Dev
+
+.PHONY: omelette
+omelette: ## Creates the omelette folder that contains a link to the installed version of Volto (a softlink pointing to node_modules/@plone/volto)
+	if [ ! -d omelette ]; then ln -sf node_modules/@plone/volto omelette; fi
+
+.PHONY: patches
+patches:	
+	/bin/bash patches/patchit.sh > /dev/null 2>&1 ||true
 
 # Top-level targets
 

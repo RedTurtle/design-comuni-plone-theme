@@ -20,6 +20,8 @@ omelette
 
 locales/*.json
 
+cypress/screenshots/*
+
 # Yarn 3
 .pnp.*
 .yarn/*
