@@ -25,6 +25,7 @@
     "src/customizations/"
   ],
   "scripts": {
+    "cypress:open": "NODE_ENV=production cypress open",
     "start": "razzle start",
     "postinstall": "make omelette && make patches",
     "prepare": "husky install",
@@ -212,6 +213,7 @@
     "@commitlint/config-conventional": "^12.0.0",
     "@release-it/conventional-changelog": "^2.0.1",
     "bundlewatch": "^0.3.3",
+    "cypress": "12.2.0",
     "eslint-plugin-prettier": "^3.4.1",
     "husky": "8.0.2",
     "jest-environment-jsdom": "^26.0.1",

@@ -1,6 +1,42 @@
-SHELL := /bin/bash
-CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+# Volto development
 
+### Defensive settings for make:
+#     https://tech.davis-hansson.com/p/make/
+SHELL:=bash
+.ONESHELL:
+.SHELLFLAGS:=-xeu -o pipefail -O inherit_errexit -c
+.SILENT:
+.DELETE_ON_ERROR:
+MAKEFLAGS+=--warn-undefined-variables
+MAKEFLAGS+=--no-builtin-rules
+
+# Project settings
+
+INSTANCE_PORT=8080
+# DOCKER_IMAGE=plone/plone-backend:6.0.0
+DOCKER_IMAGE=ghcr.io/redturtle/dist.design.plone:latest
+# KGS=plone.volto==4.0.3
+KGS=
+TESTING_ADDONS=plone.app.robotframework==2.0.0 plone.app.testing==7.0.0
+NODEBIN = ./node_modules/.bin
+SCRIPTSPACKAGE = ./packages/scripts
+
+# Sphinx variables
+# You can set these variables from the command line.
+SPHINXOPTS      ?=
+# Internal variables.
+SPHINXBUILD     = $(realpath bin/sphinx-build)
+SPHINXAUTOBUILD = $(realpath bin/sphinx-autobuild)
+DOCS_DIR        = ./docs/source/
+BUILDDIR        = ../_build/
+ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(SPHINXOPTS) .
+
+# Recipe snippets for reuse
+
+CHECKOUT_BASENAME=$(shell basename $(shell realpath ./))
+CHECKOUT_BRANCH=$(shell git branch --show-current)
+CHECKOUT_TMP=../$(CHECKOUT_BASENAME).tmp
+CHECKOUT_TMP_ABS=$(shell realpath $(CHECKOUT_TMP))
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -9,66 +45,279 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-GIT_NAME = design-comuni-plone-theme
-NAMESPACE = ""
-RAZZLE_JEST_CONFIG = jest-addon.config.js
 
-# Add the following 'help' target to your Makefile
-# And add help text after each target name starting with '\#\#'
-.PHONY: help
-help: ## This help message
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+# Top-level targets
 
 .PHONY: all
 all: build
 
+# Add the following 'help' target to your Makefile
+# And add help text after each target name starting with '\#\#'
+.PHONY: help
+help: .SHELLFLAGS:=-eu -o pipefail -O inherit_errexit -c
+help: ## This help message
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
+.PHONY: start
+# Run both the back-end and the front end
+start:
+	# $(MAKE) -j 2 start-backend start-frontend
+	$(MAKE) -j 2 start-backend-docker start-frontend
+
+.PHONY: start-frontend
+start-frontend:
+	yarn start
+
+.PHONY: start-backend
+start-backend: ## Start Plone Backend
+	$(MAKE) -C "./api/" start
+
+.PHONY: release
+release:
+	./node_modules/.bin/release-it
+
+.PHONY: build
+build:
+	make build-frontend
+
+.PHONY: build-frontend
+build-frontend:
+	yarn && RAZZLE_API_PATH=http://localhost:55001/Plone yarn build
+
+.PHONY: dist
+dist:
+	yarn
+	yarn build
+
 .PHONY: test
-test: ## Run unit test suite for the addon
-	@echo "$(GREEN)==> Run unit test suite for the addon$(RESET)"
-	docker run -it --rm -e NAMESPACE="$(NAMESPACE)" -e DEPENDENCIES="$(DEPENDENCIES)" -e GIT_NAME="$(GIT_NAME)" -v $(shell pwd):/opt/frontend/my-volto-project/src/addons/$(GIT_NAME) plone/volto-addon-ci bash -c "RAZZLE_JEST_CONFIG=$(RAZZLE_JEST_CONFIG) yarn test src/addons/$(GIT_NAME) --watchAll"
+test:
+	$(MAKE) -C "./api/" test
 
-.PHONY: cypress
-cypress: ## Run unit test suite for the addon
-	@echo "$(GREEN)==> Run cypress for the addon$(RESET)"
-	docker run -i --rm --link plone -e NODE_ENV=production -e RAZZLE_API_PATH="http://plone:55001/plone" -e CYPRESS_BACKEND_HOST="plone" -e NAMESPACE="$(NAMESPACE)" -e DEPENDENCIES="$(DEPENDENCIES)" -e GIT_NAME="$(GIT_NAME)" -v $(shell pwd):/opt/frontend/my-volto-project/src/addons/$(GIT_NAME) plone/volto-addon-ci cypress
+bin/python:
+	python3 -m venv . || virtualenv --clear --python=python3 .
+	bin/python -m pip install --upgrade pip
+	bin/pip install -r requirements-docs.txt
 
-.PHONY: prettier
-prettier: ## Run unit test suite for the addon
-	@echo "$(GREEN)==> Run prettier for the addon$(RESET)"
-	docker run -it --rm -e NAMESPACE="$(NAMESPACE)" -e DEPENDENCIES="$(DEPENDENCIES)" -e GIT_NAME="$(GIT_NAME)" -v $(shell pwd):/opt/frontend/my-volto-project/src/addons/$(GIT_NAME) plone/volto-addon-ci prettier
+.PHONY: clean
+clean:
+	$(MAKE) -C "./api/" clean
+	rm -rf node_modules
 
-.PHONY: lint
-lint: ## Run unit test suite for the addon
-	@echo "$(GREEN)==> Run ESlint for the addon$(RESET)"
-	docker run -it --rm -e NAMESPACE="$(NAMESPACE)" -e DEPENDENCIES="$(DEPENDENCIES)" -e GIT_NAME="$(GIT_NAME)" -v $(shell pwd):/opt/frontend/my-volto-project/src/addons/$(GIT_NAME) plone/volto-addon-ci eslint
+##### Documentation
 
-.PHONY: stylelint
-stylelint: ## Run unit test suite for the addon
-	@echo "$(GREEN)==> Run stylelint for the addon$(RESET)"
-	docker run -it --rm -e NAMESPACE="$(NAMESPACE)" -e DEPENDENCIES="$(DEPENDENCIES)" -e GIT_NAME="$(GIT_NAME)" -v $(shell pwd):/opt/frontend/my-volto-project/src/addons/$(GIT_NAME) plone/volto-addon-ci stylelint
+.PHONY: docs-clean
+docs-clean:  ## Clean current and legacy docs build directories, and Python virtual environment
+	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
+	rm -rf bin include lib
+	rm -rf docs/_build
 
-.PHONY: test-acceptance-server
-test-acceptance-server: ## Run test acceptance server
-	docker run -i --rm --name=plone -e ZSERVER_HOST=0.0.0.0 -e ZSERVER_PORT=55001 -p 55001:55001 -e SITE=plone -e APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,kitconcept.volto:default-homepage -e CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,kitconcept.volto,kitconcept.volto.cors -e ADDONS='plone.app.robotframework plone.app.contenttypes plone.restapi kitconcept.volto' plone ./bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING
+.PHONY: docs-html
+docs-html: bin/python  ## Build html
+	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	@echo
+	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-.PHONY: demo
-demo: docker-compose.yml
-	docker compose pull
-	docker compose build
-	docker compose up
+.PHONY: docs-livehtml
+docs-livehtml: bin/python  ## Rebuild Sphinx documentation on changes, with live-reload in the browser
+	cd "$(DOCS_DIR)" && ${SPHINXAUTOBUILD} \
+		--ignore "*.swp" \
+		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS)
 
-.PHONY: preinstall
-preinstall: ## Preinstall task, checks if missdev (mrs-developer) is present and runs it
-	if [ -f $$(pwd)/mrs.developer.json ]; then make develop; fi
+.PHONY: docs-linkcheck
+docs-linkcheck: bin/python  ## Run linkcheck
+	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
+	@echo
+	@echo "Link check complete; look for any errors in the above output " \
+		"or in $(BUILDDIR)/linkcheck/ ."
 
-.PHONY: develop
-develop: ## Runs missdev in the local project (mrs.developer.json should be present)
-	npx -p mrs-developer missdev --config=jsconfig.json --output=addons --fetch-https
+.PHONY: docs-linkcheckbroken
+docs-linkcheckbroken: bin/python  ## Run linkcheck and show only broken links
+	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' grep -wi "broken\|redirect" --color=auto || test $$? = 1
+	@echo
+	@echo "Link check complete; look for any errors in the above output " \
+		"or in $(BUILDDIR)/linkcheck/ ."
 
-.PHONY: omelette
-omelette: ## Creates the omelette folder that contains a link to the installed version of Volto (a softlink pointing to node_modules/@plone/volto)
-	if [ ! -d omelette ]; then ln -sf node_modules/@plone/volto omelette; fi
+.PHONY: docs-spellcheck
+docs-spellcheck: bin/python  ## Run spellcheck
+	cd $(DOCS_DIR) && LANGUAGE=$* $(SPHINXBUILD) -b spelling -j 4 $(ALLSPHINXOPTS) $(BUILDDIR)/spellcheck/$*
+	@echo
+	@echo "Spellcheck is finished; look for any errors in the above output " \
+		" or in $(BUILDDIR)/spellcheck/ ."
 
-.PHONY: patches
-patches:
-	/bin/bash patches/patchit.sh > /dev/null 2>&1 ||true
+.PHONY: netlify
+netlify:
+	pip install -r requirements-docs.txt
+	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) ../$(BUILDDIR)/html
+
+.PHONY: docs-test
+docs-test: docs-clean docs-linkcheckbroken docs-spellcheck  ## Clean docs build, then run linkcheckbroken, spellcheck
+
+.PHONY: storybook-build
+storybook-build:
+	yarn build-storybook -o docs/_build/storybook
+
+##### Release
+
+.PHONY: corepackagebump
+corepackagebump:
+	node $(SCRIPTSPACKAGE)/corepackagebump.js packages/volto-slate $(VERSION)
+
+##### Docker containers
+
+.PHONY: start-backend-docker
+start-backend-docker:
+	docker run -it --rm --name=backend -p 8080:8080 -e SITE=Plone -e ADDONS='$(KGS)' $(DOCKER_IMAGE)
+
+.PHONY: start-frontend-docker
+start-frontend-docker:
+	docker run -it --rm --name=volto --link backend -p 3000:3000 -e RAZZLE_INTERNAL_API_PATH=http://backend:8080/Plone -e RAZZLE_DEV_PROXY_API_PATH=http://backend:8080/Plone plone/plone-frontend:latest
+
+##### Acceptance tests (Cypress)
+
+.PHONY: start-test
+start-test: ## Start Test
+	@echo "$(GREEN)==> Start Test$(RESET)"
+	yarn cypress:open
+
+.PHONY: start-test-all
+start-test-all: ## Start Test
+	@echo "$(GREEN)==> Start Test$(RESET)"
+	yarn ci:cypress:run
+
+.PHONY: start-test-frontend
+start-test-frontend: ## Start Test Volto Frontend
+	@echo "$(GREEN)==> Start Test Volto Frontend$(RESET)"
+	RAZZLE_API_PATH=http://localhost:55001/Plone yarn build && NODE_ENV=production node build/server.js
+
+.PHONY: start-test-backend
+start-test-backend: ## Start Test Plone Backend (api folder)
+	$(MAKE) -C "./api/" start-test
+
+.PHONY: test-acceptance-server-old
+test-acceptance-server-old:
+	$(MAKE) -C "./api/" test-acceptance-server-old
+
+######### Dev mode Acceptance tests
+
+.PHONY: start-test-acceptance-frontend-dev
+start-test-acceptance-frontend-dev: ## Start the Core Acceptance Frontend Fixture in dev mode
+	RAZZLE_API_PATH=http://localhost:55001/Plone yarn start
+
+######### Core Acceptance tests
+
+.PHONY: start-test-acceptance-server test-acceptance-server
+start-test-acceptance-server test-acceptance-server: ## Start Test Acceptance Server Main Fixture (docker container)
+	# docker run -i --rm -e ZSERVER_HOST=0.0.0.0 -e ZSERVER_PORT=55001 -p 55001:55001 -e ADDONS='$(KGS) $(TESTING_ADDONS)' -e APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,plone.volto:default-homepage -e CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,plone.volto,plone.volto.cors $(DOCKER_IMAGE) ./bin/robot-server plone.app.robotframework.testing.VOLTO_ROBOT_TESTING
+	docker run -i --rm -e ZSERVER_HOST=0.0.0.0 -e ZSERVER_PORT=55001 -p 55001:55001 -e ADDONS='$(KGS) $(TESTING_ADDONS)' $(DOCKER_IMAGE) ./bin/robot-server plone.app.robotframework.testing.VOLTO_ROBOT_TESTING
+
+.PHONY: start-test-acceptance-frontend
+start-test-acceptance-frontend: ## Start the Core Acceptance Frontend Fixture
+	RAZZLE_API_PATH=http://localhost:55001/plone yarn build && yarn start:prod
+
+.PHONY: test-acceptance
+test-acceptance: ## Start Core Cypress Acceptance Tests
+	NODE_ENV=production CYPRESS_API=plone $(NODEBIN)/cypress open
+
+.PHONY: test-acceptance-headless
+test-acceptance-headless: ## Start Core Cypress Acceptance Tests in headless mode
+	NODE_ENV=production CYPRESS_API=plone $(NODEBIN)/cypress run
+
+.PHONY: full-test-acceptance
+full-test-acceptance: ## Runs Core Full Acceptance Testing in headless mode
+	$(NODEBIN)/start-test "make start-test-acceptance-server" http-get://localhost:55001/plone "make start-test-acceptance-frontend" http://localhost:3000 "make test-acceptance-headless"
+
+######### Seamless Core Acceptance tests
+
+.PHONY: start-test-acceptance-frontend-seamless
+start-test-acceptance-frontend-seamless: ## Start the Seamless Core Acceptance Frontend Fixture
+	yarn build && yarn start:prod
+
+.PHONY: test-acceptance-seamless
+test-acceptance-seamless: ## Start Seamless Cypress Acceptance Tests
+	NODE_ENV=production CYPRESS_API=plone $(NODEBIN)/cypress open --config baseUrl='http://localhost'
+
+.PHONY: start-test-acceptance-webserver-seamless
+start-test-acceptance-webserver-seamless: ## Start the seamless webserver
+	cd cypress/docker && docker-compose -f seamless.yml up
+
+.PHONY: full-test-acceptance-seamless
+full-test-acceptance-seamless: ## Runs Seamless Core Full Acceptance Testing in headless mode
+	$(NODEBIN)/start-test "make start-test-acceptance-server" http-get://localhost:55001/plone "make start-test-acceptance-frontend-seamless" http://localhost:3000 "make test-acceptance-headless"
+
+######### Project Acceptance tests
+
+.PHONY: start-test-acceptance-frontend-project
+start-test-acceptance-frontend-project: ## Start the Project Acceptance Frontend Fixture
+	cd my-volto-app && RAZZLE_API_PATH=http://localhost:55001/plone yarn build && yarn start:prod
+
+######### CoreSandbox Acceptance tests
+
+.PHONY: start-test-acceptance-server-coresandbox test-acceptance-server-coresandbox
+start-test-acceptance-server-coresandbox test-acceptance-server-coresandbox: ## Start CoreSandbox Test Acceptance Server Fixture (docker container)
+	docker run -i --rm -e ZSERVER_HOST=0.0.0.0 -e ZSERVER_PORT=55001 -p 55001:55001 -e ADDONS='$(KGS) $(TESTING_ADDONS)' -e APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,plone.volto:default-homepage,plone.volto:coresandbox -e CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,plone.volto,plone.volto.cors,plone.volto.coresandbox $(DOCKER_IMAGE) ./bin/robot-server plone.app.robotframework.testing.VOLTO_ROBOT_TESTING
+	# ZSERVER_PORT=55001 CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,plone.volto,plone.volto.cors,plone.volto.coresandbox APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,plone.volto:default-homepage,plone.volto:coresandbox ./api/bin/robot-server plone.app.robotframework.testing.VOLTO_ROBOT_TESTING
+
+.PHONY: start-test-acceptance-frontend-coresandbox
+start-test-acceptance-frontend-coresandbox: ## Start the CoreSandbox Acceptance Frontend Fixture
+	ADDONS=coresandbox RAZZLE_API_PATH=http://localhost:55001/plone yarn build && yarn start:prod
+
+.PHONY: start-test-acceptance-frontend-coresandbox-dev
+start-test-acceptance-frontend-coresandbox-dev: ## Start the CoreSandbox Acceptance Frontend Fixture in dev mode
+	ADDONS=coresandbox RAZZLE_API_PATH=http://localhost:55001/plone yarn start
+
+.PHONY: test-acceptance-coresandbox
+test-acceptance-coresandbox: ## Start CoreSandbox Cypress Acceptance Tests
+	NODE_ENV=production CYPRESS_API=plone $(NODEBIN)/cypress open --config specPattern='cypress/tests/coresandbox/**/*.{js,jsx,ts,tsx}'
+
+.PHONY: test-acceptance-coresandbox-headless
+test-acceptance-coresandbox-headless: ## Start CoreSandbox Cypress Acceptance Tests in headless mode
+	NODE_ENV=production CYPRESS_API=plone $(NODEBIN)/cypress run --config specPattern='cypress/tests/coresandbox/**/*.{js,jsx,ts,tsx}/**/*.{js,jsx,ts,tsx}'
+
+.PHONY: full-test-acceptance-coresandbox
+full-test-acceptance-coresandbox: ## Runs CoreSandbox Full Acceptance Testing in headless mode
+	$(NODEBIN)/start-test "make start-test-acceptance-server-coresandbox" http-get://localhost:55001/plone "make start-test-acceptance-frontend-coresandbox" http://localhost:3000 "make test-acceptance-coresandbox-headless"
+
+######### Multilingual Acceptance tests
+
+.PHONY: start-test-acceptance-server-multilingual test-acceptance-server-multilingual
+start-test-acceptance-server-multilingual test-acceptance-server-multilingual: ## Start Multilingual Acceptance Server Multilingual Fixture (docker container)
+	docker run -i --rm -e ZSERVER_HOST=0.0.0.0 -e ZSERVER_PORT=55001 -p 55001:55001 -e ADDONS='$(KGS) $(TESTING_ADDONS)' -e APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,plone.volto:multilingual -e CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,plone.volto,plone.volto.cors $(DOCKER_IMAGE) ./bin/robot-server plone.app.robotframework.testing.VOLTO_ROBOT_TESTING
+
+.PHONY: start-test-acceptance-frontend-multilingual
+start-test-acceptance-frontend-multilingual: ## Start the Multilingual Acceptance Frontend Fixture
+	ADDONS=coresandbox:multilingualFixture RAZZLE_API_PATH=http://localhost:55001/plone yarn build && yarn start:prod
+
+.PHONY: test-acceptance-multilingual
+test-acceptance-multilingual: ## Start Multilingual Cypress Acceptance Tests
+	NODE_ENV=production CYPRESS_API=plone $(NODEBIN)/cypress open --config specPattern='cypress/tests/multilingual/**/*.{js,jsx,ts,tsx}'
+
+.PHONY: test-acceptance-multilingual-headless
+test-acceptance-multilingual-headless: ## Start Multilingual Cypress Acceptance Tests in headless mode
+	NODE_ENV=production CYPRESS_API=plone $(NODEBIN)/cypress run --config specPattern='cypress/tests/multilingual/**/*.{js,jsx,ts,tsx}'
+
+.PHONY: full-test-acceptance-multilingual
+full-test-acceptance-multilingual: ## Runs Multilingual Full Acceptance Testing in headless mode
+	$(NODEBIN)/start-test "make start-test-acceptance-server-multilingual" http-get://localhost:55001/plone "make start-test-acceptance-frontend-multilingual" http://localhost:3000 "make test-acceptance-multilingual-headless"
+
+######### WorkingCopy Acceptance tests
+
+.PHONY: start-test-acceptance-server-workingcopy test-acceptance-server-workingcopy
+start-test-acceptance-server-workingcopy test-acceptance-server-workingcopy : ## Start the WorkingCopy Acceptance Server  Fixture (docker container)
+	docker run -i --rm -e ZSERVER_HOST=0.0.0.0 -e ZSERVER_PORT=55001 -p 55001:55001 -e ADDONS='$(KGS) $(TESTING_ADDONS)' -e APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,plone.app.iterate:default,plone.volto:default-homepage -e CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,plone.volto,plone.volto.cors $(DOCKER_IMAGE) ./bin/robot-server plone.app.robotframework.testing.VOLTO_ROBOT_TESTING
+	# ZSERVER_PORT=55001 CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,plone.app.iterate,plone.volto,plone.volto.cors APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,plone.app.iterate:default,plone.volto:default-homepage ./api/bin/robot-server plone.app.robotframework.testing.VOLTO_ROBOT_TESTING
+
+.PHONY: start-test-acceptance-frontend-workingcopy
+start-test-acceptance-frontend-workingcopy: ## Start the WorkingCopy Acceptance Frontend Fixture
+	ADDONS=coresandbox:workingCopyFixture RAZZLE_API_PATH=http://localhost:55001/plone yarn build && yarn start:prod
+
+.PHONY: test-acceptance-workingcopy
+test-acceptance-workingcopy: ## Start WorkingCopy Cypress Acceptance Tests
+	NODE_ENV=production CYPRESS_API=plone $(NODEBIN)/cypress open --config specPattern='cypress/tests/workingCopy/**/*.{js,jsx,ts,tsx}'
+
+.PHONY: test-acceptance-workingcopy-headless
+test-acceptance-workingcopy-headless: ## Start WorkingCopy Cypress Acceptance Tests in headless mode
+	NODE_ENV=production CYPRESS_API=plone $(NODEBIN)/cypress run --config specPattern='cypress/tests/workingCopy/**/*.{js,jsx,ts,tsx}'
+
+.PHONY: full-test-acceptance-workingcopy
+full-test-acceptance-workingcopy: ## Runs WorkingCopy Full Acceptance Testing in headless mode
+	$(NODEBIN)/start-test "make start-test-acceptance-server-workingcopy" http-get://localhost:55001/plone "make start-test-acceptance-frontend-workingcopy" http://localhost:3000 "make test-acceptance-workingcopy-headless"
