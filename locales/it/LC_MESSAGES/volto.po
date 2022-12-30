@@ -78,7 +78,7 @@ msgstr ""
 #: config/Views/views
 # defaultMessage: Cartella modulistica
 msgid "Cartella modulistica"
-msgstr ""
+msgstr "Cartella modulistica"
 
 #: components/ItaliaTheme/Header/HeaderSearch/HeaderSearch
 # defaultMessage: Cerca
@@ -333,7 +333,7 @@ msgstr ""
 #: config/Views/views
 # defaultMessage: Luogo
 msgid "Luogo"
-msgstr ""
+msgstr "Luogo"
 
 #: components/ItaliaTheme/manage/Widgets/LocationFiltersWidget
 # defaultMessage: Luogo
