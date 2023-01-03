@@ -3,7 +3,7 @@
  * - gestione campi required di tipo blocks
  * - gestione motivo dello stato di servizio che è required solo se il servizio non è fruibile
  */
-import { map, uniq, keys, intersection, isEmpty } from 'lodash';
+import { map, uniq, keys, intersection, isEmpty, filter } from 'lodash';
 import { messages } from '@plone/volto/helpers/MessageLabels/MessageLabels';
 
 /**
@@ -195,10 +195,12 @@ const validateRequiredFields = (
 ) => {
   const errors = {};
   const fields = isEmpty(touchedField)
-    ? schema.required.slice()
+    ? // Custom: Serve creare una copia dei required
+      // per poterlo modificare tre righe più giù
+      schema.required.slice()
     : intersection(schema.required, keys(touchedField));
 
-  // Situazione custom per stato del servizio
+  // Custom: Situazione custom per stato del servizio
   if (
     formData.stato_servizio &&
     (isEmpty(touchedField) || 'motivo_stato_servizio' in touchedField)
@@ -225,10 +227,29 @@ const validateRequiredFields = (
         const field = formData[requiredField];
         const firstBlock = field.blocks_layout?.items?.[0];
         isEmpty =
-          field.blocks_layout?.items?.length === 0 ||
-          (field.blocks_layout?.items?.length === 1 &&
-            field.blocks?.[firstBlock]?.['@type'] === 'text' &&
-            !field.blocks[firstBlock].text?.blocks[0].text);
+          // se non ci sono blocchi (improbabile)
+          firstBlock === undefined ||
+          // se non c'è alcun blocco di testo o tabella che contenga testo
+          filter(field.blocks, (block) => {
+            if (block['@type'] === 'text') {
+              return !!block.text?.blocks.filter((block) => !!block.text.trim())
+                .length;
+            }
+            if (block['@type'] === 'table') {
+              return (
+                // se non ci sono righe che hanno almeno una cella che contenga testo
+                !!block.table.rows.filter(
+                  (row) =>
+                    row.cells.filter(
+                      (cell) =>
+                        cell.value.blocks.filter((block) => !!block.text.trim())
+                          .length > 0,
+                    ).length > 0,
+                ).length
+              );
+            }
+            return false;
+          }).length === 0;
       }
     }
     if (
