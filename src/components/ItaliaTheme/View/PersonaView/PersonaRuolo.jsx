@@ -4,7 +4,7 @@ import {
   richTextHasContent,
   RichTextArticle,
   RichText,
-  OfficeCard,
+  // OfficeCard,
   Gallery,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import {
