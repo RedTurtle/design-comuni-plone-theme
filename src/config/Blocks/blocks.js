@@ -363,7 +363,7 @@ const italiaBlocks = {
 };
 
 const getItaliaBlocks = (config) => {
-  delete config.blocks.blocksConfig.search;
+  // delete config.blocks.blocksConfig.search;
   return italiaBlocks;
 };
 export default getItaliaBlocks;

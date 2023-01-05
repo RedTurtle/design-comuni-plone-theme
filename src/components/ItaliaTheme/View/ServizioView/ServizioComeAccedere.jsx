@@ -1,3 +1,6 @@
+/**
+ * FILE OBSOLETO, TODO RIMUOVERE, NON È PIÙ USATO
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
@@ -6,7 +9,7 @@ import {
   RichText,
   RichTextArticle,
   richTextHasContent,
-  Locations,
+  // Locations,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
@@ -30,14 +33,14 @@ const messages = defineMessages({
     id: 'canale_digitale',
     defaultMessage: 'Canale digitale',
   },
-  autenticazione: {
-    id: 'autenticazione',
-    defaultMessage: 'Metodi di autenticazione al servizio',
-  },
-  dove_rivolgersi: {
-    id: 'dove_rivolgersi',
-    defaultMessage: 'Dove rivolgersi',
-  },
+  // autenticazione: {
+  //   id: 'autenticazione',
+  //   defaultMessage: 'Metodi di autenticazione al servizio',
+  // },
+  // dove_rivolgersi: {
+  //   id: 'dove_rivolgersi',
+  //   defaultMessage: 'Dove rivolgersi',
+  // },
 });
 
 const ServizioComeAccedere = ({ content }) => {
@@ -45,11 +48,12 @@ const ServizioComeAccedere = ({ content }) => {
   return richTextHasContent(content.come_si_fa) ||
     richTextHasContent(content.cosa_si_ottiene) ||
     richTextHasContent(content.procedure_collegate) ||
-    richTextHasContent(content.canale_digitale) ||
-    richTextHasContent(content.autenticazione) ||
-    richTextHasContent(content.prenota_appuntamento) ||
-    content.dove_rivolgersi?.length > 0 ||
-    richTextHasContent(content.dove_rivolgersi_extra) ? (
+    // richTextHasContent(content.canale_digitale) ||
+    // richTextHasContent(content.autenticazione) ||
+    // richTextHasContent(content.prenota_appuntamento) ||
+    // content.dove_rivolgersi?.length > 0 ||
+    // richTextHasContent(content.dove_rivolgersi_extra) ? (
+    richTextHasContent(content.canale_digitale) ? (
     <RichTextArticle
       title={intl.formatMessage(messages.accedere_al_servizio)}
       tag_id="accedere_al_servizio"
@@ -74,20 +78,20 @@ const ServizioComeAccedere = ({ content }) => {
         title={intl.formatMessage(messages.canale_digitale)}
       />
 
-      {!richTextHasContent(content.canale_digitale) &&
+      {/* {!richTextHasContent(content.canale_digitale) &&
         richTextHasContent(content.autenticazione) && (
           <h5 className="mt-4">
             {intl.formatMessage(messages.canale_digitale)}
           </h5>
-        )}
+        )} */}
 
-      <RichText
+      {/* <RichText
         content={content.autenticazione}
         title={intl.formatMessage(messages.autenticazione)}
         title_size="h6"
-      />
+      /> */}
 
-      {(content.dove_rivolgersi?.length > 0 ||
+      {/* {(content.dove_rivolgersi?.length > 0 ||
         richTextHasContent(content.dove_rivolgersi_extra) ||
         richTextHasContent(content.prenota_appuntamento)) && (
         <RichText title={intl.formatMessage(messages.dove_rivolgersi)}>
@@ -120,7 +124,7 @@ const ServizioComeAccedere = ({ content }) => {
 
           <RichText content={content.dove_rivolgersi_extra} />
         </RichText>
-      )}
+      )} */}
     </RichTextArticle>
   ) : (
     <></>
@@ -141,15 +145,15 @@ ServizioComeAccedere.propTypes = {
     canale_digitale: PropTypes.shape({
       data: PropTypes.string,
     }),
-    autenticazione: PropTypes.shape({
-      data: PropTypes.string,
-    }),
-    dove_rivolgersi_extra: PropTypes.shape({
-      data: PropTypes.string,
-    }),
-    prenota_appuntamento: PropTypes.shape({
-      data: PropTypes.string,
-    }),
+    // autenticazione: PropTypes.shape({
+    //   data: PropTypes.string,
+    // }),
+    // dove_rivolgersi_extra: PropTypes.shape({
+    //   data: PropTypes.string,
+    // }),
+    // prenota_appuntamento: PropTypes.shape({
+    //   data: PropTypes.string,
+    // }),
   }),
 };
 export default ServizioComeAccedere;
