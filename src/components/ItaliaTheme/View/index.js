@@ -182,6 +182,7 @@ export VenueMoreInfos from 'design-comuni-plone-theme/components/ItaliaTheme/Vie
 export PuntoDiContattoView from 'design-comuni-plone-theme/components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView';
 export PuntoDiContattoPlaceholderAfterContent from 'design-comuni-plone-theme/components/ItaliaTheme/View/PuntoDiContattoView/Placeholder/AfterContent';
 export PuntoDiContattoPlaceholderAfterRelatedItems from 'design-comuni-plone-theme/components/ItaliaTheme/View/PuntoDiContattoView/Placeholder/AfterRelatedItems';
+export RelatedItemsChipsPDC from 'design-comuni-plone-theme/components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC';
 
 export IncaricoView from 'design-comuni-plone-theme/components/ItaliaTheme/View/IncaricoView/IncaricoView';
 export IncaricoPlaceholderAfterContent from 'design-comuni-plone-theme/components/ItaliaTheme/View/IncaricoView/Placeholder/AfterContent';

@@ -1850,6 +1850,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eeacms/volto-taxonomy@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@eeacms/volto-taxonomy@npm:1.0.0"
+  checksum: 2c8148061279cb3423c4eb27ae897d502d61d15b0b818a6dfe5b3a200b0aa84677cc9131274843e8b8c082be0e31ecec9cd06aa63830de46634e58bff32ae3a3
+  languageName: node
+  linkType: hard
+
 "@emotion/babel-plugin@npm:^11.10.0":
   version: 11.10.2
   resolution: "@emotion/babel-plugin@npm:11.10.2"
@@ -7827,6 +7834,7 @@ __metadata:
     "@babel/plugin-proposal-throw-expressions": 7.18.6
     "@commitlint/cli": ^12.0.0
     "@commitlint/config-conventional": ^12.0.0
+    "@eeacms/volto-taxonomy": ^1.0.0
     "@loadable/babel-plugin": 5.13.2
     "@plone-collective/volto-sentry": 0.3.0
     "@plone/volto": 16.5.0

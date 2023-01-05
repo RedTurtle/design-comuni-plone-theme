@@ -15,6 +15,7 @@ import {
   RelatedItems,
   IncaricoPersone,
   RichTextArticle,
+  RelatedItemsChipsPDC,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { renderPDCItemValue } from 'design-comuni-plone-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
@@ -81,9 +82,9 @@ const PuntoDiContattoView = (props) => {
           tag_id="contatti"
           title={intl.formatMessage(messages.contatti)}
         >
-          {content?.value_punto_contatto?.map((pdc) => {
+          {content?.value_punto_contatto?.map((pdc, i) => {
             return (
-              <div className="my-2">
+              <div className="my-2" key={i}>
                 <h6>
                   {intl.formatMessage(messages.label, {
                     value: intl.formatMessage(messages[pdc?.pdc_type]),
@@ -95,6 +96,16 @@ const PuntoDiContattoView = (props) => {
           })}
         </RichTextArticle>
         <IncaricoPersone content={content} />
+        <RelatedItemsChipsPDC
+          content={content}
+          fieldLists={[
+            'strutture_correlate',
+            'servizi_correlati',
+            'eventi_correlati',
+            'luoghi_correlati',
+            'persone_correlate',
+          ]}
+        />
       </section>
       <PuntoDiContattoPlaceholderAfterContent content={content} />
       <RelatedItems list={content?.relatedItems} />
@@ -118,10 +129,12 @@ PuntoDiContattoView.propTypes = {
      */
     title: PropTypes.string,
 
-    value_punto_contatto: PropTypes.shape({
-      pdc_type: PropTypes.string,
-      pdc_value: PropTypes.string,
-    }).isRequired,
+    value_punto_contatto: PropTypes.arrayOf(
+      PropTypes.shape({
+        pdc_type: PropTypes.arrayOf(PropTypes.string),
+        pdc_value: PropTypes.string,
+      }),
+    ).isRequired,
   }).isRequired,
 };
 

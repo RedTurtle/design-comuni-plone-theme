@@ -20,7 +20,8 @@
     "volto-subfooter",
     "volto-customer-satisfaction",
     "volto-gdpr-privacy",
-    "volto-data-grid-widget"
+    "volto-data-grid-widget",
+    "@eeacms/volto-taxonomy"
   ],
   "customizationPaths": [
     "src/customizations/"
@@ -175,6 +176,7 @@
     "@babel/plugin-proposal-export-namespace-from": "7.18.9",
     "@babel/plugin-proposal-nullish-coalescing-operator": "7.18.6",
     "@babel/plugin-proposal-throw-expressions": "7.18.6",
+    "@eeacms/volto-taxonomy": "^1.0.0",
     "@loadable/babel-plugin": "5.13.2",
     "@plone-collective/volto-sentry": "0.3.0",
     "@plone/volto": "16.5.0",
