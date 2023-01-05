@@ -13,10 +13,6 @@ const messages = defineMessages({
     id: 'costi_e_vincoli',
     defaultMessage: 'Quanto costa',
   },
-  // costi: {
-  //   id: 'costi',
-  //   defaultMessage: 'Costi',
-  // },
   vincoli: {
     id: 'vincoli',
     defaultMessage: 'Vincoli',
@@ -33,10 +29,7 @@ const ServizioCostiVincoli = ({ content }) => {
         tag_id="costs"
         title={intl.formatMessage(messages.costi_e_vincoli)}
       >
-        <RichText
-          // title={intl.formatMessage(messages.costi)}
-          content={content.costi}
-        />
+        <RichText content={content.costi} />
 
         <RichText
           title={intl.formatMessage(messages.vincoli)}
