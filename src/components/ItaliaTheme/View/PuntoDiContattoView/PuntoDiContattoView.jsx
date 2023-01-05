@@ -29,21 +29,45 @@ const messages = defineMessages({
     id: 'pec',
     defaultMessage: 'PEC',
   },
-  web: {
-    id: 'web',
+  url: {
+    id: 'url',
     defaultMessage: 'Sito web',
   },
   social: {
     id: 'social',
     defaultMessage: 'Social',
   },
-  phone: {
-    id: 'phone',
+  telefono: {
+    id: 'telefono',
     defaultMessage: 'Telefono',
   },
   fax: {
     id: 'fax',
     defaultMessage: 'Fax',
+  },
+  account: {
+    id: 'account',
+    defaultMessage: 'Account',
+  },
+  whatsapp: {
+    id: 'whatsapp',
+    defaultMessage: 'Whatsapp',
+  },
+  telegram: {
+    id: 'telegram',
+    defaultMessage: 'Telegram',
+  },
+  skype: {
+    id: 'skype',
+    defaultMessage: 'Skype',
+  },
+  linkedin: {
+    id: 'linkedin',
+    defaultMessage: 'LinkedIn',
+  },
+  twitter: {
+    id: 'twitter',
+    defaultMessage: 'Twitter',
   },
   label: {
     id: 'label',

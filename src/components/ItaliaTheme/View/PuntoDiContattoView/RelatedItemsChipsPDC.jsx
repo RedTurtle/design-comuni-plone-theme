@@ -12,11 +12,7 @@ const messages = defineMessages({
   },
   servizi_correlati: {
     id: 'servizi_correlati',
-    defaultMessage: 'Servizzi correlati',
-  },
-  eventi_correlati: {
-    id: 'eventi_correlati',
-    defaultMessage: 'Eventi correlati',
+    defaultMessage: 'Servizi correlati',
   },
   luoghi_correlati: {
     id: 'luoghi_correlati',
@@ -24,7 +20,7 @@ const messages = defineMessages({
   },
   persone_correlate: {
     id: 'persone_correlate',
-    defaultMessage: 'Persone correlati',
+    defaultMessage: 'Persone correlate',
   },
 });
 
@@ -35,11 +31,11 @@ const RelatedItemsChipsPDC = ({ content, fieldLists }) => {
     Object.keys(relatedCategories)?.map((key, i) => (
       <article
         id={key}
-        className="it-page-section anchor-offset mt-5"
+        className="it-page-section anchor-offset my-4"
         key={key}
       >
         <h4 id={`header-${key}`}>{intl.formatMessage(messages[key])}</h4>
-        <div className="ruolo-persone-struttura" key={key + i}>
+        <div className={key} key={key + i}>
           {content?.[key]?.map((item, _i) => (
             <Link
               to={flattenToAppURL(item['@id'])}
