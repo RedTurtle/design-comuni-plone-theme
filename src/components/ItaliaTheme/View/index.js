@@ -50,6 +50,7 @@ export Module from 'design-comuni-plone-theme/components/ItaliaTheme/View/Common
 export GenericCard from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/GenericCard';
 export NewsCard from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/NewsCard';
 export OfficeCard from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/OfficeCard';
+export ContactsCard from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/ContactsCard';
 
 export RelatedNews from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/RelatedNews';
 export WideImage from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/WideImage';
