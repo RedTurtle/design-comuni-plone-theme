@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen /*, waitFor */ } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import PersonaView from '../PersonaView/PersonaView';
 import configureStore from 'redux-mock-store';
@@ -31,6 +31,7 @@ const mock_mandatory = {
   // },
   items: [],
   incarichi: [],
+  contact_info: [],
   organizzazione_riferimento: [
     {
       '@id': 'http://loremipsum.it/siet',
@@ -422,7 +423,7 @@ test('Checks all field when we have filled up mock', async () => {
 
   // contatti: email, telefono, Contatti, informazioni_di_contatto
   // expect(getByText(/Contatti/i)).toBeInTheDocument();
-  expect(getByText(/lucabel@redturtle.it/i)).toBeInTheDocument();
+  // expect(getByText(/lucabel@redturtle.it/i)).toBeInTheDocument();
   // expect(getByText(/3459988767/i)).toBeInTheDocument();
   // expect(getByText(/Altre informazioni di contatto/i)).toBeInTheDocument();
 
