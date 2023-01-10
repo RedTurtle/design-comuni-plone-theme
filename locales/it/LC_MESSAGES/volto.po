@@ -665,18 +665,13 @@ msgstr "Stai provando ad accedere ad una risorsa protetta, per favore fai prima 
 msgid "a_chi_si_rivolge"
 msgstr "A chi è rivolto"
 
-#: components/ItaliaTheme/View/ServizioView/ServizioComeAccedere
-# defaultMessage: Accedere al servizio
-msgid "accedere_al_servizio"
-msgstr "Accedere al servizio"
-
 #: components/ItaliaTheme/Blocks/Accordion/Sidebar
 # defaultMessage: Accordion
 msgid "accordion_block"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: Accountt
+# defaultMessage: Account
 msgid "account"
 msgstr ""
 
@@ -1045,11 +1040,6 @@ msgstr "Nessun evento disponibile al momento"
 msgid "calendar_prev_arrow"
 msgstr "Precedente"
 
-#: components/ItaliaTheme/View/ServizioView/ServizioComeAccedere
-# defaultMessage: Canale digitale
-msgid "canale_digitale"
-msgstr "Canale digitale"
-
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
 # defaultMessage: Seleziona l'immagine da mostrare
 msgid "cardImage"
@@ -1140,11 +1130,6 @@ msgstr "Colore primario"
 msgid "color_transparent"
 msgstr "Trasparente"
 
-#: components/ItaliaTheme/View/ServizioView/ServizioComeAccedere
-# defaultMessage: Come si fa
-msgid "come_si_fa"
-msgstr "Come si fa"
-
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
@@ -1195,11 +1180,6 @@ msgstr "Cosa fa"
 # defaultMessage: Cosa serve
 msgid "cosa_serve"
 msgstr "Cosa serve"
-
-#: components/ItaliaTheme/View/ServizioView/ServizioComeAccedere
-# defaultMessage: Cosa si ottiene
-msgid "cosa_si_ottiene"
-msgstr "Cosa si ottiene"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
 # defaultMessage: Quanto costa
@@ -1745,14 +1725,8 @@ msgid "email"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/ContactLink
-#: components/ItaliaTheme/View/PersonaView/PersonaContatti
 # defaultMessage: E-mail
 msgid "email_label"
-msgstr "E-mail"
-
-#: components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsContacts
-# defaultMessage: E-mail
-msgid "email_sede"
 msgstr "E-mail"
 
 #: components/ItaliaTheme/Blocks/HighlightedContent/Edit
@@ -1806,16 +1780,6 @@ msgstr "Eventi"
 msgid "event_url"
 msgstr "Url dell'evento"
 
-#: components/ItaliaTheme/View/EventoView/EventoContatti
-# defaultMessage: Sito web dell'evento
-msgid "event_web_site"
-msgstr "Sito web dell'evento"
-
-#: components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC
-# defaultMessage: Eventi correlati
-msgid "eventi_correlati"
-msgstr ""
-
 #: components/ItaliaTheme/View/Commons/Events
 # defaultMessage: Appuntamenti
 msgid "events"
@@ -1851,11 +1815,6 @@ msgstr "Digita una parola chiave per trovare le risposte"
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 # defaultMessage: Fax
 msgid "fax"
-msgstr "Fax"
-
-#: components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsContacts
-# defaultMessage: Fax
-msgid "fax_sede"
 msgstr "Fax"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
@@ -2067,9 +2026,9 @@ msgid "link_siti_esterni"
 msgstr "Link utili"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: Linkedin
+# defaultMessage: LinkedIn
 msgid "linkedin"
-msgstr ""
+msgstr "LinkedIn"
 
 #: helpers/ListingHelper
 # defaultMessage: Questo evento ha più date: vedi tutte
@@ -2396,20 +2355,15 @@ msgstr "Patrocinato da"
 msgid "pec"
 msgstr "PEC"
 
-#: components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsContacts
-# defaultMessage: PEC
-msgid "pec_sede"
-msgstr "PEC"
-
 #: components/ItaliaTheme/View/IncaricoView/IncaricoPersone
 # defaultMessage: Persona
 msgid "persona"
-msgstr ""
+msgstr "Persona"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC
-# defaultMessage: Persone correlati
+# defaultMessage: Persone correlate
 msgid "persone_correlate"
-msgstr ""
+msgstr "Persone correlate"
 
 #: components/ItaliaTheme/View/UOView/UOPeople
 # defaultMessage: Persone
@@ -2424,7 +2378,7 @@ msgstr "Testo di aiuto"
 #: components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar
 # defaultMessage: PlayStore Link
 msgid "playStoreLink"
-msgstr ""
+msgstr "PlayStore Link"
 
 #: components/ItaliaTheme/manage/Widgets/IconPreviewWidget
 # defaultMessage: Anteprima dell'icona scelta
@@ -2440,11 +2394,6 @@ msgstr "Stampa"
 # defaultMessage: Procedura informatizzata online
 msgid "procedura_online"
 msgstr "Procedura informatizzata online"
-
-#: components/ItaliaTheme/View/ServizioView/ServizioComeAccedere
-# defaultMessage: Procedure collegate all'esito
-msgid "procedure_collegate"
-msgstr "Procedure collegate all'esito"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
@@ -3044,9 +2993,9 @@ msgid "servizi_collegati"
 msgstr "Servizi collegati"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC
-# defaultMessage: Servizzi correlati
+# defaultMessage: Servizi correlati
 msgid "servizi_correlati"
-msgstr ""
+msgstr "Servizi correlati"
 
 #: components/ItaliaTheme/View/UOView/UOServices
 # defaultMessage: Servizi
@@ -3097,7 +3046,7 @@ msgstr "Prenota appuntamento"
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Vai alle altre opzioni di ricerca
 msgid "setMoreSearchOptions"
-msgstr ""
+msgstr "Vai alle altre opzioni di ricerca"
 
 #: config/Blocks/ListingOptions/cardWithImageTemplate
 # defaultMessage: Disponi su 4 colonne
@@ -3112,7 +3061,7 @@ msgstr "Condividi"
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
 # defaultMessage: Mostra la data
 msgid "show_date"
-msgstr ""
+msgstr "Mostra la data"
 
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Mostra la descrizione
@@ -3588,11 +3537,6 @@ msgstr "Vedi su Google Maps"
 # defaultMessage: Vincoli
 msgid "vincoli"
 msgstr "Vincoli"
-
-#: components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsContacts
-# defaultMessage: Sito web
-msgid "website"
-msgstr "Sito web"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 # defaultMessage: Whatsapp
