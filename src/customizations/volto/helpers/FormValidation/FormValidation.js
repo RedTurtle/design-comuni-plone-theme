@@ -230,12 +230,9 @@ const validateRequiredFields = (
           const dgfRequiredFields = dgfFields?.required;
           const dgfData = formData[requiredField];
           isEmpty =
-            filter(dgfRequiredFields, (dgfRequiredField) => {
-              return (
-                map(dgfData, (dgfField) => !!!dgfField[dgfRequiredField])
-                  ?.length > 0
-              );
-            })?.length > 0;
+            dgfRequiredFields.filter((dgfRequiredField) =>
+              dgfData.some((dgfField) => !!!dgfField[dgfRequiredField]),
+            )?.length > 0;
         } else {
           isEmpty = formData[requiredField]
             ? formData[requiredField].length === 0
