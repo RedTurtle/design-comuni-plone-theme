@@ -1,6 +1,9 @@
 /* CUSTOMIZATIONS:
-  Add custom classname for required fields, they are not working
+  NON CUSTOMIZZABILE DIRETTAMENTE PERCHE' L'ADDON BASE E' FATTO MALE. IMPORTATO
+  DA QUI IN widgets.js
+  - Add custom classname for required fields, they are not working
   in this widget because fields are not wrapped with standard form field wrapper
+
 */
 
 import React, { useState, useEffect } from 'react';
