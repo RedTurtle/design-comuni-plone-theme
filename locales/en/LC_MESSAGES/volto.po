@@ -665,18 +665,13 @@ msgstr ""
 msgid "a_chi_si_rivolge"
 msgstr "Who is it for"
 
-#: components/ItaliaTheme/View/ServizioView/ServizioComeAccedere
-# defaultMessage: Accedere al servizio
-msgid "accedere_al_servizio"
-msgstr "Log in to the service"
-
 #: components/ItaliaTheme/Blocks/Accordion/Sidebar
 # defaultMessage: Accordion
 msgid "accordion_block"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: Accountt
+# defaultMessage: Account
 msgid "account"
 msgstr ""
 
@@ -1045,11 +1040,6 @@ msgstr ""
 msgid "calendar_prev_arrow"
 msgstr ""
 
-#: components/ItaliaTheme/View/ServizioView/ServizioComeAccedere
-# defaultMessage: Canale digitale
-msgid "canale_digitale"
-msgstr "Digital channel"
-
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
 # defaultMessage: Seleziona l'immagine da mostrare
 msgid "cardImage"
@@ -1140,11 +1130,6 @@ msgstr ""
 msgid "color_transparent"
 msgstr ""
 
-#: components/ItaliaTheme/View/ServizioView/ServizioComeAccedere
-# defaultMessage: Come si fa
-msgid "come_si_fa"
-msgstr "How you do it"
-
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
@@ -1195,11 +1180,6 @@ msgstr "What does it do"
 # defaultMessage: Cosa serve
 msgid "cosa_serve"
 msgstr "What is needed"
-
-#: components/ItaliaTheme/View/ServizioView/ServizioComeAccedere
-# defaultMessage: Cosa si ottiene
-msgid "cosa_si_ottiene"
-msgstr "What do you get"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
 # defaultMessage: Quanto costa
@@ -1745,14 +1725,8 @@ msgid "email"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/ContactLink
-#: components/ItaliaTheme/View/PersonaView/PersonaContatti
 # defaultMessage: E-mail
 msgid "email_label"
-msgstr "E-mail"
-
-#: components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsContacts
-# defaultMessage: E-mail
-msgid "email_sede"
 msgstr "E-mail"
 
 #: components/ItaliaTheme/Blocks/HighlightedContent/Edit
@@ -1806,16 +1780,6 @@ msgstr "Events"
 msgid "event_url"
 msgstr "Event url"
 
-#: components/ItaliaTheme/View/EventoView/EventoContatti
-# defaultMessage: Sito web dell'evento
-msgid "event_web_site"
-msgstr "Event website"
-
-#: components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC
-# defaultMessage: Eventi correlati
-msgid "eventi_correlati"
-msgstr ""
-
 #: components/ItaliaTheme/View/Commons/Events
 # defaultMessage: Appuntamenti
 msgid "events"
@@ -1851,11 +1815,6 @@ msgstr "Type a keyword to find answers"
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 # defaultMessage: Fax
 msgid "fax"
-msgstr "Fax"
-
-#: components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsContacts
-# defaultMessage: Fax
-msgid "fax_sede"
 msgstr "Fax"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
@@ -2067,7 +2026,7 @@ msgid "link_siti_esterni"
 msgstr "Useful links"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: Linkedin
+# defaultMessage: LinkedIn
 msgid "linkedin"
 msgstr ""
 
@@ -2396,10 +2355,15 @@ msgstr "Sponsored by"
 msgid "pec"
 msgstr "PEC"
 
-#: components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsContacts
-# defaultMessage: PEC
-msgid "pec_sede"
-msgstr "PEC"
+#: components/ItaliaTheme/View/IncaricoView/IncaricoPersone
+# defaultMessage: Persona
+msgid "persona"
+msgstr ""
+
+#: components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC
+# defaultMessage: Persone correlate
+msgid "persone_correlate"
+msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoPersone
 # defaultMessage: Persona
@@ -2440,11 +2404,6 @@ msgstr "Print"
 # defaultMessage: Procedura informatizzata online
 msgid "procedura_online"
 msgstr ""
-
-#: components/ItaliaTheme/View/ServizioView/ServizioComeAccedere
-# defaultMessage: Procedure collegate all'esito
-msgid "procedure_collegate"
-msgstr "Procedures related to outcome"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
@@ -3044,7 +3003,7 @@ msgid "servizi_collegati"
 msgstr "Related services"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC
-# defaultMessage: Servizzi correlati
+# defaultMessage: Servizi correlati
 msgid "servizi_correlati"
 msgstr ""
 
@@ -3589,10 +3548,10 @@ msgstr "View on Google Maps"
 msgid "vincoli"
 msgstr "Constraints"
 
-#: components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsContacts
-# defaultMessage: Sito web
-msgid "website"
-msgstr "Web site"
+#: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+# defaultMessage: Whatsapp
+msgid "whatsapp"
+msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 # defaultMessage: Whatsapp

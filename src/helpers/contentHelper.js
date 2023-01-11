@@ -1,3 +1,5 @@
+import { UniversalLink } from '@plone/volto/components';
+
 export const contentFolderHasItems = (content, folder_name) => {
   const has_items =
     content?.items.some((e) => e.id === folder_name) &&
@@ -12,18 +14,14 @@ export const renderPDCItemValue = (pdcValue) => {
     case 'linkedin':
     case 'twitter':
       return (
-        <a
-          href={`${pdcValue?.pdc_value}` ?? '#'}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <UniversalLink href={`${pdcValue?.pdc_value}`}>
           {pdcValue?.pdc_value}
-        </a>
+        </UniversalLink>
       );
     case 'telefono':
       return (
         <a
-          href={`tel:${pdcValue?.pdc_value}` ?? '#'}
+          href={`tel:${pdcValue?.pdc_value}`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -33,9 +31,7 @@ export const renderPDCItemValue = (pdcValue) => {
     case 'whatsapp':
       return (
         <a
-          href={
-            `https://wa.me/${pdcValue?.pdc_value.replace(/\D/g, '')}` ?? '#'
-          }
+          href={`https://wa.me/${pdcValue?.pdc_value.replace(/\D/g, '')}`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -46,32 +42,31 @@ export const renderPDCItemValue = (pdcValue) => {
       // telegram must be username not phone number
       return (
         <a
-          href={`https://t.me/${pdcValue?.pdc_value}` ?? '#'}
+          href={`https://t.me/${pdcValue?.pdc_value}`}
           target="_blank"
           rel="noopener noreferrer"
         >
           {pdcValue?.pdc_value}
         </a>
       );
-    // case 'skype':
-    //   // skype must be: unknown, should we use their js resources?
-    //   // and then GDPR?
-    // https://learn.microsoft.com/en-us/skype-sdk/skypeuris/skypeuritutorial_webpages?redirectedfrom=MSDN
-    //   return (
-    //     <a
-    //       href={`skype:${pdcValue?.pdc_value}?call` ?? '#'}
-    //       target="_blank"
-    //       rel="noopener
-    //  noreferrer"
-    //     >
-    //       {pdcValue?.pdc_value}
-    //     </a>
-    //   );
+    case 'skype':
+      // skype must be: unknown, should we use their js resources?
+      // and then GDPR?
+      // https://learn.microsoft.com/en-us/skype-sdk/skypeuris/skypeuritutorial_webpages?redirectedfrom=MSDN
+      return (
+        <a
+          href={`skype:${pdcValue?.pdc_value}?call`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {pdcValue?.pdc_value}
+        </a>
+      );
     case 'email':
     case 'pec':
       return (
         <a
-          href={`mailto:${pdcValue?.pdc_value}` ?? '#'}
+          href={`mailto:${pdcValue?.pdc_value}`}
           target="_blank"
           rel="noopener noreferrer"
         >
