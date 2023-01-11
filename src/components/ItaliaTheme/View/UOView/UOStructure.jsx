@@ -3,6 +3,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { OfficeCard } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { CardPersona } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { Chip, ChipLabel } from 'design-react-kit';
 
 const messages = defineMessages({
@@ -28,7 +29,7 @@ const messages = defineMessages({
   },
   tipologia_organizzazione: {
     id: 'tipologia_organizzazione',
-    defaultMessage: 'Tipologia organizzazione',
+    defaultMessage: 'Tipologia di organizzazione',
   },
   assessore_riferimento: {
     id: 'assessore_riferimento',
@@ -46,6 +47,12 @@ const UOStructure = ({ content }) => {
     content?.uo_parent ||
     content?.assessore_riferimento?.length > 0 ? (
     <article id="struttura" className="it-page-section anchor-offset mt-5">
+      {content.tipologia_organizzazione?.title && (
+        <div className="mb-5 mt-3">
+          <h4>{intl.formatMessage(messages.tipologia_organizzazione)}</h4>
+          <p className="font-serif">{content.tipologia_organizzazione.title}</p>
+        </div>
+      )}
       <h4 id="header-struttura" className="mb-3">
         {intl.formatMessage(messages.struttura)}
       </h4>
@@ -93,33 +100,20 @@ const UOStructure = ({ content }) => {
       )}
       {content.responsabile?.length > 0 && (
         <div className="mb-5 mt-3">
-          <h5>{intl.formatMessage(messages.responsabile)}</h5>
+          <h4>{intl.formatMessage(messages.responsabile)}</h4>
           {content.responsabile.map((item, i) => (
-            <Link
-              to={flattenToAppURL(item['@id'])}
-              key={item['@id']}
-              title={item.title}
-              className="text-decoration-none  me-2"
-            >
-              <Chip
-                color="primary"
-                disabled={false}
-                large={false}
-                simple
-                tag="div"
-              >
-                <ChipLabel tag="span">{item.title}</ChipLabel>
-              </Chip>
-            </Link>
+            <CardPersona
+              item={item}
+              className={'shadow'}
+              show_image={true}
+              titleTagName={'h5'}
+              titleClassName={'big-heading'}
+              listingText={'Dirigente responsabile'}
+            />
           ))}
         </div>
       )}
-      {content.tipologia_organizzazione?.title && (
-        <div className="mb-5 mt-3">
-          <h5>{intl.formatMessage(messages.tipologia_organizzazione)}</h5>
-          <p className="font-serif">{content.tipologia_organizzazione.title}</p>
-        </div>
-      )}
+
       {content.assessore_riferimento?.length > 0 && (
         <div className="mb-5 mt-3">
           <h5>{intl.formatMessage(messages.assessore_riferimento)}</h5>

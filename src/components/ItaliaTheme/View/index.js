@@ -53,6 +53,7 @@ export Module from 'design-comuni-plone-theme/components/ItaliaTheme/View/Common
 export GenericCard from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/GenericCard';
 export NewsCard from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/NewsCard';
 export OfficeCard from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/OfficeCard';
+export ContactsCard from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/ContactsCard';
 
 export RelatedNews from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/RelatedNews';
 export WideImage from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/WideImage';
@@ -169,9 +170,9 @@ export UOPeople from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOVi
 export UOStructure from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOStructure';
 export UOServices from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOServices';
 export UOContacts from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOContacts';
-export UOContactsLocations from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsLocations';
+export UOContactsLocations from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOLocationsParts/UOContactsLocations';
 export UOContactsContacts from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsContacts';
-export UOContactsSediSecondarie from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsSediSecondarie';
+export UOContactsSediSecondarie from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOLocationsParts/UOContactsSediSecondarie';
 
 export UODocuments from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UODocuments';
 export UOWhatDoesItDo from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOWhatDoesItDo';
@@ -185,3 +186,13 @@ export VenueWhere from 'design-comuni-plone-theme/components/ItaliaTheme/View/Ve
 export VenuePublicTimetable from 'design-comuni-plone-theme/components/ItaliaTheme/View/VenueView/VenuePublicTimetable';
 export VenueContacts from 'design-comuni-plone-theme/components/ItaliaTheme/View/VenueView/VenueContacts';
 export VenueMoreInfos from 'design-comuni-plone-theme/components/ItaliaTheme/View/VenueView/VenueMoreInfos';
+
+export PuntoDiContattoView from 'design-comuni-plone-theme/components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView';
+export PuntoDiContattoPlaceholderAfterContent from 'design-comuni-plone-theme/components/ItaliaTheme/View/PuntoDiContattoView/Placeholder/AfterContent';
+export PuntoDiContattoPlaceholderAfterRelatedItems from 'design-comuni-plone-theme/components/ItaliaTheme/View/PuntoDiContattoView/Placeholder/AfterRelatedItems';
+export RelatedItemsChipsPDC from 'design-comuni-plone-theme/components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC';
+
+export IncaricoView from 'design-comuni-plone-theme/components/ItaliaTheme/View/IncaricoView/IncaricoView';
+export IncaricoPlaceholderAfterContent from 'design-comuni-plone-theme/components/ItaliaTheme/View/IncaricoView/Placeholder/AfterContent';
+export IncaricoPlaceholderAfterRelatedItems from 'design-comuni-plone-theme/components/ItaliaTheme/View/IncaricoView/Placeholder/AfterRelatedItems';
+export IncaricoPersone from 'design-comuni-plone-theme/components/ItaliaTheme/View/IncaricoView/IncaricoPersone';
