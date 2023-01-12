@@ -44,6 +44,8 @@ const VenueDescription = ({ content }) => {
       tag_id={'description'}
       title={intl.formatMessage(messages.descrizione)}
     >
+      {/* DESCRIZIONE COMPLETA */}
+      <RichText content={content.descrizione_completa} />
       {/* Tipologia luogo */}
       {content.tipologia_luogo?.title && (
         <div className="mb-5 mt-3">
@@ -51,8 +53,6 @@ const VenueDescription = ({ content }) => {
           <p className="font-serif">{content.tipologia_luogo.title}</p>
         </div>
       )}
-      {/* DESCRIZIONE COMPLETA */}
-      <RichText content={content.descrizione_completa} />
       {/* ELEMENTI DI INTERESSE */}
       {richTextHasContent(content.elementi_di_interesse) && (
         <div className="mb-5 mt-3">
