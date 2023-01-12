@@ -22,7 +22,7 @@ const messages = defineMessages({
 const UOServices = ({ content }) => {
   const intl = useIntl();
 
-  return (
+  return content?.servizi_offerti?.length > 0 ? (
     <section
       id={'servizi_offerti'}
       className={'it-page-section anchor-offset mt-5'}
@@ -53,7 +53,7 @@ const UOServices = ({ content }) => {
         ))}
       </Row>
     </section>
-  );
+  ) : null;
 };
 
 export default UOServices;
