@@ -8,7 +8,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { defineMessages, useIntl } from 'react-intl';
-import { Container, Spinner } from 'design-react-kit/dist/design-react-kit';
+import { Container, Spinner } from 'design-react-kit';
 import {
   PageHeader,
   RelatedItems,
@@ -97,7 +97,10 @@ const FaqFolderView = ({ content }) => {
       </Container>
 
       {/* -------SEARCH------- */}
-      <FaqFolderSearchBar setSearchableText={setSearchableText} />
+      <FaqFolderSearchBar
+        searchableText={searchableText}
+        setSearchableText={setSearchableText}
+      />
 
       {/* -------CONTENT------- */}
       <Container className="px-4">
@@ -106,8 +109,8 @@ const FaqFolderView = ({ content }) => {
         {faq_structure && (
           <>
             {faq_structure?.loaded &&
-              searchableText?.lenght > 0 &&
-              faq_structure.data?.items?.lenght === 0 && (
+              searchableText?.length > 0 &&
+              faq_structure.data?.items?.length === 0 && (
                 <>{intl.formatMessage(messages.no_results)}</>
               )}
 

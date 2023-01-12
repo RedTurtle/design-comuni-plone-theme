@@ -1,19 +1,15 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-} from 'design-react-kit/dist/design-react-kit';
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { Card, CardBody, CardTitle } from 'design-react-kit';
+// import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import {
   richTextHasContent,
   RichTextArticle,
   RichText,
   GenericCard,
-  ContactLink,
+  // ContactLink,
+  ContactsCard,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
@@ -66,22 +62,20 @@ const messages = defineMessages({
 const VenueContacts = ({ content }) => {
   const intl = useIntl();
 
-  return content?.telefono ||
-    content?.email ||
-    content?.pec ||
-    content?.web ||
+  return content?.contact_info?.length > 0 ||
     content?.struttura_responsabile_correlati?.length > 0 ||
-    richTextHasContent(content?.struttura_responsabile) ||
-    content?.riferimento_telefonico_struttura ||
-    content?.riferimento_fax_struttura ||
-    content?.riferimento_mail_struttura ||
-    content?.riferimento_pec_struttura ? (
+    // richTextHasContent(content?.struttura_responsabile) ||
+    // content?.riferimento_telefonico_struttura ||
+    // content?.riferimento_fax_struttura ||
+    // content?.riferimento_mail_struttura ||
+    // content?.riferimento_pec_struttura ? (
+    richTextHasContent(content?.struttura_responsabile) ? (
     <RichTextArticle
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
     >
       {/* CONTATTI LUOGO */}
-      {(content?.telefono ||
+      {/* {(content?.telefono ||
         content?.email ||
         content?.fax ||
         content?.pec ||
@@ -94,7 +88,7 @@ const VenueContacts = ({ content }) => {
           <CardTitle tag="h5">
             <Icon icon="it-telephone" padding={true} />
           </CardTitle>
-          <CardBody tag="div" className={'card-body pr-3'}>
+          <CardBody tag="div" className={'card-body pe-3'}>
             {content.telefono && (
               <p className="card-text mt-3">
                 {intl.formatMessage(messages.riferimento_telefonico_luogo)}
@@ -139,7 +133,11 @@ const VenueContacts = ({ content }) => {
             )}
           </CardBody>
         </Card>
-      )}
+      )} */}
+      {content.contact_info?.length > 0 &&
+        content.contact_info.map((contact) => (
+          <ContactsCard contact={contact} key={contact['@id']} />
+        ))}
       {/*
     STRUTTURE RESPONSABILI
     Se è presente una struttura_responsabile_correlati metto quella altrimenti metto una card con i campi singoli, se presenti
@@ -163,11 +161,12 @@ const VenueContacts = ({ content }) => {
           ) : (
             //STRUTTURA RESPONSABILE
             <>
-              {(richTextHasContent(content.struttura_responsabile) ||
+              {/* {(richTextHasContent(content.struttura_responsabile) ||
                 content.riferimento_telefonico_struttura ||
                 content.riferimento_fax_struttura ||
                 content.riferimento_mail_struttura ||
-                content.riferimento_pec_struttura) && (
+                content.riferimento_pec_struttura) && ( */}
+              {richTextHasContent(content.struttura_responsabile) && (
                 <Card className="genericcard card card-teaser shadow p-4 mt-3 rounded">
                   <CardBody>
                     {richTextHasContent(content.struttura_responsabile) && (
@@ -177,10 +176,10 @@ const VenueContacts = ({ content }) => {
                         </h5>
                       </CardTitle>
                     )}
-                    <CardText>
+                    {/* <CardText>
                       {content.riferimento_telefonico_struttura && (
                         <div>
-                          <span className="font-weight-semibold">
+                          <span className="fw-semibold">
                             {intl.formatMessage(
                               messages.riferimento_telefonico_struttura,
                             )}
@@ -194,7 +193,7 @@ const VenueContacts = ({ content }) => {
                       )}
                       {content.riferimento_fax_struttura && (
                         <div className="mt-2">
-                          <span className="font-weight-semibold">
+                          <span className="fw-semibold">
                             {intl.formatMessage(
                               messages.riferimento_fax_struttura,
                             )}
@@ -208,7 +207,7 @@ const VenueContacts = ({ content }) => {
                       )}
                       {content.riferimento_mail_struttura && (
                         <div className="mt-2">
-                          <span className="font-weight-semibold">
+                          <span className="fw-semibold">
                             {intl.formatMessage(
                               messages.riferimento_mail_struttura,
                             )}
@@ -222,7 +221,7 @@ const VenueContacts = ({ content }) => {
                       )}
                       {content.riferimento_pec_struttura && (
                         <div className="mt-2">
-                          <span className="font-weight-semibold">
+                          <span className="fw-semibold">
                             {intl.formatMessage(
                               messages.riferimento_pec_struttura,
                             )}
@@ -234,7 +233,7 @@ const VenueContacts = ({ content }) => {
                           />
                         </div>
                       )}
-                    </CardText>
+                    </CardText> */}
                   </CardBody>
                 </Card>
               )}
@@ -243,9 +242,7 @@ const VenueContacts = ({ content }) => {
         </div>
       )}
     </RichTextArticle>
-  ) : (
-    <></>
-  );
+  ) : null;
 };
 
 export default VenueContacts;

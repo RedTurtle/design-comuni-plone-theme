@@ -10,7 +10,7 @@ import {
   CardReadMore,
   Row,
   Col,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
@@ -66,7 +66,7 @@ const CardWithImageRssTemplate = ({
                       </div>
                     </div>
                   )}
-                  <CardBody tag="div">
+                  <CardBody tag="div" className="px-4">
                     <div className="category-top">
                       {item?.categories?.length > 0 && item.categories[0]._ && (
                         <>
@@ -84,7 +84,7 @@ const CardWithImageRssTemplate = ({
                   </CardBody>
                   <CardReadMore
                     iconName="it-arrow-right"
-                    className="ml-4"
+                    className="ms-4"
                     tag="a"
                     target="_blank"
                     rel="noopener noreferrer"

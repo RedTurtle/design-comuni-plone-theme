@@ -8,7 +8,7 @@ import {
   DropdownMenu,
   LinkList,
   LinkListItem,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 
 import { toPublicURL } from '@plone/volto/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -66,7 +66,7 @@ const Sharing = ({ url, title }) => {
   return (
     <UncontrolledDropdown className="d-inline page-sharing">
       <DropdownToggle
-        className={`btn btn-dropdown`}
+        className={`btn btn-dropdown ps-0`}
         color=""
         tag={'button'}
         caret

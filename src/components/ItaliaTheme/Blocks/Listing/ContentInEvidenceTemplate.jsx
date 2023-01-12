@@ -9,7 +9,7 @@ import {
   CardTitle,
   CardText,
   Chip,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 import cx from 'classnames';
 
 import { UniversalLink } from '@plone/volto/components';
@@ -91,7 +91,7 @@ const ContentInEvidenceTemplate = ({
                               simple
                               color="primary"
                               key={argomento['@id']}
-                              className="mr-2"
+                              className="me-2"
                             >
                               <UniversalLink
                                 href={flattenToAppURL(argomento['@id'])}

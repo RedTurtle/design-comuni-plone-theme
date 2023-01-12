@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import { Card, CardBody } from 'design-react-kit/dist/design-react-kit';
+import { Card, CardBody } from 'design-react-kit';
 import {
   RichText,
-  RichTextArticle,
+  RichTextSection,
   richTextHasContent,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
@@ -18,7 +18,7 @@ const messages = defineMessages({
 const ServizioSitiEsterni = ({ content }) => {
   const intl = useIntl();
   return richTextHasContent(content.link_siti_esterni) ? (
-    <RichTextArticle
+    <RichTextSection
       tag_id="link-esterni"
       title={intl.formatMessage(messages.link_siti_esterni)}
     >
@@ -31,10 +31,8 @@ const ServizioSitiEsterni = ({ content }) => {
           <RichText add_class="p-4 pt-0" content={content.link_siti_esterni} />
         </CardBody>
       </Card>
-    </RichTextArticle>
-  ) : (
-    <></>
-  );
+    </RichTextSection>
+  ) : null;
 };
 
 ServizioSitiEsterni.propTypes = {

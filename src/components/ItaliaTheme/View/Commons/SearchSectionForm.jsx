@@ -2,7 +2,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'design-react-kit/dist/design-react-kit';
+import { Button } from 'design-react-kit';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { SearchUtils } from 'design-comuni-plone-theme/components';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -54,8 +54,8 @@ const SearchSectionForm = ({ content }) => {
     }
   };
   return (
-    <div className="form-group mt-5">
-      <div className="input-group mb-3">
+    <div className="form-group mt-5 search-section-form">
+      <div className="input-group">
         <input
           id="search-page-text"
           type="text"
@@ -71,17 +71,15 @@ const SearchSectionForm = ({ content }) => {
           }"`}
           aria-describedby="search-page-button"
         />
-        <div className="input-group-append">
-          <Button
-            color="link"
-            onClick={() => doSearch()}
-            title={intl.formatMessage(messages.search)}
-            id="search-page-button"
-            className="pr-2"
-          >
-            <Icon icon="it-search" aria-hidden={true} size="sm" />
-          </Button>
-        </div>
+        <Button
+          color="link"
+          onClick={() => doSearch()}
+          title={intl.formatMessage(messages.search)}
+          id="search-page-button"
+          className="pe-2 py-0 rounded-0"
+        >
+          <Icon icon="it-search" aria-hidden={true} size="sm" />
+        </Button>
       </div>
     </div>
   );

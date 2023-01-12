@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-} from 'design-react-kit/dist/design-react-kit';
+import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import {
   richTextHasContent,
@@ -86,13 +81,13 @@ const VenueWhere = ({ content }) => {
           <h5 className="mt-3">
             {intl.formatMessage(messages.circoscrizione)}:
           </h5>
-          <div className="text-serif">{content.circoscrizione}</div>
+          <div className="font-serif">{content.circoscrizione}</div>
         </div>
       )}
       {content.quartiere && (
         <div className="quartiere">
           <h5 className="mt-3">{intl.formatMessage(messages.quartiere)}:</h5>
-          <div className="text-serif">{content.quartiere}</div>
+          <div className="font-serif">{content.quartiere}</div>
         </div>
       )}
       {richTextHasContent(content.notes) && (

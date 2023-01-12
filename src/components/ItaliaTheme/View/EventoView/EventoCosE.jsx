@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { defineMessages, useIntl } from 'react-intl';
 
-import { Chip, ChipLabel } from 'design-react-kit/dist/design-react-kit';
+import { Chip, ChipLabel } from 'design-react-kit';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import {
@@ -65,7 +65,7 @@ const EventoCosE = ({ content }) => {
                 simple
                 tag="div"
                 key={item['@id']}
-                className="mr-2"
+                className="me-2"
               >
                 <ChipLabel tag="span">{item.title}</ChipLabel>
               </Chip>

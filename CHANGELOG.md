@@ -1,3 +1,42 @@
+## [7.0.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.12...v7.0.0) (2023-01-11)
+
+
+### Bug Fixes
+
+* remove sort_order from search query by date. Sort order is managed by backend ([#45](https://github.com/RedTurtle/design-comuni-plone-theme/issues/45)) ([802a98d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/802a98d003989c3ac7835db6d712c4d439d0f680))
+
+
+### Documentation
+
+* improve conventional changelog ([5f70e72](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5f70e725f5336e78f74899147bf325c9f85d2c44))
+
+## [7.0.0-alpha.12](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.11...v7.0.0-alpha.12) (2023-01-03)
+
+
+### Bug Fixes
+
+* customized arrayWidget to fix condition of select without vocabulary ([#44](https://github.com/RedTurtle/design-comuni-plone-theme/issues/44)) ([d7d34cb](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d7d34cb4b870f36477cb19d43b468e236172e45c))
+
+
+### Documentation
+
+* improve conventional changelog ([1143ed8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1143ed83cd33d2f807dcc56276a734c4a71c4882))
+
+## [7.0.0-alpha.11](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.10...v7.0.0-alpha.11) (2022-12-30)
+
+
+### Features
+
+* hideable footer sub items ([#37](https://github.com/RedTurtle/design-comuni-plone-theme/issues/37)) ([567a2ed](https://github.com/RedTurtle/design-comuni-plone-theme/commit/567a2ed1df49e3913492600a145838f76c344c64))
+
+
+### Bug Fixes
+
+* fixed layoutViewsNamesMapping config ([#39](https://github.com/RedTurtle/design-comuni-plone-theme/issues/39)) ([fff7819](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fff781944344887329cc4e956e62d8904535d0b5))
+* image in complete block links template ([#38](https://github.com/RedTurtle/design-comuni-plone-theme/issues/38)) ([24b4109](https://github.com/RedTurtle/design-comuni-plone-theme/commit/24b4109ce89bca515a199ab6aa624a90969598fc))
+* modulistica view race condition on rendering content items ([#43](https://github.com/RedTurtle/design-comuni-plone-theme/issues/43)) ([f51dd5f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f51dd5f1cbc2679cf16f8bd84b4e29f3ef7c1925))
+* race condition in rendering the toolbar in multilingual sites after saving a page ([6e557b1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6e557b1c5b65e09103cd5df79fca40f709a9482c))
+
 ## [7.0.0-alpha.10](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.9...v7.0.0-alpha.10) (2022-12-23)
 
 

@@ -66,7 +66,7 @@ body.cms-ui {
       text-align: center;
     }
 
-    .text-right {
+    .text-end {
       text-align: right;
     }
 
@@ -615,6 +615,7 @@ body.public-ui.has-toolbar {
     .toolbar-content.show {
       max-height: 100vh;
       overflow-y: scroll !important;
+      z-index: 9;
     }
   }
 }

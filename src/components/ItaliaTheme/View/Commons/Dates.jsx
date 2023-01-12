@@ -2,11 +2,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import React from 'react';
 import { rrulei18n } from '@plone/volto/components/manage/Widgets/RecurrenceWidget/Utils';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import {
-  Card,
-  CardTitle,
-  CardBody,
-} from 'design-react-kit/dist/design-react-kit';
+import { Card, CardTitle, CardBody } from 'design-react-kit';
 import PropTypes from 'prop-types';
 import { viewDate } from 'design-comuni-plone-theme/helpers';
 
@@ -78,10 +74,10 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
       <div className="point-list-wrapper my-4 mb-5">
         <div className="point-list">
           <div className="point-list-aside point-list-warning">
-            <div className="point-date text-monospace">
+            <div className="point-date font-monospace">
               {start.format('DD')}
             </div>
-            <div className="point-month text-monospace">
+            <div className="point-month font-monospace">
               {start.format('MMMM')}
             </div>
           </div>
@@ -133,7 +129,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         )}
       </div>
       {recurrenceText && (
-        <div className="mt-4 mb-5 text-serif">
+        <div className="mt-4 mb-5 font-serif">
           <strong>{recurrenceText}</strong>
         </div>
       )}
@@ -141,7 +137,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.additional_dates)}</h5>
           {rruleSet.rdates().map((additionalDate) => (
-            <div className="text-serif">
+            <div className="font-serif">
               {viewDate(intl.locale, additionalDate, 'dddd DD MMMM YYYY')}
             </div>
           ))}
@@ -151,7 +147,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.excluded_dates)}</h5>
           {rruleSet.exdates().map((exDate) => (
-            <div className="text-serif">
+            <div className="font-serif">
               {viewDate(intl.locale, exDate, 'dddd DD MMMM YYYY')}
             </div>
           ))}

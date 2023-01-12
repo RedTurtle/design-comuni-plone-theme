@@ -9,7 +9,7 @@ import {
   CardReadMore,
   Row,
   Col,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 
 const CardWithImageRssTemplateSkeleton = ({ isEditMode, data = {} }) => {
   return (
@@ -32,13 +32,13 @@ const CardWithImageRssTemplateSkeleton = ({ isEditMode, data = {} }) => {
                   </div>
                 </div>
 
-                <CardBody tag="div">
+                <CardBody tag="div" className="px-4">
                   <div className="category-top"></div>
                   <CardTitle className="big-heading" tag="h6"></CardTitle>
                 </CardBody>
                 <CardReadMore
                   iconName="it-arrow-right"
-                  className="ml-4"
+                  className="ms-4"
                   tag="a"
                   href="#"
                   text=""

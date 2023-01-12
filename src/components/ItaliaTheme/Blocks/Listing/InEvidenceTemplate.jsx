@@ -10,7 +10,7 @@ import {
   CardText,
   Chip,
   ChipLabel,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
 
@@ -103,7 +103,7 @@ const InEvidenceTemplate = (props) => {
                     </div>
                   </div>
                 )}
-                <CardBody>
+                <CardBody className="px-4">
                   {(icon || category || date) && (
                     <CardCategory iconName={icon} date={date}>
                       {category && (
@@ -148,7 +148,7 @@ const InEvidenceTemplate = (props) => {
                             disabled={false}
                             simple
                             tag="div"
-                            className="mr-2"
+                            className="me-2"
                           >
                             <ChipLabel tag="span">{argument.title}</ChipLabel>
                           </Chip>

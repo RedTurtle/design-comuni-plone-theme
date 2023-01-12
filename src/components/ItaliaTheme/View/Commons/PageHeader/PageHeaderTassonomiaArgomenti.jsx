@@ -1,7 +1,7 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import { Chip, ChipLabel } from 'design-react-kit/dist/design-react-kit';
+import { Chip, ChipLabel } from 'design-react-kit';
 
 import { flattenToAppURL } from '@plone/volto/helpers';
 
@@ -32,7 +32,7 @@ const PageHeaderTassonomiaArgomenti = ({ content }) => {
           href={flattenToAppURL(item['@id'])}
           key={item['@id']}
           title={item.title}
-          className="text-decoration-none mr-2 d-inline-block"
+          className="text-decoration-none me-2 d-inline-block"
           data-element="service-topic"
         >
           <Chip color="primary" disabled={false} large={false} simple tag="div">

@@ -3,7 +3,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { OfficeCard } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
-import { Chip, ChipLabel } from 'design-react-kit/dist/design-react-kit';
+import { Chip, ChipLabel } from 'design-react-kit';
 
 const messages = defineMessages({
   struttura: {
@@ -99,7 +99,7 @@ const UOStructure = ({ content }) => {
               to={flattenToAppURL(item['@id'])}
               key={item['@id']}
               title={item.title}
-              className="text-decoration-none  mr-2"
+              className="text-decoration-none  me-2"
             >
               <Chip
                 color="primary"
@@ -117,7 +117,7 @@ const UOStructure = ({ content }) => {
       {content.tipologia_organizzazione?.title && (
         <div className="mb-5 mt-3">
           <h5>{intl.formatMessage(messages.tipologia_organizzazione)}</h5>
-          <p className="text-serif">{content.tipologia_organizzazione.title}</p>
+          <p className="font-serif">{content.tipologia_organizzazione.title}</p>
         </div>
       )}
       {content.assessore_riferimento?.length > 0 && (
@@ -128,7 +128,7 @@ const UOStructure = ({ content }) => {
               to={flattenToAppURL(item['@id'])}
               key={item['@id']}
               title={item.title}
-              className="text-decoration-none mr-2"
+              className="text-decoration-none me-2"
             >
               <Chip
                 color="primary"

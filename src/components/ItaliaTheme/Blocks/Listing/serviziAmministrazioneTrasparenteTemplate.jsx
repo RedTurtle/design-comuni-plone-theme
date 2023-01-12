@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import moment from 'moment';
-import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
+import { Container, Row, Col } from 'design-react-kit';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { ListingLinkMore } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -66,7 +66,7 @@ const GridGalleryTemplate = ({
                 <td>
                   <UniversalLink
                     item={item}
-                    className="text-decoration-none font-weight-bold"
+                    className="text-decoration-none fw-bold"
                   >
                     {item.title}
                   </UniversalLink>

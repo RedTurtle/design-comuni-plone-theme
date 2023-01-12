@@ -8,7 +8,7 @@ import {
   LinkList,
   LinkListItem,
   Button,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 
 import { toPublicURL } from '@plone/volto/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -61,7 +61,7 @@ const Actions = (props) => {
   return (
     <UncontrolledDropdown className="d-inline page-actions">
       <DropdownToggle
-        className={`btn btn-dropdown`}
+        className={`btn btn-dropdown ps-0`}
         color=""
         tag={'button'}
         caret

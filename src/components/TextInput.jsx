@@ -3,10 +3,20 @@
  */
 import React, { useState } from 'react';
 import cx from 'classnames';
-//import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 export default function TextInput(props) {
-  const { id, label, placeholder, onChange, prepend, append, size } = props;
+  const {
+    id,
+    label,
+    placeholder,
+    onChange,
+    prepend,
+    append,
+    size,
+    className,
+    groupClassName,
+    ...otherProps
+  } = props;
   const [isFocused, setIsFocused] = useState(false);
 
   const toggleFocusLabel = () => {
@@ -20,22 +30,25 @@ export default function TextInput(props) {
   };
 
   return (
-    <div className="form-group">
+    <div className={cx('form-group io-text-input', groupClassName)}>
       <div className={cx('input-group', size ? 'input-group-' + size : '')}>
-        {prepend && <div className="input-group-prepend">{prepend}</div>}
-        {/* <div className="input-group-prepend">
-          <div className="input-group-text">
-            <Icon color="" icon="it-search" padding={false} size="sm" />
-          </div>
-        </div> */}
-        <label htmlFor={id} className={isFocused ? 'active' : ''}>
+        {prepend}
+        <label
+          htmlFor={id}
+          className={cx({
+            active: isFocused,
+            'has-prepend': !!prepend,
+          })}
+        >
           {label}
         </label>
 
         <input
-          {...props}
+          {...otherProps}
+          id={id}
           type="text"
-          className={cx('form-control', size ? 'form-control-' + size : '', {
+          className={cx('form-control', className, {
+            [`form-control-${size}`]: size,
             'focus--mouse': isFocused,
           })}
           onFocus={toggleFocusLabel}
@@ -44,14 +57,9 @@ export default function TextInput(props) {
           onChange={(e) => {
             onChange(e.target.id, e.target.value);
           }}
-          placeholder={placeholder ? placeholder : label}
+          placeholder={placeholder}
         />
-        {append && <div className="input-group-append">{append}</div>}
-        {/* <div className="input-group-append">
-          <Button className="btn-icon" tag="button" icon color="">
-            <Icon color="" icon="it-search" padding={false} size="sm" />
-          </Button>
-        </div> */}
+        {append}
       </div>
     </div>
   );

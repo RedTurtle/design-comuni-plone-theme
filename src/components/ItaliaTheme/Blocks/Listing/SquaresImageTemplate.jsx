@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from 'design-react-kit/dist/design-react-kit';
+import { Container } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 
 import {
@@ -36,7 +36,7 @@ const SquaresImageTemplate = ({
                 key={index}
                 data-element={id_lighthouse}
               >
-                <span className="title font-weight-bold">{item?.title}</span>
+                <span className="title fw-bold">{item?.title}</span>
               </UniversalLink>
             );
           })}

@@ -12,7 +12,7 @@ import {
   CardText,
   Chip,
   ChipLabel,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
@@ -131,7 +131,7 @@ const CardWithImageTemplate = (props) => {
                         </div>
                       </div>
                     )}
-                    <CardBody>
+                    <CardBody className="px-4">
                       {(icon || category || date) && (
                         <CardCategory iconName={icon} date={date}>
                           <ListingCategory category={category} item={item} />
@@ -174,7 +174,7 @@ const CardWithImageTemplate = (props) => {
                                 disabled={false}
                                 simple
                                 tag="div"
-                                className="mr-2"
+                                className="me-2"
                               >
                                 <ChipLabel tag="span">
                                   {argument.title}

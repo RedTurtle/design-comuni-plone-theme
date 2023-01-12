@@ -12,7 +12,7 @@ import {
   CardText,
   CardTitle,
   CardReadMore,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 
 // eslint-disable-next-line import/no-unresolved
 import Image from '@plone/volto/components/theme/Image/Image';
@@ -76,7 +76,7 @@ const Body = (props) => {
                         simple
                         color="primary"
                         key={`${idx} ${argomento['@id']}`}
-                        className="mr-2"
+                        className="me-2"
                       >
                         <ConditionalLink
                           condition={!!argomento['@id']}
