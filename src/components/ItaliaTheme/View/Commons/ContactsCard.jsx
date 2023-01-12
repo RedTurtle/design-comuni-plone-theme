@@ -4,6 +4,7 @@ import { Card, CardBody, CardText, CardTitle, Icon } from 'design-react-kit';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import { renderPDCItemValue } from 'design-comuni-plone-theme/helpers';
 
 const ContactsCard = ({ contact = {} }) => {
   const dispatch = useDispatch();
@@ -45,45 +46,9 @@ const ContactsCard = ({ contact = {} }) => {
           </UniversalLink>
         </CardTitle>
         <CardText>
-          {data?.value_punto_contatto.map((pdc, index) => {
-            switch (pdc.pdc_type) {
-              // case 'address':
-              //   return <p>{pdc.pdc_value}</p>;
-              case 'email':
-              case 'pec':
-                return (
-                  <p key={index}>
-                    <UniversalLink href={`mailto:${pdc.pdc_value}`}>
-                      {pdc.pdc_value}
-                    </UniversalLink>
-                  </p>
-                );
-              case 'telefono':
-                return <p key={index}>T {pdc.pdc_value}</p>;
-              case 'url':
-              case 'account':
-              case 'whatsapp':
-              case 'telegram':
-              case 'skype':
-              case 'linkedin':
-              case 'twitter':
-                return (
-                  <p key={index}>
-                    <UniversalLink
-                      href={
-                        pdc.pdc_value.match(/^(http:\/\/|https:\/\/)/gm)
-                          ? pdc.pdc_value
-                          : `http://${pdc.pdc_value}`
-                      }
-                    >
-                      {pdc.pdc_value}
-                    </UniversalLink>
-                  </p>
-                );
-              default:
-                return null;
-            }
-          }) ?? null}
+          {data?.value_punto_contatto.map((pdc, index) => (
+            <p key={index}>{renderPDCItemValue(pdc)}</p>
+          )) ?? null}
         </CardText>
       </CardBody>
     </Card>

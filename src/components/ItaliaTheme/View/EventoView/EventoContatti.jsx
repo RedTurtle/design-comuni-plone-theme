@@ -55,7 +55,7 @@ const EventoDocumenti = ({ content }) => {
   return richTextHasContent(content?.organizzato_da_esterno) ||
     content?.organizzato_da_interno.length > 0 ||
     content?.supportato_da?.length > 0 ||
-    content?.contact_info?.length !== 0 ? (
+    content?.contact_info?.length > 0 ? (
     <RichTextArticle
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
