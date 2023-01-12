@@ -170,9 +170,9 @@ export UOPeople from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOVi
 export UOStructure from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOStructure';
 export UOServices from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOServices';
 export UOContacts from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOContacts';
-export UOContactsLocations from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOLocationsParts/UOContactsLocations';
+export UOContactsLocations from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsLocations';
 export UOContactsContacts from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsContacts';
-export UOContactsSediSecondarie from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOLocationsParts/UOContactsSediSecondarie';
+export UOContactsSediSecondarie from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsSediSecondarie';
 
 export UODocuments from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UODocuments';
 export UOWhatDoesItDo from 'design-comuni-plone-theme/components/ItaliaTheme/View/UOView/UOWhatDoesItDo';

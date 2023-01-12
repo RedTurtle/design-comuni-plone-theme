@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { OfficeCard } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { CardPersona } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { Chip, ChipLabel } from 'design-react-kit';
+import { Chip, ChipLabel, Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   struttura: {
@@ -13,7 +13,7 @@ const messages = defineMessages({
   },
   legami_struttura_padre: {
     id: 'legami_struttura_padre',
-    defaultMessage: 'Servizio o ufficio di appartenenza',
+    defaultMessage: 'Unità organizzativa genitore',
   },
   legami_strutture_figlie: {
     id: 'legami_strutture_figlie',
@@ -101,40 +101,40 @@ const UOStructure = ({ content }) => {
       {content.responsabile?.length > 0 && (
         <div className="mb-5 mt-3">
           <h4>{intl.formatMessage(messages.responsabile)}</h4>
-          {content.responsabile.map((item, i) => (
-            <CardPersona
-              item={item}
-              className={'shadow'}
-              show_image={true}
-              titleTagName={'h5'}
-              titleClassName={'big-heading'}
-              listingText={'Dirigente responsabile'}
-            />
-          ))}
+          <Row className="card-wrapper card-teaser-wrapper  ruolo-persone-struttura">
+            {content.responsabile.map((item, i) => (
+              <Col xs="12" lg="12" xl="12" md="12" sm="12" key={item['@id']}>
+                <CardPersona
+                  item={item}
+                  className={'shadow'}
+                  showImage={true}
+                  titleTagName={'h5'}
+                  titleClassName={'big-heading'}
+                  listingText={item.incarichi}
+                />
+              </Col>
+            ))}
+          </Row>
         </div>
       )}
 
       {content.assessore_riferimento?.length > 0 && (
         <div className="mb-5 mt-3">
           <h5>{intl.formatMessage(messages.assessore_riferimento)}</h5>
-          {content.assessore_riferimento.map((item, _i) => (
-            <Link
-              to={flattenToAppURL(item['@id'])}
-              key={item['@id']}
-              title={item.title}
-              className="text-decoration-none me-2"
-            >
-              <Chip
-                color="primary"
-                disabled={false}
-                large={false}
-                simple
-                tag="div"
-              >
-                <ChipLabel tag="span">{item.title}</ChipLabel>
-              </Chip>
-            </Link>
-          ))}
+          <Row className="card-wrapper card-teaser-wrapper mt-2">
+            {content.assessore_riferimento.map((item, _i) => (
+              <Col xs="12" lg="12" xl="6" md="12" sm="12" key={item['@id']}>
+                <CardPersona
+                  item={item}
+                  className={'shadow'}
+                  showImage={true}
+                  titleTagName={'h5'}
+                  titleClassName={'big-heading'}
+                  listingText={item.incarichi}
+                />
+              </Col>
+            ))}
+          </Row>
         </div>
       )}
     </article>

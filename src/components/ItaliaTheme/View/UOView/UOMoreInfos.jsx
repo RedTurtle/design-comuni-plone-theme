@@ -12,6 +12,7 @@ const UOMoreInfos = ({ content }) => {
       content={content.ulteriori_informazioni}
       tag_id="more-info"
       title={intl.formatMessage(messages.other_info)}
+      anchorOffset={true}
     />
   ) : null;
 };
