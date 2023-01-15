@@ -71,6 +71,7 @@ const GenericCard = ({
           <div className="img-responsive img-responsive-panoramic">
             <figure className="img-wrapper">
               <Image
+                itemUrl={item_fo['@id']}
                 image={item_fo.preview_image || item_fo.image}
                 alt={item_fo.title}
                 title={item_fo.title}

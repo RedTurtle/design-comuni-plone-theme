@@ -154,6 +154,7 @@ const Gallery = ({
                         )} ${item.title}`}
                       >
                         <Image
+                          itemUrl={item['@id']}
                           image={item.image}
                           alt={item.title}
                           className="img-fluid"

@@ -2,7 +2,6 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 
-// eslint-disable-next-line import/no-unresolved
 import Image from '@plone/volto/components/theme/Image/Image';
 
 import {
@@ -118,6 +117,7 @@ const PageHeader = (props) => {
           <div className="col-lg-2 page-header-image">
             <figure>
               <Image
+                itemUrl={props.content['@id']}
                 image={props.content[props.imageinheader_field]}
                 alt={props.content.title}
                 className="img-fluid"

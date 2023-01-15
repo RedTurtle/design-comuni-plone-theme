@@ -14,7 +14,6 @@ import {
   CardReadMore,
 } from 'design-react-kit';
 
-// eslint-disable-next-line import/no-unresolved
 import Image from '@plone/volto/components/theme/Image/Image';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
@@ -39,6 +38,7 @@ const Body = (props) => {
         {content.image && (
           <Col lg={{ size: 6, offset: 1, order: 2 }}>
             <Image
+              itemUrl={content['@id']}
               image={content.image}
               alt=""
               className={cx('item-image', {

@@ -31,6 +31,7 @@ const getImageType = (image) => {
 
 const DEFAULT_MAX_SIZE = 10000;
 export const getImageAttributes = (
+  itemUrl,
   image,
   {
     imageField = 'image',
@@ -39,6 +40,7 @@ export const getImageAttributes = (
     minSize = 0,
   } = {},
 ) => {
+  const itemPath = flattenToAppURL(itemUrl);
   const imageScales = config.settings.imageScales;
 
   const minScale = Object.keys(imageScales).reduce((minScale, scale) => {
@@ -76,7 +78,7 @@ export const getImageAttributes = (
         });
 
       const scale = sortedScales[0];
-      attrs.src = flattenToAppURL(scale?.download ?? image.download);
+      attrs.src = `${itemPath}/${scale?.download ?? image.download}`;
       attrs.aspectRatio = Math.round((image.width / image.height) * 100) / 100;
       attrs.width = image.width;
       attrs.height = image.height;
@@ -88,20 +90,18 @@ export const getImageAttributes = (
       }
 
       attrs.srcSet = sortedScales.map(
-        (scale) => `${flattenToAppURL(scale.download)} ${scale.width}w`,
+        (scale) => `${itemPath}/${scale.download} ${scale.width}w`,
       );
 
       if (useOriginal || sortedScales?.length === 0)
         attrs.srcSet = attrs.srcSet.concat(
-          `${flattenToAppURL(image.download)} ${image.width}w`,
+          `${itemPath}/${image.download} ${image.width}w`,
         );
       break;
 
     // Internal URL
     case 'internalUrl':
-      let baseUrl = `${flattenToAppURL(image.split('/@@images')[0])}${
-        image.endsWith('/') ? '' : '/'
-      }@@images/${imageField}`;
+      const baseUrl = `${itemPath}/@@images/${imageField}`;
       attrs.src = `${baseUrl}/${minScale}`;
 
       attrs.srcSet = Object.keys(imageScales)

@@ -17,9 +17,10 @@ const ContentImage = ({ content, position }) => {
   return view ? (
     <div className="content-image">
       <WideImage
-        title={content?.title}
-        image={content?.image}
-        caption={content?.image_caption}
+        itemUrl={content['@id']}
+        title={content.title}
+        image={content.image}
+        caption={content.image_caption}
         fullWidth={
           config.settings.italiaThemeViewsConfig.imagePosition === 'afterHeader'
         }

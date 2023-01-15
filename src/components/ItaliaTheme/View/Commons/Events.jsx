@@ -61,6 +61,7 @@ const Evento = ({ event, show_image }) => {
             {viewDate(intl.locale, event.start, 'DD MMM')}
           </div>
           <Image
+            itemUrl={event['@id']}
             image={event.image}
             alt="Immagine"
             className="event-center-cropped"

@@ -112,7 +112,7 @@ const LocationItem = ({
       </div>
       {location_fo.immagine && (
         <div className="avatar size-xl">
-          <Image image={location_fo.immagine} />
+          <Image itemUrl={location_fo['@id']} image={location_fo.immagine} />
         </div>
       )}
     </div>

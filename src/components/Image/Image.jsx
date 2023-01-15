@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-unresolved
@@ -20,6 +20,7 @@ import { getImageAttributes } from '@plone/volto/helpers/Image/Image';
  * @param {boolean} useOriginal - whether to render original size
  */
 const Image = ({
+  itemUrl,
   image,
   imageField = 'image',
   alt = '',
@@ -37,6 +38,7 @@ const Image = ({
   ...imageProps
 }) => {
   const { src, srcSet, width, height, aspectRatio } = getImageAttributes(
+    itemUrl,
     image,
     {
       imageField,
@@ -156,6 +158,7 @@ const Image = ({
 };
 
 Image.propTypes = {
+  itemUrl: PropTypes.string.isRequired,
   imageField: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   alt: PropTypes.string,
