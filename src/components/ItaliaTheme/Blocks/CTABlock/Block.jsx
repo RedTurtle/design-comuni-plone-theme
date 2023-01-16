@@ -70,7 +70,11 @@ const Block = ({
       {hasImage && data?.ctaImage?.length > 0 && (
         <Image
           itemUrl={data.ctaImage[0]['@id']}
-          image={data.ctaImage[0]['@id']}
+          image={
+            data.ctaImage[0].image_scales?.[
+              data.ctaImage[0].image_field
+            ]?.[0] || data.ctaImage[0]['@id']
+          }
           key={data.ctaImage[0]['@id']}
           alt=""
           aria-hidden="true"

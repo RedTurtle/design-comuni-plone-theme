@@ -37,7 +37,7 @@ const WideImage = ({ itemUrl, image, title, caption, fullWidth = true }) => {
 export default WideImage;
 
 WideImage.propTypes = {
-  itemUrl: PropTypes.string.isRequired,
+  itemUrl: PropTypes.string,
   title: PropTypes.string,
   image: PropTypes.shape({
     download: PropTypes.string,

@@ -35,11 +35,10 @@ const Body = (props) => {
   return (
     <div className={`${block.bg_color ? 'bg-' + block.bg_color : ''}`}>
       <Row>
-        {content.image && (
+        {(content.preview_image || content.image) && (
           <Col lg={{ size: 6, offset: 1, order: 2 }}>
             <Image
-              itemUrl={content['@id']}
-              image={content.image}
+              image={content.preview_image || content.image}
               alt=""
               className={cx('item-image', {
                 'natural-image-size': block.natural_image_size,

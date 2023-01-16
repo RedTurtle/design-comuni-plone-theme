@@ -117,7 +117,6 @@ const PageHeader = (props) => {
           <div className="col-lg-2 page-header-image">
             <figure>
               <Image
-                itemUrl={props.content['@id']}
                 image={props.content[props.imageinheader_field]}
                 alt={props.content.title}
                 className="img-fluid"

@@ -93,7 +93,6 @@ const PageView = ({ content, token, location, history }) => {
                   {content.image?.scales && (
                     <div className="header-image px-4 mb-3">
                       <Image
-                        itemUrl={content['@id']}
                         image={content.image}
                         alt={content.title}
                         maxSize={300}

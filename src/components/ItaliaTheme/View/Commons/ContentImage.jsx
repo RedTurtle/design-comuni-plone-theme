@@ -17,7 +17,6 @@ const ContentImage = ({ content, position }) => {
   return view ? (
     <div className="content-image">
       <WideImage
-        itemUrl={content['@id']}
         title={content.title}
         image={content.image}
         caption={content.image_caption}
@@ -31,12 +30,10 @@ const ContentImage = ({ content, position }) => {
 export default ContentImage;
 
 ContentImage.propTypes = {
-  params: PropTypes.shape({
-    title: PropTypes.string,
-    image: PropTypes.shape({
-      download: PropTypes.string,
-    }),
-    caption: PropTypes.string,
-    fullWidth: PropTypes.bool,
+  content: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    image: PropTypes.object,
+    image_caption: PropTypes.string,
   }),
+  position: PropTypes.string,
 };

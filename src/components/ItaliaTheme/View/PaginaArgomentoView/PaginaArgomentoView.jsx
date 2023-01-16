@@ -151,7 +151,6 @@ const PaginaArgomentoView = ({ content }) => {
               >
                 <div>
                   <Image
-                    itemUrl={content['@id']}
                     image={content.image}
                     alt={content.caption ?? content.title}
                     title={content.caption ?? content.title}

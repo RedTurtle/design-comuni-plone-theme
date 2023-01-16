@@ -2,12 +2,18 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  Card,
+  CardBody,
+  CardReadMore,
+  CardText,
+  CardTitle,
+} from 'design-react-kit';
 
 import { UniversalLink } from '@plone/volto/components';
 import { searchContent, resetSearchContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import Image from '@plone/volto/components/theme/Image/Image';
 import { viewDate } from 'design-comuni-plone-theme/helpers';
 
@@ -16,9 +22,9 @@ const messages = defineMessages({
     id: 'events',
     defaultMessage: 'Appuntamenti',
   },
-  title: {
-    id: 'event_title',
-    defaultMessage: 'Eventi',
+  events_read_more: {
+    id: 'events_read_more',
+    defaultMessage: 'Leggi di più',
   },
 });
 
@@ -32,42 +38,52 @@ const Evento = ({ event, show_image }) => {
   const intl = useIntl();
 
   return event ? (
-    <div className="card card-teaser card-flex rounded shadow">
-      <div className="card-body p-4">
-        <h5 className="card-title card-title-icon">
-          <Icon icon={'it-calendar'}></Icon>
-          <span className="text-uppercase">
-            {intl.formatMessage(messages.title)}
-          </span>
-        </h5>
-        <div className="card-text">
-          <p className="text-uppercase">
-            {event.luogo_evento && event.luogo_evento[0]?.title}
-          </p>
-
-          <div className="pt-4 pb-3">
+    <div className="card-wrapper card-teaser">
+      <Card noWrapper className="card-img no-after">
+        {show_image &&
+          (event.image_field || event.preview_image || event.image) && (
+            <div className="img-responsive-wrapper">
+              <div className="img-responsive">
+                <Image
+                  itemUrl={event.image_field ? event['@id'] : undefined}
+                  image={
+                    event.image_scales?.[event.image_field]?.[0] ||
+                    event.preview_image ||
+                    event.image ||
+                    event['@id']
+                  }
+                  alt="Immagine"
+                  containerClassName="img-wrapper"
+                />
+                {event.start && (
+                  <div className="card-calendar d-flex flex-column justify-content-center">
+                    {viewDate(intl.locale, event.start, 'DD MMM')}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        <CardBody>
+          <CardTitle tag="h5" className="card-title-icon">
             <UniversalLink
               href={flattenToAppURL(event['@id'])}
               title={event.title}
+              className="text-decoration-none"
             >
               <h6 className="fw-semibold">{event.title}</h6>
             </UniversalLink>
-          </div>
-        </div>
-      </div>
-      {show_image && event.image && (
-        <div className="card-image card-image-rounded">
-          <div className="card-date text-center rounded shadow">
-            {viewDate(intl.locale, event.start, 'DD MMM')}
-          </div>
-          <Image
-            itemUrl={event['@id']}
-            image={event.image}
-            alt="Immagine"
-            className="event-center-cropped"
+          </CardTitle>
+          <CardText>
+            {event.luogo_evento && (
+              <p className="text-uppercase">{event.luogo_evento[0]?.title}</p>
+            )}
+          </CardText>
+          <CardReadMore
+            iconName="it-arrow-right"
+            text={intl.formatMessage(messages.events_read_more)}
           />
-        </div>
-      )}
+        </CardBody>
+      </Card>
     </div>
   ) : null;
 };

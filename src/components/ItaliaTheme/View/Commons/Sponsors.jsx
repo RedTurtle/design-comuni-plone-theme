@@ -33,8 +33,11 @@ const Sponsor = ({ item }) => {
           >
             <Image
               itemUrl={item['@id']}
-              image={item.image}
-              alt={item.image.filename}
+              image={item.image_scales?.[item.image_field]?.[0] || item['@id']}
+              alt={
+                item.image_scales?.[item.image_field]?.[0]?.filename ??
+                item.title
+              }
               className="img-fluid"
             />
           </a>

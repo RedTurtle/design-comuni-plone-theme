@@ -6,6 +6,7 @@ import { getImageAttributes } from '@plone/volto/helpers/Image/Image';
 
 /**
  * Image component
+ * @param {string} itemUrl - url (`@id`) of the item. **ONLY** use this if rendering an image from a brain object, leave undefined otherwise
  * @param {object | string} image - Plone image as object or url
  * @param {string} imageField - (default: image) image field for scales URL
  * @param {string} alt - Alternative text for image
@@ -38,9 +39,9 @@ const Image = ({
   ...imageProps
 }) => {
   const { src, srcSet, width, height, aspectRatio } = getImageAttributes(
-    itemUrl,
     image,
     {
+      itemUrl,
       imageField,
       maxSize,
       useOriginal,
@@ -158,7 +159,7 @@ const Image = ({
 };
 
 Image.propTypes = {
-  itemUrl: PropTypes.string.isRequired,
+  itemUrl: PropTypes.string,
   imageField: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   alt: PropTypes.string,
