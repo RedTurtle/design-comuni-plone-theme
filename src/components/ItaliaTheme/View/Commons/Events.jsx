@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import { useDispatch, useSelector } from 'react-redux';
 import {
   Card,
   CardBody,
@@ -11,7 +9,6 @@ import {
 } from 'design-react-kit';
 
 import { UniversalLink } from '@plone/volto/components';
-import { searchContent, resetSearchContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
 import Image from '@plone/volto/components/theme/Image/Image';
@@ -73,11 +70,7 @@ const Evento = ({ event, show_image }) => {
               <h6 className="fw-semibold">{event.title}</h6>
             </UniversalLink>
           </CardTitle>
-          <CardText>
-            {event.luogo_evento && (
-              <p className="text-uppercase">{event.luogo_evento[0]?.title}</p>
-            )}
-          </CardText>
+          <CardText></CardText>
           <CardReadMore
             iconName="it-arrow-right"
             text={intl.formatMessage(messages.events_read_more)}
@@ -97,61 +90,26 @@ const Evento = ({ event, show_image }) => {
 const Events = ({ content, title, show_image, folder_name, isChild }) => {
   const intl = useIntl();
 
-  const path = isChild ? content.parent['@id'] : content['@id'];
-  const searchResults = useSelector((state) => state.search.subrequests);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (isChild && !searchResults?.[folder_name]?.loading) {
-      dispatch(
-        searchContent(
-          flattenToAppURL(path),
-          {
-            portal_type: 'Event',
-            'path.depth': 1,
-            sort_on: 'getObjPositionInParent',
-            fullobjects: true,
-          },
-          folder_name,
-        ),
-      );
-    }
-    return () => {
-      dispatch(resetSearchContent(folder_name));
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [content]);
-
-  let events = isChild
-    ? searchResults?.[folder_name]?.items || []
+  const events = isChild
+    ? content?.parent
+      ? [content.parent]
+      : []
     : content?.items?.filter((el) => el['@type'] === 'Event') || [];
-  if (isChild) {
-    events = [...events].filter((el) => !content['@id'].includes(el['@id']));
-  }
 
-  return (
-    <>
-      {events.length > 0 ? (
-        <article
-          id="appuntamenti"
-          className="it-page-section anchor-offset mt-5"
-        >
-          {title ? (
-            <h4 id="header-appuntamenti">{title}</h4>
-          ) : (
-            <h4 id="header-appuntamenti">
-              {intl.formatMessage(messages.events)}
-            </h4>
-          )}
-          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
-            {events.map((item, i) => (
-              <Evento key={item['@id']} event={item} show_image={show_image} />
-            ))}
-          </div>
-        </article>
-      ) : null}
-    </>
-  );
+  return events.length > 0 ? (
+    <article id="appuntamenti" className="it-page-section anchor-offset mt-5">
+      {title ? (
+        <h4 id="header-appuntamenti">{title}</h4>
+      ) : (
+        <h4 id="header-appuntamenti">{intl.formatMessage(messages.events)}</h4>
+      )}
+      <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+        {events.map((item, i) => (
+          <Evento key={item['@id']} event={item} show_image={show_image} />
+        ))}
+      </div>
+    </article>
+  ) : null;
 };
 
 export default Events;
