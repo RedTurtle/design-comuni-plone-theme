@@ -26,6 +26,9 @@
     .img-skeleton {
       height: 80px;
     }
+    @media (max-width: #{map-get($grid-breakpoints, sm)}) {
+      height: unset;
+    }
   }
 
   .title {
