@@ -4,7 +4,7 @@ import {
   Attachments,
   Attachment,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
-import { Row, Col } from 'design-react-kit';
+import { Row } from 'design-react-kit';
 
 const messages = defineMessages({
   documenti: {
@@ -16,7 +16,7 @@ const messages = defineMessages({
 const UODocuments = ({ content }) => {
   const intl = useIntl();
 
-  return (
+  return content?.documenti_pubblici?.length > 0 ? (
     <article id="allegati" className="it-page-section anchor-offset mt-5 mb-5">
       <h3 id="header-allegati">{intl.formatMessage(messages.documenti)}</h3>
       <Attachments
@@ -30,6 +30,8 @@ const UODocuments = ({ content }) => {
         ))}
       </Row>
     </article>
+  ) : (
+    <></>
   );
 };
 

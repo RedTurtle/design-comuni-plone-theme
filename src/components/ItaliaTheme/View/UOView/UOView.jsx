@@ -57,6 +57,7 @@ export const UOViewSectionsOrder = [
 const UOView = ({ content }) => {
   let documentBody = createRef();
   const [sideMenuElements, setSideMenuElements] = useState(null);
+  console.log(content);
 
   useEffect(() => {
     if (documentBody.current && __CLIENT__) {
