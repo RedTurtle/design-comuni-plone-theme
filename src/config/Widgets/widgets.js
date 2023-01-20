@@ -10,6 +10,7 @@ import MenuConfigurationForm from 'design-comuni-plone-theme/components/ItaliaTh
 import SecondaryMenuConfigurationForm from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/SecondaryMenuConfigurationForm';
 import SubFooterConfigurationForm from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/SubFooterConfigurationForm';
 import SearchSectionsConfigurationWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/SearchSectionsConfigurationWidget/SearchSectionsConfigurationWidget';
+import TimelineAddableDatagridWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/TimelineAddableDatagridWidget/TimelineAddableDatagridWidget';
 import { defaultIconWidgetOptions } from 'design-comuni-plone-theme/helpers';
 import {
   ColorListWidget,
@@ -77,6 +78,7 @@ const getItaliaWidgets = (config) => {
         [],
       ),
       subsite_social_links: SubsiteSocialLinksWidget,
+      timeline_tempi_scadenze: TimelineAddableDatagridWidget,
     },
     widget: {
       ...config.widgets.widget,

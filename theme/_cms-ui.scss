@@ -1,4 +1,9 @@
 body.cms-ui {
+  &.dimmable.dimmed {
+    // Fix semantic bug when modal is scrollable but
+    // body is too
+    overflow-y: hidden;
+  }
   .block {
     font-family: $font-family-serif;
 
