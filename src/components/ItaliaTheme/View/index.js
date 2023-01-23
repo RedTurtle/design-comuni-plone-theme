@@ -140,7 +140,6 @@ export PersonaDocumenti from 'design-comuni-plone-theme/components/ItaliaTheme/V
 export PersonaUlterioriInformazioni from 'design-comuni-plone-theme/components/ItaliaTheme/View/PersonaView/PersonaUlterioriInformazioni';
 export ServizioPlaceholderAfterContent from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/Placeholder/AfterContent';
 export ServizioPlaceholderAfterRelatedItems from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/Placeholder/AfterRelatedItems';
-export ServizioStato from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/ServizioStato';
 export ServizioCosE from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/ServizioCosE';
 export ServizioAccedi from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/ServizioAccedi';
 export ServizioAChiSiRivolge from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/ServizioAChiSiRivolge';
@@ -150,6 +149,7 @@ export ServizioCosaSiOttiene from 'design-comuni-plone-theme/components/ItaliaTh
 export ServizioCostiVincoli from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli';
 export ServizioTempiScadenze from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/ServizioTempiScadenze';
 export ServizioCasiParticolari from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/ServizioCasiParticolari';
+export ServizioProcedure from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/ServizioProcedure';
 export ServizioContatti from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/ServizioContatti';
 export ServizioAltriDocumenti from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/ServizioAltriDocumenti';
 export ServizioSitiEsterni from 'design-comuni-plone-theme/components/ItaliaTheme/View/ServizioView/ServizioSitiEsterni';
