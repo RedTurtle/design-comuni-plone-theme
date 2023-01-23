@@ -73,4 +73,11 @@ body.contenttype-unitaorganizzativa {
       }
     }
   }
+  #allegati {
+    h5 {
+      font-size: $card-big-head-size;
+      line-height: $card-big-head-l-h;
+      font-weight: bold;
+    }
+  }
 }

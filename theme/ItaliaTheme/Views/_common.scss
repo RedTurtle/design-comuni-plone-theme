@@ -98,9 +98,16 @@ picture.volto-image.responsive img.full-width {
 }
 
 .public-ui {
-  .card.bigborder {
-    border: 1px solid #d9dadb;
-    border-left-width: 10px !important;
+  .card {
+    .card-body {
+      .card-text {
+        font-family: $font-family-sans-serif;
+      }
+    }
+    &.bigborder {
+      border: 1px solid #d9dadb;
+      border-left-width: 10px !important;
+    }
   }
 
   .link-esterni {
