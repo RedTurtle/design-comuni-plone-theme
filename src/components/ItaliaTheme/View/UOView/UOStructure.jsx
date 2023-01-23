@@ -39,23 +39,25 @@ const messages = defineMessages({
 
 const UOStructure = ({ content }) => {
   const intl = useIntl();
+  console.log(content);
 
-  return content?.legami_con_altre_strutture?.length > 0 ||
-    content?.responsabile?.length > 0 ||
-    content?.tipologia_organizzazione ||
-    content?.uo_children?.length > 0 ||
-    content?.uo_parent ||
-    content?.assessore_riferimento?.length > 0 ? (
+  return content?.tipologia_organizzazione ? (
     <article id="struttura" className="it-page-section anchor-offset mt-5">
       {content.tipologia_organizzazione?.title && (
         <div className="mb-5 mt-3">
-          <h4>{intl.formatMessage(messages.tipologia_organizzazione)}</h4>
+          <h3>{intl.formatMessage(messages.tipologia_organizzazione)}</h3>
           <p className="font-serif">{content.tipologia_organizzazione.title}</p>
         </div>
       )}
-      <h4 id="header-struttura" className="mb-3">
-        {intl.formatMessage(messages.struttura)}
-      </h4>
+      {(content?.legami_con_altre_strutture?.length > 0 ||
+        content?.responsabile?.length > 0 ||
+        content?.uo_children?.length > 0 ||
+        content?.uo_parent ||
+        content?.assessore_riferimento?.length > 0) && (
+        <h3 id="header-struttura" className="mb-3">
+          {intl.formatMessage(messages.struttura)}
+        </h3>
+      )}
       {content.uo_parent && (
         <div className="mb-5 mt-3">
           <h5>{intl.formatMessage(messages.legami_struttura_padre)}</h5>
