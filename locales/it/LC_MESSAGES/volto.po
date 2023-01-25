@@ -3506,7 +3506,7 @@ msgstr "Documenti"
 #: components/ItaliaTheme/View/UOView/UODocuments
 # defaultMessage: Documenti Pubblici
 msgid "uo_documenti_pubblici"
-msgstr ""
+msgstr "Documenti Pubblici"
 
 #: components/ItaliaTheme/Blocks/UOSearch/DefaultFilters
 # defaultMessage: Cerca una struttura
