@@ -3516,9 +3516,14 @@ msgid "uo_altre_sedi"
 msgstr "Autres endroits"
 
 #: components/ItaliaTheme/View/UOView/UODocuments
-# defaultMessage: Allegati
+# defaultMessage: Documenti
 msgid "uo_documenti"
 msgstr "Documents"
+
+#: components/ItaliaTheme/View/UOView/UODocuments
+# defaultMessage: Documenti Pubblici
+msgid "uo_documenti_pubblici"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/UOSearch/DefaultFilters
 # defaultMessage: Cerca una struttura

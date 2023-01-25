@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-01-20T17:57:24.848Z\n"
+"POT-Creation-Date: 2023-01-25T13:51:47.243Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -3501,8 +3501,13 @@ msgid "uo_altre_sedi"
 msgstr ""
 
 #: components/ItaliaTheme/View/UOView/UODocuments
-# defaultMessage: Allegati
+# defaultMessage: Documenti
 msgid "uo_documenti"
+msgstr ""
+
+#: components/ItaliaTheme/View/UOView/UODocuments
+# defaultMessage: Documenti Pubblici
+msgid "uo_documenti_pubblici"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/UOSearch/DefaultFilters
