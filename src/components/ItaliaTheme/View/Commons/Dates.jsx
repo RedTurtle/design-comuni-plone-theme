@@ -43,6 +43,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
   const intl = useIntl();
   const moment = momentlib.default;
   moment.locale(intl.locale);
+  console.log(content);
 
   const rrulestr = rrule.rrulestr;
 
@@ -63,7 +64,6 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
       RRULE_LANGUAGE.dateFormatter,
     );
   }
-
   const start = viewDate(intl.locale, content.start);
   const end = viewDate(intl.locale, content.end);
   const openEnd = content?.open_end;
