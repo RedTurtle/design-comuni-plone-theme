@@ -22,6 +22,10 @@ import PuntoDiContattoView from 'design-comuni-plone-theme/components/ItaliaThem
 import IncaricoView from 'design-comuni-plone-theme/components/ItaliaTheme/View/IncaricoView/IncaricoView';
 
 defineMessages({
+  modulistica_view: {
+    id: 'Cartella modulistica',
+    defaultMessage: 'Cartella modulistica',
+  },
   trasparenza_view: {
     id: 'Trasparenza',
     defaultMessage: 'Trasparenza',
@@ -29,6 +33,10 @@ defineMessages({
   dettagli_procedimenti_view: {
     id: 'Dettagli procedimento',
     defaultMessage: 'Dettagli procedimento',
+  },
+  venue_view: {
+    id: 'Luogo',
+    defaultMessage: 'Luogo',
   },
 });
 
@@ -60,8 +68,10 @@ const italiaLayoutViews = {
 };
 
 const layoutViewsNamesMapping = {
+  modulistica_view: 'Cartella modulistica',
   trasparenza_view: 'Trasparenza',
   dettagli_procedimenti_view: 'Dettagli procedimento',
+  venue_view: 'Luogo',
 };
 
 const getItaliaViews = (config) => {

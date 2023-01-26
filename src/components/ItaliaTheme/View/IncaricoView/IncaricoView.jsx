@@ -67,7 +67,6 @@ const messages = defineMessages({
 const IncaricoView = (props) => {
   const { content } = props;
   const intl = useIntl();
-  console.log(content);
   return (
     <div className="container px-4 my-4 punto-di-contatto-view">
       <SkipToMainContent />

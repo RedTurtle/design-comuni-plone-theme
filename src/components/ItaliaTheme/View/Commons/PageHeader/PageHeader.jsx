@@ -1,23 +1,22 @@
-import React from 'react';
-import { defineMessages, useIntl } from 'react-intl';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import { Chip, ChipLabel } from 'design-react-kit';
+import { defineMessages, useIntl } from 'react-intl';
 
-// eslint-disable-next-line import/no-unresolved
 import Image from '@plone/volto/components/theme/Image/Image';
 
 import {
-  Sharing,
   Actions,
+  ArgumentIcon,
+  PageHeaderBando,
   PageHeaderDates,
   PageHeaderEventDates,
-  PageHeaderPersona,
-  PageHeaderBando,
-  PageHeaderNewsItem,
-  PageHeaderTassonomiaArgomenti,
   PageHeaderExtend,
-  ArgumentIcon,
+  PageHeaderNewsItem,
+  PageHeaderPersona,
+  PageHeaderStatoServizio,
+  PageHeaderLinkServizio,
+  PageHeaderTassonomiaArgomenti,
+  Sharing,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 /**
@@ -36,14 +35,6 @@ const messages = defineMessages({
     id: 'minutes',
     defaultMessage: 'min',
   },
-  service_on: {
-    id: 'service_on',
-    defaultMessage: 'Servizio attivo',
-  },
-  service_off: {
-    id: 'service_off',
-    defaultMessage: 'Servizio non attivo',
-  },
 });
 
 const PageHeader = (props) => {
@@ -61,27 +52,32 @@ const PageHeader = (props) => {
           {(props.content.icon || props.content.icona) && (
             <ArgumentIcon icon={props.content.icon || props.content.icona} />
           )}
-          <h1 data-element="service-title">
+          <h1
+            data-element={
+              props.content['@type'] === 'Servizio'
+                ? 'service-title'
+                : undefined
+            }
+          >
             {props.content.title}
-            {props.content.subtitle && ` - ${props.content.subtitle}`}
-            {props.content.sottotitolo && ` - ${props.content.sottotitolo}`}
           </h1>
+          <p className="h2">
+            {props.content.subtitle && `${props.content.subtitle}`}
+            {props.content.sottotitolo && `${props.content.sottotitolo}`}
+          </p>
 
           <PageHeaderEventDates content={props.content} />
-          {props.content.stato_servizio !== null && (
-            <Chip tag="div" simple color="primary" className="ml-5">
-              <ChipLabel className="p-3">
-                {props.content.stato_servizio
-                  ? intl.formatMessage(messages.service_on)
-                  : intl.formatMessage(messages.service_off)}
-              </ChipLabel>
-            </Chip>
-          )}
+
+          <PageHeaderStatoServizio content={props.content} />
 
           {props.content.description && (
             <p
               className="documentDescription"
-              data-element="service-description"
+              data-element={
+                props.content['@type'] === 'Servizio'
+                  ? 'service-description'
+                  : undefined
+              }
             >
               {props.content.description}
             </p>
@@ -92,6 +88,8 @@ const PageHeader = (props) => {
           <PageHeaderPersona content={props.content} />
 
           <PageHeaderNewsItem content={props.content} />
+
+          <PageHeaderLinkServizio content={props.content} />
 
           <PageHeaderExtend {...props} />
 

@@ -2,7 +2,7 @@
   "name": "design-comuni-plone-theme",
   "description": "Volto Theme for Italia design guidelines",
   "license": "MIT",
-  "version": "7.0.0-alpha.9",
+  "version": "8.0.0-alpha.4",
   "addons": [
     "@plone-collective/volto-sentry",
     "volto-multilingual-widget",
@@ -20,7 +20,8 @@
     "volto-subfooter",
     "volto-customer-satisfaction",
     "volto-gdpr-privacy",
-    "volto-data-grid-widget"
+    "volto-data-grid-widget",
+    "@eeacms/volto-taxonomy"
   ],
   "customizationPaths": [
     "src/customizations/"
@@ -66,7 +67,8 @@
       "^design-comuni-plone-theme/(.*)$": "<rootDir>/src/$1",
       "^volto-gdpr-privacy/(.*)$": "<rootDir>/node_modules/volto-gdpr-privacy/src/$1",
       "^volto-venue/(.*)$": "<rootDir>/node_modules/volto-venue/src/$1",
-      "^volto-data-grid-widget/(.*)$": "<rootDir>/node_modules/volto-data-grid-widget/src/$1"
+      "^volto-data-grid-widget/(.*)$": "<rootDir>/node_modules/volto-data-grid-widget/src/$1",
+      "^volto-dropdownmenu/(.*)$": "<rootDir>/node_modules/volto-dropdownmenu/src/$1"
     },
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs,ts,tsx}",
@@ -90,7 +92,6 @@
     },
     "setupFiles": [
       "@plone/volto/test-setup-globals.js",
-      "@plone/volto/test-setup-config.js",
       "./test-setup-config.js"
     ],
     "globalSetup": "@plone/volto/global-test-setup.js",
@@ -175,9 +176,10 @@
     "@babel/plugin-proposal-export-namespace-from": "7.18.9",
     "@babel/plugin-proposal-nullish-coalescing-operator": "7.18.6",
     "@babel/plugin-proposal-throw-expressions": "7.18.6",
+    "@eeacms/volto-taxonomy": "^1.0.0",
     "@loadable/babel-plugin": "5.13.2",
     "@plone-collective/volto-sentry": "0.3.0",
-    "@plone/volto": "16.5.0",
+    "@plone/volto": "16.8.1",
     "bootstrap-italia": "2.0.9",
     "classnames": "^2.3.2",
     "design-react-kit": "italia/design-react-kit#2584d0c0f4ad5fdf18d70a74b541f6bfe7def13b",
@@ -193,7 +195,7 @@
     "typeface-titillium-web": "0.0.72",
     "volto-blocks-widget": "3.0.0",
     "volto-customer-satisfaction": "1.0.0",
-    "volto-data-grid-widget": "1.0.3",
+    "volto-data-grid-widget": "2.1.0",
     "volto-dropdownmenu": "4.0.0",
     "volto-editablefooter": "5.0.1",
     "volto-form-block": "3.0.0",

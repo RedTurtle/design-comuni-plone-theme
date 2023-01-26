@@ -13,14 +13,16 @@ import {
   ServizioPlaceholderAfterRelatedItems,
   RelatedItemInEvidence,
   SkipToMainContent,
-  ServizioStato,
   ServizioCosE,
+  ServizioAccedi,
   ServizioAChiSiRivolge,
-  ServizioComeAccedere,
+  ServizioComeFare,
   ServizioCosaServe,
+  ServizioCosaSiOttiene,
   ServizioCostiVincoli,
   ServizioTempiScadenze,
   ServizioCasiParticolari,
+  ServizioProcedure,
   ServizioContatti,
   ServizioAltriDocumenti,
   ServizioSitiEsterni,
@@ -29,10 +31,12 @@ import {
   ServizioTrasparenza,
   ServizioCorrelati,
   ServizioUlterioriInformazioni,
+  ServizioMetadati,
+  ServizioCondizioni,
   ContentTypeViewSections,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
-export const VenueViewSectionsOrder = [
+export const ServizioViewSectionsOrder = [
   {
     /* HEADER IMAGE */
 
@@ -40,37 +44,45 @@ export const VenueViewSectionsOrder = [
     props: { position: 'documentBody' },
   },
 
-  { /* STATO DEL SERVIZIO */ component: ServizioStato },
+  { /* A CHI È RIVOLTO */ component: ServizioAChiSiRivolge },
 
-  { /* TEXT BODY */ component: ServizioCosE },
+  { /* DESCRIZIONE */ component: ServizioCosE },
 
-  { /* A CHI SI RIVOLGE */ component: ServizioAChiSiRivolge },
-
-  { /* ACCEDERE AL SERVIZIO */ component: ServizioComeAccedere },
+  { /* COME FARE */ component: ServizioComeFare },
 
   { /* COSA SERVE */ component: ServizioCosaServe },
 
-  { /* COSTI E VINCOLI */ component: ServizioCostiVincoli },
+  { /* COSA SI OTTIENE */ component: ServizioCosaSiOttiene },
 
   { /* TEMPI E SCADENZE */ component: ServizioTempiScadenze },
 
-  { /* CASI PARTICOLARI */ component: ServizioCasiParticolari },
+  { /* QUANTO COSTA */ component: ServizioCostiVincoli },
+
+  { /* ?? CASI PARTICOLARI ?? */ component: ServizioCasiParticolari },
+
+  { /* PROCEDURE ESITO */ component: ServizioProcedure },
+
+  { /* ACCEDI AL SERVIZIO */ component: ServizioAccedi },
+
+  { /* ULTERIORI INFORMAZIONI */ component: ServizioUlterioriInformazioni },
+
+  { /* ?? ALTRI DOCUMENTI ?? */ component: ServizioAltriDocumenti },
+
+  { /* ?? SITI ESTERNI ?? */ component: ServizioSitiEsterni },
+
+  { /* ?? ALLEGATI ?? */ component: ServizioAllegati },
+
+  { /* ?? MODULISTICA ?? */ component: ServizioModulistica },
+
+  { /* CONDIZIONI DI SERVIZIO */ component: ServizioCondizioni },
 
   { /* CONTATTI */ component: ServizioContatti },
 
-  { /* ALTRI DOCUMENTI */ component: ServizioAltriDocumenti },
+  { /* ?? TRASPARENZA ?? */ component: ServizioTrasparenza },
 
-  { /* SITI ESTERNI */ component: ServizioSitiEsterni },
+  { /* ?? CORRELATI ??  */ component: ServizioCorrelati },
 
-  { /* ALLEGATI */ component: ServizioAllegati },
-
-  { /* MODULISTICA */ component: ServizioModulistica },
-
-  { /* TRASPARENZA */ component: ServizioTrasparenza },
-
-  { /* CORRELATI */ component: ServizioCorrelati },
-
-  { /* ULTERIORI INFORMAZIONI */ component: ServizioUlterioriInformazioni },
+  { /* ULTIMO AGGIORNAMENTO  */ component: ServizioMetadati },
 ];
 
 /**
@@ -116,7 +128,7 @@ const ServizioView = ({ content }) => {
             {/* SEZIONI */}
             <ContentTypeViewSections
               content={content}
-              defaultSections={VenueViewSectionsOrder}
+              defaultSections={ServizioViewSectionsOrder}
             />
           </section>
         </div>

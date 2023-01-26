@@ -1850,6 +1850,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eeacms/volto-taxonomy@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@eeacms/volto-taxonomy@npm:1.0.0"
+  checksum: 2c8148061279cb3423c4eb27ae897d502d61d15b0b818a6dfe5b3a200b0aa84677cc9131274843e8b8c082be0e31ecec9cd06aa63830de46634e58bff32ae3a3
+  languageName: node
+  linkType: hard
+
 "@emotion/babel-plugin@npm:^11.10.0":
   version: 11.10.2
   resolution: "@emotion/babel-plugin@npm:11.10.2"
@@ -2716,9 +2723,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone/volto@npm:16.5.0":
-  version: 16.5.0
-  resolution: "@plone/volto@npm:16.5.0"
+"@plone/volto@npm:16.8.1":
+  version: 16.8.1
+  resolution: "@plone/volto@npm:16.8.1"
   dependencies:
     "@babel/core": ^7.0.0
     "@babel/plugin-proposal-export-default-from": 7.18.9
@@ -2897,7 +2904,7 @@ __metadata:
     webpack-node-externals: 3.0.0
     xmlrpc: 1.3.2
     yarnhook: 0.5.1
-  checksum: 5014bd2299749c0ec5b4457d70a6c2401800b4c3def1ee70e434d83f98acc58073b3623a9cdd9423f7e60ddc85d12abc47656d1a99c03168e98be5cd6c6bad7d
+  checksum: 529663fd513389fc0c6aa12980b02dc7596e3d9b14ad37d9ef90db664c5ae2d806535dea7a364a40aa06e21eebe77898b29bd1c8a8a19ca19960beee823c8ff4
   languageName: node
   linkType: hard
 
@@ -7827,9 +7834,10 @@ __metadata:
     "@babel/plugin-proposal-throw-expressions": 7.18.6
     "@commitlint/cli": ^12.0.0
     "@commitlint/config-conventional": ^12.0.0
+    "@eeacms/volto-taxonomy": ^1.0.0
     "@loadable/babel-plugin": 5.13.2
     "@plone-collective/volto-sentry": 0.3.0
-    "@plone/volto": 16.5.0
+    "@plone/volto": 16.8.1
     "@release-it/conventional-changelog": ^2.0.1
     bootstrap-italia: 2.0.9
     bundlewatch: ^0.3.3
@@ -7860,7 +7868,7 @@ __metadata:
     typeface-titillium-web: 0.0.72
     volto-blocks-widget: 3.0.0
     volto-customer-satisfaction: 1.0.0
-    volto-data-grid-widget: 1.0.3
+    volto-data-grid-widget: 2.1.0
     volto-dropdownmenu: 4.0.0
     volto-editablefooter: 5.0.1
     volto-form-block: 3.0.0
@@ -22364,12 +22372,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-data-grid-widget@npm:1.0.3":
-  version: 1.0.3
-  resolution: "volto-data-grid-widget@npm:1.0.3"
-  dependencies:
-    "@plone/scripts": "*"
-  checksum: 0c0b8ea30e31ff9a9dd53cfab21fe968e3f4e45fc3034b68e9d9c98d08d378467cd6cc6d48de6dfbebbe1feb9382938f1cb05789e1761671945ba07cc08d265e
+"volto-data-grid-widget@npm:2.1.0":
+  version: 2.1.0
+  resolution: "volto-data-grid-widget@npm:2.1.0"
+  peerDependencies:
+    "@plone/volto": ">=16.0.0-alpha.38"
+  checksum: bcd7a85585c3d9ac59a071c1b5a7d17e0672877bed992aaa4e4257bf219ce63eee8c9c64a547ff6aab31a1a18f6354c2c2164b499e02c3852e1f7c08b1a732c9
   languageName: node
   linkType: hard
 
