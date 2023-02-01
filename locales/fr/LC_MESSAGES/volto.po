@@ -1576,11 +1576,6 @@ msgstr "Déclaration d'impôts"
 msgid "dirigente"
 msgstr "Directeur"
 
-#: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
-# defaultMessage: Documenti
-msgid "documenti"
-msgstr "Documents"
-
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Documenti e dati
 msgid "documenti-e-dati"
@@ -2322,7 +2317,7 @@ msgid "order_by"
 msgstr "Trier par"
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
-# defaultMessage: Organizzazione di riferimento
+# defaultMessage: Organizzazione
 msgid "organizzazione_riferimento"
 msgstr "Organisation de référence"
 
@@ -3395,6 +3390,7 @@ msgstr "Entrez du texte"
 msgid "tipologia_bando"
 msgstr "Type d'appel"
 
+#: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Tipo di incarico
 msgid "tipologia_incarico"

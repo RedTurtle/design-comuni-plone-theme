@@ -1574,11 +1574,6 @@ msgstr ""
 msgid "dirigente"
 msgstr ""
 
-#: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
-# defaultMessage: Documenti
-msgid "documenti"
-msgstr ""
-
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Documenti e dati
 msgid "documenti-e-dati"
@@ -2320,7 +2315,7 @@ msgid "order_by"
 msgstr ""
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
-# defaultMessage: Organizzazione di riferimento
+# defaultMessage: Organizzazione
 msgid "organizzazione_riferimento"
 msgstr ""
 
@@ -3393,6 +3388,7 @@ msgstr ""
 msgid "tipologia_bando"
 msgstr ""
 
+#: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Tipo di incarico
 msgid "tipologia_incarico"

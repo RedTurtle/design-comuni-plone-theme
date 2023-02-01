@@ -1559,11 +1559,6 @@ msgstr "Tax declaration"
 msgid "dirigente"
 msgstr "Manager"
 
-#: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
-# defaultMessage: Documenti
-msgid "documenti"
-msgstr "Documents"
-
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Documenti e dati
 msgid "documenti-e-dati"
@@ -2305,7 +2300,7 @@ msgid "order_by"
 msgstr "Order by"
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
-# defaultMessage: Organizzazione di riferimento
+# defaultMessage: Organizzazione
 msgid "organizzazione_riferimento"
 msgstr "Reference organization"
 
@@ -3378,6 +3373,7 @@ msgstr "Insert a value"
 msgid "tipologia_bando"
 msgstr "Type of call"
 
+#: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Tipo di incarico
 msgid "tipologia_incarico"

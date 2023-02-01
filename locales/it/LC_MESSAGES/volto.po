@@ -1559,11 +1559,6 @@ msgstr "Dichiarazione dei redditi"
 msgid "dirigente"
 msgstr "Dirigente"
 
-#: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
-# defaultMessage: Documenti
-msgid "documenti"
-msgstr "Documenti"
-
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Documenti e dati
 msgid "documenti-e-dati"
@@ -2305,9 +2300,9 @@ msgid "order_by"
 msgstr "Ordina per"
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
-# defaultMessage: Organizzazione di riferimento
+# defaultMessage: Organizzazione
 msgid "organizzazione_riferimento"
-msgstr "Organizzazione di riferimento"
+msgstr "Organizzazione"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
@@ -2422,7 +2417,7 @@ msgstr "Provvedimento finale"
 #: components/ItaliaTheme/View/VenueView/VenueWhere
 # defaultMessage: Quartiere
 msgid "quartiere"
-msgstr "Quartiere "
+msgstr "Quartiere"
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeader
 # defaultMessage: Tempo di lettura
@@ -3378,6 +3373,7 @@ msgstr "Inserisci un valore"
 msgid "tipologia_bando"
 msgstr "Tipologia del bando"
 
+#: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Tipo di incarico
 msgid "tipologia_incarico"
