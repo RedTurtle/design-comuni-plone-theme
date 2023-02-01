@@ -57,174 +57,378 @@ const mock_mandatory = {
 const mock_allfields = {
   ...mock_mandatory,
   allow_discussion: false,
-  //blocks: {
-  //  '00228483-b071-4c68-a565-92a90549cf48': {
-  //    '@type': 'title',
-  //},
-  // '0cf3f1df-c020-40eb-8f33-f265bb19dad1': {
-  //   '@type': 'description',
-  // },
-  // '2d02f60e-5bc9-4382-bded-87b5c5aa405b': {
-  //   '@type': 'listing',
-  //   block: '2d02f60e-5bc9-4382-bded-87b5c5aa405b',
-  //   headlineTag: 'h2',
-  //   hide_dates: false,
-  //   linkHref: [
-  //     {
-  //       '@id': '/documenti-e-dati',
-  //       Description: '',
-  //       Title: 'Documenti e dati',
-  //       title: 'Documenti e dati',
-  //     },
-  //   ],
-  //   linkTitle: 'Tutti i documenti',
-  //   query: [],
-  //   querystring: {
-  //     query: [
-  //       {
-  //         i: 'portal_type',
-  //         o: 'plone.app.querystring.operation.selection.any',
-  //         v: ['Documento'],
-  //       },
-  //     ],
-  //     sort_order: 'ascending',
-  //   },
-  //   show_description: true,
-  //   show_detail_link: false,
-  //   show_icon: false,
-  //   show_path_filters: false,
-  //   show_section: true,
-  //   show_type: false,
-  //   title: 'Documenti',
-  //   variation: 'simpleCard',
-  // },
-  // '4036e2cc-199b-4d9f-9584-877b06a113d2': {
-  //   '@type': 'text',
-  // },
-  // '795d6f3a-970a-47b1-8ad1-cc8ada0f70bc': {
-  //   '@type': 'listing',
-  //   block: '795d6f3a-970a-47b1-8ad1-cc8ada0f70bc',
-  //   headlineTag: 'h2',
-  //   hide_dates: false,
-  //   linkHref: [
-  //     {
-  //       '@id': '/amministrazione',
-  //       Description: '',
-  //       Title: 'Amministrazione',
-  //       title: 'Amministrazione',
-  //     },
-  //   ],
-  //   linkTitle: "Tutta l'amministrazione",
-  //   path_filters: {},
-  //   query: [],
-  //   querystring: {
-  //     limit: '3',
-  //     query: [
-  //       {
-  //         i: 'portal_type',
-  //         o: 'plone.app.querystring.operation.selection.any',
-  //         v: ['UnitaOrganizzativa', 'Persona'],
-  //       },
-  //     ],
-  //     sort_order: 'ascending',
-  //   },
-  //   show_description: true,
-  //   show_detail_link: false,
-  //   show_icon: false,
-  //   show_path_filters: false,
-  //   show_section: true,
-  //   show_type: false,
-  //   title: 'Amministrazione',
-  //   variation: 'simpleCard',
-  // },
-  // '7e34a700-a41e-4a44-9e04-2e51c5e1d9b0': {
-  //   '@type': 'listing',
-  //   block: '7e34a700-a41e-4a44-9e04-2e51c5e1d9b0',
-  //   headlineTag: 'h2',
-  //   hide_dates: false,
-  //   linkHref: [
-  //     {
-  //       '@id': '/servizi',
-  //       Description: '',
-  //       Title: 'Servizi',
-  //       title: 'Servizi',
-  //     },
-  //   ],
-  //   linkTitle: 'Tutti i servizi',
-  //   query: [],
-  //   querystring: {
-  //     limit: '3',
-  //     query: [
-  //       {
-  //         i: 'portal_type',
-  //         o: 'plone.app.querystring.operation.selection.any',
-  //         v: ['Servizio'],
-  //       },
-  //     ],
-  //     sort_order: 'ascending',
-  //   },
-  //   show_description: true,
-  //   show_detail_link: false,
-  //   show_icon: false,
-  //   show_path_filters: false,
-  //   show_section: true,
-  //   show_type: false,
-  //   title: 'Servizi',
-  //   variation: 'simpleCard',
-  // },
-  // 'cc6f7851-ad0f-4eb1-bba0-1d23750b6fe8': {
-  //   '@type': 'listing',
-  //   always_show_image: false,
-  //   autoplay: false,
-  //   autoplay_speed: 2,
-  //   block: 'cc6f7851-ad0f-4eb1-bba0-1d23750b6fe8',
-  //   headlineTag: 'h2',
-  //   hide_dates: false,
-  //   linkHref: [
-  //     {
-  //       '@id': '/notizie',
-  //       Description: '',
-  //       Title: 'Notizie',
-  //       title: 'Notizie',
-  //     },
-  //   ],
-  //   linkTitle: 'Tutte le novità',
-  //   natural_image_size: false,
-  //   path_filters: {},
-  //   query: [],
-  //   querystring: {
-  //     limit: '3',
-  //     query: [
-  //       {
-  //         i: 'portal_type',
-  //         o: 'plone.app.querystring.operation.selection.any',
-  //         v: ['News Item', 'Event'],
-  //       },
-  //     ],
-  //     sort_order: 'ascending',
-  //   },
-  //   set_four_columns: false,
-  //   show_block_bg: true,
-  //   show_description: true,
-  //   show_detail_link: false,
-  //   show_dots: true,
-  //   show_icon: false,
-  //   show_image_popup: false,
-  //   show_image_title: true,
-  //   show_only_first_ribbon: false,
-  //   show_path_filters: false,
-  //   show_pointer_list: false,
-  //   show_section: false,
-  //   show_topics: false,
-  //   show_type: true,
-  //   slidesToShow: 1,
-  //   title: 'Novità',
-  //   variation: 'cardWithImageTemplate',
-  // },
-  // },
+  blocks: {
+    '00228483-b071-4c68-a565-92a90549cf48': {
+      '@type': 'title',
+    },
+    '0cf3f1df-c020-40eb-8f33-f265bb19dad1': {
+      '@type': 'description',
+    },
+    '2d02f60e-5bc9-4382-bded-87b5c5aa405b': {
+      '@type': 'listing',
+      block: '2d02f60e-5bc9-4382-bded-87b5c5aa405b',
+      headlineTag: 'h2',
+      hide_dates: false,
+      linkHref: [
+        {
+          '@id': '/documenti-e-dati',
+          Description: '',
+          Title: 'Documenti e dati',
+          title: 'Documenti e dati',
+        },
+      ],
+      linkTitle: 'Tutti i documenti',
+      query: [],
+      querystring: {
+        query: [
+          {
+            i: 'portal_type',
+            o: 'plone.app.querystring.operation.selection.any',
+            v: ['Documento'],
+          },
+        ],
+        sort_order: 'ascending',
+      },
+      show_description: true,
+      show_detail_link: false,
+      show_icon: false,
+      show_path_filters: false,
+      show_section: true,
+      show_type: false,
+      title: 'Documenti',
+      variation: 'simpleCard',
+    },
+    '4036e2cc-199b-4d9f-9584-877b06a113d2': {
+      '@type': 'text',
+    },
+    '795d6f3a-970a-47b1-8ad1-cc8ada0f70bc': {
+      '@type': 'listing',
+      block: '795d6f3a-970a-47b1-8ad1-cc8ada0f70bc',
+      headlineTag: 'h2',
+      hide_dates: false,
+      linkHref: [
+        {
+          '@id': '/amministrazione',
+          Description: '',
+          Title: 'Amministrazione',
+          title: 'Amministrazione',
+        },
+      ],
+      linkTitle: "Tutta l'amministrazione",
+      path_filters: {},
+      query: [],
+      querystring: {
+        limit: '3',
+        query: [
+          {
+            i: 'portal_type',
+            o: 'plone.app.querystring.operation.selection.any',
+            v: ['UnitaOrganizzativa', 'Persona'],
+          },
+        ],
+        sort_order: 'ascending',
+      },
+      show_description: true,
+      show_detail_link: false,
+      show_icon: false,
+      show_path_filters: false,
+      show_section: true,
+      show_type: false,
+      title: 'Amministrazione',
+      variation: 'simpleCard',
+    },
+    '7e34a700-a41e-4a44-9e04-2e51c5e1d9b0': {
+      '@type': 'listing',
+      block: '7e34a700-a41e-4a44-9e04-2e51c5e1d9b0',
+      headlineTag: 'h2',
+      hide_dates: false,
+      linkHref: [
+        {
+          '@id': '/servizi',
+          Description: '',
+          Title: 'Servizi',
+          title: 'Servizi',
+        },
+      ],
+      linkTitle: 'Tutti i servizi',
+      query: [],
+      querystring: {
+        limit: '3',
+        query: [
+          {
+            i: 'portal_type',
+            o: 'plone.app.querystring.operation.selection.any',
+            v: ['Servizio'],
+          },
+        ],
+        sort_order: 'ascending',
+      },
+      show_description: true,
+      show_detail_link: false,
+      show_icon: false,
+      show_path_filters: false,
+      show_section: true,
+      show_type: false,
+      title: 'Servizi',
+      variation: 'simpleCard',
+    },
+    'cc6f7851-ad0f-4eb1-bba0-1d23750b6fe8': {
+      '@type': 'listing',
+      always_show_image: false,
+      autoplay: false,
+      autoplay_speed: 2,
+      block: 'cc6f7851-ad0f-4eb1-bba0-1d23750b6fe8',
+      headlineTag: 'h2',
+      hide_dates: false,
+      linkHref: [
+        {
+          '@id': '/notizie',
+          Description: '',
+          Title: 'Notizie',
+          title: 'Notizie',
+        },
+      ],
+      linkTitle: 'Tutte le novità',
+      natural_image_size: false,
+      path_filters: {},
+      query: [],
+      querystring: {
+        limit: '3',
+        query: [
+          {
+            i: 'portal_type',
+            o: 'plone.app.querystring.operation.selection.any',
+            v: ['News Item', 'Event'],
+          },
+        ],
+        sort_order: 'ascending',
+      },
+      set_four_columns: false,
+      show_block_bg: true,
+      show_description: true,
+      show_detail_link: false,
+      show_dots: true,
+      show_icon: false,
+      show_image_popup: false,
+      show_image_title: true,
+      show_only_first_ribbon: false,
+      show_path_filters: false,
+      show_pointer_list: false,
+      show_section: false,
+      show_topics: false,
+      show_type: true,
+      slidesToShow: 1,
+      title: 'Novità',
+      variation: 'cardWithImageTemplate',
+    },
+  },
   description:
     'Informazioni su eventi sportivi, impianti comunali, servizi dedicati allo sport',
   icona: 'child',
+  image: {
+    'content-type': 'image/png',
+    download:
+      'http://localhost:3000/argomenti/sport/@@images/image-1156-4ffcd0c77ca4a1c9c64a80649bdae352.png',
+    filename: 'foto-ospedale.png',
+    height: 940,
+    scales: {
+      gallery: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-250-a830b05cc226c10022663a8870939760.png',
+        height: 203,
+        width: 250,
+      },
+      great: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-1200-893c7283628ec9c36465079d21f05ee0.png',
+        height: 940,
+        width: 1156,
+      },
+      huge: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-1600-11978e33cf1496dcad5ddf72d2addfec.png',
+        height: 940,
+        width: 1156,
+      },
+      icon: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-32-17e65f3e8aa84ed6073fb06d3892f807.png',
+        height: 26,
+        width: 32,
+      },
+      large: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-800-e0ccedc3da400dddb644eb871a129d2e.png',
+        height: 650,
+        width: 800,
+      },
+      larger: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-1000-3a8204d5166f1788579b76d41b11112d.png',
+        height: 813,
+        width: 1000,
+      },
+      listing: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-16-da545670ce47827cdc7612634f04d8a5.png',
+        height: 13,
+        width: 16,
+      },
+      midi: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-300-cb33c44a55ea9f4842c74cb28a365930.png',
+        height: 243,
+        width: 300,
+      },
+      mini: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-200-f0240dabd42962ce5490a48211561f71.png',
+        height: 162,
+        width: 200,
+      },
+      preview: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-400-fdf79ef230c6d931e9bf20e038fc30f0.png',
+        height: 325,
+        width: 400,
+      },
+      teaser: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-600-371729b4ca1e8bb32d1e06860dbb8533.png',
+        height: 487,
+        width: 600,
+      },
+      thumb: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-128-857bb85322609c7b73d7e111bc7732b9.png',
+        height: 104,
+        width: 128,
+      },
+      tile: {
+        download:
+          'http://localhost:3000/argomenti/sport/@@images/image-64-49d29cadb948f4e10b6fadce6877477c.png',
+        height: 52,
+        width: 64,
+      },
+    },
+    size: 1296882,
+    width: 1156,
+  },
+  image_caption: 'Didascalia immagine testata',
+  relatedItems: [
+    {
+      '@id': 'http://localhost:3000/eventi/mega-evento',
+      '@type': 'Event',
+      description: 'Descrizione del mega evento',
+      design_italia_meta_type: 'Evento',
+      effective: null,
+      end: '2023-01-20T09:00:00+00:00',
+      has_children: true,
+      id: 'mega-evento',
+      image_field: 'preview_image',
+      image_scales: {
+        preview_image: [
+          {
+            'content-type': 'image/jpeg',
+            download:
+              'http://localhost:3000/eventi/mega-evento/@@images/preview_image-5184-b5d567a7ba608b94404e30c90b255c22.jpeg',
+            filename: 'national-cancer-institute.jpeg',
+            height: 3456,
+            scales: {
+              gallery: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-250-1ec9475de2124b017f1dd92d4888a04a.jpeg',
+                height: 166,
+                width: 250,
+              },
+              great: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-1200-dce45656c72c5e2fda91d15ea1700b38.jpeg',
+                height: 800,
+                width: 1200,
+              },
+              huge: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-1600-43b4907c74976d400296f42c4bee8b89.jpeg',
+                height: 1066,
+                width: 1600,
+              },
+              icon: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-32-10fa05879a725f1c0a79ff6cb9299c97.jpeg',
+                height: 21,
+                width: 32,
+              },
+              large: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-800-be70acf978f5aacbe83af8482c6a2381.jpeg',
+                height: 533,
+                width: 800,
+              },
+              larger: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-1000-820f7ead7e59728ce3ee9bb8021ec950.jpeg',
+                height: 666,
+                width: 1000,
+              },
+              listing: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-16-ab5be9555a009fb3de92b9d049462440.jpeg',
+                height: 10,
+                width: 16,
+              },
+              midi: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-300-8edca2b5c68239a69a87584b16f146e4.jpeg',
+                height: 200,
+                width: 300,
+              },
+              mini: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-200-10ce8dad9c6577e5f08e12bc7d94be91.jpeg',
+                height: 133,
+                width: 200,
+              },
+              preview: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-400-0500bc73ae0d0d6f304e4de314a41e73.jpeg',
+                height: 266,
+                width: 400,
+              },
+              teaser: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-600-389097fa4b7b5dee7b16be86a1957043.jpeg',
+                height: 400,
+                width: 600,
+              },
+              thumb: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-128-91e9caaa30bdb024c025190a58db4eae.jpeg',
+                height: 85,
+                width: 128,
+              },
+              tile: {
+                download:
+                  'http://localhost:3000/eventi/mega-evento/@@images/preview_image-64-7d4fda773924ded6e0ac3321d3046c81.jpeg',
+                height: 42,
+                width: 64,
+              },
+            },
+            size: 2026538,
+            width: 5184,
+          },
+        ],
+      },
+      review_state: 'private',
+      start: '2023-01-20T09:00:00+00:00',
+      title: 'Mega Evento',
+    },
+  ],
+  ulteriori_informazioni: {
+    'content-type': 'text/html',
+    data: "<p>There's a lady who's sure</p>",
+    encoding: 'utf8',
+  },
   unita_amministrative_responsabili: [
     {
       '@id':
@@ -262,50 +466,6 @@ const mock_allfields = {
       zip_code: '50302',
     },
   ],
-  // image: {
-  //   'content-type': 'image/jpeg',
-  //   download:
-  //     'http://loremipsum.com/cultura/@@images/bf6af857-5fd1-4353-b270-830577b3bd6e.jpeg',
-  //   filename: 'immagine.jpg',
-  //   height: 1050,
-  //   size: 193044,
-  //   width: 1680,
-  // },
-  // image_caption: 'Caption immagine',
-  // relatedItems: [
-  //   {
-  //     '@id': 'http://loremipsum.com/related_pagina',
-  //     '@type': 'Document',
-  //     description: '',
-  //     review_state: 'published',
-  //     title: 'Pagina1',
-  //   },
-  // ],
-  // related_doc: [
-  //   {
-  //     '@id': 'http://loremipsum.it/loremdoc',
-  //     description:
-  //       "Breve descrizione dell'elemento del servizio di potatura e sfalcio",
-  //     title: 'Documento',
-  //   },
-  // ],
-  // related_news: [
-  //   {
-  //     '@id': 'http://loremipsum.it/lorem_news',
-  //     description: 'Una descrizione descrittiva della notizia descritta',
-  //     effective: '2020/02/14 11:36:00 GMT+1',
-  //     title: 'Un titolo',
-  //     typology: 'Notizia',
-  //   },
-  // ],
-  // related_servizio: [
-  //   {
-  //     '@id': 'http://loremipsum.it/lorem_servizio',
-  //     description:
-  //       "Breve descrizione dell'elemento del servizio di potatura e sfalcio",
-  //     title: 'Servizio di potatura e sfalcio',
-  //   },
-  // ],
 };
 
 // const with_blocks = {
@@ -428,6 +588,22 @@ const store = mockStore({
   intl: {
     locale: 'en',
     messages: {},
+  },
+  breadcrumbs: {
+    error: null,
+    items: [
+      {
+        title: 'Argomenti',
+        url: '/argomenti',
+      },
+      {
+        title: 'Sport',
+        url: '/argomenti/sport',
+      },
+    ],
+    root: '',
+    loaded: true,
+    loading: false,
   },
   content: {
     data: {
@@ -625,41 +801,27 @@ test('expect to have all fields in page', async () => {
       </MemoryRouter>
     </Provider>,
   );
+
   //descrizione
   expect(
     screen.getByText(/Informazioni su eventi sportivi/i, { exact: false }),
   ).toBeInTheDocument();
-  // icona
-  //???
 
   //unità amministrative responsabili
-  await screen.findByText(/gestione impianti sportivi/i);
-  screen.debug();
   expect(screen.getByText(/gestione impianti sportivi/i)).toBeInTheDocument();
 
-  // image
-  // expect(getByAltText(/Caption immagine/i)).toBeInTheDocument();
-  // image_caption
-  // expect(getByText(/Caption immagine/i)).toBeInTheDocument();
+  //didascalia immagine testata --> non mostrata in pagina
+  expect(screen.getByText('Didascalia immagine testata')).toBeInTheDocument();
+  //didascalia immagine preview --> non mostrata in pagina
+  expect(screen.getByText('Preview description')).toBeInTheDocument();
 
-  // relatedItems
-  // const related_items = await waitForElement(() =>
-  //   getByText(/Pagina Related/i),
-  // );
-  // expect(related_items).toBeInTheDocument();
+  // Ulteriori informazioni
+  expect(screen.getByText(/There's a lady who's sure/i)).toBeInTheDocument();
 
-  // related news
-  // expect(getByText(/Novità/i)).toBeInTheDocument();
-
-  // related doc
-  // const related_doc = await waitForElement(() => getByText(/Pagina doc/i));
-  // expect(related_doc).toBeInTheDocument();
-
-  // related service
-  // const related_service = await waitForElement(() =>
-  //   getByText(/Pagina Servizio/i),
-  // );
-  // expect(related_service).toBeInTheDocument();
+  //Eventi correlati
+  expect(
+    screen.getByRole('link', { name: /Mega evento/i }),
+  ).toBeInTheDocument();
 });
 
 // TypeError: Cannot read property 'items' of undefined

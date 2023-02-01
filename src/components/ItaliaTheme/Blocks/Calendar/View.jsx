@@ -4,6 +4,7 @@ import Body from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Calend
 import { getBaseUrl } from '@plone/volto/helpers';
 
 const View = ({ data, path, id }) => {
+  console.log(data);
   return (
     <div className="block full-width">
       <div className="calendar">

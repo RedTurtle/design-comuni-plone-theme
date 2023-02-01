@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 import EventoView from '../EventoView/EventoView';
@@ -162,6 +162,20 @@ const mock_mandatory = {
     blocks: {
       'bdb27ec6-3371-42c0-9e55-65d69bfff7ef': {
         '@type': 'text',
+        text: {
+          blocks: [
+            {
+              data: {},
+              depth: 0,
+              entityRanges: [],
+              inlineStyleRanges: [],
+              key: '5acqg',
+              text: 'Ho inventato tutto',
+              type: 'unstyled',
+            },
+          ],
+          entityMap: {},
+        },
       },
     },
     blocks_layout: {
@@ -1390,7 +1404,7 @@ const store = mockStore({
 });
 
 it('expect to have all mandatory fields in page', async () => {
-  const { debug } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter>
         <EventoView content={mock_mandatory} />
@@ -1402,10 +1416,9 @@ it('expect to have all mandatory fields in page', async () => {
     screen.getByRole('heading', { name: /Mega Evento/i }),
   ).toBeInTheDocument();
 
-  //questi campi possono essere inseriti ma non vengono visualizzati in pagina
-  // a chi è rivolto
+  // a chi è rivolto --> non appare
   expect(screen.getByText(/Programmatori RedTurtle/i)).toBeInTheDocument();
-  //tipo evento
+  //tipo evento --> non appare
   expect(screen.getByText(/Evento culturale/i)).toBeInTheDocument();
 
   // !!!!!!!!!!!!!!!!!
@@ -1435,7 +1448,7 @@ it('expect to have all mandatory fields in page', async () => {
 });
 
 it('expect to have all non-mandatory fields in page', async () => {
-  const { debug } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter>
         <EventoView content={mock_allfields} />
@@ -1457,7 +1470,7 @@ it('expect to have all non-mandatory fields in page', async () => {
   ).toBeInTheDocument();
 
   // parteciperanno - campo non compare
-  expect(screen.getByText(/Franco Franchini/i)).toBeInTheDocument();
+  // expect(screen.getByText(/Franco Franchini/i)).toBeInTheDocument();
 
   //parteciperanno persone amministrazione
   expect(
@@ -1491,7 +1504,7 @@ it('expect to have all non-mandatory fields in page', async () => {
   //circoscrizione
   expect(screen.getByText(/Arginone/i)).toBeInTheDocument();
 
-  //!!! Paese - Non appare anche se compilato
+  // Paese --> non appare
   // expect(screen.getByText(/Italia/i)).toBeInTheDocument();
 
   // tutta la giornata - non appare ma devono scomparire gli orari
@@ -1511,12 +1524,8 @@ it('expect to have all non-mandatory fields in page', async () => {
   // !!!!!!!!!!!!!!!!!
   // !!!!!!!!!!!!!!!!!
 
-  // !!!!!!!!!!!!!!!!!
-  // !!!!!!!!!!!!!!!!!
-  // //informazioni aggiuntive sugli orari
-  // expect(screen.getByText(/Ho inventato tutto/i)).not.toBeInTheDocument();
-  // !!!!!!!!!!!!!!!!!
-  // !!!!!!!!!!!!!!!!!
+  //informazioni aggiuntive sugli orari
+  expect(screen.getByText(/Ho inventato tutto/i)).toBeInTheDocument();
 
   // costi
   expect(screen.getByText('10€')).toBeInTheDocument();

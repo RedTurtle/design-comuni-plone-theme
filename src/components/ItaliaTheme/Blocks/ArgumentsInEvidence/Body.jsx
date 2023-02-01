@@ -12,6 +12,7 @@ class Body extends SubblockEdit {
     };
     if (!__SERVER__) {
     }
+    console.log(props.data);
   }
 
   /**
