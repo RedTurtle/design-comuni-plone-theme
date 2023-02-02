@@ -77,7 +77,6 @@ const Image = ({
       const newSrcSet = srcSet
         .filter((s, index) => {
           const addable = (ss) => {
-            const devicePixelRatio = window.devicePixelRatio;
             const w = ss
               ? parseInt(ss.split(' ')[1].replace('w', ''), 10)
               : null;
