@@ -258,7 +258,22 @@ body.cms-ui {
       fill: #999 !important;
     }
   }
-
+  .sidebar-container {
+    .breadcrumbs {
+      .breadcrumb {
+        flex-wrap: wrap;
+        a.section {
+          max-width: 33.33%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          &:last-child {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
   .icon-align-name {
     svg.icon {
       margin-right: 0.75rem !important;
