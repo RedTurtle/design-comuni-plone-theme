@@ -133,8 +133,8 @@ test('View renders all fields', async () => {
     screen.getByPlaceholderText(/Cerca per parola chiave/i),
   ).toBeInTheDocument();
   //select filters
-  // const selectFilters = document.getElementsByClassName('select-filter');
-  // expect(selectFilters).toHaveLength(1);
+  const selectFilters = document.getElementsByClassName('select-filter');
+  expect(selectFilters).toHaveLength(1);
   // const dateFilters = document.querySelector('.date-filter');
   // expect(dateFilters).toHaveLength(1);
 

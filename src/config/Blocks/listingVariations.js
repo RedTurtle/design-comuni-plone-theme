@@ -217,6 +217,7 @@ const italiaListingVariations = [
     template: BandiInEvidenceTemplate,
     skeleton: BandiInEvidenceTemplateSkeleton,
     schemaEnhancer: ({ schema, formData, intl }) => {
+      console.log(schema);
       let pos = addDefaultOptions(schema, formData, intl);
       addBandiInEvidenceTemplateOptions(schema, formData, intl, pos);
       return schema;
