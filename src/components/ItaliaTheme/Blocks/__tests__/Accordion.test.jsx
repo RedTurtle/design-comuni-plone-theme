@@ -1,10 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import AccordionView from '../../Accordion/View';
+import AccordionView from '../Accordion/View';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-intl-redux';
-import { MemoryRouter } from 'react-router-dom';
 import thunk from 'redux-thunk';
 
 const middlewares = [thunk];
@@ -58,7 +57,7 @@ const store = mockStore({
 });
 
 test('View renders all fields', async () => {
-  const { getByText, getByRole, debug } = render(
+  render(
     <Provider store={store}>
       <AccordionView data={mock_fields} />
     </Provider>,

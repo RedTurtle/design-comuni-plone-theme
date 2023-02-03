@@ -1,10 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import AlertView from '../../Alert/View';
+import AlertView from '../Alert/View';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-intl-redux';
-import { MemoryRouter } from 'react-router-dom';
 import thunk from 'redux-thunk';
 
 const middlewares = [thunk];
@@ -43,25 +42,20 @@ const store = mockStore({
 });
 
 test('View renders all fields', async () => {
-  const { getByText, getByRole, debug } = render(
+  render(
     <Provider store={store}>
       <AlertView data={mock_fields} />
     </Provider>,
   );
 
+  //title
   expect(screen.getByText(/Ciao/i)).toBeInTheDocument();
 
+  //immagine
   const images = document.getElementsByClassName('left-image');
   expect(images.length).toBe(1);
-});
 
-test('alert gets correct classname when changing button in sidebar', async () => {
-  const { getByText, getByRole, debug } = render(
-    <Provider store={store}>
-      <AlertView data={mock_fields} />
-    </Provider>,
-  );
-
+  //sfondo
   const alertBox = document.getElementsByClassName('row-full-width');
   expect(alertBox[0]).toHaveClass('bg-alert-warning');
 });

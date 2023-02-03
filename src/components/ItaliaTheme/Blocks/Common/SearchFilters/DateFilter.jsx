@@ -175,6 +175,7 @@ const getDateRangePickerPhrases = (intl) => {
   };
 };
 const DateFilter = (props) => {
+  console.log(props);
   const intl = useIntl();
   const [focusedDateInput, setFocusedDateInput] = useState(null);
   const {
