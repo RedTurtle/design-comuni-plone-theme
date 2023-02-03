@@ -15,7 +15,6 @@ const messages = defineMessages({
 });
 
 const StoresButtons = ({ data }) => {
-  console.log(data);
   const intl = useIntl();
 
   return (

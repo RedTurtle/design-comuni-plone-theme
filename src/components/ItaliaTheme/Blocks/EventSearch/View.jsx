@@ -4,7 +4,6 @@ import Body from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/EventS
 import { getBaseUrl } from '@plone/volto/helpers';
 
 const View = ({ data, id, path, properties, block }) => {
-  console.log(data);
   return (
     <div className="event-search">
       <div className="event-search">

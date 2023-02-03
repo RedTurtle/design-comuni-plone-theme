@@ -12,8 +12,10 @@ const mockStore = configureStore(middlewares);
 
 const mock_fields = {
   '@type': 'hero',
+  appStoreLink: '/',
   moreHref: 'http://localhost:3000/argomenti',
   moreTitle: 'She spoke just like a baroness',
+  playStoreLink: '/',
   show_block_bg: true,
   title: '',
 };
@@ -38,12 +40,9 @@ test('View renders all fields', async () => {
   expect(
     screen.getByText(/She spoke just like a baroness/i),
   ).toBeInTheDocument();
-  //select filters
-  // const selectFilters = document.getElementsByClassName('select-filter');
-  // expect(selectFilters).toHaveLength(1);
-  // const dateFilters = document.querySelector('.date-filter');
-  // expect(dateFilters).toHaveLength(1);
 
-  //bottone cerca
-  expect(screen.getByRole('button', { name: /Cerca/i })).toBeInTheDocument();
+  //app store link
+  expect(screen.getByRole('link', { name: /App store/i }));
+  //play store link
+  expect(screen.getByRole('link', { name: /Play store/i }));
 });
