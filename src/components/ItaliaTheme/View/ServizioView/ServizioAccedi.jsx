@@ -5,6 +5,7 @@ import {
   RichText,
   RichTextSection,
   richTextHasContent,
+  OfficeCard,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const ServizioAccedi = ({ content }) => {
@@ -30,6 +31,9 @@ const ServizioAccedi = ({ content }) => {
         </div>
       )}
       <RichText content={content.prenota_appuntamento} />
+      {content.canale_fisico?.map?.((canale) => (
+        <OfficeCard key={canale['@id']} office={canale} load_data={false} />
+      ))}
     </RichTextSection>
   ) : null;
 };
