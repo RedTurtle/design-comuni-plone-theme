@@ -262,13 +262,20 @@ body.cms-ui {
     .breadcrumbs {
       .breadcrumb {
         flex-wrap: wrap;
+        row-gap: 0.5em;
         a.section {
           max-width: 33.33%;
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
+          &:hover {
+            white-space: normal;
+            text-overflow: unset;
+          }
           &:last-child {
-            max-width: 100%;
+            max-width: none;
+            white-space: normal;
+            text-overflow: unset;
           }
         }
       }
