@@ -54,7 +54,6 @@ const CardWithImageTemplate = (props) => {
     natural_image_size = false,
     id_lighthouse,
   } = props;
-
   const imagesToShow = set_four_columns ? 4 : 3;
 
   return (
@@ -86,7 +85,6 @@ const CardWithImageTemplate = (props) => {
               (index < imagesToShow || always_show_image) && image != null;
             const category = getCategory(item, show_type, show_section, props);
             const topics = show_topics ? item.tassonomia_argomenti : null;
-
             return (
               <Col
                 lg={set_four_columns ? '3' : '4'}

@@ -77,7 +77,6 @@ const BandiInEvidenceTemplate = ({
   linkTitle,
   linkHref,
 }) => {
-  console.log(items);
   const intl = useIntl();
   return (
     <div className="bandi-in-evidence">

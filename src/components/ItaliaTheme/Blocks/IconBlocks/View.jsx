@@ -18,7 +18,6 @@ import config from '@plone/volto/registry';
  * @extends Component
  */
 const AccordionView = ({ data, block }) => {
-  console.log(data);
   const id = new Date().getTime();
 
   return (
