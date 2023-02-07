@@ -14,7 +14,7 @@ import {
   SubsiteFooter,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/';
 
-import { CustomerSatisfaction } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { FeedbackForm as CustomerSatisfaction } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
 /**
  * Footer component class.
@@ -36,11 +36,7 @@ const Footer = ({ intl }) => {
       {contentType != null &&
         NoCustomerSatisfactionFor.indexOf(contentType) < 0 &&
         config.settings.siteProperties.enableCustomerSatisfaction && (
-          <div className="section section-inset-shadow py-3 px-0">
-            <Container className="px-4">
-              <CustomerSatisfaction />
-            </Container>
-          </div>
+          <CustomerSatisfaction />
         )}
 
       <SubsiteFooter />

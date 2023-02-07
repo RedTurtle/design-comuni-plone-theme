@@ -35,7 +35,8 @@
       ],
       "@italia/addons/volto-gdpr-privacy": [
         "../node_modules/volto-gdpr-privacy/src"
-      ]
+      ],
+      "@italia/addons/volto-feedback": ["../node_modules/volto-feedback/src"]
     },
     "baseUrl": "src"
   }

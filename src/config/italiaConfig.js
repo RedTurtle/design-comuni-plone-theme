@@ -18,6 +18,11 @@ import CardWithImageRssTemplate from 'design-comuni-plone-theme/components/Itali
 import CardWithImageRssTemplateSkeleton from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/TemplatesSkeleton/CardWithImageRssTemplateSkeleton';
 import CardWithoutImageRssTemplate from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate';
 import CardWithoutImageRssTemplateSkeleton from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/TemplatesSkeleton/CardWithoutImageRssTemplateSkeleton';
+import {
+  AnswersStep,
+  CommentsStep,
+  FeedbackForm,
+} from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import HandleAnchor from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HandleAnchor';
 import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/GenericAppExtras';
@@ -244,6 +249,19 @@ export default function applyConfig(voltoConfig) {
     'volto-editablefooter': {
       ...config.settings['volto-editablefooter'],
       options: { socials: true, newsletterSubscribe: true },
+    },
+    'volto-feedback': {
+      ...config.settings['volto-feedback'],
+      formSteps: [
+        {
+          step: 0,
+          pane: AnswersStep,
+        },
+        {
+          step: 1,
+          pane: CommentsStep,
+        },
+      ],
     },
     videoAllowExternalsDefault: false,
     showTrasparenzaFields: false,

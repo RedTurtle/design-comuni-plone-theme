@@ -7850,6 +7850,7 @@ __metadata:
     volto-data-grid-widget: 2.1.0
     volto-dropdownmenu: 4.0.0
     volto-editablefooter: 5.0.1
+    volto-feedback: "RedTurtle/volto-feedback#0.1.0"
     volto-form-block: 3.0.0
     volto-gdpr-privacy: 2.0.0
     volto-google-analytics: 2.0.0
@@ -19492,6 +19493,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semantic-ui-css@npm:2.5.0":
+  version: 2.5.0
+  resolution: "semantic-ui-css@npm:2.5.0"
+  dependencies:
+    jquery: x.*
+  checksum: f8f9bea6f06f084a9ab0bd0fa46191586a4fc94194f092fbd78deff49ee559257eb3ba9b732916073143fa7816348a7424684a94e60621e889cb184906a750d6
+  languageName: node
+  linkType: hard
+
 "semantic-ui-less@npm:2.4.1":
   version: 2.4.1
   resolution: "semantic-ui-less@npm:2.4.1"
@@ -22379,6 +22389,18 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
   checksum: 8aecc466a36f8b53b1c84cd1c29860d3078d4e54ed9da35d4e0ad221d8545eecf8c14a324194c1a939fc21eca02b768367ade32e3baef2a1af6e9cd1ce519d05
+  languageName: node
+  linkType: hard
+
+"volto-feedback@RedTurtle/volto-feedback#0.1.0":
+  version: 0.1.0
+  resolution: "volto-feedback@https://github.com/RedTurtle/volto-feedback.git#commit=3e9a60729a8f14d682f802324e39ea95f2abebab"
+  dependencies:
+    react-google-recaptcha-v3: 1.9.5
+    semantic-ui-css: 2.5.0
+  peerDependencies:
+    "@plone/volto": ">=16.0.0-alpha.38"
+  checksum: d158f8805d561bf6d090c6aa538ad3d51c0ed7605ba37325b5614b391b62c256af2b79e5ee9907e47f1a801202dcda17d8bf3e0e6d8f97c3e566cf0af54a66d6
   languageName: node
   linkType: hard
 
