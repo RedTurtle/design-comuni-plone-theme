@@ -1810,27 +1810,42 @@ msgstr "Fax"
 #: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
 # defaultMessage: Where did you encounter the biggest problems?
 msgid "feedback_answers_header_negative"
-msgstr ""
+msgstr "Dove hai incontrato le maggiori difficoltà?"
 
 #: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
 # defaultMessage: Which were the aspects you liked the most?
 msgid "feedback_answers_header_positive"
-msgstr ""
+msgstr "Quali sono stati gli aspetti che hai preferito?"
 
 #: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
 # defaultMessage: Do you want to add some more details?
 msgid "feedback_comments_header"
-msgstr ""
+msgstr "Vuoi aggiungere altri dettagli?"
+
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
+# defaultMessage: Comment is too long, maximum length is 200 characters
+msgid "feedback_comments_infotext_invalid"
+msgstr "Il testo è troppo lungo, la lunghezza massima è 200 caratteri"
+
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
+# defaultMessage: Add your comment, maximum length is 200 characters
+msgid "feedback_comments_infotext_valid"
+msgstr "Inserire massimo 200 caratteri"
+
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
+# defaultMessage: Comment
+msgid "feedback_comments_label_comment"
+msgstr "Dettaglio"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Next
 msgid "feedback_form_button_next"
-msgstr ""
+msgstr "Avanti"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Previous
 msgid "feedback_form_button_prev"
-msgstr ""
+msgstr "Indietro"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: No
@@ -1846,22 +1861,22 @@ msgstr ""
 #: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
 # defaultMessage: Explain us why, and help us improve the quality of the site
 msgid "feedback_form_suggestions_placeholder"
-msgstr ""
+msgstr "Dacci il tuo parere per aiutarci a migliorare la qualità del sito"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Thank you for your feedback!
 msgid "feedback_form_thank_you"
-msgstr ""
+msgstr "Grazie, il tuo parere ci aiuterà a migliorare il servizio!"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: How clear is the information on this page?
 msgid "feedback_form_title"
-msgstr ""
+msgstr "Quanto sono chiare le informazioni su questa pagina?"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Yes
 msgid "feedback_form_yes"
-msgstr ""
+msgstr "Si"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Your feedback was sent!

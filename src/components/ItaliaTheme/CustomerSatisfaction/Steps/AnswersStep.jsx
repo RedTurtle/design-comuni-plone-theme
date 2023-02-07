@@ -30,17 +30,12 @@ const AnswersStep = ({
 }) => {
   const initializeState = (newState) => setState(newState);
   const threshold = useMemo(() => getFeedbackThreshold(), []);
+  const selectedAnswer = getFormFieldValue('answer');
   const getInitialState = () => {
-    if (userFeedback === null) return {};
-    const questions = getFeedbackQuestions(userFeedback);
-    return questions?.reduce(
-      (acc, curr) => ({
-        ...acc,
-        [curr]: false,
-      }),
-      {},
-    );
+    if (userFeedback === null) return [];
+    return getFeedbackQuestions(userFeedback);
   };
+
   const [state, setState] = useState(getInitialState());
   const prevFeedback = usePrevious(userFeedback);
   useEffect(() => {
@@ -59,13 +54,9 @@ const AnswersStep = ({
   }, [userFeedback]);
 
   const handleAnswerChange = (e) => {
-    const newState = Object.keys(state).reduce((acc, curr) => {
-      if (curr === e.target.name) return { ...acc, [curr]: true };
-      else return { ...acc, [curr]: false };
-    }, {});
-    updateFormData('answer', e.target.name);
-    setState(newState);
+    updateFormData('answer', e.target.value);
   };
+
   return (
     <div
       id="vf-more"
@@ -85,13 +76,14 @@ const AnswersStep = ({
         className={'answers-header'}
       />
       <Form className="answers-form">
-        {Object.keys(state)?.map((s) => (
+        {state?.map((s) => (
           <FormGroup check key={s} className="border-bottom border-light mb-4">
             <Input
               name={s}
               id={s}
               type="radio"
-              value={getFormFieldValue('answer') === s}
+              checked={s === selectedAnswer}
+              value={s}
               onChange={handleAnswerChange}
               addon
             />
