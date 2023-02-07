@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import InEvidenceTemplate from '../../Listing/InEvidenceTemplate';
+import RibbonCardTemplate from '../../Listing/RibbonCardTemplate';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-intl-redux';
 import { MemoryRouter } from 'react-router-dom';
@@ -1077,331 +1077,10 @@ const mock_fields = {
       update_note: null,
       whole_day: true,
     },
-    {
-      '@id':
-        '/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa',
-      '@type': 'Event',
-      CreationDate: '2023-01-04T11:40:36+00:00',
-      Creator: 'admin',
-      Date: '2023-01-04T11:43:28+00:00',
-      Description: '',
-      EffectiveDate: 'None',
-      ExpirationDate: 'None',
-      ModificationDate: '2023-01-04T11:43:28+00:00',
-      Subject: [],
-      Subject_bando: null,
-      Title: "Il ballo dell'isola in festa",
-      Type: 'Evento',
-      UID: 'fb0f4858c1cf43f7b9c19086500d4c5a',
-      apertura_bando: null,
-      author_name: null,
-      chiusura_procedimento_bando: null,
-      cmf_uid: null,
-      commentators: [],
-      created: '2023-01-04T11:40:36+00:00',
-      data_conclusione_incarico: null,
-      description: '',
-      design_italia_meta_type: 'Evento',
-      destinatari_bando: null,
-      effective: null,
-      end: '2019-12-31T22:59:59+00:00',
-      ente_bando: null,
-      event_location: [],
-      exclude_from_nav: false,
-      expires: null,
-      geolocation: null,
-      getIcon: true,
-      getId: 'copy_of_il-ballo-dellisola-in-festa',
-      getObjSize: '2.5 MB',
-      getPath:
-        '/Plone/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa',
-      getRemoteUrl: null,
-      getURL:
-        'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa',
-      hasPreviewImage: true,
-      head_title: null,
-      icona: null,
-      id: 'copy_of_il-ballo-dellisola-in-festa',
-      image: {
-        scales: {
-          gallery: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/gallery',
-            height: 65536,
-            width: 250,
-          },
-          great: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/great',
-            height: 65536,
-            width: 1200,
-          },
-          huge: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/huge',
-            height: 65536,
-            width: 1600,
-          },
-          icon: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/icon',
-            height: 32,
-            width: 32,
-          },
-          large: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/large',
-            height: 65536,
-            width: 800,
-          },
-          larger: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/larger',
-            height: 65536,
-            width: 1000,
-          },
-          listing: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/listing',
-            height: 16,
-            width: 16,
-          },
-          midi: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/midi',
-            height: 65536,
-            width: 300,
-          },
-          mini: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/mini',
-            height: 65536,
-            width: 200,
-          },
-          preview: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/preview',
-            height: 65536,
-            width: 400,
-          },
-          teaser: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/teaser',
-            height: 65536,
-            width: 600,
-          },
-          thumb: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/thumb',
-            height: 65536,
-            width: 128,
-          },
-          tile: {
-            download:
-              'http://localhost:3000/eventi/363-festa-di-santefisio/copy_of_il-ballo-dellisola-in-festa/@@images/preview_image/tile',
-            height: 64,
-            width: 64,
-          },
-        },
-      },
-      image_field: 'preview_image',
-      image_scales: {
-        image: [
-          {
-            'content-type': 'image/png',
-            download:
-              '@@images/image-1156-df8f80bf09602fb53ccc700f897ec537.png',
-            filename: 'foto-ospedale.png',
-            height: 940,
-            scales: {
-              icon: {
-                download:
-                  '@@images/image-32-93d4452f8edf6664b53b3f7617a170e6.png',
-                height: 26,
-                width: 32,
-              },
-              large: {
-                download:
-                  '@@images/image-800-87e4af79c9a0f6fb63355ca6b05edc0f.png',
-                height: 650,
-                width: 800,
-              },
-              larger: {
-                download:
-                  '@@images/image-1000-726b7dda823fff20a6d14a98e93bce67.png',
-                height: 813,
-                width: 1000,
-              },
-              listing: {
-                download:
-                  '@@images/image-16-4c5548ed2f111bdd07c5a324f3b0647d.png',
-                height: 13,
-                width: 16,
-              },
-              midi: {
-                download:
-                  '@@images/image-300-f3cdc12ee7edc4388752123e03de2e1f.png',
-                height: 243,
-                width: 300,
-              },
-              mini: {
-                download:
-                  '@@images/image-200-c0de84b376d2b409ba41842ddda8f40b.png',
-                height: 162,
-                width: 200,
-              },
-              preview: {
-                download:
-                  '@@images/image-400-dff863310e56b5d754d0f840b4c16081.png',
-                height: 325,
-                width: 400,
-              },
-              teaser: {
-                download:
-                  '@@images/image-600-6b5255fc399afedc995cdf1ace0753ba.png',
-                height: 487,
-                width: 600,
-              },
-              thumb: {
-                download:
-                  '@@images/image-128-bafc908a0202e68979d78ef68590ffe3.png',
-                height: 104,
-                width: 128,
-              },
-              tile: {
-                download:
-                  '@@images/image-64-6ba4fed3019340a15373923f7078834d.png',
-                height: 52,
-                width: 64,
-              },
-            },
-            size: 1296882,
-            width: 1156,
-          },
-        ],
-        preview_image: [
-          {
-            'content-type': 'image/png',
-            download:
-              '@@images/preview_image-1156-a2cdb5a425a7ea6ae9da7d578ab6090d.png',
-            filename: 'foto-ospedale.png',
-            height: 940,
-            scales: {
-              icon: {
-                download:
-                  '@@images/preview_image-32-2e82f409fd2fa52413d4d2583455efff.png',
-                height: 26,
-                width: 32,
-              },
-              large: {
-                download:
-                  '@@images/preview_image-800-10d352bce01ad7b5d924f37ee8e67216.png',
-                height: 650,
-                width: 800,
-              },
-              larger: {
-                download:
-                  '@@images/preview_image-1000-b25f3b4b80cf1cbcc311cca53c63e587.png',
-                height: 813,
-                width: 1000,
-              },
-              listing: {
-                download:
-                  '@@images/preview_image-16-fb73ade6ff160b9bfdcb317a76511099.png',
-                height: 13,
-                width: 16,
-              },
-              midi: {
-                download:
-                  '@@images/preview_image-300-48cd0d95454587aedde26487e10d0ffc.png',
-                height: 243,
-                width: 300,
-              },
-              mini: {
-                download:
-                  '@@images/preview_image-200-ff3523d87af7c454d6798570bfb064d3.png',
-                height: 162,
-                width: 200,
-              },
-              preview: {
-                download:
-                  '@@images/preview_image-400-d5ebd311251342231a10824bad43f7de.png',
-                height: 325,
-                width: 400,
-              },
-              teaser: {
-                download:
-                  '@@images/preview_image-600-a293f65df0d28a5a15643b00a699bde4.png',
-                height: 487,
-                width: 600,
-              },
-              thumb: {
-                download:
-                  '@@images/preview_image-128-451eaf1a527ddf7388a6e2d0b85b0250.png',
-                height: 104,
-                width: 128,
-              },
-              tile: {
-                download:
-                  '@@images/preview_image-64-d1d475c3e1d2a5e0938c5c4af8e7418c.png',
-                height: 52,
-                width: 64,
-              },
-            },
-            size: 1296882,
-            width: 1156,
-          },
-        ],
-      },
-      in_response_to: null,
-      is_folderish: true,
-      last_comment_date: null,
-      latitude: 0,
-      listCreators: ['admin'],
-      location: null,
-      longitude: 0,
-      mime_type: 'text/plain',
-      modified: '2023-01-04T11:43:28+00:00',
-      nav_title: null,
-      open_end: true,
-      parent: {
-        '@id': 'http://localhost:3000/eventi/363-festa-di-santefisio',
-        UID: '797e8784ca0241af9ec737ed081bd0cc',
-        title: "363^ Festa di Sant'Efisio",
-      },
-      portal_type: 'Event',
-      recurrence: null,
-      review_state: 'private',
-      scadenza_bando: null,
-      start: '2019-12-30T23:00:00+00:00',
-      sync_uid: 'fb0f4858c1cf43f7b9c19086500d4c5a@localhost:3000',
-      tassonomia_argomenti: [],
-      taxonomy_business_events: null,
-      taxonomy_person_life_events: null,
-      taxonomy_temi_dataset: null,
-      taxonomy_tipologia_documenti_albopretorio: null,
-      taxonomy_tipologia_documento: null,
-      taxonomy_tipologia_evento: null,
-      taxonomy_tipologia_frequenza_aggiornamento: null,
-      taxonomy_tipologia_incarico: null,
-      taxonomy_tipologia_licenze: null,
-      taxonomy_tipologia_luogo: null,
-      taxonomy_tipologia_notizia: null,
-      taxonomy_tipologia_organizzazione: null,
-      taxonomy_tipologia_pdc: null,
-      taxonomy_tipologia_stati_pratica: null,
-      tipologia_bando: null,
-      tipologia_documento: null,
-      tipologia_notizia: null,
-      title: "Il ballo dell'isola in festa",
-      total_comments: 0,
-      ufficio_responsabile_bando: null,
-      update_note: null,
-      whole_day: true,
-    },
   ],
   '@type': 'listing',
-  block: '0a915bc6-9a58-42ae-ade4-cdbf81691e4b',
+  block: 'd80c6cb6-07e5-4ee9-bbed-f4dde4393917',
+  detail_link_label: 'Is this just fantasy?',
   headlineTag: 'h2',
   hide_dates: true,
   linkHref: [
@@ -1412,10 +1091,10 @@ const mock_fields = {
       title: 'Eventi',
     },
   ],
-  linkTitle: 'Is this just fantasy?',
+  linkTitle: 'Caught in a landside',
   query: [],
   querystring: {
-    b_size: '4',
+    b_size: 3,
     query: [
       {
         i: 'portal_type',
@@ -1426,13 +1105,13 @@ const mock_fields = {
     sort_order: 'ascending',
   },
   show_description: true,
-  show_detail_link: false,
+  show_detail_link: true,
   show_icon: true,
+  show_only_first_ribbon: true,
   show_path_filters: false,
   show_section: true,
-  show_topics: true,
   show_type: true,
-  variation: 'inEvidenceTemplate',
+  variation: 'ribbonCardTemplate',
   additionalFilters: [],
   items_total: 6,
   loading: false,
@@ -1451,18 +1130,19 @@ test('View renders all fields', async () => {
   render(
     <Provider store={store}>
       <MemoryRouter>
-        <InEvidenceTemplate
+        <RibbonCardTemplate
           data={mock_fields}
           items={mock_fields.items}
           title={mock_fields.title}
-          show_description={mock_fields.show_description}
           linkHref={mock_fields.linkHref}
           linkTitle={mock_fields.linkTitle}
+          show_only_first_ribbon={mock_fields.show_only_first_ribbon}
           show_icon={mock_fields.show_icon}
           show_type={mock_fields.show_type}
-          show_topics={mock_fields.show_topics}
-          show_section={mock_fields.show_section}
           hide_dates={mock_fields.hide_dates}
+          show_description={mock_fields.show_description}
+          show_detail_link={mock_fields.show_detail_link}
+          detail_link_label={mock_fields.detail_link_label}
         />
       </MemoryRouter>
     </Provider>,
@@ -1475,32 +1155,40 @@ test('View renders all fields', async () => {
     }),
   ).toBeInTheDocument();
 
-  // mostra icona
-  const icon = document.querySelectorAll('.icon').length;
-  expect(icon).toBeGreaterThanOrEqual(0);
+  //mostra nastro solo su prima card
+  const ribbon = document.querySelectorAll('.flag-icon');
+  expect(ribbon.length).toBe(1);
 
-  // mostra sezione
-  expect(screen.getAllByText(/Eventi/)).toBeTruthy();
+  //mostra icona --> non viene renderizzata
+  // const icon = document.querySelector('.icon');
+  // expect(icon.length).toBeGreaterThan(0);
 
-  // mostra tipo
-  expect(screen.getAllByText(/Evento/)).toBeTruthy();
+  //mostra sezione
+  expect(screen.getByText(/Eventi/i)).toBeInTheDocument();
 
-  // nascondi le date
-  const date = document.querySelectorAll('.data');
+  //mostra sezione
+  expect(screen.getAllByText(/Evento/i)).toBeTruthy();
+
+  //nascondi date
+  const date = document.querySelectorAll('.dates');
   expect(date.length).toBe(0);
 
-  // mostra la descrizione
+  //mostra descrizione
   expect(
     screen.getByText(
-      /Dal 2 al 3 giugno torna il torneo di beneficienza “Tutti in pista”./i,
+      /Dal 2 al 3 giugno torna il torneo di beneficienza “Tutti in pista”. La raccolta fondi finanzierà progetti sportivi per ragazzi e ragazze./i,
     ),
   ).toBeInTheDocument();
 
-  // mostra argomenti
-  expect(screen.getByRole('link', { name: /Sport/i })).toBeInTheDocument();
+  //mostra link dettaglio
+  expect(screen.getAllByText(/Is this just fantasy?/i)).toBeTruthy();
+
+  //risultati per pagina
+  const card = document.querySelectorAll('.card-big');
+  expect(card.length).toBe(mock_fields.querystring.b_size);
 
   //link more
   expect(
-    screen.getByRole('link', { name: /Is this just fantasy?/i }),
+    screen.getByRole('link', { name: /Caught in a landside/i }),
   ).toBeInTheDocument();
 });

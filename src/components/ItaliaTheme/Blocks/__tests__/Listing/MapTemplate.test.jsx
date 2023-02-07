@@ -1668,6 +1668,16 @@ const mock_fields = {
   firstLoading: false,
   title: 'Is this the real life?',
   show_map_full_width: true,
+  linkHref: [
+    {
+      '@id': '/vivi-il-comune',
+      Description:
+        'Tutti gli eventi, le iniziative e i luoghi d’interesse per scoprire e vivere il territorio comunale.',
+      Title: 'Vivi il Comune',
+      title: 'Vivi il Comune',
+    },
+  ],
+  linkTitle: 'Is this just fantasy?',
 };
 
 const store = mockStore({
@@ -1703,33 +1713,9 @@ test('View renders all fields', async () => {
   //mostra mappa a tutta larghezza
   const map = document.querySelector('.map-wrapper');
   expect(map).toHaveClass('full-width');
-  // // mostra icona
-  // const icon = document.querySelectorAll('.icon').length;
-  // expect(icon).toBeGreaterThanOrEqual(0);
 
-  // // mostra sezione
-  // expect(screen.getAllByText(/Eventi/)).toBeTruthy();
-
-  // // mostra tipo
-  // expect(screen.getAllByText(/Evento/)).toBeTruthy();
-
-  // // nascondi le date
-  // // in entrambi i casi, viene renderizzato solo span con classe "data"
-  // // const date = document.querySelectorAll('.data');
-  // // expect(date.length).toBe(0);
-
-  // // mostra la descrizione
-  // expect(
-  //   screen.getByText(
-  //     /Dal 2 al 3 giugno torna il torneo di beneficienza “Tutti in pista”./i,
-  //   ),
-  // ).toBeInTheDocument();
-
-  // // mostra argomenti
-  // expect(screen.getByRole('link', { name: /Sport/i })).toBeInTheDocument();
-
-  // //link more
-  // expect(
-  //   screen.getByRole('link', { name: /Is this just fantasy?/i }),
-  // ).toBeInTheDocument();
+  //link more
+  expect(
+    screen.getByRole('link', { name: /Is this just fantasy?/i }),
+  ).toBeInTheDocument();
 });

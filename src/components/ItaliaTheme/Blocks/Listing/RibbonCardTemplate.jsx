@@ -56,7 +56,6 @@ const RibbonCardTemplate = (props) => {
     hide_dates,
     id_lighthouse,
   } = props;
-
   return (
     <div className="ribbon-card-template">
       <Container className="px-4">

@@ -29,9 +29,6 @@ const MapTemplate = ({
   show_map_full_width,
   map_size = 'medium',
 }) => {
-  console.log(items);
-  console.log(linkTitle);
-  console.log(linkHref);
   const intl = useIntl();
   let history = useHistory();
 
