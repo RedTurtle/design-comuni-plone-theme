@@ -2405,7 +2405,7 @@ msgstr "Tutte le persone che fanno parte di questo servizio"
 #: components/ItaliaTheme/View/IncaricoView/IncaricoPersone
 # defaultMessage: Persona
 msgid "persona"
-msgstr ""
+msgstr "Persona"
 
 #: components/ItaliaTheme/View/UOView/UOPeople
 # defaultMessage: Persone
@@ -3253,7 +3253,7 @@ msgstr "Social"
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 # defaultMessage: Social
 msgid "social"
-msgstr ""
+msgstr "Social"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 # defaultMessage: Soggetti esterni, nonché, strutture interne coinvolte nel procedimento
