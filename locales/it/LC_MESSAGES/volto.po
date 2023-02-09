@@ -685,6 +685,11 @@ msgstr "Vedi azioni"
 msgid "advandedSectionsFilters"
 msgstr "Vai alla ricerca per sezioni avanzata"
 
+#: components/ItaliaTheme/Blocks/Listing/schema
+# defaultMessage: Allinea bottone a destra
+msgid "alignButton"
+msgstr "Allinea bottone a destra"
+
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Tutto
 msgid "allFilters"
@@ -2402,11 +2407,6 @@ msgstr "Persone correlate"
 msgid "persone_p_description"
 msgstr "Tutte le persone che fanno parte di questo servizio"
 
-#: components/ItaliaTheme/View/IncaricoView/IncaricoPersone
-# defaultMessage: Persona
-msgid "persona"
-msgstr "Persona"
-
 #: components/ItaliaTheme/View/UOView/UOPeople
 # defaultMessage: Persone
 msgid "persone_struttura"
@@ -3250,11 +3250,6 @@ msgstr "N° slide da mostrare"
 msgid "social"
 msgstr "Social"
 
-#: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: Social
-msgid "social"
-msgstr "Social"
-
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 # defaultMessage: Soggetti esterni, nonché, strutture interne coinvolte nel procedimento
 msgid "soggetti_esterni"
@@ -3451,6 +3446,11 @@ msgstr "Tipologia persona"
 # defaultMessage: Titolo
 msgid "title"
 msgstr "Titolo"
+
+#: config/Blocks/ListingOptions/defaultOptions
+# defaultMessage: Mostra la linea sotto il titolo
+msgid "titleLine"
+msgstr "Mostra la linea sotto il titolo"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
