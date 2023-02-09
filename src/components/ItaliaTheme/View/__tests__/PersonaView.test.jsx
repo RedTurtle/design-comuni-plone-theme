@@ -61,7 +61,8 @@ const mock_mandatory = {
 
 const mock_allfields = {
   ...mock_mandatory,
-  allow_discussion: false,
+  '@id': 'http://loremipsum.it/aguzzoli-claudia-dana',
+  atto_nomina: null,
   biografia: {
     blocks: {
       '49066162-9327-4aa7-930c-ebc24971bfef': {
@@ -88,39 +89,18 @@ const mock_allfields = {
   },
   changeNote: '',
   competenze: {
-    blocks: {
-      '353a16e6-e4c0-4305-a19d-2638b720881a': {
-        '@type': 'text',
-        text: {
-          blocks: [
-            {
-              data: {},
-              depth: 0,
-              entityRanges: [],
-              inlineStyleRanges: [],
-              key: '6923e',
-              text: 'Is this just fantasy?',
-              type: 'unstyled',
-            },
-          ],
-          entityMap: {},
-        },
-      },
-    },
-    blocks_layout: {
-      items: ['353a16e6-e4c0-4305-a19d-2638b720881a'],
-    },
+    'content-type': 'text/html',
+    data: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in pharetra nunc, in finibus sapien. Donec eu venenatis dolor, sit amet dignissim sem. Mauris vulputate, enim at vestibulum euismod, quam risus vulputate erat, a varius tortor tellus in metus. Nulla cursus lobortis metus. Pellentesque vehicula risus tincidunt, ornare nisl non, convallis turpis. Nam convallis nulla id neque condimentum hendrerit. Proin ac tincidunt eros, quis fringilla dolor. Duis vitae arcu nibh.</p>\n<p>Donec non urna enim. Nulla mattis accumsan mauris ut sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius lacus sed turpis mollis, in volutpat magna lobortis. Nam erat enim, placerat eget orci nec, consequat efficitur arcu. Nunc auctor, augue in egestas posuere, eros velit auctor dui, in lacinia urna dolor id libero. Proin ac tincidunt ligula. Ut dictum dignissim aliquet. Donec in quam fringilla, fringilla ante sit amet, faucibus libero. Pellentesque a metus ante. Mauris iaculis pellentesque nisl vel vehicula.</p>',
+    encoding: 'utf-8',
   },
-  contributors: [],
-  created: '2023-01-26T14:28:09+00:00',
-  creators: ['admin'],
   curriculum_vitae: {
     'content-type': 'application/pdf',
-    download:
-      'http://localhost:3000/amministrazione/personale-amministrativo/gianluca-luchetti/@@download/curriculum_vitae',
-    filename: 'doc-prova.pdf',
-    size: 781,
+    download: 'http://loremipsum.doc',
+    filename: '907122.pdf',
+    size: 57203,
   },
+  // data_conclusione_incarico: '2020-03-13',
+  // data_insediamento: '2020-03-12',
   deleghe: {
     blocks: {
       '792eac6b-5110-4878-9c11-31ef3de20c45': {
@@ -1884,8 +1864,8 @@ test('expect to have all non-mandatory fields in page', async () => {
     </Provider>,
   );
 
-  // description
-  expect(screen.getByText(/Is this the real life?/i)).toBeInTheDocument();
+  // atto_nomina
+  expect(getByText(/Atto di nomina/i)).toBeInTheDocument();
 
   //foto
   expect(screen.getByAltText(/Gianluca Luchetti/i)).toBeInTheDocument();
@@ -1896,8 +1876,8 @@ test('expect to have all non-mandatory fields in page', async () => {
   ).toBeInTheDocument();
   expect(screen.getByText(/Incaricone/i)).toBeInTheDocument();
 
-  //organizzazione di riferimento --> non appare
-  // expect(screen.getByText(/Provincia di Cagliari/i)).toBeInTheDocument();
+  // curriculum_vitae
+  expect(getByText(/Curriculum vitae/i)).toBeInTheDocument();
 
   // competenze
   expect(
@@ -1994,12 +1974,12 @@ test('expect to have all non-mandatory fields in page', async () => {
 // expect(await screen.findByText('Compensi')).toBeInTheDocument();
 
 // importi_di_viaggio_e_o_servizi
-// expect(
-//   await screen.findByText('Importi di viaggio e/o servizi'),
-// ).toBeInTheDocument();
+expect(
+  await screen.findByText('Importi di viaggio e/o servizi'),
+).toBeInTheDocument();
 
 // altre-cariche
-// expect(await screen.findByText('Altre cariche')).toBeInTheDocument();
+expect(await screen.findByText('Altre cariche')).toBeInTheDocument();
 
 // situazione-patrimoniale
 // const situazione_patrimoniale = await waitForElement(() =>

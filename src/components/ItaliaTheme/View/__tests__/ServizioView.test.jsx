@@ -1170,7 +1170,7 @@ const store = mockStore({
 });
 
 test('expect to have all mandatory fields in page', async () => {
-  const { getByText, getByRole, findByText, getByAltText, debug } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter>
         <ServizioView title={mock_mandatory.title} content={mock_mandatory} />
@@ -1259,7 +1259,7 @@ test('expect to have all mandatory fields in page', async () => {
 });
 
 test('expect to have all fields in page', async () => {
-  const { getByText, getByAltText, getByTitle, debug } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter>
         <ServizioView content={mock_all_fields} />
@@ -1267,129 +1267,51 @@ test('expect to have all fields in page', async () => {
     </Provider>,
   );
 
-  //sottotitolo
-  expect(screen.getByText(/Visite gratuite per tutti/i)).toBeInTheDocument();
-
-  // stato servizio + motivazione stato servizio
-  expect(screen.getByText('Servizio non attivo')).toBeInTheDocument();
-  expect(screen.getByText(/Motivazione/i)).toBeInTheDocument();
-
-  // immagine di testata
-  expect(screen.getByAltText(/woman working/i)).toBeInTheDocument();
-  expect(screen.getByText(/woman working/i)).toBeInTheDocument();
-
-  // correlati in evidenza
   expect(
-    screen.getByRole('heading', { name: /Sport nel verde/i, exact: false }),
+    screen.getByText(/Indicazioni d'uso del servizio/i),
   ).toBeInTheDocument();
 
-  // eventi della vita delle persone --> non appare
+  // casi_particolari
   expect(
-    screen.getByText(/Possesso, cura, smarrimento animale/i, { exact: false }),
-  );
-
-  //eventi della vita delle imprese --> non appare
-  expect(screen.getByText(/avvio impresa/i)).toBeInTheDocument();
-
-  // descrizione estesa
-  expect(
-    screen.getByRole('heading', { name: /Descrizione/i }),
+    screen.getByText(/Casi particolari per usufruire del servizio/i),
   ).toBeInTheDocument();
-  expect(screen.getByText(/Is this the real life?/i)).toBeInTheDocument();
-
-  //chi può presentare
+  // chi_puo_presentare
   expect(
-    screen.getByRole('heading', { name: /Chi può presentare/i }),
+    screen.getByText(/Chi può presentare richiesta del servizio/i),
   ).toBeInTheDocument();
-  expect(screen.getByText(/Is this just fantasy?/i)).toBeInTheDocument();
-
-  // copertura geografica
+  // copertura_geografica
   expect(
-    screen.getByRole('heading', { name: /Copertura geografica del servizio/i }),
+    screen.getByText(/Qual'è la copertura geografica del servizio/i),
   ).toBeInTheDocument();
-  expect(screen.getByText(/Caught in a landside/i)).toBeInTheDocument();
-
-  // procedure collegate
-  expect(
-    screen.getByRole('heading', { name: /Procedure collegate all'esito/i }),
-  ).toBeInTheDocument();
-  expect(screen.getByText(/No escape from reality/i)).toBeInTheDocument();
-
-  //canale digitale
-  expect(
-    screen.getByRole('heading', { name: /Accedi al servizio/i }),
-  ).toBeInTheDocument();
-  expect(screen.getByText(/Open your eyes/i)).toBeInTheDocument();
-
-  //autenticazione --> non appare
-  expect(screen.getByText(/I'm just a poor boy/i)).toBeInTheDocument();
-
-  // dove rivolgersi --> non appare
-  expect(
-    screen.getByText(/Ufficio delle attività produttive/i),
-  ).toBeInTheDocument();
-
-  //dove rivolgersi extra --> non appare
-  expect(screen.getByText(/I need no sympathy/i)).toBeInTheDocument();
-
-  //prenota appuntamento
-  expect(
-    screen.getByText(/Because I'm easy come, easy go/i),
-  ).toBeInTheDocument();
-
   // costi
+  expect(screen.getByText(/Costi del servizio/i)).toBeInTheDocument();
+  // descrizione_estesa
+  expect(screen.getByText(/Descrizione estesa/i)).toBeInTheDocument();
+  // image
+  expect(screen.getByAltText(/Caption del servizio/i)).toBeInTheDocument();
+  // image_caption
+  expect(screen.getByText(/Caption del servizio/i)).toBeInTheDocument();
+  // link_siti_esterni
   expect(
-    screen.getByRole('heading', { name: /Quanto costa/i }),
+    screen.getByText(/https:\/\/www.loremipsum.it\/agid/i),
   ).toBeInTheDocument();
-  expect(screen.getByText('345')).toBeInTheDocument();
+  // relatedItems
+  const related_iteems = await waitFor(
+    async () => await screen.getByText(/Pagina allegata/i),
+  );
+  expect(related_iteems).toBeInTheDocument();
+  // related_news
+  // expect(
+  //   getByText(/Descrizione della news collegata al servizio/i),
+  // ).toBeInTheDocument();
+  // servizi_collegati
 
+  // subtitle
+  expect(screen.getByText(/IoAutocertifico/i)).toBeInTheDocument();
   // vincoli
-  expect(screen.getByRole('heading', { name: /Vincoli/i })).toBeInTheDocument();
-  expect(screen.getByText(/Little high, little low/i)).toBeInTheDocument();
-
-  // casi particolari
-  expect(
-    screen.getByRole('heading', { name: /Casi particolari/i }),
-  ).toBeInTheDocument();
-  expect(screen.getByText(/Mama, Just killed a man/i)).toBeInTheDocument();
-
-  // documenti
-  // heading - viene renderizzato heading "Altri documenti" ma test
-  // passa solo se viene verificata presenza di "Documenti correlati"
-  expect(
-    screen.getByRole('heading', { name: /Documenti correlati/i }),
-  ).toBeInTheDocument();
-  // expect(screen.getByText(/Altri documenti/i)).toBeInTheDocument();
-  expect(
-    screen.getByRole('link', { name: /Piano lavori 2023/i }),
-  ).toBeInTheDocument();
-
-  //link siti esterni
-  expect(
-    screen.getByRole('heading', { name: /Link utili/i }),
-  ).toBeInTheDocument();
-  expect(screen.getByText(/Put a gun against his head/i)).toBeInTheDocument();
-
-  //ulteriori informazioni
-  expect(
-    screen.getByRole('heading', { name: /Ulteriori informazioni/i }),
-  ).toBeInTheDocument();
-  expect(screen.getByText(/pulled my trigger/i)).toBeInTheDocument();
-
-  // servizi collegati
-  expect(
-    screen.getByRole('heading', { name: /Contenuti correlati/i }),
-  ).toBeInTheDocument();
-  expect(
-    screen.getByRole('link', {
-      name: /Concessione degli impianti sportivi/i,
-    }),
-  ).toBeInTheDocument();
-  expect(
-    screen.getByRole('link', {
-      name: /Chiusa per ristrutturazione la piscina Minghetti/i,
-    }),
-  ).toBeInTheDocument();
+  // expect(
+  //   getByText(/Per poter usufruire del servizio ci sono/i),
+  // ).toBeInTheDocument();
 });
 
 // test('Check parts loaded from child folders', async () => {

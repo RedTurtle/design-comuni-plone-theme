@@ -1119,6 +1119,11 @@ msgstr "chiudi"
 msgid "closeSearch"
 msgstr "Chiudi ricerca"
 
+#: components/ItaliaTheme/View/ServizioView/ServizioUlterioriInformazioni
+# defaultMessage: Codice dell'ente erogatore (ipa)
+msgid "codice_ipa"
+msgstr "Codice dell'ente erogatore (ipa)"
+
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
 # defaultMessage: Primario
@@ -1559,11 +1564,6 @@ msgstr "Dichiarazione dei redditi"
 msgid "dirigente"
 msgstr "Dirigente"
 
-#: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
-# defaultMessage: Documenti
-msgid "documenti"
-msgstr "Documenti"
-
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Documenti e dati
 msgid "documenti-e-dati"
@@ -1595,9 +1595,19 @@ msgid "documento_documenti"
 msgstr "Documenti"
 
 #: components/ItaliaTheme/View/DocumentoView/DocumentoDocAllegati
-# defaultMessage: Documenti allegati
-msgid "documento_documenti_allegati"
-msgstr "Documenti allegati"
+# defaultMessage: Documenti collegati
+msgid "documento_documenti_collegati"
+msgstr "Documenti collegati"
+
+#: components/ItaliaTheme/View/DocumentoView/DocumentoDocumenti
+# defaultMessage: Formati disponibili
+msgid "documento_formati_disponibili"
+msgstr "Formati disponibili"
+
+#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDocumento
+# defaultMessage: Protocollo {protocollo} del {data_protocollo}
+msgid "documento_header_protocollo"
+msgstr "Protocollo {protocollo} del {data_protocollo}"
 
 #: components/ItaliaTheme/View/DocumentoView/DocumentoDescrizione
 # defaultMessage: Licenza di distribuzione
@@ -1608,6 +1618,16 @@ msgstr "Licenza di distribuzione"
 # defaultMessage: Riferimenti normativi
 msgid "documento_riferimenti_normativi"
 msgstr "Riferimenti normativi"
+
+#: components/ItaliaTheme/View/DocumentoView/DocumentoDescrizione
+# defaultMessage: Tipo di documento albo pretorio
+msgid "documento_tipologia_documenti_albopretorio"
+msgstr "Tipo di documento albo pretorio"
+
+#: components/ItaliaTheme/View/DocumentoView/DocumentoDescrizione
+# defaultMessage: Tipo di documento
+msgid "documento_tipologia_documento"
+msgstr "Tipo di documento"
 
 #: components/ItaliaTheme/View/DocumentoView/DocumentoUfficioResponsabile
 # defaultMessage: Ufficio responsabile
@@ -1937,6 +1957,11 @@ msgstr "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppur
 # defaultMessage: Blocco con icone
 msgid "iconss_blocks"
 msgstr "Blocco con icone"
+
+#: components/ItaliaTheme/View/DocumentoView/DocumentoDescrizione
+# defaultMessage: Identificativo del documento
+msgid "identificativo"
+msgstr "Identificativo del documento"
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Immagine per lo sfondo
@@ -2305,9 +2330,9 @@ msgid "order_by"
 msgstr "Ordina per"
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
-# defaultMessage: Organizzazione di riferimento
+# defaultMessage: Organizzazione
 msgid "organizzazione_riferimento"
-msgstr "Organizzazione di riferimento"
+msgstr "Organizzazione"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
@@ -2422,7 +2447,7 @@ msgstr "Provvedimento finale"
 #: components/ItaliaTheme/View/VenueView/VenueWhere
 # defaultMessage: Quartiere
 msgid "quartiere"
-msgstr "Quartiere "
+msgstr "Quartiere"
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeader
 # defaultMessage: Tempo di lettura
@@ -2983,13 +3008,8 @@ msgstr "risultato"
 msgid "service_cos_e"
 msgstr "Descrizione"
 
-#: components/ItaliaTheme/View/ServizioView/ServizioStato
-# defaultMessage: Il servizio non è attivo
-msgid "service_not_active"
-msgstr "Il servizio non è attivo"
-
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderStatoServizio
-# defaultMessage: Servizio chiuso
+# defaultMessage: Servizio non attivo
 msgid "service_off"
 msgstr "Servizio non attivo"
 
@@ -3056,9 +3076,19 @@ msgid "servizio_cosa_si_ottiene"
 msgstr "Cosa si ottiene"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioAccedi
+# defaultMessage: Dove rivolgersi
+msgid "servizio_dove_rivolgersi"
+msgstr "Dove rivolgersi"
+
+#: components/ItaliaTheme/View/ServizioView/ServizioAccedi
 # defaultMessage: Prenota appuntamento
 msgid "servizio_prenota_appuntamento"
 msgstr "Prenota appuntamento"
+
+#: components/ItaliaTheme/View/ServizioView/ServizioProcedure
+# defaultMessage: Procedure collegate all'esito
+msgid "servizio_procedure_collegate"
+msgstr "Procedure collegate all'esito"
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Vai alle altre opzioni di ricerca
@@ -3069,6 +3099,11 @@ msgstr "Vai alle altre opzioni di ricerca"
 # defaultMessage: Disponi su 4 colonne
 msgid "set_four_columns"
 msgstr "Disponi su 4 colonne"
+
+#: components/ItaliaTheme/View/ServizioView/ServizioUlterioriInformazioni
+# defaultMessage: Settore merceologico
+msgid "settore_merceologico"
+msgstr "Settore merceologico"
 
 #: components/ItaliaTheme/View/Commons/Sharing
 # defaultMessage: Condividi
@@ -3378,6 +3413,7 @@ msgstr "Inserisci un valore"
 msgid "tipologia_bando"
 msgstr "Tipologia del bando"
 
+#: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Tipo di incarico
 msgid "tipologia_incarico"

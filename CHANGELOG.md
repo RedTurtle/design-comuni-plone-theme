@@ -1,3 +1,70 @@
+## [8.0.0-alpha.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.5...v8.0.0-alpha.6) (2023-02-07)
+
+
+### Features
+
+* google maps block restricted and removed from privacy options ([#71](https://github.com/RedTurtle/design-comuni-plone-theme/issues/71)) ([abbedf5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/abbedf5aaf1d1098a3b27156864724827dc1fd2e))
+* upgraded design-react-kit and bootstrap-italia ([960ce5c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/960ce5cdcc1b49076c647b97852cea35972e6f2b))
+* upgraded kit to latest next branch ([353df7d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/353df7d4f5128351c31b6459d0110a7bfcfde278))
+* upgraded volto to 16.10.0 ([c9d0cf6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c9d0cf61a8d6f3a44e07d764f060ff4c08663e46))
+* use new api expanders to reduce the number of api calls ([5cb3904](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5cb3904643a2545cd8baa40ccf26cf596b1a6264))
+* use new Progress component for content types side menus ([adc3dd5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/adc3dd5dd712a8f2f32f5913606032ebba88b64f))
+
+
+### Bug Fixes
+
+* card category with new taxonomies ([a99af4f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a99af4f0add3e7527fa27c2f6c8ddb42d925b4ed))
+* race condition on service deadlines ([8ad445c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8ad445cef490ad44e5f7d054901db521f410bca5))
+* remove custom headings color ([ed507e8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ed507e84c16e3c3d388f8d5d28a1d2ceb34aac5b))
+* show persona fields even without incarico ([d439e6b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d439e6baf6d1316172a5e3330323b27b2e5a60b6))
+* temporary fix for tests ([e19ca71](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e19ca714644607794f631d5af40225e27e75a424))
+
+
+### Maintenance
+
+* fix build pipeline and reintroduce auto deployment ([6481d8c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6481d8c5e6917837e1ba0356ac05a989a552388d))
+
+## [8.0.0-alpha.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.4...v8.0.0-alpha.5) (2023-02-03)
+
+
+### Bug Fixes
+
+* adapt to new taxonomies ([bdd10ca](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bdd10ca8ca4121fce105f740728e139ace792d18))
+* added some margin to 'punti di contatti' card inside UO ([#65](https://github.com/RedTurtle/design-comuni-plone-theme/issues/65)) ([8eaf326](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8eaf326715e81ed673d0e26ab8efcb3df291c780))
+* campi mancanti nelle view ([#67](https://github.com/RedTurtle/design-comuni-plone-theme/issues/67)) ([f51f9ec](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f51f9ec35c0abf18fe77d627e0af4599310b8db6))
+* content type views section components keys breaking related items ([#66](https://github.com/RedTurtle/design-comuni-plone-theme/issues/66)) ([f16095d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f16095da597cbdb3325410eba4f0f40b37aaaf06))
+
+## [8.0.0-alpha.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.3...v8.0.0-alpha.4) (2023-01-24)
+
+
+### Features
+
+* added field procedure_collegate to ServizioView ([c039c58](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c039c58c0b9d1378cf2b5d82366f9119ec59df73))
+* moved motivo_stato_servizio to page header ([3c4e4da](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3c4e4da7bd9d10f188c8375663568db4b9f51ec7))
+* upgraded volto to 16.8.1 ([19b1203](https://github.com/RedTurtle/design-comuni-plone-theme/commit/19b1203b062dac2e096542600cf0a735606c1f0a))
+
+
+### Bug Fixes
+
+* cleanup className errors ([b971f31](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b971f3138c370df39518bf13aa072fa1ef9ffb24))
+* do not show titles of empty fields in ServizioView ([7d81ccf](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7d81ccfaed5addf9de6b223316d487d96230e13d))
+* flatten image urls ([ed900a2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ed900a2b5ed651d7c341cf0043b7cf4b9da12fb2))
+* link tag in some CardReadMore usages ([8b6a75e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8b6a75e8bb9f1ff402451b3a21208832e3371930))
+* listing image when no image is set on the item ([9b4b7db](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9b4b7db85215635be460e673598c9c2554254068))
+* ordering and labels in DocumentoView ([79b6743](https://github.com/RedTurtle/design-comuni-plone-theme/commit/79b67433be96e64a3ae6a3379586d7e665af3743))
+* remove subtitle from h1 tag ([27eb014](https://github.com/RedTurtle/design-comuni-plone-theme/commit/27eb014cff1d6ccec6a61020366ef5ab303570f6))
+* show stato_servizio even when null ([24d89e5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/24d89e50177ab040135d9b58e8fcbccb4bf66fb0))
+* show stato_servizio even when null ([43541f5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/43541f5d092941ecc9888ac0c4f937fa085b6849))
+
+
+### Maintenance
+
+* enhanced test-setup-config ([9b45002](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9b450021020f7d3639d28b39e49084e471e94933))
+* fix config in tests, was missing italiaConfig ([83c5937](https://github.com/RedTurtle/design-comuni-plone-theme/commit/83c5937dc4418eb2befa4f211c91ecd51da3d380))
+* fix test config ([1d924c1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1d924c1fdabbdabea99b93499a87bc605dbab014))
+* fixed ServizioView test ([9ffa964](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9ffa9645af5e73c5fa1b6a1be9422647a2799bc3))
+* twitter image profile removed ([fe733ab](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fe733ab2b9c890e14cca8960712a844c4e8b0f08))
+
 ## [8.0.0-alpha.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.2...v8.0.0-alpha.3) (2023-01-17)
 
 
