@@ -2681,27 +2681,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone/scripts@npm:*":
-  version: 2.2.2
-  resolution: "@plone/scripts@npm:2.2.2"
-  dependencies:
-    babel-plugin-react-intl: 5.1.17
-    babel-preset-razzle: 4.2.17
-    chalk: 4
-    commander: 8.2.0
-    fs-extra: 10.1.0
-    git-url-parse: ^11.6.0
-    mrs-developer: "*"
-    pofile: 1.0.10
-    simple-git: 3.5.0
-  bin:
-    addon: addon/index.js
-    changelogupdater: changelogupdater.cjs
-    i18n: i18n.cjs
-  checksum: 33d63c1d0fe096984aa3a37b0842f65f13ef84065ffa88f66b6ada38c73a545f2236c8d24987881c50be36c903ec4b96bf5dc63dc3e4409985174efc122f737a
-  languageName: node
-  linkType: hard
-
 "@plone/scripts@npm:2.1.2":
   version: 2.1.2
   resolution: "@plone/scripts@npm:2.1.2"

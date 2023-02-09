@@ -9,9 +9,6 @@ import {
   contentFolderHasItems,
   viewDate,
 } from 'design-comuni-plone-theme/helpers';
-import { getContent, resetContent } from '@plone/volto/actions';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { useDispatch, useSelector } from 'react-redux';
 
 const messages = defineMessages({
   ruolo: {
@@ -69,20 +66,8 @@ const messages = defineMessages({
   },
 });
 
-// TODO: rework this when taxonomies available and official wireframes
-// appear in the wild. Internal previews show no understanding of their
-// own guidelines (i.e. incarichi multipli)
 const PersonaRuolo = ({ content }) => {
   const intl = useIntl();
-  const dispatch = useDispatch();
-  const fetchedIncarichi = useSelector((state) => state.content.subrequests);
-  const incarichi = content?.incarichi?.map((incarico) => {
-    let url = flattenToAppURL(incarico['@id']);
-    return {
-      key: `incarico${url}`,
-      url: url,
-    };
-  });
 
   return (
     <>
