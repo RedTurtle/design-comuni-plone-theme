@@ -205,6 +205,13 @@ export default function applyConfig(voltoConfig) {
       splitMegamenuColumns: true, //se impostato a false, non spezza le colonne con intestazioni nel megamenu
       footerNavigationDepth: 2, //valori possibili: [1,2]. Se impostato ad 1 non verranno mostrati nel footer i link agli elementi contenuti nelle sezioni di primo livello.
     },
+    apiExpanders: [
+      ...config.settings.apiExpanders,
+      // {
+      //   match: '',
+      //   GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
+      // },
+    ],
     appExtras: [
       ...config.settings.appExtras,
       {
@@ -327,6 +334,10 @@ export default function applyConfig(voltoConfig) {
     },
     slateTable: {
       ...config.blocks.blocksConfig.slateTable,
+      restricted: true,
+    },
+    maps: {
+      ...config.blocks.blocksConfig.maps,
       restricted: true,
     },
   };

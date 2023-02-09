@@ -2,8 +2,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import {
   richTextHasContent,
   RichTextSection,
-  RichText,
-  // OfficeCard,
+  OfficeCard,
   Gallery,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import {
@@ -21,7 +20,7 @@ const messages = defineMessages({
   },
   organizzazione_riferimento: {
     id: 'organizzazione_riferimento',
-    defaultMessage: 'Organizzazione di riferimento',
+    defaultMessage: 'Organizzazione',
   },
   responsabile_di: {
     id: 'responsabile_di',
@@ -85,43 +84,31 @@ const PersonaRuolo = ({ content }) => {
     };
   });
 
-  // Not shown in wireframes, somehow
-  // const strutture = useMemo(() => {
-  //   return incarichiData?.incarichiAttivi?.reduce((acc, val) => {
-  //     if (val?.responsabile_struttura?.length > 0)
-  //       return [...acc, ...val.responsabile_struttura];
-  //     return acc;
-  //   }, []);
-  // }, [incarichiData]);
-  // const uffici = useMemo(() => {
-  //   return incarichiData?.incarichiAttivi?.reduce((acc, val) => {
-  //     if (val?.unita_organizzativa?.length > 0)
-  //       return [...acc, ...val.unita_organizzativa];
-  //     return acc;
-  //   }, []);
-  // }, [incarichiData]);
-
-  return content?.incarichi_persona?.length > 0 ? (
+  return (
     <>
-      {content.incarichi_persona.slice(0, 1).map((inc) => (
+      {content?.incarichi_persona?.length > 0 && (
         <>
           <RichTextSection
             tag_id="incarico"
             title={intl.formatMessage(messages.ruolo)}
           >
-            <div className="font-serif">{inc.title}</div>
+            <div className="font-serif">
+              {content.incarichi_persona[0].title}
+            </div>
           </RichTextSection>
           <RichTextSection
             tag_id="tipologia_incarico"
             title={intl.formatMessage(messages.tipologia_incarico)}
           >
-            <div className="font-serif">{inc.tipologia_incarico}</div>
+            <div className="font-serif">
+              {content.incarichi_persona[0].tipologia_incarico.title}
+            </div>
           </RichTextSection>
-          {richTextHasContent(inc.compensi) && (
+          {richTextHasContent(content.incarichi_persona[0].compensi) && (
             <RichTextSection
               tag_id="compensi"
               title={intl.formatMessage(messages.compensi)}
-              content={inc.compensi}
+              content={content.incarichi_persona[0].compensi}
             />
           )}
           <RichTextSection
@@ -129,49 +116,47 @@ const PersonaRuolo = ({ content }) => {
             title={intl.formatMessage(messages.data_insediamento)}
           >
             <div className="font-serif">
-              {viewDate(intl.locale, inc.data_inizio_incarico, 'DD-MM-Y')}
+              {viewDate(
+                intl.locale,
+                content.incarichi_persona[0].data_inizio_incarico,
+                'DD-MM-Y',
+              )}
             </div>
           </RichTextSection>
         </>
-      ))}
-      {/* {incarichiData?.incarichiInattivi?.map((inc) => (
-        <p key={inc['@id']}>
-          <strong>
-            {intl.formatMessage(messages.data_conclusione_incarico, {
-              incarico: inc.title,
-            })}
-            :
-          </strong>{' '}
-          {viewDate(intl.locale, inc?.data_conclusione_incarico, 'DD-MM-Y')}
-        </p>
-      ))} */}
-      {richTextHasContent(content?.competenze) && (
-        <div className="mb-5 mt-3">
-          <RichText
-            title_size="h5"
-            title={intl.formatMessage(messages.competenze)}
-            content={content.competenze}
-          />
-        </div>
       )}
-
+      {content.organizzazione_riferimento.length > 0 && (
+        <RichTextSection
+          tag_id="organization"
+          title={intl.formatMessage(messages.organizzazione_riferimento)}
+        >
+          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+            {content.organizzazione_riferimento.map((item, i) => (
+              <OfficeCard key={item['@id']} office={item} />
+            ))}
+          </div>
+        </RichTextSection>
+      )}
+      {richTextHasContent(content?.competenze) && (
+        <RichTextSection
+          tag_id="competenze"
+          title={intl.formatMessage(messages.competenze)}
+          content={content.competenze}
+        />
+      )}
       {richTextHasContent(content?.deleghe) && (
-        <div className="mb-5 mt-3">
-          <RichText
-            title_size="h5"
-            title={intl.formatMessage(messages.deleghe)}
-            content={content.deleghe}
-          />
-        </div>
+        <RichTextSection
+          tag_id="deleghe"
+          title={intl.formatMessage(messages.deleghe)}
+          content={content.deleghe}
+        />
       )}
       {richTextHasContent(content?.biografia) > 0 && (
-        <div className="mb-5 mt-3">
-          <RichText
-            title_size="h5"
-            title={intl.formatMessage(messages.biografia)}
-            content={content.biografia}
-          />
-        </div>
+        <RichTextSection
+          tag_id="biografia"
+          title={intl.formatMessage(messages.biografia)}
+          content={content.biografia}
+        />
       )}
 
       {contentFolderHasItems(content, 'foto-e-attivita-politica') && (
@@ -179,22 +164,11 @@ const PersonaRuolo = ({ content }) => {
           content={content}
           folder_name="foto-e-attivita-politica"
           title={intl.formatMessage(messages.foto_attivita_politica)}
-          title_type="h5"
+          title_type="h3"
         />
       )}
-      {/* Not shown in wireframes, somehow */}
-      {/* {uffici.length > 0 && (
-        <div className="mb-5 mt-3">
-          <h4>{intl.formatMessage(messages.organizzazione_riferimento)}</h4>
-          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
-            {uffici.map((item, i) => (
-              <OfficeCard key={item['@id']} office={item} />
-            ))}
-          </div>
-        </div>
-      )}
 
-      {strutture.length > 0 && (
+      {/* {strutture.length > 0 && (
         <div className="mb-5 mt-3">
           <h5>{intl.formatMessage(messages.responsabile_di)}</h5>
           <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
@@ -205,7 +179,7 @@ const PersonaRuolo = ({ content }) => {
         </div>
       )} */}
     </>
-  ) : null;
+  );
 };
 
 export default PersonaRuolo;
