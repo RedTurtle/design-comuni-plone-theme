@@ -2404,7 +2404,6 @@ test('View renders all fields', async () => {
       </MemoryRouter>
     </Provider>,
   );
-  screen.debug();
 
   // tipo template
   const simpleCard = document.querySelector('.simple-card-default');

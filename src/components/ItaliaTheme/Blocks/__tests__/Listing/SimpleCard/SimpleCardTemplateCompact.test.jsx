@@ -1139,7 +1139,6 @@ test('View renders all fields', async () => {
       </MemoryRouter>
     </Provider>,
   );
-  screen.debug();
 
   // titolo;
   expect(

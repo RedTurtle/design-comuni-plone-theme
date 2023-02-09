@@ -2425,8 +2425,6 @@ test('View renders all fields', async () => {
     </Provider>,
   );
 
-  screen.debug();
-
   //non renderizza?
   // // titolo
   // expect(

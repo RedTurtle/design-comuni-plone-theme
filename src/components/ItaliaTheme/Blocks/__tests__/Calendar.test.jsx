@@ -57,6 +57,4 @@ test('View renders all fields', async () => {
       <Body data={mock_fields} path={mock_path} id={mock_block} />
     </Provider>,
   );
-
-  screen.debug();
 });

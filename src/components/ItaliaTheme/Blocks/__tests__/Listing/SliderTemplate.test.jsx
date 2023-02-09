@@ -11,7 +11,6 @@ import Slider from 'react-slick';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
-console.log(Slider);
 
 const mock_fields = {
   items: [

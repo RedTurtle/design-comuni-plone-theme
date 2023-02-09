@@ -49,11 +49,6 @@ const PhotogalleryTemplate = ({
   linkHref,
   reactSlick,
 }) => {
-  // console.log(items);
-  // console.log(linkTitle);
-  // console.log(linkHref);
-  // console.log(reactSlick);
-
   const intl = useIntl();
   const slider = useRef(null);
   const [autoplay, setAutoplay] = useState(false);

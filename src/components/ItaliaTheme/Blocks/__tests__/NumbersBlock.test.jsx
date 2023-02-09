@@ -360,7 +360,6 @@ test('View renders all fields', async () => {
   const icon = document.querySelector('.icon');
   expect(icon).toBeInTheDocument();
 
-  screen.debug();
   //titolo
   expect(screen.getByText(/Is this the real life/i)).toBeInTheDocument();
 
