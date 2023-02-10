@@ -15,7 +15,6 @@ export const schemaListing = (props) => {
 
   baseSchema.properties.linkAlign = {
     title: intl.formatMessage(messages.alignButton),
-    title: 'Allinea bottone a destra',
     type: 'boolean',
   };
 

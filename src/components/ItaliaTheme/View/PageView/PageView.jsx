@@ -61,6 +61,8 @@ const PageView = ({ content, token, location, history }) => {
       content?.tassonomia_argomenti?.length > 0 ||
       content.mostra_bottoni_condivisione;
 
+    console.log(content);
+
     return (
       <>
         <div id="page-document" className="ui container px-4">

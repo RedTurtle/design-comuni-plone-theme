@@ -18,7 +18,7 @@ export const ListingLinkMore = ({ title, href, className = '', linkAlign }) => {
   return url ? (
     <div
       className={
-        linkAlign === true
+        linkAlign
           ? `link-more-button-align-right ${className}`
           : `link-button text-center ${className}`
       }
