@@ -43,6 +43,8 @@ const SimpleCardTemplateDefault = (props) => {
     isEditMode,
     linkTitle,
     linkHref,
+    linkAlign,
+    titleLine,
     show_icon = true,
     show_section = true,
     show_type,
@@ -73,7 +75,12 @@ const SimpleCardTemplateDefault = (props) => {
     let className = null;
     switch (item['@type']) {
       case 'News Item':
-        className = item.tipologia_notizia?.toLowerCase().replace(' ', '_');
+        className =
+          item.tipologia_notizia
+            ?.map?.((tipologia) =>
+              tipologia.token.toLowerCase().replace(' ', '_'),
+            )
+            .join(' ') ?? '';
         break;
       default:
         className = null;
@@ -122,6 +129,7 @@ const SimpleCardTemplateDefault = (props) => {
             <Col md={path_filters_buttons ? 6 : 12}>
               <h2
                 className={cx('', {
+                  'title-bottom-line': titleLine,
                   'mt-5': !show_block_bg,
                   'mb-4': !path_filters_buttons,
                 })}
@@ -223,7 +231,12 @@ const SimpleCardTemplateDefault = (props) => {
         })}
       </div>
 
-      <ListingLinkMore title={linkTitle} href={linkHref} className="my-4" />
+      <ListingLinkMore
+        title={linkTitle}
+        href={linkHref}
+        className="my-4"
+        linkAlign={linkAlign}
+      />
     </div>
   );
 };
