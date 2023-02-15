@@ -38,7 +38,7 @@
     }
   }
   .comment {
-    @media (max-width: #{map-get($grid-breakpoints, lg)}) {
+    @media (max-width: #{map-get($grid-breakpoints, lg) - 1px }) {
       margin-top: 3.5rem;
       .form-group {
         label {
