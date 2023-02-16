@@ -5,7 +5,6 @@ logs
 npm-debug.log*
 .DS_Store
 src/addons
-.env
 
 coverage
 node_modules
