@@ -124,25 +124,6 @@ const SideMenu = ({ data, content_uid }) => {
     setIsNavOpen(false);
   };
 
-  // console.log(document.documentElement.clientHeight);
-  // const prova = document.querySelector('#main-content-section');
-  // // console.log(prova);
-  // const pos = prova.offsetTop;
-  // const height = prova.offsetHeight;
-  // const bottom = pos + height;
-  // console.log(pos);
-  // // console.log(bot);
-  // console.log(height);
-  // console.log(bottom);
-  // console.log(
-  //   document.documentElement.scrollHeight -
-  //     document.documentElement.clientHeight,
-  // );
-  // console.log(
-  //   document.documentElement.scrollHeight -
-  //     document.documentElement.clientHeight,
-  // );
-
   return headers?.length > 0 ? (
     <div className="sticky-wrapper navbar-wrapper page-side-menu">
       <nav className="navbar it-navscroll-wrapper navbar-expand-lg">

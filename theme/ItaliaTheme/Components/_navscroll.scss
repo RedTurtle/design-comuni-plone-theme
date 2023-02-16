@@ -7,19 +7,22 @@
         color: $body-color;
       }
 
-      .nav-item {
-        a.nav-link {
-          span {
-            @include rem-size(font-size, 18);
-            @include rem-size(line-height, 28);
-            font-weight: 400;
-            text-decoration: none;
+      ul {
+        li {
+          @include rem-size(font-size, 18);
+          @include rem-size(line-height, 28);
+          a {
+            span {
+              // @include rem-size(font-size, 18);
+              font-weight: 400;
+              text-decoration: none;
+            }
           }
-        }
-        a.nav-link.active {
-          span {
-            font-weight: 700;
-            text-decoration: none;
+          a.nav-link.active {
+            span {
+              font-weight: 700;
+              text-decoration: none;
+            }
           }
         }
       }

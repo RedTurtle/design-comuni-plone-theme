@@ -6,29 +6,42 @@
   display: flex;
   flex-wrap: nowrap;
 
-  &.card-teaser .card-body {
-    flex: 0 0 80%;
+  &.card-small {
+    @include rem-size(line-height, 24);
 
-    h5.card-title {
+    h5.card-title,
+    .text.fw-bold {
       a {
-        font-size: 1rem;
+        @include rem-size(font-size, 18);
         text-decoration: none;
-        font-weight: 700;
+        text-transform: none;
       }
     }
 
     p.card-text {
-      font-size: 1rem;
+      @include rem-size(font-size, 16);
     }
   }
-  .category-top {
+
+  &.card-big {
+    h5.card-title,
     .text.fw-bold {
       a {
+        @include rem-size(font-size, 24);
+        @include rem-size(line-height, 32);
+        text-decoration: none;
         text-transform: none;
-        font-size: 1rem;
-        line-height: 1.5rem;
       }
     }
+
+    p.card-text {
+      @include rem-size(font-size, 18);
+      @include rem-size(line-height, 24);
+    }
+  }
+
+  &.card-teaser .card-body {
+    flex: 0 0 80%;
   }
 }
 

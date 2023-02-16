@@ -104,7 +104,7 @@ const PaginaArgomentoView = ({ content }) => {
                       <div className="w-100">
                         <Card
                           className={
-                            'listing-item card-bg border-left-card preview-image-card'
+                            'listing-item card-bg border-left-card card-small'
                           }
                         >
                           <div className="d-flex">
