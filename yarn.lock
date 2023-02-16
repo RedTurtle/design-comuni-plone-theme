@@ -7826,7 +7826,6 @@ __metadata:
     typeface-roboto-mono: 0.0.75
     typeface-titillium-web: 0.0.72
     volto-blocks-widget: 3.0.0
-    volto-customer-satisfaction: 1.0.0
     volto-data-grid-widget: 2.1.0
     volto-dropdownmenu: 4.0.0
     volto-editablefooter: 5.0.1
@@ -22336,17 +22335,6 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
   checksum: d6547c09efc518c5cfb87bd03f64ca7a00094b8a0c43cfb7829d8e0376df9c4cb6d86a45bcb7ebaaafa3b7ec8c1617baee2190a9541622e08e559376f3da576e
-  languageName: node
-  linkType: hard
-
-"volto-customer-satisfaction@npm:1.0.0":
-  version: 1.0.0
-  resolution: "volto-customer-satisfaction@npm:1.0.0"
-  dependencies:
-    react-google-recaptcha-v3: 1.9.5
-  peerDependencies:
-    "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: c43f62b24b0d5b7b1acaffc3973ac8c5dc82dd58372bbe44f0a3eee7928af0185b7977861b66bf94e750d48f8be73d71f6ce5f49eee381978a1b7cdc13ebcd57
   languageName: node
   linkType: hard
 
