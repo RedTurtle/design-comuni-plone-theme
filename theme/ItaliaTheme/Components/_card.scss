@@ -1,0 +1,108 @@
+@use 'sass:color';
+
+.card.border-left-card {
+  border-left: 8px solid $primary-a0;
+  box-shadow: 0px 4px 4px 0px #00000026;
+  display: flex;
+  flex-wrap: nowrap;
+
+  &.card-teaser .card-body {
+    flex: 0 0 80%;
+
+    h5.card-title {
+      a {
+        font-size: 1rem;
+        text-decoration: none;
+        font-weight: 700;
+      }
+    }
+
+    p.card-text {
+      font-size: 1rem;
+    }
+  }
+  .category-top {
+    .text.fw-bold {
+      a {
+        text-transform: none;
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
+
+.card.preview-image-card {
+  .image-container {
+    margin: auto;
+    flex-basis: 20%;
+
+    img {
+      max-width: 67.56px;
+      height: 64px;
+      border-radius: 54px;
+    }
+  }
+}
+
+.card-with-image-template {
+  .listing-item.card {
+    .card-body {
+      .category-top {
+        font-size: 0.875rem;
+        line-height: 1.313rem;
+        color: $caption-text;
+
+        span.text {
+          font-weight: 600;
+          letter-spacing: 1px;
+        }
+
+        span.data {
+          font-weight: 400;
+          letter-spacing: 1.1px;
+        }
+      }
+
+      h3.card-title {
+        a {
+          font-size: 1.5rem;
+          line-height: 1.75rem;
+          font-weight: 700;
+          color: $primary;
+        }
+      }
+
+      p.card-text {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: $secondary;
+      }
+    }
+  }
+}
+
+.simple-card-default {
+  .card-body {
+    .category-top {
+      span.text {
+        span.text.fw-bold {
+          font-size: 0.875rem;
+          line-height: 1.313rem;
+          letter-spacing: 1px;
+          font-weight: 600 !important;
+          color: $primary;
+        }
+      }
+    }
+
+    p.card-text {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+// .card.card-border {
+//   border: 1px solid $primary-a0;
+// }

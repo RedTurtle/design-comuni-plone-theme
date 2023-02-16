@@ -17,7 +17,7 @@ export const ListingLinkMore = ({ title, href, className = '' }) => {
 
   return url ? (
     <div className={`link-button text-center ${className}`}>
-      <UniversalLink href={flattenToAppURL(url)} className="btn btn-tertiary">
+      <UniversalLink href={flattenToAppURL(url)} className="btn btn-primary">
         {title || intl.formatMessage(messages.view_all)}
       </UniversalLink>
     </div>

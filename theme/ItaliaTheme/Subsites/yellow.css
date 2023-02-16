@@ -1,0 +1,3724 @@
+/***
+******************+++
+Questo file definisce alcune variabili aggiuntive per design-comuni-plone-theme
+******************+++
+**/
+/***************************** 1 ****************************************/
+/***************************** 2 ****************************************/
+/***************************** 1 ****************************************/
+/***************************** 2 ****************************************/
+/***************************** 1 ****************************************/
+/***************************** 2 ****************************************/
+/***************************** 3 ****************************************/
+/***************************** 1 ****************************************/
+/***************************** 2 ****************************************/
+/***************************** 3 ****************************************/
+/***************************** NEUTRAL 1 ****************************************/
+/***************************** NEUTRAL 2 ****************************************/
+/***************************** NEUTRAL 2 / 3 ****************************************/
+.primary-bg {
+  background-color: hsl(210deg, 100%, 40%) !important;
+}
+
+.primary-color {
+  color: hsl(210deg, 100%, 40%) !important;
+}
+
+.primary-border-color {
+  border-color: hsl(210deg, 100%, 40%) !important;
+}
+.primary-border-color.border {
+  border-color: hsl(210deg, 100%, 40%) !important;
+}
+
+.white-bg {
+  background-color: hsl(0deg, 0%, 100%) !important;
+}
+
+.white-color {
+  color: hsl(0deg, 0%, 100%) !important;
+}
+
+.white-border-color- {
+  border-color: hsl(0deg, 0%, 100%) !important;
+}
+.white-border-color-.border {
+  border-color: hsl(0deg, 0%, 100%) !important;
+}
+
+.primary-bg-a1 {
+  background-color: hsl(210deg, 92.523364486%, 86.625%) !important;
+}
+
+.primary-color-a1 {
+  color: hsl(210deg, 92.523364486%, 86.625%) !important;
+}
+
+.primary-border-color-a1 {
+  border-color: hsl(210deg, 92.523364486%, 86.625%) !important;
+}
+.primary-border-color-a1.border {
+  border-color: hsl(210deg, 92.523364486%, 86.625%) !important;
+}
+
+.primary-bg-a2 {
+  background-color: hsl(211deg, 82.7586206897%, 76.8%) !important;
+}
+
+.primary-color-a2 {
+  color: hsl(211deg, 82.7586206897%, 76.8%) !important;
+}
+
+.primary-border-color-a2 {
+  border-color: hsl(211deg, 82.7586206897%, 76.8%) !important;
+}
+.primary-border-color-a2.border {
+  border-color: hsl(211deg, 82.7586206897%, 76.8%) !important;
+}
+
+.primary-bg-a3 {
+  background-color: hsl(210deg, 75.975975976%, 66.7%) !important;
+}
+
+.primary-color-a3 {
+  color: hsl(210deg, 75.975975976%, 66.7%) !important;
+}
+
+.primary-border-color-a3 {
+  border-color: hsl(210deg, 75.975975976%, 66.7%) !important;
+}
+.primary-border-color-a3.border {
+  border-color: hsl(210deg, 75.975975976%, 66.7%) !important;
+}
+
+.primary-bg-a4 {
+  background-color: hsl(210deg, 71.9626168224%, 57.2%) !important;
+}
+
+.primary-color-a4 {
+  color: hsl(210deg, 71.9626168224%, 57.2%) !important;
+}
+
+.primary-border-color-a4 {
+  border-color: hsl(210deg, 71.9626168224%, 57.2%) !important;
+}
+.primary-border-color-a4.border {
+  border-color: hsl(210deg, 71.9626168224%, 57.2%) !important;
+}
+
+.primary-bg-a5 {
+  background-color: hsl(210deg, 73.9130434783%, 48.3%) !important;
+}
+
+.primary-color-a5 {
+  color: hsl(210deg, 73.9130434783%, 48.3%) !important;
+}
+
+.primary-border-color-a5 {
+  border-color: hsl(210deg, 73.9130434783%, 48.3%) !important;
+}
+.primary-border-color-a5.border {
+  border-color: hsl(210deg, 73.9130434783%, 48.3%) !important;
+}
+
+.primary-bg-a6 {
+  background-color: hsl(210deg, 100%, 40%) !important;
+}
+
+.primary-color-a6 {
+  color: hsl(210deg, 100%, 40%) !important;
+}
+
+.primary-border-color-a6 {
+  border-color: hsl(210deg, 100%, 40%) !important;
+}
+.primary-border-color-a6.border {
+  border-color: hsl(210deg, 100%, 40%) !important;
+}
+
+.primary-bg-a7 {
+  background-color: hsl(210deg, 100%, 35%) !important;
+}
+
+.primary-color-a7 {
+  color: hsl(210deg, 100%, 35%) !important;
+}
+
+.primary-border-color-a7 {
+  border-color: hsl(210deg, 100%, 35%) !important;
+}
+.primary-border-color-a7.border {
+  border-color: hsl(210deg, 100%, 35%) !important;
+}
+
+.primary-bg-a8 {
+  background-color: hsl(210deg, 100%, 30%) !important;
+}
+
+.primary-color-a8 {
+  color: hsl(210deg, 100%, 30%) !important;
+}
+
+.primary-border-color-a8 {
+  border-color: hsl(210deg, 100%, 30%) !important;
+}
+.primary-border-color-a8.border {
+  border-color: hsl(210deg, 100%, 30%) !important;
+}
+
+.primary-bg-a9 {
+  background-color: hsl(210deg, 100%, 25%) !important;
+}
+
+.primary-color-a9 {
+  color: hsl(210deg, 100%, 25%) !important;
+}
+
+.primary-border-color-a9 {
+  border-color: hsl(210deg, 100%, 25%) !important;
+}
+.primary-border-color-a9.border {
+  border-color: hsl(210deg, 100%, 25%) !important;
+}
+
+.primary-bg-a10 {
+  background-color: hsl(210deg, 100%, 20%) !important;
+}
+
+.primary-color-a10 {
+  color: hsl(210deg, 100%, 20%) !important;
+}
+
+.primary-border-color-a10 {
+  border-color: hsl(210deg, 100%, 20%) !important;
+}
+.primary-border-color-a10.border {
+  border-color: hsl(210deg, 100%, 20%) !important;
+}
+
+.primary-bg-a11 {
+  background-color: hsl(210deg, 100%, 15%) !important;
+}
+
+.primary-color-a11 {
+  color: hsl(210deg, 100%, 15%) !important;
+}
+
+.primary-border-color-a11 {
+  border-color: hsl(210deg, 100%, 15%) !important;
+}
+.primary-border-color-a11.border {
+  border-color: hsl(210deg, 100%, 15%) !important;
+}
+
+.primary-bg-a12 {
+  background-color: hsl(210deg, 100%, 10%) !important;
+}
+
+.primary-color-a12 {
+  color: hsl(210deg, 100%, 10%) !important;
+}
+
+.primary-border-color-a12 {
+  border-color: hsl(210deg, 100%, 10%) !important;
+}
+.primary-border-color-a12.border {
+  border-color: hsl(210deg, 100%, 10%) !important;
+}
+
+.primary-bg-b1 {
+  background-color: hsl(210deg, 100%, 40%) !important;
+}
+
+.primary-color-b1 {
+  color: hsl(210deg, 100%, 40%) !important;
+}
+
+.primary-border-color-b1 {
+  border-color: hsl(210deg, 100%, 40%) !important;
+}
+.primary-border-color-b1.border {
+  border-color: hsl(210deg, 100%, 40%) !important;
+}
+
+.primary-bg-b2 {
+  background-color: hsl(210deg, 81.8181818182%, 38.5%) !important;
+}
+
+.primary-color-b2 {
+  color: hsl(210deg, 81.8181818182%, 38.5%) !important;
+}
+
+.primary-border-color-b2 {
+  border-color: hsl(210deg, 81.8181818182%, 38.5%) !important;
+}
+.primary-border-color-b2.border {
+  border-color: hsl(210deg, 81.8181818182%, 38.5%) !important;
+}
+
+.primary-bg-b3 {
+  background-color: hsl(210deg, 66.6666666667%, 36%) !important;
+}
+
+.primary-color-b3 {
+  color: hsl(210deg, 66.6666666667%, 36%) !important;
+}
+
+.primary-border-color-b3 {
+  border-color: hsl(210deg, 66.6666666667%, 36%) !important;
+}
+.primary-border-color-b3.border {
+  border-color: hsl(210deg, 66.6666666667%, 36%) !important;
+}
+
+.primary-bg-b4 {
+  background-color: hsl(210deg, 53.8461538462%, 32.5%) !important;
+}
+
+.primary-color-b4 {
+  color: hsl(210deg, 53.8461538462%, 32.5%) !important;
+}
+
+.primary-border-color-b4 {
+  border-color: hsl(210deg, 53.8461538462%, 32.5%) !important;
+}
+.primary-border-color-b4.border {
+  border-color: hsl(210deg, 53.8461538462%, 32.5%) !important;
+}
+
+.primary-bg-b5 {
+  background-color: hsl(210deg, 42.8571428571%, 28%) !important;
+}
+
+.primary-color-b5 {
+  color: hsl(210deg, 42.8571428571%, 28%) !important;
+}
+
+.primary-border-color-b5 {
+  border-color: hsl(210deg, 42.8571428571%, 28%) !important;
+}
+.primary-border-color-b5.border {
+  border-color: hsl(210deg, 42.8571428571%, 28%) !important;
+}
+
+.primary-bg-b6 {
+  background-color: hsl(210deg, 33.3333333333%, 22.5%) !important;
+}
+
+.primary-color-b6 {
+  color: hsl(210deg, 33.3333333333%, 22.5%) !important;
+}
+
+.primary-border-color-b6 {
+  border-color: hsl(210deg, 33.3333333333%, 22.5%) !important;
+}
+.primary-border-color-b6.border {
+  border-color: hsl(210deg, 33.3333333333%, 22.5%) !important;
+}
+
+.primary-bg-b7 {
+  background-color: hsl(210deg, 25%, 16%) !important;
+}
+
+.primary-color-b7 {
+  color: hsl(210deg, 25%, 16%) !important;
+}
+
+.primary-border-color-b7 {
+  border-color: hsl(210deg, 25%, 16%) !important;
+}
+.primary-border-color-b7.border {
+  border-color: hsl(210deg, 25%, 16%) !important;
+}
+
+.primary-bg-b8 {
+  background-color: hsl(210deg, 17.6470588235%, 8.5%) !important;
+}
+
+.primary-color-b8 {
+  color: hsl(210deg, 17.6470588235%, 8.5%) !important;
+}
+
+.primary-border-color-b8 {
+  border-color: hsl(210deg, 17.6470588235%, 8.5%) !important;
+}
+.primary-border-color-b8.border {
+  border-color: hsl(210deg, 17.6470588235%, 8.5%) !important;
+}
+
+.primary-bg-c1 {
+  background-color: hsl(210deg, 54.5454545455%, 91.2%) !important;
+}
+
+.primary-color-c1 {
+  color: hsl(210deg, 54.5454545455%, 91.2%) !important;
+}
+
+.primary-border-color-c1 {
+  border-color: hsl(210deg, 54.5454545455%, 91.2%) !important;
+}
+.primary-border-color-c1.border {
+  border-color: hsl(210deg, 54.5454545455%, 91.2%) !important;
+}
+
+.primary-bg-c2 {
+  background-color: hsl(210deg, 70.5882352941%, 86.4%) !important;
+}
+
+.primary-color-c2 {
+  color: hsl(210deg, 70.5882352941%, 86.4%) !important;
+}
+
+.primary-border-color-c2 {
+  border-color: hsl(210deg, 70.5882352941%, 86.4%) !important;
+}
+.primary-border-color-c2.border {
+  border-color: hsl(210deg, 70.5882352941%, 86.4%) !important;
+}
+
+.primary-bg-c3 {
+  background-color: hsl(210deg, 78.2608695652%, 81.6%) !important;
+}
+
+.primary-color-c3 {
+  color: hsl(210deg, 78.2608695652%, 81.6%) !important;
+}
+
+.primary-border-color-c3 {
+  border-color: hsl(210deg, 78.2608695652%, 81.6%) !important;
+}
+.primary-border-color-c3.border {
+  border-color: hsl(210deg, 78.2608695652%, 81.6%) !important;
+}
+
+.primary-bg-c4 {
+  background-color: hsl(210deg, 82.7586206897%, 76.8%) !important;
+}
+
+.primary-color-c4 {
+  color: hsl(210deg, 82.7586206897%, 76.8%) !important;
+}
+
+.primary-border-color-c4 {
+  border-color: hsl(210deg, 82.7586206897%, 76.8%) !important;
+}
+.primary-border-color-c4.border {
+  border-color: hsl(210deg, 82.7586206897%, 76.8%) !important;
+}
+
+.primary-bg-c5 {
+  background-color: hsl(210deg, 85.7142857143%, 72%) !important;
+}
+
+.primary-color-c5 {
+  color: hsl(210deg, 85.7142857143%, 72%) !important;
+}
+
+.primary-border-color-c5 {
+  border-color: hsl(210deg, 85.7142857143%, 72%) !important;
+}
+.primary-border-color-c5.border {
+  border-color: hsl(210deg, 85.7142857143%, 72%) !important;
+}
+
+.primary-bg-c6 {
+  background-color: hsl(210deg, 87.8048780488%, 67.2%) !important;
+}
+
+.primary-color-c6 {
+  color: hsl(210deg, 87.8048780488%, 67.2%) !important;
+}
+
+.primary-border-color-c6 {
+  border-color: hsl(210deg, 87.8048780488%, 67.2%) !important;
+}
+.primary-border-color-c6.border {
+  border-color: hsl(210deg, 87.8048780488%, 67.2%) !important;
+}
+
+.primary-bg-c7 {
+  background-color: hsl(210deg, 89.3617021277%, 62.4%) !important;
+}
+
+.primary-color-c7 {
+  color: hsl(210deg, 89.3617021277%, 62.4%) !important;
+}
+
+.primary-border-color-c7 {
+  border-color: hsl(210deg, 89.3617021277%, 62.4%) !important;
+}
+.primary-border-color-c7.border {
+  border-color: hsl(210deg, 89.3617021277%, 62.4%) !important;
+}
+
+.primary-bg-c8 {
+  background-color: hsl(210deg, 90.5660377358%, 57.6%) !important;
+}
+
+.primary-color-c8 {
+  color: hsl(210deg, 90.5660377358%, 57.6%) !important;
+}
+
+.primary-border-color-c8 {
+  border-color: hsl(210deg, 90.5660377358%, 57.6%) !important;
+}
+.primary-border-color-c8.border {
+  border-color: hsl(210deg, 90.5660377358%, 57.6%) !important;
+}
+
+.primary-bg-c9 {
+  background-color: hsl(210deg, 91.5254237288%, 52.8%) !important;
+}
+
+.primary-color-c9 {
+  color: hsl(210deg, 91.5254237288%, 52.8%) !important;
+}
+
+.primary-border-color-c9 {
+  border-color: hsl(210deg, 91.5254237288%, 52.8%) !important;
+}
+.primary-border-color-c9.border {
+  border-color: hsl(210deg, 91.5254237288%, 52.8%) !important;
+}
+
+.primary-bg-c10 {
+  background-color: hsl(210deg, 100%, 48%) !important;
+}
+
+.primary-color-c10 {
+  color: hsl(210deg, 100%, 48%) !important;
+}
+
+.primary-border-color-c10 {
+  border-color: hsl(210deg, 100%, 48%) !important;
+}
+.primary-border-color-c10.border {
+  border-color: hsl(210deg, 100%, 48%) !important;
+}
+
+.primary-bg-c11 {
+  background-color: hsl(210deg, 100%, 44%) !important;
+}
+
+.primary-color-c11 {
+  color: hsl(210deg, 100%, 44%) !important;
+}
+
+.primary-border-color-c11 {
+  border-color: hsl(210deg, 100%, 44%) !important;
+}
+.primary-border-color-c11.border {
+  border-color: hsl(210deg, 100%, 44%) !important;
+}
+
+.primary-bg-c12 {
+  background-color: hsl(210deg, 100%, 40%) !important;
+}
+
+.primary-color-c12 {
+  color: hsl(210deg, 100%, 40%) !important;
+}
+
+.primary-border-color-c12 {
+  border-color: hsl(210deg, 100%, 40%) !important;
+}
+.primary-border-color-c12.border {
+  border-color: hsl(210deg, 100%, 40%) !important;
+}
+
+.analogue-1-bg {
+  background-color: hsl(243deg, 100%, 57.5%) !important;
+}
+
+.analogue-1-color {
+  color: hsl(243deg, 100%, 57.5%) !important;
+}
+
+.analogue-1-border-color- {
+  border-color: hsl(243deg, 100%, 57.5%) !important;
+}
+.analogue-1-border-color-.border {
+  border-color: hsl(243deg, 100%, 57.5%) !important;
+}
+
+.analogue-1-bg-a1 {
+  background-color: hsl(243deg, 100%, 95%) !important;
+}
+
+.analogue-1-color-a1 {
+  color: hsl(243deg, 100%, 95%) !important;
+}
+
+.analogue-1-border-color-a1 {
+  border-color: hsl(243deg, 100%, 95%) !important;
+}
+.analogue-1-border-color-a1.border {
+  border-color: hsl(243deg, 100%, 95%) !important;
+}
+
+.analogue-1-bg-a2 {
+  background-color: hsl(243deg, 75%, 84%) !important;
+}
+
+.analogue-1-color-a2 {
+  color: hsl(243deg, 75%, 84%) !important;
+}
+
+.analogue-1-border-color-a2 {
+  border-color: hsl(243deg, 75%, 84%) !important;
+}
+.analogue-1-border-color-a2.border {
+  border-color: hsl(243deg, 75%, 84%) !important;
+}
+
+.analogue-1-bg-a3 {
+  background-color: hsl(243deg, 69.696969697%, 73.6%) !important;
+}
+
+.analogue-1-color-a3 {
+  color: hsl(243deg, 69.696969697%, 73.6%) !important;
+}
+
+.analogue-1-border-color-a3 {
+  border-color: hsl(243deg, 69.696969697%, 73.6%) !important;
+}
+.analogue-1-border-color-a3.border {
+  border-color: hsl(243deg, 69.696969697%, 73.6%) !important;
+}
+
+.analogue-1-bg-a4 {
+  background-color: hsl(243deg, 66.8508287293%, 63.8%) !important;
+}
+
+.analogue-1-color-a4 {
+  color: hsl(243deg, 66.8508287293%, 63.8%) !important;
+}
+
+.analogue-1-border-color-a4 {
+  border-color: hsl(243deg, 66.8508287293%, 63.8%) !important;
+}
+.analogue-1-border-color-a4.border {
+  border-color: hsl(243deg, 66.8508287293%, 63.8%) !important;
+}
+
+.analogue-1-bg-a5 {
+  background-color: hsl(243deg, 64.7577092511%, 54.6%) !important;
+}
+
+.analogue-1-color-a5 {
+  color: hsl(243deg, 64.7577092511%, 54.6%) !important;
+}
+
+.analogue-1-border-color-a5 {
+  border-color: hsl(243deg, 64.7577092511%, 54.6%) !important;
+}
+.analogue-1-border-color-a5.border {
+  border-color: hsl(243deg, 64.7577092511%, 54.6%) !important;
+}
+
+.analogue-1-bg-a6 {
+  background-color: hsl(243deg, 73.9130434783%, 46%) !important;
+}
+
+.analogue-1-color-a6 {
+  color: hsl(243deg, 73.9130434783%, 46%) !important;
+}
+
+.analogue-1-border-color-a6 {
+  border-color: hsl(243deg, 73.9130434783%, 46%) !important;
+}
+.analogue-1-border-color-a6.border {
+  border-color: hsl(243deg, 73.9130434783%, 46%) !important;
+}
+
+.analogue-1-bg-a7 {
+  background-color: hsl(243deg, 73.9130434783%, 40.25%) !important;
+}
+
+.analogue-1-color-a7 {
+  color: hsl(243deg, 73.9130434783%, 40.25%) !important;
+}
+
+.analogue-1-border-color-a7 {
+  border-color: hsl(243deg, 73.9130434783%, 40.25%) !important;
+}
+.analogue-1-border-color-a7.border {
+  border-color: hsl(243deg, 73.9130434783%, 40.25%) !important;
+}
+
+.analogue-1-bg-a8 {
+  background-color: hsl(243deg, 73.9130434783%, 34.5%) !important;
+}
+
+.analogue-1-color-a8 {
+  color: hsl(243deg, 73.9130434783%, 34.5%) !important;
+}
+
+.analogue-1-border-color-a8 {
+  border-color: hsl(243deg, 73.9130434783%, 34.5%) !important;
+}
+.analogue-1-border-color-a8.border {
+  border-color: hsl(243deg, 73.9130434783%, 34.5%) !important;
+}
+
+.analogue-1-bg-a9 {
+  background-color: hsl(243deg, 73.9130434783%, 28.75%) !important;
+}
+
+.analogue-1-color-a9 {
+  color: hsl(243deg, 73.9130434783%, 28.75%) !important;
+}
+
+.analogue-1-border-color-a9 {
+  border-color: hsl(243deg, 73.9130434783%, 28.75%) !important;
+}
+.analogue-1-border-color-a9.border {
+  border-color: hsl(243deg, 73.9130434783%, 28.75%) !important;
+}
+
+.analogue-1-bg-a10 {
+  background-color: hsl(243deg, 73.9130434783%, 23%) !important;
+}
+
+.analogue-1-color-a10 {
+  color: hsl(243deg, 73.9130434783%, 23%) !important;
+}
+
+.analogue-1-border-color-a10 {
+  border-color: hsl(243deg, 73.9130434783%, 23%) !important;
+}
+.analogue-1-border-color-a10.border {
+  border-color: hsl(243deg, 73.9130434783%, 23%) !important;
+}
+
+.analogue-1-bg-a11 {
+  background-color: hsl(243deg, 73.9130434783%, 17.25%) !important;
+}
+
+.analogue-1-color-a11 {
+  color: hsl(243deg, 73.9130434783%, 17.25%) !important;
+}
+
+.analogue-1-border-color-a11 {
+  border-color: hsl(243deg, 73.9130434783%, 17.25%) !important;
+}
+.analogue-1-border-color-a11.border {
+  border-color: hsl(243deg, 73.9130434783%, 17.25%) !important;
+}
+
+.analogue-1-bg-a12 {
+  background-color: hsl(243deg, 73.9130434783%, 11.5%) !important;
+}
+
+.analogue-1-color-a12 {
+  color: hsl(243deg, 73.9130434783%, 11.5%) !important;
+}
+
+.analogue-1-border-color-a12 {
+  border-color: hsl(243deg, 73.9130434783%, 11.5%) !important;
+}
+.analogue-1-border-color-a12.border {
+  border-color: hsl(243deg, 73.9130434783%, 11.5%) !important;
+}
+
+.analogue-2-bg {
+  background-color: hsl(178deg, 90.4761904762%, 44.625%) !important;
+}
+
+.analogue-2-color {
+  color: hsl(178deg, 90.4761904762%, 44.625%) !important;
+}
+
+.analogue-2-border-color- {
+  border-color: hsl(178deg, 90.4761904762%, 44.625%) !important;
+}
+.analogue-2-border-color-.border {
+  border-color: hsl(178deg, 90.4761904762%, 44.625%) !important;
+}
+
+.analogue-2-bg-a1 {
+  background-color: hsl(178deg, 100%, 90%) !important;
+}
+
+.analogue-2-color-a1 {
+  color: hsl(178deg, 100%, 90%) !important;
+}
+
+.analogue-2-border-color-a1 {
+  border-color: hsl(178deg, 100%, 90%) !important;
+}
+.analogue-2-border-color-a1.border {
+  border-color: hsl(178deg, 100%, 90%) !important;
+}
+
+.analogue-2-bg-a2 {
+  background-color: hsl(178deg, 80.7692307692%, 79.2%) !important;
+}
+
+.analogue-2-color-a2 {
+  color: hsl(178deg, 80.7692307692%, 79.2%) !important;
+}
+
+.analogue-2-border-color-a2 {
+  border-color: hsl(178deg, 80.7692307692%, 79.2%) !important;
+}
+.analogue-2-border-color-a2.border {
+  border-color: hsl(178deg, 80.7692307692%, 79.2%) !important;
+}
+
+.analogue-2-bg-a3 {
+  background-color: hsl(178deg, 74.1935483871%, 69%) !important;
+}
+
+.analogue-2-color-a3 {
+  color: hsl(178deg, 74.1935483871%, 69%) !important;
+}
+
+.analogue-2-border-color-a3 {
+  border-color: hsl(178deg, 74.1935483871%, 69%) !important;
+}
+.analogue-2-border-color-a3.border {
+  border-color: hsl(178deg, 74.1935483871%, 69%) !important;
+}
+
+.analogue-2-bg-a4 {
+  background-color: hsl(178deg, 70.4433497537%, 59.4%) !important;
+}
+
+.analogue-2-color-a4 {
+  color: hsl(178deg, 70.4433497537%, 59.4%) !important;
+}
+
+.analogue-2-border-color-a4 {
+  border-color: hsl(178deg, 70.4433497537%, 59.4%) !important;
+}
+.analogue-2-border-color-a4.border {
+  border-color: hsl(178deg, 70.4433497537%, 59.4%) !important;
+}
+
+.analogue-2-bg-a5 {
+  background-color: hsl(178deg, 67.7419354839%, 50.4%) !important;
+}
+
+.analogue-2-color-a5 {
+  color: hsl(178deg, 67.7419354839%, 50.4%) !important;
+}
+
+.analogue-2-border-color-a5 {
+  border-color: hsl(178deg, 67.7419354839%, 50.4%) !important;
+}
+.analogue-2-border-color-a5.border {
+  border-color: hsl(178deg, 67.7419354839%, 50.4%) !important;
+}
+
+.analogue-2-bg-a6 {
+  background-color: hsl(178deg, 90.4761904762%, 42%) !important;
+}
+
+.analogue-2-color-a6 {
+  color: hsl(178deg, 90.4761904762%, 42%) !important;
+}
+
+.analogue-2-border-color-a6 {
+  border-color: hsl(178deg, 90.4761904762%, 42%) !important;
+}
+.analogue-2-border-color-a6.border {
+  border-color: hsl(178deg, 90.4761904762%, 42%) !important;
+}
+
+.analogue-2-bg-a7 {
+  background-color: hsl(178deg, 90.4761904762%, 36.75%) !important;
+}
+
+.analogue-2-color-a7 {
+  color: hsl(178deg, 90.4761904762%, 36.75%) !important;
+}
+
+.analogue-2-border-color-a7 {
+  border-color: hsl(178deg, 90.4761904762%, 36.75%) !important;
+}
+.analogue-2-border-color-a7.border {
+  border-color: hsl(178deg, 90.4761904762%, 36.75%) !important;
+}
+
+.analogue-2-bg-a8 {
+  background-color: hsl(178deg, 90.4761904762%, 31.5%) !important;
+}
+
+.analogue-2-color-a8 {
+  color: hsl(178deg, 90.4761904762%, 31.5%) !important;
+}
+
+.analogue-2-border-color-a8 {
+  border-color: hsl(178deg, 90.4761904762%, 31.5%) !important;
+}
+.analogue-2-border-color-a8.border {
+  border-color: hsl(178deg, 90.4761904762%, 31.5%) !important;
+}
+
+.analogue-2-bg-a9 {
+  background-color: hsl(178deg, 90.4761904762%, 26.25%) !important;
+}
+
+.analogue-2-color-a9 {
+  color: hsl(178deg, 90.4761904762%, 26.25%) !important;
+}
+
+.analogue-2-border-color-a9 {
+  border-color: hsl(178deg, 90.4761904762%, 26.25%) !important;
+}
+.analogue-2-border-color-a9.border {
+  border-color: hsl(178deg, 90.4761904762%, 26.25%) !important;
+}
+
+.analogue-2-bg-a10 {
+  background-color: hsl(178deg, 90.4761904762%, 21%) !important;
+}
+
+.analogue-2-color-a10 {
+  color: hsl(178deg, 90.4761904762%, 21%) !important;
+}
+
+.analogue-2-border-color-a10 {
+  border-color: hsl(178deg, 90.4761904762%, 21%) !important;
+}
+.analogue-2-border-color-a10.border {
+  border-color: hsl(178deg, 90.4761904762%, 21%) !important;
+}
+
+.analogue-2-bg-a11 {
+  background-color: hsl(178deg, 90.4761904762%, 15.75%) !important;
+}
+
+.analogue-2-color-a11 {
+  color: hsl(178deg, 90.4761904762%, 15.75%) !important;
+}
+
+.analogue-2-border-color-a11 {
+  border-color: hsl(178deg, 90.4761904762%, 15.75%) !important;
+}
+.analogue-2-border-color-a11.border {
+  border-color: hsl(178deg, 90.4761904762%, 15.75%) !important;
+}
+
+.analogue-2-bg-a12 {
+  background-color: hsl(178deg, 90.4761904762%, 10.5%) !important;
+}
+
+.analogue-2-color-a12 {
+  color: hsl(178deg, 90.4761904762%, 10.5%) !important;
+}
+
+.analogue-2-border-color-a12 {
+  border-color: hsl(178deg, 90.4761904762%, 10.5%) !important;
+}
+.analogue-2-border-color-a12.border {
+  border-color: hsl(178deg, 90.4761904762%, 10.5%) !important;
+}
+
+.complementary-1-bg {
+  background-color: hsl(351deg, 92.380952381%, 60.625%) !important;
+}
+
+.complementary-1-color {
+  color: hsl(36deg, 100%, 50%) !important;
+}
+
+.complementary-1-border-color- {
+  border-color: hsl(351deg, 92.380952381%, 60.625%) !important;
+}
+.complementary-1-border-color-.border {
+  border-color: hsl(351deg, 92.380952381%, 60.625%) !important;
+}
+
+.complementary-1-bg-a1 {
+  background-color: hsl(351deg, 100%, 99.5%) !important;
+}
+
+.complementary-1-color-a1 {
+  color: hsl(351deg, 100%, 99.5%) !important;
+}
+
+.complementary-1-border-color-a1 {
+  border-color: hsl(351deg, 100%, 99.5%) !important;
+}
+.complementary-1-border-color-a1.border {
+  border-color: hsl(351deg, 100%, 99.5%) !important;
+}
+
+.complementary-1-bg-a2 {
+  background-color: hsl(351deg, 64.2857142857%, 88.8%) !important;
+}
+
+.complementary-1-color-a2 {
+  color: hsl(351deg, 64.2857142857%, 88.8%) !important;
+}
+
+.complementary-1-border-color-a2 {
+  border-color: hsl(351deg, 64.2857142857%, 88.8%) !important;
+}
+.complementary-1-border-color-a2.border {
+  border-color: hsl(351deg, 64.2857142857%, 88.8%) !important;
+}
+
+.complementary-1-bg-a3 {
+  background-color: hsl(351deg, 63.3027522936%, 78.2%) !important;
+}
+
+.complementary-1-color-a3 {
+  color: hsl(351deg, 63.3027522936%, 78.2%) !important;
+}
+
+.complementary-1-border-color-a3 {
+  border-color: hsl(351deg, 63.3027522936%, 78.2%) !important;
+}
+.complementary-1-border-color-a3.border {
+  border-color: hsl(351deg, 63.3027522936%, 78.2%) !important;
+}
+
+.complementary-1-bg-a4 {
+  background-color: hsl(351deg, 62.2641509434%, 68.2%) !important;
+}
+
+.complementary-1-color-a4 {
+  color: hsl(351deg, 62.2641509434%, 68.2%) !important;
+}
+
+.complementary-1-border-color-a4 {
+  border-color: hsl(351deg, 62.2641509434%, 68.2%) !important;
+}
+.complementary-1-border-color-a4.border {
+  border-color: hsl(351deg, 62.2641509434%, 68.2%) !important;
+}
+
+.complementary-1-bg-a5 {
+  background-color: hsl(351deg, 61.1650485437%, 58.8%) !important;
+}
+
+.complementary-1-color-a5 {
+  color: hsl(351deg, 61.1650485437%, 58.8%) !important;
+}
+
+.complementary-1-border-color-a5 {
+  border-color: hsl(351deg, 61.1650485437%, 58.8%) !important;
+}
+.complementary-1-border-color-a5.border {
+  border-color: hsl(351deg, 61.1650485437%, 58.8%) !important;
+}
+
+.complementary-1-bg-a6 {
+  background-color: hsl(351deg, 60%, 50%) !important;
+}
+
+.complementary-1-color-a6 {
+  color: hsl(351deg, 60%, 50%) !important;
+}
+
+.complementary-1-border-color-a6 {
+  border-color: hsl(351deg, 60%, 50%) !important;
+}
+.complementary-1-border-color-a6.border {
+  border-color: hsl(351deg, 60%, 50%) !important;
+}
+
+.complementary-1-bg-a7 {
+  background-color: hsl(351deg, 60%, 43.75%) !important;
+}
+
+.complementary-1-color-a7 {
+  color: hsl(351deg, 60%, 43.75%) !important;
+}
+
+.complementary-1-border-color-a7 {
+  border-color: hsl(351deg, 60%, 43.75%) !important;
+}
+.complementary-1-border-color-a7.border {
+  border-color: hsl(351deg, 60%, 43.75%) !important;
+}
+
+.complementary-1-bg-a8 {
+  background-color: hsl(351deg, 60%, 37.5%) !important;
+}
+
+.complementary-1-color-a8 {
+  color: hsl(351deg, 60%, 37.5%) !important;
+}
+
+.complementary-1-border-color-a8 {
+  border-color: hsl(351deg, 60%, 37.5%) !important;
+}
+.complementary-1-border-color-a8.border {
+  border-color: hsl(351deg, 60%, 37.5%) !important;
+}
+
+.complementary-1-bg-a9 {
+  background-color: hsl(351deg, 60%, 31.25%) !important;
+}
+
+.complementary-1-color-a9 {
+  color: hsl(351deg, 60%, 31.25%) !important;
+}
+
+.complementary-1-border-color-a9 {
+  border-color: hsl(351deg, 60%, 31.25%) !important;
+}
+.complementary-1-border-color-a9.border {
+  border-color: hsl(351deg, 60%, 31.25%) !important;
+}
+
+.complementary-1-bg-a10 {
+  background-color: hsl(351deg, 60%, 25%) !important;
+}
+
+.complementary-1-color-a10 {
+  color: hsl(351deg, 60%, 25%) !important;
+}
+
+.complementary-1-border-color-a10 {
+  border-color: hsl(351deg, 60%, 25%) !important;
+}
+.complementary-1-border-color-a10.border {
+  border-color: hsl(351deg, 60%, 25%) !important;
+}
+
+.complementary-1-bg-a11 {
+  background-color: hsl(351deg, 60%, 18.75%) !important;
+}
+
+.complementary-1-color-a11 {
+  color: hsl(351deg, 60%, 18.75%) !important;
+}
+
+.complementary-1-border-color-a11 {
+  border-color: hsl(351deg, 60%, 18.75%) !important;
+}
+.complementary-1-border-color-a11.border {
+  border-color: hsl(351deg, 60%, 18.75%) !important;
+}
+
+.complementary-1-bg-a12 {
+  background-color: hsl(351deg, 60%, 12.5%) !important;
+}
+
+.complementary-1-color-a12 {
+  color: hsl(351deg, 60%, 12.5%) !important;
+}
+
+.complementary-1-border-color-a12 {
+  border-color: hsl(351deg, 60%, 12.5%) !important;
+}
+.complementary-1-border-color-a12.border {
+  border-color: hsl(351deg, 60%, 12.5%) !important;
+}
+
+.complementary-2-bg {
+  background-color: hsl(36deg, 100%, 50%) !important;
+}
+
+.complementary-2-color {
+  color: hsl(36deg, 100%, 50%) !important;
+}
+
+.complementary-2-border-color- {
+  border-color: hsl(36deg, 100%, 50%) !important;
+}
+.complementary-2-border-color-.border {
+  border-color: hsl(36deg, 100%, 50%) !important;
+}
+
+.complementary-2-bg-a1 {
+  background-color: hsl(36deg, 100%, 87.5%) !important;
+}
+
+.complementary-2-color-a1 {
+  color: hsl(36deg, 100%, 87.5%) !important;
+}
+
+.complementary-2-border-color-a1 {
+  border-color: hsl(36deg, 100%, 87.5%) !important;
+}
+.complementary-2-border-color-a1.border {
+  border-color: hsl(36deg, 100%, 87.5%) !important;
+}
+
+.complementary-2-bg-a2 {
+  background-color: hsl(36deg, 82.7586206897%, 76.8%) !important;
+}
+
+.complementary-2-color-a2 {
+  color: hsl(36deg, 82.7586206897%, 76.8%) !important;
+}
+
+.complementary-2-border-color-a2 {
+  border-color: hsl(36deg, 82.7586206897%, 76.8%) !important;
+}
+.complementary-2-border-color-a2.border {
+  border-color: hsl(36deg, 82.7586206897%, 76.8%) !important;
+}
+
+.complementary-2-bg-a3 {
+  background-color: hsl(36deg, 75.975975976%, 66.7%) !important;
+}
+
+.complementary-2-color-a3 {
+  color: hsl(36deg, 75.975975976%, 66.7%) !important;
+}
+
+.complementary-2-border-color-a3 {
+  border-color: hsl(36deg, 75.975975976%, 66.7%) !important;
+}
+.complementary-2-border-color-a3.border {
+  border-color: hsl(36deg, 75.975975976%, 66.7%) !important;
+}
+
+.complementary-2-bg-a4 {
+  background-color: hsl(36deg, 71.9626168224%, 57.2%) !important;
+}
+
+.complementary-2-color-a4 {
+  color: hsl(36deg, 71.9626168224%, 57.2%) !important;
+}
+
+.complementary-2-border-color-a4 {
+  border-color: hsl(36deg, 71.9626168224%, 57.2%) !important;
+}
+.complementary-2-border-color-a4.border {
+  border-color: hsl(36deg, 71.9626168224%, 57.2%) !important;
+}
+
+.complementary-2-bg-a5 {
+  background-color: hsl(36deg, 73.9130434783%, 48.3%) !important;
+}
+
+.complementary-2-color-a5 {
+  color: hsl(36deg, 73.9130434783%, 48.3%) !important;
+}
+
+.complementary-2-border-color-a5 {
+  border-color: hsl(36deg, 73.9130434783%, 48.3%) !important;
+}
+.complementary-2-border-color-a5.border {
+  border-color: hsl(36deg, 73.9130434783%, 48.3%) !important;
+}
+
+.complementary-2-bg-a6 {
+  background-color: hsl(36deg, 100%, 40%) !important;
+}
+
+.complementary-2-color-a6 {
+  color: hsl(36deg, 100%, 40%) !important;
+}
+
+.complementary-2-border-color-a6 {
+  border-color: hsl(36deg, 100%, 40%) !important;
+}
+.complementary-2-border-color-a6.border {
+  border-color: hsl(36deg, 100%, 40%) !important;
+}
+
+.complementary-2-bg-a7 {
+  background-color: hsl(36deg, 100%, 35%) !important;
+}
+
+.complementary-2-color-a7 {
+  color: hsl(36deg, 100%, 35%) !important;
+}
+
+.complementary-2-border-color-a7 {
+  border-color: hsl(36deg, 100%, 35%) !important;
+}
+.complementary-2-border-color-a7.border {
+  border-color: hsl(36deg, 100%, 35%) !important;
+}
+
+.complementary-2-bg-a8 {
+  background-color: hsl(36deg, 100%, 30%) !important;
+}
+
+.complementary-2-color-a8 {
+  color: hsl(36deg, 100%, 30%) !important;
+}
+
+.complementary-2-border-color-a8 {
+  border-color: hsl(36deg, 100%, 30%) !important;
+}
+.complementary-2-border-color-a8.border {
+  border-color: hsl(36deg, 100%, 30%) !important;
+}
+
+.complementary-2-bg-a9 {
+  background-color: hsl(36deg, 100%, 25%) !important;
+}
+
+.complementary-2-color-a9 {
+  color: hsl(36deg, 100%, 25%) !important;
+}
+
+.complementary-2-border-color-a9 {
+  border-color: hsl(36deg, 100%, 25%) !important;
+}
+.complementary-2-border-color-a9.border {
+  border-color: hsl(36deg, 100%, 25%) !important;
+}
+
+.complementary-2-bg-a10 {
+  background-color: hsl(36deg, 100%, 20%) !important;
+}
+
+.complementary-2-color-a10 {
+  color: hsl(36deg, 100%, 20%) !important;
+}
+
+.complementary-2-border-color-a10 {
+  border-color: hsl(36deg, 100%, 20%) !important;
+}
+.complementary-2-border-color-a10.border {
+  border-color: hsl(36deg, 100%, 20%) !important;
+}
+
+.complementary-2-bg-a11 {
+  background-color: hsl(36deg, 100%, 15%) !important;
+}
+
+.complementary-2-color-a11 {
+  color: hsl(36deg, 100%, 15%) !important;
+}
+
+.complementary-2-border-color-a11 {
+  border-color: hsl(36deg, 100%, 15%) !important;
+}
+.complementary-2-border-color-a11.border {
+  border-color: hsl(36deg, 100%, 15%) !important;
+}
+
+.complementary-2-bg-a12 {
+  background-color: hsl(36deg, 100%, 10%) !important;
+}
+
+.complementary-2-color-a12 {
+  color: hsl(36deg, 100%, 10%) !important;
+}
+
+.complementary-2-border-color-a12 {
+  border-color: hsl(36deg, 100%, 10%) !important;
+}
+.complementary-2-border-color-a12.border {
+  border-color: hsl(36deg, 100%, 10%) !important;
+}
+
+.complementary-3-bg {
+  background-color: hsl(159deg, 100%, 40.5%) !important;
+}
+
+.complementary-3-color {
+  color: hsl(159deg, 100%, 40.5%) !important;
+}
+
+.complementary-3-border-color- {
+  border-color: hsl(159deg, 100%, 40.5%) !important;
+}
+.complementary-3-border-color-.border {
+  border-color: hsl(159deg, 100%, 40.5%) !important;
+}
+
+.complementary-3-bg-a1 {
+  background-color: hsl(159deg, 100%, 87.5%) !important;
+}
+
+.complementary-3-color-a1 {
+  color: hsl(159deg, 100%, 87.5%) !important;
+}
+
+.complementary-3-border-color-a1 {
+  border-color: hsl(159deg, 100%, 87.5%) !important;
+}
+.complementary-3-border-color-a1.border {
+  border-color: hsl(159deg, 100%, 87.5%) !important;
+}
+
+.complementary-3-bg-a2 {
+  background-color: hsl(159deg, 82.7586206897%, 76.8%) !important;
+}
+
+.complementary-3-color-a2 {
+  color: hsl(159deg, 82.7586206897%, 76.8%) !important;
+}
+
+.complementary-3-border-color-a2 {
+  border-color: hsl(159deg, 82.7586206897%, 76.8%) !important;
+}
+.complementary-3-border-color-a2.border {
+  border-color: hsl(159deg, 82.7586206897%, 76.8%) !important;
+}
+
+.complementary-3-bg-a3 {
+  background-color: hsl(159deg, 75.975975976%, 66.7%) !important;
+}
+
+.complementary-3-color-a3 {
+  color: hsl(159deg, 75.975975976%, 66.7%) !important;
+}
+
+.complementary-3-border-color-a3 {
+  border-color: hsl(159deg, 75.975975976%, 66.7%) !important;
+}
+.complementary-3-border-color-a3.border {
+  border-color: hsl(159deg, 75.975975976%, 66.7%) !important;
+}
+
+.complementary-3-bg-a4 {
+  background-color: hsl(159deg, 71.9626168224%, 57.2%) !important;
+}
+
+.complementary-3-color-a4 {
+  color: hsl(159deg, 71.9626168224%, 57.2%) !important;
+}
+
+.complementary-3-border-color-a4 {
+  border-color: hsl(159deg, 71.9626168224%, 57.2%) !important;
+}
+.complementary-3-border-color-a4.border {
+  border-color: hsl(159deg, 71.9626168224%, 57.2%) !important;
+}
+
+.complementary-3-bg-a5 {
+  background-color: hsl(159deg, 73.9130434783%, 48.3%) !important;
+}
+
+.complementary-3-color-a5 {
+  color: hsl(159deg, 73.9130434783%, 48.3%) !important;
+}
+
+.complementary-3-border-color-a5 {
+  border-color: hsl(159deg, 73.9130434783%, 48.3%) !important;
+}
+.complementary-3-border-color-a5.border {
+  border-color: hsl(159deg, 73.9130434783%, 48.3%) !important;
+}
+
+.complementary-3-bg-a6 {
+  background-color: hsl(159deg, 100%, 40%) !important;
+}
+
+.complementary-3-color-a6 {
+  color: hsl(159deg, 100%, 40%) !important;
+}
+
+.complementary-3-border-color-a6 {
+  border-color: hsl(159deg, 100%, 40%) !important;
+}
+.complementary-3-border-color-a6.border {
+  border-color: hsl(159deg, 100%, 40%) !important;
+}
+
+.complementary-3-bg-a7 {
+  background-color: hsl(159deg, 100%, 35%) !important;
+}
+
+.complementary-3-color-a7 {
+  color: hsl(159deg, 100%, 35%) !important;
+}
+
+.complementary-3-border-color-a7 {
+  border-color: hsl(159deg, 100%, 35%) !important;
+}
+.complementary-3-border-color-a7.border {
+  border-color: hsl(159deg, 100%, 35%) !important;
+}
+
+.complementary-3-bg-a8 {
+  background-color: hsl(159deg, 100%, 30%) !important;
+}
+
+.complementary-3-color-a8 {
+  color: hsl(159deg, 100%, 30%) !important;
+}
+
+.complementary-3-border-color-a8 {
+  border-color: hsl(159deg, 100%, 30%) !important;
+}
+.complementary-3-border-color-a8.border {
+  border-color: hsl(159deg, 100%, 30%) !important;
+}
+
+.complementary-3-bg-a9 {
+  background-color: hsl(159deg, 100%, 25%) !important;
+}
+
+.complementary-3-color-a9 {
+  color: hsl(159deg, 100%, 25%) !important;
+}
+
+.complementary-3-border-color-a9 {
+  border-color: hsl(159deg, 100%, 25%) !important;
+}
+.complementary-3-border-color-a9.border {
+  border-color: hsl(159deg, 100%, 25%) !important;
+}
+
+.complementary-3-bg-a10 {
+  background-color: hsl(159deg, 100%, 20%) !important;
+}
+
+.complementary-3-color-a10 {
+  color: hsl(159deg, 100%, 20%) !important;
+}
+
+.complementary-3-border-color-a10 {
+  border-color: hsl(159deg, 100%, 20%) !important;
+}
+.complementary-3-border-color-a10.border {
+  border-color: hsl(159deg, 100%, 20%) !important;
+}
+
+.complementary-3-bg-a11 {
+  background-color: hsl(159deg, 100%, 15%) !important;
+}
+
+.complementary-3-color-a11 {
+  color: hsl(159deg, 100%, 15%) !important;
+}
+
+.complementary-3-border-color-a11 {
+  border-color: hsl(159deg, 100%, 15%) !important;
+}
+.complementary-3-border-color-a11.border {
+  border-color: hsl(159deg, 100%, 15%) !important;
+}
+
+.complementary-3-bg-a12 {
+  background-color: hsl(159deg, 100%, 10%) !important;
+}
+
+.complementary-3-color-a12 {
+  color: hsl(159deg, 100%, 10%) !important;
+}
+
+.complementary-3-border-color-a12 {
+  border-color: hsl(159deg, 100%, 10%) !important;
+}
+.complementary-3-border-color-a12.border {
+  border-color: hsl(159deg, 100%, 10%) !important;
+}
+
+.analogue-1-bg-b1 {
+  background-color: hsl(243deg, 100%, 57.5%) !important;
+}
+
+.analogue-1-color-b1 {
+  color: hsl(243deg, 100%, 57.5%) !important;
+}
+
+.analogue-1-border-color-b1 {
+  border-color: hsl(243deg, 100%, 57.5%) !important;
+}
+.analogue-1-border-color-b1.border {
+  border-color: hsl(243deg, 100%, 57.5%) !important;
+}
+
+.analogue-1-bg-b2 {
+  background-color: hsl(243deg, 77.1428571429%, 56.25%) !important;
+}
+
+.analogue-1-color-b2 {
+  color: hsl(243deg, 77.1428571429%, 56.25%) !important;
+}
+
+.analogue-1-border-color-b2 {
+  border-color: hsl(243deg, 77.1428571429%, 56.25%) !important;
+}
+.analogue-1-border-color-b2.border {
+  border-color: hsl(243deg, 77.1428571429%, 56.25%) !important;
+}
+
+.analogue-1-bg-b3 {
+  background-color: hsl(243deg, 56.5217391304%, 54%) !important;
+}
+
+.analogue-1-color-b3 {
+  color: hsl(243deg, 56.5217391304%, 54%) !important;
+}
+
+.analogue-1-border-color-b3 {
+  border-color: hsl(243deg, 56.5217391304%, 54%) !important;
+}
+.analogue-1-border-color-b3.border {
+  border-color: hsl(243deg, 56.5217391304%, 54%) !important;
+}
+
+.analogue-1-bg-b4 {
+  background-color: hsl(243deg, 39.0862944162%, 50.75%) !important;
+}
+
+.analogue-1-color-b4 {
+  color: hsl(243deg, 39.0862944162%, 50.75%) !important;
+}
+
+.analogue-1-border-color-b4 {
+  border-color: hsl(243deg, 39.0862944162%, 50.75%) !important;
+}
+.analogue-1-border-color-b4.border {
+  border-color: hsl(243deg, 39.0862944162%, 50.75%) !important;
+}
+
+.analogue-1-bg-b5 {
+  background-color: hsl(243deg, 29.0322580645%, 46.5%) !important;
+}
+
+.analogue-1-color-b5 {
+  color: hsl(243deg, 29.0322580645%, 46.5%) !important;
+}
+
+.analogue-1-border-color-b5 {
+  border-color: hsl(243deg, 29.0322580645%, 46.5%) !important;
+}
+.analogue-1-border-color-b5.border {
+  border-color: hsl(243deg, 29.0322580645%, 46.5%) !important;
+}
+
+.analogue-1-bg-b6 {
+  background-color: hsl(243deg, 21.2121212121%, 41.25%) !important;
+}
+
+.analogue-1-color-b6 {
+  color: hsl(243deg, 21.2121212121%, 41.25%) !important;
+}
+
+.analogue-1-border-color-b6 {
+  border-color: hsl(243deg, 21.2121212121%, 41.25%) !important;
+}
+.analogue-1-border-color-b6.border {
+  border-color: hsl(243deg, 21.2121212121%, 41.25%) !important;
+}
+
+.analogue-1-bg-b7 {
+  background-color: hsl(243deg, 14.2857142857%, 35%) !important;
+}
+
+.analogue-1-color-b7 {
+  color: hsl(243deg, 14.2857142857%, 35%) !important;
+}
+
+.analogue-1-border-color-b7 {
+  border-color: hsl(243deg, 14.2857142857%, 35%) !important;
+}
+.analogue-1-border-color-b7.border {
+  border-color: hsl(243deg, 14.2857142857%, 35%) !important;
+}
+
+.analogue-1-bg-b8 {
+  background-color: hsl(243deg, 8.1081081081%, 27.75%) !important;
+}
+
+.analogue-1-color-b8 {
+  color: hsl(243deg, 8.1081081081%, 27.75%) !important;
+}
+
+.analogue-1-border-color-b8 {
+  border-color: hsl(243deg, 8.1081081081%, 27.75%) !important;
+}
+.analogue-1-border-color-b8.border {
+  border-color: hsl(243deg, 8.1081081081%, 27.75%) !important;
+}
+
+.analogue-2-bg-b1 {
+  background-color: hsl(178deg, 90.4761904762%, 44.625%) !important;
+}
+
+.analogue-2-color-b1 {
+  color: hsl(178deg, 90.4761904762%, 44.625%) !important;
+}
+
+.analogue-2-border-color-b1 {
+  border-color: hsl(178deg, 90.4761904762%, 44.625%) !important;
+}
+.analogue-2-border-color-b1.border {
+  border-color: hsl(178deg, 90.4761904762%, 44.625%) !important;
+}
+
+.analogue-2-bg-b2 {
+  background-color: hsl(178deg, 73.9130434783%, 43.125%) !important;
+}
+
+.analogue-2-color-b2 {
+  color: hsl(178deg, 73.9130434783%, 43.125%) !important;
+}
+
+.analogue-2-border-color-b2 {
+  border-color: hsl(178deg, 73.9130434783%, 43.125%) !important;
+}
+.analogue-2-border-color-b2.border {
+  border-color: hsl(178deg, 73.9130434783%, 43.125%) !important;
+}
+
+.analogue-2-bg-b3 {
+  background-color: hsl(178deg, 60%, 40.625%) !important;
+}
+
+.analogue-2-color-b3 {
+  color: hsl(178deg, 60%, 40.625%) !important;
+}
+
+.analogue-2-border-color-b3 {
+  border-color: hsl(178deg, 60%, 40.625%) !important;
+}
+.analogue-2-border-color-b3.border {
+  border-color: hsl(178deg, 60%, 40.625%) !important;
+}
+
+.analogue-2-bg-b4 {
+  background-color: hsl(178deg, 48.1481481481%, 37.125%) !important;
+}
+
+.analogue-2-color-b4 {
+  color: hsl(178deg, 48.1481481481%, 37.125%) !important;
+}
+
+.analogue-2-border-color-b4 {
+  border-color: hsl(178deg, 48.1481481481%, 37.125%) !important;
+}
+.analogue-2-border-color-b4.border {
+  border-color: hsl(178deg, 48.1481481481%, 37.125%) !important;
+}
+
+.analogue-2-bg-b5 {
+  background-color: hsl(178deg, 37.9310344828%, 32.625%) !important;
+}
+
+.analogue-2-color-b5 {
+  color: hsl(178deg, 37.9310344828%, 32.625%) !important;
+}
+
+.analogue-2-border-color-b5 {
+  border-color: hsl(178deg, 37.9310344828%, 32.625%) !important;
+}
+.analogue-2-border-color-b5.border {
+  border-color: hsl(178deg, 37.9310344828%, 32.625%) !important;
+}
+
+.analogue-2-bg-b6 {
+  background-color: hsl(178deg, 29.0322580645%, 27.125%) !important;
+}
+
+.analogue-2-color-b6 {
+  color: hsl(178deg, 29.0322580645%, 27.125%) !important;
+}
+
+.analogue-2-border-color-b6 {
+  border-color: hsl(178deg, 29.0322580645%, 27.125%) !important;
+}
+.analogue-2-border-color-b6.border {
+  border-color: hsl(178deg, 29.0322580645%, 27.125%) !important;
+}
+
+.analogue-2-bg-b7 {
+  background-color: hsl(178deg, 21.2121212121%, 20.625%) !important;
+}
+
+.analogue-2-color-b7 {
+  color: hsl(178deg, 21.2121212121%, 20.625%) !important;
+}
+
+.analogue-2-border-color-b7 {
+  border-color: hsl(178deg, 21.2121212121%, 20.625%) !important;
+}
+.analogue-2-border-color-b7.border {
+  border-color: hsl(178deg, 21.2121212121%, 20.625%) !important;
+}
+
+.analogue-2-bg-b8 {
+  background-color: hsl(178deg, 14.2857142857%, 13.125%) !important;
+}
+
+.analogue-2-color-b8 {
+  color: hsl(178deg, 14.2857142857%, 13.125%) !important;
+}
+
+.analogue-2-border-color-b8 {
+  border-color: hsl(178deg, 14.2857142857%, 13.125%) !important;
+}
+.analogue-2-border-color-b8.border {
+  border-color: hsl(178deg, 14.2857142857%, 13.125%) !important;
+}
+
+.complementary-1-bg-b1 {
+  background-color: hsl(351deg, 92.380952381%, 60.625%) !important;
+}
+
+.complementary-1-color-b1 {
+  color: hsl(351deg, 92.380952381%, 60.625%) !important;
+}
+
+.complementary-1-border-color-b1 {
+  border-color: hsl(351deg, 92.380952381%, 60.625%) !important;
+}
+.complementary-1-border-color-b1.border {
+  border-color: hsl(351deg, 92.380952381%, 60.625%) !important;
+}
+
+.complementary-1-bg-b2 {
+  background-color: hsl(351deg, 68.5039370079%, 58.725%) !important;
+}
+
+.complementary-1-color-b2 {
+  color: hsl(351deg, 68.5039370079%, 58.725%) !important;
+}
+
+.complementary-1-border-color-b2 {
+  border-color: hsl(351deg, 68.5039370079%, 58.725%) !important;
+}
+.complementary-1-border-color-b2.border {
+  border-color: hsl(351deg, 68.5039370079%, 58.725%) !important;
+}
+
+.complementary-1-bg-b3 {
+  background-color: hsl(351deg, 47.9343520091%, 55.825%) !important;
+}
+
+.complementary-1-color-b3 {
+  color: hsl(351deg, 47.9343520091%, 55.825%) !important;
+}
+
+.complementary-1-border-color-b3 {
+  border-color: hsl(351deg, 47.9343520091%, 55.825%) !important;
+}
+.complementary-1-border-color-b3.border {
+  border-color: hsl(351deg, 47.9343520091%, 55.825%) !important;
+}
+
+.complementary-1-bg-b4 {
+  background-color: hsl(351deg, 31.3572542902%, 51.925%) !important;
+}
+
+.complementary-1-color-b4 {
+  color: hsl(351deg, 31.3572542902%, 51.925%) !important;
+}
+
+.complementary-1-border-color-b4 {
+  border-color: hsl(351deg, 31.3572542902%, 51.925%) !important;
+}
+.complementary-1-border-color-b4.border {
+  border-color: hsl(351deg, 31.3572542902%, 51.925%) !important;
+}
+
+.complementary-1-bg-b5 {
+  background-color: hsl(351deg, 21.2121212121%, 47.025%) !important;
+}
+
+.complementary-1-color-b5 {
+  color: hsl(351deg, 21.2121212121%, 47.025%) !important;
+}
+
+.complementary-1-border-color-b5 {
+  border-color: hsl(351deg, 21.2121212121%, 47.025%) !important;
+}
+.complementary-1-border-color-b5.border {
+  border-color: hsl(351deg, 21.2121212121%, 47.025%) !important;
+}
+
+.complementary-1-bg-b6 {
+  background-color: hsl(351deg, 14.2857142857%, 41.125%) !important;
+}
+
+.complementary-1-color-b6 {
+  color: hsl(351deg, 14.2857142857%, 41.125%) !important;
+}
+
+.complementary-1-border-color-b6 {
+  border-color: hsl(351deg, 14.2857142857%, 41.125%) !important;
+}
+.complementary-1-border-color-b6.border {
+  border-color: hsl(351deg, 14.2857142857%, 41.125%) !important;
+}
+
+.complementary-1-bg-b7 {
+  background-color: hsl(351deg, 8.1081081081%, 34.225%) !important;
+}
+
+.complementary-1-color-b7 {
+  color: hsl(351deg, 8.1081081081%, 34.225%) !important;
+}
+
+.complementary-1-border-color-b7 {
+  border-color: hsl(351deg, 8.1081081081%, 34.225%) !important;
+}
+.complementary-1-border-color-b7.border {
+  border-color: hsl(351deg, 8.1081081081%, 34.225%) !important;
+}
+
+.complementary-1-bg-b8 {
+  background-color: hsl(351deg, 2.5641025641%, 26.325%) !important;
+}
+
+.complementary-1-color-b8 {
+  color: hsl(351deg, 2.5641025641%, 26.325%) !important;
+}
+
+.complementary-1-border-color-b8 {
+  border-color: hsl(351deg, 2.5641025641%, 26.325%) !important;
+}
+.complementary-1-border-color-b8.border {
+  border-color: hsl(351deg, 2.5641025641%, 26.325%) !important;
+}
+
+.complementary-2-bg-b1 {
+  background-color: hsl(36deg, 100%, 50%) !important;
+}
+
+.complementary-2-color-b1 {
+  color: hsl(36deg, 100%, 50%) !important;
+}
+
+.complementary-2-border-color-b1 {
+  border-color: hsl(36deg, 100%, 50%) !important;
+}
+.complementary-2-border-color-b1.border {
+  border-color: hsl(36deg, 100%, 50%) !important;
+}
+
+.complementary-2-bg-b2 {
+  background-color: hsl(36deg, 81.8181818182%, 49.5%) !important;
+}
+
+.complementary-2-color-b2 {
+  color: hsl(36deg, 81.8181818182%, 49.5%) !important;
+}
+
+.complementary-2-border-color-b2 {
+  border-color: hsl(36deg, 81.8181818182%, 49.5%) !important;
+}
+.complementary-2-border-color-b2.border {
+  border-color: hsl(36deg, 81.8181818182%, 49.5%) !important;
+}
+
+.complementary-2-bg-b3 {
+  background-color: hsl(36deg, 66.6666666667%, 48%) !important;
+}
+
+.complementary-2-color-b3 {
+  color: hsl(36deg, 66.6666666667%, 48%) !important;
+}
+
+.complementary-2-border-color-b3 {
+  border-color: hsl(36deg, 66.6666666667%, 48%) !important;
+}
+.complementary-2-border-color-b3.border {
+  border-color: hsl(36deg, 66.6666666667%, 48%) !important;
+}
+
+.complementary-2-bg-b4 {
+  background-color: hsl(36deg, 53.8461538462%, 45.5%) !important;
+}
+
+.complementary-2-color-b4 {
+  color: hsl(36deg, 53.8461538462%, 45.5%) !important;
+}
+
+.complementary-2-border-color-b4 {
+  border-color: hsl(36deg, 53.8461538462%, 45.5%) !important;
+}
+.complementary-2-border-color-b4.border {
+  border-color: hsl(36deg, 53.8461538462%, 45.5%) !important;
+}
+
+.complementary-2-bg-b5 {
+  background-color: hsl(36deg, 42.8571428571%, 42%) !important;
+}
+
+.complementary-2-color-b5 {
+  color: hsl(36deg, 42.8571428571%, 42%) !important;
+}
+
+.complementary-2-border-color-b5 {
+  border-color: hsl(36deg, 42.8571428571%, 42%) !important;
+}
+.complementary-2-border-color-b5.border {
+  border-color: hsl(36deg, 42.8571428571%, 42%) !important;
+}
+
+.complementary-2-bg-b6 {
+  background-color: hsl(36deg, 33.3333333333%, 37.5%) !important;
+}
+
+.complementary-2-color-b6 {
+  color: hsl(36deg, 33.3333333333%, 37.5%) !important;
+}
+
+.complementary-2-border-color-b6 {
+  border-color: hsl(36deg, 33.3333333333%, 37.5%) !important;
+}
+.complementary-2-border-color-b6.border {
+  border-color: hsl(36deg, 33.3333333333%, 37.5%) !important;
+}
+
+.complementary-2-bg-b7 {
+  background-color: hsl(36deg, 25%, 32%) !important;
+}
+
+.complementary-2-color-b7 {
+  color: hsl(36deg, 25%, 32%) !important;
+}
+
+.complementary-2-border-color-b7 {
+  border-color: hsl(36deg, 25%, 32%) !important;
+}
+.complementary-2-border-color-b7.border {
+  border-color: hsl(36deg, 25%, 32%) !important;
+}
+
+.complementary-2-bg-b8 {
+  background-color: hsl(36deg, 17.6470588235%, 25.5%) !important;
+}
+
+.complementary-2-color-b8 {
+  color: hsl(36deg, 17.6470588235%, 25.5%) !important;
+}
+
+.complementary-2-border-color-b8 {
+  border-color: hsl(36deg, 17.6470588235%, 25.5%) !important;
+}
+.complementary-2-border-color-b8.border {
+  border-color: hsl(36deg, 17.6470588235%, 25.5%) !important;
+}
+
+.complementary-3-bg-b1 {
+  background-color: hsl(159deg, 100%, 40.5%) !important;
+}
+
+.complementary-3-color-b1 {
+  color: hsl(159deg, 100%, 40.5%) !important;
+}
+
+.complementary-3-border-color-b1 {
+  border-color: hsl(159deg, 100%, 40.5%) !important;
+}
+.complementary-3-border-color-b1.border {
+  border-color: hsl(159deg, 100%, 40.5%) !important;
+}
+
+.complementary-3-bg-b2 {
+  background-color: hsl(159deg, 81.8181818182%, 39.05%) !important;
+}
+
+.complementary-3-color-b2 {
+  color: hsl(159deg, 81.8181818182%, 39.05%) !important;
+}
+
+.complementary-3-border-color-b2 {
+  border-color: hsl(159deg, 81.8181818182%, 39.05%) !important;
+}
+.complementary-3-border-color-b2.border {
+  border-color: hsl(159deg, 81.8181818182%, 39.05%) !important;
+}
+
+.complementary-3-bg-b3 {
+  background-color: hsl(159deg, 66.6666666667%, 36.6%) !important;
+}
+
+.complementary-3-color-b3 {
+  color: hsl(159deg, 66.6666666667%, 36.6%) !important;
+}
+
+.complementary-3-border-color-b3 {
+  border-color: hsl(159deg, 66.6666666667%, 36.6%) !important;
+}
+.complementary-3-border-color-b3.border {
+  border-color: hsl(159deg, 66.6666666667%, 36.6%) !important;
+}
+
+.complementary-3-bg-b4 {
+  background-color: hsl(159deg, 53.8461538462%, 33.15%) !important;
+}
+
+.complementary-3-color-b4 {
+  color: hsl(159deg, 53.8461538462%, 33.15%) !important;
+}
+
+.complementary-3-border-color-b4 {
+  border-color: hsl(159deg, 53.8461538462%, 33.15%) !important;
+}
+.complementary-3-border-color-b4.border {
+  border-color: hsl(159deg, 53.8461538462%, 33.15%) !important;
+}
+
+.complementary-3-bg-b5 {
+  background-color: hsl(159deg, 42.8571428571%, 28.7%) !important;
+}
+
+.complementary-3-color-b5 {
+  color: hsl(159deg, 42.8571428571%, 28.7%) !important;
+}
+
+.complementary-3-border-color-b5 {
+  border-color: hsl(159deg, 42.8571428571%, 28.7%) !important;
+}
+.complementary-3-border-color-b5.border {
+  border-color: hsl(159deg, 42.8571428571%, 28.7%) !important;
+}
+
+.complementary-3-bg-b6 {
+  background-color: hsl(159deg, 33.3333333333%, 23.25%) !important;
+}
+
+.complementary-3-color-b6 {
+  color: hsl(159deg, 33.3333333333%, 23.25%) !important;
+}
+
+.complementary-3-border-color-b6 {
+  border-color: hsl(159deg, 33.3333333333%, 23.25%) !important;
+}
+.complementary-3-border-color-b6.border {
+  border-color: hsl(159deg, 33.3333333333%, 23.25%) !important;
+}
+
+.complementary-3-bg-b7 {
+  background-color: hsl(159deg, 25%, 16.8%) !important;
+}
+
+.complementary-3-color-b7 {
+  color: hsl(159deg, 25%, 16.8%) !important;
+}
+
+.complementary-3-border-color-b7 {
+  border-color: hsl(159deg, 25%, 16.8%) !important;
+}
+.complementary-3-border-color-b7.border {
+  border-color: hsl(159deg, 25%, 16.8%) !important;
+}
+
+.complementary-3-bg-b8 {
+  background-color: hsl(159deg, 17.6470588235%, 9.35%) !important;
+}
+
+.complementary-3-color-b8 {
+  color: hsl(159deg, 17.6470588235%, 9.35%) !important;
+}
+
+.complementary-3-border-color-b8 {
+  border-color: hsl(159deg, 17.6470588235%, 9.35%) !important;
+}
+.complementary-3-border-color-b8.border {
+  border-color: hsl(159deg, 17.6470588235%, 9.35%) !important;
+}
+
+.neutral-1-bg {
+  background-color: hsl(210deg, 53.8461538462%, 19.5%) !important;
+}
+
+.neutral-1-color {
+  color: hsl(210deg, 53.8461538462%, 19.5%) !important;
+}
+
+.neutral-1-border-color- {
+  border-color: hsl(210deg, 53.8461538462%, 19.5%) !important;
+}
+.neutral-1-border-color-.border {
+  border-color: hsl(210deg, 53.8461538462%, 19.5%) !important;
+}
+
+.neutral-1-bg-a1 {
+  background-color: hsl(210deg, 6.2290689886%, 92.535%) !important;
+}
+
+.neutral-1-color-a1 {
+  color: hsl(210deg, 6.2290689886%, 92.535%) !important;
+}
+
+.neutral-1-border-color-a1 {
+  border-color: hsl(210deg, 6.2290689886%, 92.535%) !important;
+}
+.neutral-1-border-color-a1.border {
+  border-color: hsl(210deg, 6.2290689886%, 92.535%) !important;
+}
+
+.neutral-1-bg-a2 {
+  background-color: hsl(210deg, 2.9799029799%, 85.57%) !important;
+}
+
+.neutral-1-color-a2 {
+  color: hsl(210deg, 2.9799029799%, 85.57%) !important;
+}
+
+.neutral-1-border-color-a2 {
+  border-color: hsl(210deg, 2.9799029799%, 85.57%) !important;
+}
+.neutral-1-border-color-a2.border {
+  border-color: hsl(210deg, 2.9799029799%, 85.57%) !important;
+}
+
+.neutral-1-bg-a3 {
+  background-color: hsl(210deg, 3.6255162919%, 78.21%) !important;
+}
+
+.neutral-1-color-a3 {
+  color: hsl(210deg, 3.6255162919%, 78.21%) !important;
+}
+
+.neutral-1-border-color-a3 {
+  border-color: hsl(210deg, 3.6255162919%, 78.21%) !important;
+}
+.neutral-1-border-color-a3.border {
+  border-color: hsl(210deg, 3.6255162919%, 78.21%) !important;
+}
+
+.neutral-1-bg-a4 {
+  background-color: hsl(210deg, 7.1618037135%, 69.84%) !important;
+}
+
+.neutral-1-color-a4 {
+  color: hsl(210deg, 7.1618037135%, 69.84%) !important;
+}
+
+.neutral-1-border-color-a4 {
+  border-color: hsl(210deg, 7.1618037135%, 69.84%) !important;
+}
+.neutral-1-border-color-a4.border {
+  border-color: hsl(210deg, 7.1618037135%, 69.84%) !important;
+}
+
+.neutral-1-bg-a5 {
+  background-color: hsl(210deg, 8.4967320261%, 61.75%) !important;
+}
+
+.neutral-1-color-a5 {
+  color: hsl(210deg, 8.4967320261%, 61.75%) !important;
+}
+
+.neutral-1-border-color-a5 {
+  border-color: hsl(210deg, 8.4967320261%, 61.75%) !important;
+}
+.neutral-1-border-color-a5.border {
+  border-color: hsl(210deg, 8.4967320261%, 61.75%) !important;
+}
+
+.neutral-1-bg-a6 {
+  background-color: hsl(210deg, 12.1338912134%, 52.2%) !important;
+}
+
+.neutral-1-color-a6 {
+  color: hsl(210deg, 12.1338912134%, 52.2%) !important;
+}
+
+.neutral-1-border-color-a6 {
+  border-color: hsl(210deg, 12.1338912134%, 52.2%) !important;
+}
+.neutral-1-border-color-a6.border {
+  border-color: hsl(210deg, 12.1338912134%, 52.2%) !important;
+}
+
+.neutral-1-bg-a7 {
+  background-color: hsl(210deg, 17.6470588235%, 43.35%) !important;
+}
+
+.neutral-1-color-a7 {
+  color: hsl(210deg, 17.6470588235%, 43.35%) !important;
+}
+
+.neutral-1-border-color-a7 {
+  border-color: hsl(210deg, 17.6470588235%, 43.35%) !important;
+}
+.neutral-1-border-color-a7.border {
+  border-color: hsl(210deg, 17.6470588235%, 43.35%) !important;
+}
+
+.neutral-1-bg-a8 {
+  background-color: hsl(210deg, 25%, 35.2%) !important;
+}
+
+.neutral-1-color-a8 {
+  color: hsl(210deg, 25%, 35.2%) !important;
+}
+
+.neutral-1-border-color-a8 {
+  border-color: hsl(210deg, 25%, 35.2%) !important;
+}
+.neutral-1-border-color-a8.border {
+  border-color: hsl(210deg, 25%, 35.2%) !important;
+}
+
+.neutral-1-bg-a9 {
+  background-color: hsl(210deg, 33.3333333333%, 27.75%) !important;
+}
+
+.neutral-1-color-a9 {
+  color: hsl(210deg, 33.3333333333%, 27.75%) !important;
+}
+
+.neutral-1-border-color-a9 {
+  border-color: hsl(210deg, 33.3333333333%, 27.75%) !important;
+}
+.neutral-1-border-color-a9.border {
+  border-color: hsl(210deg, 33.3333333333%, 27.75%) !important;
+}
+
+.neutral-1-bg-a10 {
+  background-color: hsl(210deg, 53.8461538462%, 19.5%) !important;
+}
+
+.neutral-1-color-a10 {
+  color: hsl(210deg, 53.8461538462%, 19.5%) !important;
+}
+
+.neutral-1-border-color-a10 {
+  border-color: hsl(210deg, 53.8461538462%, 19.5%) !important;
+}
+.neutral-1-border-color-a10.border {
+  border-color: hsl(210deg, 53.8461538462%, 19.5%) !important;
+}
+
+.neutral-2-bg {
+  background-color: hsl(210deg, 32.2033898305%, 92.625%) !important;
+}
+
+.neutral-2-color {
+  color: hsl(210deg, 32.2033898305%, 92.625%) !important;
+}
+
+.neutral-2-border-color- {
+  border-color: hsl(210deg, 32.2033898305%, 92.625%);
+}
+
+.neutral-2-bg-b1 {
+  background-color: hsl(210deg, 32.2033898305%, 92.625%) !important;
+}
+
+.neutral-2-color-b1 {
+  color: hsl(210deg, 32.2033898305%, 92.625%) !important;
+}
+
+.neutral-2-border-color-b1 {
+  border-color: hsl(210deg, 32.2033898305%, 92.625%) !important;
+}
+.neutral-2-border-color-b1.border {
+  border-color: hsl(210deg, 32.2033898305%, 92.625%) !important;
+}
+
+.neutral-2-bg-b2 {
+  background-color: hsl(210deg, 9.0909090909%, 78%) !important;
+}
+
+.neutral-2-color-b2 {
+  color: hsl(210deg, 9.0909090909%, 78%) !important;
+}
+
+.neutral-2-border-color-b2 {
+  border-color: hsl(210deg, 9.0909090909%, 78%) !important;
+}
+.neutral-2-border-color-b2.border {
+  border-color: hsl(210deg, 9.0909090909%, 78%) !important;
+}
+
+.neutral-2-bg-b3 {
+  background-color: hsl(210deg, 4.4368600683%, 63.375%) !important;
+}
+
+.neutral-2-color-b3 {
+  color: hsl(210deg, 4.4368600683%, 63.375%) !important;
+}
+
+.neutral-2-border-color-b3 {
+  border-color: hsl(210deg, 4.4368600683%, 63.375%) !important;
+}
+.neutral-2-border-color-b3.border {
+  border-color: hsl(210deg, 4.4368600683%, 63.375%) !important;
+}
+
+.neutral-2-bg-b4 {
+  background-color: hsl(210deg, 2.5641025641%, 48.75%) !important;
+}
+
+.neutral-2-color-b4 {
+  color: hsl(210deg, 2.5641025641%, 48.75%) !important;
+}
+
+.neutral-2-border-color-b4 {
+  border-color: hsl(210deg, 2.5641025641%, 48.75%) !important;
+}
+.neutral-2-border-color-b4.border {
+  border-color: hsl(210deg, 2.5641025641%, 48.75%) !important;
+}
+
+.neutral-2-bg-b5 {
+  background-color: hsl(210deg, 2.0408163265%, 34.3%) !important;
+}
+
+.neutral-2-color-b5 {
+  color: hsl(210deg, 2.0408163265%, 34.3%) !important;
+}
+
+.neutral-2-border-color-b5 {
+  border-color: hsl(210deg, 2.0408163265%, 34.3%) !important;
+}
+.neutral-2-border-color-b5.border {
+  border-color: hsl(210deg, 2.0408163265%, 34.3%) !important;
+}
+
+.neutral-2-bg-b6 {
+  background-color: hsl(210deg, 3.6269430052%, 19.3%) !important;
+}
+
+.neutral-2-color-b6 {
+  color: hsl(210deg, 3.6269430052%, 19.3%) !important;
+}
+
+.neutral-2-border-color-b6 {
+  border-color: hsl(210deg, 3.6269430052%, 19.3%) !important;
+}
+.neutral-2-border-color-b6.border {
+  border-color: hsl(210deg, 3.6269430052%, 19.3%) !important;
+}
+
+.neutral-2-bg-b7 {
+  background-color: hsl(210deg, 4.7120418848%, 4.775%) !important;
+}
+
+.neutral-2-color-b7 {
+  color: hsl(210deg, 4.7120418848%, 4.775%) !important;
+}
+
+.neutral-2-border-color-b7 {
+  border-color: hsl(210deg, 4.7120418848%, 4.775%) !important;
+}
+.neutral-2-border-color-b7.border {
+  border-color: hsl(210deg, 4.7120418848%, 4.775%) !important;
+}
+
+.neutral-2-bg-a1 {
+  background-color: hsl(210deg, 32.2033898305%, 92.625%) !important;
+}
+
+.neutral-2-color-a1 {
+  color: hsl(210deg, 32.2033898305%, 92.625%) !important;
+}
+
+.neutral-2-border-color-a1 {
+  border-color: hsl(210deg, 32.2033898305%, 92.625%) !important;
+}
+.neutral-2-border-color-a1.border {
+  border-color: hsl(210deg, 32.2033898305%, 92.625%) !important;
+}
+
+.neutral-2-bg-a2 {
+  background-color: hsl(210deg, 13.7931034483%, 76.8%) !important;
+}
+
+.neutral-2-color-a2 {
+  color: hsl(210deg, 13.7931034483%, 76.8%) !important;
+}
+
+.neutral-2-border-color-a2 {
+  border-color: hsl(210deg, 13.7931034483%, 76.8%) !important;
+}
+.neutral-2-border-color-a2.border {
+  border-color: hsl(210deg, 13.7931034483%, 76.8%) !important;
+}
+
+.neutral-2-bg-a3 {
+  background-color: hsl(210deg, 6.103286385%, 62.725%) !important;
+}
+
+.neutral-2-color-a3 {
+  color: hsl(210deg, 6.103286385%, 62.725%) !important;
+}
+
+.neutral-2-border-color-a3 {
+  border-color: hsl(210deg, 6.103286385%, 62.725%) !important;
+}
+.neutral-2-border-color-a3.border {
+  border-color: hsl(210deg, 6.103286385%, 62.725%) !important;
+}
+
+.neutral-2-bg-a4 {
+  background-color: hsl(210deg, 3.6269430052%, 48.25%) !important;
+}
+
+.neutral-2-color-a4 {
+  color: hsl(210deg, 3.6269430052%, 48.25%) !important;
+}
+
+.neutral-2-border-color-a4 {
+  border-color: hsl(210deg, 3.6269430052%, 48.25%) !important;
+}
+.neutral-2-border-color-a4.border {
+  border-color: hsl(210deg, 3.6269430052%, 48.25%) !important;
+}
+
+.neutral-2-bg-a5 {
+  background-color: hsl(210deg, 3.6269430052%, 33.775%) !important;
+}
+
+.neutral-2-color-a5 {
+  color: hsl(210deg, 3.6269430052%, 33.775%) !important;
+}
+
+.neutral-2-border-color-a5 {
+  border-color: hsl(210deg, 3.6269430052%, 33.775%) !important;
+}
+.neutral-2-border-color-a5.border {
+  border-color: hsl(210deg, 3.6269430052%, 33.775%) !important;
+}
+
+.neutral-2-bg-a6 {
+  background-color: hsl(210deg, 3.6269430052%, 19.3%) !important;
+}
+
+.neutral-2-color-a6 {
+  color: hsl(210deg, 3.6269430052%, 19.3%) !important;
+}
+
+.neutral-2-border-color-a6 {
+  border-color: hsl(210deg, 3.6269430052%, 19.3%) !important;
+}
+.neutral-2-border-color-a6.border {
+  border-color: hsl(210deg, 3.6269430052%, 19.3%) !important;
+}
+
+.neutral-2-bg-a7 {
+  background-color: hsl(210deg, 4.7120418848%, 9.55%) !important;
+}
+
+.neutral-2-color-a7 {
+  color: hsl(210deg, 4.7120418848%, 9.55%) !important;
+}
+
+.neutral-2-border-color-a7 {
+  border-color: hsl(210deg, 4.7120418848%, 9.55%) !important;
+}
+.neutral-2-border-color-a7.border {
+  border-color: hsl(210deg, 4.7120418848%, 9.55%) !important;
+}
+
+.lightgrey-bg-a1 {
+  background-color: #e8f2fc !important;
+}
+
+.lightgrey-color-a1 {
+  color: #e8f2fc !important;
+}
+
+.lightgrey-border-color-a1 {
+  border-color: #e8f2fc !important;
+}
+.lightgrey-border-color-a1.border {
+  border-color: #e8f2fc !important;
+}
+
+.lightgrey-bg-a2 {
+  background-color: #edf5fc !important;
+}
+
+.lightgrey-color-a2 {
+  color: #edf5fc !important;
+}
+
+.lightgrey-border-color-a2 {
+  border-color: #edf5fc !important;
+}
+.lightgrey-border-color-a2.border {
+  border-color: #edf5fc !important;
+}
+
+.lightgrey-bg-a3 {
+  background-color: #f2f7fc !important;
+}
+
+.lightgrey-color-a3 {
+  color: #f2f7fc !important;
+}
+
+.lightgrey-border-color-a3 {
+  border-color: #f2f7fc !important;
+}
+.lightgrey-border-color-a3.border {
+  border-color: #f2f7fc !important;
+}
+
+.lightgrey-bg-a4 {
+  background-color: #f5f9fc !important;
+}
+
+.lightgrey-color-a4 {
+  color: #f5f9fc !important;
+}
+
+.lightgrey-border-color-a4 {
+  border-color: #f5f9fc !important;
+}
+.lightgrey-border-color-a4.border {
+  border-color: #f5f9fc !important;
+}
+
+.lightgrey-bg-b1 {
+  background-color: #e6f0fa !important;
+}
+
+.lightgrey-color-b1 {
+  color: #e6f0fa !important;
+}
+
+.lightgrey-border-color-b1 {
+  border-color: #e6f0fa !important;
+}
+.lightgrey-border-color-b1.border {
+  border-color: #e6f0fa !important;
+}
+
+.lightgrey-bg-b2 {
+  background-color: #ebf2fa !important;
+}
+
+.lightgrey-color-b2 {
+  color: #ebf2fa !important;
+}
+
+.lightgrey-border-color-b2 {
+  border-color: #ebf2fa !important;
+}
+.lightgrey-border-color-b2.border {
+  border-color: #ebf2fa !important;
+}
+
+.lightgrey-bg-b3 {
+  background-color: #edf4fa !important;
+}
+
+.lightgrey-color-b3 {
+  color: #edf4fa !important;
+}
+
+.lightgrey-border-color-b3 {
+  border-color: #edf4fa !important;
+}
+.lightgrey-border-color-b3.border {
+  border-color: #edf4fa !important;
+}
+
+.lightgrey-bg-b4 {
+  background-color: #f2f6fa !important;
+}
+
+.lightgrey-color-b4 {
+  color: #f2f6fa !important;
+}
+
+.lightgrey-border-color-b4 {
+  border-color: #f2f6fa !important;
+}
+.lightgrey-border-color-b4.border {
+  border-color: #f2f6fa !important;
+}
+
+.lightgrey-bg-c1 {
+  background-color: #f7f9fa !important;
+}
+
+.lightgrey-color-c1 {
+  color: #f7f9fa !important;
+}
+
+.lightgrey-border-color-c1 {
+  border-color: #f7f9fa !important;
+}
+.lightgrey-border-color-c1.border {
+  border-color: #f7f9fa !important;
+}
+
+.lightgrey-bg-c2 {
+  background-color: #f5f6f7 !important;
+}
+
+.lightgrey-color-c2 {
+  color: #f5f6f7 !important;
+}
+
+.lightgrey-border-color-c2 {
+  border-color: #f5f6f7 !important;
+}
+.lightgrey-border-color-c2.border {
+  border-color: #f5f6f7 !important;
+}
+
+/***
+******************+++
+Questo file definisce alcune variabili aggiuntive per design-comuni-plone-theme
+******************+++
+**/
+/***************************** 1 ****************************************/
+/***************************** 2 ****************************************/
+/***************************** 1 ****************************************/
+/***************************** 2 ****************************************/
+/***************************** 1 ****************************************/
+/***************************** 2 ****************************************/
+/***************************** 3 ****************************************/
+/***************************** 1 ****************************************/
+/***************************** 2 ****************************************/
+/***************************** 3 ****************************************/
+/***************************** NEUTRAL 1 ****************************************/
+/***************************** NEUTRAL 2 ****************************************/
+/***************************** NEUTRAL 2 / 3 ****************************************/
+body.subsite.subsite-root .documentFirstHeading,
+body.subsite.subsite-root #briciole,
+body.subsite.subsite-root .public-ui .documentFirstHeading,
+body.subsite.subsite-root .public-ui #briciole {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  body.subsite-yellow .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper .menu-wrapper .it-brand-wrapper.cloned a,
+  body.subsite-yellow .public-ui .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper .menu-wrapper .it-brand-wrapper.cloned a {
+    color: black;
+  }
+  body.subsite-yellow .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper .menu-wrapper .it-brand-wrapper.cloned a .icon,
+  body.subsite-yellow .public-ui .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper .menu-wrapper .it-brand-wrapper.cloned a .icon {
+    fill: black;
+  }
+  body.subsite-yellow .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper .menu-wrapper .it-search-wrapper,
+  body.subsite-yellow .public-ui .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper .menu-wrapper .it-search-wrapper {
+    color: black;
+  }
+  body.subsite-yellow .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper .menu-wrapper .it-search-wrapper a.rounded-icon svg,
+  body.subsite-yellow .public-ui .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper .menu-wrapper .it-search-wrapper a.rounded-icon svg {
+    fill: black;
+  }
+}
+body.subsite-yellow .it-header-wrapper .it-header-center-wrapper,
+body.subsite-yellow .public-ui .it-header-wrapper .it-header-center-wrapper {
+  background-color: #d4a418;
+}
+body.subsite-yellow .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-brand-wrapper a,
+body.subsite-yellow .public-ui .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-brand-wrapper a {
+  color: black;
+}
+body.subsite-yellow .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-brand-wrapper a .icon,
+body.subsite-yellow .public-ui .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-brand-wrapper a .icon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  color: black;
+  fill: black;
+}
+body.subsite-yellow .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-right-zone,
+body.subsite-yellow .public-ui .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-right-zone {
+  color: black;
+}
+body.subsite-yellow .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-right-zone .it-socials ul .icon,
+body.subsite-yellow .public-ui .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-right-zone .it-socials ul .icon {
+  color: black;
+  fill: black;
+}
+body.subsite-yellow .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-search-wrapper a.rounded-icon svg,
+body.subsite-yellow .public-ui .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-search-wrapper a.rounded-icon svg {
+  fill: black;
+}
+@media (min-width: 992px) {
+  body.subsite-yellow .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-right-zone .it-socials ul a:hover svg,
+  body.subsite-yellow .public-ui .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-right-zone .it-socials ul a:hover svg {
+    color: black;
+    fill: black;
+  }
+  body.subsite-yellow .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-search-wrapper a.rounded-icon svg,
+  body.subsite-yellow .public-ui .it-header-wrapper .it-header-center-wrapper .it-header-center-content-wrapper .it-search-wrapper a.rounded-icon svg {
+    fill: black;
+  }
+}
+body.subsite-yellow .it-header-wrapper .it-brand-text,
+body.subsite-yellow .it-header-wrapper .it-brand-text h1,
+body.subsite-yellow .it-header-wrapper .it-brand-text h2,
+body.subsite-yellow .it-header-wrapper .it-brand-text h3,
+body.subsite-yellow .it-header-wrapper .it-brand-text h4,
+body.subsite-yellow .it-header-wrapper .it-brand-text h5,
+body.subsite-yellow .it-header-wrapper .it-brand-text h6,
+body.subsite-yellow .public-ui .it-header-wrapper .it-brand-text,
+body.subsite-yellow .public-ui .it-header-wrapper .it-brand-text h1,
+body.subsite-yellow .public-ui .it-header-wrapper .it-brand-text h2,
+body.subsite-yellow .public-ui .it-header-wrapper .it-brand-text h3,
+body.subsite-yellow .public-ui .it-header-wrapper .it-brand-text h4,
+body.subsite-yellow .public-ui .it-header-wrapper .it-brand-text h5,
+body.subsite-yellow .public-ui .it-header-wrapper .it-brand-text h6 {
+  color: black;
+}
+@media (max-width: 992px) {
+  body.subsite-yellow .navbar .navbar-collapsable .menu-wrapper .it-brand-text h2,
+  body.subsite-yellow .public-ui .navbar .navbar-collapsable .menu-wrapper .it-brand-text h2 {
+    font-size: 1.5rem;
+  }
+  body.subsite-yellow .navbar .navbar-collapsable .menu-wrapper .it-brand-text h3,
+  body.subsite-yellow .public-ui .navbar .navbar-collapsable .menu-wrapper .it-brand-text h3 {
+    font-size: 1rem;
+  }
+  body.subsite-yellow .it-header-wrapper .menu-wrapper .it-brand-text,
+  body.subsite-yellow .it-header-wrapper .menu-wrapper .it-brand-text h1,
+  body.subsite-yellow .it-header-wrapper .menu-wrapper .it-brand-text h2,
+  body.subsite-yellow .it-header-wrapper .menu-wrapper .it-brand-text h3,
+  body.subsite-yellow .it-header-wrapper .menu-wrapper .it-brand-text h4,
+  body.subsite-yellow .it-header-wrapper .menu-wrapper .it-brand-text h5,
+  body.subsite-yellow .it-header-wrapper .menu-wrapper .it-brand-text h6,
+  body.subsite-yellow .public-ui .it-header-wrapper .menu-wrapper .it-brand-text,
+  body.subsite-yellow .public-ui .it-header-wrapper .menu-wrapper .it-brand-text h1,
+  body.subsite-yellow .public-ui .it-header-wrapper .menu-wrapper .it-brand-text h2,
+  body.subsite-yellow .public-ui .it-header-wrapper .menu-wrapper .it-brand-text h3,
+  body.subsite-yellow .public-ui .it-header-wrapper .menu-wrapper .it-brand-text h4,
+  body.subsite-yellow .public-ui .it-header-wrapper .menu-wrapper .it-brand-text h5,
+  body.subsite-yellow .public-ui .it-header-wrapper .menu-wrapper .it-brand-text h6 {
+    color: #d4a418;
+  }
+}
+@media (min-width: 992px) {
+  body.subsite-yellow .it-header-wrapper .it-header-navbar-wrapper,
+  body.subsite-yellow .public-ui .it-header-wrapper .it-header-navbar-wrapper {
+    background: #d4a418;
+  }
+}
+@media (max-width: 576px) {
+  body.subsite-yellow .it-header-wrapper .it-nav-wrapper .it-header-navbar-wrapper,
+  body.subsite-yellow .public-ui .it-header-wrapper .it-nav-wrapper .it-header-navbar-wrapper {
+    margin-right: 0.8rem;
+    margin-left: 0.8rem;
+  }
+  body.subsite-yellow .it-header-wrapper .it-nav-wrapper .it-header-navbar-wrapper nav,
+  body.subsite-yellow .public-ui .it-header-wrapper .it-nav-wrapper .it-header-navbar-wrapper nav {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+body.subsite-yellow.cms-ui .public-ui .it-header-slim-wrapper .it-header-slim-wrapper-content a,
+body.subsite-yellow .public-ui.cms-ui .public-ui .it-header-slim-wrapper .it-header-slim-wrapper-content a {
+  color: #fff;
+}
+body.subsite-yellow.cms-ui .public-ui .it-header-slim-wrapper .it-header-slim-wrapper-content a:hover,
+body.subsite-yellow .public-ui.cms-ui .public-ui .it-header-slim-wrapper .it-header-slim-wrapper-content a:hover {
+  color: #fff;
+}
+@media (min-width: 768px) {
+  body.subsite-yellow .parent-site-menu,
+  body.subsite-yellow .public-ui .parent-site-menu {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+  body.subsite-yellow .parent-site-menu li.nav-item,
+  body.subsite-yellow .public-ui .parent-site-menu li.nav-item {
+    display: flex;
+    max-width: 10rem;
+    align-items: center;
+  }
+}
+@media (max-width: 992px) {
+  body.subsite-yellow .parent-site-menu li.nav-item a.nav-link,
+  body.subsite-yellow .public-ui .parent-site-menu li.nav-item a.nav-link {
+    color: black;
+  }
+}
+body.subsite-yellow .navbar .navbar-collapsable,
+body.subsite-yellow .public-ui .navbar .navbar-collapsable {
+  /*lista menu*/
+}
+body.subsite-yellow .navbar .navbar-collapsable .navbar-nav li a.nav-link,
+body.subsite-yellow .public-ui .navbar .navbar-collapsable .navbar-nav li a.nav-link {
+  color: black;
+}
+body.subsite-yellow .navbar .navbar-collapsable .navbar-nav li a.nav-link.active,
+body.subsite-yellow .public-ui .navbar .navbar-collapsable .navbar-nav li a.nav-link.active {
+  border-left-color: black;
+}
+body.subsite-yellow .navbar .dropdown-menu .link-list-wrapper ul li a.list-item.active,
+body.subsite-yellow .public-ui .navbar .dropdown-menu .link-list-wrapper ul li a.list-item.active {
+  color: #b77d04;
+}
+body.subsite-yellow .navbar .dropdown-menu .link-list-wrapper ul li a span,
+body.subsite-yellow .public-ui .navbar .dropdown-menu .link-list-wrapper ul li a span {
+  color: #855b03;
+}
+body.subsite-yellow .navbar .dropdown-menu .link-list-wrapper ul li a i,
+body.subsite-yellow .public-ui .navbar .dropdown-menu .link-list-wrapper ul li a i {
+  color: #b77d04;
+}
+body.subsite-yellow .custom-navbar-toggler span,
+body.subsite-yellow .public-ui .custom-navbar-toggler span {
+  color: black;
+}
+body.subsite-yellow .custom-navbar-toggler svg,
+body.subsite-yellow .public-ui .custom-navbar-toggler svg {
+  fill: black;
+}
+@media (min-width: 992px) {
+  body.subsite-yellow,
+  body.subsite-yellow .public-ui {
+    /*.nav-item.megamenu {
+      > a.dropdown-toggle {
+        &:before {
+          content: '';
+          background-color: $dropdown-bg;
+        }
+      }
+    }*/
+  }
+  body.subsite-yellow .navbar,
+  body.subsite-yellow .public-ui .navbar {
+    background: #d4a418;
+    /* Dropdown style tipo collapse
+    .dropdown-menu {
+      color: $body-color;
+      background-color: $dropdown-bg;
+
+      border: $dropdown-border-width solid $dropdown-border-color;
+
+      .link-list-wrapper {
+        ul li {
+          a {
+            span,
+            i,
+            h3 {
+              color: $primary;
+            }
+          }
+
+          h3 {
+            color: $body-color;
+          }
+        }
+      }
+    }*/
+  }
+  body.subsite-yellow .navbar .navbar-collapsable,
+  body.subsite-yellow .public-ui .navbar .navbar-collapsable {
+    /*menu vrapper
+    .menu-wrapper {
+      background: $navigation-bg-color-desktop;
+    }*/
+    /*lista menu*/
+  }
+  body.subsite-yellow .navbar .navbar-collapsable .navbar-nav li a.nav-link,
+  body.subsite-yellow .public-ui .navbar .navbar-collapsable .navbar-nav li a.nav-link {
+    color: black;
+  }
+  body.subsite-yellow .navbar .navbar-collapsable .navbar-nav li a.nav-link.dropdown-toggle svg,
+  body.subsite-yellow .public-ui .navbar .navbar-collapsable .navbar-nav li a.nav-link.dropdown-toggle svg {
+    fill: #d4a418;
+  }
+  body.subsite-yellow .navbar .navbar-collapsable .navbar-nav li a.nav-link.active,
+  body.subsite-yellow .public-ui .navbar .navbar-collapsable .navbar-nav li a.nav-link.active {
+    border-color: black;
+  }
+}
+@media (max-width: 992px) {
+  body.subsite-yellow .navbar .navbar-collapsable .navbar-nav li a.nav-link,
+  body.subsite-yellow .public-ui .navbar .navbar-collapsable .navbar-nav li a.nav-link {
+    font-size: 16px;
+  }
+  body.subsite-yellow .navbar .navbar-collapsable .link-list-wrapper ul li a,
+  body.subsite-yellow .public-ui .navbar .navbar-collapsable .link-list-wrapper ul li a {
+    font-size: 14px;
+  }
+  body.subsite-yellow .navbar .navbar-collapsable .link-list-wrapper ul li h3,
+  body.subsite-yellow .public-ui .navbar .navbar-collapsable .link-list-wrapper ul li h3 {
+    font-size: 0.833em;
+  }
+}
+body.subsite-yellow .nav-tabs,
+body.subsite-yellow .public-ui .nav-tabs {
+  border-bottom: 1px solid hsl(210deg, 9.0909090909%, 78%);
+}
+body.subsite-yellow .nav-tabs .nav-link,
+body.subsite-yellow .public-ui .nav-tabs .nav-link {
+  margin-bottom: -1px;
+  color: hsl(210deg, 2.5641025641%, 48.75%);
+}
+body.subsite-yellow .nav-tabs .nav-link:hover, body.subsite-yellow .nav-tabs .nav-link:focus,
+body.subsite-yellow .public-ui .nav-tabs .nav-link:hover,
+body.subsite-yellow .public-ui .nav-tabs .nav-link:focus {
+  border-color: #b77d04;
+  color: #b77d04;
+}
+body.subsite-yellow .nav-tabs .nav-link.active,
+body.subsite-yellow .nav-tabs .nav-item.show .nav-link,
+body.subsite-yellow .public-ui .nav-tabs .nav-link.active,
+body.subsite-yellow .public-ui .nav-tabs .nav-item.show .nav-link {
+  border-color: #b77d04;
+  color: #b77d04;
+}
+body.subsite-yellow .navbar.has-megamenu li.nav-item.active .dropdown a.nav-link,
+body.subsite-yellow .public-ui .navbar.has-megamenu li.nav-item.active .dropdown a.nav-link {
+  border-color: black;
+}
+body.subsite-yellow .navbar .dropdown-menu .link-list-wrapper .link-list.bordered li,
+body.subsite-yellow .public-ui .navbar .dropdown-menu .link-list-wrapper .link-list.bordered li {
+  border-bottom-color: rgba(212, 164, 24, 0.2);
+}
+body.subsite-yellow .navbar .dropdown-menu .link-list-wrapper .link-list.bordered li:hover, body.subsite-yellow .navbar .dropdown-menu .link-list-wrapper .link-list.bordered li:active,
+body.subsite-yellow .navbar .dropdown-menu .link-list-wrapper .link-list.bordered li a.active,
+body.subsite-yellow .public-ui .navbar .dropdown-menu .link-list-wrapper .link-list.bordered li:hover,
+body.subsite-yellow .public-ui .navbar .dropdown-menu .link-list-wrapper .link-list.bordered li:active,
+body.subsite-yellow .public-ui .navbar .dropdown-menu .link-list-wrapper .link-list.bordered li a.active {
+  background-color: rgba(212, 164, 24, 0.06);
+}
+body.subsite-yellow .megamenu .megamenu-toggle-icon,
+body.subsite-yellow .public-ui .megamenu .megamenu-toggle-icon {
+  fill: black;
+}
+body.subsite-yellow a.btn-primary,
+body.subsite-yellow .btn-primary,
+body.subsite-yellow .public-ui a.btn-primary,
+body.subsite-yellow .public-ui .btn-primary {
+  color: hsl(0deg, 0%, 0%);
+  background-color: #a68113;
+  border-color: black;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  color: black !important;
+}
+body.subsite-yellow a.btn-primary:focus, body.subsite-yellow a.btn-primary.focus,
+body.subsite-yellow .btn-primary:focus,
+body.subsite-yellow .btn-primary.focus,
+body.subsite-yellow .public-ui a.btn-primary:focus,
+body.subsite-yellow .public-ui a.btn-primary.focus,
+body.subsite-yellow .public-ui .btn-primary:focus,
+body.subsite-yellow .public-ui .btn-primary.focus {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+body.subsite-yellow a.btn-primary:hover,
+body.subsite-yellow .btn-primary:hover,
+body.subsite-yellow .public-ui a.btn-primary:hover,
+body.subsite-yellow .public-ui .btn-primary:hover {
+  background-color: #c99b17;
+  color: hsl(0deg, 0%, 0%);
+  border-color: black;
+}
+body.subsite-yellow a.btn-primary.disabled, body.subsite-yellow a.btn-primary:disabled,
+body.subsite-yellow .btn-primary.disabled,
+body.subsite-yellow .btn-primary:disabled,
+body.subsite-yellow .public-ui a.btn-primary.disabled,
+body.subsite-yellow .public-ui a.btn-primary:disabled,
+body.subsite-yellow .public-ui .btn-primary.disabled,
+body.subsite-yellow .public-ui .btn-primary:disabled {
+  color: hsl(0deg, 0%, 0%);
+  background-color: #a68113;
+  border-color: black;
+  pointer-events: none;
+}
+body.subsite-yellow a.btn-primary:not(:disabled):not(.disabled):active, body.subsite-yellow a.btn-primary:not(:disabled):not(.disabled).active, .show > body.subsite-yellow a.btn-primary.dropdown-toggle,
+body.subsite-yellow .btn-primary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .btn-primary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .btn-primary.dropdown-toggle,
+body.subsite-yellow .public-ui a.btn-primary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui a.btn-primary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui a.btn-primary.dropdown-toggle,
+body.subsite-yellow .public-ui .btn-primary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui .btn-primary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui .btn-primary.dropdown-toggle {
+  color: hsl(0deg, 0%, 0%);
+  background-color: #d4a418;
+  border-color: black;
+}
+body.subsite-yellow a.btn-primary:not(:disabled):not(.disabled):active:focus, body.subsite-yellow a.btn-primary:not(:disabled):not(.disabled).active:focus, .show > body.subsite-yellow a.btn-primary.dropdown-toggle:focus,
+body.subsite-yellow .btn-primary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .btn-primary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui a.btn-primary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui a.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui a.btn-primary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui .btn-primary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui .btn-primary.dropdown-toggle:focus {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+body.subsite-yellow a.btn-primary .icon,
+body.subsite-yellow .btn-primary .icon,
+body.subsite-yellow .public-ui a.btn-primary .icon,
+body.subsite-yellow .public-ui .btn-primary .icon {
+  color: black;
+  fill: black;
+}
+body.subsite-yellow a.btn-primary:hover,
+body.subsite-yellow .btn-primary:hover,
+body.subsite-yellow .public-ui a.btn-primary:hover,
+body.subsite-yellow .public-ui .btn-primary:hover {
+  color: black !important;
+}
+body.subsite-yellow a.btn-primary:hover .icon,
+body.subsite-yellow .btn-primary:hover .icon,
+body.subsite-yellow .public-ui a.btn-primary:hover .icon,
+body.subsite-yellow .public-ui .btn-primary:hover .icon {
+  color: black;
+  fill: black;
+}
+body.subsite-yellow a.btn-primary.disabled, body.subsite-yellow a.btn-primary:disabled,
+body.subsite-yellow .btn-primary.disabled,
+body.subsite-yellow .btn-primary:disabled,
+body.subsite-yellow .public-ui a.btn-primary.disabled,
+body.subsite-yellow .public-ui a.btn-primary:disabled,
+body.subsite-yellow .public-ui .btn-primary.disabled,
+body.subsite-yellow .public-ui .btn-primary:disabled {
+  color: black;
+}
+body.subsite-yellow a.btn-secondary,
+body.subsite-yellow .btn-secondary,
+body.subsite-yellow .public-ui a.btn-secondary,
+body.subsite-yellow .public-ui .btn-secondary {
+  color: hsl(0deg, 0%, 100%);
+  background-color: green;
+  border-color: white;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  color: white;
+}
+body.subsite-yellow a.btn-secondary:focus, body.subsite-yellow a.btn-secondary.focus,
+body.subsite-yellow .btn-secondary:focus,
+body.subsite-yellow .btn-secondary.focus,
+body.subsite-yellow .public-ui a.btn-secondary:focus,
+body.subsite-yellow .public-ui a.btn-secondary.focus,
+body.subsite-yellow .public-ui .btn-secondary:focus,
+body.subsite-yellow .public-ui .btn-secondary.focus {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+body.subsite-yellow a.btn-secondary:hover,
+body.subsite-yellow .btn-secondary:hover,
+body.subsite-yellow .public-ui a.btn-secondary:hover,
+body.subsite-yellow .public-ui .btn-secondary:hover {
+  background-color: #00a600;
+  color: hsl(0deg, 0%, 100%);
+  border-color: #e6e6e6;
+}
+body.subsite-yellow a.btn-secondary.disabled, body.subsite-yellow a.btn-secondary:disabled,
+body.subsite-yellow .btn-secondary.disabled,
+body.subsite-yellow .btn-secondary:disabled,
+body.subsite-yellow .public-ui a.btn-secondary.disabled,
+body.subsite-yellow .public-ui a.btn-secondary:disabled,
+body.subsite-yellow .public-ui .btn-secondary.disabled,
+body.subsite-yellow .public-ui .btn-secondary:disabled {
+  color: hsl(0deg, 0%, 100%);
+  background-color: green;
+  border-color: white;
+  pointer-events: none;
+}
+body.subsite-yellow a.btn-secondary:not(:disabled):not(.disabled):active, body.subsite-yellow a.btn-secondary:not(:disabled):not(.disabled).active, .show > body.subsite-yellow a.btn-secondary.dropdown-toggle,
+body.subsite-yellow .btn-secondary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .btn-secondary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .btn-secondary.dropdown-toggle,
+body.subsite-yellow .public-ui a.btn-secondary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui a.btn-secondary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui a.btn-secondary.dropdown-toggle,
+body.subsite-yellow .public-ui .btn-secondary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui .btn-secondary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui .btn-secondary.dropdown-toggle {
+  color: hsl(0deg, 0%, 0%);
+  background-color: #00b300;
+  border-color: #dfdfdf;
+}
+body.subsite-yellow a.btn-secondary:not(:disabled):not(.disabled):active:focus, body.subsite-yellow a.btn-secondary:not(:disabled):not(.disabled).active:focus, .show > body.subsite-yellow a.btn-secondary.dropdown-toggle:focus,
+body.subsite-yellow .btn-secondary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .btn-secondary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .btn-secondary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui a.btn-secondary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui a.btn-secondary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui a.btn-secondary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui .btn-secondary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui .btn-secondary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui .btn-secondary.dropdown-toggle:focus {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+body.subsite-yellow a.btn-secondary .icon,
+body.subsite-yellow .btn-secondary .icon,
+body.subsite-yellow .public-ui a.btn-secondary .icon,
+body.subsite-yellow .public-ui .btn-secondary .icon {
+  color: white;
+  fill: white;
+}
+body.subsite-yellow a.btn-secondary:hover,
+body.subsite-yellow .btn-secondary:hover,
+body.subsite-yellow .public-ui a.btn-secondary:hover,
+body.subsite-yellow .public-ui .btn-secondary:hover {
+  color: #e6e6e6;
+}
+body.subsite-yellow a.btn-secondary:hover .icon,
+body.subsite-yellow .btn-secondary:hover .icon,
+body.subsite-yellow .public-ui a.btn-secondary:hover .icon,
+body.subsite-yellow .public-ui .btn-secondary:hover .icon {
+  color: #e6e6e6;
+  fill: #e6e6e6;
+}
+body.subsite-yellow a.btn-secondary.disabled, body.subsite-yellow a.btn-secondary:disabled,
+body.subsite-yellow .btn-secondary.disabled,
+body.subsite-yellow .btn-secondary:disabled,
+body.subsite-yellow .public-ui a.btn-secondary.disabled,
+body.subsite-yellow .public-ui a.btn-secondary:disabled,
+body.subsite-yellow .public-ui .btn-secondary.disabled,
+body.subsite-yellow .public-ui .btn-secondary:disabled {
+  color: #e6e6e6;
+}
+body.subsite-yellow a.btn-outline-primary,
+body.subsite-yellow .btn-outline-primary,
+body.subsite-yellow .public-ui a.btn-outline-primary,
+body.subsite-yellow .public-ui .btn-outline-primary {
+  color: black;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 0 0 2px black;
+}
+body.subsite-yellow a.btn-outline-primary:hover,
+body.subsite-yellow .btn-outline-primary:hover,
+body.subsite-yellow .public-ui a.btn-outline-primary:hover,
+body.subsite-yellow .public-ui .btn-outline-primary:hover {
+  color: black;
+  box-shadow: inset 0 0 0 2px black;
+}
+body.subsite-yellow a.btn-outline-primary:focus, body.subsite-yellow a.btn-outline-primary.focus,
+body.subsite-yellow .btn-outline-primary:focus,
+body.subsite-yellow .btn-outline-primary.focus,
+body.subsite-yellow .public-ui a.btn-outline-primary:focus,
+body.subsite-yellow .public-ui a.btn-outline-primary.focus,
+body.subsite-yellow .public-ui .btn-outline-primary:focus,
+body.subsite-yellow .public-ui .btn-outline-primary.focus {
+  box-shadow: inset 0 0 0 1px black, 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+body.subsite-yellow a.btn-outline-primary.disabled, body.subsite-yellow a.btn-outline-primary:disabled,
+body.subsite-yellow .btn-outline-primary.disabled,
+body.subsite-yellow .btn-outline-primary:disabled,
+body.subsite-yellow .public-ui a.btn-outline-primary.disabled,
+body.subsite-yellow .public-ui a.btn-outline-primary:disabled,
+body.subsite-yellow .public-ui .btn-outline-primary.disabled,
+body.subsite-yellow .public-ui .btn-outline-primary:disabled {
+  color: black;
+  background-color: transparent;
+}
+body.subsite-yellow a.btn-outline-primary:not(:disabled):not(.disabled):active, body.subsite-yellow a.btn-outline-primary:not(:disabled):not(.disabled).active, .show > body.subsite-yellow a.btn-outline-primary.dropdown-toggle,
+body.subsite-yellow .btn-outline-primary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .btn-outline-primary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .btn-outline-primary.dropdown-toggle,
+body.subsite-yellow .public-ui a.btn-outline-primary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui a.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui a.btn-outline-primary.dropdown-toggle,
+body.subsite-yellow .public-ui .btn-outline-primary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui .btn-outline-primary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui .btn-outline-primary.dropdown-toggle {
+  color: black;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 0 0 1px black;
+}
+body.subsite-yellow a.btn-outline-primary:not(:disabled):not(.disabled):active:focus, body.subsite-yellow a.btn-outline-primary:not(:disabled):not(.disabled).active:focus, .show > body.subsite-yellow a.btn-outline-primary.dropdown-toggle:focus,
+body.subsite-yellow .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .btn-outline-primary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui a.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui a.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui a.btn-outline-primary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui .btn-outline-primary.dropdown-toggle:focus {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+body.subsite-yellow a.btn-outline-secondary,
+body.subsite-yellow .btn-outline-secondary,
+body.subsite-yellow .public-ui a.btn-outline-secondary,
+body.subsite-yellow .public-ui .btn-outline-secondary {
+  color: green;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 0 0 2px green;
+}
+body.subsite-yellow a.btn-outline-secondary:hover,
+body.subsite-yellow .btn-outline-secondary:hover,
+body.subsite-yellow .public-ui a.btn-outline-secondary:hover,
+body.subsite-yellow .public-ui .btn-outline-secondary:hover {
+  color: #066d06;
+  box-shadow: inset 0 0 0 2px #066d06;
+}
+body.subsite-yellow a.btn-outline-secondary:focus, body.subsite-yellow a.btn-outline-secondary.focus,
+body.subsite-yellow .btn-outline-secondary:focus,
+body.subsite-yellow .btn-outline-secondary.focus,
+body.subsite-yellow .public-ui a.btn-outline-secondary:focus,
+body.subsite-yellow .public-ui a.btn-outline-secondary.focus,
+body.subsite-yellow .public-ui .btn-outline-secondary:focus,
+body.subsite-yellow .public-ui .btn-outline-secondary.focus {
+  box-shadow: inset 0 0 0 1px green, 0 0 0 0.25rem rgba(0, 128, 0, 0.5);
+}
+body.subsite-yellow a.btn-outline-secondary.disabled, body.subsite-yellow a.btn-outline-secondary:disabled,
+body.subsite-yellow .btn-outline-secondary.disabled,
+body.subsite-yellow .btn-outline-secondary:disabled,
+body.subsite-yellow .public-ui a.btn-outline-secondary.disabled,
+body.subsite-yellow .public-ui a.btn-outline-secondary:disabled,
+body.subsite-yellow .public-ui .btn-outline-secondary.disabled,
+body.subsite-yellow .public-ui .btn-outline-secondary:disabled {
+  color: green;
+  background-color: transparent;
+}
+body.subsite-yellow a.btn-outline-secondary:not(:disabled):not(.disabled):active, body.subsite-yellow a.btn-outline-secondary:not(:disabled):not(.disabled).active, .show > body.subsite-yellow a.btn-outline-secondary.dropdown-toggle,
+body.subsite-yellow .btn-outline-secondary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .btn-outline-secondary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .btn-outline-secondary.dropdown-toggle,
+body.subsite-yellow .public-ui a.btn-outline-secondary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui a.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui a.btn-outline-secondary.dropdown-toggle,
+body.subsite-yellow .public-ui .btn-outline-secondary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui .btn-outline-secondary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui .btn-outline-secondary.dropdown-toggle {
+  color: green;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 0 0 1px green;
+}
+body.subsite-yellow a.btn-outline-secondary:not(:disabled):not(.disabled):active:focus, body.subsite-yellow a.btn-outline-secondary:not(:disabled):not(.disabled).active:focus, .show > body.subsite-yellow a.btn-outline-secondary.dropdown-toggle:focus,
+body.subsite-yellow .btn-outline-secondary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .btn-outline-secondary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui a.btn-outline-secondary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui a.btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui a.btn-outline-secondary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui .btn-outline-secondary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui .btn-outline-secondary.dropdown-toggle:focus {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.25rem rgba(0, 128, 0, 0.5);
+}
+body.subsite-yellow a.btn-outline-tertiary,
+body.subsite-yellow .btn-outline-tertiary,
+body.subsite-yellow .public-ui a.btn-outline-tertiary,
+body.subsite-yellow .public-ui .btn-outline-tertiary {
+  color: #be2816;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 0 0 2px #be2816;
+}
+body.subsite-yellow a.btn-outline-tertiary:hover,
+body.subsite-yellow .btn-outline-tertiary:hover,
+body.subsite-yellow .public-ui a.btn-outline-tertiary:hover,
+body.subsite-yellow .public-ui .btn-outline-tertiary:hover {
+  color: #a12c1e;
+  box-shadow: inset 0 0 0 2px #a12c1e;
+}
+body.subsite-yellow a.btn-outline-tertiary:focus, body.subsite-yellow a.btn-outline-tertiary.focus,
+body.subsite-yellow .btn-outline-tertiary:focus,
+body.subsite-yellow .btn-outline-tertiary.focus,
+body.subsite-yellow .public-ui a.btn-outline-tertiary:focus,
+body.subsite-yellow .public-ui a.btn-outline-tertiary.focus,
+body.subsite-yellow .public-ui .btn-outline-tertiary:focus,
+body.subsite-yellow .public-ui .btn-outline-tertiary.focus {
+  box-shadow: inset 0 0 0 1px #be2816, 0 0 0 0.25rem rgba(190, 40, 22, 0.5);
+}
+body.subsite-yellow a.btn-outline-tertiary.disabled, body.subsite-yellow a.btn-outline-tertiary:disabled,
+body.subsite-yellow .btn-outline-tertiary.disabled,
+body.subsite-yellow .btn-outline-tertiary:disabled,
+body.subsite-yellow .public-ui a.btn-outline-tertiary.disabled,
+body.subsite-yellow .public-ui a.btn-outline-tertiary:disabled,
+body.subsite-yellow .public-ui .btn-outline-tertiary.disabled,
+body.subsite-yellow .public-ui .btn-outline-tertiary:disabled {
+  color: #be2816;
+  background-color: transparent;
+}
+body.subsite-yellow a.btn-outline-tertiary:not(:disabled):not(.disabled):active, body.subsite-yellow a.btn-outline-tertiary:not(:disabled):not(.disabled).active, .show > body.subsite-yellow a.btn-outline-tertiary.dropdown-toggle,
+body.subsite-yellow .btn-outline-tertiary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .btn-outline-tertiary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .btn-outline-tertiary.dropdown-toggle,
+body.subsite-yellow .public-ui a.btn-outline-tertiary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui a.btn-outline-tertiary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui a.btn-outline-tertiary.dropdown-toggle,
+body.subsite-yellow .public-ui .btn-outline-tertiary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui .btn-outline-tertiary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui .btn-outline-tertiary.dropdown-toggle {
+  color: #be2816;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 0 0 1px #be2816;
+}
+body.subsite-yellow a.btn-outline-tertiary:not(:disabled):not(.disabled):active:focus, body.subsite-yellow a.btn-outline-tertiary:not(:disabled):not(.disabled).active:focus, .show > body.subsite-yellow a.btn-outline-tertiary.dropdown-toggle:focus,
+body.subsite-yellow .btn-outline-tertiary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .btn-outline-tertiary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .btn-outline-tertiary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui a.btn-outline-tertiary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui a.btn-outline-tertiary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui a.btn-outline-tertiary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui .btn-outline-tertiary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui .btn-outline-tertiary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui .btn-outline-tertiary.dropdown-toggle:focus {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.25rem rgba(190, 40, 22, 0.5);
+}
+body.subsite-yellow .chip.chip-primary,
+body.subsite-yellow .public-ui .chip.chip-primary {
+  border-color: #a68113;
+  color: #a68113;
+}
+body.subsite-yellow .chip.chip-primary > .chip-label,
+body.subsite-yellow .public-ui .chip.chip-primary > .chip-label {
+  color: #a68113;
+}
+body.subsite-yellow .chip.chip-primary:hover,
+body.subsite-yellow .public-ui .chip.chip-primary:hover {
+  border-color: #d4a418;
+  background-color: #d4a418;
+}
+body.subsite-yellow .chip.chip-primary:hover > .chip-label,
+body.subsite-yellow .public-ui .chip.chip-primary:hover > .chip-label {
+  color: black;
+}
+body.subsite-yellow .chip.chip-secondary,
+body.subsite-yellow .public-ui .chip.chip-secondary {
+  border-color: green;
+  color: #d4a418;
+}
+body.subsite-yellow .chip.chip-secondary > .chip-label,
+body.subsite-yellow .public-ui .chip.chip-secondary > .chip-label {
+  color: green;
+}
+body.subsite-yellow .chip.chip-secondary:hover,
+body.subsite-yellow .public-ui .chip.chip-secondary:hover {
+  border-color: green;
+  background-color: green;
+}
+body.subsite-yellow .chip.chip-secondary:hover > .chip-label,
+body.subsite-yellow .public-ui .chip.chip-secondary:hover > .chip-label {
+  color: white;
+}
+body.subsite-yellow .flag-icon,
+body.subsite-yellow .public-ui .flag-icon {
+  background: #d4a418;
+}
+body.subsite-yellow a.read-more,
+body.subsite-yellow .public-ui a.read-more {
+  color: #b77d04;
+}
+body.subsite-yellow a.read-more .icon,
+body.subsite-yellow .public-ui a.read-more .icon {
+  fill: #b77d04;
+}
+body.subsite-yellow a .card .card-body .card-title a:hover,
+body.subsite-yellow .public-ui a .card .card-body .card-title a:hover {
+  color: #855b03;
+}
+body.subsite-yellow .btn-dropdown,
+body.subsite-yellow .public-ui .btn-dropdown {
+  color: #b77d04;
+}
+body.subsite-yellow .link-list-wrapper ul li a:hover:not(.disabled) span,
+body.subsite-yellow .public-ui .link-list-wrapper ul li a:hover:not(.disabled) span {
+  color: #b77d04;
+}
+body.subsite-yellow .link-list-wrapper ul li a:hover:not(.disabled) p,
+body.subsite-yellow .public-ui .link-list-wrapper ul li a:hover:not(.disabled) p {
+  color: #b77d04;
+}
+body.subsite-yellow .link-list-wrapper ul li a:hover:not(.disabled) .icon,
+body.subsite-yellow .public-ui .link-list-wrapper ul li a:hover:not(.disabled) .icon {
+  fill: #b77d04;
+}
+body.subsite-yellow .link-list-wrapper ul li a span,
+body.subsite-yellow .public-ui .link-list-wrapper ul li a span {
+  color: #b77d04;
+}
+@media (min-width: 992px) {
+  body.subsite-yellow .link-list-wrapper.menu-link-list h3:after,
+  body.subsite-yellow .link-list-wrapper.menu-link-list h4:after,
+  body.subsite-yellow .public-ui .link-list-wrapper.menu-link-list h3:after,
+  body.subsite-yellow .public-ui .link-list-wrapper.menu-link-list h4:after {
+    background-color: #d4a418;
+  }
+}
+body.subsite-yellow .navbar.it-navscroll-wrapper .link-list-wrapper ul li a.active,
+body.subsite-yellow .public-ui .navbar.it-navscroll-wrapper .link-list-wrapper ul li a.active {
+  border-left-color: #b77d04;
+}
+body.subsite-yellow .navbar.it-navscroll-wrapper .link-list-wrapper ul li a.active span,
+body.subsite-yellow .public-ui .navbar.it-navscroll-wrapper .link-list-wrapper ul li a.active span {
+  color: #b77d04;
+}
+body.subsite-yellow .navbar.it-navscroll-wrapper .link-list-wrapper ul li ul li a.active span,
+body.subsite-yellow .public-ui .navbar.it-navscroll-wrapper .link-list-wrapper ul li ul li a.active span {
+  color: #b77d04;
+}
+@media (min-width: 992px) {
+  body.subsite-yellow .navbar.it-navscroll-wrapper .link-list-wrapper ul li a.active,
+  body.subsite-yellow .public-ui .navbar.it-navscroll-wrapper .link-list-wrapper ul li a.active {
+    border-left-color: #b77d04;
+  }
+  body.subsite-yellow .navbar.it-navscroll-wrapper .link-list-wrapper ul li a.active span,
+  body.subsite-yellow .public-ui .navbar.it-navscroll-wrapper .link-list-wrapper ul li a.active span {
+    color: #b77d04;
+  }
+  body.subsite-yellow .navbar.it-navscroll-wrapper .link-list-wrapper ul li ul li a.active span,
+  body.subsite-yellow .public-ui .navbar.it-navscroll-wrapper .link-list-wrapper ul li ul li a.active span {
+    color: #b77d04;
+  }
+}
+body.subsite-yellow .subsite-footer, body.subsite-yellow.cms-ui .subsite-footer,
+body.subsite-yellow .public-ui .subsite-footer,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer {
+  background-color: #d4a418;
+}
+body.subsite-yellow .subsite-footer .text, body.subsite-yellow.cms-ui .subsite-footer .text,
+body.subsite-yellow .public-ui .subsite-footer .text,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text {
+  color: black;
+}
+body.subsite-yellow .subsite-footer .text h1,
+body.subsite-yellow .subsite-footer .text h2,
+body.subsite-yellow .subsite-footer .text h3,
+body.subsite-yellow .subsite-footer .text h4,
+body.subsite-yellow .subsite-footer .text a, body.subsite-yellow.cms-ui .subsite-footer .text h1,
+body.subsite-yellow.cms-ui .subsite-footer .text h2,
+body.subsite-yellow.cms-ui .subsite-footer .text h3,
+body.subsite-yellow.cms-ui .subsite-footer .text h4,
+body.subsite-yellow.cms-ui .subsite-footer .text a,
+body.subsite-yellow .public-ui .subsite-footer .text h1,
+body.subsite-yellow .public-ui .subsite-footer .text h2,
+body.subsite-yellow .public-ui .subsite-footer .text h3,
+body.subsite-yellow .public-ui .subsite-footer .text h4,
+body.subsite-yellow .public-ui .subsite-footer .text a,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h1,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h2,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h3,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h4,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text a {
+  color: black;
+}
+body.subsite-yellow .subsite-footer .text h1:hover, body.subsite-yellow .subsite-footer .text h1:active,
+body.subsite-yellow .subsite-footer .text h2:hover,
+body.subsite-yellow .subsite-footer .text h2:active,
+body.subsite-yellow .subsite-footer .text h3:hover,
+body.subsite-yellow .subsite-footer .text h3:active,
+body.subsite-yellow .subsite-footer .text h4:hover,
+body.subsite-yellow .subsite-footer .text h4:active,
+body.subsite-yellow .subsite-footer .text a:hover,
+body.subsite-yellow .subsite-footer .text a:active, body.subsite-yellow.cms-ui .subsite-footer .text h1:hover, body.subsite-yellow.cms-ui .subsite-footer .text h1:active,
+body.subsite-yellow.cms-ui .subsite-footer .text h2:hover,
+body.subsite-yellow.cms-ui .subsite-footer .text h2:active,
+body.subsite-yellow.cms-ui .subsite-footer .text h3:hover,
+body.subsite-yellow.cms-ui .subsite-footer .text h3:active,
+body.subsite-yellow.cms-ui .subsite-footer .text h4:hover,
+body.subsite-yellow.cms-ui .subsite-footer .text h4:active,
+body.subsite-yellow.cms-ui .subsite-footer .text a:hover,
+body.subsite-yellow.cms-ui .subsite-footer .text a:active,
+body.subsite-yellow .public-ui .subsite-footer .text h1:hover,
+body.subsite-yellow .public-ui .subsite-footer .text h1:active,
+body.subsite-yellow .public-ui .subsite-footer .text h2:hover,
+body.subsite-yellow .public-ui .subsite-footer .text h2:active,
+body.subsite-yellow .public-ui .subsite-footer .text h3:hover,
+body.subsite-yellow .public-ui .subsite-footer .text h3:active,
+body.subsite-yellow .public-ui .subsite-footer .text h4:hover,
+body.subsite-yellow .public-ui .subsite-footer .text h4:active,
+body.subsite-yellow .public-ui .subsite-footer .text a:hover,
+body.subsite-yellow .public-ui .subsite-footer .text a:active,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h1:hover,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h1:active,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h2:hover,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h2:active,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h3:hover,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h3:active,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h4:hover,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text h4:active,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text a:hover,
+body.subsite-yellow .public-ui.cms-ui .subsite-footer .text a:active {
+  color: black;
+}
+body.subsite-yellow .block.listing .card-with-image-template .listing-item .card-title a:hover, body.subsite-yellow .block.listing .card-with-image-template .listing-item .card-title a:focus,
+body.subsite-yellow .block.listing .in-evidence .listing-item .card-title a:hover,
+body.subsite-yellow .block.listing .in-evidence .listing-item .card-title a:focus,
+body.subsite-yellow .public-ui .block.listing .card-with-image-template .listing-item .card-title a:hover,
+body.subsite-yellow .public-ui .block.listing .card-with-image-template .listing-item .card-title a:focus,
+body.subsite-yellow .public-ui .block.listing .in-evidence .listing-item .card-title a:hover,
+body.subsite-yellow .public-ui .block.listing .in-evidence .listing-item .card-title a:focus {
+  color: #b77d04;
+}
+body.subsite-yellow .complete-block-links-template .card.card-bg,
+body.subsite-yellow .public-ui .complete-block-links-template .card.card-bg {
+  background-color: green;
+}
+body.subsite-yellow .complete-block-links-template .card.card-bg a,
+body.subsite-yellow .public-ui .complete-block-links-template .card.card-bg a {
+  color: white;
+}
+body.subsite-yellow .ribbon-card-template .card.show_detail_link .card-title a:hover, body.subsite-yellow .ribbon-card-template .card.show_detail_link .card-title a:active,
+body.subsite-yellow .public-ui .ribbon-card-template .card.show_detail_link .card-title a:hover,
+body.subsite-yellow .public-ui .ribbon-card-template .card.show_detail_link .card-title a:active {
+  color: #b77d04;
+}
+body.subsite-yellow .block.highlitedContent .card-title a:hover, body.subsite-yellow .block.highlitedContent .card-title a:focus,
+body.subsite-yellow .public-ui .block.highlitedContent .card-title a:hover,
+body.subsite-yellow .public-ui .block.highlitedContent .card-title a:focus {
+  color: #b77d04;
+}
+body.subsite-yellow .argumentInEvidence .argumentInEvidence-background,
+body.subsite-yellow .public-ui .argumentInEvidence .argumentInEvidence-background {
+  background-color: #d4a418;
+}
+body.subsite-yellow .argumentInEvidence::before,
+body.subsite-yellow .public-ui .argumentInEvidence::before {
+  background-color: #d4a418;
+}
+body.subsite-yellow .argumentInEvidence h2,
+body.subsite-yellow .public-ui .argumentInEvidence h2 {
+  color: black;
+}
+body.subsite-yellow .container .block .searchSections,
+body.subsite-yellow .public-ui .container .block .searchSections {
+  color: white;
+}
+body.subsite-yellow .container .block .searchSections .searchSections-background,
+body.subsite-yellow .public-ui .container .block .searchSections .searchSections-background {
+  background-color: green;
+}
+body.subsite-yellow .container .block .searchSections h2.text-secondary,
+body.subsite-yellow .public-ui .container .block .searchSections h2.text-secondary {
+  color: white !important;
+}
+body.subsite-yellow .container .block .searchSections .searchContainer .searchbar button,
+body.subsite-yellow .public-ui .container .block .searchSections .searchContainer .searchbar button {
+  background: #d4a418;
+}
+body.subsite-yellow .container .block .searchSections .searchContainer .searchbar button:hover, body.subsite-yellow .container .block .searchSections .searchContainer .searchbar button:active,
+body.subsite-yellow .public-ui .container .block .searchSections .searchContainer .searchbar button:hover,
+body.subsite-yellow .public-ui .container .block .searchSections .searchContainer .searchbar button:active {
+  background-color: #b28914;
+}
+body.subsite-yellow .block.twitter_posts .authors a,
+body.subsite-yellow .block.twitter_posts .public-ui .authors a,
+body.subsite-yellow .public-ui .block.twitter_posts .authors a,
+body.subsite-yellow .public-ui .block.twitter_posts .public-ui .authors a {
+  color: #fff;
+}
+body.subsite-yellow .block.twitter_posts .authors a:hover, body.subsite-yellow .block.twitter_posts .authors a:active,
+body.subsite-yellow .block.twitter_posts .public-ui .authors a:hover,
+body.subsite-yellow .block.twitter_posts .public-ui .authors a:active,
+body.subsite-yellow .public-ui .block.twitter_posts .authors a:hover,
+body.subsite-yellow .public-ui .block.twitter_posts .authors a:active,
+body.subsite-yellow .public-ui .block.twitter_posts .public-ui .authors a:hover,
+body.subsite-yellow .public-ui .block.twitter_posts .public-ui .authors a:active {
+  text-decoration: underline;
+}
+body.subsite-yellow .card-title a,
+body.subsite-yellow .public-ui .card-title a {
+  color: #b77d04;
+}
+body.subsite-yellow .genericcard .card-title a,
+body.subsite-yellow .public-ui .genericcard .card-title a {
+  color: #b77d04;
+}
+body.subsite-yellow .link-list-wrapper ul li button.btn-link,
+body.subsite-yellow .public-ui .link-list-wrapper ul li button.btn-link {
+  color: #b77d04;
+}
+body.subsite-yellow .link-list-wrapper ul li button.btn-link:hover,
+body.subsite-yellow .public-ui .link-list-wrapper ul li button.btn-link:hover {
+  color: #b77d04;
+}
+body.subsite-yellow .link-list-wrapper ul li button.btn-link:hover .icon,
+body.subsite-yellow .public-ui .link-list-wrapper ul li button.btn-link:hover .icon {
+  fill: #d4a418;
+}
+body.subsite-yellow .style_ol_list ol li:before,
+body.subsite-yellow .public-ui .style_ol_list ol li:before {
+  color: green;
+}
+body.subsite-yellow .style_ol_list ol li:after,
+body.subsite-yellow .public-ui .style_ol_list ol li:after {
+  background-color: green;
+}
+body.subsite-yellow .icon-argument-container .show-icon,
+body.subsite-yellow .public-ui .icon-argument-container .show-icon {
+  color: #be2816;
+}
+body.subsite-yellow .icon-argument-container svg,
+body.subsite-yellow .public-ui .icon-argument-container svg {
+  color: #be2816;
+  fill: #be2816;
+}
+body.subsite-yellow .btn-tertiary,
+body.subsite-yellow .public-ui .btn-tertiary {
+  color: hsl(0deg, 0%, 100%);
+  background-color: #be2816;
+  border-color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+body.subsite-yellow .btn-tertiary:focus, body.subsite-yellow .btn-tertiary.focus,
+body.subsite-yellow .public-ui .btn-tertiary:focus,
+body.subsite-yellow .public-ui .btn-tertiary.focus {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+body.subsite-yellow .btn-tertiary:hover,
+body.subsite-yellow .public-ui .btn-tertiary:hover {
+  background-color: #9a2012;
+  color: hsl(0deg, 0%, 100%);
+  border-color: #bfbfbf;
+}
+body.subsite-yellow .btn-tertiary.disabled, body.subsite-yellow .btn-tertiary:disabled,
+body.subsite-yellow .public-ui .btn-tertiary.disabled,
+body.subsite-yellow .public-ui .btn-tertiary:disabled {
+  color: hsl(0deg, 0%, 100%);
+  background-color: #be2816;
+  border-color: #fff;
+  pointer-events: none;
+}
+body.subsite-yellow .btn-tertiary:not(:disabled):not(.disabled):active, body.subsite-yellow .btn-tertiary:not(:disabled):not(.disabled).active, .show > body.subsite-yellow .btn-tertiary.dropdown-toggle,
+body.subsite-yellow .public-ui .btn-tertiary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui .btn-tertiary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui .btn-tertiary.dropdown-toggle {
+  color: hsl(0deg, 0%, 100%);
+  background-color: #8f1e11;
+  border-color: #b0b0b0;
+}
+body.subsite-yellow .btn-tertiary:not(:disabled):not(.disabled):active:focus, body.subsite-yellow .btn-tertiary:not(:disabled):not(.disabled).active:focus, .show > body.subsite-yellow .btn-tertiary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui .btn-tertiary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui .btn-tertiary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui .btn-tertiary.dropdown-toggle:focus {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+body.subsite-yellow .btn-tertiary svg,
+body.subsite-yellow .public-ui .btn-tertiary svg {
+  fill: #fff;
+}
+body.subsite-yellow .btn-tertiary:hover svg, body.subsite-yellow .btn-tertiary:active svg,
+body.subsite-yellow .public-ui .btn-tertiary:hover svg,
+body.subsite-yellow .public-ui .btn-tertiary:active svg {
+  fill: #fff;
+}
+body.subsite-yellow a.btn-tertiary,
+body.subsite-yellow .public-ui a.btn-tertiary {
+  color: #fff;
+}
+body.subsite-yellow .btn-outline-tertiary,
+body.subsite-yellow .public-ui .btn-outline-tertiary {
+  color: #be2816;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 0 0 2px #be2816;
+}
+body.subsite-yellow .btn-outline-tertiary:hover,
+body.subsite-yellow .public-ui .btn-outline-tertiary:hover {
+  color: #a12c1e;
+  box-shadow: inset 0 0 0 2px #a12c1e;
+}
+body.subsite-yellow .btn-outline-tertiary:focus, body.subsite-yellow .btn-outline-tertiary.focus,
+body.subsite-yellow .public-ui .btn-outline-tertiary:focus,
+body.subsite-yellow .public-ui .btn-outline-tertiary.focus {
+  box-shadow: inset 0 0 0 1px #be2816, 0 0 0 0.25rem rgba(190, 40, 22, 0.5);
+}
+body.subsite-yellow .btn-outline-tertiary.disabled, body.subsite-yellow .btn-outline-tertiary:disabled,
+body.subsite-yellow .public-ui .btn-outline-tertiary.disabled,
+body.subsite-yellow .public-ui .btn-outline-tertiary:disabled {
+  color: #be2816;
+  background-color: transparent;
+}
+body.subsite-yellow .btn-outline-tertiary:not(:disabled):not(.disabled):active, body.subsite-yellow .btn-outline-tertiary:not(:disabled):not(.disabled).active, .show > body.subsite-yellow .btn-outline-tertiary.dropdown-toggle,
+body.subsite-yellow .public-ui .btn-outline-tertiary:not(:disabled):not(.disabled):active,
+body.subsite-yellow .public-ui .btn-outline-tertiary:not(:disabled):not(.disabled).active,
+.show > body.subsite-yellow .public-ui .btn-outline-tertiary.dropdown-toggle {
+  color: #be2816;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 0 0 1px #be2816;
+}
+body.subsite-yellow .btn-outline-tertiary:not(:disabled):not(.disabled):active:focus, body.subsite-yellow .btn-outline-tertiary:not(:disabled):not(.disabled).active:focus, .show > body.subsite-yellow .btn-outline-tertiary.dropdown-toggle:focus,
+body.subsite-yellow .public-ui .btn-outline-tertiary:not(:disabled):not(.disabled):active:focus,
+body.subsite-yellow .public-ui .btn-outline-tertiary:not(:disabled):not(.disabled).active:focus,
+.show > body.subsite-yellow .public-ui .btn-outline-tertiary.dropdown-toggle:focus {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.25rem rgba(190, 40, 22, 0.5);
+}
+body.subsite-yellow a, body.subsite-yellow.cms-ui .public-ui a,
+body.subsite-yellow .public-ui a,
+body.subsite-yellow .public-ui.cms-ui .public-ui a {
+  color: #b77d04;
+}
+body.subsite-yellow a:hover, body.subsite-yellow.cms-ui .public-ui a:hover,
+body.subsite-yellow .public-ui a:hover,
+body.subsite-yellow .public-ui.cms-ui .public-ui a:hover {
+  color: #9d6e0c;
+}
+body.subsite-yellow .icon-primary,
+body.subsite-yellow .public-ui .icon-primary {
+  fill: #d4a418 !important;
+}/*# sourceMappingURL=yellow.css.map */

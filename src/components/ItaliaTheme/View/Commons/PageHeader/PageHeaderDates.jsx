@@ -33,8 +33,8 @@ const PageHeaderDates = ({ content }) => {
             <div className="row">
               <div className="col-12">
                 <small>{intl.formatMessage(messages.date)}:</small>
-                <p className="fw-semibold font-monospace">
-                  {viewDate(intl.locale, content.effective, 'DD-MM-Y')}
+                <p className="fw-semibold">
+                  {viewDate(intl.locale, content.effective, 'DD MMMM YYYY')}
                 </p>
               </div>
             </div>

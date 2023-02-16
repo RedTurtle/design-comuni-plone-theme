@@ -45,9 +45,12 @@ const OfficeCard = ({
 
   return office_fo ? (
     <div
-      className={cx('card card-teaser rounded shadow p-4', {
-        'mb-3': margin_bottom,
-      })}
+      className={cx(
+        'card card-teaser border-left-card preview-image-card rounded shadow p-4',
+        {
+          'mb-3': margin_bottom,
+        },
+      )}
     >
       {icon && <Icon icon={icon}></Icon>}
       <div className="card-body pe-3">
@@ -91,6 +94,7 @@ const OfficeCard = ({
           )}
         {children && <div className="card-text">{children}</div>}
       </div>
+      <div className="image-container"></div>
     </div>
   ) : null;
 };

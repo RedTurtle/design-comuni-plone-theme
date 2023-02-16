@@ -176,6 +176,9 @@ const SimpleCardTemplateDefault = (props) => {
 
           return (
             <Card
+              // className={`align-items-top rounded card-border ${getItemClass(
+              //   item,
+              // )}`}
               className={`align-items-top rounded shadow ${getItemClass(item)}`}
               noWrapper
               teaser

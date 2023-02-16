@@ -20,4 +20,19 @@
       margin-bottom: 0;
     }
   }
+  .readingtime-dates {
+    small {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      color: $caption-text;
+    }
+
+    .fw-semibold {
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: 0.96px;
+      color: $caption-text;
+    }
+  }
 }

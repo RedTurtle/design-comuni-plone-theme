@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 .documentFirstHeading {
   border: none;
 
@@ -10,6 +12,14 @@
   color: $body-color;
   font-size: 1rem;
   white-space: pre-wrap;
+}
+
+.newsitem-view {
+  .documentDescription {
+    @include rem-size(font-size, 24);
+    margin-top: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 a {
@@ -308,5 +318,20 @@ iframe {
         content: none;
       }
     }
+  }
+}
+
+.bg-light {
+  --bs-light-rgb: #{color.red($primary-a0)}, #{color.green($primary-a0)},
+    #{color.blue($primary-a0)};
+}
+
+.public-ui {
+  h1 {
+    @include rem-size(font-size, 48);
+  }
+
+  h5 {
+    @include rem-size(font-size, 24);
   }
 }
