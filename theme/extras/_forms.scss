@@ -65,3 +65,10 @@ $sidebarFormBg: #fafafa;
 #toolbar .ui.checkbox input:focus ~ label {
   color: #000;
 }
+/* FIX CT SELECT REACTVIRTUALIZED */
+.ReactVirtualized__Grid.ReactVirtualized__List {
+  width: 100% !important;
+  .ReactVirtualized__Grid__innerScrollContainer {
+    max-width: none !important;
+  }
+}
