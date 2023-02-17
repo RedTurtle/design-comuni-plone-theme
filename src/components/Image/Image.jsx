@@ -71,20 +71,7 @@ const Image = ({
   //intersection observer
   useEffect(() => {
     const applySrcSet = () => {
-      // TODO: documentation
-      const newSrcSet = srcSet
-        .filter((s, index) => {
-          const addable = (ss) => {
-            const w = ss
-              ? parseInt(ss.split(' ')[1].replace('w', ''), 10)
-              : null;
-            return w ?? false;
-          };
-          //add the next item grather then imageRef width, to avoid less quality
-          return addable(s) || addable(srcSet[index - 1]);
-        })
-        .join(', ');
-      setActualSrcSet(newSrcSet);
+      setActualSrcSet(srcSet.join(', '));
     };
 
     if (srcSet && !critical) {
@@ -93,7 +80,7 @@ const Image = ({
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting && !actualSrcSet) {
-                srcSet && applySrcSet();
+                applySrcSet();
                 if (imageRef.current instanceof Element) {
                   observer.unobserve(imageRef.current);
                 }
@@ -107,7 +94,7 @@ const Image = ({
         applySrcSet();
       }
     }
-  }, [imageRef, imageHasLoaded, srcSet, actualSrcSet, critical]);
+  }, [imageHasLoaded, srcSet, actualSrcSet, critical]);
 
   return (
     <>
