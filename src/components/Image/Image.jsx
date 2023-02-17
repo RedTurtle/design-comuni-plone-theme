@@ -21,7 +21,6 @@ import { getImageAttributes } from '@plone/volto/helpers/Image/Image';
  * @param {boolean} useOriginal - whether to render original size
  */
 const Image = ({
-  itemUrl,
   image,
   imageField = 'image',
   alt = '',
@@ -41,7 +40,6 @@ const Image = ({
   const { src, srcSet, width, height, aspectRatio } = getImageAttributes(
     image,
     {
-      itemUrl,
       imageField,
       maxSize,
       useOriginal,
@@ -153,7 +151,6 @@ const Image = ({
 };
 
 Image.propTypes = {
-  itemUrl: PropTypes.string,
   imageField: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   alt: PropTypes.string,
