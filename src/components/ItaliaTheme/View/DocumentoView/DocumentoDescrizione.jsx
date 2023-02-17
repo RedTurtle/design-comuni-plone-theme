@@ -6,8 +6,8 @@ import {
   RichTextArticle,
   richTextHasContent,
   Gallery,
-  CuredBy,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { DocumentoAutori } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
   descrizione: {
@@ -57,10 +57,7 @@ const DocumentoDescrizione = ({ content }) => {
         />
       )}
       {content.autori?.length > 0 && (
-        <CuredBy
-          people={content.autori}
-          title={intl.formatMessage(messages.autori)}
-        />
+        <DocumentoAutori autori={content.autori} />
       )}
       {content.identificativo && (
         <div className="mt-5">

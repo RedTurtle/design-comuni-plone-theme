@@ -322,8 +322,8 @@ iframe {
 }
 
 .bg-light {
-  --bs-light-rgb: #{color.red($primary-a0)}, #{color.green($primary-a0)},
-    #{color.blue($primary-a0)};
+  --bs-light-rgb: #{red($primary-a0)}, #{green($primary-a0)},
+    #{blue($primary-a0)};
 }
 
 .public-ui {

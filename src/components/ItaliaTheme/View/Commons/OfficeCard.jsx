@@ -94,7 +94,7 @@ const OfficeCard = ({
           )}
         {children && <div className="card-text">{children}</div>}
       </div>
-      <div className="image-container"></div>
+      <div className="image-container">{/* <img src={} /> */}</div>
     </div>
   ) : null;
 };

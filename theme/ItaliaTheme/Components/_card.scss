@@ -45,6 +45,41 @@
   }
 }
 
+.card-big {
+  &.card.card-teaser {
+    display: flex;
+    padding: 0px;
+  }
+  .card-body {
+    h5.card-title {
+      margin-bottom: 0em;
+      a {
+        @include rem-size(font-size, 24);
+        @include rem-size(line-height, 32);
+        text-decoration: none;
+        font-weight: 600;
+      }
+    }
+
+    p.card-text {
+      @include rem-size(font-size, 18);
+      @include rem-size(line-height, 24);
+    }
+  }
+
+  .card-image {
+    flex-basis: 20%;
+    @include rem-size(max-width, 111.18);
+    max-height: -webkit-fill-available;
+    max-width: 111px;
+    margin: auto;
+
+    img {
+      width: -webkit-fill-available;
+    }
+  }
+}
+
 .card.preview-image-card {
   .image-container {
     margin: auto;
@@ -116,6 +151,18 @@
   }
 }
 
-// .card.card-border {
-//   border: 1px solid $primary-a0;
-// }
+#documenti-collegati .genericcard {
+  .card-body {
+    h5.card-title {
+      a {
+        @include rem-size(font-size, 18);
+        @include rem-size(line-height, 24);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      svg {
+        fill: $primary;
+      }
+    }
+  }
+}
