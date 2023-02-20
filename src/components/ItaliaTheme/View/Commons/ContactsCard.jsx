@@ -47,7 +47,10 @@ const ContactsCard = ({ contact = {} }) => {
         </CardTitle>
         <CardText>
           {data?.value_punto_contatto.map((pdc, index) => (
-            <p key={index}>{renderPDCItemValue(pdc)}</p>
+            <p key={index}>
+              <strong>{pdc.pdc_type}: </strong>
+              {renderPDCItemValue(pdc)}
+            </p>
           )) ?? null}
         </CardText>
       </CardBody>

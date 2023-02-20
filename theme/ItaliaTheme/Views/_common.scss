@@ -282,7 +282,13 @@ div.sticky-wrapper {
     .card-title {
       a {
         font-size: 1rem;
+        text-decoration: none;
+        @include rem-size(line-height, 24);
+        font-weight: 600;
       }
+    }
+    svg {
+      fill: $primary;
     }
   }
 }

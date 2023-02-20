@@ -26,6 +26,7 @@ const OfficeCard = ({
   children,
   margin_bottom = false,
   show_contacts = true,
+  size,
 }) => {
   const url = flattenToAppURL(office['@id']);
   const key = `${url}_office`;
@@ -46,7 +47,8 @@ const OfficeCard = ({
   return office_fo ? (
     <div
       className={cx(
-        'card card-teaser border-left-card card-small rounded shadow p-4',
+        'card card-teaser border-left-card rounded shadow p-4 ',
+        size === 'big' ? 'card-big' : 'card-small',
         {
           'mb-3': margin_bottom,
         },
