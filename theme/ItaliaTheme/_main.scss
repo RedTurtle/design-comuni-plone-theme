@@ -9,17 +9,11 @@
 }
 
 .documentDescription {
+  @include rem-size(font-size, 24);
+  margin-top: 1.5rem;
+  line-height: 2rem;
   color: $body-color;
-  font-size: 1rem;
   white-space: pre-wrap;
-}
-
-.newsitem-view {
-  .documentDescription {
-    @include rem-size(font-size, 24);
-    margin-top: 1.5rem;
-    line-height: 2rem;
-  }
 }
 
 a {
@@ -137,7 +131,7 @@ iframe {
       background-color: $primary;
       border-radius: $btn-border-radius;
       color: $primary-text;
-      font-weight: 600;
+      font-weight: 700;
       text-align: center;
       text-decoration: none;
 
@@ -145,7 +139,7 @@ iframe {
       &:active {
         background-color: darken($primary, 8);
         color: $primary-text;
-        font-weight: 600;
+        font-weight: 700;
       }
     }
   }
