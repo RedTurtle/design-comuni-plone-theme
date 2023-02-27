@@ -176,7 +176,7 @@ const SimpleCardTemplateDefault = (props) => {
             <ListingText item={item} />
           ) : null;
           const category = getCategory(item, show_type, show_section, props);
-
+          const type = item['@type'];
           return (
             <Card
               // className={`align-items-top rounded card-border ${getItemClass(
@@ -213,6 +213,19 @@ const SimpleCardTemplateDefault = (props) => {
                 {listingText && (
                   <CardText className={cx('', { 'mb-5': eventRecurrenceMore })}>
                     {listingText}
+                    {
+                      (type === 'Modulo' || type === 'Documento') && (
+                        <div className="document-date mt-3">
+                          <strong>Data di pubblicazione: </strong>
+                          {moment(item.CreationDate).format('DD-MM-YYYY')}
+                          <br />
+                          <strong>Data di aggiornamento: </strong>
+                          {moment(item.modified).format('DD-MM-YYYY')}
+                        </div>
+                      )
+                      // console.log(type)
+                      // <div>ciao</div>
+                    }
                   </CardText>
                 )}
                 {eventRecurrenceMore}

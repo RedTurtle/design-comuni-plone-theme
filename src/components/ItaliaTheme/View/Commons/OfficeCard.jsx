@@ -27,6 +27,7 @@ const OfficeCard = ({
   margin_bottom = false,
   show_contacts = true,
   size,
+  no_details = false,
 }) => {
   const url = flattenToAppURL(office['@id']);
   const key = `${url}_office`;
@@ -96,7 +97,11 @@ const OfficeCard = ({
           )}
         {children && <div className="card-text">{children}</div>}
       </div>
-      <div className="image-container">{/* <img src={} /> */}</div>
+      <div className="image-container">
+        {office.preview_image?.scales?.preview && (
+          <img src={office.preview_image?.scales?.preview} alt={office.id} />
+        )}
+      </div>
     </div>
   ) : null;
 };

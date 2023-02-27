@@ -8,6 +8,7 @@ import {
   RichTextSection,
   RichText,
   GenericCard,
+  OfficeCard,
   // ContactLink,
   ContactsCard,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
@@ -74,6 +75,7 @@ const VenueContacts = ({ content }) => {
       <RichTextSection
         tag_id="contatti"
         title={intl.formatMessage(messages.contatti)}
+        title_tag="h4"
       >
         {/* CONTATTI LUOGO */}
         {/* {(content?.telefono ||
@@ -137,7 +139,11 @@ const VenueContacts = ({ content }) => {
       )} */}
         {content.contact_info?.length > 0 &&
           content.contact_info.map((contact) => (
-            <ContactsCard contact={contact} key={contact['@id']} />
+            <ContactsCard
+              contact={contact}
+              key={contact['@id']}
+              show_title={false}
+            />
           ))}
         {/*
         STRUTTURE RESPONSABILI
@@ -153,12 +159,13 @@ const VenueContacts = ({ content }) => {
         <RichTextSection
           tag_id="struttura_responsabile"
           title={intl.formatMessage(messages.struttura_responsabile)}
+          title_tag="h4"
         >
           {content.struttura_responsabile_correlati?.length > 0 ? (
             //STRUTTURE RESPONSABILI CORRELATE
             <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
               {content?.struttura_responsabile_correlati?.map((item, i) => (
-                <GenericCard key={item['@id']} item={item} />
+                <OfficeCard key={item['@id']} office={item} load_data={false} />
               ))}
             </div>
           ) : (

@@ -82,6 +82,7 @@
 @import 'ItaliaTheme/Blocks/countdown';
 @import 'ItaliaTheme/Blocks/video';
 @import 'ItaliaTheme/Blocks/HTML';
+@import 'ItaliaTheme/Blocks/simpleCardTemplate';
 
 @import 'ItaliaTheme/Views/uo';
 @import 'ItaliaTheme/Views/evento';
@@ -90,9 +91,7 @@
 @import 'ItaliaTheme/Views/modules';
 @import 'ItaliaTheme/Views/cartellaModulistica';
 @import 'ItaliaTheme/Views/trasparenzaView';
-@import 'ItaliaTheme/Blocks/simpleCardTemplate';
-@import 'ItaliaTheme/Views/paginaArgomentoView';
-@import 'ItaliaTheme/Views/documentoView';
+@import 'ItaliaTheme/Views/paginaArgomento';
 @import 'ItaliaTheme/Views/sponsors';
 @import 'ItaliaTheme/Views/slider';
 @import 'ItaliaTheme/Views/faqFolder';
@@ -100,8 +99,9 @@
 @import 'ItaliaTheme/Views/embeddedVideo';
 @import 'ItaliaTheme/Views/homepage';
 @import 'ItaliaTheme/Views/puntoDiContatto';
-@import 'ItaliaTheme/Views/personaView';
-@import 'ItaliaTheme/Views/servizioView';
+@import 'ItaliaTheme/Views/persona';
+@import 'ItaliaTheme/Views/servizio';
+@import 'ItaliaTheme/Views/venue';
 @import 'ItaliaTheme/Widgets/iconWidget';
 @import 'ItaliaTheme/Widgets/searchSectionsConfigurationWidget';
 @import 'ItaliaTheme/Widgets/blocksWidget';

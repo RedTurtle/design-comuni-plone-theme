@@ -21,6 +21,7 @@ const VenueAccessMode = ({ content }) => {
       content={content.modalita_accesso}
       tag_id={'modalita-accesso'}
       title={intl.formatMessage(messages.modalita_accesso)}
+      title_tag="h4"
     />
   ) : (
     <></>

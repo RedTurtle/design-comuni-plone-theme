@@ -26,6 +26,7 @@
   &.card-big {
     h5.card-title,
     .text.fw-bold {
+      color: $primary;
       a {
         @include rem-size(font-size, 24);
         @include rem-size(line-height, 32);
@@ -147,6 +148,12 @@
 }
 
 .simple-card-default {
+  .card-title {
+    @include rem-size(font-size, 24px);
+    @include rem-size(line-height, 32px);
+    font-weight: 700;
+  }
+
   .card-body {
     .category-top {
       span.text {
@@ -163,6 +170,9 @@
     p.card-text {
       font-size: 1rem;
       line-height: 1.5rem;
+      div.document-date {
+        @include rem-size(font-size, 14);
+      }
     }
   }
 }
