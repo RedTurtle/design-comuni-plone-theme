@@ -7,7 +7,6 @@ import {
   richTextHasContent,
   RichTextSection,
   RichText,
-  GenericCard,
   OfficeCard,
   // ContactLink,
   ContactsCard,
