@@ -80,6 +80,22 @@
   }
 }
 
+.card-small {
+  .card-body {
+    h5.card-title {
+      a {
+        @include rem-size(font-size, 18);
+        text-decoration: none;
+        text-transform: none;
+      }
+    }
+
+    p.card-text {
+      @include rem-size(font-size, 16);
+    }
+  }
+}
+
 .card.preview-image-card {
   .image-container {
     margin: auto;
