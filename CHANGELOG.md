@@ -1,3 +1,45 @@
+## [8.0.0-alpha.9](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.8...v8.0.0-alpha.9) (2023-02-22)
+
+
+### Bug Fixes
+
+* tendina react virtualized ([#79](https://github.com/RedTurtle/design-comuni-plone-theme/issues/79)) ([0b7097c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0b7097cff2be398e6b763c0b68d3f7964de5509c))
+* width on react virtualized ([#77](https://github.com/RedTurtle/design-comuni-plone-theme/issues/77)) ([be3076c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/be3076c53e94fdfd3a6542ee20dfb95fafa01db8))
+
+## [8.0.0-alpha.8](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.7...v8.0.0-alpha.8) (2023-02-17)
+
+
+### Features
+
+* added new customer satisfaction using new volto-feedback and collective.feedback addons ([#74](https://github.com/RedTurtle/design-comuni-plone-theme/issues/74)) ([2d0a894](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2d0a894608d12c9818ce21b58280101e7ba5b67a))
+* object browser breadcrumbs ([#68](https://github.com/RedTurtle/design-comuni-plone-theme/issues/68)) ([ba4b918](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ba4b918ebe64b9110a22e60ffa8ad5c59176ac78))
+* upgraded volto 16.11.0 ([3520bc3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3520bc356413ab3ab981c92cfc4e2d7cbbd989e2))
+
+
+### Bug Fixes
+
+* propTypes ([83baf67](https://github.com/RedTurtle/design-comuni-plone-theme/commit/83baf67f135bdadfaa5b14e2934cd23d63b17a48))
+* rimossi campi headline e headlineTag da calendar block ([#78](https://github.com/RedTurtle/design-comuni-plone-theme/issues/78)) ([a3b1b16](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a3b1b1629246ba1243de0e0eeeead0ed17468a18))
+
+## [8.0.0-alpha.7](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.6...v8.0.0-alpha.7) (2023-02-15)
+
+
+### Features
+
+* added conditional to set pdf download in a new tab ([2fcbb2b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2fcbb2b09b620c69cbdedf72908c6d3c1c8b0200))
+* allineamento bottone blocco elenco e linea sotto al titolo ([#58](https://github.com/RedTurtle/design-comuni-plone-theme/issues/58)) ([b3ca7de](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b3ca7dec2755f9bba6c52b61d14e1195f3f1fdc5))
+* new color for links inside the draftjs editor on footer site config ([#63](https://github.com/RedTurtle/design-comuni-plone-theme/issues/63)) ([c735228](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c73522805db739568eb6e9e119018b11c644ec26))
+
+
+### Bug Fixes
+
+* block twitter strutture re-done ([#75](https://github.com/RedTurtle/design-comuni-plone-theme/issues/75)) ([f9ffe63](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f9ffe63b9231e9020f694cfedc9a1c1bcb784297))
+* changed label accedi al servizio ([cf8e5f9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/cf8e5f94647963dd5575f884ab92322760d43499))
+* remove broken api expanders ([82c87c3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/82c87c30b277d120ea1c50fcf23bb4ee50b1bac2))
+* tipologia_notizia for non configured listing blocks ([1551f97](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1551f979c94fc052ef5779ee3e121c6f608cc042))
+* uo view competenze ([1491da7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1491da786ba887f5b516b95e8712f662cb452106))
+* upgraded design-react-kit ([21d9604](https://github.com/RedTurtle/design-comuni-plone-theme/commit/21d96049b605449617c2e7adc6df6411dff8f947))
+
 ## [8.0.0-alpha.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.5...v8.0.0-alpha.6) (2023-02-07)
 
 

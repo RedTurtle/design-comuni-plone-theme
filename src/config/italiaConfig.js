@@ -18,6 +18,10 @@ import CardWithImageRssTemplate from 'design-comuni-plone-theme/components/Itali
 import CardWithImageRssTemplateSkeleton from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/TemplatesSkeleton/CardWithImageRssTemplateSkeleton';
 import CardWithoutImageRssTemplate from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate';
 import CardWithoutImageRssTemplateSkeleton from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/TemplatesSkeleton/CardWithoutImageRssTemplateSkeleton';
+import {
+  AnswersStep,
+  CommentsStep,
+} from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import HandleAnchor from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HandleAnchor';
 import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/GenericAppExtras';
@@ -48,6 +52,8 @@ import bandoSVG from 'design-comuni-plone-theme/icons/bando.svg';
 import applyRichTextConfig from 'design-comuni-plone-theme/config/RichTextEditor/config';
 
 import gdprPrivacyPanelConfig from 'design-comuni-plone-theme/config/volto-gdpr-privacy-defaultPanelConfig.js';
+
+import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/schema.js';
 
 export default function applyConfig(voltoConfig) {
   let config = applyRichTextConfig(voltoConfig);
@@ -197,8 +203,8 @@ export default function applyConfig(voltoConfig) {
           // { title: 'Credits', url: 'https://www.redturtle.it/' },
         ],
       },
-      enableCustomerSatisfaction: true,
-      enableCustomerSatisfactionCaptcha: false,
+      enableFeedbackForm: true,
+      enableFeedbackFormCaptcha: false,
       enableVoltoFormBlockCaptcha: true,
       splitMegamenuColumns: true, //se impostato a false, non spezza le colonne con intestazioni nel megamenu
       footerNavigationDepth: 2, //valori possibili: [1,2]. Se impostato ad 1 non verranno mostrati nel footer i link agli elementi contenuti nelle sezioni di primo livello.
@@ -251,6 +257,19 @@ export default function applyConfig(voltoConfig) {
     'volto-editablefooter': {
       ...config.settings['volto-editablefooter'],
       options: { socials: true, newsletterSubscribe: true },
+    },
+    'volto-feedback': {
+      ...config.settings['volto-feedback'],
+      formSteps: [
+        {
+          step: 0,
+          pane: AnswersStep,
+        },
+        {
+          step: 1,
+          pane: CommentsStep,
+        },
+      ],
     },
     videoAllowExternalsDefault: false,
     showTrasparenzaFields: false,
@@ -308,6 +327,7 @@ export default function applyConfig(voltoConfig) {
     listing: {
       ...config.blocks.blocksConfig.listing,
       showLinkMore: true,
+      blockSchema: schemaListing,
       variations: [
         ...config.blocks.blocksConfig.listing.variations,
         ...getItaliaListingVariations(config),
