@@ -5,9 +5,6 @@ FROM base as build
 WORKDIR /home/node/app
 USER root
 
-ENV RAZZLE_API_PATH=VOLTO_API_PATH
-ENV RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH
-
 #RUN buildDeps="build-essential ca-certificates git-core openssl" && \
 RUN buildDeps="make" && \
     apt-get update && \
