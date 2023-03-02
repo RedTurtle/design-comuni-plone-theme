@@ -5,7 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from 'design-react-kit/dist/design-react-kit';
+import { Container } from 'design-react-kit';
 
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
@@ -59,7 +59,7 @@ const Body = ({ data, children, nItems = 0, reactSlick }) => {
         {data?.title && <h2>{data.title}</h2>}
         {(data?.channel_link || data?.channel_link_title) && (
           <div className="channel">
-            <Icon color="primary" icon="it-youtube" className="mr-2" />
+            <Icon color="primary" icon="it-youtube" className="me-2" />
             {data.channel_link ? (
               <a
                 href={data.channel_link}

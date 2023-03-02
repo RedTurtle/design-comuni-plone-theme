@@ -1,12 +1,7 @@
 import React from 'react';
 import { defineMessages } from 'react-intl';
 import { UniversalLink, ConditionalLink } from '@plone/volto/components';
-import {
-  Chip,
-  ChipLabel,
-  Button,
-  Container,
-} from 'design-react-kit/dist/design-react-kit';
+import { Chip, ChipLabel, Button, Container } from 'design-react-kit';
 
 const messages = defineMessages({
   view_all: {
@@ -28,7 +23,7 @@ const BottomBody = ({ data, intl }) => {
             {intl?.formatMessage(messages.otherArguments)}
           </h6>
         </div>
-        <div className="col-lg-9 text-left">
+        <div className="col-lg-9 text-start">
           {data?.arguments?.map((argument, index) => (
             <Chip
               color="primary"
@@ -40,7 +35,7 @@ const BottomBody = ({ data, intl }) => {
               item={argument}
               key={index}
               title={argument.title}
-              className="mr-2 text-decoration-none"
+              className="me-2 text-decoration-none"
             >
               <ChipLabel tag="span">{argument.title}</ChipLabel>
             </Chip>

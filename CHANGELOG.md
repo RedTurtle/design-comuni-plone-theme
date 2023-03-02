@@ -1,3 +1,380 @@
+## [8.0.0-alpha.10](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.9...v8.0.0-alpha.10) (2023-02-27)
+
+
+### Features
+
+* change patrocinato_da field from TextLine to RichText; change 'contatti interni' to 'organizzato da' ([d712d66](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d712d668c5746c1b27dbb258ea6b795e159a870f))
+* increase char counter limit to 255 ([3a7b7cc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3a7b7cc051dac0293177bb6808e85bf8893e33ab))
+* update and rebuild i18n catalog ([ac3a220](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ac3a220089cbb3480c59defbbd8ff953d5ece05e))
+
+
+### Bug Fixes
+
+* change details in event view ([3d0c005](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3d0c0053f0417ca7127c108678982aac2c1cd7f5))
+* fix space between galleries ([86e509f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/86e509f487c401cd9a3cda41b72a5cf64863ded4))
+* fix styles for gallery and better PropTypes description ([fdeb6e4](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fdeb6e4cc4f7fb82ae2e44ba5bd138f35a7936fd))
+* fix test ([b7fceda](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b7fceda67331d40ee4b373460fd4c0b5112ee4f0))
+
+## [8.0.0-alpha.9](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.8...v8.0.0-alpha.9) (2023-02-22)
+
+
+### Bug Fixes
+
+* tendina react virtualized ([#79](https://github.com/RedTurtle/design-comuni-plone-theme/issues/79)) ([0b7097c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0b7097cff2be398e6b763c0b68d3f7964de5509c))
+* width on react virtualized ([#77](https://github.com/RedTurtle/design-comuni-plone-theme/issues/77)) ([be3076c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/be3076c53e94fdfd3a6542ee20dfb95fafa01db8))
+
+## [8.0.0-alpha.8](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.7...v8.0.0-alpha.8) (2023-02-17)
+
+
+### Features
+
+* added new customer satisfaction using new volto-feedback and collective.feedback addons ([#74](https://github.com/RedTurtle/design-comuni-plone-theme/issues/74)) ([2d0a894](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2d0a894608d12c9818ce21b58280101e7ba5b67a))
+* object browser breadcrumbs ([#68](https://github.com/RedTurtle/design-comuni-plone-theme/issues/68)) ([ba4b918](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ba4b918ebe64b9110a22e60ffa8ad5c59176ac78))
+* upgraded volto 16.11.0 ([3520bc3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3520bc356413ab3ab981c92cfc4e2d7cbbd989e2))
+
+
+### Bug Fixes
+
+* propTypes ([83baf67](https://github.com/RedTurtle/design-comuni-plone-theme/commit/83baf67f135bdadfaa5b14e2934cd23d63b17a48))
+* rimossi campi headline e headlineTag da calendar block ([#78](https://github.com/RedTurtle/design-comuni-plone-theme/issues/78)) ([a3b1b16](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a3b1b1629246ba1243de0e0eeeead0ed17468a18))
+
+## [8.0.0-alpha.7](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.6...v8.0.0-alpha.7) (2023-02-15)
+
+
+### Features
+
+* added conditional to set pdf download in a new tab ([2fcbb2b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2fcbb2b09b620c69cbdedf72908c6d3c1c8b0200))
+* allineamento bottone blocco elenco e linea sotto al titolo ([#58](https://github.com/RedTurtle/design-comuni-plone-theme/issues/58)) ([b3ca7de](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b3ca7dec2755f9bba6c52b61d14e1195f3f1fdc5))
+* new color for links inside the draftjs editor on footer site config ([#63](https://github.com/RedTurtle/design-comuni-plone-theme/issues/63)) ([c735228](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c73522805db739568eb6e9e119018b11c644ec26))
+
+
+### Bug Fixes
+
+* block twitter strutture re-done ([#75](https://github.com/RedTurtle/design-comuni-plone-theme/issues/75)) ([f9ffe63](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f9ffe63b9231e9020f694cfedc9a1c1bcb784297))
+* changed label accedi al servizio ([cf8e5f9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/cf8e5f94647963dd5575f884ab92322760d43499))
+* remove broken api expanders ([82c87c3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/82c87c30b277d120ea1c50fcf23bb4ee50b1bac2))
+* tipologia_notizia for non configured listing blocks ([1551f97](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1551f979c94fc052ef5779ee3e121c6f608cc042))
+* uo view competenze ([1491da7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1491da786ba887f5b516b95e8712f662cb452106))
+* upgraded design-react-kit ([21d9604](https://github.com/RedTurtle/design-comuni-plone-theme/commit/21d96049b605449617c2e7adc6df6411dff8f947))
+
+## [8.0.0-alpha.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.5...v8.0.0-alpha.6) (2023-02-07)
+
+
+### Features
+
+* google maps block restricted and removed from privacy options ([#71](https://github.com/RedTurtle/design-comuni-plone-theme/issues/71)) ([abbedf5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/abbedf5aaf1d1098a3b27156864724827dc1fd2e))
+* upgraded design-react-kit and bootstrap-italia ([960ce5c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/960ce5cdcc1b49076c647b97852cea35972e6f2b))
+* upgraded kit to latest next branch ([353df7d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/353df7d4f5128351c31b6459d0110a7bfcfde278))
+* upgraded volto to 16.10.0 ([c9d0cf6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c9d0cf61a8d6f3a44e07d764f060ff4c08663e46))
+* use new api expanders to reduce the number of api calls ([5cb3904](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5cb3904643a2545cd8baa40ccf26cf596b1a6264))
+* use new Progress component for content types side menus ([adc3dd5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/adc3dd5dd712a8f2f32f5913606032ebba88b64f))
+
+
+### Bug Fixes
+
+* card category with new taxonomies ([a99af4f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a99af4f0add3e7527fa27c2f6c8ddb42d925b4ed))
+* race condition on service deadlines ([8ad445c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8ad445cef490ad44e5f7d054901db521f410bca5))
+* remove custom headings color ([ed507e8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ed507e84c16e3c3d388f8d5d28a1d2ceb34aac5b))
+* show persona fields even without incarico ([d439e6b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d439e6baf6d1316172a5e3330323b27b2e5a60b6))
+* temporary fix for tests ([e19ca71](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e19ca714644607794f631d5af40225e27e75a424))
+
+
+### Maintenance
+
+* fix build pipeline and reintroduce auto deployment ([6481d8c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6481d8c5e6917837e1ba0356ac05a989a552388d))
+
+## [8.0.0-alpha.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.4...v8.0.0-alpha.5) (2023-02-03)
+
+
+### Bug Fixes
+
+* adapt to new taxonomies ([bdd10ca](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bdd10ca8ca4121fce105f740728e139ace792d18))
+* added some margin to 'punti di contatti' card inside UO ([#65](https://github.com/RedTurtle/design-comuni-plone-theme/issues/65)) ([8eaf326](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8eaf326715e81ed673d0e26ab8efcb3df291c780))
+* campi mancanti nelle view ([#67](https://github.com/RedTurtle/design-comuni-plone-theme/issues/67)) ([f51f9ec](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f51f9ec35c0abf18fe77d627e0af4599310b8db6))
+* content type views section components keys breaking related items ([#66](https://github.com/RedTurtle/design-comuni-plone-theme/issues/66)) ([f16095d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f16095da597cbdb3325410eba4f0f40b37aaaf06))
+
+## [8.0.0-alpha.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.3...v8.0.0-alpha.4) (2023-01-24)
+
+
+### Features
+
+* added field procedure_collegate to ServizioView ([c039c58](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c039c58c0b9d1378cf2b5d82366f9119ec59df73))
+* moved motivo_stato_servizio to page header ([3c4e4da](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3c4e4da7bd9d10f188c8375663568db4b9f51ec7))
+* upgraded volto to 16.8.1 ([19b1203](https://github.com/RedTurtle/design-comuni-plone-theme/commit/19b1203b062dac2e096542600cf0a735606c1f0a))
+
+
+### Bug Fixes
+
+* cleanup className errors ([b971f31](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b971f3138c370df39518bf13aa072fa1ef9ffb24))
+* do not show titles of empty fields in ServizioView ([7d81ccf](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7d81ccfaed5addf9de6b223316d487d96230e13d))
+* flatten image urls ([ed900a2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ed900a2b5ed651d7c341cf0043b7cf4b9da12fb2))
+* link tag in some CardReadMore usages ([8b6a75e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8b6a75e8bb9f1ff402451b3a21208832e3371930))
+* listing image when no image is set on the item ([9b4b7db](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9b4b7db85215635be460e673598c9c2554254068))
+* ordering and labels in DocumentoView ([79b6743](https://github.com/RedTurtle/design-comuni-plone-theme/commit/79b67433be96e64a3ae6a3379586d7e665af3743))
+* remove subtitle from h1 tag ([27eb014](https://github.com/RedTurtle/design-comuni-plone-theme/commit/27eb014cff1d6ccec6a61020366ef5ab303570f6))
+* show stato_servizio even when null ([24d89e5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/24d89e50177ab040135d9b58e8fcbccb4bf66fb0))
+* show stato_servizio even when null ([43541f5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/43541f5d092941ecc9888ac0c4f937fa085b6849))
+
+
+### Maintenance
+
+* enhanced test-setup-config ([9b45002](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9b450021020f7d3639d28b39e49084e471e94933))
+* fix config in tests, was missing italiaConfig ([83c5937](https://github.com/RedTurtle/design-comuni-plone-theme/commit/83c5937dc4418eb2befa4f211c91ecd51da3d380))
+* fix test config ([1d924c1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1d924c1fdabbdabea99b93499a87bc605dbab014))
+* fixed ServizioView test ([9ffa964](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9ffa9645af5e73c5fa1b6a1be9422647a2799bc3))
+* twitter image profile removed ([fe733ab](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fe733ab2b9c890e14cca8960712a844c4e8b0f08))
+
+## [8.0.0-alpha.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.2...v8.0.0-alpha.3) (2023-01-17)
+
+
+### Bug Fixes
+
+* i18n in pdc view ([eb67d56](https://github.com/RedTurtle/design-comuni-plone-theme/commit/eb67d56fbd464cab1fa1ed0a1b780b944a7b4b84))
+* image component with Plone 6 images_scales ([#56](https://github.com/RedTurtle/design-comuni-plone-theme/issues/56)) ([5f97ac9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5f97ac963764c2b239298b66ff7bbe7652f9f135))
+* missing locales ([0729bd6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0729bd6e1aa8ff407b81c51aa99c9a32ad903899))
+* persona view fields not showing properly ([bc54385](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bc5438517b4806b13e77b925db3fe56b104f02c3))
+* toolbar z-index in contents view ([e3b90de](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e3b90dedb416e278043b9415151f9baeff71c87f))
+
+
+### Maintenance
+
+* added sample test for CardPersona ([413d433](https://github.com/RedTurtle/design-comuni-plone-theme/commit/413d4338e8d933cb97d197086ce375ab3f2c48ac))
+
+## [8.0.0-alpha.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.1...v8.0.0-alpha.2) (2023-01-13)
+
+
+### Features
+
+* upgrade volto-data-grid-widget to 2.1.0 ([#55](https://github.com/RedTurtle/design-comuni-plone-theme/issues/55)) ([e9f8700](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e9f8700c6f6a70ca16c5ffbcdfa93576f301c1db))
+
+
+### Bug Fixes
+
+* upgraded volto-data-grid-widget to 2.0.0 ([d00b773](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d00b773f33588c7a0456106ee628054a00cb6a02))
+
+
+### Maintenance
+
+* cleanup unused import ([6de76ed](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6de76edc4f98f609ef2ca1ce3926f6d68d296134))
+
+## [8.0.0-alpha.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0...v8.0.0-alpha.1) (2023-01-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgraded design-react-kit 4.0.2 and bootstrap-italia to last v1
+
+### Features
+
+* added filed servizio attivo/non attivo ([#19](https://github.com/RedTurtle/design-comuni-plone-theme/issues/19)) ([069dd90](https://github.com/RedTurtle/design-comuni-plone-theme/commit/069dd9089a17dd819efbacbf014b1e79c386fefb))
+* luogo view ([#52](https://github.com/RedTurtle/design-comuni-plone-theme/issues/52)) ([81512bd](https://github.com/RedTurtle/design-comuni-plone-theme/commit/81512bdca916a61f78c0691341d38c11a8d831d9))
+* nuova vista servizio, validazione campi del servizio ([#46](https://github.com/RedTurtle/design-comuni-plone-theme/issues/46)) ([64885de](https://github.com/RedTurtle/design-comuni-plone-theme/commit/64885de071db9837c486d8210c95285feeb09411))
+* punti di contatto e incarichi ([#48](https://github.com/RedTurtle/design-comuni-plone-theme/issues/48)) ([257d2c9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/257d2c9177b355c3144a687131153b232ce588c6))
+* tempi e scadenze servizio ([#47](https://github.com/RedTurtle/design-comuni-plone-theme/issues/47)) ([8181820](https://github.com/RedTurtle/design-comuni-plone-theme/commit/81818202fa10c1cad3a4e57812bedb08ed562c6a))
+* upgraded design-react-kit 4.0.2 and bootstrap-italia to last v1 ([f61c2c3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f61c2c3d118e7b1986d1041b0f281d7082ae0164))
+* upgraded volto to 16.7.0 ([d1fb2f4](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d1fb2f48b4a6754a509251a3445557c0b4dec351))
+* view unita organizzativa ([#51](https://github.com/RedTurtle/design-comuni-plone-theme/issues/51)) ([d562d1f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d562d1f2de714fef8cca3ba639b340135ce0da0a))
+
+
+### Bug Fixes
+
+* cleanup old styles ([fc4703d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fc4703dd4fcc3f36c54d94242e3f2eba7f6eb699))
+* correct the path to script i18n ([#20](https://github.com/RedTurtle/design-comuni-plone-theme/issues/20)) ([1c888a8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1c888a89df069cfd7baf28d03ea871de3fdf3f21))
+* date aperte e ricorrenze ([#53](https://github.com/RedTurtle/design-comuni-plone-theme/issues/53)) ([70bab86](https://github.com/RedTurtle/design-comuni-plone-theme/commit/70bab86d3b8959f8421f5021ece65bdcac1a36e5))
+* imports ([5371df7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5371df7fe1ce22c7fc682cd393944ac20cae6c18))
+* incarichi changed to incarichi_persona ([fbb3773](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fbb377342d6e176126dcb43ab5534397aa78ee82))
+* more style fixes after migration ([e6b8712](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e6b8712dfdd2ba6dcff6b801e320233160f638bb))
+* removed unused locales ([85ddc78](https://github.com/RedTurtle/design-comuni-plone-theme/commit/85ddc7880c3de0d6fbd2069474927d4f6cb5b62d))
+* search view label transition fixed ([#34](https://github.com/RedTurtle/design-comuni-plone-theme/issues/34)) ([ea6d489](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ea6d4890a18c3d0dc409c86a7186a6554b9313f7))
+* servizio attivo ([#31](https://github.com/RedTurtle/design-comuni-plone-theme/issues/31)) ([b31b4ba](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b31b4ba0c438a94ba590deccae52e7550f884ff7))
+* style fixes ([e185fa3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e185fa3073178056bad6d14cc2ab1faf376aa717))
+* style fixes ([9113848](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9113848af2f5780c21317cd38ec33f057372958f))
+* uo services cards ([aedb5b8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/aedb5b8bb6e507152f3a34dfeca02e09cd1fab23))
+* updated locales ([6601e91](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6601e91d159b48dad20635eaf673c5305d4b92c8))
+
+
+### Maintenance
+
+* disable auto deployment for releases ([0415b54](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0415b547720a5183dba55a69ed2d40c18d5fc79e))
+* prepare for alpha deployment ([addeac3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/addeac3a02c25d9282f71ade3d15b063b9c89f37))
+* removed alpha workflow and removed auto-deploy from develop workflow ([1ec92b2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1ec92b26c5d3dc0a87f9a0ebccdb40b82546d9b3))
+
+## [7.0.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.12...v7.0.0) (2023-01-11)
+
+
+### Bug Fixes
+
+* remove sort_order from search query by date. Sort order is managed by backend ([#45](https://github.com/RedTurtle/design-comuni-plone-theme/issues/45)) ([802a98d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/802a98d003989c3ac7835db6d712c4d439d0f680))
+
+
+### Documentation
+
+* improve conventional changelog ([5f70e72](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5f70e725f5336e78f74899147bf325c9f85d2c44))
+
+## [7.0.0-alpha.12](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.11...v7.0.0-alpha.12) (2023-01-03)
+
+
+### Bug Fixes
+
+* customized arrayWidget to fix condition of select without vocabulary ([#44](https://github.com/RedTurtle/design-comuni-plone-theme/issues/44)) ([d7d34cb](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d7d34cb4b870f36477cb19d43b468e236172e45c))
+
+
+### Documentation
+
+* improve conventional changelog ([1143ed8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1143ed83cd33d2f807dcc56276a734c4a71c4882))
+
+## [7.0.0-alpha.11](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.10...v7.0.0-alpha.11) (2022-12-30)
+
+
+### Features
+
+* hideable footer sub items ([#37](https://github.com/RedTurtle/design-comuni-plone-theme/issues/37)) ([567a2ed](https://github.com/RedTurtle/design-comuni-plone-theme/commit/567a2ed1df49e3913492600a145838f76c344c64))
+
+
+### Bug Fixes
+
+* fixed layoutViewsNamesMapping config ([#39](https://github.com/RedTurtle/design-comuni-plone-theme/issues/39)) ([fff7819](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fff781944344887329cc4e956e62d8904535d0b5))
+* image in complete block links template ([#38](https://github.com/RedTurtle/design-comuni-plone-theme/issues/38)) ([24b4109](https://github.com/RedTurtle/design-comuni-plone-theme/commit/24b4109ce89bca515a199ab6aa624a90969598fc))
+* modulistica view race condition on rendering content items ([#43](https://github.com/RedTurtle/design-comuni-plone-theme/issues/43)) ([f51dd5f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f51dd5f1cbc2679cf16f8bd84b4e29f3ef7c1925))
+* race condition in rendering the toolbar in multilingual sites after saving a page ([6e557b1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6e557b1c5b65e09103cd5df79fca40f709a9482c))
+
+## [7.0.0-alpha.10](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.9...v7.0.0-alpha.10) (2022-12-23)
+
+
+### Features
+
+* upgraded volto to 16.6.0 ([47ea40d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/47ea40d247cd42911a112394ab60a7d084915849))
+
+
+### Bug Fixes
+
+* IntersectionObserver.unobserve: Argument 1 is not an object ([#36](https://github.com/RedTurtle/design-comuni-plone-theme/issues/36)) ([b3e6870](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b3e687016febead7daba781d3ec5bbab402b051c))
+* related items preview image ([#35](https://github.com/RedTurtle/design-comuni-plone-theme/issues/35)) ([d48c48d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d48c48dc9cea05a2b07e241c24e934664b59e548))
+
+## [7.0.0-alpha.9](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.8...v7.0.0-alpha.9) (2022-12-20)
+
+
+### Bug Fixes
+
+* install volto-sentry to restore sentry functionality ([5f7fe26](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5f7fe2638501f9f587f02662bfaca70bbfc26bf3))
+
+## [7.0.0-alpha.8](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.7...v7.0.0-alpha.8) (2022-12-19)
+
+
+### Bug Fixes
+
+* race condition in Diff view and components, better diff preview for native volto blocks ([#30](https://github.com/RedTurtle/design-comuni-plone-theme/issues/30)) ([fc6535e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fc6535e6912bf7d52632a5830651bd53d2d656a9))
+* updated locales ([4433ed9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4433ed9487ea1ff6d0604445ab80b148c4ee7a45))
+* upgraded volto-subfooter volto-secondarymenu volto-dropdownmenu ([2ce140c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2ce140c0b1b5d3601f727fc158eb2e6e6b16a5c8))
+
+## [7.0.0-alpha.7](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.6...v7.0.0-alpha.7) (2022-12-18)
+
+
+### Features
+
+* upgraded volto-editablefooter to 5.0.1 ([3be20c0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3be20c0ea6922d7b249d8d1754169aba66de6dab))
+
+## [7.0.0-alpha.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.5...v7.0.0-alpha.6) (2022-12-16)
+
+
+### Bug Fixes
+
+* version overview customization ([80606fb](https://github.com/RedTurtle/design-comuni-plone-theme/commit/80606fbeec5ac9fe072f12f887b61c1ad904c219))
+
+
+### Maintenance
+
+* re-add locales in lint-staged ([bc649d0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bc649d05cb7e142456c6f9e6ac33b70cbb90f683))
+
+## [7.0.0-alpha.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.4...v7.0.0-alpha.5) (2022-12-16)
+
+
+### Features
+
+* upgraded volto to 16.5.0 ([6404b0d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6404b0d5a7c83b2603227ab72e6322df9f09f015))
+
+
+### Bug Fixes
+
+* version overview customization ([95332b9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/95332b9ee9fbad337a0b473615f0e8e33694460e))
+
+## [7.0.0-alpha.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.3...v7.0.0-alpha.4) (2022-12-16)
+
+
+### Features
+
+* added io-Comune version in controlpanels view ([#17](https://github.com/RedTurtle/design-comuni-plone-theme/issues/17)) ([f8c38fc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f8c38fc283f8fbebc523d18a9209e259991aa29c))
+* file view custom ([#25](https://github.com/RedTurtle/design-comuni-plone-theme/issues/25)) ([90ce17e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/90ce17e2e2c7239a521c8cacc4edd4f4d0dd843e))
+* use image_scales metadata ([#14](https://github.com/RedTurtle/design-comuni-plone-theme/issues/14)) ([12a4c2e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/12a4c2e7a80fcece8c94e51004ace78dc307e1f8))
+
+
+### Bug Fixes
+
+* editable footer errors and style ([#23](https://github.com/RedTurtle/design-comuni-plone-theme/issues/23)) ([f050b62](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f050b625f4e5201523bd55c8e0d2722a107d7d0f))
+* history view ([#27](https://github.com/RedTurtle/design-comuni-plone-theme/issues/27)) ([f2ddda7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f2ddda7eb39f74e29749ab7c886ed838ab17326d))
+* remove new volto headlines configs from listing block ([#28](https://github.com/RedTurtle/design-comuni-plone-theme/issues/28)) ([157577b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/157577b7c063287d70c6e14125b552d80cd29641))
+
+## [7.0.0-alpha.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.2...v7.0.0-alpha.3) (2022-12-15)
+
+
+### Bug Fixes
+
+* upgraded volto-venue to 4.0.2 ([b7205a4](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b7205a412d57c3d816aac993ec94944b2aec8286))
+
+## [7.0.0-alpha.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.0.0-alpha.1...v7.0.0-alpha.2) (2022-12-15)
+
+
+### Bug Fixes
+
+* upgraded volto-venue to 4.0.1 ([cafbec6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/cafbec6c2d460553e53cefb867fd29c47613843d))
+
+## [7.0.0-alpha.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v6.5.0...v7.0.0-alpha.1) (2022-12-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* moment locales restrict to it/en (#15)
+* change name to design-comuni-plone-theme
+
+### Features
+
+* added checkbox for date in block HighlightedContent ([#7](https://github.com/RedTurtle/design-comuni-plone-theme/issues/7)) ([b1a3bce](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b1a3bceccfa34a1d878465506c0b3657da546f54))
+* added data-element on MegaMenu ([#610](https://github.com/RedTurtle/design-comuni-plone-theme/issues/610)) ([2e51337](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2e51337cb0b969da51cf9a810d81321b415c0c95))
+* data-element added to footer menu and secondary menu ([#611](https://github.com/RedTurtle/design-comuni-plone-theme/issues/611)) ([ef2e748](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ef2e748be536ff1d32c51c67c1a71cd2dcc59243))
+* lighthouse data-element tag on draftjs ([009c01e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/009c01e9f9a9ce31e4b4397f4eec199da8f71ef2))
+* upgrade to volto16 ([#605](https://github.com/RedTurtle/design-comuni-plone-theme/issues/605)) ([e6be34d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e6be34d025b7485c26873e530a3a3587c0706692)), closes [plone/volto#2103](https://github.com/plone/volto/issues/2103)
+* upgraded volto to 16.3.0 ([1115a79](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1115a799f6734bb3cebdcc7f879afdee5adf3d66))
+
+
+### Bug Fixes
+
+* card link color changed ([e2ca9a1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e2ca9a160a5b9829a5d51762fb9cb258ba27b428))
+* i18n bin ([#12](https://github.com/RedTurtle/design-comuni-plone-theme/issues/12)) ([31b3aef](https://github.com/RedTurtle/design-comuni-plone-theme/commit/31b3aefc7b3e2a69a0af86905d7a8202eb699784))
+* i18n cleanup ([41b9af2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/41b9af2bbc2aa6bbbfbb928862f8735a00e41e42))
+* moment locales restrict to it/en ([#15](https://github.com/RedTurtle/design-comuni-plone-theme/issues/15)) ([602ddf9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/602ddf994669b38c1b0b1a12f3a55de58c7eccb0))
+* proper handling of data-element in LinkEntity when it comes from backend data ([4b8106f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4b8106f53465f8ed9483ff7643715572ff23a9e8))
+* removed link style ([f070b02](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f070b02ffaa719d89a974e75965bc9339b67895a))
+* tag inside attachment cards changed to h5 ([#612](https://github.com/RedTurtle/design-comuni-plone-theme/issues/612)) ([ecbc666](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ecbc6662f09dea79f6497bddb970ee0c2e1227e9))
+* text report-inefficiency fixed ([f5877a2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f5877a283343411f660fc9684019c0cba7d3f47f))
+* theme usage from child themes ([#22](https://github.com/RedTurtle/design-comuni-plone-theme/issues/22)) ([eb22c8c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/eb22c8cf0542d02a68e829334701781ca6d56312))
+* update html customization to fix redirects problems ([#4](https://github.com/RedTurtle/design-comuni-plone-theme/issues/4)) ([e9208e6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e9208e647ebbce5056c1f55c49be931a6ee4231f))
+* use full image infos to have width/height in img tag ([#11](https://github.com/RedTurtle/design-comuni-plone-theme/issues/11)) ([035e9ea](https://github.com/RedTurtle/design-comuni-plone-theme/commit/035e9eadb36ac1a9e0ebf4b2c5d942942841457f))
+
+
+### Changes
+
+* change name to design-comuni-plone-theme ([e3bb745](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e3bb7459c66f4d34f4e2dc9a320cd174ba0505e1))
+
+
+### Maintenance
+
+* added a new phrase to social links title ([abfaf8c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/abfaf8c8877a59cb8a8d7e6d4399751f17a9fcf6))
+* added title to logo link ([854275e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/854275eb448090975b8e7d7754621b4ba29a3837))
+* configured draftjs widget ([e05cd0a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e05cd0a31aa487ac0a36e5c00b2dc03b304927f3))
+* update release script ([459cff7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/459cff7ddc00467427c84166b1b40efdf86d03ee))
+* updated docs and removed obsolete scripts ([5723b6b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5723b6be16abbd070a21f4bd67385bbd03909d9c))
+* updated style of link tooltip and codereview ([f9ae9a4](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f9ae9a4085cfff2ab040157f4be406b3fe234f6e))
+
 ## [6.5.0](https://github.com/RedTurtle/design-volto-theme/compare/v6.4.0...v6.5.0) (2022-11-08)
 
 

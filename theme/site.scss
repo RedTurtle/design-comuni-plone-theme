@@ -21,11 +21,11 @@
 @import 'ItaliaTheme/ar';
 @import 'ItaliaTheme/home';
 @import 'ItaliaTheme/sitemap';
-@import 'ItaliaTheme/Addons/customerSatisfaction';
 @import 'ItaliaTheme/Addons/volto-gdpr-privacy';
 @import 'ItaliaTheme/Components/unauthorized';
 @import 'ItaliaTheme/Components/parentSiteMenu';
 @import 'ItaliaTheme/Components/tertiaryMenu';
+@import 'ItaliaTheme/Components/search';
 @import 'ItaliaTheme/Components/subsiteHeader';
 @import 'ItaliaTheme/Components/subsiteFooter';
 @import 'ItaliaTheme/Components/scrollToTop';
@@ -33,6 +33,8 @@
 @import 'ItaliaTheme/Components/metadata';
 @import 'ItaliaTheme/Components/galleryPreview';
 @import 'ItaliaTheme/Components/locationsMap';
+@import 'ItaliaTheme/Components/diffField';
+@import 'ItaliaTheme/Components/cmp-timeline';
 @import 'ItaliaTheme/Blocks/subblocks-edit';
 @import 'ItaliaTheme/Blocks/listing';
 @import 'ItaliaTheme/Blocks/tableOfContents';
@@ -95,17 +97,21 @@
 @import 'ItaliaTheme/Views/folder';
 @import 'ItaliaTheme/Views/embeddedVideo';
 @import 'ItaliaTheme/Views/homepage';
+@import 'ItaliaTheme/Views/puntoDiContatto';
 @import 'ItaliaTheme/Widgets/iconWidget';
 @import 'ItaliaTheme/Widgets/searchSectionsConfigurationWidget';
 @import 'ItaliaTheme/Widgets/blocksWidget';
 @import 'ItaliaTheme/Widgets/subsiteSocialLinks';
 @import 'ItaliaTheme/Widgets/reactSelect';
+@import 'ItaliaTheme/Widgets/textInput';
+@import 'ItaliaTheme/Widgets/dataGridWidget';
 @import 'ItaliaTheme/Components/megamenu';
 @import 'ItaliaTheme/Components/sharing';
 @import 'ItaliaTheme/Components/logo';
 @import 'ItaliaTheme/Components/mobileMenu';
 @import 'ItaliaTheme/Components/relatedItemInEvidence';
 @import 'ItaliaTheme/Components/pageLoader';
+@import 'ItaliaTheme/Components/customerSatisfaction';
 
 @import 'ItaliaTheme/Print/all_pages';
 @import 'ItaliaTheme/Print/news_items';

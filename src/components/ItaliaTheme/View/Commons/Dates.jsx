@@ -2,11 +2,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import React from 'react';
 import { rrulei18n } from '@plone/volto/components/manage/Widgets/RecurrenceWidget/Utils';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import {
-  Card,
-  CardTitle,
-  CardBody,
-} from 'design-react-kit/dist/design-react-kit';
+import { Card, CardTitle, CardBody } from 'design-react-kit';
 import PropTypes from 'prop-types';
 import { viewDate } from 'design-comuni-plone-theme/helpers';
 
@@ -18,6 +14,14 @@ const messages = defineMessages({
   end: {
     id: 'end',
     defaultMessage: 'Fine evento',
+  },
+  open_end: {
+    id: 'open_end',
+    defaultMessage: 'Questo evento ha una data di fine aperta/variabile.',
+  },
+  whole_day: {
+    id: 'whole_day',
+    defaultMessage: 'Questo evento ha luogo per tutta la giornata.',
   },
   additional_dates: {
     id: 'Date aggiuntive',
@@ -62,16 +66,18 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
 
   const start = viewDate(intl.locale, content.start);
   const end = viewDate(intl.locale, content.end);
+  const openEnd = content?.open_end;
+  const wholeDay = content?.whole_day;
 
   return content ? (
     <>
       <div className="point-list-wrapper my-4 mb-5">
         <div className="point-list">
           <div className="point-list-aside point-list-warning">
-            <div className="point-date text-monospace">
+            <div className="point-date font-monospace">
               {start.format('DD')}
             </div>
-            <div className="point-month text-monospace">
+            <div className="point-month font-monospace">
               {start.format('MMMM')}
             </div>
           </div>
@@ -83,38 +89,47 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
             >
               <CardBody tag="div" className={'card-body'}>
                 <CardTitle tag="h5">
-                  {!content.whole_day && `${start.format('HH:mm')} - `}
+                  {!wholeDay && `${start.format('HH:mm')} - `}
                   {intl.formatMessage(messages.start)}
                 </CardTitle>
+                {openEnd && (
+                  <p>
+                    <i>{intl.formatMessage(messages.open_end)}</i>
+                  </p>
+                )}
               </CardBody>
             </Card>
           </div>
         </div>
-        <div className="point-list">
-          <div className="point-list-aside point-list-warning">
-            <div className="point-date text-monospace">{end.format('DD')}</div>
-            <div className="point-month text-monospace">
-              {end.format('MMMM')}
+        {!openEnd && (
+          <div className="point-list">
+            <div className="point-list-aside point-list-warning">
+              <div className="point-date text-monospace">
+                {end.format('DD')}
+              </div>
+              <div className="point-month text-monospace">
+                {end.format('MMMM')}
+              </div>
+            </div>
+            <div className="point-list-content">
+              <Card
+                className="card card-teaser rounded shadow"
+                noWrapper={true}
+                tag="div"
+              >
+                <CardBody tag="div" className={'card-body'}>
+                  <CardTitle tag="h5">
+                    {!content.whole_day && `${end.format('HH:mm')} - `}
+                    {intl.formatMessage(messages.end)}
+                  </CardTitle>
+                </CardBody>
+              </Card>
             </div>
           </div>
-          <div className="point-list-content">
-            <Card
-              className="card card-teaser rounded shadow"
-              noWrapper={true}
-              tag="div"
-            >
-              <CardBody tag="div" className={'card-body'}>
-                <CardTitle tag="h5">
-                  {!content.whole_day && `${end.format('HH:mm')} - `}
-                  {intl.formatMessage(messages.end)}
-                </CardTitle>
-              </CardBody>
-            </Card>
-          </div>
-        </div>
+        )}
       </div>
       {recurrenceText && (
-        <div className="mt-4 mb-5 text-serif">
+        <div className="mt-4 mb-5 font-serif">
           <strong>{recurrenceText}</strong>
         </div>
       )}
@@ -122,7 +137,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.additional_dates)}</h5>
           {rruleSet.rdates().map((additionalDate) => (
-            <div className="text-serif">
+            <div className="font-serif">
               {viewDate(intl.locale, additionalDate, 'dddd DD MMMM YYYY')}
             </div>
           ))}
@@ -132,7 +147,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.excluded_dates)}</h5>
           {rruleSet.exdates().map((exDate) => (
-            <div className="text-serif">
+            <div className="font-serif">
               {viewDate(intl.locale, exDate, 'dddd DD MMMM YYYY')}
             </div>
           ))}

@@ -18,8 +18,14 @@ import FaqView from 'design-comuni-plone-theme/components/ItaliaTheme/View/FAQ/F
 
 import TrasparenzaView from 'design-comuni-plone-theme/components/ItaliaTheme/View/TrasparenzaView/TrasparenzaView';
 import DettagliProcedimentiView from 'design-comuni-plone-theme/components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView';
+import PuntoDiContattoView from 'design-comuni-plone-theme/components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView';
+import IncaricoView from 'design-comuni-plone-theme/components/ItaliaTheme/View/IncaricoView/IncaricoView';
 
 defineMessages({
+  modulistica_view: {
+    id: 'Cartella modulistica',
+    defaultMessage: 'Cartella modulistica',
+  },
   trasparenza_view: {
     id: 'Trasparenza',
     defaultMessage: 'Trasparenza',
@@ -27,6 +33,10 @@ defineMessages({
   dettagli_procedimenti_view: {
     id: 'Dettagli procedimento',
     defaultMessage: 'Dettagli procedimento',
+  },
+  venue_view: {
+    id: 'Luogo',
+    defaultMessage: 'Luogo',
   },
 });
 
@@ -46,6 +56,8 @@ const italiaContentTypesViews = {
   Bando: BandoView,
   FaqFolder: FaqFolderView,
   Faq: FaqView,
+  PuntoDiContatto: PuntoDiContattoView,
+  Incarico: IncaricoView,
 };
 
 /* LAYOUT VIEWS */
@@ -56,8 +68,10 @@ const italiaLayoutViews = {
 };
 
 const layoutViewsNamesMapping = {
+  modulistica_view: 'Cartella modulistica',
   trasparenza_view: 'Trasparenza',
   dettagli_procedimenti_view: 'Dettagli procedimento',
+  venue_view: 'Luogo',
 };
 
 const getItaliaViews = (config) => {

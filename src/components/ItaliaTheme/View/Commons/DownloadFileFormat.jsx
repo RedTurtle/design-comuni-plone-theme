@@ -40,12 +40,14 @@ const DownloadFileFormat = ({
 
     icon = viewFormat?.icon ?? defaultIcon;
   }
+  const pdfFile = file?.download?.includes('@@display-file');
 
   return file ? (
     <a
       href={flattenToAppURL(file.download)}
       title={file.filename}
       className={className}
+      target={pdfFile ? '_blank' : '_self'}
     >
       {!icon.svg_format ? (
         <IconFA
@@ -57,7 +59,7 @@ const DownloadFileFormat = ({
       ) : (
         <Icon className="icon-svg-custom" name={icon.name} />
       )}
-      {showLabel && <span className="ml-4">{label}</span>}
+      {showLabel && <span className="ms-4">{label}</span>}
     </a>
   ) : null;
 };

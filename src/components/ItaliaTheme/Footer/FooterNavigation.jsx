@@ -12,12 +12,7 @@ import { isEqual } from 'lodash';
 import { getBaseUrl } from '@plone/volto/helpers';
 import { getNavigation } from '@plone/volto/actions';
 import { UniversalLink } from '@plone/volto/components';
-import {
-  Row,
-  Col,
-  LinkList,
-  LinkListItem,
-} from 'design-react-kit/dist/design-react-kit';
+import { Row, Col, LinkList, LinkListItem } from 'design-react-kit';
 import { SectionIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
 
@@ -64,7 +59,7 @@ const FooterNavigation = () => {
               <h4>
                 <SectionIcon
                   section={item.url}
-                  iconProps={{ size: 'sm', color: 'white', className: 'mr-2' }}
+                  iconProps={{ size: 'sm', color: 'white', className: 'me-2' }}
                 />
                 <Link
                   to={item.url}
@@ -75,7 +70,7 @@ const FooterNavigation = () => {
                   {item.title}
                 </Link>
               </h4>
-              {item.items && (
+              {!config.settings.isFooterCollapsed && item.items && (
                 <LinkList className="footer-list clearfix" tag="div">
                   {item.items.map((subitem) => {
                     return (

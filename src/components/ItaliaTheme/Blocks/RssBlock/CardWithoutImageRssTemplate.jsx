@@ -11,7 +11,7 @@ import {
   CardReadMore,
   Row,
   Col,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { getViewDate } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/utils';
@@ -70,13 +70,13 @@ const CardWithoutImageRssTemplate = ({
                     <CardTitle className="big-heading" tag="h5">
                       {item.title}
                     </CardTitle>
-                    <CardText tag="p" className="text-serif">
+                    <CardText tag="p" className="font-serif">
                       {item.contentSnippet}
                     </CardText>
                   </CardBody>
                   <CardReadMore
                     iconName="it-arrow-right"
-                    className="ml-4"
+                    className="ms-4"
                     tag="a"
                     target="_blank"
                     rel="noopener noreferrer"

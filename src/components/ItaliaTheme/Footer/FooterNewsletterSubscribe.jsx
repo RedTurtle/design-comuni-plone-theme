@@ -6,12 +6,7 @@
 import React from 'react';
 
 import { defineMessages, useIntl } from 'react-intl';
-import {
-  Form,
-  Label,
-  Input,
-  Button,
-} from 'design-react-kit/dist/design-react-kit';
+import { Form, Label, Input, Button } from 'design-react-kit';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const messages = defineMessages({
@@ -30,7 +25,7 @@ const FooterNewsletterSubscribe = () => {
   return (
     <Form action="#" className="form-newsletter" method="post" tag="form">
       <Label
-        className="text-white font-weight-semibold active"
+        className="text-white fw-semibold active"
         htmlFor="input-newsletter"
         style={{
           transition: 'none 0 ease 0',

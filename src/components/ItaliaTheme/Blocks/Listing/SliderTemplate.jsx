@@ -1,11 +1,13 @@
 import 'slick-carousel/slick/slick.css';
 import 'design-comuni-plone-theme/components/slick-carousel/slick/slick-theme.css';
 
-import { Col, Container, Row } from 'design-react-kit/dist/design-react-kit';
+import { Col, Container, Row } from 'design-react-kit';
 import {
   Icon,
   ListingImage,
   ListingLinkMore,
+  NextArrow,
+  PrevArrow,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -38,6 +40,7 @@ const SliderTemplate = ({
   title,
   isEditMode,
   show_block_bg,
+  linkAlign,
   linkTitle,
   linkHref,
   slidesToShow = '1',
@@ -47,6 +50,7 @@ const SliderTemplate = ({
   autoplay = false,
   autoplay_speed = 2, //seconds
   reactSlick,
+  titleLine,
 }) => {
   const intl = useIntl();
   const slider = useRef(null);
@@ -63,24 +67,6 @@ const SliderTemplate = ({
       setUserAutoplay(true);
       slider.current.slickPlay();
     }
-  };
-
-  const NextArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className} style={{ ...style }} onClick={onClick}>
-        <Icon icon="chevron-right" key="chevron-right" />
-      </div>
-    );
-  };
-
-  const PrevArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className} style={{ ...style }} onClick={onClick}>
-        <Icon icon="chevron-left" key="chevron-left-prev" />
-      </div>
-    );
   };
 
   const settings = {
@@ -122,7 +108,9 @@ const SliderTemplate = ({
         {title && (
           <Row>
             <Col>
-              <h2 className="mb-4">{title}</h2>
+              <h2 className={cx('mb-4', { 'title-bottom-line': titleLine })}>
+                {title}
+              </h2>
             </Col>
           </Row>
         )}
@@ -199,7 +187,12 @@ const SliderTemplate = ({
             </Slider>
           </div>
         </div>
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-4" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          linkAlign={linkAlign}
+          className="my-4"
+        />
       </Container>
     </div>
   );

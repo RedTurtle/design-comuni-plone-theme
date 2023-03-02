@@ -12,7 +12,7 @@ import {
   CardText,
   CardTitle,
   CardReadMore,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 
 import Image from '@plone/volto/components/theme/Image/Image';
 import { flattenToAppURL } from '@plone/volto/helpers';
@@ -35,10 +35,10 @@ const Body = (props) => {
   return (
     <div className={`${block.bg_color ? 'bg-' + block.bg_color : ''}`}>
       <Row>
-        {content.image && (
+        {(content.preview_image || content.image) && (
           <Col lg={{ size: 6, offset: 1, order: 2 }}>
             <Image
-              image={content.image}
+              image={content.preview_image || content.image}
               alt=""
               className={cx('item-image', {
                 'natural-image-size': block.natural_image_size,
@@ -53,6 +53,7 @@ const Body = (props) => {
               <CardCategory
                 date={
                   content.effective &&
+                  block.show_date !== false &&
                   viewDate(intl.locale, content.effective, 'll')
                 }
                 iconName={icon}
@@ -74,7 +75,7 @@ const Body = (props) => {
                         simple
                         color="primary"
                         key={`${idx} ${argomento['@id']}`}
-                        className="mr-2"
+                        className="me-2"
                       >
                         <ConditionalLink
                           condition={!!argomento['@id']}

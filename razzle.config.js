@@ -9,6 +9,8 @@ const path = require('path');
 const makeLoaderFinder = require('razzle-dev-utils/makeLoaderFinder');
 const fileLoaderFinder = makeLoaderFinder('file-loader');
 const urlLoaderFinder = makeLoaderFinder('url-loader');
+const lessLoaderFinder = makeLoaderFinder('less-loader');
+const babelLoaderFinder = makeLoaderFinder('babel-loader');
 const projectRootPath = path.resolve('.');
 
 const pathsConfig = jsConfig.paths;
@@ -20,6 +22,35 @@ Object.keys(pathsConfig).forEach((pkg) => {
 });
 
 const volto_config = require(`${voltoPath}/razzle.config`);
+
+const plugins = (volto_config.plugins || []).filter(
+  (plugin) => plugin !== 'scss',
+);
+plugins.push({
+  name: 'scss',
+  options: {
+    sass: {
+      dev: {
+        sassOptions: {
+          includePaths: ['node_modules'],
+          outputStyle: 'expanded',
+          sourceMap: true,
+          quiet: true,
+          quietDeps: true,
+        },
+      },
+      prod: {
+        sassOptions: {
+          includePaths: ['node_modules'],
+          outputStyle: 'expanded',
+          sourceMap: true,
+          quiet: true,
+          quietDeps: true,
+        },
+      },
+    },
+  },
+});
 
 module.exports = Object.assign({}, volto_config, {
   modifyWebpackConfig: ({
@@ -92,58 +123,34 @@ module.exports = Object.assign({}, volto_config, {
     };
 
     base_config.module.rules.push(IMG_LOADER);
-    // RegExp.prototype.toJSON = function() { return this.source; };
-    // console.log(JSON.stringify(base_config.module.rules, null, 2))
 
-    webpackConfig.resolve.alias = {
+    const lessLoader = base_config.module.rules.find(lessLoaderFinder);
+    lessLoader.include.push(/node_modules\/volto-data-grid-widget/);
+
+    // See https://github.com/italia/design-react-kit/pull/885#issuecomment-1420886066
+    const babelLoader = base_config.module.rules.find(babelLoaderFinder);
+    babelLoader.include.push(/node_modules\/design-react-kit/);
+
+    base_config.resolve.alias = {
       // TODO remove the next two when implemented in core
-      '@plone/volto/components/theme/Image/Image': path.resolve(
-        `${projectRootPath}/src/components/Image/Image.jsx`,
-      ),
-      '@plone/volto/helpers/Image/Image': path.resolve(
-        `${projectRootPath}/src/components/Image/helpers.js`,
-      ),
-
+      '@plone/volto/components/theme/Image/Image': `${projectRootPath}/src/components/Image/Image.jsx`,
+      '@plone/volto/helpers/Image/Image': `${projectRootPath}/src/components/Image/helpers.js`,
       ...webpackConfig.resolve.alias,
       ...base_config.resolve.alias,
-      '../../theme.config$': `${projectRootPath}/theme/theme.config`,
-
-      '@plone/volto': `${voltoPath}/src`,
-      // to be able to reference path uncustomized by webpack
-      '@plone/volto-original': `${voltoPath}/src`,
-      // be able to reference current package from customized package
       '@italia': `${projectRootPath}/src`, // TODO deprecated: remove in version 8
       'design-comuni-plone-theme': `${projectRootPath}/src`,
     };
 
+    // remove unused languages. (TODO: move to ENV at build time)
+    base_config.plugins.push(
+      new webpackObject.ContextReplacementPlugin(
+        /moment[/\\]locale$/,
+        /(it|it-it|en-us|en-gb)$/,
+      ),
+      // Ignore all locale files of moment.js - new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    );
+
     return base_config;
   },
-  plugins: [
-    ...(volto_config.plugins || {}),
-    {
-      name: 'scss',
-      options: {
-        sass: {
-          dev: {
-            sassOptions: {
-              includePaths: ['node_modules'],
-              outputStyle: 'expanded',
-              sourceMap: true,
-              quiet: true,
-              quietDeps: true,
-            },
-          },
-          prod: {
-            sassOptions: {
-              includePaths: ['node_modules'],
-              outputStyle: 'expanded',
-              sourceMap: true,
-              quiet: true,
-              quietDeps: true,
-            },
-          },
-        },
-      },
-    },
-  ],
+  plugins,
 });

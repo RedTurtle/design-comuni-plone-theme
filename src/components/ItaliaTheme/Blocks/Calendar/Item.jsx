@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
-import { Spinner } from 'design-react-kit/dist/design-react-kit';
+import { Spinner } from 'design-react-kit';
 import cx from 'classnames';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import { getCalendarDayResults } from 'design-comuni-plone-theme/actions';
@@ -60,10 +60,10 @@ const Item = ({ day, path, query, inEditMode }) => {
 
   return (
     <div>
-      <div className="pl-3">
+      <div className="ps-3">
         <div className={cx('day', { 'mb-3': inEditMode })}>
           {_day.format('DD')}{' '}
-          <span className={cx('month', { 'ml-1': inEditMode })}>
+          <span className={cx('month', { 'ms-1': inEditMode })}>
             {_day.format('MMMM')}
           </span>
         </div>
@@ -74,7 +74,7 @@ const Item = ({ day, path, query, inEditMode }) => {
         {calendarDayResults[day] ? (
           calendarDayResults[day].items[day]?.map((item, index) => (
             <div key={index} className="calendar-item">
-              <div className="pl-3">
+              <div className="ps-3">
                 <div>{item?.type}</div>
                 <span className="calendar-type">
                   <ConditionalLink

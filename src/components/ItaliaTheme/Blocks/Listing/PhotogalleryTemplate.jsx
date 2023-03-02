@@ -1,10 +1,12 @@
 import 'slick-carousel/slick/slick.css';
 import 'design-comuni-plone-theme/components/slick-carousel/slick/slick-theme.css';
 
-import { Col, Container, Row } from 'design-react-kit/dist/design-react-kit';
+import { Col, Container, Row } from 'design-react-kit';
 import {
   ListingImage,
   ListingLinkMore,
+  NextArrow,
+  PrevArrow,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import React, { useRef, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
@@ -43,9 +45,11 @@ const PhotogalleryTemplate = ({
   isEditMode,
   show_block_bg,
   show_image_popup,
+  linkAlign,
   linkTitle,
   linkHref,
   reactSlick,
+  titleLine,
 }) => {
   const intl = useIntl();
   const slider = useRef(null);
@@ -106,6 +110,8 @@ const PhotogalleryTemplate = ({
         },
       },
     ],
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     appendDots: (dots) => (
       <div>
         <div className="play-pause-wrapper">
@@ -143,7 +149,9 @@ const PhotogalleryTemplate = ({
         {title && (
           <Row>
             <Col>
-              <h2 className="mb-4">{title}</h2>
+              <h2 className={cx('mb-4', { 'title-bottom-line': titleLine })}>
+                {title}
+              </h2>
             </Col>
           </Row>
         )}
@@ -209,7 +217,12 @@ const PhotogalleryTemplate = ({
             ) : null}
           </div>
         </div>
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-4" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          linkAlign={linkAlign}
+          className="my-4"
+        />
       </Container>
     </div>
   );

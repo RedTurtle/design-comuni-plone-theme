@@ -17,7 +17,7 @@ import {
   Row,
   Col,
   LinkList,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 import { defineMessages, useIntl } from 'react-intl';
 import {
   flattenToAppURL,
@@ -112,7 +112,7 @@ const MegaMenu = ({ item, pathname }) => {
 
   if (item.mode === 'simpleLink') {
     return item.linkUrl?.length > 0 ? (
-      <NavItem tag="li" active={isItemActive}>
+      <NavItem tag="li">
         <NavLink
           href={item.linkUrl === '' ? '/' : null}
           item={item.linkUrl[0]?.['@id'] ? item.linkUrl[0] : '#'}
@@ -122,7 +122,7 @@ const MegaMenu = ({ item, pathname }) => {
         >
           <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
           {isItemActive && (
-            <span className="sr-only">
+            <span className="visually-hidden">
               {intl.formatMessage(messages.menu_selected)}
             </span>
           )}
@@ -259,7 +259,7 @@ const MegaMenu = ({ item, pathname }) => {
             />
           </DropdownToggle>
           <DropdownMenu flip tag="div">
-            <div className="text-right megamenu-close-button">
+            <div className="text-end megamenu-close-button">
               <Button
                 color="link"
                 onClick={() => setMenuStatus(false)}
@@ -363,7 +363,7 @@ const MegaMenu = ({ item, pathname }) => {
                   <Col lg={8} />
                   <Col lg={4}>
                     <LinkList>
-                      <li className="it-more text-right">
+                      <li className="it-more text-end">
                         <UniversalLink
                           className="list-item medium"
                           item={item.showMoreLink[0]}

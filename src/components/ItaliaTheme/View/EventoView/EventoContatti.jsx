@@ -1,13 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
 import { defineMessages, useIntl } from 'react-intl';
-import {
-  Card,
-  CardBody,
-  CardTitle,
-} from 'design-react-kit/dist/design-react-kit';
-
+import { Card, CardBody, CardTitle } from 'design-react-kit';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import {
   RichText,
@@ -15,77 +8,65 @@ import {
   RichTextArticle,
   ContactLink,
   OfficeCard,
+  ContactsCard,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
-  supported_by: {
-    id: 'supported_by',
-    defaultMessage: 'Con il supporto di',
-  },
+  // supported_by: {
+  //   id: 'supported_by',
+  //   defaultMessage: 'Con il supporto di',
+  // },
   contatti: {
     id: 'Contatti',
     defaultMessage: 'Contatti',
   },
-  event_web_site: {
-    id: 'event_web_site',
-    defaultMessage: "Sito web dell'evento",
-  },
+  // event_web_site: {
+  //   id: 'event_web_site',
+  //   defaultMessage: "Sito web dell'evento",
+  // },
   contatti_interni: {
     id: 'contatti_interni',
     defaultMessage: 'Contatti interni',
+  },
+  organizzato_da: {
+    id: 'organizzato_da',
+    defaultMessage: 'Organizzato da',
   },
 });
 
 const EventoDocumenti = ({ content }) => {
   const intl = useIntl();
-  const getSupportatoDa = () => {
-    return (
-      content?.supportato_da?.length > 0 && (
-        <>
-          <h5 className="mt-4 supported-by">
-            {intl.formatMessage(messages.supported_by)}
-          </h5>
-          {content?.supportato_da?.map((item) => (
-            <OfficeCard
-              key={item['@id']}
-              office={item}
-              extended={true}
-              icon={'it-pa'}
-            />
-          ))}
-        </>
-      )
-    );
-  };
+  // const getSupportatoDa = () => {
+  //   return (
+  //     content?.supportato_da?.length > 0 && (
+  //       <>
+  //         <h5 className="mt-4 supported-by">
+  //           {intl.formatMessage(messages.supported_by)}
+  //         </h5>
+  //         {content?.supportato_da?.map((item) => (
+  //           <OfficeCard
+  //             key={item['@id']}
+  //             office={item}
+  //             extended={true}
+  //             icon={'it-pa'}
+  //           />
+  //         ))}
+  //       </>
+  //     )
+  //   );
+  // };
 
   return richTextHasContent(content?.organizzato_da_esterno) ||
     content?.organizzato_da_interno.length > 0 ||
     content?.supportato_da?.length > 0 ||
-    content.web?.length > 0 ||
-    content?.telefono ||
-    content?.email ||
-    content?.fax ? (
+    content?.contact_info?.length > 0 ? (
     <RichTextArticle
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
     >
-      {/* ---web */}
-      {content?.web?.length > 0 && (
-        <div className="mb-5 mt-3">
-          <h5>{intl.formatMessage(messages.event_web_site)}</h5>
-          <a
-            href={
-              content.web.match(/^(http:\/\/|https:\/\/)/gm)
-                ? content.web
-                : `http://${content.web}`
-            }
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {content.web}
-          </a>
-        </div>
-      )}
+      {content.contact_info.map((contact) => (
+        <ContactsCard contact={contact} key={contact['@id']} />
+      ))}
 
       {/* ---organizzato da esterno */}
       {richTextHasContent(content?.organizzato_da_esterno) ||
@@ -101,7 +82,7 @@ const EventoDocumenti = ({ content }) => {
             <CardTitle tag="h5">
               <Icon icon="it-telephone" padding={true} />
             </CardTitle>
-            <CardBody tag="div" className={'card-body pr-3'}>
+            <CardBody tag="div" className={'card-body pe-3'}>
               <RichText content={content.organizzato_da_esterno} />
               {content?.telefono && (
                 <p className="card-text mt-3">
@@ -132,7 +113,7 @@ const EventoDocumenti = ({ content }) => {
       {/* ---contatti interno */}
       {content?.organizzato_da_interno?.length > 0 && (
         <div className="mb-5">
-          <h5>{intl.formatMessage(messages.contatti_interni)}</h5>
+          <h5>{intl.formatMessage(messages.organizzato_da)}</h5>
           {content?.organizzato_da_interno?.map((item, index) => (
             <OfficeCard
               margin_bottom={
@@ -154,11 +135,9 @@ const EventoDocumenti = ({ content }) => {
       )}
 
       {/* ---supportato da */}
-      {getSupportatoDa()}
+      {/* {getSupportatoDa()} */}
     </RichTextArticle>
-  ) : (
-    <></>
-  );
+  ) : null;
 };
 
 EventoDocumenti.propTypes = {

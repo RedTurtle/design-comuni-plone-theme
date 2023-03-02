@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import { UniversalLink } from '@plone/volto/components';
 import { defineMessages, useIntl } from 'react-intl';
-import { Container } from 'design-react-kit/dist/design-react-kit';
+import { Container } from 'design-react-kit';
 import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -55,7 +55,9 @@ const FooterSmall = () => {
   return subFooterItems?.length > 0 || links.length > 0 || true ? (
     <div className="it-footer-small-prints clearfix">
       <Container tag="div">
-        <h3 className="sr-only">{intl.formatMessage(messages.goToPage)}</h3>
+        <h3 className="visually-hidden">
+          {intl.formatMessage(messages.goToPage)}
+        </h3>
         <ul className="it-footer-small-prints-list list-inline mb-0 d-flex flex-column flex-md-row">
           {subFooterItems?.length > 0 &&
             subFooterItems.map((item, index) => {

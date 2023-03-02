@@ -9,11 +9,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
-import {
-  Input,
-  FormGroup,
-  Label,
-} from 'design-react-kit/dist/design-react-kit';
+import { Input, FormGroup, Label } from 'design-react-kit';
 
 import FileWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/FileWidget';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
@@ -84,7 +80,7 @@ const Field = ({
           id={name}
           name={name}
           label={getLabel()}
-          type="textarea"
+          tag="textarea"
           rows={10}
           required={required}
           infoText={description}
@@ -149,6 +145,7 @@ const Field = ({
                     onChange(name, v);
                   }}
                   invalid={isInvalid() ? 'true' : null}
+                  addon // Needed to avoid application of form-control class as of kit v4.0.2
                 />
                 <Label for={v + name} check>
                   {v}
@@ -186,6 +183,7 @@ const Field = ({
                     onChange(name, values);
                   }}
                   invalid={isInvalid() ? 'true' : null}
+                  addon // Needed to avoid application of form-control class as of kit v4.0.2
                 />
                 <Label for={v + name} check>
                   {v}
@@ -216,6 +214,7 @@ const Field = ({
                 }}
                 invalid={isInvalid() ? 'true' : null}
                 required={required}
+                addon // Needed to avoid application of form-control class as of kit v4.0.2
               />
               <Label for={name} check>
                 {getLabel()}

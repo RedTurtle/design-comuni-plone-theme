@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Styles from '@plone/volto/config/RichTextEditor/Styles';
 
 import ToHTMLRenderers from '@plone/volto/config/RichTextEditor/ToHTML';
@@ -14,6 +13,8 @@ import AlignButton from 'design-comuni-plone-theme/config/RichTextEditor/Toolbar
 import CalloutsButton from 'design-comuni-plone-theme/config/RichTextEditor/ToolbarButtons/CalloutsButton';
 import ButtonsButton from 'design-comuni-plone-theme/config/RichTextEditor/ToolbarButtons/ButtonsButton';
 import TextSizeButton from 'design-comuni-plone-theme/config/RichTextEditor/ToolbarButtons/TextSizeButton';
+
+import LinkEntity from 'design-comuni-plone-theme/config/RichTextEditor/LinkEntity';
 
 const ItaliaRichTextEditorPlugins = (props) => [];
 const ItaliaRichTextEditorInlineToolbarButtons = (props, plugins) => {
@@ -85,7 +86,7 @@ const ItaliaBlocksHtmlRenderers = {
     )),
   'align-right': (children, { keys }) =>
     children.map((child, i) => (
-      <p id={keys[i]} key={keys[i]} className="text-right">
+      <p id={keys[i]} key={keys[i]} className="text-end">
         {renderHTMLBlock(child)}
       </p>
     )),
@@ -179,7 +180,7 @@ export default function applyConfig(config) {
 
       const styles = {
         'align-center': 'text-center',
-        'align-right': 'text-right',
+        'align-right': 'text-end',
         'align-justify': 'text-justify',
         callout: 'callout',
         'callout-bg': 'callout-bg',
@@ -214,6 +215,16 @@ export default function applyConfig(config) {
   // TODO: rimuovere questa customizzazione quando sistemano https://github.com/plone/volto/issues/1601
   config.settings.richtextViewSettings.ToHTMLRenderers = {
     ...config.settings.richtextViewSettings.ToHTMLRenderers,
+    entities: {
+      ...config.settings.richtextViewSettings.ToHTMLRenderers.entities,
+      LINK: (children, props, other) => {
+        return (
+          <LinkEntity key={other.key} {...props}>
+            {children}
+          </LinkEntity>
+        );
+      },
+    },
     blocks: {
       ...ToHTMLRenderers.blocks,
       ...ItaliaBlocksHtmlRenderers,

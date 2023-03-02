@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSecondaryMenu, getItemsByPath } from 'volto-secondarymenu';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
-import { Nav, NavItem, NavLink } from 'design-react-kit/dist/design-react-kit';
+import { Nav, NavItem, NavLink } from 'design-react-kit';
 
 const messages = defineMessages({
   menu_selected: {
@@ -49,7 +49,7 @@ const MenuSecondary = ({ pathname }) => {
           let url = item.href || item.linkUrl?.[0]?.['@id'] || '';
 
           return (
-            <NavItem tag="li" active={isMenuActive(url)} key={i}>
+            <NavItem tag="li" key={i}>
               <NavLink
                 href={url === '' ? '/' : flattenToAppURL(url)}
                 tag={UniversalLink}
@@ -57,11 +57,11 @@ const MenuSecondary = ({ pathname }) => {
                 data-element={item.id_lighthouse}
               >
                 <span
-                  className={item.inEvidence ? 'font-weight-bold' : ''}
+                  className={item.inEvidence ? 'fw-bold' : ''}
                   dangerouslySetInnerHTML={{ __html: item.title }}
                 ></span>
                 {isMenuActive(url) && (
-                  <span className="sr-only">
+                  <span className="visually-hidden">
                     {intl.formatMessage(messages.menu_selected)}
                   </span>
                 )}

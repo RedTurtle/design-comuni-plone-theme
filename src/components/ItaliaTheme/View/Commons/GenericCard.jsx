@@ -61,7 +61,7 @@ const GenericCard = ({
   item_fo = locationContent?.[key]?.data || item;
 
   return item_fo ? (
-    showimage && item_fo[image_field] ? (
+    showimage && (item_fo.image || item_fo.preview_image) ? (
       <div
         className={cx('genericcard card card-img shadow rounded mt-3 ', {
           'card-teaser': !showimage,
@@ -71,14 +71,14 @@ const GenericCard = ({
           <div className="img-responsive img-responsive-panoramic">
             <figure className="img-wrapper">
               <Image
-                image={item_fo[image_field]}
+                image={item_fo.preview_image || item_fo.image}
                 alt={item_fo.title}
                 title={item_fo.title}
               />
             </figure>
           </div>
         </div>
-        <div className="card-body">
+        <div className="card-body px-4">
           {infos}
           <h5 className="card-title">
             {show_icon && <Icon icon={show_icon} padding={false} />}
