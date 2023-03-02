@@ -22,7 +22,7 @@ function apply_path {
 }
 
 # Should we monkey patch?
-test -n "$RAZZLE_API_PATH" && apply_path
+# test -n "$RAZZLE_API_PATH" && apply_path
 
 #./create-sentry-release.sh
 
