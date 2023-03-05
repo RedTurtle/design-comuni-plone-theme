@@ -1,9 +1,4 @@
-import {
-  Alert,
-  Col,
-  Container,
-  Row,
-} from 'design-react-kit/dist/design-react-kit';
+import { Alert, Col, Container, Row } from 'design-react-kit';
 import {
   ListingImage,
   ListingLinkMore,
@@ -28,6 +23,8 @@ const GridGalleryTemplate = ({
   items,
   isEditMode,
   title,
+  titleLine,
+  linkAlign,
   linkTitle,
   linkHref,
   show_block_bg,
@@ -41,7 +38,9 @@ const GridGalleryTemplate = ({
         {title && (
           <Row>
             <Col>
-              <h2 className="mb-4">{title}</h2>
+              <h2 className={cx('mb-4', { 'title-bottom-line': titleLine })}>
+                {title}
+              </h2>
             </Col>
           </Row>
         )}
@@ -72,7 +71,7 @@ const GridGalleryTemplate = ({
 
             if (scale && item?.image?.scales?.[scale]) {
               image = (
-                <picture class="volto-image responsive">
+                <picture className="volto-image responsive">
                   <img
                     src={flattenToAppURL(item.image.scales[scale].download)}
                     width={item.image.scales[scale].width}
@@ -103,7 +102,12 @@ const GridGalleryTemplate = ({
             );
           })}
         </div>
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-5" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          linkAlign={linkAlign}
+          className="my-5"
+        />
       </Container>
     </div>
   );

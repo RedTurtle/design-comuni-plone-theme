@@ -5,6 +5,8 @@
 
 import React, { createRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import {
   SideMenu,
   PageHeader,
@@ -13,14 +15,16 @@ import {
   ServizioPlaceholderAfterRelatedItems,
   RelatedItemInEvidence,
   SkipToMainContent,
-  ServizioStato,
   ServizioCosE,
+  ServizioAccedi,
   ServizioAChiSiRivolge,
-  ServizioComeAccedere,
+  ServizioComeFare,
   ServizioCosaServe,
+  ServizioCosaSiOttiene,
   ServizioCostiVincoli,
   ServizioTempiScadenze,
   ServizioCasiParticolari,
+  ServizioProcedure,
   ServizioContatti,
   ServizioAltriDocumenti,
   ServizioSitiEsterni,
@@ -29,10 +33,12 @@ import {
   ServizioTrasparenza,
   ServizioCorrelati,
   ServizioUlterioriInformazioni,
+  ServizioMetadati,
+  ServizioCondizioni,
   ContentTypeViewSections,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
-export const VenueViewSectionsOrder = [
+export const ServizioViewSectionsOrder = (props) => [
   {
     /* HEADER IMAGE */
 
@@ -40,23 +46,31 @@ export const VenueViewSectionsOrder = [
     props: { position: 'documentBody' },
   },
 
-  { /* STATO DEL SERVIZIO */ component: ServizioStato },
+  { /* A CHI È RIVOLTO */ component: ServizioAChiSiRivolge },
 
-  { /* TEXT BODY */ component: ServizioCosE },
+  { /* DESCRIZIONE */ component: ServizioCosE },
 
-  { /* A CHI SI RIVOLGE */ component: ServizioAChiSiRivolge },
-
-  { /* ACCEDERE AL SERVIZIO */ component: ServizioComeAccedere },
+  { /* COME FARE */ component: ServizioComeFare },
 
   { /* COSA SERVE */ component: ServizioCosaServe },
 
-  { /* COSTI E VINCOLI */ component: ServizioCostiVincoli },
+  { /* COSA SI OTTIENE */ component: ServizioCosaSiOttiene },
 
-  { /* TEMPI E SCADENZE */ component: ServizioTempiScadenze },
+  {
+    /* TEMPI E SCADENZE */
+    component: ServizioTempiScadenze,
+    props: { moment: props.moment },
+  },
+
+  { /* QUANTO COSTA */ component: ServizioCostiVincoli },
 
   { /* CASI PARTICOLARI */ component: ServizioCasiParticolari },
 
-  { /* CONTATTI */ component: ServizioContatti },
+  { /* PROCEDURE ESITO */ component: ServizioProcedure },
+
+  { /* ACCEDI AL SERVIZIO */ component: ServizioAccedi },
+
+  { /* ULTERIORI INFORMAZIONI */ component: ServizioUlterioriInformazioni },
 
   { /* ALTRI DOCUMENTI */ component: ServizioAltriDocumenti },
 
@@ -66,11 +80,15 @@ export const VenueViewSectionsOrder = [
 
   { /* MODULISTICA */ component: ServizioModulistica },
 
+  { /* CONDIZIONI DI SERVIZIO */ component: ServizioCondizioni },
+
+  { /* CONTATTI */ component: ServizioContatti },
+
   { /* TRASPARENZA */ component: ServizioTrasparenza },
 
-  { /* CORRELATI */ component: ServizioCorrelati },
+  { /* CORRELATI  */ component: ServizioCorrelati },
 
-  { /* ULTERIORI INFORMAZIONI */ component: ServizioUlterioriInformazioni },
+  { /* ULTIMO AGGIORNAMENTO  */ component: ServizioMetadati },
 ];
 
 /**
@@ -79,8 +97,12 @@ export const VenueViewSectionsOrder = [
  * @params {object} content Content object.
  * @returns {string} Markup of the component.
  */
-const ServizioView = ({ content }) => {
-  let documentBody = createRef();
+const ServizioView = ({ content, moment }) => {
+  const intl = useIntl();
+  const Moment = moment.default;
+  Moment.locale(intl.locale);
+
+  const documentBody = createRef();
   const [sideMenuElements, setSideMenuElements] = useState(null);
   useEffect(() => {
     if (documentBody.current) {
@@ -116,7 +138,7 @@ const ServizioView = ({ content }) => {
             {/* SEZIONI */}
             <ContentTypeViewSections
               content={content}
-              defaultSections={VenueViewSectionsOrder}
+              defaultSections={ServizioViewSectionsOrder({ moment: Moment })}
             />
           </section>
         </div>
@@ -202,4 +224,4 @@ ServizioView.propTypes = {
   }),
 };
 
-export default ServizioView;
+export default injectLazyLibs(['moment'])(ServizioView);

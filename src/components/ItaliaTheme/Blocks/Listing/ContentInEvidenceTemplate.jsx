@@ -9,7 +9,7 @@ import {
   CardTitle,
   CardText,
   Chip,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 import cx from 'classnames';
 
 import { UniversalLink } from '@plone/volto/components';
@@ -33,9 +33,11 @@ const ContentInEvidenceTemplate = ({
   title,
   isEditMode,
   show_block_bg,
+  linkAlign,
   linkTitle,
   linkHref,
   id_lighthouse,
+  titleLine,
 }) => {
   return (
     <div className="contentInEvidenceTemplate">
@@ -47,7 +49,9 @@ const ContentInEvidenceTemplate = ({
         {title && (
           <Row>
             <Col>
-              <h2 className="mb-4">{title}</h2>
+              <h2 className={cx('mb-4', { 'title-bottom-line': titleLine })}>
+                {title}
+              </h2>
             </Col>
           </Row>
         )}
@@ -91,7 +95,7 @@ const ContentInEvidenceTemplate = ({
                               simple
                               color="primary"
                               key={argomento['@id']}
-                              className="mr-2"
+                              className="me-2"
                             >
                               <UniversalLink
                                 href={flattenToAppURL(argomento['@id'])}
@@ -112,7 +116,12 @@ const ContentInEvidenceTemplate = ({
           );
         })}
 
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-4" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          linkAlign={linkAlign}
+          className="my-4"
+        />
       </Container>
     </div>
   );

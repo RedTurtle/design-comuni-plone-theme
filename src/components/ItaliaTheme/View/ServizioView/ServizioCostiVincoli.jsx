@@ -4,18 +4,14 @@ import { defineMessages, useIntl } from 'react-intl';
 
 import {
   RichText,
-  RichTextArticle,
+  RichTextSection,
   richTextHasContent,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
   costi_e_vincoli: {
     id: 'costi_e_vincoli',
-    defaultMessage: 'Costi e vincoli',
-  },
-  costi: {
-    id: 'costi',
-    defaultMessage: 'Costi',
+    defaultMessage: 'Quanto costa',
   },
   vincoli: {
     id: 'vincoli',
@@ -25,35 +21,37 @@ const messages = defineMessages({
 
 const ServizioCostiVincoli = ({ content }) => {
   const intl = useIntl();
-  return richTextHasContent(content.costi) ||
-    richTextHasContent(content.vincoli) ? (
+
+  return (
     <>
-      <RichTextArticle
-        tag_id={'costi-e-vincoli'}
-        title={intl.formatMessage(messages.costi_e_vincoli)}
-      >
+      {richTextHasContent(content.costi) && (
         <RichText
-          title={intl.formatMessage(messages.costi)}
+          title={intl.formatMessage(messages.costi_e_vincoli)}
+          title_size="h2"
+          add_class="mb-5"
           content={content.costi}
         />
-
+      )}
+      {richTextHasContent(content.vincoli) && (
         <RichText
           title={intl.formatMessage(messages.vincoli)}
+          title_size="h2"
+          add_class="mb-5"
           content={content.vincoli}
         />
-      </RichTextArticle>
+      )}
     </>
-  ) : (
-    <></>
   );
 };
 
 ServizioCostiVincoli.propTypes = {
-  costi: PropTypes.shape({
-    data: PropTypes.string,
-  }),
-  vincoli: PropTypes.shape({
-    data: PropTypes.string,
+  content: PropTypes.shape({
+    costi: PropTypes.shape({
+      data: PropTypes.object,
+    }),
+    vincoli: PropTypes.shape({
+      data: PropTypes.object,
+    }),
   }),
 };
 export default ServizioCostiVincoli;

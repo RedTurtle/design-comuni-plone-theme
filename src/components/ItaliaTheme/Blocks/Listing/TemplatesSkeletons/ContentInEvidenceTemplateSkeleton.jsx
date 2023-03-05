@@ -9,7 +9,7 @@ import {
   CardText,
   Chip,
   Container,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 import cx from 'classnames';
 
 import { CardCategory } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -59,7 +59,7 @@ const ContentInEvidenceTemplateSkeleton = ({
                             disabled={false}
                             simple
                             tag="div"
-                            className="mr-2"
+                            className="me-2"
                             key={index}
                           ></Chip>
                         ))}

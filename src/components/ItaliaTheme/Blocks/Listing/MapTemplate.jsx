@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import moment from 'moment';
 import cx from 'classnames';
 import { OSMMap } from 'volto-venue';
-import { Row, Col, Container } from 'design-react-kit/dist/design-react-kit';
+import { Row, Col, Container } from 'design-react-kit';
 import { ListingLinkMore } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const messages = defineMessages({
@@ -23,9 +23,11 @@ const messages = defineMessages({
 const MapTemplate = ({
   items,
   isEditMode,
+  linkAlign,
   linkTitle,
   linkHref,
   title,
+  titleLine,
   show_map_full_width,
   map_size = 'medium',
 }) => {
@@ -72,7 +74,9 @@ const MapTemplate = ({
         {title && (
           <Row>
             <Col>
-              <h2 className="mb-4">{title}</h2>
+              <h2 className={cx('mb-4', { 'title-bottom-line': titleLine })}>
+                {title}
+              </h2>
             </Col>
           </Row>
         )}
@@ -97,7 +101,12 @@ const MapTemplate = ({
           intl.formatMessage(messages.no_markers)
         )}
 
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-5" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          linkAlign={linkAlign}
+          className="my-5"
+        />
       </Container>
     </div>
   );

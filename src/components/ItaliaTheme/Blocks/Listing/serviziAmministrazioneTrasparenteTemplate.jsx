@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import moment from 'moment';
-import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
+import { Container, Row, Col } from 'design-react-kit';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { ListingLinkMore } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -27,9 +27,11 @@ const GridGalleryTemplate = ({
   items,
   isEditMode,
   title,
+  linkAlign,
   linkTitle,
   linkHref,
   show_block_bg,
+  titleLine,
 }) => {
   const intl = useIntl();
   moment.locale(intl.locale);
@@ -40,7 +42,12 @@ const GridGalleryTemplate = ({
         {title && (
           <Row>
             <Col>
-              <h2 className={cx('mb-4', { 'mt-5': !show_block_bg })}>
+              <h2
+                className={cx('mb-4', {
+                  'mt-5': !show_block_bg,
+                  'title-bottom-line': titleLine,
+                })}
+              >
                 {title}
               </h2>
             </Col>
@@ -66,7 +73,7 @@ const GridGalleryTemplate = ({
                 <td>
                   <UniversalLink
                     item={item}
-                    className="text-decoration-none font-weight-bold"
+                    className="text-decoration-none fw-bold"
                   >
                     {item.title}
                   </UniversalLink>
@@ -91,7 +98,12 @@ const GridGalleryTemplate = ({
             ))}
           </tbody>
         </table>
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-4" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          linkAlign={linkAlign}
+          className="my-4"
+        />
       </Container>
     </div>
   );

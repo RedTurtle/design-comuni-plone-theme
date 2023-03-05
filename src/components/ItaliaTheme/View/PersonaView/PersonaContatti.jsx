@@ -1,9 +1,8 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import {
-  RichTextArticle,
-  ContactLink,
-  PersonaTelephones,
+  RichTextSection,
+  ContactsCard,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
@@ -11,44 +10,21 @@ const messages = defineMessages({
     id: 'contacts',
     defaultMessage: 'Contatti',
   },
-  email_label: {
-    id: 'email_label',
-    defaultMessage: 'E-mail',
-  },
 });
 
 const PersonaContatti = ({ content }) => {
   const intl = useIntl();
-  const telefono = content && PersonaTelephones({ content: content });
 
-  const showSection = telefono || content?.fax || content?.email?.length > 0;
-  return showSection ? (
-    <RichTextArticle
+  return content?.contact_info?.length > 0 ? (
+    <RichTextSection
       title={intl.formatMessage(messages.contacts)}
       tag_id="contacts"
     >
-      {telefono && telefono}
-
-      {content?.fax && (
-        <p>
-          <ContactLink fax={content.fax} strong={true} />
-        </p>
-      )}
-
-      {content?.email?.length > 0 && (
-        <p>
-          <strong>{intl.formatMessage(messages.email_label)}: </strong>
-          {content.email.map((email, index) => (
-            <React.Fragment key={index}>
-              <ContactLink email={email} label={false} />{' '}
-            </React.Fragment>
-          ))}
-        </p>
-      )}
-    </RichTextArticle>
-  ) : (
-    <></>
-  );
+      {content.contact_info.map((contact) => (
+        <ContactsCard contact={contact} key={contact['@id']} />
+      ))}
+    </RichTextSection>
+  ) : null;
 };
 
 export default PersonaContatti;

@@ -1,12 +1,3 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $primary-b5;
-}
-
 //questa evita lo scroll orizzontale causato dal full-width su windows
 body {
   width: 100vw;
@@ -87,21 +78,6 @@ picture.volto-image.responsive img.full-width {
   }
 }
 
-//richtext-blocks
-h2,
-h3,
-h4,
-h5,
-h6 {
-  ~ .richtext-blocks {
-    margin-top: 0.5rem;
-  }
-
-  + .richtext-blocks {
-    margin-bottom: 2.5rem;
-  }
-}
-
 @media (max-width: #{map-get($grid-breakpoints, lg)}) {
   .page-side-menu {
     display: none;
@@ -134,7 +110,7 @@ h6 {
     margin-bottom: 1rem !important;
     line-height: 1em;
 
-    a {
+    &:not(.big-heading) a {
       color: $primary;
       font-size: 1.125rem;
       line-height: 1.625rem;
@@ -363,4 +339,8 @@ dl.trasparenza-fields {
       }
     }
   }
+}
+
+#search-page-button {
+  border-bottom: 1px solid $neutral-1-a7;
 }

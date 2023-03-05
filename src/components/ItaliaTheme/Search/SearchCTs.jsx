@@ -4,13 +4,7 @@
 import React, { useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { values } from 'lodash';
-import {
-  Input,
-  FormGroup,
-  Label,
-  Collapse,
-  Button,
-} from 'design-react-kit/dist/design-react-kit';
+import { Input, FormGroup, Label, Collapse, Button } from 'design-react-kit';
 
 const messages = defineMessages({
   showAll: {
@@ -173,7 +167,7 @@ export default function SearchCTs({
                 e.preventDefault();
                 setCollapse((prev) => !prev);
               }}
-              className="font-weight-bold"
+              className="fw-bold"
               data-toggle="collapse"
               href="#collapseTopics"
               role="button"

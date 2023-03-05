@@ -16,7 +16,7 @@ import {
   LinkList,
   LinkListItem,
   UncontrolledDropdown,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 
 import { getUser, logout, purgeMessages } from '@plone/volto/actions';
 
@@ -106,10 +106,10 @@ const ArLogin = () => {
                   nav
                   className="btn-icon"
                 >
-                  <span class="rounded-icon">
+                  <span className="rounded-icon">
                     <Icon color="primary" icon="it-user" size="" />
                   </span>
-                  <span class="d-none d-lg-block">
+                  <span className="d-none d-lg-block">
                     {userLogged.fullname
                       ? userLogged.fullname
                       : userLogged.username}

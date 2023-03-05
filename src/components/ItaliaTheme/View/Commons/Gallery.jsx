@@ -39,7 +39,7 @@ const Gallery = ({
   title,
   title_type = 'h4',
   title_video,
-  className,
+  className = '',
   reactSlick,
 }) => {
   const Slider = reactSlick.default;
@@ -101,7 +101,6 @@ const Gallery = ({
             'path.depth': 1,
             sort_on: 'getObjPositionInParent',
             metadata_fields: '_all',
-            fullobjects: 1,
           },
           folder_name,
         ),
@@ -154,7 +153,11 @@ const Gallery = ({
                         )} ${item.title}`}
                       >
                         <Image
-                          image={item.image}
+                          itemUrl={item['@id']}
+                          image={
+                            item.image_scales?.[item.image_field]?.[0] ||
+                            item['@id']
+                          }
                           alt={item.title}
                           className="img-fluid"
                         />
@@ -179,7 +182,9 @@ const Gallery = ({
       ) : null}
 
       {videos?.length > 0 ? (
-        <div className="it-carousel-wrapper it-carousel-landscape-abstract-three-cols">
+        <div
+          className={`it-carousel-wrapper it-carousel-landscape-abstract-three-cols ${className}`}
+        >
           <div className="slider-container">
             {title_video && (
               <div className="it-header-block">

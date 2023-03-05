@@ -10,11 +10,7 @@ import { Portal } from 'react-portal';
 import cx from 'classnames';
 
 import { UniversalLink } from '@plone/volto/components';
-import {
-  Card,
-  CardBody,
-  CardText,
-} from 'design-react-kit/dist/design-react-kit';
+import { Card, CardBody, CardText } from 'design-react-kit';
 import Image from '@plone/volto/components/theme/Image/Image';
 import {
   BodyClass,
@@ -112,7 +108,7 @@ const PaginaArgomentoView = ({ content }) => {
                           <div className="d-flex">
                             <CardBody className="">
                               <CardCategory>
-                                <span className="text font-weight-bold">
+                                <span className="text fw-bold">
                                   <UniversalLink
                                     href={flattenToAppURL(u['@id'])}
                                   >
@@ -125,8 +121,9 @@ const PaginaArgomentoView = ({ content }) => {
                               </CardText>
                             </CardBody>
                             {searchResults[u['@id']]?.data?.image && (
-                              <div className="image-container mr-3">
+                              <div className="image-container me-3">
                                 <Image
+                                  itemUrl={u['@id']}
                                   image={searchResults[u['@id']].data?.image}
                                   alt={
                                     searchResults[u['@id'].data?.image_caption]

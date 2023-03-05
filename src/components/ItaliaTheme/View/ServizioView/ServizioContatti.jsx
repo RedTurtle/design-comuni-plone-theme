@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 
 import {
-  RichTextArticle,
+  RichTextSection,
   OfficeCard,
+  ContactsCard,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
@@ -17,10 +18,14 @@ const messages = defineMessages({
 const ServizioContatti = ({ content }) => {
   const intl = useIntl();
   return content.ufficio_responsabile?.length > 0 || content.area.length > 0 ? (
-    <RichTextArticle
+    <RichTextSection
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
     >
+      {content.contact_info?.length > 0 &&
+        content.contact_info.map((contact) => (
+          <ContactsCard contact={contact} key={contact['@id']} />
+        ))}
       <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
         {content.ufficio_responsabile?.length > 0 && (
           <>
@@ -37,10 +42,8 @@ const ServizioContatti = ({ content }) => {
           </>
         )}
       </div>
-    </RichTextArticle>
-  ) : (
-    <></>
-  );
+    </RichTextSection>
+  ) : null;
 };
 
 ServizioContatti.propTypes = {

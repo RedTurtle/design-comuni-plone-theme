@@ -12,7 +12,7 @@ import {
   CardText,
   Chip,
   ChipLabel,
-} from 'design-react-kit/dist/design-react-kit';
+} from 'design-react-kit';
 
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
@@ -40,6 +40,7 @@ const CardWithImageTemplate = (props) => {
     items,
     isEditMode,
     title,
+    linkAlign,
     linkTitle,
     linkHref,
     show_block_bg = false,
@@ -53,6 +54,7 @@ const CardWithImageTemplate = (props) => {
     hide_dates = false,
     natural_image_size = false,
     id_lighthouse,
+    titleLine,
   } = props;
 
   const imagesToShow = set_four_columns ? 4 : 3;
@@ -63,7 +65,12 @@ const CardWithImageTemplate = (props) => {
         {title && (
           <Row>
             <Col>
-              <h2 className={cx('mb-4', { 'mt-5': !show_block_bg })}>
+              <h2
+                className={cx('mb-4', {
+                  'mt-5': !show_block_bg,
+                  'title-bottom-line': titleLine,
+                })}
+              >
                 {title}
               </h2>
             </Col>
@@ -122,12 +129,16 @@ const CardWithImageTemplate = (props) => {
                         <div className="img-responsive img-responsive-panoramic">
                           <figure className="img-wrapper">{image}</figure>
                           {item['@type'] === 'Event' && (
-                            <CardCalendar start={item.start} end={item.end} />
+                            <CardCalendar
+                              start={item.start}
+                              end={item.end}
+                              recurrence={item.recurrence}
+                            />
                           )}
                         </div>
                       </div>
                     )}
-                    <CardBody>
+                    <CardBody className="px-4">
                       {(icon || category || date) && (
                         <CardCategory iconName={icon} date={date}>
                           <ListingCategory category={category} item={item} />
@@ -170,7 +181,7 @@ const CardWithImageTemplate = (props) => {
                                 disabled={false}
                                 simple
                                 tag="div"
-                                className="mr-2"
+                                className="me-2"
                               >
                                 <ChipLabel tag="span">
                                   {argument.title}
@@ -189,7 +200,12 @@ const CardWithImageTemplate = (props) => {
             );
           })}
         </Row>
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-4" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          className="my-4"
+          linkAlign={linkAlign}
+        />
       </Container>
     </div>
   );

@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-} from 'design-react-kit/dist/design-react-kit';
+import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 
 import { UniversalLink } from '@plone/volto/components';
 import { CardCategory } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -16,6 +11,8 @@ import {
 export const CardPersona = ({
   item,
   className,
+  titleClassName = '',
+  titleTagName = 'h3',
   showImage,
   natural_image_size,
   listingText,
@@ -41,7 +38,7 @@ export const CardPersona = ({
               <ListingCategory category={type} item={item} />
             </CardCategory>
           )}
-          <CardTitle tag="h3">
+          <CardTitle tag={titleTagName} className={titleClassName}>
             <UniversalLink
               item={!isEditMode ? item : null}
               href={isEditMode ? '#' : ''}

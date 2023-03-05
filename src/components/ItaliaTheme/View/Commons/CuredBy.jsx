@@ -1,7 +1,7 @@
 import { defineMessages, useIntl } from 'react-intl';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Chip, ChipLabel } from 'design-react-kit/dist/design-react-kit';
+import { Chip, ChipLabel } from 'design-react-kit';
 import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { OfficeCard } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
@@ -56,7 +56,7 @@ const CuredBy = ({ office, people, title }) => {
               <Link
                 to={flattenToAppURL(item['@id'])}
                 key={item['@id']}
-                className="text-decoration-none mr-2"
+                className="text-decoration-none me-2"
               >
                 <Chip
                   color="primary"

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
 import { flatMapDeep } from 'lodash';
 import { useHistory } from 'react-router-dom';
-import { Button } from 'design-react-kit/dist/design-react-kit';
+import { Button } from 'design-react-kit';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import {
   Icon,
@@ -65,7 +65,7 @@ const Body = ({ block, sections }) => {
               aria-label={block.placeholder}
             ></input>
             <button
-              className="rounded-right"
+              className="rounded-end"
               onClick={(e) => navigate(inputText, searchFilters())}
               aria-label={intl.formatMessage(messages.doSearch)}
             >

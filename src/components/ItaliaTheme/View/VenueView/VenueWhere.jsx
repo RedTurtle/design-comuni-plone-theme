@@ -1,24 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-} from 'design-react-kit/dist/design-react-kit';
+import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import {
   richTextHasContent,
   RichText,
-  RichTextArticle,
+  RichTextSection,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { OSMMap } from 'volto-venue';
 
 const messages = defineMessages({
   dove: {
     id: 'dove',
-    defaultMessage: 'Dove',
+    defaultMessage: 'Indirizzo',
   },
   circoscrizione: {
     id: 'circoscrizione',
@@ -41,7 +36,7 @@ const VenueWhere = ({ content }) => {
     content.circoscrizione ||
     content.quartiere ||
     richTextHasContent(content.notes) ? (
-    <RichTextArticle tag_id="dove" title={intl.formatMessage(messages.dove)}>
+    <RichTextSection tag_id="dove" title={intl.formatMessage(messages.dove)}>
       <Card className="card card-teaser shadow mt-3 rounded mb-4">
         <Icon icon={'it-pin'} />
         <CardBody>
@@ -83,16 +78,16 @@ const VenueWhere = ({ content }) => {
         )}
       {content.circoscrizione && (
         <div className="circoscrizione">
-          <h5 className="mt-3">
-            {intl.formatMessage(messages.circoscrizione)}:
-          </h5>
-          <div className="text-serif">{content.circoscrizione}</div>
+          <h3 className="mt-3">
+            {intl.formatMessage(messages.circoscrizione)}
+          </h3>
+          <div className="font-serif">{content.circoscrizione}</div>
         </div>
       )}
       {content.quartiere && (
         <div className="quartiere">
-          <h5 className="mt-3">{intl.formatMessage(messages.quartiere)}:</h5>
-          <div className="text-serif">{content.quartiere}</div>
+          <h3 className="mt-3">{intl.formatMessage(messages.quartiere)}</h3>
+          <div className="font-serif">{content.quartiere}</div>
         </div>
       )}
       {richTextHasContent(content.notes) && (
@@ -100,7 +95,7 @@ const VenueWhere = ({ content }) => {
           <RichText content={content.notes} />
         </div>
       )}
-    </RichTextArticle>
+    </RichTextSection>
   ) : (
     <></>
   );
