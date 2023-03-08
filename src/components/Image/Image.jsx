@@ -6,7 +6,6 @@ import { getImageAttributes } from '@plone/volto/helpers/Image/Image';
 
 /**
  * Image component
- * @param {string} itemUrl - url (`@id`) of the item. **ONLY** use this if rendering an image from a brain object, leave undefined otherwise
  * @param {object | string} image - Plone image as object or url
  * @param {string} imageField - (default: image) image field for scales URL
  * @param {string} alt - Alternative text for image
