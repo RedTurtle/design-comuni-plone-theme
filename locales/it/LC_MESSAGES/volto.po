@@ -827,6 +827,11 @@ msgstr "Velocità autoplay"
 msgid "autoplay_speed_description"
 msgstr "La velocità di autoplay deve essere espressa in secondi."
 
+#: components/ItaliaTheme/View/DocumentoView/DocumentoAutori
+# defaultMessage: Autore
+msgid "autore"
+msgstr ""
+
 #: components/SelectInput/SelectInput
 # defaultMessage: Usa le frecce Su e Giu per scegliere un'opzione
 msgid "ay11_Use Up and Down to choose options"
@@ -1192,7 +1197,7 @@ msgid "cosa_serve"
 msgstr "Cosa serve"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
-# defaultMessage: Quanto costa
+# defaultMessage: Costi
 msgid "costi_e_vincoli"
 msgstr "Quanto costa"
 
@@ -1782,9 +1787,9 @@ msgstr "Leggi di più"
 
 #: components/ItaliaTheme/manage/Widgets/CharCounterTextareaWidget
 #: components/ItaliaTheme/manage/Widgets/CharCounterTextWidget
-# defaultMessage: Il testo supera la lunghezza consigliata
+# defaultMessage: Il testo supera la lunghezza consigliata perciò verrà tagliato.
 msgid "exceeded_chars"
-msgstr "Il testo supera la lunghezza consigliata"
+msgstr "Il testo supera la lunghezza consigliata perciò verrà tagliato."
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza

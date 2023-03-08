@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-02-09T11:02:52.975Z\n"
+"POT-Creation-Date: 2023-03-08T14:41:54.272Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -829,6 +829,11 @@ msgstr ""
 msgid "autoplay_speed_description"
 msgstr ""
 
+#: components/ItaliaTheme/View/DocumentoView/DocumentoAutori
+# defaultMessage: Autore
+msgid "autore"
+msgstr ""
+
 #: components/SelectInput/SelectInput
 # defaultMessage: Usa le frecce Su e Giu per scegliere un'opzione
 msgid "ay11_Use Up and Down to choose options"
@@ -1194,7 +1199,7 @@ msgid "cosa_serve"
 msgstr ""
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
-# defaultMessage: Quanto costa
+# defaultMessage: Costi
 msgid "costi_e_vincoli"
 msgstr ""
 
@@ -1784,7 +1789,7 @@ msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/CharCounterTextareaWidget
 #: components/ItaliaTheme/manage/Widgets/CharCounterTextWidget
-# defaultMessage: Il testo supera la lunghezza consigliata
+# defaultMessage: Il testo supera la lunghezza consigliata perciò verrà tagliato.
 msgid "exceeded_chars"
 msgstr ""
 
