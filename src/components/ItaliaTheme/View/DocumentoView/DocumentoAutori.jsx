@@ -23,8 +23,10 @@ const messages = defineMessages({
 const DocumentoAutori = ({ autori, title }) => {
   const intl = useIntl();
   return (
-    <article id="a-cura-di" className="it-page-section anchor-offset mt-5 mb-5">
-      <h4 id="header-autore">{title ?? intl.formatMessage(messages.autore)}</h4>
+    <section id="a-cura-di" className="it-page-section anchor-offset mt-5 mb-5">
+      <h2 id="header-autore" className="h4">
+        {title ?? intl.formatMessage(messages.autore)}
+      </h2>
       <div className="autori-container col-12 col-sm-8">
         {autori.map((autore) => (
           <div className="card card-big card-teaser rounded shadow ">
@@ -47,7 +49,7 @@ const DocumentoAutori = ({ autori, title }) => {
           </div>
         ))}
       </div>
-    </article>
+    </section>
   );
 };
 

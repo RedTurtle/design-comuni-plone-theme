@@ -8,7 +8,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import {
   RichText,
-  RichTextArticle,
+  RichTextSection,
   richTextHasContent,
   Gallery,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
@@ -32,7 +32,7 @@ const EventoCosE = ({ content }) => {
   const intl = useIntl();
 
   return (
-    <RichTextArticle
+    <RichTextSection
       tag_id={'text-body'}
       title={intl.formatMessage(messages.cos_e)}
       show_title={false}
@@ -73,7 +73,7 @@ const EventoCosE = ({ content }) => {
           ))}
         </>
       )}
-    </RichTextArticle>
+    </RichTextSection>
   );
 };
 

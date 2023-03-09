@@ -74,7 +74,6 @@ const VenueContacts = ({ content }) => {
       <RichTextSection
         tag_id="contatti"
         title={intl.formatMessage(messages.contatti)}
-        title_tag="h4"
       >
         {/* CONTATTI LUOGO */}
         {/* {(content?.telefono ||
@@ -158,7 +157,6 @@ const VenueContacts = ({ content }) => {
         <RichTextSection
           tag_id="struttura_responsabile"
           title={intl.formatMessage(messages.struttura_responsabile)}
-          title_tag="h4"
         >
           {content.struttura_responsabile_correlati?.length > 0 ? (
             //STRUTTURE RESPONSABILI CORRELATE

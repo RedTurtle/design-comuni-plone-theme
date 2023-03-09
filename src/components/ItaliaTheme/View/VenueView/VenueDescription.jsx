@@ -41,14 +41,12 @@ const VenueDescription = ({ content }) => {
           tag_id="description"
           title={intl.formatMessage(messages.descrizione)}
           content={content.descrizione_completa}
-          title_tag="h4"
         />
       )}
       {content?.tipologia_luogo?.length > 0 && (
         <RichTextSection
           tag_id="tipologia"
           title={intl.formatMessage(messages.tipologia_luogo)}
-          title_tag="h4"
         >
           {content.tipologia_luogo.map((tipologia) => (
             <p key={tipologia.token} className="font-serif">
@@ -62,14 +60,12 @@ const VenueDescription = ({ content }) => {
           tag_id="elementi-di-interesse"
           title={`${intl.formatMessage(messages.elementi_di_interesse)}:`}
           content={content.elementi_di_interesse}
-          title_tag="h4"
         />
       )}
       {content.luoghi_correlati?.length > 0 && (
         <RichTextSection
           tag_id={'luoghi_correlati'}
           title={intl.formatMessage(messages.luoghi_correlati)}
-          title_tag="h4"
         >
           <div className="card-wrapper card-teaser-wrapper mb-5">
             {content.luoghi_correlati?.map((item, i) => (

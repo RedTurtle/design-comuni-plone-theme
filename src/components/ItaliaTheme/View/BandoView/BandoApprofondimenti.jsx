@@ -88,7 +88,6 @@ const BandoApprofondimenti = ({ content }) => {
     <RichTextSection
       tag_id="allegati"
       title={intl.formatMessage(messages.allegati)}
-      className="h4"
     >
       {/* Se ho una sola cartella lascio solo "allegati" altrimenti
       aggiungo gli altri titoli */}

@@ -3,7 +3,7 @@ import { defineMessages, useIntl } from 'react-intl';
 
 import { contentFolderHasItems } from 'design-comuni-plone-theme/helpers';
 import {
-  RichTextArticle,
+  RichTextSection,
   richTextHasContent,
   Gallery,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
@@ -43,7 +43,7 @@ const DocumentoDescrizione = ({ content }) => {
     contentFolderHasItems(content, 'multimedia') ||
     content.autori?.length > 0 ||
     content.licenza_distribuzione?.length > 0 ? (
-    <RichTextArticle
+    <RichTextSection
       tag_id={'text-body'}
       title={intl.formatMessage(messages.descrizione)}
       show_title={true}
@@ -97,7 +97,7 @@ const DocumentoDescrizione = ({ content }) => {
           </p>
         </div>
       )}
-    </RichTextArticle>
+    </RichTextSection>
   ) : (
     <></>
   );
