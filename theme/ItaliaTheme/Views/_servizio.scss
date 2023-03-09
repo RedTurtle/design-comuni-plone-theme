@@ -1,14 +1,19 @@
 .contenttype-servizio {
   #deadlines {
     .calendar-vertical {
-      .calendar-date-description {
-        .calendar-date-description-content {
-          color: $body-color;
+      .calendar-date-day {
+        span.title-xxlarge-regular {
+          font-family: 'Roboto Mono', monospace;
+          .calendar-date-description {
+            .calendar-date-description-content {
+              color: $body-color;
+            }
+          }
+          .calendar-date-description:before {
+            width: 0px;
+            height: 0%;
+          }
         }
-      }
-      .calendar-date-description:before {
-        width: 0px;
-        height: 0%;
       }
     }
   }
