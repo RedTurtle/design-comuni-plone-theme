@@ -376,29 +376,3 @@ dl.trasparenza-fields {
   @include rem-size(font-size, 16px);
   @include rem-size(line-height, 24px);
 }
-
-.point-list-wrapper {
-  .point-list {
-    .point-list-aside {
-      width: 6.8rem;
-      color: $primary !important;
-      border-color: $primary !important;
-      border-right-width: 2px;
-
-      .point-month {
-        text-transform: none;
-      }
-    }
-
-    .point-list-aside:after {
-      background-color: $primary !important;
-    }
-    .point-list-content {
-      .card-teaser {
-        &.card {
-          padding: 0.8em;
-        }
-      }
-    }
-  }
-}
