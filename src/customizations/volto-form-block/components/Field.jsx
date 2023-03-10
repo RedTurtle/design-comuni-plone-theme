@@ -126,6 +126,9 @@ const Field = ({
               classNamePrefix="react-select"
               className={isInvalid() ? 'is-invalid' : ''}
             />
+            {description && (
+              <small className="form-text text-muted">{description}</small>
+            )}
           </div>
         </div>
       )}
