@@ -112,7 +112,6 @@ const Field = ({
               id={name}
               name={name}
               label={getLabel()}
-              infoText={description}
               isSearchable={true}
               onChange={(v) => {
                 onChange(name, v.value);
