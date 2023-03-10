@@ -3,6 +3,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 
 import { UniversalLink } from '@plone/volto/components';
+import { RichTextSection } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
   autore: {
@@ -23,10 +24,11 @@ const messages = defineMessages({
 const DocumentoAutori = ({ autori, title }) => {
   const intl = useIntl();
   return (
-    <section id="a-cura-di" className="it-page-section anchor-offset mt-5 mb-5">
-      <h2 id="header-autore" className="h4">
-        {title ?? intl.formatMessage(messages.autore)}
-      </h2>
+    <RichTextSection
+      tag_id="a-cura-di"
+      content={autori}
+      title={intl.formatMessage(messages.autore)}
+    >
       <div className="autori-container col-12 col-sm-8">
         {autori.map((autore) => (
           <div className="card card-big card-teaser rounded shadow ">
@@ -49,7 +51,7 @@ const DocumentoAutori = ({ autori, title }) => {
           </div>
         ))}
       </div>
-    </section>
+    </RichTextSection>
   );
 };
 

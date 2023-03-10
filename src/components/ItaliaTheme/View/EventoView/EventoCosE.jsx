@@ -66,6 +66,22 @@ const EventoCosE = ({ content }) => {
           ))}
         </>
       )}
+      <Gallery
+        content={content}
+        folder_name={'immagini'}
+        className="mt-4 pb-4"
+      />
+      <Gallery content={content} folder_name={'video'} />
+
+      {richTextHasContent(content?.descrizione_destinatari) && (
+        <div className="mb-5 pt-2">
+          <RichText
+            title_size="h5"
+            title={intl.formatMessage(messages.a_chi_rivolto)}
+            content={content?.descrizione_destinatari}
+          />
+        </div>
+      )}
     </RichTextSection>
   );
 };
