@@ -20,8 +20,13 @@ const messages = defineMessages({
   },
   event_destinatari: {
     id: 'event_destinatari',
-    defaultMessage: "L'evento è di interesse per",
+    defaultMessage: 'A chi è rivolto',
   },
+  a_chi_rivolto: {
+    id: 'a_chi_rivolto',
+    defaultMessage: 'A chi è rivolto',
+  },
+
   parteciperanno: {
     id: 'parteciperanno',
     defaultMessage: 'Parteciperanno',
@@ -35,21 +40,9 @@ const EventoCosE = ({ content }) => {
     <RichTextSection
       tag_id={'text-body'}
       title={intl.formatMessage(messages.cos_e)}
-      show_title={false}
+      show_title={true}
       content={content.descrizione_estesa}
     >
-      <Gallery content={content} folder_name={'multimedia'} />
-
-      {richTextHasContent(content?.descrizione_destinatari) && (
-        <div className="mb-5">
-          <RichText
-            title_size="h5"
-            title={intl.formatMessage(messages.event_destinatari)}
-            content={content?.descrizione_destinatari}
-          />
-        </div>
-      )}
-
       {content?.persone_amministrazione?.length > 0 && (
         <>
           <h5>{intl.formatMessage(messages.parteciperanno)}</h5>
