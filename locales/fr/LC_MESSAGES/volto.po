@@ -2526,6 +2526,11 @@ msgstr ""
 msgid "provvedimento_finale"
 msgstr "Disposition finale"
 
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+# defaultMessage: Data di pubblicazione
+msgid "publication_date"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/LocationItem
 #: components/ItaliaTheme/View/VenueView/VenueWhere
 # defaultMessage: Quartiere
@@ -3646,6 +3651,11 @@ msgstr "Chercher une structure"
 # defaultMessage: Tipologia
 msgid "uo_type"
 msgstr "Typologie"
+
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+# defaultMessage: Data di aggiornamento
+msgid "update_date"
+msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 # defaultMessage: Sito web

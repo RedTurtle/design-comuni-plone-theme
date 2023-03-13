@@ -31,6 +31,14 @@ import {
 
 const messages = defineMessages({
   card_detail_label: { id: 'Card detail label', defaultMessage: 'Vedi' },
+  publication_date: {
+    id: 'publication_date',
+    defaultMessage: 'Data di pubblicazione',
+  },
+  update_date: {
+    id: 'update_date',
+    defaultMessage: 'Data di aggiornamento',
+  },
 });
 
 const SimpleCardTemplateDefault = (props) => {
@@ -213,19 +221,19 @@ const SimpleCardTemplateDefault = (props) => {
                 {listingText && (
                   <CardText className={cx('', { 'mb-5': eventRecurrenceMore })}>
                     {listingText}
-                    {
-                      (type === 'Modulo' || type === 'Documento') && (
-                        <div className="document-date mt-3">
-                          <strong>Data di pubblicazione: </strong>
-                          {moment(item.CreationDate).format('DD-MM-YYYY')}
-                          <br />
-                          <strong>Data di aggiornamento: </strong>
-                          {moment(item.modified).format('DD-MM-YYYY')}
-                        </div>
-                      )
-                      // console.log(type)
-                      // <div>ciao</div>
-                    }
+                    {(type === 'Modulo' || type === 'Documento') && (
+                      <div className="document-date mt-3">
+                        <strong>
+                          {intl.formatMessage(messages.publication_date)}
+                        </strong>
+                        {moment(item.CreationDate).format('DD-MM-YYYY')}
+                        <br />
+                        <strong>
+                          {intl.formatMessage(messages.update_date)}{' '}
+                        </strong>
+                        {moment(item.modified).format('DD-MM-YYYY')}
+                      </div>
+                    )}
                   </CardText>
                 )}
                 {eventRecurrenceMore}
