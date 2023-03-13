@@ -47,14 +47,14 @@ const ContactsCard = ({ contact = {}, show_title = false }) => {
             </UniversalLink>
           )}
         </CardTitle>
-        <CardText>
+        <div>
           {data?.value_punto_contatto.map((pdc, index) => (
             <p key={index}>
               <strong>{pdc.pdc_type}: </strong>
               {renderPDCItemValue(pdc)}
             </p>
           )) ?? null}
-        </CardText>
+        </div>
       </CardBody>
     </Card>
   );
