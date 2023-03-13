@@ -537,11 +537,20 @@ const mock_allfields = {
   modified: '2023-01-20T08:45:26+00:00',
   next_item: {},
   nome_sede: 'Sede del mega evento',
-  open_end: true,
-  opengraph_description: null,
-  opengraph_image: null,
-  opengraph_title: null,
-  parteciperanno: [
+  open_end: false,
+  orari: { 'content-type': 'text/html', data: '<p>no</p>', encoding: 'utf-8' },
+  organizzato_da_esterno: {
+    'content-type': 'text/html',
+    data: '<p>nessuno</p>',
+    encoding: 'utf-8',
+  },
+  organizzato_da_interno: [],
+  patrocinato_da: {
+    'content-type': 'text/html',
+    data: '<p>Comune di io-Comune</p>',
+    encoding: 'utf-8',
+  },
+  persone_amministrazione: [
     {
       '@id':
         'http://localhost:3000/amministrazione/personale-amministrativo/franco-franchini',
@@ -558,26 +567,6 @@ const mock_allfields = {
       incarichi: '',
       review_state: 'private',
       title: 'Franco Franchini',
-    },
-  ],
-  patrocinato_da: 'Regione Autonome della Sardegna',
-  persone_amministrazione: [
-    {
-      '@id':
-        'http://localhost:3000/amministrazione/personale-amministrativo/valerio-alfio-boi-1',
-      '@type': 'Persona',
-      description: '',
-      design_italia_meta_type: 'Persona pubblica',
-      effective: null,
-      has_children: true,
-      id: 'valerio-alfio-boi-1',
-      image_field: 'foto_persona',
-      image_scales: {
-        foto_persona: [null],
-      },
-      incarichi: 'Incarico di Valerio Alfio Boi',
-      review_state: 'private',
-      title: 'Valerio Alfio Boi',
     },
   ],
   preview_caption: null,

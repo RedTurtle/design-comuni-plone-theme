@@ -3,11 +3,11 @@ import { defineMessages, useIntl } from 'react-intl';
 
 import { contentFolderHasItems } from 'design-comuni-plone-theme/helpers';
 import {
-  RichTextArticle,
+  RichTextSection,
   richTextHasContent,
   Gallery,
-  CuredBy,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { DocumentoAutori } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
   descrizione: {
@@ -43,7 +43,7 @@ const DocumentoDescrizione = ({ content }) => {
     contentFolderHasItems(content, 'multimedia') ||
     content.autori?.length > 0 ||
     content.licenza_distribuzione?.length > 0 ? (
-    <RichTextArticle
+    <RichTextSection
       tag_id={'text-body'}
       title={intl.formatMessage(messages.descrizione)}
       show_title={true}
@@ -57,10 +57,7 @@ const DocumentoDescrizione = ({ content }) => {
         />
       )}
       {content.autori?.length > 0 && (
-        <CuredBy
-          people={content.autori}
-          title={intl.formatMessage(messages.autori)}
-        />
+        <DocumentoAutori autori={content.autori} />
       )}
       {content.identificativo && (
         <div className="mt-5">
@@ -68,15 +65,18 @@ const DocumentoDescrizione = ({ content }) => {
           <p className="font-serif">{content.identificativo}</p>
         </div>
       )}
+      {/* Although this is a required field, some not complete migrations missing
+          these fields lead to error and broken page. Conditional checking these for now
+      */}
       {(content.licenza_distribuzione?.length > 0 ||
-        content.tipologia_licenze.title) && (
+        content.tipologia_licenze?.title) && (
         <div className="mt-5">
           <h4>{intl.formatMessage(messages.licenza_distribuzione)}</h4>
           {content.licenza_distribuzione?.length > 0 && (
             <p className="font-serif">{content.licenza_distribuzione}</p>
           )}
-          {content.tipologia_licenze.title && (
-            <p className="font-serif">{content.tipologia_licenze.title}</p>
+          {content.tipologia_licenze?.title && (
+            <p className="font-serif">{content.tipologia_licenze?.title}</p>
           )}
         </div>
       )}
@@ -90,17 +90,17 @@ const DocumentoDescrizione = ({ content }) => {
           ))}
         </div>
       )}
-      {content.tipologia_documenti_albopretorio.title && (
+      {content.tipologia_documenti_albopretorio?.title && (
         <div className="mt-5">
           <h4>
             {intl.formatMessage(messages.tipologia_documenti_albopretorio)}
           </h4>
           <p className="font-serif">
-            {content.tipologia_documenti_albopretorio.title}
+            {content.tipologia_documenti_albopretorio?.title}
           </p>
         </div>
       )}
-    </RichTextArticle>
+    </RichTextSection>
   ) : (
     <></>
   );

@@ -660,6 +660,11 @@ msgstr "Video gallery"
 msgid "You are trying to access a protected resource, please {login} first."
 msgstr "Stai provando ad accedere ad una risorsa protetta, per favore fai prima il {login}."
 
+#: components/ItaliaTheme/View/EventoView/EventoCosE
+# defaultMessage: A chi è rivolto
+msgid "a_chi_rivolto"
+msgstr "A chi è rivolto"
+
 #: components/ItaliaTheme/View/ServizioView/ServizioAChiSiRivolge
 # defaultMessage: A chi è rivolto
 msgid "a_chi_si_rivolge"
@@ -684,6 +689,11 @@ msgstr "Vedi azioni"
 # defaultMessage: Vai alla ricerca per sezioni avanzata
 msgid "advandedSectionsFilters"
 msgstr "Vai alla ricerca per sezioni avanzata"
+
+#: components/ItaliaTheme/Blocks/Listing/schema
+# defaultMessage: Allinea bottone a destra
+msgid "alignButton"
+msgstr "Allinea bottone a destra"
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Tutto
@@ -821,6 +831,11 @@ msgstr "Velocità autoplay"
 # defaultMessage: La velocità di autoplay deve essere espressa in secondi.
 msgid "autoplay_speed_description"
 msgstr "La velocità di autoplay deve essere espressa in secondi."
+
+#: components/ItaliaTheme/View/DocumentoView/DocumentoAutori
+# defaultMessage: Autore
+msgid "autore"
+msgstr "Autore"
 
 #: components/SelectInput/SelectInput
 # defaultMessage: Usa le frecce Su e Giu per scegliere un'opzione
@@ -1187,9 +1202,9 @@ msgid "cosa_serve"
 msgstr "Cosa serve"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
-# defaultMessage: Quanto costa
+# defaultMessage: Costi
 msgid "costi_e_vincoli"
-msgstr "Quanto costa"
+msgstr "Costi"
 
 #: components/ItaliaTheme/Blocks/CountDown/Sidebar
 # defaultMessage: Posizione del contatore
@@ -1295,36 +1310,6 @@ msgstr "Curriculum vitae"
 # defaultMessage: Risultati indagini di customer satisfaction
 msgid "customer_satisfaction"
 msgstr "Risultati indagini di customer satisfaction"
-
-#: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: No
-msgid "customer_satisfaction_no"
-msgstr "No"
-
-#: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: Submit your comment
-msgid "customer_satisfaction_submit"
-msgstr "Invia il tuo commento"
-
-#: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: Explain us why, and help us improve the quality of the site. (Leave your email address for any communications on the outcome of the report)
-msgid "customer_satisfaction_suggestions_placeholder"
-msgstr "Spiegaci perchè e aiutaci a migliorare il servizio. (Lascia il tuo indirizzo email per eventuali comunicazioni sull'esito della segnalazione)"
-
-#: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: Thank you for your feedback!
-msgid "customer_satisfaction_thank_you"
-msgstr "Grazie per il tuo feedback!"
-
-#: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: Was this page useful to you?
-msgid "customer_satisfaction_title"
-msgstr "Questa pagina ti è stata utile?"
-
-#: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: Yes
-msgid "customer_satisfaction_yes"
-msgstr "Sì"
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 # defaultMessage: Data conclusione incarico
@@ -1770,7 +1755,7 @@ msgid "event_costi"
 msgstr "Costi"
 
 #: components/ItaliaTheme/View/EventoView/EventoCosE
-# defaultMessage: L'evento è di interesse per
+# defaultMessage: A chi è rivolto
 msgid "event_destinatari"
 msgstr "L'evento è di interesse per"
 
@@ -1836,6 +1821,82 @@ msgstr "Digita una parola chiave per trovare le risposte"
 # defaultMessage: Fax
 msgid "fax"
 msgstr "Fax"
+
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: Where did you encounter the biggest problems?
+msgid "feedback_answers_header_negative"
+msgstr "Dove hai incontrato le maggiori difficoltà?"
+
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: Which were the aspects you liked the most?
+msgid "feedback_answers_header_positive"
+msgstr "Quali sono stati gli aspetti che hai preferito?"
+
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
+# defaultMessage: Do you want to add some more details?
+msgid "feedback_comments_header"
+msgstr "Vuoi aggiungere altri dettagli?"
+
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
+# defaultMessage: Comment is too long, maximum length is 200 characters
+msgid "feedback_comments_infotext_invalid"
+msgstr "Il testo è troppo lungo, la lunghezza massima è 200 caratteri"
+
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
+# defaultMessage: Add your comment, maximum length is 200 characters
+msgid "feedback_comments_infotext_valid"
+msgstr "Inserire massimo 200 caratteri"
+
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
+# defaultMessage: Comment
+msgid "feedback_comments_label_comment"
+msgstr "Dettaglio"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Next
+msgid "feedback_form_button_next"
+msgstr "Avanti"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Previous
+msgid "feedback_form_button_prev"
+msgstr "Indietro"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: No
+msgid "feedback_form_no"
+msgstr "No"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Submit your comment
+msgid "feedback_form_submit"
+msgstr "Invia il tuo commento"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
+# defaultMessage: Explain us why, and help us improve the quality of the site
+msgid "feedback_form_suggestions_placeholder"
+msgstr "Dacci il tuo parere per aiutarci a migliorare la qualità del sito"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Thank you for your feedback!
+msgid "feedback_form_thank_you"
+msgstr "Grazie, il tuo parere ci aiuterà a migliorare il servizio!"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: How clear is the information on this page?
+msgid "feedback_form_title"
+msgstr "Quanto sono chiare le informazioni su questa pagina?"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Yes
+msgid "feedback_form_yes"
+msgstr "Si"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Your feedback was sent!
+msgid "feedback_sent"
+msgstr "Il tuo feedback è stato inviato!"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
@@ -2329,6 +2390,11 @@ msgstr "Orario per il pubblico"
 msgid "order_by"
 msgstr "Ordina per"
 
+#: components/ItaliaTheme/View/EventoView/EventoContatti
+# defaultMessage: Organizzato da
+msgid "organizzato_da"
+msgstr "Organizzato da"
+
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Organizzazione
 msgid "organizzazione_riferimento"
@@ -2442,6 +2508,11 @@ msgstr "Procedura informatizzata online"
 # defaultMessage: Provvedimento finale
 msgid "provvedimento_finale"
 msgstr "Provvedimento finale"
+
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+# defaultMessage: Data di pubblicazione
+msgid "publication_date"
+msgstr "Data di pubblicazione"
 
 #: components/ItaliaTheme/View/Commons/LocationItem
 #: components/ItaliaTheme/View/VenueView/VenueWhere
@@ -3046,9 +3117,9 @@ msgstr "Accedi al servizio"
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderLinkServizio
 #: components/ItaliaTheme/View/ServizioView/ServizioAccedi
-# defaultMessage: Richiedi iscrizione online
+# defaultMessage: Accedi al servizio
 msgid "servizio_canale_digitale_link"
-msgstr "Richiedi iscrizione online"
+msgstr "Accedi al servizio"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioComeFare
 # defaultMessage: Come fare
@@ -3261,6 +3332,16 @@ msgid "sort_chiusura_procedimento_bando"
 msgstr "Chiusura procedimento bando"
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Data di pubblicazione
+msgid "sort_effective_date"
+msgstr "Data di pubblicazione"
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Data di modifica
+msgid "sort_modified_date"
+msgstr "Data di modifica"
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
 # defaultMessage: Ordina per
 msgid "sort_on"
 msgstr "Ordina per"
@@ -3442,6 +3523,11 @@ msgstr "Tipologia persona"
 msgid "title"
 msgstr "Titolo"
 
+#: config/Blocks/ListingOptions/defaultOptions
+# defaultMessage: Mostra la linea sotto il titolo
+msgid "titleLine"
+msgstr "Mostra la linea sotto il titolo"
+
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Titolare del potere sostitutivo
@@ -3548,6 +3634,11 @@ msgstr "Cerca una struttura"
 # defaultMessage: Tipologia
 msgid "uo_type"
 msgstr "Tipologia"
+
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+# defaultMessage: Data di aggiornamento
+msgid "update_date"
+msgstr "Data di aggiornamento"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 # defaultMessage: Sito web

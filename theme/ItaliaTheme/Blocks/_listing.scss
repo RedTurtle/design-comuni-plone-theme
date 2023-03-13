@@ -1,6 +1,13 @@
 .block.listing {
   .full-width {
     height: unset;
+
+    h2 {
+      @include rem-size(font-size, 32);
+      @include rem-size(line-height, 32);
+      font-weight: 600;
+      color: $secondary;
+    }
   }
 
   .listing-item picture {
@@ -34,5 +41,20 @@
         }
       }
     }
+  }
+
+  //* custom align button
+
+  .link-more-button-align-right {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin: 30px 0;
+  }
+
+  //* customizzazione: checkbox linea sotto al titolo
+  .title-bottom-line {
+    border-bottom: 1px solid #455b71;
+    padding-bottom: 15px;
   }
 }

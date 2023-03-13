@@ -23,9 +23,10 @@ const ServizioAccedi = ({ content }) => {
           title={intl.formatMessage(messages.canale_digitale)}
           hasBg
           p="4"
+          title_tag="h4"
         >
           {content.canale_digitale_link && (
-            <div className="font-serif mb-4">
+            <div className="mb-4">
               <p className="draftjs-buttons">
                 <UniversalLink href={content.canale_digitale_link}>
                   {intl.formatMessage(messages.canale_digitale_link)}
@@ -41,7 +42,10 @@ const ServizioAccedi = ({ content }) => {
       )}
       {(content.dove_rivolgersi?.length > 0 ||
         richTextHasContent(content.dove_rivolgersi_extra)) && (
-        <RichTextSection title={intl.formatMessage(messages.dove_rivolgersi)}>
+        <RichTextSection
+          title={intl.formatMessage(messages.dove_rivolgersi)}
+          title_tag="h4"
+        >
           {content.dove_rivolgersi?.map?.((dove) => (
             <div
               key={dove['@id']}
@@ -72,7 +76,7 @@ const messages = defineMessages({
   },
   canale_digitale_link: {
     id: 'servizio_canale_digitale_link',
-    defaultMessage: 'Richiedi iscrizione online',
+    defaultMessage: 'Accedi al servizio',
   },
   prenota_appuntamento: {
     id: 'servizio_prenota_appuntamento',
