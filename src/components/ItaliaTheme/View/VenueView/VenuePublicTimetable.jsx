@@ -21,7 +21,6 @@ const VenuePublicTimetable = ({ content }) => {
       content={content.orario_pubblico}
       tag_id={'orario-per-pubblico'}
       title={intl.formatMessage(messages.orario_pubblico)}
-      title_tag="h4"
     />
   ) : (
     <></>

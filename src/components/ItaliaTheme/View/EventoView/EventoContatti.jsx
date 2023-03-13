@@ -63,7 +63,6 @@ const EventoDocumenti = ({ content }) => {
     <RichTextSection
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
-      title_tag="h4"
     >
       {content.contact_info.map((contact) => (
         <ContactsCard contact={contact} key={contact['@id']} />

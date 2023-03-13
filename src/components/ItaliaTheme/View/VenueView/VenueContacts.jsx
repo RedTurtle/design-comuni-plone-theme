@@ -1,14 +1,12 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Card, CardBody, CardTitle } from 'design-react-kit';
-// import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import {
   richTextHasContent,
   RichTextSection,
   RichText,
   OfficeCard,
-  // ContactLink,
   ContactsCard,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
@@ -74,7 +72,6 @@ const VenueContacts = ({ content }) => {
       <RichTextSection
         tag_id="contatti"
         title={intl.formatMessage(messages.contatti)}
-        title_tag="h4"
       >
         {/* CONTATTI LUOGO */}
         {/* {(content?.telefono ||
@@ -158,7 +155,6 @@ const VenueContacts = ({ content }) => {
         <RichTextSection
           tag_id="struttura_responsabile"
           title={intl.formatMessage(messages.struttura_responsabile)}
-          title_tag="h4"
         >
           {content.struttura_responsabile_correlati?.length > 0 ? (
             //STRUTTURE RESPONSABILI CORRELATE
