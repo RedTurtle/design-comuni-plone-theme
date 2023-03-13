@@ -61,7 +61,7 @@ const ServizioTempiScadenze = ({ content, moment }) => {
             return (
               <div className="calendar-date">
                 {milestone_label}
-                <div className="calendar-date-description rounded ">
+                <div className="calendar-date-description rounded">
                   <div className="calendar-date-description-content">
                     {entry?.milestone && (
                       <h3 className="title-medium-2 mb-0">{entry.milestone}</h3>
