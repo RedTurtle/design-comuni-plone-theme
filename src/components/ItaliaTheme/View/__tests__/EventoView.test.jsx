@@ -53,7 +53,61 @@ const mock_mandatory = {
   '@id': 'http://localhost:3000/eventi/mega-evento',
   '@type': 'Event',
   UID: '3a046f1b374d465abaea77175ab20cce',
+  '@components': {
+    actions: {
+      '@id': 'http://localhost:3000/eventi/mega-evento/@actions',
+    },
+    aliases: {
+      '@id': 'http://localhost:3000/eventi/mega-evento/@aliases',
+    },
+    breadcrumbs: {
+      '@id': 'http://localhost:3000/eventi/mega-evento/@breadcrumbs',
+    },
+    contextnavigation: {
+      '@id': 'http://localhost:3000/eventi/mega-evento/@contextnavigation',
+    },
+    navigation: {
+      '@id': 'http://localhost:3000/eventi/mega-evento/@navigation',
+    },
+    subsite: {},
+    translations: {
+      '@id': 'http://localhost:3000/eventi/mega-evento/@translations',
+    },
+    types: {
+      '@id': 'http://localhost:3000/eventi/mega-evento/@types',
+    },
+    workflow: {
+      '@id': 'http://localhost:3000/eventi/mega-evento/@workflow',
+    },
+  },
+  '@id': 'http://localhost:3000/eventi/mega-evento',
+  '@type': 'Event',
+  UID: '3a046f1b374d465abaea77175ab20cce',
   a_chi_si_rivolge: {
+    blocks: {
+      '393849f3-523a-46e0-92ab-c826873a177f': {
+        '@type': 'text',
+        text: {
+          blocks: [
+            {
+              data: {},
+              depth: 0,
+              entityRanges: [],
+              inlineStyleRanges: [],
+              key: '37t3k',
+              text: 'Programmatori RedTurtle',
+              type: 'unstyled',
+            },
+          ],
+          entityMap: {},
+        },
+      },
+    },
+    blocks_layout: {
+      items: ['393849f3-523a-46e0-92ab-c826873a177f'],
+    },
+  },
+  contact_info: [
     blocks: {
       '393849f3-523a-46e0-92ab-c826873a177f': {
         '@type': 'text',
@@ -93,6 +147,80 @@ const mock_mandatory = {
       title: 'Ufficio delle Attività Produttive',
       value_punto_contatto: [
         {
+          pdc_type: 'email',
+          pdc_value: 'produttive@comune.cagliari.it',
+        },
+        {
+          pdc_type: 'fax',
+          pdc_value: '+393333333333',
+        },
+        {
+          pdc_type: 'url',
+          pdc_value: 'www.festadisantelfisio.com',
+        },
+        {
+          pdc_type: 'pec',
+          pdc_value: 'contatto@pec.it',
+        },
+        {
+          pdc_type: 'account',
+          pdc_value: 'Account',
+        },
+        {
+          pdc_type: 'whatsapp',
+          pdc_value: 'Whatsapp',
+        },
+        {
+          pdc_type: 'telegram',
+          pdc_value: 'Telegram',
+        },
+        {
+          pdc_type: 'skype',
+          pdc_value: 'Skype',
+        },
+        {
+          pdc_type: 'linkedin',
+          pdc_value: 'LinkedIn',
+        },
+        {
+          pdc_type: 'twitter',
+          pdc_value: 'Twitter',
+        },
+        {
+          pdc_type: 'telefono',
+          pdc_value: '+39 070 6776430',
+        },
+      ],
+    },
+  ],
+  descrizione_estesa: {
+    blocks: {
+      'c3aac6c5-b8d9-48b7-bc01-a7211248548b': {
+        '@type': 'text',
+        text: {
+          blocks: [
+            {
+              data: {},
+              depth: 0,
+              entityRanges: [],
+              inlineStyleRanges: [],
+              key: 'e0m83',
+              text: 'Un mega evento con delle mega iniziative',
+              type: 'unstyled',
+            },
+          ],
+          entityMap: {},
+        },
+      },
+    },
+    blocks_layout: {
+      items: ['c3aac6c5-b8d9-48b7-bc01-a7211248548b'],
+    },
+  },
+  end: '2023-01-20T09:00:00+00:00',
+      title: 'Ufficio delle Attività Produttive',
+      value_punto_contatto: [
+        {
           pdc_type: 'phone',
           pdc_value: '+39 070 6776430',
         },
@@ -112,7 +240,14 @@ const mock_mandatory = {
     {
       '@id': 'http://localhost:3000/eventi/mega-evento/immagini',
       '@type': 'Document',
+      '@id': 'http://localhost:3000/eventi/mega-evento/immagini',
+      '@type': 'Document',
       description: '',
+      design_italia_meta_type: 'Pagina',
+      has_children: false,
+      id: 'immagini',
+      image_field: '',
+      image_scales: null,
       design_italia_meta_type: 'Pagina',
       has_children: false,
       id: 'immagini',
@@ -120,8 +255,11 @@ const mock_mandatory = {
       image_scales: null,
       review_state: 'published',
       title: 'Immagini',
+      url: '/eventi/mega-evento/immagini',
     },
     {
+      '@id': 'http://localhost:3000/eventi/mega-evento/video',
+      '@type': 'Document',
       '@id': 'http://localhost:3000/eventi/mega-evento/video',
       '@type': 'Document',
       description: '',
@@ -132,6 +270,7 @@ const mock_mandatory = {
       image_scales: null,
       review_state: 'published',
       title: 'Video',
+      url: '/eventi/mega-evento/video',
     },
     {
       '@id': 'http://localhost:3000/eventi/mega-evento/sponsor_evento',
@@ -144,6 +283,7 @@ const mock_mandatory = {
       image_scales: null,
       review_state: 'published',
       title: 'Sponsor Evento',
+      url: '/eventi/mega-evento/sponsor_evento',
     },
     {
       '@id': 'http://localhost:3000/eventi/mega-evento/documenti',
@@ -156,32 +296,9 @@ const mock_mandatory = {
       image_scales: null,
       review_state: 'published',
       title: 'Allegati',
+      url: '/eventi/mega-evento/documenti',
     },
   ],
-  orari: {
-    blocks: {
-      'bdb27ec6-3371-42c0-9e55-65d69bfff7ef': {
-        '@type': 'text',
-        text: {
-          blocks: [
-            {
-              data: {},
-              depth: 0,
-              entityRanges: [],
-              inlineStyleRanges: [],
-              key: '5acqg',
-              text: 'Ho inventato tutto',
-              type: 'unstyled',
-            },
-          ],
-          entityMap: {},
-        },
-      },
-    },
-    blocks_layout: {
-      items: ['bdb27ec6-3371-42c0-9e55-65d69bfff7ef'],
-    },
-  },
   organizzato_da_esterno: {
     blocks: {
       'd8f67e41-c9a1-4993-9b0b-6124db188de2': {
@@ -206,47 +323,10 @@ const mock_mandatory = {
       items: ['d8f67e41-c9a1-4993-9b0b-6124db188de2'],
     },
   },
-  organizzato_da_interno: [
-    {
-      '@id':
-        'http://localhost:3000/amministrazione/uffici/assessorato-al-turismo',
-      '@type': 'UnitaOrganizzativa',
-      address: '',
-      circoscrizione: null,
-      city: 'Roma',
-      contact_info: {
-        blocks: {
-          'b3225997-aad5-467c-8e4a-b868838188dd': {
-            '@type': 'text',
-          },
-        },
-        blocks_layout: {
-          items: ['b3225997-aad5-467c-8e4a-b868838188dd'],
-        },
-      },
-      description: '',
-      design_italia_meta_type: 'Unita Organizzativa',
-      effective: null,
-      geolocation: {
-        latitude: 0,
-        longitude: 0,
-      },
-      has_children: true,
-      id: 'assessorato-al-turismo',
-      image_field: null,
-      image_scales: null,
-      nome_sede: null,
-      quartiere: null,
-      review_state: 'private',
-      street: 'Via Roma 1',
-      title: 'Assessorato al Turismo',
-      zip_code: '00100',
-    },
-  ],
   parent: {
     '@id': 'http://localhost:3000/eventi',
     '@type': 'Document',
-    description: '',
+    description: 'Lorem ipsum',
     design_italia_meta_type: 'Pagina',
     has_children: true,
     id: 'eventi',
@@ -261,8 +341,8 @@ const mock_mandatory = {
       '@id': 'http://localhost:3000/amministrazione/politici/arst-1',
       '@type': 'UnitaOrganizzativa',
       address: '',
-      circoscrizione: null,
-      city: null,
+      circoscrizione: '',
+      city: '',
       contact_info: [
         {
           '@id': 'http://localhost:3000/amministrazione/politici/arst',
@@ -294,19 +374,19 @@ const mock_mandatory = {
       id: 'arst-1',
       image_field: null,
       image_scales: null,
-      nome_sede: null,
-      quartiere: null,
+      nome_sede: '',
+      quartiere: '',
       review_state: 'private',
-      street: null,
+      street: '',
       title: 'ARST',
-      zip_code: null,
+      zip_code: '',
     },
   ],
+  title: 'Mega Evento',
   tipologia_evento: {
     title: 'Evento culturale',
     token: 'evento_culturale',
   },
-  title: 'Mega Evento',
 };
 
 const mock_allfields = {
@@ -320,7 +400,7 @@ const mock_allfields = {
     {
       '@id': 'http://localhost:3000/notizie',
       '@type': 'Document',
-      description: '',
+      description: 'Is this the real life?',
       design_italia_meta_type: 'Pagina',
       effective: '2023-01-03T15:40:54+00:00',
       has_children: true,
@@ -335,6 +415,8 @@ const mock_allfields = {
     title: 'Italia',
     token: '380',
   },
+  created: '2023-01-20T08:12:40+00:00',
+  creators: ['admin'],
   description: 'Descrizione del mega evento',
   descrizione_destinatari: {
     blocks: {
@@ -360,30 +442,7 @@ const mock_allfields = {
       items: ['b9b06941-630d-4876-ad94-5ee8fcaef369'],
     },
   },
-  descrizione_estesa: {
-    blocks: {
-      'c3aac6c5-b8d9-48b7-bc01-a7211248548b': {
-        '@type': 'text',
-        text: {
-          blocks: [
-            {
-              data: {},
-              depth: 0,
-              entityRanges: [],
-              inlineStyleRanges: [],
-              key: 'e0m83',
-              text: 'Un mega evento con delle mega iniziative',
-              type: 'unstyled',
-            },
-          ],
-          entityMap: {},
-        },
-      },
-    },
-    blocks_layout: {
-      items: ['c3aac6c5-b8d9-48b7-bc01-a7211248548b'],
-    },
-  },
+  design_italia_meta_type: 'Evento',
   effective: null,
   exclude_from_nav: false,
   expires: null,
@@ -391,6 +450,7 @@ const mock_allfields = {
     latitude: 39.21252001040267,
     longitude: 9.115209984181092,
   },
+  id: 'mega-evento',
   image: {
     'content-type': 'image/png',
     download:
@@ -516,9 +576,27 @@ const mock_allfields = {
       image_scales: null,
       nome_sede: null,
       orario_pubblico: {
-        blocks: {},
+        blocks: {
+          'b87e0b6c-e210-4d75-964b-17d71a281ada': {
+            '@type': 'text',
+            text: {
+              blocks: [
+                {
+                  data: {},
+                  depth: 0,
+                  entityRanges: [],
+                  inlineStyleRanges: [],
+                  key: 'b1c6n',
+                  text: 'Built a home and watched it burn',
+                  type: 'unstyled',
+                },
+              ],
+              entityMap: {},
+            },
+          },
+        },
         blocks_layout: {
-          items: [],
+          items: ['b87e0b6c-e210-4d75-964b-17d71a281ada'],
         },
       },
       pec: null,
@@ -549,12 +627,70 @@ const mock_allfields = {
     'content-type': 'text/html',
     data: '<p>Comune di io-Comune</p>',
     encoding: 'utf-8',
+      riferimento_mail_struttura: null,
+      riferimento_pec_struttura: null,
+      riferimento_telefonico_struttura: null,
+      street: 'Via Liszt, 21',
+      telefono: null,
+      tipologia_luogo: [
+        {
+          title: 'Architettura Militare e fortificata',
+          token: 'architettura_militare_e_fortificata',
+        },
+      ],
+      title: 'Il castello normanno',
+      web: null,
+      zip_code: '00144',
+    },
+  ],
+  modified: '2023-01-25T15:23:08+00:00',
+  next_item: {
+    '@id': 'http://localhost:3000/eventi/lorem-ipsum',
+    '@type': 'Event',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus magna vel porta euismod. Aenean vitae lacus viverra, hendrerit velit a, maximus tortor. Suspendisse finibus ultrices eros, vitae tristique risus sollicitudin in. Ut pellentesque commodo r',
+    title: 'Lorem ipsum',
   },
-  persone_amministrazione: [
+  nome_sede: 'Sede del mega evento',
+  open_end: true,
+  opengraph_description: null,
+  opengraph_image: null,
+  opengraph_title: null,
+  orari: {
+    blocks: {
+      'bdb27ec6-3371-42c0-9e55-65d69bfff7ef': {
+        '@type': 'text',
+        text: {
+          blocks: [
+            {
+              data: {},
+              depth: 0,
+              entityRanges: [],
+              inlineStyleRanges: [],
+              key: '5acqg',
+              text: 'Ho inventato tutto',
+              type: 'unstyled',
+            },
+          ],
+          entityMap: {},
+        },
+      },
+    },
+    blocks_layout: {
+      items: ['bdb27ec6-3371-42c0-9e55-65d69bfff7ef'],
+    },
+  },
+  organizzato_da_interno: [
     {
       '@id':
         'http://localhost:3000/amministrazione/personale-amministrativo/franco-franchini',
       '@type': 'Persona',
+        'http://localhost:3000/amministrazione/uffici/assessorato-al-turismo',
+      '@type': 'UnitaOrganizzativa',
+      address: '',
+      circoscrizione: '',
+      city: 'Roma',
+      contact_info: [],
       description: '',
       design_italia_meta_type: 'Persona pubblica',
       effective: null,
@@ -565,13 +701,148 @@ const mock_allfields = {
         foto_persona: [null],
       },
       incarichi: '',
+      design_italia_meta_type: 'Unita Organizzativa',
+      effective: null,
+      geolocation: {
+        latitude: 0,
+        longitude: 0,
+      },
+      has_children: true,
+      id: 'assessorato-al-turismo',
+      image_field: null,
+      image_scales: null,
+      nome_sede: '',
+      quartiere: '',
+      review_state: 'private',
+      street: 'Via Roma 1',
+      tipologia_organizzazione: {
+        title: 'Struttura amministrativa',
+        token: 'struttura_amministrativa',
+      },
+      title: 'Assessorato al Turismo',
+      zip_code: '00100',
+    },
+  ],
+  patrocinato_da: 'Regione Autonome della Sardegna',
+  persone_amministrazione: [
+    {
+      '@id':
+        'http://localhost:3000/amministrazione/personale-amministrativo/valerio-alfio-boi-1',
+      '@type': 'Persona',
+      description: '',
+      design_italia_meta_type: 'Persona pubblica',
+      effective: null,
+      has_children: true,
+      id: 'valerio-alfio-boi-1',
+      image_field: 'foto_persona',
+      image_scales: {
+        foto_persona: [null],
+      },
+      incarichi: 'Incarico di Valerio Alfio Boi',
       review_state: 'private',
       title: 'Franco Franchini',
+      title: 'Valerio Alfio Boi',
     },
   ],
   preview_caption: null,
   preview_image: null,
+  preview_caption: 'Didascalia immagine preview',
+  preview_image: {
+    'content-type': 'image/jpeg',
+    download:
+      'http://localhost:3000/eventi/mega-evento/@@images/preview_image-5184-b5d567a7ba608b94404e30c90b255c22.jpeg',
+    filename: 'national-cancer-institute.jpeg',
+    height: 3456,
+    scales: {
+      gallery: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-250-1ec9475de2124b017f1dd92d4888a04a.jpeg',
+        height: 166,
+        width: 250,
+      },
+      great: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-1200-dce45656c72c5e2fda91d15ea1700b38.jpeg',
+        height: 800,
+        width: 1200,
+      },
+      huge: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-1600-43b4907c74976d400296f42c4bee8b89.jpeg',
+        height: 1066,
+        width: 1600,
+      },
+      icon: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-32-10fa05879a725f1c0a79ff6cb9299c97.jpeg',
+        height: 21,
+        width: 32,
+      },
+      large: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-800-be70acf978f5aacbe83af8482c6a2381.jpeg',
+        height: 533,
+        width: 800,
+      },
+      larger: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-1000-820f7ead7e59728ce3ee9bb8021ec950.jpeg',
+        height: 666,
+        width: 1000,
+      },
+      listing: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-16-ab5be9555a009fb3de92b9d049462440.jpeg',
+        height: 10,
+        width: 16,
+      },
+      midi: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-300-8edca2b5c68239a69a87584b16f146e4.jpeg',
+        height: 200,
+        width: 300,
+      },
+      mini: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-200-10ce8dad9c6577e5f08e12bc7d94be91.jpeg',
+        height: 133,
+        width: 200,
+      },
+      preview: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-400-0500bc73ae0d0d6f304e4de314a41e73.jpeg',
+        height: 266,
+        width: 400,
+      },
+      teaser: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-600-389097fa4b7b5dee7b16be86a1957043.jpeg',
+        height: 400,
+        width: 600,
+      },
+      thumb: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-128-91e9caaa30bdb024c025190a58db4eae.jpeg',
+        height: 85,
+        width: 128,
+      },
+      tile: {
+        download:
+          'http://localhost:3000/eventi/mega-evento/@@images/preview_image-64-7d4fda773924ded6e0ac3321d3046c81.jpeg',
+        height: 42,
+        width: 64,
+      },
+    },
+    size: 2026538,
+    width: 5184,
+  },
   previous_item: {
+    '@id': 'http://localhost:3000/eventi/363-festa-di-santefisio',
+    '@type': 'Event',
+    description:
+      "Il 1° maggio 2019 Cagliari e tutta la Sardegna festeggiano la 363ª Festa di Sant'Efisio. Un intenso momento di devozione, fede, cultura e tradizioni centenarie che si fondono in una processione che non ha eguali.",
+    title: "363^ Festa di Sant'Efisio",
+
     '@id': 'http://localhost:3000/eventi/363-festa-di-santefisio',
     '@type': 'Event',
     description:
@@ -579,6 +850,30 @@ const mock_allfields = {
     title: "363^ Festa di Sant'Efisio",
   },
   prezzo: {
+    blocks: {
+      '3ae432d0-6255-4168-8fba-578c46f2321d': {
+        '@type': 'text',
+        text: {
+          blocks: [
+            {
+              data: {},
+              depth: 0,
+              entityRanges: [],
+              inlineStyleRanges: [],
+              key: 's9f2',
+              text: '10€',
+              type: 'unstyled',
+            },
+          ],
+          entityMap: {},
+        },
+      },
+    },
+    blocks_layout: {
+      items: ['3ae432d0-6255-4168-8fba-578c46f2321d'],
+    },
+  },
+  quartiere: 'Bello',
     blocks: {
       '3ae432d0-6255-4168-8fba-578c46f2321d': {
         '@type': 'text',
@@ -723,6 +1018,216 @@ const mock_allfields = {
   seo_title: null,
   sottotitolo: 'Sottotitolo del mega evento',
   street: 'Via Cincillà 198',
+  relatedItems: [
+    {
+      '@id':
+        'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista',
+      '@type': 'Event',
+      description:
+        'Dal 2 al 3 giugno torna il torneo di beneficienza “Tutti in pista”. La raccolta fondi finanzierà progetti sportivi per ragazzi e ragazze.',
+      design_italia_meta_type: 'Evento',
+      effective: '2023-01-03T15:40:33+00:00',
+      end: '2023-06-03T15:00:00+00:00',
+      has_children: true,
+      id: 'torneo-di-beneficienza-tutti-in-pista',
+      image_field: 'preview_image',
+      image_scales: {
+        image: [
+          {
+            'content-type': 'image/jpeg',
+            download:
+              '@@images/image-5184-40c7eaa33c6c54aa29dedac49e94df89.jpeg',
+            filename: 'national-cancer-institute.jpeg',
+            height: 3456,
+            scales: {
+              gallery: {
+                download:
+                  '@@images/image-250-7b0e56e988604eea439fa33ffeb8550a.jpeg',
+                height: 166,
+                width: 250,
+              },
+              great: {
+                download:
+                  '@@images/image-1200-3ce6f15e8ecb14ff7f8cc2212ff8466f.jpeg',
+                height: 800,
+                width: 1200,
+              },
+              huge: {
+                download:
+                  '@@images/image-1600-0e8d74773520f196e3a3a024901c2459.jpeg',
+                height: 1066,
+                width: 1600,
+              },
+              icon: {
+                download:
+                  '@@images/image-32-12137579b4452eac919248d0a4f016b0.jpeg',
+                height: 21,
+                width: 32,
+              },
+              large: {
+                download:
+                  '@@images/image-800-12943fd32b1636c8809a0fbb551a3e39.jpeg',
+                height: 533,
+                width: 800,
+              },
+              larger: {
+                download:
+                  '@@images/image-1000-f835c3eb1ef0543023d1cc70870bd9c1.jpeg',
+                height: 666,
+                width: 1000,
+              },
+              listing: {
+                download:
+                  '@@images/image-16-845a44d9fbb2de07b170d4c51905b287.jpeg',
+                height: 10,
+                width: 16,
+              },
+              midi: {
+                download:
+                  '@@images/image-300-798a37614985cf5005f5366561c9be98.jpeg',
+                height: 200,
+                width: 300,
+              },
+              mini: {
+                download:
+                  '@@images/image-200-01545d595ae8b4fe34b81d884e9707d7.jpeg',
+                height: 133,
+                width: 200,
+              },
+              preview: {
+                download:
+                  '@@images/image-400-c8f88b078f0c31df1d931e6ebf975549.jpeg',
+                height: 266,
+                width: 400,
+              },
+              teaser: {
+                download:
+                  '@@images/image-600-530df8bed590a10142ff8af7d0e280fc.jpeg',
+                height: 400,
+                width: 600,
+              },
+              thumb: {
+                download:
+                  '@@images/image-128-dde65d0e13ed94eb193db2159ea6be72.jpeg',
+                height: 85,
+                width: 128,
+              },
+              tile: {
+                download:
+                  '@@images/image-64-0e97272d5a8b4a796d08a7f055345bbd.jpeg',
+                height: 42,
+                width: 64,
+              },
+            },
+            size: 2026538,
+            width: 5184,
+          },
+        ],
+        preview_image: [
+          {
+            'content-type': 'image/jpeg',
+            download:
+              '@@images/preview_image-5184-7ecfd1173eff751c8d1cb7914c7518d8.jpeg',
+            filename: 'national-cancer-institute.jpeg',
+            height: 3456,
+            scales: {
+              gallery: {
+                download:
+                  '@@images/preview_image-250-c96a676e655ec293a54e8d0f3f3b2f2f.jpeg',
+                height: 166,
+                width: 250,
+              },
+              great: {
+                download:
+                  '@@images/preview_image-1200-9c8c7d44877ac3a0f73bbca89a5394e5.jpeg',
+                height: 800,
+                width: 1200,
+              },
+              huge: {
+                download:
+                  '@@images/preview_image-1600-1675145136aabae9ff1d522b548308bc.jpeg',
+                height: 1066,
+                width: 1600,
+              },
+              icon: {
+                download:
+                  '@@images/preview_image-32-b253a826ca285a0bf1bdaf017bccd712.jpeg',
+                height: 21,
+                width: 32,
+              },
+              large: {
+                download:
+                  '@@images/preview_image-800-460a4d552e7f6daacd4405cea33f8799.jpeg',
+                height: 533,
+                width: 800,
+              },
+              larger: {
+                download:
+                  '@@images/preview_image-1000-952437d4893daef993e664fd2514d046.jpeg',
+                height: 666,
+                width: 1000,
+              },
+              listing: {
+                download:
+                  '@@images/preview_image-16-ec07d423f977183b0ec460e71e0c82ef.jpeg',
+                height: 10,
+                width: 16,
+              },
+              midi: {
+                download:
+                  '@@images/preview_image-300-c4e0f8ef57aca43f96fccb6bf5321073.jpeg',
+                height: 200,
+                width: 300,
+              },
+              mini: {
+                download:
+                  '@@images/preview_image-200-5abca393768d0a22c1ade849537f8746.jpeg',
+                height: 133,
+                width: 200,
+              },
+              preview: {
+                download:
+                  '@@images/preview_image-400-15eea7738a74beb28e506e20fa788a38.jpeg',
+                height: 266,
+                width: 400,
+              },
+              teaser: {
+                download:
+                  '@@images/preview_image-600-85d77ae4fb15ddb33f911f00ba274db8.jpeg',
+                height: 400,
+                width: 600,
+              },
+              thumb: {
+                download:
+                  '@@images/preview_image-128-0fd297681d054ef4aaf4df372aeb9f75.jpeg',
+                height: 85,
+                width: 128,
+              },
+              tile: {
+                download:
+                  '@@images/preview_image-64-5ab5c9fdc31755ff65aa52e7c76ede62.jpeg',
+                height: 42,
+                width: 64,
+              },
+            },
+            size: 2026538,
+            width: 5184,
+          },
+        ],
+      },
+      review_state: 'published',
+      start: '2023-06-02T14:39:39+00:00',
+      title: 'Torneo di beneficienza "Tutti in pista"',
+    },
+  ],
+  review_state: 'private',
+  rights: '',
+  seo_canonical_url: null,
+  seo_description: null,
+  seo_noindex: null,
+  seo_title: null,
+  sottotitolo: 'Sottotitolo del mega evento',
+  street: 'Via Cincillà 198',
   subjects: [],
   supportato_da: [
     {
@@ -775,7 +1280,43 @@ const mock_allfields = {
       image_scales: null,
       review_state: 'private',
       title: 'Muoversi',
+      '@id': 'http://localhost:3000/argomenti/muoversi',
+      '@type': 'Pagina Argomento',
+      description: '',
+      design_italia_meta_type: 'Argomento',
+      effective: null,
+      has_children: false,
+      id: 'muoversi',
+      image_field: null,
+      image_scales: null,
+      review_state: 'private',
+      title: 'Muoversi',
     },
+  ],
+  ulteriori_informazioni: {
+    blocks: {
+      'fe8ee3f2-c1b3-4692-98ed-d9ca7821fbab': {
+        '@type': 'text',
+        text: {
+          blocks: [
+            {
+              data: {},
+              depth: 0,
+              entityRanges: [],
+              inlineStyleRanges: [],
+              key: '2lvs7',
+              text: 'Magliette gratis',
+              type: 'unstyled',
+            },
+          ],
+          entityMap: {},
+        },
+      },
+    },
+    blocks_layout: {
+      items: ['fe8ee3f2-c1b3-4692-98ed-d9ca7821fbab'],
+    },
+  },
   ],
   ulteriori_informazioni: {
     blocks: {
@@ -1409,6 +1950,10 @@ it('expect to have all mandatory fields in page', async () => {
   expect(screen.getByText(/Programmatori RedTurtle/i)).toBeInTheDocument();
   //tipo evento --> non appare
   expect(screen.getByText(/Evento culturale/i)).toBeInTheDocument();
+  // contatti
+  expect(
+    screen.getByRole('heading', { name: /Contatti/i }),
+  ).toBeInTheDocument();
 
   // !!!!!!!!!!!!!!!!!
   // !!!!!!!!!!!!!!!!!
@@ -1433,6 +1978,10 @@ it('expect to have all mandatory fields in page', async () => {
   //punto di contatto
   expect(
     screen.getByText(/Ufficio delle attività produttive/i),
+  ).toBeInTheDocument();
+  // date e orari
+  expect(
+    screen.getByRole('heading', { name: /Date e orari/i }),
   ).toBeInTheDocument();
 });
 
