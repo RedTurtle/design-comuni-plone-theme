@@ -19,16 +19,12 @@ const ServizioUlterioriInformazioni = ({ content }) => {
         />
       )}
       {content.codice_ipa && (
-        <RichTextSection
-          title_tag="h3"
-          title={intl.formatMessage(messages.codice_ipa)}
-        >
+        <RichTextSection title={intl.formatMessage(messages.codice_ipa)}>
           <p className="font-serif">{content.codice_ipa}</p>
         </RichTextSection>
       )}
       {content.settore_merceologico && (
         <RichTextSection
-          title_tag="h3"
           title={intl.formatMessage(messages.settore_merceologico)}
         >
           <p className="font-serif">{content.settore_merceologico}</p>

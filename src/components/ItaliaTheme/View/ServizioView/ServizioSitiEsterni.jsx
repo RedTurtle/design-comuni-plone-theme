@@ -23,7 +23,7 @@ const ServizioSitiEsterni = ({ content }) => {
       title={intl.formatMessage(messages.link_siti_esterni)}
     >
       <Card
-        className="card card-teaser shadow p-0 mt-3 rounded link-esterni"
+        className="card card-teaser shadow py-3 px-2 mt-3 rounded link-esterni"
         noWrapper={true}
         tag="div"
       >
