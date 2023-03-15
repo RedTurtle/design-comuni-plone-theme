@@ -60,7 +60,6 @@ const mock_mandatory = {
 
 const mock_allfields = {
   ...mock_mandatory,
-
   allow_discussion: false,
   blocks: {
     'cb95f0fa-189c-4d6a-82a9-8182f7e2c0d4': {
@@ -96,7 +95,7 @@ const mock_allfields = {
   correlato_in_evidenza: [],
   created: '2023-01-03T15:26:54+00:00',
   creators: ['admin'],
-  description: '',
+  description: 'Is this the real life?',
   design_italia_meta_type: 'Pagina',
   effective: '2023-01-03T15:40:54+00:00',
   exclude_from_nav: false,
@@ -104,6 +103,11 @@ const mock_allfields = {
   id: 'notizie',
   image: null,
   image_caption: null,
+  info_testata: {
+    'content-type': 'text/html',
+    data: '<p><br></p>',
+    encoding: 'utf8',
+  },
   is_folderish: true,
   items: [
     {
@@ -112,7 +116,7 @@ const mock_allfields = {
       '@type': 'News Item',
       description:
         'Le informazioni per partecipare all’iniziativa rivolta a tutte le fasce d’età per promuovere l’attività motoria nelle aree verdi della città.',
-      design_italia_meta_type: 'Notizia',
+      design_italia_meta_type: null,
       has_children: true,
       id: 'sport-nel-verde-le-iniziative-della-prossima-edizione',
       image_field: 'preview_image',
@@ -301,6 +305,36 @@ const mock_allfields = {
         ],
       },
       review_state: 'published',
+      tipologia_notizia: [
+        {
+          title: null,
+          token: 'N',
+        },
+        {
+          title: null,
+          token: 'o',
+        },
+        {
+          title: null,
+          token: 't',
+        },
+        {
+          title: null,
+          token: 'i',
+        },
+        {
+          title: null,
+          token: 'z',
+        },
+        {
+          title: null,
+          token: 'i',
+        },
+        {
+          title: null,
+          token: 'a',
+        },
+      ],
       title: 'Sport nel verde: le iniziative della prossima edizione',
     },
     {
@@ -309,12 +343,38 @@ const mock_allfields = {
       '@type': 'News Item',
       description:
         'Partiti i lavori per l’adeguamento dell’impianto. La riapertura è prevista per giugno 2023.',
-      design_italia_meta_type: 'avviso',
+      design_italia_meta_type: 'Avviso',
       has_children: true,
       id: 'chiusa-per-ristrutturazione-la-piscina-minghetti',
       image_field: '',
       image_scales: null,
       review_state: 'private',
+      tipologia_notizia: [
+        {
+          title: null,
+          token: 'a',
+        },
+        {
+          title: null,
+          token: 'v',
+        },
+        {
+          title: null,
+          token: 'v',
+        },
+        {
+          title: null,
+          token: 'i',
+        },
+        {
+          title: null,
+          token: 's',
+        },
+        {
+          title: null,
+          token: 'o',
+        },
+      ],
       title: 'Chiusa per ristrutturazione la piscina Minghetti',
     },
     {
@@ -322,7 +382,7 @@ const mock_allfields = {
         'http://localhost:3000/notizie/so-you-think-you-can-stop-me-and-spit-in-my-eye',
       '@type': 'News Item',
       description: 'So you think you can love me and leave me to die',
-      design_italia_meta_type: 'notizia',
+      design_italia_meta_type: 'Notizia',
       has_children: true,
       id: 'so-you-think-you-can-stop-me-and-spit-in-my-eye',
       image_field: 'preview_image',
@@ -453,19 +513,19 @@ const mock_allfields = {
               },
               large: {
                 download:
-                  '@@images/preview_image-800-60c57a8c74c21c289ef969d0f792b5ff.webp',
+                  '@@images/preview_image-800-60c57a8c74c21c289ef969d0f792b5ff.jpeg',
                 height: 533,
                 width: 800,
               },
               larger: {
                 download:
-                  '@@images/preview_image-1000-fd1d78cac12899a019ba4ca8525bbf31.webp',
+                  '@@images/preview_image-1000-fd1d78cac12899a019ba4ca8525bbf31.jpeg',
                 height: 666,
                 width: 1000,
               },
               listing: {
                 download:
-                  '@@images/preview_image-16-3ed212ed2808128b22aae7159c0ddd00.webp',
+                  '@@images/preview_image-16-3ed212ed2808128b22aae7159c0ddd00.jpeg',
                 height: 10,
                 width: 16,
               },
@@ -489,7 +549,7 @@ const mock_allfields = {
               },
               teaser: {
                 download:
-                  '@@images/preview_image-600-4e55af059198a0f440d21500a699070b.webp',
+                  '@@images/preview_image-600-4e55af059198a0f440d21500a699070b.jpeg',
                 height: 399,
                 width: 600,
               },
@@ -512,6 +572,36 @@ const mock_allfields = {
         ],
       },
       review_state: 'private',
+      tipologia_notizia: [
+        {
+          title: null,
+          token: 'n',
+        },
+        {
+          title: null,
+          token: 'o',
+        },
+        {
+          title: null,
+          token: 't',
+        },
+        {
+          title: null,
+          token: 'i',
+        },
+        {
+          title: null,
+          token: 'z',
+        },
+        {
+          title: null,
+          token: 'i',
+        },
+        {
+          title: null,
+          token: 'a',
+        },
+      ],
       title: 'So you think you can stop me and spit in my eye',
     },
   ],
@@ -525,13 +615,13 @@ const mock_allfields = {
     locked: false,
     stealable: true,
   },
-  modified: '2023-01-31T11:06:15+00:00',
+  modified: '2023-01-31T13:54:54+00:00',
   mostra_bottoni_condivisione: false,
   mostra_navigazione: false,
   next_item: {
     '@id': 'http://localhost:3000/eventi',
     '@type': 'Document',
-    description: '',
+    description: 'Lorem ipsum',
     title: 'Eventi',
   },
   opengraph_description: null,
@@ -564,6 +654,7 @@ const mock_allfields = {
   subjects: [],
   table_of_contents: null,
   tassonomia_argomenti: [],
+  title: 'Notizie',
   version: 'current',
   versioning_enabled: true,
   working_copy: null,

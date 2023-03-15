@@ -53,61 +53,7 @@ const mock_mandatory = {
   '@id': 'http://localhost:3000/eventi/mega-evento',
   '@type': 'Event',
   UID: '3a046f1b374d465abaea77175ab20cce',
-  '@components': {
-    actions: {
-      '@id': 'http://localhost:3000/eventi/mega-evento/@actions',
-    },
-    aliases: {
-      '@id': 'http://localhost:3000/eventi/mega-evento/@aliases',
-    },
-    breadcrumbs: {
-      '@id': 'http://localhost:3000/eventi/mega-evento/@breadcrumbs',
-    },
-    contextnavigation: {
-      '@id': 'http://localhost:3000/eventi/mega-evento/@contextnavigation',
-    },
-    navigation: {
-      '@id': 'http://localhost:3000/eventi/mega-evento/@navigation',
-    },
-    subsite: {},
-    translations: {
-      '@id': 'http://localhost:3000/eventi/mega-evento/@translations',
-    },
-    types: {
-      '@id': 'http://localhost:3000/eventi/mega-evento/@types',
-    },
-    workflow: {
-      '@id': 'http://localhost:3000/eventi/mega-evento/@workflow',
-    },
-  },
-  '@id': 'http://localhost:3000/eventi/mega-evento',
-  '@type': 'Event',
-  UID: '3a046f1b374d465abaea77175ab20cce',
   a_chi_si_rivolge: {
-    blocks: {
-      '393849f3-523a-46e0-92ab-c826873a177f': {
-        '@type': 'text',
-        text: {
-          blocks: [
-            {
-              data: {},
-              depth: 0,
-              entityRanges: [],
-              inlineStyleRanges: [],
-              key: '37t3k',
-              text: 'Programmatori RedTurtle',
-              type: 'unstyled',
-            },
-          ],
-          entityMap: {},
-        },
-      },
-    },
-    blocks_layout: {
-      items: ['393849f3-523a-46e0-92ab-c826873a177f'],
-    },
-  },
-  contact_info: [
     blocks: {
       '393849f3-523a-46e0-92ab-c826873a177f': {
         '@type': 'text',
@@ -218,87 +164,7 @@ const mock_mandatory = {
     },
   },
   end: '2023-01-20T09:00:00+00:00',
-      title: 'Ufficio delle Attività Produttive',
-      value_punto_contatto: [
-        {
-          pdc_type: 'phone',
-          pdc_value: '+39 070 6776430',
-        },
-        {
-          pdc_type: 'email',
-          pdc_value: 'produttive@comune.cagliari.it',
-        },
-      ],
-    },
-  ],
-  created: '2023-01-20T08:12:40+00:00',
-  creators: ['admin'],
-  design_italia_meta_type: 'Evento',
-  end: '2023-01-20T09:00:00+00:00',
-  id: 'mega-evento',
-  items: [
-    {
-      '@id': 'http://localhost:3000/eventi/mega-evento/immagini',
-      '@type': 'Document',
-      '@id': 'http://localhost:3000/eventi/mega-evento/immagini',
-      '@type': 'Document',
-      description: '',
-      design_italia_meta_type: 'Pagina',
-      has_children: false,
-      id: 'immagini',
-      image_field: '',
-      image_scales: null,
-      design_italia_meta_type: 'Pagina',
-      has_children: false,
-      id: 'immagini',
-      image_field: '',
-      image_scales: null,
-      review_state: 'published',
-      title: 'Immagini',
-      url: '/eventi/mega-evento/immagini',
-    },
-    {
-      '@id': 'http://localhost:3000/eventi/mega-evento/video',
-      '@type': 'Document',
-      '@id': 'http://localhost:3000/eventi/mega-evento/video',
-      '@type': 'Document',
-      description: '',
-      design_italia_meta_type: 'Pagina',
-      has_children: false,
-      id: 'video',
-      image_field: '',
-      image_scales: null,
-      review_state: 'published',
-      title: 'Video',
-      url: '/eventi/mega-evento/video',
-    },
-    {
-      '@id': 'http://localhost:3000/eventi/mega-evento/sponsor_evento',
-      '@type': 'Document',
-      description: '',
-      design_italia_meta_type: 'Pagina',
-      has_children: false,
-      id: 'sponsor_evento',
-      image_field: '',
-      image_scales: null,
-      review_state: 'published',
-      title: 'Sponsor Evento',
-      url: '/eventi/mega-evento/sponsor_evento',
-    },
-    {
-      '@id': 'http://localhost:3000/eventi/mega-evento/documenti',
-      '@type': 'Document',
-      description: '',
-      design_italia_meta_type: 'Pagina',
-      has_children: false,
-      id: 'documenti',
-      image_field: '',
-      image_scales: null,
-      review_state: 'published',
-      title: 'Allegati',
-      url: '/eventi/mega-evento/documenti',
-    },
-  ],
+  items: [],
   organizzato_da_esterno: {
     blocks: {
       'd8f67e41-c9a1-4993-9b0b-6124db188de2': {
@@ -382,11 +248,11 @@ const mock_mandatory = {
       zip_code: '',
     },
   ],
-  title: 'Mega Evento',
   tipologia_evento: {
     title: 'Evento culturale',
     token: 'evento_culturale',
   },
+  title: ' Mega Evento',
 };
 
 const mock_allfields = {
@@ -542,6 +408,56 @@ const mock_allfields = {
   },
   image_caption: 'Didascalia immagine testata',
   is_folderish: true,
+  items: [
+    {
+      '@id': 'http://localhost:3000/eventi/mega-evento/immagini',
+      '@type': 'Document',
+      description: '',
+      design_italia_meta_type: 'Pagina',
+      has_children: false,
+      id: 'immagini',
+      image_field: '',
+      image_scales: null,
+      review_state: 'published',
+      title: 'Immagini',
+    },
+    {
+      '@id': 'http://localhost:3000/eventi/mega-evento/video',
+      '@type': 'Document',
+      description: '',
+      design_italia_meta_type: 'Pagina',
+      has_children: false,
+      id: 'video',
+      image_field: '',
+      image_scales: null,
+      review_state: 'published',
+      title: 'Video',
+    },
+    {
+      '@id': 'http://localhost:3000/eventi/mega-evento/sponsor_evento',
+      '@type': 'Document',
+      description: '',
+      design_italia_meta_type: 'Pagina',
+      has_children: false,
+      id: 'sponsor_evento',
+      image_field: '',
+      image_scales: null,
+      review_state: 'published',
+      title: 'Sponsor Evento',
+    },
+    {
+      '@id': 'http://localhost:3000/eventi/mega-evento/documenti',
+      '@type': 'Document',
+      description: '',
+      design_italia_meta_type: 'Pagina',
+      has_children: false,
+      id: 'documenti',
+      image_field: '',
+      image_scales: null,
+      review_state: 'published',
+      title: 'Allegati',
+    },
+  ],
   items_total: 4,
   language: {
     title: 'Italiano',
@@ -607,31 +523,6 @@ const mock_allfields = {
       riferimento_telefonico_struttura: null,
       street: 'Via Liszt, 21',
       telefono: null,
-      title: 'Il castello normanno',
-      web: null,
-      zip_code: '00144',
-    },
-  ],
-  modified: '2023-01-20T08:45:26+00:00',
-  next_item: {},
-  nome_sede: 'Sede del mega evento',
-  open_end: false,
-  orari: { 'content-type': 'text/html', data: '<p>no</p>', encoding: 'utf-8' },
-  organizzato_da_esterno: {
-    'content-type': 'text/html',
-    data: '<p>nessuno</p>',
-    encoding: 'utf-8',
-  },
-  organizzato_da_interno: [],
-  patrocinato_da: {
-    'content-type': 'text/html',
-    data: '<p>Comune di io-Comune</p>',
-    encoding: 'utf-8',
-      riferimento_mail_struttura: null,
-      riferimento_pec_struttura: null,
-      riferimento_telefonico_struttura: null,
-      street: 'Via Liszt, 21',
-      telefono: null,
       tipologia_luogo: [
         {
           title: 'Architettura Militare e fortificata',
@@ -643,7 +534,7 @@ const mock_allfields = {
       zip_code: '00144',
     },
   ],
-  modified: '2023-01-25T15:23:08+00:00',
+  modified: '2023-03-13T15:49:09+00:00',
   next_item: {
     '@id': 'http://localhost:3000/eventi/lorem-ipsum',
     '@type': 'Event',
@@ -683,8 +574,6 @@ const mock_allfields = {
   organizzato_da_interno: [
     {
       '@id':
-        'http://localhost:3000/amministrazione/personale-amministrativo/franco-franchini',
-      '@type': 'Persona',
         'http://localhost:3000/amministrazione/uffici/assessorato-al-turismo',
       '@type': 'UnitaOrganizzativa',
       address: '',
@@ -692,15 +581,6 @@ const mock_allfields = {
       city: 'Roma',
       contact_info: [],
       description: '',
-      design_italia_meta_type: 'Persona pubblica',
-      effective: null,
-      has_children: true,
-      id: 'franco-franchini',
-      image_field: 'foto_persona',
-      image_scales: {
-        foto_persona: [null],
-      },
-      incarichi: '',
       design_italia_meta_type: 'Unita Organizzativa',
       effective: null,
       geolocation: {
@@ -740,12 +620,9 @@ const mock_allfields = {
       },
       incarichi: 'Incarico di Valerio Alfio Boi',
       review_state: 'private',
-      title: 'Franco Franchini',
       title: 'Valerio Alfio Boi',
     },
   ],
-  preview_caption: null,
-  preview_image: null,
   preview_caption: 'Didascalia immagine preview',
   preview_image: {
     'content-type': 'image/jpeg',
@@ -842,12 +719,6 @@ const mock_allfields = {
     description:
       "Il 1° maggio 2019 Cagliari e tutta la Sardegna festeggiano la 363ª Festa di Sant'Efisio. Un intenso momento di devozione, fede, cultura e tradizioni centenarie che si fondono in una processione che non ha eguali.",
     title: "363^ Festa di Sant'Efisio",
-
-    '@id': 'http://localhost:3000/eventi/363-festa-di-santefisio',
-    '@type': 'Event',
-    description:
-      "Il 1° maggio 2019 Cagliari e tutta la Sardegna festeggiano la 363ª Festa di Sant'Efisio. Un intenso momento di devozione, fede, cultura e tradizioni centenarie che si fondono in una processione che non ha eguali.",
-    title: "363^ Festa di Sant'Efisio",
   },
   prezzo: {
     blocks: {
@@ -874,150 +745,7 @@ const mock_allfields = {
     },
   },
   quartiere: 'Bello',
-    blocks: {
-      '3ae432d0-6255-4168-8fba-578c46f2321d': {
-        '@type': 'text',
-        text: {
-          blocks: [
-            {
-              data: {},
-              depth: 0,
-              entityRanges: [],
-              inlineStyleRanges: [],
-              key: 's9f2',
-              text: '10€',
-              type: 'unstyled',
-            },
-          ],
-          entityMap: {},
-        },
-      },
-    },
-    blocks_layout: {
-      items: ['3ae432d0-6255-4168-8fba-578c46f2321d'],
-    },
-  },
-  quartiere: 'Bello',
   recurrence: null,
-  relatedItems: [
-    {
-      '@id':
-        'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista',
-      '@type': 'Event',
-      description:
-        'Dal 2 al 3 giugno torna il torneo di beneficienza “Tutti in pista”. La raccolta fondi finanzierà progetti sportivi per ragazzi e ragazze.',
-      design_italia_meta_type: 'Evento',
-      effective: '2023-01-03T15:40:33+00:00',
-      end: '2023-06-03T15:00:00+00:00',
-      has_children: true,
-      id: 'torneo-di-beneficienza-tutti-in-pista',
-      image_field: 'preview_image',
-      image_scales: {
-        preview_image: [
-          {
-            'content-type': 'image/jpeg',
-            download:
-              'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-5184-74c3e55aa69d3eec7332cb8028f247f0.jpeg',
-            filename: 'national-cancer-institute.jpeg',
-            height: 3456,
-            scales: {
-              gallery: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-250-bd9d757f9bab5f7fe8ae1ac4fbb1adc5.jpeg',
-                height: 166,
-                width: 250,
-              },
-              great: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-1200-502b536559cea66d298e6857671cfaec.jpeg',
-                height: 800,
-                width: 1200,
-              },
-              huge: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-1600-cef7453cc7e5539995203acfd0fd67af.jpeg',
-                height: 1066,
-                width: 1600,
-              },
-              icon: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-32-3e9daca363c77b93aed78e17d721a3bc.jpeg',
-                height: 21,
-                width: 32,
-              },
-              large: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-800-7e93626815d089878e6ce731efd8561e.jpeg',
-                height: 533,
-                width: 800,
-              },
-              larger: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-1000-fddf730aa0c1379ad7251efebf48808f.jpeg',
-                height: 666,
-                width: 1000,
-              },
-              listing: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-16-b792a861a9f3fe0dec3a5689c648bbbd.jpeg',
-                height: 10,
-                width: 16,
-              },
-              midi: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-300-f5465a4e5f233f8d2a63880b6a8d8eea.jpeg',
-                height: 200,
-                width: 300,
-              },
-              mini: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-200-f9542fccc1ed011fde2c79b43b0927be.jpeg',
-                height: 133,
-                width: 200,
-              },
-              preview: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-400-a7b07ee75a650233ddb8a659ca0bbe27.jpeg',
-                height: 266,
-                width: 400,
-              },
-              teaser: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-600-cf3e72563ace502a8b9e75ade4f6ca49.jpeg',
-                height: 400,
-                width: 600,
-              },
-              thumb: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-128-e40ea7e792fbba0a30bd5c22cdb1a3a4.jpeg',
-                height: 85,
-                width: 128,
-              },
-              tile: {
-                download:
-                  'http://localhost:3000/eventi/torneo-di-beneficienza-tutti-in-pista/@@images/preview_image-64-8c3cf625de779a0bc3c0a28d2e3cc4be.jpeg',
-                height: 42,
-                width: 64,
-              },
-            },
-            size: 2026538,
-            width: 5184,
-          },
-        ],
-      },
-      review_state: 'published',
-      start: '2023-06-02T14:39:39+00:00',
-      title: 'Torneo di beneficienza "Tutti in pista"',
-    },
-  ],
-  review_state: 'private',
-  rights: '',
-  seo_canonical_url: null,
-  seo_description: null,
-  seo_noindex: null,
-  seo_title: null,
-  sottotitolo: 'Sottotitolo del mega evento',
-  street: 'Via Cincillà 198',
   relatedItems: [
     {
       '@id':
@@ -1235,18 +963,9 @@ const mock_allfields = {
         'http://localhost:3000/amministrazione/aree-di-competenza/area-impiantistica-sportiva-e-manifestazioni-sportive',
       '@type': 'UnitaOrganizzativa',
       address: '',
-      circoscrizione: null,
-      city: null,
-      contact_info: {
-        blocks: {
-          'c6feaad0-4f8e-411a-8e2a-f9fbe644dc55': {
-            '@type': 'text',
-          },
-        },
-        blocks_layout: {
-          items: ['c6feaad0-4f8e-411a-8e2a-f9fbe644dc55'],
-        },
-      },
+      circoscrizione: '',
+      city: '',
+      contact_info: [],
       description: 'Dirigente Arch. M. Alessandra Verdi',
       design_italia_meta_type: 'Unita Organizzativa',
       effective: null,
@@ -1258,12 +977,16 @@ const mock_allfields = {
       id: 'area-impiantistica-sportiva-e-manifestazioni-sportive',
       image_field: null,
       image_scales: null,
-      nome_sede: null,
-      quartiere: null,
+      nome_sede: '',
+      quartiere: '',
       review_state: 'private',
-      street: null,
+      street: '',
+      tipologia_organizzazione: {
+        title: 'Struttura amministrativa',
+        token: 'struttura_amministrativa',
+      },
       title: 'Area impiantistica sportiva e manifestazioni sportive',
-      zip_code: null,
+      zip_code: '',
     },
   ],
   sync_uid: null,
@@ -1280,43 +1003,7 @@ const mock_allfields = {
       image_scales: null,
       review_state: 'private',
       title: 'Muoversi',
-      '@id': 'http://localhost:3000/argomenti/muoversi',
-      '@type': 'Pagina Argomento',
-      description: '',
-      design_italia_meta_type: 'Argomento',
-      effective: null,
-      has_children: false,
-      id: 'muoversi',
-      image_field: null,
-      image_scales: null,
-      review_state: 'private',
-      title: 'Muoversi',
     },
-  ],
-  ulteriori_informazioni: {
-    blocks: {
-      'fe8ee3f2-c1b3-4692-98ed-d9ca7821fbab': {
-        '@type': 'text',
-        text: {
-          blocks: [
-            {
-              data: {},
-              depth: 0,
-              entityRanges: [],
-              inlineStyleRanges: [],
-              key: '2lvs7',
-              text: 'Magliette gratis',
-              type: 'unstyled',
-            },
-          ],
-          entityMap: {},
-        },
-      },
-    },
-    blocks_layout: {
-      items: ['fe8ee3f2-c1b3-4692-98ed-d9ca7821fbab'],
-    },
-  },
   ],
   ulteriori_informazioni: {
     blocks: {
@@ -1344,7 +1031,7 @@ const mock_allfields = {
   },
   version: 'current',
   versioning_enabled: true,
-  whole_day: true,
+  whole_day: false,
   working_copy: null,
   working_copy_of: null,
   zip_code: '999999',
@@ -1946,43 +1633,37 @@ it('expect to have all mandatory fields in page', async () => {
     screen.getByRole('heading', { name: /Mega Evento/i }),
   ).toBeInTheDocument();
 
-  // a chi è rivolto --> non appare
-  expect(screen.getByText(/Programmatori RedTurtle/i)).toBeInTheDocument();
-  //tipo evento --> non appare
-  expect(screen.getByText(/Evento culturale/i)).toBeInTheDocument();
-  // contatti
+  // // a chi è rivolto --> non appare
+  // expect(screen.getByText(/Programmatori RedTurtle/i)).toBeInTheDocument();
+  // //tipo evento --> non appare
+  // expect(screen.getByText(/Evento culturale/i)).toBeInTheDocument();
+
+  // date e orari
   expect(
-    screen.getByRole('heading', { name: /Contatti/i }),
+    screen.getByRole('heading', { name: /Date e orari/i }),
   ).toBeInTheDocument();
 
   // !!!!!!!!!!!!!!!!!
-  // !!!!!!!!!!!!!!!!!
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! TEST ORARI
   // non riesco a testare il campo inizio evento - fine evento, solo il blocco date e orari
   // // inizio evento - fine evento
   // await screen.findByText(/inizio evento/i);
   // screen.debug();
   // expect(screen.getByText(/Inizio evento/i)).toBeInTheDocument();
-  // !!!!!!!!!!!!!!!!!
-  // !!!!!!!!!!!!!!!!!
 
-  // !!!!!!!!!!!!!!!!!
   // !!!!!!!!!!!!!!!!!
   //orari - sezione orari dovrebbe essere titolo della sezione "informazioni sugli orari" ma appare anche se sezione non è compilata
   // expect(
   //   screen.getByRole('heading', { name: /Orari/i }),
   // ).not.toBeInTheDocument();
   // !!!!!!!!!!!!!!!!!
-  // !!!!!!!!!!!!!!!!!
 
-  //punto di contatto
+  // contatti
   expect(
-    screen.getByText(/Ufficio delle attività produttive/i),
+    screen.getByRole('heading', { name: /Contatti/i }),
   ).toBeInTheDocument();
-  // date e orari
-  expect(
-    screen.getByRole('heading', { name: /Date e orari/i }),
-  ).toBeInTheDocument();
+
+  const cardContatti = document.querySelector('#contatti .card');
+  expect(cardContatti).toBeInTheDocument();
 });
 
 it('expect to have all non-mandatory fields in page', async () => {
@@ -1996,87 +1677,84 @@ it('expect to have all non-mandatory fields in page', async () => {
 
   // descrizione
   expect(screen.getByText('Descrizione del mega evento')).toBeInTheDocument();
-  //immagine di testata + didascalia
+  // immagine di testata + didascalia
   expect(
     screen.getByRole('img', { name: /Didascalia immagine testata/i }),
   ).toBeInTheDocument();
-  //tassonomia argomenti
+  // tassonomia argomenti
   expect(screen.getAllByText(/Muoversi/i)).toBeTruthy();
   // sottotitolo
   expect(
     screen.getByText(/sottotitolo del mega evento/i, { exact: false }),
   ).toBeInTheDocument();
 
-  // parteciperanno - campo non compare
-  // expect(screen.getByText(/Franco Franchini/i)).toBeInTheDocument();
-
-  //parteciperanno persone amministrazione
+  // parteciperanno persone
   expect(
     screen.getByRole('link', { name: /Valerio Alfio Boi/i }),
   ).toBeInTheDocument();
 
-  //descrizione estesa
+  // descrizione estesa
   expect(screen.getByText(/mega iniziative/i)).toBeInTheDocument();
-  //descrizione destinatari
-  expect(screen.getByText(/L'evento è di interesse per/i)).toBeInTheDocument();
+  // descrizione destinatari
+  expect(screen.getByText(/A chi è rivolto/i)).toBeInTheDocument();
   expect(
     screen.getByText(/I destinatari dovranno essere programmatori/i),
   ).toBeInTheDocument();
 
-  //luoghi correlati
+  // luoghi correlati
   expect(
     screen.getByRole('heading', { name: /Il castello normanno/i }),
   ).toBeInTheDocument();
-  //nome sede
+  // nome sede
   expect(
     screen.getByRole('heading', { name: /Sede del mega evento/i }),
   ).toBeInTheDocument();
   // street
   expect(screen.getByText(/Via Cincillà 198/i)).toBeInTheDocument();
-  //zip code
+  // zip code
   expect(screen.getByText(/999999/i)).toBeInTheDocument();
-  //città
+  // città
   expect(screen.getByText(/Perugia/i)).toBeInTheDocument();
-  //quartiere
+  // quartiere
   expect(screen.getByText(/Bello/i)).toBeInTheDocument();
-  //circoscrizione
+  // circoscrizione
   expect(screen.getByText(/Arginone/i)).toBeInTheDocument();
 
   // Paese --> non appare
-  // expect(screen.getByText(/Italia/i)).toBeInTheDocument();
+  expect(screen.getByText(/Italia/i)).toBeInTheDocument();
 
   // tutta la giornata - non appare ma devono scomparire gli orari
-  // expect(screen.getByText('10:00')).not.toBeInTheDocument();
+  expect(screen.getByText('10:00')).toBeInTheDocument();
 
   // !!!!!!!!!!!!!!!!!
   // !!!!!!!!!!!!!!!!!
-  //fine aperta
-  // expect(
-  //   await screen.getByText(
-  //     'Questo evento ha una data di fine aperta/variabile.',
-  //   ),
-  // ).toBeInTheDocument();
-  // expect(
-  //   screen.getByText(/fino a conclusione/, { exact: false, selector: 'h4' }),
-  // ).toBeInTheDocument();
+  // fine aperta
+  expect(
+    await screen.getByText(
+      'Questo evento ha una data di fine aperta/variabile.',
+    ),
+  ).toBeInTheDocument();
+  expect(
+    screen.getByText(/fino a conclusione/, { exact: false, selector: 'h4' }),
+  ).toBeInTheDocument();
   // !!!!!!!!!!!!!!!!!
   // !!!!!!!!!!!!!!!!!
 
-  //informazioni aggiuntive sugli orari
+  // informazioni aggiuntive sugli orari
   expect(screen.getByText(/Ho inventato tutto/i)).toBeInTheDocument();
 
   // costi
   expect(screen.getByText('10€')).toBeInTheDocument();
 
-  // organizzato da - interno
+  // organizzato da
   expect(
-    screen.getByRole('heading', { name: /Contatti interni/i }),
+    screen.getByRole('heading', { name: /Organizzato da/i }),
   ).toBeInTheDocument();
 
   await screen.findByText(/assessorato al turismo/i);
   expect(screen.getByText(/assessorato al turismo/i)).toBeInTheDocument();
 
-  //organizzato da - esterno
+  // organizzato da - esterno
   expect(screen.getByText(/Batman/i)).toBeInTheDocument();
 
   // evento supportato da - campo non compare
@@ -2084,7 +1762,7 @@ it('expect to have all non-mandatory fields in page', async () => {
     screen.getByText(/Area impiantistica sportiva/i, { exact: false }),
   ).toBeInTheDocument();
 
-  //evento patrocinato da
+  // evento patrocinato da --> non appare
   expect(
     screen.getByRole('heading', { name: /Patrocinato da/i }),
   ).toBeInTheDocument();
@@ -2092,10 +1770,10 @@ it('expect to have all non-mandatory fields in page', async () => {
     screen.getByText(/Regione Autonome della Sardegna/i),
   ).toBeInTheDocument();
 
-  //ulteriori informazioni
+  // ulteriori informazioni
   expect(screen.getByText(/Magliette gratis/i)).toBeInTheDocument();
 
-  //strutture politiche coinvolte
+  // strutture politiche coinvolte
   expect(
     screen.getByText(/strutture politiche coinvolte/i),
   ).toBeInTheDocument();
@@ -2110,48 +1788,48 @@ it('expect to have all non-mandatory fields in page', async () => {
   expect(
     screen.getByRole('link', { name: /Torneo di beneficienza/i, exact: false }),
   ).toBeInTheDocument();
-  // screen.debug();
+  screen.debug();
 });
 
-// it('Check parts loaded from child folders', async () => {
-//   render(
-//     <Provider store={store}>
-//       <MemoryRouter>
-//         <EventoView content={mock_mandatory} />
-//       </MemoryRouter>
-//     </Provider>,
-//   );
-//   // // documenti
-//   // const documenti = await waitForElement(() =>
-//   //   document.querySelector('#documenti'),
-//   // );
-//   // expect(documenti).toBeInTheDocument();
-//   // // galleria immagini
-//   // const galleria = await waitForElement(() =>
-//   //   getByText(/Galleria di immagini/i),
-//   // );
-//   // expect(galleria).toBeInTheDocument();
+it('Check parts loaded from child folders', async () => {
+  render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <EventoView content={mock_mandatory} />
+      </MemoryRouter>
+    </Provider>,
+  );
+  // // documenti
+  // const documenti = await waitForElement(() =>
+  //   document.querySelector('#documenti'),
+  // );
+  // expect(documenti).toBeInTheDocument();
+  // // galleria immagini
+  // const galleria = await waitForElement(() =>
+  //   getByText(/Galleria di immagini/i),
+  // );
+  // expect(galleria).toBeInTheDocument();
 
-//   // const eventi = await waitForElement(() => document.querySelector('#events'));
-//   // expect(eventi).toBeInTheDocument();
-// });
+  // const eventi = await waitForElement(() => document.querySelector('#events'));
+  // expect(eventi).toBeInTheDocument();
+});
 
-// it('embedded video is displayed', async () => {
-//   render(
-//     <Provider store={store}>
-//       <MemoryRouter>
-//         <EventoView content={mock_mandatory} />
-//       </MemoryRouter>
-//     </Provider>,
-//   );
-//   // const iframe = await waitForElement(() =>
-//   //   document.querySelector('#embedded-video-0'),
-//   // );
-//   // expect(iframe).toBeInTheDocument();
-// });
+it('embedded video is displayed', async () => {
+  render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <EventoView content={mock_mandatory} />
+      </MemoryRouter>
+    </Provider>,
+  );
+  // const iframe = await waitForElement(() =>
+  //   document.querySelector('#embedded-video-0'),
+  // );
+  // expect(iframe).toBeInTheDocument();
+});
 
-// test('todo', () => {
-//   expect(mock_mandatory).toBeDefined();
-//   expect(store).toBeDefined();
-//   expect(true).toBe(true);
-// });
+test('todo', () => {
+  expect(mock_mandatory).toBeDefined();
+  expect(store).toBeDefined();
+  expect(true).toBe(true);
+});

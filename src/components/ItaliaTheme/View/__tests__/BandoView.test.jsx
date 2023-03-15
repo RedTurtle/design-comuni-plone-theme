@@ -24,7 +24,7 @@ const mock_mandatory = {
     'http://localhost:3000/documenti-e-dati/bandi/bando-per-diventare-ironman',
   '@type': 'Bando',
   UID: 'ff82688a5a5f4484a8d2eec481e10c7c',
-  bando_state: ['open', 'Open'],
+  bando_state: ['inProgress', 'In progress'],
   tipologia_bando: {
     title: 'Acquisizione beni e servizi',
     token: 'beni_servizi',
@@ -34,6 +34,45 @@ const mock_mandatory = {
 
 const mock_allfields = {
   ...mock_mandatory,
+  '@components': {
+    actions: {
+      '@id':
+        'http://localhost:3000/documenti-e-dati/bandi/bando-per-diventare-ironman/@actions',
+    },
+    aliases: {
+      '@id':
+        'http://localhost:3000/documenti-e-dati/bandi/bando-per-diventare-ironman/@aliases',
+    },
+    breadcrumbs: {
+      '@id':
+        'http://localhost:3000/documenti-e-dati/bandi/bando-per-diventare-ironman/@breadcrumbs',
+    },
+    contextnavigation: {
+      '@id':
+        'http://localhost:3000/documenti-e-dati/bandi/bando-per-diventare-ironman/@contextnavigation',
+    },
+    navigation: {
+      '@id':
+        'http://localhost:3000/documenti-e-dati/bandi/bando-per-diventare-ironman/@navigation',
+    },
+    subsite: {},
+    translations: {
+      '@id':
+        'http://localhost:3000/documenti-e-dati/bandi/bando-per-diventare-ironman/@translations',
+    },
+    types: {
+      '@id':
+        'http://localhost:3000/documenti-e-dati/bandi/bando-per-diventare-ironman/@types',
+    },
+    workflow: {
+      '@id':
+        'http://localhost:3000/documenti-e-dati/bandi/bando-per-diventare-ironman/@workflow',
+    },
+  },
+  '@id':
+    'http://localhost:3000/documenti-e-dati/bandi/bando-per-diventare-ironman',
+  '@type': 'Bando',
+  UID: 'ff82688a5a5f4484a8d2eec481e10c7c',
   allow_discussion: false,
   apertura_bando: '2023-01-01T09:00:00',
   approfondimento: [],
@@ -43,18 +82,9 @@ const mock_allfields = {
         'http://localhost:3000/amministrazione/aree-di-competenza/area-impiantistica-sportiva-e-manifestazioni-sportive',
       '@type': 'UnitaOrganizzativa',
       address: '',
-      circoscrizione: null,
-      city: null,
-      contact_info: {
-        blocks: {
-          'c6feaad0-4f8e-411a-8e2a-f9fbe644dc55': {
-            '@type': 'text',
-          },
-        },
-        blocks_layout: {
-          items: ['c6feaad0-4f8e-411a-8e2a-f9fbe644dc55'],
-        },
-      },
+      circoscrizione: '',
+      city: '',
+      contact_info: [],
       description: 'Dirigente Arch. M. Alessandra Verdi',
       design_italia_meta_type: 'Unita Organizzativa',
       effective: null,
@@ -66,15 +96,19 @@ const mock_allfields = {
       id: 'area-impiantistica-sportiva-e-manifestazioni-sportive',
       image_field: null,
       image_scales: null,
-      nome_sede: null,
-      quartiere: null,
+      nome_sede: '',
+      quartiere: '',
       review_state: 'private',
-      street: null,
+      street: '',
+      tipologia_organizzazione: {
+        title: 'Struttura amministrativa',
+        token: 'struttura_amministrativa',
+      },
       title: 'Area impiantistica sportiva e manifestazioni sportive',
-      zip_code: null,
+      zip_code: '',
     },
   ],
-  bando_state: ['open', 'Open'],
+  bando_state: ['inProgress', 'In progress'],
   changeNote: '',
   chiusura_procedimento_bando: '2023-03-15',
   contributors: [],
@@ -85,13 +119,17 @@ const mock_allfields = {
       '@type': 'News Item',
       description:
         'Partiti i lavori per l’adeguamento dell’impianto. La riapertura è prevista per giugno 2023.',
-      design_italia_meta_type: 'avviso',
+      design_italia_meta_type: 'Avviso',
       effective: null,
       has_children: true,
       id: 'chiusa-per-ristrutturazione-la-piscina-minghetti',
       image_field: null,
       image_scales: null,
       review_state: 'private',
+      tipologia_notizia: {
+        title: 'Avviso',
+        token: 'avviso',
+      },
       title: 'Chiusa per ristrutturazione la piscina Minghetti',
     },
   ],
@@ -162,8 +200,14 @@ const mock_allfields = {
     locked: false,
     stealable: true,
   },
-  modified: '2023-01-27T15:17:11+00:00',
-  next_item: {},
+  modified: '2023-01-30T11:07:30+00:00',
+  next_item: {
+    '@id':
+      'http://localhost:3000/documenti-e-dati/bandi/bando-per-diventare-spiderman',
+    '@type': 'Bando',
+    description: '',
+    title: 'Bando per diventare Spiderman',
+  },
   opengraph_description: null,
   opengraph_image: null,
   opengraph_title: null,
@@ -276,13 +320,17 @@ const mock_allfields = {
       '@type': 'News Item',
       description:
         'Donec in consequat nunc. Duis semper fermentum lacus, ac condimentum justo auctor a. Nam erat erat, porta vel pharetra in, ullamcorper vel turpis.',
-      design_italia_meta_type: 'Notizia',
+      design_italia_meta_type: null,
       effective: '2019-12-03T11:09:00+00:00',
       has_children: true,
       id: 'osservatorio-sul-turismo',
       image_field: null,
       image_scales: null,
       review_state: 'private',
+      tipologia_notizia: {
+        title: null,
+        token: 'Notizia',
+      },
       title: 'Osservatorio sul turismo',
     },
   ],
@@ -359,15 +407,40 @@ const mock_allfields = {
       items: ['92c8c380-c65d-4cfa-bb3f-4276124731ae'],
     },
   },
+  tipologia_bando: {
+    title: 'Acquisizione beni e servizi',
+    token: 'beni_servizi',
+  },
+  title: 'Bando per diventare Ironman',
   ufficio_responsabile: [
     {
       '@id': 'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio',
       '@type': 'UnitaOrganizzativa',
       address: '',
-      circoscrizione: null,
-      city: null,
-      contact_info: [],
-      description: '',
+      circoscrizione: '',
+      city: '',
+      contact_info: [
+        {
+          '@id':
+            'http://localhost:3000/amministrazione/punti-di-contatto/is-this-the-real-life',
+          '@type': 'PuntoDiContatto',
+          description: 'Is this just fantasy',
+          design_italia_meta_type: 'Punto di Contatto',
+          has_children: false,
+          id: 'is-this-the-real-life',
+          image_field: null,
+          image_scales: null,
+          review_state: 'private',
+          title: 'Is this the real life',
+          value_punto_contatto: [
+            {
+              pdc_type: 'email',
+              pdc_value: 'freddymercury@gmail.com',
+            },
+          ],
+        },
+      ],
+      description: 'Pierced through the heart but never killed',
       design_italia_meta_type: 'Unita Organizzativa',
       effective: null,
       geolocation: {
@@ -378,12 +451,16 @@ const mock_allfields = {
       id: 'giunta-e-consiglio',
       image_field: null,
       image_scales: null,
-      nome_sede: null,
-      quartiere: null,
+      nome_sede: '',
+      quartiere: '',
       review_state: 'private',
-      street: null,
+      street: '',
+      tipologia_organizzazione: {
+        title: 'Struttura amministrativa',
+        token: 'struttura_amministrativa',
+      },
       title: 'Giunta e consiglio',
-      zip_code: null,
+      zip_code: '',
     },
   ],
   update_note: 'No escape from reality',
@@ -400,6 +477,425 @@ const store = mockStore({
   },
   content: {
     subrequests: {
+      '/amministrazione/uffici/giunta-e-consiglio_office': {
+        loading: false,
+        loaded: true,
+        error: null,
+        data: {
+          '@components': {
+            actions: {
+              '@id':
+                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@actions',
+            },
+            aliases: {
+              '@id':
+                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@aliases',
+            },
+            breadcrumbs: {
+              '@id':
+                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@breadcrumbs',
+            },
+            contextnavigation: {
+              '@id':
+                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@contextnavigation',
+            },
+            navigation: {
+              '@id':
+                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@navigation',
+            },
+            subsite: {},
+            translations: {
+              '@id':
+                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@translations',
+            },
+            types: {
+              '@id':
+                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@types',
+            },
+            workflow: {
+              '@id':
+                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@workflow',
+            },
+          },
+          '@id':
+            'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio',
+          '@type': 'UnitaOrganizzativa',
+          UID: '4b56678a54884616aa8b7cb230d27794',
+          allow_discussion: false,
+          assessore_riferimento: [],
+          changeNote: '',
+          competenze: {
+            blocks: {
+              '84a4a7af-5b14-4161-84c0-008b501a4dc7': {
+                '@type': 'text',
+                text: {
+                  blocks: [
+                    {
+                      data: {},
+                      depth: 0,
+                      entityRanges: [],
+                      inlineStyleRanges: [],
+                      key: '7srp8',
+                      text: 'Prova',
+                      type: 'unstyled',
+                    },
+                  ],
+                  entityMap: {},
+                },
+              },
+            },
+            blocks_layout: {
+              items: ['84a4a7af-5b14-4161-84c0-008b501a4dc7'],
+            },
+          },
+          contact_info: [
+            {
+              '@id':
+                'http://localhost:3000/amministrazione/punti-di-contatto/is-this-the-real-life',
+              '@type': 'PuntoDiContatto',
+              description: 'Is this just fantasy',
+              design_italia_meta_type: 'Punto di Contatto',
+              effective: null,
+              has_children: false,
+              id: 'is-this-the-real-life',
+              image_field: null,
+              image_scales: null,
+              review_state: 'private',
+              title: 'Is this the real life',
+              value_punto_contatto: [
+                {
+                  pdc_type: 'email',
+                  pdc_value: 'freddymercury@gmail.com',
+                },
+              ],
+            },
+          ],
+          contributors: [],
+          correlato_in_evidenza: [],
+          created: '2023-01-03T15:47:46+00:00',
+          creators: ['admin'],
+          description: 'Pierced through the heart but never killed',
+          design_italia_meta_type: 'Unita Organizzativa',
+          documenti_pubblici: [],
+          effective: null,
+          exclude_from_nav: false,
+          expires: null,
+          id: 'giunta-e-consiglio',
+          image: null,
+          image_caption: null,
+          is_folderish: true,
+          items: [
+            {
+              '@id':
+                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/allegati',
+              '@type': 'Document',
+              description: '',
+              design_italia_meta_type: 'Pagina',
+              has_children: false,
+              id: 'allegati',
+              image_field: '',
+              image_scales: null,
+              review_state: 'private',
+              title: 'Allegati',
+              url: '/amministrazione/uffici/giunta-e-consiglio/allegati',
+            },
+          ],
+          items_total: 1,
+          language: {
+            title: 'Italiano',
+            token: 'it',
+          },
+          layout: 'view',
+          legami_con_altre_strutture: [],
+          lock: {
+            locked: false,
+            stealable: true,
+          },
+          modified: '2023-02-13T13:58:29+00:00',
+          next_item: {
+            '@id':
+              'http://localhost:3000/amministrazione/uffici/assessorato-al-turismo',
+            '@type': 'UnitaOrganizzativa',
+            description: '',
+            title: 'Assessorato al Turismo',
+          },
+          opengraph_description: null,
+          opengraph_image: null,
+          opengraph_title: null,
+          orario_pubblico: {
+            blocks: {
+              'fbe2077b-d934-437b-b5ac-894ad6901bbc': {
+                '@type': 'text',
+              },
+            },
+            blocks_layout: {
+              items: ['fbe2077b-d934-437b-b5ac-894ad6901bbc'],
+            },
+          },
+          parent: {
+            '@id': 'http://localhost:3000/amministrazione/uffici',
+            '@type': 'Document',
+            description: '',
+            design_italia_meta_type: 'Pagina',
+            has_children: true,
+            id: 'uffici',
+            image_field: null,
+            image_scales: null,
+            review_state: 'private',
+            title: 'Uffici',
+          },
+          persone_struttura: [
+            {
+              '@id':
+                'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi',
+              '@type': 'Persona',
+              description: 'Assessore allo sport',
+              design_italia_meta_type: 'Persona pubblica',
+              effective: null,
+              has_children: true,
+              id: 'gabriele-bianchi',
+              image_field: 'foto_persona',
+              image_scales: {
+                foto_persona: [
+                  {
+                    'content-type': 'image/jpeg',
+                    download:
+                      'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-5184-a0948b7d7c2e6ec2944ea4915f5d0c4f.jpeg',
+                    filename: 'national-cancer-institute.jpeg',
+                    height: 3456,
+                    scales: {
+                      gallery: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-250-d009f9ee6746d6ada973aeb0e99437eb.jpeg',
+                        height: 166,
+                        width: 250,
+                      },
+                      great: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-1200-db22dc3240b650dc494ea6412e5c4e8c.jpeg',
+                        height: 800,
+                        width: 1200,
+                      },
+                      huge: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-1600-1a281d1182b9422a0211cb7cc5e156f2.jpeg',
+                        height: 1066,
+                        width: 1600,
+                      },
+                      icon: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-32-92c4797637f83c00ac27cba86b37cff5.jpeg',
+                        height: 21,
+                        width: 32,
+                      },
+                      large: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-800-d85755d485e32d0a1deba313de75711b.jpeg',
+                        height: 533,
+                        width: 800,
+                      },
+                      larger: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-1000-e88f96e2a0ed91917f9d728caf2d4406.jpeg',
+                        height: 666,
+                        width: 1000,
+                      },
+                      listing: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-16-37154ce0fea872870103d5fae1a29f61.jpeg',
+                        height: 10,
+                        width: 16,
+                      },
+                      midi: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-300-458fd003c0d1576f66035dbc1e8ab87e.jpeg',
+                        height: 200,
+                        width: 300,
+                      },
+                      mini: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-200-830b17e7b02da4853b079bc80c1c4e34.jpeg',
+                        height: 133,
+                        width: 200,
+                      },
+                      preview: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-400-f9e5f2efc8120f6e3351536b3f287196.jpeg',
+                        height: 266,
+                        width: 400,
+                      },
+                      teaser: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-600-001ddce8166a4c8bb2839212f9fb2430.jpeg',
+                        height: 400,
+                        width: 600,
+                      },
+                      thumb: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-128-d97983d9975606ed88ec6d2029e10ea9.jpeg',
+                        height: 85,
+                        width: 128,
+                      },
+                      tile: {
+                        download:
+                          'http://localhost:3000/amministrazione/personale-amministrativo/gabriele-bianchi/@@images/foto_persona-64-f7765a9f78ff6e0725ebee3534a782c8.jpeg',
+                        height: 42,
+                        width: 64,
+                      },
+                    },
+                    size: 2026538,
+                    width: 5184,
+                  },
+                ],
+              },
+              incarichi: 'Incarico di Gabriele Bianchi',
+              review_state: 'private',
+              title: 'Gabriele Bianchi',
+            },
+          ],
+          prestazioni: [],
+          preview_caption: null,
+          preview_image: null,
+          previous_item: {
+            '@id':
+              'http://localhost:3000/amministrazione/uffici/gestione-impianti-sportivi',
+            '@type': 'UnitaOrganizzativa',
+            description: 'Prova prova prova',
+            title: 'Gestione impianti sportivi',
+          },
+          relatedItems: [],
+          related_news: [],
+          responsabile: [],
+          review_state: 'private',
+          rights: '',
+          sede: [
+            {
+              '@id': 'http://localhost:3000/vivi-il-comune/luoghi/prova',
+              '@type': 'Venue',
+              circoscrizione: null,
+              city: 'Roma',
+              country: '380',
+              description: 'Lorem ipsum',
+              design_italia_meta_type: 'Luogo',
+              effective: null,
+              email: null,
+              fax: null,
+              geolocation: {
+                latitude: 41.8337833,
+                longitude: 12.4677863,
+              },
+              has_children: true,
+              id: 'prova',
+              image_field: null,
+              image_scales: null,
+              nome_sede: null,
+              orario_pubblico: {
+                blocks: {
+                  '0cba7e98-73ee-41c7-9260-8dbb4af725d4': {
+                    '@type': 'text',
+                  },
+                },
+                blocks_layout: {
+                  items: ['0cba7e98-73ee-41c7-9260-8dbb4af725d4'],
+                },
+              },
+              pec: null,
+              quartiere: null,
+              review_state: 'private',
+              riferimento_mail_struttura: null,
+              riferimento_pec_struttura: null,
+              riferimento_telefonico_struttura: null,
+              street: 'Via Liszt, 21',
+              telefono: null,
+              tipologia_luogo: [
+                {
+                  title: 'Architettura Militare e fortificata␟Roccaforte',
+                  token: 'roccaforte',
+                },
+              ],
+              title: 'Prova',
+              web: null,
+              zip_code: '00144',
+            },
+          ],
+          sedi_secondarie: [],
+          seo_canonical_url: null,
+          seo_description: null,
+          seo_noindex: null,
+          seo_title: null,
+          servizi_offerti: [
+            {
+              '@id': 'http://localhost:3000/servizi/visita-veterinaria-gratis',
+              '@type': 'Servizio',
+              business_events: [
+                {
+                  title: 'Avvio impresa',
+                  token: 'avvio_impresa',
+                },
+              ],
+              canale_digitale: {
+                blocks: {
+                  '7bebaf7f-40fd-4274-82a4-59180e9dff0b': {
+                    '@type': 'text',
+                    text: {
+                      blocks: [
+                        {
+                          data: {},
+                          depth: 0,
+                          entityRanges: [],
+                          inlineStyleRanges: [],
+                          key: '1e42l',
+                          text: 'Open your eyes',
+                          type: 'unstyled',
+                        },
+                      ],
+                      entityMap: {},
+                    },
+                  },
+                },
+                blocks_layout: {
+                  items: ['7bebaf7f-40fd-4274-82a4-59180e9dff0b'],
+                },
+              },
+              description: 'Fai visitare il tuo cucciolo',
+              design_italia_meta_type: 'Servizio',
+              has_children: true,
+              id: 'visita-veterinaria-gratis',
+              image_field: null,
+              image_scales: null,
+              parent_title: 'Servizi',
+              parent_url: 'http://localhost:3000/servizi',
+              person_life_events: [
+                {
+                  title: 'Possesso, cura, smarrimento animale da compagnia',
+                  token: 'possesso_cura_smarrimento_animale_da_compagnia',
+                },
+              ],
+              review_state: 'private',
+              title: 'Visita veterinaria gratis',
+            },
+          ],
+          subjects: [],
+          tassonomia_argomenti: [],
+          tipologia_organizzazione: {
+            title: 'Struttura amministrativa',
+            token: 'struttura_amministrativa',
+          },
+          title: 'Giunta e consiglio',
+          ulteriori_informazioni: {
+            blocks: {},
+            blocks_layout: {
+              items: [],
+            },
+          },
+          uo_children: [],
+          uo_parent: null,
+          version: 'current',
+          versioning_enabled: true,
+          working_copy: null,
+          working_copy_of: null,
+        },
+      },
       '/amministrazione/aree-di-competenza/area-impiantistica-sportiva-e-manifestazioni-sportive_office':
         {
           loading: false,
@@ -448,8 +944,6 @@ const store = mockStore({
             allow_discussion: false,
             assessore_riferimento: [],
             changeNote: '',
-            circoscrizione: null,
-            city: null,
             competenze: {
               blocks: {
                 '68c21d17-ea6b-4469-9e10-ff6029d49419': {
@@ -463,7 +957,6 @@ const store = mockStore({
             contact_info: [],
             contributors: [],
             correlato_in_evidenza: [],
-            country: null,
             created: '2023-01-03T16:32:16+00:00',
             creators: ['admin'],
             description: 'Dirigente Arch. M. Alessandra Verdi',
@@ -472,7 +965,6 @@ const store = mockStore({
             effective: null,
             exclude_from_nav: false,
             expires: null,
-            geolocation: {},
             id: 'area-impiantistica-sportiva-e-manifestazioni-sportive',
             image: null,
             image_caption: null,
@@ -505,10 +997,30 @@ const store = mockStore({
                   'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio',
                 '@type': 'UnitaOrganizzativa',
                 address: '',
-                circoscrizione: null,
-                city: null,
-                contact_info: [],
-                description: '',
+                circoscrizione: '',
+                city: '',
+                contact_info: [
+                  {
+                    '@id':
+                      'http://localhost:3000/amministrazione/punti-di-contatto/is-this-the-real-life',
+                    '@type': 'PuntoDiContatto',
+                    description: 'Is this just fantasy',
+                    design_italia_meta_type: 'Punto di Contatto',
+                    has_children: false,
+                    id: 'is-this-the-real-life',
+                    image_field: null,
+                    image_scales: null,
+                    review_state: 'private',
+                    title: 'Is this the real life',
+                    value_punto_contatto: [
+                      {
+                        pdc_type: 'email',
+                        pdc_value: 'freddymercury@gmail.com',
+                      },
+                    ],
+                  },
+                ],
+                description: 'Pierced through the heart but never killed',
                 design_italia_meta_type: 'Unita Organizzativa',
                 effective: null,
                 geolocation: {
@@ -519,12 +1031,16 @@ const store = mockStore({
                 id: 'giunta-e-consiglio',
                 image_field: null,
                 image_scales: null,
-                nome_sede: null,
-                quartiere: null,
+                nome_sede: '',
+                quartiere: '',
                 review_state: 'private',
-                street: null,
+                street: '',
+                tipologia_organizzazione: {
+                  title: 'Struttura amministrativa',
+                  token: 'struttura_amministrativa',
+                },
                 title: 'Giunta e consiglio',
-                zip_code: null,
+                zip_code: '',
               },
             ],
             lock: {
@@ -533,10 +1049,19 @@ const store = mockStore({
             },
             modified: '2023-01-19T12:04:48+00:00',
             next_item: {},
-            nome_sede: null,
             opengraph_description: null,
             opengraph_image: null,
             opengraph_title: null,
+            orario_pubblico: {
+              blocks: {
+                '3cf3d6e2-0ded-4701-8e88-9eee27ddb9d6': {
+                  '@type': 'text',
+                },
+              },
+              blocks_layout: {
+                items: ['3cf3d6e2-0ded-4701-8e88-9eee27ddb9d6'],
+              },
+            },
             parent: {
               '@id': 'http://localhost:3000/amministrazione/aree-di-competenza',
               '@type': 'Document',
@@ -554,7 +1079,6 @@ const store = mockStore({
             preview_caption: null,
             preview_image: null,
             previous_item: {},
-            quartiere: null,
             relatedItems: [],
             related_news: [],
             responsabile: [],
@@ -571,6 +1095,12 @@ const store = mockStore({
                 '@id':
                   'http://localhost:3000/servizi/visita-veterinaria-gratis',
                 '@type': 'Servizio',
+                business_events: [
+                  {
+                    title: 'Avvio impresa',
+                    token: 'avvio_impresa',
+                  },
+                ],
                 canale_digitale: {
                   blocks: {
                     '7bebaf7f-40fd-4274-82a4-59180e9dff0b': {
@@ -603,11 +1133,16 @@ const store = mockStore({
                 image_scales: null,
                 parent_title: 'Servizi',
                 parent_url: 'http://localhost:3000/servizi',
+                person_life_events: [
+                  {
+                    title: 'Possesso, cura, smarrimento animale da compagnia',
+                    token: 'possesso_cura_smarrimento_animale_da_compagnia',
+                  },
+                ],
                 review_state: 'private',
                 title: 'Visita veterinaria gratis',
               },
             ],
-            street: null,
             subjects: [],
             tassonomia_argomenti: [
               {
@@ -647,648 +1182,129 @@ const store = mockStore({
             versioning_enabled: true,
             working_copy: null,
             working_copy_of: null,
-            zip_code: null,
           },
         },
-
-      '/amministrazione/uffici/giunta-e-consiglio_office': {
-        loading: false,
-        loaded: true,
-        error: null,
-        data: {
-          '@components': {
-            actions: {
-              '@id':
-                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@actions',
-            },
-            aliases: {
-              '@id':
-                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@aliases',
-            },
-            breadcrumbs: {
-              '@id':
-                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@breadcrumbs',
-            },
-            contextnavigation: {
-              '@id':
-                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@contextnavigation',
-            },
-            navigation: {
-              '@id':
-                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@navigation',
-            },
-            subsite: {},
-            translations: {
-              '@id':
-                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@translations',
-            },
-            types: {
-              '@id':
-                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@types',
-            },
-            workflow: {
-              '@id':
-                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/@workflow',
-            },
-          },
-          '@id':
-            'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio',
-          '@type': 'UnitaOrganizzativa',
-          UID: '4b56678a54884616aa8b7cb230d27794',
-          allow_discussion: false,
-          assessore_riferimento: [],
-          changeNote: '',
-          circoscrizione: null,
-          city: null,
-          competenze: {
-            blocks: {
-              '84a4a7af-5b14-4161-84c0-008b501a4dc7': {
-                '@type': 'text',
-              },
-            },
-            blocks_layout: {
-              items: ['84a4a7af-5b14-4161-84c0-008b501a4dc7'],
-            },
-          },
-          contact_info: [],
-          contributors: [],
-          correlato_in_evidenza: [],
-          country: null,
-          created: '2023-01-03T15:47:46+00:00',
-          creators: ['admin'],
-          description: '',
-          design_italia_meta_type: 'Unita Organizzativa',
-          documenti_pubblici: [],
-          effective: null,
-          exclude_from_nav: false,
-          expires: null,
-          geolocation: {},
-          id: 'giunta-e-consiglio',
-          image: null,
-          image_caption: null,
-          is_folderish: true,
-          items: [
-            {
-              '@id':
-                'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio/allegati',
-              '@type': 'Document',
-              description: '',
-              design_italia_meta_type: 'Pagina',
-              has_children: false,
-              id: 'allegati',
-              image_field: '',
-              image_scales: null,
-              review_state: 'private',
-              title: 'Allegati',
-              url: '/amministrazione/uffici/giunta-e-consiglio/allegati',
-            },
-          ],
-          items_total: 1,
-          language: {
-            title: 'Italiano',
-            token: 'it',
-          },
-          layout: 'view',
-          legami_con_altre_strutture: [],
-          lock: {
-            locked: false,
-            stealable: true,
-          },
-          modified: '2023-01-19T12:04:48+00:00',
-          next_item: {
-            '@id':
-              'http://localhost:3000/amministrazione/uffici/assessorato-al-turismo',
-            '@type': 'UnitaOrganizzativa',
-            description: '',
-            title: 'Assessorato al Turismo',
-          },
-          nome_sede: null,
-          opengraph_description: null,
-          opengraph_image: null,
-          opengraph_title: null,
-          parent: {
-            '@id': 'http://localhost:3000/amministrazione/uffici',
-            '@type': 'Document',
-            description: '',
-            design_italia_meta_type: 'Pagina',
-            has_children: true,
-            id: 'uffici',
-            image_field: null,
-            image_scales: null,
-            review_state: 'private',
-            title: 'Uffici',
-          },
-          persone_struttura: [],
-          prestazioni: [],
-          preview_caption: null,
-          preview_image: null,
-          previous_item: {
-            '@id':
-              'http://localhost:3000/amministrazione/uffici/gestione-impianti-sportivi',
-            '@type': 'UnitaOrganizzativa',
-            description: '',
-            title: 'Gestione impianti sportivi',
-          },
-          quartiere: null,
-          relatedItems: [],
-          related_news: [],
-          responsabile: [],
-          review_state: 'private',
-          rights: '',
-          sede: [],
-          sedi_secondarie: [],
-          seo_canonical_url: null,
-          seo_description: null,
-          seo_noindex: null,
-          seo_title: null,
-          servizi_offerti: [
-            {
-              '@id': 'http://localhost:3000/servizi/visita-veterinaria-gratis',
-              '@type': 'Servizio',
-              canale_digitale: {
-                blocks: {
-                  '7bebaf7f-40fd-4274-82a4-59180e9dff0b': {
-                    '@type': 'text',
-                    text: {
-                      blocks: [
-                        {
-                          data: {},
-                          depth: 0,
-                          entityRanges: [],
-                          inlineStyleRanges: [],
-                          key: '1e42l',
-                          text: 'Open your eyes',
-                          type: 'unstyled',
-                        },
-                      ],
-                      entityMap: {},
-                    },
-                  },
-                },
-                blocks_layout: {
-                  items: ['7bebaf7f-40fd-4274-82a4-59180e9dff0b'],
-                },
-              },
-              description: 'Fai visitare il tuo cucciolo',
-              design_italia_meta_type: 'Servizio',
-              has_children: true,
-              id: 'visita-veterinaria-gratis',
-              image_field: null,
-              image_scales: null,
-              parent_title: 'Servizi',
-              parent_url: 'http://localhost:3000/servizi',
-              review_state: 'private',
-              title: 'Visita veterinaria gratis',
-            },
-          ],
-          street: null,
-          subjects: [],
-          tassonomia_argomenti: [],
-          tipologia_organizzazione: {
-            title: 'Struttura amministrativa',
-            token: 'struttura_amministrativa',
-          },
-          title: 'Giunta e consiglio',
-          ulteriori_informazioni: {
-            blocks: {},
-            blocks_layout: {
-              items: [],
-            },
-          },
-          uo_children: [],
-          uo_parent: null,
-          version: 'current',
-          versioning_enabled: true,
-          working_copy: null,
-          working_copy_of: null,
-          zip_code: null,
-        },
-      },
-
       'generic_card_/novita/notizie/osservatorio-sul-turismo': {
+        data: null,
         loading: false,
-        loaded: true,
-        error: null,
-        data: {
-          '@components': {
-            actions: {
-              '@id':
-                'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@actions',
-            },
-            aliases: {
-              '@id':
-                'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@aliases',
-            },
-            breadcrumbs: {
-              '@id':
-                'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@breadcrumbs',
-            },
-            contextnavigation: {
-              '@id':
-                'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@contextnavigation',
-            },
-            navigation: {
-              '@id':
-                'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@navigation',
-            },
-            subsite: {},
-            translations: {
-              '@id':
-                'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@translations',
-            },
-            types: {
-              '@id':
-                'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@types',
-            },
-            workflow: {
-              '@id':
-                'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@workflow',
-            },
-          },
-          '@id':
-            'http://localhost:3000/novita/notizie/osservatorio-sul-turismo',
-          '@type': 'News Item',
-          UID: '47289573edbc4a5087eea97d01a6c8bc',
-          a_cura_di: [
-            {
-              '@id':
-                'http://localhost:3000/amministrazione/uffici/assessorato-al-turismo',
-              '@type': 'UnitaOrganizzativa',
-              address: '',
-              circoscrizione: null,
-              city: 'Roma',
-              contact_info: {
-                blocks: {
-                  'b3225997-aad5-467c-8e4a-b868838188dd': {
-                    '@type': 'text',
-                  },
-                },
-                blocks_layout: {
-                  items: ['b3225997-aad5-467c-8e4a-b868838188dd'],
-                },
-              },
-              description: '',
-              design_italia_meta_type: 'Unita Organizzativa',
-              effective: null,
-              geolocation: {
-                latitude: 0,
-                longitude: 0,
-              },
-              has_children: true,
-              id: 'assessorato-al-turismo',
-              image_field: null,
-              image_scales: null,
-              nome_sede: null,
-              quartiere: null,
-              review_state: 'private',
-              street: 'Via Roma 1',
-              title: 'Assessorato al Turismo',
-              zip_code: '00100',
-            },
-          ],
-          a_cura_di_persone: [],
-          allow_discussion: false,
-          changeNote: '',
-          contributors: [],
-          correlato_in_evidenza: [],
-          created: '2023-01-04T10:08:46+00:00',
-          creators: ['admin'],
-          description:
-            'Donec in consequat nunc. Duis semper fermentum lacus, ac condimentum justo auctor a. Nam erat erat, porta vel pharetra in, ullamcorper vel turpis.',
-          descrizione_estesa: {
-            blocks: {
-              '1a1f071d-569b-465d-be06-0208b177724d': {
-                '@type': 'text',
-                text: {
-                  blocks: [
-                    {
-                      data: {},
-                      depth: 0,
-                      entityRanges: [],
-                      inlineStyleRanges: [],
-                      key: 'b1r54',
-                      text: 'Vivamus orci risus, fringilla sit amet enim vel, semper faucibus elit. Aliquam nec laoreet leo. Integer eu venenatis purus, eu tincidunt eros. Aliquam egestas est quis lacinia ultrices. Vestibulum vehicula sit amet purus id suscipit. Sed gravida urna tellus, sed aliquet erat faucibus porta. Aenean condimentum.',
-                      type: 'unstyled',
-                    },
-                  ],
-                  entityMap: {},
-                },
-              },
-              'a959cd72-9bce-493e-bd68-9d97f5e7965c': {
-                '@type': 'text',
-                text: {
-                  blocks: [
-                    {
-                      data: {},
-                      depth: 0,
-                      entityRanges: [],
-                      inlineStyleRanges: [],
-                      key: 'fgns2',
-                      text: 'Descrizione',
-                      type: 'header-two',
-                    },
-                  ],
-                  entityMap: {},
-                },
+        loaded: false,
+        error: {
+          original: null,
+          response: {
+            req: {
+              method: 'GET',
+              url: 'http://localhost:3000/++api++/novita/notizie/osservatorio-sul-turismo?expand=subsite',
+              headers: {
+                authorization:
+                  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY3ODg0NTk2OSwiZnVsbG5hbWUiOm51bGx9.8AzoIXH8pHTF9AcEOHqn61BSxpcxYiH3qNLzOZNyYmk',
+                accept: 'application/json',
               },
             },
-            blocks_layout: {
-              items: [
-                'a959cd72-9bce-493e-bd68-9d97f5e7965c',
-                '1a1f071d-569b-465d-be06-0208b177724d',
+            xhr: {},
+            text: '{\n  "message": "\'NoneType\' object has no attribute \'startswith\'",\n  "traceback": [\n    "File \\"/app/lib/python3.11/site-packages/ZPublisher/WSGIPublisher.py\\", line 172, in transaction_pubevents",\n    "    yield",\n    "",\n    "  File \\"/app/lib/python3.11/site-packages/ZPublisher/WSGIPublisher.py\\", line 381, in publish_module",\n    "    response = _publish(request, new_mod_info)",\n    "               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",\n    "",\n    "  File \\"/app/lib/python3.11/site-packages/ZPublisher/WSGIPublisher.py\\", line 276, in publish",\n    "    result = mapply(obj,",\n    "             ^^^^^^^^^^^",\n    "",\n    "  File \\"/app/lib/python3.11/site-packages/ZPublisher/mapply.py\\", line 85, in mapply",\n    "    return debug(object, args, context)",\n    "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^",\n    "",\n    "  File \\"/app/lib/python3.11/site-packages/ZPublisher/WSGIPublisher.py\\", line 68, in call_object",\n    "    return obj(*args)",\n    "           ^^^^^^^^^^",\n    "",\n    "  File \\"/app/lib/python3.11/site-packages/plone/rest/service.py\\", line 22, in __call__",\n    "    return self.render()",\n    "           ^^^^^^^^^^^^^",\n    "",\n    "  File \\"/app/lib/python3.11/site-packages/plone/restapi/services/__init__.py\\", line 19, in render",\n    "    content = self.reply()",\n    "              ^^^^^^^^^^^^",\n    "",\n    "  File \\"/app/lib/python3.11/site-packages/plone/restapi/services/content/get.py\\", line 16, in reply",\n    "    return serializer(version=self.request.get(\\"version\\"))",\n    "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",\n    "",\n    "  File \\"/app/src/design.plone.contenttypes/src/design/plone/contenttypes/restapi/serializers/dxcontent.py\\", line 51, in __call__",\n    "    result = super(SerializeFolderToJson, self).__call__(",\n    "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",\n    "",\n    "  File \\"/app/src/design.plone.contenttypes/src/design/plone/contenttypes/patches/baseserializer.py\\", line 61, in design_italia_serialize_folder_to_json_call",\n    "    folder_metadata = super(SerializeFolderToJson, self).__call__(",\n    "                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",\n    "",\n    "  File \\"/app/src/design.plone.contenttypes/src/design/plone/contenttypes/patches/baseserializer.py\\", line 46, in design_italia_serialize_to_json_call",\n    "    if title.startswith(PATH_SEPARATOR):",\n    "       ^^^^^^^^^^^^^^^^"\n  ],\n  "type": "AttributeError"\n}',
+            statusText: 'Internal Server Error',
+            statusCode: 500,
+            status: 500,
+            statusType: 5,
+            info: false,
+            ok: false,
+            redirect: false,
+            clientError: false,
+            serverError: true,
+            error: {
+              status: 500,
+              method: 'GET',
+              url: 'http://localhost:3000/++api++/novita/notizie/osservatorio-sul-turismo?expand=subsite',
+            },
+            accepted: false,
+            noContent: false,
+            badRequest: false,
+            unauthorized: false,
+            notAcceptable: false,
+            forbidden: false,
+            notFound: false,
+            headers: {
+              'cache-control': 'max-age=0, must-revalidate, private',
+              connection: 'close',
+              'content-length': '2457',
+              'content-type': 'application/json',
+              date: 'Tue, 14 Mar 2023 14:10:05 GMT',
+              expires: 'Sat, 16 Mar 2013 14:10:05 GMT',
+              server: 'waitress',
+              via: 'waitress',
+              'x-cache-operation': 'plone.app.caching.terseCaching',
+              'x-cache-rule': 'plone.content.dynamic',
+              'x-frame-options': 'SAMEORIGIN',
+              'x-ids-involved': '#47289573edbc4a5087eea97d01a6c8bc#',
+              'x-powered-by': 'Zope (www.zope.dev), Python (www.python.org)',
+            },
+            header: {
+              'cache-control': 'max-age=0, must-revalidate, private',
+              connection: 'close',
+              'content-length': '2457',
+              'content-type': 'application/json',
+              date: 'Tue, 14 Mar 2023 14:10:05 GMT',
+              expires: 'Sat, 16 Mar 2013 14:10:05 GMT',
+              server: 'waitress',
+              via: 'waitress',
+              'x-cache-operation': 'plone.app.caching.terseCaching',
+              'x-cache-rule': 'plone.content.dynamic',
+              'x-frame-options': 'SAMEORIGIN',
+              'x-ids-involved': '#47289573edbc4a5087eea97d01a6c8bc#',
+              'x-powered-by': 'Zope (www.zope.dev), Python (www.python.org)',
+            },
+            type: 'application/json',
+            links: {},
+            body: {
+              message: "'NoneType' object has no attribute 'startswith'",
+              traceback: [
+                'File "/app/lib/python3.11/site-packages/ZPublisher/WSGIPublisher.py", line 172, in transaction_pubevents',
+                '    yield',
+                '',
+                '  File "/app/lib/python3.11/site-packages/ZPublisher/WSGIPublisher.py", line 381, in publish_module',
+                '    response = _publish(request, new_mod_info)',
+                '               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^',
+                '',
+                '  File "/app/lib/python3.11/site-packages/ZPublisher/WSGIPublisher.py", line 276, in publish',
+                '    result = mapply(obj,',
+                '             ^^^^^^^^^^^',
+                '',
+                '  File "/app/lib/python3.11/site-packages/ZPublisher/mapply.py", line 85, in mapply',
+                '    return debug(object, args, context)',
+                '           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^',
+                '',
+                '  File "/app/lib/python3.11/site-packages/ZPublisher/WSGIPublisher.py", line 68, in call_object',
+                '    return obj(*args)',
+                '           ^^^^^^^^^^',
+                '',
+                '  File "/app/lib/python3.11/site-packages/plone/rest/service.py", line 22, in __call__',
+                '    return self.render()',
+                '           ^^^^^^^^^^^^^',
+                '',
+                '  File "/app/lib/python3.11/site-packages/plone/restapi/services/__init__.py", line 19, in render',
+                '    content = self.reply()',
+                '              ^^^^^^^^^^^^',
+                '',
+                '  File "/app/lib/python3.11/site-packages/plone/restapi/services/content/get.py", line 16, in reply',
+                '    return serializer(version=self.request.get("version"))',
+                '           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^',
+                '',
+                '  File "/app/src/design.plone.contenttypes/src/design/plone/contenttypes/restapi/serializers/dxcontent.py", line 51, in __call__',
+                '    result = super(SerializeFolderToJson, self).__call__(',
+                '             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^',
+                '',
+                '  File "/app/src/design.plone.contenttypes/src/design/plone/contenttypes/patches/baseserializer.py", line 61, in design_italia_serialize_folder_to_json_call',
+                '    folder_metadata = super(SerializeFolderToJson, self).__call__(',
+                '                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^',
+                '',
+                '  File "/app/src/design.plone.contenttypes/src/design/plone/contenttypes/patches/baseserializer.py", line 46, in design_italia_serialize_to_json_call',
+                '    if title.startswith(PATH_SEPARATOR):',
+                '       ^^^^^^^^^^^^^^^^',
               ],
+              type: 'AttributeError',
             },
           },
-          design_italia_meta_type: 'Notizia',
-          effective: '2019-12-03T11:09:00+00:00',
-          exclude_from_nav: false,
-          expires: null,
-          id: 'osservatorio-sul-turismo',
-          image: {
-            'content-type': 'image/png',
-            download:
-              'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-1156-c094bb5c2dc00c7e35fb6e86c39554d7.png',
-            filename: 'foto-ospedale.png',
-            height: 940,
-            scales: {
-              gallery: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-250-3b0282cd29acba6e89db34e489e3595e.png',
-                height: 203,
-                width: 250,
-              },
-              great: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-1200-22277e74e0047ea44bc371f1af49519b.png',
-                height: 940,
-                width: 1156,
-              },
-              huge: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-1600-d94832ce2cbc67eb01c1407921242e4d.png',
-                height: 940,
-                width: 1156,
-              },
-              icon: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-32-7167c9ac8896506fef516e3c603935ac.png',
-                height: 26,
-                width: 32,
-              },
-              large: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-800-dcf1d9a887df95a771ee9ce05e029e48.png',
-                height: 650,
-                width: 800,
-              },
-              larger: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-1000-f27f06722d1699e3de50f91ea90ddfdb.png',
-                height: 813,
-                width: 1000,
-              },
-              listing: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-16-f0257c07396bd9116228983c9574771d.png',
-                height: 13,
-                width: 16,
-              },
-              midi: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-300-3a89a9a6a73de60acf2a7472fd6e48c9.png',
-                height: 243,
-                width: 300,
-              },
-              mini: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-200-3462630e79a7bb23ba38d246781867c5.png',
-                height: 162,
-                width: 200,
-              },
-              preview: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-400-ffeea08e7e9d30a340472a30f88cd4d3.png',
-                height: 325,
-                width: 400,
-              },
-              teaser: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-600-8b983b752a9141c04191b0bd7be9b509.png',
-                height: 487,
-                width: 600,
-              },
-              thumb: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-128-5878cd60521a7d68ab1aac1141b1a232.png',
-                height: 104,
-                width: 128,
-              },
-              tile: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/image-64-62380f15653ca9c852052a334bb5e4c9.png',
-                height: 52,
-                width: 64,
-              },
-            },
-            size: 1296882,
-            width: 1156,
-          },
-          image_caption: "Una didascalia per l'immagine sopra.",
-          is_folderish: true,
-          items: [
-            {
-              '@id':
-                'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/multimedia',
-              '@type': 'Document',
-              description: '',
-              design_italia_meta_type: 'Pagina',
-              has_children: false,
-              id: 'multimedia',
-              image_field: '',
-              image_scales: null,
-              review_state: 'private',
-              title: 'Multimedia',
-              url: '/novita/notizie/osservatorio-sul-turismo/multimedia',
-            },
-            {
-              '@id':
-                'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/documenti-allegati',
-              '@type': 'Document',
-              description: '',
-              design_italia_meta_type: 'Pagina',
-              has_children: true,
-              id: 'documenti-allegati',
-              image_field: '',
-              image_scales: null,
-              review_state: 'private',
-              title: 'Documenti allegati',
-              url: '/novita/notizie/osservatorio-sul-turismo/documenti-allegati',
-            },
-          ],
-          items_total: 2,
-          language: {
-            title: 'Italiano',
-            token: 'it',
-          },
-          layout: 'newsitem_view',
-          lock: {
-            locked: false,
-            stealable: true,
-          },
-          luoghi_correlati: [],
-          modified: '2023-01-19T12:04:48+00:00',
-          next_item: {},
-          notizie_correlate: [],
-          numero_progressivo_cs: null,
-          opengraph_description: null,
-          opengraph_image: null,
-          opengraph_title: null,
-          parent: {
-            '@id': 'http://localhost:3000/novita/notizie',
-            '@type': 'Document',
-            description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula fermentum eros a elementum. Donec.',
-            design_italia_meta_type: 'Pagina',
-            has_children: true,
-            id: 'notizie',
-            image_field: null,
-            image_scales: null,
-            review_state: 'private',
-            title: 'Notizie',
-          },
-          preview_caption: "Una didascalia per l'immagine sopra",
-          preview_image: {
-            'content-type': 'image/png',
-            download:
-              'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-1156-97eafca2d9adf2a8093aa4bd222298ca.png',
-            filename: 'foto-ospedale.png',
-            height: 940,
-            scales: {
-              gallery: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-250-7d2c91bdaa911da91a80c240f4eaf97a.png',
-                height: 203,
-                width: 250,
-              },
-              great: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-1200-3a7316f12d617366d900bc11166346a1.png',
-                height: 940,
-                width: 1156,
-              },
-              huge: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-1600-dec02251d3a0fa2ff01f8257c24cf5ba.png',
-                height: 940,
-                width: 1156,
-              },
-              icon: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-32-8768b0830b355e9343577782227e950f.png',
-                height: 26,
-                width: 32,
-              },
-              large: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-800-f873ced3d03f125d6082b36d8a5aaba3.png',
-                height: 650,
-                width: 800,
-              },
-              larger: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-1000-83aeb1fbae6741eeb58ca3d9320fbd77.png',
-                height: 813,
-                width: 1000,
-              },
-              listing: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-16-780d56a712328d39936fefc2a00a0b32.png',
-                height: 13,
-                width: 16,
-              },
-              midi: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-300-13182b93e2e289079fcb0c83782d63bb.png',
-                height: 243,
-                width: 300,
-              },
-              mini: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-200-9102732c7ca035d6187b14868643bb42.png',
-                height: 162,
-                width: 200,
-              },
-              preview: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-400-53dd9347f53c680de283bac15ed876dd.png',
-                height: 325,
-                width: 400,
-              },
-              teaser: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-600-8dafea6a9881d1a8d0146d995cb6a9f8.png',
-                height: 487,
-                width: 600,
-              },
-              thumb: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-128-e58700fdc985abe670afa090afe13508.png',
-                height: 104,
-                width: 128,
-              },
-              tile: {
-                download:
-                  'http://localhost:3000/novita/notizie/osservatorio-sul-turismo/@@images/preview_image-64-0fe74aaaa862a21b4f60c9f8b5fcfe38.png',
-                height: 52,
-                width: 64,
-              },
-            },
-            size: 1296882,
-            width: 1156,
-          },
-          previous_item: {},
-          relatedItems: [],
-          review_state: 'private',
-          rights: '',
-          seo_canonical_url: null,
-          seo_description: null,
-          seo_noindex: null,
-          seo_title: null,
-          subjects: [],
-          tassonomia_argomenti: [
-            {
-              '@id': 'http://localhost:3000/argomenti/cultura',
-              '@type': 'Pagina Argomento',
-              description: '',
-              design_italia_meta_type: 'Argomento',
-              effective: null,
-              has_children: false,
-              id: 'cultura',
-              image_field: null,
-              image_scales: null,
-              review_state: 'private',
-              title: 'Cultura',
-            },
-            {
-              '@id': 'http://localhost:3000/argomenti/muoversi',
-              '@type': 'Pagina Argomento',
-              description: '',
-              design_italia_meta_type: 'Argomento',
-              effective: null,
-              has_children: false,
-              id: 'muoversi',
-              image_field: null,
-              image_scales: null,
-              review_state: 'private',
-              title: 'Muoversi',
-            },
-          ],
-          tipologia_notizia: 'Notizia',
-          title: 'Osservatorio sul turismo',
-          version: 'current',
-          versioning_enabled: true,
-          working_copy: null,
-          working_copy_of: null,
+          status: 500,
         },
       },
     },
@@ -1316,7 +1332,7 @@ test('renders all mandatory fields in the page', async () => {
   expect(screen.getByText(/Acquisizione beni e servizi/i)).toBeInTheDocument();
 
   //stato del bando
-  expect(screen.getByText(/Bando attivo/i)).toBeInTheDocument();
+  expect(screen.getByText(/Bando in corso/i)).toBeInTheDocument();
 });
 
 test('renders all non-mandatory fields in the page', async () => {
@@ -1350,9 +1366,7 @@ test('renders all non-mandatory fields in the page', async () => {
   expect(screen.getByText(/Marvel/i)).toBeInTheDocument();
 
   // apertura bando --> non appare se non sono compilati sia apertura che termine del bando
-  expect(
-    screen.getByText(/Apertura del bando/i, { exact: false }),
-  ).toBeInTheDocument();
+  expect(screen.getByText(/Apertura del bando/i)).toBeInTheDocument();
 
   // termine per la richiesta
   expect(
@@ -1374,8 +1388,8 @@ test('renders all non-mandatory fields in the page', async () => {
   //ulteriori informazioni
   expect(screen.getByText(/Caught in a landside/i)).toBeInTheDocument();
 
-  // note di aggiornamento --> non compare
-  expect(screen.getByText(/No escape from reality/i)).toBeInTheDocument();
+  // note di aggiornamento --> compare solo aggiornando bando
+  // expect(screen.getByText(/No escape from reality/i)).toBeInTheDocument();
 
   //area responsabile
   expect(

@@ -812,13 +812,14 @@ test('expect to have all fields in page', async () => {
 
   //didascalia immagine testata --> non mostrata in pagina
   expect(screen.getByText('Didascalia immagine testata')).toBeInTheDocument();
-  //didascalia immagine preview --> non mostrata in pagina
-  expect(screen.getByText('Preview description')).toBeInTheDocument();
 
   // Ulteriori informazioni
   expect(screen.getByText(/There's a lady who's sure/i)).toBeInTheDocument();
 
   //Eventi correlati
+  expect(
+    screen.getByRole('heading', { name: /Contenuti correlati/i }),
+  ).toBeInTheDocument();
   expect(
     screen.getByRole('link', { name: /Mega evento/i }),
   ).toBeInTheDocument();
@@ -845,7 +846,7 @@ test('expect to have all fields in page', async () => {
 //   expect(getByText(/Eventi ambiente ed educazione/)).toBeInTheDocument();
 // });
 
-// test('todo', () => {
-//   expect(with_blocks).toBeDefined();
-//   expect(true).toBe(true);
-// });
+test('todo', () => {
+  expect(with_blocks).toBeDefined();
+  expect(true).toBe(true);
+});

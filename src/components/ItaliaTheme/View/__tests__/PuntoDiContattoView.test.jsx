@@ -20,21 +20,6 @@ beforeAll(
 );
 
 const mock_mandatory = {
-  '@id':
-    'http://localhost:3000/amministrazione/punti-di-contatto/is-this-the-real-life',
-  '@type': 'PuntoDiContatto',
-  UID: '541fa38e47764d10bc257d31c5be0ccd',
-  title: 'Is this the real life',
-  value_punto_contatto: [
-    {
-      pdc_type: 'email',
-      pdc_value: 'freddymercury@gmail.com',
-    },
-  ],
-};
-
-const mock_allfields = {
-  ...mock_mandatory,
   '@components': {
     actions: {
       '@id':
@@ -70,6 +55,21 @@ const mock_allfields = {
         'http://localhost:3000/amministrazione/punti-di-contatto/is-this-the-real-life/@workflow',
     },
   },
+  '@id':
+    'http://localhost:3000/amministrazione/punti-di-contatto/is-this-the-real-life',
+  '@type': 'PuntoDiContatto',
+  UID: '541fa38e47764d10bc257d31c5be0ccd',
+  title: 'Is this the real life',
+  value_punto_contatto: [
+    {
+      pdc_type: 'email',
+      pdc_value: 'freddymercury@gmail.com',
+    },
+  ],
+};
+
+const mock_allfields = {
+  ...mock_mandatory,
   allow_discussion: false,
   changeNote: '',
   contributors: [],
@@ -93,7 +93,56 @@ const mock_allfields = {
     locked: false,
     stealable: true,
   },
-  modified: '2023-01-31T14:33:05+00:00',
+  luoghi_correlati: [
+    {
+      '@id': 'http://localhost:3000/vivi-il-comune/luoghi/prova',
+      '@type': 'Venue',
+      circoscrizione: null,
+      city: 'Roma',
+      country: '380',
+      description: 'Lorem ipsum',
+      design_italia_meta_type: 'Luogo',
+      email: null,
+      fax: null,
+      geolocation: {
+        latitude: 41.8337833,
+        longitude: 12.4677863,
+      },
+      has_children: true,
+      id: 'prova',
+      image_field: null,
+      image_scales: null,
+      nome_sede: null,
+      orario_pubblico: {
+        blocks: {
+          '0cba7e98-73ee-41c7-9260-8dbb4af725d4': {
+            '@type': 'text',
+          },
+        },
+        blocks_layout: {
+          items: ['0cba7e98-73ee-41c7-9260-8dbb4af725d4'],
+        },
+      },
+      pec: null,
+      quartiere: null,
+      review_state: 'private',
+      riferimento_mail_struttura: null,
+      riferimento_pec_struttura: null,
+      riferimento_telefonico_struttura: null,
+      street: 'Via Liszt, 21',
+      telefono: null,
+      tipologia_luogo: [
+        {
+          title: 'Architettura Militare e fortificata␟Roccaforte',
+          token: 'roccaforte',
+        },
+      ],
+      title: 'Prova',
+      web: null,
+      zip_code: '00144',
+    },
+  ],
+  modified: '2023-01-31T14:43:38+00:00',
   next_item: {},
   opengraph_description: null,
   opengraph_image: null,
@@ -241,7 +290,7 @@ const mock_allfields = {
         'http://localhost:3000/notizie/so-you-think-you-can-stop-me-and-spit-in-my-eye',
       '@type': 'News Item',
       description: 'So you think you can love me and leave me to die',
-      design_italia_meta_type: 'notizia',
+      design_italia_meta_type: 'Notizia',
       effective: '2023-01-26T12:28:00+00:00',
       has_children: true,
       id: 'so-you-think-you-can-stop-me-and-spit-in-my-eye',
@@ -373,19 +422,19 @@ const mock_allfields = {
               },
               large: {
                 download:
-                  '@@images/preview_image-800-60c57a8c74c21c289ef969d0f792b5ff.webp',
+                  '@@images/preview_image-800-60c57a8c74c21c289ef969d0f792b5ff.jpeg',
                 height: 533,
                 width: 800,
               },
               larger: {
                 download:
-                  '@@images/preview_image-1000-fd1d78cac12899a019ba4ca8525bbf31.webp',
+                  '@@images/preview_image-1000-fd1d78cac12899a019ba4ca8525bbf31.jpeg',
                 height: 666,
                 width: 1000,
               },
               listing: {
                 download:
-                  '@@images/preview_image-16-3ed212ed2808128b22aae7159c0ddd00.webp',
+                  '@@images/preview_image-16-3ed212ed2808128b22aae7159c0ddd00.jpeg',
                 height: 10,
                 width: 16,
               },
@@ -409,7 +458,7 @@ const mock_allfields = {
               },
               teaser: {
                 download:
-                  '@@images/preview_image-600-4e55af059198a0f440d21500a699070b.webp',
+                  '@@images/preview_image-600-4e55af059198a0f440d21500a699070b.jpeg',
                 height: 399,
                 width: 600,
               },
@@ -432,6 +481,36 @@ const mock_allfields = {
         ],
       },
       review_state: 'private',
+      tipologia_notizia: [
+        {
+          title: null,
+          token: 'n',
+        },
+        {
+          title: null,
+          token: 'o',
+        },
+        {
+          title: null,
+          token: 't',
+        },
+        {
+          title: null,
+          token: 'i',
+        },
+        {
+          title: null,
+          token: 'z',
+        },
+        {
+          title: null,
+          token: 'i',
+        },
+        {
+          title: null,
+          token: 'a',
+        },
+      ],
       title: 'So you think you can stop me and spit in my eye',
       typology: 'notizia',
     },
@@ -441,7 +520,7 @@ const mock_allfields = {
       '@type': 'News Item',
       description:
         'Le informazioni per partecipare all’iniziativa rivolta a tutte le fasce d’età per promuovere l’attività motoria nelle aree verdi della città.',
-      design_italia_meta_type: 'Notizia',
+      design_italia_meta_type: null,
       effective: '2022-05-18T16:29:00+00:00',
       has_children: true,
       id: 'sport-nel-verde-le-iniziative-della-prossima-edizione',
@@ -631,6 +710,36 @@ const mock_allfields = {
         ],
       },
       review_state: 'published',
+      tipologia_notizia: [
+        {
+          title: null,
+          token: 'N',
+        },
+        {
+          title: null,
+          token: 'o',
+        },
+        {
+          title: null,
+          token: 't',
+        },
+        {
+          title: null,
+          token: 'i',
+        },
+        {
+          title: null,
+          token: 'z',
+        },
+        {
+          title: null,
+          token: 'i',
+        },
+        {
+          title: null,
+          token: 'a',
+        },
+      ],
       title: 'Sport nel verde: le iniziative della prossima edizione',
       typology: 'Notizia',
     },
@@ -639,7 +748,7 @@ const mock_allfields = {
       '@type': 'News Item',
       description:
         'Donec in consequat nunc. Duis semper fermentum lacus, ac condimentum justo auctor a. Nam erat erat, porta vel pharetra in, ullamcorper vel turpis.',
-      design_italia_meta_type: 'Notizia',
+      design_italia_meta_type: null,
       effective: '2019-12-03T11:09:00+00:00',
       has_children: true,
       id: 'osservatorio-sul-turismo',
@@ -805,6 +914,36 @@ const mock_allfields = {
         ],
       },
       review_state: 'private',
+      tipologia_notizia: [
+        {
+          title: null,
+          token: 'N',
+        },
+        {
+          title: null,
+          token: 'o',
+        },
+        {
+          title: null,
+          token: 't',
+        },
+        {
+          title: null,
+          token: 'i',
+        },
+        {
+          title: null,
+          token: 'z',
+        },
+        {
+          title: null,
+          token: 'i',
+        },
+        {
+          title: null,
+          token: 'a',
+        },
+      ],
       title: 'Osservatorio sul turismo',
       typology: 'Notizia',
     },
@@ -815,7 +954,161 @@ const mock_allfields = {
   seo_description: null,
   seo_noindex: null,
   seo_title: null,
+  strutture_correlate: [
+    {
+      '@id':
+        'http://localhost:3000/amministrazione/uffici/gestione-impianti-sportivi',
+      '@type': 'UnitaOrganizzativa',
+      address: '',
+      circoscrizione: '',
+      city: '',
+      contact_info: [
+        {
+          '@id':
+            'http://localhost:3000/amministrazione/punti-di-contatto/is-this-the-real-life',
+          '@type': 'PuntoDiContatto',
+          description: 'Is this just fantasy',
+          design_italia_meta_type: 'Punto di Contatto',
+          has_children: false,
+          id: 'is-this-the-real-life',
+          image_field: null,
+          image_scales: null,
+          review_state: 'private',
+          title: 'Is this the real life',
+          value_punto_contatto: [
+            {
+              pdc_type: 'email',
+              pdc_value: 'freddymercury@gmail.com',
+            },
+          ],
+        },
+      ],
+      description: 'Prova prova prova',
+      design_italia_meta_type: 'Unita Organizzativa',
+      geolocation: {
+        latitude: 0,
+        longitude: 0,
+      },
+      has_children: true,
+      id: 'gestione-impianti-sportivi',
+      image_field: null,
+      image_scales: null,
+      nome_sede: '',
+      quartiere: '',
+      review_state: 'private',
+      street: 'Via Dei Transiti 21',
+      tipologia_organizzazione: {
+        title: 'Struttura amministrativa',
+        token: 'struttura_amministrativa',
+      },
+      title: 'Gestione impianti sportivi',
+      zip_code: '50302',
+    },
+    {
+      '@id': 'http://localhost:3000/amministrazione/uffici/giunta-e-consiglio',
+      '@type': 'UnitaOrganizzativa',
+      address: '',
+      circoscrizione: '',
+      city: '',
+      contact_info: [
+        {
+          '@id':
+            'http://localhost:3000/amministrazione/punti-di-contatto/is-this-the-real-life',
+          '@type': 'PuntoDiContatto',
+          description: 'Is this just fantasy',
+          design_italia_meta_type: 'Punto di Contatto',
+          has_children: false,
+          id: 'is-this-the-real-life',
+          image_field: null,
+          image_scales: null,
+          review_state: 'private',
+          title: 'Is this the real life',
+          value_punto_contatto: [
+            {
+              pdc_type: 'email',
+              pdc_value: 'freddymercury@gmail.com',
+            },
+          ],
+        },
+      ],
+      description: 'Pierced through the heart but never killed',
+      design_italia_meta_type: 'Unita Organizzativa',
+      geolocation: {
+        latitude: 0,
+        longitude: 0,
+      },
+      has_children: true,
+      id: 'giunta-e-consiglio',
+      image_field: null,
+      image_scales: null,
+      nome_sede: '',
+      quartiere: '',
+      review_state: 'private',
+      street: '',
+      tipologia_organizzazione: {
+        title: 'Struttura amministrativa',
+        token: 'struttura_amministrativa',
+      },
+      title: 'Giunta e consiglio',
+      zip_code: '',
+    },
+    {
+      '@id':
+        'http://localhost:3000/amministrazione/enti-e-fondazioni/im-just-a-poor-boy',
+      '@type': 'UnitaOrganizzativa',
+      address: '',
+      circoscrizione: 'No, we will not let you go',
+      city: 'will you let me go',
+      contact_info: [
+        {
+          '@id':
+            'http://localhost:3000/amministrazione/punti-di-contatto/is-this-the-real-life',
+          '@type': 'PuntoDiContatto',
+          description: 'Is this just fantasy',
+          design_italia_meta_type: 'Punto di Contatto',
+          has_children: false,
+          id: 'is-this-the-real-life',
+          image_field: null,
+          image_scales: null,
+          review_state: 'private',
+          title: 'Is this the real life',
+          value_punto_contatto: [
+            {
+              pdc_type: 'email',
+              pdc_value: 'freddymercury@gmail.com',
+            },
+          ],
+        },
+      ],
+      description: 'Nobody loves me',
+      design_italia_meta_type: 'Unita Organizzativa',
+      geolocation: {
+        latitude: 0,
+        longitude: 0,
+      },
+      has_children: true,
+      id: 'im-just-a-poor-boy',
+      image_field: null,
+      image_scales: null,
+      nome_sede: 'Spare him his life from this monstrosity',
+      quartiere: 'Bismillah',
+      review_state: 'private',
+      street: 'Easy come',
+      tipologia_organizzazione: {
+        title: 'Struttura amministrativa',
+        token: 'struttura_amministrativa',
+      },
+      title: "I'm just a poor boy",
+      zip_code: 'Easy go',
+    },
+  ],
   subjects: [],
+  value_punto_contatto: [
+    {
+      pdc_type: 'email',
+      pdc_value: 'freddymercury@gmail.com',
+    },
+  ],
   version: 'current',
   versioning_enabled: true,
   working_copy: null,
@@ -1029,6 +1322,12 @@ test('renders all non-mandatory fields in the page', async () => {
     screen.getByRole('link', { name: /Gabriele Bianchi/i }),
   ).toBeInTheDocument();
 
+  //strutture collegate
+  expect(screen.getByRole('heading', { name: /Persona/i })).toBeInTheDocument();
+  expect(
+    screen.getByRole('link', { name: /Gabriele Bianchi/i }),
+  ).toBeInTheDocument();
+
   //contenuti correlati
   expect(
     screen.getByRole('heading', { name: /Contenuti correlati/i }),
@@ -1036,4 +1335,44 @@ test('renders all non-mandatory fields in the page', async () => {
   expect(
     screen.getByRole('link', { name: /Aree di competenza/i }),
   ).toBeInTheDocument();
+});
+
+test('renders relateed fields', async () => {
+  render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <PuntoDiContattoView content={mock_allfields} />
+      </MemoryRouter>
+    </Provider>,
+  );
+
+  // strutture correlate
+  mock_allfields.strutture_correlate?.length > 0 &&
+    expect(
+      screen.getByRole('heading', { name: /Strutture correlate/i }),
+    ).toBeInTheDocument();
+  expect(
+    screen.getByRole('link', { name: /Gestione impianti sportivi/i }),
+  ).toBeInTheDocument();
+
+  mock_allfields.servizi_correlati?.length > 0 &&
+    expect(
+      screen.getByRole('heading', { name: /Servizi correlati/i }),
+    ).toBeInTheDocument();
+
+  mock_allfields.eventi_correlati?.length > 0 &&
+    expect(
+      screen.getByRole('heading', { name: /Eventi correlati/i }),
+    ).toBeInTheDocument();
+
+  mock_allfields.luoghi_correlati?.length > 0 &&
+    expect(
+      screen.getByRole('heading', { name: /Luoghi correlati/i }),
+    ).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /Prova/i })).toBeInTheDocument();
+
+  mock_allfields.persone_correlate?.length > 0 &&
+    expect(
+      screen.getByRole('heading', { name: /Persone correlate/i }),
+    ).toBeInTheDocument();
 });

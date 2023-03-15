@@ -168,7 +168,22 @@ const mock_allfields = {
   allow_discussion: false,
   changeNote: '',
   contributors: [],
-  correlato_in_evidenza: [],
+  correlato_in_evidenza: [
+    {
+      '@id': 'http://localhost:3000/novita',
+      '@type': 'Document',
+      description:
+        'Tutte le novità comunali per i cittadini per restare aggiornati.',
+      design_italia_meta_type: 'Pagina',
+      effective: null,
+      has_children: true,
+      id: 'novita',
+      image_field: null,
+      image_scales: null,
+      review_state: 'published',
+      title: 'Novità',
+    },
+  ],
   created: '2023-01-31T10:42:29+00:00',
   creators: ['admin'],
   design_italia_meta_type: 'notizia',
@@ -595,7 +610,21 @@ const mock_allfields = {
   seo_noindex: null,
   seo_title: null,
   subjects: [],
-  tassonomia_argomenti: [],
+  tassonomia_argomenti: [
+    {
+      '@id': 'http://localhost:3000/argomenti/cultura',
+      '@type': 'Pagina Argomento',
+      description: '',
+      design_italia_meta_type: 'Argomento',
+      effective: null,
+      has_children: false,
+      id: 'cultura',
+      image_field: null,
+      image_scales: null,
+      review_state: 'private',
+      title: 'Cultura',
+    },
+  ],
   version: 'current',
   versioning_enabled: true,
   working_copy: null,
@@ -1665,8 +1694,14 @@ test('renders all non-mandatory fields in the page', async () => {
   expect(screen.getByAltText(/can't do this to me, baby/i)).toBeInTheDocument();
   expect(screen.getByText(/can't do this to me, baby/i)).toBeInTheDocument();
 
+  // a cura di - persone
+  expect(
+    screen.getByRole('link', { name: /Marco Murgia/i }),
+  ).toBeInTheDocument();
+
   //argomenti + correlato in evidenza
-  // cannot access local variable 'resolved_by' where it is not associated with a value
+  expect(screen.getAllByRole('link', { name: /Cultura/i })).toHaveLength(2);
+  expect(screen.getByRole('heading', { name: /Novità/i })).toBeInTheDocument();
 
   //numero del comunicato di stampa
   expect(screen.getByText(/Numero del comunicato stampa/i)).toBeInTheDocument();
@@ -1693,7 +1728,7 @@ test('renders all non-mandatory fields in the page', async () => {
   ).toBeInTheDocument();
 
   //data di pubblicazione
-  expect(screen.getByText(/26-01-2023/i)).toBeInTheDocument();
+  expect(screen.getByText(/26 January 2023/i)).toBeInTheDocument();
 
   //data di scadenza--> non appare
   expect(screen.getByText(/28-02-2023/i)).toBeInTheDocument();
