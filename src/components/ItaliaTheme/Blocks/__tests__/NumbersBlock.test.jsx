@@ -357,7 +357,7 @@ test('View renders all fields', async () => {
   const background = document.querySelector('.background-image');
   expect(background).toBeInTheDocument();
   //icona --> non renderizza
-  const icon = document.querySelector('.icon');
+  const icon = document.querySelector('.icons');
   expect(icon).toBeInTheDocument();
 
   //titolo

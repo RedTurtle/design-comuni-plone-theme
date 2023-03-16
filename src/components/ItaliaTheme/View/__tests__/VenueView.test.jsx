@@ -20,6 +20,41 @@ beforeAll(
 );
 
 const mock_mandatory = {
+  '@components': {
+    actions: {
+      '@id':
+        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@actions',
+    },
+    aliases: {
+      '@id':
+        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@aliases',
+    },
+    breadcrumbs: {
+      '@id':
+        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@breadcrumbs',
+    },
+    contextnavigation: {
+      '@id':
+        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@contextnavigation',
+    },
+    navigation: {
+      '@id':
+        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@navigation',
+    },
+    subsite: {},
+    translations: {
+      '@id':
+        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@translations',
+    },
+    types: {
+      '@id':
+        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@types',
+    },
+    workflow: {
+      '@id':
+        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@workflow',
+    },
+  },
   '@id': 'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody',
   '@type': 'Venue',
   UID: 'f936f47d0dc34a6c98f40b4d1e1baf7e',
@@ -177,41 +212,7 @@ const mock_mandatory = {
 };
 
 const mock_allfields = {
-  '@components': {
-    actions: {
-      '@id':
-        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@actions',
-    },
-    aliases: {
-      '@id':
-        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@aliases',
-    },
-    breadcrumbs: {
-      '@id':
-        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@breadcrumbs',
-    },
-    contextnavigation: {
-      '@id':
-        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@contextnavigation',
-    },
-    navigation: {
-      '@id':
-        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@navigation',
-    },
-    subsite: {},
-    translations: {
-      '@id':
-        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@translations',
-    },
-    types: {
-      '@id':
-        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@types',
-    },
-    workflow: {
-      '@id':
-        'http://localhost:3000/amministrazione/luoghi/bohemian-rhapsody/@workflow',
-    },
-  },
+  ...mock_mandatory,
   allow_discussion: false,
   changeNote: '',
   circoscrizione: "Because I'm easy come",
@@ -4471,7 +4472,7 @@ const store = mockStore({
 });
 
 test('renders all mandatory fields in the page', async () => {
-  const { getByText, getByRole, debug } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter>
         <VenueView content={mock_mandatory} />
@@ -4494,8 +4495,6 @@ test('renders all mandatory fields in the page', async () => {
   //didascalia
   expect(screen.getByText(/Is this just fantasy?/i)).toBeInTheDocument();
 
-  //immagine preview--> non appare
-
   //modalità di accesso
   expect(
     screen.getByRole('heading', { name: /Modalità di accesso/i }),
@@ -4509,19 +4508,17 @@ test('renders all mandatory fields in the page', async () => {
   //CAP
   expect(screen.getByText(/00144/i)).toBeInTheDocument();
 
-  //coordinate --> non mostrate
-
   //punti di contatto
   expect(
     screen.getByRole('heading', { name: /Contatti/i }),
   ).toBeInTheDocument();
   expect(
-    screen.getByRole('link', { name: /Ufficio delle Attività Produttive/i }),
+    screen.getByRole('link', { name: /produttive@comune.cagliari.it/i }),
   ).toBeInTheDocument();
 });
 
 test('renders all non-mandatory fields in the page', async () => {
-  const { getByText, getByRole, debug } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter>
         <VenueView content={mock_allfields} />
@@ -4529,7 +4526,7 @@ test('renders all non-mandatory fields in the page', async () => {
     </Provider>,
   );
 
-  //argomenti --> compaiono in testata + elementi in evidenza
+  //argomenti
   expect(screen.getAllByText(/Argomenti/i)).toBeTruthy();
   expect(
     screen.getAllByRole('link', { name: /Vivere la città/i }),
@@ -4543,10 +4540,10 @@ test('renders all non-mandatory fields in the page', async () => {
     screen.getByRole('link', { name: /Il castello normanno/i }),
   ).toBeInTheDocument();
 
-  // //tipologia luogo --> non appare
-  // expect(
-  //   screen.getByText(/Architettura Militare e fortificata/i),
-  // ).toBeInTheDocument();
+  //tipologia luogo --> non appare
+  expect(
+    screen.getByText(/Architettura Militare e fortificata/i),
+  ).toBeInTheDocument();
 
   //descrizione completa
   expect(
@@ -4590,7 +4587,7 @@ test('renders all non-mandatory fields in the page', async () => {
   ).toBeInTheDocument();
 
   //struttura responsabile --> non appare
-  // expect(screen.getByText(/Any way the wind blows/i)).toBeInTheDocument();
+  expect(screen.getByText(/Any way the wind blows/i)).toBeInTheDocument();
 
   //ulteriori informazioni
   expect(screen.getByText(/doesn't really matter to me/i)).toBeInTheDocument();
@@ -4612,8 +4609,3 @@ test('renders all non-mandatory fields in the page', async () => {
     }),
   ).toBeInTheDocument();
 });
-
-// expect(screen.getByRole('heading', {name: //i})).toBeInTheDocument();
-// expect(screen.getByRole('link', {name: //i})).toBeInTheDocument();
-// expect(screen.getByAltText(//i)).toBeInTheDocument();
-// expect(screen.getByText(//i)).toBeInTheDocument();

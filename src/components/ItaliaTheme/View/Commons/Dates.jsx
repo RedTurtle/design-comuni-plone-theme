@@ -43,7 +43,6 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
   const intl = useIntl();
   const moment = momentlib.default;
   moment.locale(intl.locale);
-  console.log(content);
 
   const rrulestr = rrule.rrulestr;
 

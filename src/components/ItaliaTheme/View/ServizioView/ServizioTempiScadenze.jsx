@@ -11,7 +11,6 @@ const messages = defineMessages({
 
 const ServizioTempiScadenze = ({ content, moment }) => {
   const intl = useIntl();
-
   return (
     <RichTextSection
       content={content.tempi_e_scadenze}

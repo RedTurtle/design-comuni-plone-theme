@@ -299,7 +299,7 @@ const mock_fields = {
     entityMap: {},
   },
   countDownPosition: 'right',
-  endDate: '2023-02-28T09:48:37.327Z',
+  endDate: '2050-02-28T09:48:37.327Z',
   showFullWidth: true,
   showHours: true,
   showMinutes: true,

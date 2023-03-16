@@ -22,188 +22,159 @@ beforeAll(
 const mock_mandatory = {
   '@components': {
     actions: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@actions',
+      '@id': 'http://localhost:3000/vivi-il-comune/trasparenza/@actions',
     },
     aliases: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@aliases',
+      '@id': 'http://localhost:3000/vivi-il-comune/trasparenza/@aliases',
     },
     breadcrumbs: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@breadcrumbs',
+      '@id': 'http://localhost:3000/vivi-il-comune/trasparenza/@breadcrumbs',
     },
     contextnavigation: {
       '@id':
-        'http://localhost:3000/amministrazione/trasparenza/@contextnavigation',
+        'http://localhost:3000/vivi-il-comune/trasparenza/@contextnavigation',
     },
     navigation: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@navigation',
+      '@id': 'http://localhost:3000/vivi-il-comune/trasparenza/@navigation',
     },
     subsite: {},
     translations: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@translations',
+      '@id': 'http://localhost:3000/vivi-il-comune/trasparenza/@translations',
     },
     types: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@types',
+      '@id': 'http://localhost:3000/vivi-il-comune/trasparenza/@types',
     },
     workflow: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@workflow',
+      '@id': 'http://localhost:3000/vivi-il-comune/trasparenza/@workflow',
     },
   },
-  '@id': 'http://localhost:3000/amministrazione/trasparenza',
+  '@id': 'http://localhost:3000/vivi-il-comune/trasparenza',
   '@type': 'Document',
-  UID: '688cfca7ba0f42b49fcd7e5c8b6983e8',
+  UID: '542f7b7e8b554f978c729d84b88db175',
   title: 'Trasparenza',
 };
 
 const mock_allfields = {
   ...mock_mandatory,
-  '@components': {
-    actions: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@actions',
-    },
-    aliases: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@aliases',
-    },
-    breadcrumbs: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@breadcrumbs',
-    },
-    contextnavigation: {
-      '@id':
-        'http://localhost:3000/amministrazione/trasparenza/@contextnavigation',
-    },
-    navigation: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@navigation',
-    },
-    subsite: {},
-    translations: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@translations',
-    },
-    types: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@types',
-    },
-    workflow: {
-      '@id': 'http://localhost:3000/amministrazione/trasparenza/@workflow',
-    },
-  },
   allow_discussion: false,
   blocks: {
-    '336e4c46-d55d-4790-8e3b-144d52b15e0b': {
-      '@type': 'text',
-    },
-    'aa791609-cae9-4da6-86bb-da50f1dafdf9': {
+    'd872f558-3d24-4ce2-a75d-7c6b12918ca9': {
       '@type': 'title',
+    },
+    'fbd627d2-46a1-4d32-b610-6aed2a142b36': {
+      '@type': 'text',
     },
   },
   blocks_layout: {
     items: [
-      'aa791609-cae9-4da6-86bb-da50f1dafdf9',
-      '336e4c46-d55d-4790-8e3b-144d52b15e0b',
+      'd872f558-3d24-4ce2-a75d-7c6b12918ca9',
+      'fbd627d2-46a1-4d32-b610-6aed2a142b36',
     ],
   },
   changeNote: '',
   contributors: [],
   correlato_in_evidenza: [],
-  created: '2023-01-31T14:47:20+00:00',
+  created: '2023-03-16T14:07:53+00:00',
   creators: ['admin'],
-  description: 'Is this the real life',
+  description: 'I have this thing where I get older',
   design_italia_meta_type: 'Pagina',
   effective: null,
   exclude_from_nav: false,
   expires: null,
   id: 'trasparenza',
   image: {
-    'content-type': 'image/webp',
+    'content-type': 'image/jpeg',
     download:
-      'http://localhost:3000/amministrazione/trasparenza/@@images/image-2000-58bce741812574efe26df29bbb2809f4.webp',
-    filename:
-      'business-teamwork-join-hands-together-business-teamwork-concept_1150-1804.webp',
-    height: 1333,
+      'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-6240-2a0888197ea6da24471a4916100aafaa.jpeg',
+    filename: 'woman-having-online-meeting-work.jpg',
+    height: 4160,
     scales: {
       gallery: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-250-21c281ae68f201e90a9acdde2b8591b8.webp',
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-250-42bc2883c2f57fe4dbbec907ad5a7807.jpeg',
         height: 166,
         width: 250,
       },
       great: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-1200-ec5ea7e8b7e34867fdeebc00cb6ae47f.webp',
-        height: 799,
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-1200-8f9148df0fa5e672f85d4e3dd228edda.jpeg',
+        height: 800,
         width: 1200,
       },
       huge: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-1600-a0169ed33e9b9820adcfea856c550251.webp',
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-1600-3f930d9aa8634f1ec59f497ad316f315.jpeg',
         height: 1066,
         width: 1600,
       },
       icon: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-32-7a336e7a7f9017ccd3faa4386782d0fa.webp',
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-32-b1f3f55497c1fefd2d1a9c4a60fa149e.jpeg',
         height: 21,
         width: 32,
       },
       large: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-800-12d0cdfc5c37269599d67c2fb599784e.webp',
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-800-2bd6cc909fa5176ae209162923ca125c.jpeg',
         height: 533,
         width: 800,
       },
       larger: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-1000-9924f21338210bf5306365bbda12b1c7.webp',
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-1000-7dc50e5e48a890d36bd0b5a71139c2e5.jpeg',
         height: 666,
         width: 1000,
       },
       listing: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-16-6c92f7c36500a2564e01b2131189e841.webp',
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-16-7f0564e02d82aa374b90295ab02004b9.jpeg',
         height: 10,
         width: 16,
       },
       midi: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-300-a76b5bfb669863e6bdc75ed9613930f2.webp',
-        height: 199,
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-300-1b69ca8a7e79e874854d25a564c2efb2.jpeg',
+        height: 200,
         width: 300,
       },
       mini: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-200-a1c5d482447b2c9bdf131c517db73ce2.webp',
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-200-e5df700d235ff5218d4eb35ed2a01b03.jpeg',
         height: 133,
         width: 200,
       },
       preview: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-400-f3d0ba4a73b2c323247449e03b4ec462.webp',
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-400-3d480bd67e775d66be15669224b6c0df.jpeg',
         height: 266,
         width: 400,
       },
       teaser: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-600-e74da05202082e2a9e272b03d28feef1.webp',
-        height: 399,
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-600-ad252357846a0fba5e3a3cb809e1f12a.jpeg',
+        height: 400,
         width: 600,
       },
       thumb: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-128-d27a6508841ab1955f60079c2caeec56.webp',
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-128-8f8264f9c8922db9fe23306d1069b21c.jpeg',
         height: 85,
         width: 128,
       },
       tile: {
         download:
-          'http://localhost:3000/amministrazione/trasparenza/@@images/image-64-dd3ba2ee6cb0d37def578d0b832bb296.webp',
+          'http://localhost:3000/vivi-il-comune/trasparenza/@@images/image-64-dcb36f22d89f75cc0a7c2d516feb5227.jpeg',
         height: 42,
         width: 64,
       },
     },
-    size: 202972,
-    width: 2000,
+    size: 1195679,
+    width: 6240,
   },
-  image_caption: 'Is this just fantasy?',
+  image_caption: 'but just never wiser',
   info_testata: {
     'content-type': 'text/html',
-    data: '<p><br></p>',
+    data: '<p>Midnights become my afternoon</p>',
     encoding: 'utf8',
   },
   is_folderish: true,
@@ -218,37 +189,37 @@ const mock_allfields = {
     locked: false,
     stealable: true,
   },
-  modified: '2023-01-31T14:47:20+00:00',
+  modified: '2023-03-16T14:09:04+00:00',
   mostra_bottoni_condivisione: false,
-  mostra_navigazione: true,
+  mostra_navigazione: false,
   next_item: {},
   opengraph_description: null,
   opengraph_image: null,
   opengraph_title: null,
   parent: {
-    '@id': 'http://localhost:3000/amministrazione',
+    '@id': 'http://localhost:3000/vivi-il-comune',
     '@type': 'Document',
     description:
-      'Tutte le informazioni sulla struttura amministrativa del Comune. Scopri gli organi politici, gli uffici e il personale e consulta i documenti pubblici, le statistiche e i bandi di gara.',
+      'Tutti gli eventi, le iniziative e i luoghi d’interesse per scoprire e vivere il territorio comunale.',
     design_italia_meta_type: 'Pagina',
     has_children: true,
-    id: 'amministrazione',
+    id: 'vivi-il-comune',
     image_field: null,
     image_scales: null,
-    review_state: 'published',
-    title: 'Amministrazione',
+    review_state: 'private',
+    title: 'Vivi il Comune',
   },
   preview_caption: null,
   preview_image: null,
   previous_item: {
-    '@id': 'http://localhost:3000/amministrazione/punti-di-contatto',
+    '@id': 'http://localhost:3000/vivi-il-comune/luoghi',
     '@type': 'Document',
     description: '',
-    title: 'Punti di Contatto',
+    title: 'Luoghi',
   },
   relatedItems: [],
   review_state: 'private',
-  ricerca_in_testata: true,
+  ricerca_in_testata: false,
   rights: '',
   seo_canonical_url: null,
   seo_description: null,
@@ -274,6 +245,7 @@ const mock_allfields = {
       title: 'Sport',
     },
   ],
+  title: 'Trasparenza',
   version: 'current',
   versioning_enabled: true,
   working_copy: null,
@@ -288,7 +260,7 @@ const store = mockStore({
 });
 
 test('renders all mandatory fields in the page', async () => {
-  const { getByText, getByRole, debug } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter>
         <TrasparenzaView content={mock_mandatory} />
@@ -303,7 +275,7 @@ test('renders all mandatory fields in the page', async () => {
 });
 
 test('renders all non-mandatory fields in the page', async () => {
-  const { getByText, getByRole, debug } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter>
         <TrasparenzaView content={mock_allfields} />
@@ -312,11 +284,13 @@ test('renders all non-mandatory fields in the page', async () => {
   );
 
   // descrizione
-  expect(screen.getByText(/Is this the real life/i)).toBeInTheDocument();
+  expect(
+    screen.getByText(/I have this thing where I get older/i),
+  ).toBeInTheDocument();
 
   //immagine di testata --> non compare
   expect(screen.getByAltText(/Is this just fantasy?/i)).toBeInTheDocument();
-  expect(screen.getByText(/Is this just fantasy?/i)).toBeInTheDocument();
+  expect(screen.getByText(/but just never wiser/i)).toBeInTheDocument();
 
   //ricerca in testata --> non compare
   expect(
@@ -328,7 +302,9 @@ test('renders all non-mandatory fields in the page', async () => {
   ).not.toBeInTheDocument();
 
   //informazioni aggiuntive --> non compare
-  expect(screen.getByText(/No escape from reality/i)).toBeInTheDocument();
+  expect(
+    screen.getByText(/Midnights become my afternoon/i),
+  ).toBeInTheDocument();
   //navigazione in testata --> non compare
   expect(screen.getByText(/In questa sezione/i)).toBeInTheDocument();
 

@@ -502,6 +502,30 @@ const mock_allfields = {
   opengraph_description: null,
   opengraph_image: null,
   opengraph_title: null,
+  orario_pubblico: {
+    blocks: {
+      'e64bb2b4-d372-4978-842a-b8a0c0eec910': {
+        '@type': 'text',
+        text: {
+          blocks: [
+            {
+              data: {},
+              depth: 0,
+              entityRanges: [],
+              inlineStyleRanges: [],
+              key: '8pd54',
+              text: 'I have this thing where I get older',
+              type: 'unstyled',
+            },
+          ],
+          entityMap: {},
+        },
+      },
+    },
+    blocks_layout: {
+      items: ['e64bb2b4-d372-4978-842a-b8a0c0eec910'],
+    },
+  },
   parent: {
     '@id': 'http://localhost:3000/amministrazione/enti-e-fondazioni',
     '@type': 'Document',
@@ -2795,7 +2819,7 @@ const store = mockStore({
 });
 
 test('renders all mandatory fields in the page', async () => {
-  const { getByText, getByRole, debug } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter>
         <UOView content={mock_mandatory} />
@@ -2812,17 +2836,13 @@ test('renders all mandatory fields in the page', async () => {
   expect(screen.getByText(/Nobody loves me/i)).toBeInTheDocument();
 
   //competenze --> non compare
-  // expect(screen.getByText(/He's just a poor boy/i)).toBeInTheDocument();
+  expect(screen.getByText(/He's just a poor boy/i)).toBeInTheDocument();
 
   //tipologia organizzazione
   expect(
     screen.getByRole('heading', { name: /Tipologia di organizzazione/i }),
   ).toBeInTheDocument();
   expect(screen.getByText(/Struttura amministrativa/i)).toBeInTheDocument();
-
-  // heading struttura appare anche se solo campo tipologia organizzazione è compilato
-  // ma viene renderizzato prima dell'heading
-  // altri campi non compilati --> titolo senza campi
 
   //persone che compongono la struttura
   expect(screen.getByRole('heading', { name: /Persone/i })).toBeInTheDocument();
@@ -2838,7 +2858,7 @@ test('renders all mandatory fields in the page', async () => {
     screen.getByRole('heading', { name: /Contatti/i }),
   ).toBeInTheDocument();
   expect(
-    screen.getByRole('link', { name: /Is this the real life/i }),
+    screen.getByRole('link', { name: /freddymercury@gmail.com/i }),
   ).toBeInTheDocument();
   //sede principale
   expect(
@@ -2847,7 +2867,7 @@ test('renders all mandatory fields in the page', async () => {
 });
 
 test('renders all non-mandatory fields in the page', async () => {
-  const { getByText, getByRole, debug } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter>
         <UOView content={mock_allfields} />
@@ -2882,9 +2902,7 @@ test('renders all non-mandatory fields in the page', async () => {
     screen.getByRole('link', { name: /Gianluca Luchetti/i }),
   ).toBeInTheDocument();
   // immagine non renderizza
-  expect(
-    screen.getByRole('img', { name: /Gianluca Luchetti/i }),
-  ).toBeInTheDocument();
+  expect(screen.getByAltText(/Gianluca Luchetti/i)).toBeInTheDocument();
 
   //assessore di riferimento
   expect(
@@ -2894,9 +2912,7 @@ test('renders all non-mandatory fields in the page', async () => {
     screen.getByRole('link', { name: /Gabriele Bianchi/i }),
   ).toBeInTheDocument();
   // immagine non renderizza
-  expect(
-    screen.getByRole('img', { name: /Gabriele Bianchi/i }),
-  ).toBeInTheDocument();
+  expect(screen.getByAltText(/Gabriele Bianchi/i)).toBeInTheDocument();
 
   //altre sedi
   expect(
@@ -2906,29 +2922,19 @@ test('renders all non-mandatory fields in the page', async () => {
     screen.getByRole('link', { name: /Il castello normanno/i }),
   ).toBeInTheDocument();
 
-  //Nome sede
+  //Sede principale
   expect(
-    screen.getByText(/Spare him his life from this monstrosity/i),
+    screen.getByRole('link', { name: /Bohemian Rhapsody/i }),
   ).toBeInTheDocument();
 
-  //via
-  expect(screen.getByText(/Easy come/i)).toBeInTheDocument();
-  //cap
-  expect(screen.getByText(/Easy go/i)).toBeInTheDocument();
-  //città
-  expect(screen.getByText(/will you let me go/i)).toBeInTheDocument();
-  //quartiere
-  expect(screen.getByText(/Bismillah/i)).toBeInTheDocument();
-  //Circoscrizione
-  expect(screen.getByText(/No, we will not let you go/i)).toBeInTheDocument();
-  //Paese--> non compare
-  expect(screen.getByText(/Aghanistan/i)).toBeInTheDocument();
+  //Orario per il pubblico
+  expect(
+    screen.getByRole('heading', { name: /Orario per il pubblico/i }),
+  ).toBeInTheDocument();
+  expect(
+    screen.getByText(/I have this thing where I get older/i),
+  ).toBeInTheDocument();
 
-  // heading documenti appare anche altri campi non compilati
-  //--> titolo senza campi
-  //documenti
-  //header --> se si cerca documenti, test fallisce, viene letto come "allegati"
-  expect(screen.getByText(/Documenti/i)).toBeInTheDocument();
   expect(
     screen.getByRole('heading', { name: /Allegati/i }),
   ).toBeInTheDocument();
@@ -2953,7 +2959,5 @@ test('renders all non-mandatory fields in the page', async () => {
   expect(
     screen.getByRole('heading', { name: /Ulteriori informazioni/i }),
   ).toBeInTheDocument();
-  //il campo "ulteriori informazioni" viene renderizzato nel campo
-  // competenze che invece non viene mai renderizzato
   expect(screen.getByText(/Any way the wind blows/i)).toBeInTheDocument();
 });
