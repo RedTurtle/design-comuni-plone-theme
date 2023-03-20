@@ -3,6 +3,7 @@
  * @module components/manage/Sidebar/ObjectBrowserBody
  * Customization:
  * - Tooltip on breadcrumbs
+ * - Set initial search to current path instead of home '/'
  */
 
 import React, { Component } from 'react';
@@ -106,7 +107,7 @@ class ObjectBrowserBody extends Component {
     super(props);
     this.state = {
       currentFolder:
-        this.props.mode === 'multiple' ? '/' : this.props.contextURL || '/',
+        this.props.mode === 'multiple' ? this.props.contextURL || '/' : '/',
       currentImageFolder:
         this.props.mode === 'multiple'
           ? '/'
