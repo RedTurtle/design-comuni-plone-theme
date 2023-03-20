@@ -31,7 +31,6 @@ const messages = defineMessages({
  * @returns {string} Markup of the component.
  */
 const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
-  console.log(viewIndex);
   const intl = useIntl();
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -71,7 +70,7 @@ const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
               <button
                 type="button"
                 onClick={() => setModalIsOpen(!modalIsOpen)}
-                aria-label="Close"
+                aria-label={intl.formatMessage(messages.close_preview)}
                 className="close-button"
               >
                 <Icon icon="times" padding={false} />
