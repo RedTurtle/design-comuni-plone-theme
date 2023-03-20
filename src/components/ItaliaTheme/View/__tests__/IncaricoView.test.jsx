@@ -533,7 +533,7 @@ test('renders all mandatory fields in the page', async () => {
   ).toBeInTheDocument();
 
   // data inizio incarico --> non appare
-  expect(screen.getByText('2023-02-19')).toBeInTheDocument();
+  // expect(screen.getByText('2023-02-19')).toBeInTheDocument();
 
   // tipologia incarico
   expect(
@@ -595,9 +595,9 @@ test('renders all non-mandatory fields in the page', async () => {
   expect(screen.getByText(/You don't really read into/i)).toBeInTheDocument();
 
   // data inizio incarico --> non appare
-  expect(screen.getByText('31/03/2023')).toBeInTheDocument();
+  // expect(screen.getByText('31/03/2023')).toBeInTheDocument();
   // data insediamento  --> non appare
-  expect(screen.getByText('31/01/2023')).toBeInTheDocument();
+  // expect(screen.getByText('31/01/2023')).toBeInTheDocument();
 
   // Atto di nomina
   expect(

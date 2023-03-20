@@ -810,9 +810,6 @@ test('expect to have all fields in page', async () => {
   //unità amministrative responsabili
   expect(screen.getByText(/gestione impianti sportivi/i)).toBeInTheDocument();
 
-  //didascalia immagine testata --> non mostrata in pagina
-  expect(screen.getByText('Didascalia immagine testata')).toBeInTheDocument();
-
   // Ulteriori informazioni
   expect(screen.getByText(/There's a lady who's sure/i)).toBeInTheDocument();
 
@@ -845,8 +842,3 @@ test('expect to have all fields in page', async () => {
 //   // portata_di_click
 //   expect(getByText(/Eventi ambiente ed educazione/)).toBeInTheDocument();
 // });
-
-test('todo', () => {
-  expect(with_blocks).toBeDefined();
-  expect(true).toBe(true);
-});

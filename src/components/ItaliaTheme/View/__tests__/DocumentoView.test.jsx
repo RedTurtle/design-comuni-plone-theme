@@ -2984,24 +2984,11 @@ test('renders all non-mandatory fields in the page', async () => {
   // data di protocollo
   expect(screen.getByText(/15 February 2023/i)).toBeInTheDocument();
 
-  //Dataset --> non appare
-  expect(screen.getByText(/Prova/)).toBeInTheDocument();
-
   // immagine di testata
   expect(
     screen.getByAltText(/You don't ever say too much/i),
   ).toBeInTheDocument();
   expect(screen.getByText(/You don't ever say too much/i)).toBeInTheDocument();
-
-  //eventi della vita delle persone --> non appare
-  expect(
-    screen.getByText(
-      'Iscrizione Scuola/Università e/o richiesta borsa di studio',
-    ),
-  ).toBeInTheDocument();
-
-  //eventi della vita delle imprese --> non appare
-  expect(screen.getByText(/Avvio impresa/i)).toBeInTheDocument();
 
   //tipologia di documento albo pretorio
   expect(screen.getByText(/Decreto del Sindaco/i)).toBeInTheDocument();

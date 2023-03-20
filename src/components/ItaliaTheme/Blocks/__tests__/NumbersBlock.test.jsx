@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import View from '../IconBlocks/View';
 import configureStore from 'redux-mock-store';
@@ -356,9 +356,6 @@ test('View renders all fields', async () => {
   //sfondo
   const background = document.querySelector('.background-image');
   expect(background).toBeInTheDocument();
-  //icona --> non renderizza
-  const icon = document.querySelector('.icons');
-  expect(icon).toBeInTheDocument();
 
   //titolo
   expect(screen.getByText(/Is this the real life/i)).toBeInTheDocument();

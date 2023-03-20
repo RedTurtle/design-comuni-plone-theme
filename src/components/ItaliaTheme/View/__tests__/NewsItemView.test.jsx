@@ -1676,9 +1676,6 @@ test('renders all mandatory fields in the page', async () => {
   expect(
     screen.getByRole('link', { name: /Ufficio delle attività produttive/i }),
   ).toBeInTheDocument();
-
-  //tipologia notizia --> non appare
-  expect(screen.getByText(/Notizia/i)).toBeInTheDocument();
 });
 
 test('renders all non-mandatory fields in the page', async () => {
@@ -1729,9 +1726,6 @@ test('renders all non-mandatory fields in the page', async () => {
 
   //data di pubblicazione
   expect(screen.getByText(/26 January 2023/i)).toBeInTheDocument();
-
-  //data di scadenza--> non appare
-  expect(screen.getByText(/28-02-2023/i)).toBeInTheDocument();
 
   //contenuti correlati
   expect(

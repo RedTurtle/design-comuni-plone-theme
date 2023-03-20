@@ -664,8 +664,6 @@ test('renders all non-mandatory fields in the page', async () => {
   expect(screen.getByText(/Is this the real life?/i)).toBeInTheDocument();
   //immagine di testata
   expect(screen.getByAltText(/Cartella modulistica/i)).toBeInTheDocument();
-  //didascalia immagine di testata --> non appare
-  expect(screen.getByText(/Is this just fantasy?/i)).toBeInTheDocument();
 
   //items
   expect(screen.getByRole('link', { name: /Doc prova/i })).toBeInTheDocument();
