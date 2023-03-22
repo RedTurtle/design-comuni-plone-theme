@@ -108,8 +108,7 @@ class ObjectBrowserBody extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentFolder:
-        this.props.mode === 'multiple' ? this.props.contextURL || '/' : '/',
+      currentFolder: this.props.contextURL || '/',
       currentImageFolder:
         this.props.mode === 'multiple'
           ? '/'
@@ -230,7 +229,7 @@ class ObjectBrowserBody extends Component {
         },
         `${this.props.block}-${this.props.mode}`,
       );
-    } else if (!text.startsWith('/') && text.length > 2) {
+    } else if (text.length > 2) {
       this.props.searchContent(
         '/',
         {
