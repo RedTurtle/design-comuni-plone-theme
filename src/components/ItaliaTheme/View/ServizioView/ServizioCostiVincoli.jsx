@@ -26,19 +26,15 @@ const messages = defineMessages({
 const ServizioCostiVincoli = ({ content }) => {
   const intl = useIntl();
 
-  return (
+  return richTextHasContent(content.costi) ||
+    richTextHasContent(content.vincoli) ? (
     <RichTextSection
       content={content.a_chi_si_rivolge}
       tag_id="costs"
       title={intl.formatMessage(messages.costi_e_vincoli_header)}
     >
       {richTextHasContent(content.costi) && (
-        <RichText
-          title={intl.formatMessage(messages.costi_e_vincoli)}
-          title_size="h4"
-          add_class="mb-5"
-          content={content.costi}
-        />
+        <RichText add_class="mb-5" content={content.costi} />
       )}
       {richTextHasContent(content.vincoli) && (
         <RichText
@@ -49,7 +45,7 @@ const ServizioCostiVincoli = ({ content }) => {
         />
       )}
     </RichTextSection>
-  );
+  ) : null;
 };
 
 ServizioCostiVincoli.propTypes = {

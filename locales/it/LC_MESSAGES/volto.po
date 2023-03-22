@@ -1206,6 +1206,11 @@ msgstr "Cosa serve"
 msgid "costi_e_vincoli"
 msgstr "Costi"
 
+#: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
+# defaultMessage: Quanto costa
+msgid "costi_e_vincoli_header"
+msgstr "Quanto costa"
+
 #: components/ItaliaTheme/Blocks/CountDown/Sidebar
 # defaultMessage: Posizione del contatore
 msgid "countDown_countDownPosition"

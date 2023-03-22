@@ -1223,6 +1223,11 @@ msgstr "Ce qui est necessaire"
 msgid "costi_e_vincoli"
 msgstr "Coûts et contraintes"
 
+#: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
+# defaultMessage: Quanto costa
+msgid "costi_e_vincoli_header"
+msgstr "Coûts et contraintes"
+
 #: components/ItaliaTheme/Blocks/CountDown/Sidebar
 # defaultMessage: Posizione del contatore
 msgid "countDown_countDownPosition"
