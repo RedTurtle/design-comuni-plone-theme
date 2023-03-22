@@ -55,7 +55,7 @@ const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
       className="gallery-preview"
       onExit={() => {
         setViewIndex(null);
-        setModalIsOpen(false);
+        closeModal();
       }}
       backdrop="static"
       centered={true}
