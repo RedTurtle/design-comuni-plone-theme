@@ -55,7 +55,7 @@ const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
       className="gallery-preview"
       onExit={() => {
         setViewIndex(null);
-        closeModal();
+        setModalIsOpen(false);
       }}
       backdrop="static"
       centered={true}
@@ -69,7 +69,7 @@ const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
             <div className="modal-close-button">
               <button
                 type="button"
-                onClick={() => setModalIsOpen(!modalIsOpen)}
+                onClick={closeModal}
                 aria-label={intl.formatMessage(messages.close_preview)}
                 className="close-button"
               >
