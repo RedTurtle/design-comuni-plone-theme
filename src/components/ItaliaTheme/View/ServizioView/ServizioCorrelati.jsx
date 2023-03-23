@@ -35,7 +35,12 @@ const ServizioCorrelati = ({ content }) => {
           {/* <h5>{intl.formatMessage(messages.servizi_collegati)}</h5> */}
           <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
             {content.servizi_collegati.map((item, i) => (
-              <GenericCard key={item['@id']} item={item} showimage={false} />
+              <GenericCard
+                key={item['@id']}
+                item={item}
+                showimage={false}
+                size="small"
+              />
             ))}
           </div>
         </div>

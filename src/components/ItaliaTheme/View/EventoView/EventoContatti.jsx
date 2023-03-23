@@ -5,17 +5,17 @@ import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import {
   RichText,
   richTextHasContent,
-  RichTextArticle,
+  RichTextSection,
   ContactLink,
   OfficeCard,
   ContactsCard,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
-  // supported_by: {
-  //   id: 'supported_by',
-  //   defaultMessage: 'Con il supporto di',
-  // },
+  supported_by: {
+    id: 'supported_by',
+    defaultMessage: 'Con il supporto di',
+  },
   contatti: {
     id: 'Contatti',
     defaultMessage: 'Contatti',
@@ -36,31 +36,31 @@ const messages = defineMessages({
 
 const EventoDocumenti = ({ content }) => {
   const intl = useIntl();
-  // const getSupportatoDa = () => {
-  //   return (
-  //     content?.supportato_da?.length > 0 && (
-  //       <>
-  //         <h5 className="mt-4 supported-by">
-  //           {intl.formatMessage(messages.supported_by)}
-  //         </h5>
-  //         {content?.supportato_da?.map((item) => (
-  //           <OfficeCard
-  //             key={item['@id']}
-  //             office={item}
-  //             extended={true}
-  //             icon={'it-pa'}
-  //           />
-  //         ))}
-  //       </>
-  //     )
-  //   );
-  // };
+  const getSupportatoDa = () => {
+    return (
+      content?.supportato_da?.length > 0 && (
+        <>
+          <h5 className="mt-4 supported-by">
+            {intl.formatMessage(messages.supported_by)}
+          </h5>
+          {content?.supportato_da?.map((item) => (
+            <OfficeCard
+              key={item['@id']}
+              office={item}
+              extended={true}
+              icon={'it-pa'}
+            />
+          ))}
+        </>
+      )
+    );
+  };
 
   return richTextHasContent(content?.organizzato_da_esterno) ||
     content?.organizzato_da_interno.length > 0 ||
     content?.supportato_da?.length > 0 ||
     content?.contact_info?.length > 0 ? (
-    <RichTextArticle
+    <RichTextSection
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
     >
@@ -135,8 +135,8 @@ const EventoDocumenti = ({ content }) => {
       )}
 
       {/* ---supportato da */}
-      {/* {getSupportatoDa()} */}
-    </RichTextArticle>
+      {getSupportatoDa()}
+    </RichTextSection>
   ) : null;
 };
 

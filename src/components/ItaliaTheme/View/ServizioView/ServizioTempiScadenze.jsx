@@ -11,15 +11,18 @@ const messages = defineMessages({
 
 const ServizioTempiScadenze = ({ content, moment }) => {
   const intl = useIntl();
-
   return (
     <RichTextSection
       content={content.tempi_e_scadenze}
       add_class="style_ol_list cmp-timeline"
       tag_id="deadlines"
       title={intl.formatMessage(messages.tempi_e_scadenze)}
+      lighthouseId="service-calendar-text"
     >
-      <div className="calendar-vertical mb-3">
+      <div
+        className="calendar-vertical mb-3"
+        data-element="service-calendar-list"
+      >
         <div className="calendar-vertical mb-3">
           {content.timeline_tempi_scadenze?.map((entry, i) => {
             let milestone_label = (
@@ -32,14 +35,14 @@ const ServizioTempiScadenze = ({ content, moment }) => {
             if (entry?.data_scadenza) {
               milestone_label = (
                 <div className="calendar-date-day">
-                  <small className="calendar-date-day__year">
-                    {moment(entry.data_scadenza).format('Y')}
-                  </small>
-                  <span className="title-xxlarge-regular d-flex justify-content-center">
+                  <span className="title-xxlarge-regular d-flex justify-content-center mb-1">
                     {moment(entry.data_scadenza).format('DD')}
                   </span>
-                  <small className="calendar-date-day__month">
-                    {moment(entry.data_scadenza).format('MMM')}
+                  <small className="calendar-date-day__month mb-1">
+                    {moment(entry.data_scadenza).format('MMMM')}
+                  </small>
+                  <small className="calendar-date-day__year">
+                    {moment(entry.data_scadenza).format('Y')}
                   </small>
                 </div>
               );
@@ -62,7 +65,9 @@ const ServizioTempiScadenze = ({ content, moment }) => {
                 {milestone_label}
                 <div className="calendar-date-description rounded">
                   <div className="calendar-date-description-content">
-                    <h3 className="title-medium-2 mb-0">{entry.milestone}</h3>
+                    {entry?.milestone && (
+                      <h3 className="title-medium-2 mb-0">{entry.milestone}</h3>
+                    )}
                     {entry?.milestone_description && (
                       <p className="info-text mt-1 mb-0">
                         {entry.milestone_description}

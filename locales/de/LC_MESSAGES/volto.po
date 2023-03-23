@@ -847,6 +847,11 @@ msgstr ""
 msgid "autoplay_speed_description"
 msgstr ""
 
+#: components/ItaliaTheme/View/DocumentoView/DocumentoAutori
+# defaultMessage: Autore
+msgid "autore"
+msgstr ""
+
 #: components/SelectInput/SelectInput
 # defaultMessage: Usa le frecce Su e Giu per scegliere un'opzione
 msgid "ay11_Use Up and Down to choose options"
@@ -1212,7 +1217,7 @@ msgid "cosa_serve"
 msgstr ""
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
-# defaultMessage: Quanto costa
+# defaultMessage: Costi
 msgid "costi_e_vincoli"
 msgstr ""
 
@@ -1802,7 +1807,7 @@ msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/CharCounterTextareaWidget
 #: components/ItaliaTheme/manage/Widgets/CharCounterTextWidget
-# defaultMessage: Il testo supera la lunghezza consigliata
+# defaultMessage: Il testo supera la lunghezza consigliata perciò verrà tagliato.
 msgid "exceeded_chars"
 msgstr ""
 
@@ -2517,6 +2522,11 @@ msgstr ""
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Provvedimento finale
 msgid "provvedimento_finale"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+# defaultMessage: Data di pubblicazione
+msgid "publication_date"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/LocationItem
@@ -3337,6 +3347,16 @@ msgid "sort_chiusura_procedimento_bando"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Data di pubblicazione
+msgid "sort_effective_date"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Data di modifica
+msgid "sort_modified_date"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
 # defaultMessage: Ordina per
 msgid "sort_on"
 msgstr ""
@@ -3439,6 +3459,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/Metadata
 # defaultMessage: Tags
 msgid "subjects"
+msgstr ""
+
+#: components/ItaliaTheme/View/EventoView/EventoContatti
+# defaultMessage: Con il supporto di
+msgid "supported_by"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/ContactLink
@@ -3628,6 +3653,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/UOSearch/DefaultFilters
 # defaultMessage: Tipologia
 msgid "uo_type"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+# defaultMessage: Data di aggiornamento
+msgid "update_date"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView

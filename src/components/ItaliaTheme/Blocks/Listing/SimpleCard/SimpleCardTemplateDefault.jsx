@@ -31,6 +31,14 @@ import {
 
 const messages = defineMessages({
   card_detail_label: { id: 'Card detail label', defaultMessage: 'Vedi' },
+  publication_date: {
+    id: 'publication_date',
+    defaultMessage: 'Data di pubblicazione',
+  },
+  update_date: {
+    id: 'update_date',
+    defaultMessage: 'Data di aggiornamento',
+  },
 });
 
 const SimpleCardTemplateDefault = (props) => {
@@ -59,6 +67,7 @@ const SimpleCardTemplateDefault = (props) => {
     addFilters,
     additionalFilters = [],
     id_lighthouse,
+    linkmore_id_lighthouse,
   } = props;
 
   let currentPathFilter = additionalFilters
@@ -176,7 +185,7 @@ const SimpleCardTemplateDefault = (props) => {
             <ListingText item={item} />
           ) : null;
           const category = getCategory(item, show_type, show_section, props);
-
+          const type = item['@type'];
           return (
             <Card
               className={`align-items-top rounded shadow ${getItemClass(item)}`}
@@ -210,6 +219,19 @@ const SimpleCardTemplateDefault = (props) => {
                 {listingText && (
                   <CardText className={cx('', { 'mb-5': eventRecurrenceMore })}>
                     {listingText}
+                    {(type === 'Modulo' || type === 'Documento') && (
+                      <div className="document-date mt-3">
+                        <strong>
+                          {intl.formatMessage(messages.publication_date)}
+                        </strong>
+                        {moment(item.CreationDate).format('DD-MM-YYYY')}
+                        <br />
+                        <strong>
+                          {intl.formatMessage(messages.update_date)}{' '}
+                        </strong>
+                        {moment(item.modified).format('DD-MM-YYYY')}
+                      </div>
+                    )}
                   </CardText>
                 )}
                 {eventRecurrenceMore}
@@ -236,6 +258,7 @@ const SimpleCardTemplateDefault = (props) => {
         href={linkHref}
         className="my-4"
         linkAlign={linkAlign}
+        linkmoreIdLighthouse={linkmore_id_lighthouse}
       />
     </div>
   );

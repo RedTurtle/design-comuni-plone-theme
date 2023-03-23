@@ -13,11 +13,13 @@ const RichTextSection = ({
   hasBg,
   p,
   children,
+  lighthouseId = '',
 }) => {
   const content_to_display = RichTextRender({
     content,
     add_class,
     serif: true,
+    lighthouseId,
   });
 
   const Tag = title_tag;
@@ -39,7 +41,7 @@ const RichTextSection = ({
       {title && (
         <Tag
           id={title_tag === 'h2' ? `header-${tag_id}` : undefined}
-          className={cx('mb-3', {
+          className={cx('mb-3 h4', {
             'sr-only': !show_title,
           })}
         >
@@ -62,4 +64,5 @@ RichTextSection.propTypes = {
   anchorOffset: PropTypes.bool,
   hasBg: PropTypes.bool,
   p: PropTypes.oneOf(['1', '2', '3', '4', '5']),
+  lighthouseId: PropTypes.string,
 };

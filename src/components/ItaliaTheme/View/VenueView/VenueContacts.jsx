@@ -1,14 +1,12 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Card, CardBody, CardTitle } from 'design-react-kit';
-// import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import {
   richTextHasContent,
   RichTextSection,
   RichText,
-  GenericCard,
-  // ContactLink,
+  OfficeCard,
   ContactsCard,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
@@ -137,7 +135,11 @@ const VenueContacts = ({ content }) => {
       )} */}
         {content.contact_info?.length > 0 &&
           content.contact_info.map((contact) => (
-            <ContactsCard contact={contact} key={contact['@id']} />
+            <ContactsCard
+              contact={contact}
+              key={contact['@id']}
+              show_title={false}
+            />
           ))}
         {/*
         STRUTTURE RESPONSABILI
@@ -158,7 +160,7 @@ const VenueContacts = ({ content }) => {
             //STRUTTURE RESPONSABILI CORRELATE
             <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
               {content?.struttura_responsabile_correlati?.map((item, i) => (
-                <GenericCard key={item['@id']} item={item} />
+                <OfficeCard key={item['@id']} office={item} load_data={false} />
               ))}
             </div>
           ) : (

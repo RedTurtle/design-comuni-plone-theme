@@ -26,6 +26,9 @@ const OfficeCard = ({
   children,
   margin_bottom = false,
   show_contacts = true,
+  size,
+  no_details = false,
+  ...rest
 }) => {
   const url = flattenToAppURL(office['@id']);
   const key = `${url}_office`;
@@ -45,9 +48,14 @@ const OfficeCard = ({
 
   return office_fo ? (
     <div
-      className={cx('card card-teaser rounded shadow p-4', {
-        'mb-3': margin_bottom,
-      })}
+      className={cx(
+        'card card-teaser border-left-card rounded shadow p-3 ',
+        size === 'big' ? 'card-big' : 'card-small',
+        {
+          'mb-3': margin_bottom,
+        },
+      )}
+      {...rest}
     >
       {icon && <Icon icon={icon}></Icon>}
       <div className="card-body pe-3">
@@ -90,6 +98,11 @@ const OfficeCard = ({
             </div>
           )}
         {children && <div className="card-text">{children}</div>}
+      </div>
+      <div className="image-container">
+        {office.preview_image?.scales?.preview && (
+          <img src={office.preview_image?.scales?.preview} alt={office.id} />
+        )}
       </div>
     </div>
   ) : null;
