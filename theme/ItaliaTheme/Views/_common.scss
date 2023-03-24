@@ -52,7 +52,15 @@ picture.volto-image {
   }
 }
 
+//if full-width is NOT related directly to any image
+.full-width:not(img.full-width, .ui.image
+    img.full-width, picture.volto-image.responsive.full-width
+    img, picture.volto-image.full-width img, picture.volto-image.responsive
+    img.full-width) {
+  height: 480px;
+}
 .full-width,
+img.full-width,
 .ui.image img.full-width,
 picture.volto-image.responsive.full-width img,
 picture.volto-image.full-width img,
@@ -61,12 +69,9 @@ picture.volto-image.responsive img.full-width {
   right: 50%;
   left: 50%;
   width: 100vw !important;
-  max-width: initial !important;
-  height: 480px;
   margin-right: -50vw !important;
   margin-left: -50vw !important;
   object-fit: cover;
-
   .has-toolbar & {
     left: calc(50% + 40px);
     width: calc(100vw - 80px) !important;
@@ -76,6 +81,15 @@ picture.volto-image.responsive img.full-width {
     left: calc(50% + 10px);
     width: calc(100vw - 20px) !important;
   }
+}
+
+//if full-width is related directly to an image
+img.full-width,
+.ui.image img.full-width,
+picture.volto-image.responsive.full-width img,
+picture.volto-image.full-width img,
+picture.volto-image.responsive img.full-width {
+  max-height: 480px;
 }
 
 @media (max-width: #{map-get($grid-breakpoints, lg)}) {
