@@ -1202,11 +1202,6 @@ msgid "cosa_serve"
 msgstr "Cosa serve"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
-# defaultMessage: Costi
-msgid "costi_e_vincoli"
-msgstr "Costi"
-
-#: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
 # defaultMessage: Quanto costa
 msgid "costi_e_vincoli_header"
 msgstr "Quanto costa"

@@ -9,10 +9,6 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
-  costi_e_vincoli: {
-    id: 'costi_e_vincoli',
-    defaultMessage: 'Costi',
-  },
   costi_e_vincoli_header: {
     id: 'costi_e_vincoli_header',
     defaultMessage: 'Quanto costa',

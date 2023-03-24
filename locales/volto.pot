@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-03-22T14:06:57.311Z\n"
+"POT-Creation-Date: 2023-03-24T09:49:18.288Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1201,11 +1201,6 @@ msgstr ""
 #: components/ItaliaTheme/View/ServizioView/ServizioCosaServe
 # defaultMessage: Cosa serve
 msgid "cosa_serve"
-msgstr ""
-
-#: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
-# defaultMessage: Costi
-msgid "costi_e_vincoli"
 msgstr ""
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli

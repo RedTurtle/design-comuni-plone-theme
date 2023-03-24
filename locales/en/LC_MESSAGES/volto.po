@@ -1202,11 +1202,6 @@ msgid "cosa_serve"
 msgstr "What is needed"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
-# defaultMessage: Costi
-msgid "costi_e_vincoli"
-msgstr "Costs and constraints"
-
-#: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
 # defaultMessage: Quanto costa
 msgid "costi_e_vincoli_header"
 msgstr "Costs and constraints"
