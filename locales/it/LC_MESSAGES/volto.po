@@ -2212,7 +2212,7 @@ msgstr "In alternativa puoi utilizzare le seguenti modalità."
 #: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
 # defaultMessage: Log in as employee
 msgid "login_plone_user"
-msgstr "Accedi come dipendente"
+msgstr "Accesso operatore"
 
 #: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
 # defaultMessage: SPID
