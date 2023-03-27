@@ -49,6 +49,9 @@ export SearchCTs from 'design-comuni-plone-theme/components/ItaliaTheme/Search/S
 export SearchResultItem from 'design-comuni-plone-theme/components/ItaliaTheme/Search/ResultItem';
 export MegaMenu from 'design-comuni-plone-theme/components/ItaliaTheme/MegaMenu/MegaMenu';
 export MenuSecondary from 'design-comuni-plone-theme/components/ItaliaTheme/MenuSecondary/MenuSecondary';
+export LoginAgid from 'design-comuni-plone-theme/components/ItaliaTheme/LoginAgid/LoginAgid';
+export LoginAgidButtons from 'design-comuni-plone-theme/components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons';
+export LoginOperatore from 'design-comuni-plone-theme/components/ItaliaTheme/LoginOperatore/LoginOperatore';
 export Logo from 'design-comuni-plone-theme/components/ItaliaTheme/Logo/Logo';
 export BrandText from 'design-comuni-plone-theme/components/ItaliaTheme/BrandText/BrandText';
 export BrandTextFooter from 'design-comuni-plone-theme/components/ItaliaTheme/BrandTextFooter/BrandTextFooter';

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-03-20T17:55:26.838Z\n"
+"POT-Creation-Date: 2023-03-27T08:07:02.138Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -60,6 +60,16 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
 # defaultMessage: Block style
 msgid "Block style"
+msgstr ""
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Both email address and password are case sensitive, check that caps lock is not enabled.
+msgid "Both email address and password are case sensitive, check that caps lock is not enabled."
+msgstr ""
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Cancel
+msgid "Cancel"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
@@ -179,6 +189,11 @@ msgstr ""
 #: config/RichTextEditor/Plugins/AnchorPlugin/components/LinkButton/AddLinkForm
 # defaultMessage: Enter URL or select an item
 msgid "Enter URL or select an item"
+msgstr ""
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Error
+msgid "Error"
 msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/LocationFiltersWidget
@@ -318,6 +333,21 @@ msgstr ""
 msgid "Loading page..."
 msgstr ""
 
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Log in
+msgid "Log in"
+msgstr ""
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Login Failed
+msgid "Login Failed"
+msgstr ""
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Login Name
+msgid "Login Name"
+msgstr ""
+
 #: config/Views/views
 # defaultMessage: Luogo
 msgid "Luogo"
@@ -399,6 +429,11 @@ msgstr ""
 msgid "Open in a new tab"
 msgstr ""
 
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Password
+msgid "Password"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/PathFiltersWidget
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Filtro
@@ -431,6 +466,11 @@ msgstr ""
 #: components/ItaliaTheme/Pagination/PaginationItem
 # defaultMessage: Pagina precedente
 msgid "Previous page"
+msgstr ""
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Register
+msgid "Register"
 msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/FileWidget
@@ -503,6 +543,11 @@ msgstr ""
 #: components/ItaliaTheme/Search/SearchCTs
 # defaultMessage: Mostra tutti i tipi di contenuto
 msgid "Show all content types"
+msgstr ""
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Sign in to start session
+msgid "Sign in to start session"
 msgstr ""
 
 #: components/ItaliaTheme/Unauthorized/Unauthorized
@@ -655,11 +700,6 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Video Gallery
 msgid "VideoGalleryBlock"
-msgstr ""
-
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: You are trying to access a protected resource, please {login} first.
-msgid "You are trying to access a protected resource, please {login} first."
 msgstr ""
 
 #: components/ItaliaTheme/View/EventoView/EventoCosE
@@ -1035,6 +1075,11 @@ msgstr ""
 #: config/Blocks/ListingOptions/defaultOptions
 # defaultMessage: Colore di sfondo
 msgid "block_bg_color"
+msgstr ""
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Forgot your password?
+msgid "box_forgot_password_option"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
@@ -2146,22 +2191,47 @@ msgstr ""
 msgid "locations"
 msgstr ""
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: log in
-msgid "log in"
+#: components/ItaliaTheme/LoginAgid/LoginAgid
+# defaultMessage: Log in
+msgid "login_agid"
 msgstr ""
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: or login as an administrator
-msgid "login_admin_message"
+#: components/ItaliaTheme/LoginAgid/LoginAgid
+# defaultMessage: To access the site and its services, use one of the following methods.
+msgid "login_agid_description"
 msgstr ""
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: login with Spid
-msgid "login_spid_message"
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: Other users
+msgid "login_agid_other"
 msgstr ""
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: Alternatively you can use these methods.
+msgid "login_agid_other_description"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: Log in as employee
+msgid "login_plone_user"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: SPID
+msgid "login_spid"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: Log in with SPID, the public digital identity system.
+msgid "login_spid_description"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: How to activate SPID
+msgid "login_spid_help"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
 # defaultMessage: Login with Spid
 msgid "login_with_spid"
 msgstr ""
@@ -3604,6 +3674,11 @@ msgstr ""
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Ulteriori informazioni
 msgid "ulteriori_informazioni"
+msgstr ""
+
+#: components/ItaliaTheme/Unauthorized/Unauthorized
+# defaultMessage: You are trying to access a protected resource, please login first.
+msgid "unauthorized_description"
 msgstr ""
 
 #: helpers/amministrazioneTrasparenteHelper

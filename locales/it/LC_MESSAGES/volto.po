@@ -60,6 +60,16 @@ msgstr "Titolo del blocco..."
 msgid "Block style"
 msgstr "Stile del blocco"
 
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Both email address and password are case sensitive, check that caps lock is not enabled.
+msgid "Both email address and password are case sensitive, check that caps lock is not enabled."
+msgstr "E-mail e password distinguono entrambi le maiuscole dalle minuscole, verifica di non avere il Blocco maiuscole attivato."
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Cancel
+msgid "Cancel"
+msgstr "Annulla"
+
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
 # defaultMessage: Vedi
 msgid "Card detail label"
@@ -178,6 +188,11 @@ msgstr "Dimensione della mappa"
 # defaultMessage: Enter URL or select an item
 msgid "Enter URL or select an item"
 msgstr "Inserisci un URL o seleziona un elemento"
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Error
+msgid "Error"
+msgstr "Errore"
 
 #: components/ItaliaTheme/manage/Widgets/LocationFiltersWidget
 # defaultMessage: Etichetta
@@ -316,6 +331,21 @@ msgstr "Titolo per il link ad altro"
 msgid "Loading page..."
 msgstr "Sto caricando la pagina richiesta..."
 
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Log in
+msgid "Log in"
+msgstr "Accedi"
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Login Failed
+msgid "Login Failed"
+msgstr "Accesso fallito"
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Login Name
+msgid "Login Name"
+msgstr "Nome utente"
+
 #: config/Views/views
 # defaultMessage: Luogo
 msgid "Luogo"
@@ -397,6 +427,11 @@ msgstr "- apri in nuova scheda"
 msgid "Open in a new tab"
 msgstr "Apri in un nuovo tab"
 
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Password
+msgid "Password"
+msgstr "Password"
+
 #: components/ItaliaTheme/manage/Widgets/PathFiltersWidget
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Filtro
@@ -430,6 +465,11 @@ msgstr "Play"
 # defaultMessage: Pagina precedente
 msgid "Previous page"
 msgstr "Pagina precedente"
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Register
+msgid "Register"
+msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/FileWidget
 # defaultMessage: Rimuovi il file
@@ -502,6 +542,11 @@ msgstr "Mostra tutto"
 # defaultMessage: Mostra tutti i tipi di contenuto
 msgid "Show all content types"
 msgstr "Mostra tutti i tipi di contenuto"
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Sign in to start session
+msgid "Sign in to start session"
+msgstr "Accedi per iniziare la sessione"
 
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: Site Administration
@@ -654,11 +699,6 @@ msgstr "Video"
 # defaultMessage: Video Gallery
 msgid "VideoGalleryBlock"
 msgstr "Video gallery"
-
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: You are trying to access a protected resource, please {login} first.
-msgid "You are trying to access a protected resource, please {login} first."
-msgstr "Stai provando ad accedere ad una risorsa protetta, per favore fai prima il {login}."
 
 #: components/ItaliaTheme/View/EventoView/EventoCosE
 # defaultMessage: A chi è rivolto
@@ -1034,6 +1074,11 @@ msgstr "Biografia"
 # defaultMessage: Colore di sfondo
 msgid "block_bg_color"
 msgstr "Colore di sfondo"
+
+#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+# defaultMessage: Forgot your password?
+msgid "box_forgot_password_option"
+msgstr "Hai dimenticato la tua password?"
 
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
 # defaultMessage: Calendario
@@ -2144,22 +2189,47 @@ msgstr "Posizione in cui cercare"
 msgid "locations"
 msgstr "Luoghi"
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: log in
-msgid "log in"
-msgstr "Log in"
+#: components/ItaliaTheme/LoginAgid/LoginAgid
+# defaultMessage: Log in
+msgid "login_agid"
+msgstr "Accedi"
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: or login as an administrator
-msgid "login_admin_message"
-msgstr "oppure accedi come amministratore del sito"
+#: components/ItaliaTheme/LoginAgid/LoginAgid
+# defaultMessage: To access the site and its services, use one of the following methods.
+msgid "login_agid_description"
+msgstr "Per accedere al sito a ai suoi servizi, utilizza una delle seguenti modalità."
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: login with Spid
-msgid "login_spid_message"
-msgstr "login con Spid"
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: Other users
+msgid "login_agid_other"
+msgstr "Altre utenze"
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: Alternatively you can use these methods.
+msgid "login_agid_other_description"
+msgstr "In alternativa puoi utilizzare le seguenti modalità."
+
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: Log in as employee
+msgid "login_plone_user"
+msgstr "Accedi come dipendente"
+
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: SPID
+msgid "login_spid"
+msgstr "SPID"
+
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: Log in with SPID, the public digital identity system.
+msgid "login_spid_description"
+msgstr "Accedi con SPID, il sistema Pubblico di Identità Digitale."
+
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+# defaultMessage: How to activate SPID
+msgid "login_spid_help"
+msgstr "Come attivare SPID"
+
+#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
 # defaultMessage: Login with Spid
 msgid "login_with_spid"
 msgstr "Accedi con Spid"
@@ -3603,6 +3673,11 @@ msgstr "Ufficio responsabile"
 # defaultMessage: Ulteriori informazioni
 msgid "ulteriori_informazioni"
 msgstr "Ulteriori informazioni"
+
+#: components/ItaliaTheme/Unauthorized/Unauthorized
+# defaultMessage: You are trying to access a protected resource, please login first.
+msgid "unauthorized_description"
+msgstr "Stai provando ad accedere ad una risorsa protetta, per favore accedi al sito."
 
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: unità operativa

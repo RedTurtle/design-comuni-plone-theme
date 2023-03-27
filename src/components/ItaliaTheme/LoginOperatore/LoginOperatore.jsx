@@ -1,7 +1,7 @@
 /**
  * Login container.
  * @module components/theme/Login/Login
- * TO DO: DA RIMUOVERE QUANDO AGGIORNIAMO A VOLTO16
+ * Copia del componente Login.jsx per poter fare login anche dall'url login-operatore
  */
 
 import React, { Component } from 'react';
@@ -41,10 +41,6 @@ const messages = defineMessages({
     id: 'Login Name',
     defaultMessage: 'Login Name',
   },
-  Login: {
-    id: 'Login',
-    defaultMessage: 'Login',
-  },
   password: {
     id: 'Password',
     defaultMessage: 'Password',
@@ -62,8 +58,7 @@ const messages = defineMessages({
     defaultMessage: 'Login Failed',
   },
   loginFailedContent: {
-    id:
-      'Both email address and password are case sensitive, check that caps lock is not enabled.',
+    id: 'Both email address and password are case sensitive, check that caps lock is not enabled.',
     defaultMessage:
       'Both email address and password are case sensitive, check that caps lock is not enabled.',
   },
@@ -82,7 +77,7 @@ const messages = defineMessages({
  * @class Login
  * @extends Component
  */
-class Login extends Component {
+class LoginOperatore extends Component {
   /**
    * Property types.
    * @property {Object} propTypes Property types.
@@ -130,11 +125,17 @@ class Login extends Component {
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.token) {
       this.props.history.push(this.props.returnUrl || '/');
+      if (toast.isActive('loggedOut')) {
+        toast.dismiss('loggedOut');
+      }
       if (toast.isActive('loginFailed')) {
         toast.dismiss('loginFailed');
       }
     }
     if (nextProps.error) {
+      if (toast.isActive('loggedOut')) {
+        toast.dismiss('loggedOut');
+      }
       if (!toast.isActive('loginFailed')) {
         toast.error(
           <Toast
@@ -176,12 +177,12 @@ class Login extends Component {
   render() {
     return (
       <div id="page-login">
-        <Helmet title={this.props.intl.formatMessage(messages.Login)} />
+        <Helmet title={this.props.intl.formatMessage(messages.login)} />
         <Container text>
           <Form method="post" onSubmit={this.onLogin}>
             <Segment.Group raised>
               <Segment className="primary">
-                <FormattedMessage id="Log In" defaultMessage="Login" />
+                <FormattedMessage {...messages.login} />
               </Segment>
               <Segment secondary>
                 <FormattedMessage
@@ -317,10 +318,10 @@ export default compose(
       returnUrl:
         qs.parse(props.location.search).return_url ||
         props.location.pathname
-          .replace(/\/login$/, '')
-          .replace(/\/logout$/, '') ||
+          .replace(/\/login-operatore\/?$/, '')
+          .replace(/\/logout\/?$/, '') ||
         '/',
     }),
     { login },
   ),
-)(Login);
+)(LoginOperatore);
