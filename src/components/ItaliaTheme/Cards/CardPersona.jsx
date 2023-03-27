@@ -25,6 +25,9 @@ export const CardPersona = ({
     maxSize: 300,
     useOriginal: false,
   });
+
+  const cardHasPicture = item.image_scales.foto_persona[0] !== null;
+
   return (
     <Card
       className={`card-persona card-big p-3 card-teaser-image card-flex no-after ${
@@ -46,7 +49,11 @@ export const CardPersona = ({
               {item.title || item.id}
             </UniversalLink>
           </CardTitle>
-          {listingText && <CardText>{listingText}</CardText>}
+          {listingText && (
+            <CardText className={cardHasPicture ? 'card-with-picture' : ''}>
+              {listingText}
+            </CardText>
+          )}
         </CardBody>
         {showImage && (
           <div className="card-image card-image-rounded">{image}</div>
