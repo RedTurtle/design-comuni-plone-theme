@@ -53,7 +53,8 @@ body.contenttype-unitaorganizzativa {
     }
   }
   .card-persona.card-teaser-image.card-flex.card {
-    height: 135px;
+    min-height: 135px;
+    height: fit-content;
     .card-image-wrapper {
       .card-image {
         position: absolute;
@@ -62,9 +63,13 @@ body.contenttype-unitaorganizzativa {
         bottom: 0;
         overflow: hidden;
         img {
-          width: 95px;
-          object-fit: contain;
-          aspect-ratio: 9/16;
+          min-width: 95px;
+          max-width: 135px;
+          width: auto;
+          min-height: 135px;
+          object-fit: cover;
+          aspect-ratio: 180/100;
+          object-position: center;
         }
       }
       .card-title {

@@ -67,6 +67,7 @@
       @include rem-size(font-size, 18);
       @include rem-size(line-height, 24);
       font-family: 'Titillium Web' !important;
+      width: 70%;
     }
   }
 
@@ -79,6 +80,7 @@
 
     img {
       width: -webkit-fill-available;
+      object-fit: cover;
     }
   }
 }
