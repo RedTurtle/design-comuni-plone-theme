@@ -56,28 +56,6 @@ body.contenttype-unitaorganizzativa {
     min-height: 135px;
     height: fit-content;
     .card-image-wrapper {
-      .card-image {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
-        height: 100%;
-        picture.volto-image {
-          height: 100%;
-
-          img {
-            min-width: 95px;
-            max-width: 130px;
-            width: auto;
-            min-height: 135px;
-            height: fill-available;
-            object-fit: cover;
-            aspect-ratio: 180/100;
-            object-position: center;
-          }
-        }
-      }
       .card-title {
         font-size: $card-big-head-size;
         line-height: $card-big-head-l-h;
