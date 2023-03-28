@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Button } from 'design-react-kit';
-import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import { defineMessages, useIntl, injectIntl } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 import {
   Icon,
@@ -43,65 +43,47 @@ const messages = defineMessages({
   },
 });
 
-/**
- * LoginAgidButtons class.
- * @class LoginAgidButtons
- * @extends Component
- */
 const LoginAgidButtons = () => {
+  const intl = useIntl();
   let loginUrl = __CLIENT__ ? window?.location?.href : '';
+
   if (loginUrl.endsWith('/login')) {
     loginUrl += '-operatore';
   }
 
   return (
-    <div id="page-login">
+    <>
       <div className="login-method">
-        <h3>
-          <FormattedMessage {...messages.loginSpid} />
-        </h3>
+        <h2>{intl.formatMessage(messages.loginSpid)}</h2>
         <p className="description">
-          <FormattedMessage {...messages.loginSpidDescription} />
+          {intl.formatMessage(messages.loginSpidDescription)}
         </p>
-        <div className="unauthorized-spid-login">
+        <div className="authorized-spid-login mb-4">
           <LoginButton size="big">
             <span className="rounded-icon">
               <Icon color="primary" icon="it-user" padding={false} size="" />
             </span>
-            <span>
-              <FormattedMessage {...messages.loginSpidButton} />
-            </span>
+            <span>{intl.formatMessage(messages.loginSpidButton)}</span>
           </LoginButton>
           <div>
-            <a href="https://www.spid.gov.it/cos-e-spid/come-attivare-spid">
-              <FormattedMessage {...messages.loginSpidHelp} />
-            </a>
+            <UniversalLink href="https://www.spid.gov.it/cos-e-spid/come-attivare-spid">
+              <small>{intl.formatMessage(messages.loginSpidHelp)}</small>
+            </UniversalLink>
           </div>
         </div>
       </div>
       <div className="login-method">
-        <h3>
-          <FormattedMessage {...messages.loginOther} />
-        </h3>
+        <h3>{intl.formatMessage(messages.loginOther)}</h3>
         <p className="description">
-          <FormattedMessage {...messages.loginOtherDescription} />
+          {intl.formatMessage(messages.loginOtherDescription)}
         </p>
         <div className="unauthorized-spid-login">
-          <Button
-            className="btn-icon"
-            color="white"
-            tag={UniversalLink}
-            href={loginUrl}
-            icon={false}
-            size="lg"
-          >
-            <span>
-              <FormattedMessage {...messages.loginPloneUser} />
-            </span>
+          <Button color="primary" outline href={loginUrl} tag="button">
+            <span>{intl.formatMessage(messages.loginPloneUser)}</span>
           </Button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

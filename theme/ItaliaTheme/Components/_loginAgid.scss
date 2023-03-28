@@ -1,0 +1,13 @@
+#page-login {
+  .view-wrapper {
+    .btn {
+      &.btn-icon {
+        justify-content: center;
+      }
+      width: 300px;
+      @media (max-width: #{map-get($grid-breakpoints, sm)}) {
+        width: 100%;
+      }
+    }
+  }
+}

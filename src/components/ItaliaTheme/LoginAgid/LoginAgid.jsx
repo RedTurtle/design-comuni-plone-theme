@@ -6,11 +6,11 @@
 import React from 'react';
 import { Helmet } from '@plone/volto/helpers';
 import { compose } from 'redux';
-import { Container } from 'semantic-ui-react';
 import { BodyClass } from '@plone/volto/helpers';
 import { defineMessages, useIntl, injectIntl } from 'react-intl';
 import { withRouter } from 'react-router-dom';
 import { Login } from '@plone/volto/components';
+import { Row, Col, Container } from 'design-react-kit';
 import {
   RemoveBodyClass,
   LoginAgidButtons,
@@ -38,14 +38,23 @@ const LoginAgid = (props) => {
       {!config.settings.siteProperties.spidLogin && <Login {...props}></Login>}
       <div id="page-login">
         <Helmet title={intl.formatMessage(messages.login)} />
+        <BodyClass className="public-ui" />
+        <RemoveBodyClass className="cms-ui" />
         <Container className="view-wrapper py-5">
-          <BodyClass className="public-ui" />
-          <RemoveBodyClass className="cms-ui" />
-          <h1>{intl.formatMessage(messages.login)}</h1>
-          <p className="description">
-            {intl.formatMessage(messages.loginDescription)}
-          </p>
-          <LoginAgidButtons />
+          <Row className="view-container">
+            <Col xs={12} lg={{ size: 10, offset: 1 }}>
+              <h1 sans-serfif="true">{intl.formatMessage(messages.login)}</h1>
+              <p className="description">
+                {intl.formatMessage(messages.loginDescription)}
+              </p>
+            </Col>
+          </Row>
+          <hr className="d-none d-lg-block mt-0 mb-4" />
+          <Row>
+            <Col xs={12} lg={{ size: 8, offset: 2 }}>
+              <LoginAgidButtons />
+            </Col>
+          </Row>
         </Container>
       </div>
     </>
