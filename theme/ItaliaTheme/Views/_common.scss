@@ -62,8 +62,7 @@ picture.volto-image.responsive img.full-width {
   left: 50%;
   width: 100vw !important;
   max-width: initial !important;
-  height: auto;
-  max-height: 480px;
+  height: 480px;
   margin-right: -50vw !important;
   margin-left: -50vw !important;
   object-fit: cover;
@@ -110,12 +109,6 @@ picture.volto-image.responsive img.full-width {
     margin: 0 !important;
     margin-bottom: 1rem !important;
     line-height: 1em;
-
-    &:not(.big-heading) a {
-      color: $primary;
-      @include rem-size(font-size, 24);
-      @include rem-size(line-height, 28);
-    }
   }
 
   .genericcard {
