@@ -5,7 +5,7 @@
 import React from 'react';
 import { FormattedMessage, defineMessages } from 'react-intl';
 import { Link } from 'react-router-dom';
-import { Container } from 'semantic-ui-react';
+import { Row, Col, Container } from 'design-react-kit';
 import { withServerErrorCode } from '@plone/volto/helpers/Utils/Utils';
 import { BodyClass } from '@plone/volto/helpers';
 import {
@@ -29,36 +29,54 @@ const messages = defineMessages({
 
 const Unauthorized = () => {
   return (
-    <Container className="view-wrapper">
+    <div id="unauthorized-agid" className="view-wrapper">
       <BodyClass className="public-ui" />
       <RemoveBodyClass className="cms-ui" />
-      <h1>
-        <FormattedMessage id="Unauthorized" defaultMessage="Unauthorized" />
-      </h1>
-      <p className="description">
-        <FormattedMessage {...messages.unauthorizedDescription} />
-      </p>
-      <LoginAgidButtons />
-      <p>
-        <FormattedMessage
-          id="If you are certain you have the correct web address but are encountering an error, please contact the {site_admin}."
-          defaultMessage="If you are certain you have the correct web address but are encountering an error, please contact the {site_admin}."
-          values={{
-            site_admin: (
-              <Link to="/contact-form">
-                <FormattedMessage
-                  id="Site Administration"
-                  defaultMessage="Site Administration"
-                />
-              </Link>
-            ),
-          }}
-        />
-      </p>
-      <p>
-        <FormattedMessage id="Thank you." defaultMessage="Thank you." />
-      </p>
-    </Container>
+      <Container className="view-wrapper py-5">
+        <Row className="view-container">
+          <Col xs={12} lg={{ size: 10, offset: 1 }}>
+            <h1>
+              <FormattedMessage
+                id="Unauthorized"
+                defaultMessage="Unauthorized"
+              />
+            </h1>
+            <p className="description">
+              <FormattedMessage {...messages.unauthorizedDescription} />
+            </p>
+          </Col>
+        </Row>
+        <hr className="d-none d-lg-block mt-0 mb-4" />
+        <Row className="py-4">
+          <Col xs={12} lg={{ size: 10, offset: 1 }}>
+            <LoginAgidButtons />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} lg={{ size: 10, offset: 1 }}>
+            <p>
+              <FormattedMessage
+                id="If you are certain you have the correct web address but are encountering an error, please contact the {site_admin}."
+                defaultMessage="If you are certain you have the correct web address but are encountering an error, please contact the {site_admin}."
+                values={{
+                  site_admin: (
+                    <Link to="/contact-form">
+                      <FormattedMessage
+                        id="Site Administration"
+                        defaultMessage="Site Administration"
+                      />
+                    </Link>
+                  ),
+                }}
+              />
+            </p>
+            <p>
+              <FormattedMessage id="Thank you." defaultMessage="Thank you." />
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
