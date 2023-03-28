@@ -60,12 +60,12 @@ msgstr "Titolo del blocco..."
 msgid "Block style"
 msgstr "Stile del blocco"
 
-#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+#: components/ItaliaTheme/LoginAgid/LoginOperatore
 # defaultMessage: Both email address and password are case sensitive, check that caps lock is not enabled.
 msgid "Both email address and password are case sensitive, check that caps lock is not enabled."
 msgstr "E-mail e password distinguono entrambi le maiuscole dalle minuscole, verifica di non avere il Blocco maiuscole attivato."
 
-#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+#: components/ItaliaTheme/LoginAgid/LoginOperatore
 # defaultMessage: Cancel
 msgid "Cancel"
 msgstr "Annulla"
@@ -189,7 +189,7 @@ msgstr "Dimensione della mappa"
 msgid "Enter URL or select an item"
 msgstr "Inserisci un URL o seleziona un elemento"
 
-#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+#: components/ItaliaTheme/LoginAgid/LoginOperatore
 # defaultMessage: Error
 msgid "Error"
 msgstr "Errore"
@@ -331,17 +331,17 @@ msgstr "Titolo per il link ad altro"
 msgid "Loading page..."
 msgstr "Sto caricando la pagina richiesta..."
 
-#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+#: components/ItaliaTheme/LoginAgid/LoginOperatore
 # defaultMessage: Log in
 msgid "Log in"
 msgstr "Accedi"
 
-#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+#: components/ItaliaTheme/LoginAgid/LoginOperatore
 # defaultMessage: Login Failed
 msgid "Login Failed"
 msgstr "Accesso fallito"
 
-#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+#: components/ItaliaTheme/LoginAgid/LoginOperatore
 # defaultMessage: Login Name
 msgid "Login Name"
 msgstr "Nome utente"
@@ -427,7 +427,7 @@ msgstr "- apri in nuova scheda"
 msgid "Open in a new tab"
 msgstr "Apri in un nuovo tab"
 
-#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+#: components/ItaliaTheme/LoginAgid/LoginOperatore
 # defaultMessage: Password
 msgid "Password"
 msgstr "Password"
@@ -466,7 +466,7 @@ msgstr "Play"
 msgid "Previous page"
 msgstr "Pagina precedente"
 
-#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+#: components/ItaliaTheme/LoginAgid/LoginOperatore
 # defaultMessage: Register
 msgid "Register"
 msgstr ""
@@ -543,7 +543,7 @@ msgstr "Mostra tutto"
 msgid "Show all content types"
 msgstr "Mostra tutti i tipi di contenuto"
 
-#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+#: components/ItaliaTheme/LoginAgid/LoginOperatore
 # defaultMessage: Sign in to start session
 msgid "Sign in to start session"
 msgstr "Accedi per iniziare la sessione"
@@ -1075,7 +1075,7 @@ msgstr "Biografia"
 msgid "block_bg_color"
 msgstr "Colore di sfondo"
 
-#: components/ItaliaTheme/LoginOperatore/LoginOperatore
+#: components/ItaliaTheme/LoginAgid/LoginOperatore
 # defaultMessage: Forgot your password?
 msgid "box_forgot_password_option"
 msgstr "Hai dimenticato la tua password?"
@@ -2199,37 +2199,37 @@ msgstr "Accedi"
 msgid "login_agid_description"
 msgstr "Per accedere al sito a ai suoi servizi, utilizza una delle seguenti modalità."
 
-#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: Other users
 msgid "login_agid_other"
 msgstr "Altre utenze"
 
-#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: Alternatively you can use these methods.
 msgid "login_agid_other_description"
 msgstr "In alternativa puoi utilizzare le seguenti modalità."
 
-#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: Log in as employee
 msgid "login_plone_user"
 msgstr "Accesso operatore"
 
-#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: SPID
 msgid "login_spid"
 msgstr "SPID"
 
-#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: Log in with SPID, the public digital identity system.
 msgid "login_spid_description"
 msgstr "Accedi con SPID, il sistema Pubblico di Identità Digitale."
 
-#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: How to activate SPID
 msgid "login_spid_help"
 msgstr "Come attivare SPID"
 
-#: components/ItaliaTheme/LoginAgidButtons/LoginAgidButtons
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: Login with Spid
 msgid "login_with_spid"
 msgstr "Accedi con Spid"
