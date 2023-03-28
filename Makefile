@@ -221,7 +221,12 @@ start-test-acceptance-server test-acceptance-server: ## Start Test Acceptance Se
 
 .PHONY: start-test-acceptance-frontend
 start-test-acceptance-frontend: ## Start the Core Acceptance Frontend Fixture
-	RAZZLE_API_PATH=http://localhost:55001/plone yarn build && yarn start:prod
+	# aggiunto temporanemante CI=false per warning su css minimizer vs svg parsing
+	# Css Minimizer Plugin: cssnano: webpack://./node_modules/bootstrap-italia/src/scss/custom/_alert.scss:66:2: Error in parsing SVG: Non-whitespace before first tag.
+	# Line: 0
+	# Column: 1
+	# Char: % 
+	CI=false RAZZLE_API_PATH=http://localhost:55001/plone yarn build && yarn start:prod
 
 .PHONY: test-acceptance
 test-acceptance: ## Start Core Cypress Acceptance Tests

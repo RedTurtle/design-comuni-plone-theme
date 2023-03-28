@@ -30,7 +30,6 @@ jobs:
           # Recommended: pass the GitHub token lets this action correctly
           # determine the unique run id necessary to re-run the checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CI: false
         with:
           record: true
           parallel: false # Since they run on different node versions, we can't parallel
