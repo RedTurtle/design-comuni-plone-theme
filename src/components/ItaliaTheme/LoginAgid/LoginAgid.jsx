@@ -3,12 +3,12 @@
  * @module components/theme/Login/Login
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import { Helmet } from '@plone/volto/helpers';
 import { compose } from 'redux';
 import { Container } from 'semantic-ui-react';
 import { BodyClass } from '@plone/volto/helpers';
-import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import { defineMessages, useIntl, injectIntl } from 'react-intl';
 import { withRouter } from 'react-router-dom';
 import { Login } from '@plone/volto/components';
 import {
@@ -30,40 +30,26 @@ const messages = defineMessages({
   },
 });
 
-/**
- * LoginAgid class.
- * @class LoginAgid
- * @extends Component
- */
-class LoginAgid extends Component {
-  /**
-   * Render method.
-   * @method render
-   * @returns {string} Markup for the component.
-   */
+const LoginAgid = (props) => {
+  const intl = useIntl();
 
-  render() {
-    if (!config.settings.siteProperties.spidLogin) {
-      // no spid login set
-      return <Login {...this.props}></Login>;
-    }
-    return (
+  return (
+    <>
+      {!config.settings.siteProperties.spidLogin && <Login {...props}></Login>}
       <div id="page-login">
-        <Helmet title={this.props.intl.formatMessage(messages.login)} />
-        <Container className="view-wrapper">
+        <Helmet title={intl.formatMessage(messages.login)} />
+        <Container className="view-wrapper py-5">
           <BodyClass className="public-ui" />
           <RemoveBodyClass className="cms-ui" />
-          <h1>
-            <FormattedMessage {...messages.login} />
-          </h1>
+          <h1>{intl.formatMessage(messages.login)}</h1>
           <p className="description">
-            <FormattedMessage {...messages.loginDescription} />
+            {intl.formatMessage(messages.loginDescription)}
           </p>
           <LoginAgidButtons />
         </Container>
       </div>
-    );
-  }
-}
+    </>
+  );
+};
 
 export default compose(withRouter, injectIntl)(LoginAgid);
