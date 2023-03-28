@@ -66,7 +66,7 @@ const SideMenu = ({ data, content_uid }) => {
   const [headers, setHeaders] = useState([]);
   const [activeSection, setActiveSection] = useState(null);
 
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(true);
   const [windowScrollY, setWindowScrollY] = useState(0);
 
   useEffect(() => {
@@ -127,92 +127,80 @@ const SideMenu = ({ data, content_uid }) => {
   return headers?.length > 0 ? (
     <div className="sticky-wrapper navbar-wrapper page-side-menu">
       <nav className="navbar it-navscroll-wrapper navbar-expand-lg">
-        <button
-          className={
-            isNavOpen
-              ? 'custom-navbar-toggler focus--mouse'
-              : 'custom-navbar-toggler'
-          }
-          type="button"
-          aria-controls="navbarNavB"
-          aria-expanded={isNavOpen ? 'true' : 'false'}
-          aria-label="Toggle navigation"
-          data-target="#navbarNavB"
-          onClick={() => {
-            setIsNavOpen(!isNavOpen);
-          }}
-        >
-          <span className="it-list"></span>
-          {intl.formatMessage(messages.index)}
-        </button>
+        <div className="menu-wrapper">
+          <div className="link-list-wrapper menu-link-list">
+            <div className="accordion">
+              <div className="accordion-item">
+                <span className="accordion-header" id="accordion-title-one">
+                  <button
+                    className="accordion-button pb-10"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse-one"
+                    aria-expanded="true"
+                    aria-controls="collapse-one"
+                    data-focus-mouse="false"
+                    onClick={async () => {
+                      if (isNavOpen) {
+                        setIsNavOpen(false);
+                      } else {
+                        setIsNavOpen(true);
+                      }
+                    }}
+                  >
+                    <h3>{intl.formatMessage(messages.index)}</h3>
+                    <Icon
+                      icon="chevron-up"
+                      className={isNavOpen ? '' : 'rotate-icon'}
+                    />
+                  </button>
+                </span>
 
-        <div
-          className={
-            isNavOpen ? 'navbar-collapsable expanded' : 'navbar-collapsable'
-          }
-          id="navbarNavB"
-          style={isNavOpen ? { display: 'block' } : { display: 'none' }}
-        >
-          <div
-            className="overlay"
-            style={isNavOpen ? { display: 'block' } : { display: 'none' }}
-          ></div>
-          <div className="close-div visually-hidden">
-            <button className="btn close-menu" type="button">
-              <span className="it-close"></span>
-              {intl.formatMessage(messages.close)}
-            </button>
-          </div>
-          <a
-            className="it-back-button"
-            href="#"
-            style={isNavOpen ? { display: 'block' } : { display: 'none' }}
-            onClick={(e) => {
-              e.preventDefault();
-              setIsNavOpen(!isNavOpen);
-            }}
-          >
-            <Icon
-              className="align-top"
-              color="primary"
-              icon="it-chevron-left"
-              style={{ ariaHidden: true }}
-              size="sm"
-            />
-            <span>{intl.formatMessage(messages.back)}</span>
-          </a>
-          <div className="menu-wrapper">
-            <div className="link-list-wrapper menu-link-list">
-              <h3>{intl.formatMessage(messages.index)}</h3>
-              <div className="mb-3">
-                <Progress
-                  value={
-                    100 *
-                    (window.scrollY /
-                      (document.documentElement.scrollHeight -
-                        document.documentElement.clientHeight))
+                <div className="mb-3">
+                  <Progress
+                    value={
+                      100 *
+                      (window.scrollY /
+                        (document.documentElement.scrollHeight -
+                          document.documentElement.clientHeight))
+                    }
+                    role="progressbar"
+                  />
+                </div>
+
+                <div
+                  id="collapse-one"
+                  className={
+                    isNavOpen
+                      ? 'accordion-collapse show'
+                      : 'accordion-collapse collapse'
                   }
-                  role="progressbar"
-                />
+                  role="region"
+                  aria-aria-labelledby="accordion-title-one"
+                >
+                  <div className="accordion-body">
+                    <ul className="link-list" data-element="page-index">
+                      {headers.map((item, i) => (
+                        <li className="nav-item" key={item.id}>
+                          <a
+                            className={`nav-link ${
+                              item.id === activeSection && 'active'
+                            }`}
+                            href={`#${item.id}`}
+                            onClick={handleClickAnchor(item.id)}
+                          >
+                            <span>{item.title}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <ul className="link-list" data-element="page-index">
-                {headers.map((item, i) => (
-                  <li className="nav-item" key={item.id}>
-                    <a
-                      className={`nav-link ${
-                        item.id === activeSection && 'active'
-                      }`}
-                      href={`#${item.id}`}
-                      onClick={handleClickAnchor(item.id)}
-                    >
-                      <span>{item.title}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
+        {/* </div> */}
       </nav>
     </div>
   ) : null;

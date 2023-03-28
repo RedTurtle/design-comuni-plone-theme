@@ -1,0 +1,35 @@
+.page-side-menu {
+  // @include mobile(320px, 992px) {
+  //   display: block;
+  // }
+
+  .menu-wrapper {
+    width: 100%;
+    .accordion {
+      .accordion-item {
+        .accordion-header {
+          width: 100%;
+          display: block;
+          button.accordion-button {
+            border: none;
+            background: transparent;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 1.3em;
+
+            svg.fa-icon {
+              height: 0.72rem;
+              width: auto;
+
+              &.rotate-icon {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
