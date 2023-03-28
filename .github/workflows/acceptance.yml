@@ -19,7 +19,10 @@ jobs:
           cache: 'yarn'
 
       ## node install
-      - run: yarn --immutable
+      - name: Install
+        env:
+          CI: false
+        run: yarn --immutable
 
       - name: Cypress acceptance tests
         uses: cypress-io/github-action@v4
