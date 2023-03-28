@@ -48,7 +48,7 @@ const Unauthorized = () => {
         </Row>
         <hr className="d-none d-lg-block mt-0 mb-4" />
         <Row className="py-4">
-          <Col xs={12} lg={{ size: 10, offset: 1 }}>
+          <Col xs={12} lg={{ size: 8, offset: 2 }}>
             <LoginAgidButtons />
           </Col>
         </Row>
