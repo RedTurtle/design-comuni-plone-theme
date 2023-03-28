@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: 'design-comuni-plone-theme',
   e2e: {
     baseUrl: 'http://localhost:3000',
     excludeSpecPattern: ['*~'],
