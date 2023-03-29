@@ -65,13 +65,14 @@ body.contenttype-unitaorganizzativa {
         height: 100%;
         picture.volto-image {
           height: 100%;
+          display: flex;
+          align-items: stretch;
 
           img {
             min-width: 95px;
             max-width: 130px;
             width: auto;
             min-height: 135px;
-            height: fill-available;
             object-fit: cover;
             aspect-ratio: 180/100;
             object-position: center;
