@@ -35,6 +35,14 @@ const messages = defineMessages({
     id: "Accedi all'area personale",
     defaultMessage: "Accedi all'area personale",
   },
+  areaPersonale: {
+    id: 'areaPersonale',
+    defaultMessage: 'Area personale',
+  },
+  areaOperatore: {
+    id: 'areaOperatore',
+    defaultMessage: 'Area operatore',
+  },
   arLogout: {
     id: 'arLogout',
     defaultMessage: 'Esci',
@@ -84,7 +92,7 @@ const ArLogin = () => {
 
       {config.settings.siteProperties?.arLoginUrl ? (
         <>
-          {!userId || !isPublicUser ? (
+          {!userId || isPublicUser ? (
             // not logged
             <LoginButton>
               <span className="rounded-icon">
@@ -126,6 +134,38 @@ const ArLogin = () => {
                       <LinkList tag="div">
                         <UserLoggedMenu />
                         <LinkListItem divider tag="a" />
+                        {userLogged.roles &&
+                        userLogged?.roles.find(
+                          (e) => e === 'Gestore Pratiche',
+                        ) ? (
+                          <>
+                            <LinkListItem
+                              href={'/area-personale-operatore'}
+                              title={intl.formatMessage(messages.areaOperatore)}
+                              tag="a"
+                              className="link-areaOperatore"
+                            >
+                              <span>
+                                {intl.formatMessage(messages.areaOperatore)}
+                              </span>
+                            </LinkListItem>
+                            <LinkListItem divider tag="a" />
+                          </>
+                        ) : (
+                          <>
+                            <LinkListItem
+                              href={'/area-personale-cittadino'}
+                              title={intl.formatMessage(messages.areaPersonale)}
+                              tag="a"
+                              className="link-areaPersonale"
+                            >
+                              <span>
+                                {intl.formatMessage(messages.areaPersonale)}
+                              </span>
+                            </LinkListItem>
+                            <LinkListItem divider tag="a" />
+                          </>
+                        )}
                         <LinkListItem
                           href={
                             config.settings.siteProperties.arLogoutUrl || '/'
