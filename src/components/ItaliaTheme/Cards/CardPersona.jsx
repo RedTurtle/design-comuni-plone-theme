@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
+import cx from 'classnames';
 
 import { UniversalLink } from '@plone/volto/components';
 import { CardCategory } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -26,8 +27,6 @@ export const CardPersona = ({
     useOriginal: false,
   });
 
-  const cardHasPicture = item.image_scales.foto_persona[0] !== null;
-
   return (
     <Card
       className={`card-persona card-big p-3 card-teaser-image card-flex no-after ${
@@ -50,7 +49,11 @@ export const CardPersona = ({
             </UniversalLink>
           </CardTitle>
           {listingText && (
-            <CardText className={cardHasPicture ? 'card-with-picture' : ''}>
+            <CardText
+              className={cx('', {
+                'card-with-picture': !!image,
+              })}
+            >
               {listingText}
             </CardText>
           )}
