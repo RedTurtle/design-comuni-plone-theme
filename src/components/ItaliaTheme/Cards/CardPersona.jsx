@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 import cx from 'classnames';
 
