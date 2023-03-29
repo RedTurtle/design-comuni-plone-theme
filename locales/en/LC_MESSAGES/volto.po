@@ -801,6 +801,16 @@ msgstr "Logout"
 msgid "area"
 msgstr "area"
 
+#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+# defaultMessage: Area operatore
+msgid "areaOperatore"
+msgstr "Operator Area"
+
+#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+# defaultMessage: Area personale
+msgid "areaPersonale"
+msgstr "Personal Area"
+
 #: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks
 # defaultMessage: Area di appartenenza
 msgid "area_appartenenza"

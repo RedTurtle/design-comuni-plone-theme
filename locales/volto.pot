@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-03-28T12:16:01.205Z\n"
+"POT-Creation-Date: 2023-03-29T14:37:31.021Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -801,6 +801,16 @@ msgstr ""
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: area
 msgid "area"
+msgstr ""
+
+#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+# defaultMessage: Area operatore
+msgid "areaOperatore"
+msgstr ""
+
+#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+# defaultMessage: Area personale
+msgid "areaPersonale"
 msgstr ""
 
 #: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks

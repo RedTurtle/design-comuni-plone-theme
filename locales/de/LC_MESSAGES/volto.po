@@ -816,6 +816,16 @@ msgstr ""
 msgid "area"
 msgstr ""
 
+#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+# defaultMessage: Area operatore
+msgid "areaOperatore"
+msgstr ""
+
+#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+# defaultMessage: Area personale
+msgid "areaPersonale"
+msgstr ""
+
 #: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks
 # defaultMessage: Area di appartenenza
 msgid "area_appartenenza"
