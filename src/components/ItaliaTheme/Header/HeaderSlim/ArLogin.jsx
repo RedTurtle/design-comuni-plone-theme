@@ -134,6 +134,8 @@ const ArLogin = () => {
                       <LinkList tag="div">
                         <UserLoggedMenu />
                         <LinkListItem divider tag="a" />
+
+                        {/* Gestione IO-CITTADINO */}
                         {userLogged.roles &&
                         userLogged?.roles.find(
                           (e) => e === 'Gestore Pratiche',
@@ -166,6 +168,7 @@ const ArLogin = () => {
                             <LinkListItem divider tag="a" />
                           </>
                         )}
+
                         <LinkListItem
                           href={
                             config.settings.siteProperties.arLogoutUrl || '/'
