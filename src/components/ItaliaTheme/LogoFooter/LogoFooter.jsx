@@ -11,7 +11,7 @@
  */
 
 // eslint-disable-next-line import/no-unresolved
-import logo from '../Logo/logo.png?width=164';
+import logo from '../Logo/logo.png';
 
 const LogoFooter = () => (
   <img className="icon" src={logo} width="82" height="82" alt="Logo" />
