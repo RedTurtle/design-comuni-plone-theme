@@ -1,0 +1,25 @@
+.pagination-wrapper {
+  ul.pagination {
+    @include mobile(320px, 1023px) {
+      flex-wrap: nowrap;
+    }
+
+    li.page-item {
+      button.page-link {
+        @include mobile(320px, 1023px) {
+          min-width: 1rem;
+          height: 2rem;
+        }
+      }
+
+      &:first-child,
+      &:last-child {
+        button.page-link {
+          @include mobile(320px, 1023px) {
+            padding: 0px;
+          }
+        }
+      }
+    }
+  }
+}
