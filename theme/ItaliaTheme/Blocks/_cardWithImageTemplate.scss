@@ -1,0 +1,24 @@
+.cardWithImageTemplate {
+  .listing-item.card-bg.card-img.card,
+  .listing-item.card-bg.card {
+    .card-body {
+      .category-top {
+        @include mobile(320px, 767px) {
+          flex-wrap: wrap;
+        }
+
+        span.data {
+          @include mobile(320px, 767px) {
+            margin-top: 3px;
+            flex-basis: 100%;
+          }
+          &:before {
+            @include mobile(320px, 767px) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -50,7 +50,7 @@
     display: flex;
   }
   .card-body {
-    padding: 0px !important;
+    padding: 0em !important;
     h5.card-title {
       margin-bottom: 0.3em !important;
       font-weight: 600;
@@ -69,6 +69,39 @@
       font-family: 'Titillium Web' !important;
       &.card-with-picture {
         width: 60%;
+      }
+    }
+  }
+}
+
+.ribbon-card-template {
+  .card.card-big {
+    .flag-icon {
+      margin-left: 1.3em !important;
+    }
+
+    .etichetta {
+      @include mobile(320px, 767px) {
+        width: 70%;
+        right: 0em !important;
+        left: auto;
+        top: 1.67em !important;
+        padding: 0em 0.5em 0em 0em;
+      }
+    }
+
+    .card-body {
+      padding: 2.67em !important;
+
+      @include mobile(320px, 767px) {
+        padding: 1.3em !important;
+      }
+
+      h3.card-title {
+        a {
+          font-size: 1.3rem;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -162,6 +195,21 @@
       a {
         color: $primary;
         font-size: 1.7rem;
+      }
+    }
+  }
+}
+
+.block.listing.simpleCard {
+  .card {
+    @include mobile(320px, 1023px) {
+      row-gap: 0.56em;
+    }
+
+    .card-body {
+      @include mobile(320px, 1023px) {
+        margin-left: 0em;
+        flex-basis: 100%;
       }
     }
   }
