@@ -80,11 +80,18 @@ picture.volto-image.responsive img.full-width {
 
 @media (max-width: #{map-get($grid-breakpoints, lg)}) {
   .page-side-menu {
-    display: none;
-  }
-
-  .it-page-sections-container {
-    border-top: none !important;
+    .menu-wrapper {
+      .accordion {
+        .accordion-item {
+          .accordion-header {
+            button.accordion-button {
+              padding-bottom: 1.3em;
+              padding-top: 1.3em;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
