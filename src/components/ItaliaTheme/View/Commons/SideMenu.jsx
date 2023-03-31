@@ -4,7 +4,12 @@
 import { defineMessages, useIntl } from 'react-intl';
 import React, { useEffect, useState } from 'react';
 import { throttle } from 'lodash';
-import { Progress } from 'design-react-kit';
+import {
+  Progress,
+  Accordion,
+  AccordionBody,
+  AccordionHeader,
+} from 'design-react-kit';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const messages = defineMessages({
@@ -129,33 +134,22 @@ const SideMenu = ({ data, content_uid }) => {
       <nav className="navbar it-navscroll-wrapper navbar-expand-lg">
         <div className="menu-wrapper">
           <div className="link-list-wrapper menu-link-list">
-            <div className="accordion">
-              <div className="accordion-item">
-                <span className="accordion-header" id="accordion-title-one">
-                  <button
-                    className="accordion-button pb-10"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapse-one"
-                    aria-expanded="true"
-                    aria-controls="collapse-one"
-                    data-focus-mouse="false"
-                    onClick={async () => {
-                      if (isNavOpen) {
-                        setIsNavOpen(false);
-                      } else {
-                        setIsNavOpen(true);
-                      }
-                    }}
-                  >
+            <div className="accordion-wrapper">
+              <Accordion>
+                <AccordionHeader
+                  active={isNavOpen}
+                  onToggle={(a, b) => {
+                    isNavOpen ? setIsNavOpen(false) : setIsNavOpen(true);
+                  }}
+                >
+                  <div className="accordion-title">
                     <h3>{intl.formatMessage(messages.index)}</h3>
                     <Icon
                       icon="chevron-up"
                       className={isNavOpen ? '' : 'rotate-icon'}
                     />
-                  </button>
-                </span>
-
+                  </div>
+                </AccordionHeader>
                 <div className="mb-3">
                   <Progress
                     value={
@@ -167,40 +161,34 @@ const SideMenu = ({ data, content_uid }) => {
                     role="progressbar"
                   />
                 </div>
-
-                <div
-                  id="collapse-one"
+                <AccordionBody
+                  active={isNavOpen}
                   className={
                     isNavOpen
                       ? 'accordion-collapse show'
                       : 'accordion-collapse collapse'
                   }
-                  role="region"
-                  aria-aria-labelledby="accordion-title-one"
                 >
-                  <div className="accordion-body">
-                    <ul className="link-list" data-element="page-index">
-                      {headers.map((item, i) => (
-                        <li className="nav-item" key={item.id}>
-                          <a
-                            className={`nav-link ${
-                              item.id === activeSection && 'active'
-                            }`}
-                            href={`#${item.id}`}
-                            onClick={handleClickAnchor(item.id)}
-                          >
-                            <span>{item.title}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
+                  <ul className="link-list" data-element="page-index">
+                    {headers.map((item, i) => (
+                      <li className="nav-item" key={item.id}>
+                        <a
+                          className={`nav-link ${
+                            item.id === activeSection && 'active'
+                          }`}
+                          href={`#${item.id}`}
+                          onClick={handleClickAnchor(item.id)}
+                        >
+                          <span>{item.title}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionBody>
+              </Accordion>
             </div>
           </div>
         </div>
-        {/* </div> */}
       </nav>
     </div>
   ) : null;
