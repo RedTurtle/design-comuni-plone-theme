@@ -31,3 +31,22 @@
     }
   }
 }
+
+@media (max-width: #{map-get($grid-breakpoints, lg)}) {
+  .page-side-menu {
+    .menu-wrapper {
+      .accordion-wrapper {
+        .accordion {
+          .accordion-header {
+            button.accordion-button {
+              .accordion-title {
+                padding-bottom: 1.3em;
+                padding-top: 1.3em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
