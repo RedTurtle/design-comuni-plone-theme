@@ -3,8 +3,8 @@
     .point-list-aside {
       &.point-list-warning {
         width: 6.8rem;
-        color: $primary;
-        border-color: $primary;
+        color: $link-color;
+        border-color: currentColor;
         border-right-width: 2px;
 
         .point-date {
