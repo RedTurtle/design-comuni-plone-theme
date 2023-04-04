@@ -45,11 +45,10 @@ const messages = defineMessages({
 
 const LoginAgidButtons = () => {
   const intl = useIntl();
-  let loginUrl = __CLIENT__ ? window?.location?.href : '';
 
-  if (loginUrl.endsWith('/login')) {
-    loginUrl += '-operatore';
-  }
+  const currentUrl = __CLIENT__ ? window?.location?.href : '';
+  const startIndex = currentUrl.indexOf('/login') + '/login'.length;
+  const loginUrl = currentUrl.slice(0, startIndex) + '-operatore';
 
   return (
     <>

@@ -167,13 +167,8 @@ export default function applyConfig(voltoConfig) {
       parentSiteURL: 'https://www.regione.emilia-romagna.it', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'https://www.governo.it', 'en':'https://www.governo.it/en'}. Se multilingua il default è comunque la stringa.
       subsiteParentSiteTitle: 'io-Comune', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome del sito padre', 'en':'Parent site name'}. Se multilingua il default è comunque la stringa.
       amministrazioneTrasparenteUrl: '/amministrazione-trasparente',
-      // arLoginUrl: '/login',
-      // arLogoutUrl: '/logout',
-      //spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
-
-      //impostazioni per io-cittadino temporaria. Cancellare le props arLoginUrl, arLogoutUrl e spidLogin qua sotto se non serve il pulsante accedi
-      arLoginUrl: 'https://io-comune.agamar.redturtle.it/login',
-      arLogoutUrl: 'https://io-comune.agamar.redturtle.it/logout',
+      arLoginUrl: '/login',
+      arLogoutUrl: '/logout',
       spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
 
       headerslimTertiaryMenu: {
