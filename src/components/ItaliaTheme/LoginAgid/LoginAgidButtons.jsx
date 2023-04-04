@@ -7,10 +7,7 @@ import React from 'react';
 import { Button } from 'design-react-kit';
 import { defineMessages, useIntl, injectIntl } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
-import {
-  Icon,
-  LoginButton,
-} from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const messages = defineMessages({
   loginOther: {
@@ -54,12 +51,20 @@ const LoginAgidButtons = () => {
           {intl.formatMessage(messages.loginSpidDescription)}
         </p>
         <div className="authorized-spid-login mb-4">
-          <LoginButton size="big">
+          {/**TODO: Cambiare il link per accesso spid */}
+          <Button
+            className="btn-icon"
+            color="primary"
+            href="#"
+            tag="a"
+            data-element="personal-area-login"
+            size="big"
+          >
             <span className="rounded-icon">
               <Icon color="primary" icon="it-user" padding={false} size="" />
             </span>
             <span>{intl.formatMessage(messages.loginSpidButton)}</span>
-          </LoginButton>
+          </Button>
           <div>
             <UniversalLink href="https://www.spid.gov.it/cos-e-spid/come-attivare-spid">
               <small>{intl.formatMessage(messages.loginSpidHelp)}</small>
