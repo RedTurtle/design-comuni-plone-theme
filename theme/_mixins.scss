@@ -5,9 +5,3 @@
 @mixin margin-size($key, $value) {
   #{$key}: calc($value / 18) + em;
 }
-
-@mixin mobile($min-size, $max-size) {
-  @media only screen and (min-width: $min-size) and (max-width: $max-size) {
-    @content;
-  }
-}

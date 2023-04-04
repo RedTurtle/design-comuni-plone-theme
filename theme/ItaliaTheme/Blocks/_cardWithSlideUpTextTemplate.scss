@@ -26,17 +26,13 @@
     padding: 1.2rem;
     text-decoration: none;
 
-    // @include mobile(320px, 1023px) {
-    //   height: fit-content;
-    // }
-
     .title {
       z-index: 2;
       margin-bottom: 0.8rem;
       color: #fff;
       font-size: 1.7rem;
 
-      @include mobile(320px, 1023px) {
+      @include media-breakpoint-between(320px, 1023px) {
         overflow: scroll;
       }
     }

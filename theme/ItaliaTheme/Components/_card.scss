@@ -81,7 +81,7 @@
     }
 
     .etichetta {
-      @include mobile(320px, 767px) {
+      @include media-breakpoint-between(320px, 767px) {
         width: 70%;
         right: 0em !important;
         left: auto;
@@ -93,7 +93,7 @@
     .card-body {
       padding: 2.67em !important;
 
-      @include mobile(320px, 767px) {
+      @include media-breakpoint-between(320px, 767px) {
         padding: 1.3em !important;
       }
 
@@ -202,12 +202,12 @@
 
 .block.listing.simpleCard {
   .card {
-    @include mobile(320px, 1023px) {
+    @include media-breakpoint-between(320px, 1023px) {
       row-gap: 0.56em;
     }
 
     .card-body {
-      @include mobile(320px, 1023px) {
+      @include media-breakpoint-between(320px, 1023px) {
         margin-left: 0em;
         flex-basis: 100%;
       }
