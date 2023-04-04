@@ -1202,8 +1202,8 @@ msgid "cosa_serve"
 msgstr "What is needed"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCostiVincoli
-# defaultMessage: Costi
-msgid "costi_e_vincoli"
+# defaultMessage: Quanto costa
+msgid "costi_e_vincoli_header"
 msgstr "Costs and constraints"
 
 #: components/ItaliaTheme/Blocks/CountDown/Sidebar
@@ -1832,6 +1832,16 @@ msgstr ""
 msgid "feedback_answers_header_positive"
 msgstr ""
 
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: The instructions were clear
+msgid "feedback_clear_instructions"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: I always understood that I was proceeding correctly
+msgid "feedback_clear_proceeding"
+msgstr ""
+
 #: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
 # defaultMessage: Do you want to add some more details?
 msgid "feedback_comments_header"
@@ -1850,6 +1860,11 @@ msgstr ""
 #: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
 # defaultMessage: Comment
 msgid "feedback_comments_label_comment"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: The instructions were complete
+msgid "feedback_complete_instructions"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
@@ -1889,13 +1904,53 @@ msgid "feedback_form_title"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: How easy was it to use this service?
+msgid "feedback_form_title_service"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Yes
 msgid "feedback_form_yes"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Some instructions were incomplete
+msgid "feedback_incomplete_instructions"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: I had no technical problems
+msgid "feedback_no_technical_problems"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Other
+msgid "feedback_other_negative"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Other
+msgid "feedback_other_positive"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Your feedback was sent!
 msgid "feedback_sent"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: I ran into technical problems
+msgid "feedback_technical_problems"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Some instructions were not clear and confusin
+msgid "feedback_unclear_instructions"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Sometimes I couldn't understand if I was proceeding correctly
+msgid "feedback_unclear_proceeding"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
@@ -3089,6 +3144,11 @@ msgstr "Service not available"
 msgid "service_on"
 msgstr "Service available"
 
+#: components/ItaliaTheme/View/ServizioView/ServizioArgomenti
+# defaultMessage: Argomenti:
+msgid "service_topics"
+msgstr "Topics:"
+
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Servizi
 msgid "servizi"
@@ -3445,6 +3505,11 @@ msgstr ""
 # defaultMessage: Tags
 msgid "subjects"
 msgstr "Tags"
+
+#: components/ItaliaTheme/View/EventoView/EventoContatti
+# defaultMessage: Con il supporto di
+msgid "supported_by"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/ContactLink
 # defaultMessage: Tel

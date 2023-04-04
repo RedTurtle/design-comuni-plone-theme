@@ -24,7 +24,8 @@
   &.card-big {
     h5.card-title,
     .text.fw-bold {
-      color: $primary;
+      color: $link-color;
+      font-weight: 600;
       a {
         @include rem-size(font-size, 24);
         @include rem-size(line-height, 32);
@@ -52,6 +53,8 @@
     padding: 0px !important;
     h5.card-title {
       margin-bottom: 0.3em !important;
+      font-weight: 600;
+
       a {
         @include rem-size(font-size, 24);
         @include rem-size(line-height, 32);
@@ -64,18 +67,9 @@
       @include rem-size(font-size, 18);
       @include rem-size(line-height, 24);
       font-family: 'Titillium Web' !important;
-    }
-  }
-
-  .card-image {
-    flex-basis: 20%;
-    @include rem-size(max-width, 111.18);
-    max-height: -webkit-fill-available;
-    max-width: 111px;
-    margin: auto;
-
-    img {
-      width: -webkit-fill-available;
+      &.card-with-picture {
+        width: 60%;
+      }
     }
   }
 }
@@ -130,10 +124,10 @@
 
       h3.card-title {
         a {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           line-height: 1.75rem;
           font-weight: 700;
-          color: $primary;
+          color: $link-color;
         }
       }
 
@@ -141,36 +135,6 @@
         font-size: 1rem;
         line-height: 1.5rem;
         color: $secondary;
-      }
-    }
-  }
-}
-
-.simple-card-default {
-  .card-title {
-    @include rem-size(font-size, 24px);
-    @include rem-size(line-height, 32px);
-    font-weight: 700;
-  }
-
-  .card-body {
-    .category-top {
-      span.text {
-        span.text.fw-bold {
-          font-size: 0.875rem;
-          line-height: 1.313rem;
-          letter-spacing: 1px;
-          font-weight: 600 !important;
-          color: $primary;
-        }
-      }
-    }
-
-    p.card-text {
-      font-size: 1rem;
-      line-height: 1.5rem;
-      div.document-date {
-        @include rem-size(font-size, 14);
       }
     }
   }
@@ -186,7 +150,18 @@
         text-decoration: none;
       }
       svg {
-        fill: $primary;
+        fill: $link-color;
+      }
+    }
+  }
+}
+
+.block.highlitedContent {
+  div.card {
+    h2.card-title {
+      a {
+        color: $link-color;
+        font-size: 1.7rem;
       }
     }
   }

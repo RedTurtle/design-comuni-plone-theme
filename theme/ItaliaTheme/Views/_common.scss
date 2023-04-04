@@ -109,12 +109,6 @@ picture.volto-image.responsive img.full-width {
     margin: 0 !important;
     margin-bottom: 1rem !important;
     line-height: 1em;
-
-    &:not(.big-heading) a {
-      color: $primary;
-      @include rem-size(font-size, 24);
-      @include rem-size(line-height, 28);
-    }
   }
 
   .genericcard {
@@ -124,7 +118,7 @@ picture.volto-image.responsive img.full-width {
       line-height: 1em;
 
       a {
-        color: $primary;
+        color: $link-color;
         font-size: 1.125rem;
         line-height: 1.625rem;
       }
@@ -135,13 +129,13 @@ picture.volto-image.responsive img.full-width {
     ul {
       li {
         button.btn-link {
-          color: $primary;
+          color: $link-color;
 
           &:hover {
-            color: $primary;
+            color: $link-color;
 
             .icon {
-              fill: $primary;
+              fill: $link-color;
             }
           }
         }
@@ -288,7 +282,7 @@ div.sticky-wrapper {
       }
     }
     svg {
-      fill: $primary;
+      fill: $link-color;
     }
   }
 }

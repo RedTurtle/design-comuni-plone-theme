@@ -52,25 +52,4 @@ body.contenttype-unitaorganizzativa {
       margin-right: 0;
     }
   }
-  .card-persona.card-teaser-image.card-flex.card {
-    height: 135px;
-    .card-image-wrapper {
-      .card-image {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
-        img {
-          width: 95px;
-          object-fit: contain;
-          aspect-ratio: 9/16;
-        }
-      }
-      .card-title {
-        font-size: $card-big-head-size;
-        line-height: $card-big-head-l-h;
-      }
-    }
-  }
 }

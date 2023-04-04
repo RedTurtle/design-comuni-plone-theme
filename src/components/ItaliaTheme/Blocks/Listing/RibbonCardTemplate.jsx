@@ -57,8 +57,8 @@ const RibbonCardTemplate = (props) => {
     hide_dates,
     id_lighthouse,
     titleLine,
+    linkmore_id_lighthouse,
   } = props;
-
   return (
     <div className="ribbon-card-template">
       <Container className="px-4">
@@ -149,6 +149,7 @@ const RibbonCardTemplate = (props) => {
           href={linkHref}
           linkAlign={linkAlign}
           className="my-5"
+          linkmoreIdLighthouse={linkmore_id_lighthouse}
         />
       </Container>
     </div>
