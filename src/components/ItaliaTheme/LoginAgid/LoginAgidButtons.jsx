@@ -46,9 +46,13 @@ const messages = defineMessages({
 const LoginAgidButtons = () => {
   const intl = useIntl();
 
+  let loginUrl = '';
   const currentUrl = __CLIENT__ ? window?.location?.href : '';
-  const startIndex = currentUrl.indexOf('/login') + '/login'.length;
-  const loginUrl = currentUrl.slice(0, startIndex) + '-operatore';
+  console.log(currentUrl);
+  if (currentUrl.includes('/login')) {
+    const startIndex = currentUrl.indexOf('/login') + '/login'.length;
+    loginUrl = currentUrl.slice(0, startIndex) + '-operatore';
+  }
 
   return (
     <>
