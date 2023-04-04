@@ -46,14 +46,6 @@ const messages = defineMessages({
 const LoginAgidButtons = () => {
   const intl = useIntl();
 
-  let loginUrl = '';
-  const currentUrl = __CLIENT__ ? window?.location?.href : '';
-  console.log(currentUrl);
-  if (currentUrl.includes('/login')) {
-    const startIndex = currentUrl.indexOf('/login') + '/login'.length;
-    loginUrl = currentUrl.slice(0, startIndex) + '-operatore';
-  }
-
   return (
     <>
       <div className="login-method">
@@ -81,7 +73,7 @@ const LoginAgidButtons = () => {
           {intl.formatMessage(messages.loginOtherDescription)}
         </p>
         <div className="unauthorized-spid-login">
-          <Button color="primary" outline href={loginUrl} tag="button">
+          <Button color="primary" outline href="/login-operatore" tag="button">
             <span>{intl.formatMessage(messages.loginPloneUser)}</span>
           </Button>
         </div>
