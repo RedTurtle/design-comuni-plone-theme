@@ -19,6 +19,7 @@ import {
 } from 'design-react-kit';
 
 import { getUser, logout, purgeMessages } from '@plone/volto/actions';
+import config from '@plone/volto/registry';
 
 import { BodyClass } from '@plone/volto/helpers';
 
@@ -82,9 +83,11 @@ const SpidLogin = () => {
   const spidLoginUrl = __CLIENT__
     ? window.env.RAZZLE_SPID_LOGIN_URL
     : process.env.RAZZLE_SPID_LOGIN_URL;
-  const spidLogoutUrl = __CLIENT__
-    ? window.env.RAZZLE_SPID_LOGOUT_URL
-    : process.env.RAZZLE_SPID_LOGOUT_URL;
+  const spidLogoutUrl =
+    (__CLIENT__
+      ? window.env.RAZZLE_SPID_LOGOUT_URL
+      : process.env.RAZZLE_SPID_LOGOUT_URL) ||
+    config.settings.siteProperties.arLogoutUrl;
 
   return (
     <>
