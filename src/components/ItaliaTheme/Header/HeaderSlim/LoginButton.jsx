@@ -11,9 +11,11 @@ import { Button } from 'design-react-kit';
 import config from '@plone/volto/registry';
 
 const LoginButton = ({ children, size = 'full' }) => {
-  let [loginURL, setLoginURL] = useState(
-    config.settings.siteProperties?.arLoginUrl,
-  );
+  /*   const spidLoginUrl = __CLIENT__
+    ? window.env.RAZZLE_SPID_LOGIN_URL
+    : process.env.RAZZLE_SPID_LOGIN_URL; */
+
+  let [loginURL, setLoginURL] = useState('/login');
 
   useEffect(() => {
     if (loginURL && __CLIENT__) {

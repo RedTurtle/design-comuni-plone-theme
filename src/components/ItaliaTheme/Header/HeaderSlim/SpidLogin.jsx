@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /**
- * ArLogin component.
- * @module components/ItaliaTheme/Header/HeaderSlim/ArLogin
+ * SpidLogin component.
+ * @module components/ItaliaTheme/Header/HeaderSlim/SpidLogin
  */
 
 import React, { useEffect } from 'react';
@@ -31,7 +31,7 @@ import {
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
-  arLogin: {
+  spidLogin: {
     id: "Accedi all'area personale",
     defaultMessage: "Accedi all'area personale",
   },
@@ -43,13 +43,13 @@ const messages = defineMessages({
     id: 'areaOperatore',
     defaultMessage: 'Area operatore',
   },
-  arLogout: {
-    id: 'arLogout',
+  spidLogout: {
+    id: 'spidLogout',
     defaultMessage: 'Esci',
   },
 });
 
-const ArLogin = () => {
+const SpidLogin = () => {
   const intl = useIntl();
   const dispatch = useDispatch();
 
@@ -83,6 +83,13 @@ const ArLogin = () => {
 
   const isPublicUser = userLogged?.roles?.length === 0;
 
+  const spidLoginUrl = __CLIENT__
+    ? window.env.RAZZLE_SPID_LOGIN_URL
+    : process.env.RAZZLE_SPID_LOGIN_URL;
+  const spidLogoutUrl = __CLIENT__
+    ? window.env.RAZZLE_SPID_LOGOUT_URL
+    : process.env.RAZZLE_SPID_LOGOUT_URL;
+
   return (
     <>
       {/* add user roles classes to body */}
@@ -90,16 +97,17 @@ const ArLogin = () => {
         <BodyClass className={rolesBodyClasses.join(' ')} />
       )}
 
-      {config.settings.siteProperties?.arLoginUrl ? (
+      {spidLoginUrl ? (
         <>
           {!userId || isPublicUser ? (
             // not logged
+
             <LoginButton>
               <span className="rounded-icon">
                 <Icon color="primary" icon="it-user" padding={false} size="" />
               </span>
               <span className="d-none d-lg-block">
-                {intl.formatMessage(messages.arLogin)}
+                {intl.formatMessage(messages.spidLogin)}
               </span>
             </LoginButton>
           ) : (
@@ -170,20 +178,18 @@ const ArLogin = () => {
                         )}
 
                         <LinkListItem
-                          href={
-                            config.settings.siteProperties.arLogoutUrl || '/'
-                          }
-                          title={intl.formatMessage(messages.arLogout)}
+                          href={spidLogoutUrl || '/'}
+                          title={intl.formatMessage(messages.spidLogout)}
                           tag="a"
                           onClick={() => {
-                            if (!config.settings.siteProperties.arLogoutUrl) {
+                            if (!spidLogoutUrl) {
                               doLogout();
                             }
                           }}
                           className="logout"
                         >
                           <Icon color="" icon="sign-out-alt" size="sm" left />
-                          <span>{intl.formatMessage(messages.arLogout)}</span>
+                          <span>{intl.formatMessage(messages.spidLogout)}</span>
                         </LinkListItem>
                       </LinkList>
                     </Col>
@@ -198,4 +204,4 @@ const ArLogin = () => {
   );
 };
 
-export default ArLogin;
+export default SpidLogin;

@@ -33,7 +33,7 @@ export GalleryPreview from 'design-comuni-plone-theme/components/ItaliaTheme/Gal
 export LanguageSelector from 'design-comuni-plone-theme/components/ItaliaTheme/LanguageSelector/LanguageSelector';
 export HeaderSlim from 'design-comuni-plone-theme/components/ItaliaTheme/Header/HeaderSlim';
 export HeaderSlimRightZone from 'design-comuni-plone-theme/components/ItaliaTheme/Header/HeaderSlim/HeaderSlimRightZone';
-export ArLogin from 'design-comuni-plone-theme/components/ItaliaTheme/Header/HeaderSlim/ArLogin';
+export SpidLogin from 'design-comuni-plone-theme/components/ItaliaTheme/Header/HeaderSlim/SpidLogin';
 export LoginButton from 'design-comuni-plone-theme/components/ItaliaTheme/Header/HeaderSlim/LoginButton';
 export TertiaryMenu from 'design-comuni-plone-theme/components/ItaliaTheme/Header/HeaderSlim/TertiaryMenu';
 export UserLoggedMenu from 'design-comuni-plone-theme/components/ItaliaTheme/Header/HeaderSlim/UserLoggedMenu';

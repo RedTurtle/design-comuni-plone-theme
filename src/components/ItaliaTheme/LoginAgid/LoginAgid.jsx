@@ -32,11 +32,13 @@ const messages = defineMessages({
 
 const LoginAgid = (props) => {
   const intl = useIntl();
-  console.log(process.env.AR_LOGIN_URL);
+  const spidLoginUrl = __CLIENT__
+    ? window.env.RAZZLE_SPID_LOGIN_URL
+    : process.env.RAZZLE_SPID_LOGIN_URL;
 
   return (
     <>
-      {!config.settings.siteProperties?.arLoginUrl ? (
+      {!spidLoginUrl ? (
         <Login {...props}></Login>
       ) : (
         <div id="page-login">

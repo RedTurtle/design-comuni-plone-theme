@@ -26,7 +26,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Accedi all'area personale
 msgid "Accedi all'area personale"
 msgstr ""
@@ -805,23 +805,18 @@ msgstr ""
 msgid "appStoreLink"
 msgstr ""
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
-# defaultMessage: Esci
-msgid "arLogout"
-msgstr ""
-
 #: components/ItaliaTheme/Blocks/Listing/serviziAmministrazioneTrasparenteTemplate
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: area
 msgid "area"
 msgstr ""
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Area operatore
 msgid "areaOperatore"
 msgstr ""
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Area personale
 msgid "areaPersonale"
 msgstr ""
@@ -3529,6 +3524,11 @@ msgstr ""
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Spese elettorali
 msgid "spese_elettorali"
+msgstr ""
+
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
+# defaultMessage: Esci
+msgid "spidLogout"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Sponsors

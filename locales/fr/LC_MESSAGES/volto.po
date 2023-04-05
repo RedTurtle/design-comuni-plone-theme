@@ -28,7 +28,7 @@ msgstr ""
 "X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
 "X-Generator: Poedit 2.2.3\n"
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Accedi all'area personale
 msgid "Accedi all'area personale"
 msgstr "Accéder à l'espace personnel"
@@ -807,23 +807,18 @@ msgstr ""
 msgid "appStoreLink"
 msgstr ""
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
-# defaultMessage: Esci
-msgid "arLogout"
-msgstr "Sortir"
-
 #: components/ItaliaTheme/Blocks/Listing/serviziAmministrazioneTrasparenteTemplate
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: area
 msgid "area"
 msgstr "Zone"
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Area operatore
 msgid "areaOperatore"
 msgstr ""
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Area personale
 msgid "areaPersonale"
 msgstr ""
@@ -3532,6 +3527,11 @@ msgstr "Date limite d'appel"
 # defaultMessage: Spese elettorali
 msgid "spese_elettorali"
 msgstr "Dépenses électorales"
+
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
+# defaultMessage: Esci
+msgid "spidLogout"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Sponsors
 # defaultMessage: Sponsor

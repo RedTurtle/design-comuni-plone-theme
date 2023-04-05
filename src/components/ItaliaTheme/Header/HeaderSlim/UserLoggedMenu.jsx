@@ -1,6 +1,6 @@
 /**
  * UserLoggedMenu component.
- * @module components/ItaliaTheme/Header/HeaderSlim/ArLogin
+ * @module components/ItaliaTheme/Header/HeaderSlim/SpidLogin
  */
 
 import React from 'react';

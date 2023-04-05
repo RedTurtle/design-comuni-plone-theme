@@ -51,11 +51,10 @@ const LoginAgidButtons = () => {
           {intl.formatMessage(messages.loginSpidDescription)}
         </p>
         <div className="authorized-spid-login mb-4">
-          {/**TODO: Cambiare il link per accesso spid */}
           <Button
             className="btn-icon"
             color="primary"
-            href="#"
+            href="#" //Cambiare il link per accesso spid
             tag="a"
             data-element="personal-area-login"
             size="big"

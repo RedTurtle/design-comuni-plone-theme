@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Accedi all'area personale
 msgid "Accedi all'area personale"
 msgstr "Accedi all'area personale"
@@ -790,23 +790,18 @@ msgstr "Apertura del bando"
 msgid "appStoreLink"
 msgstr "APPStore Link"
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
-# defaultMessage: Esci
-msgid "arLogout"
-msgstr "Logout"
-
 #: components/ItaliaTheme/Blocks/Listing/serviziAmministrazioneTrasparenteTemplate
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: area
 msgid "area"
 msgstr "area"
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Area operatore
 msgid "areaOperatore"
 msgstr ""
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Area personale
 msgid "areaPersonale"
 msgstr ""
@@ -3515,6 +3510,11 @@ msgstr "Scadenza termini partecipazione"
 # defaultMessage: Spese elettorali
 msgid "spese_elettorali"
 msgstr "Spese elettorali"
+
+#: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
+# defaultMessage: Esci
+msgid "spidLogout"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Sponsors
 # defaultMessage: Sponsor
