@@ -45,8 +45,6 @@ const OfficeCard = ({
   }, [url]);
 
   let office_fo = load_data ? officeContent?.[key]?.data : office;
-  console.log(office_fo);
-
   return office_fo ? (
     <div
       className={cx(
@@ -74,7 +72,6 @@ const OfficeCard = ({
           <div>
             {' '}
             {office_fo?.sede?.map((sede) => {
-              console.log(sede);
               return (
                 <div className="card-text">
                   {sede.street && <p>{sede.street}</p>}
@@ -85,8 +82,7 @@ const OfficeCard = ({
                   )}
                   {(sede.telefono || sede.email) && (
                     <p>
-                      ciao Telefono:{' '}
-                      <ContactLink tel={sede.telefono} label={true} />
+                      Telefono: <ContactLink tel={sede.telefono} label={true} />
                       <br />
                       Email: <ContactLink email={sede.email} label={true} />
                     </p>
