@@ -111,7 +111,7 @@ const PuntoDiContattoView = (props) => {
                 <h6>
                   {intl.formatMessage(messages.label, {
                     value: intl.formatMessage(messages[pdc?.pdc_type]),
-                  })}{' '}
+                  })}
                   <span className="ml-1">{renderPDCItemValue(pdc)}</span>
                 </h6>
               </div>
