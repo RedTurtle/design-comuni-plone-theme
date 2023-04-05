@@ -5,24 +5,22 @@
  */
 
 import React, { useState, useEffect } from 'react';
-
 import { Button } from 'design-react-kit';
-
 import config from '@plone/volto/registry';
 
 const LoginButton = ({ children, size = 'full' }) => {
-  /*   const spidLoginUrl = __CLIENT__
-    ? window.env.RAZZLE_SPID_LOGIN_URL
-    : process.env.RAZZLE_SPID_LOGIN_URL; */
-
-  let [loginURL, setLoginURL] = useState('/login');
+  // per retrocompatibilità con il vecchio config arLoginUrl
+  const [loginURL, setLoginURL] = useState(
+    config.settings.siteProperties?.arLoginUrl || '/login',
+  );
 
   useEffect(() => {
     if (loginURL && __CLIENT__) {
       if (loginURL.indexOf('came_from') < 0) {
-        let came_from = loginURL.indexOf('?') >= 0 ? '&' : '?';
-        came_from += 'came_from=' + window?.location?.href ?? '';
-        setLoginURL(loginURL + came_from);
+        const came_from = window?.location?.href ?? '/';
+        setLoginURL(
+          (loginURL) => `${loginURL.split('?')[0]}?came_from=${came_from}`,
+        );
       }
     }
   }, []);

@@ -97,7 +97,6 @@ const SpidLogin = () => {
         <>
           {!userId ? (
             // not logged
-
             <LoginButton>
               <span className="rounded-icon">
                 <Icon color="primary" icon="it-user" padding={false} size="" />
