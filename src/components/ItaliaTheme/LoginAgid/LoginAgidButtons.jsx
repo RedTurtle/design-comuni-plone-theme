@@ -8,6 +8,7 @@ import { Button } from 'design-react-kit';
 import { defineMessages, useIntl, injectIntl } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { useLocation } from 'react-router-dom';
 
 const messages = defineMessages({
   loginOther: {
@@ -40,11 +41,23 @@ const messages = defineMessages({
   },
 });
 
+// https://v5.reactrouter.com/web/example/query-parameters
+function useQuery() {
+  const { search } = useLocation();
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
+
 const LoginAgidButtons = () => {
   const intl = useIntl();
-  const spidLoginUrl = __CLIENT__
-    ? window.env.RAZZLE_SPID_LOGIN_URL
-    : process.env.RAZZLE_SPID_LOGIN_URL;
+  const query = useQuery();
+  const came_from = query.get('came_from')
+    ? `?came_from=${query.get('came_from')}`
+    : '';
+  const spidLoginUrl = `${
+    __CLIENT__
+      ? window.env.RAZZLE_SPID_LOGIN_URL
+      : process.env.RAZZLE_SPID_LOGIN_URL
+  }${came_from}`;
 
   return (
     <>
