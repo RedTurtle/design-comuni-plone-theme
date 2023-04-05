@@ -42,6 +42,9 @@ const messages = defineMessages({
 
 const LoginAgidButtons = () => {
   const intl = useIntl();
+  const spidLoginUrl = __CLIENT__
+    ? window.env.RAZZLE_SPID_LOGIN_URL
+    : process.env.RAZZLE_SPID_LOGIN_URL;
 
   return (
     <>
@@ -54,7 +57,7 @@ const LoginAgidButtons = () => {
           <Button
             className="btn-icon"
             color="primary"
-            href="#" //Cambiare il link per accesso spid
+            href={spidLoginUrl}
             tag="a"
             data-element="personal-area-login"
             size="big"
