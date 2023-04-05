@@ -178,7 +178,7 @@ const SpidLogin = () => {
                         )}
 
                         <LinkListItem
-                          href={spidLogoutUrl || '/'}
+                          href={spidLogoutUrl || '/logout'}
                           title={intl.formatMessage(messages.spidLogout)}
                           tag="a"
                           onClick={() => {
