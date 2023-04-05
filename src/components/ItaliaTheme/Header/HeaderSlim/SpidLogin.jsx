@@ -28,8 +28,6 @@ import {
   LoginButton,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
-import config from '@plone/volto/registry';
-
 const messages = defineMessages({
   spidLogin: {
     id: "Accedi all'area personale",
@@ -81,8 +79,6 @@ const SpidLogin = () => {
     rolesBodyClasses.push('no-user-roles');
   }
 
-  const isPublicUser = userLogged?.roles?.length === 0;
-
   const spidLoginUrl = __CLIENT__
     ? window.env.RAZZLE_SPID_LOGIN_URL
     : process.env.RAZZLE_SPID_LOGIN_URL;
@@ -99,7 +95,7 @@ const SpidLogin = () => {
 
       {spidLoginUrl ? (
         <>
-          {!userId || isPublicUser ? (
+          {!userId ? (
             // not logged
 
             <LoginButton>
