@@ -167,6 +167,7 @@ export default function applyConfig(voltoConfig) {
       parentSiteURL: 'https://www.regione.emilia-romagna.it', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'https://www.governo.it', 'en':'https://www.governo.it/en'}. Se multilingua il default è comunque la stringa.
       subsiteParentSiteTitle: 'io-Comune', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome del sito padre', 'en':'Parent site name'}. Se multilingua il default è comunque la stringa.
       amministrazioneTrasparenteUrl: '/amministrazione-trasparente',
+      showNextGenerationEU: false,
 
       headerslimTertiaryMenu: {
         it: [
@@ -348,6 +349,14 @@ export default function applyConfig(voltoConfig) {
       sidebarTab: 1,
     },
     rssBlock,
+    text: {
+      ...config.blocks.blocksConfig.text,
+      restricted: false,
+    },
+    slate: {
+      ...config.blocks.blocksConfig.slate,
+      restricted: true,
+    },
     table: {
       ...config.blocks.blocksConfig.table,
       restricted: false,
