@@ -32,31 +32,35 @@ const messages = defineMessages({
 
 const LoginAgid = (props) => {
   const intl = useIntl();
+  console.log(process.env.AR_LOGIN_URL);
 
   return (
     <>
-      {!config.settings.siteProperties.spidLogin && <Login {...props}></Login>}
-      <div id="page-login">
-        <Helmet title={intl.formatMessage(messages.login)} />
-        <BodyClass className="public-ui" />
-        <RemoveBodyClass className="cms-ui" />
-        <Container className="view-wrapper py-5">
-          <Row className="view-container">
-            <Col xs={12} lg={{ size: 10, offset: 1 }}>
-              <h1 sans-serfif="true">{intl.formatMessage(messages.login)}</h1>
-              <p className="description">
-                {intl.formatMessage(messages.loginDescription)}
-              </p>
-            </Col>
-          </Row>
-          <hr className="d-none d-lg-block mt-0 mb-4" />
-          <Row>
-            <Col xs={12} lg={{ size: 8, offset: 2 }}>
-              <LoginAgidButtons />
-            </Col>
-          </Row>
-        </Container>
-      </div>
+      {!config.settings.siteProperties?.arLoginUrl ? (
+        <Login {...props}></Login>
+      ) : (
+        <div id="page-login">
+          <Helmet title={intl.formatMessage(messages.login)} />
+          <BodyClass className="public-ui" />
+          <RemoveBodyClass className="cms-ui" />
+          <Container className="view-wrapper py-5">
+            <Row className="view-container">
+              <Col xs={12} lg={{ size: 10, offset: 1 }}>
+                <h1 sans-serfif="true">{intl.formatMessage(messages.login)}</h1>
+                <p className="description">
+                  {intl.formatMessage(messages.loginDescription)}
+                </p>
+              </Col>
+            </Row>
+            <hr className="d-none d-lg-block mt-0 mb-4" />
+            <Row>
+              <Col xs={12} lg={{ size: 8, offset: 2 }}>
+                <LoginAgidButtons />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      )}
     </>
   );
 };
