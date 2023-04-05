@@ -74,39 +74,6 @@
   }
 }
 
-.ribbon-card-template {
-  .card.card-big {
-    .flag-icon {
-      margin-left: 1.3em !important;
-    }
-
-    .etichetta {
-      @include media-breakpoint-between(320px, 767px) {
-        width: 70%;
-        right: 0em !important;
-        left: auto;
-        top: 1.67em !important;
-        padding: 0em 0.5em 0em 0em;
-      }
-    }
-
-    .card-body {
-      padding: 2.67em !important;
-
-      @include media-breakpoint-between(320px, 767px) {
-        padding: 1.3em !important;
-      }
-
-      h3.card-title {
-        a {
-          font-size: 1.3rem;
-          text-decoration: none;
-        }
-      }
-    }
-  }
-}
-
 .card-small {
   .card-body {
     h5.card-title {
@@ -132,43 +99,6 @@
       max-width: 67.56px;
       height: 64px;
       border-radius: 54px;
-    }
-  }
-}
-
-.card-with-image-template {
-  .listing-item.card {
-    .card-body {
-      .category-top {
-        font-size: 0.875rem;
-        line-height: 1.313rem;
-        color: $caption-text;
-
-        span.text {
-          font-weight: 600;
-          letter-spacing: 1px;
-        }
-
-        span.data {
-          font-weight: 400;
-          letter-spacing: 1.1px;
-        }
-      }
-
-      h3.card-title {
-        a {
-          font-size: 1.3rem;
-          line-height: 1.75rem;
-          font-weight: 700;
-          color: $link-color;
-        }
-      }
-
-      p.card-text {
-        font-size: 1rem;
-        line-height: 1.5rem;
-        color: $secondary;
-      }
     }
   }
 }
