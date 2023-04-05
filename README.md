@@ -53,6 +53,17 @@ Il sistema implementa anche un tipo di contenuto ad hoc per la gestione di sotto
 Si veda ad esempio:
 [Comune di Modena: Informagiovani](https://www.comune.modena.it/informagiovani)
 
+## Autenticazione SPID
+
+L'integrazione dell'autenticazione con SPID, viene fatta generalmente tramite addon lone come
+[pas.plugins.oidc](https://pypi.org/project/pas.plugins.oidc),
+[pas.plugins.headers](https://pypi.org/project/pas.plugins.headers), ...
+insieme a sistemi di integrazione SPID verificati con SPID o con federatori di autenticazione
+(Shibboleth, Keycloak, ...).
+
+Il tema prevede la possibilità di definire due environment `RAZZLE_SPID_LOGIN_URL` e `RAZZLE_SPID_LOGOUT_URL`
+su cui impostare rispettivamente la url di login e di logout, eventualmente esterne al sito, per l'integrazione.
+
 ## Esempi di siti che usano questo tema/sistema
 
 - [ASP Comuni Modenesi Area Nord](https://www.aspareanord.it/)

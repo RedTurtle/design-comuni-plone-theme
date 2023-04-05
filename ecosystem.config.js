@@ -8,8 +8,8 @@ module.exports = {
       max_memory_restart: '1G',
       env: {
         NODE_ENV: 'production',
-        SPID_LOGIN_URL: '/login',
-        SPID_LOGOUT_URL: '/logout',
+        // RAZZLE_SPID_LOGIN_URL: 'https://external.comune.it/auth/login',
+        // RAZZLE_SPID_LOGOUT_URL: 'https://external.comune.it/auth/logout',
       },
       env_production: {
         NODE_ENV: 'production',
