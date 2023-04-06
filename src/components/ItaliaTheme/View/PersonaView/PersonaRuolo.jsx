@@ -82,14 +82,14 @@ const PersonaRuolo = ({ content }) => {
             tag_id="incarico"
             title={intl.formatMessage(messages.ruolo)}
           >
-            <div className="font-serif">
-              {content.incarichi_persona[0].title}
-            </div>
-            <div className="font-serif">
-              <UniversalLink href={content.incarichi_persona[0]['@id']}>
-                {intl.formatMessage(messages.atto_di_nomina)}
-              </UniversalLink>
-            </div>
+            {content.incarichi_persona.map((incarico) => (
+              <div className="font-serif">
+                <p>{incarico.title}</p>
+                <UniversalLink href={incarico.atto_di_nomina}>
+                  {intl.formatMessage(messages.atto_di_nomina)}
+                </UniversalLink>
+              </div>
+            ))}
           </RichTextSection>
           <RichTextSection
             tag_id="tipologia_incarico"
