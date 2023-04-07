@@ -85,8 +85,8 @@ const PersonaRuolo = ({ content }) => {
             {content?.incarichi_persona?.map((incarico) => (
               <div className="font-serif">
                 <p>{incarico.title}</p>
-                {incarico.atto_nomina && (
-                  <UniversalLink href={incarico.atto_nomina}>
+                {incarico.atto_di_nomina && (
+                  <UniversalLink href={incarico.atto_di_nomina}>
                     {intl.formatMessage(messages.atto_nomina)}
                   </UniversalLink>
                 )}
