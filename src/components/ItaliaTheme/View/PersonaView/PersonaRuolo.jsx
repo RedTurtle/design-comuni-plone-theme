@@ -16,8 +16,8 @@ const messages = defineMessages({
     id: 'ruolo',
     defaultMessage: 'Incarico',
   },
-  atto_di_nomina: {
-    id: 'atto_di_nomina',
+  atto_nomina: {
+    id: 'atto_nomina',
     defaultMessage: 'Atto di nomina',
   },
   organizzazione_riferimento: {
@@ -85,9 +85,9 @@ const PersonaRuolo = ({ content }) => {
             {content?.incarichi_persona?.map((incarico) => (
               <div className="font-serif">
                 <p>{incarico.title}</p>
-                {incarico.atto_di_nomina && (
-                  <UniversalLink href={incarico.atto_di_nomina}>
-                    {intl.formatMessage(messages.atto_di_nomina)}
+                {incarico.atto_nomina && (
+                  <UniversalLink href={incarico.atto_nomina}>
+                    {intl.formatMessage(messages.atto_nomina)}
                   </UniversalLink>
                 )}
               </div>
