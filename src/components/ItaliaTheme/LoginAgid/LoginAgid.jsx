@@ -67,4 +67,4 @@ const LoginAgid = (props) => {
   );
 };
 
-export default compose(withRouter, injectIntl)(LoginAgid);
+export default compose(withRouter)(LoginAgid);
