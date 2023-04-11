@@ -42,14 +42,14 @@ const messages = defineMessages({
 });
 
 // https://v5.reactrouter.com/web/example/query-parameters
-function useQuery() {
+function useQueryV5() {
   const { search } = useLocation();
   return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
 const LoginAgidButtons = () => {
   const intl = useIntl();
-  const query = useQuery();
+  const query = useQueryV5();
   const came_from = query.get('came_from')
     ? `?came_from=${query.get('came_from')}`
     : '';
