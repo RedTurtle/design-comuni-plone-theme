@@ -859,6 +859,7 @@ msgstr "Atti e documenti a corredo dell'istanza"
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
+#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Atto di nomina
 msgid "atto_nomina"
 msgstr "Atto di nomina"
@@ -2604,11 +2605,6 @@ msgstr "Tutte le persone che fanno parte di questo servizio"
 msgid "persone_struttura"
 msgstr "Persone"
 
-#: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: Telefono
-msgid "phone"
-msgstr "Telefono"
-
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Testo di aiuto
 msgid "placeholder"
@@ -3593,6 +3589,7 @@ msgid "supported_by"
 msgstr "Con il supporto di"
 
 #: components/ItaliaTheme/View/Commons/ContactLink
+#: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 # defaultMessage: Tel
 msgid "telefono"
 msgstr "Telefono"

@@ -874,6 +874,7 @@ msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
+#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Atto di nomina
 msgid "atto_nomina"
 msgstr ""
@@ -2619,11 +2620,6 @@ msgstr ""
 msgid "persone_struttura"
 msgstr ""
 
-#: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: Telefono
-msgid "phone"
-msgstr ""
-
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Testo di aiuto
 msgid "placeholder"
@@ -3608,6 +3604,7 @@ msgid "supported_by"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/ContactLink
+#: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 # defaultMessage: Tel
 msgid "telefono"
 msgstr ""
