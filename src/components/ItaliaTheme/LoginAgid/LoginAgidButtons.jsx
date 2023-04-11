@@ -102,4 +102,4 @@ const LoginAgidButtons = () => {
   );
 };
 
-export default injectIntl(LoginAgidButtons);
+export default LoginAgidButtons;

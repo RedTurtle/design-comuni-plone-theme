@@ -469,7 +469,7 @@ msgstr "Pagina precedente"
 #: components/ItaliaTheme/LoginAgid/LoginOperatore
 # defaultMessage: Register
 msgid "Register"
-msgstr ""
+msgstr "Registrati"
 
 #: components/ItaliaTheme/manage/Widgets/FileWidget
 # defaultMessage: Rimuovi il file
@@ -800,12 +800,12 @@ msgstr "area"
 #: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Area operatore
 msgid "areaOperatore"
-msgstr ""
+msgstr "Area operatore"
 
 #: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Area personale
 msgid "areaPersonale"
-msgstr ""
+msgstr "Area personale"
 
 #: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks
 # defaultMessage: Area di appartenenza
@@ -3511,7 +3511,7 @@ msgstr "Spese elettorali"
 #: components/ItaliaTheme/Header/HeaderSlim/SpidLogin
 # defaultMessage: Esci
 msgid "spidLogout"
-msgstr ""
+msgstr "Esci"
 
 #: components/ItaliaTheme/View/Commons/Sponsors
 # defaultMessage: Sponsor
