@@ -1,3 +1,13 @@
+.public-ui {
+  .card {
+    .card-body {
+      .card-text {
+        line-height: 1.5em;
+      }
+    }
+  }
+}
+
 .card.border-left-card {
   border-left: 8px solid $primary-a0;
   box-shadow: 0px 4px 4px 0px #00000026;
@@ -14,6 +24,10 @@
         text-decoration: none;
         text-transform: none;
       }
+
+      a:hover {
+        text-decoration: underline;
+      }
     }
 
     p.card-text {
@@ -21,16 +35,20 @@
     }
   }
 
-  &.card-big {
-    h5.card-title,
+  &.card-big-io-comune {
+    .card-title,
     .text.fw-bold {
-      color: $primary;
+      color: $link-color;
       font-weight: 600;
       a {
         @include rem-size(font-size, 24);
         @include rem-size(line-height, 32);
         text-decoration: none;
         text-transform: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
       }
     }
 
@@ -45,21 +63,32 @@
   }
 }
 
-.card-big {
+.card-big-io-comune {
   &.card.card-teaser {
     display: flex;
   }
   .card-body {
-    padding: 0px !important;
-    h5.card-title {
+    padding: 0em !important;
+    .category-top {
+      .category {
+        text-decoration: none;
+      }
+    }
+
+    .card-title {
       margin-bottom: 0.3em !important;
       font-weight: 600;
 
-      a {
+      a,
+      &.venue-card-title.venue-card-title {
         @include rem-size(font-size, 24);
         @include rem-size(line-height, 32);
         text-decoration: none;
         font-weight: 600;
+      }
+
+      a:hover {
+        text-decoration: underline;
       }
     }
 
@@ -67,18 +96,9 @@
       @include rem-size(font-size, 18);
       @include rem-size(line-height, 24);
       font-family: 'Titillium Web' !important;
-    }
-  }
-
-  .card-image {
-    flex-basis: 20%;
-    @include rem-size(max-width, 111.18);
-    max-height: -webkit-fill-available;
-    max-width: 111px;
-    margin: auto;
-
-    img {
-      width: -webkit-fill-available;
+      &.card-with-picture {
+        width: 60%;
+      }
     }
   }
 }
@@ -112,43 +132,6 @@
   }
 }
 
-.card-with-image-template {
-  .listing-item.card {
-    .card-body {
-      .category-top {
-        font-size: 0.875rem;
-        line-height: 1.313rem;
-        color: $caption-text;
-
-        span.text {
-          font-weight: 600;
-          letter-spacing: 1px;
-        }
-
-        span.data {
-          font-weight: 400;
-          letter-spacing: 1.1px;
-        }
-      }
-
-      h3.card-title {
-        a {
-          font-size: 1.3rem;
-          line-height: 1.75rem;
-          font-weight: 700;
-          color: $primary;
-        }
-      }
-
-      p.card-text {
-        font-size: 1rem;
-        line-height: 1.5rem;
-        color: $secondary;
-      }
-    }
-  }
-}
-
 #documenti-collegati .genericcard {
   .card-body {
     h5.card-title {
@@ -158,8 +141,12 @@
         font-weight: 600;
         text-decoration: none;
       }
+
+      a:hover {
+        text-decoration: underline;
+      }
       svg {
-        fill: $primary;
+        fill: $link-color;
       }
     }
   }
@@ -169,9 +156,22 @@
   div.card {
     h2.card-title {
       a {
-        color: $primary;
+        color: $link-color;
         font-size: 1.7rem;
       }
+    }
+  }
+}
+
+.block.listing.simpleCard {
+  @include media-breakpoint-down(xl) {
+    .card {
+      row-gap: 0.56em;
+    }
+
+    .card-body {
+      margin-left: 0em;
+      flex-basis: 100%;
     }
   }
 }

@@ -633,6 +633,7 @@ msgid "Vedi l'immagine"
 msgstr "Vedi l'immagine"
 
 #: components/ItaliaTheme/Blocks/Listing/Commons/ListingLinkMore
+#: components/ItaliaTheme/Blocks/Listing/ContentInEvidenceTemplate
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithImageRssTemplate
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate
 #: components/ItaliaTheme/MegaMenu/MegaMenu
@@ -813,6 +814,7 @@ msgstr "Atti e documenti a corredo dell'istanza"
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
+#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Atto di nomina
 msgid "atto_nomina"
 msgstr "Atto di nomina"
@@ -1832,6 +1834,16 @@ msgstr "Dove hai incontrato le maggiori difficoltà?"
 msgid "feedback_answers_header_positive"
 msgstr "Quali sono stati gli aspetti che hai preferito?"
 
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: The instructions were clear
+msgid "feedback_clear_instructions"
+msgstr "Le indicazioni erano chiare"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: I always understood that I was proceeding correctly
+msgid "feedback_clear_proceeding"
+msgstr "Capivo sempre che stavo procedendo correttamente"
+
 #: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
 # defaultMessage: Do you want to add some more details?
 msgid "feedback_comments_header"
@@ -1851,6 +1863,11 @@ msgstr "Inserire massimo 200 caratteri"
 # defaultMessage: Comment
 msgid "feedback_comments_label_comment"
 msgstr "Dettaglio"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: The instructions were complete
+msgid "feedback_complete_instructions"
+msgstr "Le indicazioni erano complete"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Next
@@ -1889,14 +1906,54 @@ msgid "feedback_form_title"
 msgstr "Quanto sono chiare le informazioni su questa pagina?"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: How easy was it to use this service?
+msgid "feedback_form_title_service"
+msgstr "Quanto è stato facile usare questo servizio?"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Yes
 msgid "feedback_form_yes"
 msgstr "Si"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Some instructions were incomplete
+msgid "feedback_incomplete_instructions"
+msgstr "A volte le indicazioni non erano complete"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: I had no technical problems
+msgid "feedback_no_technical_problems"
+msgstr "Non ho avuto problemi tecnici"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Other
+msgid "feedback_other_negative"
+msgstr "Altro"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Other
+msgid "feedback_other_positive"
+msgstr "Altro"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Your feedback was sent!
 msgid "feedback_sent"
 msgstr "Il tuo feedback è stato inviato!"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: I ran into technical problems
+msgid "feedback_technical_problems"
+msgstr "Ho avuto problemi tecnici"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Some instructions were not clear and confusin
+msgid "feedback_unclear_instructions"
+msgstr "A volte le indicazioni non erano chiare"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Sometimes I couldn't understand if I was proceeding correctly
+msgid "feedback_unclear_proceeding"
+msgstr "A volte non capivo se stavo procedendo correttamente"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
@@ -2472,11 +2529,6 @@ msgstr "Tutte le persone che fanno parte di questo servizio"
 # defaultMessage: Persone
 msgid "persone_struttura"
 msgstr "Persone"
-
-#: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: Telefono
-msgid "phone"
-msgstr "Telefono"
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Testo di aiuto
@@ -3089,6 +3141,11 @@ msgstr "Servizio non attivo"
 msgid "service_on"
 msgstr "Servizio attivo"
 
+#: components/ItaliaTheme/View/ServizioView/ServizioArgomenti
+# defaultMessage: Argomenti:
+msgid "service_topics"
+msgstr "Argomenti:"
+
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Servizi
 msgid "servizi"
@@ -3452,6 +3509,7 @@ msgid "supported_by"
 msgstr "Con il supporto di"
 
 #: components/ItaliaTheme/View/Commons/ContactLink
+#: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 # defaultMessage: Tel
 msgid "telefono"
 msgstr "Telefono"

@@ -650,6 +650,7 @@ msgid "Vedi l'immagine"
 msgstr "Regarder la photo"
 
 #: components/ItaliaTheme/Blocks/Listing/Commons/ListingLinkMore
+#: components/ItaliaTheme/Blocks/Listing/ContentInEvidenceTemplate
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithImageRssTemplate
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate
 #: components/ItaliaTheme/MegaMenu/MegaMenu
@@ -830,6 +831,7 @@ msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
+#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Atto di nomina
 msgid "atto_nomina"
 msgstr "Acte de nomination"
@@ -1849,6 +1851,16 @@ msgstr ""
 msgid "feedback_answers_header_positive"
 msgstr ""
 
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: The instructions were clear
+msgid "feedback_clear_instructions"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: I always understood that I was proceeding correctly
+msgid "feedback_clear_proceeding"
+msgstr ""
+
 #: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
 # defaultMessage: Do you want to add some more details?
 msgid "feedback_comments_header"
@@ -1867,6 +1879,11 @@ msgstr ""
 #: components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep
 # defaultMessage: Comment
 msgid "feedback_comments_label_comment"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: The instructions were complete
+msgid "feedback_complete_instructions"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
@@ -1906,13 +1923,53 @@ msgid "feedback_form_title"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: How easy was it to use this service?
+msgid "feedback_form_title_service"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Yes
 msgid "feedback_form_yes"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Some instructions were incomplete
+msgid "feedback_incomplete_instructions"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: I had no technical problems
+msgid "feedback_no_technical_problems"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Other
+msgid "feedback_other_negative"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Other
+msgid "feedback_other_positive"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Your feedback was sent!
 msgid "feedback_sent"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: I ran into technical problems
+msgid "feedback_technical_problems"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Some instructions were not clear and confusin
+msgid "feedback_unclear_instructions"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Sometimes I couldn't understand if I was proceeding correctly
+msgid "feedback_unclear_proceeding"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
@@ -2489,11 +2546,6 @@ msgstr ""
 # defaultMessage: Persone
 msgid "persone_struttura"
 msgstr "Gens"
-
-#: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: Telefono
-msgid "phone"
-msgstr ""
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Testo di aiuto
@@ -3106,6 +3158,11 @@ msgstr ""
 msgid "service_on"
 msgstr ""
 
+#: components/ItaliaTheme/View/ServizioView/ServizioArgomenti
+# defaultMessage: Argomenti:
+msgid "service_topics"
+msgstr "Sujet:"
+
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Servizi
 msgid "servizi"
@@ -3469,6 +3526,7 @@ msgid "supported_by"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/ContactLink
+#: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 # defaultMessage: Tel
 msgid "telefono"
 msgstr "Tél."

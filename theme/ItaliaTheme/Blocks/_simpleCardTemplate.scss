@@ -70,7 +70,7 @@
             line-height: 1.313rem;
             letter-spacing: 1px;
             font-weight: 600 !important;
-            color: $primary;
+            color: $link-color;
           }
         }
       }
@@ -131,6 +131,11 @@
         &:hover,
         &:active {
           text-decoration: underline;
+        }
+
+        @include media-breakpoint-only(md) {
+          font-size: 1.5rem;
+          line-height: 1.5rem;
         }
       }
     }

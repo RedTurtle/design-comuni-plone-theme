@@ -35,6 +35,7 @@ import {
   ServizioUlterioriInformazioni,
   ServizioMetadati,
   ServizioCondizioni,
+  ServizioArgomenti,
   ContentTypeViewSections,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
@@ -88,6 +89,8 @@ export const ServizioViewSectionsOrder = (props) => [
 
   { /* CORRELATI  */ component: ServizioCorrelati },
 
+  { /* ARGOMENTI */ component: ServizioArgomenti },
+
   { /* ULTIMO AGGIORNAMENTO  */ component: ServizioMetadati },
 ];
 
@@ -121,7 +124,7 @@ const ServizioView = ({ content, moment }) => {
           readingtime={null}
           showreadingtime={false}
           showdates={false}
-          showtassonomiaargomenti={true}
+          showtassonomiaargomenti={false}
         />
         {/* HEADER IMAGE */}
         <ContentImage content={content} position="afterHeader" />
