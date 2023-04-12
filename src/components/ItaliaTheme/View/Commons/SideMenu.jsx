@@ -128,12 +128,17 @@ const SideMenu = ({ data, content_uid }) => {
     setIsNavOpen(false);
   };
 
+  const yCountStart = document.querySelector(
+    '.row.border-top.row-column-border',
+  );
+
+  const yCountEnd = document.querySelector('#main-content-section');
+
   const progressValue = useMemo(() => {
     if (!isClient) return 0;
     return (
-      scrollY /
-        (document.documentElement.scrollHeight -
-          document.documentElement.clientHeight) || 0
+      (scrollY - yCountStart.offsetTop) /
+        (yCountEnd.offsetHeight - yCountStart.offsetTop) || 0
     );
   }, [scrollY, isClient]);
 
@@ -198,7 +203,10 @@ const SideMenu = ({ data, content_uid }) => {
             <div className="link-list-wrapper menu-link-list">
               <h3>{intl.formatMessage(messages.index)}</h3>
               <div className="mb-3">
-                <Progress value={100 * progressValue} role="progressbar" />
+                <Progress
+                  value={progressValue > 0 ? 100 * progressValue : 0}
+                  role="progressbar"
+                />
               </div>
               <ul className="link-list" data-element="page-index">
                 {headers.map((item, i) => (
