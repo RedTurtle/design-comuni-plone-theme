@@ -128,18 +128,11 @@ const SideMenu = ({ data, content_uid }) => {
     setIsNavOpen(false);
   };
 
-  const yCountStart = document.querySelector(
-    '.row.border-top.row-column-border',
-  );
-
   const yCountEnd = document.querySelector('#main-content-section');
 
   const progressValue = useMemo(() => {
     if (!isClient) return 0;
-    return (
-      (scrollY - yCountStart.offsetTop) /
-        (yCountEnd.offsetHeight - yCountStart.offsetTop) || 0
-    );
+    return (scrollY - yCountEnd.offsetTop) / yCountEnd.offsetHeight || 0;
   }, [scrollY, isClient]);
 
   return headers?.length > 0 ? (
