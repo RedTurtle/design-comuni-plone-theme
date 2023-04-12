@@ -3,6 +3,7 @@
     width: 100%;
     .accordion-wrapper {
       .accordion {
+        border-bottom: none;
         .accordion-header {
           width: 100%;
           display: block;
@@ -10,20 +11,12 @@
             border: none;
             background: transparent;
             width: 100%;
-            .accordion-title {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              padding-right: 1.3em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-              svg.fa-icon {
-                height: 0.72rem;
-                width: auto;
-
-                &.rotate-icon {
-                  transform: rotate(180deg);
-                }
-              }
+            h3 {
+              padding: 0px;
             }
           }
         }
