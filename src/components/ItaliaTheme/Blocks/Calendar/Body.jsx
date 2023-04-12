@@ -327,16 +327,14 @@ const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
             )}
           </div>
         </Card>
-        {data?.linkTitle && (
-          <div className="link-more-container">
-            <ListingLinkMore
-              title={data.linkTitle}
-              href={data.linkHref}
-              linkAlign={data.linkAlign}
-              className="my-4"
-            />
-          </div>
-        )}
+        <div className="link-more-container">
+          <ListingLinkMore
+            title={data.linkTitle}
+            href={data.linkHref}
+            linkAlign={data.linkAlign}
+            className="my-4"
+          />
+        </div>
       </Container>
     </div>
   );
