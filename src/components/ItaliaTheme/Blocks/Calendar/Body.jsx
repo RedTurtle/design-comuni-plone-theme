@@ -42,7 +42,6 @@ const copyFields = ['limit', 'query', 'sort_on', 'sort_order', 'depth'];
 
 const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
   const intl = useIntl();
-  console.log(data);
 
   const Slider = reactSlick.default;
 
