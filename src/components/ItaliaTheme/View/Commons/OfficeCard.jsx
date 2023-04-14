@@ -28,6 +28,7 @@ const OfficeCard = ({
   show_contacts = true,
   size,
   no_details = false,
+  view_servizio,
   ...rest
 }) => {
   const url = flattenToAppURL(office['@id']);
@@ -101,6 +102,45 @@ const OfficeCard = ({
                 </div>
               );
             })}
+          </div>
+        )}
+        {view_servizio && (
+          <div className="contact-info">
+            {office_fo.street && (
+              <p className="card-text">{office_fo.street}</p>
+            )}
+            {office_fo.contact_info?.map((el) =>
+              el.value_punto_contatto?.map(
+                (pdc) =>
+                  pdc.pdc_type === 'telefono' &&
+                  pdc.pdc_type !== undefined && (
+                    <div>
+                      <a
+                        href={`tel:${pdc.pdc_value}`}
+                        className="card-link pdc"
+                      >
+                        {pdc.pdc_value}
+                      </a>
+                    </div>
+                  ),
+              ),
+            )}
+
+            {office_fo.contact_info?.map((el) =>
+              el.value_punto_contatto?.map(
+                (pdc) =>
+                  pdc.pdc_type === 'email' && (
+                    <div>
+                      <a
+                        href={`mailto:${pdc.pdc_value}`}
+                        className="card-link pdc"
+                      >
+                        {pdc.pdc_value}
+                      </a>
+                    </div>
+                  ),
+              ),
+            )}
           </div>
         )}
         {children && <div className="card-text">{children}</div>}
