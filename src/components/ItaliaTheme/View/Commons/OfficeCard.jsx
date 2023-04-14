@@ -50,7 +50,7 @@ const OfficeCard = ({
   return office_fo ? (
     <div
       className={cx(
-        'card card-teaser border-left-card rounded shadow p-3 ',
+        'card card-teaser preview-image-card border-left-card rounded shadow p-3 ',
         size === 'big' ? 'card-big-io-comune' : 'card-small',
         {
           'mb-3': margin_bottom,
@@ -146,8 +146,14 @@ const OfficeCard = ({
         {children && <div className="card-text">{children}</div>}
       </div>
       <div className="image-container">
-        {office.preview_image?.scales?.preview && (
-          <img src={office.preview_image?.scales?.preview} alt={office.id} />
+        {office_fo?.image_scales?.preview_image[0]?.scales?.preview
+          ?.download && (
+          <img
+            src={
+              office_fo.image_scales?.preview_image[0]?.scales?.preview.download
+            }
+            alt={office.id}
+          />
         )}
       </div>
     </div>
