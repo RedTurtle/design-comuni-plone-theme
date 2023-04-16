@@ -6,20 +6,19 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from 'design-react-kit';
-import config from '@plone/volto/registry';
 
-const LoginButton = ({ children, size = 'full' }) => {
-  // per retrocompatibilità con il vecchio config arLoginUrl
-  const [loginURL, setLoginURL] = useState(
-    config.settings.siteProperties?.arLoginUrl || '/login',
-  );
+const LoginButton = ({ children, baseLoginUrl, size = 'full' }) => {
+  const [loginURL, setLoginURL] = useState(baseLoginUrl);
 
   useEffect(() => {
     if (loginURL && __CLIENT__) {
-      if (loginURL.indexOf('came_from') < 0) {
-        const came_from = window?.location?.href ?? '/';
+      if (!loginURL.includes('came_from')) {
+        const came_from = window.location.href ?? '/';
         setLoginURL(
-          (loginURL) => `${loginURL.split('?')[0]}?came_from=${came_from}`,
+          (loginURL) =>
+            `${loginURL}${
+              loginURL.includes('?') ? '&' : '?'
+            }came_from=${came_from}`,
         );
       }
     }

@@ -1,20 +1,57 @@
 /**
  * UserLoggedMenu component.
- * @module components/ItaliaTheme/Header/HeaderSlim/SpidLogin
+ * TODO: usare plone portal actions ?
  */
 
 import React from 'react';
-//import { Link } from 'react-router-dom';
-//import { defineMessages, useIntl } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
+import { LinkListItem } from 'design-react-kit';
 
-//import { LinkListItem } from 'design-react-kit';
+const messages = defineMessages({
+  areaPersonale: {
+    id: 'areaPersonale',
+    defaultMessage: 'Area personale',
+  },
+  areaOperatore: {
+    id: 'areaOperatore',
+    defaultMessage: 'Area operatore',
+  },
+});
 
-//const messages = defineMessages({});
+const UserLoggedMenu = ({ userLogged }) => {
+  const intl = useIntl();
 
-const UserLoggedMenu = () => {
-  //const intl = useIntl();
-
-  return <></>;
+  return (
+    <>
+      <LinkListItem divider tag="a" />
+      {userLogged.roles &&
+      userLogged?.roles.find((e) => e === 'Gestore Pratiche') ? (
+        <>
+          <LinkListItem
+            href={'/area-personale-operatore'}
+            title={intl.formatMessage(messages.areaOperatore)}
+            tag="a"
+            className="link-areaOperatore"
+          >
+            <span>{intl.formatMessage(messages.areaOperatore)}</span>
+          </LinkListItem>
+          <LinkListItem divider tag="a" />
+        </>
+      ) : (
+        <>
+          <LinkListItem
+            href={'/area-personale-cittadino'}
+            title={intl.formatMessage(messages.areaPersonale)}
+            tag="a"
+            className="link-areaPersonale"
+          >
+            <span>{intl.formatMessage(messages.areaPersonale)}</span>
+          </LinkListItem>
+          <LinkListItem divider tag="a" />
+        </>
+      )}
+    </>
+  );
 
   /*Example:
 

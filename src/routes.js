@@ -5,11 +5,7 @@
 
 import { App, Search } from '@plone/volto/components';
 import { defaultRoutes, multilingualRoutes } from '@plone/volto/routes';
-import {
-  LoginAgid,
-  LoginOperatore,
-} from 'design-comuni-plone-theme/components/ItaliaTheme';
-
+import { LoginAgid } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
 
 export const italiaRoutes = [
@@ -21,10 +17,6 @@ export const italiaRoutes = [
   {
     path: ['/login', '/**/login'],
     component: LoginAgid,
-  },
-  {
-    path: ['/login-operatore', '/**/login-operatore'],
-    component: LoginOperatore,
   },
 ];
 

@@ -2,12 +2,14 @@
  * @module components/theme/Unauthorized/Unauthorized
  */
 
+import { Button } from 'design-react-kit';
 import React from 'react';
-import { FormattedMessage, defineMessages } from 'react-intl';
+import { FormattedMessage, defineMessages, useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 import { Row, Col, Container } from 'design-react-kit';
 import { withServerErrorCode } from '@plone/volto/helpers/Utils/Utils';
 import { BodyClass } from '@plone/volto/helpers';
+import { useLocation } from 'react-router-dom';
 import {
   LoginAgidButtons,
   RemoveBodyClass,
@@ -25,13 +27,28 @@ const messages = defineMessages({
     defaultMessage:
       'You are trying to access a protected resource, please login first.',
   },
+  loginOther: {
+    id: 'login_agid_other',
+    defaultMessage: 'Other users',
+  },
+  // loginOtherDescription: {
+  //   id: 'login_agid_other_description',
+  //   defaultMessage: 'Alternatively you can use these methods.',
+  // },
+  loginPloneUser: {
+    id: 'login_plone_user',
+    defaultMessage: 'Log in as employee',
+  },
 });
 
-const Unauthorized = () => {
+const Unauthorized = (props) => {
+  const intl = useIntl();
+  const location = useLocation();
   return (
     <div id="unauthorized-agid" className="view-wrapper">
       <BodyClass className="public-ui" />
       <RemoveBodyClass className="cms-ui" />
+
       <Container className="view-wrapper py-5">
         <Row className="view-container">
           <Col xs={12} lg={{ size: 10, offset: 1 }}>
@@ -49,7 +66,23 @@ const Unauthorized = () => {
         <hr className="d-none d-lg-block mt-0 mb-4" />
         <Row className="py-4">
           <Col xs={12} lg={{ size: 8, offset: 2 }}>
-            <LoginAgidButtons />
+            <LoginAgidButtons origin={location.href} />
+            <div className="login-method">
+              <h3>{intl.formatMessage(messages.loginOther)}</h3>
+              {/* <p className="description">
+                {intl.formatMessage(messages.loginOtherDescription)}
+              </p> */}
+              <div className="unauthorized-spid-login">
+                <Button
+                  color="primary"
+                  outline
+                  href={`/login?came_from=${location.pathname}&login_operatore=1`}
+                  tag="button"
+                >
+                  <span>{intl.formatMessage(messages.loginPloneUser)}</span>
+                </Button>
+              </div>
+            </div>
           </Col>
         </Row>
         <Row>

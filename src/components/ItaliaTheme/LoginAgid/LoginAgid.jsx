@@ -15,6 +15,8 @@ import {
   RemoveBodyClass,
   LoginAgidButtons,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { Button } from 'design-react-kit';
+import { useLocation } from 'react-router-dom';
 
 import config from '@plone/volto/registry';
 
@@ -23,22 +25,47 @@ const messages = defineMessages({
     id: 'login_agid',
     defaultMessage: 'Log in',
   },
+  loginOtherDescription: {
+    id: 'login_agid_other_description',
+    defaultMessage: 'Alternatively you can use these methods.',
+  },
   loginDescription: {
     id: 'login_agid_description',
     defaultMessage:
       'To access the site and its services, use one of the following methods.',
   },
+  loginPloneUser: {
+    id: 'login_plone_user',
+    defaultMessage: 'Log in as employee',
+  },
+  loginOther: {
+    id: 'login_agid_other',
+    defaultMessage: 'Other users',
+  },
 });
+
+// https://v5.reactrouter.com/web/example/query-parameters
+function useQueryV5() {
+  const { search } = useLocation();
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
 
 const LoginAgid = (props) => {
   const intl = useIntl();
+  const query = useQueryV5();
+
   const spidLoginUrl = __CLIENT__
     ? window.env.RAZZLE_SPID_LOGIN_URL
     : process.env.RAZZLE_SPID_LOGIN_URL;
+  const [showFormLogin, setShowFormLogin] = React.useState(
+    !spidLoginUrl || query.get('login_operatore'),
+  );
+  const came_from = query.get('came_from') || props.origin;
+  const qs = came_from ? `?came_from=${came_from}` : '';
 
   return (
     <>
-      {!spidLoginUrl ? (
+      {showFormLogin ? (
         <Login {...props}></Login>
       ) : (
         <div id="page-login">
@@ -58,6 +85,24 @@ const LoginAgid = (props) => {
             <Row>
               <Col xs={12} lg={{ size: 8, offset: 2 }}>
                 <LoginAgidButtons />
+                <div className="login-method">
+                  <h3>{intl.formatMessage(messages.loginOther)}</h3>
+                  <p className="description">
+                    {intl.formatMessage(messages.loginOtherDescription)}
+                  </p>
+                  <div className="unauthorized-spid-login">
+                    <Button
+                      color="primary"
+                      outline
+                      onClick={() => {
+                        setShowFormLogin(true);
+                      }}
+                      tag="button"
+                    >
+                      <span>{intl.formatMessage(messages.loginPloneUser)}</span>
+                    </Button>
+                  </div>
+                </div>
               </Col>
             </Row>
           </Container>

@@ -11,14 +11,6 @@ import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { useLocation } from 'react-router-dom';
 
 const messages = defineMessages({
-  loginOther: {
-    id: 'login_agid_other',
-    defaultMessage: 'Other users',
-  },
-  loginOtherDescription: {
-    id: 'login_agid_other_description',
-    defaultMessage: 'Alternatively you can use these methods.',
-  },
   loginSpid: {
     id: 'login_spid',
     defaultMessage: 'SPID',
@@ -35,10 +27,6 @@ const messages = defineMessages({
     id: 'login_spid_help',
     defaultMessage: 'How to activate SPID',
   },
-  loginPloneUser: {
-    id: 'login_plone_user',
-    defaultMessage: 'Log in as employee',
-  },
 });
 
 // https://v5.reactrouter.com/web/example/query-parameters
@@ -47,21 +35,17 @@ function useQueryV5() {
   return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
-const LoginAgidButtons = () => {
+const LoginAgidButtons = ({ origin }) => {
   const intl = useIntl();
   const query = useQueryV5();
-  const came_from = query.get('came_from')
-    ? `?came_from=${query.get('came_from')}`
-    : '';
-  const spidLoginUrl = `${
-    __CLIENT__
-      ? window.env.RAZZLE_SPID_LOGIN_URL
-      : process.env.RAZZLE_SPID_LOGIN_URL
-  }${came_from}`;
+  const came_from = query.get('came_from') || origin;
+  const qs = came_from ? `?came_from=${came_from}` : '';
+  const spidLoginUrl = __CLIENT__ ? window.env.RAZZLE_SPID_LOGIN_URL : process.env.RAZZLE_SPID_LOGIN_URL;
 
   return (
-    <>
+    spidLoginUrl ? (
       <div className="login-method">
+        <h1>{typeof spidLoginUrl}</h1>
         <h2>{intl.formatMessage(messages.loginSpid)}</h2>
         <p className="description">
           {intl.formatMessage(messages.loginSpidDescription)}
@@ -70,7 +54,7 @@ const LoginAgidButtons = () => {
           <Button
             className="btn-icon"
             color="primary"
-            href={spidLoginUrl}
+            href={`${spidLoginUrl}${qs}`}
             tag="a"
             data-element="personal-area-login"
             size="big"
@@ -87,18 +71,7 @@ const LoginAgidButtons = () => {
           </div>
         </div>
       </div>
-      <div className="login-method">
-        <h3>{intl.formatMessage(messages.loginOther)}</h3>
-        <p className="description">
-          {intl.formatMessage(messages.loginOtherDescription)}
-        </p>
-        <div className="unauthorized-spid-login">
-          <Button color="primary" outline href="/login-operatore" tag="button">
-            <span>{intl.formatMessage(messages.loginPloneUser)}</span>
-          </Button>
-        </div>
-      </div>
-    </>
+    ) : null
   );
 };
 

@@ -170,7 +170,7 @@ export default function applyConfig(voltoConfig) {
       showNextGenerationEU: true,
       // arLoginUrl: '/login',
       // arLogoutUrl: '/logout',
-      //spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
+      // spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
       headerslimTertiaryMenu: {
         it: [
           //{ title: 'Contatti', url: '/it/contatti' },
