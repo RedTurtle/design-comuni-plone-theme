@@ -357,6 +357,11 @@ body.cms-ui {
     .button.secondary.active {
       background-color: $secondary;
     }
+
+    .button.tertiary,
+    .button.tertiary.active {
+      background-color: $tertiary;
+    }
   }
 
   .path-filter-widget {
