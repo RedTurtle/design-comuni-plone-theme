@@ -40,7 +40,9 @@ const LoginAgidButtons = ({ origin }) => {
   const query = useQueryV5();
   const came_from = query.get('came_from') || origin;
   const qs = came_from ? `?came_from=${came_from}` : '';
-  const spidLoginUrl = __CLIENT__ ? window.env.RAZZLE_SPID_LOGIN_URL : process.env.RAZZLE_SPID_LOGIN_URL;
+  const spidLoginUrl = __CLIENT__
+    ? window.env.RAZZLE_SPID_LOGIN_URL
+    : process.env.RAZZLE_SPID_LOGIN_URL;
 
   return (
     spidLoginUrl ? (

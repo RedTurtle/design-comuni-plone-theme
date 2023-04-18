@@ -6,10 +6,12 @@ import { Button } from 'design-react-kit';
 import React from 'react';
 import { FormattedMessage, defineMessages, useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { Row, Col, Container } from 'design-react-kit';
 import { withServerErrorCode } from '@plone/volto/helpers/Utils/Utils';
 import { BodyClass } from '@plone/volto/helpers';
 import { useLocation } from 'react-router-dom';
+import { getBaseUrl } from '@plone/volto/helpers';
 import {
   LoginAgidButtons,
   RemoveBodyClass,
@@ -31,10 +33,10 @@ const messages = defineMessages({
     id: 'login_agid_other',
     defaultMessage: 'Other users',
   },
-  // loginOtherDescription: {
-  //   id: 'login_agid_other_description',
-  //   defaultMessage: 'Alternatively you can use these methods.',
-  // },
+  loginOtherDescription: {
+    id: 'login_agid_other_description',
+    defaultMessage: 'Alternatively you can use these methods.',
+  },
   loginPloneUser: {
     id: 'login_plone_user',
     defaultMessage: 'Log in as employee',
@@ -44,47 +46,87 @@ const messages = defineMessages({
 const Unauthorized = (props) => {
   const intl = useIntl();
   const location = useLocation();
+  const error_message = useSelector((state) => state.apierror?.message);
+  const spidLoginUrl = __CLIENT__
+    ? window.env.RAZZLE_SPID_LOGIN_URL
+    : process.env.RAZZLE_SPID_LOGIN_URL;
+
   return (
     <div id="unauthorized-agid" className="view-wrapper">
       <BodyClass className="public-ui" />
       <RemoveBodyClass className="cms-ui" />
 
       <Container className="view-wrapper py-5">
-        <Row className="view-container">
-          <Col xs={12} lg={{ size: 10, offset: 1 }}>
-            <h1>
-              <FormattedMessage
-                id="Unauthorized"
-                defaultMessage="Unauthorized"
-              />
-            </h1>
-            <p className="description">
-              <FormattedMessage {...messages.unauthorizedDescription} />
-            </p>
-          </Col>
-        </Row>
-        <hr className="d-none d-lg-block mt-0 mb-4" />
-        <Row className="py-4">
-          <Col xs={12} lg={{ size: 8, offset: 2 }}>
-            <LoginAgidButtons origin={location.href} />
-            <div className="login-method">
-              <h3>{intl.formatMessage(messages.loginOther)}</h3>
-              {/* <p className="description">
-                {intl.formatMessage(messages.loginOtherDescription)}
-              </p> */}
-              <div className="unauthorized-spid-login">
-                <Button
-                  color="primary"
-                  outline
-                  href={`/login?came_from=${location.pathname}&login_operatore=1`}
-                  tag="button"
-                >
-                  <span>{intl.formatMessage(messages.loginPloneUser)}</span>
-                </Button>
-              </div>
-            </div>
-          </Col>
-        </Row>
+        {spidLoginUrl ? (
+          <>
+            <Row className="view-container">
+              <Col xs={12} lg={{ size: 10, offset: 1 }}>
+                <h1>
+                  <FormattedMessage
+                    id="Unauthorized"
+                    defaultMessage="Unauthorized"
+                  />
+                </h1>
+                <p className="description">
+                  <FormattedMessage {...messages.unauthorizedDescription} />
+                </p>
+              </Col>
+            </Row>
+            <hr className="d-none d-lg-block mt-0 mb-4" />
+            <Row className="py-4">
+              <Col xs={12} lg={{ size: 8, offset: 2 }}>
+                <LoginAgidButtons origin={location.href} />
+                <div className="login-method">
+                  <h3>{intl.formatMessage(messages.loginOther)}</h3>
+                  <p className="description">
+                    {intl.formatMessage(messages.loginOtherDescription)}
+                  </p>
+                  <div className="unauthorized-spid-login">
+                    <Button
+                      color="primary"
+                      outline
+                      href={`/login?came_from=${getBaseUrl(
+                        location.pathname,
+                      )}&login_operatore=1`}
+                      tag="button"
+                    >
+                      <span>{intl.formatMessage(messages.loginPloneUser)}</span>
+                    </Button>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </>
+        ) : (
+          <Row className="view-container">
+            <Col xs={12} lg={{ size: 10, offset: 1 }}>
+              <h1>
+                <FormattedMessage
+                  id="Unauthorized"
+                  defaultMessage="Unauthorized"
+                />
+              </h1>
+              <h3>{error_message}</h3>
+              <p className="description">
+                <FormattedMessage
+                  id="You are trying to access a protected resource, please {login} first."
+                  defaultMessage="You are trying to access a protected resource, please {login} first."
+                  values={{
+                    login: (
+                      <Link
+                        to={`${getBaseUrl(
+                          location.pathname,
+                        )}/login?login_operatore=1`}
+                      >
+                        <FormattedMessage id="log in" defaultMessage="log in" />
+                      </Link>
+                    ),
+                  }}
+                />
+              </p>
+            </Col>
+          </Row>
+        )}
         <Row>
           <Col xs={12} lg={{ size: 10, offset: 1 }}>
             <p>
