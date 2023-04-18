@@ -94,39 +94,21 @@
     }
   }
 
-  .date-container {
-    display: flex;
-    align-items: center;
+  .day {
+    font-family: $font-family-monospace;
+    font-size: 2.4rem;
+    font-weight: 100;
+  }
 
-    .day {
-      font-family: $font-family-sans-serif;
-      font-size: 2.4rem;
-      font-weight: 400;
-      line-height: 2.4rem;
-      height: min-content;
-    }
+  .day-week {
+    font-family: $font-family-monospace;
+    font-weight: 400;
+  }
 
-    .month-day-block {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-left: 0.4em;
-
-      .day-week {
-        font-family: $font-family-sans-serif;
-        font-weight: 400;
-        text-transform: uppercase;
-        color: $text-muted;
-      }
-
-      .month {
-        font-family: $font-family-sans-serif;
-        font-size: 0.9rem;
-        text-transform: capitalize;
-        font-weight: 600;
-        margin-bottom: -0.27em;
-      }
-    }
+  .month {
+    margin-left: -1rem;
+    font-family: $font-family-monospace;
+    font-size: 0.8rem;
   }
 
   .calendar-item {
