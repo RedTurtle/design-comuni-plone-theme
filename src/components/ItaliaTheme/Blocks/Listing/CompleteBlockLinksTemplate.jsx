@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { UniversalLink } from '@plone/volto/components';
+import cx from 'classnames';
 import {
   Card,
   CardBody,
@@ -24,6 +25,7 @@ const CompleteBlockLinksTemplate = ({
   show_block_bg,
   show_description = true,
   id_lighthouse,
+  center_cards,
 }) => {
   return (
     <div className="complete-block-links-template">
@@ -35,7 +37,7 @@ const CompleteBlockLinksTemplate = ({
             </Col>
           </Row>
         )}
-        <Row className="items">
+        <Row className={cx('items', { 'center-cards': center_cards })}>
           {items.map((item, index) => {
             const image = ListingImage({ item, className: '' });
 
