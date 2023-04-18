@@ -60,14 +60,14 @@ const Item = ({ day, path, query, inEditMode }) => {
 
   return (
     <div>
-      <div className="ps-3">
-        <div className={cx('day', { 'mb-3': inEditMode })}>
-          {_day.format('DD')}{' '}
-          <span className={cx('month', { 'ms-1': inEditMode })}>
+      <div className="ps-3 date-container">
+        <div className={cx('day')}>{_day.format('DD')}</div>
+        <div className="month-day-block">
+          <div className={cx('month', { 'mb-1': inEditMode })}>
             {_day.format('MMMM')}
-          </span>
+          </div>
+          <div className={cx('day-week')}>{_day.format('ddd')}</div>
         </div>
-        <div className="day-week">{_day.format('ddd')}</div>
       </div>
       <div>
         <hr />
