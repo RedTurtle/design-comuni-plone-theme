@@ -5,7 +5,8 @@
  *
  * login button/dropdown for spid for top header
  *
- * TODO: usare plone portal actions ?
+ * nel caso di spid_login la url di login è impostata alla pagina intermedia
+ * dove si può scegliere se loggarsi con spid o con utente plone
  *
  */
 
@@ -88,7 +89,7 @@ const HeaderLogin = () => {
       <BodyClass className={rolesBodyClasses.join(' ')} />
       {spidLoginUrl || arLoginUrl ? (
         !userId ? (
-          <LoginButton baseLoginUrl={spidLoginUrl || arLoginUrl}>
+          <LoginButton baseLoginUrl={spidLoginUrl ? '/login' : arLoginUrl}>
             <span className="rounded-icon">
               <Icon color="primary" icon="it-user" padding={false} size="" />
             </span>

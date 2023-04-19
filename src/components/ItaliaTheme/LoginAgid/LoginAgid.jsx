@@ -7,7 +7,7 @@ import React from 'react';
 import { Helmet } from '@plone/volto/helpers';
 import { compose } from 'redux';
 import { BodyClass } from '@plone/volto/helpers';
-import { defineMessages, useIntl, injectIntl } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
 import { withRouter } from 'react-router-dom';
 import { Login } from '@plone/volto/components';
 import { Row, Col, Container } from 'design-react-kit';
@@ -17,8 +17,6 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { Button } from 'design-react-kit';
 import { useLocation } from 'react-router-dom';
-
-import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   login: {
@@ -57,11 +55,8 @@ const LoginAgid = (props) => {
   const spidLoginUrl = __CLIENT__
     ? window.env.RAZZLE_SPID_LOGIN_URL
     : process.env.RAZZLE_SPID_LOGIN_URL;
-  const [showFormLogin, setShowFormLogin] = React.useState(
-    !spidLoginUrl || query.get('login_operatore'),
-  );
+  const showFormLogin = !spidLoginUrl || query.get('login_operatore');
   const came_from = query.get('came_from') || props.origin;
-  const qs = came_from ? `?came_from=${came_from}` : '';
 
   return (
     <>
@@ -94,9 +89,7 @@ const LoginAgid = (props) => {
                     <Button
                       color="primary"
                       outline
-                      onClick={() => {
-                        setShowFormLogin(true);
-                      }}
+                      href={`${came_from}/login?login_operatore=1`}
                       tag="button"
                     >
                       <span>{intl.formatMessage(messages.loginPloneUser)}</span>
