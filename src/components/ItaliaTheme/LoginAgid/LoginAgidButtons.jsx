@@ -47,7 +47,6 @@ const LoginAgidButtons = ({ origin }) => {
   return (
     spidLoginUrl ? (
       <div className="login-method">
-        <h1>{typeof spidLoginUrl}</h1>
         <h2>{intl.formatMessage(messages.loginSpid)}</h2>
         <p className="description">
           {intl.formatMessage(messages.loginSpidDescription)}

@@ -75,7 +75,7 @@ const Unauthorized = (props) => {
             <hr className="d-none d-lg-block mt-0 mb-4" />
             <Row className="py-4">
               <Col xs={12} lg={{ size: 8, offset: 2 }}>
-                <LoginAgidButtons origin={location.href} />
+                <LoginAgidButtons origin={getBaseUrl(location.pathname)} />
                 <div className="login-method">
                   <h3>{intl.formatMessage(messages.loginOther)}</h3>
                   <p className="description">
@@ -85,9 +85,9 @@ const Unauthorized = (props) => {
                     <Button
                       color="primary"
                       outline
-                      href={`/login?came_from=${getBaseUrl(
+                      href={`${getBaseUrl(
                         location.pathname,
-                      )}&login_operatore=1`}
+                      )}/login?login_operatore=1`}
                       tag="button"
                     >
                       <span>{intl.formatMessage(messages.loginPloneUser)}</span>
