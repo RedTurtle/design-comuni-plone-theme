@@ -1,37 +1,17 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /**
  * LoginButton component.
  * @module components/ItaliaTheme/Header/HeaderSlim/LoginButton
  */
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Button } from 'design-react-kit';
-import { getBaseUrl } from '@plone/volto/helpers';
-import { useLocation } from 'react-router-dom';
 
 const LoginButton = ({ children, baseLoginUrl, size = 'full' }) => {
-  const location = useLocation();
-  const [loginURL, setLoginURL] = useState(baseLoginUrl);
-
-  useEffect(() => {
-    if (loginURL) {
-      if (!loginURL.includes('came_from')) {
-        const came_from = getBaseUrl(location.pathname);
-        setLoginURL(
-          (loginURL) =>
-            `${loginURL}${
-              loginURL.includes('?') ? '&' : '?'
-            }came_from=${came_from}`,
-        );
-      }
-    }
-  }, []);
-
-  return loginURL ? (
+  return baseLoginUrl ? (
     <Button
       className="btn-icon"
       color="primary"
-      href={loginURL}
+      href={baseLoginUrl}
       icon={false}
       size={size}
       tag="a"

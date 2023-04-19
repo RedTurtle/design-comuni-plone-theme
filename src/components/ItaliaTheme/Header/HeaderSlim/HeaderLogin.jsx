@@ -23,17 +23,16 @@ import {
   LinkListItem,
   UncontrolledDropdown,
 } from 'design-react-kit';
-
 import { getUser, logout, purgeMessages } from '@plone/volto/actions';
 import config from '@plone/volto/registry';
-
 import { BodyClass } from '@plone/volto/helpers';
-
 import {
   Icon,
   UserLoggedMenu,
   LoginButton,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { getBaseUrl } from '@plone/volto/helpers';
+import { useLocation } from 'react-router-dom';
 
 const messages = defineMessages({
   loginAreaPersonale: {
@@ -84,12 +83,20 @@ const HeaderLogin = () => {
     ? window.env.RAZZLE_SPID_LOGOUT_URL
     : process.env.RAZZLE_SPID_LOGOUT_URL;
 
+  const location = useLocation();
+
   return (
     <>
       <BodyClass className={rolesBodyClasses.join(' ')} />
       {spidLoginUrl || arLoginUrl ? (
         !userId ? (
-          <LoginButton baseLoginUrl={spidLoginUrl ? '/login' : arLoginUrl}>
+          <LoginButton
+            baseLoginUrl={
+              spidLoginUrl
+                ? `${getBaseUrl(location.pathname)}/login`
+                : arLoginUrl
+            }
+          >
             <span className="rounded-icon">
               <Icon color="primary" icon="it-user" padding={false} size="" />
             </span>

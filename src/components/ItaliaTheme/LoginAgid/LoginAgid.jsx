@@ -17,6 +17,7 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { Button } from 'design-react-kit';
 import { useLocation } from 'react-router-dom';
+import { getBaseUrl } from '@plone/volto/helpers';
 
 const messages = defineMessages({
   login: {
@@ -56,7 +57,8 @@ const LoginAgid = (props) => {
     ? window.env.RAZZLE_SPID_LOGIN_URL
     : process.env.RAZZLE_SPID_LOGIN_URL;
   const showFormLogin = !spidLoginUrl || query.get('login_operatore');
-  const came_from = query.get('came_from') || props.origin;
+  const location = useLocation();
+  const came_from = query.get('came_from') || props.origin || getBaseUrl(location.pathname);
 
   return (
     <>
@@ -79,7 +81,7 @@ const LoginAgid = (props) => {
             <hr className="d-none d-lg-block mt-0 mb-4" />
             <Row>
               <Col xs={12} lg={{ size: 8, offset: 2 }}>
-                <LoginAgidButtons />
+                <LoginAgidButtons origin={came_from} />
                 <div className="login-method">
                   <h3>{intl.formatMessage(messages.loginOther)}</h3>
                   <p className="description">
