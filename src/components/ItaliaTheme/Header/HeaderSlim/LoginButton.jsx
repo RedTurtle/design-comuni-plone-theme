@@ -6,14 +6,17 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from 'design-react-kit';
+import { getBaseUrl } from '@plone/volto/helpers';
+import { useLocation } from 'react-router-dom';
 
 const LoginButton = ({ children, baseLoginUrl, size = 'full' }) => {
+  const location = useLocation();
   const [loginURL, setLoginURL] = useState(baseLoginUrl);
 
   useEffect(() => {
-    if (loginURL && __CLIENT__) {
+    if (loginURL) {
       if (!loginURL.includes('came_from')) {
-        const came_from = window.location.href ?? '/';
+        const came_from = getBaseUrl(location.pathname);
         setLoginURL(
           (loginURL) =>
             `${loginURL}${
