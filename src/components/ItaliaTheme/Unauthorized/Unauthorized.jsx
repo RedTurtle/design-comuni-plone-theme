@@ -12,6 +12,7 @@ import { withServerErrorCode } from '@plone/volto/helpers/Utils/Utils';
 import { BodyClass } from '@plone/volto/helpers';
 import { useLocation } from 'react-router-dom';
 import { getBaseUrl } from '@plone/volto/helpers';
+import config from '@plone/volto/registry';
 import {
   LoginAgidButtons,
   RemoveBodyClass,
@@ -50,6 +51,8 @@ const Unauthorized = (props) => {
   const spidLoginUrl = __CLIENT__
     ? window.env.RAZZLE_SPID_LOGIN_URL
     : process.env.RAZZLE_SPID_LOGIN_URL;
+  // BBB: per retrocompatibilità con il vecchio config arLoginUrl
+  const spidLogin = config.settings.siteProperties?.spidLogin;
 
   return (
     <div id="unauthorized-agid" className="view-wrapper">
@@ -57,7 +60,7 @@ const Unauthorized = (props) => {
       <RemoveBodyClass className="cms-ui" />
 
       <Container className="view-wrapper py-5">
-        {spidLoginUrl ? (
+        {spidLoginUrl || spidLogin ? (
           <>
             <Row className="view-container">
               <Col xs={12} lg={{ size: 10, offset: 1 }}>

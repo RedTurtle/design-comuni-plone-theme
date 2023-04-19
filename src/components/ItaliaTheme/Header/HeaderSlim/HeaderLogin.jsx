@@ -74,7 +74,7 @@ const HeaderLogin = () => {
 
   // BBB: per retrocompatibilità con il vecchio config arLoginUrl
   const arLoginUrl = config.settings.siteProperties?.arLoginUrl;
-  const arLogoutUrl = config.settings.siteProperties.arLogoutUrl;
+  const arLogoutUrl = config.settings.siteProperties?.arLogoutUrl;
 
   const spidLoginUrl = __CLIENT__
     ? window.env.RAZZLE_SPID_LOGIN_URL
