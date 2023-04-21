@@ -2,9 +2,9 @@
  * UserLoggedMenu component.
  * @module components/ItaliaTheme/Header/HeaderSlim/UserLoggedMenu
  *
- * le azione proposte sono configurate in config.settings.siteProperties.UserLoggedMenu
+ * le azione proposte sono configurate in config.settings.siteProperties.userLoggedMenu
  * nella forma:
- *     UserLoggedMenu: [
+ *     userLoggedMenu: [
  *       {
  *         href: { it: '/area-personale-cittadino' },
  *         title: { it: 'Area personale' },
@@ -39,7 +39,7 @@ import config from '@plone/volto/registry';
 
 const UserLoggedMenu = ({ userLogged }) => {
   const intl = useIntl();
-  const items = config.settings.siteProperties.UserLoggedMenu || [];
+  const items = config.settings.siteProperties.userLoggedMenu || [];
   return (
     <>
       <LinkListItem divider tag="a" />
