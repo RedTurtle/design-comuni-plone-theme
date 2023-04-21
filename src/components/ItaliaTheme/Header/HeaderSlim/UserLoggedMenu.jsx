@@ -53,9 +53,8 @@ const UserLoggedMenu = ({ userLogged }) => {
               userLogged?.roles.find((e) => item.roles.includes(e))),
         )
         .map((item, index) => (
-          <>
+          <React.Fragment key={`userloggedmenu-${index}`}>
             <LinkListItem
-              key={index}
               href={item.href?.[intl.locale] || item.href.it}
               title={item.title?.[intl.locale] || item.title.it}
               tag="a"
@@ -64,7 +63,7 @@ const UserLoggedMenu = ({ userLogged }) => {
               <span>{item.title?.[intl.locale] || item.title.it}</span>
             </LinkListItem>
             <LinkListItem divider tag="a" />
-          </>
+          </React.Fragment>
         ))}
       {/* {userLogged.roles &&
       userLogged?.roles.find((e) => e === 'Gestore Pratiche') ? (
