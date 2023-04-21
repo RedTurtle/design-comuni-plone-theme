@@ -1,30 +1,72 @@
 /**
  * UserLoggedMenu component.
- * TODO: usare plone portal actions ?
+ * @module components/ItaliaTheme/Header/HeaderSlim/UserLoggedMenu
+ *
+ * le azione proposte sono configurate in config.settings.siteProperties.UserLoggedMenu
+ * nella forma:
+ *     UserLoggedMenu: [
+ *       {
+ *         href: { it: '/area-personale-cittadino' },
+ *         title: { it: 'Area personale' },
+ *         roles: [],
+ *         className: 'link-areaPersonale',
+ *       },
+ *       {
+ *         href: { it: '/area-personale-operatore' },
+ *         title: { it: 'Area operatore' },
+ *         roles: ['Gestore Pratiche'],
+ *         className: 'link-areaOperatore',
+ *       },
+ *     ],
+ *
  */
 
 import React from 'react';
-import { defineMessages, useIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import { LinkListItem } from 'design-react-kit';
+import config from '@plone/volto/registry';
 
-const messages = defineMessages({
-  areaPersonale: {
-    id: 'areaPersonale',
-    defaultMessage: 'Area personale',
-  },
-  areaOperatore: {
-    id: 'areaOperatore',
-    defaultMessage: 'Area operatore',
-  },
-});
+// const messages = defineMessages({
+//   areaPersonale: {
+//     id: 'areaPersonale',
+//     defaultMessage: 'Area personale',
+//   },
+//   areaOperatore: {
+//     id: 'areaOperatore',
+//     defaultMessage: 'Area operatore',
+//   },
+// });
 
 const UserLoggedMenu = ({ userLogged }) => {
   const intl = useIntl();
-
+  const items = config.settings.siteProperties.UserLoggedMenu || [];
   return (
     <>
       <LinkListItem divider tag="a" />
-      {userLogged.roles &&
+      {items
+        .filter(
+          (item) =>
+            !item.roles ||
+            item.roles.length === 0 ||
+            (item.roles &&
+              userLogged.roles &&
+              userLogged?.roles.find((e) => item.roles.includes(e))),
+        )
+        .map((item, index) => (
+          <>
+            <LinkListItem
+              key={index}
+              href={item.href?.[intl.locale] || item.href.it}
+              title={item.title?.[intl.locale] || item.title.it}
+              tag="a"
+              className={item.className}
+            >
+              <span>{item.title?.[intl.locale] || item.title.it}</span>
+            </LinkListItem>
+            <LinkListItem divider tag="a" />
+          </>
+        ))}
+      {/* {userLogged.roles &&
       userLogged?.roles.find((e) => e === 'Gestore Pratiche') ? (
         <>
           <LinkListItem
@@ -49,7 +91,7 @@ const UserLoggedMenu = ({ userLogged }) => {
           </LinkListItem>
           <LinkListItem divider tag="a" />
         </>
-      )}
+      )} */}
     </>
   );
 

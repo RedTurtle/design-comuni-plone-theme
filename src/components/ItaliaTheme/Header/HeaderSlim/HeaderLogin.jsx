@@ -6,7 +6,7 @@
  * login button/dropdown for spid for top header
  *
  * nel caso di spid_login la url di login è impostata alla pagina intermedia
- * dove si può scegliere se loggarsi con spid o con utente plone
+ * dove si può scegliere se loggarsi con spid o con utente plone/operatore
  *
  */
 

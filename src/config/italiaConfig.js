@@ -209,6 +209,20 @@ export default function applyConfig(voltoConfig) {
       enableVoltoFormBlockCaptcha: true,
       splitMegamenuColumns: true, //se impostato a false, non spezza le colonne con intestazioni nel megamenu
       footerNavigationDepth: 2, //valori possibili: [1,2]. Se impostato ad 1 non verranno mostrati nel footer i link agli elementi contenuti nelle sezioni di primo livello.
+      // UserLoggedMenu: [
+      //   {
+      //     href: { it: '/area-personale-cittadino' },
+      //     title: { it: 'Area personale' },
+      //     roles: [],
+      //     className: 'link-areaPersonale',
+      //   },
+      //   {
+      //     href: { it: '/area-personale-operatore' },
+      //     title: { it: 'Area operatore' },
+      //     roles: ['Gestore Pratiche'],
+      //     className: 'link-areaOperatore',
+      //   },
+      // ],
     },
     apiExpanders: [
       ...config.settings.apiExpanders,
@@ -274,11 +288,6 @@ export default function applyConfig(voltoConfig) {
     },
     videoAllowExternalsDefault: false,
     showTrasparenzaFields: false,
-    nonContentRoutes: [
-      ...config.settings.nonContentRoutes,
-      '/login-operatore',
-      '/login',
-    ],
   };
 
   /******************************************************************************
