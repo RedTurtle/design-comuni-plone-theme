@@ -46,6 +46,7 @@ const OfficeCard = ({
   }, [url]);
 
   let office_fo = load_data ? officeContent?.[key]?.data : office;
+  console.log(office_fo);
 
   return office_fo ? (
     <div
@@ -112,8 +113,7 @@ const OfficeCard = ({
             {office_fo.contact_info?.map((el) =>
               el.value_punto_contatto?.map(
                 (pdc) =>
-                  pdc.pdc_type === 'telefono' &&
-                  pdc.pdc_type !== undefined && (
+                  pdc.pdc_type === 'telefono' && (
                     <div>
                       <a
                         href={`tel:${pdc.pdc_value}`}
@@ -153,6 +153,8 @@ const OfficeCard = ({
               office_fo.image_scales?.preview_image[0]?.scales?.preview.download
             }
             alt={office.id}
+            loading="lazy"
+            decoding="async"
           />
         )}
       </div>
