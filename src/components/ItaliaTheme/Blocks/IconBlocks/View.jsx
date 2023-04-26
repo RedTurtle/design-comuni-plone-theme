@@ -11,6 +11,7 @@ import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
 import { flattenToAppURL, addAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
+import cx from 'classnames';
 
 /**
  * View Accordion block class.
@@ -58,7 +59,7 @@ const AccordionView = ({ data, block }) => {
                 </div>
               )}
             </div>
-            <Row>
+            <Row className={cx({ center: data.alignCards })}>
               {data.subblocks.map((subblock, index) => (
                 <Col lg="4" xl="3" key={subblock.id}>
                   <ViewBlock

@@ -38,6 +38,11 @@
       content: '';
     }
   }
+  .container {
+    .row.center {
+      justify-content: center;
+    }
+  }
 
   .block-header {
     .title {
