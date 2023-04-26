@@ -2,7 +2,7 @@
   "name": "design-comuni-plone-theme",
   "description": "Volto Theme for Italia design guidelines",
   "license": "MIT",
-  "version": "8.0.0-alpha.25",
+  "version": "8.0.0-alpha.27",
   "addons": [
     "@plone-collective/volto-sentry",
     "volto-multilingual-widget",
@@ -181,7 +181,7 @@
     "@eeacms/volto-taxonomy": "^1.0.0",
     "@loadable/babel-plugin": "5.13.2",
     "@plone-collective/volto-sentry": "0.3.0",
-    "@plone/volto": "16.18.0",
+    "@plone/volto": "16.20.4",
     "bootstrap-italia": "2.2.0",
     "classnames": "^2.3.2",
     "design-react-kit": "italia/design-react-kit#fc9b40257ba3cb613141faf217f1f5b806489740",
