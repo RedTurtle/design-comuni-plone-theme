@@ -56,12 +56,18 @@ class Edit extends SubblocksEdit {
       return <div />;
     }
 
+    if (!this.props.data.bg_color) {
+      this.props.data.bg_color = 'primary';
+    }
+
     return (
       <div className="public-ui">
         <div className="full-width section py-5">
           {this.props.data.background?.[0] ? (
             <div
-              className="background-image"
+              className={cx('background-image', {
+                [this.props.data.bg_color]: this.props.data.bg_color,
+              })}
               style={{
                 backgroundImage: `url(${
                   this.props.data.background[0]?.image?.scales?.huge
@@ -71,7 +77,11 @@ class Edit extends SubblocksEdit {
               }}
             ></div>
           ) : (
-            <div className="background-image"></div>
+            <div
+              className={cx('background-image', {
+                [this.props.data.bg_color]: this.props.data.bg_color,
+              })}
+            ></div>
           )}
 
           <Container className="px-md-4">

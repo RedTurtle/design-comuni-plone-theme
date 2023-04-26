@@ -27,7 +27,9 @@ const AccordionView = ({ data, block }) => {
         <div className="full-width section py-5">
           {data.background?.[0] ? (
             <div
-              className="background-image"
+              className={cx('background-image', {
+                [data.bg_color]: data.bg_color,
+              })}
               style={{
                 backgroundImage: `url(${
                   data.background[0]?.image?.scales?.huge?.download ??
@@ -36,7 +38,11 @@ const AccordionView = ({ data, block }) => {
               }}
             ></div>
           ) : (
-            <div className="background-image"></div>
+            <div
+              className={cx('background-image', {
+                [data.bg_color]: data.bg_color,
+              })}
+            ></div>
           )}
           <Container className="px-md-4">
             <div className="block-header">

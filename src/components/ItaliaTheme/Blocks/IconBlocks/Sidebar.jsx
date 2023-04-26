@@ -11,6 +11,7 @@ import {
   ObjectBrowserWidget,
   CheckboxWidget,
 } from '@plone/volto/components';
+import { ColorListWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
 
@@ -37,6 +38,22 @@ const messages = defineMessages({
     id: 'alignCards',
     defaultMessage: 'Centrare i card',
   },
+  bg_color: {
+    id: 'bg_color',
+    defaultMessage: 'Colore di sfondo',
+  },
+  color_primary: {
+    id: 'color_primary',
+    defaultMessage: 'Primario',
+  },
+  color_secondary: {
+    id: 'color_primary',
+    defaultMessage: 'Primario',
+  },
+  color_transparent: {
+    id: 'color_transparent',
+    defaultMessage: 'Trasparente',
+  },
 });
 
 const Sidebar = ({
@@ -49,6 +66,17 @@ const Sidebar = ({
   openObjectBrowser,
 }) => {
   const intl = useIntl();
+
+  const bg_colors = [
+    {
+      name: 'transparent',
+      label: intl.formatMessage(messages.color_transparent),
+    },
+    { name: 'primary', label: intl.formatMessage(messages.color_primary) },
+    { name: 'secondary', label: intl.formatMessage(messages.color_secondary) },
+  ];
+
+  console.log(data.bg_color);
 
   return (
     <Segment.Group raised>
@@ -82,6 +110,18 @@ const Sidebar = ({
             onChange={(name, checked) => {
               onChangeBlock(block, { ...data, [name]: checked });
             }}
+          />
+          <ColorListWidget
+            id="bg_color"
+            title={intl.formatMessage(messages.bg_color)}
+            value={data.bg_color}
+            onChange={(id, value) => {
+              onChangeBlock(block, {
+                ...data,
+                [id]: value,
+              });
+            }}
+            colors={bg_colors}
           />
           <TextWidget
             id="linkMoreTitle"
