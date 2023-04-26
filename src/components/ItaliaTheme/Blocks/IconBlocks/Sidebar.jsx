@@ -76,8 +76,6 @@ const Sidebar = ({
     { name: 'secondary', label: intl.formatMessage(messages.color_secondary) },
   ];
 
-  console.log(data.bg_color);
-
   return (
     <Segment.Group raised>
       <header className="header pulled">

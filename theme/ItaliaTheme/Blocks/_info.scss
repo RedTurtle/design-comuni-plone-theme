@@ -1,0 +1,121 @@
+.public-ui {
+  .block.infoblock,
+  .infoblock {
+    .bg-alert-warning-orange,
+    .bg-alert-warning {
+      color: $black;
+      .public-DraftEditorPlaceholder-inner {
+        color: $black;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $black;
+      }
+
+      a {
+        color: $black;
+      }
+    }
+    .bg-alert-danger {
+      border: solid 2px #a32219;
+      color: $black;
+      svg.icon {
+        fill: #a32219;
+      }
+      &.bg-color-true {
+        background-color: #a32219;
+        color: #fff;
+        .public-DraftEditorPlaceholder-inner {
+          color: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          color: #fff;
+        }
+
+        a {
+          color: #fff;
+        }
+        svg.icon {
+          fill: #fff;
+        }
+      }
+
+      .public-DraftEditorPlaceholder-inner {
+        color: $black;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $black;
+      }
+
+      a {
+        color: $black;
+      }
+    }
+
+    .bg-alert-warning-orange {
+      border: solid 2px #eb973f;
+      svg.icon {
+        fill: #eb973f;
+      }
+      &.bg-color-true {
+        background-color: #eb973f;
+      }
+    }
+
+    .bg-alert-warning {
+      border: solid 2px #f0c250;
+
+      &.bg-color-true {
+        background-color: #f0c250;
+      }
+    }
+
+    .DraftEditor-root {
+      background: none;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    img.left-image {
+      max-width: 80%;
+      object-fit: unset;
+    }
+
+    .image-col {
+      text-align: center;
+    }
+
+    div + h3,
+    p + h3,
+    h3 + div,
+    h3 + p {
+      margin-top: 1.33rem;
+    }
+
+    div + h2,
+    p + h2,
+    h2 + div,
+    h2 + p {
+      margin-top: 1rem;
+    }
+  }
+}

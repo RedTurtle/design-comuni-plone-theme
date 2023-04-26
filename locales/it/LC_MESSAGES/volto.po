@@ -26,9 +26,9 @@ msgid "Add accordion item"
 msgstr "Aggiungi un elemento"
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Alert
+# defaultMessage: Blocco alert
 msgid "Alert"
-msgstr "Alert"
+msgstr "Blocco alert"
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Allow Externals
@@ -80,6 +80,11 @@ msgstr ""
 msgid "Cartella modulistica"
 msgstr "Cartella modulistica"
 
+#: config/Blocks/ListingOptions/defaultOptions
+# defaultMessage: Centrare i card
+msgid "Center block cards"
+msgstr "Centrare i card"
+
 #: components/ItaliaTheme/Header/HeaderSearch/HeaderSearch
 # defaultMessage: Cerca
 msgid "Cerca"
@@ -111,21 +116,6 @@ msgstr "Clicca qui per sostituire il file"
 # defaultMessage: Colore
 msgid "Color"
 msgstr "Colore"
-
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Rosso
-msgid "Color_danger"
-msgstr "Rosso"
-
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Giallo
-msgid "Color_warning"
-msgstr "Giallo"
-
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Arancione
-msgid "Color_warning_orange"
-msgstr "Arancione"
 
 #: components/ItaliaTheme/View/EventoView/EventoContatti
 # defaultMessage: Contatti
@@ -283,6 +273,11 @@ msgstr ""
 msgid "In this section"
 msgstr "In questa sezione"
 
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Blocco informazione
+msgid "Info"
+msgstr "Blocco informazione"
+
 #: components/ItaliaTheme/Blocks/CountDown/Edit
 # defaultMessage: Inserisci il testo…
 msgid "Inserisci il testo…"
@@ -377,7 +372,6 @@ msgstr "Mostra i filtri per percorso"
 
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
 #: components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar
-#: config/Blocks/ListingOptions/defaultOptions
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Mostra lo sfondo del blocco
 msgid "Mostra lo sfondo del blocco"
@@ -590,7 +584,6 @@ msgid "Title placeholder"
 msgstr "Titolo..."
 
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
-#: config/Blocks/ListingOptions/defaultOptions
 # defaultMessage: Titolo
 msgid "Titolo"
 msgstr "Titolo"
@@ -735,6 +728,11 @@ msgstr "Vedi azioni"
 # defaultMessage: Vai alla ricerca per sezioni avanzata
 msgid "advandedSectionsFilters"
 msgstr ""
+
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Centrare i card
+msgid "alignCards"
+msgstr "Centrare i card"
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Tutto
@@ -1061,6 +1059,8 @@ msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Colore di sfondo
 msgid "bg_color"
 msgstr "Colore di sfondo"
@@ -1070,10 +1070,10 @@ msgstr "Colore di sfondo"
 msgid "biografia"
 msgstr "Biografia"
 
-#: config/Blocks/ListingOptions/defaultOptions
-# defaultMessage: Colore di sfondo
-msgid "block_bg_color"
-msgstr "Colore di sfondo"
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Colore
+msgid "border_color"
+msgstr "Colore"
 
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
 # defaultMessage: Calendario
@@ -1109,6 +1109,11 @@ msgstr "Seleziona l'immagine da mostrare"
 # defaultMessage: Mostra l'immagine
 msgid "cardImageEnable"
 msgstr "Mostra l'immagine"
+
+#: config/Blocks/ListingOptions/defaultOptions
+# defaultMessage: Colore di sfondo
+msgid "card_bg_color"
+msgstr "Colore di sfondo"
 
 #: components/ItaliaTheme/Blocks/Listing/CardWithSlideUpTextTemplate
 #: components/ItaliaTheme/Blocks/Listing/TemplatesSkeletons/CardWithSlideUpTextTemplateSkeleton
@@ -1179,16 +1184,36 @@ msgstr "chiudi"
 msgid "closeSearch"
 msgstr "Chiudi ricerca"
 
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Rosso
+msgid "color_danger"
+msgstr "Rosso"
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Arancione
+msgid "color_orange"
+msgstr "Arancione"
+
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 # defaultMessage: Primario
 msgid "color_primary"
 msgstr "Colore primario"
 
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 # defaultMessage: Trasparente
 msgid "color_transparent"
 msgstr "Trasparente"
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Giallo
+msgid "color_warning"
+msgstr "Giallo"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioComeAccedere
 # defaultMessage: Come si fa
@@ -2089,11 +2114,6 @@ msgstr "Link utili"
 # defaultMessage: Questo evento ha più date: vedi tutte
 msgid "listing_event_recurrence_label"
 msgstr "Questo evento ha più date: vedi tutte"
-
-#: config/Blocks/ListingOptions/defaultOptions
-# defaultMessage: Colore dell'elemento
-msgid "listing_items_color"
-msgstr "Colore dell'elemento"
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Block/ViewBlock
 #: components/ItaliaTheme/View/Commons/EmbeddedVideo
