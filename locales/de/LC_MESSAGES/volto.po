@@ -40,11 +40,6 @@ msgstr ""
 msgid "Add accordion item"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Blocco alert
-msgid "Alert"
-msgstr ""
-
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Allow Externals
 msgid "Allow Externals"
@@ -286,11 +281,6 @@ msgstr ""
 #: components/ItaliaTheme/View/PageView/PageView
 # defaultMessage: In questa sezione
 msgid "In this section"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Info/Sidebar
-# defaultMessage: Blocco informazione
-msgid "Info"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/CountDown/Edit
@@ -1083,6 +1073,16 @@ msgstr ""
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Biografia
 msgid "biografia"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Blocco alert
+msgid "blocco_alert"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Blocco informazioni
+msgid "blocco_info"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Info/Sidebar

@@ -25,11 +25,6 @@ msgstr "Login to your personal area"
 msgid "Add accordion item"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Blocco alert
-msgid "Alert"
-msgstr ""
-
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Allow Externals
 msgid "Allow Externals"
@@ -272,11 +267,6 @@ msgstr "Cookies settings"
 # defaultMessage: In questa sezione
 msgid "In this section"
 msgstr "In this section"
-
-#: components/ItaliaTheme/Blocks/Info/Sidebar
-# defaultMessage: Blocco informazione
-msgid "Info"
-msgstr ""
 
 #: components/ItaliaTheme/Blocks/CountDown/Edit
 # defaultMessage: Inserisci il testo…
@@ -1069,6 +1059,16 @@ msgstr ""
 # defaultMessage: Biografia
 msgid "biografia"
 msgstr "Biography"
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Blocco alert
+msgid "blocco_alert"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Blocco informazioni
+msgid "blocco_info"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Colore

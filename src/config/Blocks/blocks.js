@@ -9,7 +9,7 @@ import alertSVG from '@plone/volto/icons/alert.svg';
 import AlertView from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Alert/View';
 import AlertEdit from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Alert/Edit';
 
-import infoSVG from '@plone/volto/icons/alert.svg';
+import infoSVG from '@plone/volto/icons/info.svg';
 import InfoView from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Info/View';
 import InfoEdit from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Info/Edit';
 
@@ -212,7 +212,7 @@ const italiaBlocks = {
 
   info: {
     id: 'info',
-    title: 'Info',
+    title: 'Informazioni',
     icon: infoSVG,
     group: 'text',
     view: InfoView,

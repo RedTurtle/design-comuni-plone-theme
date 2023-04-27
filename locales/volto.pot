@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-04-26T13:45:10.282Z\n"
+"POT-Creation-Date: 2023-04-27T07:59:08.112Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -25,11 +25,6 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/VideoGallery/Edit
 # defaultMessage: Aggiungi elemento
 msgid "Add accordion item"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Blocco alert
-msgid "Alert"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
@@ -273,11 +268,6 @@ msgstr ""
 #: components/ItaliaTheme/View/PageView/PageView
 # defaultMessage: In questa sezione
 msgid "In this section"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Info/Sidebar
-# defaultMessage: Blocco informazione
-msgid "Info"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/CountDown/Edit
@@ -1070,6 +1060,16 @@ msgstr ""
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Biografia
 msgid "biografia"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Blocco alert
+msgid "blocco_alert"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Blocco informazioni
+msgid "blocco_info"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Info/Sidebar

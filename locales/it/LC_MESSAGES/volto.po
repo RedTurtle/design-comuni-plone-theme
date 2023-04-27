@@ -25,11 +25,6 @@ msgstr "Accedi all'area personale"
 msgid "Add accordion item"
 msgstr "Aggiungi un elemento"
 
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Blocco alert
-msgid "Alert"
-msgstr "Blocco alert"
-
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Allow Externals
 msgid "Allow Externals"
@@ -272,11 +267,6 @@ msgstr ""
 # defaultMessage: In questa sezione
 msgid "In this section"
 msgstr "In questa sezione"
-
-#: components/ItaliaTheme/Blocks/Info/Sidebar
-# defaultMessage: Blocco informazione
-msgid "Info"
-msgstr "Blocco informazione"
 
 #: components/ItaliaTheme/Blocks/CountDown/Edit
 # defaultMessage: Inserisci il testo…
@@ -1069,6 +1059,16 @@ msgstr "Colore di sfondo"
 # defaultMessage: Biografia
 msgid "biografia"
 msgstr "Biografia"
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Blocco alert
+msgid "blocco_alert"
+msgstr "Blocco alert"
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Blocco informazioni
+msgid "blocco_info"
+msgstr "Blocco informazioni"
 
 #: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Colore

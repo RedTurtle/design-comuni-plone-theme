@@ -55,7 +55,7 @@ class Sidebar extends Component {
       <Segment.Group raised>
         <header className="header pulled">
           <h2>
-            <FormattedMessage id="Alert" defaultMessage="Blocco alert" />
+            <FormattedMessage id="blocco_alert" defaultMessage="Blocco alert" />
           </h2>
         </header>
 
