@@ -26,6 +26,7 @@ const CompleteBlockLinksTemplate = ({
   show_description = true,
   id_lighthouse,
   center_cards,
+  bg_card_color = 'secondary',
 }) => {
   return (
     <div className="complete-block-links-template">
@@ -45,7 +46,7 @@ const CompleteBlockLinksTemplate = ({
               <Col md="6" lg="3" key={item['@id']} className="col-item">
                 <Card
                   color=""
-                  className="card-bg rounded"
+                  className={cx('card-bg rounded', bg_card_color)}
                   noWrapper={false}
                   tag="div"
                 >
