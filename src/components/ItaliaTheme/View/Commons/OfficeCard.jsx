@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import Image from '@plone/volto/components/theme/Image/Image';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { ContactLink } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
@@ -18,7 +19,6 @@ import { ContactLink } from 'design-comuni-plone-theme/components/ItaliaTheme/Vi
 const OfficeCard = ({
   office,
   load_data = true,
-  extended,
   icon,
   children,
   margin_bottom = false,
@@ -104,15 +104,11 @@ const OfficeCard = ({
         {children && <div className="card-text">{children}</div>}
       </div>
       <div className="image-container">
-        {office_fo?.image_scales?.preview_image[0]?.scales?.preview
-          ?.download && (
-          <img
-            src={
-              office_fo.image_scales?.preview_image[0]?.scales?.preview.download
-            }
-            alt={office.id}
-            loading="lazy"
-            decoding="async"
+        {office_fo?.image_scales?.[office_fo?.image_field]?.[0] && (
+          <Image
+            image={office_fo.image_scales[office_fo.image_field][0]}
+            alt=""
+            responsive={false}
           />
         )}
       </div>
@@ -129,6 +125,5 @@ OfficeCard.propTypes = {
     title: PropTypes.string,
     review_state: PropTypes.string,
   }),
-  extended: PropTypes.bool,
   icon: PropTypes.string,
 };
