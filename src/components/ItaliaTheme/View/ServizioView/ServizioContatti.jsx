@@ -39,7 +39,6 @@ const ServizioContatti = ({ content }) => {
                 office={item}
                 load_data={false}
                 data-element="service-area"
-                view_servizio={true}
               />
             ))}
           </>
@@ -52,7 +51,6 @@ const ServizioContatti = ({ content }) => {
                 office={item}
                 load_data={false}
                 data-element="service-area"
-                view_servizio={true}
               />
             ))}
           </>

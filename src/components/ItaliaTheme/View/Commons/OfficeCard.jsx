@@ -7,10 +7,7 @@ import cx from 'classnames';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import {
-  RichText,
-  ContactLink,
-} from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { ContactLink } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 /**
  * OfficeCard view component class.
@@ -28,7 +25,6 @@ const OfficeCard = ({
   show_contacts = true,
   size,
   no_details = false,
-  view_servizio,
   ...rest
 }) => {
   const url = flattenToAppURL(office['@id']);
@@ -73,75 +69,38 @@ const OfficeCard = ({
         {show_contacts && office_fo?.sede?.length > 0 && (
           <div>
             {' '}
-            {office_fo?.sede?.map((sede) => {
+            {office_fo?.sede?.map((sede, i) => {
               return (
-                <div className="card-text">
+                <div className="card-text" key={i}>
                   {sede.street && <p>{sede.street}</p>}
                   {(sede.city || sede.zip_code) && (
                     <p>
                       {sede.zip_code} {sede.city}
                     </p>
                   )}
-                  {(sede.telefono || sede.email) && (
-                    <p>
-                      Telefono: <ContactLink tel={sede.telefono} label={true} />
-                      <br />
-                      Email: <ContactLink email={sede.email} label={true} />
-                    </p>
+                  {office_fo.contact_info?.map((el) =>
+                    el.value_punto_contatto?.map((pdc, i) => {
+                      if (pdc.pdc_type === 'telefono') {
+                        return (
+                          <div key={i}>
+                            <ContactLink tel={pdc.pdc_value} label={false} />
+                          </div>
+                        );
+                      } else if (pdc.pdc_type === 'email')
+                        return (
+                          <div key={i}>
+                            <ContactLink email={pdc.pdc_value} label={false} />
+                          </div>
+                        );
+                      return null;
+                    }),
                   )}
-
-                  {extended ? (
-                    <>
-                      <RichText
-                        serif={false}
-                        add_class="card-text"
-                        content={office_fo.sede.contact_info}
-                      />
-                    </>
-                  ) : null}
                 </div>
               );
             })}
           </div>
         )}
-        {view_servizio && (
-          <div className="contact-info">
-            {office_fo.street && (
-              <p className="card-text">{office_fo.street}</p>
-            )}
-            {office_fo.contact_info?.map((el) =>
-              el.value_punto_contatto?.map(
-                (pdc) =>
-                  pdc.pdc_type === 'telefono' && (
-                    <div>
-                      <a
-                        href={`tel:${pdc.pdc_value}`}
-                        className="card-link pdc"
-                      >
-                        {pdc.pdc_value}
-                      </a>
-                    </div>
-                  ),
-              ),
-            )}
 
-            {office_fo.contact_info?.map((el) =>
-              el.value_punto_contatto?.map(
-                (pdc) =>
-                  pdc.pdc_type === 'email' && (
-                    <div>
-                      <a
-                        href={`mailto:${pdc.pdc_value}`}
-                        className="card-link pdc"
-                      >
-                        {pdc.pdc_value}
-                      </a>
-                    </div>
-                  ),
-              ),
-            )}
-          </div>
-        )}
         {children && <div className="card-text">{children}</div>}
       </div>
       <div className="image-container">
