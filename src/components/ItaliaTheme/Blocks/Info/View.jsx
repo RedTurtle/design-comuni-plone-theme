@@ -42,7 +42,7 @@ const View = ({ data, pathname }) => {
       >
         <Container>
           <Row className="align-items-start">
-            <Col sm={2} className="pb-3 image-col">
+            <Col sm={1} className="pb-3 image-col">
               <Icon
                 className="left-image"
                 icon="it-info-circle"
