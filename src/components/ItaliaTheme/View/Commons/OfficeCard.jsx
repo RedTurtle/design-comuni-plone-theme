@@ -46,7 +46,6 @@ const OfficeCard = ({
   }, [url]);
 
   let office_fo = load_data ? officeContent?.[key]?.data : office;
-  console.log(office_fo);
 
   return office_fo ? (
     <div
