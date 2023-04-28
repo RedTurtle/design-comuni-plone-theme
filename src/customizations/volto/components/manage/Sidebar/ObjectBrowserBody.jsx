@@ -265,25 +265,40 @@ class ObjectBrowserBody extends Component {
           break;
       }
     };
-
+    let newData = { ...data };
     if (dataName) {
-      onChangeBlock(block, {
-        ...data,
+      newData = {
+        ...newData,
         [dataName]: url,
-      });
+      };
+      onChangeBlock(block, newData);
+      // Should use on blur
+      if (this.props.onBlur) {
+        this.props.onBlur(this.props.id, newData);
+      }
     } else if (this.props.onSelectItem) {
       this.props.onSelectItem(url, item);
     } else if (mode === 'image') {
-      onChangeBlock(block, {
-        ...data,
+      newData = {
+        ...newData,
         url: flattenToAppURL(item.getURL),
         alt: '',
-      });
+      };
+      onChangeBlock(block, newData);
+      // Should use on blur
+      if (this.props.onBlur) {
+        this.props.onBlur(this.props.id, newData);
+      }
     } else if (mode === 'link') {
-      onChangeBlock(block, {
-        ...data,
+      newData = {
+        ...newData,
         href: flattenToAppURL(url),
-      });
+      };
+      onChangeBlock(block, newData);
+      // Should use on blur
+      if (this.props.onBlur) {
+        this.props.onBlur(this.props.id, newData);
+      }
     }
     updateState(mode);
   };

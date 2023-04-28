@@ -15,6 +15,7 @@ import {
   ColorListWidget,
   PathFiltersWidget,
   LocationFiltersWidget,
+  CanaleDigitaleWidget,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const getItaliaWidgets = (config) => {
@@ -77,6 +78,7 @@ const getItaliaWidgets = (config) => {
         [],
       ),
       subsite_social_links: SubsiteSocialLinksWidget,
+      canale_digitale: (props) => <CanaleDigitaleWidget {...props} />,
     },
     widget: {
       ...config.widgets.widget,
