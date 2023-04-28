@@ -77,11 +77,9 @@
 
     img.left-image {
       object-fit: unset;
+      max-width: 80%;
       @media (min-width: #{map-get($grid-breakpoints, md)}) {
         &.size {
-          &-l {
-            max-height: 80%;
-          }
           &-m {
             max-width: 50%;
           }
