@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Segment } from 'semantic-ui-react';
 import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
-import { FileWidget, FormFieldWrapper } from '@plone/volto/components';
+import { FileWidget } from '@plone/volto/components';
 import { ColorListWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import ImageSizeWidget from '@plone/volto/components/manage/Widgets/ImageSizeWidget';
 
@@ -27,8 +27,8 @@ const messages = defineMessages({
     id: 'Image',
     defaultMessage: 'Immagine',
   },
-  size_image: {
-    id: 'size_image',
+  CardImageSize: {
+    id: 'CardImageSize',
     defaultMessage: 'Dimensione immagine',
   },
   CardImageSize: {
@@ -94,7 +94,7 @@ class Sidebar extends Component {
           />
           <ImageSizeWidget
             id="sizeImage"
-            title={this.props.intl.formatMessage(messages.size_image)}
+            title={this.props.intl.formatMessage(messages.CardImageSize)}
             onChange={(name, value) => {
               this.props.onChangeBlock(this.props.block, {
                 ...this.props.data,

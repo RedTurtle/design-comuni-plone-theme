@@ -80,6 +80,7 @@ msgstr ""
 msgid "CardImageRight"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
 # defaultMessage: Dimensione immagine
 msgid "CardImageSize"
