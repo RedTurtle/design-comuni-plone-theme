@@ -125,9 +125,10 @@
     flex-basis: 20%;
 
     img {
-      max-width: 67.56px;
+      max-width: 64px;
       height: 64px;
-      border-radius: 54px;
+      border-radius: 50%;
+      object-fit: cover;
     }
   }
 }

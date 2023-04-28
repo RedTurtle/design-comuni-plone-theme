@@ -106,6 +106,7 @@ const OfficeCard = ({
       <div className="image-container">
         {office_fo?.image_scales?.[office_fo?.image_field]?.[0] && (
           <Image
+            itemUrl={office_fo['@id']}
             image={office_fo.image_scales[office_fo.image_field][0]}
             alt=""
             responsive={false}
