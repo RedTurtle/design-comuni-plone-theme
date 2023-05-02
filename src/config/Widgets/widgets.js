@@ -78,7 +78,7 @@ const getItaliaWidgets = (config) => {
         [],
       ),
       subsite_social_links: SubsiteSocialLinksWidget,
-      canale_digitale: (props) => <CanaleDigitaleWidget {...props} />,
+      canale_digitale: CanaleDigitaleWidget,
     },
     widget: {
       ...config.widgets.widget,

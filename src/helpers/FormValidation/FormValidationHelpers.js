@@ -1,4 +1,4 @@
-import { isEmpty, keys, filter } from 'lodash';
+import { isEmpty, filter } from 'lodash';
 
 export const blocksFieldIsEmpty = (field) => {
   return (

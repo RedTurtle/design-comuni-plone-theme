@@ -2,6 +2,10 @@
  * ObjectBrowserWidget component.
  * @module components/manage/Widgets/ObjectBrowserWidget
  */
+/*
+  CUSTOMIZATIONS
+  - Gestione e uso di props.onBlur nel widget
+*/
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';

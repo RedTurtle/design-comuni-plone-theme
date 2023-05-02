@@ -6,6 +6,7 @@
  * - Set initial search to current path instead of home '/'
  * - Fix searchable types in query applying selectableTypes from field config
  * - Use debounce in onSearch to keep requests low and avoid race conditions
+ * - Added use of props.onBlur function when selecting an item
  */
 
 import React, { Component } from 'react';
