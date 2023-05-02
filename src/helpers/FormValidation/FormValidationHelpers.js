@@ -126,6 +126,42 @@ export const serviceFormValidationHelper = (
         formData.canale_fisico = [];
       }
     }
+  } else if (isEmpty(touchedField)) {
+    if (!isEmpty(formData.canale_fisico)) {
+      fieldIsRequired(fields, 'canale_digitale') &&
+        removeRequiredField(fields, 'canale_digitale');
+      fieldIsRequired(fields, 'canale_digitale_link') &&
+        removeRequiredField(fields, 'canale_digitale_link');
+    } else {
+      if (
+        !blocksFieldIsEmpty(formData.canale_digitale) &&
+        isEmpty(formData.canale_digitale_link)
+      )
+        fields.push('canale_digitale_link');
+      else if (
+        blocksFieldIsEmpty(formData.canale_digitale) &&
+        !isEmpty(formData.canale_digitale_link)
+      )
+        fields.push('canale_digitale');
+      else if (
+        !blocksFieldIsEmpty(formData.canale_digitale) &&
+        !isEmpty(formData.canale_digitale_link)
+      ) {
+        fieldIsRequired(fields, 'canale_digitale') &&
+          removeRequiredField(fields, 'canale_digitale');
+        fieldIsRequired(fields, 'canale_digitale_link') &&
+          removeRequiredField(fields, 'canale_digitale_link');
+        fieldIsRequired(fields, 'canale_fisico') &&
+          removeRequiredField(fields, 'canale_fisico');
+      } else {
+        fields.push('canale_digitale');
+        fields.push('canale_digitale_link');
+        fields.push('canale_fisico');
+        // fix brutto ma efficace perche' formData non si aggiorna in tempo
+        // reale con il widget objectBrowser
+        formData.canale_fisico = [];
+      }
+    }
   }
 
   // Custom: Situazione custom per timeline tempi e scadenze del servizio
