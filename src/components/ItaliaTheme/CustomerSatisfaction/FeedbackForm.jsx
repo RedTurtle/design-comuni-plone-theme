@@ -13,7 +13,6 @@ import {
   CardHeader,
 } from 'design-react-kit';
 import {
-  getFeedbackFormByStep,
   getNumberOfSteps,
   getTranslatedQuestion,
   HoneypotWidget,
@@ -237,7 +236,11 @@ const FeedbackForm = ({ contentType }) => {
                         {/* {contentType === 'Servizio'
                           ? intl.formatMessage(messages.service_title)
                           : intl.formatMessage(messages.title)} */}
-                        {intl.formatMessage(messages.title)}
+
+                        {/* Aggiunto titolo per compatibilità modello AGID di io-cittadino */}
+                        {contentType === 'ModelloPratica'
+                          ? intl.formatMessage(messages.service_title)
+                          : intl.formatMessage(messages.title)}
                       </h2>
                       <div className="rating-container mb-0">
                         <Rating
