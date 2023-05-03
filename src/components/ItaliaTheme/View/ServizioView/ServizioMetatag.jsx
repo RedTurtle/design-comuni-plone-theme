@@ -4,23 +4,6 @@ import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
 const ServizioMetatag = ({ content }) => {
   const siteTitle = getSiteProperty('siteTitle');
 
-  // const [prova, setProva] = useState([]);
-  // console.log(prova);
-
-  // const coperturaGeografica = [];
-  // const coperturaGeograficaData =
-  //   content.copertura_geografica.blocks_layout.items.reduce((array, item) => {
-  //     if (content.copertura_geografica.blocks[item]['@type'] === 'text') {
-  //       coperturaGeografica.push(
-  //         content.copertura_geografica.blocks[item].text.blocks[0].text,
-  //       );
-  //       return coperturaGeografica;
-  //     } else return null;
-  //   }, coperturaGeografica);
-
-  // console.log(content.copertura_geografica);
-  const fields = { copertura_geografica: [] };
-
   const fieldDataToPlainText = (field) => {
     return field.blocks_layout.items.reduce((accumulator, item, index) => {
       if (field.blocks[item]['@type'] === 'text') {
