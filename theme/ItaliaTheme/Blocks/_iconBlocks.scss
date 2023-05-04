@@ -47,7 +47,12 @@
     }
   }
   .container {
-    &.secondary,
+    &.secondary {
+      .title,
+      .description {
+        color: $secondary-text;
+      }
+    }
     &.transparent {
       .title,
       .description {
