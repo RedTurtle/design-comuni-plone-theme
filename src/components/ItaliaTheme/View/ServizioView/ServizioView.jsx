@@ -48,7 +48,7 @@ export const ServizioViewSectionsOrder = (props) => [
     props: { position: 'documentBody' },
   },
 
-  { /* A CHI È RIVOLTO */ component: ServizioMetatag },
+  { /* METADATI SCHEMA.ORG */ component: ServizioMetatag },
 
   { /* A CHI È RIVOLTO */ component: ServizioAChiSiRivolge },
 
