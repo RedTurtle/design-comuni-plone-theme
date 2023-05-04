@@ -6,7 +6,6 @@ import configureStore from 'redux-mock-store';
 import { Provider } from 'react-intl-redux';
 import { MemoryRouter } from 'react-router-dom';
 import thunk from 'redux-thunk';
-import config from '@plone/volto/registry';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -18,11 +17,9 @@ const store = mockStore({
   },
 });
 
-const DOMAIN_TEST_URL = 'https://v3.io-comune.redturtle.it/api';
-
 const mockedBrain = {
   '@id':
-    'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing',
+    'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing',
   '@type': 'Event',
   CreationDate: '2023-03-15T14:48:25+00:00',
   Creator: 'admin',
@@ -60,7 +57,7 @@ const mockedBrain = {
   getPath: '/Plone/test-martina/evento-test-rotto-nei-listing',
   getRemoteUrl: null,
   getURL:
-    'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing',
+    'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing',
   hasPreviewImage: true,
   head_title: null,
   icona: null,
@@ -69,79 +66,79 @@ const mockedBrain = {
     scales: {
       gallery: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/gallery',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/gallery',
         height: 65536,
         width: 250,
       },
       great: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/great',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/great',
         height: 65536,
         width: 1200,
       },
       huge: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/huge',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/huge',
         height: 65536,
         width: 1600,
       },
       icon: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/icon',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/icon',
         height: 32,
         width: 32,
       },
       large: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/large',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/large',
         height: 65536,
         width: 800,
       },
       larger: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/larger',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/larger',
         height: 65536,
         width: 1000,
       },
       listing: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/listing',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/listing',
         height: 16,
         width: 16,
       },
       midi: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/midi',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/midi',
         height: 65536,
         width: 300,
       },
       mini: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/mini',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/mini',
         height: 65536,
         width: 200,
       },
       preview: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/preview',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/preview',
         height: 65536,
         width: 400,
       },
       teaser: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/teaser',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/teaser',
         height: 65536,
         width: 600,
       },
       thumb: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/thumb',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/thumb',
         height: 65536,
         width: 128,
       },
       tile: {
         download:
-          'https://v3.io-comune.redturtle.it/api/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/tile',
+          'http://localhost:3000/Plone/test-martina/evento-test-rotto-nei-listing/@@images/preview_image/tile',
         height: 64,
         width: 64,
       },
@@ -317,7 +314,7 @@ const mockedBrain = {
   nav_title: null,
   open_end: false,
   parent: {
-    '@id': 'https://v3.io-comune.redturtle.it/api/test-martina',
+    '@id': 'http://localhost:3000/Plone/test-martina',
     UID: 'f1aa63e84b4249b1b5851328ffd53f44',
     title: 'Test Martina',
   },
@@ -331,7 +328,7 @@ const mockedBrain = {
   sync_uid: '8304fd7c157d454fbb42af4cf76546f5@v3.io-comune.redturtle.it',
   tassonomia_argomenti: [
     {
-      '@id': 'https://v3.io-comune.redturtle.it/api/argomenti/comune',
+      '@id': 'http://localhost:3000/Plone/argomenti/comune',
       '@type': 'Pagina Argomento',
       CreationDate: '2022-01-10T06:26:48+00:00',
       Creator: 'admin',
@@ -368,7 +365,7 @@ const mockedBrain = {
       getObjSize: null,
       getPath: '/Plone/argomenti/comune',
       getRemoteUrl: null,
-      getURL: 'https://v3.io-comune.redturtle.it/api/argomenti/comune',
+      getURL: 'http://localhost:3000/Plone/argomenti/comune',
       hasPreviewImage: null,
       head_title: null,
       icona: 'building',
@@ -444,7 +441,7 @@ const mockedBrain = {
 
 const mockedSummary = {
   '@id':
-    'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini',
+    'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini',
   '@type': 'Persona',
   description: '',
   design_italia_meta_type: 'Persona pubblica',
@@ -457,85 +454,85 @@ const mockedSummary = {
       {
         'content-type': 'image/jpeg',
         download:
-          'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-424-b5ca77428064e1494bf321665ea28e65.jpeg',
+          'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-424-b5ca77428064e1494bf321665ea28e65.jpeg',
         filename: 'mickeyeyes.jpg',
         height: 369,
         scales: {
           gallery: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-250-cbac351505afca6dfd08fd706050cedb.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-250-cbac351505afca6dfd08fd706050cedb.jpeg',
             height: 217,
             width: 250,
           },
           great: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-1200-c0a82d1866ff2d08a6c048bc7b7b1ca1.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-1200-c0a82d1866ff2d08a6c048bc7b7b1ca1.jpeg',
             height: 369,
             width: 424,
           },
           huge: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-1600-3e45bb6dd52ae834965cda9e0718e475.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-1600-3e45bb6dd52ae834965cda9e0718e475.jpeg',
             height: 369,
             width: 424,
           },
           icon: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-32-36eebaae69826152f529b5385311744f.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-32-36eebaae69826152f529b5385311744f.jpeg',
             height: 27,
             width: 32,
           },
           large: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-800-4c19436e19a37296cdaf002d10affcd5.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-800-4c19436e19a37296cdaf002d10affcd5.jpeg',
             height: 369,
             width: 424,
           },
           larger: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-1000-736981d81319b5425ccdfec2963ebf80.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-1000-736981d81319b5425ccdfec2963ebf80.jpeg',
             height: 369,
             width: 424,
           },
           listing: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-16-5f902255ae498b09dbfa7b899ccd7392.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-16-5f902255ae498b09dbfa7b899ccd7392.jpeg',
             height: 13,
             width: 16,
           },
           midi: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-300-65c648fc61aff577a05b3f18ed2819ad.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-300-65c648fc61aff577a05b3f18ed2819ad.jpeg',
             height: 261,
             width: 300,
           },
           mini: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-200-ed95556be4df5284dfd93e123e4c5d94.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-200-ed95556be4df5284dfd93e123e4c5d94.jpeg',
             height: 174,
             width: 200,
           },
           preview: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-400-bd95cd2ce1f2bfcb0c9c6402f79f69cc.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-400-bd95cd2ce1f2bfcb0c9c6402f79f69cc.jpeg',
             height: 348,
             width: 400,
           },
           teaser: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-600-265c5da771163e59cf6282fbb473624e.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-600-265c5da771163e59cf6282fbb473624e.jpeg',
             height: 369,
             width: 424,
           },
           thumb: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-128-49a659bc174e4f7dfa87caeea577e2d7.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-128-49a659bc174e4f7dfa87caeea577e2d7.jpeg',
             height: 111,
             width: 128,
           },
           tile: {
             download:
-              'https://v3.io-comune.redturtle.it/api/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-64-9cc01bcb6a84f82987d0a64f24c6e3ab.jpeg',
+              'http://localhost:3000/Plone/amministrazione/personale-amministrativo/monica-rossini/@@images/foto_persona-64-9cc01bcb6a84f82987d0a64f24c6e3ab.jpeg',
             height: 55,
             width: 64,
           },
