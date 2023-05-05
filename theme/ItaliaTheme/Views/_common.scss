@@ -191,7 +191,7 @@ div.sticky-wrapper {
         padding-bottom: 42px;
 
         border-right: 1px solid currentColor;
-        color: $gray-secondary;
+        color: $secondary;
 
         content: counter(inst);
 
@@ -208,7 +208,7 @@ div.sticky-wrapper {
         width: 9px;
         height: 9px;
         border-radius: 50%;
-        background-color: $gray-secondary;
+        background-color: $secondary;
 
         content: '';
       }
