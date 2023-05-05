@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     padding: 3.5rem 2.5rem;
-    background-color: $secondary;
+    background-color: $gray-secondary;
     color: $secondary-text;
 
     &.full-width {
@@ -40,7 +40,7 @@
         &:hover,
         &:focus {
           background: $secondary-text;
-          color: $secondary;
+          color: $gray-secondary;
         }
       }
 
