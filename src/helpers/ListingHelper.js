@@ -4,11 +4,15 @@ import { useIntl, defineMessages } from 'react-intl';
 
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
-import { viewDate } from 'design-comuni-plone-theme/helpers';
+import {
+  viewDate,
+  getRealStartAndEndWithRecurrence,
+} from 'design-comuni-plone-theme/helpers';
 import {
   getCalendarDate_extend,
   getEventRecurrenceMore_extend,
 } from 'design-comuni-plone-theme/helpers/ListingHelper_extend';
+import { rrulestr } from 'rrule';
 
 const messages = defineMessages({
   from: {
@@ -39,10 +43,24 @@ export const getCalendarDate = (item) => {
   let ret = null;
   switch (item['@type']) {
     case 'Event':
+      let realStart = item.start;
+      let realEnd = item.end;
+      if (item.recurrence) {
+        const _start = item.start && viewDate(intl.locale, item.start);
+        const recurrenceDates = getRealStartAndEndWithRecurrence(
+          intl.locale,
+          _start,
+          item.recurrence,
+          rrulestr,
+          intl,
+        );
+        realStart = recurrenceDates.recurrenceStart;
+        realEnd = recurrenceDates.recurrenceEnd;
+      }
       ret = (
         <When
-          start={item.start}
-          end={item.end}
+          start={realStart}
+          end={realEnd}
           whole_day={item.whole_day}
           open_end={item.open_end}
           start_label={intl.formatMessage(messages.from)}
