@@ -645,6 +645,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/plugin-proposal-throw-expressions@npm:7.18.6":
+  version: 7.18.6
+  resolution: "@babel/plugin-proposal-throw-expressions@npm:7.18.6"
+  dependencies:
+    "@babel/helper-plugin-utils": ^7.18.6
+    "@babel/plugin-syntax-throw-expressions": ^7.18.6
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: 327e4e7d6ed5c47208da8d525c65138a49ce46e6b4126467c4127f82dacaa8bc1e89dd364902ff4eac7209f31810f0f163cdec0cf8df1819e5b61e7bd4f5cffa
+  languageName: node
+  linkType: hard
+
 "@babel/plugin-proposal-unicode-property-regex@npm:^7.18.6, @babel/plugin-proposal-unicode-property-regex@npm:^7.4.4":
   version: 7.18.6
   resolution: "@babel/plugin-proposal-unicode-property-regex@npm:7.18.6"
@@ -841,6 +853,17 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: b317174783e6e96029b743ccff2a67d63d38756876e7e5d0ba53a322e38d9ca452c13354a57de1ad476b4c066dbae699e0ca157441da611117a47af88985ecda
+  languageName: node
+  linkType: hard
+
+"@babel/plugin-syntax-throw-expressions@npm:^7.18.6":
+  version: 7.18.6
+  resolution: "@babel/plugin-syntax-throw-expressions@npm:7.18.6"
+  dependencies:
+    "@babel/helper-plugin-utils": ^7.18.6
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: 9b7bac75fb7ef9e87f593132bb231527f54ecb56709bd3a55a8c07ec5066c5fa81574b46e2b29d2868898824f95aee113103fa4b7dba9a587c755e3263c1b1c2
   languageName: node
   linkType: hard
 
@@ -3951,6 +3974,7 @@ __metadata:
   dependencies:
     "@babel/core": 7.19.6
     "@babel/plugin-proposal-export-default-from": 7.18.9
+    "@babel/plugin-proposal-throw-expressions": 7.18.6
     "@commitlint/cli": ^12.0.0
     "@commitlint/config-conventional": ^12.0.0
     "@eeacms/volto-taxonomy": ^1.0.0
