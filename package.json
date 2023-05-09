@@ -108,14 +108,8 @@
     "node": "^14 || ^16"
   },
   "dependencies": {
-    "@babel/plugin-proposal-export-default-from": "7.18.9",
-    "@babel/plugin-proposal-export-namespace-from": "7.18.9",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "7.18.6",
-    "@babel/plugin-proposal-throw-expressions": "7.18.6",
     "@eeacms/volto-taxonomy": "^1.0.0",
-    "@loadable/babel-plugin": "5.13.2",
     "@plone-collective/volto-sentry": "0.3.0",
-    "@plone/volto": "16.20.4",
     "bootstrap-italia": "2.2.0",
     "classnames": "^2.3.2",
     "design-react-kit": "italia/design-react-kit#fc9b40257ba3cb613141faf217f1f5b806489740",
@@ -126,6 +120,8 @@
     "react-select": "^4.3.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "1.8.1",
+    "svg-inline-loader": "^0.8.2",
+    "svg-inline-react": "^3.2.1",
     "typeface-lora": "0.0.72",
     "typeface-roboto-mono": "0.0.75",
     "typeface-titillium-web": "0.0.72",
@@ -144,7 +140,8 @@
     "volto-subblocks": "2.0.0",
     "volto-subfooter": "3.0.0",
     "volto-subsites": "4.0.0",
-    "volto-venue": "4.0.2"
+    "volto-venue": "4.0.2",
+    "webpack-image-resize-loader": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.19.6",
@@ -159,10 +156,7 @@
     "release-it": "^14.6.1",
     "stylelint-config-idiomatic-order": "^9.0.0",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-prettier": "^2.0.0",
-    "svg-inline-loader": "^0.8.2",
-    "svg-inline-react": "^3.2.1",
-    "webpack-image-resize-loader": "^5.0.0"
+    "stylelint-prettier": "^2.0.0"
   },
   "resolutions": {
     "moment": "2.29.3",
