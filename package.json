@@ -158,6 +158,9 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-prettier": "^2.0.0"
   },
+  "peerDependencies": {
+    "@plone/volto": "16.20.4"
+  },
   "resolutions": {
     "moment": "2.29.3",
     "lodash": "4.17.21"
