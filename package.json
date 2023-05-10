@@ -32,9 +32,6 @@
     "@eeacms/volto-taxonomy",
     "volto-feedback"
   ],
-  "customizationPaths": [
-    "src/customizations/"
-  ],
   "scripts": {
     "prepare": "husky install",
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
