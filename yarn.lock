@@ -3993,7 +3993,6 @@ __metadata:
     "@plone-collective/volto-sentry": 0.3.0
     "@plone/scripts": "*"
     "@release-it/conventional-changelog": ^2.0.1
-    babel-preset-razzle: 4.2.17
     bootstrap-italia: 2.2.0
     classnames: ^2.3.2
     design-react-kit: "italia/design-react-kit#fc9b40257ba3cb613141faf217f1f5b806489740"

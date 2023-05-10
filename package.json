@@ -149,7 +149,6 @@
     "@commitlint/config-conventional": "^12.0.0",
     "@plone/scripts": "*",
     "@release-it/conventional-changelog": "^2.0.1",
-    "babel-preset-razzle": "4.2.17",
     "eslint-plugin-prettier": "^3.4.1",
     "husky": "8.0.2",
     "lint-staged": "13.0.3",
