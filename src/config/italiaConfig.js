@@ -390,7 +390,10 @@ export default function applyConfig(voltoConfig) {
 
   // TOC block anchors not working, customizing tocEntry
   // to also return draftJS block id
-
+  config.settings.slate = {
+    ...(config.settings.slate ?? {}),
+    topLevelTargetElements: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+  };
   config.blocks.blocksConfig.text = {
     ...config.blocks.blocksConfig.text,
     tocEntry: (block = {}) => {
