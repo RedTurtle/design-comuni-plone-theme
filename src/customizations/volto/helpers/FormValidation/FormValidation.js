@@ -7,6 +7,11 @@
  */
 import { map, uniq, keys, intersection, isEmpty, filter } from 'lodash';
 import { messages } from '@plone/volto/helpers/MessageLabels/MessageLabels';
+import {
+  serviceFormValidationHelper,
+  blocksFieldIsEmpty,
+  getRealEmptyField,
+} from 'design-comuni-plone-theme/helpers';
 
 /**
  * Will return the intl message if invalid
@@ -210,87 +215,46 @@ const validateRequiredFields = (
       schema.required.slice()
     : intersection(schema.required, keys(touchedField));
 
-  // Custom: Situazione custom per stato del servizio
-  if (
-    formData.stato_servizio &&
-    (isEmpty(touchedField) || 'motivo_stato_servizio' in touchedField)
-  ) {
-    fields.push('motivo_stato_servizio');
-  }
-
-  // Custom: Situazione custom per timeline tempi e scadenze del servizio
-  // if (
-  //   formData.timeline_tempi_scadenze &&
-  //   (isEmpty(touchedField) || 'timeline_tempi_scadenze' in touchedField)
-  // ) {
-  //   fields.push('timeline_tempi_scadenze');
-  // }
-
-  map(fields, (requiredField) => {
+  serviceFormValidationHelper(schema, formData, touchedField, fields);
+  const uniqueFields = uniq(fields);
+  map(uniqueFields, (requiredField) => {
     const type = schema.properties[requiredField]?.type;
     const widget = schema.properties[requiredField]?.widget;
-    let isEmpty = !formData[requiredField];
-    if (!isEmpty) {
+    let isEmptyField = getRealEmptyField(
+      formData,
+      touchedField,
+      requiredField,
+      type,
+      widget,
+    );
+    if (!isEmptyField) {
       if (type === 'array') {
         // Custom: Supporto alla validazione dei campi DataGridField
         if (widget === 'data_grid') {
           const dgfFields = schema.properties[requiredField]?.items;
           const dgfRequiredFields = dgfFields?.required;
           const dgfData = formData[requiredField];
-          isEmpty =
+          isEmptyField =
             dgfRequiredFields.filter((dgfRequiredField) =>
               dgfData.some((dgfField) => !!!dgfField[dgfRequiredField]),
             )?.length > 0;
         } else {
-          isEmpty = formData[requiredField]
+          isEmptyField = formData[requiredField]
             ? formData[requiredField].length === 0
             : true;
         }
-      } else if (type === 'string' && widget === 'richtext') {
-        isEmpty = !(
-          formData[requiredField]?.data?.replace(/(<([^>]+)>)/g, '').length > 0
-        );
-      } else if (type === 'dict' && widget === 'blocks') {
-        // Custom: gestione del campo di tipo blocks
-        const field = formData[requiredField];
-        const firstBlock = field.blocks_layout?.items?.[0];
-        isEmpty =
-          // se non ci sono blocchi (improbabile)
-          firstBlock === undefined ||
-          // se non c'è alcun blocco di testo o tabella che contenga testo
-          filter(field.blocks, (block) => {
-            if (block['@type'] === 'text') {
-              return !!block.text?.blocks.filter((block) => !!block.text.trim())
-                .length;
-            }
-            if (block['@type'] === 'table') {
-              return (
-                // se non ci sono righe che hanno almeno una cella che contenga testo
-                !!block.table.rows.filter(
-                  (row) =>
-                    row.cells.filter(
-                      (cell) =>
-                        cell.value.blocks.filter((block) => !!block.text.trim())
-                          .length > 0,
-                    ).length > 0,
-                ).length
-              );
-            }
-            return false;
-          }).length === 0;
       }
     }
     if (
       schema.properties[requiredField] &&
       schema.properties[requiredField].type !== 'boolean' &&
       !schema.properties[requiredField].readonly &&
-      isEmpty
+      isEmptyField
     ) {
       errors[requiredField] = [];
       errors[requiredField].push(formatMessage(messages.required));
     }
   });
-
   return errors;
 };
 /**
