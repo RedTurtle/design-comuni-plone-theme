@@ -54,11 +54,11 @@
   .slick-arrow {
     width: 1.5rem;
     height: auto;
-    color: transparentize($secondary, 0.6);
+    color: transparentize($gray-secondary, 0.6);
 
     &:hover,
     &:focus {
-      color: transparentize($secondary, 0.3);
+      color: transparentize($gray-secondary, 0.3);
     }
 
     &.slick-next {
@@ -113,9 +113,7 @@
 
   .calendar-item {
     .calendar-type {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
+      font-size: 0.9rem;
     }
 
     .scadenza_message {

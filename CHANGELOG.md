@@ -1,3 +1,37 @@
+## [8.0.0-alpha.31](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.30...v8.0.0-alpha.31) (2023-05-11)
+
+
+### Bug Fixes
+
+* changed secondary variable to gray-secondary or primary ([#155](https://github.com/RedTurtle/design-comuni-plone-theme/issues/155)) ([9e43bfa](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9e43bfae0050b29a8e91b15d87db8c672a02c5cd))
+* more tolerant check in persona view ([4b36c50](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4b36c506f48112f8a2db202a6342bb4128d910c2))
+* Object browser not updating formData, validation fails ([#158](https://github.com/RedTurtle/design-comuni-plone-theme/issues/158)) ([aba4490](https://github.com/RedTurtle/design-comuni-plone-theme/commit/aba4490f702d1e80314036eb4f4a1596f2a094aa))
+* service schema.org data-element ([24df03f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/24df03f12b6868200c1f4fd6b7798ff19384a4bd))
+* service schema.org serviceUrl nesting ([20e1357](https://github.com/RedTurtle/design-comuni-plone-theme/commit/20e1357f323a3cb59c0460e040600d984bb958cc))
+* service schema.org url and area ([5622eac](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5622eac53d3a039a288a9c439da58a990e399585))
+* toc block not working ([#160](https://github.com/RedTurtle/design-comuni-plone-theme/issues/160)) ([91026ed](https://github.com/RedTurtle/design-comuni-plone-theme/commit/91026edecea142d752ff47f0878d3789d1aea7d0))
+
+
+### Maintenance
+
+* test-acceptance-server ([51853f0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/51853f03c074a267b95571f912d4db769d32f45f))
+
+## [8.0.0-alpha.30](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.29...v8.0.0-alpha.30) (2023-05-04)
+
+
+### Features
+
+* added custom validation for CT Servizio 'Accedere al servizio' section ([#144](https://github.com/RedTurtle/design-comuni-plone-theme/issues/144)) ([4918407](https://github.com/RedTurtle/design-comuni-plone-theme/commit/49184076f05851b3491f03e6669a359deab8088c))
+* added schema.org metadata for ct servizio ([#151](https://github.com/RedTurtle/design-comuni-plone-theme/issues/151)) ([c3d4ff0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c3d4ff088140a2c83eea1f759be809a30b6439b0))
+* updated customerSatisfaction with ModelloPratica condition ([#145](https://github.com/RedTurtle/design-comuni-plone-theme/issues/145)) ([010071a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/010071aa8a8898bbf79ad990d7883f6dbb9544fd))
+
+
+### Bug Fixes
+
+* blocks copy/paste logic ([#146](https://github.com/RedTurtle/design-comuni-plone-theme/issues/146)) ([59caffd](https://github.com/RedTurtle/design-comuni-plone-theme/commit/59caffdfce28fd14cc4859338240c772aab8d1a1))
+* duplicate feedback form title ([2569199](https://github.com/RedTurtle/design-comuni-plone-theme/commit/256919978b9ec34d75fbfc2e5a3631a03f64df66))
+* percorso raddoppiato immagini ([#153](https://github.com/RedTurtle/design-comuni-plone-theme/issues/153)) ([18e9f8a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/18e9f8aa1a49a570d5e308bafe7fbd718f06de37))
+
 ## [8.0.0-alpha.29](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.28...v8.0.0-alpha.29) (2023-04-28)
 
 
