@@ -1,3 +1,30 @@
+## [8.0.0-alpha.32](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.31...v8.0.0-alpha.32) (2023-05-14)
+
+
+### Bug Fixes
+
+* fixed title of events in calendar block ([#165](https://github.com/RedTurtle/design-comuni-plone-theme/issues/165)) ([5e73f79](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5e73f792839ba9fd1b9a16b120c258e2e807de9c))
+* progress bar calculation in ct views ([#135](https://github.com/RedTurtle/design-comuni-plone-theme/issues/135)) ([efc5e9c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/efc5e9c866f1d97f3241da068a3ff9ee629ecb04))
+* style of Rss card without image ([#168](https://github.com/RedTurtle/design-comuni-plone-theme/issues/168)) ([ae2673f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ae2673f8d6a13adb591f676696369b80f6cdaafe))
+
+## [8.0.0-alpha.31](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.30...v8.0.0-alpha.31) (2023-05-11)
+
+
+### Bug Fixes
+
+* changed secondary variable to gray-secondary or primary ([#155](https://github.com/RedTurtle/design-comuni-plone-theme/issues/155)) ([9e43bfa](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9e43bfae0050b29a8e91b15d87db8c672a02c5cd))
+* more tolerant check in persona view ([4b36c50](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4b36c506f48112f8a2db202a6342bb4128d910c2))
+* Object browser not updating formData, validation fails ([#158](https://github.com/RedTurtle/design-comuni-plone-theme/issues/158)) ([aba4490](https://github.com/RedTurtle/design-comuni-plone-theme/commit/aba4490f702d1e80314036eb4f4a1596f2a094aa))
+* service schema.org data-element ([24df03f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/24df03f12b6868200c1f4fd6b7798ff19384a4bd))
+* service schema.org serviceUrl nesting ([20e1357](https://github.com/RedTurtle/design-comuni-plone-theme/commit/20e1357f323a3cb59c0460e040600d984bb958cc))
+* service schema.org url and area ([5622eac](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5622eac53d3a039a288a9c439da58a990e399585))
+* toc block not working ([#160](https://github.com/RedTurtle/design-comuni-plone-theme/issues/160)) ([91026ed](https://github.com/RedTurtle/design-comuni-plone-theme/commit/91026edecea142d752ff47f0878d3789d1aea7d0))
+
+
+### Maintenance
+
+* test-acceptance-server ([51853f0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/51853f03c074a267b95571f912d4db769d32f45f))
+
 ## [8.0.0-alpha.30](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.29...v8.0.0-alpha.30) (2023-05-04)
 
 
