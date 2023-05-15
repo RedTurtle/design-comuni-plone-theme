@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
@@ -72,41 +73,47 @@ const Item = ({ day, path, query, inEditMode }) => {
       <div>
         <hr />
         {calendarDayResults[day] ? (
-          calendarDayResults[day].items[day]?.map((item, index) => (
-            <div key={index} className="calendar-item">
-              <div className="ps-3">
-                <div>{item?.type}</div>
-                <span className="calendar-type">
-                  <ConditionalLink
-                    condition={!inEditMode}
-                    href={flattenToAppURL(item['@id'] || '')}
-                  >
-                    {item.title}
-                  </ConditionalLink>
-                </span>
+          calendarDayResults[day].items[day]?.map((item, index) => {
+            return (
+              <div key={index} className="calendar-item">
+                <div className="ps-3">
+                  <div>{item?.type}</div>
+                  <div>{moment(item.start).format('HH:mm')}</div>
+                  <div className="calendar-type">
+                    <ConditionalLink
+                      condition={!inEditMode}
+                      href={flattenToAppURL(item['@id'] || '')}
+                    >
+                      {item.title}
+                    </ConditionalLink>
+                  </div>
 
-                {item.scadenza_domande_bando &&
-                  _day.diff(item.scadenza_domande_bando, 'day') === 0 && (
-                    <div className="scadenza_message">
-                      {intl.formatMessage(messages.scadenza_domande_bando)}
-                    </div>
-                  )}
-                {item.scadenza_bando &&
-                  _day.diff(item.scadenza_bando, 'day') === 0 && (
-                    <div className="scadenza_message">
-                      {intl.formatMessage(messages.scadenza_bando)}
-                    </div>
-                  )}
-                {item.chiusura_procedimento_bando &&
-                  _day.diff(item.chiusura_procedimento_bando, 'day') === 0 && (
-                    <div className="scadenza_message">
-                      {intl.formatMessage(messages.chiusura_procedimento_bando)}
-                    </div>
-                  )}
+                  {item.scadenza_domande_bando &&
+                    _day.diff(item.scadenza_domande_bando, 'day') === 0 && (
+                      <div className="scadenza_message">
+                        {intl.formatMessage(messages.scadenza_domande_bando)}
+                      </div>
+                    )}
+                  {item.scadenza_bando &&
+                    _day.diff(item.scadenza_bando, 'day') === 0 && (
+                      <div className="scadenza_message">
+                        {intl.formatMessage(messages.scadenza_bando)}
+                      </div>
+                    )}
+                  {item.chiusura_procedimento_bando &&
+                    _day.diff(item.chiusura_procedimento_bando, 'day') ===
+                      0 && (
+                      <div className="scadenza_message">
+                        {intl.formatMessage(
+                          messages.chiusura_procedimento_bando,
+                        )}
+                      </div>
+                    )}
+                </div>
+                <hr />
               </div>
-              <hr />
-            </div>
-          ))
+            );
+          })
         ) : (
           <div className="d-flex justify-content-center">
             <Spinner active />
