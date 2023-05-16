@@ -12,7 +12,6 @@ import {
   getCalendarDate_extend,
   getEventRecurrenceMore_extend,
 } from 'design-comuni-plone-theme/helpers/ListingHelper_extend';
-import { rrulestr } from 'rrule';
 
 const messages = defineMessages({
   from: {
@@ -34,7 +33,7 @@ const Intl = () => {
   return intl;
 };
 
-export const getCalendarDate = (item) => {
+export const getCalendarDate = (item, rrulestr) => {
   const intl = Intl();
   const effective = item.effective && (
     <span>{viewDate(intl.locale, item.effective, 'll')}</span>
