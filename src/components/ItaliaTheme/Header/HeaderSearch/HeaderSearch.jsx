@@ -37,12 +37,10 @@ const HeaderSearch = () => {
           <Icon icon="it-search" />
         </a>
       </div>
-      {showSearchModal && (
-        <SearchModal
-          show={showSearchModal}
-          closeModal={() => setShowSearchModal(false)}
-        />
-      )}
+      <SearchModal
+        show={showSearchModal}
+        closeModal={() => setShowSearchModal(false)}
+      />
     </>
   );
 };
