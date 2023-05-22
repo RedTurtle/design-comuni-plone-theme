@@ -23,6 +23,7 @@ import CardWithoutImageRssTemplateSkeleton from 'design-comuni-plone-theme/compo
 import {
   AnswersStep,
   CommentsStep,
+  LoginAgid,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import HandleAnchor from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HandleAnchor';
@@ -172,9 +173,9 @@ export default function applyConfig(voltoConfig) {
       subsiteParentSiteTitle: 'io-Comune', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome del sito padre', 'en':'Parent site name'}. Se multilingua il default è comunque la stringa.
       amministrazioneTrasparenteUrl: '/amministrazione-trasparente',
       showNextGenerationEU: true,
-      // arLoginUrl: '/login',
-      // arLogoutUrl: '/logout',
-      //spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
+      // arLoginUrl: '/login?e=1',
+      // arLogoutUrl: '/logout?e=1',
+      // spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
       headerslimTertiaryMenu: {
         it: [
           //{ title: 'Contatti', url: '/it/contatti' },
@@ -238,12 +239,9 @@ export default function applyConfig(voltoConfig) {
     ],
     'volto-blocks-widget': {
       allowedBlocks: [
-        'text',
-        'image',
-        'video',
-        'html',
-        'table',
-        'maps',
+        ...config.settings['volto-blocks-widget'].allowedBlocks.filter(
+          (block) => block.id !== 'maps',
+        ),
         'break',
         'testo_riquadro_semplice',
         'testo_riquadro_immagine',
@@ -435,6 +433,10 @@ export default function applyConfig(voltoConfig) {
     {
       path: '/**/search',
       component: Search,
+    },
+    {
+      path: ['/login', '/**/login'],
+      component: LoginAgid,
     },
   ];
 
