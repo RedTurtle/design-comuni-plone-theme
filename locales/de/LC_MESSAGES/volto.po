@@ -1788,6 +1788,11 @@ msgstr ""
 msgid "event_documenti"
 msgstr ""
 
+#: helpers/FormValidation/FormValidationHelpers
+# defaultMessage: Non è possibile indicare una data di fine precedente a quella di inizio
+msgid "event_end"
+msgstr "Sie können kein Enddatum angeben, das vor dem Startdatum liegt"
+
 #: components/ItaliaTheme/Blocks/EventSearch/Edit
 #: components/ItaliaTheme/Blocks/UOSearch/Edit
 # defaultMessage: Nessun filtro da mostrare. Seleziona i filtri di ricerca da mostrare dalla sidebar laterale.
