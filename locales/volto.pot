@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-05-22T09:55:42.726Z\n"
+"POT-Creation-Date: 2023-05-22T10:23:47.155Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1776,7 +1776,7 @@ msgid "event_documenti"
 msgstr ""
 
 #: helpers/FormValidation/FormValidationHelpers
-# defaultMessage: Non è possibile indicare una data di fine precedente a quella di inizio
+# defaultMessage: La data di fine deve essere successiva alla data di inizio
 msgid "event_end"
 msgstr ""
 

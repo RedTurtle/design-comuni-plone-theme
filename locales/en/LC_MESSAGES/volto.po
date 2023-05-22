@@ -1774,7 +1774,7 @@ msgid "event_documenti"
 msgstr "Documents"
 
 #: helpers/FormValidation/FormValidationHelpers
-# defaultMessage: Non è possibile indicare una data di fine precedente a quella di inizio
+# defaultMessage: La data di fine deve essere successiva alla data di inizio
 msgid "event_end"
 msgstr "You cannot specify an end date prior to the start date."
 

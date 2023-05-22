@@ -5,7 +5,7 @@ const customValidationMessages = defineMessages({
   event_end: {
     id: 'event_end',
     defaultMessage:
-      'Non è possibile indicare una data di fine precedente a quella di inizio',
+      'La data di fine deve essere successiva alla data di inizio',
   },
 });
 
