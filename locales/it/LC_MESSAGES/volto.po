@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+#: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
 # defaultMessage: Accedi all'area personale
 msgid "Accedi all'area personale"
 msgstr "Accedi all'area personale"
@@ -317,6 +317,11 @@ msgstr "Titolo per il link ad altro"
 # defaultMessage: Sto caricando la pagina richiesta...
 msgid "Loading page..."
 msgstr "Sto caricando la pagina richiesta..."
+
+#: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
+# defaultMessage: Esci
+msgid "Logout"
+msgstr "Esci"
 
 #: config/Views/views
 # defaultMessage: Luogo
@@ -661,7 +666,7 @@ msgstr "Video gallery"
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: You are trying to access a protected resource, please {login} first.
 msgid "You are trying to access a protected resource, please {login} first."
-msgstr "Stai provando ad accedere ad una risorsa protetta, per favore fai prima il {login}."
+msgstr "Stai provando ad accedere ad una risorsa protetta, per favore {login} al sito."
 
 #: components/ItaliaTheme/View/EventoView/EventoCosE
 # defaultMessage: A chi è rivolto
@@ -752,11 +757,6 @@ msgstr "Apertura del bando"
 # defaultMessage: APPStore Link
 msgid "appStoreLink"
 msgstr "APPStore Link"
-
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
-# defaultMessage: Esci
-msgid "arLogout"
-msgstr "Logout"
 
 #: components/ItaliaTheme/Blocks/Listing/serviziAmministrazioneTrasparenteTemplate
 #: helpers/amministrazioneTrasparenteHelper
@@ -2216,20 +2216,53 @@ msgstr "Luoghi"
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: log in
 msgid "log in"
-msgstr "Log in"
+msgstr "accedi"
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: or login as an administrator
-msgid "login_admin_message"
-msgstr "oppure accedi come amministratore del sito"
+#: components/ItaliaTheme/LoginAgid/LoginAgid
+# defaultMessage: Log in
+msgid "login_agid"
+msgstr "Accedi"
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: login with Spid
-msgid "login_spid_message"
-msgstr "login con Spid"
+#: components/ItaliaTheme/LoginAgid/LoginAgid
+# defaultMessage: To access the site and its services, use one of the following methods.
+msgid "login_agid_description"
+msgstr "Per accedere al sito a ai suoi servizi, utilizza una delle seguenti modalità."
 
+#: components/ItaliaTheme/LoginAgid/LoginAgid
 #: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: Login with Spid
+# defaultMessage: Other users
+msgid "login_agid_other"
+msgstr "Altre utenze"
+
+#: components/ItaliaTheme/LoginAgid/LoginAgid
+#: components/ItaliaTheme/Unauthorized/Unauthorized
+# defaultMessage: Alternatively you can use these methods.
+msgid "login_agid_other_description"
+msgstr "In alternativa puoi utilizzare le seguenti modalità."
+
+#: components/ItaliaTheme/LoginAgid/LoginAgid
+#: components/ItaliaTheme/Unauthorized/Unauthorized
+# defaultMessage: Log in as employee
+msgid "login_plone_user"
+msgstr "Accesso operatore"
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: SPID
+msgid "login_spid"
+msgstr "SPID"
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: Log in with SPID, the public digital identity system.
+msgid "login_spid_description"
+msgstr "Accedi con SPID, il sistema Pubblico di Identità Digitale."
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: How to activate SPID
+msgid "login_spid_help"
+msgstr "Come attivare SPID"
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: Login with SPID
 msgid "login_with_spid"
 msgstr "Accedi con Spid"
 
@@ -3673,6 +3706,11 @@ msgstr "Ufficio responsabile"
 # defaultMessage: Ulteriori informazioni
 msgid "ulteriori_informazioni"
 msgstr "Ulteriori informazioni"
+
+#: components/ItaliaTheme/Unauthorized/Unauthorized
+# defaultMessage: You are trying to access a protected resource, please login first.
+msgid "unauthorized_description"
+msgstr "Stai provando ad accedere ad una risorsa protetta, per favore accedi al sito."
 
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: unità operativa
