@@ -38,45 +38,46 @@ const EventoUlterioriInformazioni = ({ content }) => {
   );
 
   return (
-    <Metadata content={content} showSectionTitle={showSectionTitle}>
-      {richTextHasContent(content?.ulteriori_informazioni) && (
-        <HelpBox text={content?.ulteriori_informazioni} />
-      )}
+    // <Metadata content={content} showSectionTitle={showSectionTitle}>
+    //   {richTextHasContent(content?.ulteriori_informazioni) && (
+    //     <HelpBox text={content?.ulteriori_informazioni} />
+    //   )}
 
-      {content?.event_url && (
-        <div className="mt-4">
-          <h5>{intl.formatMessage(messages.event_url)}</h5>
-          <UniversalLink href={content.event_url}>
-            {content.event_url}
-          </UniversalLink>
-        </div>
-      )}
+    //   {content?.event_url && (
+    //     <div className="mt-4">
+    //       <h5>{intl.formatMessage(messages.event_url)}</h5>
+    //       <UniversalLink href={content.event_url}>
+    //         {content.event_url}
+    //       </UniversalLink>
+    //     </div>
+    //   )}
 
-      {content?.patrocinato_da && (
-        <div className="mt-4">
-          <h5>{intl.formatMessage(messages.patrocinato_da)}</h5>
-          {content.patrocinato_da}
-        </div>
-      )}
+    //   {content?.patrocinato_da && (
+    //     <div className="mt-4">
+    //       <h5>{intl.formatMessage(messages.patrocinato_da)}</h5>
+    //       {content.patrocinato_da}
+    //     </div>
+    //   )}
 
-      {content?.strutture_politiche.length > 0 && (
-        <div className="mt-4">
-          <h5>{intl.formatMessage(messages.strutture_politiche)}</h5>
-          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
-            {content.strutture_politiche.map((item, i) => (
-              <GenericCard
-                key={i}
-                index={item['@id']}
-                item={item}
-                showimage={false}
-                showDescription={false}
-              />
-            ))}
-          </div>
-        </div>
-      )}
-      <div className="mt-4"></div>
-    </Metadata>
+    //   {content?.strutture_politiche.length > 0 && (
+    //     <div className="mt-4">
+    //       <h5>{intl.formatMessage(messages.strutture_politiche)}</h5>
+    //       <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+    //         {content.strutture_politiche.map((item, i) => (
+    //           <GenericCard
+    //             key={i}
+    //             index={item['@id']}
+    //             item={item}
+    //             showimage={false}
+    //             showDescription={false}
+    //           />
+    //         ))}
+    //       </div>
+    //     </div>
+    //   )}
+    //   <div className="mt-4"></div>
+    // </Metadata>
+    <div>ciao</div>
   );
 };
 
