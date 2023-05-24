@@ -51,7 +51,7 @@ const Metadata = ({
           {title || intl.formatMessage(messages.other_info)}
         </h4>
       )}
-      {children}
+
       <p className="text-serif mb-0 mt-4">
         {intl.formatMessage(messages.modified)}
       </p>
