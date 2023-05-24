@@ -78,12 +78,12 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
       <div className="point-list-wrapper my-4 mb-5">
         <div className="point-list">
           <div className="point-list-aside point-list-warning">
-            <div className="point-date text-monospace">
+            <span className="point-date text-monospace">
               {start.format('DD')}
-            </div>
-            <div className="point-month text-monospace">
+            </span>
+            <span className="point-month text-monospace">
               {start.format('MMMM')}
-            </div>
+            </span>
           </div>
           <div className="point-list-content">
             <Card
@@ -92,7 +92,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
               tag="div"
             >
               <CardBody tag="div" className={'card-body'}>
-                <CardTitle tag="h5">
+                <CardTitle tag="p">
                   {!wholeDay && `${start.format('HH:mm')} - `}
                   {intl.formatMessage(messages.start)}
                 </CardTitle>
@@ -122,7 +122,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
                 tag="div"
               >
                 <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="h5">
+                  <CardTitle tag="p">
                     {!content.whole_day && `${end.format('HH:mm')} - `}
                     {intl.formatMessage(messages.end)}
                   </CardTitle>
