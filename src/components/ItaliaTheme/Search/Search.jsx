@@ -494,6 +494,7 @@ const Search = () => {
                       size="small"
                       onClick={() => setAdvFiltersOpen(!advFiltersOpen)}
                       className="justify-content-start w-100 pl-2"
+                      aria-expanded={advFiltersOpen}
                     >
                       <Icon
                         icon={advFiltersOpen ? 'it-minus' : 'it-plus'}
