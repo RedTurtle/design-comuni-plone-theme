@@ -1,8 +1,5 @@
 import { defineMessages } from 'react-intl';
-import {
-  addSchemaField,
-  addDefaultAdditionalOptions,
-} from '@italia/config/Blocks/ListingOptions';
+import { addSchemaField } from '@italia/config/Blocks/ListingOptions';
 
 import config from '@plone/volto/registry';
 
@@ -44,7 +41,9 @@ const addDefaultOptions = (schema, formData, intl, position = 0) => {
     config.blocks.blocksConfig?.listing?.listing_items_colors || [];
   let listing_bg_colors =
     config.blocks.blocksConfig?.listing?.listing_bg_colors || [];
+
   let pos = position;
+
   addSchemaField(
     schema,
     'title',
@@ -54,6 +53,7 @@ const addDefaultOptions = (schema, formData, intl, position = 0) => {
     pos,
   );
   pos++;
+
   if (listing_items_colors.length > 0) {
     addSchemaField(
       schema,
@@ -65,6 +65,7 @@ const addDefaultOptions = (schema, formData, intl, position = 0) => {
     );
     pos++;
   }
+
   if (
     formData.variation === 'simpleCard' ||
     formData.variation === 'completeBlockLinksTemplate' ||
@@ -93,6 +94,7 @@ const addDefaultOptions = (schema, formData, intl, position = 0) => {
     pos,
   );
   pos++;
+
   if (listing_bg_colors.length > 0) {
     addSchemaField(
       schema,
@@ -116,6 +118,7 @@ const addDefaultOptions = (schema, formData, intl, position = 0) => {
     );
   } */
   pos = addDefaultAdditionalOptions(schema, formData, intl, pos);
+
   return pos;
 };
 
