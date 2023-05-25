@@ -507,7 +507,10 @@ const Search = () => {
                         <h6 className="text-uppercase">
                           {intl.formatMessage(messages.content_types)}
                           {activePortalTypes > 0 && (
-                            <span className="badge badge-secondary ml-3">
+                            <span
+                              className="badge badge-secondary ml-3"
+                              aria-live="polite"
+                            >
                               {activePortalTypes}
                             </span>
                           )}
@@ -619,7 +622,7 @@ const Search = () => {
                   <div className="d-block ordering-widget">
                     <Row className="pb-3 border-bottom">
                       <Col xs={6} className="align-self-center">
-                        <p className="d-none d-lg-block">
+                        <p className="d-none d-lg-block" aria-live="polite">
                           {intl.formatMessage(messages.foundNResults, {
                             total: searchResults.result.items_total,
                           })}
