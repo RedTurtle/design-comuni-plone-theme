@@ -239,7 +239,7 @@ export default function applyConfig(voltoConfig) {
     ],
     'volto-blocks-widget': {
       allowedBlocks: [
-        ...config.settings['volto-blocks-widget'].allowedBlocks.filter(
+        ...(config.settings['volto-blocks-widget']?.allowedBlocks ?? []).filter(
           (block) => block.id !== 'maps',
         ),
         'break',
