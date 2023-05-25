@@ -21,7 +21,7 @@ export const italiaRoutes = [
  * @returns {array} Routes.
  */
 
-const filteredObject = defaultRoutes.filter(
+const filteredRoutes = defaultRoutes.filter(
   (item) => item.path !== '/contact-form',
 );
 
@@ -33,7 +33,7 @@ const routes = [
       ...italiaRoutes,
       ...(config.addonRoutes || []),
       ...((config.settings?.isMultilingual && multilingualRoutes) || []),
-      ...filteredObject,
+      ...filteredRoutes,
     ],
   },
 ];
