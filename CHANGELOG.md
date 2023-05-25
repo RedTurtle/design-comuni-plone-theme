@@ -1,3 +1,32 @@
+## [8.0.0-alpha.33](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.32...v8.0.0-alpha.33) (2023-05-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* added time field in calendar block, changed layout of date (#167)
+* rethink login process and improve unauthorized page (#113)
+
+### Features
+
+* added time field in calendar block, changed layout of date ([#167](https://github.com/RedTurtle/design-comuni-plone-theme/issues/167)) ([1908586](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1908586a78b55b4a29e6fb0c64c58a67360a70bf))
+* rethink login process and improve unauthorized page ([#113](https://github.com/RedTurtle/design-comuni-plone-theme/issues/113)) ([80c4777](https://github.com/RedTurtle/design-comuni-plone-theme/commit/80c4777ce6fc64def08a6fded6f14f9712ee6a18))
+
+
+### Bug Fixes
+
+* fixed site of ufficio_responsabile condition ([#169](https://github.com/RedTurtle/design-comuni-plone-theme/issues/169)) ([65c1eae](https://github.com/RedTurtle/design-comuni-plone-theme/commit/65c1eae889fb1ea8bcec7c2b2ca8f971bb2f7a18))
+* i18n ([d95f3b8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d95f3b8716d144bf6795c10af5ad616590c64f4a))
+* progress bar count ([#171](https://github.com/RedTurtle/design-comuni-plone-theme/issues/171)) ([66ed91a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/66ed91a6e288a570828d487ab736420fd4664a2d))
+
+## [8.0.0-alpha.32](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.31...v8.0.0-alpha.32) (2023-05-14)
+
+
+### Bug Fixes
+
+* fixed title of events in calendar block ([#165](https://github.com/RedTurtle/design-comuni-plone-theme/issues/165)) ([5e73f79](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5e73f792839ba9fd1b9a16b120c258e2e807de9c))
+* progress bar calculation in ct views ([#135](https://github.com/RedTurtle/design-comuni-plone-theme/issues/135)) ([efc5e9c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/efc5e9c866f1d97f3241da068a3ff9ee629ecb04))
+* style of Rss card without image ([#168](https://github.com/RedTurtle/design-comuni-plone-theme/issues/168)) ([ae2673f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ae2673f8d6a13adb591f676696369b80f6cdaafe))
+
 ## [8.0.0-alpha.31](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.30...v8.0.0-alpha.31) (2023-05-11)
 
 
