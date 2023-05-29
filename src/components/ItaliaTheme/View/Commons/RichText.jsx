@@ -15,7 +15,7 @@ const RichText = ({
   children,
   serif = true,
   lighthouseId = '',
-  context = null,
+  context,
 }) => {
   let content_to_display = RichTextRender({
     content: content,
