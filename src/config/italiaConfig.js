@@ -364,7 +364,7 @@ export default function applyConfig(voltoConfig) {
       restricted: true,
     },
   };
-
+  console.log(config.blocks);
   config.blocks = {
     ...config.blocks,
     blocksConfig: { ...config.blocks.blocksConfig, ...customBlocks },

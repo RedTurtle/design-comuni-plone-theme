@@ -9,6 +9,8 @@ import React, { createRef, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { getContent, getQueryStringResults } from '@plone/volto/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import useDeepCompareEffect from 'use-deep-compare-effect';
+import { flattenToAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
 import { setOriginalQuery } from 'design-comuni-plone-theme/actions';
@@ -52,6 +54,7 @@ const getAdaptedQuery = (querystring, b_size, variation) => {
 export default function withQuerystringResults(WrappedComponent) {
   function WithQuerystringResults(props) {
     const { data = {}, path, properties, isEditMode } = props; //properties: content,
+    console.log('prop', props);
     const content = useSelector((state) => state.content.data);
     const { settings } = config;
     const querystring = data.querystring || data; // For backwards compat with data saved before Blocks schema
@@ -71,11 +74,16 @@ export default function withQuerystringResults(WrappedComponent) {
     const [additionalFilters, setAdditionalFilters] = React.useState([]);
 
     const originalQuery = useSelector((state) => {
+      if (props?.variation?.['@type'] === 'search') {
+        return state.originalQuery?.[path]?.[data?.block];
+      }
       return state.originalQuery?.[properties['@id']]?.[
         data.block
       ]?.toArray?.();
     });
-
+    console.log('original query', originalQuery);
+    console.log('data.query', data.query);
+    console.log('additional filters', additionalFilters);
     const folderItems = content?.is_folderish ? content.items : [];
     const hasQuery = querystring?.query?.length > 0;
     const hasLoaded = hasQuery ? !querystringResults?.[block]?.loading : true;
@@ -131,20 +139,26 @@ export default function withQuerystringResults(WrappedComponent) {
 
     //set original query on loading component
     useEffect(() => {
+      let path = properties?.['@id'];
+      if (props?.variation?.['@type'] === 'search') {
+        path = flattenToAppURL(props?.path);
+      }
+
       if (
         !originalQuery &&
-        properties['@id'] &&
+        path &&
         data.block &&
         querystring.query?.length > 0
       ) {
         dispatch(
           setOriginalQuery(
-            properties['@id'],
+            path,
             data.block,
             JSON.parse(JSON.stringify(querystring.query)),
           ),
         );
       }
+
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -152,10 +166,12 @@ export default function withQuerystringResults(WrappedComponent) {
       setFirstLoading(false);
     }
 
-    useEffect(() => {
+    useDeepCompareEffect(() => {
       if (
-        hasQuery > 0 &&
-        (isEditMode || (!isEditMode && !querystringResults[block]?.loaded))
+        (hasQuery > 0 &&
+          (isEditMode ||
+            (!isEditMode && !querystringResults[block]?.loaded))) ||
+        (hasQuery > 0 && props.variation?.['@type'] === 'search')
       ) {
         doSearch(data);
       }
@@ -174,7 +190,7 @@ export default function withQuerystringResults(WrappedComponent) {
         });
       }
 
-      if (data.querystring?.query?.length > 0 || additionalFilters.length > 0) {
+      if (_dataQuerystring?.query?.length > 0 || additionalFilters.length > 0) {
         let query = [
           ...(originalQuery && additionalFilters.length > 0
             ? JSON.parse(JSON.stringify(originalQuery))
@@ -233,8 +249,8 @@ export default function withQuerystringResults(WrappedComponent) {
       }
     };
 
-    useEffect(() => {
-      if (!firstLoading) {
+    useDeepCompareEffect(() => {
+      if (!firstLoading && !loadingQuery) {
         doSearch(data);
       }
     }, [additionalFilters]);

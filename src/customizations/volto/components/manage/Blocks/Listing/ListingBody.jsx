@@ -37,14 +37,14 @@ const ListingBody = React.memo(
         listingRef,
         additionalFilters,
       } = props;
-
+      console.log('listing body props', props);
       let ListingBodyTemplate;
       let templateConfig;
       // Legacy support if template is present
       const variations =
         config.blocks?.blocksConfig['listing']?.variations || [];
       const defaultVariation = variations.filter((item) => item.isDefault)?.[0];
-
+      console.log(data.template, data.variation);
       if (data.template && !data.variation) {
         let legacyTemplateConfig = variations.find(
           (item) => item.id === data.template,
@@ -61,9 +61,11 @@ const ListingBody = React.memo(
       }
 
       const SkeletonTemplate = templateConfig.skeleton || Skeleton;
-
+      console.log(properties);
       const getBackgroundClass = () => {
-        const block = properties.blocks[data.block];
+        const block = !variation
+          ? properties?.blocks?.[data?.block]
+          : variation;
 
         if (!block?.show_block_bg) return '';
 
@@ -84,11 +86,12 @@ const ListingBody = React.memo(
 
         return `${bg_color} ${items_color}`;
       };
+      const listingBodyProps = !variation ? data : variation;
       return (
         <div className="public-ui">
           {loadingQuery && (
             <div className={`full-width ${getBlockClasses()}`} ref={listingRef}>
-              <SkeletonTemplate {...data} />
+              <SkeletonTemplate {...listingBodyProps} />
             </div>
           )}
           {!loadingQuery &&
@@ -97,7 +100,7 @@ const ListingBody = React.memo(
               <ListingBodyTemplate
                 items={listingItems}
                 isEditMode={isEditMode}
-                {...data}
+                {...listingBodyProps}
                 addFilters={addFilters}
                 additionalFilters={additionalFilters}
                 items_total={itemsTotal}

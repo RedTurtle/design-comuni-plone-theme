@@ -48,7 +48,7 @@ const addDefaultOptions = (schema, formData, intl, position = 0) => {
   );
   pos++;
 
-  if (formData.title) {
+  if (formData?.title) {
     addSchemaField(
       schema,
       'titleLine',
