@@ -10,19 +10,19 @@ import { RichTextRender } from 'design-comuni-plone-theme/components/ItaliaTheme
 const RichText = ({
   title,
   title_size = 'h5',
-  content,
+  data,
   add_class,
   children,
   serif = true,
   lighthouseId = '',
-  context,
+  content,
 }) => {
   let content_to_display = RichTextRender({
-    content: content,
-    add_class: add_class,
-    serif: serif,
+    data,
+    add_class,
+    serif,
     lighthouseId,
-    context,
+    content,
   });
 
   const Tag = title_size;
@@ -48,9 +48,9 @@ export default RichText;
 RichText.propTypes = {
   title: PropTypes.string,
   title_size: PropTypes.oneOf(['h2', 'h3', 'h4', 'h5', 'h6']),
-  content: PropTypes.object,
+  data: PropTypes.object,
   add_class: PropTypes.string,
   serif: PropTypes.bool,
   lighthouseId: PropTypes.string,
-  context: PropTypes.object,
+  content: PropTypes.object,
 };
