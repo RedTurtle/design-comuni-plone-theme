@@ -212,10 +212,10 @@ export default function applyConfig(voltoConfig) {
     },
     apiExpanders: [
       ...config.settings.apiExpanders,
-      // {
-      //   match: '',
-      //   GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
-      // },
+      {
+        match: '',
+        GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
+      },
     ],
     appExtras: [
       ...config.settings.appExtras,
@@ -272,6 +272,10 @@ export default function applyConfig(voltoConfig) {
     videoAllowExternalsDefault: false,
     showTrasparenzaFields: false,
   };
+
+  config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
+    (route) => route !== '/contact-form',
+  );
 
   /******************************************************************************
    * VIEWS

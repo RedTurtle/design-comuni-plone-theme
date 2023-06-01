@@ -20,7 +20,7 @@ const HelpBox = ({ text }) => {
       </CalloutTitle>
 
       <div>
-        <RichText content={text} />
+        <RichText data={text} />
       </div>
     </Callout>
   ) : null;
