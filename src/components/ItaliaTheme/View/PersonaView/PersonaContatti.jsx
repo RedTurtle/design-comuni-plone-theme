@@ -20,11 +20,9 @@ const PersonaContatti = ({ content }) => {
       title={intl.formatMessage(messages.contacts)}
       tag_id="contacts"
     >
-      <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
-        {content.contact_info.map((contact) => (
-          <ContactsCard contact={contact} key={contact['@id']} />
-        ))}
-      </div>
+      {content.contact_info.map((contact) => (
+        <ContactsCard contact={contact} key={contact['@id']} />
+      ))}
     </RichTextSection>
   ) : null;
 };
