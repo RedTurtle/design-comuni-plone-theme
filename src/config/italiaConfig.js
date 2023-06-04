@@ -168,9 +168,9 @@ export default function applyConfig(voltoConfig) {
       subsiteParentSiteTitle: 'io-Comune', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome del sito padre', 'en':'Parent site name'}. Se multilingua il default è comunque la stringa.
       amministrazioneTrasparenteUrl: '/amministrazione-trasparente',
       showNextGenerationEU: true,
-      // arLoginUrl: '/login',
-      // arLogoutUrl: '/logout',
-      //spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
+      // arLoginUrl: '/login?e=1',
+      // arLogoutUrl: '/logout?e=1',
+      // spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
       headerslimTertiaryMenu: {
         it: [
           //{ title: 'Contatti', url: '/it/contatti' },
@@ -212,10 +212,10 @@ export default function applyConfig(voltoConfig) {
     },
     apiExpanders: [
       ...config.settings.apiExpanders,
-      // {
-      //   match: '',
-      //   GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
-      // },
+      {
+        match: '',
+        GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
+      },
     ],
     appExtras: [
       ...config.settings.appExtras,
@@ -234,12 +234,9 @@ export default function applyConfig(voltoConfig) {
     ],
     'volto-blocks-widget': {
       allowedBlocks: [
-        'text',
-        'image',
-        'video',
-        'html',
-        'table',
-        'maps',
+        ...(config.settings['volto-blocks-widget']?.allowedBlocks ?? []).filter(
+          (block) => block.id !== 'maps',
+        ),
         'break',
         'testo_riquadro_semplice',
         'testo_riquadro_immagine',
@@ -275,6 +272,10 @@ export default function applyConfig(voltoConfig) {
     videoAllowExternalsDefault: false,
     showTrasparenzaFields: false,
   };
+
+  config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
+    (route) => route !== '/contact-form',
+  );
 
   /******************************************************************************
    * VIEWS

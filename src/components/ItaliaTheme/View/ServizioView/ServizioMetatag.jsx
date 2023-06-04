@@ -9,7 +9,7 @@ const ServizioMetatag = ({ content }) => {
     return field.blocks_layout.items.reduce((accumulator, item, index) => {
       if (field.blocks[item]['@type'] === 'text') {
         if (index > 0) accumulator += ' ';
-        accumulator += field.blocks[item].text.blocks[0].text;
+        accumulator += field.blocks[item].text?.blocks[0].text ?? '';
       }
       return accumulator;
     }, '');
@@ -60,7 +60,7 @@ const ServizioMetatag = ({ content }) => {
       name: content.ufficio_responsabile[0].title,
     };
 
-    if (content.ufficio_responsabile[0]?.sede[0]) {
+    if (content.ufficio_responsabile[0]?.sede?.[0]) {
       schemaOrg.availableChannel.serviceLocation.address = {
         '@type': 'PostalAddress',
         streetAddress: content.ufficio_responsabile[0].sede[0].street,

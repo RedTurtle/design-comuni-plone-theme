@@ -5,6 +5,7 @@
 
 import { App, Search } from '@plone/volto/components';
 import { defaultRoutes, multilingualRoutes } from '@plone/volto/routes';
+import { LoginAgid } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
 
 export const italiaRoutes = [
@@ -13,6 +14,10 @@ export const italiaRoutes = [
     path: '/**/search',
     component: Search,
   },
+  {
+    path: ['/login', '/**/login'],
+    component: LoginAgid,
+  },
 ];
 
 /**
@@ -20,6 +25,11 @@ export const italiaRoutes = [
  * @array
  * @returns {array} Routes.
  */
+
+const filteredRoutes = defaultRoutes.filter(
+  (item) => item.path !== '/contact-form',
+);
+
 const routes = [
   {
     path: '/',
@@ -28,7 +38,7 @@ const routes = [
       ...italiaRoutes,
       ...(config.addonRoutes || []),
       ...((config.settings?.isMultilingual && multilingualRoutes) || []),
-      ...defaultRoutes,
+      ...filteredRoutes,
     ],
   },
 ];

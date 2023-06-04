@@ -13,7 +13,7 @@ import {
   Row,
   Col,
 } from 'design-react-kit';
-
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { UniversalLink } from '@plone/volto/components';
 
 import { CardCategory } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -68,6 +68,7 @@ const SimpleCardTemplateDefault = (props) => {
     additionalFilters = [],
     id_lighthouse,
     linkmore_id_lighthouse,
+    rrule,
   } = props;
 
   let currentPathFilter = additionalFilters
@@ -177,7 +178,9 @@ const SimpleCardTemplateDefault = (props) => {
         {items.map((item, index) => {
           const icon = show_icon ? getItemIcon(item) : null;
           const itemTitle = item.title || item.id;
-          const date = hide_dates ? null : getCalendarDate(item);
+          const date = hide_dates
+            ? null
+            : getCalendarDate(item, rrule.rrulestr);
           const eventRecurrenceMore = hide_dates
             ? null
             : getEventRecurrenceMore(item, isEditMode);
@@ -222,12 +225,12 @@ const SimpleCardTemplateDefault = (props) => {
                     {(type === 'Modulo' || type === 'Documento') && (
                       <div className="document-date mt-3">
                         <strong>
-                          {intl.formatMessage(messages.publication_date)}
+                          {intl.formatMessage(messages.publication_date)}:{' '}
                         </strong>
                         {moment(item.CreationDate).format('DD-MM-YYYY')}
                         <br />
                         <strong>
-                          {intl.formatMessage(messages.update_date)}{' '}
+                          {intl.formatMessage(messages.update_date)}:{' '}
                         </strong>
                         {moment(item.modified).format('DD-MM-YYYY')}
                       </div>
@@ -245,6 +248,7 @@ const SimpleCardTemplateDefault = (props) => {
                       detail_link_label ||
                       intl.formatMessage(messages.card_detail_label)
                     }
+                    aria-hidden="true"
                   />
                 )}
               </CardBody>
@@ -271,4 +275,4 @@ SimpleCardTemplateDefault.propTypes = {
   linkHref: PropTypes.any,
 };
 
-export default SimpleCardTemplateDefault;
+export default injectLazyLibs(['rrule'])(SimpleCardTemplateDefault);

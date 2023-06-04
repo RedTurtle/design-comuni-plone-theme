@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
+#: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
 # defaultMessage: Accedi all'area personale
 msgid "Accedi all'area personale"
 msgstr "Login to your personal area"
@@ -317,6 +317,11 @@ msgstr ""
 # defaultMessage: Sto caricando la pagina richiesta...
 msgid "Loading page..."
 msgstr "Loading page..."
+
+#: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
+# defaultMessage: Esci
+msgid "Logout"
+msgstr ""
 
 #: config/Views/views
 # defaultMessage: Luogo
@@ -661,7 +666,7 @@ msgstr ""
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: You are trying to access a protected resource, please {login} first.
 msgid "You are trying to access a protected resource, please {login} first."
-msgstr ""
+msgstr "You are trying to access a protected resource, please {login} first."
 
 #: components/ItaliaTheme/View/EventoView/EventoCosE
 # defaultMessage: A chi è rivolto
@@ -752,11 +757,6 @@ msgstr "Opening date"
 # defaultMessage: APPStore Link
 msgid "appStoreLink"
 msgstr ""
-
-#: components/ItaliaTheme/Header/HeaderSlim/ArLogin
-# defaultMessage: Esci
-msgid "arLogout"
-msgstr "Logout"
 
 #: components/ItaliaTheme/Blocks/Listing/serviziAmministrazioneTrasparenteTemplate
 #: helpers/amministrazioneTrasparenteHelper
@@ -1773,6 +1773,11 @@ msgstr "The event is of interest to"
 msgid "event_documenti"
 msgstr "Documents"
 
+#: helpers/FormValidation/FormValidationHelpers
+# defaultMessage: La data di fine deve essere successiva alla data di inizio
+msgid "event_end"
+msgstr "You cannot specify an end date prior to the start date."
+
 #: components/ItaliaTheme/Blocks/EventSearch/Edit
 #: components/ItaliaTheme/Blocks/UOSearch/Edit
 # defaultMessage: Nessun filtro da mostrare. Seleziona i filtri di ricerca da mostrare dalla sidebar laterale.
@@ -2074,7 +2079,7 @@ msgid "icon"
 msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/IconWidget
-# defaultMessage: Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 5
+# defaultMessage: Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6
 msgid "iconDescription"
 msgstr ""
 
@@ -2211,20 +2216,53 @@ msgstr "Venues"
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: log in
 msgid "log in"
+msgstr "log in"
+
+#: components/ItaliaTheme/LoginAgid/LoginAgid
+# defaultMessage: Log in
+msgid "login_agid"
 msgstr ""
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: or login as an administrator
-msgid "login_admin_message"
+#: components/ItaliaTheme/LoginAgid/LoginAgid
+# defaultMessage: To access the site and its services, use one of the following methods.
+msgid "login_agid_description"
 msgstr ""
 
+#: components/ItaliaTheme/LoginAgid/LoginAgid
 #: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: login with Spid
-msgid "login_spid_message"
+# defaultMessage: Other users
+msgid "login_agid_other"
 msgstr ""
 
+#: components/ItaliaTheme/LoginAgid/LoginAgid
 #: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: Login with Spid
+# defaultMessage: Alternatively you can use these methods.
+msgid "login_agid_other_description"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgid/LoginAgid
+#: components/ItaliaTheme/Unauthorized/Unauthorized
+# defaultMessage: Log in as employee
+msgid "login_plone_user"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: SPID
+msgid "login_spid"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: Log in with SPID, the public digital identity system.
+msgid "login_spid_description"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: How to activate SPID
+msgid "login_spid_help"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: Login with SPID
 msgid "login_with_spid"
 msgstr ""
 
@@ -3668,6 +3706,11 @@ msgstr "Responsible office"
 # defaultMessage: Ulteriori informazioni
 msgid "ulteriori_informazioni"
 msgstr "Further information"
+
+#: components/ItaliaTheme/Unauthorized/Unauthorized
+# defaultMessage: You are trying to access a protected resource, please login first.
+msgid "unauthorized_description"
+msgstr ""
 
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: unità operativa

@@ -1,3 +1,73 @@
+## [8.0.0-alpha.36](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.35...v8.0.0-alpha.36) (2023-06-01)
+
+
+### Features
+
+* disabled contact-form route ([#187](https://github.com/RedTurtle/design-comuni-plone-theme/issues/187)) ([9e39568](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9e3956834d0be35aa371e99d7fee451a09a55d86))
+
+
+### Bug Fixes
+
+* added content in renderBlocks and renamed old content to data ([#195](https://github.com/RedTurtle/design-comuni-plone-theme/issues/195)) ([66b7338](https://github.com/RedTurtle/design-comuni-plone-theme/commit/66b7338038d4f4f7789b5ea380e3f72f709e56c4))
+* aria-expanded and aria-live in search page ([#182](https://github.com/RedTurtle/design-comuni-plone-theme/issues/182)) ([ca3530a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ca3530ad545dfc5eb544db2b614324216584d608))
+* avoid error when adding empty blocks to servizio block fields ([#196](https://github.com/RedTurtle/design-comuni-plone-theme/issues/196)) ([9a95734](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9a95734833dbc342872589ff083f23ec5eafecb1))
+
+## [8.0.0-alpha.35](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.34...v8.0.0-alpha.35) (2023-05-30)
+
+
+### Features
+
+* upgraded volto-form-block ([e18e153](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e18e1534ad2df8d2aece6d9d597327dfedc43b21))
+
+
+### Bug Fixes
+
+* added space between label and data ([#189](https://github.com/RedTurtle/design-comuni-plone-theme/issues/189)) ([3c75252](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3c75252d07c7eb0078f47bbe8f51a0d708d831b5))
+* font size in CardPersona ([#180](https://github.com/RedTurtle/design-comuni-plone-theme/issues/180)) ([bb09d1f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bb09d1f3ce53056f62123ead76799c73ebc02738))
+* sede mancante nei metatag del servizio ([#185](https://github.com/RedTurtle/design-comuni-plone-theme/issues/185)) ([cebcdf0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/cebcdf090444ca6751726b9a063d696fbe362a90))
+* unnecessary flex removed ([#184](https://github.com/RedTurtle/design-comuni-plone-theme/issues/184)) ([08ce5dc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/08ce5dc849d83ce043787525d89502aa3aef3e6e))
+* upgrade volto to 16.20.7 ([dc08c9f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/dc08c9fc14373fa9d17dda3a996a025501736f6a))
+
+
+### Maintenance
+
+* added basic api expanders ([#192](https://github.com/RedTurtle/design-comuni-plone-theme/issues/192)) ([2c4cb08](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2c4cb08f2e31ad1435900d4edc0f7feec3f52ac4))
+
+## [8.0.0-alpha.34](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.33...v8.0.0-alpha.34) (2023-05-25)
+
+
+### Features
+
+* custom validation and error message for Event if end date is prior to start date ([#170](https://github.com/RedTurtle/design-comuni-plone-theme/issues/170)) ([f94794a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f94794a701a6f1608e51a983a0446a5817d8683e))
+
+
+### Bug Fixes
+
+* date nelle card evento ([#154](https://github.com/RedTurtle/design-comuni-plone-theme/issues/154)) ([3f00f57](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3f00f57170713e831774ec04448c87fcaa5f101f))
+* more resilient configuration ([e0f1189](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e0f1189cd88f90b86ab9b3ed60353064f6f80cbe))
+* remove custom styles for datepickers, use customizations for DatetimeWidget and RecurrenceWidget to keep previous specs for calendar opening on top in adddate recurrence field ([#172](https://github.com/RedTurtle/design-comuni-plone-theme/issues/172)) ([947979b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/947979bb17c9d495c8c45a38f1ea50477107c520))
+* volto-blocks-widget allowedBlocks configurable from add-ons ([c789e48](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c789e48e1c61129b68d22d57c4b4489f5198fdcc))
+
+## [8.0.0-alpha.33](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.32...v8.0.0-alpha.33) (2023-05-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* added time field in calendar block, changed layout of date (#167)
+* rethink login process and improve unauthorized page (#113)
+
+### Features
+
+* added time field in calendar block, changed layout of date ([#167](https://github.com/RedTurtle/design-comuni-plone-theme/issues/167)) ([1908586](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1908586a78b55b4a29e6fb0c64c58a67360a70bf))
+* rethink login process and improve unauthorized page ([#113](https://github.com/RedTurtle/design-comuni-plone-theme/issues/113)) ([80c4777](https://github.com/RedTurtle/design-comuni-plone-theme/commit/80c4777ce6fc64def08a6fded6f14f9712ee6a18))
+
+
+### Bug Fixes
+
+* fixed site of ufficio_responsabile condition ([#169](https://github.com/RedTurtle/design-comuni-plone-theme/issues/169)) ([65c1eae](https://github.com/RedTurtle/design-comuni-plone-theme/commit/65c1eae889fb1ea8bcec7c2b2ca8f971bb2f7a18))
+* i18n ([d95f3b8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d95f3b8716d144bf6795c10af5ad616590c64f4a))
+* progress bar count ([#171](https://github.com/RedTurtle/design-comuni-plone-theme/issues/171)) ([66ed91a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/66ed91a6e288a570828d487ab736420fd4664a2d))
+
 ## [8.0.0-alpha.32](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.0.0-alpha.31...v8.0.0-alpha.32) (2023-05-14)
 
 
