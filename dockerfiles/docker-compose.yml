@@ -22,10 +22,6 @@ services:
     tty: true
     profiles:
       - dev
-    # BBB
-    entrypoint: []
-    command: bash
-    stdin_open: true
 
   backend:
     image: plone/plone-backend:${PLONE_VERSION:-6}
