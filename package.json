@@ -40,7 +40,6 @@
   "prettier": {
     "trailingComma": "all",
     "singleQuote": true,
-    "printWidth": 80,
     "overrides": [
       {
         "files": "*.overrides",

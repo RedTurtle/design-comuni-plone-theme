@@ -10,19 +10,32 @@ SHELL:=bash
 MAKEFLAGS+=--warn-undefined-variables
 MAKEFLAGS+=--no-builtin-rules
 
+CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+
 # Project settings
 # Update the versions depending on your project requirements | Last Updated 2022-12-23
-DOCKER_IMAGE=plone/plone-backend:6.0
-KGS=
-TESTING_ADDONS=plone.app.robotframework==2.0.0 plone.app.testing==7.0.0
-NODEBIN = ./node_modules/.bin
+# DOCKER_IMAGE=plone/plone-backend:6.0
+# KGS=
+# TESTING_ADDONS=plone.app.robotframework==2.0.0 plone.app.testing==7.0.0
+# NODEBIN = ./node_modules/.bin
 
 # Plone 5 legacy
-DOCKER_IMAGE5=plone/plone-backend:5.2.9
-KGS5=plone.restapi==8.32.6 plone.volto==4.0.0 plone.rest==2.0.0
+# DOCKER_IMAGE5=plone/plone-backend:5.2.9
+# KGS5=plone.restapi==8.32.6 plone.volto==4.0.0 plone.rest==2.0.0
 
-DIR=$(shell basename $$(pwd))
-ADDON ?= "design-comuni-plone-theme"
+# DIR=$(shell basename $$(pwd))
+# ADDON ?= "design-comuni-plone-theme"
+
+PLONE_VERSION=6
+VOLTO_VERSION=16.20.4
+
+ADDON_NAME='design-comuni-plone-theme'
+ADDON_PATH='design-comuni-plone-theme'
+DEV_COMPOSE=dockerfiles/docker-compose.yml
+ACCEPTANCE_COMPOSE=acceptance/docker-compose.yml
+CMD=BUILDKIT_PROGRESS=plain CURRENT_DIR=${CURRENT_DIR} ADDON_NAME=${ADDON_NAME} ADDON_PATH=${ADDON_PATH} VOLTO_VERSION=${VOLTO_VERSION} PLONE_VERSION=${PLONE_VERSION} docker compose
+DOCKER_COMPOSE=${CMD} -p ${ADDON_PATH} -f ${DEV_COMPOSE}
+ACCEPTANCE=${CMD} -p ${ADDON_PATH}-acceptance -f ${ACCEPTANCE_COMPOSE}
 
 # Recipe snippets for reuse
 
@@ -86,3 +99,22 @@ demo: docker-compose.yml
 	docker compose pull
 	docker compose build
 	docker compose up
+
+.PHONY: build-addon
+build-addon: ## Build Addon dev
+	@echo "$(GREEN)==> Build Addon development container $(RESET)"
+	${DOCKER_COMPOSE} build addon-dev
+
+.PHONY: lint
+lint: ## Lint Codebase
+	${DOCKER_COMPOSE} run addon-dev lint
+	${DOCKER_COMPOSE} run addon-dev prettier
+	${DOCKER_COMPOSE} run addon-dev stylelint
+
+.PHONY: test
+test: ## Run unit tests
+	${DOCKER_COMPOSE} run addon-dev test --watchAll
+
+.PHONY: test-ci
+test-ci: ## Run unit tests in CI
+	${DOCKER_COMPOSE} run -e CI=1 addon-dev test
