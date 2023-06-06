@@ -101,6 +101,14 @@ export default function applyConfig(voltoConfig) {
       },
     },
     querystringAdditionalFields: [],
+    searchBlockTemplates: [
+      'simpleCard',
+      'cardWithImageTemplate',
+      'inEvidenceTemplate',
+      'cardSlideUpTextTemplate',
+      'bandiInEvidenceTemplate',
+      'simpleListTemplate',
+    ],
     loadables: { ...config.settings.loadables, ...ItaliaLoadables },
     contentIcons: {
       ...config.settings.contentIcons,
@@ -363,8 +371,13 @@ export default function applyConfig(voltoConfig) {
       ...config.blocks.blocksConfig.maps,
       restricted: true,
     },
+    search: {
+      ...config.blocks.blocksConfig.search,
+      variations: config.blocks.blocksConfig.search.variations.filter((f) => {
+        return f.id !== 'facetsTopSide';
+      }),
+    },
   };
-  console.log(config.blocks);
   config.blocks = {
     ...config.blocks,
     blocksConfig: { ...config.blocks.blocksConfig, ...customBlocks },

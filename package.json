@@ -21,7 +21,8 @@
     "volto-gdpr-privacy",
     "volto-data-grid-widget",
     "@eeacms/volto-taxonomy",
-    "volto-feedback"
+    "volto-feedback",
+    "@eeacms/volto-columns-block"
   ],
   "customizationPaths": [
     "src/customizations/"
@@ -69,7 +70,8 @@
       "^volto-venue/(.*)$": "<rootDir>/node_modules/volto-venue/src/$1",
       "^volto-data-grid-widget/(.*)$": "<rootDir>/node_modules/volto-data-grid-widget/src/$1",
       "^volto-dropdownmenu/(.*)$": "<rootDir>/node_modules/volto-dropdownmenu/src/$1",
-      "^volto-feedback/(.*)$": "<rootDir>/node_modules/volto-feedback/src/$1"
+      "^volto-feedback/(.*)$": "<rootDir>/node_modules/volto-feedback/src/$1",
+      "@eeacms/volto-columns-block/(.*)$": "<rootDir>/node_modules/@eeacms/volto-columns-block/src/$1"
     },
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs,ts,tsx}",
@@ -178,6 +180,7 @@
     "@babel/plugin-proposal-export-namespace-from": "7.18.9",
     "@babel/plugin-proposal-nullish-coalescing-operator": "7.18.6",
     "@babel/plugin-proposal-throw-expressions": "7.18.6",
+    "@eeacms/volto-columns-block": "^6.3.0",
     "@eeacms/volto-taxonomy": "^1.0.0",
     "@loadable/babel-plugin": "5.13.2",
     "@plone-collective/volto-sentry": "0.3.0",

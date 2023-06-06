@@ -139,6 +139,7 @@ module.exports = Object.assign({}, volto_config, {
       ...base_config.resolve.alias,
       '@italia': `${projectRootPath}/src`, // TODO deprecated: remove in version 8
       'design-comuni-plone-theme': `${projectRootPath}/src`,
+      // '@eeacms/volto-columns-block/ColumnsBlock/ColumnsBlockView': `${projectRootPath}/src/customizations/volto-columns-block/ColumnsBlock/ColumnsBlockView.jsx`,
     };
 
     // remove unused languages. (TODO: move to ENV at build time)

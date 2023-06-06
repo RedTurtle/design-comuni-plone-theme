@@ -90,7 +90,12 @@ export const templatesOptions = (
 ) => {
   let pos = position;
 
+  const fieldset =
+    schema.id === 'search' ? 'listingTemplateOptions' : undefined;
   fields.forEach((f) => {
+    // Avoid duplicated fields when using templates in Search block
+    if (schema.fieldsets?.some((fs) => fs?.fields?.some((fsf) => fsf === f)))
+      return;
     const f_config = fieldsConfig?.[f] ?? {};
     if (f === 'show_detail_link') {
       addSchemaField(
@@ -100,9 +105,10 @@ export const templatesOptions = (
         f_config.description ?? null,
         { type: 'boolean', default: f_config.default ?? true },
         pos,
+        fieldset,
       );
 
-      if (formData.show_detail_link) {
+      if (formData?.show_detail_link) {
         pos++;
         addSchemaField(
           schema,
@@ -111,6 +117,7 @@ export const templatesOptions = (
           null,
           null,
           pos,
+          fieldset,
         );
       }
     } else if (f === 'show_path_filters') {
@@ -125,6 +132,7 @@ export const templatesOptions = (
           formData: formData,
         },
         pos,
+        fieldset,
       );
     } else {
       addSchemaField(
@@ -134,6 +142,7 @@ export const templatesOptions = (
         f_config.description ?? null,
         { type: 'boolean', default: f_config.default ?? true },
         pos,
+        fieldset,
       );
     }
     pos++;
@@ -144,7 +153,8 @@ export const templatesOptions = (
 
 export const addLighthouseField = (schema, intl, position = 0) => {
   let pos = position;
-
+  const fieldset =
+    schema.id === 'search' ? 'listingTemplateOptions' : undefined;
   addSchemaField(
     schema,
     'id_lighthouse',
@@ -164,6 +174,7 @@ export const addLighthouseField = (schema, intl, position = 0) => {
       /* default: 'medium', */
     },
     pos,
+    fieldset,
   );
   pos++;
 

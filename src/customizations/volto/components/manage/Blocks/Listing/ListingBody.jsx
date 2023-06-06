@@ -44,7 +44,7 @@ const ListingBody = React.memo(
       const variations =
         config.blocks?.blocksConfig['listing']?.variations || [];
       const defaultVariation = variations.filter((item) => item.isDefault)?.[0];
-      console.log(data.template, data.variation);
+
       if (data.template && !data.variation) {
         let legacyTemplateConfig = variations.find(
           (item) => item.id === data.template,
@@ -61,20 +61,25 @@ const ListingBody = React.memo(
       }
 
       const SkeletonTemplate = templateConfig.skeleton || Skeleton;
-      console.log(properties);
+
       const getBackgroundClass = () => {
-        const block = !variation
-          ? properties?.blocks?.[data?.block]
-          : variation;
+        const isSearchBlockResults = variation?.['@type'] === 'search';
+        const block = isSearchBlockResults
+          ? variation
+          : properties?.blocks?.[data?.block];
 
         if (!block?.show_block_bg) return '';
 
         let bg_color = data.bg_color ? `bg-${data.bg_color}` : '';
 
         if (block.template === 'gridGalleryTemplate') {
-          return `section section-muted section-inset-shadow py-5 ${bg_color}`;
+          return `section section-muted section-inset-shadow py-5 ${bg_color} ${
+            isSearchBlockResults ? '' : 'full-width'
+          }`;
         } else {
-          return `bg-light py-5 ${bg_color}`;
+          return `py-5 ${bg_color} ${
+            isSearchBlockResults ? 'template-wrapper' : 'bg-light full-width'
+          }`;
         }
       };
 
@@ -86,17 +91,20 @@ const ListingBody = React.memo(
 
         return `${bg_color} ${items_color}`;
       };
-      const listingBodyProps = !variation ? data : variation;
+      // Props have different locations in seachBlock
+      // Also need to purge title from searchblock schema, it's the name of the listing template used
+      const listingBodyProps =
+        variation?.['@type'] !== 'search' ? data : { ...variation, title: '' };
       return (
         <div className="public-ui">
           {loadingQuery && (
-            <div className={`full-width ${getBlockClasses()}`} ref={listingRef}>
+            <div className={`${getBlockClasses()}`} ref={listingRef}>
               <SkeletonTemplate {...listingBodyProps} />
             </div>
           )}
           {!loadingQuery &&
           (listingItems.length > 0 || additionalFilters?.length > 0) ? (
-            <div className={`full-width ${getBlockClasses()}`} ref={listingRef}>
+            <div className={`${getBlockClasses()}`} ref={listingRef}>
               <ListingBodyTemplate
                 items={listingItems}
                 isEditMode={isEditMode}

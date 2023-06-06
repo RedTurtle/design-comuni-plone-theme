@@ -1,5 +1,144 @@
 .block.search {
-  .public-ui .full-width {
+  .full-width {
     height: 100% !important;
+  }
+  .search-wrapper {
+    position: relative;
+    background-color: #fff;
+    .form-group {
+      flex: 1;
+      margin: 0;
+
+      .form-text {
+        display: none;
+      }
+    }
+    .input-group-append,
+    .clear-icon,
+    input {
+      height: 45px;
+    }
+    input {
+      padding-left: 2.5rem !important;
+    }
+    .autocomplete-icon {
+      position: absolute;
+      left: 0;
+      right: auto;
+      top: 6px;
+      z-index: 5;
+      .icon {
+        fill: $primary;
+      }
+    }
+    .clear-icon {
+      z-index: 5;
+      border: none;
+      outline: none;
+      position: absolute;
+      right: 80px;
+      font-size: 1rem;
+      border-bottom: 1px solid hsl(210deg, 17.6470588235%, 43.35%);
+    }
+  }
+  .search-details {
+    color: var(--bs-gray-900);
+  }
+  .search-results .public-ui .template-wrapper {
+    .container {
+      padding: 0 !important;
+    }
+  }
+  .facets {
+    .daterange-facet {
+      .DateRangePickerInput {
+        border-bottom: 1px solid hsl(210deg, 17.6470588235%, 43.35%);
+        input[type='text'] {
+          border-bottom: none;
+        }
+      }
+      .DayPicker_weekHeader_ul {
+        padding-left: 0 !important;
+      }
+    }
+  }
+  .search-results-count-sort {
+    .accordion-wrapper {
+      min-width: 350px;
+      position: relative;
+      .accordion-header {
+        padding: 0.5rem;
+        font-size: 1rem;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        border: none;
+        border-bottom: 1px solid hsl(210deg, 17.6470588235%, 43.35%);
+        &[aria-expanded='true'] {
+          border-bottom: none;
+        }
+        .filter-list-title {
+          display: flex;
+          .accordion-control {
+            position: relative;
+            margin-right: 28px;
+            .indicator {
+              position: absolute;
+              right: -22px;
+              bottom: -5px;
+              z-index: 10;
+            }
+          }
+        }
+      }
+
+      .accordion-content {
+        overflow: hidden;
+        height: auto;
+        max-height: 0;
+        padding: 0;
+        transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+        position: absolute;
+        z-index: 10;
+        &[aria-expanded='true'] {
+          max-height: 1000vh;
+          overflow: auto;
+          transition: max-height 1s ease-in-out;
+          border-color: hsl(36deg, 100%, 50%) !important;
+          box-shadow: 0 0 0 2px hsl(36deg, 100%, 50%) !important;
+          outline: none !important;
+        }
+
+        .accordion-inner {
+          padding: 0.75rem 1rem;
+          min-width: 350px;
+        }
+
+        .link-more {
+          text-align: right;
+
+          a {
+            font-weight: bold;
+
+            svg {
+              width: 1.2em;
+              fill: $link-color;
+            }
+          }
+        }
+        .clear-filters {
+          margin-top: 1rem;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          font-size: 17px;
+          svg {
+            margin-right: 0.5rem !important;
+            fill: var(--bs-danger);
+          }
+        }
+      }
+    }
   }
 }

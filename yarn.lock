@@ -1850,6 +1850,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eeacms/volto-columns-block@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "@eeacms/volto-columns-block@npm:6.3.0"
+  dependencies:
+    react-color: ~2.19.3
+  checksum: f99e2d02d343d9a752920ddb3321532aca38d9309f5c7acacaf05f66ea04c8f023b6f9a0054d8260f63b465a23673852a5d9449c827fb50a8b65ca40e9e06062
+  languageName: node
+  linkType: hard
+
 "@eeacms/volto-taxonomy@npm:^1.0.0":
   version: 1.0.0
   resolution: "@eeacms/volto-taxonomy@npm:1.0.0"
@@ -2106,6 +2115,15 @@ __metadata:
   version: 2.2.5
   resolution: "@iarna/toml@npm:2.2.5"
   checksum: b63b2b2c4fd67969a6291543ada0303d45593801ee744b60f5390f183c03d9192bc67a217abb24be945158f1935f02840d9ffff40c0142aa171b5d3b6b6a3ea5
+  languageName: node
+  linkType: hard
+
+"@icons/material@npm:^0.2.4":
+  version: 0.2.4
+  resolution: "@icons/material@npm:0.2.4"
+  peerDependencies:
+    react: "*"
+  checksum: 24baa360cb83f7e1a9e6784ac11185d57eb895b0efd3070ec915693378330f35ff9feb248f650b9649fa3e1045601286585dc05795a4c734d4849b33900351ee
   languageName: node
   linkType: hard
 
@@ -7793,6 +7811,7 @@ __metadata:
     "@babel/plugin-proposal-throw-expressions": 7.18.6
     "@commitlint/cli": ^12.0.0
     "@commitlint/config-conventional": ^12.0.0
+    "@eeacms/volto-columns-block": ^6.3.0
     "@eeacms/volto-taxonomy": ^1.0.0
     "@loadable/babel-plugin": 5.13.2
     "@plone-collective/volto-sentry": 0.3.0
@@ -14223,6 +14242,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"material-colors@npm:^1.2.1":
+  version: 1.2.6
+  resolution: "material-colors@npm:1.2.6"
+  checksum: 72d005ccccb82bab68eef3cd757e802668634fc86976dedb9fc564ce994f2d3258273766b7efecb7404a0031969e2d72201a1b74169763f0a53c0dd8d649209f
+  languageName: node
+  linkType: hard
+
 "mathml-tag-names@npm:^2.1.3":
   version: 2.1.3
   resolution: "mathml-tag-names@npm:2.1.3"
@@ -17592,6 +17618,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-color@npm:~2.19.3":
+  version: 2.19.3
+  resolution: "react-color@npm:2.19.3"
+  dependencies:
+    "@icons/material": ^0.2.4
+    lodash: ^4.17.15
+    lodash-es: ^4.17.15
+    material-colors: ^1.2.1
+    prop-types: ^15.5.10
+    reactcss: ^1.2.0
+    tinycolor2: ^1.4.1
+  peerDependencies:
+    react: "*"
+  checksum: 40b49e1aa2ab27a099cc37a3fa2d5bb906b8def4dbe2d922c0e42365e386d82b03f9b06a2b29a44a51f1e114cef72e61c0ba0740581a128d951936ea4617429b
+  languageName: node
+  linkType: hard
+
 "react-cookie@npm:4.1.1":
   version: 4.1.1
   resolution: "react-cookie@npm:4.1.1"
@@ -18413,6 +18456,15 @@ __metadata:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
   checksum: b254cc17ce3011788330f7bbf383ab653c6848902d7936a87b09d835d091e3f295f7e9dd1597c6daac5dc80f90e778c8230218ba8ad599f74adcc11e33b9d61b
+  languageName: node
+  linkType: hard
+
+"reactcss@npm:^1.2.0":
+  version: 1.2.3
+  resolution: "reactcss@npm:1.2.3"
+  dependencies:
+    lodash: ^4.0.1
+  checksum: c53e386a0881f1477e1cff661f6a6ad4c662230941f3827862193ac30f9b75cdf7bc7b4c7e5ca543d3e4e80fee1a3e9fa0056c206b1c0423726c41773ab3fe45
   languageName: node
   linkType: hard
 
@@ -21436,6 +21488,13 @@ __metadata:
   version: 1.0.3
   resolution: "tiny-warning@npm:1.0.3"
   checksum: da62c4acac565902f0624b123eed6dd3509bc9a8d30c06e017104bedcf5d35810da8ff72864400ad19c5c7806fc0a8323c68baf3e326af7cb7d969f846100d71
+  languageName: node
+  linkType: hard
+
+"tinycolor2@npm:^1.4.1":
+  version: 1.6.0
+  resolution: "tinycolor2@npm:1.6.0"
+  checksum: 6df4d07fceeedc0a878d7bac47e2cd47c1ceeb1078340a9eb8a295bc0651e17c750f73d47b3028d829f30b85c15e0572c0fd4142083e4c21a30a597e47f47230
   languageName: node
   linkType: hard
 
