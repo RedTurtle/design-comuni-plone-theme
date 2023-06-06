@@ -19,9 +19,9 @@ const HelpBox = ({ text }) => {
         />
       </CalloutTitle>
 
-      <p>
-        <RichText content={text} />
-      </p>
+      <div>
+        <RichText data={text} />
+      </div>
     </Callout>
   ) : null;
 };

@@ -96,7 +96,7 @@ const PageView = ({ content, token, location, history }) => {
                     <div className="header-image px-4 mb-3">
                       <Image
                         image={content.image}
-                        alt={content.title}
+                        alt=""
                         maxSize={300}
                         key={content.image?.download}
                       />
@@ -104,7 +104,7 @@ const PageView = ({ content, token, location, history }) => {
                   )}
                   {richTextHasContent(content.info_testata) && (
                     <div className="header-infos px-4 mb-5">
-                      <RichText serif={false} content={content.info_testata} />
+                      <RichText serif={false} data={content.info_testata} />
                     </div>
                   )}
 

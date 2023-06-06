@@ -27,7 +27,7 @@ const DocumentoAutori = ({ autori, title }) => {
   return (
     <RichTextSection
       tag_id="a-cura-di"
-      content={autori}
+      data={autori}
       title={intl.formatMessage(messages.autore)}
     >
       <div className="autori-container">
@@ -51,7 +51,7 @@ const DocumentoAutori = ({ autori, title }) => {
                           autore?.image_scales.foto_persona[0]?.scales.preview
                             .download
                         }
-                        alt={autore.title}
+                        alt=""
                       />
                     </div>
                   </div>

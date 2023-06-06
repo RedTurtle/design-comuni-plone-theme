@@ -83,7 +83,7 @@ const PersonaRuolo = ({ content }) => {
             title={intl.formatMessage(messages.ruolo)}
           >
             {content?.incarichi_persona?.map((incarico) => (
-              <div className="font-serif">
+              <div className="font-serif" key={incarico.id}>
                 <p>{incarico.title}</p>
                 {incarico.atto_di_nomina && (
                   <UniversalLink href={incarico.atto_di_nomina}>
@@ -107,7 +107,7 @@ const PersonaRuolo = ({ content }) => {
             <RichTextSection
               tag_id="compensi"
               title={intl.formatMessage(messages.compensi)}
-              content={content.incarichi_persona[0].compensi}
+              data={content.incarichi_persona[0].compensi}
             />
           )}
           <RichTextSection
@@ -140,21 +140,21 @@ const PersonaRuolo = ({ content }) => {
         <RichTextSection
           tag_id="competenze"
           title={intl.formatMessage(messages.competenze)}
-          content={content.competenze}
+          data={content.competenze}
         />
       )}
       {richTextHasContent(content?.deleghe) && (
         <RichTextSection
           tag_id="deleghe"
           title={intl.formatMessage(messages.deleghe)}
-          content={content.deleghe}
+          data={content.deleghe}
         />
       )}
       {richTextHasContent(content?.biografia) > 0 && (
         <RichTextSection
           tag_id="biografia"
           title={intl.formatMessage(messages.biografia)}
-          content={content.biografia}
+          data={content.biografia}
         />
       )}
 
