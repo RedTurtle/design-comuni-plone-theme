@@ -111,11 +111,11 @@ lint: ## Lint Codebase
 
 .PHONY: test
 test: ## Run unit tests
-	${DOCKER_COMPOSE} run addon-dev test --watchAll
+	${DOCKER_COMPOSE} --profile unittest run addon-dev test --watchAll
 
 .PHONY: test-ci
 test-ci: ## Run unit tests in CI
-	${DOCKER_COMPOSE} run -e CI=1 addon-dev test
+	${DOCKER_COMPOSE} --profile unittest run -e CI=1 addon-dev test
 
 ## Acceptance
 .PHONY: install-acceptance

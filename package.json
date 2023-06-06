@@ -35,7 +35,11 @@
   "scripts": {
     "prepare": "husky install",
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
-    "release": "release-it --disable-metrics"
+    "dry-release": "release-it --dry-run",
+    "release-major-alpha": "release-it major --disable-metrics --preRelease=alpha",
+    "release-alpha": "release-it --disable-metrics --preRelease=alpha",
+    "release": "release-it --disable-metrics",
+    "test": "make test"
   },
   "prettier": {
     "trailingComma": "all",
@@ -147,11 +151,13 @@
     "@commitlint/config-conventional": "^12.0.0",
     "@plone/scripts": "*",
     "@release-it/conventional-changelog": "^2.0.1",
+    "eslint": "8.42.0",
     "eslint-plugin-prettier": "^3.4.1",
     "husky": "8.0.2",
     "lint-staged": "13.0.3",
     "prettier": "^2.7.1",
     "release-it": "^14.6.1",
+    "stylelint": "15.7.0",
     "stylelint-config-idiomatic-order": "^9.0.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-prettier": "^2.0.0"

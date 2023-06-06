@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const projectRootPath = fs.realpathSync('./addon-testing-project'); // __dirname
-const packageJson = require(path.join(projectRootPath, 'package.json'));
+const projectRootPath = fs.realpathSync('.'); // __dirname
 
 let voltoPath = path.join(projectRootPath, 'node_modules/@plone/volto');
 
