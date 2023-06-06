@@ -24,9 +24,11 @@ services:
       - dev
 
   backend:
-    image: plone/plone-backend:${PLONE_VERSION:-6}
+    # image: plone/plone-backend:${PLONE_VERSION:-6}
+    image: ghcr.io/redturtle/iocomune-backend:latest
     environment:
       SITE: Plone
+      PROFILES: design.plone.policy:default
       CORS_ALLOW_ORIGIN: '*'
     ports:
       - 8080:8080

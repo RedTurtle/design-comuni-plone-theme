@@ -5,9 +5,21 @@ FROM plone/frontend-builder:${VOLTO_VERSION} as builder
 ARG ADDON_NAME
 ARG ADDON_PATH
 
+USER root
+
+RUN <<EOT
+    set -e
+    apt update
+    apt install -y --no-install-recommends ca-certificates git-core libvips-dev
+    rm -rf /var/lib/apt/lists/*
+EOT
+
+USER node
+
 COPY --chown=node:node ./ /app/src/addons/${ADDON_PATH}/
 
 RUN <<EOT
+    set -e
     /setupAddon
     yarn install --network-timeout 1000000
     yarn build
@@ -16,9 +28,9 @@ EOT
 
 FROM plone/frontend-prod-config:${VOLTO_VERSION}
 
-LABEL maintainer="Plone Community <dev@plone.org>" \
-      org.label-schema.name="volto-social-blocks" \
-      org.label-schema.description="Plone frontend image" \
-      org.label-schema.vendor="Plone Foundation"
+LABEL maintainer="RedTurtle" \
+      org.label-schema.name="design-comuni-plone-theme" \
+      org.label-schema.description="Plone theme for Italian Public Administration" \
+      org.label-schema.vendor="RedTurtle"
 
 COPY --from=builder /app/ /app/

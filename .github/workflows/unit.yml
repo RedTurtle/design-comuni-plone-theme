@@ -12,5 +12,5 @@ jobs:
       - name: Main checkout
         uses: actions/checkout@v3
 
-      - name: Linting
+      - name: Run unit tests
         run: make test-ci

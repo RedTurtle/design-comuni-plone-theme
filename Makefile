@@ -27,7 +27,7 @@ CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 # ADDON ?= "design-comuni-plone-theme"
 
 PLONE_VERSION=6
-VOLTO_VERSION=16.20.4
+VOLTO_VERSION=16.20.7
 
 ADDON_NAME='design-comuni-plone-theme'
 ADDON_PATH='design-comuni-plone-theme'
@@ -49,47 +49,6 @@ YELLOW=`tput setaf 3`
 
 # Top-level targets
 
-.PHONY: project
-project:
-	npm install -g yo
-	npm install -g @plone/generator-volto
-	npm install -g mrs-developer
-	yo @plone/volto project --addon ${ADDON} --workspace "src/addons/${DIR}" --no-interactive
-	ln -sf $$(pwd) project/src/addons/
-	cp .project.eslintrc.js .eslintrc.js
-	cd project && yarn
-	@echo "-------------------"
-	@echo "$(GREEN)Volto project is ready!$(RESET)"
-	@echo "$(RED)Now run: cd project && yarn start$(RESET)"
-
-.PHONY: all
-all: project
-
-.PHONY: start-test-backend
-start-test-backend: ## Start Test Plone Backend
-	@echo "$(GREEN)==> Start Test Plone Backend$(RESET)"
-	docker run -i --rm -e ZSERVER_HOST=0.0.0.0 -e ZSERVER_PORT=55001 -p 55001:55001 -e SITE=plone -e APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,plone.volto:default-homepage -e CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,plone.volto,plone.volto.cors -e ADDONS='plone.app.robotframework plone.app.contenttypes plone.restapi plone.volto' plone ./bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING
-
-.PHONY: start-backend-docker
-start-backend-docker:		## Starts a Docker-based backend
-	@echo "$(GREEN)==> Start Docker-based Plone Backend$(RESET)"
-	docker run -it --rm --name=backend -p 8080:8080 -e SITE=Plone -e ADDONS='$(KGS)' $(DOCKER_IMAGE)
-
-.PHONY: test-acceptance-server
-test-acceptance-server: ## Run test acceptance server
-	docker run -it \
-		--rm \
-		--name=plone \
-		-e ZSERVER_HOST=0.0.0.0 \
-		-e ZSERVER_PORT=55001 \
-		-p 55001:55001 \
-		-e SITE=plone \
-		-e APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,plone.app.caching:default,design.plone.policy:default \
-		-e CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,design.plone.policy,design.plone.contenttypes,redturtle.volto,collective.volto.dropdownmenu,collective.volto.socialsettings,collective.volto.secondarymenu,collective.volto.subsites,collective.volto.subsites,redturtle.voltoplugin.editablefooter,collective.volto.subsites,redturtle.voltoplugin.editablefooter,collective.volto.formsupport,collective.volto.subsites,redturtle.voltoplugin.editablefooter,collective.volto.formsupport,collective.volto.subfooter,collective.volto.subsites,redturtle.voltoplugin.editablefooter,collective.volto.formsupport,collective.volto.subfooter,eea.api.taxonomy,collective.volto.subsites,redturtle.voltoplugin.editablefooter,collective.volto.formsupport,collective.volto.subfooter,eea.api.taxonomy,redturtle.faq,collective.volto.subsites,redturtle.voltoplugin.editablefooter,collective.volto.formsupport,collective.volto.subfooter,eea.api.taxonomy,redturtle.faq,collective.feedback,collective.volto.subsites,redturtle.voltoplugin.editablefooter,collective.volto.formsupport,collective.volto.subfooter,eea.api.taxonomy,redturtle.faq,collective.feedback,redturtle.bandi,collective.volto.subsites,redturtle.voltoplugin.editablefooter,collective.volto.formsupport,collective.volto.subfooter,eea.api.taxonomy,redturtle.faq,collective.feedback,redturtle.bandi,collective.venue,collective.volto.subsites,redturtle.voltoplugin.editablefooter,collective.volto.formsupport,collective.volto.subfooter,eea.api.taxonomy,redturtle.faq,collective.feedback,redturtle.bandi,collective.venue,collective.z3cform.datagridfield,collective.volto.subsites,redturtle.voltoplugin.editablefooter,collective.volto.formsupport,collective.volto.subfooter,eea.api.taxonomy,redturtle.faq,collective.feedback,redturtle.bandi,collective.venue,collective.z3cform.datagridfield,collective.taxonomy,collective.volto.subsites,redturtle.voltoplugin.editablefooter,collective.volto.formsupport,collective.volto.subfooter,eea.api.taxonomy,redturtle.faq,collective.feedback,redturtle.bandi,collective.venue,collective.z3cform.datagridfield,collective.taxonomy,plone.app.caching \
-		-e ADDONS='plone.app.robotframework' \
-		ghcr.io/redturtle/iocomune-backend \
-		./bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING
-
 .PHONY: help
 help:		## Show this help.
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
@@ -100,10 +59,49 @@ demo: docker-compose.yml
 	docker compose build
 	docker compose up
 
+.PHONY: build-backend
+build-backend: ## Build
+	@echo "$(GREEN)==> Build Backend Container $(RESET)"
+	${DOCKER_COMPOSE} build backend
+
+.PHONY: start-backend
+start-backend: ## Starts Docker backend
+	@echo "$(GREEN)==> Start Docker-based Plone Backend $(RESET)"
+	${DOCKER_COMPOSE} up backend -d
+
+.PHONY: stop-backend
+stop-backend: ## Stop Docker backend
+	@echo "$(GREEN)==> Stop Docker-based Plone Backend $(RESET)"
+	${DOCKER_COMPOSE} stop backend
+
 .PHONY: build-addon
 build-addon: ## Build Addon dev
 	@echo "$(GREEN)==> Build Addon development container $(RESET)"
 	${DOCKER_COMPOSE} build addon-dev
+
+.PHONY: start-dev
+start-dev: ## Starts Dev container
+	@echo "$(GREEN)==> Start Addon Development container $(RESET)"
+	${DOCKER_COMPOSE} up addon-dev
+
+.PHONY: dev
+dev: ## Develop the addon
+	@echo "$(GREEN)==> Start Development Environment $(RESET)"
+	make build-backend
+	make start-backend
+	make build-addon
+	make start-dev
+
+# Dev Helpers
+.PHONY: i18n
+i18n: ## Sync i18n
+	${DOCKER_COMPOSE} run addon-dev i18n
+
+.PHONY: format
+format: ## Format codebase
+	${DOCKER_COMPOSE} run addon-dev lint:fix
+	${DOCKER_COMPOSE} run addon-dev prettier:fix
+	${DOCKER_COMPOSE} run addon-dev stylelint:fix
 
 .PHONY: lint
 lint: ## Lint Codebase
@@ -118,3 +116,33 @@ test: ## Run unit tests
 .PHONY: test-ci
 test-ci: ## Run unit tests in CI
 	${DOCKER_COMPOSE} run -e CI=1 addon-dev test
+
+## Acceptance
+.PHONY: install-acceptance
+install-acceptance: ## Install Cypress, build containers
+	(cd acceptance && yarn)
+	${ACCEPTANCE} --profile dev --profile prod build
+
+.PHONY: start-test-acceptance-server
+start-test-acceptance-server: ## Start acceptance server
+	${ACCEPTANCE} --profile dev up -d
+
+.PHONY: start-test-acceptance-server-prod
+start-test-acceptance-server-prod: ## Start acceptance server
+	${ACCEPTANCE} --profile prod up -d
+
+.PHONY: test-acceptance
+test-acceptance: ## Start Cypress
+	(cd acceptance && ./node_modules/.bin/cypress open)
+
+.PHONY: test-acceptance-headless
+test-acceptance-headless: ## Run cypress tests in CI
+	(cd acceptance && ./node_modules/.bin/cypress run)
+
+.PHONY: stop-test-acceptance-server
+stop-test-acceptance-server: ## Stop acceptance server
+	${ACCEPTANCE} down
+
+.PHONY: status-test-acceptance-server
+status-test-acceptance-server: ## Status of Acceptance Server
+	${ACCEPTANCE} ps

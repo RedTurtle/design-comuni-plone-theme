@@ -1,47 +1,6 @@
 # syntax=docker/dockerfile:1
 ARG VOLTO_VERSION
-# FROM plone/frontend-dev:${VOLTO_VERSION}
-
-# Workaround waiting for release of frontend-dev with bullseye
-FROM node:16-bullseye-slim
-
-RUN <<EOT
-    set -e
-    apt update
-    apt install -y --no-install-recommends python3 build-essential
-    npm install --no-audit --no-fund -g yo @plone/generator-volto
-    mkdir /app
-    chown -R node:node /app
-    rm -rf /var/lib/apt/lists/*
-EOT
-
-USER node
-WORKDIR /app
-
-RUN <<EOT
-    set -e
-    yo @plone/volto \
-        app \
-        --description "Plone frontend using Volto" \
-        --skip-addons \
-        --skip-install \
-        --skip-workspaces \
-        --volto=${VOLTO_VERSION} \
-        --no-interactive
-    yarn install --network-timeout 1000000
-EOT
-
-COPY --chown=node:node dockerfiles/helper.py /setupAddon
-
-# Expose ports 3000 and 3001 (used by Express in development mode) and port 6006 (Storybook)
-EXPOSE 3000 3001 6006
-
-# Entrypoint would be yarn
-ENTRYPOINT [ "yarn" ]
-
-# Run the project in development mode
-CMD ["start"]
-# END Workaround
+FROM plone/frontend-dev:${VOLTO_VERSION}
 
 ARG ADDON_NAME
 ARG ADDON_PATH
@@ -49,10 +8,9 @@ ARG ADDON_PATH
 USER root
 
 RUN <<EOT
+    set -e
     apt update
     apt install -y --no-install-recommends ca-certificates git-core libvips-dev
-    # TEST
-    apt install -y --no-install-recommends vim
     rm -rf /var/lib/apt/lists/*
 EOT
 
@@ -61,6 +19,7 @@ USER node
 COPY --chown=node:node package.json /app/src/addons/${ADDON_PATH}/
 
 RUN <<EOT
+    set -e
     /setupAddon
     yarn install --network-timeout 1000000
 EOT
