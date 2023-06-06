@@ -17,11 +17,16 @@ EOT
 USER node
 
 COPY --chown=node:node ./ /app/src/addons/${ADDON_PATH}/
+COPY --chown=node:node dockerfiles/helper.js /app/
 
 RUN <<EOT
     set -e
     /setupAddon
+    node helper.js
+    rm -rf public
+    cp -a /app/src/addons/${ADDON_PATH}/public .
     yarn install --network-timeout 1000000
+    yarn dedupe @popperjs/core
     yarn build
     rm -rf cache omelette .yarn/cache
 EOT

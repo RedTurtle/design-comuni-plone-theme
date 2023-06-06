@@ -54,10 +54,11 @@ help:		## Show this help.
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
 
 .PHONY: demo
-demo: docker-compose.yml
-	docker compose pull
-	docker compose build
-	docker compose up
+demo: docker-compose.yml ## Launch demo site
+	make build-backend
+	make start-backend
+	make build-frontend
+	make start-frontend
 
 .PHONY: build-backend
 build-backend: ## Build
@@ -73,6 +74,21 @@ start-backend: ## Starts Docker backend
 stop-backend: ## Stop Docker backend
 	@echo "$(GREEN)==> Stop Docker-based Plone Backend $(RESET)"
 	${DOCKER_COMPOSE} stop backend
+
+.PHONY: build-frontend
+build-frontend: ## Build frontend
+	@echo "$(GREEN)==> Build Frontend Container $(RESET)"
+	${DOCKER_COMPOSE} build addon-prod
+
+.PHONY: start-frontend
+start-frontend: ## Starts Docker frontend
+	@echo "$(GREEN)==> Start Docker-based Volto Frontend $(RESET)"
+	${DOCKER_COMPOSE} up addon-prod -d
+
+.PHONY: stop-frontend
+stop-frontend: ## Stop Docker frontend
+	@echo "$(GREEN)==> Stop Docker-based Volto Frontend $(RESET)"
+	${DOCKER_COMPOSE} stop addon-prod
 
 .PHONY: build-addon
 build-addon: ## Build Addon dev
@@ -95,19 +111,19 @@ dev: ## Develop the addon
 # Dev Helpers
 .PHONY: i18n
 i18n: ## Sync i18n
-	${DOCKER_COMPOSE} run addon-dev i18n
+	${DOCKER_COMPOSE} --profile unittest run addon-dev i18n
 
 .PHONY: format
 format: ## Format codebase
-	${DOCKER_COMPOSE} run addon-dev lint:fix
-	${DOCKER_COMPOSE} run addon-dev prettier:fix
-	${DOCKER_COMPOSE} run addon-dev stylelint:fix
+	${DOCKER_COMPOSE} --profile unittest run addon-dev lint:fix
+	${DOCKER_COMPOSE} --profile unittest run addon-dev prettier:fix
+	${DOCKER_COMPOSE} --profile unittest run addon-dev stylelint:fix
 
 .PHONY: lint
 lint: ## Lint Codebase
-	${DOCKER_COMPOSE} run addon-dev lint
-	${DOCKER_COMPOSE} run addon-dev prettier
-	${DOCKER_COMPOSE} run addon-dev stylelint
+	${DOCKER_COMPOSE} --profile unittest run addon-dev lint
+	${DOCKER_COMPOSE} --profile unittest run addon-dev prettier
+	${DOCKER_COMPOSE} --profile unittest run addon-dev stylelint
 
 .PHONY: test
 test: ## Run unit tests

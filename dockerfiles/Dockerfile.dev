@@ -24,4 +24,5 @@ RUN <<EOT
     /setupAddon
     node helper.js
     yarn install --network-timeout 1000000
+    yarn dedupe @popperjs/core
 EOT

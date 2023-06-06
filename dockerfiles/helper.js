@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+const ADDON_NAME = process.env.ADDON_NAME || '';
 const ADDON_PATH = process.env.ADDON_PATH || '';
 
 const appFolder = path.resolve('/app');
@@ -15,5 +16,7 @@ packageJson.scripts = {
   'cypress:run': `make test-acceptance-addon-headless ADDONPATH=src/addons/${ADDON_PATH}`,
   'cypress:ci:full': `make full-test-acceptance-addon ADDONPATH=src/addons/${ADDON_PATH}`,
 };
+
+packageJson.theme = ADDON_NAME;
 
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));

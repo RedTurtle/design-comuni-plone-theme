@@ -27,6 +27,23 @@ services:
     # entrypoint: ''
     # command: /bin/bash
 
+  addon-prod:
+    build:
+      context: ../
+      dockerfile: ./dockerfiles/Dockerfile
+      args:
+        ADDON_NAME: '${ADDON_NAME}'
+        ADDON_PATH: '${ADDON_PATH}'
+        VOLTO_VERSION: ${VOLTO_VERSION:-16}
+    environment:
+      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
+      RAZZLE_API_PATH: http://localhost:8080/Plone
+    ports:
+      - 3000:3000
+    tty: true
+    profiles:
+      - prod
+
   backend:
     # image: plone/plone-backend:${PLONE_VERSION:-6}
     image: ghcr.io/redturtle/iocomune-backend:latest
@@ -38,3 +55,4 @@ services:
       - 8080:8080
     profiles:
       - dev
+      - prod
