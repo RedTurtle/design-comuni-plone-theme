@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: '{context}/dockerfiles/Dockerfile'
+          file: ./dockerfiles/Dockerfile
           tags: redturtletech/io-comune-base:develop
           pull: true
           push: false
