@@ -62,7 +62,7 @@ const DateRangeFacet = (props) => {
   const [focused, setFocused] = useState(null);
   return (
     <div className="daterange-facet">
-      <h6 className="mb-2 columnTextTitle">
+      <h6 className="mb-3 columnTextTitle">
         {facet?.title ?? facet?.field?.label}
       </h6>
       <div className="date-time-widget-wrapper">

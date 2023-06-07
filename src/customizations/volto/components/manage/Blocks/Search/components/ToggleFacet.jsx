@@ -6,7 +6,7 @@ const ToggleFacet = (props) => {
 
   return (
     <div className="checkbox-facet">
-      <h6 className="mb-2 columnTextTitle">
+      <h6 className="mb-3 columnTextTitle">
         {facet?.title ?? facet?.field?.label}
       </h6>
       <FormGroup check className="radio">

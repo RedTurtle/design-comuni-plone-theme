@@ -11,7 +11,7 @@ const SelectFacet = (props) => {
   const v = Array.isArray(value) && value.length === 0 ? null : value;
   return (
     <div className="select-facet">
-      <h6 className="mb-2 columnTextTitle">
+      <h6 className="mb-3 columnTextTitle">
         {facet?.title || facet?.field?.label}
       </h6>
 

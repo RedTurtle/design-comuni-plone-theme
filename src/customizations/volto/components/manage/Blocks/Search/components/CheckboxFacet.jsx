@@ -16,7 +16,7 @@ const CheckboxFacet = (props) => {
 
   return (
     <div className="checkbox-facet">
-      <h6 className="mb-3 columnTextTitle">
+      <h6 className="mb-4 columnTextTitle">
         {facet.title ?? facet?.field?.label}
       </h6>
       <Form className="entries">

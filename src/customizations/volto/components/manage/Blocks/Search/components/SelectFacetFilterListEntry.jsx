@@ -4,8 +4,15 @@ import { selectFacetStateToValue } from '@plone/volto/components/manage/Blocks/S
 import { commonMessages } from '../utils';
 
 function SelectFacetFilterListEntry(props) {
-  const { facet, isEditMode, setFacets, facets, querystring, data, intl } =
-    props;
+  const {
+    facet,
+    isEditMode,
+    setFacets,
+    facets,
+    querystring,
+    data,
+    intl,
+  } = props;
   const selectedValue = useMemo(
     () =>
       selectFacetStateToValue({
@@ -35,8 +42,8 @@ function SelectFacetFilterListEntry(props) {
         })}
       >
         <Icon
-          icon="it-delete"
-          size="sm"
+          icon="it-close"
+          size="md"
           aria-label={intl.formatMessage(commonMessages.clearFilter, {
             filterName: selectedValue?.label ?? '',
           })}
@@ -73,8 +80,8 @@ function SelectFacetFilterListEntry(props) {
               })}
             >
               <Icon
-                icon="it-delete"
-                size="sm"
+                icon="it-close"
+                size="md"
                 aria-label={intl.formatMessage(commonMessages.clearFilter, {
                   filterName: label,
                 })}

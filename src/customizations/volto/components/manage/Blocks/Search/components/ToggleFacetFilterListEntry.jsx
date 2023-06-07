@@ -41,8 +41,8 @@ function ToggleFacetFilterListEntry(props) {
         })}
       >
         <Icon
-          icon="it-delete"
-          size="sm"
+          icon="it-close"
+          size="md"
           aria-label={intl.formatMessage(commonMessages.clearFilter, {
             filterName: entrySettings?.label ?? '',
           })}
