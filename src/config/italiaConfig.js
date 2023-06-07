@@ -6,6 +6,8 @@ import bookSVG from '@plone/volto/icons/book.svg';
 import shareSVG from '@plone/volto/icons/share.svg';
 import searchIcon from 'bootstrap-italia/src/svg/it-search.svg';
 
+import { Search } from '@plone/volto/components';
+
 import {
   getItaliaListingVariations,
   removeListingVariation,
@@ -22,6 +24,7 @@ import CardWithoutImageRssTemplateSkeleton from 'design-comuni-plone-theme/compo
 import {
   AnswersStep,
   CommentsStep,
+  LoginAgid,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import RightColumnFacets from '@plone/volto/components/manage/Blocks/Search/layout/RightColumnFacets';
 import LeftColumnFacets from '@plone/volto/components/manage/Blocks/Search/layout/LeftColumnFacets';
@@ -57,6 +60,8 @@ import applyRichTextConfig from 'design-comuni-plone-theme/config/RichTextEditor
 import gdprPrivacyPanelConfig from 'design-comuni-plone-theme/config/volto-gdpr-privacy-defaultPanelConfig.js';
 
 import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/schema.js';
+
+import reducers from 'design-comuni-plone-theme/reducers';
 
 export default function applyConfig(voltoConfig) {
   let config = applyRichTextConfig(voltoConfig);
@@ -447,6 +452,25 @@ export default function applyConfig(voltoConfig) {
     config.blocks.blocksConfig.toc.variations.filter(
       (v) => v.id !== 'horizontalMenu',
     );
+
+  // REDUCERS
+  config.addonReducers = {
+    ...config.addonReducers,
+    ...reducers,
+  };
+
+  // ROUTES
+  config.addonRoutes = [
+    ...config.addonRoutes,
+    {
+      path: '/**/search',
+      component: Search,
+    },
+    {
+      path: ['/login', '/**/login'],
+      component: LoginAgid,
+    },
+  ];
 
   return config;
 }
