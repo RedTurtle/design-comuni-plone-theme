@@ -69,7 +69,7 @@ const RightColumnFacets = (props) => {
               </div>
             )}
 
-            <div className="search-results-count-sort d-flex align-center">
+            <div className="search-results-count-sort d-flex align-center flex-wrap">
               <SearchDetails
                 text={searchedText}
                 total={totalItems}
