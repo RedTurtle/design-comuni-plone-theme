@@ -21,8 +21,7 @@
     "volto-gdpr-privacy",
     "volto-data-grid-widget",
     "@eeacms/volto-taxonomy",
-    "volto-feedback",
-    "@eeacms/volto-columns-block"
+    "volto-feedback"
   ],
   "customizationPaths": [
     "src/customizations/"
