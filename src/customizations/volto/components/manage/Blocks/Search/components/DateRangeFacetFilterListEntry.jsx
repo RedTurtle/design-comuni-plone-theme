@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { Label, Icon, Button } from 'design-react-kit';
 import { defineMessages } from 'react-intl';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { commonMessages } from '../utils';
 
 const messages = defineMessages({
@@ -19,8 +20,17 @@ const messages = defineMessages({
 });
 
 function DateRangeFacetFilterListEntry(props) {
-  const { facet, isEditMode, setFacets, facets, data, intl, searchData } =
-    props;
+  const {
+    facet,
+    isEditMode,
+    setFacets,
+    facets,
+    data,
+    intl,
+    searchData,
+    moment: momentLib,
+  } = props;
+  const moment = momentLib.default;
   const entrySettings = useMemo(() => {
     return data.facets?.find((f) => f?.field?.value === facet)?.field;
   }, [data, facet]);
@@ -42,15 +52,15 @@ function DateRangeFacetFilterListEntry(props) {
         label = `${intl.formatMessage(
           messages.DateRangeFacetFilterListEntryDalAl,
           {
-            start: start,
-            end: end,
+            start: moment(start).locale(intl.locale).format('DD-MM-YYYY'),
+            end: moment(end).locale(intl.locale).format('DD-MM-YYYY'),
           },
         )}`;
       else
         label = `${intl.formatMessage(
           messages.DateRangeFacetFilterListEntryDal,
           {
-            start: start,
+            start: moment(start).locale(intl.locale).format('DD-MM-YYYY'),
           },
         )}`;
     } else {
@@ -58,7 +68,7 @@ function DateRangeFacetFilterListEntry(props) {
         label = `${intl.formatMessage(
           messages.DateRangeFacetFilterListEntryAl,
           {
-            end: end,
+            end: moment(end).locale(intl.locale).format('DD-MM-YYYY'),
           },
         )}`;
     }
@@ -101,4 +111,4 @@ function DateRangeFacetFilterListEntry(props) {
   );
 }
 
-export default DateRangeFacetFilterListEntry;
+export default injectLazyLibs(['moment'])(DateRangeFacetFilterListEntry);
