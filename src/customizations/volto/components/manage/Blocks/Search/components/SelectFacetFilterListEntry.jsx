@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Label, Icon, Button } from 'design-react-kit';
 import { selectFacetStateToValue } from '@plone/volto/components/manage/Blocks/Search/components/base';
-import { commonMessages } from '../utils';
+import { commonSearchBlockMessages } from 'design-comuni-plone-theme/helpers';
 
 function SelectFacetFilterListEntry(props) {
   const {
@@ -41,20 +41,26 @@ function SelectFacetFilterListEntry(props) {
                 [facet]: '',
               });
           }}
-          aria-label={intl.formatMessage(commonMessages.clearFilter, {
-            filterName: selectedValue?.label ?? '',
-          })}
-          title={intl.formatMessage(commonMessages.clearFilter, {
+          aria-label={intl.formatMessage(
+            commonSearchBlockMessages.clearFilter,
+            {
+              filterName: selectedValue?.label ?? '',
+            },
+          )}
+          title={intl.formatMessage(commonSearchBlockMessages.clearFilter, {
             filterName: selectedValue?.label ?? '',
           })}
         >
           <Icon
             icon="it-close"
             size="md"
-            aria-label={intl.formatMessage(commonMessages.clearFilter, {
-              filterName: selectedValue?.label ?? '',
-            })}
-            title={intl.formatMessage(commonMessages.clearFilter, {
+            aria-label={intl.formatMessage(
+              commonSearchBlockMessages.clearFilter,
+              {
+                filterName: selectedValue?.label ?? '',
+              },
+            )}
+            title={intl.formatMessage(commonSearchBlockMessages.clearFilter, {
               filterName: selectedValue?.label ?? '',
             })}
           />
@@ -85,22 +91,31 @@ function SelectFacetFilterListEntry(props) {
                     [facet]: entries,
                   });
               }}
-              aria-label={intl.formatMessage(commonMessages.clearFilter, {
-                filterName: label,
-              })}
-              title={intl.formatMessage(commonMessages.clearFilter, {
+              aria-label={intl.formatMessage(
+                commonSearchBlockMessages.clearFilter,
+                {
+                  filterName: label,
+                },
+              )}
+              title={intl.formatMessage(commonSearchBlockMessages.clearFilter, {
                 filterName: label,
               })}
             >
               <Icon
                 icon="it-close"
                 size="md"
-                aria-label={intl.formatMessage(commonMessages.clearFilter, {
-                  filterName: label,
-                })}
-                title={intl.formatMessage(commonMessages.clearFilter, {
-                  filterName: label,
-                })}
+                aria-label={intl.formatMessage(
+                  commonSearchBlockMessages.clearFilter,
+                  {
+                    filterName: label,
+                  },
+                )}
+                title={intl.formatMessage(
+                  commonSearchBlockMessages.clearFilter,
+                  {
+                    filterName: label,
+                  },
+                )}
               />
             </Button>
           </Label>

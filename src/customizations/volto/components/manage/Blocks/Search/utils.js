@@ -8,6 +8,8 @@ export const NONVALUE_OPERATIONS = new Set([
 
 export const DATE_OPERATIONS = new Set([
   'plone.app.querystring.operation.date.between',
+  'plone.app.querystring.operation.date.lessThan',
+  'plone.app.querystring.operation.date.largerThan',
 ]);
 
 export const hasNonValueOperation = (ops) => {
@@ -25,17 +27,6 @@ export const getBackgroundClass = (show_block_bg, bg_color) => {
 
   return `bg-light py-5 ${background_color}`;
 };
-
-export const commonMessages = defineMessages({
-  clearFilter: {
-    id: 'clearFilter',
-    defaultMessage: 'Clear {filterName} filter',
-  },
-  clearAllFilters: {
-    id: 'clearAllFilters',
-    defaultMessage: 'Clear all filters',
-  },
-});
 
 export const useClickOutside = (ref, callback) => {
   const handleClick = (e) => {

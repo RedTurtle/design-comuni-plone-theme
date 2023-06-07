@@ -1,21 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Icon, Input, Label } from 'design-react-kit';
-import { defineMessages, useIntl } from 'react-intl';
-
-const messages = defineMessages({
-  search: {
-    id: 'SearchSearchBlock',
-    defaultMessage: 'Cerca una parola chiave',
-  },
-  searchButtonText: {
-    id: 'SearchSearchBlockButtonText',
-    defaultMessage: 'Search',
-  },
-  clearSearch: {
-    id: 'clearSearch',
-    defaultMessage: 'Clear search',
-  },
-});
+import { useIntl } from 'react-intl';
+import { commonSearchBlockMessages } from 'design-comuni-plone-theme/helpers';
 
 const SearchInput = (props) => {
   const {
@@ -41,7 +27,7 @@ const SearchInput = (props) => {
         htmlFor={`${props.id}-searchtext`}
         className={focused ? 'active' : 'inactive'}
       >
-        {intl.formatMessage(messages.search)}
+        {intl.formatMessage(commonSearchBlockMessages.search)}
       </Label>
       <Input
         noWrapper
@@ -52,7 +38,7 @@ const SearchInput = (props) => {
         placeholder={
           focused || data.searchInputPrompt
             ? data.searchInputPrompt
-            : intl.formatMessage(messages.search)
+            : intl.formatMessage(commonSearchBlockMessages.search)
         }
         onKeyPress={(event) => {
           if (isLive || event.key === 'Enter') onTriggerSearch(searchText);
@@ -71,13 +57,15 @@ const SearchInput = (props) => {
         <button
           className="clear-icon bg-transparent"
           onClick={clearSearch}
-          title={intl.formatMessage(messages.clearSearch)}
+          title={intl.formatMessage(commonSearchBlockMessages.clearSearch)}
           style={{ right: isLive ? 0 : 80 }}
         >
           <Icon
             icon="it-close"
-            aria-label={intl.formatMessage(messages.clearSearch)}
-            title={intl.formatMessage(messages.clearSearch)}
+            aria-label={intl.formatMessage(
+              commonSearchBlockMessages.clearSearch,
+            )}
+            title={intl.formatMessage(commonSearchBlockMessages.clearSearch)}
             size="sm"
           />
         </button>
@@ -90,13 +78,13 @@ const SearchInput = (props) => {
             tag="button"
             title={
               data.searchButtonLabel ||
-              intl.formatMessage(messages.searchButtonText)
+              intl.formatMessage(commonSearchBlockMessages.searchButtonText)
             }
             size="sm"
             onClick={() => onTriggerSearch(searchText)}
           >
             {data.searchButtonLabel ||
-              intl.formatMessage(messages.searchButtonText)}
+              intl.formatMessage(commonSearchBlockMessages.searchButtonText)}
           </Button>
         </div>
       )}

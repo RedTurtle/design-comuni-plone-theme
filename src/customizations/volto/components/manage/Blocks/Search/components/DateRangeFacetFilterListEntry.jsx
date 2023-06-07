@@ -1,23 +1,7 @@
 import React, { useMemo } from 'react';
 import { Label, Icon, Button } from 'design-react-kit';
-import { defineMessages } from 'react-intl';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import { commonMessages } from '../utils';
-
-const messages = defineMessages({
-  DateRangeFacetFilterListEntryDal: {
-    id: 'DateRangeFacetFilterListEntryDal',
-    defaultMessage: 'Dal {start}',
-  },
-  DateRangeFacetFilterListEntryAl: {
-    id: 'DateRangeFacetFilterListEntryAl',
-    defaultMessage: 'Al {end}',
-  },
-  DateRangeFacetFilterListEntryDalAl: {
-    id: 'DateRangeFacetFilterListEntryDalAl',
-    defaultMessage: 'Dal {start} al {end}',
-  },
-});
+import { commonSearchBlockMessages } from 'design-comuni-plone-theme/helpers';
 
 function DateRangeFacetFilterListEntry(props) {
   const {
@@ -51,7 +35,7 @@ function DateRangeFacetFilterListEntry(props) {
     if (start) {
       if (end)
         label = `${intl.formatMessage(
-          messages.DateRangeFacetFilterListEntryDalAl,
+          commonSearchBlockMessages.DateRangeFacetFilterListEntryDalAl,
           {
             start: moment(start).locale(intl.locale).format('DD-MM-YYYY'),
             end: moment(end).locale(intl.locale).format('DD-MM-YYYY'),
@@ -59,7 +43,7 @@ function DateRangeFacetFilterListEntry(props) {
         )}`;
       else
         label = `${intl.formatMessage(
-          messages.DateRangeFacetFilterListEntryDal,
+          commonSearchBlockMessages.DateRangeFacetFilterListEntryDal,
           {
             start: moment(start).locale(intl.locale).format('DD-MM-YYYY'),
           },
@@ -67,7 +51,7 @@ function DateRangeFacetFilterListEntry(props) {
     } else {
       if (end)
         label = `${intl.formatMessage(
-          messages.DateRangeFacetFilterListEntryAl,
+          commonSearchBlockMessages.DateRangeFacetFilterListEntryAl,
           {
             end: moment(end).locale(intl.locale).format('DD-MM-YYYY'),
           },
@@ -94,20 +78,26 @@ function DateRangeFacetFilterListEntry(props) {
             );
             !isEditMode && setFacets(filteredFacets);
           }}
-          aria-label={intl.formatMessage(commonMessages.clearFilter, {
-            filterName: entrySettings?.label ?? '',
-          })}
-          title={intl.formatMessage(commonMessages.clearFilter, {
+          aria-label={intl.formatMessage(
+            commonSearchBlockMessages.clearFilter,
+            {
+              filterName: entrySettings?.label ?? '',
+            },
+          )}
+          title={intl.formatMessage(commonSearchBlockMessages.clearFilter, {
             filterName: entrySettings?.label ?? '',
           })}
         >
           <Icon
             icon="it-close"
             size="md"
-            aria-label={intl.formatMessage(commonMessages.clearFilter, {
-              filterName: entrySettings?.label ?? '',
-            })}
-            title={intl.formatMessage(commonMessages.clearFilter, {
+            aria-label={intl.formatMessage(
+              commonSearchBlockMessages.clearFilter,
+              {
+                filterName: entrySettings?.label ?? '',
+              },
+            )}
+            title={intl.formatMessage(commonSearchBlockMessages.clearFilter, {
               filterName: entrySettings?.label ?? '',
             })}
           />

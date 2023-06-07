@@ -1,14 +1,11 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
+import { commonSearchBlockMessages } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   searchResults: {
     id: 'Search results',
     defaultMessage: 'Search results',
-  },
-  searchedFor: {
-    id: 'searchedFor',
-    defaultMessage: 'Ricerca per: <em>{searchedtext}</em>.',
   },
 });
 
@@ -20,7 +17,7 @@ const SearchDetails = ({ total, text, as = 'p', data }) => {
       <>
         {text && (
           <>
-            {intl.formatMessage(messages.searchedFor, {
+            {intl.formatMessage(commonSearchBlockMessages.searchedFor, {
               em: (...chunks) => <em>{chunks}</em>,
               searchedtext: text,
             })}

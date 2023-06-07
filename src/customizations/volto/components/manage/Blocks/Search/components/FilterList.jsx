@@ -5,7 +5,8 @@ import { isEmpty } from 'lodash';
 import { resolveExtension } from '@plone/volto/helpers';
 import cx from 'classnames';
 import { compose } from 'redux';
-import { commonMessages, useClickOutside } from '../utils';
+import { useClickOutside } from '../utils';
+import { commonSearchBlockMessages } from 'design-comuni-plone-theme/helpers';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -118,13 +119,21 @@ const FilterList = (props) => {
               e.stopPropagation();
               !isEditMode && setFacets({});
             }}
-            aria-label={intl.formatMessage(commonMessages.clearAllFilters)}
-            title={intl.formatMessage(commonMessages.clearAllFilters)}
+            aria-label={intl.formatMessage(
+              commonSearchBlockMessages.clearAllFilters,
+            )}
+            title={intl.formatMessage(
+              commonSearchBlockMessages.clearAllFilters,
+            )}
           >
             <Icon
               icon="it-delete"
-              title={intl.formatMessage(commonMessages.clearAllFilters)}
-              aria-label={intl.formatMessage(commonMessages.clearAllFilters)}
+              title={intl.formatMessage(
+                commonSearchBlockMessages.clearAllFilters,
+              )}
+              aria-label={intl.formatMessage(
+                commonSearchBlockMessages.clearAllFilters,
+              )}
             />
             {intl.formatMessage(messages.clearFilters)}
           </Button>

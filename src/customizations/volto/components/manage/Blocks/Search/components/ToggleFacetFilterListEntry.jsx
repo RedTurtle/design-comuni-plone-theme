@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Label, Icon, Button } from 'design-react-kit';
 import { defineMessages } from 'react-intl';
-import { commonMessages } from '../utils';
+import { commonSearchBlockMessages } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   yes: {
@@ -45,20 +45,26 @@ function ToggleFacetFilterListEntry(props) {
             );
             !isEditMode && setFacets(filteredFacets);
           }}
-          aria-label={intl.formatMessage(commonMessages.clearFilter, {
-            filterName: entrySettings?.label ?? '',
-          })}
-          title={intl.formatMessage(commonMessages.clearFilter, {
+          aria-label={intl.formatMessage(
+            commonSearchBlockMessages.clearFilter,
+            {
+              filterName: entrySettings?.label ?? '',
+            },
+          )}
+          title={intl.formatMessage(commonSearchBlockMessages.clearFilter, {
             filterName: entrySettings?.label ?? '',
           })}
         >
           <Icon
             icon="it-close"
             size="md"
-            aria-label={intl.formatMessage(commonMessages.clearFilter, {
-              filterName: entrySettings?.label ?? '',
-            })}
-            title={intl.formatMessage(commonMessages.clearFilter, {
+            aria-label={intl.formatMessage(
+              commonSearchBlockMessages.clearFilter,
+              {
+                filterName: entrySettings?.label ?? '',
+              },
+            )}
+            title={intl.formatMessage(commonSearchBlockMessages.clearFilter, {
               filterName: entrySettings?.label ?? '',
             })}
           />
