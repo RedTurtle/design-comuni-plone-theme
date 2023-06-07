@@ -1,5 +1,5 @@
 /* CUSTOMIZATIONS:
-  -
+  - Customized schema
 */
 import config from '@plone/volto/registry';
 import { defineMessages } from 'react-intl';
