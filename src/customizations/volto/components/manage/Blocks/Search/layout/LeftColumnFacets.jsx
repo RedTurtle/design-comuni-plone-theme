@@ -60,7 +60,7 @@ const LeftColumnFacets = (props) => {
 
         <Row>
           {showColumn && (
-            <Col className="col-lg-4 col-md-5 col-sm-12 pe-5 sideColumn">
+            <div className="col-lg-4 col-md-5 col-sm-12 pe-5 sideColumn">
               {data.columnTextTitle && (
                 <h6 className="columnTextTitle mb-4">{data.columnTextTitle}</h6>
               )}
@@ -100,10 +100,10 @@ const LeftColumnFacets = (props) => {
                   />
                 </div>
               )}
-            </Col>
+            </div>
           )}
 
-          <Col
+          <div
             className={showColumn ? 'col-lg-8 col-md-7 col-sm-12' : 'col-lg-12'}
           >
             {(Object.keys(data).includes('showSearchInput')
@@ -132,7 +132,7 @@ const LeftColumnFacets = (props) => {
               />
             </div>
             {children}
-          </Col>
+          </div>
         </Row>
       </Container>
     </div>
