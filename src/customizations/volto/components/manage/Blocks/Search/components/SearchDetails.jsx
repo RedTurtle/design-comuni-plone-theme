@@ -1,10 +1,14 @@
 import React from 'react';
-import { FormattedMessage, defineMessages, useIntl } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
   searchResults: {
     id: 'Search results',
     defaultMessage: 'Search results',
+  },
+  searchedFor: {
+    id: 'searchedFor',
+    defaultMessage: 'Ricerca per: <em>{searchedtext}</em>.',
   },
 });
 
@@ -16,14 +20,10 @@ const SearchDetails = ({ total, text, as = 'p', data }) => {
       <>
         {text && (
           <>
-            <FormattedMessage
-              id="Searched for: <em>{searchedtext}</em>."
-              defaultMessage="Searched for: <em>{searchedtext}</em>."
-              values={{
-                em: (...chunks) => <em>{chunks}</em>,
-                searchedtext: text,
-              }}
-            />
+            {intl.formatMessage(messages.searchedFor, {
+              em: (...chunks) => <em>{chunks}</em>,
+              searchedtext: text,
+            })}
           </>
         )}
         {data.showTotalResults && (

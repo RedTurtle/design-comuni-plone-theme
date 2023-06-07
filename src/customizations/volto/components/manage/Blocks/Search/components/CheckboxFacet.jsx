@@ -16,7 +16,9 @@ const CheckboxFacet = (props) => {
 
   return (
     <div className="checkbox-facet">
-      <h5 className="mb-3">{facet.title ?? facet?.field?.label}</h5>
+      <h6 className="mb-3 columnTextTitle">
+        {facet.title ?? facet?.field?.label}
+      </h6>
       <Form className="entries">
         {choices.map(({ label, value }, i) => (
           <FormGroup className="entry form-check-group" check key={value}>

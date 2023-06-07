@@ -4,9 +4,9 @@ import {
   SearchDetails,
   Facets,
   FilterList,
-  SortOn,
 } from '@plone/volto/components/manage/Blocks/Search/components';
-import { Container, Row, Col } from 'design-react-kit';
+import { UniversalLink } from '@plone/volto/components';
+import { Container, Row, Col, Icon } from 'design-react-kit';
 import { flushSync } from 'react-dom';
 import { getBackgroundClass } from '@plone/volto/components/manage/Blocks/Search/utils';
 import {
@@ -31,15 +31,16 @@ const RightColumnFacets = (props) => {
     searchedText, // search text for previous search
     isEditMode,
     querystring = {},
-    // searchData,
+    searchData,
     // mode = 'view',
     // variation,
   } = props;
   const { showSearchButton } = data;
   const isLive = !showSearchButton;
-  console.log('rfc', richTextHasContent(data.columnText));
   const showColumn =
-    richTextHasContent(data.columnText) || data?.facets?.length > 0;
+    data.columnTextTitle ||
+    richTextHasContent(data.columnText) ||
+    data?.facets?.length > 0;
   return (
     <div
       className={`full-width ${getBackgroundClass(
@@ -57,51 +58,67 @@ const RightColumnFacets = (props) => {
         )}
 
         <Row>
-          <Col className={showColumn ? 'col-lg-8' : 'col-lg-12'}>
+          <Col
+            className={showColumn ? 'col-lg-8 col-md-7 col-sm-12' : 'col-lg-12'}
+          >
             {(Object.keys(data).includes('showSearchInput')
               ? data.showSearchInput
               : true) && (
-              <div className="search-wrapper  d-flex input-group">
+              <div className="search-wrapper d-flex form-group input-group">
                 <SearchInput {...props} isLive={isLive} />
               </div>
             )}
 
-            <FilterList
-              {...props}
-              isEditMode={isEditMode}
-              setFacets={(f) => {
-                flushSync(() => {
-                  setFacets(f);
-                  onTriggerSearch(searchedText || '', f);
-                });
-              }}
-            />
-
-            <div className="search-results-count-sort">
+            <div className="search-results-count-sort d-flex align-center">
               <SearchDetails
                 text={searchedText}
                 total={totalItems}
                 data={data}
+              />
+              <FilterList
+                {...props}
+                isEditMode={isEditMode}
+                setFacets={(f) => {
+                  flushSync(() => {
+                    setFacets(f);
+                    onTriggerSearch(searchedText || '', f);
+                  });
+                }}
               />
             </div>
             {children}
           </Col>
 
           {showColumn && (
-            <Col className="col-lg-4 ps-5">
+            <Col className="col-lg-4 col-md-5 col-sm-12 ps-5 sideColumn">
+              {data.columnTextTitle && (
+                <h6 className="columnTextTitle mb-4">{data.columnTextTitle}</h6>
+              )}
               {richTextHasContent(data.columnText) && (
-                <div className="columnText mb-5">
-                  <RichText serif={false} data={data.info_testata} />
+                <div className="columnText mb-4">
+                  <RichText serif={false} data={data.columnText} />
                 </div>
+              )}
+              {data.linkTitleColumn && data.linkHrefColumn?.length > 0 && (
+                <p className="mb-5">
+                  <UniversalLink
+                    href={data.linkHrefColumn[0]?.['@id']}
+                    className="read-more"
+                  >
+                    {data.linkTitleColumn}
+                    <Icon icon="it-arrow-right" />
+                  </UniversalLink>
+                </p>
               )}
               {data.facets?.length > 0 && (
                 <div className="facets">
                   {data.facetsTitle && (
-                    <h5 className="mb-4">{data.facetsTitle}</h5>
+                    <h6 className="columnTextTitle">{data.facetsTitle}</h6>
                   )}
                   <Facets
                     querystring={querystring}
                     data={data}
+                    searchData={searchData}
                     facets={facets}
                     isEditMode={isEditMode}
                     setFacets={(f) => {

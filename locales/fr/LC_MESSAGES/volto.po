@@ -78,6 +78,7 @@ msgid "Block style"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Vedi
 msgid "Card detail label"
 msgstr "Voir"
@@ -2624,6 +2625,7 @@ msgid "provvedimento_finale"
 msgstr "Disposition finale"
 
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Data di pubblicazione
 msgid "publication_date"
 msgstr ""
@@ -3400,6 +3402,11 @@ msgstr ""
 msgid "simplecard_listing_appearance_description"
 msgstr ""
 
+#: config/Blocks/ListingOptions/simpleCardTemplate
+# defaultMessage: Un elemento per riga
+msgid "simplecard_listing_appearance_oneforrow"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Situazione patrimoniale
 msgid "situazione_patrimoniale"
@@ -3766,6 +3773,7 @@ msgid "uo_type"
 msgstr "Typologie"
 
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Data di aggiornamento
 msgid "update_date"
 msgstr ""

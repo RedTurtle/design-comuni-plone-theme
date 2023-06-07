@@ -4,6 +4,7 @@ import { defineMessages, injectIntl } from 'react-intl';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+import qs from 'query-string';
 
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
@@ -59,10 +60,11 @@ const DateRangeFacet = (props) => {
   const moment = props.moment.default;
   const { DateRangePicker } = reactDates;
   const [focused, setFocused] = useState(null);
-
   return (
     <div className="daterange-facet">
-      <h5 className="mb-2">{facet?.title ?? facet?.field?.label}</h5>
+      <h6 className="mb-2 columnTextTitle">
+        {facet?.title ?? facet?.field?.label}
+      </h6>
       <div className="date-time-widget-wrapper">
         <div className="date-input">
           <DateRangePicker
@@ -96,13 +98,49 @@ const DateRangeFacet = (props) => {
   );
 };
 
-DateRangeFacet.stateToValue = ({ facetSettings, index, selectedValue }) => {
-  return selectedValue || [null, null];
+// CUSTOMIZATION to make it actually work as intended
+// Terrificante modo di prendere l'op reale e non le abbreviazioni
+// inspiegabili e buggose di chi ha fatto il blocco Search,
+// piuttosto che riscriverlo da capo.
+// D'altronde, nel codice originale e' pieno di todo...
+DateRangeFacet.stateToValue = (state) => {
+  const { facetSettings, selectedValue, searchData = {} } = state;
+  if (typeof selectedValue === 'string') {
+    const queryIndex = searchData?.query?.find(
+      (q) => q.i === facetSettings?.field?.value,
+    );
+    if (queryIndex) {
+      if (queryIndex?.o?.includes('date.largerThan'))
+        return [selectedValue, null];
+      else if (queryIndex?.o?.includes('date.lessThan'))
+        return [null, selectedValue];
+      else if (queryIndex?.o?.includes('date.between')) return selectedValue;
+    }
+    return [null, null];
+  } else return selectedValue || [null, null];
 };
 
 // CUSTOMIZATION to make it actually work as intended
+// Terrificante modo di prendere l'op reale e non le abbreviazioni
+// inspiegabili e buggose di chi ha fatto il blocco Search,
+// piuttosto che riscriverlo da capo.
+// D'altronde, nel codice originale e' pieno di todo...
 DateRangeFacet.valueToQuery = ({ value, facet }) => {
-  if (value) {
+  if (typeof value === 'string') {
+    const params = qs.parse(window.location.hash);
+    // Cannot guess, make it fail grracefully at least
+    if (!params) return null;
+
+    const facetQuery = JSON.parse(params?.query || '[]')?.find(
+      (q) => q.i === facet.field.value,
+    );
+    const facetOperation = facetQuery?.o ?? '';
+    return {
+      i: facet.field.value,
+      o: facetOperation.replace('paqo', 'plone.app.querystring.operation'),
+      v: value,
+    };
+  } else if (Array.isArray(value)) {
     if (value[0] && !value[1])
       return {
         i: facet.field.value,
@@ -123,6 +161,7 @@ DateRangeFacet.valueToQuery = ({ value, facet }) => {
         v: value,
       };
   }
+
   return null;
 };
 

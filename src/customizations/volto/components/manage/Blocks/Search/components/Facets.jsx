@@ -21,6 +21,7 @@ const Facets = (props) => {
     setFacets,
     facetWrapper,
     isEditMode,
+    searchData,
   } = props;
   const { search } = config.blocks.blocksConfig;
 
@@ -29,8 +30,7 @@ const Facets = (props) => {
     {},
     ...(data?.query?.query?.map(({ i, v }) => ({ [i]: v })) || []),
   );
-  console.log('facets', facets);
-  console.log('data.facets', data?.facets);
+
   return (
     <>
       {data?.facets
@@ -67,8 +67,15 @@ const Facets = (props) => {
             search.extensions.facetWidgets.types,
             facetSettings,
           );
-
-          let value = stateToValue({ facetSettings, index, selectedValue });
+          // Pass additional option to know the current operation per facet
+          // Needed for customized dateRange facet, which accepts also larger
+          // and less date operations
+          let value = stateToValue({
+            facetSettings,
+            index,
+            selectedValue,
+            searchData,
+          });
 
           const { rewriteOptions = (name, options) => options } =
             search.extensions.facetWidgets;
@@ -82,7 +89,6 @@ const Facets = (props) => {
                 value={value}
                 isEditMode={isEditMode}
                 onChange={(id, value) => {
-                  console.log('changing facet ', id, ' with value ', value);
                   !isEditMode && setFacets({ ...facets, [id]: value });
                 }}
               />

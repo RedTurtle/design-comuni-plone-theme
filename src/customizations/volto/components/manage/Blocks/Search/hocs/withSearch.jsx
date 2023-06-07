@@ -46,7 +46,6 @@ function getInitialState(data, facets, urlSearchText, id) {
 
           const name = facet.field.value;
           const value = facets[name];
-
           return valueToQuery({ value, facet });
         })
         .filter((f) => !!f),
@@ -258,7 +257,6 @@ const withSearch = (options) => (WrappedComponent) => {
         // Cani infami parte due: la ricerca testuale NON E' una faccetta configurata
         // ...urlQuery.map(({ i, v }) => ({ [i]: v })), // TODO: the 'o' should be kept. This would be a major refactoring of the facets
         ...urlQuery.reduce((acc, curr) => {
-          console.log(acc, curr);
           if (curr.i !== 'SearchableText') {
             if (curr.o.includes('boolean')) return [...acc, { [curr.i]: true }];
             else return [...acc, { [curr.i]: curr.v }];
@@ -266,10 +264,7 @@ const withSearch = (options) => (WrappedComponent) => {
         }, []),
       ),
     );
-    React.useEffect(() => {
-      console.log('monitor facets', facets);
-    }, [facets]);
-    console.log('current facets', facets);
+
     const [sortOn, setSortOn] = React.useState(data?.query?.sort_on);
     const [sortOrder, setSortOrder] = React.useState(data?.query?.sort_order);
 

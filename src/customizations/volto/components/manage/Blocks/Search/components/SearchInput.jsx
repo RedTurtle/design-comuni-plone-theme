@@ -1,42 +1,64 @@
-import React from 'react';
-import { Button, Icon } from 'design-react-kit';
+import React, { useState } from 'react';
+import { Button, Icon, Input, Label } from 'design-react-kit';
 import { defineMessages, useIntl } from 'react-intl';
-import cx from 'classnames';
 
 const messages = defineMessages({
   search: {
-    id: 'Search',
-    defaultMessage: 'Search',
+    id: 'SearchSearchBlock',
+    defaultMessage: 'Cerca una parola chiave',
   },
   searchButtonText: {
-    id: 'Search',
+    id: 'SearchSearchBlockButtonText',
     defaultMessage: 'Search',
+  },
+  clearSearch: {
+    id: 'clearSearch',
+    defaultMessage: 'Clear search',
   },
 });
 
 const SearchInput = (props) => {
-  const { data, searchText, setSearchText, isLive, onTriggerSearch } = props;
+  const {
+    data,
+    searchText,
+    setSearchText,
+    isEditMode,
+    isLive,
+    onTriggerSearch,
+  } = props;
   const intl = useIntl();
   const clearSearch = () => {
     setSearchText('');
     onTriggerSearch('');
   };
+  const [focused, setFocused] = useState(false);
   return (
     <>
       <span className="autocomplete-icon bg-transparent">
         <Icon icon="it-search" aria-hidden size="sm" />
       </span>
-
-      <input
+      <Label
+        htmlFor={`${props.id}-searchtext`}
+        className={focused ? 'active' : 'inactive'}
+      >
+        {intl.formatMessage(messages.search)}
+      </Label>
+      <Input
+        noWrapper
+        disabled={isEditMode}
         id={`${props.id}-searchtext`}
         value={searchText}
         type="search"
         placeholder={
-          data.searchInputPrompt || intl.formatMessage(messages.search)
+          focused || data.searchInputPrompt
+            ? data.searchInputPrompt
+            : intl.formatMessage(messages.search)
         }
         onKeyPress={(event) => {
           if (isLive || event.key === 'Enter') onTriggerSearch(searchText);
         }}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
         onChange={({ target }) => {
           setSearchText(target.value);
           if (isLive) {
@@ -49,10 +71,15 @@ const SearchInput = (props) => {
         <button
           className="clear-icon bg-transparent"
           onClick={clearSearch}
-          title={'Clear'}
+          title={intl.formatMessage(messages.clearSearch)}
           style={{ right: isLive ? 0 : 80 }}
         >
-          <Icon icon="it-close" aria-hidden size="sm" />
+          <Icon
+            icon="it-close"
+            aria-label={intl.formatMessage(messages.clearSearch)}
+            title={intl.formatMessage(messages.clearSearch)}
+            size="sm"
+          />
         </button>
       )}
 

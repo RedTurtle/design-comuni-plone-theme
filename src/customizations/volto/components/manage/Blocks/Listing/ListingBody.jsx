@@ -37,7 +37,6 @@ const ListingBody = React.memo(
         listingRef,
         additionalFilters,
       } = props;
-      console.log('listing body props', props);
       let ListingBodyTemplate;
       let templateConfig;
       // Legacy support if template is present

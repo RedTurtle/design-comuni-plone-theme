@@ -4,19 +4,15 @@ import {
   SearchDetails,
   Facets,
   FilterList,
-  SortOn,
 } from '@plone/volto/components/manage/Blocks/Search/components';
-import { Container, Row, Col } from 'design-react-kit';
+import { UniversalLink } from '@plone/volto/components';
+import { Container, Row, Col, Icon } from 'design-react-kit';
 import { flushSync } from 'react-dom';
-import { defineMessages, useIntl } from 'react-intl';
 import { getBackgroundClass } from '@plone/volto/components/manage/Blocks/Search/utils';
-
-const messages = defineMessages({
-  searchButtonText: {
-    id: 'Search',
-    defaultMessage: 'Search',
-  },
-});
+import {
+  RichText,
+  richTextHasContent,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const FacetWrapper = ({ children }) => (
   <Col className="facet pt-4">{children}</Col>
@@ -29,21 +25,20 @@ const LeftColumnFacets = (props) => {
     totalItems,
     facets,
     setFacets,
-    setSortOn,
-    setSortOrder,
-    sortOn,
-    sortOrder,
     onTriggerSearch,
     searchedText, // search text for previous search
     isEditMode,
     querystring = {},
-    // searchData,
+    searchData,
     // mode = 'view',
     // variation,
   } = props;
   const { showSearchButton } = data;
   const isLive = !showSearchButton;
-
+  const showColumn =
+    data.columnTextTitle ||
+    richTextHasContent(data.columnText) ||
+    data?.facets?.length > 0;
   return (
     <div
       className={`full-width ${getBackgroundClass(
@@ -64,16 +59,36 @@ const LeftColumnFacets = (props) => {
         )}
 
         <Row>
-          {data.facets?.length > 0 && (
-            <>
-              <Col className="col-lg-4 pe-5 d-flex flex-column">
+          {showColumn && (
+            <Col className="col-lg-4 col-md-5 col-sm-12 pe-5 sideColumn">
+              {data.columnTextTitle && (
+                <h6 className="columnTextTitle mb-4">{data.columnTextTitle}</h6>
+              )}
+              {richTextHasContent(data.columnText) && (
+                <div className="columnText mb-4">
+                  <RichText serif={false} data={data.columnText} />
+                </div>
+              )}
+              {data.linkTitleColumn && data.linkHrefColumn?.length > 0 && (
+                <p className="mb-5">
+                  <UniversalLink
+                    href={data.linkHrefColumn[0]?.['@id']}
+                    className="read-more"
+                  >
+                    {data.linkTitleColumn}
+                    <Icon icon="it-arrow-right" />
+                  </UniversalLink>
+                </p>
+              )}
+              {data.facets?.length > 0 && (
                 <div className="facets">
                   {data.facetsTitle && (
-                    <h5 className="mb-4">{data.facetsTitle}</h5>
+                    <h6 className="columnTextTitle">{data.facetsTitle}</h6>
                   )}
                   <Facets
                     querystring={querystring}
                     data={data}
+                    searchData={searchData}
                     facets={facets}
                     setFacets={(f) => {
                       flushSync(() => {
@@ -84,16 +99,17 @@ const LeftColumnFacets = (props) => {
                     facetWrapper={FacetWrapper}
                   />
                 </div>
-                <div className="test">colonna di test</div>
-              </Col>
-            </>
+              )}
+            </Col>
           )}
 
-          <Col className="col-lg-8">
+          <Col
+            className={showColumn ? 'col-lg-8 col-md-7 col-sm-12' : 'col-lg-12'}
+          >
             {(Object.keys(data).includes('showSearchInput')
               ? data.showSearchInput
               : true) && (
-              <div className="search-wrapper d-flex input-group">
+              <div className="search-wrapper d-flex form-group input-group">
                 <SearchInput {...props} isLive={isLive} />
               </div>
             )}
@@ -114,35 +130,6 @@ const LeftColumnFacets = (props) => {
                   });
                 }}
               />
-
-              {data.showSortOn && (
-                <div className="sort-views-wrapper">
-                  <SortOn
-                    querystring={querystring}
-                    data={data}
-                    isEditMode={isEditMode}
-                    sortOn={sortOn}
-                    sortOrder={sortOrder}
-                    setSortOn={(sortOn) => {
-                      flushSync(() => {
-                        setSortOn(sortOn);
-                        onTriggerSearch(searchedText || '', facets, sortOn);
-                      });
-                    }}
-                    setSortOrder={(sortOrder) => {
-                      flushSync(() => {
-                        setSortOrder(sortOrder);
-                        onTriggerSearch(
-                          searchedText || '',
-                          facets,
-                          sortOn,
-                          sortOrder,
-                        );
-                      });
-                    }}
-                  />
-                </div>
-              )}
             </div>
             {children}
           </Col>

@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { Label, Icon, Button } from 'design-react-kit';
-import { defineMessages, useIntl } from 'react-intl';
+import { defineMessages } from 'react-intl';
+import { commonMessages } from '../utils';
 
 const messages = defineMessages({
   DateRangeFacetFilterListEntryDal: {
@@ -18,12 +19,23 @@ const messages = defineMessages({
 });
 
 function DateRangeFacetFilterListEntry(props) {
-  const { facet, isEditMode, setFacets, facets } = props;
-  const intl = useIntl();
-  console.log('daterangeentry', props);
-  console.log(facet);
+  const { facet, isEditMode, setFacets, facets, data, intl, searchData } =
+    props;
+  const entrySettings = useMemo(() => {
+    return data.facets?.find((f) => f?.field?.value === facet)?.field;
+  }, [data, facet]);
   const dateRangeLabel = useMemo(() => {
-    const [start, end] = facets?.[facet];
+    const queryIndex = searchData?.query?.find((q) => q.i === facet);
+    let start, end;
+    if (queryIndex) {
+      if (queryIndex.o.includes('date.largerThan'))
+        [start, end] = [queryIndex.v, null];
+      else if (queryIndex.o.includes('date.lessThan'))
+        [start, end] = [null, queryIndex.v];
+      else if (queryIndex.o.includes('date.between'))
+        [start, end] = queryIndex.v;
+    }
+
     let label;
     if (start) {
       if (end)
@@ -52,11 +64,12 @@ function DateRangeFacetFilterListEntry(props) {
     }
     return label;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [facet, facets]);
+  }, [facet, searchData]);
   return (
-    <Label size="small">
-      {dateRangeLabel}
+    <Label className="d-flex w-100 py-1">
+      <span>{dateRangeLabel}</span>
       <Button
+        className="p-0"
         onClick={() => {
           const filteredFacets = Object.assign(
             {},
@@ -66,8 +79,23 @@ function DateRangeFacetFilterListEntry(props) {
           );
           !isEditMode && setFacets(filteredFacets);
         }}
+        aria-label={intl.formatMessage(commonMessages.clearFilter, {
+          filterName: entrySettings?.label ?? '',
+        })}
+        title={intl.formatMessage(commonMessages.clearFilter, {
+          filterName: entrySettings?.label ?? '',
+        })}
       >
-        <Icon icon="it-delete" />
+        <Icon
+          icon="it-delete"
+          size="sm"
+          aria-label={intl.formatMessage(commonMessages.clearFilter, {
+            filterName: entrySettings?.label ?? '',
+          })}
+          title={intl.formatMessage(commonMessages.clearFilter, {
+            filterName: entrySettings?.label ?? '',
+          })}
+        />
       </Button>
     </Label>
   );

@@ -57,9 +57,14 @@ const messages = defineMessages({
     id: 'Facets',
     defaultMessage: 'Facets',
   },
+  facetsHelper: {
+    id: 'facetsHelper',
+    defaultMessage:
+      'Filtri di ricerca aggiuntivi, configurabili e riordinabili, con la possibilità di utilizzare i seguenti widget: Menu a tendina (selezione singola o multipla), Checkbox (selezione singola o multipla), Selettore date, Toggle. Se aggiunti, verranno mostrati nella colonna (sinistra o destra a seconda della variazione scelta). Nel caso siano compilati i campi testuali da mostrare nella colonna, verranno mostrati sotto i suddetti.',
+  },
   textColumn: {
     id: 'textColumn',
-    defaultMessage: 'Block side column text',
+    defaultMessage: 'Testo della colonna laterale',
   },
   facet: {
     id: 'Facet',
@@ -69,9 +74,18 @@ const messages = defineMessages({
     id: 'Label',
     defaultMessage: 'Label',
   },
+  labelHelper: {
+    id: 'labelHelper',
+    defaultMessage:
+      'Etichetta del campo, se lasciato vuoto, verrà mostrato il nome del criterio di filtro selezionato.',
+  },
   field: {
     id: 'Field',
-    defaultMessage: 'Field',
+    defaultMessage: 'Criterio',
+  },
+  fieldHelper: {
+    id: 'fieldHelper',
+    defaultMessage: 'Seleziona il criterio secondo cui filtrare.',
   },
   multipleChoices: {
     id: 'Multiple choices?',
@@ -90,6 +104,10 @@ const messages = defineMessages({
     id: 'Facet widget',
     defaultMessage: 'Facet widget',
   },
+  facetWidgetHelper: {
+    id: 'facetWidgetHelper',
+    defaultMessage: 'Tipologia di widget da utilizzare per il filtro',
+  },
   listingTemplateOptions: {
     id: 'listingTemplateOptions',
     defaultMessage: 'Opzioni template',
@@ -106,9 +124,23 @@ const messages = defineMessages({
     id: 'Mostra lo sfondo del blocco',
     defaultMessage: 'Mostra lo sfondo del blocco',
   },
+  columnTextTitle: {
+    id: 'columnTextTitle',
+    defaultMessage: 'Intestazione della colonna',
+  },
+  columnTextTitleHelper: {
+    id: 'columnTextTitleHelper',
+    defaultMessage:
+      'Intestazione della colonna, che viene mostrata come primo elemento della colonna laterale se compilato.',
+  },
   columnText: {
     id: 'columnText',
     defaultMessage: 'Testo della colonna',
+  },
+  columnTextHelper: {
+    id: 'columnTextHelper',
+    defaultMessage:
+      'Testo libero visibile nella colonna, che viene mostrato prima dei filtri (nel caso in cui siano configurati) se compilato.',
   },
   LinkTitle: {
     id: 'Link title',
@@ -153,9 +185,11 @@ const FacetSchema = ({ intl }) => ({
   properties: {
     title: {
       title: intl.formatMessage(messages.label),
+      description: intl.formatMessage(messages.labelHelper),
     },
     field: {
       title: intl.formatMessage(messages.field),
+      description: intl.formatMessage(messages.fieldHelper),
       widget: 'select_querystring_field',
       vocabulary: { '@id': 'plone.app.vocabularies.MetadataFields' },
       filterOptions: (options) => {
@@ -188,6 +222,7 @@ const FacetSchema = ({ intl }) => ({
     },
     type: {
       title: intl.formatMessage(messages.facetWidget),
+      description: intl.formatMessage(messages.facetWidgetHelper),
       choices:
         config.blocks.blocksConfig.search.extensions.facetWidgets.types.map(
           ({ id, title }) => [
@@ -227,7 +262,12 @@ const SearchSchema = ({ data = {}, intl }) => {
       {
         id: 'columnText',
         title: intl.formatMessage(messages.textColumn),
-        fields: ['columnText', 'linkTitle', 'linkHref'],
+        fields: [
+          'columnTextTitle',
+          'columnText',
+          'linkTitleColumn',
+          'linkHrefColumn',
+        ],
       },
       {
         id: 'facets',
@@ -282,24 +322,30 @@ const SearchSchema = ({ data = {}, intl }) => {
         widget: 'object_list',
         schema: FacetSchema({ intl }),
         schemaExtender: enhanceSchema,
+        description: intl.formatMessage(messages.facetsHelper),
       },
       facetsTitle: {
         title: intl.formatMessage(messages.sectionTitle),
       },
+      columnTextTitle: {
+        title: intl.formatMessage(messages.columnTextTitle),
+        description: intl.formatMessage(messages.columnTextTitleHelper),
+      },
       columnText: {
-        title: 'ciao',
+        title: intl.formatMessage(messages.columnText),
+        description: intl.formatMessage(messages.columnTextHelper),
         type: 'string',
         widget: 'richtext',
       },
-      linkTitle: {
+      linkTitleColumn: {
         title: intl.formatMessage(messages.LinkTitle),
       },
-      linkHref: {
+      linkHrefColumn: {
         title: intl.formatMessage(messages.LinkTo),
         widget: 'object_browser',
         mode: 'link',
         selectedItemAttrs: ['Title', 'Description'],
-        allowExternals: true,
+        allowExternals: false,
       },
       query: {
         title: 'Query',

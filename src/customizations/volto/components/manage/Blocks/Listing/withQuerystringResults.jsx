@@ -54,7 +54,6 @@ const getAdaptedQuery = (querystring, b_size, variation) => {
 export default function withQuerystringResults(WrappedComponent) {
   function WithQuerystringResults(props) {
     const { data = {}, path, properties, isEditMode } = props; //properties: content,
-    console.log('prop', props);
     const content = useSelector((state) => state.content.data);
     const { settings } = config;
     const querystring = data.querystring || data; // For backwards compat with data saved before Blocks schema
@@ -81,9 +80,6 @@ export default function withQuerystringResults(WrappedComponent) {
         data.block
       ]?.toArray?.();
     });
-    console.log('original query', originalQuery);
-    console.log('data.query', data.query);
-    console.log('additional filters', additionalFilters);
     const folderItems = content?.is_folderish ? content.items : [];
     const hasQuery = querystring?.query?.length > 0;
     const hasLoaded = hasQuery ? !querystringResults?.[block]?.loading : true;

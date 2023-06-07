@@ -61,11 +61,7 @@ const applyDefaults = (data, root) => {
 
 const SearchBlockView = (props) => {
   const { data, searchData, mode = 'view', variation } = props;
-  console.log(
-    'PUTTANAMADONNADIOCANE',
-    variation,
-    config.blocks.blocksConfig.search.variations,
-  );
+
   const Layout =
     variation?.view ||
     config.blocks.blocksConfig.search.variations.find(

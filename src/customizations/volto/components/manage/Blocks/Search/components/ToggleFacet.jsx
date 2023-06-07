@@ -6,7 +6,9 @@ const ToggleFacet = (props) => {
 
   return (
     <div className="checkbox-facet">
-      <h5 className="mb-2">{facet?.title ?? facet?.field?.label}</h5>
+      <h6 className="mb-2 columnTextTitle">
+        {facet?.title ?? facet?.field?.label}
+      </h6>
       <FormGroup check className="radio">
         <Toggle
           label={facet?.field?.label}
@@ -15,6 +17,7 @@ const ToggleFacet = (props) => {
           onChange={({ target }) => {
             onChange(facet.field.value, target.checked);
           }}
+          aria-describedby={facet?.field?.label}
         />
       </FormGroup>
     </div>

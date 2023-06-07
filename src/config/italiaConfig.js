@@ -4,6 +4,7 @@ import navSVG from '@plone/volto/icons/nav.svg';
 import contentSVG from '@plone/volto/icons/content.svg';
 import bookSVG from '@plone/volto/icons/book.svg';
 import shareSVG from '@plone/volto/icons/share.svg';
+import searchIcon from 'bootstrap-italia/src/svg/it-search.svg';
 
 import {
   getItaliaListingVariations,
@@ -22,6 +23,8 @@ import {
   AnswersStep,
   CommentsStep,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import RightColumnFacets from '@plone/volto/components/manage/Blocks/Search/layout/RightColumnFacets';
+import LeftColumnFacets from '@plone/volto/components/manage/Blocks/Search/layout/LeftColumnFacets';
 
 import HandleAnchor from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HandleAnchor';
 import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/GenericAppExtras';
@@ -377,9 +380,21 @@ export default function applyConfig(voltoConfig) {
     },
     search: {
       ...config.blocks.blocksConfig.search,
-      variations: config.blocks.blocksConfig.search.variations.filter((f) => {
-        return f.id !== 'facetsTopSide';
-      }),
+      icon: searchIcon,
+      variations: [
+        {
+          id: 'facetsRightSide',
+          title: 'Colonna a destra',
+          view: RightColumnFacets,
+          isDefault: true,
+        },
+        {
+          id: 'facetsLeftSide',
+          title: 'Colonna a sinistra',
+          view: LeftColumnFacets,
+          isDefault: false,
+        },
+      ],
     },
   };
   config.blocks = {

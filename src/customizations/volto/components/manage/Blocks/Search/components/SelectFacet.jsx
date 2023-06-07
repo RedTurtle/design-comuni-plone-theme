@@ -10,16 +10,19 @@ const SelectFacet = (props) => {
   const { facet, choices, isMulti, onChange, value, isEditMode } = props;
   const v = Array.isArray(value) && value.length === 0 ? null : value;
   return (
-    <div className="">
-      <h5 className="mb-2">{facet?.title || facet?.field?.label}</h5>
+    <div className="select-facet">
+      <h6 className="mb-2 columnTextTitle">
+        {facet?.title || facet?.field?.label}
+      </h6>
 
       <div className="bootstrap-select-wrapper">
         {/* <label htmlFor={facet['@id']}>
           {facet?.title || facet?.field?.label || ''}
         </label> */}
+        {/* Cannot style with props because the kit is... the kit. Resorting to div[class*='-ValueContainer'] */}
         <Select
           placeholder={facet?.title ?? (facet?.field?.label || 'select...')}
-          aria-label=""
+          aria-label={facet?.title ?? (facet?.field?.label || 'select...')}
           id={facet['@id']}
           options={choices}
           isDisabled={isEditMode}
