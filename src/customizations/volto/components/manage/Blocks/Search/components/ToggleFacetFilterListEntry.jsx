@@ -15,43 +15,56 @@ const messages = defineMessages({
 });
 
 function ToggleFacetFilterListEntry(props) {
-  const { facet, isEditMode, setFacets, facets, intl, data } = props;
+  const {
+    facet,
+    isEditMode,
+    setFacets,
+    facets,
+    intl,
+    data,
+    facetSettings,
+  } = props;
   const entrySettings = useMemo(() => {
     return data.facets?.find((f) => f?.field?.value === facet)?.field;
   }, [data, facet]);
   return facets[facet] ? (
-    <Label className="d-flex w-100 py-1">
-      {intl.formatMessage(messages.yes)}
-      <Button
-        className="p-0"
-        onClick={() => {
-          const filteredFacets = Object.assign(
-            {},
-            ...Object.keys(facets)
-              .filter((f) => f !== facet)
-              .map((f) => ({ [f]: facets[f] })),
-          );
-          !isEditMode && setFacets(filteredFacets);
-        }}
-        aria-label={intl.formatMessage(commonMessages.clearFilter, {
-          filterName: entrySettings?.label ?? '',
-        })}
-        title={intl.formatMessage(commonMessages.clearFilter, {
-          filterName: entrySettings?.label ?? '',
-        })}
-      >
-        <Icon
-          icon="it-close"
-          size="md"
+    <>
+      <span className="label-title mb-2">
+        {facetSettings.title ?? facetSettings?.field?.label}
+      </span>
+      <Label className="d-flex w-100 py-1">
+        {intl.formatMessage(messages.yes)}
+        <Button
+          className="p-0"
+          onClick={() => {
+            const filteredFacets = Object.assign(
+              {},
+              ...Object.keys(facets)
+                .filter((f) => f !== facet)
+                .map((f) => ({ [f]: facets[f] })),
+            );
+            !isEditMode && setFacets(filteredFacets);
+          }}
           aria-label={intl.formatMessage(commonMessages.clearFilter, {
             filterName: entrySettings?.label ?? '',
           })}
           title={intl.formatMessage(commonMessages.clearFilter, {
             filterName: entrySettings?.label ?? '',
           })}
-        />
-      </Button>
-    </Label>
+        >
+          <Icon
+            icon="it-close"
+            size="md"
+            aria-label={intl.formatMessage(commonMessages.clearFilter, {
+              filterName: entrySettings?.label ?? '',
+            })}
+            title={intl.formatMessage(commonMessages.clearFilter, {
+              filterName: entrySettings?.label ?? '',
+            })}
+          />
+        </Button>
+      </Label>
+    </>
   ) : null;
 }
 

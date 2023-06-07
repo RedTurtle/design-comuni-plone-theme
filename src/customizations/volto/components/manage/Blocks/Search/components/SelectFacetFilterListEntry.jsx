@@ -10,51 +10,64 @@ function SelectFacetFilterListEntry(props) {
     setFacets,
     facets,
     querystring,
+    facetSettings,
     data,
     intl,
   } = props;
+
   const selectedValue = useMemo(
     () =>
       selectFacetStateToValue({
-        facetSettings: data?.facets?.find((t) => t?.field?.value === facet),
+        facetSettings,
         index: querystring?.indexes?.[facet] ?? {},
         selectedValue: facets[facet],
       }),
-    [data, querystring, facet, facets],
+    [querystring, facet, facets, facetSettings],
   );
   return typeof facets[facet] === 'string' ? (
-    <Label className="d-flex w-100 py-1">
-      <span>{selectedValue?.label || ''}</span>
-      <Button
-        className="p-0"
-        onClick={() => {
-          !isEditMode &&
-            setFacets({
-              ...facets,
-              [facet]: '',
-            });
-        }}
-        aria-label={intl.formatMessage(commonMessages.clearFilter, {
-          filterName: selectedValue?.label ?? '',
-        })}
-        title={intl.formatMessage(commonMessages.clearFilter, {
-          filterName: selectedValue?.label ?? '',
-        })}
-      >
-        <Icon
-          icon="it-close"
-          size="md"
+    <>
+      <span className="label-title mb-2">
+        {facetSettings.title ?? facetSettings?.field?.label}
+      </span>
+
+      <Label className="d-flex w-100 py-1">
+        <span>{selectedValue?.label || ''}</span>
+        <Button
+          className="p-0"
+          onClick={() => {
+            !isEditMode &&
+              setFacets({
+                ...facets,
+                [facet]: '',
+              });
+          }}
           aria-label={intl.formatMessage(commonMessages.clearFilter, {
             filterName: selectedValue?.label ?? '',
           })}
           title={intl.formatMessage(commonMessages.clearFilter, {
             filterName: selectedValue?.label ?? '',
           })}
-        />
-      </Button>
-    </Label>
+        >
+          <Icon
+            icon="it-close"
+            size="md"
+            aria-label={intl.formatMessage(commonMessages.clearFilter, {
+              filterName: selectedValue?.label ?? '',
+            })}
+            title={intl.formatMessage(commonMessages.clearFilter, {
+              filterName: selectedValue?.label ?? '',
+            })}
+          />
+        </Button>
+      </Label>
+    </>
   ) : (
     <>
+      {facets[facet]?.length > 0 && (
+        <span className="label-title mb-2">
+          {facetSettings.title ?? facetSettings?.field?.label}
+        </span>
+      )}
       {facets[facet].map((entry, i) => {
         const label = Array.isArray(selectedValue)
           ? selectedValue?.find((sv) => sv.value === entry)?.label ?? ''

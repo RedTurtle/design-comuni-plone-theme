@@ -1,4 +1,5 @@
 import { defineMessages } from 'react-intl';
+import { useEffect } from 'react';
 
 export const NONVALUE_OPERATIONS = new Set([
   'plone.app.querystring.operation.boolean.isFalse',
@@ -35,3 +36,17 @@ export const commonMessages = defineMessages({
     defaultMessage: 'Clear all filters',
   },
 });
+
+export const useClickOutside = (ref, callback) => {
+  const handleClick = (e) => {
+    if (ref.current && !ref.current.contains(e.target)) {
+      callback();
+    }
+  };
+  useEffect(() => {
+    document.addEventListener('click', handleClick);
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  });
+};

@@ -16,7 +16,7 @@ const SearchDetails = ({ total, text, as = 'p', data }) => {
   const El = as;
   const intl = useIntl();
   return (
-    <El className="search-details">
+    <El className="search-details" aria-live="polite">
       <>
         {text && (
           <>
@@ -28,7 +28,6 @@ const SearchDetails = ({ total, text, as = 'p', data }) => {
         )}
         {data.showTotalResults && (
           <>
-            {' '}
             {intl.formatMessage(messages.searchResults)}: <b>{total}</b>
           </>
         )}
