@@ -1,3 +1,6 @@
+/* CUSTOMIZATIONS:
+  - Agid styling
+*/
 import React, { useState } from 'react';
 import { Button, Icon, Input, Label } from 'design-react-kit';
 import { useIntl } from 'react-intl';

@@ -1,3 +1,6 @@
+/* CUSTOMIZATIONS:
+  - Agid styling
+*/
 import React from 'react';
 import {
   selectFacetSchemaEnhancer,

@@ -1,3 +1,7 @@
+/* CUSTOMIZATIONS:
+  - Agid styling
+  - Use a limited templates subsets
+*/
 import React, { useEffect } from 'react';
 import { defineMessages } from 'react-intl';
 import { compose } from 'redux';

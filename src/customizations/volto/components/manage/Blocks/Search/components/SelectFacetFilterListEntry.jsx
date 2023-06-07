@@ -1,3 +1,6 @@
+/* CUSTOMIZATIONS:
+  - Agid styling
+*/
 import React, { useMemo } from 'react';
 import { Label, Icon, Button } from 'design-react-kit';
 import { selectFacetStateToValue } from '@plone/volto/components/manage/Blocks/Search/components/base';

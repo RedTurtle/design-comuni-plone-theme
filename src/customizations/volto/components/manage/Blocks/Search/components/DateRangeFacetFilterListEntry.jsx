@@ -1,3 +1,7 @@
+/* CUSTOMIZATIONS:
+  - Agid styling
+  - Use with more plone.app.querystring.date operations
+*/
 import React, { useMemo } from 'react';
 import { Label, Icon, Button } from 'design-react-kit';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';

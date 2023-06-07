@@ -1,3 +1,6 @@
+/* CUSTOMIZATIONS:
+  - Use with more plone.app.querystring.date operations
+*/
 import { defineMessages } from 'react-intl';
 import { useEffect } from 'react';
 

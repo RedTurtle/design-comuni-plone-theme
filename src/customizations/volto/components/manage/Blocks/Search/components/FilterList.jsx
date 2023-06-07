@@ -1,3 +1,7 @@
+/* CUSTOMIZATIONS:
+  - Agid styling
+  - Pass more useful props to components
+*/
 import React, { useMemo, useRef } from 'react';
 import { Button, Icon } from 'design-react-kit';
 import { defineMessages, injectIntl } from 'react-intl';

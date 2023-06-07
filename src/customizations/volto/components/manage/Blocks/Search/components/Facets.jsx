@@ -1,3 +1,7 @@
+/* CUSTOMIZATIONS:
+  - Agid styling
+  - Pass more useful props to components
+*/
 import React from 'react';
 import { resolveExtension } from '@plone/volto/helpers/Extensions/withBlockExtensions';
 import config from '@plone/volto/registry';

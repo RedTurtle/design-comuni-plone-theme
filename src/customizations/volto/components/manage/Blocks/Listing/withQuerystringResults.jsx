@@ -4,6 +4,7 @@ CUSTOMIZATIONS:
 - added listingRef to scroll to start of listing, and not to start of page
 - added additional filters
 - added additional fields to pass to @querystring-search (config.settings.querystringAdditionalFields)
+- usedeepCompareEffect and integrate custom logic for searchBlock to make it work with our implementation
 */
 import React, { createRef, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';

@@ -1,3 +1,7 @@
+/* CUSTOMIZATIONS:
+  - Agid styling
+  - Use with more plone.app.querystring.date operations
+*/
 import React, { useState } from 'react';
 import { Icon } from 'design-react-kit';
 import { defineMessages, injectIntl } from 'react-intl';

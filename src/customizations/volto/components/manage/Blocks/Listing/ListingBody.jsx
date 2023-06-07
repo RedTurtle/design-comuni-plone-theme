@@ -3,6 +3,8 @@ CUSTOMIZATIONS:
 -added skeleton
 - added additionalFilters
 - 'background class' and 'block class'
+- 'background class' and 'block class' logic for search block
+- search block integration
 */
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';

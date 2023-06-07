@@ -1,3 +1,6 @@
+/* CUSTOMIZATIONS:
+  - Agid styling
+*/
 import React from 'react';
 import { Form, FormGroup, Input, Label } from 'design-react-kit';
 import {

@@ -1,3 +1,6 @@
+/* CUSTOMIZATIONS:
+  - Read puntual comments in code
+*/
 import React from 'react';
 import { useSelector } from 'react-redux';
 import qs from 'query-string';
