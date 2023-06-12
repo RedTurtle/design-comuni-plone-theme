@@ -38,6 +38,7 @@
   }
 
   .slick-dots {
+    position: unset;
     bottom: -3rem;
   }
 
@@ -71,11 +72,11 @@
   }
 
   .calendar-body {
-    height: 368px;
+    min-height: 368px;
     padding: 0rem 1rem;
 
     .body {
-      height: 368px;
+      min-height: 368px;
       padding: 1rem 1rem 1rem 1rem;
       box-shadow: 10px 0 17px -10px $neutral-1-a2;
       overflow-y: auto;

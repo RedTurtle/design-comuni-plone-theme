@@ -248,8 +248,12 @@ iframe {
   }
 
   svg.fa-icon {
-    width: 1em;
+    display: block;
     fill: currentColor;
+    @media (max-width: #{map-get($grid-breakpoints, md)}) {
+      width: 20px;
+      height: 30px;
+    }
   }
 
   .icon.fa-icon.placeholder {
