@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import Slider from 'react-slick';
 import {
   Card,
   Row,
@@ -45,8 +46,6 @@ const copyFields = ['limit', 'query', 'sort_on', 'sort_order', 'depth'];
 
 const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
   const intl = useIntl();
-
-  const Slider = reactSlick.default;
 
   const [activePage, setActivePage] = useState(0);
   const [additionalFilters, setAdditionalFilters] = useState([]);
@@ -171,22 +170,34 @@ const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
   const addFilters = (filters = []) => {
     setAdditionalFilters(filters);
   };
+  const NextArrow = (props) => {
+    const { onClick, className } = props;
+    return (
+      <div onClick={onClick} className={className}>
+        <FontAwesomeIcon
+          title={intl.formatMessage(messages.calendar_next_arrow)}
+          icon={['fas', 'chevron-right']}
+        />
+      </div>
+    );
+  };
+  const PrevArrow = (props) => {
+    const { onClick, className } = props;
+    return (
+      <div onClick={onClick} className={className}>
+        <FontAwesomeIcon
+          title={intl.formatMessage(messages.calendar_prev_arrow)}
+          icon={['fas', 'chevron-left']}
+        />
+      </div>
+    );
+  };
 
   const settings = {
     dots: true,
-    arrows: false,
-    nextArrow: (
-      <FontAwesomeIcon
-        title={intl.formatMessage(messages.calendar_next_arrow)}
-        icon={['fas', 'chevron-right']}
-      />
-    ),
-    prevArrow: (
-      <FontAwesomeIcon
-        title={intl.formatMessage(messages.calendar_prev_arrow)}
-        icon={['fas', 'chevron-left']}
-      />
-    ),
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     speed: 500,
     slidesToShow: data.b_size || 4,
     slidesToScroll: data.b_size || 4,
@@ -216,6 +227,7 @@ const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: false,
         },
       },
     ],
