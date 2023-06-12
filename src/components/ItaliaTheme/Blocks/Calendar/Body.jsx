@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import Slider from 'react-slick';
 import {
   Card,
   Row,
@@ -46,6 +45,8 @@ const copyFields = ['limit', 'query', 'sort_on', 'sort_order', 'depth'];
 
 const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
   const intl = useIntl();
+
+  const Slider = reactSlick.default;
 
   const [activePage, setActivePage] = useState(0);
   const [additionalFilters, setAdditionalFilters] = useState([]);
