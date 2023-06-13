@@ -170,21 +170,56 @@ const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
     setAdditionalFilters(filters);
   };
 
+  const NextArrow = (props) => {
+    const { onClick, className } = props;
+    return (
+      <div
+        className={className}
+        role="button"
+        tabIndex={0}
+        onClick={onClick}
+        onKeyDown={(e) => {
+          if (e.key === 'enter' || e.keyCode === 13) {
+            onClick();
+          }
+        }}
+      >
+        <FontAwesomeIcon
+          title={intl.formatMessage(messages.calendar_next_arrow)}
+          icon={['fas', 'chevron-right']}
+          role="button"
+          tabIndex={0}
+        />
+      </div>
+    );
+  };
+  const PrevArrow = (props) => {
+    const { onClick, className } = props;
+    return (
+      <div
+        className={className}
+        role="button"
+        tabIndex={0}
+        onClick={onClick}
+        onKeyDown={(e) => {
+          if (e.key === 'enter' || e.keyCode === 13) {
+            onClick();
+          }
+        }}
+      >
+        <FontAwesomeIcon
+          title={intl.formatMessage(messages.calendar_prev_arrow)}
+          icon={['fas', 'chevron-left']}
+        />
+      </div>
+    );
+  };
+
   const settings = {
     dots: true,
     arrows: true,
-    nextArrow: (
-      <FontAwesomeIcon
-        title={intl.formatMessage(messages.calendar_next_arrow)}
-        icon={['fas', 'chevron-right']}
-      />
-    ),
-    prevArrow: (
-      <FontAwesomeIcon
-        title={intl.formatMessage(messages.calendar_prev_arrow)}
-        icon={['fas', 'chevron-left']}
-      />
-    ),
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     speed: 500,
     slidesToShow: data.b_size || 4,
     slidesToScroll: data.b_size || 4,

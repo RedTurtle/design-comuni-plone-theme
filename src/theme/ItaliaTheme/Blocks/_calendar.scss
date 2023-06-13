@@ -55,7 +55,9 @@
     width: 1.5rem;
     height: auto;
     color: transparentize($gray-secondary, 0.6);
-
+    &::before {
+      display: none;
+    }
     &:hover,
     &:focus {
       color: transparentize($gray-secondary, 0.3);
