@@ -27,11 +27,18 @@ export const CardPersona = ({
     useOriginal: false,
   });
 
+  const hasImage = item?.image_scales?.foto_persona[0] !== null;
+
   return (
     <Card
-      className={`card-persona card-big-io-comune p-4 card-teaser-image card-flex no-after ${
-        className ?? ''
-      }`}
+      className={cx(
+        {
+          'card-with-image': hasImage,
+        },
+        `card-persona card-big-io-comune p-4 card-teaser-image card-flex no-after ${
+          className ?? ''
+        }`,
+      )}
     >
       <div className="card-image-wrapper">
         <CardBody>
