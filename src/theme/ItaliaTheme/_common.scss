@@ -43,4 +43,10 @@
       }
     }
   }
+
+  @media print {
+    .gdpr-privacy-show-banner {
+      visibility: hidden;
+    }
+  }
 }
