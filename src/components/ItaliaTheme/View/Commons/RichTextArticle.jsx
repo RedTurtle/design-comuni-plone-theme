@@ -27,10 +27,11 @@ const RichTextArticle = ({
       id={tag_id}
       className="it-page-section anchor-offset mt-5"
       menu_title={title ? title : ''}
+      aria-labelledby={`header-${tag_id}`}
     >
       {title && show_title ? (
         title_size === 'h5' ? (
-          <h5>{title}</h5>
+          <h5 id={`header-${tag_id}`}>{title}</h5>
         ) : (
           <h4 id={`header-${tag_id}`}>{title}</h4>
         )
