@@ -77,10 +77,7 @@ const Body = ({ data, isEditMode, reactSlick }) => {
   const Slider = reactSlick.default;
 
   const dispatch = useDispatch();
-  const request = useSelector((state) => {
-    return state.twitterPosts;
-  });
-  console.log(request);
+  const request = useSelector((state) => state.twitterPosts);
 
   const authors = data.twitter_accounts?.split(',').filter((a) => a.length > 0);
 
@@ -111,9 +108,9 @@ const Body = ({ data, isEditMode, reactSlick }) => {
           <div>{intl.formatMessage(messages.not_found)}</div>
         )}
 
-        <Slider {...getTwitterSliderSettings(twitter_posts.length)}>
-          {Array.isArray(twitter_posts) &&
-            twitter_posts.map((tweet, index) => (
+        {Array.isArray(twitter_posts) && (
+          <Slider {...getTwitterSliderSettings(twitter_posts.length)}>
+            {twitter_posts.map((tweet, index) => (
               <div className="it-single-slide-wrapper" key={index}>
                 <div className="tweet rounded">
                   <div className="author">
@@ -162,7 +159,8 @@ const Body = ({ data, isEditMode, reactSlick }) => {
                 </div>
               </div>
             ))}
-        </Slider>
+          </Slider>
+        )}
       </div>
     ) : isEditMode ? (
       intl.formatMessage(messages.no_results)

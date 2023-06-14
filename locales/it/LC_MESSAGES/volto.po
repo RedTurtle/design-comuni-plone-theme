@@ -3448,7 +3448,7 @@ msgstr "Inserisci i nomi degli account di cui vuoi visualizzare i post, separati
 #: components/ItaliaTheme/Blocks/TwitterPosts/Body
 # defaultMessage: Error: Ci scusiamo per l'inconveniente, il server Twitter non risponde.
 msgid "twitter_error"
-msgstr Ci scusiamo per l'inconveniente, il server Twitter non risponde."
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/TwitterPosts/Body
 # defaultMessage: Non c'è nessun post da mostrare.
