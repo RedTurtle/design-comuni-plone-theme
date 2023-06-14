@@ -107,12 +107,12 @@ const Body = ({ data, isEditMode, reactSlick }) => {
             ))}
           </div>
         )}
-        {!twitter_posts.map && (
+        {!Array.isArray(twitter_posts) && (
           <div>{intl.formatMessage(messages.not_found)}</div>
         )}
 
         <Slider {...getTwitterSliderSettings(twitter_posts.length)}>
-          {twitter_posts.map &&
+          {Array.isArray(twitter_posts) &&
             twitter_posts.map((tweet, index) => (
               <div className="it-single-slide-wrapper" key={index}>
                 <div className="tweet rounded">
