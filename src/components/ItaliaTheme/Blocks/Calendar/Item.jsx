@@ -62,7 +62,6 @@ const Item = ({ day, path, query, inEditMode, data }) => {
 
   // show event preview image
   const show_preview_img = data.show_preview_img;
-  console.log(show_preview_img);
 
   return (
     <div>
