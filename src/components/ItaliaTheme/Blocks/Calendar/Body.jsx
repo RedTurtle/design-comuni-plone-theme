@@ -173,45 +173,23 @@ const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
   const NextArrow = (props) => {
     const { onClick, className } = props;
     return (
-      <div
-        className={className}
-        role="button"
-        tabIndex={0}
-        onClick={onClick}
-        onKeyDown={(e) => {
-          if (e.key === 'enter' || e.keyCode === 13) {
-            onClick();
-          }
-        }}
-      >
+      <Button outline color={'unset'} className={className} onClick={onClick}>
         <FontAwesomeIcon
           title={intl.formatMessage(messages.calendar_next_arrow)}
           icon={['fas', 'chevron-right']}
-          role="button"
-          tabIndex={0}
         />
-      </div>
+      </Button>
     );
   };
   const PrevArrow = (props) => {
     const { onClick, className } = props;
     return (
-      <div
-        className={className}
-        role="button"
-        tabIndex={0}
-        onClick={onClick}
-        onKeyDown={(e) => {
-          if (e.key === 'enter' || e.keyCode === 13) {
-            onClick();
-          }
-        }}
-      >
+      <Button outline color={'unset'} className={className} onClick={onClick}>
         <FontAwesomeIcon
           title={intl.formatMessage(messages.calendar_prev_arrow)}
           icon={['fas', 'chevron-left']}
         />
-      </div>
+      </Button>
     );
   };
 
