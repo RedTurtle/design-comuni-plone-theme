@@ -21,10 +21,11 @@ const RelatedArticles = ({
     <article
       id={id}
       className={cx('it-page-section', 'anchor-offset', { 'mt-5': !noMargin })}
+      aria-labelledby={`header-${id}`}
     >
       {title && show_title ? (
         title_size === 'h5' ? (
-          <h5>{title}</h5>
+          <h5 id={`header-${id}`}>{title}</h5>
         ) : (
           <h4 id={`header-${id}`}>{title}</h4>
         )

@@ -93,6 +93,9 @@ const SideMenu = ({ data, content_uid }) => {
         headers[0],
       );
       setActiveSection(section.id);
+      debugger;
+
+      document.getElementById(section.id).focus();
     }
   }, [headers, activeSection]);
 
@@ -121,6 +124,7 @@ const SideMenu = ({ data, content_uid }) => {
 
   const handleClickAnchor = (id) => (e) => {
     e.preventDefault();
+    e.target.blur();
     document.getElementById(id)?.scrollIntoView?.({
       behavior: 'smooth',
       block: 'start',
