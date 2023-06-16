@@ -87,8 +87,8 @@ const Item = ({ day, path, query, inEditMode, data }) => {
                     <div className="item-img">
                       <Image
                         image={
-                          item.image_scales?.preview_image[0] ||
-                          item.image_scales?.image[0]
+                          item.image_scales?.preview_image?.[0] ||
+                          item.image_scales?.image?.[0]
                         }
                         itemUrl={item['@id']}
                         alt=""
