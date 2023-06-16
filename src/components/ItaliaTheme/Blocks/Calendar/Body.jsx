@@ -181,8 +181,6 @@ const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
         <FontAwesomeIcon
           title={intl.formatMessage(messages.calendar_next_arrow)}
           icon={['fas', 'chevron-right']}
-          role="button"
-          tabIndex={0}
         />
       </Button>
     );
