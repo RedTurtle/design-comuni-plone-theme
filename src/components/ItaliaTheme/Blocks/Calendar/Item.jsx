@@ -83,16 +83,17 @@ const Item = ({ day, path, query, inEditMode, data }) => {
             return (
               <div key={index} className="calendar-item">
                 <div className="ps-3 calendar-item-container">
-                  {show_preview_img && (
+                  {show_preview_img && eventHasImage && (
                     <div className="item-img">
-                      {eventHasImage && (
-                        <Image
-                          image={item.image_scales.preview_image[0]}
-                          itemUrl={item['@id']}
-                          alt=""
-                          containerClassName="img-wrapper"
-                        />
-                      )}
+                      <Image
+                        image={
+                          item.image_scales?.preview_image[0] ||
+                          item.image_scales?.image[0]
+                        }
+                        itemUrl={item['@id']}
+                        alt=""
+                        containerClassName="img-wrapper"
+                      />
                     </div>
                   )}
                   <div className="item-info">
