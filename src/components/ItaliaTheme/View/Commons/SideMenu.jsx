@@ -68,7 +68,7 @@ const SideMenu = ({ data, content_uid }) => {
   const [activeSection, setActiveSection] = useState(null);
   const [scrollY, setScrollY] = useState(0);
   const [isClient, setIsClient] = useState(false);
-
+  const [isAnimating, setIsAnimating] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
@@ -93,9 +93,6 @@ const SideMenu = ({ data, content_uid }) => {
         headers[0],
       );
       setActiveSection(section.id);
-      debugger;
-
-      document.getElementById(section.id).focus();
     }
   }, [headers, activeSection]);
 
@@ -115,6 +112,7 @@ const SideMenu = ({ data, content_uid }) => {
       window.addEventListener('scroll', throttledHandleScroll, {
         passive: true,
       });
+
     return () => {
       window.removeEventListener('scroll', throttledHandleScroll);
     };
@@ -123,8 +121,13 @@ const SideMenu = ({ data, content_uid }) => {
   const throttledHandleScroll = throttle(handleScroll, 100);
 
   const handleClickAnchor = (id) => (e) => {
+    setIsAnimating(true);
     e.preventDefault();
-    e.target.blur();
+    // Blur a link
+    document.getElementById(`item-${id}`).blur();
+    // Focus on section
+    document.getElementById(id).focus({ preventScroll: true });
+    // Scroll to section
     document.getElementById(id)?.scrollIntoView?.({
       behavior: 'smooth',
       block: 'start',
@@ -132,7 +135,6 @@ const SideMenu = ({ data, content_uid }) => {
     setIsNavOpen(false);
   };
 
-  // const yCountEnd = document.querySelector('#main-content-section');
   const yCountEnd = isClient
     ? document.querySelector('#main-content-section')
     : null;
@@ -217,6 +219,7 @@ const SideMenu = ({ data, content_uid }) => {
                       })}
                       href={`#${item.id}`}
                       onClick={handleClickAnchor(item.id)}
+                      id={`item-${item.id}`}
                     >
                       <span>{item.title}</span>
                     </a>
