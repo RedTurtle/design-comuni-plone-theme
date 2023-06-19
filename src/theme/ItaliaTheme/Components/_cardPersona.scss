@@ -5,7 +5,7 @@
   &.card-with-image {
     .card-image-wrapper {
       .card-body {
-        width: 70%;
+        width: calc(100% - 7.2rem);
       }
     }
   }
