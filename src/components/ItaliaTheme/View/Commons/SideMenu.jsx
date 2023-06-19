@@ -129,10 +129,12 @@ const SideMenu = ({ data, content_uid }) => {
 
   const handleClickAnchor = (id) => (e) => {
     e.preventDefault();
-    e.target.blur();
-    const elementToScroll = document.getElementById(id);
-    elementToScroll.focus();
-    elementToScroll?.scrollIntoView?.({
+    // Blur a link
+    document.getElementById(`item-${id}`).blur();
+    // Focus on section
+    document.getElementById(id).focus({ preventScroll: true });
+    // Scroll to section
+    document.getElementById(id)?.scrollIntoView?.({
       behavior: 'smooth',
       block: 'start',
     });
@@ -206,6 +208,7 @@ const SideMenu = ({ data, content_uid }) => {
                       }`}
                       href={`#${item.id}`}
                       onClick={handleClickAnchor(item.id)}
+                      id={`item-${item.id}`}
                     >
                       {item.title}
                     </a>
