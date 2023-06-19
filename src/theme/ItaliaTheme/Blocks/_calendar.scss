@@ -1,0 +1,198 @@
+.calendar {
+  margin: 3rem 0;
+
+  .full-width {
+    height: auto;
+  }
+
+  .template-header {
+    &.with-filters {
+      /* border-bottom: 1px solid $neutral-1-a2;*/
+      margin-bottom: 1em;
+
+      .path-filter-buttons {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      h2,
+      .path-filter-buttons-wrapper {
+        margin-bottom: 1rem;
+      }
+
+      button {
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .calendar-header {
+    padding: 0.35rem;
+    background: $primary;
+
+    h3 {
+      margin: 0 !important;
+      color: $primary-text !important;
+    }
+  }
+
+  .slick-dots {
+    bottom: -3rem;
+  }
+
+  .dot {
+    li {
+      button {
+        &:before {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .slick-arrow {
+    width: 1.5rem;
+    height: auto;
+    color: transparentize($gray-secondary, 0.6);
+
+    &:hover,
+    &:focus {
+      color: transparentize($gray-secondary, 0.3);
+    }
+
+    &.slick-next {
+      right: -2.9rem;
+    }
+
+    &.slick-prev {
+      left: -2.9rem;
+    }
+  }
+
+  .calendar-body {
+    height: 368px;
+    padding: 0rem 1rem;
+
+    .body {
+      height: 368px;
+      padding: 1rem 1rem 1rem 1rem;
+      box-shadow: 10px 0 17px -10px $neutral-1-a2;
+      overflow-y: auto;
+    }
+  }
+
+  .no-results {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .card.card-bg {
+    &:after {
+      content: none;
+    }
+  }
+  .flex-container {
+    display: flex;
+    align-items: center;
+    column-gap: 0.56em;
+    .day {
+      font-size: 2.6rem;
+      font-weight: 400;
+    }
+
+    .month-date {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .day-week {
+        font-family: $font-family-sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $caption-text;
+      }
+
+      .month {
+        font-family: $font-family-sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .calendar-item {
+    .calendar-type {
+      font-size: 0.9rem;
+    }
+
+    .scadenza_message {
+      color: $complementary-1-b5;
+      font-size: 0.8em;
+    }
+
+    .calendar-item-container {
+      display: flex;
+      align-items: center;
+      .item-img {
+        flex: 0 0 3.11rem;
+        margin-right: 0.83em;
+        position: relative;
+        overflow: hidden;
+        height: 3.11rem;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          min-width: 100%;
+          min-height: 100%;
+          object-fit: cover;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  .link-more-container {
+    margin-top: 60px;
+
+    .link-more-button-align-right {
+      align-items: center;
+      justify-content: right;
+      display: flex;
+    }
+  }
+
+  @media (max-width: 600px) {
+    margin: 0;
+
+    .calendar-body {
+      .body {
+        box-shadow: none;
+      }
+    }
+  }
+  @media (min-width: #{map-get($grid-breakpoints, md)}) {
+    .template-header {
+      &.with-filters {
+        .path-filter-buttons {
+          justify-content: flex-end;
+
+          button {
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+
+    .card-wrapper {
+      margin-bottom: 1rem;
+    }
+  }
+}
