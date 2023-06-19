@@ -27,7 +27,7 @@ export const CardPersona = ({
     useOriginal: false,
   });
 
-  const hasImage = item?.image_scales?.foto_persona[0] !== null;
+  const hasImage = image !== null;
 
   return (
     <Card
