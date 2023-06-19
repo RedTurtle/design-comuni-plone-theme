@@ -68,7 +68,6 @@ const SideMenu = ({ data, content_uid }) => {
   const [activeSection, setActiveSection] = useState(null);
   const [scrollY, setScrollY] = useState(0);
   const [isClient, setIsClient] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
@@ -121,7 +120,6 @@ const SideMenu = ({ data, content_uid }) => {
   const throttledHandleScroll = throttle(handleScroll, 100);
 
   const handleClickAnchor = (id) => (e) => {
-    setIsAnimating(true);
     e.preventDefault();
     // Blur a link
     document.getElementById(`item-${id}`).blur();
