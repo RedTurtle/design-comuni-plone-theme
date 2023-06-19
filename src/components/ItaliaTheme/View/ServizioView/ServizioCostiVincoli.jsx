@@ -21,7 +21,7 @@ const messages = defineMessages({
 
 const ServizioCostiVincoli = ({ content }) => {
   const intl = useIntl();
-  const sectionTtitleToRender = useMemo(() => {
+  const sectionTitleToRender = () => {
     if (richTextHasContent(content.costi))
       return intl.formatMessage(messages.costi_e_vincoli_header);
     else if (
@@ -29,11 +29,11 @@ const ServizioCostiVincoli = ({ content }) => {
       richTextHasContent(content.vincoli)
     )
       return intl.formatMessage(messages.vincoli);
-  }, [content.costi, content.vincoli]);
+  };
 
   return richTextHasContent(content.costi) ||
     richTextHasContent(content.vincoli) ? (
-    <RichTextSection tag_id="costs" title={sectionTtitleToRender}>
+    <RichTextSection tag_id="costs" title={sectionTitleToRender}>
       {richTextHasContent(content.costi) && (
         <RichText add_class="mb-5" data={content.costi} />
       )}
