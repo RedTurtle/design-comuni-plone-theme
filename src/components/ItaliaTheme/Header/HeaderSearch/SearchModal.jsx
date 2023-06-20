@@ -170,7 +170,7 @@ const SearchModal = ({ closeModal, show }) => {
   const location = useLocation();
 
   const [advancedSearch, setAdvancedSearch] = useState(false);
-  const [advancedTab, setAdvancedTab] = useState('sections');
+  const [advancedTab, setAdvancedTab] = useState(null);
   const [searchableText, setSearchableText] = useState(
     qs.parse(location.search)?.SearchableText ?? '',
   );
@@ -190,6 +190,52 @@ const SearchModal = ({ closeModal, show }) => {
   useEffect(() => {
     if (!searchFilters || Object.keys(searchFilters).length === 0)
       dispatch(getSearchFilters());
+  }, []);
+  const handleSetAdvancedTab = () => {
+    if (!advancedSearch) return;
+    setTimeout(() => {
+      const currentFocusedElement = document.activeElement;
+      const optionToFocus = document.querySelectorAll(
+        '[role="tabpanel"][aria-expanded="true"] input',
+      )[0];
+      optionToFocus &&
+        optionToFocus !== currentFocusedElement &&
+        optionToFocus.focus();
+    }, 200);
+  };
+
+  useEffect(() => handleSetAdvancedTab(), [advancedTab]);
+
+  const handleBackTabbingFromPane = (event) => {
+    if (event.shiftKey && event.key === 'Tab') {
+      const activeTab = document.querySelectorAll('[aria-selected=true] a')[0];
+      if (!activeTab) {
+        return;
+      }
+      const firstSectionItem = document.querySelectorAll(
+        '[role="tabpanel"][aria-expanded="true"] input',
+      )[0];
+      const lastFocusedElement = document.activeElement;
+      const modal = document.querySelectorAll('div.modal[role="dialog"]')[0];
+      //  That input is nasty, make exception in logic
+      const isModalContainer =
+        modal === lastFocusedElement ||
+        lastFocusedElement === document.getElementById('options-date-end');
+      if (
+        lastFocusedElement === firstSectionItem ||
+        !lastFocusedElement ||
+        isModalContainer
+      ) {
+        event.preventDefault(); // Prevent default Shift+Tab behavior
+        activeTab.focus();
+      }
+    }
+  };
+  useEffect(() => {
+    document.addEventListener('keydown', handleBackTabbingFromPane);
+    return () => {
+      document.removeEventListener('keydown', handleBackTabbingFromPane);
+    };
   }, []);
 
   useEffect(() => {
@@ -640,6 +686,7 @@ const SearchModal = ({ closeModal, show }) => {
                       href="#"
                       active={advancedTab === 'sections'}
                       onClick={() => setAdvancedTab('sections')}
+                      id={'sections'}
                     >
                       <span>{intl.formatMessage(messages.sections)}</span>
                     </NavLink>
@@ -654,6 +701,7 @@ const SearchModal = ({ closeModal, show }) => {
                     href="#"
                     active={advancedTab === 'topics'}
                     onClick={() => setAdvancedTab('topics')}
+                    id={'topics'}
                   >
                     <span>{intl.formatMessage(messages.topics)}</span>
                   </NavLink>
@@ -667,6 +715,7 @@ const SearchModal = ({ closeModal, show }) => {
                     href="#"
                     active={advancedTab === 'options'}
                     onClick={() => setAdvancedTab('options')}
+                    id={'options'}
                   >
                     <span>{intl.formatMessage(messages.options)}</span>
                   </NavLink>
