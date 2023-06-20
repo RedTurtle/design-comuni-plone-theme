@@ -14,6 +14,11 @@ $tertiary: #be2816 !default;
 $tertiary-text: #fff !default;
 $highlight-search: #ff0;
 $font-family-monospace-light: Roboto Mono Light;
+$gdpr-toggle-checked: #008000;
+$gdpr-toggle: #ff0000;
+$gdpr-toggle-border: #000;
+$gdpr-focus-color: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+  0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem #005ebd;
 
 $argument-icon-color: $tertiary !default;
 $argument-icon-bg: #f5f6f7 !default;
