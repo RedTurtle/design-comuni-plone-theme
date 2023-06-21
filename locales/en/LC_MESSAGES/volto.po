@@ -383,6 +383,11 @@ msgid "Mostra i filtri per percorso"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
+# defaultMessage: Mostra le immagini di anteprima
+msgid "Mostra le immagini di anteprima"
+msgstr "Show preview images"
+
+#: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
 #: components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar
 #: config/Blocks/ListingOptions/defaultOptions
 #: config/Blocks/ListingOptions/utils
@@ -3748,9 +3753,19 @@ msgid "twitterAccounts_description"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/TwitterPosts/Body
+# defaultMessage: Error: Ci scusiamo per l'inconveniente, il server Twitter non risponde.
+msgid "twitter_error"
+msgstr "Sorry for the inconvenience, Twitter server is not responding"
+
+#: components/ItaliaTheme/Blocks/TwitterPosts/Body
 # defaultMessage: Non c'è nessun post da mostrare.
 msgid "twitter_posts_no_results"
 msgstr "There is no post to show"
+
+#: components/ItaliaTheme/Blocks/TwitterPosts/Body
+# defaultMessage: Post non trovati.
+msgid "twitter_posts_not_found"
+msgstr "Posts not found"
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 # defaultMessage: Unita organizzativa

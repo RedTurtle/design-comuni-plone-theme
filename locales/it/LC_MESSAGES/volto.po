@@ -105,7 +105,7 @@ msgstr "Cerca per parola chiave"
 #: helpers/Translations/searchBlockExtendedTranslations
 # defaultMessage: Clear filters
 msgid "Clear filters"
-msgstr ""
+msgstr "Azzera filtri"
 
 #: components/ItaliaTheme/manage/Widgets/FileWidget
 # defaultMessage: Clicca qui per sostituire il file
@@ -156,7 +156,7 @@ msgstr "Contenuto"
 #: helpers/Translations/searchBlockExtendedTranslations
 # defaultMessage: Current filters applied
 msgid "Current filters applied"
-msgstr ""
+msgstr "Filtri attualmente applicati"
 
 #: components/ItaliaTheme/View/Commons/Dates
 # defaultMessage: Date aggiuntive
@@ -383,6 +383,11 @@ msgid "Mostra i filtri per percorso"
 msgstr "Mostra i filtri per percorso"
 
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
+# defaultMessage: Mostra le immagini di anteprima
+msgid "Mostra le immagini di anteprima"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
 #: components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar
 #: config/Blocks/ListingOptions/defaultOptions
 #: config/Blocks/ListingOptions/utils
@@ -503,7 +508,7 @@ msgstr ""
 #: helpers/Translations/searchBlockExtendedTranslations
 # defaultMessage: Search
 msgid "SearchSearchBlockButtonText"
-msgstr ""
+msgstr "Cerca"
 
 #: components/ItaliaTheme/Header/SocialHeader
 # defaultMessage: Seguici su
@@ -3748,9 +3753,19 @@ msgid "twitterAccounts_description"
 msgstr "Inserisci i nomi degli account di cui vuoi visualizzare i post, separati da virgola. Ad esempio, se vuoi mostrare i tweet di Repubblica e del Corriere della Sera, inserisci “repubblica,Corriere"."
 
 #: components/ItaliaTheme/Blocks/TwitterPosts/Body
+# defaultMessage: Error: Ci scusiamo per l'inconveniente, il server Twitter non risponde.
+msgid "twitter_error"
+msgstr "Error: Ci scusiamo per l'inconveniente, il server Twitter non risponde."
+
+#: components/ItaliaTheme/Blocks/TwitterPosts/Body
 # defaultMessage: Non c'è nessun post da mostrare.
 msgid "twitter_posts_no_results"
 msgstr "Non c'è nessun post da mostrare."
+
+#: components/ItaliaTheme/Blocks/TwitterPosts/Body
+# defaultMessage: Post non trovati.
+msgid "twitter_posts_not_found"
+msgstr "Post non trovati."
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 # defaultMessage: Unita organizzativa
