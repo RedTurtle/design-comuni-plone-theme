@@ -194,7 +194,7 @@ const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
   };
 
   const settings = {
-    dots: true,
+    dots: false,
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
