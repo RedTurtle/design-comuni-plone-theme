@@ -193,7 +193,7 @@ const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
   };
 
   const settings = {
-    dots: false,
+    dots: true,
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -211,7 +211,6 @@ const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          dots: true,
         },
       },
       {
