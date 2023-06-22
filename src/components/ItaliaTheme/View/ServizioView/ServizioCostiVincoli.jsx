@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 
@@ -33,7 +33,7 @@ const ServizioCostiVincoli = ({ content }) => {
 
   return richTextHasContent(content.costi) ||
     richTextHasContent(content.vincoli) ? (
-    <RichTextSection tag_id="costs" title={sectionTitleToRender}>
+    <RichTextSection tag_id="costs" title={sectionTitleToRender()}>
       {richTextHasContent(content.costi) && (
         <RichText add_class="mb-5" data={content.costi} />
       )}
