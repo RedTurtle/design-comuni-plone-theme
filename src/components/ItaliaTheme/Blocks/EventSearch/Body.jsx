@@ -230,7 +230,7 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
           </div>
         ) : querystringResults ? (
           <>
-            <div className="mt-4">
+            <div className="mt-4" role="alert">
               <p className="text-center">
                 {intl.formatMessage(messages.noResult)}
               </p>

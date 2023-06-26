@@ -115,7 +115,7 @@ const ListingBody = React.memo(
               )}
             </div>
           ) : isEditMode ? (
-            <div className="listing message">
+            <div className="listing message" role="alert">
               {isFolderContentsListing && (
                 <FormattedMessage
                   id="No items found in this container."

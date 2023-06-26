@@ -107,7 +107,7 @@ const CardWithImageRssTemplate = ({
           )}
         </>
       ) : data.feed ? (
-        <div className="no-rss-feed-results">
+        <div className="no-rss-feed-results" role="alert">
           {intl.formatMessage(messages.noResults)}
         </div>
       ) : null}
