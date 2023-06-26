@@ -73,7 +73,9 @@ const SideMenu = ({ data, content_uid }) => {
   const [scrollY, setScrollY] = useState(0);
   const [isClient, setIsClient] = useState(false);
 
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(
+    __CLIENT__ ? window.innerWidth >= 992 : false,
+  );
 
   useEffect(() => {
     setIsClient(true);
@@ -125,20 +127,25 @@ const SideMenu = ({ data, content_uid }) => {
 
   const handleClickAnchor = (id) => (e) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView?.({
-      behavior: 'smooth',
-      block: 'start',
-    });
-    setIsNavOpen(false);
+    if (window.innerWidth < 992) {
+      setIsNavOpen(false);
+    }
+    // setTimeout hack should wait for rerender after setIsNavOpen
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView?.({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, 0);
   };
+
+  const yCountEnd = isClient
+    ? document.querySelector('#main-content-section')
+    : null;
 
   const progressValue = useMemo(() => {
     if (!isClient) return 0;
-    return (
-      scrollY /
-        (document.documentElement.scrollHeight -
-          document.documentElement.clientHeight) || 0
-    );
+    return (scrollY - yCountEnd.offsetTop) / yCountEnd.offsetHeight || 0;
   }, [scrollY, isClient]);
 
   return headers?.length > 0 ? (
@@ -150,14 +157,17 @@ const SideMenu = ({ data, content_uid }) => {
               <Accordion>
                 <AccordionHeader
                   active={isNavOpen}
-                  onToggle={(a, b) => {
-                    isNavOpen ? setIsNavOpen(false) : setIsNavOpen(true);
+                  onToggle={() => {
+                    setIsNavOpen(!isNavOpen);
                   }}
                 >
                   <h3>{intl.formatMessage(messages.index)}</h3>
                 </AccordionHeader>
                 <div className="mb-3">
-                  <Progress value={100 * progressValue} role="progressbar" />
+                  <Progress
+                    value={progressValue > 0 ? 100 * progressValue : 0}
+                    role="progressbar"
+                  />
                 </div>
                 <AccordionBody
                   active={isNavOpen}

@@ -41,5 +41,14 @@
         }
       }
     }
+    .navbar.it-navscroll-wrapper {
+      .menu-wrapper {
+        padding: 0;
+      }
+    }
+  }
+
+  .it-page-sections-container {
+    border-top: none !important;
   }
 }
