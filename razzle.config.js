@@ -80,16 +80,20 @@ module.exports = Object.assign({}, volto_config, {
           loader: 'svgo-loader',
           options: {
             plugins: [
-              { removeTitle: true },
-              { convertPathData: false },
-              { removeUselessStrokeAndFill: true },
-              { removeViewBox: false },
+              { name: 'removeTitle' },
+              { name: 'convertPathData' },
+              { name: 'removeUselessStrokeAndFill' },
+              { name: 'removeTitle', params: { removeTitle: true } },
+              { name: 'convertPathData', params: { convertPathData: false } },
+              {
+                name: 'removeUselessStrokeAndFill',
+                params: { removeUselessStrokeAndFill: true },
+              },
             ],
           },
         },
       ],
     };
-
     base_config.module.rules.push(SVG_LOADER);
 
     const urlLoader = base_config.module.rules.find(urlLoaderFinder);
