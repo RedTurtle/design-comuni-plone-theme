@@ -1,10 +1,3 @@
 .event-search {
   @extend .search-block-filters;
-  .DayPicker {
-    .DayPicker_weekHeader {
-      .DayPicker_weekHeader_ul {
-        padding-left: 0;
-      }
-    }
-  }
 }
