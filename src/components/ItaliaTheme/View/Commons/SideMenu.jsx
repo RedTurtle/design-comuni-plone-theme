@@ -143,6 +143,11 @@ const SideMenu = ({ data, content_uid }) => {
       setIsNavOpen(false);
     }
 
+    // Blur a link
+    document.getElementById(`item-${id}`).blur();
+    // Focus on section
+    document.getElementById(id).focus({ preventScroll: true });
+    // Scroll to section
     document.getElementById(id)?.scrollIntoView?.({
       behavior: 'smooth',
       block: 'start',
