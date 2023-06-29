@@ -1,5 +1,5 @@
 import React from 'react';
-import { defineMessages } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 
 // import DraftJsDropdownButton from 'design-comuni-plone-theme/config/RichTextEditor/ToolbarButtons/DraftJsDropdownButton';
@@ -44,17 +44,22 @@ const TextSizeButton = (props) => {
 };
 */
 
+const ButtonIcon = (props) => {
+  const intl = useIntl();
+  return (
+    <Icon
+      name={formatSVG}
+      size="1.25em"
+      title={intl.formatMessage(messages.TextSizeButton)}
+    />
+  );
+};
+
 const TextSizeButton = (props) => {
   const createInlineStyleButton = props.draftJsCreateInlineStyleButton.default;
   return createInlineStyleButton({
     style: 'TEXT_LARGER',
-    children: (
-      <Icon
-        name={formatSVG}
-        size="1.25em"
-        title={intl.formatMessage(messages.TextSizeButton)}
-      />
-    ),
+    children: ButtonIcon,
   });
 };
 export default TextSizeButton;

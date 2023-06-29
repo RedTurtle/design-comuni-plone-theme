@@ -1,8 +1,7 @@
 import React from 'react';
-import { defineMessages } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useIntl } from 'react-intl';
 
 import { Collapse as CollapseBase } from 'reactstrap';
 
@@ -43,6 +42,7 @@ const Collapse = ({
   ...attributes
 }) => {
   const intl = useIntl();
+
   if (navbar && header) {
     const classes = classNames(className, 'navbar-collapse', {
       expanded: isOpen,
