@@ -23,6 +23,10 @@ const messages = defineMessages({
     id: 'events_read_more',
     defaultMessage: 'Leggi di più',
   },
+  immagine: {
+    id: 'Immagine',
+    defaultMessage: 'Immagine',
+  },
 });
 
 /**
@@ -49,7 +53,7 @@ const Evento = ({ event, show_image }) => {
                     event.image ||
                     event['@id']
                   }
-                  alt="Immagine"
+                  alt={intl.formatMessage(messages.immagine)}
                   containerClassName="img-wrapper"
                 />
                 {event.start && (
@@ -99,7 +103,11 @@ const Events = ({ content, title, show_image, folder_name, isChild }) => {
     : content?.items?.filter((el) => el['@type'] === 'Event') || [];
 
   return events.length > 0 ? (
-    <article id="appuntamenti" className="it-page-section anchor-offset mt-5">
+    <article
+      id="appuntamenti"
+      className="it-page-section anchor-offset mt-5"
+      aria-labelledby="header-appuntamenti"
+    >
       {title ? (
         <h4 id="header-appuntamenti">{title}</h4>
       ) : (
