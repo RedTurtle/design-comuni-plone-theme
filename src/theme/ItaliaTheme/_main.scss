@@ -272,6 +272,7 @@ iframe {
   }
 
   svg.fa-icon {
+    width: 1em;
     fill: currentColor;
   }
 
@@ -346,5 +347,14 @@ iframe {
 
   h5 {
     @include rem-size(font-size, 24);
+  }
+}
+
+//search weekday fix
+.DayPicker {
+  .DayPicker_weekHeader {
+    .DayPicker_weekHeader_ul {
+      padding-left: 0;
+    }
   }
 }
