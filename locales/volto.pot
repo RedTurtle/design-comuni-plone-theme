@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-06-28T14:35:51.566Z\n"
+"POT-Creation-Date: 2023-06-29T11:17:55.511Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -202,6 +202,11 @@ msgstr ""
 msgid "Dimensione della mappa"
 msgstr ""
 
+#: components/ItaliaTheme/View/Commons/TrasparenzaFields
+# defaultMessage: Download
+msgid "Download"
+msgstr ""
+
 #: config/RichTextEditor/Plugins/AnchorPlugin/components/LinkButton/AddLinkForm
 # defaultMessage: Enter URL or select an item
 msgid "Enter URL or select an item"
@@ -274,6 +279,13 @@ msgstr ""
 msgid "ID Lighthouse Help Description"
 msgstr ""
 
+#: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
+#: components/ItaliaTheme/manage/Widgets/SecondaryMenuConfigurationForm
+#: components/ItaliaTheme/manage/Widgets/SubFooterConfigurationForm
+# defaultMessage: ID lighthouse
+msgid "ID lighthouse"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/NumbersBlock/Edit
 # defaultMessage: Seleziona le icone dalla barra a lato
 msgid "Icons placeholder"
@@ -287,6 +299,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
 # defaultMessage: Immagine
 msgid "Image"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/Events
+# defaultMessage: Immagine
+msgid "Immagine"
 msgstr ""
 
 #: components/ItaliaTheme/Footer/FooterSmall
@@ -890,6 +907,11 @@ msgid "ay11_Use Up and Down to choose options"
 msgstr ""
 
 #: components/SelectInput/SelectInput
+# defaultMessage: Annulla
+msgid "ay11_select cancel"
+msgstr ""
+
+#: components/SelectInput/SelectInput
 # defaultMessage: deselezionata
 msgid "ay11_select deselected"
 msgstr ""
@@ -967,11 +989,6 @@ msgstr ""
 #: components/SelectInput/SelectInput
 # defaultMessage: premi la freccia a sinistra per evidenziare i valori selezionati
 msgid "ay11_select_press left to focus selected values"
-msgstr ""
-
-#: components/ItaliaTheme/View/Commons/SideMenu
-# defaultMessage: Indietro
-msgid "back"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
@@ -1191,9 +1208,9 @@ msgstr ""
 msgid "clearSearch"
 msgstr ""
 
-#: components/ItaliaTheme/View/Commons/SideMenu
-# defaultMessage: Chiudi
-msgid "close"
+#: components/Collapse
+# defaultMessage: Chiudi menu
+msgid "close-menu"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
@@ -1376,6 +1393,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 # defaultMessage: Risultati indagini di customer satisfaction
 msgid "customer_satisfaction"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderEventDates
+# defaultMessage: dal {dateStart} fino a conclusione
+msgid "dal {dateStart} fino a conclusione"
 msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
@@ -1706,6 +1728,12 @@ msgstr ""
 msgid "download"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/VideoGallery/Block/ViewBlock
+#: components/ItaliaTheme/View/Commons/EmbeddedVideo
+# defaultMessage: Download and Play video
+msgid "downloadPlayVideo"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
 # defaultMessage: Additional classes
 msgid "dropdownmenu-additionalClasses"
@@ -1804,6 +1832,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/ContactLink
 # defaultMessage: E-mail
 msgid "email_label"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/EmbeddedVideo
+# defaultMessage: YouTube Video {id}
+msgid "embedVideo"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/HighlightedContent/Edit
@@ -2221,6 +2254,11 @@ msgstr ""
 msgid "link"
 msgstr ""
 
+#: components/ItaliaTheme/Header/HeaderCenter
+# defaultMessage: homepage
+msgid "link-subsite-homepage-title"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Accordion/Sidebar
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons
@@ -2329,6 +2367,11 @@ msgstr ""
 msgid "login_with_spid"
 msgstr ""
 
+#: components/ItaliaTheme/Header/HeaderCenter
+# defaultMessage: Logo
+msgid "logo-subsite-alt"
+msgstr ""
+
 #: components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC
 #: components/ItaliaTheme/View/VenueView/VenueDescription
 # defaultMessage: Luoghi correlati
@@ -2343,6 +2386,11 @@ msgstr ""
 #: components/ItaliaTheme/View/EventoView/EventoLuoghi
 # defaultMessage: Luogo
 msgid "luogo"
+msgstr ""
+
+#: components/ItaliaTheme/Footer/FooterNewsletterSubscribe
+# defaultMessage: mail@example.com
+msgid "mail@example.com"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Actions
@@ -2472,6 +2520,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/NumbersBlock/Sidebar
 # defaultMessage: Blocco numeri
 msgid "numbers_block"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/TwitterPosts/Body
+# defaultMessage: Replies
+msgid "numbers_replies"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderNewsItem
@@ -3100,7 +3153,7 @@ msgid "search_startDate"
 msgstr ""
 
 #: helpers/Translations/searchBlockExtendedTranslations
-# defaultMessage: Ricerca per: <em>{searchedtext}</em>. 
+# defaultMessage: Ricerca per: <em>{searchedtext}</em>.
 msgid "searchedFor"
 msgstr ""
 
@@ -3681,6 +3734,11 @@ msgstr ""
 msgid "termini_del_procedimento"
 msgstr ""
 
+#: config/RichTextEditor/ToolbarButtons/TextSizeButton
+# defaultMessage: Dimensione del testo
+msgid "text-size-button"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/TextFilter
 # defaultMessage: Inserisci un valore
 msgid "text_filter_placeholder"
@@ -3780,6 +3838,11 @@ msgid "twitter_error"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/TwitterPosts/Body
+# defaultMessage: Likes
+msgid "twitter_likes"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/TwitterPosts/Body
 # defaultMessage: Non c'è nessun post da mostrare.
 msgid "twitter_posts_no_results"
 msgstr ""
@@ -3787,6 +3850,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/TwitterPosts/Body
 # defaultMessage: Post non trovati.
 msgid "twitter_posts_not_found"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/TwitterPosts/Body
+# defaultMessage: Retweets
+msgid "twitter_retweets"
 msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
