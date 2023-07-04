@@ -682,7 +682,6 @@ msgid "Vedi"
 msgstr "View"
 
 #: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 # defaultMessage: Vedi l'immagine
 msgid "Vedi l'immagine"
 msgstr "View image"
@@ -3625,6 +3624,11 @@ msgstr "Change in balance sheet"
 # defaultMessage: Luoghi
 msgid "venues"
 msgstr "Venues"
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sx e dx o i controlli
+msgid "viewImage"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/BottomBody
 # defaultMessage: Vedi tutti
