@@ -4,7 +4,6 @@
 import { defineMessages, useIntl } from 'react-intl';
 import React, { useEffect, useState } from 'react';
 import { throttle } from 'lodash';
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import {
   Accordion,
   AccordionBody,
@@ -79,16 +78,15 @@ const SideMenu = ({ data, content_uid }) => {
 
   const [activeSection, _setActiveSection] = useState(null);
   const activeSectionRef = React.useRef(activeSection);
-  const [isNavOpen, setIsNavOpen] = React.useState(false);
+  const [isNavOpen, setIsNavOpen] = React.useState(
+    __CLIENT__ ? window.innerWidth >= 992 : false,
+  );
+
   const setActiveSection = (data) => {
     activeSectionRef.current = data;
     _setActiveSection(data);
   };
   const [windowScrollY, setWindowScrollY] = useState(0);
-
-  const onNavScrollToggle = () => {
-    setIsNavOpen(!isNavOpen);
-  };
 
   useEffect(() => {
     if (data?.children) {
@@ -144,7 +142,7 @@ const SideMenu = ({ data, content_uid }) => {
     }
 
     // Blur a link
-    document.getElementById(`item-${id}`).blur();
+    document.getElementById(id).blur();
     // Focus on section
     document.getElementById(id).focus({ preventScroll: true });
     // Scroll to section
@@ -152,7 +150,6 @@ const SideMenu = ({ data, content_uid }) => {
       behavior: 'smooth',
       block: 'start',
     });
-    setIsNavOpen(true);
   };
 
   return headers?.length > 0 ? (
@@ -167,10 +164,7 @@ const SideMenu = ({ data, content_uid }) => {
                   onToggle={() => {
                     setIsNavOpen(!isNavOpen);
                   }}
-                  aria-controls="navbarNavB"
                   aria-expanded={isNavOpen ? 'true' : 'false'}
-                  aria-label={intl.formatMessage(messages.buttonToggle)}
-                  data-target="#navbarNavB"
                   className="accordion-button"
                 >
                   <h3>{intl.formatMessage(messages.index)}</h3>
