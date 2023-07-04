@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 export const getCategory = (item, show_type, show_section, props) => {
   let cat = [];
@@ -29,43 +29,26 @@ export const visibleSlideTitle = (selector) => {
   });
 };
 
-export const useSlider = () => {
+export const useSlider = (userAutoplay) => {
   const slider = useRef(null);
-  const [isSliderVisible, setIsSliderVisible] = useState(false);
+
   const focusNext = (currentSlide) => {
-    if (!isSliderVisible) return;
+    const sliderElement = document.querySelector('.block.listing.slider');
+    const slide = sliderElement.querySelectorAll(
+      `a.slide-link[data-slide="${currentSlide}"]`,
+    );
+
+    if ((userAutoplay && !slide) || (userAutoplay && !slide.length > 0)) return;
+
     // Custom handling of focus as per Arter a11y audit and request
     const link = visibleSlideTitle(
       `a.slide-link[data-slide="${currentSlide}"]`,
     );
-    if (!link || document.activeElement === link) return;
-    // eslint-disable-next-line no-unused-expressions
-    link.focus();
-  };
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1, // 100% visibility threshold?
-    };
-    const observer = new IntersectionObserver((entries) => {
-      const [entry] = entries;
-      setIsSliderVisible(entry.isIntersecting);
-    }, observerOptions);
-
-    const sliderElement = slider.current && slider.current.innerSlider.list;
-
-    if (sliderElement instanceof Element) {
-      observer.observe(sliderElement);
+    if (!link || document.activeElement === link) {
     }
-
-    return () => {
-      if (sliderElement instanceof Element) {
-        observer.unobserve(sliderElement);
-      }
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [slider.current]);
+    // eslint-disable-next-line no-unused-expressions
+    else link.focus();
+  };
 
   return {
     slider,

@@ -6,10 +6,7 @@ import {
   ListingImage,
   ListingLinkMore,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import {
-  useSlider,
-  visibleSlideTitle,
-} from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
+import { useSlider } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
 import React, { useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -19,8 +16,9 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
 const messages = defineMessages({
   viewImage: {
-    id: "Vedi l'immagine",
-    defaultMessage: "Vedi l'immagine",
+    id: 'viewImage',
+    defaultMessage:
+      'Sei attualmente in un carosello, per navigare usa le frecce sx e dx o i controlli',
   },
   play: {
     id: 'Play slider',
@@ -50,33 +48,20 @@ const messages = defineMessages({
 
 function NextArrow(props) {
   // Custom handling of focus as per Arter a11y audit and request
-  const { className, style, onClick, currentSlide, intl, focusNext } = props;
+  const { className, style, onClick, intl } = props;
   const handleClick = (options) => {
     onClick(options, false);
   };
 
-  const handleKeyDown = async (event) => {
-    // Tab n/p
-    if (event.key === 'Tab' && event.shiftKey) {
-      event.preventDefault();
-      event.stopPropagation();
-      focusNext(currentSlide);
-    }
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      event.stopPropagation();
-      await onClick(event);
-    }
-  };
   return (
     <button
       className={className}
       style={{ ...style }}
       onClick={handleClick}
-      onKeyDown={handleKeyDown}
-      tabIndex={0}
+      tabIndex={-1}
       title={intl.formatMessage(messages.successivo)}
       aria-label={intl.formatMessage(messages.successivo)}
+      aria-hidden={true}
     >
       <Icon icon="chevron-right" key="chevron-right" />
       <span class="sr-only">{intl.formatMessage(messages.successivo)}</span>
@@ -86,30 +71,17 @@ function NextArrow(props) {
 
 function PrevArrow(props) {
   // Custom handling of focus as per Arter a11y audit and request
-  const { className, style, onClick, currentSlide, intl, focusNext } = props;
+  const { className, style, onClick, intl } = props;
 
-  const handleKeyDown = async (event) => {
-    // Tab n/p
-    if (event.key === 'Tab' && !event.shiftKey) {
-      event.preventDefault();
-      event.stopPropagation();
-      focusNext(currentSlide);
-    }
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      event.stopPropagation();
-      await onClick(event);
-    }
-  };
   return (
     <button
       className={className}
       style={{ ...style }}
       onClick={onClick}
-      tabIndex={0}
+      tabIndex={-1}
       title={intl.formatMessage(messages.precedente)}
       aria-label={intl.formatMessage(messages.precedente)}
-      onKeyDown={handleKeyDown}
+      aria-hidden={true}
     >
       <Icon icon="chevron-left" key="chevron-left-prev" />
       <span class="sr-only">{intl.formatMessage(messages.precedente)}</span>
@@ -136,8 +108,7 @@ const SliderTemplate = ({
   const [userAutoplay, setUserAutoplay] = useState(autoplay);
   const nSlidesToShow = parseInt(slidesToShow);
   const Slider = reactSlick.default;
-  const { slider, focusNext } = useSlider();
-
+  const { slider, focusNext } = useSlider(userAutoplay);
   const toggleAutoplay = () => {
     if (!slider?.current) return;
     if (userAutoplay) {
@@ -146,45 +117,6 @@ const SliderTemplate = ({
     } else {
       setUserAutoplay(true);
       slider.current.slickPlay();
-    }
-  };
-
-  const handleKeyDown = (event) => {
-    // Tab n/p
-    // Custom handling of focus as per Arter a11y audit and request
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      event.stopPropagation();
-      const currentSlide = parseInt(event.target.dataset.slide);
-      if (event.shiftKey) {
-        if (
-          nSlidesToShow > 1 &&
-          visibleSlideTitle(`a.slide-link[data-slide="${currentSlide - 1}"]`)
-        ) {
-          focusNext(currentSlide - 1);
-        } else {
-          const prevArrow = document.querySelector('.slick-arrow.slick-prev');
-          prevArrow.focus();
-        }
-      } else {
-        if (
-          nSlidesToShow > 1 &&
-          visibleSlideTitle(`a.slide-link[data-slide="${currentSlide + 1}"]`)
-        ) {
-          focusNext(currentSlide + 1);
-        } else {
-          const nextArrow = document.querySelector('.slick-arrow.slick-next');
-          nextArrow.focus();
-        }
-      }
-    }
-  };
-  const handleDotKeyDown = (event, index, originalOnClick) => {
-    // Custom handling of focus as per Arter a11y audit and request
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      event.stopPropagation();
-      originalOnClick(event);
     }
   };
 
@@ -208,13 +140,11 @@ const SliderTemplate = ({
           return (
             <El
               className={`${item.props.className} slick-dot`}
-              tabIndex={0}
+              tabIndex={-1}
               title={intl.formatMessage(messages.slideDot, {
                 index: index + 1,
               })}
-              onKeyDown={(event) =>
-                handleDotKeyDown(event, index, children.props.onClick)
-              }
+              aria-hidden={true}
             >
               <Child
                 {...children.props}
@@ -266,7 +196,6 @@ const SliderTemplate = ({
     ],
   };
 
-  //const getCaption = (item) => item.description ?? item.rights ?? null;
   return (
     <div
       className={cx(`sliderTemplate slidesToShow-${nSlidesToShow || 1}`, {
@@ -297,6 +226,8 @@ const SliderTemplate = ({
                       ? intl.formatMessage(messages.pause)
                       : intl.formatMessage(messages.play)
                   }
+                  aria-hidden={true}
+                  tabIndex={-1}
                 >
                   <Icon
                     key={userAutoplay ? 'pause' : 'play'}
@@ -315,7 +246,6 @@ const SliderTemplate = ({
                   maxSize: 1600,
                   critical: true,
                 });
-                //if (!image) return null;
                 return (
                   <div
                     className="it-single-slide-wrapper"
@@ -334,7 +264,6 @@ const SliderTemplate = ({
                             item={item}
                             title={intl.formatMessage(messages.viewImage)}
                             tabIndex={0}
-                            onKeyDown={handleKeyDown}
                             className="slide-link"
                             data-slide={index}
                           >
