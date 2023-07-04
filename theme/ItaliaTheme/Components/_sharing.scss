@@ -1,8 +1,8 @@
 .page-sharing,
 .page-actions {
   .btn-dropdown:focus {
-    border-color: hsl(36deg, 100%, 50%);
-    box-shadow: 0 0 0 2px hsl(36deg, 100%, 50%);
+    border-color: $focus-outline-color;
+    box-shadow: 0 0 0 2px $focus-outline-color;
     outline: none;
   }
   .link-list-wrapper {
@@ -24,8 +24,8 @@
           border-radius: 0;
 
           &:focus {
-            border-color: hsl(36deg, 100%, 50%);
-            box-shadow: 0 0 0 2px hsl(36deg, 100%, 50%);
+            border-color: $focus-outline-color;
+            box-shadow: 0 0 0 2px $focus-outline-color;
             outline: none;
           }
         }
