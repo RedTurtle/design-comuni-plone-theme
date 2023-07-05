@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import { Row, Col } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
-import Image from '@plone/volto/components/theme/Image/Image';
 import { CardPersona } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { RichTextSection } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
@@ -34,21 +33,17 @@ const DocumentoAutori = ({ autori, title }) => {
     >
       <div className="autori-container">
         <Row className="card-wrapper card-teaser-wrapper ruolo-persone-struttura">
-          {autori.map((autore) => {
-            const image = autore?.image_scales?.[autore?.image_field]?.[0];
-
-            return (
-              <Col xs="12" lg="12" xl="6" md="12" key={autore['@id']}>
-                <CardPersona
-                  item={autore}
-                  className="shadow"
-                  titleTagName="h5"
-                  showImage={true}
-                  listingText={autore?.incarichi ?? ''}
-                />
-              </Col>
-            );
-          })}
+          {autori.map((autore) => (
+            <Col xs="12" lg="12" xl="6" md="12" key={autore['@id']}>
+              <CardPersona
+                item={autore}
+                className="shadow"
+                titleTagName="h5"
+                showImage={true}
+                listingText={autore?.incarichi ?? ''}
+              />
+            </Col>
+          ))}
         </Row>
       </div>
     </RichTextSection>
