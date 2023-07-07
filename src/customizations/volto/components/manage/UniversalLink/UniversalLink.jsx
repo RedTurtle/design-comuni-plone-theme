@@ -116,8 +116,7 @@ const UniversalLink = ({
           icon="it-external-link"
           title={title}
           size="xs"
-          className="align-top ml-1"
-          color="primary"
+          className="align-top ml-1 external-link"
         />
       </a>
     );
