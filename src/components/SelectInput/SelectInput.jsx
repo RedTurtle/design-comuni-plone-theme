@@ -47,7 +47,8 @@ const messages = defineMessages({
       'premi la freccia a sinistra per evidenziare i valori selezionati',
   },
   ay11_toggle_values: {
-    id: 'ay11_select_Use left and right to toggle between focused values, press Backspace to remove the currently focused value',
+    id:
+      'ay11_select_Use left and right to toggle between focused values, press Backspace to remove the currently focused value',
     defaultMessage:
       'Usa le frecce destra e sinistra per attivare o disattivare i valori evidenziati, premi Backspace per rimuovere il valore corrente evidenziato',
   },
@@ -176,8 +177,13 @@ ClearIndicator.propTypes = {
 const getSelectAriaLiveMessages = (intl) => {
   return {
     guidance: (props) => {
-      const { isSearchable, isMulti, isDisabled, tabSelectsValue, context } =
-        props;
+      const {
+        isSearchable,
+        isMulti,
+        isDisabled,
+        tabSelectsValue,
+        context,
+      } = props;
       switch (context) {
         case 'menu':
           return `${intl.formatMessage(messages.ay11_up_down)}${
@@ -338,6 +344,16 @@ const SelectInput = ({
           }`
         }
         classNamePrefix={'react-select'}
+        styles={{
+          option: (base) => ({
+            ...base,
+            ':focus': {
+              'border-color': 'hsl(36deg, 100%, 50%) !important',
+              'box-shadow': '0 0 0 2px hsl(36deg, 100%, 50%) !important',
+              outline: 'none !important',
+            },
+          }),
+        }}
       />
     </div>
   );
