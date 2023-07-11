@@ -79,7 +79,7 @@ const SideMenu = ({ data, content_uid }) => {
   const [activeSection, _setActiveSection] = useState(null);
   const activeSectionRef = React.useRef(activeSection);
   const [isNavOpen, setIsNavOpen] = React.useState(
-    __CLIENT__ ? window.innerWidth >= 992 : false,
+    __CLIENT__ ? window?.innerWidth >= 992 : false,
   );
 
   const setActiveSection = (data) => {
@@ -87,25 +87,6 @@ const SideMenu = ({ data, content_uid }) => {
     _setActiveSection(data);
   };
   const [windowScrollY, setWindowScrollY] = useState(0);
-
-  useEffect(() => {
-    if (data?.children) {
-      let extractedHeaders = extractHeaders(data.children, intl);
-
-      if (extractedHeaders.length > 0) {
-        setHeaders(extractedHeaders);
-        setActiveSection(extractedHeaders[0].id);
-      }
-      setWindowScrollY(window.scrollY);
-    }
-  }, [data, content_uid]);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const handleScroll = throttle(() => {
     let scrollDown = window.scrollY > windowScrollY;
@@ -134,6 +115,24 @@ const SideMenu = ({ data, content_uid }) => {
     }
   }, 100);
 
+  useEffect(() => {
+    if (data?.children) {
+      let extractedHeaders = extractHeaders(data.children, intl);
+
+      if (extractedHeaders.length > 0) {
+        setHeaders(extractedHeaders);
+        setActiveSection(extractedHeaders[0].id);
+      }
+    }
+  }, [data, content_uid]);
+
+  useEffect(() => {
+    window?.addEventListener('scroll', handleScroll);
+    return () => {
+      window?.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const handleClickAnchor = (id) => (e) => {
     e.preventDefault();
 
@@ -142,14 +141,16 @@ const SideMenu = ({ data, content_uid }) => {
     }
 
     // Blur a link
-    document.getElementById(id).blur();
+    document.getElementById(`item-${id}`).blur();
     // Focus on section
     document.getElementById(id).focus({ preventScroll: true });
     // Scroll to section
-    document.getElementById(id)?.scrollIntoView?.({
-      behavior: 'smooth',
-      block: 'start',
-    });
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView?.({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, 0);
   };
 
   return headers?.length > 0 ? (
@@ -187,6 +188,7 @@ const SideMenu = ({ data, content_uid }) => {
                         }`}
                         href={`#${item.id}`}
                         onClick={handleClickAnchor(item.id)}
+                        id={`item-${item.id}`}
                       >
                         <span>{item.title}</span>
                       </a>
