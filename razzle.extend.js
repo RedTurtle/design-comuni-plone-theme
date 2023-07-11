@@ -56,10 +56,6 @@ const modify = (webpackConfig, { target, dev }, webpackObject) => {
         loader: 'svgo-loader',
         options: {
           plugins: [
-            { name: 'removeTitle' },
-            { name: 'convertPathData' },
-            { name: 'removeUselessStrokeAndFill' },
-            { name: 'removeViewBox' },
             { name: 'removeTitle', params: { removeTitle: true } },
             { name: 'convertPathData', params: { convertPathData: false } },
             {
