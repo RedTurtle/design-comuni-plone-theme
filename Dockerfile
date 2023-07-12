@@ -10,6 +10,8 @@ RUN buildDeps="make" && \
     apt-get update && \
     apt-get install -y --no-install-recommends $buildDeps
 
+ENV NODE_OPTIONS "--max_old_space_size=4096"
+
 COPY . .
 
 RUN --mount=type=cache,target=/root/.yarn \
