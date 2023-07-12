@@ -17,7 +17,6 @@ export const getCategory = (item, show_type, show_section, props) => {
   }
   return null;
 };
-
 export const visibleSlideTitle = (selector) => {
   // Needed to deal with react-slick duplicating a lot of slides
   // when used in infinite mode. It's an useless and counterproductive
