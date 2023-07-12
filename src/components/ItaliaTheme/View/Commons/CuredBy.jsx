@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Chip, ChipLabel } from 'design-react-kit/dist/design-react-kit';
 import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import { UniversalLink } from '@plone/volto/components';
 import { OfficeCard } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
@@ -57,7 +58,7 @@ const CuredBy = ({ office, people, title }) => {
               </h5>
             )}
             {people.map((item, i) => (
-              <Link
+              <UniversalLink
                 to={flattenToAppURL(item['@id'])}
                 key={item['@id']}
                 className="text-decoration-none mr-2"
@@ -71,7 +72,7 @@ const CuredBy = ({ office, people, title }) => {
                 >
                   <ChipLabel tag="span">{item.title}</ChipLabel>
                 </Chip>
-              </Link>
+              </UniversalLink>
             ))}
           </div>
         ) : null}
