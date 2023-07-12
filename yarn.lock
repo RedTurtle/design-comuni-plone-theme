@@ -4412,9 +4412,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone/volto@npm:17.0.0-alpha.13":
-  version: 17.0.0-alpha.13
-  resolution: "@plone/volto@npm:17.0.0-alpha.13"
+"@plone/volto@npm:17.0.0-alpha.17":
+  version: 17.0.0-alpha.17
+  resolution: "@plone/volto@npm:17.0.0-alpha.17"
   dependencies:
     "@babel/core": ^7.0.0
     "@babel/plugin-proposal-export-default-from": 7.18.9
@@ -4480,6 +4480,7 @@ __metadata:
     eslint-plugin-react-hooks: 4.0.2
     express: 4.17.3
     filesize: 6
+    github-slugger: 1.4.0
     glob: 7.1.6
     history: 4.10.1
     hoist-non-react-statics: 3.3.2
@@ -4595,7 +4596,7 @@ __metadata:
     webpack-node-externals: 3.0.0
     xmlrpc: 1.3.2
     yarnhook: 0.5.1
-  checksum: c07b75e58f66a4282dd0439f1e35b53fd7f9d0b70b64c3a9a49b200ff253a9a0a914e6f5f64fb3d4eba187df50b3f62c921bf393b839d0518ad91954185eb247
+  checksum: fe0eb3967164b41065b6dc2d7b2e6c18fd396e7fa2c4cb97770b83009a8385b4d0faa2c2ce5c44792ada2d189e0a92abbbf39a1f01f1110bcb55576ca2658b85
   languageName: node
   linkType: hard
 
@@ -12248,7 +12249,7 @@ __metadata:
     "@loadable/babel-plugin": 5.13.2
     "@plone-collective/volto-sentry": 0.3.0
     "@plone/scripts": ^2.1.5
-    "@plone/volto": 17.0.0-alpha.13
+    "@plone/volto": 17.0.0-alpha.17
     "@release-it/conventional-changelog": ^2.0.1
     "@storybook/addon-actions": ^6.5.15
     "@storybook/addon-controls": 6.5.15
@@ -15271,6 +15272,13 @@ __metadata:
   version: 0.0.0
   resolution: "github-from-package@npm:0.0.0"
   checksum: 14e448192a35c1e42efee94c9d01a10f42fe790375891a24b25261246ce9336ab9df5d274585aedd4568f7922246c2a78b8a8cd2571bfe99c693a9718e7dd0e3
+  languageName: node
+  linkType: hard
+
+"github-slugger@npm:1.4.0":
+  version: 1.4.0
+  resolution: "github-slugger@npm:1.4.0"
+  checksum: 4f52e7a21f5c6a4c5328f01fe4fe13ae8881fea78bfe31f9e72c4038f97e3e70d52fb85aa7633a52c501dc2486874474d9abd22aa61cbe9b113099a495551c6b
   languageName: node
   linkType: hard
 
