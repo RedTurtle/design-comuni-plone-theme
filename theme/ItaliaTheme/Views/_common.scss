@@ -354,3 +354,11 @@ dl.trasparenza-fields {
     }
   }
 }
+
+// Regole per SideMenu mobile
+.row.row-column-border.row-column-menu-left {
+  position: relative;
+  aside {
+    z-index: 1;
+  }
+}
