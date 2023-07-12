@@ -27,11 +27,12 @@
               align-items: center;
               justify-content: space-between;
               flex-direction: row-reverse;
-              padding: 8px 24px;
+              padding: 14px 24px;
 
               h3 {
                 padding: 0px;
                 border-bottom: none;
+                margin-bottom: 0px;
                 &::after {
                   display: none;
                 }
