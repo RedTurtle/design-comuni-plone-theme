@@ -66,14 +66,14 @@ const FooterNavigation = () => {
                   section={item.url}
                   iconProps={{ size: 'sm', color: 'white', className: 'mr-2' }}
                 />
-                <UniversalLink
+                <Link
                   to={item.url}
                   title={
                     intl.formatMessage(messages.goToPage) + ': ' + item.title
                   }
                 >
                   {item.title}
-                </UniversalLink>
+                </Link>
               </h4>
               {!config.settings.isFooterCollapsed && item.items && (
                 <LinkList className="footer-list clearfix" tag="div">
