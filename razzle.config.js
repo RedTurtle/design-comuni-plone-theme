@@ -91,6 +91,7 @@ module.exports = Object.assign({}, volto_config, {
         },
       ],
     };
+
     base_config.module.rules.push(SVG_LOADER);
 
     const urlLoader = base_config.module.rules.find(urlLoaderFinder);
