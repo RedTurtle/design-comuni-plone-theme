@@ -189,6 +189,7 @@ const SimpleCardTemplateDefault = (props) => {
           ) : null;
           const category = getCategory(item, show_type, show_section, props);
           const type = item['@type'];
+
           return (
             <Card
               className={`align-items-top rounded shadow ${getItemClass(item)}`}
@@ -225,16 +226,16 @@ const SimpleCardTemplateDefault = (props) => {
                     {(type === 'Modulo' || type === 'Documento') &&
                       !hide_dates && (
                         <div className="document-date mt-3">
-                          {item?.CreationDate && (
+                          {item?.effective && (
                             <p className="mb-0">
                               <strong>
                                 {intl.formatMessage(messages.publication_date)}:{' '}
                               </strong>
-                              {moment(item.CreationDate).format('DD-MM-YYYY')}
+                              {moment(item.effective).format('DD-MM-YYYY')}
                             </p>
                           )}
                           {item?.modified && (
-                            <p>
+                            <p className="mb-0">
                               <strong>
                                 {intl.formatMessage(messages.update_date)}:{' '}
                               </strong>
