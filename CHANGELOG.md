@@ -1,3 +1,11 @@
+## [7.16.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.15.2...v7.16.0) (2023-07-20)
+
+
+### Features
+
+* mark external links with custom icon ([#247](https://github.com/RedTurtle/design-comuni-plone-theme/issues/247)) ([18f690a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/18f690a3a6947b22c517bc72551affcfcff4f1a9))
+* Updated to volto 17.0.0-alpha.19 to fix recurrence year bug ([#255](https://github.com/RedTurtle/design-comuni-plone-theme/issues/255)) ([e9b9c06](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e9b9c06515738fdbda0eb607b0db9d4409384acf))
+
 ### [7.15.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.15.1...v7.15.2) (2023-07-14)
 
 
