@@ -19,6 +19,7 @@ const Link = ({ children, className, entityKey, getEditorState, target }) => {
   const entity = getEditorState().getCurrentContent().getEntity(entityKey);
   const entityData = entity ? entity.get('data') : undefined;
   const href = (entityData && entityData.url) || undefined;
+
   return (
     <a
       className={className}
@@ -29,7 +30,6 @@ const Link = ({ children, className, entityKey, getEditorState, target }) => {
       data-element={entityData.dataElement || entityData['data-element']}
     >
       {children}
-      {!isInternalURL(href) && <i className="external-link-icon"></i>}
     </a>
   );
 };

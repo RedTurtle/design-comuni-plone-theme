@@ -2,7 +2,6 @@ import { defineMessages, useIntl } from 'react-intl';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Chip, ChipLabel } from 'design-react-kit/dist/design-react-kit';
-import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { OfficeCard } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
@@ -59,7 +58,7 @@ const CuredBy = ({ office, people, title }) => {
             )}
             {people.map((item, i) => (
               <UniversalLink
-                to={flattenToAppURL(item['@id'])}
+                href={flattenToAppURL(item['@id'])}
                 key={item['@id']}
                 className="text-decoration-none mr-2"
               >
