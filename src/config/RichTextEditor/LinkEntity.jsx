@@ -8,7 +8,6 @@ const LinkEntity = connect((state) => ({
   const { token, url, target, targetUrl, download, children, dataElement } =
     props;
   const to = token ? url : targetUrl || url;
-
   return (
     <UniversalLink
       href={to}
