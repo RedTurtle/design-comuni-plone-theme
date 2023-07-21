@@ -18,12 +18,7 @@ const FontAwesomeIcon = (props) => {
   };
 
   let prefixKey = prefix;
-  let iconName = getIconAlias(icon, fontAwesomeAliases);
-
-  if (Array.isArray(icon)) {
-    prefixKey = icon[0];
-    iconName = icon[1];
-  }
+  let iconName = getIconAlias(icon[1], fontAwesomeAliases);
 
   const prefixFolder =
     prefixKey === 'fab' ? 'brands' : prefixKey === 'far' ? 'regular' : 'solid';
