@@ -20,6 +20,10 @@ const FontAwesomeIcon = (props) => {
   let prefixKey = prefix;
   let iconName = getIconAlias(icon[1], fontAwesomeAliases);
 
+  if (Array.isArray(icon)) {
+    prefixKey = icon[0];
+  }
+
   const prefixFolder =
     prefixKey === 'fab' ? 'brands' : prefixKey === 'far' ? 'regular' : 'solid';
 
