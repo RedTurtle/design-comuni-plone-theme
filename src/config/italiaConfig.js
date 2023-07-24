@@ -4,9 +4,6 @@ import navSVG from '@plone/volto/icons/nav.svg';
 import contentSVG from '@plone/volto/icons/content.svg';
 import bookSVG from '@plone/volto/icons/book.svg';
 import shareSVG from '@plone/volto/icons/share.svg';
-import searchIcon from 'bootstrap-italia/src/svg/it-search.svg';
-
-import { Search } from '@plone/volto/components';
 
 import {
   getItaliaListingVariations,
@@ -21,18 +18,11 @@ import CardWithImageRssTemplate from 'design-comuni-plone-theme/components/Itali
 import CardWithImageRssTemplateSkeleton from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/TemplatesSkeleton/CardWithImageRssTemplateSkeleton';
 import CardWithoutImageRssTemplate from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate';
 import CardWithoutImageRssTemplateSkeleton from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/TemplatesSkeleton/CardWithoutImageRssTemplateSkeleton';
-import {
-  AnswersStep,
-  CommentsStep,
-  LoginAgid,
-} from 'design-comuni-plone-theme/components/ItaliaTheme';
-import RightColumnFacets from '@plone/volto/components/manage/Blocks/Search/layout/RightColumnFacets';
-import LeftColumnFacets from '@plone/volto/components/manage/Blocks/Search/layout/LeftColumnFacets';
 
 import HandleAnchor from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HandleAnchor';
 import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/GenericAppExtras';
 import PageLoader from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/PageLoader';
-import redraft from 'redraft';
+
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
 
 // CTs icons
@@ -59,9 +49,7 @@ import applyRichTextConfig from 'design-comuni-plone-theme/config/RichTextEditor
 
 import gdprPrivacyPanelConfig from 'design-comuni-plone-theme/config/volto-gdpr-privacy-defaultPanelConfig.js';
 
-import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/schema.js';
-
-import reducers from 'design-comuni-plone-theme/reducers';
+import redraft from 'redraft';
 
 export default function applyConfig(voltoConfig) {
   let config = applyRichTextConfig(voltoConfig);
@@ -109,14 +97,6 @@ export default function applyConfig(voltoConfig) {
       },
     },
     querystringAdditionalFields: [],
-    searchBlockTemplates: [
-      'simpleCard',
-      'cardWithImageTemplate',
-      'inEvidenceTemplate',
-      'cardSlideUpTextTemplate',
-      'bandiInEvidenceTemplate',
-      'simpleListTemplate',
-    ],
     loadables: { ...config.settings.loadables, ...ItaliaLoadables },
     contentIcons: {
       ...config.settings.contentIcons,
@@ -169,6 +149,7 @@ export default function applyConfig(voltoConfig) {
       portalTypes: ['Image', 'File'],
     },
     italiaThemeViewsConfig: {
+      ...(config.settings.italiaThemeViewsConfig ?? {}),
       imagePosition: 'afterHeader', // possible values: afterHeader, documentBody
       // Venue: {
       //   sections: [
@@ -177,16 +158,15 @@ export default function applyConfig(voltoConfig) {
       // },
     },
     siteProperties: {
-      siteTitle: 'io-Comune', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome del Comune', 'en':'Site name'}. Se multilingua il default è comunque la stringa.
-      siteSubtitle: '', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Uno dei tanti Comuni d'Italia', 'en':'Uno dei tanti Comuni d'Italia'}. Se multilingua il default è comunque la stringa.
-      parentSiteTitle: 'Regione Emilia-Romagna', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome della Regione', 'en':'Region name'}.Se multilingua il default è comunque la stringa.
-      parentSiteURL: 'https://www.regione.emilia-romagna.it', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'https://www.governo.it', 'en':'https://www.governo.it/en'}. Se multilingua il default è comunque la stringa.
-      subsiteParentSiteTitle: 'io-Comune', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome del sito padre', 'en':'Parent site name'}. Se multilingua il default è comunque la stringa.
+      siteTitle: 'Nome del Comune', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome del Comune', 'en':'Site name'}. Se multilingua il default è comunque la stringa.
+      siteSubtitle: "Uno dei tanti Comuni d'Italia", //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Uno dei tanti Comuni d'Italia', 'en':'Uno dei tanti Comuni d'Italia'}. Se multilingua il default è comunque la stringa.
+      parentSiteTitle: 'Nome della Regione', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome della Regione', 'en':'Region name'}.Se multilingua il default è comunque la stringa.
+      parentSiteURL: 'https://www.governo.it', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'https://www.governo.it', 'en':'https://www.governo.it/en'}. Se multilingua il default è comunque la stringa.
+      subsiteParentSiteTitle: 'Nome del sito padre del sottosito', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome del sito padre', 'en':'Parent site name'}. Se multilingua il default è comunque la stringa.
       amministrazioneTrasparenteUrl: '/amministrazione-trasparente',
-      showNextGenerationEU: true,
-      // arLoginUrl: '/login?e=1',
-      // arLogoutUrl: '/logout?e=1',
-      // spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
+      //arLoginUrl: 'https://io-comune.agamar.redturtle.it/login',
+      // arLogoutUrl: 'https://io-comune.agamar.redturtle.it/logout',
+      //spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
       headerslimTertiaryMenu: {
         it: [
           //{ title: 'Contatti', url: '/it/contatti' },
@@ -231,20 +211,12 @@ export default function applyConfig(voltoConfig) {
           // { title: 'Créditos', url: 'https://www.redturtle.it/' },
         ],
       },
-      enableFeedbackForm: true,
-      enableFeedbackFormCaptcha: false,
+      enableCustomerSatisfaction: true,
+      enableCustomerSatisfactionCaptcha: false,
       enableVoltoFormBlockCaptcha: true,
       splitMegamenuColumns: true, //se impostato a false, non spezza le colonne con intestazioni nel megamenu
       footerNavigationDepth: 2, //valori possibili: [1,2]. Se impostato ad 1 non verranno mostrati nel footer i link agli elementi contenuti nelle sezioni di primo livello.
-      markSpecialLinks: true, // se impostato a false, non marca con icona i link esterni
     },
-    apiExpanders: [
-      ...config.settings.apiExpanders,
-      {
-        match: '',
-        GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
-      },
-    ],
     appExtras: [
       ...config.settings.appExtras,
       {
@@ -260,12 +232,14 @@ export default function applyConfig(voltoConfig) {
         component: PageLoader,
       },
     ],
-    maxFileUploadSize: null,
     'volto-blocks-widget': {
       allowedBlocks: [
-        ...(config.settings['volto-blocks-widget']?.allowedBlocks ?? []).filter(
-          (block) => block.id !== 'maps',
-        ),
+        'text',
+        'image',
+        'video',
+        'html',
+        'table',
+        'maps',
         'break',
         'testo_riquadro_semplice',
         'testo_riquadro_immagine',
@@ -285,22 +259,11 @@ export default function applyConfig(voltoConfig) {
       ...config.settings['volto-editablefooter'],
       options: { socials: true, newsletterSubscribe: true },
     },
-    'volto-feedback': {
-      ...config.settings['volto-feedback'],
-      formSteps: [
-        {
-          step: 0,
-          pane: AnswersStep,
-        },
-        {
-          step: 1,
-          pane: CommentsStep,
-        },
-      ],
-    },
     videoAllowExternalsDefault: false,
     showTrasparenzaFields: false,
   };
+
+  //* DISALLOW FORM CONTACT
 
   config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
     (route) => route !== '/contact-form',
@@ -358,7 +321,6 @@ export default function applyConfig(voltoConfig) {
     listing: {
       ...config.blocks.blocksConfig.listing,
       showLinkMore: true,
-      blockSchema: schemaListing,
       variations: [
         ...config.blocks.blocksConfig.listing.variations,
         ...getItaliaListingVariations(config),
@@ -376,14 +338,6 @@ export default function applyConfig(voltoConfig) {
       sidebarTab: 1,
     },
     rssBlock,
-    text: {
-      ...config.blocks.blocksConfig.text,
-      restricted: false,
-    },
-    slate: {
-      ...config.blocks.blocksConfig.slate,
-      restricted: true,
-    },
     table: {
       ...config.blocks.blocksConfig.table,
       restricted: false,
@@ -396,25 +350,8 @@ export default function applyConfig(voltoConfig) {
       ...config.blocks.blocksConfig.maps,
       restricted: true,
     },
-    search: {
-      ...config.blocks.blocksConfig.search,
-      icon: searchIcon,
-      variations: [
-        {
-          id: 'facetsRightSide',
-          title: 'Colonna a destra',
-          view: RightColumnFacets,
-          isDefault: true,
-        },
-        {
-          id: 'facetsLeftSide',
-          title: 'Colonna a sinistra',
-          view: LeftColumnFacets,
-          isDefault: false,
-        },
-      ],
-    },
   };
+
   config.blocks = {
     ...config.blocks,
     blocksConfig: { ...config.blocks.blocksConfig, ...customBlocks },
@@ -434,7 +371,6 @@ export default function applyConfig(voltoConfig) {
   // We chose to disallow leadimage block usage in editor. If you want it back someday,
   // comment out the following line and add the leadimage behavior in Document.xml file
   delete config.blocks.blocksConfig['leadimage'];
-
   // TOC block anchors not working, customizing tocEntry
   // to also return draftJS block id
   config.settings.slate = {
@@ -461,28 +397,10 @@ export default function applyConfig(voltoConfig) {
     },
   };
   // Remove Horizontal Menu variation of TOC Block
-  config.blocks.blocksConfig.toc.variations = config.blocks.blocksConfig.toc.variations.filter(
-    (v) => v.id !== 'horizontalMenu',
-  );
-
-  // REDUCERS
-  config.addonReducers = {
-    ...config.addonReducers,
-    ...reducers,
-  };
-
-  // ROUTES
-  config.addonRoutes = [
-    ...config.addonRoutes,
-    {
-      path: '/**/search',
-      component: Search,
-    },
-    {
-      path: ['/login', '/**/login'],
-      component: LoginAgid,
-    },
-  ];
+  config.blocks.blocksConfig.toc.variations =
+    config.blocks.blocksConfig.toc.variations.filter(
+      (v) => v.id !== 'horizontalMenu',
+    );
 
   return config;
 }
