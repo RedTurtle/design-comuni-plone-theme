@@ -25,6 +25,7 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 import DocRow from './DocRow';
+import search from '../../../../../omelette/src/reducers/search/search';
 
 const messages = defineMessages({
   formati_scaricabili: {
@@ -69,7 +70,7 @@ const CartellaModulisticaView = ({ content }) => {
 
   useDebouncedEffect(
     () => {
-      if (searchableText?.length === 0) {
+      if (searchableText?.length === 0 && modulistica.length > 0) {
         setModulisticaFiltered(modulistica); //tutti i risultati
       } else {
         //filtra i risultati
