@@ -78,6 +78,7 @@ export BandoUlterioriInformazioni from 'design-comuni-plone-theme/components/Ita
 
 export CartellaModulisticaAfterContent from 'design-comuni-plone-theme/components/ItaliaTheme/View/CartellaModulisticaView/Placeholder/AfterContent';
 export CartellaModulisticaAfterRelatedItems from 'design-comuni-plone-theme/components/ItaliaTheme/View/CartellaModulisticaView/Placeholder/AfterRelatedItems';
+export CartellaModulisticaSearchBar from 'design-comuni-plone-theme/components/ItaliaTheme/View/CartellaModulisticaView/SearchBar';
 export DocumentoPlaceholderAfterContent from 'design-comuni-plone-theme/components/ItaliaTheme/View/DocumentoView/Placeholder/AfterContent';
 export DocumentoPlaceholderAfterRelatedItems from 'design-comuni-plone-theme/components/ItaliaTheme/View/DocumentoView/Placeholder/AfterRelatedItems';
 export DocumentoDescrizione from 'design-comuni-plone-theme/components/ItaliaTheme/View/DocumentoView/DocumentoDescrizione';

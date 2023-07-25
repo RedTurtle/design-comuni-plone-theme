@@ -3,7 +3,7 @@
  * @module components/theme/View/CartellaModulisticaView
  */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers';
@@ -11,11 +11,13 @@ import {
   getModulisticaItems,
   resetModulisticaItems,
 } from 'design-comuni-plone-theme/actions';
+import { useDebouncedEffect } from 'design-comuni-plone-theme/helpers';
 import {
   PageHeader,
   RelatedItems,
   CartellaModulisticaAfterContent,
   CartellaModulisticaAfterRelatedItems,
+  CartellaModulisticaSearchBar,
   PagePlaceholderAfterContent,
   TextOrBlocks,
   RelatedItemInEvidence,
@@ -47,6 +49,10 @@ const CartellaModulisticaView = ({ content }) => {
   const modulistica_items_url =
     content['@components']['modulistica-items']['@id'];
 
+  const [searchableText, setSearchableText] = useState('');
+  const [modulisticaFiltered, setModulisticaFiltered] = useState([]);
+  const modulistica = modulisticaItems?.data?.items ?? [];
+
   useEffect(() => {
     if (hasItems && !modulisticaItems.loading && !modulisticaItems.loaded) {
       dispatch(getModulisticaItems(flattenToAppURL(modulistica_items_url)));
@@ -57,7 +63,50 @@ const CartellaModulisticaView = ({ content }) => {
     return () => dispatch(resetModulisticaItems());
   }, [dispatch]);
 
-  const modulistica = modulisticaItems?.data?.items ?? [];
+  useEffect(() => {
+    setModulisticaFiltered(modulistica);
+  }, [modulistica]);
+
+  useDebouncedEffect(
+    () => {
+      if (searchableText?.length === 0) {
+        setModulisticaFiltered(modulistica); //tutti i risultati
+      } else {
+        //filtra i risultati
+        const modulisticaCopy = JSON.parse(JSON.stringify(modulistica));
+        const filteredItems = modulisticaCopy.filter((section) => {
+          const filterItemsFN = (items) =>
+            items?.filter(
+              (item) =>
+                item?.title
+                  .toLowerCase()
+                  .indexOf(searchableText.toLowerCase()) >= 0,
+            ) ?? [];
+
+          if (section['@type'] === 'Document') {
+            section.items.forEach((s) => (s.items = filterItemsFN(s.items)));
+            section.items = section.items.filter((s) => s.items?.length > 0);
+            return section.items.length > 0;
+          } else {
+            if (
+              section.title
+                .toLowerCase()
+                .indexOf(searchableText.toLowerCase()) >= 0
+            ) {
+              return true;
+            } else {
+              section.items = filterItemsFN(section.items);
+              return section.items?.length > 0;
+            }
+          }
+        });
+
+        setModulisticaFiltered(filteredItems);
+      }
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    600,
+    [searchableText],
+  );
 
   return (
     <>
@@ -67,11 +116,14 @@ const CartellaModulisticaView = ({ content }) => {
           imageinheader={!!content.image}
           imageinheader_field="image"
         />
-
         <TextOrBlocks content={content} />
-        {modulistica.length > 0 && (
+
+        {/* -------SEARCH------- */}
+        <CartellaModulisticaSearchBar setSearchableText={setSearchableText} />
+
+        {modulisticaFiltered.length > 0 && (
           <section className="modulistica">
-            {modulistica.map((section) => {
+            {modulisticaFiltered.map((section) => {
               return section['@type'] === 'Document' ? (
                 <div className="documents-section" key={section['@id']}>
                   {/* <h3>{section.title}</h3> */}
@@ -102,7 +154,6 @@ const CartellaModulisticaView = ({ content }) => {
             })}
           </section>
         )}
-
         <PageMetadata content={content} />
       </div>
 

@@ -1179,6 +1179,11 @@ msgstr ""
 msgid "cartellamodulistica_formati_scaricabili"
 msgstr "Formats téléchargeables"
 
+#: components/ItaliaTheme/View/CartellaModulisticaView/SearchBar
+# defaultMessage: Type in a keyword to find modules
+msgid "cartellamodulistica_search"
+msgstr ""
+
 #: components/ItaliaTheme/View/ServizioView/ServizioCasiParticolari
 # defaultMessage: Casi particolari
 msgid "casi_particolari"
