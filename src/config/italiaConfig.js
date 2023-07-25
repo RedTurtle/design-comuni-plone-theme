@@ -149,6 +149,7 @@ export default function applyConfig(voltoConfig) {
       portalTypes: ['Image', 'File'],
     },
     italiaThemeViewsConfig: {
+      ...(config.settings.italiaThemeViewsConfig ?? {}),
       imagePosition: 'afterHeader', // possible values: afterHeader, documentBody
       // Venue: {
       //   sections: [
