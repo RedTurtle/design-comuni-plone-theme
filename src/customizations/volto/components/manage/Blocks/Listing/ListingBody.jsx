@@ -32,7 +32,6 @@ const ListingBody = React.memo(
         hasQuery,
         addFilters,
         firstLoading,
-        properties,
         loadingQuery,
         listingRef,
         additionalFilters,
@@ -63,12 +62,11 @@ const ListingBody = React.memo(
       const SkeletonTemplate = templateConfig.skeleton || Skeleton;
 
       const getBackgroundClass = () => {
-        const block = properties.blocks[data.block];
-        if (!block?.show_block_bg) return '';
+        if (!data?.show_block_bg) return '';
 
         let bg_color = data.bg_color ? `bg-${data.bg_color}` : '';
 
-        if (block.template === 'gridGalleryTemplate') {
+        if (data.template === 'gridGalleryTemplate') {
           return `section section-muted section-inset-shadow py-5 ${bg_color}`;
         } else {
           return `bg-light py-5 ${bg_color}`;
