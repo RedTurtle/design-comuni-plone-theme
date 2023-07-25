@@ -70,8 +70,10 @@ const CartellaModulisticaView = ({ content }) => {
 
   useDebouncedEffect(
     () => {
-      if (searchableText?.length === 0 && modulistica.length > 0) {
-        setModulisticaFiltered(modulistica); //tutti i risultati
+      if (searchableText?.length === 0) {
+        if (modulistica.length > 0) {
+          setModulisticaFiltered(modulistica); //tutti i risultati
+        }
       } else {
         //filtra i risultati
         const modulisticaCopy = JSON.parse(JSON.stringify(modulistica));
