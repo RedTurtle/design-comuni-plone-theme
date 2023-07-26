@@ -11,7 +11,6 @@ import {
   getModulisticaItems,
   resetModulisticaItems,
 } from 'design-comuni-plone-theme/actions';
-import { useDebouncedEffect } from 'design-comuni-plone-theme/helpers';
 import {
   PageHeader,
   RelatedItems,
@@ -50,7 +49,6 @@ const CartellaModulisticaView = ({ content }) => {
     content['@components']['modulistica-items']['@id'];
 
   const [searchableText, setSearchableText] = useState('');
-  const [modulisticaFiltered, setModulisticaFiltered] = useState([]);
   const modulistica = modulisticaItems?.data?.items ?? [];
 
   useEffect(() => {
@@ -62,14 +60,6 @@ const CartellaModulisticaView = ({ content }) => {
   useEffect(() => {
     return () => dispatch(resetModulisticaItems());
   }, [dispatch]);
-
-  useDebouncedEffect(
-    () => {
-      return;
-    }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    600,
-    [searchableText],
-  );
 
   const filterDocumento = (doc) => {
     return (
