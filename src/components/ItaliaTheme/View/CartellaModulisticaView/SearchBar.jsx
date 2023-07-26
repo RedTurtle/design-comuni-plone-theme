@@ -37,9 +37,7 @@ const SearchBar = ({ setSearchableText }) => {
                   icon="it-search"
                   padding={false}
                   size="sm"
-                  style={{
-                    ariaHidden: true,
-                  }}
+                  ariaHidden="true"
                 />
               </div>
             </div>
@@ -54,7 +52,7 @@ const SearchBar = ({ setSearchableText }) => {
               id="search-field"
               name="search-field"
               onBlur={(a, b) => {
-                setFocusSearch(true);
+                setFocusSearch(false);
               }}
               onFocus={() => {
                 setFocusSearch(true);

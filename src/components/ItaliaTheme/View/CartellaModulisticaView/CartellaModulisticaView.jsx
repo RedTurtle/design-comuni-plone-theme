@@ -25,7 +25,6 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 import DocRow from './DocRow';
-import search from '../../../../../omelette/src/reducers/search/search';
 
 const messages = defineMessages({
   formati_scaricabili: {
@@ -68,6 +67,12 @@ const CartellaModulisticaView = ({ content }) => {
     setModulisticaFiltered(modulistica);
   }, [modulistica]);
 
+  const filterItemsFN = (items) =>
+    items?.filter(
+      (item) =>
+        item?.title.toLowerCase().indexOf(searchableText.toLowerCase()) >= 0,
+    ) ?? [];
+
   useDebouncedEffect(
     () => {
       if (searchableText?.length === 0) {
@@ -78,14 +83,6 @@ const CartellaModulisticaView = ({ content }) => {
         //filtra i risultati
         const modulisticaCopy = JSON.parse(JSON.stringify(modulistica));
         const filteredItems = modulisticaCopy.filter((section) => {
-          const filterItemsFN = (items) =>
-            items?.filter(
-              (item) =>
-                item?.title
-                  .toLowerCase()
-                  .indexOf(searchableText.toLowerCase()) >= 0,
-            ) ?? [];
-
           if (section['@type'] === 'Document') {
             section.items.forEach((s) => (s.items = filterItemsFN(s.items)));
             section.items = section.items.filter((s) => s.items?.length > 0);
