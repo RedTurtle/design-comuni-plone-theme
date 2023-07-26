@@ -37,7 +37,7 @@ const SearchBar = ({ setSearchableText }) => {
                   icon="it-search"
                   padding={false}
                   size="sm"
-                  ariaHidden="true"
+                  aria-hidden="true"
                 />
               </div>
             </div>
