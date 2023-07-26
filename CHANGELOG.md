@@ -1,3 +1,15 @@
+## [7.17.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.16.0...v7.17.0) (2023-07-26)
+
+
+### Features
+
+* make config.settings.italiaThemeViewsConfig extensible from addons ([#258](https://github.com/RedTurtle/design-comuni-plone-theme/issues/258)) ([f985496](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f9854965bc4a7441ae30e6c51c8fe0e249dcc362))
+
+
+### Bug Fixes
+
+* display listing bg_color ([#259](https://github.com/RedTurtle/design-comuni-plone-theme/issues/259)) ([23dcaff](https://github.com/RedTurtle/design-comuni-plone-theme/commit/23dcaffbbbb7ef67a806f9240477b1f513329701))
+
 ## [7.16.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.15.2...v7.16.0) (2023-07-20)
 
 
