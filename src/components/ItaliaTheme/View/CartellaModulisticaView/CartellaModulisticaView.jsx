@@ -3,7 +3,7 @@
  * @module components/theme/View/CartellaModulisticaView
  */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers';
@@ -16,6 +16,7 @@ import {
   RelatedItems,
   CartellaModulisticaAfterContent,
   CartellaModulisticaAfterRelatedItems,
+  CartellaModulisticaSearchBar,
   PagePlaceholderAfterContent,
   TextOrBlocks,
   RelatedItemInEvidence,
@@ -47,6 +48,9 @@ const CartellaModulisticaView = ({ content }) => {
   const modulistica_items_url =
     content['@components']['modulistica-items']['@id'];
 
+  const [searchableText, setSearchableText] = useState('');
+  const modulistica = modulisticaItems?.data?.items ?? [];
+
   useEffect(() => {
     if (hasItems && !modulisticaItems.loading && !modulisticaItems.loaded) {
       dispatch(getModulisticaItems(flattenToAppURL(modulistica_items_url)));
@@ -57,7 +61,27 @@ const CartellaModulisticaView = ({ content }) => {
     return () => dispatch(resetModulisticaItems());
   }, [dispatch]);
 
-  const modulistica = modulisticaItems?.data?.items ?? [];
+  const filterDocumento = (doc) => {
+    return (
+      doc.title.toLowerCase().indexOf((searchableText ?? '').toLowerCase()) >=
+        0 || doc.items.filter(filterItemsFN).length > 0
+    );
+  };
+
+  const filterModulistica = (section) => {
+    if (section['@type'] === 'Document') {
+      if (searchableText?.length > 0) {
+        return (section.items ?? []).filter(filterDocumento).length > 0;
+      }
+      return true;
+    } else {
+      return section.items.filter(filterItemsFN)?.length > 0;
+    }
+  };
+
+  const filterItemsFN = (item) =>
+    item?.title.toLowerCase().indexOf((searchableText ?? '').toLowerCase()) >=
+    0;
 
   return (
     <>
@@ -67,11 +91,14 @@ const CartellaModulisticaView = ({ content }) => {
           imageinheader={!!content.image}
           imageinheader_field="image"
         />
-
         <TextOrBlocks content={content} />
+
+        {/* -------SEARCH------- */}
+        <CartellaModulisticaSearchBar setSearchableText={setSearchableText} />
+
         {modulistica.length > 0 && (
           <section className="modulistica">
-            {modulistica.map((section) => {
+            {modulistica.filter(filterModulistica).map((section) => {
               return section['@type'] === 'Document' ? (
                 <div className="documents-section" key={section['@id']}>
                   {/* <h3>{section.title}</h3> */}
@@ -88,21 +115,33 @@ const CartellaModulisticaView = ({ content }) => {
                           {intl.formatMessage(messages.formati_scaricabili)}
                         </div>
                       </div>
-                      {section.items.map((doc) => (
-                        <DocRow doc={doc} key={doc['@id']} />
-                      ))}
+                      {section.items.filter(filterDocumento).map((doc) => {
+                        const items = doc.items.filter(filterItemsFN);
+                        return (
+                          <DocRow
+                            doc={doc}
+                            key={doc['@id']}
+                            items={
+                              items.length === 0 ? doc.items : items
+                            } /*se items.length ===0 significa che è stato fatto il match sul titolo del documento, quindi devo mostrare tutti i suoi figli*/
+                          />
+                        );
+                      })}
                     </div>
                   )}
                 </div>
               ) : (
                 <div className="document-row-section" key={section['@id']}>
-                  <DocRow doc={section} />
+                  <DocRow
+                    doc={section}
+                    key={section['@id']}
+                    items={section.items.filter(filterItemsFN)}
+                  />
                 </div>
               );
             })}
           </section>
         )}
-
         <PageMetadata content={content} />
       </div>
 
