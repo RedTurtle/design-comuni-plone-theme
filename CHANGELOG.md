@@ -1,3 +1,10 @@
+## [7.18.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.17.0...v7.18.0) (2023-07-26)
+
+
+### Features
+
+* added live search in CartellaModulisticaView ([#260](https://github.com/RedTurtle/design-comuni-plone-theme/issues/260)) ([9469698](https://github.com/RedTurtle/design-comuni-plone-theme/commit/94696988644a73ee505097b417dee729a5bfa2f2))
+
 ## [7.17.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.16.0...v7.17.0) (2023-07-26)
 
 
