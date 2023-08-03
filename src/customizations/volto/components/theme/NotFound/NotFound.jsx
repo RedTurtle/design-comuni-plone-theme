@@ -1,3 +1,8 @@
+/*
+CUSTOMIZATIONS:
+- Removed the "Site Administration" link, added a link to the search page
+*/
+
 import { useEffect } from 'react';
 import { BodyClass, toBackendLang } from '@plone/volto/helpers';
 import { FormattedMessage } from 'react-intl';
