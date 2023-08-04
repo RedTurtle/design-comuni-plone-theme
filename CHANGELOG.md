@@ -1,3 +1,10 @@
+### [7.18.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.1...v7.18.2) (2023-08-04)
+
+
+### Bug Fixes
+
+* fix table-of-contents links ([25575b2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/25575b2b3d9c5ba19ae61130fef08a8c5e0708b5))
+
 ### [7.18.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.0...v7.18.1) (2023-07-27)
 
 
