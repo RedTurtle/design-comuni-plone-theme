@@ -161,6 +161,7 @@ const SliderTemplate = ({
                         <UniversalLink
                           item={item}
                           title={intl.formatMessage(messages.viewImage)}
+                          className={'no-external-if-link'}
                         >
                           <div className="slide-title">
                             {full_width ? (
