@@ -61,13 +61,23 @@ const CompleteBlockLinksTemplate = ({
                     item={!isEditMode ? item : null}
                     href={isEditMode ? '#' : null}
                     data-element={id_lighthouse}
+                    className={'no-external-if-link'}
                   >
                     <div className="d-flex">
                       {image && <div className="image-container">{image}</div>}
                       <div>
                         <CardBody>
                           <CardTitle tag="h3" className="text-secondary">
-                            {item.title}
+                            {item['@type'] === 'Link' ? (
+                              <UniversalLink
+                                item={!isEditMode ? item : null}
+                                href={isEditMode ? '#' : null}
+                              >
+                                {item.title}
+                              </UniversalLink>
+                            ) : (
+                              item.title
+                            )}
                           </CardTitle>
                           {show_description && (
                             <CardText tag="p" className="text-secondary">
