@@ -15,6 +15,10 @@ import {
   ListingLinkMore,
   ListingImage,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { isInternalURL } from '@plone/volto/helpers/Url/Url';
+
+import config from '@plone/volto/registry';
 
 const CompleteBlockLinksTemplate = ({
   items,
@@ -61,16 +65,20 @@ const CompleteBlockLinksTemplate = ({
                       <div>
                         <CardBody>
                           <CardTitle tag="h3" className="text-secondary">
-                            {item['@type'] === 'Link' ? (
-                              <UniversalLink
-                                item={!isEditMode ? item : null}
-                                href={isEditMode ? '#' : null}
-                              >
-                                {item.title}
-                              </UniversalLink>
-                            ) : (
-                              item.title
-                            )}
+                            {item.title}
+                            {item['@type'] === 'Link' &&
+                              !isInternalURL(
+                                item.remoteUrl || item.getRemoteUrl,
+                              ) &&
+                              config.settings.siteProperties
+                                .markSpecialLinks && (
+                                <Icon
+                                  icon="it-external-link"
+                                  title={title}
+                                  size="xs"
+                                  className="align-top ml-1 external-link"
+                                />
+                              )}
                           </CardTitle>
                           {show_description && (
                             <CardText tag="p" className="text-secondary">
