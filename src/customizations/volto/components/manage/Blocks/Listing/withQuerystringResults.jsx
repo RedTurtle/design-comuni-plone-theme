@@ -68,7 +68,6 @@ export default function withQuerystringResults(WrappedComponent) {
     const { settings } = config;
     const querystring = data.querystring || data; // For backwards compat with data saved before Blocks schema
     const subrequestID = content.UID + '-' + id;
-    console.log(subrequestID);
     const { b_size = settings.defaultPageSize } = querystring;
     const [firstLoading, setFirstLoading] = React.useState(true);
     // save the path so it won't trigger dispatch on eager router location change
