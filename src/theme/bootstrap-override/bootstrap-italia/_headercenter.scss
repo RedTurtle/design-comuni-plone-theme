@@ -15,9 +15,9 @@
 
       .it-search-wrapper {
         a.search-link:focus {
-          border: 1px solid $primary !important;
-          box-shadow: $search-focus-outline-shadow !important;
-          outline: $search-focus-outline-color !important;
+          border: 2px solid $primary !important;
+          // box-shadow: 0px 0px 7px 7px $focus-outline-color !important;
+          outline: $focus-outline-color 5px solid !important;
         }
       }
     }
