@@ -1,3 +1,13 @@
+### [7.18.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.2...v7.18.3) (2023-08-10)
+
+
+### Bug Fixes
+
+* event card in listing breaking with invalid dates ([7e176a7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7e176a7c68ccd1badce9bdfeffc7a41e4e2b4a2a))
+* querystring results when block ids are the same on different pages ([#279](https://github.com/RedTurtle/design-comuni-plone-theme/issues/279)) ([43ebad8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/43ebad8db528a97686bd989e4253de03ec0ed416))
+* wrong layout for external link indicator icon if objects are Plone Links in anonimous view ([#271](https://github.com/RedTurtle/design-comuni-plone-theme/issues/271)) ([b46486f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b46486f18faab1486ad69c5ef5557b5bdea7d280))
+* z-index moved to a generic block ([#267](https://github.com/RedTurtle/design-comuni-plone-theme/issues/267)) ([d6f7554](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d6f7554241ef12b1114678f7c2e8ba3500f205e5))
+
 ### [7.18.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.1...v7.18.2) (2023-08-04)
 
 
