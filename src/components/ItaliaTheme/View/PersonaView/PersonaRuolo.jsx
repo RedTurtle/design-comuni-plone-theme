@@ -40,6 +40,14 @@ const messages = defineMessages({
     id: 'compensi',
     defaultMessage: 'Compensi',
   },
+  compensi_file: {
+    id: 'compensi_file',
+    defaultMessage: 'File compensi',
+  },
+  importi_di_viaggio_e_o_servizi: {
+    id: 'importi_di_viaggio_e_o_servizi',
+    default: 'Importi di viaggio e/o servizi',
+  },
   deleghe: {
     id: 'deleghe',
     defaultMessage: 'Deleghe',
@@ -108,7 +116,31 @@ const PersonaRuolo = ({ content }) => {
               tag_id="compensi"
               title={intl.formatMessage(messages.compensi)}
               data={content.incarichi_persona[0].compensi}
-            />
+            >
+              {content.incarichi_persona[0]?.compensi_file && (
+                <div className="compensi-item mb-2">
+                  <UniversalLink
+                    href={content.incarichi_persona[0]?.compensi_file}
+                  >
+                    {intl.formatMessage(messages.compensi_file)}
+                  </UniversalLink>
+                </div>
+              )}
+              {content.incarichi_persona[0]?.importi_di_viaggio_e_o_servizi && (
+                <div className="compensi-item mb-2">
+                  <UniversalLink
+                    href={
+                      content.incarichi_persona[0]
+                        ?.importi_di_viaggio_e_o_servizi
+                    }
+                  >
+                    {intl.formatMessage(
+                      messages.importi_di_viaggio_e_o_servizi,
+                    )}
+                  </UniversalLink>
+                </div>
+              )}
+            </RichTextSection>
           )}
           <RichTextSection
             tag_id="data_insediamento"
