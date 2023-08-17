@@ -71,11 +71,11 @@ const CartellaModulisticaView = ({ content }) => {
   const filterModulistica = (section) => {
     if (section['@type'] === 'Document') {
       if (searchableText?.length > 0) {
-        return (section.items ?? []).filter(filterDocumento).length > 0;
+        return (section?.items ?? []).filter(filterDocumento).length > 0;
       }
       return true;
     } else {
-      return section.items.filter(filterItemsFN)?.length > 0;
+      return (section?.items ?? []).filter(filterItemsFN)?.length > 0;
     }
   };
 
