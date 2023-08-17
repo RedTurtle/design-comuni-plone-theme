@@ -69,10 +69,11 @@ const CartellaModulisticaView = ({ content }) => {
   };
 
   const filterItemsFN = (item) => {
-    return (
-      item?.title.toLowerCase().indexOf((searchableText ?? '').toLowerCase()) >=
-      0
-    );
+    return item.title
+      ? item.title
+          .toLowerCase()
+          .indexOf((searchableText ?? '').toLowerCase()) >= 0
+      : true;
   };
 
   const filterModulistica = (section) => {
