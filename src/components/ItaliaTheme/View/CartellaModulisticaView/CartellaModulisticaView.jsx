@@ -82,7 +82,11 @@ const CartellaModulisticaView = ({ content }) => {
       }
       return true;
     } else if (section['@type'] === 'Link') {
-      return true;
+      return section.title
+        ? section.title
+            .toLowerCase()
+            .indexOf((searchableText ?? '').toLowerCase()) >= 0
+        : true;
     } else {
       return (section?.items ?? []).filter(filterItemsFN)?.length > 0;
     }
