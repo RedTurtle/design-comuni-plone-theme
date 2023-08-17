@@ -68,20 +68,30 @@ const CartellaModulisticaView = ({ content }) => {
     );
   };
 
+  const filterItemsFN = (item) => {
+    return item.title
+      ? item.title
+          .toLowerCase()
+          .indexOf((searchableText ?? '').toLowerCase()) >= 0
+      : true;
+  };
+
   const filterModulistica = (section) => {
     if (section['@type'] === 'Document') {
       if (searchableText?.length > 0) {
         return (section?.items ?? []).filter(filterDocumento).length > 0;
       }
       return true;
+    } else if (section['@type'] === 'Link') {
+      return section.title
+        ? section.title
+            .toLowerCase()
+            .indexOf((searchableText ?? '').toLowerCase()) >= 0
+        : true;
     } else {
       return (section?.items ?? []).filter(filterItemsFN)?.length > 0;
     }
   };
-
-  const filterItemsFN = (item) =>
-    item?.title.toLowerCase().indexOf((searchableText ?? '').toLowerCase()) >=
-    0;
 
   return (
     <>
@@ -132,11 +142,7 @@ const CartellaModulisticaView = ({ content }) => {
                 </div>
               ) : (
                 <div className="document-row-section" key={section['@id']}>
-                  <DocRow
-                    doc={section}
-                    key={section['@id']}
-                    items={section.items.filter(filterItemsFN)}
-                  />
+                  <DocRow doc={section} />
                 </div>
               );
             })}
