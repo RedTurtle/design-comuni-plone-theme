@@ -1,3 +1,19 @@
+
+
+### [7.18.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.3...v7.18.4) (2023-08-18)
+
+
+### Bug Fixes
+
+* focus on cookie banner toggles ([#283](https://github.com/RedTurtle/design-comuni-plone-theme/issues/283)) ([99b3d0d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/99b3d0ddc9bbc6a75cf1ea78d7a68349eca58338))
+* missing items in CartellaModulistica section ([7ee7506](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7ee7506a9540350d492a1897ab5132510733a27b))
+* section type Link does not render in "CartellaModulistica" ([#286](https://github.com/RedTurtle/design-comuni-plone-theme/issues/286)) ([dba438c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/dba438c6ad24c59165bf5be071f8a9a98fbe595e))
+
+
+### Maintenance
+
+* yarn filter YN0013 log ([1a3d23e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1a3d23e2e3128d38a8725e0b00fba689ec6c1de2))
+
 ### [7.18.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.2...v7.18.3) (2023-08-10)
 
 
