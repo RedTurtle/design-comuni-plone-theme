@@ -77,7 +77,7 @@ const CartellaModulisticaView = ({ content }) => {
   };
 
   const filterModulistica = (section) => {
-    if (section['@type'] === 'Document') {
+    if (section['@type'] === 'Document' || section['@type'] === 'Documento') {
       if (searchableText?.length > 0) {
         return (section?.items ?? []).filter(filterDocumento).length > 0;
       }
