@@ -109,7 +109,8 @@ const CartellaModulisticaView = ({ content }) => {
         {modulistica.length > 0 && (
           <section className="modulistica">
             {modulistica.filter(filterModulistica).map((section) => {
-              return section['@type'] === 'Documento' || section['@type'] === 'Document' (
+              return section['@type'] === 'Documento' ||
+                section['@type'] === 'Document' ? (
                 <div className="documents-section" key={section['@id']}>
                   {/* <h3>{section.title}</h3> */}
 
