@@ -109,16 +109,16 @@ const CartellaModulisticaView = ({ content }) => {
         {modulistica.length > 0 && (
           <section className="modulistica">
             {modulistica.filter(filterModulistica).map((section) => {
-              return section['@type'] === 'Documento' ||
-                section['@type'] === 'Document' ? (
+              return section['@type'] === 'Document' ? (
                 <div className="documents-section" key={section['@id']}>
                   {/* <h3>{section.title}</h3> */}
 
-                  {Object.keys(section.blocks)?.length > 0 && (
-                    <TextOrBlocks content={section} />
-                  )}
+                  {section.blocks &&
+                    Object.keys(section.blocks)?.length > 0 && (
+                      <TextOrBlocks content={section} />
+                    )}
 
-                  {section.items?.length > 0 && (
+                  {section.items && section.items?.length > 0 && (
                     <div className="accordion items">
                       <div className="items-header">
                         <div></div>
@@ -143,7 +143,12 @@ const CartellaModulisticaView = ({ content }) => {
                 </div>
               ) : (
                 <div className="document-row-section" key={section['@id']}>
-                  <DocRow doc={section} />
+                  <DocRow
+                    doc={section}
+                    items={
+                      section.items ? section.items.filter(filterItemsFN) : []
+                    }
+                  />
                 </div>
               );
             })}
