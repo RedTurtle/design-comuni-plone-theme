@@ -6,7 +6,10 @@ import {
   ListingImage,
   ListingLinkMore,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { useSlider } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
+import {
+  useSlider,
+  visibleSlideTitle,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
 import React, { useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -22,11 +25,11 @@ const messages = defineMessages({
   },
   play: {
     id: 'Play slider',
-    defaultMessage: 'Play',
+    defaultMessage: 'Seleziona per riprodurre',
   },
   pause: {
     id: 'Pause slider',
-    defaultMessage: 'Metti in pausa',
+    defaultMessage: 'Seleziona per mettere in pausa',
   },
   precedente: {
     id: 'precedente',
@@ -48,9 +51,20 @@ const messages = defineMessages({
 
 function NextArrow(props) {
   // Custom handling of focus as per Arter a11y audit and request
-  const { className, style, onClick, intl } = props;
+  const { className, style, onClick, intl, currentSlide } = props;
   const handleClick = (options) => {
     onClick(options, false);
+  };
+  const handleKeyboardUsers = (e) => {
+    if (e.key === 'Tab' && e.shiftKey) {
+      e.stopPropagation();
+      e.preventDefault();
+
+      const link = visibleSlideTitle(
+        `a.slide-link[data-slide="${currentSlide}"]`,
+      );
+      link && link.focus();
+    }
   };
 
   return (
@@ -58,10 +72,11 @@ function NextArrow(props) {
       className={className}
       style={{ ...style }}
       onClick={handleClick}
-      tabIndex={-1}
       title={intl.formatMessage(messages.successivo)}
       aria-label={intl.formatMessage(messages.successivo)}
       aria-hidden={true}
+      onKeyDown={handleKeyboardUsers}
+      id="sliderNextArrow"
     >
       <Icon icon="chevron-right" key="chevron-right" />
       <span class="sr-only">{intl.formatMessage(messages.successivo)}</span>
@@ -71,23 +86,112 @@ function NextArrow(props) {
 
 function PrevArrow(props) {
   // Custom handling of focus as per Arter a11y audit and request
-  const { className, style, onClick, intl } = props;
-
+  const {
+    className,
+    style,
+    onClick,
+    intl,
+    focusNext,
+    currentSlide,
+    slideCount,
+  } = props;
+  const handleClick = (options) => {
+    onClick(options, false);
+  };
+  const handleKeyboardUsers = (e) => {
+    if (e.key === 'Tab' && !e.shiftKey) {
+      e.stopPropagation();
+      e.preventDefault();
+      if (currentSlide < slideCount) {
+        const link = visibleSlideTitle(
+          `a.slide-link[data-slide="${currentSlide}"]`,
+        );
+        link && link.focus();
+      } else focusNext(0);
+    }
+  };
   return (
     <button
       className={className}
       style={{ ...style }}
-      onClick={onClick}
-      tabIndex={-1}
+      onClick={handleClick}
       title={intl.formatMessage(messages.precedente)}
       aria-label={intl.formatMessage(messages.precedente)}
       aria-hidden={true}
+      id="sliderPrevArrow"
+      onKeyDown={handleKeyboardUsers}
     >
       <Icon icon="chevron-left" key="chevron-left-prev" />
       <span class="sr-only">{intl.formatMessage(messages.precedente)}</span>
     </button>
   );
 }
+
+const Slide = ({
+  item,
+  index,
+  image,
+  show_image_title,
+  full_width,
+  intl,
+  setUserAutoplay,
+  userAutoplay,
+  slider,
+}) => {
+  const handleKeyboardUsers = (e) => {
+    const { key, shiftKey } = e;
+    if (key === 'Tab') {
+      e.stopPropagation();
+      e.preventDefault();
+      // Keeping auto pause off for now
+      // if (userAutoplay) setUserAutoplay(false);
+      // slider.current.slickPause();
+      let elementToFocus;
+      if (shiftKey) {
+        elementToFocus = document.getElementById('sliderPrevArrow');
+      } else elementToFocus = document.getElementById('sliderNextArrow');
+      elementToFocus.focus();
+    }
+  };
+
+  return (
+    <div
+      className="it-single-slide-wrapper"
+      key={item['@id'] + index}
+      data-slide={index}
+    >
+      <div className="slide-wrapper">
+        {image ? (
+          <figure className="img-wrapper">{image}</figure>
+        ) : (
+          <div className="img-placeholder"></div>
+        )}
+        {show_image_title && (
+          <div className="slide-title">
+            <UniversalLink
+              item={item}
+              title={intl.formatMessage(messages.viewImage)}
+              tabIndex={0}
+              data-slide={index}
+              className={'slide-link no-external-if-link'}
+              onKeyDown={handleKeyboardUsers}
+            >
+              {full_width ? (
+                <Container>
+                  {item.title} <Icon icon="arrow-right" key="arrow-right-fw" />
+                </Container>
+              ) : (
+                <>
+                  {item.title} <Icon icon="arrow-right" key="arrow-right" />
+                </>
+              )}
+            </UniversalLink>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const SliderTemplate = ({
   items,
@@ -180,11 +284,10 @@ const SliderTemplate = ({
     focusOnSelect: true,
     draggable: true,
     accessibility: true,
-    // Custom handling of focus as per Arter a11y audit and request
     nextArrow: <NextArrow intl={intl} focusNext={focusNext} />,
     prevArrow: <PrevArrow intl={intl} focusNext={focusNext} />,
     appendDots: renderCustomDots,
-    //
+    // Custom handling of focus as per Arter a11y audit and request
     afterChange: focusNext,
     responsive: [
       {
@@ -221,14 +324,13 @@ const SliderTemplate = ({
             {items?.length > nSlidesToShow && (
               <div className="play-pause-wrapper">
                 <button
-                  onClick={() => toggleAutoplay()}
+                  onClick={toggleAutoplay}
                   title={
-                    userAutoplay
+                    !userAutoplay
                       ? intl.formatMessage(messages.pause)
                       : intl.formatMessage(messages.play)
                   }
-                  aria-hidden={true}
-                  tabIndex={-1}
+                  tabIndex={0}
                 >
                   <Icon
                     key={userAutoplay ? 'pause' : 'play'}
@@ -248,42 +350,17 @@ const SliderTemplate = ({
                   critical: true,
                 });
                 return (
-                  <div
-                    className="it-single-slide-wrapper"
-                    key={item['@id'] + index}
-                    data-slide={index}
-                  >
-                    <div className="slide-wrapper">
-                      {image ? (
-                        <figure className="img-wrapper">{image}</figure>
-                      ) : (
-                        <div className="img-placeholder"></div>
-                      )}
-                      {show_image_title && (
-                        <div className="slide-title">
-                          <UniversalLink
-                            item={item}
-                            title={intl.formatMessage(messages.viewImage)}
-                            tabIndex={0}
-                            data-slide={index}
-                            className={'slide-link no-external-if-link'}
-                          >
-                            {full_width ? (
-                              <Container>
-                                {item.title}{' '}
-                                <Icon icon="arrow-right" key="arrow-right-fw" />
-                              </Container>
-                            ) : (
-                              <>
-                                {item.title}{' '}
-                                <Icon icon="arrow-right" key="arrow-right" />
-                              </>
-                            )}
-                          </UniversalLink>
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                  <Slide
+                    image={image}
+                    index={index}
+                    full_width={full_width}
+                    item={item}
+                    show_image_title={show_image_title}
+                    intl={intl}
+                    setUserAutoplay={setUserAutoplay}
+                    userAutoplay={userAutoplay}
+                    slider={slider}
+                  />
                 );
               })}
             </Slider>
