@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-08-21T10:11:40.763Z\n"
+"POT-Creation-Date: 2023-08-21T15:23:09.721Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -3894,7 +3894,7 @@ msgid "venues"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sx e dx o i controlli
+# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra
 msgid "viewImage"
 msgstr ""
 

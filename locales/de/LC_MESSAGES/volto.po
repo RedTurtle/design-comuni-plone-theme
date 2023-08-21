@@ -3907,7 +3907,7 @@ msgid "venues"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sx e dx o i controlli
+# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra
 msgid "viewImage"
 msgstr ""
 

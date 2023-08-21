@@ -21,7 +21,7 @@ const messages = defineMessages({
   viewImage: {
     id: 'viewImage',
     defaultMessage:
-      'Sei attualmente in un carosello, per navigare usa le frecce sx e dx o i controlli',
+      'Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra',
   },
   play: {
     id: 'Play slider',
@@ -326,7 +326,7 @@ const SliderTemplate = ({
                 <button
                   onClick={toggleAutoplay}
                   title={
-                    !userAutoplay
+                    userAutoplay
                       ? intl.formatMessage(messages.pause)
                       : intl.formatMessage(messages.play)
                   }
