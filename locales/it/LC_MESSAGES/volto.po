@@ -1226,13 +1226,11 @@ msgid "closeSearch"
 msgstr "Chiudi ricerca"
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Rosso
 msgid "color_danger"
 msgstr "Rosso"
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Arancione
 msgid "color_orange"
 msgstr "Arancione"
@@ -1251,7 +1249,6 @@ msgid "color_transparent"
 msgstr "Trasparente"
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Giallo
 msgid "color_warning"
 msgstr "Giallo"
@@ -2110,6 +2107,21 @@ msgstr "incarico"
 # defaultMessage: Indice della pagina
 msgid "index"
 msgstr "Indice della pagina"
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Primary color
+msgid "info_color_primary"
+msgstr "Colore primario"
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Secondary color
+msgid "info_color_secondary"
+msgstr "Colore secondario"
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Tertiary color
+msgid "info_color_tertiary"
+msgstr "Colore terziario"
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Body
 #: components/ItaliaTheme/Blocks/Calendar/Body

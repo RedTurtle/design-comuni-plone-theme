@@ -10,17 +10,17 @@ const messages = defineMessages({
     id: 'border_color',
     defaultMessage: 'Colore',
   },
-  color_warning: {
-    id: 'color_warning',
-    defaultMessage: 'Giallo',
+  info_color_primary: {
+    id: 'info_color_primary',
+    defaultMessage: 'Primary color',
   },
-  color_orange: {
-    id: 'color_orange',
-    defaultMessage: 'Arancione',
+  info_color_secondary: {
+    id: 'info_color_secondary',
+    defaultMessage: 'Secondary color',
   },
-  color_danger: {
-    id: 'color_danger',
-    defaultMessage: 'Rosso',
+  info_color_tertiary: {
+    id: 'info_color_tertiary',
+    defaultMessage: 'Tertiary color',
   },
   bg_color: {
     id: 'bg_color',
@@ -39,16 +39,16 @@ class Sidebar extends Component {
   render() {
     const bg_colors = [
       {
-        name: 'warning',
-        label: this.props.intl.formatMessage(messages.color_warning),
+        name: 'primary',
+        label: this.props.intl.formatMessage(messages.info_color_primary),
       },
       {
-        name: 'warning-orange',
-        label: this.props.intl.formatMessage(messages.color_orange),
+        name: 'secondary',
+        label: this.props.intl.formatMessage(messages.info_color_secondary),
       },
       {
-        name: 'danger',
-        label: this.props.intl.formatMessage(messages.color_danger),
+        name: 'tertiary',
+        label: this.props.intl.formatMessage(messages.info_color_tertiary),
       },
     ];
     return (

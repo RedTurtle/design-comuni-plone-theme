@@ -1241,13 +1241,11 @@ msgid "closeSearch"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Rosso
 msgid "color_danger"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Arancione
 msgid "color_orange"
 msgstr ""
@@ -1266,7 +1264,6 @@ msgid "color_transparent"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Giallo
 msgid "color_warning"
 msgstr ""
@@ -2124,6 +2121,21 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/SideMenu
 # defaultMessage: Indice della pagina
 msgid "index"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Primary color
+msgid "info_color_primary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Secondary color
+msgid "info_color_secondary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Tertiary color
+msgid "info_color_tertiary"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Body

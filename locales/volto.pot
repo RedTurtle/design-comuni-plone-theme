@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-07-25T10:15:46.866Z\n"
+"POT-Creation-Date: 2023-08-21T09:46:02.852Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1228,13 +1228,11 @@ msgid "closeSearch"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Rosso
 msgid "color_danger"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Arancione
 msgid "color_orange"
 msgstr ""
@@ -1253,7 +1251,6 @@ msgid "color_transparent"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Giallo
 msgid "color_warning"
 msgstr ""
@@ -2111,6 +2108,21 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/SideMenu
 # defaultMessage: Indice della pagina
 msgid "index"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Primary color
+msgid "info_color_primary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Secondary color
+msgid "info_color_secondary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Tertiary color
+msgid "info_color_tertiary"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Body
