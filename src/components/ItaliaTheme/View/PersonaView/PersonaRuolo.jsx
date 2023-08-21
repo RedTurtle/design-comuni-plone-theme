@@ -10,6 +10,7 @@ import {
   contentFolderHasItems,
   viewDate,
 } from 'design-comuni-plone-theme/helpers';
+import Attachment from '../Commons/Attachment';
 
 const messages = defineMessages({
   ruolo: {
@@ -39,10 +40,6 @@ const messages = defineMessages({
   compensi: {
     id: 'compensi',
     defaultMessage: 'Compensi',
-  },
-  compensi_file: {
-    id: 'compensi_file',
-    defaultMessage: 'File compensi',
   },
   importi_di_viaggio_e_o_servizi: {
     id: 'importi_di_viaggio_e_o_servizi',
@@ -111,33 +108,80 @@ const PersonaRuolo = ({ content }) => {
               </div>
             </RichTextSection>
           )}
+
           {richTextHasContent(content.incarichi_persona[0].compensi) && (
             <RichTextSection
               tag_id="compensi"
               title={intl.formatMessage(messages.compensi)}
               data={content.incarichi_persona[0].compensi}
             >
-              {content.incarichi_persona[0]?.compensi_file && (
+              {content.incarichi_persona[0]?.compensi_file?.length > 0 && (
                 <div className="compensi-item mb-2">
-                  <UniversalLink
-                    href={content.incarichi_persona[0]?.compensi_file}
-                  >
-                    {intl.formatMessage(messages.compensi_file)}
-                  </UniversalLink>
+                  <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+                    {content.incarichi_persona[0]?.compensi_file.map((file) => {
+                      let itemURL = '#';
+                      if (file['@type'] === 'File') {
+                        itemURL = `${file['@id']}/@@download/file`;
+                      } else if (file['@type'] === 'Link') {
+                        itemURL =
+                          file.remoteUrl?.length > 0
+                            ? file.remoteUrl
+                            : file['@id'];
+                      } else {
+                        itemURL = file['@id'];
+                      }
+                      return (
+                        <Attachment
+                          key={file['@id']}
+                          title={file.title}
+                          description={file.description}
+                          download_url={itemURL}
+                          item={file}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
               )}
-              {content.incarichi_persona[0]?.importi_di_viaggio_e_o_servizi && (
+            </RichTextSection>
+          )}
+          {content.incarichi_persona[0]?.importi_di_viaggio_e_o_servizi
+            ?.length > 0 && (
+            <RichTextSection
+              tag_id="importi-di-viaggio"
+              title={intl.formatMessage(
+                messages.importi_di_viaggio_e_o_servizi,
+              )}
+              data={content.incarichi_persona[0].importi_di_viaggio_e_o_servizi}
+            >
+              {content.incarichi_persona[0]?.compensi_file?.length > 0 && (
                 <div className="compensi-item mb-2">
-                  <UniversalLink
-                    href={
-                      content.incarichi_persona[0]
-                        ?.importi_di_viaggio_e_o_servizi
-                    }
-                  >
-                    {intl.formatMessage(
-                      messages.importi_di_viaggio_e_o_servizi,
+                  <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+                    {content.incarichi_persona[0]?.importi_di_viaggio_e_o_servizi.map(
+                      (file) => {
+                        let itemURL = '#';
+                        if (file['@type'] === 'File') {
+                          itemURL = `${file['@id']}/@@download/file`;
+                        } else if (file['@type'] === 'Link') {
+                          itemURL =
+                            file.remoteUrl?.length > 0
+                              ? file.remoteUrl
+                              : file['@id'];
+                        } else {
+                          itemURL = file['@id'];
+                        }
+                        return (
+                          <Attachment
+                            key={file['@id']}
+                            title={file.title}
+                            description={file.description}
+                            download_url={itemURL}
+                            item={file}
+                          />
+                        );
+                      },
                     )}
-                  </UniversalLink>
+                  </div>
                 </div>
               )}
             </RichTextSection>
