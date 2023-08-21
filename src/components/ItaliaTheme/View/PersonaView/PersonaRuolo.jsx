@@ -124,13 +124,37 @@ const PersonaRuolo = ({ content }) => {
           </RichTextSection>
         </>
       )}
-      {content.organizzazione_riferimento.length > 0 && (
+      {content.assessore_di?.length > 0 && (
+        <RichTextSection
+          tag_id="assessore_di"
+          title={intl.formatMessage(messages.assessore_di)}
+        >
+          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+            {content.assessore_di.map((item, i) => (
+              <OfficeCard key={item['@id']} office={item} size="big" />
+            ))}
+          </div>
+        </RichTextSection>
+      )}
+      {content.responsabile_di?.length > 0 && (
+        <RichTextSection
+          tag_id="responsabile_di"
+          title={intl.formatMessage(messages.responsabile_di)}
+        >
+          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+            {content.responsabile_di.map((item, i) => (
+              <OfficeCard key={item['@id']} office={item} size="big" />
+            ))}
+          </div>
+        </RichTextSection>
+      )}
+      {content.parte_di?.length > 0 && (
         <RichTextSection
           tag_id="organization"
           title={intl.formatMessage(messages.organizzazione_riferimento)}
         >
           <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
-            {content.organizzazione_riferimento.map((item, i) => (
+            {content.parte_di.map((item, i) => (
               <OfficeCard key={item['@id']} office={item} size="big" />
             ))}
           </div>
