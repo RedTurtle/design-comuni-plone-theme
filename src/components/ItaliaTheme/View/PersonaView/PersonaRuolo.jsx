@@ -5,12 +5,12 @@ import {
   RichTextSection,
   OfficeCard,
   Gallery,
+  Attachment,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import {
   contentFolderHasItems,
   viewDate,
 } from 'design-comuni-plone-theme/helpers';
-import Attachment from '../Commons/Attachment';
 
 const messages = defineMessages({
   ruolo: {
