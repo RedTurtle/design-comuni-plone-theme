@@ -15,8 +15,7 @@ export const CardPersona = ({
   titleClassName = '',
   titleTagName = 'h3',
   showImage,
-  natural_image_size,
-  listingText,
+  show_description = true,
   icon,
   type,
   isEditMode,
@@ -27,7 +26,7 @@ export const CardPersona = ({
     useOriginal: false,
   });
 
-  const hasImage = image !== null;
+  const hasImage = image !== null && showImage;
 
   return (
     <Card
@@ -35,9 +34,8 @@ export const CardPersona = ({
         {
           'card-with-image': hasImage,
         },
-        `card-persona card-big-io-comune p-4 card-teaser-image card-flex no-after ${
-          className ?? ''
-        }`,
+        `card-persona card-big-io-comune card-teaser-image card-flex no-after border border-light rounded`,
+        className,
       )}
     >
       <div className="card-image-wrapper">
@@ -55,17 +53,11 @@ export const CardPersona = ({
               {item.title || item.id}
             </UniversalLink>
           </CardTitle>
-          {listingText && (
-            <CardText
-              className={cx('', {
-                'card-with-picture': !!image,
-              })}
-            >
-              {listingText}
-            </CardText>
+          {show_description && (
+            <CardText>{item.incarichi || item.description}</CardText>
           )}
         </CardBody>
-        {showImage && (
+        {hasImage && (
           <div className="card-image card-image-rounded">{image}</div>
         )}
       </div>

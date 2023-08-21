@@ -635,11 +635,6 @@ msgstr "Trascina qui un file per sostituire quello esistente"
 msgid "Trasparenza"
 msgstr "Trasparenza"
 
-#: components/ItaliaTheme/Blocks/TwitterPosts/Sidebar
-# defaultMessage: Twitter Posts
-msgid "Twitter Posts"
-msgstr "Twitter Posts"
-
 #: components/ItaliaTheme/Blocks/CTABlock/Block
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Block
 #: components/ItaliaTheme/Blocks/TextCard/SimpleCard/Block
@@ -792,9 +787,9 @@ msgid "altre_modalita_invio"
 msgstr "Altre modalità di invio"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioAltriDocumenti
-# defaultMessage: Documenti correlati
+# defaultMessage: Documenti
 msgid "altri_documenti"
-msgstr "Altri documenti"
+msgstr "Documenti"
 
 #: config/Blocks/ListingOptions/cardWithImageTemplate
 # defaultMessage: Mostra l'immagine per tutti gli elementi
@@ -1711,11 +1706,6 @@ msgstr "Ufficio responsabile"
 msgid "done_edit_social_links"
 msgstr "Fatto"
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Navigazione elementi slider
-msgid "dots"
-msgstr ""
-
 #: components/ItaliaTheme/View/VenueView/VenueWhere
 # defaultMessage: Indirizzo
 msgid "dove"
@@ -2520,11 +2510,6 @@ msgstr "Novità"
 msgid "numbers_block"
 msgstr "Blocco numeri"
 
-#: components/ItaliaTheme/Blocks/TwitterPosts/Body
-# defaultMessage: Replies
-msgid "numbers_replies"
-msgstr ""
-
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderNewsItem
 # defaultMessage: Numero del comunicato stampa
 msgid "numero_progressivo_cs"
@@ -2539,6 +2524,11 @@ msgstr "Apri link in una nuova scheda"
 # defaultMessage: Questo evento ha una data di fine aperta/variabile.
 msgid "open_end"
 msgstr "Questo evento ha una data di fine aperta/variabile."
+
+#: helpers/customizationsI18n
+# defaultMessage: Opens in new tab
+msgid "opensInNewTab"
+msgstr "Si apre in una nuova scheda"
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Contenuto attivo
@@ -2698,11 +2688,6 @@ msgstr "Testo di aiuto"
 # defaultMessage: PlayStore Link
 msgid "playStoreLink"
 msgstr "PlayStore Link"
-
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Precedente
-msgid "precedente"
-msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/IconPreviewWidget
 # defaultMessage: Anteprima dell'icona scelta
@@ -3538,11 +3523,6 @@ msgstr "Vai alla navigazione"
 msgid "skype"
 msgstr "Skype"
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Vai alla slide {index}
-msgid "slideDot"
-msgstr ""
-
 #: config/Blocks/ListingOptions/sliderTemplate
 # defaultMessage: N° slide da mostrare
 msgid "slidesToShow"
@@ -3683,11 +3663,6 @@ msgstr "Visibile"
 msgid "subjects"
 msgstr "Tags"
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Successivo
-msgid "successivo"
-msgstr ""
-
 #: components/ItaliaTheme/View/EventoView/EventoContatti
 # defaultMessage: Con il supporto di
 msgid "supported_by"
@@ -3770,7 +3745,6 @@ msgstr "Tipologia persona"
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
-#: components/ItaliaTheme/Blocks/TwitterPosts/Sidebar
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Titolo
 msgid "title"
@@ -3814,46 +3788,6 @@ msgstr "Trasparenza"
 # defaultMessage: Twitter
 msgid "twitter"
 msgstr "Twitter"
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Sidebar
-# defaultMessage: Link alla pagina del profilo
-msgid "twitterAccountLink"
-msgstr "Link alla pagina del profilo"
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Sidebar
-# defaultMessage: Accounts
-msgid "twitterAccounts"
-msgstr "Accounts"
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Sidebar
-# defaultMessage: Inserisci i nomi degli account di cui vuoi visualizzare i post, separati da virgola. Ad esempio, se vuoi mostrare i tweet di Repubblica e del Corriere della Sera, inserisci “repubblica,Corriere".
-msgid "twitterAccounts_description"
-msgstr "Inserisci i nomi degli account di cui vuoi visualizzare i post, separati da virgola. Ad esempio, se vuoi mostrare i tweet di Repubblica e del Corriere della Sera, inserisci “repubblica,Corriere"."
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Body
-# defaultMessage: Error: Ci scusiamo per l'inconveniente, il server Twitter non risponde.
-msgid "twitter_error"
-msgstr "Error: Ci scusiamo per l'inconveniente, il server Twitter non risponde."
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Body
-# defaultMessage: Likes
-msgid "twitter_likes"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Body
-# defaultMessage: Non c'è nessun post da mostrare.
-msgid "twitter_posts_no_results"
-msgstr "Non c'è nessun post da mostrare."
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Body
-# defaultMessage: Post non trovati.
-msgid "twitter_posts_not_found"
-msgstr "Post non trovati."
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Body
-# defaultMessage: Retweets
-msgid "twitter_retweets"
-msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 # defaultMessage: Unita organizzativa

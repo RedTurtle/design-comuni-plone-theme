@@ -2,6 +2,7 @@
  * Questo è il link quando viene mostrato dentro l'editor nelle viste di edit
  * Customizzato
  * - aggiunto data-element
+ * - aggiunto icona link esterno
  */
 import React from 'react';
 import PropTypes from 'prop-types';
