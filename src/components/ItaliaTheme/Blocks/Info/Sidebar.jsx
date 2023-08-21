@@ -6,9 +6,9 @@ import { ColorListWidget } from 'design-comuni-plone-theme/components/ItaliaThem
 import { CheckboxWidget } from '@plone/volto/components';
 
 const messages = defineMessages({
-  border_color: {
-    id: 'border_color',
-    defaultMessage: 'Colore',
+  info_color: {
+    id: 'info_color',
+    defaultMessage: 'Color',
   },
   info_color_primary: {
     id: 'info_color_primary',
@@ -51,6 +51,7 @@ class Sidebar extends Component {
         label: this.props.intl.formatMessage(messages.info_color_tertiary),
       },
     ];
+
     return (
       <Segment.Group raised>
         <header className="header pulled">
@@ -65,8 +66,8 @@ class Sidebar extends Component {
         <Segment className="form">
           <ColorListWidget
             id="color"
-            title={this.props.intl.formatMessage(messages.border_color)}
-            value={this.props.data.border_color}
+            title={this.props.intl.formatMessage(messages.info_color)}
+            value={this.props.data.color}
             onChange={(id, value) => {
               this.props.onChangeBlock(this.props.block, {
                 ...this.props.data,
@@ -75,6 +76,7 @@ class Sidebar extends Component {
             }}
             colors={bg_colors}
           />
+
           <CheckboxWidget
             id="bg_color"
             title={this.props.intl.formatMessage(messages.bg_color)}

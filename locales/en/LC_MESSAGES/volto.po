@@ -1096,11 +1096,6 @@ msgstr ""
 msgid "block_bg_color"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Info/Sidebar
-# defaultMessage: Colore
-msgid "border_color"
-msgstr ""
-
 #: components/ItaliaTheme/View/Commons/SideMenu
 # defaultMessage: Toggle navigation
 msgid "button-toggler-toggle-navigation"
@@ -2107,6 +2102,11 @@ msgstr "assignment"
 # defaultMessage: Indice della pagina
 msgid "index"
 msgstr "Page index"
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Color
+msgid "info_color"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Primary color
