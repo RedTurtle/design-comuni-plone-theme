@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -346,16 +347,6 @@ const SelectInput = ({
           }`
         }
         classNamePrefix={'react-select'}
-        styles={{
-          option: (base) => ({
-            ...base,
-            ':focus': {
-              'border-color': 'hsl(36deg, 100%, 50%) !important',
-              'box-shadow': '0 0 0 2px hsl(36deg, 100%, 50%) !important',
-              outline: 'none !important',
-            },
-          }),
-        }}
       />
     </div>
   );
