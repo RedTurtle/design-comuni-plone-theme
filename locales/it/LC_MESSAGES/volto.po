@@ -786,9 +786,9 @@ msgid "altre_modalita_invio"
 msgstr "Altre modalità di invio"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioAltriDocumenti
-# defaultMessage: Documenti correlati
+# defaultMessage: Documenti
 msgid "altri_documenti"
-msgstr "Altri documenti"
+msgstr "Documenti"
 
 #: config/Blocks/ListingOptions/cardWithImageTemplate
 # defaultMessage: Mostra l'immagine per tutti gli elementi
@@ -2523,6 +2523,11 @@ msgstr "Apri link in una nuova scheda"
 # defaultMessage: Questo evento ha una data di fine aperta/variabile.
 msgid "open_end"
 msgstr "Questo evento ha una data di fine aperta/variabile."
+
+#: helpers/customizationsI18n
+# defaultMessage: Opens in new tab
+msgid "opensInNewTab"
+msgstr "Si apre in una nuova scheda"
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Contenuto attivo

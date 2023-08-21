@@ -795,7 +795,7 @@ msgid "altre_modalita_invio"
 msgstr "Otros métodos de envío"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioAltriDocumenti
-# defaultMessage: Documenti correlati
+# defaultMessage: Documenti
 msgid "altri_documenti"
 msgstr "Otros documentos"
 
@@ -2532,6 +2532,11 @@ msgstr "Abrir enlace en una pestaña nueva"
 # defaultMessage: Questo evento ha una data di fine aperta/variabile.
 msgid "open_end"
 msgstr "Este evento tiene una fecha de finalización abierta/variable."
+
+#: helpers/customizationsI18n
+# defaultMessage: Opens in new tab
+msgid "opensInNewTab"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Contenuto attivo

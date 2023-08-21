@@ -11,6 +11,15 @@
     }
   }
 
+  .description a {
+    color: $gdpr-link-color;
+
+    &:hover,
+    &:focus {
+      color: darken($gdpr-link-color, 10%);
+    }
+  }
+
   .gdpr-privacy-content-wrapper {
     padding: 2rem 0;
 
@@ -170,7 +179,8 @@
               &:focus {
                 & + label {
                   &:before {
-                    box-shadow: 0 0 3px 3px #ccc;
+                    box-shadow: 0 0 0 5px black !important;
+                    outline: #ddd 2px solid !important;
                   }
                 }
               }
