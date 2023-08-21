@@ -1,5 +1,64 @@
 
 
+## [8.3.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.3.1...v8.3.2) (2023-08-18)
+
+
+### Bug Fixes
+
+* actually use color variable for privacy link in cookie banner ([711efed](https://github.com/RedTurtle/design-comuni-plone-theme/commit/711efed3b9d67d5414bdba5ccf86161fe152943e))
+* focus styles on search button ([#281](https://github.com/RedTurtle/design-comuni-plone-theme/issues/281)) ([d3cddee](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d3cddee4cdfd2fed9bd230b036b29a057851bf25))
+* webp static imports in jsx code ([b1ab875](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b1ab87519b9fb29fcd05edb2bddc3c953b805957))
+
+
+### Documentation
+
+* updated publiccode ([a2d8fb5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a2d8fb5efe1cf2a813efe44189d98dc9d516d705))
+
+## [8.3.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.3.0...v8.3.1) (2023-08-10)
+
+
+### Bug Fixes
+
+* card persona images now have fixed size ([#275](https://github.com/RedTurtle/design-comuni-plone-theme/issues/275)) ([cfbdbc8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/cfbdbc8c458036864dd5c6c02fa35e85fc87fc63))
+* event card in listing breaking with invalid dates ([94aa154](https://github.com/RedTurtle/design-comuni-plone-theme/commit/94aa154e02f1a48f2afb9757d43767fea5c1f01a))
+* event dates in cards when recurrence is entirely in the past ([#277](https://github.com/RedTurtle/design-comuni-plone-theme/issues/277)) ([5c45415](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5c4541529e276693a7d145d99dfbd6a291a52796))
+* focus on cookie banner toggles ([#282](https://github.com/RedTurtle/design-comuni-plone-theme/issues/282)) ([ccc3c73](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ccc3c7324263058916cbe053131be6ae1add7ea0))
+* querystring results when block ids are the same on different pages ([#278](https://github.com/RedTurtle/design-comuni-plone-theme/issues/278)) ([71db4d3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/71db4d30b2ac0faa0dbe1e06302ceb20b81f5b1c))
+* restored full-width class to listing block ([#280](https://github.com/RedTurtle/design-comuni-plone-theme/issues/280)) ([d19c08a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d19c08a29cefe3b4a482e3b2546e71f3c4bf0604))
+* wrong layout for external link indicator icon if objects are Plone Links in anonimous view ([#270](https://github.com/RedTurtle/design-comuni-plone-theme/issues/270)) ([4bbb741](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4bbb74110659144e4f398e54b10b9c66b2c41f7a))
+
+
+### Maintenance
+
+* deploy to rancher disabled ([d924ef1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d924ef133380d2e7b890483bf0c519ecf4c07a78))
+
+
+### Documentation
+
+* updated publiccode ([c8769d2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c8769d20088300e59b1d0fef70319b4416ef4a97))
+
+## [8.3.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.2.1...v8.3.0) (2023-08-04)
+
+
+### Features
+
+* coherent description in card persona everywhere ([#273](https://github.com/RedTurtle/design-comuni-plone-theme/issues/273)) ([137fdd5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/137fdd5a17d36ccb67c736467761d645f446d116))
+* rimosso link a form contatto, aggiunto link a motore di ricerca del sito ([#269](https://github.com/RedTurtle/design-comuni-plone-theme/issues/269)) ([6793855](https://github.com/RedTurtle/design-comuni-plone-theme/commit/67938552ba8829c383757d8415c24861ce729b88))
+* upgrade to volto alpha.19 ([02e3096](https://github.com/RedTurtle/design-comuni-plone-theme/commit/02e3096c61331cb5137003c2782fa07aaed23c32))
+
+
+### Bug Fixes
+
+* equal height for card persona in uo people ([#276](https://github.com/RedTurtle/design-comuni-plone-theme/issues/276)) ([3a5e8d1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3a5e8d1672b5700e3d1097f43588ecff86efaff1))
+* height of accessibility icon for external links ([#268](https://github.com/RedTurtle/design-comuni-plone-theme/issues/268)) ([8714eb2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8714eb29ad7a05b6f40058dfdf315e046dff00ef))
+* optional chaining for pdc data in OfficeCard ([#274](https://github.com/RedTurtle/design-comuni-plone-theme/issues/274)) ([88ec896](https://github.com/RedTurtle/design-comuni-plone-theme/commit/88ec896ae9cbbc357ccb8d7a69977562aef3ab1a))
+* z-index moved to a generic block ([#265](https://github.com/RedTurtle/design-comuni-plone-theme/issues/265)) ([c0d729c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c0d729ceaf50021f5752bfbb961124c3e03e7133))
+
+
+### Documentation
+
+* updated publiccode ([6329a9b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6329a9b3f47cc43d4958155db52529ce25f16807))
+
 ## [8.2.1](https://github.com/redturtle/design-comuni-plone-theme/compare/v8.2.0...v8.2.1) (2023-07-27)
 
 
