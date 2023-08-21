@@ -191,20 +191,6 @@ const SearchModal = ({ closeModal, show }) => {
     if (!searchFilters || Object.keys(searchFilters).length === 0)
       dispatch(getSearchFilters());
   }, []);
-  const handleSetAdvancedTab = () => {
-    if (!advancedSearch) return;
-    setTimeout(() => {
-      const currentFocusedElement = document.activeElement;
-      const optionToFocus = document.querySelectorAll(
-        '[role="tabpanel"][aria-expanded="true"] input',
-      )[0];
-      optionToFocus &&
-        optionToFocus !== currentFocusedElement &&
-        optionToFocus.focus();
-    }, 200);
-  };
-
-  useEffect(() => handleSetAdvancedTab(), [advancedTab]);
 
   const handleBackTabbingFromPane = (event) => {
     if (event.shiftKey && event.key === 'Tab') {
@@ -241,13 +227,13 @@ const SearchModal = ({ closeModal, show }) => {
   useEffect(() => {
     if (show) {
       setTimeout(() => {
-        inputRef.current.focus(); //setta il focus sul campo di ricerca all'apertura della modale
+        inputRef.current && inputRef.current.focus(); //setta il focus sul campo di ricerca all'apertura della modale
       }, 100);
       document.body.classList.add('search-modal-opened'); //to prevent scroll body
     } else {
       document.body.classList.remove('search-modal-opened'); //re-enable scroll body
     }
-  }, [show]);
+  }, [show, inputRef]);
 
   useEffect(() => {
     if (Object.keys(searchFilters?.sections ?? {}).length > 0) {
@@ -411,14 +397,6 @@ const SearchModal = ({ closeModal, show }) => {
                       aria-label={intl.formatMessage(messages.searchLabel)}
                       aria-describedby="search-button"
                       ref={inputRef}
-                      // ref={(input) => {
-                      //   console.log('----');
-                      //   if (input) {
-                      //     setTimeout(() => {
-                      //       input.focus();
-                      //     }, 100);
-                      //   }
-                      // }}
                     />
                     <a
                       href={getSearchParamsURL(
