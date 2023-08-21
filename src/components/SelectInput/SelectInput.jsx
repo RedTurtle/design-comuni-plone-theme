@@ -149,6 +149,8 @@ const GroupHeading = injectLazyLibs('reactSelect')((props) => {
 });
 
 const ClearIndicator = (props) => {
+  const intl = useIntl();
+
   const {
     innerProps: { ref, ...restInnerProps },
   } = props;

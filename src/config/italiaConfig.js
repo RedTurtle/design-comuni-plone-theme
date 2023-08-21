@@ -169,6 +169,7 @@ export default function applyConfig(voltoConfig) {
       portalTypes: ['Image', 'File'],
     },
     italiaThemeViewsConfig: {
+      ...(config.settings.italiaThemeViewsConfig ?? {}),
       imagePosition: 'afterHeader', // possible values: afterHeader, documentBody
       // Venue: {
       //   sections: [
@@ -236,6 +237,7 @@ export default function applyConfig(voltoConfig) {
       enableVoltoFormBlockCaptcha: true,
       splitMegamenuColumns: true, //se impostato a false, non spezza le colonne con intestazioni nel megamenu
       footerNavigationDepth: 2, //valori possibili: [1,2]. Se impostato ad 1 non verranno mostrati nel footer i link agli elementi contenuti nelle sezioni di primo livello.
+      markSpecialLinks: true, // se impostato a false, non marca con icona i link esterni
     },
     apiExpanders: [
       ...config.settings.apiExpanders,
@@ -460,9 +462,10 @@ export default function applyConfig(voltoConfig) {
     },
   };
   // Remove Horizontal Menu variation of TOC Block
-  config.blocks.blocksConfig.toc.variations = config.blocks.blocksConfig.toc.variations.filter(
-    (v) => v.id !== 'horizontalMenu',
-  );
+  config.blocks.blocksConfig.toc.variations =
+    config.blocks.blocksConfig.toc.variations.filter(
+      (v) => v.id !== 'horizontalMenu',
+    );
 
   // REDUCERS
   config.addonReducers = {

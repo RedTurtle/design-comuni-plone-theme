@@ -3,7 +3,6 @@ import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 
 import { Row, Col } from 'design-react-kit';
-import { UniversalLink } from '@plone/volto/components';
 import { CardPersona } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { RichTextSection } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
@@ -37,10 +36,9 @@ const DocumentoAutori = ({ autori, title }) => {
             <Col xs="12" lg="12" xl="6" md="12" key={autore['@id']}>
               <CardPersona
                 item={autore}
-                className="shadow"
+                className="shadow-sm"
                 titleTagName="h5"
                 showImage={true}
-                listingText={autore?.incarichi ?? ''}
               />
             </Col>
           ))}

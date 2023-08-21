@@ -116,10 +116,9 @@ const UOStructure = ({ content }) => {
               <Col xs="12" lg="12" xl="12" md="12" sm="12" key={item['@id']}>
                 <CardPersona
                   item={item}
-                  className={'shadow'}
+                  className={'shadow-sm'}
                   showImage={true}
                   titleTagName={'h5'}
-                  listingText={item.incarichi}
                 />
               </Col>
             ))}
@@ -137,7 +136,7 @@ const UOStructure = ({ content }) => {
               <Col xs="12" lg="12" xl="6" md="12" sm="12" key={item['@id']}>
                 <CardPersona
                   item={item}
-                  className={'shadow'}
+                  className={'shadow-sm'}
                   showImage={true}
                   titleTagName={'h5'}
                   listingText={item.incarichi}
