@@ -1,3 +1,15 @@
+### [7.18.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.4...v7.18.5) (2023-08-22)
+
+
+### Bug Fixes
+
+* document vs documento ([840bddb](https://github.com/RedTurtle/design-comuni-plone-theme/commit/840bddb76f6e7256f10e52fe3b52d269267bbe8b))
+* document vs documento ([d4a18ff](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d4a18ff974f4ad3da939ecc53544dc4aa552934a))
+* document vs documento ([56ee543](https://github.com/RedTurtle/design-comuni-plone-theme/commit/56ee543d348d57def8bac9e0e4b58ec9a0bdb41d))
+* document/documento ([b4d01ed](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b4d01ed31c06492341c80fed15e7d72636e96ccf))
+* fix Cartella ModulisticaView for files, link and images ([f110d27](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f110d27b420a2b92183e0232479cc6816ea4dd53))
+* focus styles on search button ([#284](https://github.com/RedTurtle/design-comuni-plone-theme/issues/284)) ([47dc551](https://github.com/RedTurtle/design-comuni-plone-theme/commit/47dc551c37f64edf8972dab3830990c079aef066))
+
 
 
 ### [7.18.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.3...v7.18.4) (2023-08-18)
