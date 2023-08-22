@@ -77,15 +77,15 @@ const DocRow = ({ doc, items }) => {
       key={doc['@id']}
     >
       {/*Only title and/or description, no files */}
-      {!items && <div className="doc">{titleWrapper}</div>}
+      {(!items || items.length == 0) && (
+        <div className="doc">{titleWrapper}</div>
+      )}
 
       {/*Single file*/}
       {items?.length === 1 && (
         <div className="doc">
           {titleWrapper}
-          {items?.length === 1 && (
-            <Downloads item={items[0]} titleDoc={doc.title} />
-          )}
+          <Downloads item={items[0]} titleDoc={doc.title} />
         </div>
       )}
 

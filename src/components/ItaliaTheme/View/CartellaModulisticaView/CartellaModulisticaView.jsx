@@ -64,7 +64,7 @@ const CartellaModulisticaView = ({ content }) => {
   const filterDocumento = (doc) => {
     return (
       doc.title.toLowerCase().indexOf((searchableText ?? '').toLowerCase()) >=
-        0 || doc.items.filter(filterItemsFN).length > 0
+        0 || doc.items?.filter(filterItemsFN).length > 0
     );
   };
 
@@ -82,7 +82,11 @@ const CartellaModulisticaView = ({ content }) => {
         return (section?.items ?? []).filter(filterDocumento).length > 0;
       }
       return true;
-    } else if (section['@type'] === 'Link') {
+    } else if (
+      section['@type'] === 'Link' ||
+      section['@type'] === 'File' ||
+      section['@type'] === 'Image'
+    ) {
       return section.title
         ? section.title
             .toLowerCase()
@@ -141,7 +145,7 @@ const CartellaModulisticaView = ({ content }) => {
                     </div>
                   )}
                 </div>
-              ) : (
+              ) : section['@type'] === 'Documento' ? (
                 <div className="document-row-section" key={section['@id']}>
                   <DocRow
                     doc={section}
@@ -149,6 +153,11 @@ const CartellaModulisticaView = ({ content }) => {
                       section.items ? section.items.filter(filterItemsFN) : []
                     }
                   />
+                </div>
+              ) : (
+                <div className="document-row-section" key={section['@id']}>
+                  {/*file,immagine,link*/}
+                  <DocRow doc={section} />
                 </div>
               );
             })}
