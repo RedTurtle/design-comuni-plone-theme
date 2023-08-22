@@ -1,3 +1,11 @@
+### [7.18.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.5...v7.18.6) (2023-08-22)
+
+
+### Bug Fixes
+
+* fix search pagination params ([3281635](https://github.com/RedTurtle/design-comuni-plone-theme/commit/32816353d5d4690cb499bdd1de80135a0026a201))
+* focus styles for single select options ([#290](https://github.com/RedTurtle/design-comuni-plone-theme/issues/290)) ([91dd3a1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/91dd3a1d0d534d6ed0fbcbc9bd2fd47daeb81fe6))
+
 ### [7.18.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.4...v7.18.5) (2023-08-22)
 
 
