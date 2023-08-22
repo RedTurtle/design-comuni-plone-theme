@@ -2601,11 +2601,6 @@ msgstr "Ordina per"
 msgid "organizzato_da"
 msgstr "Organizzato da"
 
-#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
-# defaultMessage: Organizzazione
-msgid "organizzazione_riferimento"
-msgstr "Organizzazione"
-
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Organo competente adozione provvedimento finale
@@ -2663,6 +2658,11 @@ msgstr "PEC"
 # defaultMessage: Persona
 msgid "persona"
 msgstr "Persona"
+
+#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
+# defaultMessage: Fa parte di
+msgid "persona_strutture_correlate"
+msgstr "Fa parte di"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC
 # defaultMessage: Persone correlate

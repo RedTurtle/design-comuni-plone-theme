@@ -20,9 +20,9 @@ const messages = defineMessages({
     id: 'atto_nomina',
     defaultMessage: 'Atto di nomina',
   },
-  organizzazione_riferimento: {
-    id: 'organizzazione_riferimento',
-    defaultMessage: 'Organizzazione',
+  strutture_correlate: {
+    id: 'persona_strutture_correlate',
+    defaultMessage: 'Fa parte di',
   },
   responsabile_di: {
     id: 'responsabile_di',
@@ -148,13 +148,13 @@ const PersonaRuolo = ({ content }) => {
           </div>
         </RichTextSection>
       )}
-      {content.parte_di?.length > 0 && (
+      {content.strutture_correlate?.length > 0 && (
         <RichTextSection
-          tag_id="organization"
-          title={intl.formatMessage(messages.organizzazione_riferimento)}
+          tag_id="strutture_correlate"
+          title={intl.formatMessage(messages.strutture_correlate)}
         >
           <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
-            {content.parte_di.map((item, i) => (
+            {content.strutture_correlate.map((item, i) => (
               <OfficeCard key={item['@id']} office={item} size="big" />
             ))}
           </div>
