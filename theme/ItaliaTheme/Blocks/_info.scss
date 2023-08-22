@@ -8,7 +8,7 @@ $secondary-color-font: $text-color;
 $secondary-color-font-with-bg: $primary-text;
 
 //fixed, doesn't change with the theme
-$terciary-color: $gray-border;
+$tertiary-color: $gray-border;
 $tertiary-color-font: $black;
 $tertiary-color-font-with-bg: $black;
 
@@ -125,20 +125,20 @@ $tertiary-color-font-with-bg: $black;
     }
 
     .bg-alert-tertiary {
-      border-color: $terciary-color;
+      border-color: $tertiary-color;
       color: $tertiary-color-font;
       .draftjs-buttons a {
-        background-color: $terciary-color;
+        background-color: $tertiary-color;
         color: $tertiary-color-font;
         &:hover {
-          background-color: darken($terciary-color, 10%);
+          background-color: darken($tertiary-color, 10%);
         }
       }
       svg.icon {
         fill: $tertiary-color-font;
       }
       &.bg-color-true {
-        background-color: $terciary-color;
+        background-color: $tertiary-color;
         color: $tertiary-color-font;
         svg.icon,
         .public-DraftEditorPlaceholder-inner,
