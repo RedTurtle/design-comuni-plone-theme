@@ -1,3 +1,11 @@
+### [7.18.7](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.6...v7.18.7) (2023-08-23)
+
+
+### Bug Fixes
+
+* a11y focus color override for all buttons ([#241](https://github.com/RedTurtle/design-comuni-plone-theme/issues/241)) ([5b2c5e2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5b2c5e293880720ed302f78b81e1cf76c2b3e2c1))
+* CardWithImage fix ImageSize selector ([9082eaf](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9082eaf2ee3fea669114df83ddf024a987070bb7))
+
 ### [7.18.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.5...v7.18.6) (2023-08-22)
 
 
