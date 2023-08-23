@@ -262,11 +262,6 @@ msgstr ""
 msgid "Icons placeholder"
 msgstr "Seleziona le icone dalla barra a lato"
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: If you are certain you have the correct web address but are encountering an error, please contact the {site_admin}.
-msgid "If you are certain you have the correct web address but are encountering an error, please contact the {site_admin}."
-msgstr "Se sei sicuro di aver inserito l'indirizzo corretto ma ottieni comunque un errore, contatta l' {site_admin}."
-
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
 # defaultMessage: Immagine
 msgid "Image"
@@ -549,11 +544,6 @@ msgstr "Mostra tutto"
 # defaultMessage: Mostra tutti i tipi di contenuto
 msgid "Show all content types"
 msgstr ""
-
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: Site Administration
-msgid "Site Administration"
-msgstr "Amministratore del sito"
 
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Sono occorsi degli errori

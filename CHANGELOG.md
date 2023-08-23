@@ -1,3 +1,19 @@
+### [7.18.8](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.7...v7.18.8) (2023-08-23)
+
+
+### Maintenance
+
+* removed Contact link in Unauthorized and NotFound pages ([a58670d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a58670d55cda805bc9e19965fc15fa3e3f15a6b5))
+* updated locales ([4069143](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4069143e2920b4783f5c229c6f09904d6c1a940e))
+
+### [7.18.7](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.6...v7.18.7) (2023-08-23)
+
+
+### Bug Fixes
+
+* a11y focus color override for all buttons ([#241](https://github.com/RedTurtle/design-comuni-plone-theme/issues/241)) ([5b2c5e2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5b2c5e293880720ed302f78b81e1cf76c2b3e2c1))
+* CardWithImage fix ImageSize selector ([9082eaf](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9082eaf2ee3fea669114df83ddf024a987070bb7))
+
 ### [7.18.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.5...v7.18.6) (2023-08-22)
 
 

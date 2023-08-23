@@ -79,6 +79,8 @@ const Unauthorized = () => {
           }}
         />
       </p>
+      {/*
+      Rimosso perchè la form di contatto è stata disabilitata
       <p>
         <FormattedMessage
           id="If you are certain you have the correct web address but are encountering an error, please contact the {site_admin}."
@@ -94,7 +96,7 @@ const Unauthorized = () => {
             ),
           }}
         />
-      </p>
+      </p> */}
       <p>
         <FormattedMessage id="Thank you." defaultMessage="Thank you." />
       </p>
