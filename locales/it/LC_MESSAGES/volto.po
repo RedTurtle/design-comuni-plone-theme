@@ -454,7 +454,7 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 # defaultMessage: Play
 msgid "Play slider"
-msgstr "Play"
+msgstr "Seleziona per riprodurre"
 
 #: components/ItaliaTheme/Pagination/PaginationItem
 # defaultMessage: Pagina precedente
@@ -3585,7 +3585,7 @@ msgid "venues"
 msgstr "Luoghi"
 
 #: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sx e dx o i controlli
+# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra
 msgid "viewImage"
 msgstr ""
 
