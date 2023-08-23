@@ -1,4 +1,13 @@
 .public-ui {
+  button.btn,
+  button.rounded-right {
+    &:focus {
+      border-color: $focus-outline-color !important;
+      box-shadow: inset 0 1px 0 $focus-outline-color,
+        0 1px 1px $focus-outline-color, 0 0 0 0.2rem $focus-outline-color !important;
+      outline: none;
+    }
+  }
   .btn-tertiary {
     @include button-variant($tertiary, $tertiary);
 
@@ -16,6 +25,12 @@
 
   a.btn-tertiary {
     color: $tertiary-text !important;
+    &:focus {
+      border-color: $focus-outline-color;
+      box-shadow: inset 0 1px 0 $focus-outline-color,
+        0 1px 1px $focus-outline-color, 0 0 0 0.2rem $focus-outline-color;
+      outline: none;
+    }
   }
 
   .btn-outline-tertiary {
@@ -53,5 +68,22 @@
         align-self: center;
       }
     }
+  }
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary,
+  .draftjs-buttons {
+    .external-link {
+      fill: $external-link-fill-buttons !important;
+    }
+  }
+  .external-link {
+    fill: $link-color !important;
+    &:hover {
+      fill: #004080 !important;
+    }
+  }
+  .it-footer-small-prints-list .external-link {
+    fill: $external-link-fill-subfooter !important;
   }
 }

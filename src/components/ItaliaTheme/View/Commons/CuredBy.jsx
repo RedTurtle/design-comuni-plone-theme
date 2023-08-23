@@ -2,8 +2,8 @@ import { defineMessages, useIntl } from 'react-intl';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Chip, ChipLabel } from 'design-react-kit/dist/design-react-kit';
-import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import { UniversalLink } from '@plone/volto/components';
 import { OfficeCard } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
@@ -32,7 +32,11 @@ const messages = defineMessages({
 const CuredBy = ({ office, people, title }) => {
   const intl = useIntl();
   return (
-    <article id="a-cura-di" className="it-page-section anchor-offset mt-5">
+    <article
+      id="a-cura-di"
+      className="it-page-section anchor-offset mt-5"
+      aria-labelledby={'header-a-cura-di'}
+    >
       <h4 id="header-a-cura-di">
         {title ?? intl.formatMessage(messages.cured_by)}
       </h4>
@@ -53,8 +57,8 @@ const CuredBy = ({ office, people, title }) => {
               </h5>
             )}
             {people.map((item, i) => (
-              <Link
-                to={flattenToAppURL(item['@id'])}
+              <UniversalLink
+                href={flattenToAppURL(item['@id'])}
                 key={item['@id']}
                 className="text-decoration-none mr-2"
               >
@@ -67,7 +71,7 @@ const CuredBy = ({ office, people, title }) => {
                 >
                   <ChipLabel tag="span">{item.title}</ChipLabel>
                 </Chip>
-              </Link>
+              </UniversalLink>
             ))}
           </div>
         ) : null}

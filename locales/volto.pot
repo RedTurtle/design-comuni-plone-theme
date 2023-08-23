@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-06-14T10:50:52.745Z\n"
+"POT-Creation-Date: 2023-07-25T10:15:46.866Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -140,6 +140,7 @@ msgstr ""
 msgid "Date aggiuntive"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Calendar/schema
 #: components/ItaliaTheme/manage/Widgets/CharCounterDescriptionWidget
 #: components/ItaliaTheme/manage/Widgets/TinymceWidget
 # defaultMessage: Default
@@ -174,6 +175,11 @@ msgstr ""
 #: config/Blocks/ListingOptions/mapTemplate
 # defaultMessage: Dimensione della mappa
 msgid "Dimensione della mappa"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/TrasparenzaFields
+# defaultMessage: Download
+msgid "Download"
 msgstr ""
 
 #: config/RichTextEditor/Plugins/AnchorPlugin/components/LinkButton/AddLinkForm
@@ -246,6 +252,13 @@ msgstr ""
 msgid "ID Lighthouse Help Description"
 msgstr ""
 
+#: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
+#: components/ItaliaTheme/manage/Widgets/SecondaryMenuConfigurationForm
+#: components/ItaliaTheme/manage/Widgets/SubFooterConfigurationForm
+# defaultMessage: ID lighthouse
+msgid "ID lighthouse"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/NumbersBlock/Edit
 # defaultMessage: Seleziona le icone dalla barra a lato
 msgid "Icons placeholder"
@@ -259,6 +272,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
 # defaultMessage: Immagine
 msgid "Image"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/Events
+# defaultMessage: Immagine
+msgid "Immagine"
 msgstr ""
 
 #: components/ItaliaTheme/Footer/FooterSmall
@@ -603,11 +621,6 @@ msgstr ""
 msgid "Trasparenza"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/TwitterPosts/Sidebar
-# defaultMessage: Twitter Posts
-msgid "Twitter Posts"
-msgstr ""
-
 #: components/ItaliaTheme/Blocks/CTABlock/Block
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Block
 #: components/ItaliaTheme/Blocks/TextCard/SimpleCard/Block
@@ -876,6 +889,11 @@ msgid "ay11_Use Up and Down to choose options"
 msgstr ""
 
 #: components/SelectInput/SelectInput
+# defaultMessage: Annulla
+msgid "ay11_select cancel"
+msgstr ""
+
+#: components/SelectInput/SelectInput
 # defaultMessage: deselezionata
 msgid "ay11_select deselected"
 msgstr ""
@@ -1085,6 +1103,11 @@ msgstr ""
 msgid "border_color"
 msgstr ""
 
+#: components/ItaliaTheme/View/Commons/SideMenu
+# defaultMessage: Toggle navigation
+msgid "button-toggler-toggle-navigation"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
 # defaultMessage: Calendario
 msgid "calendarBlockSidebarTitle"
@@ -1141,6 +1164,11 @@ msgstr ""
 msgid "cartellamodulistica_formati_scaricabili"
 msgstr ""
 
+#: components/ItaliaTheme/View/CartellaModulisticaView/SearchBar
+# defaultMessage: Type in a keyword to find modules
+msgid "cartellamodulistica_search"
+msgstr ""
+
 #: components/ItaliaTheme/View/ServizioView/ServizioCasiParticolari
 # defaultMessage: Casi particolari
 msgid "casi_particolari"
@@ -1187,6 +1215,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/SideMenu
 # defaultMessage: Chiudi
 msgid "close"
+msgstr ""
+
+#: components/Collapse
+# defaultMessage: Chiudi menu
+msgid "close-menu"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
@@ -1426,6 +1459,11 @@ msgstr ""
 #: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
 # defaultMessage: Yes
 msgid "customer_satisfaction_yes"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderEventDates
+# defaultMessage: dal {dateStart} fino a conclusione
+msgid "dal {dateStart} fino a conclusione"
 msgstr ""
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
@@ -1725,6 +1763,12 @@ msgstr ""
 msgid "download"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/VideoGallery/Block/ViewBlock
+#: components/ItaliaTheme/View/Commons/EmbeddedVideo
+# defaultMessage: Download and Play video
+msgid "downloadPlayVideo"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
 # defaultMessage: Additional classes
 msgid "dropdownmenu-additionalClasses"
@@ -1824,6 +1868,11 @@ msgstr ""
 #: components/ItaliaTheme/View/UOView/UOContactsParts/UOContactsContacts
 # defaultMessage: E-mail
 msgid "email_sede"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/EmbeddedVideo
+# defaultMessage: YouTube Video {id}
+msgid "embedVideo"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/HighlightedContent/Edit
@@ -2098,6 +2147,11 @@ msgstr ""
 msgid "link"
 msgstr ""
 
+#: components/ItaliaTheme/Header/HeaderCenter
+# defaultMessage: homepage
+msgid "link-subsite-homepage-title"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Accordion/Sidebar
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons
@@ -2168,6 +2222,11 @@ msgstr ""
 msgid "login_with_spid"
 msgstr ""
 
+#: components/ItaliaTheme/Header/HeaderCenter
+# defaultMessage: Logo
+msgid "logo-subsite-alt"
+msgstr ""
+
 #: components/ItaliaTheme/View/NewsItemView/NewsItemLuoghiCorrelati
 # defaultMessage: Luoghi
 msgid "luoghi_notizia"
@@ -2176,6 +2235,11 @@ msgstr ""
 #: components/ItaliaTheme/View/EventoView/EventoLuoghi
 # defaultMessage: Luogo
 msgid "luogo"
+msgstr ""
+
+#: components/ItaliaTheme/Footer/FooterNewsletterSubscribe
+# defaultMessage: mail@example.com
+msgid "mail@example.com"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Actions
@@ -2320,6 +2384,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/Dates
 # defaultMessage: Questo evento ha una data di fine aperta/variabile.
 msgid "open_end"
+msgstr ""
+
+#: helpers/customizationsI18n
+# defaultMessage: Opens in new tab
+msgid "opensInNewTab"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
@@ -3374,6 +3443,11 @@ msgstr ""
 msgid "termini_del_procedimento"
 msgstr ""
 
+#: config/RichTextEditor/ToolbarButtons/TextSizeButton
+# defaultMessage: Dimensione del testo
+msgid "text-size-button"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/TextFilter
 # defaultMessage: Inserisci un valore
 msgid "text_filter_placeholder"
@@ -3397,7 +3471,6 @@ msgstr ""
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
-#: components/ItaliaTheme/Blocks/TwitterPosts/Sidebar
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Titolo
 msgid "title"
@@ -3430,36 +3503,6 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 # defaultMessage: Trasparenza
 msgid "trasparenza"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Sidebar
-# defaultMessage: Link alla pagina del profilo
-msgid "twitterAccountLink"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Sidebar
-# defaultMessage: Accounts
-msgid "twitterAccounts"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Sidebar
-# defaultMessage: Inserisci i nomi degli account di cui vuoi visualizzare i post, separati da virgola. Ad esempio, se vuoi mostrare i tweet di Repubblica e del Corriere della Sera, inserisci “repubblica,Corriere".
-msgid "twitterAccounts_description"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Body
-# defaultMessage: Error: Ci scusiamo per l'inconveniente, il server Twitter non risponde.
-msgid "twitter_error"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Body
-# defaultMessage: Non c'è nessun post da mostrare.
-msgid "twitter_posts_no_results"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/TwitterPosts/Body
-# defaultMessage: Post non trovati.
-msgid "twitter_posts_not_found"
 msgstr ""
 
 #: components/ItaliaTheme/View/BandoView/BandoUfficioResponsabile

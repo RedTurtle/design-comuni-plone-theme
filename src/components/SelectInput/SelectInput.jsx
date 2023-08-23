@@ -84,6 +84,10 @@ const messages = defineMessages({
     id: 'ay11_select for search term',
     defaultMessage: 'per la ricerca',
   },
+  ay11_for_cancel: {
+    id: 'ay11_select cancel',
+    defaultMessage: 'Annulla',
+  },
 });
 
 const SelectContainer = injectLazyLibs('reactSelect')(
@@ -144,6 +148,8 @@ const GroupHeading = injectLazyLibs('reactSelect')((props) => {
 });
 
 const ClearIndicator = (props) => {
+  const intl = useIntl();
+
   const {
     innerProps: { ref, ...restInnerProps },
   } = props;
@@ -154,7 +160,10 @@ const ClearIndicator = (props) => {
       {...restInnerProps}
       ref={ref}
     >
-      <div style={{ padding: '0px 5px' }} title="Annulla">
+      <div
+        style={{ padding: '0px 5px' }}
+        title={intl.formatMessage(messages.ay11_for_cancel)}
+      >
         <Icon icon="it-close" style={{ ariaHidden: true }} />
       </div>
     </div>

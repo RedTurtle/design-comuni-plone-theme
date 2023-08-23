@@ -32,7 +32,6 @@ const ListingBody = React.memo(
         hasQuery,
         addFilters,
         firstLoading,
-        properties,
         loadingQuery,
         listingRef,
         additionalFilters,
@@ -63,12 +62,11 @@ const ListingBody = React.memo(
       const SkeletonTemplate = templateConfig.skeleton || Skeleton;
 
       const getBackgroundClass = () => {
-        const block = properties.blocks[data.block];
-        if (!block?.show_block_bg) return '';
+        if (!data?.show_block_bg) return '';
 
         let bg_color = data.bg_color ? `bg-${data.bg_color}` : '';
 
-        if (block.template === 'gridGalleryTemplate') {
+        if (data.template === 'gridGalleryTemplate') {
           return `section section-muted section-inset-shadow py-5 ${bg_color}`;
         } else {
           return `bg-light py-5 ${bg_color}`;
@@ -93,7 +91,11 @@ const ListingBody = React.memo(
           )}
           {!loadingQuery &&
           (listingItems.length > 0 || additionalFilters?.length > 0) ? (
-            <div className={`full-width ${getBlockClasses()}`} ref={listingRef}>
+            <div
+              className={`full-width ${getBlockClasses()}`}
+              ref={listingRef}
+              aria-live="polite"
+            >
               <ListingBodyTemplate
                 items={listingItems}
                 isEditMode={isEditMode}
@@ -115,7 +117,7 @@ const ListingBody = React.memo(
               )}
             </div>
           ) : isEditMode ? (
-            <div className="listing message">
+            <div className="listing message" aria-live="polite">
               {isFolderContentsListing && (
                 <FormattedMessage
                   id="No items found in this container."

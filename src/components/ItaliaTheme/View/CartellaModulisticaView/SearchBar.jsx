@@ -10,8 +10,8 @@ import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const messages = defineMessages({
   search_faq: {
-    id: 'faq_search',
-    defaultMessage: 'Type in a keyword to find answers',
+    id: 'cartellamodulistica_search',
+    defaultMessage: 'Type in a keyword to find modules',
   },
 });
 
@@ -27,7 +27,7 @@ const SearchBar = ({ setSearchableText }) => {
   const [focusSearch, setFocusSearch] = useState(false);
 
   return (
-    <div className="section section-muted search-section">
+    <div className="section section-muted search-section full-width mb-3">
       <Container className="px-4">
         <div className="form-group mb-0">
           <div className="input-group shadow">
