@@ -215,7 +215,7 @@ class View extends Component {
         : this.props.error.url;
       let redirect = flattenToAppURL(redirectUrl);
       // We can hit situations where we end up being redirected to an api route. We don't want that so lets remove ++api++.
-      redirect = redirect.replace('/++api++', '');
+      redirect = redirect.replace('/++api++', '').replace(/\?.*/, '');
       return <Redirect to={`${redirect}${this.props.location.search}`} />;
     } else if (this.props.error && !this.props.connectionRefused) {
       let FoundView;
