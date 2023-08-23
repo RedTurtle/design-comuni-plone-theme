@@ -1,5 +1,6 @@
 /**
  * backport parziale/temporaneo di https://github.com/plone/volto/pull/5069
+ * rimuovere dopo l'aggiornamento a Volto >= 17.0.0-alpha.24
  *
  * Api middleware.
  * @module middleware/api
