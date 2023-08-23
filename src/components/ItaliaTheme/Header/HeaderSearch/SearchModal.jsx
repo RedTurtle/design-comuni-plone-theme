@@ -191,21 +191,6 @@ const SearchModal = ({ closeModal, show }) => {
       dispatch(getSearchFilters());
   }, []);
 
-  const handleSetAdvancedTab = () => {
-    if (!advancedSearch) return;
-    setTimeout(() => {
-      const currentFocusedElement = document.activeElement;
-      const optionToFocus = document.querySelectorAll(
-        '[role="tabpanel"][aria-expanded="true"] input',
-      )[0];
-      optionToFocus &&
-        optionToFocus !== currentFocusedElement &&
-        optionToFocus.focus();
-    }, 200);
-  };
-
-  useEffect(() => handleSetAdvancedTab(), [advancedTab]);
-
   const handleBackTabbingFromPane = (event) => {
     if (event.shiftKey && event.key === 'Tab') {
       const activeTab = document.querySelectorAll('[aria-selected=true] a')[0];
