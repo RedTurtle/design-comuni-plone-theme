@@ -42,7 +42,11 @@ const RenderListItems = ({ items, data, history }) => {
               bulleted={!data.ordered}
               as={data.ordered ? 'ol' : 'ul'}
             >
-              <RenderListItems items={item.items} data={data} />
+              <RenderListItems
+                items={item.items}
+                data={data}
+                history={history}
+              />
             </List>
           )}
         </List.Item>
