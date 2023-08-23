@@ -179,6 +179,9 @@ const getSearchParamsURL = (
     : config.settings.isMultilingual
     ? '/' + currentLang
     : '';
+  const b_start = currentPage
+    ? (currentPage - 1) * config.settings.defaultPageSize
+    : 0;
 
   const activeSections = Object.keys(sections).reduce((secAcc, secKey) => {
     const sec =
@@ -247,7 +250,7 @@ const getSearchParamsURL = (
       ...sortOn,
       ...portal_type,
       skipNull: true,
-      b_start: currentPage ?? 0,
+      b_start: b_start,
       use_site_search_settings: true,
     };
 
@@ -268,7 +271,7 @@ const getSearchParamsURL = (
       },
       { skipNull: true },
     ) +
-    (currentPage && currentPage > 0 ? `&b_start=${currentPage}` : '')
+    (b_start > 0 ? `&b_start=${b_start}` : '')
   );
 };
 

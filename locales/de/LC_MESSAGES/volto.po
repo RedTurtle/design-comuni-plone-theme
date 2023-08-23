@@ -1176,6 +1176,11 @@ msgstr ""
 msgid "cartellamodulistica_formati_scaricabili"
 msgstr ""
 
+#: components/ItaliaTheme/View/CartellaModulisticaView/SearchBar
+# defaultMessage: Type in a keyword to find modules
+msgid "cartellamodulistica_search"
+msgstr ""
+
 #: components/ItaliaTheme/View/ServizioView/ServizioCasiParticolari
 # defaultMessage: Casi particolari
 msgid "casi_particolari"
@@ -2396,6 +2401,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/Dates
 # defaultMessage: Questo evento ha una data di fine aperta/variabile.
 msgid "open_end"
+msgstr ""
+
+#: helpers/customizationsI18n
+# defaultMessage: Opens in new tab
+msgid "opensInNewTab"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal

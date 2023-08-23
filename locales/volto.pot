@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-07-04T10:49:00.762Z\n"
+"POT-Creation-Date: 2023-07-25T10:15:46.866Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1161,6 +1161,11 @@ msgstr ""
 #: components/ItaliaTheme/View/CartellaModulisticaView/CartellaModulisticaView
 # defaultMessage: Formati scaricabili
 msgid "cartellamodulistica_formati_scaricabili"
+msgstr ""
+
+#: components/ItaliaTheme/View/CartellaModulisticaView/SearchBar
+# defaultMessage: Type in a keyword to find modules
+msgid "cartellamodulistica_search"
 msgstr ""
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCasiParticolari
@@ -2383,6 +2388,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/Dates
 # defaultMessage: Questo evento ha una data di fine aperta/variabile.
 msgid "open_end"
+msgstr ""
+
+#: helpers/customizationsI18n
+# defaultMessage: Opens in new tab
+msgid "opensInNewTab"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal

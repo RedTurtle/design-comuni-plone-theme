@@ -16,6 +16,7 @@
 @import 'extras/tables';
 
 /*** ItaliaTheme ***/
+@import 'ItaliaTheme/css_variables';
 @import 'ItaliaTheme/common';
 @import 'ItaliaTheme/main';
 @import 'ItaliaTheme/ar';
@@ -34,6 +35,7 @@
 @import 'ItaliaTheme/Components/galleryPreview';
 @import 'ItaliaTheme/Components/locationsMap';
 @import 'ItaliaTheme/Components/diffField';
+@import 'ItaliaTheme/Components/sideMenu';
 @import 'ItaliaTheme/Blocks/subblocks-edit';
 @import 'ItaliaTheme/Blocks/listing';
 @import 'ItaliaTheme/Blocks/tableOfContents';

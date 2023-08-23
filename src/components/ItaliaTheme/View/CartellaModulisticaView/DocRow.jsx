@@ -49,13 +49,13 @@ const Downloads = ({ item, titleDoc }) => {
   );
 };
 
-const DocRow = ({ doc }) => {
+const DocRow = ({ doc, items }) => {
   const [itemOpen, setItemOpen] = useState(false);
 
   const titleWrapper = (
     <div
       className={cx('title-wrap', {
-        'single-row': doc.items?.length === 1,
+        'single-row': items?.length === 1,
       })}
     >
       <div id={`title-${doc.id}`} className="title">
@@ -72,25 +72,25 @@ const DocRow = ({ doc }) => {
   return (
     <div
       className={cx('doc-row', {
-        'has-children': doc.items?.length > 1,
+        'has-children': items?.length > 1,
       })}
       key={doc['@id']}
     >
       {/*Only title and/or description, no files */}
-      {!doc.items && <div className="doc">{titleWrapper}</div>}
+      {(!items || items.length == 0) && (
+        <div className="doc">{titleWrapper}</div>
+      )}
 
       {/*Single file*/}
-      {doc.items?.length === 1 && (
+      {items?.length === 1 && (
         <div className="doc">
           {titleWrapper}
-          {doc.items?.length === 1 && (
-            <Downloads item={doc.items[0]} titleDoc={doc.title} />
-          )}
+          <Downloads item={items[0]} titleDoc={doc.title} />
         </div>
       )}
 
       {/*Accordion*/}
-      {doc.items?.length > 1 && (
+      {items?.length > 1 && (
         <>
           <div className="accordion-wrapper">
             <div id="headingAccordion" className="accordion-header doc">
@@ -118,7 +118,7 @@ const DocRow = ({ doc }) => {
             aria-labelledby="headingAccordion"
           >
             <div className="accordion-inner">
-              {doc.items.map((modulo) => (
+              {items.map((modulo) => (
                 <div className="doc modulo" key={modulo['@id']}>
                   <Downloads item={modulo} titleDoc={null} />
                 </div>

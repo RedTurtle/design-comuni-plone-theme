@@ -1,6 +1,21 @@
 $docs-section-margin: 3em;
 
 .contenttype-cartellamodulistica {
+  .search-section.full-width {
+    height: auto;
+
+    .icon {
+      fill: $neutral-2-b4;
+    }
+
+    .input-group {
+      .input-group-text,
+      input[type='text'] {
+        border-bottom: none;
+      }
+    }
+  }
+
   section.modulistica {
     .documents-section,
     .document-row-section {

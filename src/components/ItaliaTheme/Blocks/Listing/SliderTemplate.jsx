@@ -265,7 +265,7 @@ const SliderTemplate = ({
                             item={item}
                             title={intl.formatMessage(messages.viewImage)}
                             tabIndex={0}
-                            className="slide-link"
+                            className="slide-link no-external-if-link"
                             data-slide={index}
                           >
                             {full_width ? (

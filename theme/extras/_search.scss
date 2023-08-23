@@ -54,7 +54,7 @@ body.search-modal-opened {
   }
 
   .card {
-    &::after{
+    &::after {
       content: none;
     }
     .card-body {
@@ -73,6 +73,12 @@ body.search-modal-opened {
           display: none;
         }
       }
+    }
+
+    .react-select__option--is-focused {
+      border-color: var(--focus-outline-color) !important;
+      box-shadow: 0 0 0 2px var(--focus-outline-color) !important;
+      outline: none !important;
     }
   }
 }

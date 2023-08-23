@@ -1170,6 +1170,11 @@ msgstr "Tarjeta con imagen"
 msgid "cartellamodulistica_formati_scaricabili"
 msgstr "Formatos descargables"
 
+#: components/ItaliaTheme/View/CartellaModulisticaView/SearchBar
+# defaultMessage: Type in a keyword to find modules
+msgid "cartellamodulistica_search"
+msgstr ""
+
 #: components/ItaliaTheme/View/ServizioView/ServizioCasiParticolari
 # defaultMessage: Casi particolari
 msgid "casi_particolari"
@@ -2391,6 +2396,11 @@ msgstr "Abrir enlace en una pestaña nueva"
 # defaultMessage: Questo evento ha una data di fine aperta/variabile.
 msgid "open_end"
 msgstr "Este evento tiene una fecha de finalización abierta/variable."
+
+#: helpers/customizationsI18n
+# defaultMessage: Opens in new tab
+msgid "opensInNewTab"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Contenuto attivo
