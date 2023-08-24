@@ -1,6 +1,6 @@
 import 'slick-carousel/slick/slick.css';
 import 'design-comuni-plone-theme/components/slick-carousel/slick/slick-theme.css';
-import { Col, Container, Row } from 'design-react-kit';
+import { Col, Container, Row } from 'design-react-kit/dist/design-react-kit';
 import {
   Icon,
   ListingImage,
