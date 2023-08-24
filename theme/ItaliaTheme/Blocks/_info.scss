@@ -1,16 +1,16 @@
 //Variables for future customization
-$primary-color: $primary;
-$primary-font-color: $text-color;
-$primary-font-color-with-bg: $primary-text;
+$info-block-primary-color: $primary;
+$info-block-primary-font-color: $text-color;
+$info-block-primary-font-color-with-bg: $primary-text;
 
-$secondary-color: $secondary;
-$secondary-font-color: $text-color;
-$secondary-font-color-with-bg: $primary-text;
+$info-block-secondary-color: $secondary;
+$info-block-secondary-font-color: $text-color;
+$info-block-secondary-font-color-with-bg: $primary-text;
 
 //fixed, doesn't change with the theme
-$tertiary-color: $gray-border;
-$tertiary-font-color: $black;
-$tertiary-font-color-with-bg: $black;
+$info-block-tertiary-color: $gray-border;
+$info-block-tertiary-font-color: $black;
+$info-block-tertiary-font-color-with-bg: $black;
 
 .public-ui {
   .infoblock {
@@ -35,19 +35,19 @@ $tertiary-font-color-with-bg: $black;
     }
 
     .bg-alert-primary {
-      color: $primary-font-color;
-      border-color: $primary-color;
+      color: $info-block-primary-font-color;
+      border-color: $info-block-primary-color;
       .draftjs-buttons a {
-        background-color: $primary-color;
+        background-color: $info-block-primary-color;
         &:hover {
-          background-color: darken($primary-color, 10%);
+          background-color: darken($info-block-primary-color, 10%);
         }
       }
       svg.icon {
-        fill: $primary-color;
+        fill: $info-block-primary-color;
       }
       &.bg-color-true {
-        background-color: $primary-color;
+        background-color: $info-block-primary-color;
       }
       h1,
       h2,
@@ -60,7 +60,7 @@ $tertiary-font-color-with-bg: $black;
         color: #fff;
       }
       &.bg-color-true {
-        color: $primary-font-color-with-bg;
+        color: $info-block-primary-font-color-with-bg;
         h1,
         h2,
         h3,
@@ -69,30 +69,30 @@ $tertiary-font-color-with-bg: $black;
         h6,
         a,
         .public-DraftEditorPlaceholder-inner {
-          color: $primary-font-color-with-bg;
+          color: $info-block-primary-font-color-with-bg;
         }
         svg.icon,
         .public-DraftEditorPlaceholder-inner {
-          fill: $primary-font-color-with-bg;
-          color: $primary-font-color-with-bg;
+          fill: $info-block-primary-font-color-with-bg;
+          color: $info-block-primary-font-color-with-bg;
         }
       }
     }
 
     .bg-alert-secondary {
-      color: $secondary-font-color;
-      border-color: $secondary-color;
+      color: $info-block-secondary-font-color;
+      border-color: $info-block-secondary-color;
       .draftjs-buttons a {
-        background-color: $secondary-color;
+        background-color: $info-block-secondary-color;
         &:hover {
-          background-color: darken($secondary-color, 10%);
+          background-color: darken($info-block-secondary-color, 10%);
         }
       }
       svg.icon {
-        fill: $secondary-color;
+        fill: $info-block-secondary-color;
       }
       &.bg-color-true {
-        background-color: $secondary-color;
+        background-color: $info-block-secondary-color;
       }
       h1,
       h2,
@@ -105,7 +105,7 @@ $tertiary-font-color-with-bg: $black;
         color: #fff;
       }
       &.bg-color-true {
-        color: $secondary-font-color-with-bg;
+        color: $info-block-secondary-font-color-with-bg;
         h1,
         h2,
         h3,
@@ -114,32 +114,32 @@ $tertiary-font-color-with-bg: $black;
         h6,
         a,
         .public-DraftEditorPlaceholder-inner {
-          color: $secondary-font-color-with-bg;
+          color: $info-block-secondary-font-color-with-bg;
         }
         svg.icon,
         .public-DraftEditorPlaceholder-inner {
-          fill: $secondary-font-color-with-bg;
-          color: $secondary-font-color-with-bg;
+          fill: $info-block-secondary-font-color-with-bg;
+          color: $info-block-secondary-font-color-with-bg;
         }
       }
     }
 
     .bg-alert-tertiary {
-      border-color: $tertiary-color;
-      color: $tertiary-font-color;
+      border-color: $info-block-tertiary-color;
+      color: $info-block-tertiary-font-color;
       .draftjs-buttons a {
-        background-color: $tertiary-color;
-        color: $tertiary-font-color;
+        background-color: $info-block-tertiary-color;
+        color: $info-block-tertiary-font-color;
         &:hover {
-          background-color: darken($tertiary-color, 10%);
+          background-color: darken($info-block-tertiary-color, 10%);
         }
       }
       svg.icon {
-        fill: $tertiary-font-color;
+        fill: $info-block-tertiary-font-color;
       }
       &.bg-color-true {
-        background-color: $tertiary-color;
-        color: $tertiary-font-color;
+        background-color: $info-block-tertiary-color;
+        color: $info-block-tertiary-font-color;
         svg.icon,
         .public-DraftEditorPlaceholder-inner,
         h1,
@@ -149,8 +149,8 @@ $tertiary-font-color-with-bg: $black;
         h5,
         h6,
         a {
-          color: $tertiary-font-color;
-          fill: $tertiary-font-color;
+          color: $info-block-tertiary-font-color;
+          fill: $info-block-tertiary-font-color;
         }
       }
     }
