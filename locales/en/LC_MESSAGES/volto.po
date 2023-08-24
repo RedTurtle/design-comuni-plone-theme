@@ -262,11 +262,6 @@ msgstr ""
 msgid "Icons placeholder"
 msgstr ""
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: If you are certain you have the correct web address but are encountering an error, please contact the {site_admin}.
-msgid "If you are certain you have the correct web address but are encountering an error, please contact the {site_admin}."
-msgstr ""
-
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
 # defaultMessage: Immagine
 msgid "Image"
@@ -550,11 +545,6 @@ msgstr "Show all"
 msgid "Show all content types"
 msgstr "Show all content types"
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: Site Administration
-msgid "Site Administration"
-msgstr ""
-
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Sono occorsi degli errori
 msgid "Sono occorsi degli errori"
@@ -677,7 +667,6 @@ msgid "Vedi"
 msgstr "View"
 
 #: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 # defaultMessage: Vedi l'immagine
 msgid "Vedi l'immagine"
 msgstr "View image"
@@ -1738,6 +1727,11 @@ msgstr "Responsible office"
 msgid "done_edit_social_links"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Navigazione elementi slider
+msgid "dots"
+msgstr "Slider elements navigation"
+
 #: components/ItaliaTheme/View/VenueView/VenueWhere
 # defaultMessage: Dove
 msgid "dove"
@@ -2538,6 +2532,11 @@ msgstr ""
 msgid "playStoreLink"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Precedente
+msgid "precedente"
+msgstr "Previous"
+
 #: components/ItaliaTheme/manage/Widgets/IconPreviewWidget
 # defaultMessage: Anteprima dell'icona scelta
 msgid "previewIconSelected"
@@ -3284,6 +3283,11 @@ msgstr "Go to content"
 msgid "skiplink-navigation"
 msgstr "Go to navigation"
 
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Vai alla slide {index}
+msgid "slideDot"
+msgstr "Go to slide {index}"
+
 #: config/Blocks/ListingOptions/sliderTemplate
 # defaultMessage: N° slide da mostrare
 msgid "slidesToShow"
@@ -3413,6 +3417,11 @@ msgstr ""
 # defaultMessage: Tags
 msgid "subjects"
 msgstr "Tags"
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Successivo
+msgid "successivo"
+msgstr "Next"
 
 #: components/ItaliaTheme/View/EventoView/EventoContatti
 # defaultMessage: Con il supporto di
@@ -3576,6 +3585,11 @@ msgstr "Change in balance sheet"
 # defaultMessage: Luoghi
 msgid "venues"
 msgstr "Venues"
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra
+msgid "viewImage"
+msgstr "You are currently in a carousel, use left and right arrows to navigate"
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/BottomBody
 # defaultMessage: Vedi tutti

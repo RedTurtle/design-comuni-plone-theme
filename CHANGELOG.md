@@ -1,3 +1,53 @@
+## [7.19.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.8...v7.19.0) (2023-08-24)
+
+
+### Features
+
+* a11y for Slider listing template ([#236](https://github.com/RedTurtle/design-comuni-plone-theme/issues/236)) ([d0dc5a0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d0dc5a01b439efef821ef45eb5192045acc18f1a))
+
+
+### Bug Fixes
+
+* search modal focus styles and focus handling for keyboard navigation ([#214](https://github.com/RedTurtle/design-comuni-plone-theme/issues/214)) ([daab9d1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/daab9d12e3641b955d295e0d4816db544599b54a))
+* wrong design-react-kit import ([6e44c3d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6e44c3db245ff22b8f48f5a65e7df937ec520fdd))
+
+### [7.18.8](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.7...v7.18.8) (2023-08-23)
+
+
+### Maintenance
+
+* removed Contact link in Unauthorized and NotFound pages ([a58670d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a58670d55cda805bc9e19965fc15fa3e3f15a6b5))
+* updated locales ([4069143](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4069143e2920b4783f5c229c6f09904d6c1a940e))
+* Backport V2 plone/volto#4854 plone/volto#5069 ([#7d15d7b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7d15d7bc43e4960cbe57266a2e1793146751e624))
+
+### [7.18.7](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.6...v7.18.7) (2023-08-23)
+
+
+### Bug Fixes
+
+* a11y focus color override for all buttons ([#241](https://github.com/RedTurtle/design-comuni-plone-theme/issues/241)) ([5b2c5e2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5b2c5e293880720ed302f78b81e1cf76c2b3e2c1))
+* CardWithImage fix ImageSize selector ([9082eaf](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9082eaf2ee3fea669114df83ddf024a987070bb7))
+
+### [7.18.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.5...v7.18.6) (2023-08-22)
+
+
+### Bug Fixes
+
+* fix search pagination params ([3281635](https://github.com/RedTurtle/design-comuni-plone-theme/commit/32816353d5d4690cb499bdd1de80135a0026a201))
+* focus styles for single select options ([#290](https://github.com/RedTurtle/design-comuni-plone-theme/issues/290)) ([91dd3a1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/91dd3a1d0d534d6ed0fbcbc9bd2fd47daeb81fe6))
+
+### [7.18.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.4...v7.18.5) (2023-08-22)
+
+
+### Bug Fixes
+
+* document vs documento ([840bddb](https://github.com/RedTurtle/design-comuni-plone-theme/commit/840bddb76f6e7256f10e52fe3b52d269267bbe8b))
+* document vs documento ([d4a18ff](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d4a18ff974f4ad3da939ecc53544dc4aa552934a))
+* document vs documento ([56ee543](https://github.com/RedTurtle/design-comuni-plone-theme/commit/56ee543d348d57def8bac9e0e4b58ec9a0bdb41d))
+* document/documento ([b4d01ed](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b4d01ed31c06492341c80fed15e7d72636e96ccf))
+* fix Cartella ModulisticaView for files, link and images ([f110d27](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f110d27b420a2b92183e0232479cc6816ea4dd53))
+* focus styles on search button ([#284](https://github.com/RedTurtle/design-comuni-plone-theme/issues/284)) ([47dc551](https://github.com/RedTurtle/design-comuni-plone-theme/commit/47dc551c37f64edf8972dab3830990c079aef066))
+
 
 
 ### [7.18.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.3...v7.18.4) (2023-08-18)
