@@ -1,3 +1,16 @@
+## [7.19.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.8...v7.19.0) (2023-08-24)
+
+
+### Features
+
+* a11y for Slider listing template ([#236](https://github.com/RedTurtle/design-comuni-plone-theme/issues/236)) ([d0dc5a0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d0dc5a01b439efef821ef45eb5192045acc18f1a))
+
+
+### Bug Fixes
+
+* search modal focus styles and focus handling for keyboard navigation ([#214](https://github.com/RedTurtle/design-comuni-plone-theme/issues/214)) ([daab9d1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/daab9d12e3641b955d295e0d4816db544599b54a))
+* wrong design-react-kit import ([6e44c3d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6e44c3db245ff22b8f48f5a65e7df937ec520fdd))
+
 ### [7.18.8](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.7...v7.18.8) (2023-08-23)
 
 
@@ -5,6 +18,7 @@
 
 * removed Contact link in Unauthorized and NotFound pages ([a58670d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a58670d55cda805bc9e19965fc15fa3e3f15a6b5))
 * updated locales ([4069143](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4069143e2920b4783f5c229c6f09904d6c1a940e))
+* Backport V2 plone/volto#4854 plone/volto#5069 ([#7d15d7b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7d15d7bc43e4960cbe57266a2e1793146751e624))
 
 ### [7.18.7](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.6...v7.18.7) (2023-08-23)
 
