@@ -5,6 +5,7 @@ import {
   RichTextSection,
   OfficeCard,
   Gallery,
+  Attachment,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import {
   contentFolderHasItems,
@@ -20,9 +21,9 @@ const messages = defineMessages({
     id: 'atto_nomina',
     defaultMessage: 'Atto di nomina',
   },
-  organizzazione_riferimento: {
-    id: 'organizzazione_riferimento',
-    defaultMessage: 'Organizzazione',
+  strutture_correlate: {
+    id: 'persona_strutture_correlate',
+    defaultMessage: 'Fa parte di',
   },
   responsabile_di: {
     id: 'responsabile_di',
@@ -39,6 +40,10 @@ const messages = defineMessages({
   compensi: {
     id: 'compensi',
     defaultMessage: 'Compensi',
+  },
+  importi_di_viaggio_e_o_servizi: {
+    id: 'importi_di_viaggio_e_o_servizi',
+    default: 'Importi di viaggio e/o servizi',
   },
   deleghe: {
     id: 'deleghe',
@@ -103,12 +108,83 @@ const PersonaRuolo = ({ content }) => {
               </div>
             </RichTextSection>
           )}
+
           {richTextHasContent(content.incarichi_persona[0].compensi) && (
             <RichTextSection
               tag_id="compensi"
               title={intl.formatMessage(messages.compensi)}
               data={content.incarichi_persona[0].compensi}
-            />
+            >
+              {content.incarichi_persona[0]?.compensi_file?.length > 0 && (
+                <div className="compensi-item mb-2">
+                  <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+                    {content.incarichi_persona[0]?.compensi_file.map((file) => {
+                      let itemURL = '#';
+                      if (file['@type'] === 'File') {
+                        itemURL = `${file['@id']}/@@download/file`;
+                      } else if (file['@type'] === 'Link') {
+                        itemURL =
+                          file.remoteUrl?.length > 0
+                            ? file.remoteUrl
+                            : file['@id'];
+                      } else {
+                        itemURL = file['@id'];
+                      }
+                      return (
+                        <Attachment
+                          key={file['@id']}
+                          title={file.title}
+                          description={file.description}
+                          download_url={itemURL}
+                          item={file}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </RichTextSection>
+          )}
+          {content.incarichi_persona[0]?.importi_di_viaggio_e_o_servizi
+            ?.length > 0 && (
+            <RichTextSection
+              tag_id="importi-di-viaggio"
+              title={intl.formatMessage(
+                messages.importi_di_viaggio_e_o_servizi,
+              )}
+              data={content.incarichi_persona[0].importi_di_viaggio_e_o_servizi}
+            >
+              {content.incarichi_persona[0]?.compensi_file?.length > 0 && (
+                <div className="compensi-item mb-2">
+                  <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+                    {content.incarichi_persona[0]?.importi_di_viaggio_e_o_servizi.map(
+                      (file) => {
+                        let itemURL = '#';
+                        if (file['@type'] === 'File') {
+                          itemURL = `${file['@id']}/@@download/file`;
+                        } else if (file['@type'] === 'Link') {
+                          itemURL =
+                            file.remoteUrl?.length > 0
+                              ? file.remoteUrl
+                              : file['@id'];
+                        } else {
+                          itemURL = file['@id'];
+                        }
+                        return (
+                          <Attachment
+                            key={file['@id']}
+                            title={file.title}
+                            description={file.description}
+                            download_url={itemURL}
+                            item={file}
+                          />
+                        );
+                      },
+                    )}
+                  </div>
+                </div>
+              )}
+            </RichTextSection>
           )}
           <RichTextSection
             tag_id="data_insediamento"
@@ -124,13 +200,37 @@ const PersonaRuolo = ({ content }) => {
           </RichTextSection>
         </>
       )}
-      {content.organizzazione_riferimento.length > 0 && (
+      {content.assessore_di?.length > 0 && (
         <RichTextSection
-          tag_id="organization"
-          title={intl.formatMessage(messages.organizzazione_riferimento)}
+          tag_id="assessore_di"
+          title={intl.formatMessage(messages.assessore_di)}
         >
           <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
-            {content.organizzazione_riferimento.map((item, i) => (
+            {content.assessore_di.map((item, i) => (
+              <OfficeCard key={item['@id']} office={item} size="big" />
+            ))}
+          </div>
+        </RichTextSection>
+      )}
+      {content.responsabile_di?.length > 0 && (
+        <RichTextSection
+          tag_id="responsabile_di"
+          title={intl.formatMessage(messages.responsabile_di)}
+        >
+          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+            {content.responsabile_di.map((item, i) => (
+              <OfficeCard key={item['@id']} office={item} size="big" />
+            ))}
+          </div>
+        </RichTextSection>
+      )}
+      {content.strutture_correlate?.length > 0 && (
+        <RichTextSection
+          tag_id="strutture_correlate"
+          title={intl.formatMessage(messages.strutture_correlate)}
+        >
+          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+            {content.strutture_correlate.map((item, i) => (
               <OfficeCard key={item['@id']} office={item} size="big" />
             ))}
           </div>

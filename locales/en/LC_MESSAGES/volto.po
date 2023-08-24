@@ -289,11 +289,6 @@ msgstr ""
 msgid "Icons placeholder"
 msgstr ""
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: If you are certain you have the correct web address but are encountering an error, please contact the {site_admin}.
-msgid "If you are certain you have the correct web address but are encountering an error, please contact the {site_admin}."
-msgstr ""
-
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
 # defaultMessage: Immagine
 msgid "Image"
@@ -567,11 +562,6 @@ msgstr "Show all"
 # defaultMessage: Mostra tutti i tipi di contenuto
 msgid "Show all content types"
 msgstr "Show all content types"
-
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: Site Administration
-msgid "Site Administration"
-msgstr ""
 
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Sono occorsi degli errori
@@ -2187,6 +2177,7 @@ msgid "imageBackground"
 msgstr ""
 
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
+#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Importi di viaggio e/o servizi
 msgid "importi_di_viaggio_e_o_servizi"
 msgstr "Travel and / or service charges"
@@ -2605,11 +2596,6 @@ msgstr "Order by"
 msgid "organizzato_da"
 msgstr ""
 
-#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
-# defaultMessage: Organizzazione
-msgid "organizzazione_riferimento"
-msgstr "Reference organization"
-
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Organo competente adozione provvedimento finale
@@ -2666,17 +2652,22 @@ msgstr "PEC"
 #: components/ItaliaTheme/View/IncaricoView/IncaricoPersone
 # defaultMessage: Persona
 msgid "persona"
-msgstr ""
+msgstr "Person"
+
+#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
+# defaultMessage: Fa parte di
+msgid "persona_strutture_correlate"
+msgstr "Part of"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC
 # defaultMessage: Persone correlate
 msgid "persone_correlate"
-msgstr ""
+msgstr "Related people"
 
 #: components/ItaliaTheme/View/UOView/UOPeople
 # defaultMessage: Tutte le persone che fanno parte di questo servizio
 msgid "persone_p_description"
-msgstr ""
+msgstr "All people who are part of this service"
 
 #: components/ItaliaTheme/View/UOView/UOPeople
 # defaultMessage: Persone
@@ -2686,7 +2677,7 @@ msgstr "People"
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Testo di aiuto
 msgid "placeholder"
-msgstr ""
+msgstr "Help text"
 
 #: components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar
 # defaultMessage: PlayStore Link
@@ -2711,7 +2702,7 @@ msgstr "Print"
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 # defaultMessage: Procedura informatizzata online
 msgid "procedura_online"
-msgstr ""
+msgstr "Online procedure"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
