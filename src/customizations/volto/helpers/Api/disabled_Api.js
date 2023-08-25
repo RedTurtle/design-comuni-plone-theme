@@ -111,7 +111,7 @@ class Api {
               });
             }
 
-            if (['301', '302', '307', '308'].includes(err?.status)) {
+            if (['301', '302', '307', '308'].includes(err?.status?.toString())) {
               return reject({
                 code: err.status,
                 url: err.response.headers.location,
