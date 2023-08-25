@@ -5,7 +5,7 @@ CUSTOMIZATIONS:
 - added additional filters
 - added additional fields to pass to @querystring-search (config.settings.querystringAdditionalFields)
 - used [subrequestID] instead [subrequestID] of block, as id of subrequest to avoid block unload on duplicate contents with blocks with same id's
-- use content['@id'] instead properties['@id'] because in megamenu properties is not always populated*/
+*/
 import React, { createRef, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { getContent, getQueryStringResults } from '@plone/volto/actions';
