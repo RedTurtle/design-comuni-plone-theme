@@ -6,7 +6,6 @@ CUSTOMIZATIONS:
 - added additional fields to pass to @querystring-search (config.settings.querystringAdditionalFields)
 - usedeepCompareEffect and integrate custom logic for searchBlock to make it work with our implementation
 - used [subrequestID] instead [id] of block, as id of subrequest to avoid block unload on duplicate contents with blocks with same id's. Volto's pr: https://github.com/plone/volto/pull/5071
-- use content['@id'] instead properties['@id'] because in megamenu properties is not always populated
 */
 import React, { createRef, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
