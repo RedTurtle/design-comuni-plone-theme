@@ -5,7 +5,7 @@ CUSTOMIZATIONS:
 - added additional filters
 - added additional fields to pass to @querystring-search (config.settings.querystringAdditionalFields)
 - used [subrequestID] instead [subrequestID] of block, as id of subrequest to avoid block unload on duplicate contents with blocks with same id's
-*/
+- use content['@id'] instead properties['@id'] because in megamenu properties is not always populated*/
 import React, { createRef, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { getContent, getQueryStringResults } from '@plone/volto/actions';
@@ -67,7 +67,7 @@ export default function withQuerystringResults(WrappedComponent) {
     const content = useSelector((state) => state.content.data);
     const { settings } = config;
     const querystring = data.querystring || data; // For backwards compat with data saved before Blocks schema
-    const subrequestID = content.UID + '-' + id;
+    const subrequestID = content?.UID + '-' + id;
     const { b_size = settings.defaultPageSize } = querystring;
     const [firstLoading, setFirstLoading] = React.useState(true);
     // save the path so it won't trigger dispatch on eager router location change
@@ -83,7 +83,7 @@ export default function withQuerystringResults(WrappedComponent) {
     const [additionalFilters, setAdditionalFilters] = React.useState([]);
 
     const originalQuery = useSelector((state) => {
-      return state.originalQuery?.[properties['@id']]?.[
+      return state.originalQuery?.[content['@id'] || properties['@id']]?.[
         subrequestID
       ]?.toArray?.();
     });
@@ -150,13 +150,13 @@ export default function withQuerystringResults(WrappedComponent) {
     useEffect(() => {
       if (
         !originalQuery &&
-        properties['@id'] &&
+        content['@id'] &&
         data.block &&
         querystring.query?.length > 0
       ) {
         dispatch(
           setOriginalQuery(
-            properties['@id'],
+            content['@id'],
             data.block,
             JSON.parse(JSON.stringify(querystring.query)),
           ),
@@ -167,7 +167,7 @@ export default function withQuerystringResults(WrappedComponent) {
         setFirstLoading(false);
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [content]);
 
     useDeepCompareEffect(() => {
       if (
@@ -178,7 +178,7 @@ export default function withQuerystringResults(WrappedComponent) {
         doSearch(data);
       }
       /* eslint-disable react-hooks/exhaustive-deps */
-    }, [data]);
+    }, [data, content]);
 
     const doSearch = (data = { querystring: { query: [] } }, page = 1) => {
       let _dataQuerystring = data?.querystring ?? data; //Backward compatibility before blockSchema
