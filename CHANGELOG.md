@@ -1,3 +1,18 @@
+### [7.19.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.0...v7.19.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* fix querystringresult to work properly in megamenu ([#303](https://github.com/RedTurtle/design-comuni-plone-theme/issues/303)) ([f946621](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f94662176eea2b6047dddfb635b5ef0be64466d4))
+* remove debug string ([f53adc2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f53adc234a2432e1ec6fb80250486103a24bcaf9))
+* removed old comment ([6ef595c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6ef595c51eb7aa84dfec073ee7db5083bbe09371))
+
+
+### Maintenance
+
+* margin-bottom for left and right positions for image equal zero ([fd82ded](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fd82ded7325cf0ad3ee4eced1a4140008c6e3aa3))
+* revert originalQuery changes to withwuerystirngresults ([a869f39](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a869f39bd754aa0e51b1bf209eb1ef3dbb5d6eeb))
+
 ## [7.19.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.8...v7.19.0) (2023-08-24)
 
 
