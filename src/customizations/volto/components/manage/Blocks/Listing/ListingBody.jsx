@@ -83,8 +83,7 @@ const ListingBody = React.memo(
       };
 
       return (
-        <div className="public-ui">
-          {props.id}
+        <div className="public-ui">        
           {loadingQuery && (
             <div className={`full-width ${getBlockClasses()}`} ref={listingRef}>
               <SkeletonTemplate {...data} />
