@@ -1,3 +1,11 @@
+### [7.19.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.1...v7.19.2) (2023-08-25)
+
+
+### Bug Fixes
+
+* backport redirect disabled ([a15a497](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a15a4970ee2b150c3a45fff8715d6ef6ee9fc1d8))
+* remove old customization, rename new - v2 ([#302](https://github.com/RedTurtle/design-comuni-plone-theme/issues/302)) ([4a8f662](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4a8f6621979aee6bfaf1d20ed548546bdf810427))
+
 ### [7.19.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.0...v7.19.1) (2023-08-25)
 
 
