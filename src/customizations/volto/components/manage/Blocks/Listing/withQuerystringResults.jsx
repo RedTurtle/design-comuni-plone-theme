@@ -6,6 +6,7 @@ CUSTOMIZATIONS:
 - added additional fields to pass to @querystring-search (config.settings.querystringAdditionalFields)
 - usedeepCompareEffect and integrate custom logic for searchBlock to make it work with our implementation
 - used [subrequestID] instead [id] of block, as id of subrequest to avoid block unload on duplicate contents with blocks with same id's. Volto's pr: https://github.com/plone/volto/pull/5071
+- use content['@id'] instead properties['@id'] because in megamenu properties is not always populated
 */
 import React, { createRef, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -61,13 +62,13 @@ export default function withQuerystringResults(WrappedComponent) {
       //properties: content,
       properties,
       path,
-      variation,
+      //variation,
       isEditMode,
     } = props;
     const content = useSelector((state) => state.content.data);
     const { settings } = config;
     const querystring = data.querystring || data; // For backwards compat with data saved before Blocks schema
-    const subrequestID = content.UID + '-' + id;
+    const subrequestID = content?.UID + '-' + id;
     const { b_size = settings.defaultPageSize } = querystring;
     const [firstLoading, setFirstLoading] = React.useState(true);
     // save the path so it won't trigger dispatch on eager router location change
@@ -186,7 +187,7 @@ export default function withQuerystringResults(WrappedComponent) {
         doSearch(data);
       }
       /* eslint-disable react-hooks/exhaustive-deps */
-    }, [data]);
+    }, [data, content]);
 
     const doSearch = (data = { querystring: { query: [] } }, page = 1) => {
       let _dataQuerystring = data?.querystring ?? data; //Backward compatibility before blockSchema
