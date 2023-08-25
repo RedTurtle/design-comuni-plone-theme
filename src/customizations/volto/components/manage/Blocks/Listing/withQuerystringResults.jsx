@@ -83,7 +83,7 @@ export default function withQuerystringResults(WrappedComponent) {
     const [additionalFilters, setAdditionalFilters] = React.useState([]);
 
     const originalQuery = useSelector((state) => {
-      return state.originalQuery?.[content['@id'] || properties['@id']]?.[
+      return state.originalQuery?.[properties['@id']]?.[
         subrequestID
       ]?.toArray?.();
     });
@@ -150,13 +150,13 @@ export default function withQuerystringResults(WrappedComponent) {
     useEffect(() => {
       if (
         !originalQuery &&
-        content['@id'] &&
+        properties['@id'] &&
         data.block &&
         querystring.query?.length > 0
       ) {
         dispatch(
           setOriginalQuery(
-            content['@id'],
+            properties['@id'],
             data.block,
             JSON.parse(JSON.stringify(querystring.query)),
           ),
@@ -167,7 +167,7 @@ export default function withQuerystringResults(WrappedComponent) {
         setFirstLoading(false);
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [content]);
+    }, []);
 
     useDeepCompareEffect(() => {
       if (
