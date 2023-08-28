@@ -1,3 +1,11 @@
+### [7.19.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.2...v7.19.3) (2023-08-28)
+
+
+### Bug Fixes
+
+* backport blacklistRoutes ([1e47842](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1e47842ebda39dddd6218e09fa2f59f2415ded3d))
+* backport blacklistRoutes ([#305](https://github.com/RedTurtle/design-comuni-plone-theme/issues/305)) ([e7485f0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e7485f0dac135ed8d6f321209f215eadd2ca1b32))
+
 ### [7.19.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.1...v7.19.2) (2023-08-25)
 
 
