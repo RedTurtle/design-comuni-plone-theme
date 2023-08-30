@@ -1,3 +1,10 @@
+### [7.19.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.3...v7.19.4) (2023-08-30)
+
+
+### Bug Fixes
+
+* Us45070 info block theme colors ([#289](https://github.com/RedTurtle/design-comuni-plone-theme/issues/289)) ([ebd93c9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ebd93c9394f046ee435ff92e7f0662af753f1274))
+
 ### [7.19.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.2...v7.19.3) (2023-08-28)
 
 
