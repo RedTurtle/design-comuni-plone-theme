@@ -12,7 +12,6 @@ const blacklistRoutes = ({ dispatch, getState }) => (next) => (action) => {
 
   switch (action.type) {
     case '@@router/LOCATION_CHANGE':
-      debugger;
       let { pathname } = action.payload.location;
       const { externalRoutes = [] } = config.settings;
 
