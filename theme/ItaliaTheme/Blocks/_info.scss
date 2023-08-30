@@ -1,17 +1,31 @@
+//Variables for future customization
+$info-block-primary-color: $primary;
+$info-block-primary-font-color: $text-color;
+$info-block-primary-font-color-with-bg: $primary-text;
+
+$info-block-secondary-color: $secondary;
+$info-block-secondary-font-color: $text-color;
+$info-block-secondary-font-color-with-bg: $primary-text;
+
+//fixed, doesn't change with the theme
+$info-block-tertiary-color: $gray-border;
+$info-block-tertiary-font-color: $black;
+$info-block-tertiary-font-color-with-bg: $black;
+
 .public-ui {
   .infoblock {
-    .bg-alert-warning-orange,
-    .bg-alert-warning,
-    .bg-alert-danger {
+    .bg-alert-primary,
+    .bg-alert-secondary,
+    .bg-alert-tertiary {
       border-style: solid;
       border-width: 2px 2px 2px 10px;
       .draftjs-buttons a {
-        color: $body-color;
+        color: #fff;
       }
       &.bg-color-true {
         .draftjs-buttons a {
           background-color: #fff;
-          color: $body-color;
+          color: $text-color;
           &:hover {
             background-color: #000;
             color: #fff;
@@ -20,9 +34,21 @@
       }
     }
 
-    .bg-alert-warning-orange,
-    .bg-alert-warning {
-      color: $black;
+    .bg-alert-primary {
+      color: $info-block-primary-font-color;
+      border-color: $info-block-primary-color;
+      .draftjs-buttons a {
+        background-color: $info-block-primary-color;
+        &:hover {
+          background-color: darken($info-block-primary-color, 10%);
+        }
+      }
+      svg.icon {
+        fill: $info-block-primary-color;
+      }
+      &.bg-color-true {
+        background-color: $info-block-primary-color;
+      }
       h1,
       h2,
       h3,
@@ -31,33 +57,89 @@
       h6,
       a,
       .public-DraftEditorPlaceholder-inner {
-        color: $black;
+        color: #fff;
       }
       &.bg-color-true {
+        color: $info-block-primary-font-color-with-bg;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a,
+        .public-DraftEditorPlaceholder-inner {
+          color: $info-block-primary-font-color-with-bg;
+        }
         svg.icon,
         .public-DraftEditorPlaceholder-inner {
-          fill: $black;
-          color: $black;
+          fill: $info-block-primary-font-color-with-bg;
+          color: $info-block-primary-font-color-with-bg;
         }
       }
     }
 
-    .bg-alert-danger {
-      border-color: #a32219;
-      color: $black;
+    .bg-alert-secondary {
+      color: $info-block-secondary-font-color;
+      border-color: $info-block-secondary-color;
       .draftjs-buttons a {
-        background-color: #a32219;
-        color: #fff;
+        background-color: $info-block-secondary-color;
         &:hover {
-          background-color: darken(#a32219, 10%);
+          background-color: darken($info-block-secondary-color, 10%);
         }
       }
       svg.icon {
-        fill: #a32219;
+        fill: $info-block-secondary-color;
       }
       &.bg-color-true {
-        background-color: #a32219;
+        background-color: $info-block-secondary-color;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      a,
+      .public-DraftEditorPlaceholder-inner {
         color: #fff;
+      }
+      &.bg-color-true {
+        color: $info-block-secondary-font-color-with-bg;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a,
+        .public-DraftEditorPlaceholder-inner {
+          color: $info-block-secondary-font-color-with-bg;
+        }
+        svg.icon,
+        .public-DraftEditorPlaceholder-inner {
+          fill: $info-block-secondary-font-color-with-bg;
+          color: $info-block-secondary-font-color-with-bg;
+        }
+      }
+    }
+
+    .bg-alert-tertiary {
+      border-color: $info-block-tertiary-color;
+      color: $info-block-tertiary-font-color;
+      .draftjs-buttons a {
+        background-color: $info-block-tertiary-color;
+        color: $info-block-tertiary-font-color;
+        &:hover {
+          background-color: darken($info-block-tertiary-color, 10%);
+        }
+      }
+      svg.icon {
+        fill: $info-block-tertiary-font-color;
+      }
+      &.bg-color-true {
+        background-color: $info-block-tertiary-color;
+        color: $info-block-tertiary-font-color;
         svg.icon,
         .public-DraftEditorPlaceholder-inner,
         h1,
@@ -67,41 +149,9 @@
         h5,
         h6,
         a {
-          color: #fff;
-          fill: #fff;
+          color: $info-block-tertiary-font-color;
+          fill: $info-block-tertiary-font-color;
         }
-      }
-    }
-
-    .bg-alert-warning-orange {
-      border-color: #eb973f;
-      .draftjs-buttons a {
-        background-color: #eb973f;
-        &:hover {
-          background-color: darken(#eb973f, 10%);
-        }
-      }
-      svg.icon {
-        fill: #eb973f;
-      }
-      &.bg-color-true {
-        background-color: #eb973f;
-      }
-    }
-
-    .bg-alert-warning {
-      border-color: #f0c250;
-      .draftjs-buttons a {
-        background-color: #f0c250;
-        &:hover {
-          background-color: darken(#f0c250, 10%);
-        }
-      }
-      svg.icon {
-        fill: #f0c250;
-      }
-      &.bg-color-true {
-        background-color: #f0c250;
       }
     }
 

@@ -1094,11 +1094,6 @@ msgstr "Bloque de información"
 msgid "block_bg_color"
 msgstr "Color de fondo"
 
-#: components/ItaliaTheme/Blocks/Info/Sidebar
-# defaultMessage: Colore
-msgid "border_color"
-msgstr "Color"
-
 #: components/ItaliaTheme/View/Commons/SideMenu
 # defaultMessage: Toggle navigation
 msgid "button-toggler-toggle-navigation"
@@ -1224,13 +1219,11 @@ msgid "closeSearch"
 msgstr "Cerrar búsqueda"
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Rosso
 msgid "color_danger"
 msgstr "Rojo"
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Arancione
 msgid "color_orange"
 msgstr "Naranja"
@@ -1249,7 +1242,6 @@ msgid "color_transparent"
 msgstr "Transparente"
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Giallo
 msgid "color_warning"
 msgstr "Amarillo"
@@ -2113,6 +2105,26 @@ msgstr "Compromiso"
 # defaultMessage: Indice della pagina
 msgid "index"
 msgstr "Índice de página"
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Color
+msgid "info_color"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Primary color
+msgid "info_color_primary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Secondary color
+msgid "info_color_secondary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Tertiary color
+msgid "info_color_tertiary"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Body
 #: components/ItaliaTheme/Blocks/Calendar/Body
