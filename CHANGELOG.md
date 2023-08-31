@@ -1,3 +1,10 @@
+### [7.19.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.4...v7.19.5) (2023-08-31)
+
+
+### Bug Fixes
+
+* debugger removed ([#308](https://github.com/RedTurtle/design-comuni-plone-theme/issues/308)) ([91d746f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/91d746f43aca2ccddd6612f1873d9c39fead31c9))
+
 ### [7.19.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.3...v7.19.4) (2023-08-30)
 
 
