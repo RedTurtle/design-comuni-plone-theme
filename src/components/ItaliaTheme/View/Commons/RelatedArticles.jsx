@@ -33,12 +33,7 @@ const RelatedArticles = ({
 
       <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
         {items?.map((item, i) => (
-          <GenericCard
-            key={item['@id']}
-            item={item}
-            showimage={showimage}
-            image_field={'immagine'}
-          />
+          <GenericCard key={item['@id']} item={item} showimage={showimage} />
         ))}
       </div>
     </article>

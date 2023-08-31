@@ -46,15 +46,6 @@ module.exports = {
           ...italiaAddonAliases,
           ['@package', `${__dirname}/src`],
           ['@italia', `${__dirname}/src`], // TODO deprecated: remove in version 8
-          // TODO remove the next two when implemented in core
-          [
-            '@plone/volto/components/theme/Image/Image',
-            path.resolve(`${projectRootPath}/src/components/Image/Image.jsx`),
-          ],
-          [
-            '@plone/volto/helpers/Image/Image',
-            path.resolve(`${projectRootPath}/src/components/Image/helpers.js`),
-          ],
         ],
         extensions: ['.js', '.jsx', '.json'],
       },

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-
+//[ToDo]:rimuovere questo componente perche si userà quello di volto
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-unresolved
 import { getImageAttributes } from '@plone/volto/helpers/Image/Image';
@@ -19,7 +19,7 @@ import { getImageAttributes } from '@plone/volto/helpers/Image/Image';
  * @param {number} maxSize - maximum size to render
  * @param {boolean} useOriginal - whether to render original size
  */
-const Image = ({
+const OldItalia_Image = ({
   image,
   imageField = 'image',
   alt = '',
@@ -136,7 +136,7 @@ const Image = ({
   );
 };
 
-Image.propTypes = {
+OldItalia_Image.propTypes = {
   imageField: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   alt: PropTypes.string,
@@ -150,7 +150,7 @@ Image.propTypes = {
   useOriginal: PropTypes.bool,
 };
 
-Image.defaultProps = {
+OldItalia_Image.defaultProps = {
   imageField: 'image',
   alt: '',
   role: 'img',
@@ -158,4 +158,4 @@ Image.defaultProps = {
   useOriginal: false,
 };
 
-export default Image;
+export default OldItalia_Image;

@@ -9,11 +9,12 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import EmbeddedVideo from './EmbeddedVideo';
 import { GalleryPreview } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import Image from '@plone/volto/components/theme/Image/Image';
+
 import PropTypes from 'prop-types';
 import { contentFolderHasItems } from 'design-comuni-plone-theme/helpers';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   gallery: {
@@ -43,6 +44,8 @@ const Gallery = ({
   reactSlick,
 }) => {
   const Slider = reactSlick.default;
+  const Image = config.getComponent({ name: 'Image' }).component;
+
   const getSettings = (nItems, slideToScroll) => {
     return {
       dots: true,
@@ -154,9 +157,10 @@ const Gallery = ({
                         )} ${item.title}`}
                       >
                         <Image
-                          image={item.image}
+                          item={item}
                           alt={item.title}
                           className="img-fluid"
+                          loading="lazy"
                         />
                       </a>
                       <figcaption className="figure-caption mt-2">

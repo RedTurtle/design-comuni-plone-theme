@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import Image from '@plone/volto/components/theme/Image/Image';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   VenuesSmall: {
@@ -29,6 +29,7 @@ const Location = ({ location, show_icon }) => {
   const intl = useIntl();
   const url = flattenToAppURL(location['@id']);
   const key = `luogo${url}`;
+  const Image = config.getComponent({ name: 'Image' }).component;
 
   const locationContent = useSelector(
     (state) => state.content.subrequests?.[key],
@@ -47,7 +48,7 @@ const Location = ({ location, show_icon }) => {
   let location_fo = locationContent?.data;
 
   return location_fo ? (
-    <div className="card card-teaser shadow mt-3 rounded">
+    <div className="card card-teaser flex-nowrap shadow mt-3 rounded">
       {show_icon && <Icon icon={'it-pin'} />}
       <div className="card-body">
         <h5 className="card-title">{location_fo.title}</h5>
@@ -69,9 +70,16 @@ const Location = ({ location, show_icon }) => {
           </p>
         </div>
       </div>
-      {location_fo.immagine && (
-        <div className="avatar size-xl">
-          <Image image={location_fo.immagine} />
+      {((location_fo.image_field && location_fo[location_fo.image_field]) ||
+        location_fo.image) && (
+        <div className="avatar ml-3 size-xl">
+          <Image
+            item={{
+              ...location_fo,
+              image_field: location_fo.image_field ?? 'image',
+            }}
+            loading="lazy"
+          />
         </div>
       )}
     </div>

@@ -73,6 +73,7 @@ const GridGalleryTemplate = ({
             if (scale && item?.image?.scales?.[scale]) {
               image = (
                 <picture class="volto-image responsive">
+                  {/*[ToDo]:togliere volto-image e gestire gli stili dell'immagine*/}
                   <img
                     src={flattenToAppURL(item.image.scales[scale].download)}
                     width={item.image.scales[scale].width}

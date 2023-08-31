@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import Image from '@plone/volto/components/theme/Image/Image';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   locations: {
@@ -57,8 +57,10 @@ const LocationItem = ({
     .filter(Boolean)
     .join(' - ');
 
+  const Image = config.getComponent({ name: 'Image' }).component;
+
   return location_fo ? (
-    <div className="card card-teaser shadow mt-3 rounded location-item">
+    <div className="card card-teaser shadow mt-3 rounded flex-nowrap location-item">
       {show_icon && <Icon icon={'it-pin'} />}
       <div className="card-body">
         <h5 className="card-title">
@@ -110,9 +112,16 @@ const LocationItem = ({
           )}
         </div>
       </div>
-      {location_fo.immagine && (
-        <div className="avatar size-xl">
-          <Image image={location_fo.immagine} />
+      {((location_fo.image_field && location_fo[location_fo.image_field]) ||
+        location_fo.image) && (
+        <div className="avatar ml-3 size-xl">
+          <Image
+            item={{
+              ...location_fo,
+              image_field: location_fo.image_field ?? 'image',
+            }}
+            loading="lazy"
+          />
         </div>
       )}
     </div>

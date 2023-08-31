@@ -1,6 +1,7 @@
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers';
 
 import config from '@plone/volto/registry';
+//[ToDo]:se in questa cartella rimane solo l'helper, spostare il file negli helpers e aggiornare l'upgrade-guide su sistemi
 
 const getImageType = (image) => {
   let imageType = 'external';
@@ -12,7 +13,8 @@ const getImageType = (image) => {
     Object.keys(image.scales).length > 0
   ) {
     imageType = 'imageObject';
-  } else if (typeof image === 'string' && isInternalURL(image)) {
+  } //[ToDo]:togliere tutte le if sopra perchè non  verranno piu usate
+  else if (typeof image === 'string' && isInternalURL(image)) {
     imageType = 'internalUrl';
   }
   return imageType;
@@ -55,13 +57,13 @@ export const getImageAttributes = (
   const imageType = getImageType(image);
 
   switch (imageType) {
-    case 'svg':
+    case 'svg': //[ToDo]:togliere questo case perchè non  verrà piu usato
       attrs.src = flattenToAppURL(image.download);
       break;
 
     // Scales object from Plone restapi
     // ideal use of Plone images
-    case 'imageObject':
+    case 'imageObject': //[ToDo]:togliere questo case perchè non  verrà piu usato
       const sortedScales = Object.values(image.scales)
         .filter((scale) => scale.width <= maxSize)
         .filter(

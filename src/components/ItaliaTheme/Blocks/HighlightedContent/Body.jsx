@@ -15,7 +15,7 @@ import {
 } from 'design-react-kit/dist/design-react-kit';
 
 // eslint-disable-next-line import/no-unresolved
-import Image from '@plone/volto/components/theme/Image/Image';
+
 import { flattenToAppURL } from '@plone/volto/helpers';
 
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
@@ -24,6 +24,7 @@ import {
   getItemIcon,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { viewDate } from 'design-comuni-plone-theme/helpers';
+import config from '@plone/volto/registry';
 
 const Body = (props) => {
   const { content, block } = props;
@@ -33,18 +34,21 @@ const Body = (props) => {
   const { show_type = true, show_section } = block;
   const category = getCategory(content, show_type, show_section, props);
 
+  const Image = config.getComponent({ name: 'Image' }).component;
+
   return (
     <div className={`${block.bg_color ? 'bg-' + block.bg_color : ''}`}>
       <Row>
         {content.image && (
           <Col lg={{ size: 6, offset: 1, order: 2 }}>
             <Image
-              image={content.image}
+              item={content}
               alt=""
               className={cx('item-image', {
                 'natural-image-size': block.natural_image_size,
               })}
               role={null}
+              responsive={true}
             />
           </Col>
         )}

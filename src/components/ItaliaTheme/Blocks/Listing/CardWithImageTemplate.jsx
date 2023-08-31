@@ -81,7 +81,7 @@ const CardWithImageTemplate = (props) => {
               <ListingText item={item} />
             ) : null;
 
-            const image = ListingImage({ item });
+            const image = ListingImage({ item, loading: 'lazy' });
 
             const showImage =
               (index < imagesToShow || always_show_image) && image != null;

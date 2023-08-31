@@ -4,8 +4,9 @@ import React, { useEffect } from 'react';
 import { searchContent, resetSearchContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import PropTypes from 'prop-types';
-import Image from '@plone/volto/components/theme/Image/Image';
+
 import { UniversalLink } from '@plone/volto/components';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   sponsors: {
@@ -22,9 +23,11 @@ const messages = defineMessages({
  * @returns {string} Markup of the component.
  */
 const Sponsor = ({ item }) => {
+  const Image = config.getComponent({ name: 'Image' }).component;
+
   return item ? (
     <>
-      {!!item.image ? (
+      {item.image ? (
         <div className="sponsor-item">
           <a
             href={item.remoteUrl}
@@ -33,7 +36,7 @@ const Sponsor = ({ item }) => {
             rel="noopener noreferrer"
           >
             <Image
-              image={item.image}
+              item={item}
               alt={item.image.filename}
               className="img-fluid"
             />
@@ -90,7 +93,7 @@ const Sponsors = ({ content, folder_name, title }) => {
   const sponsors_no_logos = sponsors.filter((sponsor) => !sponsor.image);
   const sponsors_logos = sponsors.filter((sponsor) => sponsor.image);
   return sponsors?.length > 0 ? (
-    <>
+    <div className="mt-2">
       {title ? (
         <strong>{`${title}:`}</strong>
       ) : (
@@ -112,7 +115,7 @@ const Sponsors = ({ content, folder_name, title }) => {
           </div>
         )}
       </div>
-    </>
+    </div>
   ) : null;
 };
 Sponsors.propTypes = {

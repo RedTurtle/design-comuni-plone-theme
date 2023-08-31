@@ -49,8 +49,6 @@
     "transformIgnorePatterns": [],
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "identity-obj-proxy",
-      "@plone/volto/components/theme/Image/Image": "<rootDir>/src/components/Image/Image.jsx",
-      "@plone/volto/helpers/Image/Image": "<rootDir>/src/components/Image/helpers.js",
       "@plone/volto/babel": "<rootDir>/node_modules/@plone/volto/babel",
       "@plone/volto/src/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
       "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",

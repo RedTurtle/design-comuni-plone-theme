@@ -5,13 +5,12 @@ import React, { useRef, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
 // monkey/customization attualmente in DVT
-import Image from '@plone/volto/components/theme/Image/Image';
 import PropTypes from 'prop-types';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { UniversalLink } from '@plone/volto/components';
-import config from '@plone/volto/registry';
 import cx from 'classnames';
 import redraft from 'redraft';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   cta_title: {
@@ -47,6 +46,8 @@ const Block = ({
   const titleRef = useRef();
   const contentRef = useRef();
 
+  const Image = config.getComponent({ name: 'Image' }).component;
+
   return (
     <div
       className={cx('cta-block-wrapper', {
@@ -69,15 +70,18 @@ const Block = ({
       }}
     >
       {hasImage && data?.ctaImage?.length > 0 && (
-        <Image
-          image={data.ctaImage[0]['@id']}
-          key={data.ctaImage[0]['@id']}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          useOriginal={false}
-          role="presentation"
-        />
+        <picture>
+          <Image
+            item={data.ctaImage?.[0]}
+            sizes="100vw"
+            loading="lazy"
+            responsive={true}
+            alt=""
+            aria-hidden="true"
+            role="presentation"
+            key={data.ctaImage[0]['@id']}
+          />
+        </picture>
       )}
       <Container tag="div" className="px-3 px-md-4">
         <div className="cta-tile-text">
