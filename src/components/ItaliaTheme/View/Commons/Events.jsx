@@ -2,7 +2,12 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
-import { Card, CardBody, Row, Col } from 'design-react-kit';
+import {
+  Card,
+  CardBody,
+  Row,
+  Col,
+} from 'design-react-kit/dist/design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 import { searchContent, resetSearchContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
