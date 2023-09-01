@@ -4390,9 +4390,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone/volto@npm:17.0.0-alpha.24":
-  version: 17.0.0-alpha.24
-  resolution: "@plone/volto@npm:17.0.0-alpha.24"
+"@plone/volto@git+ssh://git@github.com:plone/volto.git#fix_preview_image":
+  version: 17.0.0-alpha.25
+  resolution: "@plone/volto@git+ssh://git@github.com:plone/volto.git#commit=aa259a087a9c2bbaa1664600aedf306e66aea2e0"
   dependencies:
     "@babel/core": ^7.0.0
     "@babel/plugin-proposal-export-default-from": 7.18.9
@@ -4572,7 +4572,7 @@ __metadata:
     webpack-node-externals: 3.0.0
     xmlrpc: 1.3.2
     yarnhook: 0.5.1
-  checksum: 89a1267db6dd69e75d87085ea59337c4bdd7c2fa8423397770c60686465ea8b13d313183c9d58ff58340d2f71590f2716f0c5baa9907404c25bc0d93d03b07da
+  checksum: 1d12cf2917cda518e010f2fb141b5dfd502ee29dbc45886afef64452587c995ea6b9e4143bf88bedc5ee091b8895152d526e53b086990c299d1163e3df2004ef
   languageName: node
   linkType: hard
 
@@ -12187,7 +12187,7 @@ __metadata:
     "@loadable/babel-plugin": 5.13.2
     "@plone-collective/volto-sentry": 0.3.0
     "@plone/scripts": ^3.0.0
-    "@plone/volto": 17.0.0-alpha.24
+    "@plone/volto": "git+ssh://git@github.com:plone/volto.git#fix_preview_image"
     "@release-it/conventional-changelog": ^2.0.1
     "@storybook/addon-actions": ^6.5.15
     "@storybook/addon-controls": 6.5.15

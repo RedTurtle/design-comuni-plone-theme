@@ -11,11 +11,15 @@ const ListingImage = ({
   ...imageProps
 }) => {
   const PreviewImage = config.getComponent({ name: 'PreviewImage' }).component;
-
+  console.log(item);
   return (
     <PreviewImage
       className={className}
-      item={item}
+      item={{
+        ...item,
+        image_field: 'image', //[ToDo]: rimuove image_field quando cekk ritorna i dati corretti per i listing
+        image: { ...item.image, download: item.image?.scales?.huge?.download }, //[ToDo]: rimuove image_field quando cekk ritorna i dati corretti per i listing
+      }}
       loading={loading}
       aria-hidden="true"
       alt=""
