@@ -349,7 +349,6 @@ const Search = () => {
   }, 0);
   let activeTopics = values(topics).filter((t) => t.value).length;
   let activePortalTypes = values(portalTypes).filter((ct) => ct.value).length;
-  console.log(searchResults);
   return (
     <>
       <Helmet title={intl.formatMessage(messages.searchResults)} />
