@@ -1,3 +1,10 @@
+### [7.19.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.5...v7.19.6) (2023-09-04)
+
+
+### Bug Fixes
+
+* querystring results with additional filters in listing blocks ([#314](https://github.com/RedTurtle/design-comuni-plone-theme/issues/314)) ([97ca062](https://github.com/RedTurtle/design-comuni-plone-theme/commit/97ca062e51bea85d7161d9538c79a54c25badb0a))
+
 ### [7.19.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.4...v7.19.5) (2023-08-31)
 
 
