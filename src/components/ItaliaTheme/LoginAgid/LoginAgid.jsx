@@ -61,7 +61,7 @@ const LoginAgid = (props) => {
   const came_from =
     query.get('came_from') ||
     props.origin ||
-    getBaseUrl(location.pathname) ||
+    `${getBaseUrl(location.pathname)}${location.search}` ||
     '/';
 
   return (
