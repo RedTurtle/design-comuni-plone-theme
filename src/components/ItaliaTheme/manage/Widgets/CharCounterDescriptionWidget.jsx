@@ -40,7 +40,7 @@ const messages = defineMessages({
   },
   reached_chars: {
     id: 'reached_chars',
-    defaultMessage: "E' stato raggiunto il massimo di caratteri consentito",
+    defaultMessage: 'È stato raggiunto il massimo di caratteri consentito',
   },
 });
 
@@ -60,7 +60,7 @@ const CharCounterDescriptionWidget = ({
   onEdit,
   onDelete,
   fieldSet,
-  maxLength,
+  maxLength = 160,
 }) => {
   const intl = useIntl();
 
@@ -139,25 +139,27 @@ const CharCounterDescriptionWidget = ({
             <TextArea
               id={`field-${id}`}
               name={id}
-              value={value?.slice(0, 160) || ''}
+              value={value?.slice(0, maxLength) || ''}
               disabled={onEdit !== null}
               onChange={({ target }) =>
                 onChange(
                   id,
-                  target.value === '' ? undefined : target.value.slice(0, 160),
+                  target.value === ''
+                    ? undefined
+                    : target.value.slice(0, maxLength),
                 )
               }
             />
             <span
               style={{
                 textAlign: 'right',
-                color: '#878f93',
+                color: value?.length === maxLength ? '#E40166' : '#878f93',
                 fontWeight: 300,
               }}
             >
-              {value?.length ?? 0}/160
+              {value?.length ?? 0}/{maxLength}
             </span>
-            {value?.length === 160 && (
+            {value?.length === maxLength && (
               <p
                 style={{
                   fontSize: '14px',

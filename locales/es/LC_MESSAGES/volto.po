@@ -2574,7 +2574,7 @@ msgid "quartiere"
 msgstr "Vecindario"
 
 #: components/ItaliaTheme/manage/Widgets/CharCounterDescriptionWidget
-# defaultMessage: E' stato raggiunto il massimo di caratteri consentito
+# defaultMessage: È stato raggiunto il massimo di caratteri consentito
 msgid "reached_chars"
 msgstr ""
 
