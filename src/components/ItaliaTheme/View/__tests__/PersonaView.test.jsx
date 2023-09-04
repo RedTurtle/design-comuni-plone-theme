@@ -338,6 +338,7 @@ const mock_allfields = {
         },
       },
       data_inizio_incarico: '2023-01-01',
+      data_insediamento: '2023-01-01',
       description: '',
       design_italia_meta_type: 'Incarico',
       effective: null,
@@ -2570,6 +2571,11 @@ test('expect to have all non-mandatory fields in page', async () => {
   // data di insediamento
   expect(
     screen.getByRole('heading', { name: /Data di insediamento/ }),
+  ).toBeInTheDocument();
+  expect(screen.getByText(/01 January 2023/i)).toBeInTheDocument();
+  // data inizio incarico
+  expect(
+    screen.getByRole('heading', { name: /Data di inizio dell'incarico/ }),
   ).toBeInTheDocument();
   expect(screen.getByText(/01 January 2023/i)).toBeInTheDocument();
 
