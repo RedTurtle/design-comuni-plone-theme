@@ -185,7 +185,7 @@ const PersonaRuolo = ({ content }) => {
               )}
             </RichTextSection>
           )}
-          {content.incarichi_persona[0].data_insediamente && (
+          {content.incarichi_persona[0].data_insediamento && (
             <RichTextSection
               tag_id="data_insediamento"
               title={intl.formatMessage(messages.data_insediamento)}
