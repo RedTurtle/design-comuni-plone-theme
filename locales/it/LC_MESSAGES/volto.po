@@ -1920,11 +1920,6 @@ msgstr "Sito web dell'evento"
 msgid "events"
 msgstr "Appuntamenti"
 
-#: components/ItaliaTheme/manage/Widgets/CharCounterDescriptionWidget
-# defaultMessage: Il testo supera la lunghezza consigliata
-msgid "exceeded_chars"
-msgstr "Il testo supera la lunghezza consigliata"
-
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza
 msgid "expire"
@@ -2568,6 +2563,11 @@ msgstr "Provvedimento finale"
 # defaultMessage: Quartiere
 msgid "quartiere"
 msgstr "Quartiere "
+
+#: components/ItaliaTheme/manage/Widgets/CharCounterDescriptionWidget
+# defaultMessage: E' stato raggiunto il massimo di caratteri consentito
+msgid "reached_chars"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeader
 # defaultMessage: Tempo di lettura
