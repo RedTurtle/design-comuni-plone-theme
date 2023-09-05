@@ -112,4 +112,10 @@ body.search-modal-opened {
       outline: none !important;
     }
   }
+  .searchSpinnerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+  }
 }
