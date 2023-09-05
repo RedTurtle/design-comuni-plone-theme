@@ -55,7 +55,7 @@ class Edit extends Component {
   constructor(props) {
     super(props);
     if (!this.props.data.color) {
-      this.props.data.color = 'warning';
+      this.props.data.color = 'primary';
     }
     this.blockNode = React.createRef();
   }
