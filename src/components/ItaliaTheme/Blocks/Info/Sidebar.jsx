@@ -54,7 +54,7 @@ class Sidebar extends Component {
 
     return (
       <Segment.Group raised>
-        <header className="header pulled">
+        <header className="header pulled infoblock">
           <h2>
             <FormattedMessage
               id="blocco_info"
