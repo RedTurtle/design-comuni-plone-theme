@@ -1,3 +1,10 @@
+## [7.20.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.6...v7.20.0) (2023-09-05)
+
+
+### Features
+
+* added char limit to CharCounterDescriptionWidget ([#316](https://github.com/RedTurtle/design-comuni-plone-theme/issues/316)) ([ff190ee](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ff190ee5f9e8cfb3212dc9a3a137bf7db9facb81))
+
 ### [7.19.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.5...v7.19.6) (2023-09-04)
 
 
