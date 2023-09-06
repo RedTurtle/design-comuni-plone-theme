@@ -1,17 +1,24 @@
+$primary-hover: darken($primary, 10%);
+$secondary-hover: darken($secondary, 10%);
+$tertiary-hover: darken($gray-border, 10%);
+
 :root {
   //Variables for future customization
   --info-block-primary-color: #{$primary};
+  --info-block-primary-color-hover: #{$primary-hover};
   --info-block-primary-font-color: #{$text-color};
   --info-block-primary-font-color-with-bg: #{$primary-text};
   --info-block-primary-icon-color: var(--info-block-primary-color);
 
   --info-block-secondary-color: #{$secondary};
+  --info-block-secondary-color-hover: #{$secondary-hover};
   --info-block-secondary-font-color: #{$text-color};
   --info-block-secondary-font-color-with-bg: #{$primary-text};
   --info-block-secondary-icon-color: var(--info-block-secondary-color);
 
   //fixed, doesn't change with the theme
   --info-block-tertiary-color: #{$gray-border};
+  --info-block-tertiary-color-hover: #{$tertiary-hover};
   --info-block-tertiary-font-color: #{$black};
   --info-block-tertiary-font-color-with-bg: #{$black};
   --info-block-tertiary-icon-color: var(--info-block-tertiary-color);
@@ -45,7 +52,7 @@
       .draftjs-buttons a {
         background-color: var(--info-block-primary-color);
         &:hover {
-          background-color: calc(var(--info-block-primary-color) - 10%);
+          background-color: var(--info-block-primary-color-hover);
         }
       }
       svg.icon {
@@ -88,7 +95,7 @@
       .draftjs-buttons a {
         background-color: var(--info-block-secondary-color);
         &:hover {
-          background-color: calc(var(--info-block-secondary-color) - 10%);
+          background-color: var(--info-block-secondary-color-hover);
         }
       }
       svg.icon {
@@ -132,7 +139,7 @@
         background-color: var(--info-block-tertiary-color);
         color: var(--info-block-tertiary-font-color);
         &:hover {
-          background-color: calc(var(--info-block-tertiary-color) - 10%);
+          background-color: var(--info-block-tertiary-color-hover);
         }
       }
       svg.icon {
