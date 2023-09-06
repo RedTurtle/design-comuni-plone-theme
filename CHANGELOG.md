@@ -1,3 +1,11 @@
+### [7.20.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.0...v7.20.1) (2023-09-06)
+
+
+### Bug Fixes
+
+* info block initial color ([#319](https://github.com/RedTurtle/design-comuni-plone-theme/issues/319)) ([2b3d30d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2b3d30de088be84a37193d00b9af5c997096cfd7))
+* info block initial color fix ([#318](https://github.com/RedTurtle/design-comuni-plone-theme/issues/318)) ([2b837fc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2b837fcf0ce5cf8eef71cfa1c1bb613e5b67ffbb))
+
 ## [7.20.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.6...v7.20.0) (2023-09-05)
 
 
