@@ -136,6 +136,7 @@ const PaginaArgomentoView = ({ content }) => {
                                   title={
                                     searchResults[u['@id'].data?.image_caption]
                                   }
+                                  sizes="100px"
                                 />
                               </div>
                             )}
@@ -161,6 +162,7 @@ const PaginaArgomentoView = ({ content }) => {
                     title={content.caption ?? content.title}
                     key={content.image.download}
                     responsive={true}
+                    sizes="100vw"
                   />
                 </div>
               </Portal>

@@ -97,6 +97,7 @@ const PageView = ({ content, token, location, history }) => {
                         alt={content.title}
                         key={content.image?.download}
                         responsive={true}
+                        sizes="250px"
                       />
                     </div>
                   )}

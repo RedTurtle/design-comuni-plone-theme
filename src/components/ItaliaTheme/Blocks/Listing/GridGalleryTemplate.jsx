@@ -55,7 +55,6 @@ const GridGalleryTemplate = ({
           {items.map((item, index) => {
             let image = ListingImage({
               item,
-              useOriginal: false,
               className: '',
             });
 

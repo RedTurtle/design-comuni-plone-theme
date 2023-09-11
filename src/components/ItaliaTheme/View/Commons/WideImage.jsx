@@ -9,7 +9,7 @@ import config from '@plone/volto/registry';
  * @params {object} content: Content object.
  * @returns {string} Markup of the component.
  */
-const WideImage = ({ image, title, caption, fullWidth = true }) => {
+const WideImage = ({ image, title, caption, fullWidth = true, sizes }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
 
   return (
@@ -23,6 +23,8 @@ const WideImage = ({ image, title, caption, fullWidth = true }) => {
             title={caption || title}
             critical
             key={image?.download}
+            sizes={sizes}
+            responsive={true}
           />
         )}
         {caption && (

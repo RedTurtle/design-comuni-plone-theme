@@ -39,6 +39,7 @@ const Sponsor = ({ item }) => {
               item={item}
               alt={item.image.filename}
               className="img-fluid"
+              sizes="600px"
             />
           </a>
         </div>

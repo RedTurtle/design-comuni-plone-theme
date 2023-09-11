@@ -161,6 +161,11 @@ const Gallery = ({
                           alt={item.title}
                           className="img-fluid"
                           loading="lazy"
+                          sizes={`(max-width:320px) 300px, (max-width:425px) 400px, ${
+                            images.length > 3
+                              ? '200px'
+                              : 650 / images.length + 'px'
+                          }`}
                         />
                       </a>
                       <figcaption className="figure-caption mt-2">

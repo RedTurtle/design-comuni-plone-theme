@@ -49,6 +49,7 @@ const Body = (props) => {
               })}
               role={null}
               responsive={true}
+              sizes="(max-width:768px) 90vw, (max-width:1024px) 450px, 560px"
             />
           </Col>
         )}

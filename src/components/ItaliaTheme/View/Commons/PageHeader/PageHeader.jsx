@@ -107,6 +107,7 @@ const PageHeader = (props) => {
                 imageField={props.imageinheader_field}
                 alt=""
                 className="img-fluid"
+                sizes="(max-width:768px) 300px, 200px"
               />
             </figure>
           </div>

@@ -44,7 +44,7 @@ const CompleteBlockLinksTemplate = ({
         )}
         <Row className={cx('items', { 'center-cards': center_cards })}>
           {items.map((item, index) => {
-            const image = ListingImage({ item, className: '' });
+            const image = ListingImage({ item, className: '', sizes: '60px' });
 
             return (
               <Col md="6" lg="3" key={item['@id']} className="col-item">

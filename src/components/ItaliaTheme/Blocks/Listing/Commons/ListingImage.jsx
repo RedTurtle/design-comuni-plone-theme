@@ -1,17 +1,18 @@
 import React from 'react';
 
 import config from '@plone/volto/registry';
-import { getImageAttributes } from 'design-comuni-plone-theme/components/Image/helpers';
+import { getImageAttributes } from 'design-comuni-plone-theme/helpers';
 
 const ListingImage = ({
   item,
   loading,
   className = 'listing-image',
   responsive = true,
+  sizes = '(max-width:320px) 200px, (max-width:425px) 300px, (max-width:768px) 400px, 300px',
   ...imageProps
 }) => {
   const PreviewImage = config.getComponent({ name: 'PreviewImage' }).component;
-  console.log(item);
+
   return (
     <PreviewImage
       className={className}
@@ -25,6 +26,7 @@ const ListingImage = ({
       alt=""
       title={item.title}
       responsive={responsive}
+      sizes={sizes}
       role="presentation"
       {...imageProps}
     />

@@ -55,6 +55,7 @@ const Evento = ({ event, show_image }) => {
                     item={event}
                     alt={intl.formatMessage(messages.immagine)}
                     loading="lazy"
+                    sizes="(max-width:320px) 300px, (max-width:425px) 400px, (max-width:768px) 600px, 300px"
                   />
                 </figure>
                 <CardCalendar

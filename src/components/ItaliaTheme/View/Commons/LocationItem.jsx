@@ -121,6 +121,7 @@ const LocationItem = ({
               image_field: location_fo.image_field ?? 'image',
             }}
             loading="lazy"
+            sizes="80px"
           />
         </div>
       )}
