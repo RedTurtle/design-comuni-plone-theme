@@ -1,3 +1,10 @@
+### [7.20.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.1...v7.20.2) (2023-09-11)
+
+
+### Bug Fixes
+
+* fixed load of locations data in LocationsMap ([#320](https://github.com/RedTurtle/design-comuni-plone-theme/issues/320)) ([b07902a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b07902ae0535aabcea02a3067fb5d36d71bfdf8a))
+
 ### [7.20.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.0...v7.20.1) (2023-09-06)
 
 
