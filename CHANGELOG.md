@@ -1,3 +1,10 @@
+### [7.20.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.2...v7.20.3) (2023-09-12)
+
+
+### Bug Fixes
+
+* slider a11y ([bba17fc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bba17fce0c437c8a676cdfe91067bd215f20767a))
+
 ### [7.20.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.1...v7.20.2) (2023-09-11)
 
 
