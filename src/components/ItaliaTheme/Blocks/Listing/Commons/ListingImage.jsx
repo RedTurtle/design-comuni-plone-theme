@@ -11,10 +11,13 @@ const ListingImage = ({
   sizes = '(max-width:320px) 200px, (max-width:425px) 300px, (max-width:768px) 400px, 300px',
   ...imageProps
 }) => {
-  const PreviewImage = config.getComponent({ name: 'PreviewImage' }).component;
+  const Image = config.getComponent({ name: 'Image' }).component;
 
-  return (
-    <PreviewImage
+  const image = (
+    <Image
+      aria-hidden="true"
+      alt=""
+      role="presentation"
       className={className}
       item={{
         ...item,
@@ -22,15 +25,16 @@ const ListingImage = ({
         image: { ...item.image, download: item.image?.scales?.huge?.download }, //[ToDo]: rimuove image_field quando cekk ritorna i dati corretti per i listing
       }}
       loading={loading}
-      aria-hidden="true"
-      alt=""
       title={item.title}
       responsive={responsive}
       sizes={sizes}
-      role="presentation"
       {...imageProps}
     />
   );
+
+  if (!image) return null;
+
+  return image;
 };
 
 export const getListingImageBackground = (item, size) => {
