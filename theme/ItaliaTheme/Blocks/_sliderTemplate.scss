@@ -101,10 +101,6 @@
           img {
             min-width: 100%;
             min-height: 400px;
-          }
-
-          .volto-image.responsive img, //[ToDo]:togliere volto-image e gestire gli stili dell'immagine
-          img {
             object-fit: cover;
           }
 

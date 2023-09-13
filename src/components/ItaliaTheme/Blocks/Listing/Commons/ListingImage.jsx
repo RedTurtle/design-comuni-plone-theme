@@ -34,7 +34,6 @@ const ListingImage = ({
 };
 
 export const getListingImageBackground = (item, size) => {
-  //[ToDo]:vedere dove viene usato e verificare che funzioni bene
   let url = null;
   if (item.image_field) {
     url = getImageAttributes(item['@id'], {

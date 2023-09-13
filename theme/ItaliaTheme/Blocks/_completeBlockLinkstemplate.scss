@@ -20,13 +20,10 @@
     border-radius: 50%;
     overflow: hidden;
 
-    .volto-image {
-      //[ToDo]:togliere volto-image e gestire gli stili dell'immagine
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
