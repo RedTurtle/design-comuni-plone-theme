@@ -682,7 +682,6 @@ msgid "Vedi"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 # defaultMessage: Vedi l'immagine
 msgid "Vedi l'immagine"
 msgstr ""
@@ -1101,11 +1100,6 @@ msgstr ""
 msgid "block_bg_color"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Info/Sidebar
-# defaultMessage: Colore
-msgid "border_color"
-msgstr ""
-
 #: components/ItaliaTheme/View/Commons/SideMenu
 # defaultMessage: Toggle navigation
 msgid "button-toggler-toggle-navigation"
@@ -1231,13 +1225,11 @@ msgid "closeSearch"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Rosso
 msgid "color_danger"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Arancione
 msgid "color_orange"
 msgstr ""
@@ -1256,7 +1248,6 @@ msgid "color_transparent"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Giallo
 msgid "color_warning"
 msgstr ""
@@ -1751,6 +1742,11 @@ msgstr ""
 msgid "done_edit_social_links"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Navigazione elementi slider
+msgid "dots"
+msgstr ""
+
 #: components/ItaliaTheme/View/VenueView/VenueWhere
 # defaultMessage: Dove
 msgid "dove"
@@ -1939,11 +1935,6 @@ msgstr ""
 msgid "events"
 msgstr ""
 
-#: components/ItaliaTheme/manage/Widgets/CharCounterDescriptionWidget
-# defaultMessage: Il testo supera la lunghezza consigliata
-msgid "exceeded_chars"
-msgstr ""
-
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza
 msgid "expire"
@@ -2114,6 +2105,26 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/SideMenu
 # defaultMessage: Indice della pagina
 msgid "index"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Color
+msgid "info_color"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Primary color
+msgid "info_color_primary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Secondary color
+msgid "info_color_secondary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Tertiary color
+msgid "info_color_tertiary"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Body
@@ -2531,6 +2542,11 @@ msgstr ""
 msgid "playStoreLink"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Precedente
+msgid "precedente"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/IconPreviewWidget
 # defaultMessage: Anteprima dell'icona scelta
 msgid "previewIconSelected"
@@ -2561,6 +2577,11 @@ msgstr ""
 #: components/ItaliaTheme/View/VenueView/VenueWhere
 # defaultMessage: Quartiere
 msgid "quartiere"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/CharCounterDescriptionWidget
+# defaultMessage: È stato raggiunto il massimo di caratteri consentito
+msgid "reached_chars"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeader
@@ -3277,6 +3298,11 @@ msgstr ""
 msgid "skiplink-navigation"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Vai alla slide {index}
+msgid "slideDot"
+msgstr ""
+
 #: config/Blocks/ListingOptions/sliderTemplate
 # defaultMessage: N° slide da mostrare
 msgid "slidesToShow"
@@ -3405,6 +3431,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/Metadata
 # defaultMessage: Tags
 msgid "subjects"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Successivo
+msgid "successivo"
 msgstr ""
 
 #: components/ItaliaTheme/View/EventoView/EventoContatti
@@ -3568,6 +3599,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/UOSearch/DefaultFilters
 # defaultMessage: Luoghi
 msgid "venues"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra
+msgid "viewImage"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/BottomBody

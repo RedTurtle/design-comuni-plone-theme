@@ -1,18 +1,15 @@
 /**
+ * backport https://github.com/plone/volto/pull/4854
+ *
  * Api helper.
  * @module helpers/Api
- *
- *  Customization/Fix (from Volto 16.0.0):
- *    * fix redirect loop when there are uri with unescaped chars (i.e. http://site/olè)
- *      + encodeURI(stripQuerystring(request.url)) !== ...
- *      - stripQuerystring(request.url) !== ...
  */
 
-import Cookies from 'universal-cookie';
-import { addHeadersFactory } from '@plone/volto/helpers/Proxy/Proxy';
-import config from '@plone/volto/registry';
-import { stripQuerystring } from '@plone/volto/helpers';
 import superagent from 'superagent';
+import Cookies from 'universal-cookie';
+import config from '@plone/volto/registry';
+import { addHeadersFactory } from '@plone/volto/helpers/Proxy/Proxy';
+import { stripQuerystring } from '@plone/volto/helpers';
 
 const methods = ['get', 'post', 'put', 'patch', 'del'];
 
@@ -85,6 +82,10 @@ class Api {
 
           Object.keys(headers).forEach((key) => request.set(key, headers[key]));
 
+          if (__SERVER__ && checkUrl && ['get', 'head'].includes(method)) {
+            request.redirects(0);
+          }
+
           if (data) {
             request.send(data);
           }
@@ -109,6 +110,14 @@ class Api {
                 url: request.xhr.responseURL,
               });
             }
+
+            if (['301', '302', '307', '308'].includes(err?.status?.toString())) {
+              return reject({
+                code: err.status,
+                url: err.response.headers.location,
+              });
+            }
+
             return err ? reject(err) : resolve(response.body || response.text);
           });
         });

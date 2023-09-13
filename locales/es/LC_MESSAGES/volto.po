@@ -676,7 +676,6 @@ msgid "Vedi"
 msgstr "Vista"
 
 #: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 # defaultMessage: Vedi l'immagine
 msgid "Vedi l'immagine"
 msgstr "Ver la imagen"
@@ -1095,11 +1094,6 @@ msgstr "Bloque de información"
 msgid "block_bg_color"
 msgstr "Color de fondo"
 
-#: components/ItaliaTheme/Blocks/Info/Sidebar
-# defaultMessage: Colore
-msgid "border_color"
-msgstr "Color"
-
 #: components/ItaliaTheme/View/Commons/SideMenu
 # defaultMessage: Toggle navigation
 msgid "button-toggler-toggle-navigation"
@@ -1225,13 +1219,11 @@ msgid "closeSearch"
 msgstr "Cerrar búsqueda"
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Rosso
 msgid "color_danger"
 msgstr "Rojo"
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Arancione
 msgid "color_orange"
 msgstr "Naranja"
@@ -1250,7 +1242,6 @@ msgid "color_transparent"
 msgstr "Transparente"
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
-#: components/ItaliaTheme/Blocks/Info/Sidebar
 # defaultMessage: Giallo
 msgid "color_warning"
 msgstr "Amarillo"
@@ -1745,6 +1736,11 @@ msgstr "Oficina responsable"
 msgid "done_edit_social_links"
 msgstr "Hecho"
 
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Navigazione elementi slider
+msgid "dots"
+msgstr ""
+
 #: components/ItaliaTheme/View/VenueView/VenueWhere
 # defaultMessage: Dove
 msgid "dove"
@@ -1933,11 +1929,6 @@ msgstr "Sitio web del evento"
 msgid "events"
 msgstr "Cita"
 
-#: components/ItaliaTheme/manage/Widgets/CharCounterDescriptionWidget
-# defaultMessage: Il testo supera la lunghezza consigliata
-msgid "exceeded_chars"
-msgstr "El texto excede la longitud recomendada"
-
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza
 msgid "expire"
@@ -2109,6 +2100,26 @@ msgstr "Compromiso"
 # defaultMessage: Indice della pagina
 msgid "index"
 msgstr "Índice de página"
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Color
+msgid "info_color"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Primary color
+msgid "info_color_primary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Secondary color
+msgid "info_color_secondary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Info/Sidebar
+# defaultMessage: Tertiary color
+msgid "info_color_tertiary"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Body
 #: components/ItaliaTheme/Blocks/Calendar/Body
@@ -2525,6 +2536,11 @@ msgstr "Texto de ayuda"
 msgid "playStoreLink"
 msgstr "Enlaces de Play Store"
 
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Precedente
+msgid "precedente"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/IconPreviewWidget
 # defaultMessage: Anteprima dell'icona scelta
 msgid "previewIconSelected"
@@ -2556,6 +2572,11 @@ msgstr "Disposición final"
 # defaultMessage: Quartiere
 msgid "quartiere"
 msgstr "Vecindario"
+
+#: components/ItaliaTheme/manage/Widgets/CharCounterDescriptionWidget
+# defaultMessage: È stato raggiunto il massimo di caratteri consentito
+msgid "reached_chars"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeader
 # defaultMessage: Tempo di lettura
@@ -3271,6 +3292,11 @@ msgstr "Ir al contenido"
 msgid "skiplink-navigation"
 msgstr "Ir a navegación"
 
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Vai alla slide {index}
+msgid "slideDot"
+msgstr ""
+
 #: config/Blocks/ListingOptions/sliderTemplate
 # defaultMessage: N° slide da mostrare
 msgid "slidesToShow"
@@ -3400,6 +3426,11 @@ msgstr "Visibile"
 # defaultMessage: Tags
 msgid "subjects"
 msgstr "Etiquetas"
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Successivo
+msgid "successivo"
+msgstr ""
 
 #: components/ItaliaTheme/View/EventoView/EventoContatti
 # defaultMessage: Con il supporto di
@@ -3563,6 +3594,11 @@ msgstr "Cambio en el balance"
 # defaultMessage: Luoghi
 msgid "venues"
 msgstr "Lugares"
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra
+msgid "viewImage"
+msgstr "Tu estás actualmente en un carrusel, para navegar usa las flechas izquierda y derecha"
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/BottomBody
 # defaultMessage: Vedi tutti

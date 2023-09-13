@@ -1,3 +1,97 @@
+### [7.20.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.2...v7.20.3) (2023-09-12)
+
+
+### Bug Fixes
+
+* slider a11y ([bba17fc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bba17fce0c437c8a676cdfe91067bd215f20767a))
+
+### [7.20.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.1...v7.20.2) (2023-09-11)
+
+
+### Bug Fixes
+
+* fixed load of locations data in LocationsMap ([#320](https://github.com/RedTurtle/design-comuni-plone-theme/issues/320)) ([b07902a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b07902ae0535aabcea02a3067fb5d36d71bfdf8a))
+
+### [7.20.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.0...v7.20.1) (2023-09-06)
+
+
+### Bug Fixes
+
+* info block initial color ([#319](https://github.com/RedTurtle/design-comuni-plone-theme/issues/319)) ([2b3d30d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2b3d30de088be84a37193d00b9af5c997096cfd7))
+* info block initial color fix ([#318](https://github.com/RedTurtle/design-comuni-plone-theme/issues/318)) ([2b837fc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2b837fcf0ce5cf8eef71cfa1c1bb613e5b67ffbb))
+
+## [7.20.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.6...v7.20.0) (2023-09-05)
+
+
+### Features
+
+* added char limit to CharCounterDescriptionWidget ([#316](https://github.com/RedTurtle/design-comuni-plone-theme/issues/316)) ([ff190ee](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ff190ee5f9e8cfb3212dc9a3a137bf7db9facb81))
+
+### [7.19.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.5...v7.19.6) (2023-09-04)
+
+
+### Bug Fixes
+
+* querystring results with additional filters in listing blocks ([#314](https://github.com/RedTurtle/design-comuni-plone-theme/issues/314)) ([97ca062](https://github.com/RedTurtle/design-comuni-plone-theme/commit/97ca062e51bea85d7161d9538c79a54c25badb0a))
+
+### [7.19.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.4...v7.19.5) (2023-08-31)
+
+
+### Bug Fixes
+
+* debugger removed ([#308](https://github.com/RedTurtle/design-comuni-plone-theme/issues/308)) ([91d746f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/91d746f43aca2ccddd6612f1873d9c39fead31c9))
+
+### [7.19.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.3...v7.19.4) (2023-08-30)
+
+
+### Bug Fixes
+
+* Us45070 info block theme colors ([#289](https://github.com/RedTurtle/design-comuni-plone-theme/issues/289)) ([ebd93c9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ebd93c9394f046ee435ff92e7f0662af753f1274))
+
+### [7.19.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.2...v7.19.3) (2023-08-28)
+
+
+### Bug Fixes
+
+* backport blacklistRoutes ([1e47842](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1e47842ebda39dddd6218e09fa2f59f2415ded3d))
+* backport blacklistRoutes ([#305](https://github.com/RedTurtle/design-comuni-plone-theme/issues/305)) ([e7485f0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e7485f0dac135ed8d6f321209f215eadd2ca1b32))
+
+### [7.19.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.1...v7.19.2) (2023-08-25)
+
+
+### Bug Fixes
+
+* backport redirect disabled ([a15a497](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a15a4970ee2b150c3a45fff8715d6ef6ee9fc1d8))
+* remove old customization, rename new - v2 ([#302](https://github.com/RedTurtle/design-comuni-plone-theme/issues/302)) ([4a8f662](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4a8f6621979aee6bfaf1d20ed548546bdf810427))
+
+### [7.19.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.19.0...v7.19.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* fix querystringresult to work properly in megamenu ([#303](https://github.com/RedTurtle/design-comuni-plone-theme/issues/303)) ([f946621](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f94662176eea2b6047dddfb635b5ef0be64466d4))
+* remove debug string ([f53adc2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f53adc234a2432e1ec6fb80250486103a24bcaf9))
+* removed old comment ([6ef595c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6ef595c51eb7aa84dfec073ee7db5083bbe09371))
+
+
+### Maintenance
+
+* margin-bottom for left and right positions for image equal zero ([fd82ded](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fd82ded7325cf0ad3ee4eced1a4140008c6e3aa3))
+* revert originalQuery changes to withwuerystirngresults ([a869f39](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a869f39bd754aa0e51b1bf209eb1ef3dbb5d6eeb))
+
+## [7.19.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.8...v7.19.0) (2023-08-24)
+
+
+### Features
+
+* a11y for Slider listing template ([#236](https://github.com/RedTurtle/design-comuni-plone-theme/issues/236)) ([d0dc5a0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d0dc5a01b439efef821ef45eb5192045acc18f1a))
+
+
+### Bug Fixes
+
+* search modal focus styles and focus handling for keyboard navigation ([#214](https://github.com/RedTurtle/design-comuni-plone-theme/issues/214)) ([daab9d1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/daab9d12e3641b955d295e0d4816db544599b54a))
+* wrong design-react-kit import ([6e44c3d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6e44c3db245ff22b8f48f5a65e7df937ec520fdd))
+
 ### [7.18.8](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.7...v7.18.8) (2023-08-23)
 
 
@@ -5,6 +99,7 @@
 
 * removed Contact link in Unauthorized and NotFound pages ([a58670d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a58670d55cda805bc9e19965fc15fa3e3f15a6b5))
 * updated locales ([4069143](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4069143e2920b4783f5c229c6f09904d6c1a940e))
+* Backport V2 plone/volto#4854 plone/volto#5069 ([#7d15d7b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7d15d7bc43e4960cbe57266a2e1793146751e624))
 
 ### [7.18.7](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.18.6...v7.18.7) (2023-08-23)
 

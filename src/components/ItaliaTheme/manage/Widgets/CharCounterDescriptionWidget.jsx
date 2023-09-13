@@ -38,9 +38,9 @@ const messages = defineMessages({
     id: 'Delete',
     defaultMessage: 'Delete',
   },
-  exceeded_chars: {
-    id: 'exceeded_chars',
-    defaultMessage: 'Il testo supera la lunghezza consigliata',
+  reached_chars: {
+    id: 'reached_chars',
+    defaultMessage: 'È stato raggiunto il massimo di caratteri consentito',
   },
 });
 
@@ -60,6 +60,7 @@ const CharCounterDescriptionWidget = ({
   onEdit,
   onDelete,
   fieldSet,
+  maxLength = 160,
 }) => {
   const intl = useIntl();
 
@@ -138,24 +139,35 @@ const CharCounterDescriptionWidget = ({
             <TextArea
               id={`field-${id}`}
               name={id}
-              value={value || ''}
+              value={value?.slice(0, maxLength) || ''}
               disabled={onEdit !== null}
               onChange={({ target }) =>
-                onChange(id, target.value === '' ? undefined : target.value)
+                onChange(
+                  id,
+                  target.value === ''
+                    ? undefined
+                    : target.value.slice(0, maxLength),
+                )
               }
             />
             <span
               style={{
                 textAlign: 'right',
-                color: value?.length > 160 ? '#E40166' : '#878f93',
+                color: value?.length === maxLength ? '#E40166' : '#878f93',
                 fontWeight: 300,
               }}
             >
-              {value?.length ?? 0}/160
+              {value?.length ?? 0}/{maxLength}
             </span>
-            {value?.length > 160 && (
-              <p style={{ fontSize: '14px', textAlign: 'right' }}>
-                {intl.formatMessage(messages.exceeded_chars)}
+            {value?.length === maxLength && (
+              <p
+                style={{
+                  fontSize: '14px',
+                  textAlign: 'right',
+                  color: '#E40166',
+                }}
+              >
+                {intl.formatMessage(messages.reached_chars)}
               </p>
             )}
             {map(error, (message) => (

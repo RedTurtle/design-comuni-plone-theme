@@ -6,6 +6,7 @@ CUSTOMIZATIONS:
 - added additional fields to pass to @querystring-search (config.settings.querystringAdditionalFields)
 - used [subrequestID] instead [subrequestID] of block, as id of subrequest to avoid block unload on duplicate contents with blocks with same id's
 */
+
 import React, { createRef, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { getContent, getQueryStringResults } from '@plone/volto/actions';
@@ -67,7 +68,7 @@ export default function withQuerystringResults(WrappedComponent) {
     const content = useSelector((state) => state.content.data);
     const { settings } = config;
     const querystring = data.querystring || data; // For backwards compat with data saved before Blocks schema
-    const subrequestID = content.UID + '-' + id;
+    const subrequestID = content?.UID + '-' + id;
     const { b_size = settings.defaultPageSize } = querystring;
     const [firstLoading, setFirstLoading] = React.useState(true);
     // save the path so it won't trigger dispatch on eager router location change
@@ -77,6 +78,8 @@ export default function withQuerystringResults(WrappedComponent) {
     const querystringResults = useSelector(
       (state) => state.querystringsearch.subrequests,
     );
+
+    const subrequestResult = querystringResults[subrequestID];
 
     const dispatch = useDispatch();
     const listingRef = createRef();
@@ -163,11 +166,14 @@ export default function withQuerystringResults(WrappedComponent) {
         );
       }
 
-      if (firstLoading && querystringResults[subrequestID] && !loadingQuery) {
-        setFirstLoading(false);
-      }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    useEffect(() => {
+      if (firstLoading && subrequestResult && !loadingQuery) {
+        setFirstLoading(false);
+      }
+    }, [firstLoading, loadingQuery, subrequestResult]);
 
     useDeepCompareEffect(() => {
       if (
@@ -178,7 +184,7 @@ export default function withQuerystringResults(WrappedComponent) {
         doSearch(data);
       }
       /* eslint-disable react-hooks/exhaustive-deps */
-    }, [data]);
+    }, [data, content]);
 
     const doSearch = (data = { querystring: { query: [] } }, page = 1) => {
       let _dataQuerystring = data?.querystring ?? data; //Backward compatibility before blockSchema

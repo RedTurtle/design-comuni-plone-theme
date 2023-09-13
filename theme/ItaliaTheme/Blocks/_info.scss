@@ -1,17 +1,43 @@
+$primary-hover: darken($primary, 10%);
+$secondary-hover: darken($secondary, 10%);
+$tertiary-hover: darken($gray-border, 10%);
+
+:root {
+  //Variables for future customization
+  --info-block-primary-color: #{$primary};
+  --info-block-primary-color-hover: #{$primary-hover};
+  --info-block-primary-font-color: #{$text-color};
+  --info-block-primary-font-color-with-bg: #{$primary-text};
+  --info-block-primary-icon-color: var(--info-block-primary-color);
+
+  --info-block-secondary-color: #{$secondary};
+  --info-block-secondary-color-hover: #{$secondary-hover};
+  --info-block-secondary-font-color: #{$text-color};
+  --info-block-secondary-font-color-with-bg: #{$primary-text};
+  --info-block-secondary-icon-color: var(--info-block-secondary-color);
+
+  //fixed, doesn't change with the theme
+  --info-block-tertiary-color: #{$gray-border};
+  --info-block-tertiary-color-hover: #{$tertiary-hover};
+  --info-block-tertiary-font-color: #{$black};
+  --info-block-tertiary-font-color-with-bg: #{$black};
+  --info-block-tertiary-icon-color: var(--info-block-tertiary-color);
+}
+
 .public-ui {
   .infoblock {
-    .bg-alert-warning-orange,
-    .bg-alert-warning,
-    .bg-alert-danger {
+    .bg-alert-primary,
+    .bg-alert-secondary,
+    .bg-alert-tertiary {
       border-style: solid;
       border-width: 2px 2px 2px 10px;
       .draftjs-buttons a {
-        color: $body-color;
+        color: #fff;
       }
       &.bg-color-true {
         .draftjs-buttons a {
           background-color: #fff;
-          color: $body-color;
+          color: $text-color;
           &:hover {
             background-color: #000;
             color: #fff;
@@ -20,44 +46,108 @@
       }
     }
 
-    .bg-alert-warning-orange,
-    .bg-alert-warning {
-      color: $black;
+    .bg-alert-primary {
+      color: var(--info-block-primary-font-color);
+      border-color: var(--info-block-primary-color);
+      .draftjs-buttons a {
+        background-color: var(--info-block-primary-color);
+        &:hover {
+          background-color: var(--info-block-primary-color-hover);
+        }
+      }
+      svg.icon {
+        fill: var(--info-block-primary-icon-color);
+      }
+      &.bg-color-true {
+        background-color: var(--info-block-primary-color);
+      }
       h1,
       h2,
       h3,
       h4,
       h5,
       h6,
-      a,
-      .public-DraftEditorPlaceholder-inner {
-        color: $black;
+      a {
+        color: #fff;
       }
       &.bg-color-true {
-        svg.icon,
+        color: var(--info-block-primary-font-color-with-bg);
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a,
         .public-DraftEditorPlaceholder-inner {
-          fill: $black;
-          color: $black;
+          color: var(--info-block-primary-font-color-with-bg);
+        }
+        svg.icon {
+          fill: var(--info-block-primary-font-color-with-bg);
+          color: var(--info-block-primary-font-color-with-bg);
         }
       }
     }
 
-    .bg-alert-danger {
-      border-color: #a32219;
-      color: $black;
+    .bg-alert-secondary {
+      color: var(--info-block-secondary-font-color);
+      border-color: var(--info-block-secondary-color);
       .draftjs-buttons a {
-        background-color: #a32219;
-        color: #fff;
+        background-color: var(--info-block-secondary-color);
         &:hover {
-          background-color: darken(#a32219, 10%);
+          background-color: var(--info-block-secondary-color-hover);
         }
       }
       svg.icon {
-        fill: #a32219;
+        fill: var(--info-block-secondary-icon-color);
       }
       &.bg-color-true {
-        background-color: #a32219;
+        background-color: var(--info-block-secondary-color);
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      a {
         color: #fff;
+      }
+      &.bg-color-true {
+        color: var(--info-block-secondary-font-color-with-bg);
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a,
+        .public-DraftEditorPlaceholder-inner {
+          color: var(--info-block-secondary-font-color-with-bg);
+        }
+        svg.icon {
+          fill: var(--info-block-secondary-font-color-with-bg);
+          color: var(--info-block-secondary-font-color-with-bg);
+        }
+      }
+    }
+
+    .bg-alert-tertiary {
+      border-color: var(--info-block-tertiary-color);
+      color: var(--info-block-tertiary-font-color);
+      .draftjs-buttons a {
+        background-color: var(--info-block-tertiary-color);
+        color: var(--info-block-tertiary-font-color);
+        &:hover {
+          background-color: var(--info-block-tertiary-color-hover);
+        }
+      }
+      svg.icon {
+        fill: var(--info-block-tertiary-icon-color);
+      }
+      &.bg-color-true {
+        background-color: var(--info-block-tertiary-color);
+        color: var(--info-block-tertiary-font-color-with-bg);
         svg.icon,
         .public-DraftEditorPlaceholder-inner,
         h1,
@@ -67,41 +157,9 @@
         h5,
         h6,
         a {
-          color: #fff;
-          fill: #fff;
+          color: var(--info-block-tertiary-font-color-with-bg);
+          fill: var(--info-block-tertiary-font-color-with-bg);
         }
-      }
-    }
-
-    .bg-alert-warning-orange {
-      border-color: #eb973f;
-      .draftjs-buttons a {
-        background-color: #eb973f;
-        &:hover {
-          background-color: darken(#eb973f, 10%);
-        }
-      }
-      svg.icon {
-        fill: #eb973f;
-      }
-      &.bg-color-true {
-        background-color: #eb973f;
-      }
-    }
-
-    .bg-alert-warning {
-      border-color: #f0c250;
-      .draftjs-buttons a {
-        background-color: #f0c250;
-        &:hover {
-          background-color: darken(#f0c250, 10%);
-        }
-      }
-      svg.icon {
-        fill: #f0c250;
-      }
-      &.bg-color-true {
-        background-color: #f0c250;
       }
     }
 
@@ -137,3 +195,33 @@
     }
   }
 }
+
+//SIDEBAR COLORS:
+//(By default non sono necessarie, ma devono essere customizzate se cambiano i colori)
+/*
+body.cms-ui {
+  .infoblock {
+    .color-list-widget {
+      .ui.circular.button.primary {
+        background-color: $primary;
+        &:hover {
+          background-color: darken($primary, 10%);
+        }
+      }
+
+      .ui.circular.button.secondary {
+        background-color: $secondary;
+        &:hover {
+          background-color: darken($secondary, 10%);
+        }
+      }
+      .ui.circular.button.tertiary {
+        background-color: $tertiary;
+        &:hover {
+          background-color: darken($tertiary, 10%);
+        }
+      }
+    }
+  }
+}
+*/
