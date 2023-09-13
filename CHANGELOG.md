@@ -1,3 +1,10 @@
+### [7.20.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.3...v7.20.4) (2023-09-13)
+
+
+### Bug Fixes
+
+* calendar month a11y ([b24ebf6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b24ebf6ca0d45b29342e2a6fa956a644457d2d89))
+
 ### [7.20.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.2...v7.20.3) (2023-09-12)
 
 
