@@ -269,6 +269,7 @@ export default function applyConfig(voltoConfig) {
   config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
     (route) => route !== '/contact-form',
   );
+  config.settings.nonContentRoutes.push('/release-log');
 
   /******************************************************************************
    * VIEWS

@@ -5,6 +5,7 @@
 
 import { App, Search } from '@plone/volto/components';
 import { defaultRoutes, multilingualRoutes } from '@plone/volto/routes';
+import ReleaseLog from 'design-comuni-plone-theme/components/ReleaseLog/ReleaseLog';
 import config from '@plone/volto/registry';
 
 export const italiaRoutes = [
@@ -12,6 +13,10 @@ export const italiaRoutes = [
   {
     path: '/**/search',
     component: Search,
+  },
+  {
+    path: '/release-log',
+    component: ReleaseLog,
   },
 ];
 
