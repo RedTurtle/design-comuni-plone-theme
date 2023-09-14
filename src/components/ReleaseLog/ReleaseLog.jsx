@@ -4,27 +4,30 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { useIntl } from 'react-intl';
-import { Container } from 'design-react-kit/dist/design-react-kit';
 
-//import ReleaseInternal from 'design-comuni-plone-theme/../RELEASE-INTERNAL.md';
-import { marked } from 'marked';
+import { Container } from 'design-react-kit/dist/design-react-kit';
+import { Helmet } from '@plone/volto/helpers';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+
 import './ReleaseLog.css';
 
-const ReleaseLog = () => {
-  const intl = useIntl();
+const ReleaseLog = ({ marked }) => {
   const ReleaseInternal = require('design-comuni-plone-theme/../RELEASE-INTERNAL.md');
-
+  const Markdown = marked.marked;
   const [releaseInternal, setReleaseInternal] = useState('');
 
   useEffect(() => {
     fetch(ReleaseInternal)
       .then((res) => res.text())
-      .then((text) => setReleaseInternal(marked(text)));
+      .then((text) => setReleaseInternal(Markdown(text)));
   }, []);
 
   return (
     <div className="public-ui">
+      <Helmet title="Release LOG" />
+      <Helmet>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <Container className="px-4 my-4">
         <div dangerouslySetInnerHTML={{ __html: releaseInternal }}></div>
       </Container>
@@ -32,4 +35,4 @@ const ReleaseLog = () => {
   );
 };
 
-export default ReleaseLog;
+export default injectLazyLibs(['marked'])(ReleaseLog);
