@@ -54,7 +54,7 @@ const Metadata = ({
       </p>
       {content.rights && (
         <>
-          <p className="font-serif mb-0 mt-4 metadata-">
+          <p className="font-serif mb-0 mt-4 metadata">
             {intl.formatMessage(messages.rights)}
           </p>
           <strong>{content.rights}</strong>
