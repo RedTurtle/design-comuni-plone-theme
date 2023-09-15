@@ -29,9 +29,3 @@
 ### Fix
 - ...
 -->
-
-## Versione x.x.x
-
-### Novità
-
-- ciao
