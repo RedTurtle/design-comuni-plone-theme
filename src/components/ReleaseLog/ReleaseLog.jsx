@@ -12,14 +12,14 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import './ReleaseLog.css';
 
 const ReleaseLog = ({ marked }) => {
-  const ReleaseInternal = require('design-comuni-plone-theme/../RELEASE.md');
+  const ReleaseFile = require('design-comuni-plone-theme/../RELEASE.md');
   const Markdown = marked.marked;
-  const [releaseInternal, setReleaseInternal] = useState('');
+  const [releaseFileContent, setReleaseFileContent] = useState('');
 
   useEffect(() => {
-    fetch(ReleaseInternal)
+    fetch(ReleaseFile)
       .then((res) => res.text())
-      .then((text) => setReleaseInternal(Markdown(text)));
+      .then((text) => setReleaseFileContent(Markdown(text)));
   }, []);
 
   return (
@@ -29,7 +29,7 @@ const ReleaseLog = ({ marked }) => {
         <meta name="robots" content="noindex" />
       </Helmet>
       <Container className="px-4 my-4">
-        <div dangerouslySetInnerHTML={{ __html: releaseInternal }}></div>
+        <div dangerouslySetInnerHTML={{ __html: releaseFileContent }}></div>
       </Container>
     </div>
   );
