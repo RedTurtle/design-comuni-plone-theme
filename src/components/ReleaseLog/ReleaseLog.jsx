@@ -12,7 +12,7 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import './ReleaseLog.css';
 
 const ReleaseLog = ({ marked }) => {
-  const ReleaseInternal = require('design-comuni-plone-theme/../RELEASE-INTERNAL.md');
+  const ReleaseInternal = require('design-comuni-plone-theme/../RELEASE.md');
   const Markdown = marked.marked;
   const [releaseInternal, setReleaseInternal] = useState('');
 
