@@ -19,6 +19,10 @@ export const italiaRoutes = [
     component: Search,
   },
   {
+    path: '/controlpanel/release-log',
+    component: ReleaseLog,
+  },
+  {
     path: '/release-log',
     component: ReleaseLog,
   },

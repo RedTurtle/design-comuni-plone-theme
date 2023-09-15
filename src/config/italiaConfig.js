@@ -44,6 +44,7 @@ import faBuildingSVG from 'design-comuni-plone-theme/icons/building.svg';
 import faFileDownloadSVG from 'design-comuni-plone-theme/icons/file-download.svg';
 import faQuestionSVG from 'design-comuni-plone-theme/icons/question-solid.svg';
 import bandoSVG from 'design-comuni-plone-theme/icons/bando.svg';
+import logSVG from 'design-comuni-plone-theme/icons/log.svg';
 
 import applyRichTextConfig from 'design-comuni-plone-theme/config/RichTextEditor/config';
 
@@ -135,6 +136,15 @@ export default function applyConfig(voltoConfig) {
       great: 1200,
       huge: 1600,
     },
+    controlpanels: [
+      ...(config.settings.controlpanels ?? []),
+      {
+        '@id': '/release-log',
+        group: 'Generali',
+        title: 'Novità ultimi rilasci',
+        id: 'release-log',
+      },
+    ],
     controlPanelsIcons: {
       ...config.settings.controlPanelsIcons,
       'dropdown-menu-settings': menuSVG,
@@ -143,6 +153,7 @@ export default function applyConfig(voltoConfig) {
       'design-plone-settings': contentSVG,
       'bandi-settings': bookSVG,
       'social-settings': shareSVG,
+      'release-log': logSVG,
     },
     defaultBlockType: 'text',
     defaultExcludedFromSearch: {
