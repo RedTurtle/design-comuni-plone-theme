@@ -5,8 +5,12 @@
 
 import { App, Search } from '@plone/volto/components';
 import { defaultRoutes, multilingualRoutes } from '@plone/volto/routes';
-import ReleaseLog from 'design-comuni-plone-theme/components/ReleaseLog/ReleaseLog';
+import loadable from '@loadable/component';
 import config from '@plone/volto/registry';
+
+const ReleaseLog = loadable(() =>
+  import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
+);
 
 export const italiaRoutes = [
   // Add design-comuni-plone-theme routes here
