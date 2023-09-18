@@ -501,11 +501,7 @@ export default function applyConfig(voltoConfig) {
       component: LoginAgid,
     },
     {
-      path: '/controlpanel/release-log',
-      component: ReleaseLog,
-    },
-    {
-      path: '/release-log',
+      path: ['/controlpanel/release-log','/release-log'],
       component: ReleaseLog,
     },
   ];
