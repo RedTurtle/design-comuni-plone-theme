@@ -7,13 +7,13 @@ import React, { useState, useEffect } from 'react';
 
 import { Container } from 'design-react-kit/dist/design-react-kit';
 import { Helmet } from '@plone/volto/helpers';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import { marked as Markdown } from 'marked';
 
 import './ReleaseLog.css';
 
-const ReleaseLog = ({ marked }) => {
+const ReleaseLog = () => {
   const ReleaseFile = require('design-comuni-plone-theme/../RELEASE.md');
-  const Markdown = marked.marked;
+
   const [releaseFileContent, setReleaseFileContent] = useState('');
 
   useEffect(() => {
@@ -35,4 +35,4 @@ const ReleaseLog = ({ marked }) => {
   );
 };
 
-export default injectLazyLibs(['marked'])(ReleaseLog);
+export default ReleaseLog;
