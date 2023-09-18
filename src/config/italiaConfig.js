@@ -78,7 +78,7 @@ export default function applyConfig(voltoConfig) {
       //  return event;
       // },
     }),
-    isMultilingual: true,
+    isMultilingual: false,
     isFooterCollapsed: false, // false(default) -> vedere il footer automatico esploso | true -> implodere il footer menu automatico
     supportedLanguages: ['it'],
     defaultLanguage: 'it',
