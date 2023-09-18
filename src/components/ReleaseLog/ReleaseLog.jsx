@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 
 import { Container } from 'design-react-kit/dist/design-react-kit';
 import { Helmet } from '@plone/volto/helpers';
-import { marked as Markdown } from 'marked';
+import { marked } from 'marked';
 
 import './ReleaseLog.css';
 
@@ -19,7 +19,7 @@ const ReleaseLog = () => {
   useEffect(() => {
     fetch(ReleaseFile)
       .then((res) => res.text())
-      .then((text) => setReleaseFileContent(Markdown(text)));
+      .then((text) => setReleaseFileContent(marked(text)));
   }, []);
 
   return (
