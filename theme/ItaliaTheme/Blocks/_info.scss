@@ -61,17 +61,7 @@ $tertiary-hover: darken($gray-border, 10%);
       &.bg-color-true {
         background-color: var(--info-block-primary-color);
       }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      a {
-        color: #fff;
-      }
       &.bg-color-true {
-        color: var(--info-block-primary-font-color-with-bg);
         h1,
         h2,
         h3,
@@ -79,10 +69,12 @@ $tertiary-hover: darken($gray-border, 10%);
         h5,
         h6,
         a,
+        span,
+        p,
         .public-DraftEditorPlaceholder-inner {
           color: var(--info-block-primary-font-color-with-bg);
         }
-        svg.icon {
+        svg.icon.left-image {
           fill: var(--info-block-primary-font-color-with-bg);
           color: var(--info-block-primary-font-color-with-bg);
         }
@@ -104,15 +96,6 @@ $tertiary-hover: darken($gray-border, 10%);
       &.bg-color-true {
         background-color: var(--info-block-secondary-color);
       }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      a {
-        color: #fff;
-      }
       &.bg-color-true {
         color: var(--info-block-secondary-font-color-with-bg);
         h1,
@@ -122,6 +105,8 @@ $tertiary-hover: darken($gray-border, 10%);
         h5,
         h6,
         a,
+        span,
+        p,
         .public-DraftEditorPlaceholder-inner {
           color: var(--info-block-secondary-font-color-with-bg);
         }
@@ -156,24 +141,17 @@ $tertiary-hover: darken($gray-border, 10%);
         h4,
         h5,
         h6,
-        a {
+        a,
+        span,
+        p {
           color: var(--info-block-tertiary-font-color-with-bg);
           fill: var(--info-block-tertiary-font-color-with-bg);
         }
       }
     }
 
-    .DraftEditor-root {
-      background: none;
-    }
-
     p {
       margin: 0;
-    }
-
-    img.left-image {
-      max-width: 80%;
-      object-fit: unset;
     }
 
     .image-col {
