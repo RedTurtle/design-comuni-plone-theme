@@ -14,11 +14,11 @@ import {
   TabPane,
 } from 'design-react-kit';
 import { Helmet } from '@plone/volto/helpers';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import { marked } from 'marked';
 
 import './ReleaseLog.css';
 
-const ReleaseLog = ({ marked }) => {
+const ReleaseLog = () => {
   let ReleaseDCPT = null;
   let ReleaseIoCittadino = null;
   let ReleaseIoPrenoto = null;
@@ -47,7 +47,6 @@ const ReleaseLog = ({ marked }) => {
     { name: 'io-prenoto', file: ReleaseIoPrenoto },
   ];
 
-  const Markdown = marked.marked;
   const [activeTab, toggleTab] = useState(LOGS_TO_VIEW[0].name);
   const [logDCPT, setLogDCPT] = useState('');
   const [logIoCittadino, setLogIoCittadino] = useState('');
@@ -59,7 +58,7 @@ const ReleaseLog = ({ marked }) => {
         fetch(ReleaseDCPT)
           .then((res) => res.text())
           .then((text) => {
-            setLogDCPT(Markdown(text));
+            setLogDCPT(marked(text));
           });
       } catch {
         console.log(ReleaseDCPT + ' not found.');
@@ -70,7 +69,7 @@ const ReleaseLog = ({ marked }) => {
         fetch(ReleaseIoCittadino)
           .then((res) => res.text())
           .then((text) => {
-            setLogIoCittadino(Markdown(text));
+            setLogIoCittadino(marked(text));
           });
       } catch {
         console.log(ReleaseIoCittadino + ' not found.');
@@ -81,7 +80,7 @@ const ReleaseLog = ({ marked }) => {
         fetch(ReleaseIoPrenoto)
           .then((res) => res.text())
           .then((text) => {
-            setLogIoPrenoto(Markdown(text));
+            setLogIoPrenoto(marked(text));
           });
       } catch {
         console.log(ReleaseIoPrenoto + ' not found.');
@@ -145,4 +144,4 @@ const ReleaseLog = ({ marked }) => {
   );
 };
 
-export default injectLazyLibs(['marked'])(ReleaseLog);
+export default ReleaseLog;
