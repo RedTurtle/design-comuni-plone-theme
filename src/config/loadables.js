@@ -5,6 +5,5 @@ export const loadables = {
   reactSlick: loadable.lib(() => import('react-slick')),
   rrule: loadable.lib(() => import('rrule')),
   htmlDiffLib: loadable.lib(() => import('htmldiff-js')),
-  marked: loadable.lib(() => import('marked')), //read markdown files
   ...subsitesLoadables,
 };
