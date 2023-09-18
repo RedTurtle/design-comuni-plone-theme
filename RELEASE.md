@@ -49,7 +49,7 @@ Aggiunto limite di caratteri agli input della descrizione
 
 ### Migliorie
 
-- Accessibilità - migliorata sulla variazione "Slider" dei blocchi elenco
+- Accessibilità - migliorie sulla variazione "Slider" dei blocchi elenco
 - Accessibilità - migliorata la navigazione dentro al menu principale
 
 ### Fix
