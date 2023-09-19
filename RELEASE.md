@@ -61,7 +61,12 @@ Sistemati i colori del blocco informazioni
 
 ### Migliorie
 
-Aggiunto limite di caratteri agli input della descrizione
+- Aggiunto limite di caratteri agli input della descrizione
+
+### Fix
+
+- Sistemato il problema per cui nell'area modulistica eventuali link che puntano
+  a file non aprivano il file ma una pagina bianca del sito
 
 <!--- -->
 
