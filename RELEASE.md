@@ -40,6 +40,7 @@
 
 - Blocco info: Colori dentro editor di testo sistemati (bottoni draftJS)
 - I link nella modulistica mostrano la remoteUrl
+- Migliorata accessibilità del calendario nel blocco ricerca Eventi e ricerca Bandi
 
 ## Versione 7.20.4 (13/09/2023)
 
