@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione 7.20.x (dd/mm/yyyy)
+
+### Fix
+
+- Fissato il layout del template Blocco link solo immagini con link esterni, icona accessibilità per link esterni ora è disattivabile attraverso opzione del template, posizionata invece in overlay se presente
+
 ## Versione 7.20.4 (13/09/2023)
 
 ### Fix
@@ -42,20 +48,17 @@ Accessibilità - Migliorata l'accessibilità del calendario
 
 Accessibilità - Migliorata l'accessibilità dello Slider
 
-
 ## Versione 7.20.2 (11/09/2023)
 
 ### Fix
 
 Sistemato il caricamento delle mappe in alcuni contenuti
 
-
 ## Versione 7.20.1 (06/09/2023)
 
 ### Fix
 
 Sistemati i colori del blocco informazioni
-
 
 ## Versione 7.20.0 (05/09/2023)
 
