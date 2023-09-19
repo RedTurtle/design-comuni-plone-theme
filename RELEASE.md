@@ -29,3 +29,9 @@
 ### Fix
 - ...
 -->
+
+## Versione 8.6.x
+
+### Migliorie
+
+- Fissato il layout del template Blocco link solo immagini con link esterni, icona accessibilità per link esterni ora è disattivabile attraverso opzione del template, posizionata invece in overlay se presente
