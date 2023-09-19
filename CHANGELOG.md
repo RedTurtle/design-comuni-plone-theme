@@ -1,3 +1,21 @@
+## [7.21.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.4...v7.21.0) (2023-09-19)
+
+
+### Features
+
+* added release-log ([#326](https://github.com/RedTurtle/design-comuni-plone-theme/issues/326)) ([4ba725f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4ba725f18cc96f7fdcbaff2b27b64dcb3f9a5862))
+
+
+### Bug Fixes
+
+* color corretion + file cleaned ([#321](https://github.com/RedTurtle/design-comuni-plone-theme/issues/321)) ([b08f430](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b08f430f2687fb1732e9f2e889610188c54f6840))
+* i link in modulistica devono far vedere la remoteUrl e non il link (v2) ([#334](https://github.com/RedTurtle/design-comuni-plone-theme/issues/334)) ([a4b8b5d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a4b8b5de65ae66bbb54b26f5fa85c2e251909372))
+
+
+### Maintenance
+
+* Update RELEASE.md ([586d849](https://github.com/RedTurtle/design-comuni-plone-theme/commit/586d849f916c4632b323f43ef5f3e12755c31681))
+
 ### [7.20.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.3...v7.20.4) (2023-09-13)
 
 
