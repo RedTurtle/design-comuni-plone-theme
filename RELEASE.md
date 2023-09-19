@@ -30,6 +30,17 @@
 - ...
 -->
 
+## Versione 7.21.0 (19/09/2023)
+
+### Novità
+
+- Aggiunto il release-log su panello di configurazioni [`Per accedere alla pagina con le informazioni sugli aggiornamenti accedere all'URL /release-log`]
+
+### Fix
+
+- Blocco info: Colori dentro editor di testo sistemati (bottoni draftJS)
+- I link nella modulistica mostrano la remoteUrl
+
 ## Versione 7.20.4 (13/09/2023)
 
 ### Fix
@@ -42,20 +53,17 @@ Accessibilità - Migliorata l'accessibilità del calendario
 
 Accessibilità - Migliorata l'accessibilità dello Slider
 
-
 ## Versione 7.20.2 (11/09/2023)
 
 ### Fix
 
 Sistemato il caricamento delle mappe in alcuni contenuti
 
-
 ## Versione 7.20.1 (06/09/2023)
 
 ### Fix
 
 Sistemati i colori del blocco informazioni
-
 
 ## Versione 7.20.0 (05/09/2023)
 
