@@ -6,7 +6,7 @@
 <!--- -----------------------------------------------------------------
   Esempio:
   ---------------------------------------------------------------------
-## Versione 7.10.9
+## Versione 7.10.9 (31/08/2023)
 ### Migliorie
 - Fissato il layout di stampa per pagine con Accordion
 ### Novità
@@ -19,7 +19,7 @@
  TEMPLATE PER RELEASE
  ----------------------------------------------------------------------
 
-## Versione X.X.X
+## Versione X.X.X (dd/mm/yyyy)
 ### Migliorie
 - ...
 
@@ -30,7 +30,34 @@
 - ...
 -->
 
-## Versione 7.20.0
+## Versione 7.20.4 (13/09/2023)
+
+### Fix
+
+Accessibilità - Migliorata l'accessibilità del calendario
+
+## Versione 7.20.3 (12/09/2023)
+
+### Fix
+
+Accessibilità - Migliorata l'accessibilità dello Slider
+
+
+## Versione 7.20.2 (11/09/2023)
+
+### Fix
+
+Sistemato il caricamento delle mappe in alcuni contenuti
+
+
+## Versione 7.20.1 (06/09/2023)
+
+### Fix
+
+Sistemati i colori del blocco informazioni
+
+
+## Versione 7.20.0 (05/09/2023)
 
 ### Migliorie
 
