@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione X.X.X (19/09/2023)
+
+### Fix
+
+- Sistemata accessibilità per il menu a tendina "Ordina Per" nella pagina di ricerca
+
 ## Versione 7.21.0 (19/09/2023)
 
 ### Novità
