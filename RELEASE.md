@@ -30,3 +30,8 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- sistemati gli oggetti link che puntano a file nella Cartella Modulistica
