@@ -29,6 +29,9 @@ const ReleaseLog = () => {
         <meta name="robots" content="noindex" />
       </Helmet>
       <Container className="px-4 my-4">
+        <h1 className="py-4">
+          Release Log - Lista degli aggiornamenti io-Comune v7
+        </h1>
         <div dangerouslySetInnerHTML={{ __html: releaseFileContent }}></div>
       </Container>
     </div>
