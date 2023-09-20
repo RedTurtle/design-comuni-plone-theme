@@ -113,7 +113,7 @@ test('View renders image as m size', async () => {
   render(
     <Provider store={store}>
       <MemoryRouter>
-        <Block data={mock_fields_m_image} />
+        <Block data={mock_fields_m_image} block={{ id: '1234' }} />
       </MemoryRouter>
     </Provider>,
   );
@@ -126,7 +126,7 @@ test('View renders image as l size', async () => {
   render(
     <Provider store={store}>
       <MemoryRouter>
-        <Block data={mock_fields_l_image} />
+        <Block data={mock_fields_l_image} block={{ id: '1234' }} />
       </MemoryRouter>
     </Provider>,
   );
@@ -139,7 +139,7 @@ test('View renders block without image', async () => {
   render(
     <Provider store={store}>
       <MemoryRouter>
-        <Block data={mock_fields_no_image} />
+        <Block data={mock_fields_no_image} block={{ id: '1234' }} />
       </MemoryRouter>
     </Provider>,
   );
