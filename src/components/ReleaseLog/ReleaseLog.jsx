@@ -122,6 +122,9 @@ const ReleaseLog = () => {
               className="p-3"
               key={log.name + 'tabcontent'}
             >
+              <h1 className="py-4">
+                Release Log - Lista degli aggiornamenti {log.name}
+              </h1>
               <div
                 dangerouslySetInnerHTML={{
                   __html:
