@@ -30,6 +30,17 @@
 - ...
 -->
 
+
+## Versione x.x.x (dd/mm/yyyy)
+
+### Migliorie
+
+Nel template Blocco link solo immagini con link esterni, icona accessibilità per link esterni ora è disattivabile attraverso opzione del template
+
+### Fix
+
+- Fissato il layout del template Blocco link solo immagini con link esterni, icona accessibilità per link esterni ora è posizionata invece in overlay se presente
+
 ## Versione 7.21.0 (19/09/2023)
 
 ### Novità
@@ -40,6 +51,7 @@
 
 - Blocco info: Colori dentro editor di testo sistemati (bottoni draftJS)
 - I link nella modulistica mostrano la remoteUrl
+
 
 ## Versione 7.20.4 (13/09/2023)
 
