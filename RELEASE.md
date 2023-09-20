@@ -46,7 +46,6 @@
 
 - Blocco info: Colori dentro editor di testo sistemati (bottoni draftJS)
 - I link nella modulistica mostrano la remoteUrl
-- Sistemata accessibilità per il menu a tendina "Ordina Per" nella pagina di ricerca
 
 ## Versione 7.20.4 (13/09/2023)
 
