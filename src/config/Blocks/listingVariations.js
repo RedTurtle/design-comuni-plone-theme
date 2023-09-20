@@ -58,9 +58,13 @@ import {
   addSimpleListTemplateOptions,
   addCardWithSlideUpTextTemplateOptions,
   addPhotogalleryTemplateOptions,
+  addSmallBlockLinksTemplateOptions,
 } from 'design-comuni-plone-theme/config/Blocks/ListingOptions';
 
-import { addLighthouseField, cloneBlock } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
+import {
+  addLighthouseField,
+  cloneBlock,
+} from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
 
 const italiaListingVariations = [
   {
@@ -168,7 +172,8 @@ const italiaListingVariations = [
     template: SmallBlockLinksTemplate,
     skeleton: SmallBlockLinksTemplateSkeleton,
     schemaEnhancer: ({ schema, formData, intl }) => {
-      /*let pos = */ addDefaultOptions(schema, formData, intl);
+      let pos = addDefaultOptions(schema, formData, intl);
+      addSmallBlockLinksTemplateOptions(schema, formData, intl, pos);
       return schema;
     },
     cloneData: cloneBlock,
