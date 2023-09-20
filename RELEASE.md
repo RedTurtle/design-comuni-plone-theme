@@ -34,7 +34,7 @@
 
 ### Fix
 
-- Sistemata accessibilità per il menu a tendina "Ordina Per" nella pagina di ricerca
+- Migliorata l'accessibilità e il supporto Screen Reader per il menu a tendina "Ordina Per" nella pagina di ricerca
 
 ## Versione 7.21.0 (19/09/2023)
 
