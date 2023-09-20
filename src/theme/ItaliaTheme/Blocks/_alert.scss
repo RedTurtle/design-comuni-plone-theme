@@ -1,6 +1,10 @@
 .public-ui {
   .block.alertblock,
   .alertblock {
+    .full-width {
+      height: auto;
+    }
+
     .bg-alert-danger {
       background-color: #a32219;
       color: $white;
@@ -64,6 +68,15 @@
 
       a {
         color: $black;
+      }
+    }
+
+    .negative-margin {
+      margin-left: -6px;
+      margin-right: -6px;
+
+      .col {
+        padding: 0px 6px;
       }
     }
 
