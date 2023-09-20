@@ -101,6 +101,7 @@ const ReleaseLog = () => {
         <meta name="robots" content="noindex" />
       </Helmet>
       <Container className="px-4 my-4">
+        <h1>Lista degli aggiornamenti</h1>
         <Nav tabs className="mb-3">
           {LOGS_TO_VIEW.filter((log) => log.file != null).map((log) => (
             <NavItem key={log.name}>
@@ -122,9 +123,6 @@ const ReleaseLog = () => {
               className="p-3"
               key={log.name + 'tabcontent'}
             >
-              <h1 className="py-4">
-                Release Log - Lista degli aggiornamenti {log.name}
-              </h1>
               <div
                 dangerouslySetInnerHTML={{
                   __html:
