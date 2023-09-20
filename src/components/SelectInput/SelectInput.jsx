@@ -299,6 +299,7 @@ const SelectInput = ({
   options,
   components = {},
   reactSelect,
+  defaultValue,
 }) => {
   const intl = useIntl();
   const Select = reactSelect.default;
@@ -319,6 +320,7 @@ const SelectInput = ({
         }}
         id={id}
         value={value}
+        defaultValue={defaultValue}
         onChange={onChange}
         options={options}
         placeholder={placeholder}
@@ -326,7 +328,9 @@ const SelectInput = ({
         isSearchable={isSearchable}
         isMulti={isMulti}
         isClearable={isClearable}
-        aria-label={placeholder}
+        aria-label={label}
+        aria-live="polite"
+        aria-labelledby={id}
         ariaLiveMessages={getSelectAriaLiveMessages(intl)}
         noOptionsMessage={() =>
           intl.formatMessage(messages.select_noOptionsMessage)
