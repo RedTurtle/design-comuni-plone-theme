@@ -71,12 +71,13 @@
       }
     }
 
-    .negative-margin {
-      margin-left: -6px;
-      margin-right: -6px;
+    .row {
+      margin-right: calc(var(--bs-gutter-x) * -0.25);
+      margin-left: calc(var(--bs-gutter-x) * -0.25);
 
       .col {
-        padding: 0px 6px;
+        padding-right: calc(var(--bs-gutter-x) * 0.25);
+        padding-left: calc(var(--bs-gutter-x) * 0.25);
       }
     }
 

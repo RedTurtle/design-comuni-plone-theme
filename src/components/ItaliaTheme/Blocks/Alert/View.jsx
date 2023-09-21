@@ -31,7 +31,7 @@ const View = ({ data, pathname }) => {
     <section role="alert" className="block alertblock">
       <div className={cx('full-width', 'bg-alert-' + data.color)}>
         <Container className="p-4 pt-5 pb-5">
-          <Row className="align-items-start negative-margin">
+          <Row className="align-items-start">
             {data.image?.data && (
               <Col sm={2} className="pb-3 image-col">
                 <img
