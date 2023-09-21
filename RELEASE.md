@@ -41,6 +41,8 @@
 ### Fix
 
 - Fissato il layout del template Blocco link solo immagini con link esterni, icona accessibilità per link esterni ora è posizionata invece in overlay se presente
+- Sistemata la visualizzazione dello stato di caricamento della pagina /search
+
 
 ## Versione 7.21.0 (19/09/2023)
 
