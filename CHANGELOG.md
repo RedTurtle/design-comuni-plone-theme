@@ -1,3 +1,22 @@
+## [7.22.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.21.0...v7.22.0) (2023-09-21)
+
+
+### Features
+
+* enable/disable external link icon in listing template SmallBlocksLink ([0f9f872](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0f9f872859edc7e940d3025b572786ba0b6f9f01))
+
+
+### Bug Fixes
+
+* accessibility for selectInput ([#343](https://github.com/RedTurtle/design-comuni-plone-theme/issues/343)) ([c4b1e66](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c4b1e665e4e0eb8ce0d4a5e3f5b3927751ca8b2e))
+* focus on selected and default dates ([#333](https://github.com/RedTurtle/design-comuni-plone-theme/issues/333)) ([b271bec](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b271bec2b0bbf264cbed4f41b5d8e268554e98c0))
+
+
+### Maintenance
+
+* added the 7.21.0 release info ([#337](https://github.com/RedTurtle/design-comuni-plone-theme/issues/337)) ([b478952](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b478952628cc028353514c285fd0c2c02c674206))
+* release log title added ([#342](https://github.com/RedTurtle/design-comuni-plone-theme/issues/342)) ([2c150b5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2c150b57914b12b389c91bc44b9c4f57cf261f7a))
+
 ## [7.21.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.4...v7.21.0) (2023-09-19)
 
 
