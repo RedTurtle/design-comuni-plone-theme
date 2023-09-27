@@ -116,7 +116,6 @@ const CartellaModulisticaView = ({ content }) => {
               return section['@type'] === 'Document' ? (
                 <div className="documents-section" key={section['@id']}>
                   {/* <h3>{section.title}</h3> */}
-
                   {section.blocks &&
                     Object.keys(section.blocks)?.length > 0 && (
                       <TextOrBlocks content={section} />
@@ -131,16 +130,20 @@ const CartellaModulisticaView = ({ content }) => {
                         </div>
                       </div>
                       {section.items.filter(filterDocumento).map((doc) => {
-                        const items = doc.items.filter(filterItemsFN);
-                        return (
-                          <DocRow
-                            doc={doc}
-                            key={doc['@id']}
-                            items={
-                              items.length === 0 ? doc.items : items
-                            } /*se items.length ===0 significa che è stato fatto il match sul titolo del documento, quindi devo mostrare tutti i suoi figli*/
-                          />
-                        );
+                        if (doc.items) {
+                          const items = doc.items.filter(filterItemsFN);
+                          return (
+                            <DocRow
+                              doc={doc}
+                              key={doc['@id']}
+                              items={items.length === 0 ? doc.items : items}
+                              /*se items.length ===0 significa che è stato fatto il match sul titolo del 
+                                documento, quindi devo mostrare tutti i suoi figli*/
+                            />
+                          );
+                        } else {
+                          return <DocRow doc={doc} key={doc['@id']} />;
+                        }
                       })}
                     </div>
                   )}
