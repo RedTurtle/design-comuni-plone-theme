@@ -1,3 +1,11 @@
+### [7.22.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.22.0...v7.22.1) (2023-09-27)
+
+
+### Bug Fixes
+
+* fix search results usability for a11y ([#346](https://github.com/RedTurtle/design-comuni-plone-theme/issues/346)) ([8a891b9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8a891b93acc76b476c92fececf7372643223821e))
+* modulisticaview children non è un documento (non ha items) ([#351](https://github.com/RedTurtle/design-comuni-plone-theme/issues/351)) ([ad2b106](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ad2b1062accf6b8dfcd94cb1ed62414b381ee5f1))
+
 ## [7.22.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.21.0...v7.22.0) (2023-09-21)
 
 
