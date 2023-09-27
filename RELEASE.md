@@ -30,7 +30,7 @@
 - ...
 -->
 
-## Versione x.x.x (dd/mm/yyyy)
+## Versione 7.22.1 (27/09/2023)
 
 ### Migliorie
 
@@ -42,7 +42,7 @@
 
 - Fissato il layout del template Blocco link solo immagini con link esterni, icona accessibilità per link esterni ora è posizionata invece in overlay se presente
 - Sistemata la visualizzazione dello stato di caricamento della pagina /search
-
+- Fissata pagina Cartella Modulistica in caso di moduli all'interno di documenti
 
 ## Versione 7.21.0 (19/09/2023)
 
