@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione 7.22.2 (11/10/2023)
+
+### Fix
+
+- Sistemato il template degli Rss Card con immagine per mostrare la data corretta
+
 ## Versione 7.22.1 (27/09/2023)
 
 ### Migliorie
