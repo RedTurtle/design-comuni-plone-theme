@@ -44,7 +44,8 @@ services:
       - prod
 
   backend-acceptance:
-    image: ghcr.io/redturtle/iocomune-backend-acceptance:latest
+    # image: ghcr.io/redturtle/iocomune-backend-acceptance:latest
+    image: ghcr.io/redturtle/iocomune-backend-acceptance:acceptance-testing-image
     ports:
       - 55001:55001
     profiles:
