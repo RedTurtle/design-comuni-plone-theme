@@ -1,3 +1,15 @@
+### [7.22.2](https://github.com/redturtle/design-comuni-plone-theme/compare/v7.22.1...v7.22.2) (2023-10-11)
+
+
+### Bug Fixes
+
+* rss card date ([#359](https://github.com/redturtle/design-comuni-plone-theme/issues/359)) ([18a50a7](https://github.com/redturtle/design-comuni-plone-theme/commit/18a50a76a73c7411138690ba84c7cb3fe37386c2))
+
+
+### Maintenance
+
+* preparing release ([44e4fa9](https://github.com/redturtle/design-comuni-plone-theme/commit/44e4fa93942cbf7253ad0547582d2b9c3d52409b))
+
 ### [7.22.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.22.0...v7.22.1) (2023-09-27)
 
 
