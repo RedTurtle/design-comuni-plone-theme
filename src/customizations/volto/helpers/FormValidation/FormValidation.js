@@ -10,7 +10,7 @@
  *   export const CUSTOM_DGFIELD_VALIDATION = {
         timeline_tempi_scadenze: {
           isValid: (value, itemObj, intlFunc) => {
-            const isValid = value.filter((val, i) => val.title).length;
+            const isValid = value.every((val, i) => val.title);
             return !isValid
               ? intlFunc(
                   dgfieldValidationMessages.timeline_tempi_scadenze_validation_error,
