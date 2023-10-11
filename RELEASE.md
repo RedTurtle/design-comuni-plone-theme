@@ -30,7 +30,13 @@
 - ...
 -->
 
-## Versione X.X.X (06/10/2023)
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Cambiato il colore del bordo dell'icona Ricerca nell'header dei sottositi per garantire il contrasto per accessibilità
+
+## Versione 8.7.6 (06/10/2023)
 
 ### Fix
 
