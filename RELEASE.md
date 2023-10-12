@@ -6,12 +6,19 @@
 <!--- -----------------------------------------------------------------
   Esempio:
   ---------------------------------------------------------------------
+
 ## Versione 7.10.9 (12/09/2023)
+
 ### Migliorie
+
 - Fissato il layout di stampa per pagine con Accordion
+
 ### Novità
+
 - Nuovo blocco "Informazioni" [`Istruzioni`](https://docs.google.com/document/d/1SThuxa_ah0BuNXukWs564kKPfprK41WLQE8Mome-0xg/edit#heading=h.7ty110jumgmd)
+
 ### Fix
+
 - il numero di telefono dentro card ufficio adesso è visibile anche senza indirizzo
 -->
 
@@ -20,17 +27,21 @@
  ----------------------------------------------------------------------
 
 ## Versione X.X.X (dd/mm/yyyy)
+
 ### Migliorie
+
 - ...
 
 ### Novità
+
 - ...  [`Istruzioni`](url della documentazione relativa alla novità)
 
 ### Fix
+
 - ...
 -->
 
-## Versione 8.7.8 (xx/xx/2023)
+## Versione 8.x.x (xx/xx/2023)
 
 ### Migliorie
 
@@ -39,6 +50,12 @@
 ### Fix
 
 - Risolto un bug nel componente Object Browser che permetteva di selezionare piú elementi di quelli consentiti
+
+## Versione 8.7.8 (12/10/2023)
+
+### Fix
+
+- Nel blocco Calendario, è stata sistemata la sovrapposizione dei pallini di navigazione con il pulsante per il link agli approfondimenti
 
 ## Versione 8.7.7 (12/10/2023)
 
