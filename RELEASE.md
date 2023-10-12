@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Aggiornata nuova icona di Twitter
+
 ## Versione 7.22.2 (11/10/2023)
 
 ### Fix
