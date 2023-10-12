@@ -30,6 +30,16 @@
 - ...
 -->
 
+## Versione 8.7.8 (xx/xx/2023)
+
+### Migliorie
+
+- Migliorato il comportamento alla selezione/deselezione degli elementi multipli nel componente Object Browser
+
+### Fix
+
+- Risolto un bug nel componente Object Browser che permetteva di selezionare piú elementi di quelli consentiti
+
 ## Versione 8.7.7 (12/10/2023)
 
 ### Migliorie
