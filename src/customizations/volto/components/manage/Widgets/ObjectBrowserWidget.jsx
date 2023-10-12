@@ -159,7 +159,6 @@ export class ObjectBrowserWidgetComponent extends Component {
   };
 
   onChange = (item) => {
-    console.log(this.props.onChange);
     let value =
       this.props.mode === 'multiple' && this.props.value
         ? [...this.props.value]
