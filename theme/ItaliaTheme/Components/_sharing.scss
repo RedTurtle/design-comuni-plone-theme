@@ -5,16 +5,21 @@
     box-shadow: 0 0 0 2px $focus-outline-color;
     outline: none;
   }
+
   .link-list-wrapper {
-    z-index: 10;
     position: relative;
+    z-index: 10;
+
     ul {
       li {
         a.list-item,
         button.btn-link {
           display: flex;
           align-items: center;
+
           .icon {
+            width: 28px;
+            height: 28px;
             margin-right: 0.5em;
           }
         }
