@@ -30,7 +30,11 @@
 - ...
 -->
 
-## Versione X.X.X (06/10/2023)
+## Versione 8.7.7 (12/10/2023)
+
+### Migliorie
+
+- Aggiornata nuova icona di Twitter
 
 ### Fix
 
