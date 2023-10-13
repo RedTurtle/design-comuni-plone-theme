@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione 8.x.x (xx/xx/2023)
+
+### Fix
+
+- Alcune icone nel widget icone fontawesom mancanti sono state rese nuovamente visibili
+
 ## Versione 8.7.8 (12/10/2023)
 
 ### Fix
