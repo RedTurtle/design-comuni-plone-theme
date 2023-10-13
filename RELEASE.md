@@ -34,7 +34,7 @@
 
 ### Fix
 
-- Eliminata la sovrapposizione tra immagine e testo nel tipo documento Pagina quando l'immagine è verticale.
+- Eliminata la sovrapposizione tra immagine e testo nel tipo documento Pagina quando l'immagine è verticale
 
 ## Versione 8.7.8 (12/10/2023)
 
