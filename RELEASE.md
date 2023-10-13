@@ -6,12 +6,19 @@
 <!--- -----------------------------------------------------------------
   Esempio:
   ---------------------------------------------------------------------
+
 ## Versione 7.10.9 (12/09/2023)
+
 ### Migliorie
+
 - Fissato il layout di stampa per pagine con Accordion
+
 ### Novità
+
 - Nuovo blocco "Informazioni" [`Istruzioni`](https://docs.google.com/document/d/1SThuxa_ah0BuNXukWs564kKPfprK41WLQE8Mome-0xg/edit#heading=h.7ty110jumgmd)
+
 ### Fix
+
 - il numero di telefono dentro card ufficio adesso è visibile anche senza indirizzo
 -->
 
@@ -20,15 +27,25 @@
  ----------------------------------------------------------------------
 
 ## Versione X.X.X (dd/mm/yyyy)
+
 ### Migliorie
+
 - ...
 
 ### Novità
+
 - ...  [`Istruzioni`](url della documentazione relativa alla novità)
 
 ### Fix
+
 - ...
 -->
+
+## Versione 8.x.x (xx/xx/2023)
+
+### Fix
+
+- Visualizzazione sidebar in edit del blocco Numeri: sistemato overflowing del testo di aiuto
 
 ## Versione 8.7.8 (12/10/2023)
 
