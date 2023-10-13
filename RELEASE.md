@@ -41,7 +41,7 @@
 - ...
 -->
 
-## Versione 8.x.x (xx/xx/2023)
+## Versione X.X.X (dd/mm/yyyy)
 
 ### Migliorie
 
@@ -49,7 +49,9 @@
 
 ### Fix
 
-- Risolto un bug nel componente Object Browser che permetteva di selezionare piú elementi di quelli consentiti
+- Cambiato il colore del bordo dell'icona Ricerca nell'header dei sottositi per garantire il contrasto per accessibilità
+- Non mostrare la fascia colorata del footer di un sottosito quando questo non è compilato
+- Risolto un bug nel componente Object Browser che permetteva di selezionare più elementi di quelli consentiti
 
 ## Versione 8.7.8 (12/10/2023)
 
@@ -62,6 +64,8 @@
 ### Migliorie
 
 - Aggiornata nuova icona di Twitter
+
+## Versione 8.7.6 (06/10/2023)
 
 ### Fix
 
