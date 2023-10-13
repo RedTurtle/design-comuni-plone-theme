@@ -35,6 +35,19 @@
 ### Fix
 
 - Cambiato il colore del bordo dell'icona Ricerca nell'header dei sottositi per garantire il contrasto per accessibilità
+- Non mostrare la fascia colorata del footer di un sottosito quando questo non è compilato
+
+## Versione 8.7.8 (12/10/2023)
+
+### Fix
+
+- Nel blocco Calendario, è stata sistemata la sovrapposizione dei pallini di navigazione con il pulsante per il link agli approfondimenti
+
+## Versione 8.7.7 (12/10/2023)
+
+### Migliorie
+
+- Aggiornata nuova icona di Twitter
 
 ## Versione 8.7.6 (06/10/2023)
 

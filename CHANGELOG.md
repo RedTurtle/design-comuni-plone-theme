@@ -1,5 +1,28 @@
 
 
+## [8.7.8](https://github.com/redturtle/design-comuni-plone-theme/compare/v8.7.7...v8.7.8) (2023-10-12)
+
+
+### Bug Fixes
+
+* avoid overlay of link more and dots in Calendar block ([d063a29](https://github.com/redturtle/design-comuni-plone-theme/commit/d063a294ebef9d4d5c87c2fc82893afc318518b7))
+
+
+### Maintenance
+
+* preparing release 8..7.8 ([b60c3d0](https://github.com/redturtle/design-comuni-plone-theme/commit/b60c3d0b63145bc07980c6f68ca9c9ac90be6d51))
+* updated RELEASE.md ([e63045c](https://github.com/redturtle/design-comuni-plone-theme/commit/e63045c466b68e5fabde864e790007f55901bb57))
+
+## [8.7.7](https://github.com/redturtle/design-comuni-plone-theme/compare/v8.7.6...v8.7.7) (2023-10-12)
+
+
+### Maintenance
+
+* preparing release 8.7.7 ([1136269](https://github.com/redturtle/design-comuni-plone-theme/commit/1136269c2afd1de887d44c96edbe1fffcbdb990e))
+* updated twitter icon ([#361](https://github.com/redturtle/design-comuni-plone-theme/issues/361)) ([ce75b74](https://github.com/redturtle/design-comuni-plone-theme/commit/ce75b74e5d2b7eccdb56456f7b474184483d3035))
+
+
+
 ## [8.7.6](https://github.com/redturtle/design-comuni-plone-theme/compare/v8.7.5...v8.7.6) (2023-10-09)
 
 
