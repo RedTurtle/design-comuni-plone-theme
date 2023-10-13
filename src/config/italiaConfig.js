@@ -280,7 +280,9 @@ export default function applyConfig(voltoConfig) {
     maxFileUploadSize: null,
     'volto-blocks-widget': {
       allowedBlocks: [
-        ...(config.settings['volto-blocks-widget']?.allowedBlocks ?? []),
+        ...(config.settings['volto-blocks-widget']?.allowedBlocks ?? []).filter(
+          (block) => block !== 'maps',
+        ),
         'break',
         'testo_riquadro_semplice',
         'testo_riquadro_immagine',
@@ -408,6 +410,10 @@ export default function applyConfig(voltoConfig) {
       ...config.blocks.blocksConfig.slateTable,
       restricted: true,
     },
+    maps: {
+      ...config.blocks.blocksConfig.maps,
+      restricted: true,
+    },
     search: {
       ...config.blocks.blocksConfig.search,
       icon: searchIcon,
@@ -446,10 +452,6 @@ export default function applyConfig(voltoConfig) {
   // We chose to disallow leadimage block usage in editor. If you want it back someday,
   // comment out the following line and add the leadimage behavior in Document.xml file
   delete config.blocks.blocksConfig['leadimage'];
-
-  // BUG#41117
-  // Removed Maps block for privacy guidelines
-  delete config.blocks.blocksConfig.maps;
 
   // TOC block anchors not working, customizing tocEntry
   // to also return draftJS block id
