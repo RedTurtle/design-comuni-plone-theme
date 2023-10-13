@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione 8.x.x (xx/xx/2023)
+
+### Fix
+
+- Sistemate inconsistenze nella visualizzazione di alcuni tipi di elementi della lista degli allegati in Cartella Modulistica
+
 ## Versione 8.7.8 (12/10/2023)
 
 ### Fix
