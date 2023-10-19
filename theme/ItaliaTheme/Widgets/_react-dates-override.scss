@@ -1,0 +1,14 @@
+table.CalendarMonth_table {
+  border-collapse: separate;
+  td.CalendarDay__selected:focus {
+    border: 1px solid white;
+    outline: 2px solid $focus-outline-color;
+    border-radius: 100%;
+  }
+
+  td.CalendarDay__default:focus {
+    border: none;
+    box-shadow: none;
+    outline: 2px solid $focus-outline-color;
+  }
+}

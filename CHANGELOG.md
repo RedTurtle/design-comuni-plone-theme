@@ -1,3 +1,67 @@
+### [7.22.2](https://github.com/redturtle/design-comuni-plone-theme/compare/v7.22.1...v7.22.2) (2023-10-11)
+
+
+### Bug Fixes
+
+* rss card date ([#359](https://github.com/redturtle/design-comuni-plone-theme/issues/359)) ([18a50a7](https://github.com/redturtle/design-comuni-plone-theme/commit/18a50a76a73c7411138690ba84c7cb3fe37386c2))
+
+
+### Maintenance
+
+* preparing release ([44e4fa9](https://github.com/redturtle/design-comuni-plone-theme/commit/44e4fa93942cbf7253ad0547582d2b9c3d52409b))
+
+### [7.22.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.22.0...v7.22.1) (2023-09-27)
+
+
+### Bug Fixes
+
+* fix search results usability for a11y ([#346](https://github.com/RedTurtle/design-comuni-plone-theme/issues/346)) ([8a891b9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8a891b93acc76b476c92fececf7372643223821e))
+* modulisticaview children non è un documento (non ha items) ([#351](https://github.com/RedTurtle/design-comuni-plone-theme/issues/351)) ([ad2b106](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ad2b1062accf6b8dfcd94cb1ed62414b381ee5f1))
+
+## [7.22.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.21.0...v7.22.0) (2023-09-21)
+
+
+### Features
+
+* enable/disable external link icon in listing template SmallBlocksLink ([0f9f872](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0f9f872859edc7e940d3025b572786ba0b6f9f01))
+
+
+### Bug Fixes
+
+* accessibility for selectInput ([#343](https://github.com/RedTurtle/design-comuni-plone-theme/issues/343)) ([c4b1e66](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c4b1e665e4e0eb8ce0d4a5e3f5b3927751ca8b2e))
+* focus on selected and default dates ([#333](https://github.com/RedTurtle/design-comuni-plone-theme/issues/333)) ([b271bec](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b271bec2b0bbf264cbed4f41b5d8e268554e98c0))
+
+
+### Maintenance
+
+* added the 7.21.0 release info ([#337](https://github.com/RedTurtle/design-comuni-plone-theme/issues/337)) ([b478952](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b478952628cc028353514c285fd0c2c02c674206))
+* release log title added ([#342](https://github.com/RedTurtle/design-comuni-plone-theme/issues/342)) ([2c150b5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2c150b57914b12b389c91bc44b9c4f57cf261f7a))
+
+## [7.21.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.4...v7.21.0) (2023-09-19)
+
+
+### Features
+
+* added release-log ([#326](https://github.com/RedTurtle/design-comuni-plone-theme/issues/326)) ([4ba725f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4ba725f18cc96f7fdcbaff2b27b64dcb3f9a5862))
+
+
+### Bug Fixes
+
+* color corretion + file cleaned ([#321](https://github.com/RedTurtle/design-comuni-plone-theme/issues/321)) ([b08f430](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b08f430f2687fb1732e9f2e889610188c54f6840))
+* i link in modulistica devono far vedere la remoteUrl e non il link (v2) ([#334](https://github.com/RedTurtle/design-comuni-plone-theme/issues/334)) ([a4b8b5d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a4b8b5de65ae66bbb54b26f5fa85c2e251909372))
+
+
+### Maintenance
+
+* Update RELEASE.md ([586d849](https://github.com/RedTurtle/design-comuni-plone-theme/commit/586d849f916c4632b323f43ef5f3e12755c31681))
+
+### [7.20.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.3...v7.20.4) (2023-09-13)
+
+
+### Bug Fixes
+
+* calendar month a11y ([b24ebf6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b24ebf6ca0d45b29342e2a6fa956a644457d2d89))
+
 ### [7.20.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.20.2...v7.20.3) (2023-09-12)
 
 
