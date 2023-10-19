@@ -46,6 +46,7 @@
 ## Fix
 
 - Sistemata validazione del campo Timeline tempi e scadenze
+- Sistemato overlapping della selezione blocchi con l'header in alcuni casi
 
 ## Versione 8.7.9 (18/10/2023)
 
