@@ -110,7 +110,11 @@ const ReleaseLog = () => {
                 active={activeTab === log.name}
                 onClick={() => viewTab(log.name)}
               >
-                <span>{log.name}</span>
+                <span>
+                  {log.name.substring(0, 3) +
+                    log.name.charAt(3).toUpperCase() +
+                    log.name.substring(4)}
+                </span>
               </NavLink>
             </NavItem>
           ))}
