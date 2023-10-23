@@ -39,12 +39,12 @@ const ReleaseLog = () => {
   }
 
   const LOGS_TO_VIEW = [
-    { name: 'io-comune', file: ReleaseDCPT },
+    { name: 'io-Comune', file: ReleaseDCPT },
     {
-      name: 'io-cittadino',
+      name: 'io-Cittadino',
       file: ReleaseIoCittadino,
     },
-    { name: 'io-prenoto', file: ReleaseIoPrenoto },
+    { name: 'io-Prenoto', file: ReleaseIoPrenoto },
   ];
 
   const [activeTab, toggleTab] = useState(LOGS_TO_VIEW[0].name);
@@ -110,11 +110,7 @@ const ReleaseLog = () => {
                 active={activeTab === log.name}
                 onClick={() => viewTab(log.name)}
               >
-                <span>
-                  {log.name.substring(0, 3) +
-                    log.name.charAt(3).toUpperCase() +
-                    log.name.substring(4)}
-                </span>
+                <span>{log.name}</span>
               </NavLink>
             </NavItem>
           ))}
