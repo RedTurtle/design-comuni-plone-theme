@@ -1,3 +1,9 @@
+/*
+CUSTOMIZATIONS:
+- react-popper: added applyStyles modifier to add style to popper div
+  to add z-index and avoid overlapping of other elements on BlockChooser.
+*/
+
 import React from 'react';
 import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 import addSVG from '@plone/volto/icons/circle-plus.svg';
