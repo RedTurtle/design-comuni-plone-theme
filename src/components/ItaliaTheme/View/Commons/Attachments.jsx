@@ -107,6 +107,9 @@ const Attachments = ({
       title={title ? title : intl.formatMessage(messages.attachments)}
     >
       {attachments.length > 0 && attachments_view}
+      {/** aggiunte conditions per attendere il render del componente mentre
+       * i risultati della query stanno ancora caricando
+       */}
       {searchResults?.[key]?.loading && !searchResults?.[key]?.loaded && <></>}
     </RichTextSection>
   ) : (
