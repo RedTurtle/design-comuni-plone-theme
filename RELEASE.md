@@ -46,6 +46,11 @@
 ### Fix
 
 - Migliorato il comportamento del menu laterale dei contenuti quando si aggiungono file nelle cartelle al loro interno.
+## Versione 8.7.10 (19/10/2023)
+
+## Fix
+
+- Sistemata validazione del campo Timeline tempi e scadenze
 
 ## Versione 8.7.9 (18/10/2023)
 
