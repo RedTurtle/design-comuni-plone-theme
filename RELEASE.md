@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Migliorato il comportamento del menu laterale dei contenuti quando si aggiungono file nelle cartelle al loro interno.
+
 ## Versione 8.7.9 (18/10/2023)
 
 ### Migliorie
