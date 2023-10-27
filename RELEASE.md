@@ -41,7 +41,23 @@
 - ...
 -->
 
-## Versione x.x.x (xx/xx/xx)
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Migliorata icona del menù mobile
+- Sistemata dimensione logo e bottone di ricerca su mobile
+- Migliorato il comportamento del menu laterale dei contenuti quando si aggiungono file nelle cartelle al loro interno
+
+## Versione 8.7.10 (19/10/2023)
 
 ## Fix
 
