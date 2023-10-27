@@ -104,15 +104,7 @@ const Attachments = ({
     <RichTextSection
       tag_id={article_id}
       className="it-page-section mb-5"
-      title={
-        title ? (
-          <h2 id={`header-${article_id}`}>{title}</h2>
-        ) : (
-          <h2 id={`header-${article_id}`}>
-            {intl.formatMessage(messages.attachments)}
-          </h2>
-        )
-      }
+      title={title ? title : intl.formatMessage(messages.attachments)}
     >
       {attachments.length > 0 && attachments_view}
     </RichTextSection>

@@ -50,7 +50,7 @@ const Location = ({ location, show_icon }) => {
     <div className="card card-teaser shadow mt-3 rounded">
       {show_icon && <Icon icon={'it-pin'} />}
       <div className="card-body">
-        <h5 className="card-title">{location_fo.title}</h5>
+        <div className="card-title h5">{location_fo.title}</div>
         <div className="card-text">
           {(location_fo.street || location_fo.zip_code) && (
             <p>

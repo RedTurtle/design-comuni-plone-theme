@@ -37,7 +37,7 @@ const Gallery = ({
   content,
   folder_name,
   title,
-  title_type = 'h4',
+  title_type = 'h3',
   title_video,
   className = '',
   reactSlick,
@@ -125,6 +125,11 @@ const Gallery = ({
           <div className="slider-container">
             <div className="it-header-block">
               <div className="it-header-block-title">
+                {title_type === 'h3' && (
+                  <h3 id="galleria" className="h5">
+                    {gallery_title}
+                  </h3>
+                )}
                 {title_type === 'h4' && <h4 id="galleria">{gallery_title}</h4>}
                 {title_type === 'h5' && <h5 id="galleria">{gallery_title}</h5>}
               </div>

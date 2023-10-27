@@ -22,7 +22,7 @@ const UOPeople = ({ content }) => {
       id="persone-struttura"
       className="it-page-section anchor-offset mt-5"
     >
-      <h2 className="h4" id="header-persone-struttura">
+      <h2 className="mb-3 h4" id="header-persone-struttura">
         {intl.formatMessage(messages.persone_struttura)}
       </h2>
       <p className="mt-4">

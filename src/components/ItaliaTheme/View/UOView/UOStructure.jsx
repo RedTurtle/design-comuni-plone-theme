@@ -110,7 +110,9 @@ const UOStructure = ({ content }) => {
       )}
       {content.responsabile?.length > 0 && (
         <div className="mb-5 mt-3">
-          <h2 className="h4">{intl.formatMessage(messages.responsabile)}</h2>
+          <h2 className="mb-3 h4">
+            {intl.formatMessage(messages.responsabile)}
+          </h2>
           <Row className="card-wrapper card-teaser-wrapper  ruolo-persone-struttura">
             {content.responsabile.map((item, i) => (
               <Col xs="12" lg="12" xl="12" md="12" sm="12" key={item['@id']}>

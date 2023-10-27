@@ -14,7 +14,7 @@ import {
   PuntoDiContattoPlaceholderAfterRelatedItems,
   RelatedItems,
   IncaricoPersone,
-  RichTextArticle,
+  RichTextSection,
   RelatedItemsChipsPDC,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { renderPDCItemValue } from 'design-comuni-plone-theme/helpers';
@@ -97,29 +97,29 @@ const PuntoDiContattoView = (props) => {
         showtassonomiaargomenti={false}
       />
       <section
-        className="col-lg-12 it-page-sections-container my-4 py-4"
+        className="col-lg-12 it-page-sections-container border-light my-4 py-4"
         id="main-content-section"
       >
         {/* TODO: add tipologia when present */}
-        <RichTextArticle
+        <RichTextSection
           tag_id="contatti"
           title={intl.formatMessage(messages.contatti)}
         >
           {content?.value_punto_contatto?.map((pdc, i) => {
             return (
               <div className="my-2" key={i}>
-                <h6>
+                <h5 className="h6">
                   {messages[pdc?.pdc_type] === undefined
                     ? pdc?.pdc_type
                     : intl.formatMessage(messages.label, {
                         value: intl.formatMessage(messages[pdc?.pdc_type]),
                       })}
                   <span className="ml-1">{renderPDCItemValue(pdc)}</span>
-                </h6>
+                </h5>
               </div>
             );
           })}
-        </RichTextArticle>
+        </RichTextSection>
         <IncaricoPersone content={content} />
         <RelatedItemsChipsPDC
           content={content}
