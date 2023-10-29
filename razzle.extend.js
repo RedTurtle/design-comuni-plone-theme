@@ -108,13 +108,13 @@ const modify = (webpackConfig, { target, dev }, webpackObject) => {
   const babelLoader = webpackConfig.module.rules.find(babelLoaderFinder);
   babelLoader.include.push(/node_modules\/design-react-kit/);
 
-  webpackConfig.resolve.alias = {
-    // TODO remove the next two when implemented in core
-    '@plone/volto/components/theme/Image/Image': `${__dirname}/src/components/Image/Image.jsx`,
-    '@plone/volto/helpers/Image/Image': `${__dirname}/src/components/Image/helpers.js`,
-    ...webpackConfig.resolve.alias,
-    // 'design-comuni-plone-theme': `${__dirname}/src`,
-  };
+  // webpackConfig.resolve.alias = {
+  //   // TODO remove the next two when implemented in core
+  //   '@plone/volto/components/theme/Image/Image': `${__dirname}/src/components/Image/Image.jsx`,
+  //   '@plone/volto/helpers/Image/Image': `${__dirname}/src/components/Image/helpers.js`,
+  //   ...webpackConfig.resolve.alias,
+  //   // 'design-comuni-plone-theme': `${__dirname}/src`,
+  // };
 
   // remove unused languages. (TODO: move to ENV at build time)
   // webpackConfig.plugins.push(
