@@ -1,3 +1,6 @@
+/*
+ * Blocco link completo
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { UniversalLink } from '@plone/volto/components';

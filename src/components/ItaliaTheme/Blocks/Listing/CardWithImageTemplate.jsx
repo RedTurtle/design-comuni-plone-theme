@@ -1,3 +1,6 @@
+/*
+ * componente per visulizzare un CT "Persona" nei Listing o in aclune pagine
+*/
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -102,6 +105,7 @@ const CardWithImageTemplate = (props) => {
                 className="col-item mb-3"
               >
                 {item['@type'] === 'Persona' ? (
+                  // TODO: manca un placeholder per le persone senza un'immagine
                   <CardPersona
                     item={item}
                     className="listing-item card-bg shadow-sm"
@@ -126,6 +130,8 @@ const CardWithImageTemplate = (props) => {
                         className={cx('img-responsive-wrapper', {
                           'natural-image-size': natural_image_size,
                         })}
+                        // TODO: spostare in scss ?
+                        style={{width: 'inherit'}}
                       >
                         <div className="img-responsive img-responsive-panoramic">
                           <figure className="img-wrapper">{image}</figure>

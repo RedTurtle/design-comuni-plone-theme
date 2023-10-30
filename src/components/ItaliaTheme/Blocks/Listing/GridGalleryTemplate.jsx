@@ -1,3 +1,6 @@
+/*
+ * Gallery a griglia
+ */
 import { Alert, Col, Container, Row } from 'design-react-kit';
 import {
   ListingImage,
