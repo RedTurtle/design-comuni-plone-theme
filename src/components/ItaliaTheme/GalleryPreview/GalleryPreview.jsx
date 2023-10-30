@@ -95,7 +95,7 @@ const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
                 </Button>
               )}
               <div className="image">
-                {items[viewIndex]?.image_field && checkUrlImage ? (
+                {checkUrlImage ? (
                   <img
                     src={flattenToAppURL(checkUrlImage)}
                     loading="lazy"
