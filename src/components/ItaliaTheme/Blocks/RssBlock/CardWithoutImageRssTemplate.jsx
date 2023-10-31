@@ -56,11 +56,9 @@ const CardWithoutImageRssTemplate = ({
                 <Card noWrapper={false} tag="div" className="card-bg">
                   <CardBody tag="div">
                     <div className="category-top">
-                      {item?.categories?.length > 0 && item.categories[0]._ && (
+                      {item?.source?.length > 0 && (
                         <>
-                          <span className="category">
-                            {item.categories[0]._}
-                          </span>
+                          <span className="category">{item.source}</span>
                           <span className="mx-1">&mdash;</span>
                         </>
                       )}
