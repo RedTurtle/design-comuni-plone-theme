@@ -76,6 +76,14 @@ const CardWithImageRssTemplate = ({
                           <span className="mx-1">&mdash;</span>
                         </>
                       )}
+                      {item?.categories?.length > 0 && item.categories[0]._ && (
+                        <>
+                          <span className="category">
+                            {item.categories[0]._}
+                          </span>
+                          <span className="mx-1">&mdash;</span>
+                        </>
+                      )}
                       <span>
                         {getViewDate(item.pubDate || item.date, intl.locale)}
                       </span>{' '}
