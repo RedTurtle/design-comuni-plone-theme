@@ -30,13 +30,7 @@ const messages = defineMessages({
   },
 });
 
-/**
- * Evento view component class.
- * @function Evento
- * @params {object} Evento: object.
- * @returns {string} Markup of the component.
- */
-const Evento = ({ event, show_image }) => {
+const SubEvent = ({ event, show_image }) => {
   const intl = useIntl();
   const Image = config.getComponent({ name: 'Image' }).component;
   return event ? (
@@ -85,6 +79,11 @@ const Evento = ({ event, show_image }) => {
   ) : null;
 };
 
+SubEvent.propTypes = {
+  event: PropTypes.object.isRequired,
+  show_image: PropTypes.bool,
+};
+
 /**
  * Events view component class.
  * @function Events
@@ -112,7 +111,7 @@ const Events = ({ content, title, show_image, folder_name, isChild }) => {
       )}
       <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
         {events.map((item, i) => (
-          <Evento key={item['@id']} event={item} show_image={show_image} />
+          <SubEvent key={item['@id']} event={item} show_image={show_image} />
         ))}
       </div>
     </article>
@@ -129,7 +128,3 @@ Events.propTypes = {
   folder_name: PropTypes.string,
 };
 
-Evento.propTypes = {
-  event: PropTypes.object,
-  show_image: PropTypes.bool,
-};
