@@ -13,8 +13,6 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import React, { useRef, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-
-import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { GalleryPreview } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import PropTypes from 'prop-types';
@@ -142,12 +140,14 @@ const PhotogalleryTemplate = ({
 
   const getCaption = (item) => item.description ?? item.rights ?? null;
 
-  const figure = (image, item) => (
-    <figure className="img-wrapper volto-image responsive">
-      {image ? <>{image}</> : <img src={DefaultImageSVG} alt="" />}
-      {getCaption(item) && <figcaption>{getCaption(item)}</figcaption>}
-    </figure>
-  );
+  const figure = (image, item) => {
+    return (
+      <figure className="img-wrapper volto-image responsive">
+        {image}
+        {getCaption(item) && <figcaption>{getCaption(item)}</figcaption>}
+      </figure>
+    );
+  };
 
   return (
     <div className="photogallery">
