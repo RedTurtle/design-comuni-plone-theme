@@ -138,14 +138,11 @@ const RelatedItems = ({
                   {related.map((item, i) => (
                     <Col md={4} key={item['@id'] + i} className="mb-3">
                       <div className="card-wrapper">
-                        {/* TODO: perchè forzare 'image' e non lasciare decidere 
-                                      al componente? (preview_image o image) */}
                         <GenericCard
                           key={i}
                           index={item['@id']}
                           item={item}
                           showimage={true}
-                          image_field="image"
                           showInfos={true}
                         />
                       </div>
