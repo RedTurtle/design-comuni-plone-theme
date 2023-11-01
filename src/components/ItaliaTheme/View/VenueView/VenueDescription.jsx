@@ -33,7 +33,6 @@ const messages = defineMessages({
 
 const VenueDescription = ({ content }) => {
   const intl = useIntl();
-
   return (
     <>
       {richTextHasContent(content?.descrizione_completa) && (

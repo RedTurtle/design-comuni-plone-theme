@@ -55,9 +55,12 @@ export const VenueViewSectionsOrder = [
  * @returns {string} Markup of the component.
  */
 const VenueView = ({ content }) => {
-  let documentBody = createRef();
+  const documentBody = createRef();
   const [sideMenuElements, setSideMenuElements] = useState(null);
 
+  // TODO: Warning: Do not call Hooks inside useEffect(...), useMemo(...),
+  // or other built-in Hooks. You can only call Hooks at the top level of
+  // your React function. For more information, see https://reactjs.org/link/rules-of-hooks
   useEffect(() => {
     if (documentBody.current) {
       if (__CLIENT__) {

@@ -121,7 +121,6 @@ const Gallery = ({
   const default_width_image =
     images.length > 3 ? '200px' : `${650 / images.length}px`;
 
-  debugger;
   return !hasChildren ? null : (
     <>
       {images?.length > 0 ? (

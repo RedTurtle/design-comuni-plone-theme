@@ -127,7 +127,7 @@ const IncaricoView = (props) => {
             tag_id="ufficio"
             title={intl.formatMessage(messages.ufficio)}
           >
-            {content.unita_organizzativa?.map((item, i) => (
+            {content.unita_organizzativa?.map((item) => (
               <OfficeCard
                 key={flattenToAppURL(item['@id'])}
                 office={item}
@@ -141,7 +141,7 @@ const IncaricoView = (props) => {
             tag_id="responsabile"
             title={intl.formatMessage(messages.responsabile)}
           >
-            {content.responsabile_struttura?.map((item, i) => (
+            {content.responsabile_struttura?.map((item) => (
               <OfficeCard
                 key={flattenToAppURL(item['@id'])}
                 office={item}

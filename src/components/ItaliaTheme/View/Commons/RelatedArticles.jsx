@@ -38,6 +38,7 @@ const RelatedArticles = ({
             office={item}
             load_data={false}
             show_contacts={false}
+            showimage={showimage}
           />
         ))}
       </div>
