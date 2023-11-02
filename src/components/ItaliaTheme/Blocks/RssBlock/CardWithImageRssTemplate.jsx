@@ -83,6 +83,11 @@ const CardWithImageRssTemplate = ({
                     <CardTitle className="big-heading" tag="h6">
                       {item.title}
                     </CardTitle>
+                    {item?.source?.length > 0 && (
+                      <div className="source-title">
+                        <span className="source">{item.source}</span>
+                      </div>
+                    )}
                   </CardBody>
                   <CardReadMore
                     iconName="it-arrow-right"

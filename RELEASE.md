@@ -36,6 +36,10 @@
 
 - Aggiornata nuova icona di Twitter
 
+### Fix
+
+- Nei template dei feed RSS ora viene mostrata la sorgente se presente.
+
 ## Versione 7.22.2 (11/10/2023)
 
 ### Fix
