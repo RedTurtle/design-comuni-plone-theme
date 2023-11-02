@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Aggiunto titolo della sorgente per i singoli card - feed RSS
+
 ## Versione 8.7.12 (27/10/2023)
 
 ### Fix
