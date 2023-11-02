@@ -68,12 +68,6 @@ const CardWithImageRssTemplate = ({
                   )}
                   <CardBody tag="div">
                     <div className="category-top">
-                      {item?.source?.length > 0 && (
-                        <>
-                          <span className="category">{item.source}</span>
-                          <span className="mx-1">&mdash;</span>
-                        </>
-                      )}
                       {item?.categories?.length > 0 && item.categories[0]._ && (
                         <>
                           <span className="category">
@@ -89,6 +83,11 @@ const CardWithImageRssTemplate = ({
                     <CardTitle className="big-heading" tag="h6">
                       {item.title}
                     </CardTitle>
+                    <div className="source-title">
+                      {item?.source?.length > 0 && (
+                        <span className="source">{item.source}</span>
+                      )}
+                    </div>
                   </CardBody>
                   <CardReadMore
                     iconName="it-arrow-right"
