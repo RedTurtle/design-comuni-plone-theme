@@ -1,3 +1,24 @@
+.rssBlock {
+  .card {
+    .card-body {
+      .source-title {
+        font-size: $card-category-size;
+        text-transform: uppercase;
+        color: $card-p-color;
+        margin-bottom: $card-category-m-bottom;
+        .source {
+          font-size: $card-category-size;
+          text-transform: uppercase;
+          color: $card-p-color;
+          margin-bottom: $card-category-m-bottom;
+          font-weight: bold;
+          letter-spacing: $card-category-l-spacing;
+        }
+      }
+    }
+  }
+}
+
 #text-body {
   .rssBlock {
     .row > * {
