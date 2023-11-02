@@ -36,6 +36,10 @@
 
 - Aggiornata nuova icona di Twitter
 
+### Fix
+
+- Aggiunto titolo della sorgente per i singoli card - feed RSS
+
 ## Versione 7.22.2 (11/10/2023)
 
 ### Fix
