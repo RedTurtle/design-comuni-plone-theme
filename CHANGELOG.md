@@ -1,5 +1,30 @@
 
 
+## [8.9.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v8.8.2...v8.9.0) (2023-11-03)
+
+
+### Features
+
+* added data-element for service-link pagination ([#387](https://github.com/RedTurtle/design-comuni-plone-theme/issues/387)) ([3ef75a5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3ef75a5f8dde74b948bbfe3e61fd58575baa7c13))
+
+
+### Bug Fixes
+
+* locales ([e6b8904](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e6b890401222739a756a77cc06958ea3b9173759))
+
+
+### Documentation
+
+* updated publiccode and release log ([2fe4539](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2fe4539ee4cf6dcc88d0dfeb9fe9c49bb972244f))
+
+## [8.8.2](https://github.com/redturtle/design-comuni-plone-theme/compare/v8.8.1...v8.8.2) (2023-11-03)
+
+
+### Maintenance
+
+* changed descrizione bando i18n id ([5bef0e8](https://github.com/redturtle/design-comuni-plone-theme/commit/5bef0e8e1ebfbf6e7254ee177817960cc829b3aa))
+* preparing release 8.8.2 ([d842e66](https://github.com/redturtle/design-comuni-plone-theme/commit/d842e66c891fd19a4eef81bea2aaaf2d33c6ead7))
+
 ## [8.8.1](https://github.com/redturtle/design-comuni-plone-theme/compare/v8.8.0...v8.8.1) (2023-11-03)
 
 

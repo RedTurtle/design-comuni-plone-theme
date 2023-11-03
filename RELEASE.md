@@ -46,6 +46,11 @@
 ### Migliorie
 
 - Migliorata l'accessibilità dei titoli dei contenuti
+## Versione 8.9.0 (03/11/2023)
+
+### Novità
+
+- Aggiunto data-element pager-link al paginatore per i blocchi Elenco per i quali viene impostata l'opzione service-link.
 
 ## Versione 8.8.1 (03/11/2023)
 
