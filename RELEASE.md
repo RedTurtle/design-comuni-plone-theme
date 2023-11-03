@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (xx/xx/xxxx)
+
+### Migliorie
+
+- Migliorata l'accessibilità dei titoli dei contenuti
+
 ## Versione 8.8.1 (03/11/2023)
 
 ### Fix
