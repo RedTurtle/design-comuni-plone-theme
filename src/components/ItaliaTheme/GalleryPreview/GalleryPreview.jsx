@@ -3,7 +3,6 @@ import { defineMessages, useIntl } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
 import PropTypes from 'prop-types';
-
 import { Modal, ModalBody, Button, ModalHeader } from 'design-react-kit';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
@@ -33,6 +32,16 @@ const messages = defineMessages({
 const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
   const intl = useIntl();
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const image = items[viewIndex];
+
+  let checkUrlImage = image.image_field
+    ? image.image_scales?.[image.image_field]?.[0]?.scales?.larger?.download
+    : image?.image?.scales?.larger?.download ||
+      image?.image_scales?.image[0]?.scales?.larger?.download;
+
+  if (checkUrlImage?.startsWith('@@')) {
+    checkUrlImage = image['@id'] + '/' + checkUrlImage;
+  }
 
   const closeModal = () => {
     setViewIndex(null);
@@ -69,12 +78,10 @@ const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
             closeAriaLabel={intl.formatMessage(messages.close_preview)}
             toggle={closeModal}
           >
-            {items[viewIndex].title}
+            {image.title}
           </ModalHeader>
           <ModalBody>
-            {items[viewIndex].description && (
-              <p className="pb-3">{items[viewIndex].description}</p>
-            )}
+            {image.description && <p className="pb-3">{image.description}</p>}
             <div className="item-preview">
               {items.length > 1 && (
                 <Button
@@ -92,13 +99,11 @@ const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
                 </Button>
               )}
               <div className="image">
-                {items[viewIndex].image ? (
+                {checkUrlImage ? (
                   <img
-                    src={flattenToAppURL(
-                      items[viewIndex].image.scales.larger.download,
-                    )}
+                    src={flattenToAppURL(checkUrlImage)}
                     loading="lazy"
-                    alt={items[viewIndex].title}
+                    alt={image.title}
                   />
                 ) : (
                   <img src={DefaultImageSVG} alt="" />
