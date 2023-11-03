@@ -81,7 +81,10 @@ const Item = ({ day, path, query, inEditMode, data }) => {
             const eventHasImage = Object.keys(item.image_scales).length > 0;
             const item_start = new Date(item.start);
             const item_start_time = item_start
-              ? `${item_start.getHours()}:${item_start.getMinutes()}`
+              ? `${item_start.getHours()}:${item_start
+                  .getMinutes()
+                  .toString()
+                  .padStart(2, '0')}`
               : null;
 
             return (
