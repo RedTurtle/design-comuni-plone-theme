@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import { BandoStatus } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+
 /**
  * PageHeaderBando view component class.
  * @function PageHeaderBando
@@ -64,7 +66,7 @@ const PageHeaderBando = ({ content }) => {
                 size=""
               />
               {intl.formatMessage(messages.bando)}{' '}
-              {intl.formatMessage(messages[content.bando_state[0]])}
+              <BandoStatus content={content} />
             </div>
           </div>
         </div>
