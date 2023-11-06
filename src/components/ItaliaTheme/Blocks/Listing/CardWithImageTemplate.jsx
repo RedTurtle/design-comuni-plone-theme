@@ -105,7 +105,6 @@ const CardWithImageTemplate = (props) => {
                 className="col-item mb-3"
               >
                 {item['@type'] === 'Persona' ? (
-                  // TODO: manca un placeholder per le persone senza un'immagine
                   <CardPersona
                     item={item}
                     className="listing-item card-bg shadow-sm"
