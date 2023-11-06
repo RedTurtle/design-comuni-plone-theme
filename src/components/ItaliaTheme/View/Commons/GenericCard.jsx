@@ -72,10 +72,10 @@ const GenericCard = ({
         </div>
         <div className="card-body px-4">
           {infos}
-          <h5 className="card-title">
+          <div className="card-title h5">
             {show_icon && <Icon icon={show_icon} padding={false} />}
             <UniversalLink item={item}>{item.title}</UniversalLink>
-          </h5>
+          </div>
           {(showDescription || children) && (
             <div className="card-text">
               {item.description} {children}
@@ -92,10 +92,10 @@ const GenericCard = ({
       >
         <div className="card-body">
           {infos}
-          <h5 className="card-title">
+          <div className="card-title h5">
             {show_icon && <Icon icon={show_icon} padding={false} />}
             <UniversalLink item={item}>{item.title}</UniversalLink>
-          </h5>
+          </div>
           {(showDescription || children) && (
             <div className="card-text">
               {item.description} {children}

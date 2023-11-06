@@ -29,10 +29,10 @@ const Location = ({ location, show_icon }) => {
   const image = Image({ item: location, loading: 'lazy', sizes: '80px' });
   return (
     location && (
-      <div className="card card-teaser shadow mt-3 rounded">
+      <div className="card card-teaser shadow border-left-card mt-3 rounded">
         {show_icon && <Icon icon={'it-pin'} />}
         <div className="card-body">
-          <h5 className="card-title">{location.title}</h5>
+          <h5 className="card-title h5">{location.title}</h5>
           <div className="card-text">
             {(location.street || location.zip_code) && (
               <p>
