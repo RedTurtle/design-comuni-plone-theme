@@ -1,11 +1,16 @@
 /* --- Commons --- */
-export RichTextArticle from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/RichTextArticle';
 export RichTextSection from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/RichTextSection';
 export RichText from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/RichText';
 export {
   RichTextRender,
   richTextHasContent,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/RichTextRender';
+export {
+  useSideMenu,
+  useReadingTime,
+  readingTime,
+  getHTMLString,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/View/ViewUtils';
 
 export RenderBlocks from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/RenderBlocks';
 export RelatedNewsArticles from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/RelatedNewsArticles';

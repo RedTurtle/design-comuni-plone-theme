@@ -149,6 +149,7 @@ msgid "Content in evidence"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/SideMenu
+#: components/ItaliaTheme/View/Commons/SideMenuByTitles
 # defaultMessage: Contenuto
 msgid "Contenuto"
 msgstr "Content"
@@ -1580,13 +1581,17 @@ msgstr "Delegations"
 msgid "desc"
 msgstr "Quick links"
 
-#: components/ItaliaTheme/View/BandoView/BandoText
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 #: components/ItaliaTheme/View/VenueView/VenueDescription
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: Descrizione
 msgid "descrizione"
+msgstr "Description"
+
+#: components/ItaliaTheme/View/BandoView/BandoText
+# defaultMessage: Descrizione
+msgid "descrizione_bando"
 msgstr "Description"
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
@@ -2195,6 +2200,7 @@ msgid "incarico"
 msgstr "assignment"
 
 #: components/ItaliaTheme/View/Commons/SideMenu
+#: components/ItaliaTheme/View/Commons/SideMenuByTitles
 # defaultMessage: Indice della pagina
 msgid "index"
 msgstr "Page index"

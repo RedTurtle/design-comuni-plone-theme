@@ -1,6 +1,6 @@
-/* ************
-Costruisce il sidemenu in base alle sections strutturate nella parte destra del contenuto
-**************/
+/* ****************
+Costuisce il SideMenu utilizzando tutti gli h2 che trova nella parte di destra del contenuto.
+******************/
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-expressions */
@@ -20,10 +20,6 @@ const messages = defineMessages({
     id: 'index',
     defaultMessage: 'Indice della pagina',
   },
-  contenuto: {
-    id: 'Contenuto',
-    defaultMessage: 'Contenuto',
-  },
 });
 
 const extractHeaders = (elements, intl) => {
@@ -33,13 +29,15 @@ const extractHeaders = (elements, intl) => {
     item = elements[index];
 
     if (item.id === 'text-body') {
-      headers.push({
-        id: item.id,
-        title:
-          item.getAttribute('menu_title') ||
-          intl.formatMessage(messages.contenuto),
-        item: item,
-      });
+      const h = item.getElementsByTagName('h2');
+
+      for (var hi = 0; hi < h.length; hi++) {
+        headers.push({
+          id: h[hi].id,
+          title: h[hi].innerText,
+          item: h[hi],
+        });
+      }
     } else {
       let item_header = item.querySelector('#header-' + item.id);
       if (item_header) {
@@ -55,12 +53,12 @@ const extractHeaders = (elements, intl) => {
 };
 
 /**
- * SideMenu view component class.
- * @function SideMenu
+ * SideMenuByTitles view component class.
+ * @function SideMenuByTitles
  * @params {object} content: Content object.
  * @returns {string} Markup of the component.
  */
-const SideMenu = ({ data, content_uid }) => {
+const SideMenuByTitles = ({ data, content_uid, index_title }) => {
   const intl = useIntl();
 
   const [headers, setHeaders] = useState([]);
@@ -94,6 +92,8 @@ const SideMenu = ({ data, content_uid }) => {
         headers[0],
       );
       setActiveSection(section.id);
+    } else {
+      setActiveSection(null); //di default nessun header è selezionato.
     }
   }, [headers, activeSection]);
 
@@ -103,7 +103,7 @@ const SideMenu = ({ data, content_uid }) => {
 
       if (extractedHeaders.length > 0) {
         setHeaders(extractedHeaders);
-        setActiveSection(extractedHeaders[0].id);
+        // setActiveSection(extractedHeaders[0].id); //di default nessun header è selezionato.
       }
     }
   }, [data, content_uid]);
@@ -162,7 +162,7 @@ const SideMenu = ({ data, content_uid }) => {
                     setIsNavOpen(!isNavOpen);
                   }}
                 >
-                  <h3>{intl.formatMessage(messages.index)}</h3>
+                  <h3>{index_title ?? intl.formatMessage(messages.index)}</h3>
                 </AccordionHeader>
                 <div className="mb-3">
                   <Progress
@@ -205,4 +205,4 @@ const SideMenu = ({ data, content_uid }) => {
     </div>
   ) : null;
 };
-export default SideMenu;
+export default SideMenuByTitles;
