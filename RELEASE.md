@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Novità
+
+- Aggiunto data-element pager-link al paginatore per il blocco Cerca per i quali viene impostata l'opzione service-link.
+
 ## Versione 9.0.1 (03/11/2023)
 
 ### Migliorie
@@ -51,13 +57,9 @@
 
 ### Novità
 
-- Aggiunto data-element pager-link al paginatore per i blocchi Elenco e per il blocco Search per i quali viene impostata l'opzione service-link.
+- Aggiunto data-element pager-link al paginatore per i blocchi Elenco per i quali viene impostata l'opzione service-link.
 
 ## Versione 8.8.1 (03/11/2023)
-
-### Novità
-
-- Aggiunto data-element al paginatore per validatore AGID per i blocchi Elenco per i quali viene impostata l'opzione service-link.
 
 ### Fix
 
