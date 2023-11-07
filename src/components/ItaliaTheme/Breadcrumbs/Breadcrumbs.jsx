@@ -7,6 +7,9 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
+import { matchPath } from 'react-router';
+
+import { useLocation } from 'react-router-dom';
 import { isEqual } from 'lodash';
 import { getBreadcrumbs } from '@plone/volto/actions';
 import { getBaseUrl, flattenToAppURL } from '@plone/volto/helpers';
@@ -14,6 +17,7 @@ import { getBaseUrl, flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { Row, Col, BreadcrumbItem } from 'design-react-kit';
 import GoogleBreadcrumbs from 'design-comuni-plone-theme/components/ItaliaTheme/Breadcrumbs/GoogleBreadcrumbs';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   home: {
@@ -25,6 +29,7 @@ const messages = defineMessages({
 const Breadcrumbs = ({ pathname }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
+  const location = useLocation();
 
   let items = useSelector((state) => state.breadcrumbs.items, isEqual);
   const subsite = useSelector((state) => state.subsite?.data);
@@ -41,6 +46,34 @@ const Breadcrumbs = ({ pathname }) => {
       items[0].url === flattenToAppURL(subsite['@id'])
     ) {
       items = [];
+    }
+  }
+
+  //Gestione delle rotte statiche. Se definito nel config della rotta un breadcrumbs_title, lo aggiungo alle breadcrumbs
+  const breadcrumbs_routes = config.addonRoutes.filter((route) => {
+    const paths = typeof route.path === 'string' ? [route.path] : route.path;
+    return (
+      paths.filter(
+        (p) =>
+          matchPath(location.pathname, p) != null ||
+          matchPath(location.pathname, p.replace('**/', '')) != null,
+      ).length > 0
+    );
+  });
+
+  if (breadcrumbs_routes.length > 0) {
+    const route = breadcrumbs_routes[0];
+    if (items === null) {
+      items = [];
+    }
+    if (
+      (items.length > 0 && items[items.length - 1].url !== location.pathname) ||
+      items.length == 0
+    ) {
+      items.push({
+        url: location.pathname,
+        title: intl.formatMessage(route.breadcrumbs_title),
+      });
     }
   }
 

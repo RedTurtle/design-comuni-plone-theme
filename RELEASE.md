@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Fix
+
+- Aggiunte le breadcrumbs nella pagina dei risultati della ricerca
+
 ## Versione 10.2.0 (06/11/2023)
 
 ### Novità
