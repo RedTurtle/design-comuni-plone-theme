@@ -57,7 +57,7 @@ const Breadcrumbs = ({ pathname }) => {
         (p) =>
           matchPath(location.pathname, p) != null ||
           matchPath(location.pathname, p.replace('**/', '')) != null,
-      ).length > 0
+      ).length > 0 && route.breadcrumbs_title != null
     );
   });
 
@@ -76,6 +76,7 @@ const Breadcrumbs = ({ pathname }) => {
       });
     }
   }
+  /** fine della gestione delle rotte statiche */
 
   return items?.length > 0 ? (
     <>
