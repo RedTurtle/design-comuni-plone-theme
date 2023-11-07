@@ -997,9 +997,8 @@ msgstr "Sfondo del blocco"
 msgid "bandi_search_no_filters"
 msgstr "Nessun filtro da mostrare. Seleziona i filtri di ricerca da mostrare dalla sidebar laterale."
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
-# defaultMessage: Scaduto
+#: components/ItaliaTheme/View/Commons/BandoStatus
+# defaultMessage: scaduto
 msgid "bando_closed"
 msgstr "Scaduto"
 
@@ -1024,15 +1023,13 @@ msgstr "Data di pubblicazione"
 msgid "bando_ente"
 msgstr "Ente erogatore"
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
-# defaultMessage: In corso
+#: components/ItaliaTheme/View/Commons/BandoStatus
+# defaultMessage: in corso
 msgid "bando_inProgress"
 msgstr "In corso"
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
-# defaultMessage: Attivo
+#: components/ItaliaTheme/View/Commons/BandoStatus
+# defaultMessage: attivo
 msgid "bando_open"
 msgstr "Attivo"
 
@@ -1041,9 +1038,8 @@ msgstr "Attivo"
 msgid "bando_scadenza"
 msgstr "Scadenza partecipazione"
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
-# defaultMessage: Programmato
+#: components/ItaliaTheme/View/Commons/BandoStatus
+# defaultMessage: programmato
 msgid "bando_scheduled"
 msgstr "Programmato"
 

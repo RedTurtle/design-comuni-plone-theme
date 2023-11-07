@@ -1012,9 +1012,8 @@ msgstr ""
 msgid "bandi_search_no_filters"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
-# defaultMessage: Scaduto
+#: components/ItaliaTheme/View/Commons/BandoStatus
+# defaultMessage: scaduto
 msgid "bando_closed"
 msgstr ""
 
@@ -1039,15 +1038,13 @@ msgstr ""
 msgid "bando_ente"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
-# defaultMessage: In corso
+#: components/ItaliaTheme/View/Commons/BandoStatus
+# defaultMessage: in corso
 msgid "bando_inProgress"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
-# defaultMessage: Attivo
+#: components/ItaliaTheme/View/Commons/BandoStatus
+# defaultMessage: attivo
 msgid "bando_open"
 msgstr ""
 
@@ -1056,9 +1053,8 @@ msgstr ""
 msgid "bando_scadenza"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
-# defaultMessage: Programmato
+#: components/ItaliaTheme/View/Commons/BandoStatus
+# defaultMessage: programmato
 msgid "bando_scheduled"
 msgstr ""
 
