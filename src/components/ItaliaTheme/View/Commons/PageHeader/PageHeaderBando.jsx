@@ -19,22 +19,6 @@ const messages = defineMessages({
     id: 'Bando',
     defaultMessage: 'Bando',
   },
-  open: {
-    id: 'bando_open',
-    defaultMessage: 'attivo',
-  },
-  closed: {
-    id: 'bando_closed',
-    defaultMessage: 'scaduto',
-  },
-  inProgress: {
-    id: 'bando_inProgress',
-    defaultMessage: 'in corso',
-  },
-  scheduled: {
-    id: 'bando_scheduled',
-    defaultMessage: 'programmato',
-  },
 });
 
 const PageHeaderBando = ({ content }) => {
