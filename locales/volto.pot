@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-11-06T11:52:47.601Z\n"
+"POT-Creation-Date: 2023-11-07T11:52:13.071Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1009,7 +1009,7 @@ msgstr ""
 msgid "bando_data_pubblicazione"
 msgstr ""
 
-#: components/ItaliaTheme/View/BandoView/BandoText
+#: components/ItaliaTheme/View/BandoView/BandoTextDestinatari
 # defaultMessage: Destinatari del bando
 msgid "bando_destinatari"
 msgstr ""
@@ -1020,7 +1020,7 @@ msgid "bando_effective"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/BandoView/BandoText
+#: components/ItaliaTheme/View/BandoView/BandoTextEnte
 # defaultMessage: Ente
 msgid "bando_ente"
 msgstr ""
@@ -3740,7 +3740,7 @@ msgstr ""
 msgid "timeline_tempi_scadenze_validation_error"
 msgstr ""
 
-#: components/ItaliaTheme/View/BandoView/BandoText
+#: components/ItaliaTheme/View/BandoView/BandoTextTipologia
 # defaultMessage: Tipologia del bando
 msgid "tipologia_bando"
 msgstr ""

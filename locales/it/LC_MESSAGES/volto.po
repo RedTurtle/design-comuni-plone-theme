@@ -1007,7 +1007,7 @@ msgstr "Scaduto"
 msgid "bando_data_pubblicazione"
 msgstr "Pubblicato il"
 
-#: components/ItaliaTheme/View/BandoView/BandoText
+#: components/ItaliaTheme/View/BandoView/BandoTextDestinatari
 # defaultMessage: Destinatari del bando
 msgid "bando_destinatari"
 msgstr "Destinatari del bando"
@@ -1018,7 +1018,7 @@ msgid "bando_effective"
 msgstr "Data di pubblicazione"
 
 #: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/BandoView/BandoText
+#: components/ItaliaTheme/View/BandoView/BandoTextEnte
 # defaultMessage: Ente
 msgid "bando_ente"
 msgstr "Ente erogatore"
@@ -3738,7 +3738,7 @@ msgstr "Inserisci un valore"
 msgid "timeline_tempi_scadenze_validation_error"
 msgstr ""
 
-#: components/ItaliaTheme/View/BandoView/BandoText
+#: components/ItaliaTheme/View/BandoView/BandoTextTipologia
 # defaultMessage: Tipologia del bando
 msgid "tipologia_bando"
 msgstr "Tipologia del bando"
