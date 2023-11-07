@@ -1014,7 +1014,7 @@ msgid "bandi_search_no_filters"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/BandoStatus
-# defaultMessage: scaduto
+# defaultMessage: Scaduto
 msgid "bando_closed"
 msgstr "Expiré"
 
@@ -1040,12 +1040,12 @@ msgid "bando_ente"
 msgstr "Autorité fournisseur"
 
 #: components/ItaliaTheme/View/Commons/BandoStatus
-# defaultMessage: in corso
+# defaultMessage: In corso
 msgid "bando_inProgress"
 msgstr "En cours"
 
 #: components/ItaliaTheme/View/Commons/BandoStatus
-# defaultMessage: attivo
+# defaultMessage: Attivo
 msgid "bando_open"
 msgstr "Actif"
 
@@ -1055,7 +1055,7 @@ msgid "bando_scadenza"
 msgstr "Date d'expiration"
 
 #: components/ItaliaTheme/View/Commons/BandoStatus
-# defaultMessage: programmato
+# defaultMessage: Programmato
 msgid "bando_scheduled"
 msgstr ""
 

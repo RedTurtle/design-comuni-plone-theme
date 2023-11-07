@@ -9,19 +9,19 @@ import { defineMessages, useIntl } from 'react-intl';
 const messages = defineMessages({
   open: {
     id: 'bando_open',
-    defaultMessage: 'attivo',
+    defaultMessage: 'Attivo',
   },
   closed: {
     id: 'bando_closed',
-    defaultMessage: 'scaduto',
+    defaultMessage: 'Scaduto',
   },
   inProgress: {
     id: 'bando_inProgress',
-    defaultMessage: 'in corso',
+    defaultMessage: 'In corso',
   },
   scheduled: {
     id: 'bando_scheduled',
-    defaultMessage: 'programmato',
+    defaultMessage: 'Programmato',
   },
 });
 

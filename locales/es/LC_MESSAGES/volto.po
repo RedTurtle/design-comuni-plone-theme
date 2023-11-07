@@ -1006,7 +1006,7 @@ msgid "bandi_search_no_filters"
 msgstr "No hay filtros para mostrar. Seleccione yo filtros de búsqueda para mostrar desde la barra lateral."
 
 #: components/ItaliaTheme/View/Commons/BandoStatus
-# defaultMessage: scaduto
+# defaultMessage: Scaduto
 msgid "bando_closed"
 msgstr "Expirado"
 
@@ -1032,12 +1032,12 @@ msgid "bando_ente"
 msgstr "Autoridad proveedora"
 
 #: components/ItaliaTheme/View/Commons/BandoStatus
-# defaultMessage: in corso
+# defaultMessage: In corso
 msgid "bando_inProgress"
 msgstr "En progreso"
 
 #: components/ItaliaTheme/View/Commons/BandoStatus
-# defaultMessage: attivo
+# defaultMessage: Attivo
 msgid "bando_open"
 msgstr "Activar"
 
@@ -1047,7 +1047,7 @@ msgid "bando_scadenza"
 msgstr "Fecha de expiración:"
 
 #: components/ItaliaTheme/View/Commons/BandoStatus
-# defaultMessage: programmato
+# defaultMessage: Programmato
 msgid "bando_scheduled"
 msgstr "Programado"
 
