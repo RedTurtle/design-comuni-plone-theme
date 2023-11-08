@@ -38,7 +38,7 @@ const SmallBlockLinksTemplate = ({
         )}
         <Row className="items">
           {items.map((item, index) => {
-            const image = ListingImage({ item, maxSize: 200, style: {} });
+            const image = ListingImage({ item, sizes: '200px', style: {} });
 
             return (
               <Col
