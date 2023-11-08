@@ -48,6 +48,17 @@ BandoText.propTypes = {
     text: PropTypes.shape({
       data: PropTypes.string,
     }),
+    tipologia_bando: PropTypes.shape({
+      title: PropTypes.string,
+      token: PropTypes.string,
+    }),
+    ente_bando: PropTypes.arrayOf(PropTypes.string),
+    destinatari: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        token: PropTypes.string,
+      }),
+    ),
   }).isRequired,
 };
 export default BandoText;
