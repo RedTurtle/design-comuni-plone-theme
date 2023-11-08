@@ -50,8 +50,8 @@ const GenericCard = ({
       )}
     </>
   );
-  const cooked_image_field =
-    image_field || (item.preview_image ? 'preview_image' : 'image');
+  const cooked_image_field = image_field || item.image_field;
+  // (item.preview_image ? 'preview_image' : 'image');
   const image =
     showimage &&
     item &&

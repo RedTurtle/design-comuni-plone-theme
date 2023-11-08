@@ -2,12 +2,10 @@
  * Component used to display a location item (luoghi_correlati)
  * in VenueDescription, subcomponents of VenueView (luogo)
  */
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 import PropTypes from 'prop-types';
-import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';

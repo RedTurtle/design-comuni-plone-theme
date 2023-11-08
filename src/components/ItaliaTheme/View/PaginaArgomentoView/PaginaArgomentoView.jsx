@@ -136,11 +136,6 @@ const PaginaArgomentoView = ({ content }) => {
                                 <div className="image-container me-3">
                                   <Image
                                     item={uo_object}
-                                    imageField={
-                                      uo_object.preview_image
-                                        ? 'preview_image'
-                                        : 'image'
-                                    }
                                     alt=""
                                     title={alt}
                                     responsive={false}

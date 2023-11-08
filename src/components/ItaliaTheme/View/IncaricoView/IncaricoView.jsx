@@ -128,11 +128,7 @@ const IncaricoView = (props) => {
             title={intl.formatMessage(messages.ufficio)}
           >
             {content.unita_organizzativa?.map((item) => (
-              <OfficeCard
-                key={flattenToAppURL(item['@id'])}
-                office={item}
-                load_data={false}
-              />
+              <OfficeCard key={flattenToAppURL(item['@id'])} office={item} />
             ))}
           </RichTextSection>
         )}
@@ -142,11 +138,7 @@ const IncaricoView = (props) => {
             title={intl.formatMessage(messages.responsabile)}
           >
             {content.responsabile_struttura?.map((item) => (
-              <OfficeCard
-                key={flattenToAppURL(item['@id'])}
-                office={item}
-                load_data={false}
-              />
+              <OfficeCard key={flattenToAppURL(item['@id'])} office={item} />
             ))}
           </RichTextSection>
         )}

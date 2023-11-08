@@ -34,9 +34,9 @@ const Sponsor = ({ item }) => {
     });
   return item ? (
     <div className="sponsor-item">
-      <a href={item.remoteUrl} alt="" target="_blank" rel="noopener noreferrer">
+      <UniversalLink href={item.remoteUrl}>
         {image ? image : item.title}
-      </a>
+      </UniversalLink>
     </div>
   ) : null;
 };

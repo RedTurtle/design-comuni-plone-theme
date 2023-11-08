@@ -13,7 +13,6 @@ import config from '@plone/volto/registry';
  */
 const OfficeCard = ({
   office,
-  load_data = true,
   icon,
   children,
   margin_bottom = false,

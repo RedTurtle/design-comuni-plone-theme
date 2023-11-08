@@ -32,7 +32,7 @@ const Location = ({ location, show_icon }) => {
       <div className="card card-teaser shadow border-left-card mt-3 rounded">
         {show_icon && <Icon icon={'it-pin'} />}
         <div className="card-body">
-          <h5 className="card-title h5">{location.title}</h5>
+          <div className="card-title h5">{location.title}</div>
           <div className="card-text">
             {(location.street || location.zip_code) && (
               <p>
