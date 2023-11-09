@@ -18,11 +18,7 @@ import cx from 'classnames';
 const messages = defineMessages({
   index: {
     id: 'index',
-    defaultMessage: 'Indice',
-  },
-  contenuto: {
-    id: 'Contenuto',
-    defaultMessage: 'Contenuto',
+    defaultMessage: 'Indice della pagina',
   },
 });
 
@@ -32,33 +28,14 @@ const extractHeaders = (elements, intl) => {
   for (var index = 0; index < elements.length; index++) {
     item = elements[index];
 
-    if (item.id === 'text-body') {
+    const h = item.getElementsByTagName('h2');
+
+    for (var hi = 0; hi < h.length; hi++) {
       headers.push({
-        id: item.id,
-        title:
-          item.getAttribute('menu_title') ||
-          intl.formatMessage(messages.contenuto),
-        item: item,
+        id: h[hi].id,
+        title: h[hi].innerText,
+        item: h[hi],
       });
-
-      const h = item.getElementsByTagName('h2');
-
-      for (var hi = 0; hi < h.length; hi++) {
-        headers.push({
-          id: h[hi].id,
-          title: h[hi].innerText,
-          item: h[hi],
-        });
-      }
-    } else {
-      let item_header = item.querySelector('#header-' + item.id);
-      if (item_header) {
-        headers.push({
-          id: item.id,
-          title: item_header.textContent,
-          item: item,
-        });
-      }
     }
   }
   return headers;
@@ -70,7 +47,7 @@ const extractHeaders = (elements, intl) => {
  * @params {object} content: Content object.
  * @returns {string} Markup of the component.
  */
-const SideMenuByTitles = ({ data, content_uid }) => {
+const SideMenuByTitles = ({ data, content_uid, index_title }) => {
   const intl = useIntl();
 
   const [headers, setHeaders] = useState([]);
@@ -174,7 +151,7 @@ const SideMenuByTitles = ({ data, content_uid }) => {
                     setIsNavOpen(!isNavOpen);
                   }}
                 >
-                  <h3>{intl.formatMessage(messages.index)}</h3>
+                  <h3>{index_title ?? intl.formatMessage(messages.index)}</h3>
                 </AccordionHeader>
                 <div className="mb-3">
                   <Progress

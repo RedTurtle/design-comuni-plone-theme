@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-11-03T10:53:24.029Z\n"
+"POT-Creation-Date: 2023-11-07T09:01:50.705Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -998,8 +998,7 @@ msgstr ""
 msgid "bandi_search_no_filters"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
+#: components/ItaliaTheme/View/Commons/BandoStatus
 # defaultMessage: Scaduto
 msgid "bando_closed"
 msgstr ""
@@ -1025,14 +1024,12 @@ msgstr ""
 msgid "bando_ente"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
+#: components/ItaliaTheme/View/Commons/BandoStatus
 # defaultMessage: In corso
 msgid "bando_inProgress"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
+#: components/ItaliaTheme/View/Commons/BandoStatus
 # defaultMessage: Attivo
 msgid "bando_open"
 msgstr ""
@@ -1042,8 +1039,7 @@ msgstr ""
 msgid "bando_scadenza"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderBando
+#: components/ItaliaTheme/View/Commons/BandoStatus
 # defaultMessage: Programmato
 msgid "bando_scheduled"
 msgstr ""
@@ -1248,11 +1244,6 @@ msgstr ""
 #: components/ItaliaTheme/View/VenueView/VenueContacts
 # defaultMessage: Contatti
 msgid "contatti"
-msgstr ""
-
-#: components/ItaliaTheme/View/EventoView/EventoContatti
-# defaultMessage: Contatti interni
-msgid "contatti_interni"
 msgstr ""
 
 #: components/ItaliaTheme/View/ServizioView/ServizioAChiSiRivolge
@@ -2201,6 +2192,7 @@ msgid "incarico"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/SideMenu
+#: components/ItaliaTheme/View/Commons/SideMenuByTitles
 # defaultMessage: Indice della pagina
 msgid "index"
 msgstr ""
@@ -2598,7 +2590,7 @@ msgstr ""
 msgid "order_by"
 msgstr ""
 
-#: components/ItaliaTheme/View/EventoView/EventoContatti
+#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreInterno
 # defaultMessage: Organizzato da
 msgid "organizzato_da"
 msgstr ""
@@ -3685,7 +3677,7 @@ msgstr ""
 msgid "successivo"
 msgstr ""
 
-#: components/ItaliaTheme/View/EventoView/EventoContatti
+#: components/ItaliaTheme/View/EventoView/EventoContattiSupportatoDa
 # defaultMessage: Con il supporto di
 msgid "supported_by"
 msgstr ""

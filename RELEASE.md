@@ -41,6 +41,18 @@
 - ...
 -->
 
+## Versione 10.3.0 (08/11/2023)
+
+### Fix
+
+- Sistemata la visualizzazione della tipologia del bando nel template del blocco elenco 'Bandi'
+
+## Versione 10.2.0 (06/11/2023)
+
+### Novità
+
+- Aggiunto data-element pager-link al paginatore per il blocco Cerca per i quali viene impostata l'opzione service-link.
+
 ## Versione 9.0.1 (03/11/2023)
 
 ### Migliorie
