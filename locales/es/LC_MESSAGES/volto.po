@@ -80,6 +80,7 @@ msgstr "Ver"
 msgid "CardImageRight"
 msgstr "Alinear imagen a la derecha"
 
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
 # defaultMessage: Dimensione immagine
 msgid "CardImageSize"
@@ -126,21 +127,6 @@ msgstr "Haga clic aquí para reemplazar el archivo"
 # defaultMessage: Colore
 msgid "Color"
 msgstr "Color"
-
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Rosso
-msgid "Color_danger"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Giallo
-msgid "Color_warning"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Arancione
-msgid "Color_warning_orange"
-msgstr ""
 
 #: components/ItaliaTheme/View/EventoView/EventoContatti
 # defaultMessage: Contatti
@@ -1015,7 +1001,7 @@ msgstr "Expirado"
 msgid "bando_data_pubblicazione"
 msgstr "Fecha de publicación"
 
-#: components/ItaliaTheme/View/BandoView/BandoText
+#: components/ItaliaTheme/View/BandoView/BandoTextDestinatari
 # defaultMessage: Destinatari del bando
 msgid "bando_destinatari"
 msgstr "Destinatarios del anuncio de concurso"
@@ -1026,7 +1012,7 @@ msgid "bando_effective"
 msgstr "Fecha de publicación"
 
 #: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/View/BandoView/BandoText
+#: components/ItaliaTheme/View/BandoView/BandoTextEnte
 # defaultMessage: Ente
 msgid "bando_ente"
 msgstr "Autoridad proveedora"
@@ -1211,6 +1197,16 @@ msgstr "Cerrar búsqueda"
 msgid "codice_ipa"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Rosso
+msgid "color_danger"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Arancione
+msgid "color_orange"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
 # defaultMessage: Primario
@@ -1221,6 +1217,11 @@ msgstr "Primario"
 # defaultMessage: Trasparente
 msgid "color_transparent"
 msgstr "Transparente"
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Giallo
+msgid "color_warning"
+msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
@@ -3743,7 +3744,7 @@ msgstr "Insertar un valor"
 msgid "timeline_tempi_scadenze_validation_error"
 msgstr ""
 
-#: components/ItaliaTheme/View/BandoView/BandoText
+#: components/ItaliaTheme/View/BandoView/BandoTextTipologia
 # defaultMessage: Tipologia del bando
 msgid "tipologia_bando"
 msgstr "Tipo de llamada"
