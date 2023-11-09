@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-11-06T11:52:47.601Z\n"
+"POT-Creation-Date: 2023-11-09T11:08:24.442Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -3106,6 +3106,11 @@ msgstr ""
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Filtri avanzati
 msgid "search_adv_filters"
+msgstr ""
+
+#: config/italiaConfig
+# defaultMessage: Ricerca
+msgid "search_brdc"
 msgstr ""
 
 #: components/ItaliaTheme/Search/Search
