@@ -41,11 +41,18 @@
 - ...
 -->
 
-## Versione x.x.x (xx/xx/xxxx)
+## Versione X.X.X (dd/mm/yyyy)
+
+### Novità
+
+- Aggiunta la possibilità di selezionare la dimensione dell'immagine nel blocco Alert, inoltre è stato aggiornato anche il widget per la selezione del colore di sfondo.
+- Aggiunte le breadcrumbs nella pagina dei risultati della ricerca
+
+## Versione 10.3.0 (08/11/2023)
 
 ### Fix
 
-- Aggiunte le breadcrumbs nella pagina dei risultati della ricerca
+- Sistemata la visualizzazione della tipologia del bando nel template del blocco elenco 'Bandi'
 
 ## Versione 10.2.0 (06/11/2023)
 
