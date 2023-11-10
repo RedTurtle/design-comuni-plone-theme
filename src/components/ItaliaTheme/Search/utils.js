@@ -222,6 +222,7 @@ const getSearchParamsURL = (
   if (activeSections.length > 0) {
     pathQuery = { 'path.query': activeSections };
   } else if (customPath?.length > 0) {
+    console.log('la paath query è custompath :)');
     pathQuery = { 'path.query': customPath };
   } else if (baseUrl?.length > 0) {
     pathQuery = {

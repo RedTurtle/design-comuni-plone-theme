@@ -1,9 +1,9 @@
 import { defineMessages, useIntl } from 'react-intl';
-import { useSelector } from 'react-redux';
-import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'design-react-kit';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { getSearchFilters } from 'design-comuni-plone-theme/actions';
 import { SearchUtils } from 'design-comuni-plone-theme/components';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
@@ -27,6 +27,32 @@ const messages = defineMessages({
 });
 
 const SearchSectionForm = ({ content }) => {
+  const dispatch = useDispatch();
+  const path = content['@id'];
+  const searchFilters = useSelector(
+    (state) => state?.searchFilters?.result?.sections,
+  );
+
+  useEffect(() => {
+    if (!searchFilters || Object.keys(searchFilters).length === 0)
+      dispatch(getSearchFilters());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const customPath = [];
+
+  const sections = searchFilters?.[0]?.items ?? [];
+
+  sections.forEach((section) => {
+    if (!section.items) {
+      return;
+    } else {
+      if (path === section['@id']) {
+        customPath.push(section.items.map((item) => item['@id']));
+      }
+    }
+  });
+
   const intl = useIntl();
 
   const subsite = useSelector((state) => state.subsite?.data);
@@ -44,13 +70,11 @@ const SearchSectionForm = ({ content }) => {
             {},
             null,
             null,
-            null,
+            customPath.length > 0 ? customPath : null,
             subsite,
             intl.locale,
             false,
-          ) +
-          '&custom_path=' +
-          flattenToAppURL(content['@id']);
+          );
     }
   };
   return (
