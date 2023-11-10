@@ -46,6 +46,16 @@
 ### Fix
 
 - Quando viene effettuata una ricerca dalla barra di ricerca nelle sezioni Amministrazione, Servizi, Novità, o Documenti e Dati, viene automaticamente impostato il filtro sulla sezione stessa così da mostrare solo i contenuti corrispondenti.
+### Novità
+
+- Aggiunta la possibilità di selezionare la dimensione dell'immagine nel blocco Alert, inoltre è stato aggiornato anche il widget per la selezione del colore di sfondo.
+
+## Versione 10.3.0 (08/11/2023)
+
+### Fix
+
+- Sistemata la visualizzazione della tipologia del bando nel template del blocco elenco 'Bandi'
+- Rimosso titolo della pagina nei sottositi senza nessuno stile applicato
 
 ## Versione 10.2.0 (06/11/2023)
 
