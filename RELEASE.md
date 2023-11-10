@@ -43,12 +43,13 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
-### Fix
-
-- Quando viene effettuata una ricerca dalla barra di ricerca nelle sezioni Amministrazione, Servizi, Novità, o Documenti e Dati, viene automaticamente impostato il filtro sulla sezione stessa così da mostrare solo i contenuti corrispondenti.
 ### Novità
 
 - Aggiunta la possibilità di selezionare la dimensione dell'immagine nel blocco Alert, inoltre è stato aggiornato anche il widget per la selezione del colore di sfondo.
+
+### Fix
+
+- Quando viene effettuata una ricerca dalla barra di ricerca nelle sezioni Amministrazione, Servizi, Novità, o Documenti e Dati, viene automaticamente impostato il filtro sulla sezione stessa così da mostrare solo i contenuti corrispondenti.
 
 ## Versione 10.3.0 (08/11/2023)
 
