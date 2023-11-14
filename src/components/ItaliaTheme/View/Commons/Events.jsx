@@ -1,6 +1,3 @@
-/*
- * TODO: ....
- */
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import {
@@ -122,4 +119,3 @@ Events.propTypes = {
   title: PropTypes.string,
   folder_name: PropTypes.string,
 };
-

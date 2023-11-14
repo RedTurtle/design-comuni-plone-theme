@@ -1,9 +1,5 @@
 /*
  * Page Header Component used in most of the views
- * props:
- * - content: content object
- * - imageinheader: boolean, if true, show image in header (eg. in PersonaView)
- * - imageinheader_field: string, field name of the image to show in header (eg. 'foto_persona')
  */
 import cx from 'classnames';
 import PropTypes from 'prop-types';
@@ -37,9 +33,16 @@ const messages = defineMessages({
 });
 
 /**
+ * PageHeader view component class.
+ * @function PageHeader
  * @params content {object} content object
  * @params imageinheader {boolean} if true, show image in header (eg. in PersonaView)
  * @params imageinheader_field {string} field name of the image to show in header (eg. 'foto_persona')
+ * @params readingtime {number} reading time in minutes
+ * @params showreadingtime {boolean} show or hide reading time
+ * @params showdates {boolean} show or hide dates in header
+ * @params showtassonomiaargomenti {boolean} show or hide argomenti in header
+ * @returns {string} Markup of the component.
  */
 const PageHeader = (props) => {
   const {
