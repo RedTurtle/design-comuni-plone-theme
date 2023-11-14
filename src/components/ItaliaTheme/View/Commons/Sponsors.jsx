@@ -24,7 +24,7 @@ const messages = defineMessages({
 const Sponsor = ({ item }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   const image =
-    item &&
+    item?.image &&
     Image({
       item: item,
       sizes: '600px',
