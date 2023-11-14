@@ -49,6 +49,10 @@ class EditBlock extends SubblockEdit {
     this.state = {
       focusOn: 'title',
     };
+    this.state = {
+      ...this.state,
+      icon: '',
+    };
     this.subblock_ref = React.createRef();
   }
 
@@ -60,6 +64,19 @@ class EditBlock extends SubblockEdit {
           this.setState({ focusOn: 'text' });
         }
       }
+    });
+    this.setIconValues(this.props.data);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.data !== this.props.data) {
+      this.setIconValues(this.props.data);
+    }
+  }
+
+  setIconValues(data) {
+    this.setState({
+      icon: data.icon,
     });
   }
   /**
@@ -84,13 +101,14 @@ class EditBlock extends SubblockEdit {
         >
           <CardBody tag="div">
             <div className="iconblock-icon">
-              {this.props.data.icon?.length > 0 ? (
-                <Icon icon={this.props.data.icon} />
-              ) : (
-                <div className="icon-placeholder">
-                  {this.props.intl.formatMessage(messages.select_an_icon)}
-                </div>
-              )}
+              {this.state.icon === this.props.data.icon &&
+                (this.props.data.icon?.length > 0 ? (
+                  <Icon icon={this.props.data.icon} />
+                ) : (
+                  <div className="icon-placeholder">
+                    {this.props.intl.formatMessage(messages.select_an_icon)}
+                  </div>
+                ))}
             </div>
 
             <div className="iconblock-title">
