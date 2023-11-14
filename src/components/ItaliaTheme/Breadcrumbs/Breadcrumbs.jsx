@@ -10,7 +10,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { matchPath } from 'react-router';
 
 import { useLocation } from 'react-router-dom';
-import { isEqual } from 'lodash';
+import { isEqual, isEmpty } from 'lodash';
 import { getBreadcrumbs } from '@plone/volto/actions';
 import { getBaseUrl, flattenToAppURL } from '@plone/volto/helpers';
 
@@ -31,44 +31,46 @@ const Breadcrumbs = ({ pathname }) => {
   const dispatch = useDispatch();
   const location = useLocation();
 
-  let items = useSelector((state) => state.breadcrumbs.items, isEqual);
+  let items =
+    useSelector((state) => {
+      return state.breadcrumbs.items;
+    }, isEqual) || [];
   const subsite = useSelector((state) => state.subsite?.data);
+  const bcLoaded = useSelector((state) => {
+    return state.breadcrumbs.loaded;
+  });
 
-  useEffect(() => {
-    dispatch(getBreadcrumbs(getBaseUrl(pathname)));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
+  // Funzione per fare match di routes
+  const getMatchingRoute = (p) =>
+    matchPath(location.pathname, p) !== null ||
+    matchPath(location.pathname, p.replace('**/', '')) !== null;
 
-  if (subsite) {
-    //se siamo nella root di un sottosito, non mostriamo le breadcrumbs. Serve anche per nasconderle dalla pagina dei risultati di ricerca quando si fa la ricerca in un sottosito
-    if (
-      items.length === 1 &&
-      items[0].url === flattenToAppURL(subsite['@id'])
-    ) {
-      items = [];
-    }
-  }
+  // Funzione per riconoscere se siamo in una route statica
+  const getCurrentPathFromAddonRoutes = () =>
+    config.addonRoutes.find((route) => {
+      const paths = typeof route.path === 'string' ? [route.path] : route.path;
+      return paths.find(getMatchingRoute);
+    }) || {};
 
-  //Gestione delle rotte statiche. Se definito nel config della rotta un breadcrumbs_title, lo aggiungo alle breadcrumbs
-  const breadcrumbs_routes = config.addonRoutes.filter((route) => {
+  // Variabile per riconoscere se esistono in config route statiche con il path corrente
+  const pathIsCustomAddonRoute = config.addonRoutes.some((route) => {
     const paths = typeof route.path === 'string' ? [route.path] : route.path;
+
     return (
-      paths.filter(
-        (p) =>
-          matchPath(location.pathname, p) != null ||
-          matchPath(location.pathname, p.replace('**/', '')) != null,
-      ).length > 0 && route.breadcrumbs_title != null
+      paths.filter(getMatchingRoute).length > 0 &&
+      route.breadcrumbs_title !== null
     );
   });
 
-  if (breadcrumbs_routes.length > 0) {
-    const route = breadcrumbs_routes[0];
-    if (items === null) {
-      items = [];
-    }
+  // Gestione delle rotte statiche. Se definito nel config della rotta un breadcrumbs_title, lo aggiungo alle breadcrumbs
+  if (pathIsCustomAddonRoute) {
+    const route = getCurrentPathFromAddonRoutes();
     if (
-      (items.length > 0 && items[items.length - 1].url !== location.pathname) ||
-      items.length == 0
+      (!(items === null || isEmpty(route)) &&
+        items.length > 0 &&
+        route.breadcrumbs_title &&
+        items[items.length - 1].url !== location.pathname) ||
+      (items.length === 0 && bcLoaded)
     ) {
       items.push({
         url: location.pathname,
@@ -77,6 +79,29 @@ const Breadcrumbs = ({ pathname }) => {
     }
   }
   /** fine della gestione delle rotte statiche */
+
+  useEffect(() => {
+    let actualPathForBreadcrumbs = pathname;
+    if (pathIsCustomAddonRoute) {
+      const { path, buildFullNavTree } = getCurrentPathFromAddonRoutes();
+      if (buildFullNavTree) {
+        const replacedPath = path.replace('**/', '');
+        actualPathForBreadcrumbs = pathname.replace(replacedPath, '');
+      }
+    }
+    dispatch(getBreadcrumbs(getBaseUrl(actualPathForBreadcrumbs)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
+
+  // Se siamo nella root di un sottosito, non mostriamo le breadcrumbs. Serve anche per nasconderle dalla pagina dei risultati di ricerca quando si fa la ricerca in un sottosito
+  if (subsite) {
+    if (
+      items.length === 1 &&
+      items[0].url === flattenToAppURL(subsite['@id'])
+    ) {
+      items = [];
+    }
+  }
 
   return items?.length > 0 ? (
     <>
