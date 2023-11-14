@@ -36,6 +36,11 @@ const messages = defineMessages({
   },
 });
 
+/**
+ * @params content {object} content object
+ * @params imageinheader {boolean} if true, show image in header (eg. in PersonaView)
+ * @params imageinheader_field {string} field name of the image to show in header (eg. 'foto_persona')
+ */
 const PageHeader = (props) => {
   const {
     content,
