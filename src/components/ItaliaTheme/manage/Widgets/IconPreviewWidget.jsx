@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { defineMessages, useIntl } from 'react-intl';
@@ -14,11 +13,6 @@ const messages = defineMessages({
 const IconPreviewWidget = ({ icon, onEdit, title, description, children }) => {
   const intl = useIntl();
   const parts = icon?.split(' ') ?? [];
-  const [iconValue, setIconValue] = useState('');
-
-  useEffect(() => {
-    setIconValue(icon);
-  }, [icon]);
 
   return (
     <Form.Field inline className="help" id="icon-preview-widget-id">
@@ -32,23 +26,22 @@ const IconPreviewWidget = ({ icon, onEdit, title, description, children }) => {
           <Grid.Column width={8}>
             <div className="ui input flex-center">
               <p className="help">
-                {icon === iconValue &&
-                  (icon ? (
-                    <>
-                      {parts.length > 1 ? (
-                        <FontAwesomeIcon
-                          icon={[parts[0], parts[1]]}
-                          className="show-icon"
-                        />
-                      ) : (
-                        <FontAwesomeIcon icon={icon} className="show-icon" />
-                      )}
-                    </>
-                  ) : (
-                    <span>
-                      {intl.formatMessage(messages.previewIconSelected)}
-                    </span>
-                  ))}
+                {icon ? (
+                  <>
+                    {parts.length > 1 ? (
+                      <FontAwesomeIcon
+                        icon={[parts[0], parts[1]]}
+                        className="show-icon"
+                      />
+                    ) : (
+                      <FontAwesomeIcon icon={icon} className="show-icon" />
+                    )}
+                  </>
+                ) : (
+                  <span>
+                    {intl.formatMessage(messages.previewIconSelected)}
+                  </span>
+                )}
               </p>
             </div>
           </Grid.Column>
