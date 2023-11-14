@@ -44,8 +44,8 @@ const FontAwesomeIcon = (props) => {
   React.useEffect(() => {
     const [prefixFolder, iconName] = getIconInfo(icon, prefix);
     if (
-      iconName !== loadedIcon.iconName ||
-      prefixFolder !== loadedIcon.family
+      iconName &&
+      (iconName !== loadedIcon.iconName || prefixFolder !== loadedIcon.family)
     ) {
       import(
         `design-comuni-plone-theme/icons/fontawesome-free-6.4.0-web/svgs/${prefixFolder}/${iconName}.svg`
