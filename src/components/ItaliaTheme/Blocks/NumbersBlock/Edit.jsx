@@ -49,32 +49,6 @@ class Edit extends SubblocksEdit {
     super(props);
     this.state.selectedField = 'title';
 
-    this.state = {
-      ...this.state,
-      icon1: '',
-      icon2: '',
-      icon3: '',
-    };
-  }
-
-  componentDidMount() {
-    this.setIconValues(this.props.data);
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.data !== this.props.data) {
-      this.setIconValues(this.props.data);
-    }
-  }
-
-  setIconValues(data) {
-    this.setState({
-      icon1: data.icon1,
-      icon2: data.icon2,
-      icon3: data.icon3,
-    });
-  }
-
   /**
    * Render method.
    * @method render
@@ -115,18 +89,15 @@ class Edit extends SubblocksEdit {
                     this.props.data.icon2 ||
                     this.props.data.icon3 ? (
                       <div className="icons">
-                        {this.state.icon1?.length > 0 &&
-                          this.state.icon1 === this.props.data.icon1 && (
-                            <Icon icon={this.state.icon1} />
-                          )}
-                        {this.state.icon2?.length > 0 &&
-                          this.state.icon2 === this.props.data.icon2 && (
-                            <Icon icon={this.state.icon2} />
-                          )}
-                        {this.state.icon3?.length > 0 &&
-                          this.state.icon3 === this.props.data.icon3 && (
-                            <Icon icon={this.state.icon3} />
-                          )}
+                        {this.props.data.icon1?.length > 0 && (
+                          <Icon icon={this.props.data.icon1} />
+                        )}
+                        {this.props.data.icon2?.length > 0 && (
+                          <Icon icon={this.props.data.icon2} />
+                        )}
+                        {this.props.data.icon3?.length > 0 && (
+                          <Icon icon={this.props.data.icon3} />
+                        )}
                       </div>
                     ) : (
                       <div className="icons placeholder">
