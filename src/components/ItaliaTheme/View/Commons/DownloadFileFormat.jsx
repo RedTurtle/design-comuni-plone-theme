@@ -48,6 +48,7 @@ const DownloadFileFormat = ({
       title={file.filename}
       className={className}
       target={pdfFile ? '_blank' : '_self'}
+      rel={pdfFile ? 'noopener noreferrer' : ''}
     >
       {!icon.svg_format ? (
         <IconFA

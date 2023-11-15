@@ -20,6 +20,10 @@ const messages = defineMessages({
     id: 'Home',
     defaultMessage: 'Home',
   },
+  breadcrumb: {
+    id: 'breadcrumb',
+    defaultMessage: 'Percorso di navigazione',
+  },
 });
 
 const Breadcrumbs = ({ pathname }) => {
