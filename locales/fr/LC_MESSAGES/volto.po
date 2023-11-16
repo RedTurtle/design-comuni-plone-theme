@@ -450,6 +450,11 @@ msgstr ""
 msgid "Open in a new tab"
 msgstr ""
 
+#: components/ItaliaTheme/Pagination/PaginationItem
+# defaultMessage: Pagina
+msgid "Page"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/PathFiltersWidget
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Filtro
@@ -699,7 +704,7 @@ msgstr "Voir tout"
 msgid "VenuesSmall"
 msgstr "Lieux"
 
-#: components/ItaliaTheme/View/VenueView/VenueDescription
+#: components/ItaliaTheme/View/VenueView/VenueMultimedia
 # defaultMessage: Video
 msgid "Video"
 msgstr "Vidéo"
@@ -1079,6 +1084,11 @@ msgstr "Biographie"
 #: config/Blocks/ListingOptions/defaultOptions
 # defaultMessage: Colore di sfondo
 msgid "block_bg_color"
+msgstr ""
+
+#: components/ItaliaTheme/Breadcrumbs/Breadcrumbs
+# defaultMessage: Percorso di navigazione
+msgid "breadcrumb"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
@@ -1815,7 +1825,7 @@ msgstr ""
 msgid "edit_social_links"
 msgstr ""
 
-#: components/ItaliaTheme/View/VenueView/VenueDescription
+#: components/ItaliaTheme/View/VenueView/VenueElementiDiInteresse
 # defaultMessage: Elementi di interesse
 msgid "elementi_di_interesse"
 msgstr "Objets d'intérêt"
@@ -2371,7 +2381,7 @@ msgid "logo-subsite-alt"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC
-#: components/ItaliaTheme/View/VenueView/VenueDescription
+#: components/ItaliaTheme/View/VenueView/VenueLuoghiCorrelati
 # defaultMessage: Luoghi correlati
 msgid "luoghi_correlati"
 msgstr ""
@@ -3763,7 +3773,7 @@ msgstr "Type d'appel"
 msgid "tipologia_incarico"
 msgstr ""
 
-#: components/ItaliaTheme/View/VenueView/VenueDescription
+#: components/ItaliaTheme/View/VenueView/VenueTipologia
 # defaultMessage: Tipo di luogo
 msgid "tipologia_luogo"
 msgstr ""
