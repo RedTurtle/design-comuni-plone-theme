@@ -118,6 +118,7 @@ const CardWithImageTemplate = (props) => {
                 ) : (
                   <Card
                     className={cx('listing-item card-bg', {
+                      'card-img': showImage,
                       'card-teaser-image card-flex no-after':
                         item['@type'] === 'Persona',
                     })}

@@ -14,6 +14,12 @@
       display: inline;
     }
 
+    img.listing-image {
+      max-width: 100%;
+      height: auto;
+      object-position: center;
+    }
+
     .img-responsive-wrapper {
       width: inherit;
       .img-responsive {
