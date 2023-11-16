@@ -53,6 +53,12 @@
       fill: $gray-secondary;
     }
   }
+  &.rounded {
+    .img-responsive-wrapper {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+  }
 }
 
 a.read-more {

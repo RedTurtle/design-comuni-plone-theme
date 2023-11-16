@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import { UniversalLink } from '@plone/volto/components';
-import { getContent, resetContent } from '@plone/volto/actions';
-import { flattenToAppURL } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { getCalendarDate } from 'design-comuni-plone-theme/helpers';
 import {
@@ -50,7 +47,9 @@ const GenericCard = ({
       )}
     </>
   );
+
   const cooked_image_field = image_field || item.image_field;
+
   // (item.preview_image ? 'preview_image' : 'image');
   const image =
     showimage &&
@@ -64,7 +63,7 @@ const GenericCard = ({
 
   return item ? (
     image ? (
-      <div className={cx('genericcard card card-img shadow rounded mt-3')}>
+      <div className={cx('genericcard card shadow rounded mt-3')}>
         <div className="img-responsive-wrapper">
           <div className="img-responsive img-responsive-panoramic">
             <figure className="img-wrapper">{image}</figure>
