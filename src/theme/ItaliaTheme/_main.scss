@@ -147,7 +147,7 @@ iframe {
       margin: 0.5em 1em 0.5em 0;
       background-color: $primary;
       border-radius: $btn-border-radius;
-      color: $primary-text;
+      color: $primary-text !important;
       font-weight: 700;
       text-align: center;
       text-decoration: none;
