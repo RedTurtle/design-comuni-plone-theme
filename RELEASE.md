@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- L'etichetta della Card con Nastro (Blocco Elenco) non si sovrappone più all'immagine del nastro.
+
 ## Versione 10.4.0 (14/11/2023)
 
 ### Novità
