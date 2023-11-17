@@ -8,11 +8,11 @@
     .etichetta {
       position: absolute;
       top: 3rem;
-      right: 0;
-      left: 0;
-      width: 100%;
+      right: 0px !important;
+      left: auto;
+      width: 75%;
       justify-content: inherit;
-      padding: 0 3rem;
+      padding-right: 2rem;
 
       .icon {
         margin-left: auto;
