@@ -50,9 +50,29 @@
   }
 
   // tablet
-  @media (max-width: 1367px) and (min-width: 586px) {
-    .bandi-in-evidence-cards-wrapper {
+  .bandi-in-evidence-cards-wrapper {
+    @media (max-width: 1367px) and (min-width: 767px) {
       grid-template-columns: auto auto;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      gap: 1rem;
+    }
+
+    @media (min-width: 568px) and (max-width: 767px) {
+      display: block !important;
+    }
+
+    .bando-dati {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    @media (max-width: 991px) {
+      .read-more a.read-more {
+        flex-direction: row;
+      }
     }
   }
 
