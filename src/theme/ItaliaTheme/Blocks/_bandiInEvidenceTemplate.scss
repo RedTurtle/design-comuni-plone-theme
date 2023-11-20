@@ -51,7 +51,7 @@
 
   // tablet
   .bandi-in-evidence-cards-wrapper {
-    @media (max-width: 1367px) and (min-width: 767px) {
+    @media (min-width: 767px) and (max-width: 1367px) {
       grid-template-columns: auto auto;
     }
 
