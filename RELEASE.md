@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Il blocco Elenco con variazione Bandi viene visualizzato correttamente anche su tablet.
+
 ## Versione 10.4.0 (14/11/2023)
 
 ### Novità
