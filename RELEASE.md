@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorato l'allineamento delle informazioni dei bandi nelle card dei blocchi elenco
+
 ## Versione 10.4.0 (14/11/2023)
 
 ### Novità
