@@ -1,5 +1,53 @@
 
 
+## [10.4.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v10.4.0...v10.4.1) (2023-11-21)
+
+
+### Bug Fixes
+
+* BandiInEvidenceTemplate layout to space bando dati when titles have different lengths ([#410](https://github.com/RedTurtle/design-comuni-plone-theme/issues/410)) ([4780b12](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4780b127497e247df7dd59ffcba274537b2bc5a5))
+* class no-after added to simple card text block ([#413](https://github.com/RedTurtle/design-comuni-plone-theme/issues/413)) ([10073e8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/10073e8bdf50c9e4b8d4245c05ad38bdac8423e3))
+* search block column template + button text color ([#408](https://github.com/RedTurtle/design-comuni-plone-theme/issues/408)) ([72f7eae](https://github.com/RedTurtle/design-comuni-plone-theme/commit/72f7eae3bac35aaaa01e725a89a65de8a2b02b60))
+
+
+### Maintenance
+
+* how to customize the 503 file ([#405](https://github.com/RedTurtle/design-comuni-plone-theme/issues/405)) ([b444ba8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b444ba84de9a31edffb01f778b66677ac72971cb))
+
+
+### Documentation
+
+* updated publiccode and release log ([5be0543](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5be054313163816dd764149e8f7cb1717c52eab2))
+
+## [10.4.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v10.3.0...v10.4.0) (2023-11-14)
+
+
+### Features
+
+* added image size and colorListWidget in Alert block ([#396](https://github.com/RedTurtle/design-comuni-plone-theme/issues/396)) ([63f3b5b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/63f3b5b60364e650de5123cf8b8108dd86eab9f9))
+* split VenueDescription component ([#399](https://github.com/RedTurtle/design-comuni-plone-theme/issues/399)) ([68c3ca5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/68c3ca5338f27f4e64ea257f679ae91dc1842491))
+
+
+### Bug Fixes
+
+* documentFirstHeading in subsites without style ([#400](https://github.com/RedTurtle/design-comuni-plone-theme/issues/400)) ([9588073](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9588073d4a2a72e4eb3664c5741b0368f59781fb))
+* icons in NumbersBlock and Sidebar Widget not updating  ([#402](https://github.com/RedTurtle/design-comuni-plone-theme/issues/402)) ([0df93a5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0df93a59c100df69085db83b4ade85101601ed35))
+* locales ([c4bdc14](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c4bdc148aa76ad7ee81945185f22b2eeead3feeb))
+* mark section filters correctly when navigating to search page from page header ([#401](https://github.com/RedTurtle/design-comuni-plone-theme/issues/401)) ([fdc6207](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fdc62074fa2b92292b128a31f7d227ed5e97c074))
+* ParentSiteMenu now draws only Visible site menu elements in subsites ([#403](https://github.com/RedTurtle/design-comuni-plone-theme/issues/403)) ([9fc0a24](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9fc0a2456030d1480fbe5b76cf4f9c29eab0d10e))
+* Photogallery popup image ([#395](https://github.com/RedTurtle/design-comuni-plone-theme/issues/395)) ([4fce154](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4fce154045e2cbc710fed9d975842edb1af7e85a))
+* scroll position on h2 .visually-hidden ([#397](https://github.com/RedTurtle/design-comuni-plone-theme/issues/397)) ([9356e6a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9356e6af8a3273ebb1d51c80d84ae0cce7c7dd3a))
+
+
+### Maintenance
+
+* split BandoView Text in different components ([#391](https://github.com/RedTurtle/design-comuni-plone-theme/issues/391)) ([e787f38](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e787f38899519daa2e6743e896e5f8d53fc8bf8a))
+
+
+### Documentation
+
+* updated publiccode and release log ([f95133b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f95133b0ddaa5ac27a07dfa772f48dfb1b59c067))
+
 ## [10.3.0](https://github.com/redturtle/design-comuni-plone-theme/compare/v10.2.2...v10.3.0) (2023-11-08)
 
 
