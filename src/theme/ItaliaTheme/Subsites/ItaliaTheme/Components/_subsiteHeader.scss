@@ -1,0 +1,27 @@
+@use '../../all_variables' as *;
+
+@mixin header(
+  $subsite-primary,
+  $subsite-primary-text,
+  $subsite-secondary,
+  $subsite-secondary-text
+) {
+  &,
+  &.cms-ui {
+    .subsite-header {
+      background-color: $subsite-secondary;
+
+      .text {
+        color: $subsite-secondary-text;
+        a {
+          background-color: $subsite-primary;
+          color: $subsite-primary-text;
+
+          &:hover {
+            background-color: darken($subsite-primary, 5%);
+          }
+        }
+      }
+    }
+  }
+}

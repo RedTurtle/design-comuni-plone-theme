@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @use 'bootstrap-italia/custom/header' as bs-header;
 @use 'bootstrap-italia/custom/headercenter' as bs-headercenter;
 @use 'bootstrap-italia/brand-text' as bs-brandtext;
@@ -13,6 +15,7 @@
 @use 'bootstrap-italia/custom/linklist' as bs-linklist;
 @use 'bootstrap-italia/custom/navscroll' as bs-navscroll;
 @use 'ItaliaTheme/Components/subsiteFooter' as it-footer;
+@use 'ItaliaTheme/Components/subsiteHeader' as it-header;
 @use 'ItaliaTheme/Blocks/cardWithImageAndInEvidence' as it-card-image-evidence;
 @use 'ItaliaTheme/Blocks/completeBlockLinktemplate' as it-complete-link;
 @use 'ItaliaTheme/Blocks/ribbonCardTemplate' as it-ribbon-card;
@@ -21,6 +24,8 @@
 @use 'ItaliaTheme/Blocks/searchSections' as it-search-sections;
 @use 'ItaliaTheme/Views/common' as it-views;
 @use 'ItaliaTheme/common' as it-common;
+// @use 'ItaliaTheme'
+// @import 'design-comuni-plone-theme/theme/ItaliaTheme/Subsites/common';
 
 @mixin define-subsite(
   $subsite-style,
@@ -36,72 +41,72 @@
   body.subsite-#{$subsite-style} {
     &,
     .public-ui {
-      @include bs-header.header(
-        $subsite-light-theme,
-        $subsite-primary,
-        $subsite-primary-text
-      );
-      @include bs-headercenter.headercenter(
-        $subsite-light-theme,
-        $subsite-primary,
-        $subsite-primary-text
-      );
-      @include bs-brandtext.text($subsite-primary, $subsite-primary-text);
-      @include bs-headernavbar.navbar($subsite-primary);
-      @include bs-headerslim.header($subsite-primary-text);
-      @include bs-navigation.nav(
-        $subsite-light-theme,
-        $subsite-primary,
-        $subsite-primary-text,
-        $subsite-link-color
-      );
-      @include bs-nav.nav($subsite-link-color);
-      @include bs-megamenu.megamenu(
-        $subsite-light-theme,
-        $subsite-primary,
-        $subsite-primary-text
-      );
-      @include bs-buttons.buttons(
-        $subsite-light-theme,
-        $subsite-primary,
-        $subsite-primary-text,
-        $subsite-secondary,
-        $subsite-secondary-text,
-        $subsite-tertiary,
-        $subsite-tertiary-text
-      );
-      @include bs-chips.chips(
-        $subsite-light-theme,
-        $subsite-primary,
-        $subsite-primary-text,
-        $subsite-secondary,
-        $subsite-secondary-text
-      );
-      @include bs-card.card($subsite-primary, $subsite-link-color);
-      @include bs-dropdown.dropdown($subsite-link-color);
-      @include bs-linklist.linklist($subsite-primary, $subsite-link-color);
-      @include bs-navscroll.navscroll($subsite-link-color);
-      @include it-footer.footer($subsite-primary, $subsite-primary-text);
-      @include it-card-image-evidence.card($subsite-link-color);
-      @include it-complete-link.block(
-        $subsite-secondary,
-        $subsite-secondary-text
-      );
-      @include it-ribbon-card.card($subsite-link-color);
-      @include it-highlight.block($subsite-link-color);
-      @include it-args-evidence.block($subsite-primary, $subsite-primary-text);
-      @include it-search-sections.block(
-        $subsite-primary,
-        $subsite-secondary,
-        $subsite-secondary-text
-      );
-      @include it-views.common(
-        $subsite-primary,
-        $subsite-secondary,
-        $subsite-tertiary,
-        $subsite-link-color
-      );
-      @include it-common.common($subsite-tertiary, $subsite-tertiary-text);
+      // @include bs-header.header(
+      //   $subsite-light-theme,
+      //   $subsite-primary,
+      //   $subsite-primary-text
+      // );
+      // @include bs-headercenter.headercenter(
+      //   $subsite-light-theme,
+      //   $subsite-primary,
+      //   $subsite-primary-text
+      // );
+      // @include bs-brandtext.text($subsite-primary, $subsite-primary-text);
+      // @include bs-headernavbar.navbar($subsite-primary);
+      // @include bs-headerslim.header($subsite-primary-text);
+      // @include bs-navigation.nav(
+      //   $subsite-light-theme,
+      //   $subsite-primary,
+      //   $subsite-primary-text,
+      //   $subsite-link-color
+      // );
+      // @include bs-nav.nav($subsite-link-color);
+      // @include bs-megamenu.megamenu(
+      //   $subsite-light-theme,
+      //   $subsite-primary,
+      //   $subsite-primary-text
+      // );
+      // @include bs-buttons.buttons(
+      //   $subsite-light-theme,
+      //   $subsite-primary,
+      //   $subsite-primary-text,
+      //   $subsite-secondary,
+      //   $subsite-secondary-text,
+      //   $subsite-tertiary,
+      //   $subsite-tertiary-text
+      // );
+      // @include bs-chips.chips(
+      //   $subsite-light-theme,
+      //   $subsite-primary,
+      //   $subsite-primary-text,
+      //   $subsite-secondary,
+      //   $subsite-secondary-text
+      // );
+      // @include bs-card.card($subsite-primary, $subsite-link-color);
+      // @include bs-dropdown.dropdown($subsite-link-color);
+      // @include bs-linklist.linklist($subsite-primary, $subsite-link-color);
+      // @include bs-navscroll.navscroll($subsite-link-color);
+      // @include it-footer.footer($subsite-primary, $subsite-primary-text);
+      // @include it-card-image-evidence.card($subsite-link-color);
+      // @include it-complete-link.block(
+      //   $subsite-secondary,
+      //   $subsite-secondary-text
+      // );
+      // @include it-ribbon-card.card($subsite-link-color);
+      // @include it-highlight.block($subsite-link-color);
+      // @include it-args-evidence.block($subsite-primary, $subsite-primary-text);
+      // @include it-search-sections.block(
+      //   $subsite-primary,
+      //   $subsite-secondary,
+      //   $subsite-secondary-text
+      // );
+      // @include it-views.common(
+      //   $subsite-primary,
+      //   $subsite-secondary,
+      //   $subsite-tertiary,
+      //   $subsite-link-color
+      // );
+      // @include it-common.common($subsite-tertiary, $subsite-tertiary-text);
 
       a,
       &.cms-ui .public-ui a {
@@ -114,6 +119,481 @@
 
       .icon-primary {
         fill: $subsite-primary !important;
+      }
+    }
+  }
+}
+
+@function create-primary-a0($color) {
+  @return hsl(color.hue($color), 62%, 97%);
+}
+
+@function create-primary-c1($color) {
+  @return hsb(
+    color.hue($color),
+    color.saturation($color) - calc(color.saturation($color) * 90 / 100),
+    color.whiteness($color) + calc(color.whiteness($color) * 20 / 100)
+  );
+}
+
+@mixin iocomune-subsite(
+  $subsite-style,
+  $subsite-primary,
+  $subsite-primary-text,
+  $subsite-secondary,
+  $subsite-secondary-text,
+  $subsite-tertiary,
+  $subsite-tertiary-text,
+  $subsite-link-color,
+  $bg-opacity,
+  $subsite-light-theme
+) {
+  $subsite-primary-a0: create-primary-a0($subsite-primary);
+  $subsite-primary-c1: create-primary-c1($subsite-primary);
+
+  $subsite-primary-text-created: color-contrast($subsite-primary);
+  $subsite-secondary-text-created: color-contrast($subsite-secondary);
+  $subsite-tertiary-text-created: color-contrast($subsite-tertiary);
+
+  body.subsite-#{$subsite-style} {
+    &,
+    .public-ui {
+      // @include bs-header.header(
+      //   $subsite-primary,
+      //   $subsite-primary-text-created
+      // );
+      @include bs-headercenter.headercenter(
+        $subsite-primary,
+        $subsite-primary-text-created
+      );
+      @include bs-brandtext.text(
+        $subsite-primary,
+        $subsite-primary-text-created
+      );
+      @include bs-headernavbar.navbar($subsite-primary);
+      @include bs-headerslim.header($subsite-primary-text-created);
+      @include bs-navigation.nav(
+        $subsite-light-theme,
+        $subsite-primary,
+        $subsite-primary-text-created,
+        $subsite-link-color
+      );
+      @include bs-nav.nav($subsite-link-color);
+      @include bs-megamenu.megamenu(
+        $subsite-light-theme,
+        $subsite-primary,
+        $subsite-primary-text-created
+      );
+      @include bs-buttons.buttons(
+        $subsite-light-theme,
+        $subsite-primary,
+        $subsite-primary-text-created,
+        $subsite-secondary,
+        $subsite-secondary-text-created,
+        $subsite-tertiary,
+        $subsite-tertiary-text-created
+      );
+      //controllareeee
+      @include bs-chips.chips(
+        $subsite-light-theme,
+        $subsite-primary,
+        $subsite-primary-text-created,
+        $subsite-secondary,
+        $subsite-secondary-text-created
+      );
+      @include bs-card.card($subsite-primary, $subsite-link-color);
+      @include bs-dropdown.dropdown($subsite-link-color);
+      @include bs-linklist.linklist($subsite-primary, $subsite-link-color);
+      @include bs-navscroll.navscroll($subsite-link-color);
+      @include it-footer.footer(
+        $subsite-primary,
+        $subsite-primary-text-created,
+        $subsite-secondary,
+        $subsite-secondary-text-created
+      );
+      @include it-header.header(
+        $subsite-primary,
+        $subsite-primary-text-created,
+        $subsite-secondary,
+        $subsite-secondary-text-created
+      );
+      @include it-card-image-evidence.card($subsite-link-color);
+      @include it-complete-link.block(
+        $subsite-secondary,
+        $subsite-secondary-text-created
+      );
+      @include it-ribbon-card.card($subsite-link-color);
+      @include it-highlight.block($subsite-link-color);
+      @include it-args-evidence.block(
+        $subsite-primary,
+        $subsite-primary-text-created
+      );
+      @include it-search-sections.block(
+        $subsite-primary,
+        $subsite-secondary,
+        $subsite-secondary-text-created
+      );
+      @include it-views.common(
+        $subsite-primary,
+        $subsite-secondary,
+        $subsite-tertiary,
+        $subsite-link-color
+      );
+      @include it-common.common(
+        $subsite-tertiary,
+        $subsite-tertiary-text-created
+      );
+
+      a,
+      &.cms-ui .public-ui a {
+        color: $subsite-link-color;
+
+        &:hover {
+          color: color-hover($subsite-link-color);
+        }
+      }
+
+      .icon-primary {
+        fill: $subsite-primary !important;
+      }
+
+      .callout-bg {
+        @if $subsite-light-theme {
+          background-color: $subsite-primary-a0;
+        } @else {
+          background-color: $subsite-primary-c1;
+        }
+      }
+    }
+
+    .block.highlitedContent {
+      .bg-primary {
+        background-color: $subsite-primary !important;
+
+        .card .card-body {
+          .categoryicon-top .icon {
+            color: #fff;
+            fill: #fff;
+          }
+
+          .card-title a {
+            color: $subsite-primary-text !important;
+          }
+
+          .chip.chip-primary {
+            &:hover,
+            &:active {
+              > .chip-label {
+                color: $subsite-primary;
+              }
+            }
+          }
+
+          // .chip.chip-primary:hover {
+          //   .chip-label {
+          //     color: $subsite-primary;
+          //   }
+          // }
+        }
+      }
+
+      div.card h2.card-title a {
+        color: $subsite-link-color;
+      }
+    }
+
+    .block.accordion
+      .section.full-width
+      .card
+      .card-body
+      .accordion-item
+      .subblock-edit
+      .accordion-header
+      .title {
+      color: $subsite-primary;
+    }
+
+    .block.contacts .full-width.section.bg-primary {
+      background-color: $subsite-primary !important;
+    }
+
+    .block.iconBlocks .background-image:after {
+      background-color: transparentize($subsite-primary, 0.5);
+    }
+
+    .draftjs-buttons a {
+      background-color: $subsite-primary !important;
+      color: $subsite-primary-text !important;
+    }
+
+    .iconblock-icon svg {
+      fill: $subsite-secondary;
+    }
+    .chip.chip-primary,
+    .public-ui .chip.chip-primary {
+      border-color: $subsite-primary;
+      color: $subsite-primary;
+      .chip-label {
+        color: $subsite-primary;
+      }
+    }
+    .block.listing.cardSlideUpTextTemplate {
+      .card-slide-text-template .box .category {
+        background-color: $subsite-secondary;
+        color: $subsite-secondary-text;
+      }
+      .card-slide-text-template .box .category::after {
+        border-top-color: $subsite-secondary;
+      }
+      a.read-more {
+        color: $subsite-primary-text;
+        svg.icon {
+          fill: $subsite-primary-text;
+        }
+      }
+    }
+
+    .simple-list-template ul li {
+      color: $subsite-primary;
+    }
+
+    .squares-image-template .box:before {
+      background-color: $subsite-primary;
+    }
+    .flag-icon,
+    .public-ui .flag-icon {
+      background: $subsite-secondary;
+    }
+    .block.iconBlocks .block-header .title {
+      color: $subsite-primary-text;
+    }
+    .public-ui .form-check [type='checkbox']:checked + label::after {
+      border-color: $subsite-primary;
+      background-color: $subsite-primary;
+      z-index: 0;
+    }
+    // .btn-tertiary,
+    // .public-ui .btn-tertiary {
+    //   background-color: $subsite-tertiary !important;
+    //   color: $subsite-tertiary-text !important;
+    // }
+
+    #categoryCollapse .btn-icon.btn.btn-outline-secondary {
+      color: $subsite-primary;
+      box-shadow: inset 0 0 0 1px $subsite-primary,
+        0 0 0 0.2rem rgba(var($subsite-primary), $bg-opacity);
+      border-color: $subsite-primary;
+    }
+    .calendar .calendar-header {
+      background: $subsite-secondary;
+      h3 {
+        color: $subsite-secondary-text !important;
+      }
+    }
+    // .it-header-center-wrapper .it-header-center-content-wrapper {
+    //   .it-right-zone {
+    //     .it-socials {
+    //       color: $subsite-primary-text;
+
+    //       .icon {
+    //         fill: $subsite-primary-text !important;
+    //       }
+    //     }
+
+    //     .it-search-wrapper a.rounded-icon svg {
+    //       fill: $subsite-secondary-text !important;
+    //     }
+    //   }
+    // }
+    .bg-light {
+      background-color: rgba($subsite-primary, $bg-opacity) !important;
+    }
+    .slick-slider .slick-arrow.slick-prev .icon,
+    .slick-slider .slick-arrow.slick-next .icon {
+      fill: $subsite-primary;
+      color: $subsite-primary;
+    }
+    .slick-slider ul.slick-dots li.slick-active button:before {
+      background-color: $subsite-primary !important;
+    }
+    .table-of-contents .ui.bulleted.list .item.headline-2::before {
+      border-left: 0.5rem solid $subsite-primary;
+    }
+    .table-of-contents .ui.bulleted.list .item:not(.headline-2)::before {
+      border-top: 0.1rem solid $subsite-primary;
+      border-right: 0.1rem solid $subsite-primary;
+    }
+
+    .bg-primary.customer-satisfaction,
+    .bg-primary.customer-satisfaction .bg-primary {
+      background-color: lighten($subsite-primary, 5%) !important;
+    }
+    .container .block .searchSections:not(.button) h2.search-section-title,
+    .container
+      .block
+      .searchSections:not(.button)
+      .public-ui
+      .search-section-title.h2,
+    .public-ui
+      .container
+      .block
+      .searchSections:not(.button)
+      .search-section-title.h2 {
+      color: $subsite-primary-text;
+    }
+    .container
+      .block
+      .searchSections:not(.button)
+      .searchContainer
+      .searchbar
+      button
+      svg {
+      fill: $subsite-primary-text;
+    }
+    .card-slide-text-template .grid .bg-img {
+      background-color: $subsite-primary;
+    }
+    // .scroll-to-top .btn-tertiary {
+    //   background-color: $subsite-tertiary !important;
+    // }
+    .rating > input:checked ~ label svg,
+    .public-ui .rating:not(:checked) > label:hover svg,
+    .public-ui .rating:not(:checked) > label:hover ~ label svg {
+      fill: $subsite-primary;
+    }
+    .public-ui {
+      .card-title a,
+      .accordion-header button,
+      .category-top span.text span.text.fw-bold {
+        color: $subsite-link-color !important;
+      }
+      .page-link {
+        color: $subsite-primary !important;
+      }
+      .page-link[aria-current] {
+        color: $subsite-primary !important;
+        border-color: $subsite-primary !important;
+      }
+      // .it-header-center-wrapper
+      //   .it-header-center-content-wrapper
+      //   .it-right-zone
+      //   .it-search-wrapper {
+      //   a.search-link {
+      //     outline: $subsite-primary 2px solid !important;
+      //     svg {
+      //       fill: $subsite-primary !important;
+      //     }
+      //   }
+      // }
+
+      .select-all-cts.btn.btn-link.btn-mini,
+      .subsite-header .text a.select-all-cts.btn-link.btn-mini {
+        color: $subsite-primary !important;
+      }
+
+      .chip.chip-primary {
+        border-color: $subsite-link-color;
+        color: $subsite-link-color;
+
+        & > .chip-label {
+          color: $subsite-link-color;
+        }
+
+        &:hover {
+          border-color: $subsite-link-color;
+          background-color: $subsite-link-color;
+
+          & > .chip-label {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &.cms-ui .color-list-widget .button.primary,
+    &.cms-ui .color-list-widget .button.primary.active {
+      background-color: $subsite-primary;
+    }
+
+    &.cms-ui .color-list-widget .button.active {
+      border: 2px solid $subsite-primary;
+    }
+
+    // fix CT
+    .progress {
+      background-color: $subsite-primary-a0;
+    }
+    .progress-bar {
+      background-color: $subsite-primary;
+    }
+    .navbar.it-navscroll-wrapper .link-list-wrapper ul li {
+      a.active {
+        border-left: 2px solid $subsite-primary;
+        border-color: $subsite-primary;
+      }
+      .nav-link {
+        color: $subsite-primary;
+        transition: border-color 0 ease-in-out;
+      }
+    }
+
+    .bg-primary {
+      background-color: $subsite-primary-a0 !important;
+    }
+
+    // date servizio
+    .calendar-vertical {
+      color: $subsite-primary;
+
+      .calendar-date {
+        .calendar-date-day {
+          &:before {
+            background-color: $subsite-primary;
+          }
+          &:after {
+            background-color: $subsite-primary;
+          }
+        }
+        .calendar-date-description .calendar-date-description-content {
+          border-left: 8px solid $subsite-primary-a0;
+        }
+      }
+    }
+
+    //date evento
+    .point-list-wrapper .point-list .point-list-aside.point-list-warning {
+      color: $subsite-primary;
+      &:after {
+        background-color: $subsite-primary;
+      }
+    }
+
+    // card con bordo colorato
+    .card.border-left-card {
+      border-left: 8px solid $subsite-primary-a0;
+    }
+
+    //icone nelle card
+    .card-wrapper.card-teaser-wrapper > .card-teaser.attachment svg {
+      fill: $subsite-primary;
+    }
+
+    #documenti-collegati .genericcard .card-body .card-title.h5 svg {
+      fill: $subsite-primary;
+    }
+    // icona external link
+    .external-link {
+      fill: $subsite-primary !important;
+    }
+
+    // pagina argomenti
+    .icon-argument-container {
+      background-color: transparentize($subsite-primary, 0.9);
+
+      .icon,
+      svg {
+        color: $subsite-primary;
+        fill: $subsite-primary;
       }
     }
   }
