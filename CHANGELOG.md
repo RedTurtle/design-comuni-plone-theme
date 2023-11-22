@@ -1,5 +1,24 @@
 
 
+## [11.0.0-alpha.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v10.4.1...v11.0.0-alpha.0) (2023-11-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to design-react-kit 5.0.0-1 and bootstrap-italia 2.6.1 (#407)
+* upgrade to volto 17.5.0 (#382)
+
+### Features
+
+* upgrade to design-react-kit 5.0.0-1 and bootstrap-italia 2.6.1 ([#407](https://github.com/RedTurtle/design-comuni-plone-theme/issues/407)) ([ec1ec5b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ec1ec5bd693df58653a7c10d17a4085305734625))
+* upgrade to volto 17.5.0 ([#382](https://github.com/RedTurtle/design-comuni-plone-theme/issues/382)) ([cef3f09](https://github.com/RedTurtle/design-comuni-plone-theme/commit/cef3f09ef971bfcc03b61dafe5e1c712ac6563da))
+
+
+### Maintenance
+
+* fix babel-eslint ([a7aa9a6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a7aa9a6dff9f420bceef34809c2f7e23da883bcd))
+* upgrade linters ([9d8f13a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9d8f13a34d82fb6cc9ce68f0881a46ffd8803eca))
+
 ## [10.4.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v10.4.0...v10.4.1) (2023-11-21)
 
 
