@@ -1072,7 +1072,7 @@ msgstr ""
 #: components/ItaliaTheme/Breadcrumbs/Breadcrumbs
 # defaultMessage: Percorso di navigazione
 msgid "breadcrumb"
-msgstr ""
+msgstr "Navigation path"
 
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
 # defaultMessage: Calendario

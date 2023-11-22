@@ -4825,7 +4825,7 @@ __metadata:
     babel-eslint: 10.1.0
     bootstrap-italia: 2.6.2
     classnames: ^2.3.2
-    design-react-kit: "italia/design-react-kit#82571c45c61d5c1c10738e76bb8902f9f7c60e6b"
+    design-react-kit: 5.0.0-1
     eslint: 6.8.0
     eslint-config-prettier: 6.11.0
     eslint-config-react-app: 5.2.1
@@ -4878,9 +4878,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"design-react-kit@italia/design-react-kit#82571c45c61d5c1c10738e76bb8902f9f7c60e6b":
+"design-react-kit@npm:5.0.0-1":
   version: 5.0.0-1
-  resolution: "design-react-kit@https://github.com/italia/design-react-kit.git#commit=82571c45c61d5c1c10738e76bb8902f9f7c60e6b"
+  resolution: "design-react-kit@npm:5.0.0-1"
   dependencies:
     classnames: ^2.3.1
     is-number: ^7.0.0
