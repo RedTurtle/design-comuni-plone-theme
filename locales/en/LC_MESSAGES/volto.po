@@ -1374,7 +1374,7 @@ msgstr "People"
 #: components/ReleaseLog/ReleaseLog
 # defaultMessage: attivo
 msgid "currentActive"
-msgstr ""
+msgstr "active"
 
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Curriculum vitae
