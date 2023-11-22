@@ -693,6 +693,7 @@ const SearchModal = ({ closeModal, show }) => {
                     <span>{intl.formatMessage(messages.topics)}</span>
                     {advancedTab === 'topics' && (
                       <span className="visually-hidden">
+                        {' '}
                         {intl.formatMessage(messages.current)}
                       </span>
                     )}
