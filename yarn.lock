@@ -3593,9 +3593,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap-italia@npm:2.6.2":
-  version: 2.6.2
-  resolution: "bootstrap-italia@npm:2.6.2"
+"bootstrap-italia@npm:2.6.1":
+  version: 2.6.1
+  resolution: "bootstrap-italia@npm:2.6.1"
   dependencies:
     "@popperjs/core": ^2.11.2
     "@splidejs/splide": ^3.6.12
@@ -3608,7 +3608,7 @@ __metadata:
     progressbar.js: ^1.1.0
     uuid: ^8.3.2
     video.js: ^8.0.4
-  checksum: a6f42b4727e15f3f385b0f8bc1a76279fd11de5a9d76311f61b357df40aaa1067ea348671991089e0adf9db52b4a0691c3916354606d61c1903f4eb9e17e18dc
+  checksum: f23ffb76b47d3f2411753f4f4db6259a53da718571cf54dc008517332c9adf06df463b047912ef29586dcc31e9c41f56621f7713ef1a19bd11e79660aa421bab
   languageName: node
   linkType: hard
 
@@ -4824,7 +4824,7 @@ __metadata:
     "@plone/scripts": "*"
     "@release-it/conventional-changelog": 5.1.1
     babel-eslint: 10.1.0
-    bootstrap-italia: 2.6.2
+    bootstrap-italia: 2.6.1
     classnames: ^2.3.2
     design-react-kit: 5.0.0-1
     eslint: 6.8.0
