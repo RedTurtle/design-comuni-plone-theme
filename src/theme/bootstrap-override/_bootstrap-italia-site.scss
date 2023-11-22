@@ -16,7 +16,7 @@
 // BS5 Configuration
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';
-//@import 'node_modules/bootstrap/scss/maps';
+@import 'bootstrap/scss/maps';
 @import 'bootstrap/scss/mixins';
 // mixins custom
 @import 'bootstrap-italia/src/scss/custom/mixins/buttons';
