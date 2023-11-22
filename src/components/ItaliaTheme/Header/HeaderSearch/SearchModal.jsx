@@ -673,6 +673,7 @@ const SearchModal = ({ closeModal, show }) => {
                       <span>{intl.formatMessage(messages.sections)}</span>
                       {advancedTab === 'sections' && (
                         <span className="visually-hidden">
+                          {' '}
                           {intl.formatMessage(messages.current)}
                         </span>
                       )}
@@ -713,6 +714,7 @@ const SearchModal = ({ closeModal, show }) => {
                     <span>{intl.formatMessage(messages.options)}</span>
                     {advancedTab === 'options' && (
                       <span className="visually-hidden">
+                        {' '}
                         {intl.formatMessage(messages.current)}
                       </span>
                     )}
