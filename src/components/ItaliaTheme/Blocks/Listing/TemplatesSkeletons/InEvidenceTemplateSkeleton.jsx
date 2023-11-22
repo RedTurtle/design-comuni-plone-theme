@@ -37,7 +37,12 @@ const InEvidenceTemplateSkeleton = ({
           <div className="in-evidence-cards-wrapper mb-5">
             {[0, 1, 2, 3, 4].map((i) => {
               return (
-                <Card key={i} className={cx('listing-item card-bg')}>
+                <Card
+                  key={i}
+                  className={cx('listing-item card-bg', {
+                    'card-img': i === 0,
+                  })}
+                >
                   {i === 0 && (
                     <div className="img-responsive-wrapper">
                       <div className="img-responsive">

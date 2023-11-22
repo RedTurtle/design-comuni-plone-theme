@@ -47,9 +47,7 @@ const GenericCard = ({
       )}
     </>
   );
-
   const cooked_image_field = image_field || item.image_field;
-
   // (item.preview_image ? 'preview_image' : 'image');
   const image =
     showimage &&
@@ -63,7 +61,7 @@ const GenericCard = ({
 
   return item ? (
     image ? (
-      <div className={cx('genericcard card shadow rounded mt-3')}>
+      <div className={cx('genericcard card card-img shadow rounded mt-3')}>
         <div className="img-responsive-wrapper">
           <div className="img-responsive img-responsive-panoramic">
             <figure className="img-wrapper">{image}</figure>
