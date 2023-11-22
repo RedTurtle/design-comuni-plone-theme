@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Sistemato il layout della card nella variazione Bandi del Blocco Elenco per la modalità tablet
+
 ## Versione 10.4.0 (14/11/2023)
 
 ### Novità
