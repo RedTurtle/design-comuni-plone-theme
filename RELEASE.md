@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Novità
+
+- Modificata l'altezza delle immagini delle card, per essere in linea con i template agid.
+
 ## Versione 10.4.1 (21/11/2023)
 
 ### Migliorie
