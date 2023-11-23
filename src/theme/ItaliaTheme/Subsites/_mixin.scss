@@ -127,12 +127,11 @@
 @function create-primary-a0($color) {
   @return hsl(color.hue($color), 62%, 97%);
 }
-
 @function create-primary-c1($color) {
-  @return hsb(
+  @return hsl(
     color.hue($color),
-    color.saturation($color) - calc(color.saturation($color) * 90 / 100),
-    color.whiteness($color) + calc(color.whiteness($color) * 20 / 100)
+    calc(color.saturation($color) / 2),
+    calc(color.lightness($color) * 1.8)
   );
 }
 
@@ -151,10 +150,6 @@
   $subsite-primary-a0: create-primary-a0($subsite-primary);
   $subsite-primary-c1: create-primary-c1($subsite-primary);
 
-  $subsite-primary-text-created: color-contrast($subsite-primary);
-  $subsite-secondary-text-created: color-contrast($subsite-secondary);
-  $subsite-tertiary-text-created: color-contrast($subsite-tertiary);
-
   body.subsite-#{$subsite-style} {
     &,
     .public-ui {
@@ -164,42 +159,39 @@
       // );
       @include bs-headercenter.headercenter(
         $subsite-primary,
-        $subsite-primary-text-created
+        $subsite-primary-text
       );
-      @include bs-brandtext.text(
-        $subsite-primary,
-        $subsite-primary-text-created
-      );
+      @include bs-brandtext.text($subsite-primary, $subsite-primary-text);
       @include bs-headernavbar.navbar($subsite-primary);
-      @include bs-headerslim.header($subsite-primary-text-created);
+      @include bs-headerslim.header($subsite-primary-text);
       @include bs-navigation.nav(
         $subsite-light-theme,
         $subsite-primary,
-        $subsite-primary-text-created,
+        $subsite-primary-text,
         $subsite-link-color
       );
       @include bs-nav.nav($subsite-link-color);
       @include bs-megamenu.megamenu(
         $subsite-light-theme,
         $subsite-primary,
-        $subsite-primary-text-created
+        $subsite-primary-text
       );
       @include bs-buttons.buttons(
         $subsite-light-theme,
         $subsite-primary,
-        $subsite-primary-text-created,
+        $subsite-primary-text,
         $subsite-secondary,
-        $subsite-secondary-text-created,
+        $subsite-secondary-text,
         $subsite-tertiary,
-        $subsite-tertiary-text-created
+        $subsite-tertiary-text
       );
       //controllareeee
       @include bs-chips.chips(
         $subsite-light-theme,
         $subsite-primary,
-        $subsite-primary-text-created,
+        $subsite-primary-text,
         $subsite-secondary,
-        $subsite-secondary-text-created
+        $subsite-secondary-text
       );
       @include bs-card.card($subsite-primary, $subsite-link-color);
       @include bs-dropdown.dropdown($subsite-link-color);
@@ -207,31 +199,28 @@
       @include bs-navscroll.navscroll($subsite-link-color);
       @include it-footer.footer(
         $subsite-primary,
-        $subsite-primary-text-created,
+        $subsite-primary-text,
         $subsite-secondary,
-        $subsite-secondary-text-created
+        $subsite-secondary-text
       );
       @include it-header.header(
         $subsite-primary,
-        $subsite-primary-text-created,
+        $subsite-primary-text,
         $subsite-secondary,
-        $subsite-secondary-text-created
+        $subsite-secondary-text
       );
       @include it-card-image-evidence.card($subsite-link-color);
       @include it-complete-link.block(
         $subsite-secondary,
-        $subsite-secondary-text-created
+        $subsite-secondary-text
       );
       @include it-ribbon-card.card($subsite-link-color);
       @include it-highlight.block($subsite-link-color);
-      @include it-args-evidence.block(
-        $subsite-primary,
-        $subsite-primary-text-created
-      );
+      @include it-args-evidence.block($subsite-primary, $subsite-primary-text);
       @include it-search-sections.block(
         $subsite-primary,
         $subsite-secondary,
-        $subsite-secondary-text-created
+        $subsite-secondary-text
       );
       @include it-views.common(
         $subsite-primary,
@@ -239,10 +228,7 @@
         $subsite-tertiary,
         $subsite-link-color
       );
-      @include it-common.common(
-        $subsite-tertiary,
-        $subsite-tertiary-text-created
-      );
+      @include it-common.common($subsite-tertiary, $subsite-tertiary-text);
 
       a,
       &.cms-ui .public-ui a {
@@ -264,6 +250,10 @@
           background-color: $subsite-primary-c1;
         }
       }
+    }
+
+    blockquote {
+      border-left: 4px solid $subsite-secondary;
     }
 
     .block.highlitedContent {
@@ -367,16 +357,38 @@
     .block.iconBlocks .block-header .title {
       color: $subsite-primary-text;
     }
-    .public-ui .form-check [type='checkbox']:checked + label::after {
-      border-color: $subsite-primary;
-      background-color: $subsite-primary;
-      z-index: 0;
+    .form-check {
+      [type='checkbox'],
+      [type='radio'] {
+        &:checked + label {
+          &::after {
+            @if $subsite-light-theme {
+              border-color: darken($subsite-primary, 50%);
+              background-color: darken($subsite-primary, 50%);
+            } @else {
+              border-color: $subsite-primary;
+              background-color: $subsite-primary;
+            }
+            z-index: 0;
+          }
+          &::before {
+            @if $subsite-light-theme {
+              border-color: darken($subsite-primary, 50%);
+            } @else {
+              border-color: $subsite-primary;
+            }
+          }
+        }
+      }
+
+      .delete-button {
+        .icon-primary {
+          @if $subsite-light-theme {
+            fill: darken($subsite-primary, 50%) !important;
+          }
+        }
+      }
     }
-    // .btn-tertiary,
-    // .public-ui .btn-tertiary {
-    //   background-color: $subsite-tertiary !important;
-    //   color: $subsite-tertiary-text !important;
-    // }
 
     #categoryCollapse .btn-icon.btn.btn-outline-secondary {
       color: $subsite-primary;
