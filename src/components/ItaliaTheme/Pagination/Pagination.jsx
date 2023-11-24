@@ -89,11 +89,6 @@ class Pagination extends Component {
       totalPages,
     });
 
-    console.log(items);
-    map(items, ({ active, type, value }) =>
-      console.log(['firstItem', 'lastItem'].indexOf(type)),
-    );
-
     return (
       <Pager
         className="justify-content-center mt-5"
