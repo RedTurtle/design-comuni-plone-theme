@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Ora nella pagina 404 "Questa pagina non esiste" viene suggerito il proseguimento della navigazione verso la homepage invece che verso la ricerca.
+
 ## Versione 10.4.2 (23/11/2023)
 
 ### Fix
