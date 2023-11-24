@@ -1,30 +1,14 @@
 @import './common';
 
 $subsite-light-pink-primary: #faeef1;
-// $subsite-light-pink-primary: hsl(345, 63%, 46%);
-$subsite-light-pink-primary-text: color-contrast($subsite-light-pink-primary);
+$subsite-light-pink-primary-text: #000;
 $subsite-light-pink-secondary: #9a264d;
-$subsite-light-pink-secondary-text: color-contrast(
-  $subsite-light-pink-secondary
-);
+$subsite-light-pink-secondary-text: #fff;
 $subsite-light-pink-tertiary: #b97787;
-$subsite-light-pink-tertiary-text: color-contrast($subsite-light-pink-tertiary);
+$subsite-light-pink-tertiary-text: #fff;
 $subsite-light-pink-link-color: #9a264d;
-$subsite-light-pink-bg-opacity: 0.2;
 
-// @include define-subsite(
-//   'light-pink',
-//   $subsite-light-pink-primary,
-//   $subsite-light-pink-primary-text,
-//   $subsite-light-pink-secondary,
-//   $subsite-light-pink-secondary-text,
-//   $subsite-light-pink-tertiary,
-//   $subsite-light-pink-tertiary-text,
-//   $subsite-light-pink-link-color,
-//   true
-// );
-
-@include iocomune-subsite(
+@include define-subsite(
   'light-pink',
   $subsite-light-pink-primary,
   $subsite-light-pink-primary-text,
@@ -33,7 +17,6 @@ $subsite-light-pink-bg-opacity: 0.2;
   $subsite-light-pink-tertiary,
   $subsite-light-pink-tertiary-text,
   $subsite-light-pink-link-color,
-  $subsite-light-pink-bg-opacity,
   true
 );
-// @import 'templates/light-pink';
+@import 'templates/light-pink';
