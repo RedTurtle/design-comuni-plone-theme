@@ -89,10 +89,11 @@
           .it-search-wrapper {
             a {
               &.rounded-icon {
+                background-color: $subsite-primary-text;
                 svg {
                   @if $subsite-light-theme {
-                    color: $subsite-primary-text;
-                    fill: $subsite-primary-text;
+                    color: color-contrast($subsite-primary-text);
+                    fill: color-contrast($subsite-primary-text);
                   } @else {
                     color: $subsite-primary;
                     fill: $subsite-primary;

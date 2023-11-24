@@ -1,0 +1,18 @@
+@use '../../all_variables' as *;
+
+@mixin block($subsite-primary, $subsite-primary-text) {
+  .contacts {
+    .full-width.section.bg-primary {
+      background-color: $subsite-primary !important;
+
+      .block-header {
+        .title {
+          color: $subsite-primary-text;
+        }
+        .description {
+          color: $subsite-primary-text;
+        }
+      }
+    }
+  }
+}

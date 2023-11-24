@@ -16,12 +16,22 @@
         color: $subsite-primary-text;
 
         .draftjs-buttons a {
-          background-color: $subsite-secondary !important;
-          color: $subsite-secondary-text !important;
-          text-decoration: none;
+          @if $subsite-primary != $subsite-secondary {
+            background-color: $subsite-secondary !important;
+            color: $subsite-secondary-text !important;
+            text-decoration: none;
 
-          &:hover {
-            background-color: darken($subsite-secondary, 5%) !important;
+            &:hover {
+              background-color: darken($subsite-secondary, 5%) !important;
+            }
+          } @else {
+            background-color: $subsite-secondary-text !important;
+            color: $subsite-secondary !important;
+            text-decoration: none;
+
+            &:hover {
+              background-color: darken($subsite-secondary-text, 5%) !important;
+            }
           }
         }
 

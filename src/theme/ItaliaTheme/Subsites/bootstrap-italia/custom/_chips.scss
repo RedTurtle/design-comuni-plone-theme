@@ -14,9 +14,26 @@
       @if $subsite-light-theme {
         border-color: $subsite-link-color;
         color: $subsite-link-color;
+
+        &:hover {
+          border-color: $subsite-link-color;
+          background-color: $subsite-link-color;
+
+          & > .chip-label {
+            color: color-contrast($subsite-primary-text);
+          }
+        }
       } @else {
         border-color: $subsite-primary;
         color: $subsite-primary;
+        &:hover {
+          border-color: $subsite-primary;
+          background-color: $subsite-primary;
+
+          & > .chip-label {
+            color: $subsite-primary-text;
+          }
+        }
       }
 
       & > .chip-label {
@@ -24,15 +41,6 @@
           color: $subsite-link-color;
         } @else {
           color: $subsite-primary;
-        }
-      }
-
-      &:hover {
-        border-color: $subsite-primary;
-        background-color: $subsite-primary;
-
-        & > .chip-label {
-          color: $subsite-primary-text;
         }
       }
     }

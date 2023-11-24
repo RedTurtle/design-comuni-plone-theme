@@ -30,6 +30,10 @@
             &:active {
               background-color: darken($subsite-primary, 7.5);
             }
+
+            svg {
+              fill: $subsite-primary-text;
+            }
           }
         }
       }
