@@ -89,6 +89,11 @@ class Pagination extends Component {
       totalPages,
     });
 
+    console.log(items);
+    map(items, ({ active, type, value }) =>
+      console.log(['firstItem', 'lastItem'].indexOf(type)),
+    );
+
     return (
       <Pager
         className="justify-content-center mt-5"
@@ -104,7 +109,7 @@ class Pagination extends Component {
                   onClick={this.handleItemClick}
                   type={type}
                   ellipsisItem={ellipsisItem}
-                  isServiceLink={isServiceLink}
+                  isServiceLink={type === 'prevItem' ? '' : isServiceLink}
                 >
                   {value}
                 </PaginationItem>
