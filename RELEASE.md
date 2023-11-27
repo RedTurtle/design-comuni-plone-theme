@@ -39,6 +39,7 @@
 ### Fix
 
 - Nei template dei feed RSS ora viene mostrata la sorgente se presente.
+- Sistemata sovrapposizione della finestra di selezione blocchi con altri blocchi e con l'header del sito.
 
 ## Versione 7.22.2 (11/10/2023)
 
