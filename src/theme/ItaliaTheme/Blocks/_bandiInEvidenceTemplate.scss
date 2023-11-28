@@ -18,6 +18,7 @@
     .card-body {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       padding: 2.5rem;
       padding-bottom: 0rem;
     }
@@ -53,6 +54,10 @@
   .bandi-in-evidence-cards-wrapper {
     @media (min-width: 767px) and (max-width: 1367px) {
       grid-template-columns: auto auto;
+
+      div.read-more a.read-more {
+        flex-direction: row;
+      }
     }
 
     @media (min-width: 768px) and (max-width: 991px) {
