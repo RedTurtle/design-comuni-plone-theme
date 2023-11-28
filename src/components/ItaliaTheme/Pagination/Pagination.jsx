@@ -104,7 +104,7 @@ class Pagination extends Component {
                   onClick={this.handleItemClick}
                   type={type}
                   ellipsisItem={ellipsisItem}
-                  isServiceLink={type === 'prevItem' ? '' : isServiceLink}
+                  isServiceLink={isServiceLink}
                 >
                   {value}
                 </PaginationItem>
