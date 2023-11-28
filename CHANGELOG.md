@@ -1,3 +1,21 @@
+## [7.23.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.22.2...v7.23.0) (2023-11-28)
+
+
+### Features
+
+* added source title to single card in RSS template ([#385](https://github.com/RedTurtle/design-comuni-plone-theme/issues/385)) ([1dfd286](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1dfd2867decbf2b2887c198fd398c0e39367e3b7))
+
+
+### Bug Fixes
+
+* avoid overlapping of BlockChooser with other blocks ([#421](https://github.com/RedTurtle/design-comuni-plone-theme/issues/421)) ([6d61226](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6d61226e2965d2100276153cf818cbf647487e51))
+* release-log class added ([#375](https://github.com/RedTurtle/design-comuni-plone-theme/issues/375)) ([b399ebf](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b399ebf8a37acc78fb77914fc4ce9103752028bf))
+
+
+### Maintenance
+
+* updated twitter icon ([#362](https://github.com/RedTurtle/design-comuni-plone-theme/issues/362)) ([74b6130](https://github.com/RedTurtle/design-comuni-plone-theme/commit/74b6130d17b6ee9c9beea98366f781759d85b5ee))
+
 ### [7.22.2](https://github.com/redturtle/design-comuni-plone-theme/compare/v7.22.1...v7.22.2) (2023-10-11)
 
 
