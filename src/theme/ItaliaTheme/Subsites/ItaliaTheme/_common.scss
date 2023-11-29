@@ -27,9 +27,10 @@
     }
   }
 
-  a.btn-tertiary {
-    color: $subsite-tertiary-text;
-  }
+  // TO DO: questo serve?
+  // a.btn-tertiary {
+  //   color: $subsite-tertiary-text;
+  // }
 
   .btn-outline-tertiary {
     @include button-outline-variant($subsite-tertiary);
@@ -102,17 +103,19 @@
         fill: $subsite-link-color !important;
       }
     }
+
     .page-link[aria-current] {
-      color: $subsite-link-color !important;
       border-color: $subsite-link-color !important;
+      color: $subsite-link-color !important;
     }
   } @else {
     .page-link {
       color: $subsite-primary !important;
     }
+
     .page-link[aria-current] {
-      color: $subsite-primary !important;
       border-color: $subsite-primary !important;
+      color: $subsite-primary !important;
     }
   }
 
@@ -126,17 +129,19 @@
           fill: darken($subsite-link-color, 5%) !important;
         }
       }
+
       .page-link[aria-current] {
-        color: darken($subsite-link-color, 5%) !important;
         border-color: darken($subsite-link-color, 5%) !important;
+        color: darken($subsite-link-color, 5%) !important;
       }
     } @else {
       .page-link {
         color: darken($subsite-primary, 5%) !important;
       }
+
       .page-link[aria-current] {
-        color: darken($subsite-primary, 5%) !important;
         border-color: darken($subsite-primary, 5%) !important;
+        color: darken($subsite-primary, 5%) !important;
       }
     }
   }
@@ -169,18 +174,20 @@
   @if $subsite-light-theme {
     .slick-slider .slick-arrow.slick-prev .icon,
     .slick-slider .slick-arrow.slick-next .icon {
-      fill: $subsite-secondary;
       color: $subsite-secondary;
+      fill: $subsite-secondary;
     }
+
     .slick-slider ul.slick-dots li.slick-active button:before {
       background-color: $subsite-secondary !important;
     }
   } @else {
     .slick-slider .slick-arrow.slick-prev .icon,
     .slick-slider .slick-arrow.slick-next .icon {
-      fill: $subsite-primary;
       color: $subsite-primary;
+      fill: $subsite-primary;
     }
+
     .slick-slider ul.slick-dots li.slick-active button:before {
       background-color: $subsite-primary !important;
     }
@@ -232,12 +239,14 @@
     @if $subsite-light-theme {
       background-color: $subsite-secondary !important;
       color: $subsite-secondary-text !important;
+
       &:hover {
         background-color: darken($subsite-secondary, 5%) !important;
       }
     } @else {
       background-color: $subsite-primary !important;
       color: $subsite-primary-text !important;
+
       &:hover {
         background-color: darken($subsite-primary, 5%) !important;
       }

@@ -3,6 +3,7 @@
 @mixin block(
   $subsite-link-color,
   $subsite-primary-text,
+  $subsite-secondary,
   $subsite-secondary-text
 ) {
   .block.highlitedContent {
@@ -12,6 +13,7 @@
           .text {
             color: $subsite-primary-text;
           }
+
           .icon {
             color: $subsite-primary-text;
             fill: $subsite-primary-text;
@@ -36,7 +38,11 @@
 
         .chip.chip-primary {
           border-color: $subsite-link-color;
-          color: $subsite-link-color;
+
+          & > .chip-label {
+            color: $subsite-link-color;
+          }
+
           &:hover,
           &:active {
             > .chip-label {
@@ -53,6 +59,7 @@
           .text {
             color: $subsite-secondary-text;
           }
+
           .icon {
             color: $subsite-secondary-text;
             fill: $subsite-secondary-text;

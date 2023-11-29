@@ -155,6 +155,7 @@
       @include it-highlight.block(
         $subsite-link-color,
         $subsite-primary-text,
+        $subsite-secondary,
         $subsite-secondary-text
       );
       @include it-args-evidence.block(
@@ -204,10 +205,10 @@
       }
 
       #categoryCollapse .btn-icon.btn.btn-outline-secondary {
-        color: $subsite-primary;
+        border-color: $subsite-primary;
         box-shadow: inset 0 0 0 1px $subsite-primary,
           0 0 0 0.2rem rgba(var($subsite-primary), 0.2);
-        border-color: $subsite-primary;
+        color: $subsite-primary;
       }
 
       //listing
