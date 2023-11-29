@@ -1,3 +1,34 @@
+
+
+## [11.0.0-alpha.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.0.0-alpha.1...v11.0.0-alpha.2) (2023-11-29)
+
+
+### Bug Fixes
+
+* background image for NumbersBlock and Countdown block ([#423](https://github.com/RedTurtle/design-comuni-plone-theme/issues/423)) ([28ba7ea](https://github.com/RedTurtle/design-comuni-plone-theme/commit/28ba7ea39701eed8e65843b68c62a29797dd7d4f))
+* gallery component for ct views breaking with newer backend versions ([#422](https://github.com/RedTurtle/design-comuni-plone-theme/issues/422)) ([45a52f7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/45a52f7572cfc25b3adec897c089b848c215e359))
+* image size in listing ([397ba93](https://github.com/RedTurtle/design-comuni-plone-theme/commit/397ba932c0742690535c9dd6868cd0bda740f11b))
+* update volto-editablefooter to 5.0.3 ([8fcada1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8fcada1c5e36e67fd79f3fa99ec9077d0565a661))
+
+## [10.4.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.0.0-alpha.1...v11.0.0-alpha.2) (2023-11-23)
+
+
+### Bug Fixes
+
+* a11y of listing block read-more with card-slide-text template ([#415](https://github.com/RedTurtle/design-comuni-plone-theme/issues/415)) ([6260983](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6260983016622af038d84d0f2efd3c9e13d2fbcf))
+* changed layout of readMore component to avoid overlapping ([#411](https://github.com/RedTurtle/design-comuni-plone-theme/issues/411)) ([a36a8b8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a36a8b8b1be250a27fa48316bf514d43f2aac9b7))
+* error in search blocks with service-link lighthouse id ([#417](https://github.com/RedTurtle/design-comuni-plone-theme/issues/417)) ([69f1a42](https://github.com/RedTurtle/design-comuni-plone-theme/commit/69f1a4243d13c077a0b0b469ce1de50a17527b95))
+
+
+### Documentation
+
+* updated publiccode and release log ([603c65d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/603c65d1de43952d7a1936127ea043d8a631a8b3))
+
+
+### Maintenance
+
+* release v10.4.2 ([b7f8713](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b7f87139d12ddeffcdcfcaaad730f46b64271cc2))
+
 ## [11.0.0-alpha.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.0.0-alpha.0...v11.0.0-alpha.1) (2023-11-23)
 
 ### ⚠ BREAKING CHANGES
