@@ -13,6 +13,16 @@
           color: $subsite-primary-text;
         }
       }
+
+      .card {
+        .card-body {
+          color: #000;
+
+          .contact-info .icon-wrapper svg {
+            fill: #000;
+          }
+        }
+      }
     }
   }
 }
