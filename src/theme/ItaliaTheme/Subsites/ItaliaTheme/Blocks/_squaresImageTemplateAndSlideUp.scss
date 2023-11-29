@@ -41,9 +41,9 @@
         }
 
         a.read-more {
-          color: $subsite-primary-text;
+          color: color-contrast($subsite-primary-text);
           svg.icon {
-            fill: $subsite-primary-text;
+            fill: color-contrast($subsite-primary-text);
           }
         }
       }
