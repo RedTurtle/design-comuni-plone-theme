@@ -193,6 +193,17 @@
     }
   }
 
+  //customer satisfaction buttons
+
+  .feedback-form .form-step-actions .next-action {
+    background-color: $subsite-primary;
+    color: $subsite-primary-text;
+
+    &:hover {
+      background-color: darken($subsite-primary, 5%);
+    }
+  }
+
   // customer satisfaction star colors
   .rating > input:checked ~ label, // show primary color star when clicked
 .rating:not(:checked) > label:hover, // hover current star
