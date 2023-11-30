@@ -10,7 +10,20 @@
 * image size in listing ([397ba93](https://github.com/RedTurtle/design-comuni-plone-theme/commit/397ba932c0742690535c9dd6868cd0bda740f11b))
 * update volto-editablefooter to 5.0.3 ([8fcada1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8fcada1c5e36e67fd79f3fa99ec9077d0565a661))
 
-## [10.4.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.0.0-alpha.1...v11.0.0-alpha.2) (2023-11-23)
+## [10.4.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v10.4.2...v10.4.3) (2023-11-28)
+
+### Bug Fixes
+* 404 page now sends user to homepage instead of search ([#419](https://github.com/RedTurtle/design-comuni-plone-theme/issues/419)) ([4331b59](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4331b5937dbcfad9fe6a22f3f8a0a53c1a17b838))
+* a11y of feedback form ([#418](https://github.com/RedTurtle/design-comuni-plone-theme/issues/418)) ([52da0c7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/52da0c73f67c8bb09b225e19a6535cd6a9613602))
+* changed styles for BandiInEvidenceTemplate for tablet size ([#412](https://github.com/RedTurtle/design-comuni-plone-theme/issues/412)) ([fd7688a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fd7688a80b6247243730ff01e55dd682ba2edbac))
+* removed pager-link data-element from prev item button in Pagination ([#420](https://github.com/RedTurtle/design-comuni-plone-theme/issues/420)) ([5812546](https://github.com/RedTurtle/design-comuni-plone-theme/commit/58125465349699396b2719a79bf70a339f4ac7e6))
+
+
+### Documentation
+
+* updated publiccode and release log ([33b267f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/33b267f2f20d68b521a1452d300f7288f1d01fb1))
+
+## [10.4.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v10.4.1...v10.4.2) (2023-11-23)
 
 
 ### Bug Fixes

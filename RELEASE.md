@@ -46,6 +46,17 @@
 ### Novità
 
 - Modificata l'altezza delle immagini delle card, per essere in linea con i template agid.
+## Versione 10.4.3 (28/11/2023)
+
+### Migliorie
+
+- Ora nella pagina 404 "Questa pagina non esiste" viene suggerito il proseguimento della navigazione verso la homepage invece che verso la ricerca.
+
+### Fix
+
+- Migliorata l'accessibilità del modulo di valutazione del sito che si trova in fondo ad ogni pagina.
+- Il blocco Elenco con variazione Bandi viene visualizzato correttamente anche su tablet.
+
 ## Versione 10.4.2 (23/11/2023)
 
 ### Fix
