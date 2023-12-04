@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Dimensione del titolo del blocco calendario uniformata ai titoli degli altri blocchi elenco.
+
 ## Versione 10.4.3 (28/11/2023)
 
 ### Migliorie
