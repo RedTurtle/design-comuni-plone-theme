@@ -29,6 +29,7 @@
     "volto-subfooter",
     "volto-gdpr-privacy",
     "volto-data-grid-widget",
+    "volto-querywidget-with-browser",
     "@eeacms/volto-taxonomy",
     "volto-feedback"
   ],
