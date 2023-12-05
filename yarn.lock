@@ -6482,7 +6482,7 @@ __metadata:
     volto-gdpr-privacy: 2.1.0
     volto-google-analytics: 2.0.0
     volto-multilingual-widget: 3.0.0
-    volto-querywidget-with-browser: "git+https://gitlab.com/redturtle/volto-querywidget-with-browser.git#v0.4.0"
+    volto-querywidget-with-browser: 0.4.0
     volto-rss-block: 3.0.0
     volto-secondarymenu: 4.0.0
     volto-social-settings: 3.0.0
@@ -14191,12 +14191,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-querywidget-with-browser@git+https://gitlab.com/redturtle/volto-querywidget-with-browser.git#v0.4.0":
+"volto-querywidget-with-browser@npm:0.4.0":
   version: 0.4.0
-  resolution: "volto-querywidget-with-browser@https://gitlab.com/redturtle/volto-querywidget-with-browser.git#commit=8c03431503add4368ad38a5ae281c1ddfb59078b"
+  resolution: "volto-querywidget-with-browser@npm:0.4.0"
   peerDependencies:
     "@plone/volto": ^17.0.0
-  checksum: a3ea58f94c21e5e44deabffab737817358810f5bd39582c8b220cce9d04cf556117abb3405e4a10abea7f0a566f27c4f69c73da1597cce8a90067e6be55509e1
+  checksum: ac57171aa9aa89617afb25814cdcf7e434f3efbeb6e1477db6163aee1b8ec08173e8df86cb2a2ef05d21c9a64b66174e72fd5ba621412a25fb809dc89058b9e9
   languageName: node
   linkType: hard
 
