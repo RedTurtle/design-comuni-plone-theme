@@ -41,10 +41,15 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione x.x.x (x/x/x)
+
+### Novità
+
+- Nel blocco elenco, nel criterio di configurazione 'Posizione', è ora presente uno strumento per facilitare la ricerca dei contenuti nel sito, senza dover scrivere il percorso a mano.
 
 ### Fix
 
+- Il feedback form ora richiede necessariamente una risposta oltre al voto in stelle.
 - Dimensione del titolo del blocco calendario uniformata ai titoli degli altri blocchi elenco.
 
 ## Versione 10.4.3 (28/11/2023)
