@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Sistemati tutti gli stili per i sottositi per l'accessibilità
+
 ## Versione 10.4.1 (21/11/2023)
 
 ### Migliorie
