@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Le immagini nelle card dei contenuti correlati sono centrate verticalmente
+
 ## Versione 10.4.3 (28/11/2023)
 
 ### Migliorie
