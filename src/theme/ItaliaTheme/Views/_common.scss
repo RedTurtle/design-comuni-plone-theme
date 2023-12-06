@@ -104,15 +104,7 @@ picture.volto-image.responsive img.full-width {
   .genericcard {
     .img-wrapper {
       display: flex;
-      align-items: center;
-
-      picture.volto-image {
-        display: flex;
-
-        img {
-          object-position: center;
-        }
-      }
+      // align-items: center;
     }
 
     .card-title {
