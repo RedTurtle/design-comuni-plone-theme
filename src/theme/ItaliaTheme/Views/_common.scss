@@ -102,6 +102,19 @@ picture.volto-image.responsive img.full-width {
   }
 
   .genericcard {
+    .img-wrapper {
+      display: flex;
+      align-items: center;
+
+      picture.volto-image {
+        display: flex;
+
+        img {
+          object-position: center;
+        }
+      }
+    }
+
     .card-title {
       margin: 0 !important;
       margin-bottom: 0.625rem !important;
