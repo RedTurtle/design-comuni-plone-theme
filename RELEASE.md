@@ -45,7 +45,7 @@
 
 ### Fix
 
-- Il feedback form ora richiede necessariamente una risposta oltre al volo in stelle.
+- Il feedback form ora richiede necessariamente una risposta oltre al voto in stelle.
 
 ## Versione 10.4.3 (28/11/2023)
 
