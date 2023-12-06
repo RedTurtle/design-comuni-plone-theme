@@ -46,6 +46,24 @@
 ### Fix
 
 - Sistemati tutti gli stili per i sottositi per l'accessibilità
+## Versione 10.4.3 (28/11/2023)
+
+### Migliorie
+
+- Ora nella pagina 404 "Questa pagina non esiste" viene suggerito il proseguimento della navigazione verso la homepage invece che verso la ricerca.
+
+### Fix
+
+- Migliorata l'accessibilità del modulo di valutazione del sito che si trova in fondo ad ogni pagina.
+- Il blocco Elenco con variazione Bandi viene visualizzato correttamente anche su tablet.
+
+## Versione 10.4.2 (23/11/2023)
+
+### Fix
+
+- Sistemato il layout della card nella variazione Bandi del Blocco Elenco per la modalità tablet
+- Sistemata accessibilità del read-more nel blocco elenco con variazione "Card con testo animato" quando si è in un sottosito con uno stile applicato.
+- Sistemato errore quando viene impostato "service-link" come ID lighthouse.
 
 ## Versione 10.4.1 (21/11/2023)
 
