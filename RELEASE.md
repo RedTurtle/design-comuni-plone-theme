@@ -47,6 +47,10 @@
 
 - Nel blocco elenco, nel criterio di configurazione 'Posizione', è ora presente uno strumento per facilitare la ricerca dei contenuti nel sito, senza dover scrivere il percorso a mano.
 
+### Fix
+
+- Il feedback form ora richiede necessariamente una risposta oltre al voto in stelle.
+
 ## Versione 10.4.3 (28/11/2023)
 
 ### Migliorie
