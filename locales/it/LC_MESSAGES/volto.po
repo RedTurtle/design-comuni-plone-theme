@@ -268,7 +268,7 @@ msgstr "Identificativo di servizio a solo uso interno, utilizzato per le verific
 #: components/ItaliaTheme/manage/Widgets/SubFooterConfigurationForm
 # defaultMessage: ID lighthouse
 msgid "ID lighthouse"
-msgstr "lighthouse"
+msgstr "ID lighthouse"
 
 #: components/ItaliaTheme/Blocks/NumbersBlock/Edit
 # defaultMessage: Seleziona le icone dalla barra a lato
@@ -2243,7 +2243,7 @@ msgstr "Collegamento"
 #: components/ItaliaTheme/Header/HeaderCenter
 # defaultMessage: homepage
 msgid "link-subsite-homepage-title"
-msgstr "homepage"
+msgstr "Home page"
 
 #: components/ItaliaTheme/Blocks/Accordion/Sidebar
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
