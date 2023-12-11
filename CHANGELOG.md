@@ -1,3 +1,10 @@
+### [7.23.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.23.0...v7.23.1) (2023-12-11)
+
+
+### Bug Fixes
+
+* HeaderSlim component import ([#431](https://github.com/RedTurtle/design-comuni-plone-theme/issues/431)) ([658ad98](https://github.com/RedTurtle/design-comuni-plone-theme/commit/658ad98a37d610968353d669a63c3d03b86ad21d))
+
 ## [7.23.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.22.2...v7.23.0) (2023-11-28)
 
 
