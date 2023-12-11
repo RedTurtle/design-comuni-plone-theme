@@ -119,7 +119,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
   const dispatch = useDispatch();
   const [satisfaction, setSatisfaction] = useState(null);
   const [step, setStep] = useState(0);
-  const [invalidForm, setInvalidForm] = useState(false);
+  const [invalidForm, setInvalidForm] = useState(true);
   const [formData, setFormData] = useState({});
   const captcha = !!process.env.RAZZLE_RECAPTCHA_KEY ? 'GoogleReCaptcha' : null;
   const submitResults = useSelector((state) => state.submitFeedback);
@@ -138,6 +138,10 @@ const FeedbackForm = ({ contentType, pathname }) => {
   const updateFormData = (field, value) => {
     if (field === 'comment') {
       if (value?.length > 200) setInvalidForm(true);
+      else setInvalidForm(false);
+    }
+    if (field === 'answer') {
+      if (!value) setInvalidForm(true);
       else setInvalidForm(false);
     }
     setFormData({
@@ -214,7 +218,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
       <Container>
         <Row className="d-flex justify-content-center bg-primary">
           <Col className="col-12 col-lg-6">
-            <div className="feedback-form">
+            <div className="feedback-form" role="form">
               <Card
                 className="shadow card-wrapper py-4 px-4"
                 data-element="feedback"
@@ -312,6 +316,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
                             color="primary"
                             onClick={nextStep}
                             className="next-action fw-bold"
+                            disabled={invalidForm}
                             type="button"
                           >
                             {intl.formatMessage(messages.next)}
