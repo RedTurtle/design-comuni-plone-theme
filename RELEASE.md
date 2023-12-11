@@ -47,6 +47,18 @@
 
 - Sistemati tutti gli stili per i sottositi per l'accessibilità
 
+## Versione 10.5.0 (06/12/2023)
+
+### Novità
+
+- Nel blocco elenco, nel criterio di configurazione 'Posizione', è ora presente uno strumento per facilitare la ricerca dei contenuti nel sito, senza dover scrivere il percorso a mano.
+
+### Fix
+
+- Le immagini nelle card dei contenuti correlati sono centrate verticalmente.
+- Il feedback form ora richiede necessariamente una risposta oltre al voto in stelle.
+- Dimensione del titolo del blocco calendario uniformata ai titoli degli altri blocchi elenco.
+
 ## Versione 10.4.3 (28/11/2023)
 
 ### Migliorie
