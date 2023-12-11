@@ -52,42 +52,28 @@ const Breadcrumbs = ({ pathname }) => {
       return paths.find(getMatchingRoute);
     }) || {};
 
-  // Variabile per riconoscere se esistono in config route statiche con il path corrente
-  const pathIsCustomAddonRoute = config.addonRoutes.some((route) => {
-    const paths = typeof route.path === 'string' ? [route.path] : route.path;
-
-    return (
-      paths.filter(getMatchingRoute).length > 0 &&
-      route.breadcrumbs_title !== null
-    );
-  });
-
   // Gestione delle rotte statiche. Se definito nel config della rotta un breadcrumbs_title, lo aggiungo alle breadcrumbs
-  if (pathIsCustomAddonRoute) {
-    const route = getCurrentPathFromAddonRoutes();
-    if (
-      (!(items === null || isEmpty(route)) &&
-        items.length > 0 &&
-        route.breadcrumbs_title &&
-        items[items.length - 1].url !== location.pathname) ||
-      (items.length === 0 && bcLoaded)
-    ) {
-      items.push({
-        url: location.pathname,
-        title: intl.formatMessage(route.breadcrumbs_title),
-      });
-    }
+  const route = getCurrentPathFromAddonRoutes();
+  if (
+    (!(items === null || isEmpty(route)) &&
+      items.length > 0 &&
+      route.breadcrumbs_title &&
+      items[items.length - 1].url !== location.pathname) ||
+    (items.length === 0 && bcLoaded && route.breadcrumbs_title)
+  ) {
+    items.push({
+      url: location.pathname,
+      title: intl.formatMessage(route.breadcrumbs_title),
+    });
   }
   /** fine della gestione delle rotte statiche */
 
   useEffect(() => {
     let actualPathForBreadcrumbs = pathname;
-    if (pathIsCustomAddonRoute) {
-      const { path, buildFullNavTree } = getCurrentPathFromAddonRoutes();
-      if (buildFullNavTree) {
-        const replacedPath = path.replace('**/', '');
-        actualPathForBreadcrumbs = pathname.replace(replacedPath, '');
-      }
+    const { path, buildFullNavTree } = getCurrentPathFromAddonRoutes();
+    if (buildFullNavTree) {
+      const replacedPath = path.replace('**/', '');
+      actualPathForBreadcrumbs = pathname.replace(replacedPath, '');
     }
     dispatch(getBreadcrumbs(getBaseUrl(actualPathForBreadcrumbs)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
