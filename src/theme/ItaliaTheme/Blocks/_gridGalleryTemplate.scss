@@ -154,9 +154,15 @@
           right: 0;
           bottom: 0;
           left: 0;
-          background-color: rgba(#000, 0.65);
           content: '';
           transition: opacity 0.3s ease;
+          background: rgba(0, 0, 0, 0.6);
+          opacity: 0.75;
+        }
+
+        &:not(:has(picture))::before {
+          background-color: rgba(#000, 0.75);
+          opacity: 0.9;
         }
 
         &:hover,
@@ -166,7 +172,7 @@
           }
 
           &::before {
-            background-color: rgba(#000, 0.75);
+            opacity: 1;
           }
         }
       }
