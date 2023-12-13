@@ -46,6 +46,15 @@
 ### Fix
 
 - Sistemati tutti gli stili per i sottositi per l'accessibilità
+## Versione 10.6.1 (13/12/2023)
+
+### Novità
+
+- I seguenti campi sono ora riordinabili liberamente: "Timeline tempi e scadenze" per il tipo di contenuto *Servizio* e "Valore punto di contatto" del tipo di contenuto *Punto di contatto*.
+
+### Fix
+
+- Rimosso pager-link automatico dal paginatore perché non riconosciuto dal validatore. È ora possibile inserire a mano il data-element pager-link nei blocchi di testo.
 
 ## Versione 10.5.0 (06/12/2023)
 
@@ -93,6 +102,7 @@
 ### Novità
 
 - Aggiunta la possibilità di selezionare la dimensione dell'immagine nel blocco Alert, inoltre è stato aggiornato anche il widget per la selezione del colore di sfondo.
+- Aggiunte le breadcrumbs nella pagina dei risultati della ricerca
 
 ### Fix
 
