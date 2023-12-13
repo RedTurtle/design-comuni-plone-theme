@@ -150,8 +150,10 @@
   .callout-bg {
     @if $subsite-light-theme {
       background-color: $subsite-primary-a0;
+      color: color-contrast($subsite-primary-a0);
     } @else {
       background-color: $subsite-primary-c1;
+      color: color-contrast($subsite-primary-c1);
     }
   }
 
@@ -165,9 +167,34 @@
 
   // titles and link colors - general
   .card-title a,
-  .accordion-header button,
-  .category-top span.text span.text.fw-bold {
-    color: $subsite-link-color !important;
+  .accordion-header button {
+    color: $subsite-link-color;
+  }
+
+  // accordion vista faq
+  .faq-tree {
+    .faq-folder
+      .accordion
+      .accordion-header
+      .accordion-button[data-bs-toggle='collapse'][aria-expanded='false'] {
+      color: $subsite-link-color;
+    }
+  }
+
+  .accordion-header .accordion-button {
+    color: $subsite-link-color;
+  }
+
+  &,
+  .simple-card-default .card.card-teaser .card-body {
+    .category-top span.text span.text.fw-bold {
+      color: $subsite-link-color;
+    }
+  }
+
+  // simple list bullet color
+  .simple-list-template ul li {
+    color: $subsite-link-color;
   }
 
   // slider controller icons

@@ -113,6 +113,17 @@
     }
   }
 
+  // servizio - accedi al servizio
+  #submit-request {
+    .draftjs-buttons a {
+      background-color: $subsite-secondary !important;
+      color: $subsite-secondary-text !important;
+      &:hover {
+        background-color: darken($subsite-secondary, 5%) !important;
+      }
+    }
+  }
+
   // date servizio
   .calendar-vertical {
     @if $subsite-light-theme {
