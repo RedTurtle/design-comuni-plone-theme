@@ -35,8 +35,8 @@
         border-left: 2px solid $subsite-link-color;
         border-color: $subsite-link-color;
       } @else {
-        border-left: 2px solid $subsite-link-color;
-        border-color: $subsite-link-color;
+        border-left: 2px solid $subsite-primary;
+        border-color: $subsite-primary;
       }
     }
     .nav-link {
