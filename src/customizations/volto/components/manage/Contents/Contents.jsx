@@ -1,12 +1,12 @@
 /**
  * Contents component.
  * @module components/manage/Contents/Contents
- */
-
-/** !!!IMPORTANTE!!!
- * CUSTOMIZATION -> FILE DA RIMUOVERE QUANDO AGGIORNIAMO A VOLTO16
- * - added getContent action from '@plone/volto/actions',
- * getContent refetching content to sync the current object in the toolbar
+ *
+ * * CUSTOMIZATIONS:
+ * - Changed Indexes and defaultIndexes with spread between Volto objects and customIndex configured from config.js,
+ *   applied in the constructor and changed props with this.Indexes and this.defaultIndexes
+ * - Commented defaultProps
+ * - Filtered Object.keys(config.settings.customIndexes) in dropdown menu map
  */
 
 import React, { Component } from 'react';
@@ -18,13 +18,13 @@ import { Link } from 'react-router-dom';
 import {
   Button,
   Confirm,
-  Container,
+  Container as SemanticContainer,
+  Divider,
   Dropdown,
   Menu,
   Input,
   Segment,
   Table,
-  Popup,
   Loader,
   Dimmer,
 } from 'semantic-ui-react';
@@ -53,9 +53,9 @@ import {
   orderContent,
   sortContent,
   updateColumnsContent,
+  linkIntegrityCheck,
   getContent,
 } from '@plone/volto/actions';
-import Indexes, { defaultIndexes } from '@plone/volto/constants/Indexes';
 import {
   ContentsBreadcrumbs,
   ContentsIndexHeader,
@@ -66,6 +66,7 @@ import {
   ContentsTagsModal,
   ContentsPropertiesModal,
   Pagination,
+  Popup,
   Toolbar,
   Toast,
   Icon,
@@ -74,6 +75,7 @@ import {
 
 import { Helmet, getBaseUrl } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import config from '@plone/volto/registry';
 
 import backSVG from '@plone/volto/icons/back.svg';
 import cutSVG from '@plone/volto/icons/cut.svg';
@@ -94,6 +96,11 @@ import sortDownSVG from '@plone/volto/icons/sort-down.svg';
 import sortUpSVG from '@plone/volto/icons/sort-up.svg';
 import downKeySVG from '@plone/volto/icons/down-key.svg';
 import moreSVG from '@plone/volto/icons/more.svg';
+import clearSVG from '@plone/volto/icons/clear.svg';
+
+import VoltoIndexes, {
+  defaultIndexes as DefaultVoltoIndexes,
+} from '@plone/volto/constants/Indexes';
 
 const messages = defineMessages({
   back: {
@@ -154,7 +161,7 @@ const messages = defineMessages({
   },
   messageReorder: {
     id: 'Item succesfully moved.',
-    defaultMessage: 'Item succesfully moved.',
+    defaultMessage: 'Item successfully moved.',
   },
   messagePasted: {
     id: 'Item(s) pasted.',
@@ -272,6 +279,35 @@ const messages = defineMessages({
     id: 'All',
     defaultMessage: 'All',
   },
+  linkIntegrityMessageHeader: {
+    id: 'Potential link breakage',
+    defaultMessage: 'Potential link breakage',
+  },
+  linkIntegrityMessageBody: {
+    id:
+      'By deleting this item, you will break ' +
+      'links that exist in the items listed below. ' +
+      'If this is indeed what you want to do, ' +
+      'we recommend that remove these references first.',
+    defaultMessage:
+      'By deleting this item, ' +
+      'you will break links that exist in the items ' +
+      'listed below. If this is indeed what you ' +
+      'want to do, we recommend that remove ' +
+      'these references first.',
+  },
+  linkIntegrityMessageExtra: {
+    id: 'This Page is referenced by the following items:',
+    defaultMessage: 'This Page is referenced by the following items:',
+  },
+  deleteItemCountMessage: {
+    id: 'Total items to be deleted:',
+    defaultMessage: 'Total items to be deleted:',
+  },
+  deleteItemMessage: {
+    id: 'Items to be deleted:',
+    defaultMessage: 'Items to be deleted:',
+  },
 });
 
 /**
@@ -297,6 +333,7 @@ class Contents extends Component {
     orderContent: PropTypes.func.isRequired,
     sortContent: PropTypes.func.isRequired,
     updateColumnsContent: PropTypes.func.isRequired,
+    linkIntegrityCheck: PropTypes.func.isRequired,
     clipboardRequest: PropTypes.shape({
       loading: PropTypes.bool,
       loaded: PropTypes.bool,
@@ -331,24 +368,24 @@ class Contents extends Component {
     pathname: PropTypes.string.isRequired,
   };
 
-  /**
-   * Default properties.
-   * @property {Object} defaultProps Default properties.
-   * @static
-   */
-  static defaultProps = {
-    items: [],
-    action: null,
-    source: null,
-    index: {
-      order: keys(Indexes),
-      values: mapValues(Indexes, (value, key) => ({
-        ...value,
-        selected: indexOf(defaultIndexes, key) !== -1,
-      })),
-      selectedCount: defaultIndexes.length + 1,
-    },
-  };
+  //  /**
+  //   * Default properties.
+  //   * @property {Object} defaultProps Default properties.
+  //   * @static
+  //   */
+  //  static defaultProps = {
+  //    items: [],
+  //    action: null,
+  //    source: null,
+  //    index: {
+  //      order: keys(VoltoIndexes),
+  //      values: mapValues(VoltoIndexes, (value, key) => ({
+  //        ...value,
+  //        selected: indexOf(DefaultVoltoIndexes, key) !== -1,
+  //      })),
+  //      selectedCount: DefaultVoltoIndexes.length + 1,
+  //    },
+  //  };
 
   /**
    * Constructor
@@ -395,6 +432,16 @@ class Contents extends Component {
     this.paste = this.paste.bind(this);
     this.fetchContents = this.fetchContents.bind(this);
     this.orderTimeout = null;
+    this.deleteItemsToShowThreshold = 10;
+    this.filterTimeout = null;
+    this.defaultIndexes = [
+      ...DefaultVoltoIndexes,
+      ...config.settings.customDefaultIndexes,
+    ];
+    this.Indexes = {
+      ...VoltoIndexes,
+      ...config.settings.customIndexes,
+    };
     this.state = {
       selected: [],
       showDelete: false,
@@ -404,21 +451,23 @@ class Contents extends Component {
       showProperties: false,
       showWorkflow: false,
       itemsToDelete: [],
+      showAllItemsToDelete: true,
       items: this.props.items,
       filter: '',
       currentPage: 0,
       pageSize: 50,
       index: this.props.index || {
-        order: keys(Indexes),
-        values: mapValues(Indexes, (value, key) => ({
+        order: keys(this.Indexes),
+        values: mapValues(this.Indexes, (value, key) => ({
           ...value,
-          selected: indexOf(defaultIndexes, key) !== -1,
+          selected: indexOf(this.defaultIndexes, key) !== -1,
         })),
-        selectedCount: defaultIndexes.length + 1,
+        selectedCount: this.defaultIndexes.length + 1,
       },
       sort_on: this.props.sort?.on || 'getObjPositionInParent',
       sort_order: this.props.sort?.order || 'ascending',
       isClient: false,
+      linkIntegrityBreakages: '',
     };
     this.filterTimeout = null;
   }
@@ -431,6 +480,22 @@ class Contents extends Component {
   componentDidMount() {
     this.fetchContents();
     this.setState({ isClient: true });
+  }
+  async componentDidUpdate(_, prevState) {
+    if (
+      this.state.itemsToDelete !== prevState.itemsToDelete &&
+      this.state.itemsToDelete.length > 0
+    ) {
+      this.setState({
+        linkIntegrityBreakages: await this.props.linkIntegrityCheck(
+          map(this.state.itemsToDelete, (item) =>
+            this.getFieldById(item, 'UID'),
+          ),
+        ),
+        showAllItemsToDelete:
+          this.state.itemsToDelete.length < this.deleteItemsToShowThreshold,
+      });
+    }
   }
 
   /**
@@ -464,7 +529,10 @@ class Contents extends Component {
         {
           currentPage: 0,
         },
-        () => this.fetchContents(nextProps.pathname),
+        () =>
+          this.setState({ filter: '' }, () =>
+            this.fetchContents(nextProps.pathname),
+          ),
       );
     }
     if (this.props.searchRequest.loading && nextProps.searchRequest.loaded) {
@@ -638,6 +706,7 @@ class Contents extends Component {
 
     this.setState({
       filteredItems,
+      selectedMenuFilter: value,
     });
   }
 
@@ -745,18 +814,20 @@ class Contents extends Component {
    */
   onMoveToTop(event, { value }) {
     const id = this.state.items[value]['@id'];
-    value = this.state.currentPage * this.state.pageSize + value;
-    this.props.orderContent(
-      getBaseUrl(this.props.pathname),
-      id.replace(/^.*\//, ''),
-      -value,
-    );
-    this.setState(
-      {
-        currentPage: 0,
-      },
-      () => this.fetchContents(),
-    );
+    this.props
+      .orderContent(
+        getBaseUrl(this.props.pathname),
+        id.replace(/^.*\//, ''),
+        'top',
+      )
+      .then(() => {
+        this.setState(
+          {
+            currentPage: 0,
+          },
+          () => this.fetchContents(),
+        );
+      });
   }
 
   /**
@@ -767,18 +838,21 @@ class Contents extends Component {
    * @returns {undefined}
    */
   onMoveToBottom(event, { value }) {
-    this.onOrderItem(
-      this.state.items[value]['@id'],
-      value,
-      this.state.items.length - 1 - value,
-      false,
-    );
-    this.onOrderItem(
-      this.state.items[value]['@id'],
-      value,
-      this.state.items.length - 1 - value,
-      true,
-    );
+    const id = this.state.items[value]['@id'];
+    this.props
+      .orderContent(
+        getBaseUrl(this.props.pathname),
+        id.replace(/^.*\//, ''),
+        'bottom',
+      )
+      .then(() => {
+        this.setState(
+          {
+            currentPage: 0,
+          },
+          () => this.fetchContents(),
+        );
+      });
   }
 
   /**
@@ -957,6 +1031,7 @@ class Contents extends Component {
         sort_order: this.state.sort_order,
         metadata_fields: '_all',
         b_size: 100000000,
+        show_inactive: true,
         ...(this.state.filter && { SearchableText: `${this.state.filter}*` }),
       });
     } else {
@@ -968,6 +1043,7 @@ class Contents extends Component {
         ...(this.state.filter && { SearchableText: `${this.state.filter}*` }),
         b_size: this.state.pageSize,
         b_start: this.state.currentPage * this.state.pageSize,
+        show_inactive: true,
       });
     }
   }
@@ -1111,7 +1187,6 @@ class Contents extends Component {
     const folderContentsAction = find(this.props.objectActions, {
       id: 'folderContents',
     });
-
     const loading =
       (this.props.clipboardRequest?.loading &&
         !this.props.clipboardRequest?.error) ||
@@ -1119,6 +1194,9 @@ class Contents extends Component {
       (this.props.updateRequest?.loading && !this.props.updateRequest?.error) ||
       (this.props.orderRequest?.loading && !this.props.orderRequest?.error) ||
       (this.props.searchRequest?.loading && !this.props.searchRequest?.error);
+
+    const Container =
+      config.getComponent({ name: 'Container' }).component || SemanticContainer;
 
     return this.props.token && this.props.objectActions?.length > 0 ? (
       <>
@@ -1138,23 +1216,88 @@ class Contents extends Component {
                 <article id="content">
                   <Confirm
                     open={this.state.showDelete}
+                    confirmButton="Delete"
                     header={this.props.intl.formatMessage(
                       messages.deleteConfirm,
                     )}
                     content={
                       <div className="content">
+                        <h3>
+                          {this.props.intl.formatMessage(
+                            messages.deleteItemCountMessage,
+                          ) + ` ${this.state.itemsToDelete.length}`}
+                        </h3>
                         <ul className="content">
-                          {map(this.state.itemsToDelete, (item) => (
-                            <li key={item}>
-                              {this.getFieldById(item, 'title')}
-                            </li>
-                          ))}
+                          {map(
+                            this.state.showAllItemsToDelete
+                              ? this.state.itemsToDelete
+                              : this.state.itemsToDelete.slice(
+                                  0,
+                                  this.deleteItemsToShowThreshold,
+                                ),
+                            (item) => (
+                              <li key={item}>
+                                {this.getFieldById(item, 'title')}
+                              </li>
+                            ),
+                          )}
                         </ul>
+                        {!this.state.showAllItemsToDelete && (
+                          <Button
+                            onClick={() =>
+                              this.setState({
+                                showAllItemsToDelete: true,
+                              })
+                            }
+                          >
+                            Show all items
+                          </Button>
+                        )}
+                        {this.state.linkIntegrityBreakages.length > 0 ? (
+                          <div>
+                            <h3>
+                              {this.props.intl.formatMessage(
+                                messages.linkIntegrityMessageHeader,
+                              )}
+                            </h3>
+                            <p>
+                              {this.props.intl.formatMessage(
+                                messages.linkIntegrityMessageBody,
+                              )}
+                            </p>
+                            <ul className="content">
+                              {map(
+                                this.state.linkIntegrityBreakages,
+                                (item) => (
+                                  <li key={item['@id']}>
+                                    <a href={item['@id']}>{item.title}</a>
+                                    <p>
+                                      {this.props.intl.formatMessage(
+                                        messages.linkIntegrityMessageExtra,
+                                      )}
+                                    </p>
+                                    <ul className="content">
+                                      {map(item.breaches, (breach) => (
+                                        <li key={breach['@id']}>
+                                          <a href={breach['@id']}>
+                                            {breach.title}
+                                          </a>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </li>
+                                ),
+                              )}
+                            </ul>
+                          </div>
+                        ) : (
+                          <div></div>
+                        )}
                       </div>
                     }
                     onCancel={this.onDeleteCancel}
                     onConfirm={this.onDeleteOk}
-                    size="mini"
+                    size="medium"
                   />
                   <ContentsUploadModal
                     open={this.state.showUpload}
@@ -1420,11 +1563,26 @@ class Contents extends Component {
                               value={this.state.filter}
                               onChange={this.onChangeFilter}
                             />
+                            {this.state.filter && (
+                              <Button
+                                className="icon icon-container"
+                                onClick={() => {
+                                  this.onChangeFilter('', { value: '' });
+                                }}
+                              >
+                                <Icon
+                                  name={clearSVG}
+                                  size="30px"
+                                  color="#e40166"
+                                />
+                              </Button>
+                            )}
                             <Icon
                               name={zoomSVG}
                               size="30px"
                               color="#007eb1"
                               className="zoom"
+                              style={{ flexShrink: '0' }}
                             />
                             <div className="results" />
                           </div>
@@ -1486,9 +1644,8 @@ class Contents extends Component {
                                       {this.props.intl.formatMessage({
                                         id: this.state.index.values[index]
                                           .label,
-                                        defaultMessage: this.state.index.values[
-                                          index
-                                        ].label,
+                                        defaultMessage:
+                                          this.state.index.values[index].label,
                                       })}
                                     </span>
                                   </Dropdown.Item>
@@ -1503,24 +1660,26 @@ class Contents extends Component {
                           <Table.Header>
                             <Table.Row>
                               <Table.HeaderCell>
-                                <Dropdown
-                                  item
-                                  upward={false}
-                                  className="sort-icon"
-                                  aria-label={this.props.intl.formatMessage(
-                                    messages.sort,
-                                  )}
-                                  icon={
+                                <Popup
+                                  menu={true}
+                                  position="bottom left"
+                                  flowing={true}
+                                  basic={true}
+                                  on="click"
+                                  popper={{
+                                    className: 'dropdown-popup',
+                                  }}
+                                  trigger={
                                     <Icon
                                       name={configurationSVG}
                                       size="24px"
                                       color="#826a6a"
-                                      className="configuration-svg"
+                                      className="dropdown-popup-trigger configuration-svg"
                                     />
                                   }
                                 >
-                                  <Dropdown.Menu>
-                                    <Dropdown.Header
+                                  <Menu vertical borderless fluid>
+                                    <Menu.Header
                                       content={this.props.intl.formatMessage(
                                         messages.rearrangeBy,
                                       )}
@@ -1533,21 +1692,36 @@ class Contents extends Component {
                                         'CreationDate',
                                         'ModificationDate',
                                         'portal_type',
+                                        ...Object.keys(
+                                          config.settings.customIndexes,
+                                        ).filter(
+                                          (i) =>
+                                            config.settings.customIndexes[i]
+                                              .sort_on,
+                                        ),
                                       ],
                                       (index) => (
-                                        <Dropdown.Item
+                                        <Dropdown
                                           key={index}
+                                          item
+                                          simple
                                           className={`sort_${index} icon-align`}
+                                          icon={
+                                            <Icon
+                                              name={downKeySVG}
+                                              size="24px"
+                                              className="left"
+                                            />
+                                          }
+                                          text={this.props.intl.formatMessage({
+                                            id: this.Indexes[index].label,
+                                          })}
                                         >
-                                          <Icon name={downKeySVG} size="24px" />
-                                          <FormattedMessage
-                                            id={Indexes[index].label}
-                                          />
                                           <Dropdown.Menu>
                                             <Dropdown.Item
                                               onClick={this.onSortItems}
-                                              value={`${Indexes[index].sort_on}|ascending`}
-                                              className={`sort_${Indexes[index].sort_on}_ascending icon-align`}
+                                              value={`${this.Indexes[index].sort_on}|ascending`}
+                                              className={`sort_${this.Indexes[index].sort_on}_ascending icon-align`}
                                             >
                                               <Icon
                                                 name={sortDownSVG}
@@ -1560,8 +1734,8 @@ class Contents extends Component {
                                             </Dropdown.Item>
                                             <Dropdown.Item
                                               onClick={this.onSortItems}
-                                              value={`${Indexes[index].sort_on}|descending`}
-                                              className={`sort_${Indexes[index].sort_on}_descending icon-align`}
+                                              value={`${this.Indexes[index].sort_on}|descending`}
+                                              className={`sort_${this.Indexes[index].sort_on}_descending icon-align`}
                                             >
                                               <Icon
                                                 name={sortUpSVG}
@@ -1573,15 +1747,22 @@ class Contents extends Component {
                                               />
                                             </Dropdown.Item>
                                           </Dropdown.Menu>
-                                        </Dropdown.Item>
+                                        </Dropdown>
                                       ),
                                     )}
-                                  </Dropdown.Menu>
-                                </Dropdown>
+                                  </Menu>
+                                </Popup>
                               </Table.HeaderCell>
                               <Table.HeaderCell>
-                                <Dropdown
-                                  upward={false}
+                                <Popup
+                                  menu={true}
+                                  position="bottom left"
+                                  flowing={true}
+                                  basic={true}
+                                  on="click"
+                                  popper={{
+                                    className: 'dropdown-popup',
+                                  }}
                                   trigger={
                                     <Icon
                                       name={
@@ -1597,18 +1778,18 @@ class Contents extends Component {
                                           ? '#007eb1'
                                           : '#826a6a'
                                       }
+                                      className="dropdown-popup-trigger"
                                       size="24px"
                                     />
                                   }
-                                  icon={null}
                                 >
-                                  <Dropdown.Menu>
-                                    <Dropdown.Header
+                                  <Menu vertical borderless fluid>
+                                    <Menu.Header
                                       content={this.props.intl.formatMessage(
                                         messages.select,
                                       )}
                                     />
-                                    <Dropdown.Item onClick={this.onSelectAll}>
+                                    <Menu.Item onClick={this.onSelectAll}>
                                       <Icon
                                         name={checkboxCheckedSVG}
                                         color="#007eb1"
@@ -1618,8 +1799,8 @@ class Contents extends Component {
                                         id="All"
                                         defaultMessage="All"
                                       />
-                                    </Dropdown.Item>
-                                    <Dropdown.Item onClick={this.onSelectNone}>
+                                    </Menu.Item>
+                                    <Menu.Item onClick={this.onSelectNone}>
                                       <Icon
                                         name={checkboxUncheckedSVG}
                                         size="24px"
@@ -1628,30 +1809,35 @@ class Contents extends Component {
                                         id="None"
                                         defaultMessage="None"
                                       />
-                                    </Dropdown.Item>
-                                    <Dropdown.Divider />
-                                    <Dropdown.Header
+                                    </Menu.Item>
+                                    <Divider />
+                                    <Menu.Header
                                       content={this.props.intl.formatMessage(
                                         messages.selected,
-                                        { count: this.state.selected.length },
+                                        {
+                                          count: this.state.selected.length,
+                                        },
                                       )}
                                     />
                                     <Input
                                       icon={<Icon name={zoomSVG} size="24px" />}
                                       iconPosition="left"
-                                      className="search"
+                                      className="item search"
                                       placeholder={this.props.intl.formatMessage(
                                         messages.filter,
                                       )}
+                                      value={
+                                        this.state.selectedMenuFilter || ''
+                                      }
                                       onChange={this.onChangeSelected}
                                       onClick={(e) => {
                                         e.preventDefault();
                                         e.stopPropagation();
                                       }}
                                     />
-                                    <Dropdown.Menu scrolling>
+                                    <Menu.Menu scrolling>
                                       {map(filteredItems, (item) => (
-                                        <Dropdown.Item
+                                        <Menu.Item
                                           key={item}
                                           value={item}
                                           onClick={this.onDeselect}
@@ -1662,11 +1848,11 @@ class Contents extends Component {
                                             size="24px"
                                           />{' '}
                                           {this.getFieldById(item, 'title')}
-                                        </Dropdown.Item>
+                                        </Menu.Item>
                                       ))}
-                                    </Dropdown.Menu>
-                                  </Dropdown.Menu>
-                                </Dropdown>
+                                    </Menu.Menu>
+                                  </Menu>
+                                </Popup>
                               </Table.HeaderCell>
                               <Table.HeaderCell
                                 width={Math.ceil(
@@ -1787,14 +1973,18 @@ class Contents extends Component {
   }
 }
 
+let dndContext;
+
 const DragDropConnector = (props) => {
   const { DragDropContext } = props.reactDnd;
   const HTML5Backend = props.reactDndHtml5Backend.default;
 
-  const DndConnectedContents = React.useMemo(
-    () => DragDropContext(HTML5Backend)(Contents),
-    [DragDropContext, HTML5Backend],
-  );
+  const DndConnectedContents = React.useMemo(() => {
+    if (!dndContext) {
+      dndContext = DragDropContext(HTML5Backend);
+    }
+    return dndContext(Contents);
+  }, [DragDropContext, HTML5Backend]);
 
   return <DndConnectedContents {...props} />;
 };
@@ -1836,6 +2026,7 @@ export const __test__ = compose(
       orderContent,
       sortContent,
       updateColumnsContent,
+      linkIntegrityCheck,
       getContent,
     },
   ),
@@ -1877,6 +2068,7 @@ export default compose(
       orderContent,
       sortContent,
       updateColumnsContent,
+      linkIntegrityCheck,
       getContent,
     },
   ),
