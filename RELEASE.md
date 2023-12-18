@@ -41,15 +41,29 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 10.6.4 (18/12/2023)
 
-### Migliorie
+### Fix
 
-- ...
+- Colori delle icone che specificano che un link è esterno che in alcuni casi erano errati.
+
+## Versione 10.6.3 (15/12/2023)
+
+### Fix
+
+- Sistemati alcuni problemi di visualizzazione nei template disponibili per il blocco Cerca. Ora tutti i template disponibili per questo blocco rispecchiano graficamente quelli per il blocco Elenco sia in visualizzazione che in modifica.
+
+## Versione 10.6.2 (14/12/2023)
+
+### Fix
+
+- Ora si vedono correttamente gli stili di allineamento del testo in alcuni editor di testo, ad esempio header e footer dei sottositi.
+
+## Versione 10.6.1 (13/12/2023)
 
 ### Novità
 
-- ...  [`Istruzioni`](url della documentazione relativa alla novità)
+- I seguenti campi sono ora riordinabili liberamente: "Timeline tempi e scadenze" per il tipo di contenuto _Servizio_ e "Valore punto di contatto" del tipo di contenuto _Punto di contatto_.
 
 ### Fix
 
@@ -85,6 +99,11 @@
 - Sistemato il layout della card nella variazione Bandi del Blocco Elenco per la modalità tablet
 - Sistemata accessibilità del read-more nel blocco elenco con variazione "Card con testo animato" quando si è in un sottosito con uno stile applicato.
 - Sistemato errore quando viene impostato "service-link" come ID lighthouse.
+## Versione X.X.X (dd/mm/yyyy)
+
+### Novità
+
+- Modificata l'altezza delle immagini delle card, per essere in linea con i template agid.
 
 ## Versione 10.4.1 (21/11/2023)
 

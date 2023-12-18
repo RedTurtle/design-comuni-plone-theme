@@ -1,3 +1,6 @@
+/*
+ * Blocco link completo
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { UniversalLink } from '@plone/volto/components';
@@ -52,8 +55,8 @@ const CompleteBlockLinksTemplate = (props) => {
           </Row>
         )}
         <Row className="items">
-          {items.map((item, index) => {
-            const image = ListingImage({ item, className: '' });
+          {items.map((item) => {
+            const image = ListingImage({ item, className: '', sizes: '60px' });
 
             const BlockExtraTags = getComponentWithFallback({
               name: 'BlockExtraTags',
