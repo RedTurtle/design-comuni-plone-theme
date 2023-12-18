@@ -20,9 +20,23 @@
 // eslint-disable-next-line import/no-unresolved
 //import logo from './logo.png?width=164';
 import logo from './logo.png';
+import { useSelector } from 'react-redux';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
-const Logo = () => (
-  <img className="icon" src={logo} width="82" height="82" alt="Logo" />
-);
+const Logo = () => {
+  const site = useSelector((state) => state.site.data);
+
+  const image_attrs = {};
+
+  if (site['plone.site_logo']) {
+    image_attrs.src = flattenToAppURL(site['plone.site_logo']);
+  } else {
+    image_attrs.src = logo;
+    image_attrs.width = '82';
+    image_attrs.height = '82';
+  }
+
+  return <img className="icon" alt="Logo" {...image_attrs} />;
+};
 
 export default Logo;
