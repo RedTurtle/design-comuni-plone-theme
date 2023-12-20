@@ -144,7 +144,7 @@ const LoginAgidButtons = ({ origin }) => {
   const query = useQueryV5();
   const came_from = query.get('came_from') || origin;
   const qs = came_from ? `?came_from=${came_from}` : '';
-  // 'ar' aka ???
+  // "ar" => "Area Riservata"
   const arLoginUrl = config.settings.siteProperties?.arLoginUrl;
   const spidLoginUrl = __CLIENT__
     ? window.env.RAZZLE_SPID_LOGIN_URL
