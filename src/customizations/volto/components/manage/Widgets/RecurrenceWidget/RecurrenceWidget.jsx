@@ -40,14 +40,14 @@ import {
   WEEKLY_DAYS,
   MONDAYFRIDAY_DAYS,
   rrulei18n,
-} from './Utils';
+} from '@plone/volto/components/manage/Widgets/RecurrenceWidget/Utils';
 
-import IntervalField from './IntervalField';
-import ByDayField from './ByDayField';
-import EndField from './EndField';
-import ByMonthField from './ByMonthField';
-import ByYearField from './ByYearField';
-import Occurences from './Occurences';
+import IntervalField from '@plone/volto/components/manage/Widgets/RecurrenceWidget/IntervalField';
+import ByDayField from '@plone/volto/components/manage/Widgets/RecurrenceWidget/ByDayField';
+import EndField from '@plone/volto/components/manage/Widgets/RecurrenceWidget/EndField';
+import ByMonthField from '@plone/volto/components/manage/Widgets/RecurrenceWidget/ByMonthField';
+import ByYearField from '@plone/volto/components/manage/Widgets/RecurrenceWidget/ByYearField';
+import Occurences from '@plone/volto/components/manage/Widgets/RecurrenceWidget/Occurences';
 
 const messages = defineMessages({
   editRecurrence: {
