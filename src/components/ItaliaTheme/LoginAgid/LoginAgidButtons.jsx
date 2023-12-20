@@ -14,7 +14,7 @@ import {
   Icon,
   LoginButton,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import {Icon as BaseIcon} from '@plone/volto/components'
+import { Icon as BaseIcon } from '@plone/volto/components';
 import { useLocation } from 'react-router-dom';
 import config from '@plone/volto/registry';
 import cieSVG from 'design-comuni-plone-theme/icons/entra_con_cie.svg';
@@ -108,8 +108,7 @@ const CieButton = ({ cieLoginUrl, qs, intl }) => (
         }}
         title={intl.formatMessage(messages.loginCieButton)}
       >
-        <BaseIcon name={cieSVG} style={{ width: '100%', height: '100%'}}
-         />
+        <BaseIcon name={cieSVG} style={{ width: '100%', height: '100%' }} />
       </Button>
       <div>
         <UniversalLink href="https://www.cartaidentita.interno.gov.it/">
