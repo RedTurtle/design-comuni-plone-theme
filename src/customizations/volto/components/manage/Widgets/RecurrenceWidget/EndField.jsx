@@ -11,7 +11,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Form, Grid, Input, Radio } from 'semantic-ui-react';
-import DatetimeWidget from '@plone/volto/components/manage/Widgets/RecurrenceWidget/DatetimeWidget';
+import DatetimeWidget from '@plone/volto/components/manage/Widgets/DatetimeWidget';
 
 const messages = defineMessages({
   recurrenceEnds: { id: 'Recurrence ends', defaultMessage: 'Ends' },
