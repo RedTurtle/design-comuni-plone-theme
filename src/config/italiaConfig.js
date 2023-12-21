@@ -122,6 +122,22 @@ export default function applyConfig(voltoConfig) {
       Faq: faQuestionSVG,
     },
 
+    /* lista delle colonne di default da visualizzare nella Content Folder */
+    customDefaultIndexes: [
+      // ...config.settings.customDefaultIndexes,
+      // 'ufficio_responsabile_bando',
+    ],
+    /* lista delle colonne custom da poter visualizzare nella Content Folder */
+    customIndexes: {
+      // ...config.settings.customIndexes,
+      // ufficio_responsabile_bando: {
+      //   label: 'Bandi gara - Uff. Resp.',
+      //   type: 'object',
+      //   sort_on: 'ufficio_responsabile_bando',
+      //   component: (item) => <>{item.ufficio_responsabile_bando.title}</>,
+      // },
+    },
+
     imageScales: {
       listing: 16,
       icon: 32,
