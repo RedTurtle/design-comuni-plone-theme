@@ -55,18 +55,31 @@ const messages = defineMessages({
 
 const PersonaDocumenti = ({ content }) => {
   const intl = useIntl();
+  const default_content_folders = [
+    'curriculum-vitae',
+    'compensi',
+    'importi-di-viaggio-e-o-servizi',
+    'altre-cariche',
+    'situazione-patrimoniale',
+    'dichiarazione-dei-redditi',
+    'spese-elettorali',
+    'variazione-situazione-patrimoniale',
+  ];
+
+  const other_folders = content.items.filter(
+    (i) =>
+      default_content_folders.indexOf(i.id) < 0 &&
+      i.id !== 'foto-e-attivita-politica' &&
+      (i['@type'] === 'Document' || i['@type'] === 'Folder') &&
+      contentFolderHasItems(content, i.id),
+  );
 
   const showSection =
     content?.curriculum_vitae?.download ||
-    contentFolderHasItems(content, 'curriculum-vitae') ||
-    contentFolderHasItems(content, 'compensi') ||
-    contentFolderHasItems(content, 'importi-di-viaggio-e-o-servizi') ||
-    contentFolderHasItems(content, 'altre-cariche') ||
     content.atto_nomina?.download ||
-    contentFolderHasItems(content, 'situazione-patrimoniale') ||
-    contentFolderHasItems(content, 'dichiarazione-dei-redditi') ||
-    contentFolderHasItems(content, 'spese-elettorali') ||
-    contentFolderHasItems(content, 'variazione-situazione-patrimoniale');
+    default_content_folders.filter((f) => contentFolderHasItems(content, f))
+      .length > 0 ||
+    other_folders.length > 0;
 
   return showSection ? (
     <RichTextArticle
@@ -156,6 +169,15 @@ const PersonaDocumenti = ({ content }) => {
         title={intl.formatMessage(messages.variazione_situazione_patrimoniale)}
         as_article={false}
       />
+
+      {other_folders.map((f) => (
+        <Attachments
+          content={content}
+          folder_name={f.id}
+          title={f.title}
+          as_article={false}
+        />
+      ))}
     </RichTextArticle>
   ) : (
     <></>
