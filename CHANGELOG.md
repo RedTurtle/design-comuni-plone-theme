@@ -1,3 +1,11 @@
+## [7.24.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.23.3...v7.24.0) (2023-12-21)
+
+
+### Features
+
+* added new configuration of content folder columns ([#439](https://github.com/RedTurtle/design-comuni-plone-theme/issues/439)) ([2e16de5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2e16de556fc336916034cefa98041a449cfae2f6))
+* view all children folder and pages of Persona as documents section ([d87ccc0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d87ccc02b43d56e6b4375643c4db3dfe22aa23d9))
+
 ### [7.23.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.23.2...v7.23.3) (2023-12-21)
 
 
