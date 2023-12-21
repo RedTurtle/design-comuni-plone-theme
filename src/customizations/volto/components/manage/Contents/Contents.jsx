@@ -1914,7 +1914,7 @@ class Contents extends Component {
                                 indexes={filter(
                                   map(this.state.index.order, (index) => ({
                                     id: index,
-                                    type: this.state.index.values[index].type,
+                                    ...this.state.index.values[index],
                                   })),
                                   (index) =>
                                     this.state.index.values[index.id].selected,
