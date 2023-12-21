@@ -1,3 +1,10 @@
+### [7.23.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.23.2...v7.23.3) (2023-12-21)
+
+
+### Bug Fixes
+
+* recurrence widget ([#444](https://github.com/RedTurtle/design-comuni-plone-theme/issues/444)) ([73f0763](https://github.com/RedTurtle/design-comuni-plone-theme/commit/73f07630c22df411b124052531e4fe500a951ee5))
+
 ### [7.23.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.23.1...v7.23.2) (2023-12-11)
 
 
