@@ -218,9 +218,10 @@ export const ContentsItemComponent = ({
             {index.type === 'array' && (
               <span>{item[index.id]?.join(', ')}</span>
             )}
-            {index.type === 'object' && (
-              <span>{item[index.id]?.map((obj) => obj.title).join(', ')}</span>
-            )}
+            {index.type === 'object' &&
+              (index?.component
+                ? index.component(item)
+                : item[index.id]?.map((obj) => obj.title).join(', '))}
           </Table.Cell>
         ))}
         <Table.Cell

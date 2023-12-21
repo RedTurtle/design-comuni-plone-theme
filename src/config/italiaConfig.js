@@ -134,6 +134,7 @@ export default function applyConfig(voltoConfig) {
       //   label: 'Bandi gara - Uff. Resp.',
       //   type: 'object',
       //   sort_on: 'ufficio_responsabile_bando',
+      //   component: (item) => <>{item.ufficio_responsabile_bando.title}</>,
       // },
     },
 

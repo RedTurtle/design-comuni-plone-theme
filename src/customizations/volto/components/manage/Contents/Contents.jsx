@@ -5,8 +5,9 @@
  * * CUSTOMIZATIONS:
  * - Changed Indexes and defaultIndexes with spread between Volto objects and customIndex configured from config.js,
  *   applied in the constructor and changed props with this.Indexes and this.defaultIndexes
- * - Commented defaultProps
+ * - index in defaultProps is redefined in the constructor with the new properties
  * - Filtered Object.keys(config.settings.customIndexes) in dropdown menu map
+ * - Updated indexes props passed to ContentsItem component
  */
 
 import React, { Component } from 'react';
@@ -368,24 +369,24 @@ class Contents extends Component {
     pathname: PropTypes.string.isRequired,
   };
 
-  //  /**
-  //   * Default properties.
-  //   * @property {Object} defaultProps Default properties.
-  //   * @static
-  //   */
-  //  static defaultProps = {
-  //    items: [],
-  //    action: null,
-  //    source: null,
-  //    index: {
-  //      order: keys(VoltoIndexes),
-  //      values: mapValues(VoltoIndexes, (value, key) => ({
-  //        ...value,
-  //        selected: indexOf(DefaultVoltoIndexes, key) !== -1,
-  //      })),
-  //      selectedCount: DefaultVoltoIndexes.length + 1,
-  //    },
-  //  };
+  /**
+   * Default properties.
+   * @property {Object} defaultProps Default properties.
+   * @static
+   */
+  static defaultProps = {
+    items: [],
+    action: null,
+    source: null,
+    //  index: {
+    //    order: keys(VoltoIndexes),
+    //    values: mapValues(VoltoIndexes, (value, key) => ({
+    //      ...value,
+    //      selected: indexOf(DefaultVoltoIndexes, key) !== -1,
+    //    })),
+    //    selectedCount: DefaultVoltoIndexes.length + 1,
+    //  },
+  };
 
   /**
    * Constructor
@@ -436,12 +437,22 @@ class Contents extends Component {
     this.filterTimeout = null;
     this.defaultIndexes = [
       ...DefaultVoltoIndexes,
-      ...config.settings.customDefaultIndexes,
+      ...(config.settings.customDefaultIndexes ?? []),
     ];
     this.Indexes = {
       ...VoltoIndexes,
-      ...config.settings.customIndexes,
+      ...(config.settings.customIndexes ?? {}),
     };
+    if (!this.index) {
+      this.index = {
+        order: keys(this.Indexes),
+        values: mapValues(this.Indexes, (value, key) => ({
+          ...value,
+          selected: indexOf(this.defaultIndexes, key) !== -1,
+        })),
+        selectedCount: this.defaultIndexes.length + 1,
+      };
+    }
     this.state = {
       selected: [],
       showDelete: false,
