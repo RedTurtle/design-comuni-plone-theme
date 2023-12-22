@@ -11521,11 +11521,12 @@ __metadata:
   linkType: hard
 
 "progressbar.js@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "progressbar.js@npm:1.1.0"
+  version: 1.1.1
+  resolution: "progressbar.js@npm:1.1.1"
   dependencies:
-    shifty: ^2.1.2
-  checksum: 69e7047a333978813878b4b9235cbfdf946f771a055cecfc035923163a98afd5cb0a344763c075cc3630b4689df5146a14244f2dcce3d69b08ceb31d4dc11d96
+    lodash.merge: ^4.6.2
+    shifty: ^2.8.3
+  checksum: 40cd6f65f78b744b124e8e8d30df748c8665c5b3f4434e4f7a4f6033a34f1b1558f37c282c87f991ce17aa8bfb04cb21f6f7964d05be9a41ff32ba443e1d65f6
   languageName: node
   linkType: hard
 
@@ -12929,15 +12930,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shifty@npm:^2.1.2":
-  version: 2.19.1
-  resolution: "shifty@npm:2.19.1"
+"shifty@npm:^2.8.3":
+  version: 2.20.4
+  resolution: "shifty@npm:2.20.4"
   dependencies:
     fsevents: ^2.3.2
   dependenciesMeta:
     fsevents:
       optional: true
-  checksum: b8da35e57b5535757664ea884ae74d12c66dfb941d31967434c84e13bbe0aeb8fd90f2770b391cfb56253dc5bbe0fd3587a3aaf025dc3dc41c229cb95d854524
+  checksum: f007d4359b396901f67146fc44a386aec81e86617410b3a3a37267d1f393f412eb2eeada638461b86725732351a399dbcc18c76e4e38627d7543c59dc7165504
   languageName: node
   linkType: hard
 
