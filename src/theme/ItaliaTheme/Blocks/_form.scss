@@ -43,6 +43,13 @@
         }
       }
     }
+
+    textarea {
+      &.form-control.is-invalid {
+        background-position-x: 99% !important;
+        background-size: 16px !important;
+      }
+    }
   }
 }
 
@@ -90,9 +97,17 @@
         border-bottom-color: $danger !important;
       }
     }
+
+    .react-select__menu {
+      z-index: 2;
+    }
   }
 
   .bootstrap-checkbox-radio-wrapper {
+    padding-right: 2rem;
+    background-position: 99% !important;
+    background-size: 22px 20px !important;
+
     > label {
       position: unset;
 
