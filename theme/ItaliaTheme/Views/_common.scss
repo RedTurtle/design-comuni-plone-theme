@@ -285,6 +285,11 @@ div.sticky-wrapper {
       }
     }
   }
+  .card-body {
+    .category-top {
+      hyphens: auto;
+    }
+  }
 }
 
 .icon-argument-container {
