@@ -1,3 +1,11 @@
+### [7.24.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.24.0...v7.24.1) (2024-01-04)
+
+
+### Bug Fixes
+
+* allow submit when pressing enter key in search blocks ([#452](https://github.com/RedTurtle/design-comuni-plone-theme/issues/452)) ([39ca6e5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/39ca6e56bc2b1581755aab3d20b9de13e6665a22))
+* fixed full-width in grid block ([#454](https://github.com/RedTurtle/design-comuni-plone-theme/issues/454)) ([e570500](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e5705004e0d708f6a55286d202b91fcca2b390cf))
+
 ## [7.24.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.23.3...v7.24.0) (2023-12-21)
 
 
