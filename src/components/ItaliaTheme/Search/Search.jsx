@@ -151,6 +151,10 @@ const messages = defineMessages({
     id: 'search_skip_to_search_results',
     defaultMessage: 'Vai ai risultati di ricerca',
   },
+  no_filters: {
+    id: 'no_filters',
+    defaultMessage: 'Nessun filtro attivato',
+  },
 });
 
 const searchOrderDict = {
@@ -445,7 +449,11 @@ const Search = () => {
                     <h6 className="text-uppercase">
                       {intl.formatMessage(messages.sections)}
                       {activeSections > 0 && (
-                        <span className="badge bg-secondary ms-3">
+                        <span
+                          className="badge bg-secondary ms-3"
+                          aria-live="polite"
+                          aria-label={`${activeSections} filtri attivati`}
+                        >
                           {activeSections}
                         </span>
                       )}
@@ -471,7 +479,11 @@ const Search = () => {
                     <h6 className="text-uppercase">
                       {intl.formatMessage(messages.topics)}
                       {activeTopics > 0 && (
-                        <span className="badge bg-secondary ms-3">
+                        <span
+                          className="badge bg-secondary ms-3"
+                          aria-live="polite"
+                          aria-label={`${activeTopics} filtri attivati`}
+                        >
                           {activeTopics}
                         </span>
                       )}
@@ -507,14 +519,16 @@ const Search = () => {
                       <div className="p-3 shadow-sm bg-white">
                         <h6 className="text-uppercase">
                           {intl.formatMessage(messages.content_types)}
-                          {activePortalTypes > 0 && (
-                            <span
-                              className="badge bg-secondary ms-3"
-                              aria-live="polite"
-                            >
-                              {activePortalTypes}
-                            </span>
-                          )}
+
+                          <span
+                            className={cx('badge bg-secondary ms-3', {
+                              'visually-hidden': activePortalTypes === 0,
+                            })}
+                            aria-live="polite"
+                            aria-label={`${activePortalTypes} filtri attivati`}
+                          >
+                            {activePortalTypes}
+                          </span>
                         </h6>
                         <div className="form-checck mt-4">
                           <SearchCTs

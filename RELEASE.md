@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorata l'accessibilità nella pagina di Ricerca.
+
 ## Versione 11.1.4 (dd/mm/yyyy)
 
 ### Fix
