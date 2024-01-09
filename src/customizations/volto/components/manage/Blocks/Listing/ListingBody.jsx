@@ -68,7 +68,7 @@ const ListingBody = React.memo(
 
         if (!block?.show_block_bg && !isSearchBlockResults) return 'full-width';
 
-        let bg_color = data.bg_color ? `bg-${data.bg_color}` : '';
+        let bg_color = data.bg_color ? `bg-${data.bg_color}` : 'bg-light';
 
         if (block.template === 'gridGalleryTemplate') {
           return `section section-muted section-inset-shadow py-5 ${bg_color} ${
@@ -76,7 +76,7 @@ const ListingBody = React.memo(
           }`;
         } else {
           return `py-5 ${bg_color} ${
-            isSearchBlockResults ? 'template-wrapper' : 'bg-light full-width'
+            isSearchBlockResults ? 'template-wrapper' : 'full-width'
           }`;
         }
       };
