@@ -123,7 +123,7 @@ const MegaMenu = ({ item, pathname }) => {
         >
           <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
           {isItemActive && (
-            <span className="sr-only">
+            <span className="visually-hidden">
               {intl.formatMessage(messages.menu_selected)}
             </span>
           )}
