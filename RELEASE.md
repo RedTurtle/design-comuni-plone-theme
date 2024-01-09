@@ -41,12 +41,17 @@
 - ...
 -->
 
-## Versione 11.1.4 (dd/mm/yyyy)
+## Versione x.x.x (dd/mm/yyyy)
+
+### Fix
+
+- Risolto un problema nel blocco Video Gallery, per cui alcuni video di youtube non erano riproducibili.
+
+## Versione 11.1.4 (05/01/2024)
 
 ### Fix
 
 - Risolto il problema di layout nelle card che indicano dei luoghi.
-- Risolto un problema nel blocco Video Gallery, per cui alcuni video di youtube non erano riproducibili.
 
 ## Versione 11.1.1 (22/12/2023)
 
