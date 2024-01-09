@@ -9,8 +9,9 @@ const Marker = ({ text = '', highlight = '' }) => {
   const regex = new RegExp(
     `(${highlight
       .split(' ')
+      // remove any characters not in these ranges
       .map((s) => s.replace(/[^a-zA-Z0-9À-ÖØ-öø-ÿ]/g, ''))
-      .filter((s) => s != '')
+      .filter((s) => s !== '')
       .join('|')})`,
     'gi',
   );
