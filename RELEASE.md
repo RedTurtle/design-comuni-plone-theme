@@ -47,6 +47,10 @@
 
 - Diminuita la larghezza del testo nelle card che indicano i luoghi.
 
+### Migliorie
+
+- Migliorata l'accessibilità nella pagina di Ricerca.
+
 ## Versione 11.1.4 (dd/mm/yyyy)
 
 ### Fix
