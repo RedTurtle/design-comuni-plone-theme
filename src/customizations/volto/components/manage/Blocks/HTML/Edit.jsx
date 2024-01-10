@@ -370,7 +370,7 @@ class Edit extends Component {
                     : () => {}
                 }
                 padding={8}
-                className="html-editor container"
+                className="html-editor"
                 ref={(node) => {
                   if (node) {
                     this.codeEditorRef.current = node;
