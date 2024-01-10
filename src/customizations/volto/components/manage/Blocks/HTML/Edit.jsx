@@ -23,6 +23,8 @@ import clearSVG from '@plone/volto/icons/clear.svg';
 import codeSVG from '@plone/volto/icons/code.svg';
 import indentSVG from '@plone/volto/icons/indent.svg';
 import Sidebar from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HTML/Sidebar.jsx';
+import { toast } from 'react-toastify';
+import { Toast } from '@plone/volto/components';
 
 const Editor = loadable(() => import('react-simple-code-editor'));
 
@@ -93,6 +95,7 @@ class Edit extends Component {
     super(props);
     this.state = {
       isPreview: false,
+      code: '',
     };
     this.onChangeCode = this.onChangeCode.bind(this);
     this.onPreview = this.onPreview.bind(this);
@@ -157,21 +160,28 @@ class Edit extends Component {
    */
   onPreview() {
     try {
-      const code = this.props.prettierStandalone
+      this.props.prettierStandalone
         .format(this.getValue(), {
           parser: 'html',
           plugins: [this.props.prettierParserHtml],
         })
-        .trim();
-      this.setState(
-        {
-          isPreview: !this.state.isPreview,
-        },
-        () => this.onChangeCode(code),
-      );
+        .then((value) => {
+          this.setState({ code: value });
+          const code = this.state.code.trim();
+          this.onChangeCode(code);
+        });
+      this.setState({
+        isPreview: !this.state.isPreview,
+      });
     } catch (ex) {
       // error while parsing the user-typed HTML
-      // TODO: show a toast notification or something similar to the user
+      toast.error(
+        <Toast
+          error
+          title="Errore"
+          content="C'è stato un errore nel formattare il codice html inserito"
+        />,
+      );
     }
   }
 
@@ -182,16 +192,25 @@ class Edit extends Component {
    */
   onPrettify = () => {
     try {
-      const code = this.props.prettierStandalone
+      this.props.prettierStandalone
         .format(this.getValue(), {
           parser: 'html',
           plugins: [this.props.prettierParserHtml],
         })
-        .trim();
-      this.onChangeCode(code);
+        .then((value) => {
+          this.setState({ code: value });
+          const code = this.state.code.trim();
+          this.onChangeCode(code);
+        });
     } catch (ex) {
       // error while parsing the user-typed HTML
-      // TODO: show a toast notification or something similar to the user
+      toast.error(
+        <Toast
+          error
+          title="Errore"
+          content="C'è stato un errore nel formattare il codice html inserito"
+        />,
+      );
     }
   };
 
@@ -259,6 +278,7 @@ class Edit extends Component {
                   aria-label={this.props.intl.formatMessage(messages.source)}
                   active={!this.state.isPreview}
                   onClick={this.onCodeEditor}
+                  type="button"
                 >
                   <Icon name={codeSVG} size="24px" />
                 </Button>
@@ -275,6 +295,7 @@ class Edit extends Component {
                   aria-label={this.props.intl.formatMessage(messages.preview)}
                   active={this.state.isPreview}
                   onClick={this.onPreview}
+                  type="button"
                 >
                   <Icon name={showSVG} size="24px" />
                 </Button>
@@ -290,6 +311,7 @@ class Edit extends Component {
                   basic
                   aria-label={this.props.intl.formatMessage(messages.prettier)}
                   onClick={this.onPrettify}
+                  type="button"
                 >
                   <Icon name={indentSVG} size="24px" />
                 </Button>
@@ -302,7 +324,12 @@ class Edit extends Component {
             <Popup
               trigger={
                 <Button.Group>
-                  <Button icon basic onClick={() => this.onChangeCode('')}>
+                  <Button
+                    icon
+                    basic
+                    type="button"
+                    onClick={() => this.onChangeCode('')}
+                  >
                     <Icon name={clearSVG} size="24px" color="#e40166" />
                   </Button>
                 </Button.Group>
