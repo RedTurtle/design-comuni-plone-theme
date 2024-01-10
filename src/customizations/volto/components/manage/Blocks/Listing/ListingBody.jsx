@@ -68,7 +68,11 @@ const ListingBody = React.memo(
 
         if (!block?.show_block_bg && !isSearchBlockResults) return 'full-width';
 
-        let bg_color = data.bg_color ? `bg-${data.bg_color}` : 'bg-light';
+        let bg_color = config.blocks?.blocksConfig[
+          'listing'
+        ]?.listing_bg_colors.some((color) => color.name === data.bg_color)
+          ? `bg-${data.bg_color}`
+          : 'bg-light';
 
         if (block.template === 'gridGalleryTemplate') {
           return `section section-muted section-inset-shadow py-5 ${bg_color} ${
