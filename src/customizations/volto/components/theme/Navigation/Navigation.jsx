@@ -108,6 +108,7 @@ const Navigation = ({ pathname }) => {
             navbar
             onOverlayClick={() => setCollapseOpen(!collapseOpen)}
             id="it-navigation-collapse"
+            showCloseButton={false}
           >
             <FocusLock disabled={!focusTrapActive}>
               <div className="menu-wrapper">
@@ -154,7 +155,8 @@ const Navigation = ({ pathname }) => {
                   title={intl.formatMessage(messages.CloseMenu)}
                   onClick={() => setCollapseOpen(!collapseOpen)}
                 >
-                  <Icon color="white" icon="it-close-big" padding={false} />
+                  <Icon color="white" icon="it-close-big" padding={false} />{' '}
+                  ciao
                 </button>
               </div>
             </FocusLock>
