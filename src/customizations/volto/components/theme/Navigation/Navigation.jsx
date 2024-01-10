@@ -155,8 +155,7 @@ const Navigation = ({ pathname }) => {
                   title={intl.formatMessage(messages.CloseMenu)}
                   onClick={() => setCollapseOpen(!collapseOpen)}
                 >
-                  <Icon color="white" icon="it-close-big" padding={false} />{' '}
-                  ciao
+                  <Icon color="white" icon="it-close-big" padding={false} />
                 </button>
               </div>
             </FocusLock>
