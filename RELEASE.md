@@ -47,6 +47,7 @@
 
 - Migliorata l'accessibilità nella pagina di Ricerca.
 - Diminuita la larghezza del testo nelle card che indicano i luoghi.
+- Migliorata il testo della ricorrenza di un evento.
 
 ### Fix
 
@@ -54,6 +55,7 @@
 - Risolto problema nel funzionamento della toolbar per il blocco HTML.
 - Sistemate spaziature e font su mobile del blocco Card con Immagine e Card Semplice, migliorato il layout di quest'ultimo.
 - È stato migliorato il contrasto minimo necessario tra sfondo e testo nei blocchi numeri, countdown e galleria a griglia.
+- Risolto un problema nell'edit della ricorrenza di un evento.
 
 ## Versione 11.1.4 (05/01/2024)
 
