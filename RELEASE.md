@@ -47,6 +47,7 @@
 
 - Diminuita la larghezza del testo nelle card che indicano i luoghi.
 - Risolto un problema nel blocco Video Gallery, per cui alcuni video di youtube non erano riproducibili.
+- Sistemate spaziature e font su mobile del blocco Card con Immagine e Card Semplice, migliorato il layout di quest'ultimo.
 
 ## Versione 11.1.4 (05/01/2024)
 
