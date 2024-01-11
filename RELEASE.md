@@ -54,6 +54,7 @@
 - Risolto problema nel funzionamento della toolbar per il blocco HTML.
 - Sistemate spaziature e font su mobile del blocco Card con Immagine e Card Semplice, migliorato il layout di quest'ultimo.
 - È stato migliorato il contrasto minimo necessario tra sfondo e testo nei blocchi numeri, countdown e galleria a griglia.
+- Risolto problema con lo stile "callout", icona megafono dell'editor di testo con sfondo bianco e bordo grigio
 
 ## Versione 11.1.4 (05/01/2024)
 
