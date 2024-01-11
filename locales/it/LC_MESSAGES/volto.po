@@ -2706,6 +2706,36 @@ msgstr "Diritti"
 msgid "risultati_indagini_customer_satisfaction"
 msgstr "Risultati indagini di customer satisfaction"
 
+#: components/overrideTranslations
+# defaultMessage: il giorno
+msgid "rrule_in"
+msgstr "il giorno"
+
+#: components/overrideTranslations
+# defaultMessage: _
+msgid "rrule_nd"
+msgstr " "
+
+#: components/overrideTranslations
+# defaultMessage: il
+msgid "rrule_on the"
+msgstr "il"
+
+#: components/overrideTranslations
+# defaultMessage: _
+msgid "rrule_rd"
+msgstr " "
+
+#: components/overrideTranslations
+# defaultMessage: _
+msgid "rrule_st"
+msgstr " "
+
+#: components/overrideTranslations
+# defaultMessage: _
+msgid "rrule_th"
+msgstr " "
+
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithImageRssTemplate
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate
 # defaultMessage: No results from RSS feed.
