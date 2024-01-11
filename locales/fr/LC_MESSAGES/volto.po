@@ -2550,11 +2550,6 @@ msgstr ""
 msgid "noVideos"
 msgstr ""
 
-#: components/ItaliaTheme/Search/Search
-# defaultMessage: Nessun filtro attivato
-msgid "no_filters"
-msgstr ""
-
 #: components/ItaliaTheme/Blocks/Listing/serviziAmministrazioneTrasparenteTemplate
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: nominativo

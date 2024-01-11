@@ -151,10 +151,6 @@ const messages = defineMessages({
     id: 'search_skip_to_search_results',
     defaultMessage: 'Vai ai risultati di ricerca',
   },
-  no_filters: {
-    id: 'no_filters',
-    defaultMessage: 'Nessun filtro attivato',
-  },
   active_filters: {
     id: 'active_filters',
     defaultMessage: '{filterNumber} filtri attivati',

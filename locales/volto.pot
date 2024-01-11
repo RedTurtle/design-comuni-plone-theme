@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-01-11T10:53:57.565Z\n"
+"POT-Creation-Date: 2024-01-11T11:04:31.849Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -2533,11 +2533,6 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/VideoGallery/Edit
 # defaultMessage: Nessun video selezionato. Aggiungi un elemento per mostrare un video
 msgid "noVideos"
-msgstr ""
-
-#: components/ItaliaTheme/Search/Search
-# defaultMessage: Nessun filtro attivato
-msgid "no_filters"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/serviziAmministrazioneTrasparenteTemplate
