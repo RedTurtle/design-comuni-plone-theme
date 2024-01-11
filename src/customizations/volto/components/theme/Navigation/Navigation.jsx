@@ -4,8 +4,10 @@
  */
 
 import React, { useEffect, useState } from 'react';
+import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import FocusLock from 'react-focus-lock';
 import { UniversalLink } from '@plone/volto/components';
 
 import {
@@ -32,7 +34,9 @@ import {
 import { getDropdownMenuNavitems, getItemsByPath } from 'volto-dropdownmenu';
 
 const Navigation = ({ pathname }) => {
+  const intl = useIntl();
   const [collapseOpen, setCollapseOpen] = useState(false);
+  const [focusTrapActive, setFocusTrapActive] = useState(false);
   const dispatch = useDispatch();
 
   const subsite = useSelector((state) => state.subsite?.data);
@@ -78,6 +82,7 @@ const Navigation = ({ pathname }) => {
       }
 
       setCollapseOpen(false);
+      setFocusTrapActive(false);
     };
 
     document.body.addEventListener('click', blocksClickListener);
@@ -94,7 +99,10 @@ const Navigation = ({ pathname }) => {
             aria-controls="#it-navigation-collapse"
             aria-expanded={collapseOpen}
             aria-label="Toggle navigation"
-            onClick={() => setCollapseOpen(!collapseOpen)}
+            onClick={() => {
+              setCollapseOpen(!collapseOpen);
+              setFocusTrapActive(!focusTrapActive);
+            }}
           >
             <Icon icon="it-burger" />
           </HeaderToggler>
@@ -104,50 +112,70 @@ const Navigation = ({ pathname }) => {
             navbar
             onOverlayClick={() => setCollapseOpen(!collapseOpen)}
             id="it-navigation-collapse"
+            showCloseButton={false}
           >
-            <div className="menu-wrapper">
-              <div className="it-brand-wrapper" role="navigation">
-                <UniversalLink
-                  href={
-                    subsite?.['@id'] ? flattenToAppURL(subsite['@id']) : '/'
-                  }
-                  onClick={() => setCollapseOpen(false)}
-                >
-                  {subsite?.subsite_logo ? logoSubsite : <Logo />}
-                  <BrandText mobile={true} subsite={subsite} />
-                </UniversalLink>
+            <FocusLock disabled={!focusTrapActive}>
+              <div className="menu-wrapper">
+                <div className="it-brand-wrapper" role="navigation">
+                  <UniversalLink
+                    href={
+                      subsite?.['@id'] ? flattenToAppURL(subsite['@id']) : '/'
+                    }
+                    onClick={() => setCollapseOpen(false)}
+                  >
+                    {subsite?.subsite_logo ? logoSubsite : <Logo />}
+                    <BrandText mobile={true} subsite={subsite} />
+                  </UniversalLink>
+                </div>
+                {/* Main Menu */}
+                <Nav data-element="main-navigation" navbar role="menubar">
+                  {menu
+                    ?.filter((item) => item.visible)
+                    ?.map((item, index) => (
+                      <MegaMenu
+                        item={item}
+                        pathname={pathname}
+                        key={index + 'mm'}
+                      />
+                    ))}
+                </Nav>
+
+                {/* Secondary Menu */}
+                <MenuSecondary pathname={pathname} />
+
+                {/* Headerslim Menu - main site */}
+                {!subsite && <TertiaryMenu />}
+
+                {/* Social Links */}
+                <SocialHeader />
+
+                {/* Headerslim Menu - parent site (if subsite) */}
+                {subsite && <ParentSiteMenu />}
               </div>
-              {/* Main Menu */}
-              <Nav data-element="main-navigation" navbar role="menubar">
-                {menu
-                  ?.filter((item) => item.visible)
-                  ?.map((item, index) => (
-                    <MegaMenu
-                      item={item}
-                      pathname={pathname}
-                      key={index + 'mm'}
-                    />
-                  ))}
-              </Nav>
-
-              {/* Secondary Menu */}
-              <MenuSecondary pathname={pathname} />
-
-              {/* Headerslim Menu - main site */}
-              {!subsite && <TertiaryMenu />}
-
-              {/* Social Links */}
-              <SocialHeader />
-
-              {/* Headerslim Menu - parent site (if subsite) */}
-              {subsite && <ParentSiteMenu />}
-            </div>
+              <div className="close-div">
+                <button
+                  className="btn close-menu"
+                  type="button"
+                  title={intl.formatMessage(messages.CloseMenu)}
+                  onClick={() => setCollapseOpen(!collapseOpen)}
+                >
+                  <Icon color="white" icon="it-close-big" padding={false} />
+                </button>
+              </div>
+            </FocusLock>
           </Collapse>
         </HeaderContent>
       ) : null}
     </Header>
   );
 };
+
+const messages = defineMessages({
+  CloseMenu: {
+    id: 'close-menu',
+    defaultMessage: 'Chiudi menu',
+  },
+});
 
 Navigation.propTypes = {
   pathname: PropTypes.string.isRequired,
