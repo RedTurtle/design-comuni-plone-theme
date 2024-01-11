@@ -95,7 +95,6 @@ class Edit extends Component {
     super(props);
     this.state = {
       isPreview: false,
-      code: '',
     };
     this.onChangeCode = this.onChangeCode.bind(this);
     this.onPreview = this.onPreview.bind(this);
@@ -166,16 +165,14 @@ class Edit extends Component {
           plugins: [this.props.prettierParserHtml],
         })
         .then((value) => {
-          this.setState({ code: value });
-          const code = this.state.code.trim();
-          this.onChangeCode(code);
+          this.onChangeCode(value.trim());
         });
       this.setState({
         isPreview: !this.state.isPreview,
       });
     } catch (ex) {
       // error while parsing the user-typed HTML
-      toast.error(
+      this.props.toastify.toast.error(
         <Toast
           error
           title="Errore"
@@ -198,13 +195,11 @@ class Edit extends Component {
           plugins: [this.props.prettierParserHtml],
         })
         .then((value) => {
-          this.setState({ code: value });
-          const code = this.state.code.trim();
-          this.onChangeCode(code);
+          this.onChangeCode(value.trim());
         });
     } catch (ex) {
       // error while parsing the user-typed HTML
-      toast.error(
+      this.props.toastify.toast.error(
         <Toast
           error
           title="Errore"
@@ -410,7 +405,12 @@ const withPrismMarkup = (WrappedComponent) => (props) => {
 };
 
 export default compose(
-  injectLazyLibs(['prettierStandalone', 'prettierParserHtml', 'prismCore']),
+  injectLazyLibs([
+    'prettierStandalone',
+    'prettierParserHtml',
+    'prismCore',
+    'toastify',
+  ]),
   withPrismMarkup,
   injectIntl,
 )(Edit);
