@@ -1,3 +1,15 @@
+### [7.24.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.24.1...v7.24.2) (2024-01-11)
+
+
+### Bug Fixes
+
+* fixed reccurence text ([#480](https://github.com/RedTurtle/design-comuni-plone-theme/issues/480)) ([14bdd47](https://github.com/RedTurtle/design-comuni-plone-theme/commit/14bdd47a2363e589133ee10a9c88d8b13d20a74e))
+
+
+### Maintenance
+
+* preparing release 7.24.2 ([bf26049](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bf26049904e4e394569a85175b0dc083bb29b22d))
+
 ### [7.24.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.24.0...v7.24.1) (2024-01-04)
 
 
