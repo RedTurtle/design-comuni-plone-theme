@@ -39,6 +39,7 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
         forceset: true,
       });
       const RRULE_LANGUAGE = rrulei18n(intl, Moment);
+      console.log(rruleSet.rrules()[0]);
       eventRecurrenceText = rruleSet.rrules()[0]?.toText(
         (t) => {
           return RRULE_LANGUAGE.strings[t];
