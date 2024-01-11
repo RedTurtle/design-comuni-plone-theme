@@ -2723,32 +2723,32 @@ msgstr "Droits"
 msgid "risultati_indagini_customer_satisfaction"
 msgstr "Résultats des enquêtes de satisfaction clients"
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: il giorno
 msgid "rrule_in"
 msgstr ""
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: _
 msgid "rrule_nd"
 msgstr ""
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: il
 msgid "rrule_on the"
 msgstr ""
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: _
 msgid "rrule_rd"
 msgstr ""
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: _
 msgid "rrule_st"
 msgstr ""
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: _
 msgid "rrule_th"
 msgstr ""

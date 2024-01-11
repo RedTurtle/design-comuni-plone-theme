@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-01-11T11:58:01.327Z\n"
+"POT-Creation-Date: 2024-01-11T13:44:54.156Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -2708,32 +2708,32 @@ msgstr ""
 msgid "risultati_indagini_customer_satisfaction"
 msgstr ""
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: il giorno
 msgid "rrule_in"
 msgstr ""
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: _
 msgid "rrule_nd"
 msgstr ""
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: il
 msgid "rrule_on the"
 msgstr ""
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: _
 msgid "rrule_rd"
 msgstr ""
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: _
 msgid "rrule_st"
 msgstr ""
 
-#: components/overrideTranslations
+#: overrideTranslations
 # defaultMessage: _
 msgid "rrule_th"
 msgstr ""
