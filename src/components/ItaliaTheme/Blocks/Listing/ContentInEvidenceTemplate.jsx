@@ -1,3 +1,6 @@
+/*
+ * Contenuto in evidenza
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
@@ -19,6 +22,7 @@ import { UniversalLink } from '@plone/volto/components';
 import {
   getCalendarDate,
   getEventRecurrenceMore,
+  getComponentWithFallback,
 } from 'design-comuni-plone-theme/helpers';
 import {
   ListingCategory,
@@ -29,19 +33,20 @@ import {
   ListingImage,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
-const ContentInEvidenceTemplate = ({
-  items,
-  title,
-  isEditMode,
-  show_block_bg,
-  linkAlign,
-  linkTitle,
-  linkHref,
-  id_lighthouse,
-  linkmore_id_lighthouse,
-  titleLine,
-  rrule,
-}) => {
+const ContentInEvidenceTemplate = (props) => {
+  const {
+    items,
+    title,
+    isEditMode,
+    // show_block_bg,
+    // linkAlign,
+    linkTitle,
+    linkHref,
+    id_lighthouse,
+    // linkmore_id_lighthouse,
+    titleLine,
+    rrule,
+  } = props;
   const intl = useIntl();
 
   return (
@@ -60,8 +65,18 @@ const ContentInEvidenceTemplate = ({
           const date = getCalendarDate(item, rrule.rrulestr);
           const eventRecurrenceMore = getEventRecurrenceMore(item, isEditMode);
           const listingText = <ListingText item={item} />;
-          const image = ListingImage({ item, className: 'item-image' });
+          const image = ListingImage({
+            item,
+            className: 'item-image',
+            loading: 'eager',
+            sizes: '(max-width:425px) 400px, (max-width:767px) 520px, 650px',
+          });
           const icon = getItemIcon(item);
+          const BlockExtraTags = getComponentWithFallback({
+            name: 'BlockExtraTags',
+            dependencies: ['ContentInEvidenceTemplate', item['@type']],
+          }).component;
+
           return (
             <Row key={item['@id']} className="content-in-evidence">
               {image && (
@@ -104,7 +119,7 @@ const ContentInEvidenceTemplate = ({
                           ))}
                         </>
                       )}
-
+                    <BlockExtraTags {...props} item={item} itemIndex={index} />
                     {eventRecurrenceMore}
                     {linkHref?.[0]?.['@id'] && (
                       <CardReadMore

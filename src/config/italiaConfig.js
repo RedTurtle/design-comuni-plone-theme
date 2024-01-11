@@ -6,7 +6,7 @@ import contentSVG from '@plone/volto/icons/content.svg';
 import bookSVG from '@plone/volto/icons/book.svg';
 import shareSVG from '@plone/volto/icons/share.svg';
 import searchIcon from 'bootstrap-italia/src/svg/it-search.svg';
-
+import { defineMessages } from 'react-intl';
 import { Search } from '@plone/volto/components';
 
 import {
@@ -65,9 +65,16 @@ import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/
 
 import reducers from 'design-comuni-plone-theme/reducers';
 
-const ReleaseLog = loadable(
-  () => import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
+const ReleaseLog = loadable(() =>
+  import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
 );
+
+const messages = defineMessages({
+  search_brdc: {
+    id: 'search_brdc',
+    defaultMessage: 'Ricerca',
+  },
+});
 
 export default function applyConfig(voltoConfig) {
   let config = applyRichTextConfig(voltoConfig);
@@ -479,10 +486,15 @@ export default function applyConfig(voltoConfig) {
     },
   };
   // Remove Horizontal Menu variation of TOC Block
-  config.blocks.blocksConfig.toc.variations =
-    config.blocks.blocksConfig.toc.variations.filter(
-      (v) => v.id !== 'horizontalMenu',
-    );
+  config.blocks.blocksConfig.toc.variations = config.blocks.blocksConfig.toc.variations.filter(
+    (v) => v.id !== 'horizontalMenu',
+  );
+
+  // COMPONENTS
+  config.components = {
+    ...config.components,
+    BlockExtraTags: { component: () => null },
+  };
 
   // REDUCERS
   config.addonReducers = {
@@ -496,6 +508,7 @@ export default function applyConfig(voltoConfig) {
     {
       path: '/**/search',
       component: Search,
+      breadcrumbs_title: messages.search_brdc,
     },
     {
       path: ['/login', '/**/login'],

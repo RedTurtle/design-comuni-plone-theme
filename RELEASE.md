@@ -41,19 +41,73 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione x.x.x (dd/mm/yyyy)
 
 ### Migliorie
 
-- ...
-
-### Novità
-
-- ...
+- Migliorata l'accessibilità nella pagina di Ricerca.
+- Diminuita la larghezza del testo nelle card che indicano i luoghi.
 
 ### Fix
 
+- Risolto un problema nel blocco Video Gallery, per cui alcuni video di youtube non erano riproducibili.
 - È stato migliorato il contrasto minimo necessario tra sfondo e testo nei blocchi numeri, countdown e galleria a griglia.
+
+## Versione 11.1.4 (05/01/2024)
+
+### Fix
+
+- Risolto il problema di layout nelle card che indicano dei luoghi.
+
+## Versione 11.1.1 (22/12/2023)
+
+### Fix
+
+- Risolto un problema con la dimensione delle immagini, che risultava in alcuni casi troppo piccola causando immagini sgranate
+
+## Versione 11.0.1 (19/12/2023)
+
+### Fix
+
+- Risolto un problema con le anteprime dei video embeddati da youtube.
+
+## Versione 11.0.0 (18/12/2023)
+
+### Novità
+
+- Modificata l'altezza delle immagini delle card, per essere in linea con i template agid.
+
+### Fix
+
+- Sistemati gli stili per i sottositi per l'accessibilità.
+
+## Versione 10.6.4 (18/12/2023)
+
+### Fix
+
+- Colori delle icone che specificano che un link è esterno che in alcuni casi erano errati.
+
+## Versione 10.6.3 (15/12/2023)
+
+### Fix
+
+- Sistemati alcuni problemi di visualizzazione nei template disponibili per il blocco Cerca. Ora tutti i template disponibili per questo blocco rispecchiano graficamente quelli per il blocco Elenco sia in visualizzazione che in modifica.
+
+## Versione 10.6.2 (14/12/2023)
+
+### Fix
+
+- Ora si vedono correttamente gli stili di allineamento del testo in alcuni editor di testo, ad esempio header e footer dei sottositi.
+
+## Versione 10.6.1 (13/12/2023)
+
+### Novità
+
+- I seguenti campi sono ora riordinabili liberamente: "Timeline tempi e scadenze" per il tipo di contenuto _Servizio_ e "Valore punto di contatto" del tipo di contenuto _Punto di contatto_.
+
+### Fix
+
+- Rimosso pager-link automatico dal paginatore perché non riconosciuto dal validatore. È ora possibile inserire a mano il data-element pager-link nei blocchi di testo.
 
 ## Versione 10.5.0 (06/12/2023)
 
@@ -101,6 +155,7 @@
 ### Novità
 
 - Aggiunta la possibilità di selezionare la dimensione dell'immagine nel blocco Alert, inoltre è stato aggiornato anche il widget per la selezione del colore di sfondo.
+- Aggiunte le breadcrumbs nella pagina dei risultati della ricerca
 
 ### Fix
 

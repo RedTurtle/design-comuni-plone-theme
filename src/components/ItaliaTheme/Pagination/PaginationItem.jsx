@@ -16,6 +16,10 @@ const messages = defineMessages({
     id: 'Next page',
     defaultMessage: 'Pagina successiva',
   },
+  page: {
+    id: 'Page',
+    defaultMessage: 'Pagina',
+  },
 });
 
 /**
@@ -46,9 +50,6 @@ class PaginationItem extends Component {
       'nextItem',
       'lastItem',
     ]),
-
-    /** Lighthouse ID to set Agid data-element on pager link for CT Servizio*/
-    isServiceLink: PropTypes.bool,
   };
 
   handleClick = (e) => {
@@ -62,8 +63,7 @@ class PaginationItem extends Component {
   };
 
   render() {
-    const { active, type, children, intl, ellipsisItem, isServiceLink } =
-      this.props;
+    const { active, type, children, intl, ellipsisItem } = this.props;
     const disabled = this.props.disabled || type === 'ellipsisItem';
     return (
       <PagerItem disabled={disabled}>
@@ -72,9 +72,6 @@ class PaginationItem extends Component {
           onClick={this.handleClick}
           onKeyDown={this.handleKeyDown}
           aria-current={active ? 'page' : null}
-          data-element={
-            isServiceLink && type !== 'prevItem' ? 'pager-link' : null
-          }
         >
           {type === 'prevItem' && (
             <>
@@ -109,8 +106,14 @@ class PaginationItem extends Component {
               </span>
             </>
           )}
-          {['prevItem', 'nextItem', 'ellipsisItem'].indexOf(type) < 0 &&
-            children}
+          {['prevItem', 'nextItem', 'ellipsisItem'].indexOf(type) < 0 && (
+            <>
+              <span className="visually-hidden">
+                {intl.formatMessage(messages.page)}
+              </span>{' '}
+              {children}
+            </>
+          )}
         </PagerLink>
       </PagerItem>
     );

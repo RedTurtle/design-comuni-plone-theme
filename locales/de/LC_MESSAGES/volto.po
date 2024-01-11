@@ -448,6 +448,11 @@ msgstr ""
 msgid "Open in a new tab"
 msgstr ""
 
+#: components/ItaliaTheme/Pagination/PaginationItem
+# defaultMessage: Pagina
+msgid "Page"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/PathFiltersWidget
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Filtro
@@ -735,6 +740,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/Actions
 # defaultMessage: Vedi azioni
 msgid "actions"
+msgstr ""
+
+#: components/ItaliaTheme/Search/Search
+# defaultMessage: {filterNumber} filtri attivati
+msgid "active_filters"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
@@ -1079,6 +1089,11 @@ msgstr ""
 msgid "block_bg_color"
 msgstr ""
 
+#: components/ItaliaTheme/Breadcrumbs/Breadcrumbs
+# defaultMessage: Percorso di navigazione
+msgid "breadcrumb"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
 # defaultMessage: Calendario
 msgid "calendarBlockSidebarTitle"
@@ -1373,6 +1388,12 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/CuredBy
 # defaultMessage: Persone
 msgid "cured_by_people"
+msgstr ""
+
+#: components/ItaliaTheme/Header/HeaderSearch/SearchModal
+#: components/ReleaseLog/ReleaseLog
+# defaultMessage: attivo
+msgid "currentActive"
 msgstr ""
 
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
@@ -2342,6 +2363,21 @@ msgstr ""
 msgid "login_agid_other_description"
 msgstr ""
 
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: CIE
+msgid "login_cie"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: Log in with CIE.
+msgid "login_cie_description"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: How to activate CIE
+msgid "login_cie_help"
+msgstr ""
+
 #: components/ItaliaTheme/LoginAgid/LoginAgid
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: Log in as employee
@@ -2361,6 +2397,11 @@ msgstr ""
 #: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: How to activate SPID
 msgid "login_spid_help"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: Login with CIE
+msgid "login_with_cie"
 msgstr ""
 
 #: components/ItaliaTheme/LoginAgid/LoginAgidButtons
@@ -3121,6 +3162,11 @@ msgstr ""
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Filtri avanzati
 msgid "search_adv_filters"
+msgstr ""
+
+#: config/italiaConfig
+# defaultMessage: Ricerca
+msgid "search_brdc"
 msgstr ""
 
 #: components/ItaliaTheme/Search/Search
