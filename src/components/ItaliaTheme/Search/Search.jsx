@@ -157,7 +157,7 @@ const messages = defineMessages({
   },
   active_filters: {
     id: 'active_filters',
-    defaultMessage: '{filterType} filtri attivati',
+    defaultMessage: '{filterNumber} filtri attivati',
   },
 });
 
@@ -461,7 +461,7 @@ const Search = () => {
                         aria-label={intl.formatMessage(
                           messages.active_filters,
                           {
-                            filterType: activeSections,
+                            filterNumber: activeSections,
                           },
                         )}
                       >
@@ -497,7 +497,7 @@ const Search = () => {
                         aria-label={intl.formatMessage(
                           messages.active_filters,
                           {
-                            filterType: activeTopics,
+                            filterNumber: activeTopics,
                           },
                         )}
                       >
@@ -544,7 +544,7 @@ const Search = () => {
                             aria-label={intl.formatMessage(
                               messages.active_filters,
                               {
-                                filterType: activePortalTypes,
+                                filterNumber: activePortalTypes,
                               },
                             )}
                           >
