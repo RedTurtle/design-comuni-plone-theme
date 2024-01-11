@@ -727,6 +727,11 @@ msgstr "Account"
 msgid "actions"
 msgstr "Vedi azioni"
 
+#: components/ItaliaTheme/Search/Search
+# defaultMessage: {filterNumber} filtri attivati
+msgid "active_filters"
+msgstr ""
+
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Vai alla ricerca per sezioni avanzata
 msgid "advandedSectionsFilters"
@@ -2527,6 +2532,11 @@ msgstr "Inserisci l'URL di un video YouTube o Vimeo nella barra a lato."
 # defaultMessage: Nessun video selezionato. Aggiungi un elemento per mostrare un video
 msgid "noVideos"
 msgstr "Nessun video selezionato. Aggiungi un elemento per mostrare un video"
+
+#: components/ItaliaTheme/Search/Search
+# defaultMessage: Nessun filtro attivato
+msgid "no_filters"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/serviziAmministrazioneTrasparenteTemplate
 #: helpers/amministrazioneTrasparenteHelper
