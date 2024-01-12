@@ -71,7 +71,7 @@ const messages = defineMessages({
   },
   label: {
     id: 'label',
-    defaultMessage: '{value}:',
+    defaultMessage: '{value}',
   },
   contatti: {
     id: 'contatti',
@@ -115,6 +115,7 @@ const PuntoDiContattoView = (props) => {
                       : intl.formatMessage(messages.label, {
                           value: intl.formatMessage(messages[pdc?.pdc_type]),
                         })}
+                    {pdc?.pdc_desc && ` - ${pdc?.pdc_desc}`}:
                     <span className="ms-1">{renderPDCItemValue(pdc)}</span>
                   </h5>
                 </div>

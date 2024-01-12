@@ -2246,7 +2246,7 @@ msgid "iter_del_procedimento"
 msgstr "Procedimiento"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: {value}:
+# defaultMessage: {value}
 msgid "label"
 msgstr ""
 

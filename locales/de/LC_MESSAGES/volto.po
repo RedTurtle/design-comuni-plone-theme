@@ -2252,7 +2252,7 @@ msgid "iter_del_procedimento"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: {value}:
+# defaultMessage: {value}
 msgid "label"
 msgstr ""
 

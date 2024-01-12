@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Novità
+
+- Aggiunto un campo descrizione nei punti di contatto per aiutare nella disambiguazione.
+
 ## Versione 11.2.0 (11/01/2023)
 
 ### Migliorie
