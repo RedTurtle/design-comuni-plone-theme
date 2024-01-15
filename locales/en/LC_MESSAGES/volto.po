@@ -2907,32 +2907,32 @@ msgstr "Customer satisfaction survey results"
 #: overrideTranslations
 # defaultMessage: il giorno
 msgid "rrule_in"
-msgstr ""
+msgstr "in"
 
 #: overrideTranslations
 # defaultMessage: _
 msgid "rrule_nd"
-msgstr ""
+msgstr "nd"
 
 #: overrideTranslations
 # defaultMessage: il
 msgid "rrule_on the"
-msgstr ""
+msgstr "on the"
 
 #: overrideTranslations
 # defaultMessage: _
 msgid "rrule_rd"
-msgstr ""
+msgstr "rd"
 
 #: overrideTranslations
 # defaultMessage: _
 msgid "rrule_st"
-msgstr ""
+msgstr "st"
 
 #: overrideTranslations
 # defaultMessage: _
 msgid "rrule_th"
-msgstr ""
+msgstr "th"
 
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithImageRssTemplate
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate
