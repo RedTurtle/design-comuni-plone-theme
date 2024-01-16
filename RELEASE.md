@@ -47,6 +47,10 @@
 
 - Ora per gli eventi è obbligatorio inserire il campo "Luoghi correlati" oppure compilare i campi dell'indirizzo.
 
+### Fix
+
+- Migliorati gli stili per i sottositi.
+
 ## Versione 11.2.1 (15/01/2024)
 
 ### Migliorie
