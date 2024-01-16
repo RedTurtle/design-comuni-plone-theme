@@ -259,6 +259,7 @@ class Edit extends Component {
                   aria-label={this.props.intl.formatMessage(messages.source)}
                   active={!this.state.isPreview}
                   onClick={this.onCodeEditor}
+                  type="button"
                 >
                   <Icon name={codeSVG} size="24px" />
                 </Button>
@@ -275,6 +276,7 @@ class Edit extends Component {
                   aria-label={this.props.intl.formatMessage(messages.preview)}
                   active={this.state.isPreview}
                   onClick={this.onPreview}
+                  type="button"
                 >
                   <Icon name={showSVG} size="24px" />
                 </Button>
@@ -290,6 +292,7 @@ class Edit extends Component {
                   basic
                   aria-label={this.props.intl.formatMessage(messages.prettier)}
                   onClick={this.onPrettify}
+                  type="button"
                 >
                   <Icon name={indentSVG} size="24px" />
                 </Button>
@@ -302,7 +305,12 @@ class Edit extends Component {
             <Popup
               trigger={
                 <Button.Group>
-                  <Button icon basic onClick={() => this.onChangeCode('')}>
+                  <Button
+                    icon
+                    basic
+                    type="button"
+                    onClick={() => this.onChangeCode('')}
+                  >
                     <Icon name={clearSVG} size="24px" color="#e40166" />
                   </Button>
                 </Button.Group>
