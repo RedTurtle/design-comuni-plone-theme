@@ -2400,6 +2400,11 @@ msgstr "Logo"
 msgid "luoghi_correlati"
 msgstr "Luoghi correlati"
 
+#: components/ItaliaTheme/manage/Widgets/LuoghiCorrelatiEventoWidget
+# defaultMessage: Luogo dell'evento
+msgid "luoghi_correlati_evento_widget_title"
+msgstr "Luogo dell'evento"
+
 #: components/ItaliaTheme/View/NewsItemView/NewsItemLuoghiCorrelati
 # defaultMessage: Luoghi
 msgid "luoghi_notizia"
@@ -2898,6 +2903,36 @@ msgstr "Diritti"
 # defaultMessage: Risultati indagini di customer satisfaction
 msgid "risultati_indagini_customer_satisfaction"
 msgstr "Risultati indagini di customer satisfaction"
+
+#: overrideTranslations
+# defaultMessage: il giorno
+msgid "rrule_in"
+msgstr "il giorno"
+
+#: overrideTranslations
+# defaultMessage: _
+msgid "rrule_nd"
+msgstr " "
+
+#: overrideTranslations
+# defaultMessage: il
+msgid "rrule_on the"
+msgstr "il giorno"
+
+#: overrideTranslations
+# defaultMessage: _
+msgid "rrule_rd"
+msgstr " "
+
+#: overrideTranslations
+# defaultMessage: _
+msgid "rrule_st"
+msgstr " "
+
+#: overrideTranslations
+# defaultMessage: _
+msgid "rrule_th"
+msgstr " "
 
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithImageRssTemplate
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate
