@@ -30,15 +30,21 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 7.24.2 (11/01/2024)
+
+### Migliorie
+
+- sitemata la descrizione di una ricorrenza mensile e annuale
+
+## Versione 7.23.0 (28/11/2023)
 
 ### Migliorie
 
 - Aggiornata nuova icona di Twitter
+- Nei template dei feed RSS ora viene mostrata la sorgente se presente.
 
 ### Fix
 
-- Nei template dei feed RSS ora viene mostrata la sorgente se presente.
 - Sistemata sovrapposizione della finestra di selezione blocchi con altri blocchi e con l'header del sito.
 
 ## Versione 7.22.2 (11/10/2023)
