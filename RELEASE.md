@@ -41,7 +41,18 @@
 - ...
 -->
 
-## Versione 11.2.0 (11/01/2023)
+## Versione 11.2.1 (15/01/2024)
+
+### Migliorie
+
+- Migliorata il testo della ricorrenza di un evento.
+
+### Fix
+
+- Risolto un problema nell'edit della ricorrenza di un evento.
+- Risolto problema con lo stile "callout", icona megafono dell'editor di testo con sfondo bianco e bordo grigio
+
+## Versione 11.2.0 (11/01/2024)
 
 ### Migliorie
 
