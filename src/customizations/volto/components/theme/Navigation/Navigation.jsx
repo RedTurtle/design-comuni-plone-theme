@@ -87,6 +87,12 @@ const Navigation = ({ pathname }) => {
       document.body.removeEventListener('click', blocksClickListener);
   }, []);
 
+  const closeButtonStyle = collapseOpen
+    ? {
+        display: 'block',
+      }
+    : { display: 'none' };
+
   return (
     <Header theme="" type="navbar">
       {menu?.length > 0 ? (
@@ -148,18 +154,16 @@ const Navigation = ({ pathname }) => {
                 {/* Headerslim Menu - parent site (if subsite) */}
                 {subsite && <ParentSiteMenu />}
               </div>
-              {collapseOpen && (
-                <div className="close-div">
-                  <button
-                    className="btn close-menu"
-                    type="button"
-                    title={intl.formatMessage(messages.CloseMenu)}
-                    onClick={() => setCollapseOpen(!collapseOpen)}
-                  >
-                    <Icon color="white" icon="it-close-big" padding={false} />
-                  </button>
-                </div>
-              )}
+              <div className="close-div" style={closeButtonStyle}>
+                <button
+                  className="btn close-menu"
+                  type="button"
+                  title={intl.formatMessage(messages.CloseMenu)}
+                  onClick={() => setCollapseOpen(!collapseOpen)}
+                >
+                  <Icon color="white" icon="it-close-big" padding={false} />
+                </button>
+              </div>
             </FocusLock>
           </Collapse>
         </HeaderContent>
