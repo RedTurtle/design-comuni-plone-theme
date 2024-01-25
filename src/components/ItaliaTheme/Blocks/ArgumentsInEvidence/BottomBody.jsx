@@ -17,7 +17,7 @@ const messages = defineMessages({
 const BottomBody = ({ data, intl }) => {
   return data?.arguments?.length > 0 ? (
     <Container className="text-center">
-      <div className="row d-lg-inline-flex pt-5">
+      <div className="row d-lg-flex align-items-center pt-5">
         <div className="col-lg-3">
           <h6 className="text-uppercase text-center mt-1">
             {intl?.formatMessage(messages.otherArguments)}
