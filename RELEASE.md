@@ -46,6 +46,7 @@
 ### Fix
 
 - Sistemato il layout del template Galliery a griglia per il blocco elenco, le immagini più piccole ora sono correttamente contenute dentro il loro riquadro e il titolo non fuoriesce più
+- Risolto un problema di visualizzazione degli argomenti indicati come altri argomenti nel blocco Argomenti quando il loro numero è esiguo
 
 ## Versione 11.3.2 (19/01/2023)
 

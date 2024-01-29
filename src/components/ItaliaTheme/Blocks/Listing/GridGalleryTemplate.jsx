@@ -60,7 +60,7 @@ const GridGalleryTemplate = ({
               className: '',
             });
             let scale = null;
-            if (index % 7 === 0 || index % 7 === 6) {
+            if (index % 7 === 0 || index % 7 === 6 || index % 7 === 3) {
               scale = 'great';
             }
             if (index % 7 === 1 || index % 7 === 5) {
@@ -69,7 +69,6 @@ const GridGalleryTemplate = ({
             if (index % 7 === 2 || index % 7 === 4) {
               scale = 'large';
             }
-
             if (scale && item?.image?.scales?.[scale]) {
               image = (
                 <img
