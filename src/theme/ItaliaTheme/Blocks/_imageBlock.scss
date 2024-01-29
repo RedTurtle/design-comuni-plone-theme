@@ -13,12 +13,95 @@
     }
   }
 
-  &.left,
-  &.right {
-    margin-bottom: 0;
-  }
-
   .external-link {
     display: none;
+  }
+
+  &.align.left,
+  &.align.right {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.cms-ui {
+  .block.image {
+    &.align.left,
+    &.align.right {
+      margin-bottom: 0;
+
+      img.small,
+      img.medium,
+      img.large {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .block-editor-image {
+    &.right,
+    &.left {
+      .ui.drag.block.image {
+        z-index: 99;
+        margin-bottom: 0.3rem;
+        margin-top: 0.2rem;
+        max-width: 50%;
+
+        .block.image,
+        .block.image img {
+          margin-bottom: 0;
+        }
+      }
+
+      &.size-s {
+        .ui.drag.block.image {
+          max-width: 15%;
+        }
+      }
+      &.size-m {
+        .ui.drag.block.image {
+          max-width: 25%;
+        }
+      }
+      &.size-l {
+        .ui.drag.block.image {
+          max-width: 50%;
+        }
+      }
+    }
+
+    &.right {
+      .block.image {
+        float: right;
+      }
+      .ui.drag.block.image {
+        margin-left: 1rem;
+      }
+      .drag.handle.wrapper {
+        left: 50%;
+      }
+      &.size-l {
+        .drag.handle.wrapper {
+          left: 50%;
+        }
+      }
+      &.size-m {
+        .drag.handle.wrapper {
+          left: 75%;
+        }
+      }
+      &.size-s {
+        .drag.handle.wrapper {
+          left: 85%;
+        }
+      }
+    }
+    &.left {
+      .block.image {
+        float: left;
+      }
+      .ui.drag.block.image {
+        margin-right: 1.7rem;
+      }
+    }
   }
 }
