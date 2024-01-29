@@ -46,6 +46,9 @@
 ### Migliorie
 
 - Migliorato il focus sulle immagini in edit del blocco Immagine quando queste sono allineate a sinistra o a destra.
+### Fix
+
+- Risolto un problema di visualizzazione degli argomenti indicati come altri argomenti nel blocco Argomenti quando il loro numero è esiguo
 
 ## Versione 11.3.2 (19/01/2023)
 
