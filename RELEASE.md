@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Colore di sfondo per il blocco icone impostato sul colore primario. Sistemato il contrasto tra descrizione e lo sfondo
+
 ## Versione 11.3.2 (19/01/2023)
 
 ### Fix
