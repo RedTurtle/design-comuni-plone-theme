@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Sistemati problemi negli stili per i sottositi
+
 ## Versione 11.3.2 (19/01/2023)
 
 ### Fix
