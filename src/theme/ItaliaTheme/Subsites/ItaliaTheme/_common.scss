@@ -57,7 +57,11 @@
     color: $subsite-primary-text !important;
   }
   .select-pill.text-primary {
-    color: $subsite-primary !important;
+    @if ($subsite-light-theme) {
+      color: $subsite-secondary !important;
+    } @else {
+      color: $subsite-primary !important;
+    }
 
     div {
       color: inherit;
@@ -84,13 +88,6 @@
   }
 
   // icon external link
-  .external-link {
-    @if $subsite-light-theme {
-      fill: $subsite-link-color !important;
-    } @else {
-      fill: $subsite-primary !important;
-    }
-  }
 
   .flag-icon {
     background: $subsite-secondary;
