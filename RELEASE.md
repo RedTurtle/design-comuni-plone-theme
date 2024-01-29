@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorato il focus sulle immagini in edit del blocco Immagine quando queste sono allineate a sinistra o a destra.
+
 ## Versione 11.3.2 (19/01/2023)
 
 ### Fix
