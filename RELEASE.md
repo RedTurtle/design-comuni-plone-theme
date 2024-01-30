@@ -53,6 +53,8 @@
   titolo, titolo del modulo e link al download in caso di testi lunghi, specialmente su mobile
 - Colore di sfondo per il blocco icone impostato sul colore primario. Sistemato il contrasto tra descrizione e lo sfondo
 - Layout delle card per i luoghi migliorato per dispositivi tablet
+- Risolto un problema di visualizzazione e allineamento delle immagini per le card dei blocchi elenco che rappresentano Persone,
+  migliorata la visualizzazione e il layout su dispositivi tablet (intervallo dimensioni: 992px-1199px)
 
 ## Versione 11.3.2 (19/01/2023)
 
