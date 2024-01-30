@@ -58,7 +58,7 @@
   }
   .select-pill.text-primary {
     @if ($subsite-light-theme) {
-      color: $subsite-secondary !important;
+      color: $subsite-link-color !important;
     } @else {
       color: $subsite-primary !important;
     }
@@ -86,7 +86,6 @@
       fill: $subsite-primary !important;
     }
   }
-
 
   .flag-icon {
     background: $subsite-secondary;
