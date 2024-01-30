@@ -58,7 +58,11 @@ const ServizioAccedi = ({ content }) => {
         >
           <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
             {content.dove_rivolgersi?.map?.((dove) => (
-              <OfficeCard office={dove} data-element="service-generic-access" />
+              <OfficeCard
+                office={dove}
+                data-element="service-generic-access"
+                key={dove['@id']}
+              />
             ))}
           </div>
           <RichText
