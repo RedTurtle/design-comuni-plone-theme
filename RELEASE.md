@@ -46,7 +46,11 @@
 ### Fix
 
 - Sistemato il layout del template Galliery a griglia per il blocco elenco, le immagini più piccole ora sono correttamente contenute dentro il loro riquadro e il titolo non fuoriesce più
+- Sistemati problemi negli stili per i sottositi
 - Risolto un problema di visualizzazione degli argomenti indicati come altri argomenti nel blocco Argomenti quando il loro numero è esiguo
+- Sistemato il layout e la visualizzazione della vista del CT Cartella Modulistica per gestire al meglio gli elementi
+  titolo, titolo del modulo e link al download in caso di testi lunghi, specialmente su mobile
+- Colore di sfondo per il blocco icone impostato sul colore primario. Sistemato il contrasto tra descrizione e lo sfondo
 
 ## Versione 11.3.2 (19/01/2023)
 
