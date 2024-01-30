@@ -52,6 +52,7 @@
 - Sistemato il layout e la visualizzazione della vista del CT Cartella Modulistica per gestire al meglio gli elementi
   titolo, titolo del modulo e link al download in caso di testi lunghi, specialmente su mobile
 - Colore di sfondo per il blocco icone impostato sul colore primario. Sistemato il contrasto tra descrizione e lo sfondo
+- Sistemata la visualizzazione delle card Uffici (card Unità Organizzativa) nelle risoluzioni tablet più comuni
 
 ## Versione 11.3.2 (19/01/2023)
 
