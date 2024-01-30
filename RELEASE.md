@@ -43,6 +43,11 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Novità
+
+- Rimosso i contatti dalle card che rappresentano Unità Organizzative nelle varie viste dei diversi content type in cui sono implementate.
+  La lista delle viste comprende i CT: Persona, Unità Organizzativa, Documento, Bando, Servizio, Notizia, Evento, Incarico, Luogo, Argomento
+
 ### Fix
 
 - Sistemato il layout del blocco elenco per i Bandi
