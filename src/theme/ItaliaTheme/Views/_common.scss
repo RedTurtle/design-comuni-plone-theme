@@ -272,6 +272,7 @@ div.sticky-wrapper {
 .wide-image:not(.row-full-width) {
   img {
     max-width: 100%;
+    height: auto;
   }
 }
 
