@@ -16,7 +16,6 @@ import {
   PersonaPlaceholderAfterContent,
   PersonaPlaceholderAfterRelatedItems,
   RelatedItemInEvidence,
-  SkipToMainContent,
   ContentTypeViewSections,
   useSideMenu,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
