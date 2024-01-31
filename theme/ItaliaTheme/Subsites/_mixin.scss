@@ -21,6 +21,8 @@
 @use 'ItaliaTheme/Blocks/searchSections' as it-search-sections;
 @use 'ItaliaTheme/Views/common' as it-views;
 @use 'ItaliaTheme/common' as it-common;
+@use 'ItaliaTheme/cms-ui' as it-cms-ui;
+@use 'ItaliaTheme/main' as it-main;
 
 @mixin define-subsite(
   $subsite-style,
@@ -82,6 +84,8 @@
       @include bs-linklist.linklist($subsite-primary, $subsite-link-color);
       @include bs-navscroll.navscroll($subsite-link-color);
       @include it-footer.footer($subsite-primary, $subsite-primary-text);
+      @include it-main.main($subsite-primary, $subsite-primary-text);
+      @include it-cms-ui.cms-ui($subsite-primary, $subsite-primary-text);
       @include it-card-image-evidence.card($subsite-link-color);
       @include it-complete-link.block(
         $subsite-secondary,

@@ -1,0 +1,12 @@
+@use '../all_variables' as *;
+
+@mixin cms-ui($subsite-primary, $subsite-primary-text) {
+  &.cms-ui {
+    .color-list-widget {
+      .button.primary,
+      .button.primary.active {
+        background-color: $subsite-primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+body {
+  &.subsite-light {
+    &-teal,
+    &-pink,
+    &-blue,
+    &-yellow {
+      .public-ui {
+        .icon-primary {
+          fill: $pager-font-color !important;
+        }
+      }
+      &.public-ui,
+      &.cms-ui {
+        .pagination {
+          .page-item {
+            .page-link[aria-current] {
+              border: 1px solid $pager-font-color !important;
+              color: $pager-font-color !important;
+            }
+          }
+        }
+      }
+      .block.highlitedContent {
+        .bg-primary .card .card-body {
+          .card-title a,
+          .card-text {
+            color: $body-color;
+          }
+          .categoryicon-top {
+            .text,
+            .icon,
+            .data {
+              color: $body-color;
+              fill: $body-color;
+            }
+          }
+        }
+      }
+      .search-container {
+        .filter-wrapper {
+          &.select-filter {
+            .react-select__control {
+              .react-select__placeholder,
+              .react-select__single-value {
+                color: $body-color !important;
+              }
+              .react-select__indicators svg {
+                fill: $body-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

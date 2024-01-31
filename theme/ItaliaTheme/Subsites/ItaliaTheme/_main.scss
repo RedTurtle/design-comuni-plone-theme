@@ -1,0 +1,37 @@
+@use '../all_variables' as *;
+
+@mixin main($subsite-primary, $subsite-primary-text) {
+  &.public-ui,
+  &.cms-ui {
+    .draftjs-buttons {
+      a {
+        background-color: $subsite-primary;
+        border-radius: $subsite-primary;
+        color: $subsite-primary-text;
+
+        &:hover,
+        &:active {
+          background-color: darken($subsite-primary, 8);
+          color: $subsite-primary-text;
+        }
+      }
+    }
+    .pagination {
+      .page-item {
+        .page-link[aria-current] {
+          border: 1px solid $subsite-primary;
+          color: $subsite-primary;
+        }
+      }
+    }
+    .bg-primary {
+      background-color: $subsite-primary !important;
+    }
+    .bg-alert-primary {
+      border-color: $subsite-primary;
+      &.bg-color-true {
+        background-color: $subsite-primary !important;
+      }
+    }
+  }
+}
