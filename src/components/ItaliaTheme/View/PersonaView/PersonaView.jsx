@@ -49,7 +49,6 @@ const PersonaView = ({ content }) => {
   return (
     <>
       <div className="container px-4 my-4 persona-view">
-        <SkipToMainContent />
         <PageHeader
           content={content}
           readingtime={null}
