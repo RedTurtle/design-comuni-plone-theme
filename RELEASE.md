@@ -41,11 +41,18 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- [ Accessibilità ] Sistemato lo skiplink "Vai al contenuto" nella pagina principale di ricerca del sito
+
 ## Versione 11.3.3 (30/01/2024)
 
 ### Migliorie
 
 - Migliorato il focus sulle immagini in edit del blocco Immagine quando queste sono allineate a sinistra o a destra.
+
 ### Fix
 
 - Sistemato il layout del blocco elenco per i Bandi
