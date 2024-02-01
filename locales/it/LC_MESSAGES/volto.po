@@ -36,6 +36,7 @@ msgid "Allow Externals"
 msgstr "Accetta URL esterni per l'embed"
 
 #: config/Blocks/ListingOptions/simpleCardTemplate
+#: config/Blocks/ListingOptions/sliderTemplate
 # defaultMessage: Aspetto
 msgid "Aspetto"
 msgstr "Aspetto"
@@ -60,7 +61,7 @@ msgstr "Titolo del blocco..."
 msgid "Block style"
 msgstr "Stile del blocco"
 
-#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCard
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Vedi
 msgid "Card detail label"
@@ -2759,7 +2760,7 @@ msgstr "Procedura informatizzata online"
 msgid "provvedimento_finale"
 msgstr "Provvedimento finale"
 
-#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCard
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Data di pubblicazione
 msgid "publication_date"
@@ -3613,6 +3614,16 @@ msgid "slideDot"
 msgstr "Vai alla slide {index}"
 
 #: config/Blocks/ListingOptions/sliderTemplate
+# defaultMessage: Qui puoi selezionare, per il template 'Slider', un aspetto diverso da quello di default per gli elementi mostrati nello slider.
+msgid "slider_listing_appearance_description"
+msgstr ""
+
+#: config/Blocks/ListingOptions/sliderTemplate
+# defaultMessage: Card semplice
+msgid "slider_listing_appearance_simplecard"
+msgstr ""
+
+#: config/Blocks/ListingOptions/sliderTemplate
 # defaultMessage: N° slide da mostrare
 msgid "slidesToShow"
 msgstr "N° slide da mostrare"
@@ -3946,7 +3957,7 @@ msgstr "Cerca una struttura"
 msgid "uo_type"
 msgstr "Tipologia"
 
-#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCard
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Data di aggiornamento
 msgid "update_date"

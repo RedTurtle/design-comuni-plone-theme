@@ -79,28 +79,44 @@ export const addSimpleCardTemplateOptions = (
       pos,
     );
   } else {
-    pos = templatesOptions(
+    pos = simpleCardTemplateOptions_appearance_default(
       schema,
       formData,
       intl,
-      [
-        'show_icon',
-        'hide_dates',
-        'show_section',
-        'show_type',
-        'show_description',
-        'show_detail_link',
-        'show_path_filters',
-      ],
-      {
-        hide_dates: { default: false },
-        show_icon: { default: true },
-        show_type: { default: false },
-        show_detail_link: { default: false },
-        show_path_filters: { default: false },
-      },
       pos,
     );
   }
+  return pos;
+};
+
+export const simpleCardTemplateOptions_appearance_default = (
+  schema,
+  formData,
+  intl,
+  position,
+) => {
+  let pos = position;
+  pos = templatesOptions(
+    schema,
+    formData,
+    intl,
+    [
+      'show_icon',
+      'hide_dates',
+      'show_section',
+      'show_type',
+      'show_description',
+      'show_detail_link',
+      'show_path_filters',
+    ],
+    {
+      hide_dates: { default: false },
+      show_icon: { default: true },
+      show_type: { default: false },
+      show_detail_link: { default: false },
+      show_path_filters: { default: false },
+    },
+    pos,
+  );
   return pos;
 };
