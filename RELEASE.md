@@ -41,11 +41,18 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- [ Accessibilità ] Migliorata l'accessibilità e aggiunto elementi per migliorare l'esperienza d'uso degli utenti che utilizzano screen reader nella vista Cartella FAQ
+
 ## Versione 11.3.3 (30/01/2024)
 
 ### Migliorie
 
 - Migliorato il focus sulle immagini in edit del blocco Immagine quando queste sono allineate a sinistra o a destra.
+
 ### Fix
 
 - Sistemato il layout del blocco elenco per i Bandi
