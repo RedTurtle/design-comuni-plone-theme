@@ -41,11 +41,18 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- [ Accessibilità ] Risolto un problema relativo alla navigazione da tastiera e di gestione del focus nei menu a tendina "Condividi" e "Azioni" nelle testate delle viste dei Content Type che le implementano.
+
 ## Versione 11.3.3 (30/01/2024)
 
 ### Migliorie
 
 - Migliorato il focus sulle immagini in edit del blocco Immagine quando queste sono allineate a sinistra o a destra.
+
 ### Fix
 
 - Sistemato il layout del blocco elenco per i Bandi
