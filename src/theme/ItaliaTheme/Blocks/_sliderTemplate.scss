@@ -146,6 +146,29 @@
     margin-bottom: 0;
   }
 
+  &.appearance_image_card {
+    .slick-track {
+      align-items: start;
+    }
+
+    .listing-item {
+      .img-responsive-wrapper {
+        &.natural-image-size {
+          .img-responsive {
+            position: static;
+            height: auto;
+            padding: 0;
+
+            figure.img-wrapper {
+              position: static;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .slider-container.full-width {
     .slick-arrow.slick-prev {
       z-index: 1;

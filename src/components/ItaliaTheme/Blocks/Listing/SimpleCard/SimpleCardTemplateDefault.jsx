@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Button, Row, Col } from 'design-react-kit';
 
-import SimpleCard from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCard';
+import SimpleCardDefault from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault';
 import { ListingLinkMore } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const SimpleCardTemplateDefault = (props) => {
@@ -109,7 +109,7 @@ const SimpleCardTemplateDefault = (props) => {
 
       <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 mb-3">
         {items.map((item, index) => (
-          <SimpleCard {...props} item={item} index={index} key={index} />
+          <SimpleCardDefault {...props} item={item} index={index} key={index} />
         ))}
       </div>
 

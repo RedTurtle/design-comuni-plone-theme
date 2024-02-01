@@ -38,7 +38,7 @@ const messages = defineMessages({
   },
 });
 
-const SimpleCard = (props) => {
+const SimpleCardDefault = (props) => {
   const intl = useIntl();
 
   moment.locale(intl.locale);
@@ -88,7 +88,7 @@ const SimpleCard = (props) => {
 
   const BlockExtraTags = getComponentWithFallback({
     name: 'BlockExtraTags',
-    dependencies: ['SimpleCard', type],
+    dependencies: ['SimpleCardDefault', type],
   }).component;
 
   return (
@@ -166,9 +166,9 @@ const SimpleCard = (props) => {
   );
 };
 
-SimpleCard.propTypes = {
+SimpleCardDefault.propTypes = {
   item: PropTypes.any.isRequired,
   isEditMode: PropTypes.bool,
 };
 
-export default injectLazyLibs(['rrule'])(SimpleCard);
+export default injectLazyLibs(['rrule'])(SimpleCardDefault);

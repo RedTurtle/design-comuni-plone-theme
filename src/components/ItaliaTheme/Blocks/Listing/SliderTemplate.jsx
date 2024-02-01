@@ -2,6 +2,7 @@
  * Slider
  */
 import 'slick-carousel/slick/slick.css';
+import config from '@plone/volto/registry';
 import 'design-comuni-plone-theme/components/slick-carousel/slick/slick-theme.css';
 import { Col, Container, Row } from 'design-react-kit';
 import {
@@ -16,7 +17,6 @@ import {
 import React, { useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
@@ -134,17 +134,8 @@ function PrevArrow(props) {
   );
 }
 
-const Slide = ({
-  item,
-  index,
-  image,
-  show_image_title,
-  full_width,
-  intl,
-  setUserAutoplay,
-  userAutoplay,
-  slider,
-}) => {
+const Slide = (props) => {
+  const { item, index, appearance, appearanceProp } = props;
   const handleKeyboardUsers = (e) => {
     const { key, shiftKey } = e;
     if (key === 'Tab') {
@@ -161,40 +152,24 @@ const Slide = ({
     }
   };
 
+  const appearances = config.blocks.blocksConfig.listing.variations.filter(
+    (v) => v.id === 'slider',
+  )[0]?.appearance;
+  const SlideItemAppearance = appearances[appearance] ?? appearances['default'];
+
   return (
     <div
       className="it-single-slide-wrapper"
       key={item['@id'] + index}
       data-slide={index}
     >
-      <div className="slide-wrapper">
-        {image ? (
-          <figure className="img-wrapper">{image}</figure>
-        ) : (
-          <div className="img-placeholder"></div>
-        )}
-        {show_image_title && (
-          <div className="slide-title">
-            <UniversalLink
-              item={item}
-              title={intl.formatMessage(messages.viewImage)}
-              tabIndex={0}
-              data-slide={index}
-              className={'slide-link no-external-if-link'}
-              onKeyDown={handleKeyboardUsers}
-            >
-              {full_width ? (
-                <Container>
-                  {item.title} <Icon icon="arrow-right" key="arrow-right-fw" />
-                </Container>
-              ) : (
-                <>
-                  {item.title} <Icon icon="arrow-right" key="arrow-right" />
-                </>
-              )}
-            </UniversalLink>
-          </div>
-        )}
+      <div className={'slide-wrapper'}>
+        <SlideItemAppearance
+          {...props}
+          {...appearanceProp}
+          messages={messages}
+          handleKeyboardUsers={handleKeyboardUsers}
+        />
       </div>
     </div>
   );
@@ -213,7 +188,9 @@ const SliderTemplate = ({
   show_dots = true,
   autoplay = false,
   autoplay_speed = 2, //seconds
+  slide_appearance = 'default',
   reactSlick,
+  ...appearanceProp
 }) => {
   const intl = useIntl();
   const [userAutoplay, setUserAutoplay] = useState(autoplay);
@@ -311,6 +288,7 @@ const SliderTemplate = ({
     <div
       className={cx(`sliderTemplate slidesToShow-${nSlidesToShow || 1}`, {
         'no-margin': full_width,
+        ['appearance_' + slide_appearance]: slide_appearance,
       })}
     >
       <Container className="px-4">
@@ -367,6 +345,8 @@ const SliderTemplate = ({
                     setUserAutoplay={setUserAutoplay}
                     userAutoplay={userAutoplay}
                     slider={slider}
+                    appearance={slide_appearance}
+                    appearanceProp={appearanceProp}
                   />
                 );
               })}

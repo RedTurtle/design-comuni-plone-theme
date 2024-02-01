@@ -61,7 +61,7 @@ msgstr "Titolo del blocco..."
 msgid "Block style"
 msgstr "Stile del blocco"
 
-#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCard
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Vedi
 msgid "Card detail label"
@@ -2760,7 +2760,7 @@ msgstr "Procedura informatizzata online"
 msgid "provvedimento_finale"
 msgstr "Provvedimento finale"
 
-#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCard
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Data di pubblicazione
 msgid "publication_date"
@@ -3619,6 +3619,11 @@ msgid "slider_listing_appearance_description"
 msgstr ""
 
 #: config/Blocks/ListingOptions/sliderTemplate
+# defaultMessage: Card con immagine
+msgid "slider_listing_appearance_imagecard"
+msgstr ""
+
+#: config/Blocks/ListingOptions/sliderTemplate
 # defaultMessage: Card semplice
 msgid "slider_listing_appearance_simplecard"
 msgstr ""
@@ -3957,7 +3962,7 @@ msgstr "Cerca una struttura"
 msgid "uo_type"
 msgstr "Tipologia"
 
-#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCard
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Data di aggiornamento
 msgid "update_date"

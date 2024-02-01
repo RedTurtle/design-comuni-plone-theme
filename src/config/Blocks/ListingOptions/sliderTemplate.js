@@ -2,6 +2,7 @@ import { defineMessages } from 'react-intl';
 
 import { addSchemaField } from 'design-comuni-plone-theme/config/Blocks/ListingOptions';
 import { simpleCardTemplateOptions_appearance_default } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/simpleCardTemplate';
+import { imageCardTemplateOptions } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/cardWithImageTemplate';
 
 const messages = defineMessages({
   show_full_width: {
@@ -45,9 +46,14 @@ const messages = defineMessages({
     id: 'slider_listing_appearance_simplecard',
     defaultMessage: 'Card semplice',
   },
+  slider_listing_appearance_imagecard: {
+    id: 'slider_listing_appearance_imagecard',
+    defaultMessage: 'Card con immagine',
+  },
 });
 
 export const SliderTemplateAppearance_SIMPLECARD = 'simple_card';
+export const SliderTemplateAppearance_IMAGECARD = 'image_card';
 
 export const addSliderTemplateOptions = (
   schema,
@@ -113,11 +119,15 @@ export const addSliderTemplateOptions = (
       SliderTemplateAppearance_SIMPLECARD,
       intl.formatMessage(messages.slider_listing_appearance_simplecard),
     ],
+    [
+      SliderTemplateAppearance_IMAGECARD,
+      intl.formatMessage(messages.slider_listing_appearance_imagecard),
+    ],
   ];
 
   addSchemaField(
     schema,
-    'appearance',
+    'slide_appearance',
     intl.formatMessage(messages.appearance),
     intl.formatMessage(messages.slider_listing_appearance_description),
     {
@@ -127,8 +137,13 @@ export const addSliderTemplateOptions = (
   );
   pos++;
 
-  if (formData.appearance === SliderTemplateAppearance_SIMPLECARD) {
-    simpleCardTemplateOptions_appearance_default(schema, formData, intl, pos);
+  if (formData.slide_appearance === SliderTemplateAppearance_SIMPLECARD) {
+    simpleCardTemplateOptions_appearance_default(schema, formData, intl, pos, [
+      'show_path_filters',
+    ]);
+    pos++;
+  } else if (formData.slide_appearance === SliderTemplateAppearance_IMAGECARD) {
+    imageCardTemplateOptions(schema, formData, intl, pos, ['set_four_columns']);
     pos++;
   } else {
     addSchemaField(

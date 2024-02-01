@@ -94,6 +94,7 @@ export const simpleCardTemplateOptions_appearance_default = (
   formData,
   intl,
   position,
+  hide_fields = [], //array of string
 ) => {
   let pos = position;
   pos = templatesOptions(
@@ -108,7 +109,7 @@ export const simpleCardTemplateOptions_appearance_default = (
       'show_description',
       'show_detail_link',
       'show_path_filters',
-    ],
+    ].filter((f) => hide_fields.indexOf(f) < 0),
     {
       hide_dates: { default: false },
       show_icon: { default: true },

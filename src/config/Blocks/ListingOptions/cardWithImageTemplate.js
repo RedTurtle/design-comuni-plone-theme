@@ -38,6 +38,19 @@ export const addCardWithImageTemplateOptions = (
 
   pos = addDefaultOptions(schema, formData, intl, pos);
 
+  pos = imageCardTemplateOptions(schema, formData, intl, position);
+
+  return pos;
+};
+
+export const imageCardTemplateOptions = (
+  schema,
+  formData,
+  intl,
+  position,
+  hide_fields = [], //array of string
+) => {
+  let pos = position;
   pos = templatesOptions(
     schema,
     formData,
@@ -52,7 +65,7 @@ export const addCardWithImageTemplateOptions = (
       'hide_dates',
       'show_description',
       'show_topics',
-    ],
+    ].filter((f) => hide_fields.indexOf(f) < 0),
     {
       always_show_image: {
         default: false,
@@ -72,6 +85,5 @@ export const addCardWithImageTemplateOptions = (
     },
     pos,
   );
-
   return pos;
 };
