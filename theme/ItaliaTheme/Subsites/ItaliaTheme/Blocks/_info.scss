@@ -1,6 +1,6 @@
 @use '../../all_variables' as *;
 
-@mixin info($subsite-primary) {
+@mixin info($subsite-primary, $subsite-light-theme) {
   .public-ui,
   &.public-ui {
     .infoblock {
@@ -8,9 +8,18 @@
       .bg-alert-secondary,
       .bg-alert-tertiary {
         &.bg-color-true {
-          .draftjs-buttons a {
-            &:hover {
-              background-color: $subsite-primary;
+          .draftjs-buttons {
+            a {
+              &:hover {
+                border-color: $body-color;
+                background-color: $subsite-primary;
+                @if $subsite-light-theme {
+                  color: $body-color;
+                  span {
+                    color: $body-color;
+                  }
+                }
+              }
             }
           }
         }

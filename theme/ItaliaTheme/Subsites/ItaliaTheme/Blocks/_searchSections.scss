@@ -1,6 +1,11 @@
 @use '../../all_variables' as *;
 
-@mixin block($subsite-primary, $subsite-secondary, $subsite-secondary-text) {
+@mixin block(
+  $subsite-primary,
+  $subsite-secondary,
+  $subsite-secondary-text,
+  $subsite-light-theme
+) {
   .container .block {
     .searchSections {
       @if $subsite-secondary != $subsite-primary {
@@ -25,6 +30,11 @@
             &:active {
               background-color: darken($subsite-primary, 7.5);
             }
+          }
+        }
+        @if $subsite-light-theme {
+          button.rounded-right svg {
+            fill: $body-color !important;
           }
         }
       }

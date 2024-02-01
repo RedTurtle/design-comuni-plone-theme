@@ -98,9 +98,10 @@
       @include it-search-sections.block(
         $subsite-primary,
         $subsite-secondary,
-        $subsite-secondary-text
+        $subsite-secondary-text,
+        $subsite-light-theme
       );
-      @include it-info.info($subsite-primary);
+      @include it-info.info($subsite-primary, $subsite-light-theme);
 
       @include it-views.common(
         $subsite-primary,
@@ -118,10 +119,9 @@
           color: color-hover($subsite-link-color);
         }
       }
-
-      .icon-primary {
-        fill: $subsite-primary !important;
-      }
+    }
+    .icon-primary {
+      fill: $subsite-primary !important;
     }
   }
 }
