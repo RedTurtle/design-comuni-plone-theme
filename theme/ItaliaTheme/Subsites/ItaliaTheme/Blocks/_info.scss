@@ -1,0 +1,28 @@
+@use '../../all_variables' as *;
+
+@mixin info($subsite-primary) {
+  .public-ui,
+  &.public-ui {
+    .infoblock {
+      .bg-alert-primary,
+      .bg-alert-secondary,
+      .bg-alert-tertiary {
+        &.bg-color-true {
+          .draftjs-buttons a {
+            &:hover {
+              background-color: $subsite-primary;
+            }
+          }
+        }
+      }
+      .bg-alert-primary.bg-color-true {
+        p,
+        span,
+        svg.icon.left-image {
+          color: $body-color;
+          fill: $body-color;
+        }
+      }
+    }
+  }
+}
