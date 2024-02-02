@@ -40,18 +40,23 @@
 
 - ...
 -->
+
 ## Versione x.x.x (xx/xx/xxxx)
 
 ### Novità
 
 - Aggiunta l'icona per il formato di file CSV
 
+### Fix
+
+- [ Accessibilità ] Sistemato l'html semantico degli heading per i template del Blocco Listing variazione RSS, migliorata l'esperienza d'uso per gli utenti che utilizzano screen reader
 
 ## Versione 11.3.3 (30/01/2024)
 
 ### Migliorie
 
 - Migliorato il focus sulle immagini in edit del blocco Immagine quando queste sono allineate a sinistra o a destra.
+
 ### Fix
 
 - Sistemato il layout del blocco elenco per i Bandi
