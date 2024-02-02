@@ -2,7 +2,6 @@
  * Slider
  */
 import 'slick-carousel/slick/slick.css';
-import config from '@plone/volto/registry';
 import 'design-comuni-plone-theme/components/slick-carousel/slick/slick-theme.css';
 import { Col, Container, Row } from 'design-react-kit';
 import {
@@ -19,6 +18,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   viewImage: {

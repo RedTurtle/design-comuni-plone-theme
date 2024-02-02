@@ -1,5 +1,5 @@
 /*
- * componente per visulizzare un CT "Persona" nei Listing o in aclune pagine
+ * componente per visulizzare un elemento del template 'Card con immagine' del blocco listing con l'aspetto di default.
  */
 import React from 'react';
 import PropTypes from 'prop-types';

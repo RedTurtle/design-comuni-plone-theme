@@ -43,6 +43,10 @@ export const addCardWithImageTemplateOptions = (
   return pos;
 };
 
+/*questa funzione è riutilizzabile.
+Serve per fare in modo che le opzioni relative alla visualizzazione di ogni singola card,
+si possano riutilizzare in altre variations del blocco listing, dove appunto viene riutilizzato il componente di visualizzazione dell'elemento.
+Ad esempio, è stato usato anche nella variazione 'slider' per poter mostrare gli elementi con aspetto 'Card con immagine'.*/
 export const imageCardTemplateOptions = (
   schema,
   formData,
