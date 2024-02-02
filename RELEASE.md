@@ -40,18 +40,23 @@
 
 - ...
 -->
+
 ## Versione x.x.x (xx/xx/xxxx)
 
 ### Novità
 
 - Aggiunta l'icona per il formato di file CSV
 
+### Fix
+
+- [ Accessibilità ] Migliorata l'accessibilità per i contatti, lo screen reader ora legge anche il tipo di contatto oltre al testo (ad es. Telefono: numero di telefono)
 
 ## Versione 11.3.3 (30/01/2024)
 
 ### Migliorie
 
 - Migliorato il focus sulle immagini in edit del blocco Immagine quando queste sono allineate a sinistra o a destra.
+
 ### Fix
 
 - Sistemato il layout del blocco elenco per i Bandi

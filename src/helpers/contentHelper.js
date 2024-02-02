@@ -1,4 +1,56 @@
 import { UniversalLink } from '@plone/volto/components';
+import { defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  url: {
+    id: 'url',
+    defaultMessage: 'Sito web',
+  },
+  account: {
+    id: 'account',
+    defaultMessage: 'Account',
+  },
+  linkedin: {
+    id: 'linkedin',
+    defaultMessage: 'LinkedIn',
+  },
+  twitter: {
+    id: 'twitter',
+    defaultMessage: 'Twitter',
+  },
+  telefono: {
+    id: 'telefono',
+    defaultMessage: 'Numero di telefono',
+  },
+  email: {
+    id: 'email',
+    defaultMessage: 'Email',
+  },
+  pec: {
+    id: 'pec',
+    defaultMessage: 'PEC',
+  },
+  social: {
+    id: 'social',
+    defaultMessage: 'Social',
+  },
+  fax: {
+    id: 'fax',
+    defaultMessage: 'Fax',
+  },
+  whatsapp: {
+    id: 'whatsapp',
+    defaultMessage: 'Whatsapp',
+  },
+  telegram: {
+    id: 'telegram',
+    defaultMessage: 'Telegram',
+  },
+  skype: {
+    id: 'skype',
+    defaultMessage: 'Skype',
+  },
+});
 
 export const contentFolderHasItems = (content, folder_name) => {
   const has_items =
@@ -7,14 +59,22 @@ export const contentFolderHasItems = (content, folder_name) => {
   return has_items;
 };
 
-export const renderPDCItemValue = (pdcValue) => {
+export const renderPDCItemValue = (pdcValue, intl) => {
   switch (pdcValue?.pdc_type) {
     case 'url':
     case 'account':
     case 'linkedin':
     case 'twitter':
       return (
-        <UniversalLink href={`${pdcValue?.pdc_value}`}>
+        <UniversalLink
+          href={`${pdcValue?.pdc_value}`}
+          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
+          aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
+        >
           {pdcValue?.pdc_value}
         </UniversalLink>
       );
@@ -24,6 +84,12 @@ export const renderPDCItemValue = (pdcValue) => {
           href={`tel:${pdcValue?.pdc_value}`}
           target="_blank"
           rel="noopener noreferrer"
+          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
+          aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
         >
           {pdcValue?.pdc_value}
         </a>
@@ -34,6 +100,12 @@ export const renderPDCItemValue = (pdcValue) => {
           href={`https://wa.me/${pdcValue?.pdc_value.replace(/\D/g, '')}`}
           target="_blank"
           rel="noopener noreferrer"
+          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
+          aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
         >
           {pdcValue?.pdc_value}
         </a>
@@ -45,6 +117,12 @@ export const renderPDCItemValue = (pdcValue) => {
           href={`https://t.me/${pdcValue?.pdc_value}`}
           target="_blank"
           rel="noopener noreferrer"
+          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
+          aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
         >
           {pdcValue?.pdc_value}
         </a>
@@ -58,6 +136,12 @@ export const renderPDCItemValue = (pdcValue) => {
           href={`skype:${pdcValue?.pdc_value}?call`}
           target="_blank"
           rel="noopener noreferrer"
+          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
+          aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
         >
           {pdcValue?.pdc_value}
         </a>
@@ -69,6 +153,12 @@ export const renderPDCItemValue = (pdcValue) => {
           href={`mailto:${pdcValue?.pdc_value}`}
           target="_blank"
           rel="noopener noreferrer"
+          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
+          aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
+            pdcValue?.pdc_value ?? ''
+          }`}
         >
           {pdcValue?.pdc_value}
         </a>
