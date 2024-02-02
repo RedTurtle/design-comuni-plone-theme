@@ -87,9 +87,12 @@ const CardWithImageDefault = (props) => {
         />
       ) : (
         <Card
-          className={cx('listing-item card-bg no-after', {
-            'card-teaser-image card-flex': item['@type'] === 'Persona',
-          })}
+          className={cx(
+            'card-with-image-default-item listing-item card-bg no-after',
+            {
+              'card-teaser-image card-flex': item['@type'] === 'Persona',
+            },
+          )}
         >
           {/* wrapperClassName="card-overlapping" */}
           {showImage && (

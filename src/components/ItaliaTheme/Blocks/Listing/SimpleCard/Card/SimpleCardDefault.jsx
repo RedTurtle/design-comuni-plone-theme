@@ -93,7 +93,9 @@ const SimpleCardDefault = (props) => {
 
   return (
     <Card
-      className={`align-items-top rounded shadow ${getItemClass(item)}`}
+      className={`align-items-top rounded shadow no-after ${getItemClass(
+        item,
+      )} simple-card-default-item`}
       noWrapper
       teaser
       key={index}
