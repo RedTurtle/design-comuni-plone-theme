@@ -30,6 +30,12 @@
 - ...
 -->
 
+# Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- [ Accessibilità ] Sistemato lo skiplink "Vai al contenuto" nella pagina principale di ricerca del sito
+
 ## Versione 7.24.2 (11/01/2024)
 
 ### Migliorie
