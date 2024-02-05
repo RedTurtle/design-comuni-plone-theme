@@ -111,7 +111,7 @@ SelectContainer.propTypes = {
 const Option = injectLazyLibs('reactSelect')((props) => {
   const components = props.reactSelect.components;
   return (
-    <div className="select-pill text-primary">
+    <div className="select-pill">
       <components.Option {...props} />
     </div>
   );

@@ -87,39 +87,49 @@ body.search-modal-opened {
   }
 }
 
-.search-results-wrapper {
-  mark.highlighted-text {
-    background-color: $highlight-search;
+.search-view {
+  label.has-prepend {
+    z-index: unset;
   }
-
-  .card {
-    &::after {
-      content: none;
+  .search-results-wrapper {
+    mark.highlighted-text {
+      background-color: $highlight-search;
     }
 
-    .card-body {
-      .category-top {
-        .data:before {
-          content: none;
+    .card {
+      &::after {
+        content: none;
+      }
+
+      .card-body {
+        .category-top {
+          .data:before {
+            content: none;
+          }
         }
       }
     }
-  }
 
-  .ordering-widget {
-    @media (max-width: 991px) {
-      .bootstrap-select-wrapper {
-        label[for='search-sort-on'] {
-          display: none;
+    .ordering-widget {
+      @media (max-width: 991px) {
+        .bootstrap-select-wrapper {
+          label[for='search-sort-on'] {
+            display: none;
+          }
         }
       }
     }
-  }
 
-  .searchSpinnerWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 0;
+    .searchSpinnerWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0;
+    }
+  }
+  .react-select__option--is-focused {
+    border-color: var(--focus-outline-color) !important;
+    box-shadow: 0 0 0 2px var(--focus-outline-color) !important;
+    outline: none !important;
   }
 }
