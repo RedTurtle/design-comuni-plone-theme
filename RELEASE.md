@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- [ Accessibilità ] Migliorato l'HTML semantico per le card del blocco rss per migliorare l'esperienza d'uso con Screen Reader
+
 ## Versione 7.24.2 (11/01/2024)
 
 ### Migliorie
