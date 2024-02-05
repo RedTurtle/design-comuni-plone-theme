@@ -88,7 +88,11 @@
       @include bs-linklist.linklist($subsite-primary, $subsite-link-color);
       @include bs-navscroll.navscroll($subsite-link-color);
       @include it-footer.footer($subsite-primary, $subsite-primary-text);
-      @include it-main.main($subsite-primary, $subsite-primary-text);
+      @include it-main.main(
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-link-color
+      );
       @include it-cms-ui.cms-ui($subsite-primary, $subsite-primary-text);
       @include it-search.search($subsite-primary-text);
       @include it-card-image-evidence.card($subsite-link-color);

@@ -1,6 +1,6 @@
 @use '../all_variables' as *;
 
-@mixin main($subsite-primary, $subsite-primary-text) {
+@mixin main($subsite-primary, $subsite-primary-text, $subsite-link-color) {
   &.public-ui,
   &.cms-ui {
     .draftjs-buttons {
@@ -18,9 +18,17 @@
     }
     .pagination {
       .page-item {
-        .page-link[aria-current] {
-          border: 1px solid $subsite-primary;
-          color: $subsite-primary;
+        .page-link {
+          &[aria-current] {
+            border: 1px solid $subsite-primary;
+            color: $subsite-primary;
+          }
+          &:hover {
+            color: $subsite-link-color;
+            svg {
+              fill: $subsite-link-color !important;
+            }
+          }
         }
       }
     }
