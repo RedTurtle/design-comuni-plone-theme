@@ -38,7 +38,7 @@ export const addCardWithImageTemplateOptions = (
 
   pos = addDefaultOptions(schema, formData, intl, pos);
 
-  pos = imageCardTemplateOptions(schema, formData, intl, position);
+  pos = imageCardTemplateOptions(schema, formData, intl, pos);
 
   return pos;
 };
