@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- [ Accessibilità ] Reso il link ai diversi social elencati parlante, ora viene riportato "Seguici su nome_del_social"
+
 ## Versione 7.24.2 (11/01/2024)
 
 ### Migliorie
