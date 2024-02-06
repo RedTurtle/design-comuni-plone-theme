@@ -62,6 +62,7 @@ const SearchBar = ({ setSearchableText }) => {
               }}
               placeholder={intl.formatMessage(messages.search_faq)}
               type="text"
+              aria-controls="faq-search-results-region"
             />
           </div>
         </div>

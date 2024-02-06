@@ -31,6 +31,10 @@ const messages = defineMessages({
     id: 'Faq Folder: Nessun risultato trovato',
     defaultMessage: 'Non ho trovato la risposta che cercavi',
   },
+  foundNResults: {
+    id: 'found_n_results',
+    defaultMessage: 'Trovati {total} risultati.',
+  },
 });
 
 /**
@@ -103,25 +107,39 @@ const FaqFolderView = ({ content }) => {
       <Container className="px-4">
         <TextOrBlocks content={content} />
 
-        {faq_structure && (
-          <>
-            {faq_structure?.loaded &&
-              searchableText?.lenght > 0 &&
-              faq_structure.data?.items?.lenght === 0 && (
-                <>{intl.formatMessage(messages.no_results)}</>
+        <div
+          className="faq-search-results-wrapper"
+          id="faq-search-results-region"
+          aria-live="polite"
+        >
+          {faq_structure && (
+            <>
+              {faq_structure.loaded && (
+                <p className="visually-hidden d-lg-block" aria-live="polite">
+                  {intl.formatMessage(messages.foundNResults, {
+                    total: faq_structure?.data?.items?.[0]?.items?.length || 0,
+                  })}
+                </p>
+              )}
+              {faq_structure?.loaded &&
+                searchableText?.length > 0 &&
+                faq_structure.data?.items?.[0]?.items?.length === 0 && (
+                  <p>{intl.formatMessage(messages.no_results)}</p>
+                )}
+
+              {faq_structure?.loading && (
+                <div className="mt-5 mb-5 loading">
+                  <Spinner active double={false} small={false} tag="div" />
+                </div>
               )}
 
-            {faq_structure?.loading && (
-              <div className="mt-5 mb-5 loading">
-                <Spinner active double={false} small={false} tag="div" />
-              </div>
-            )}
-
-            {!faq_structure?.loading && faq_structure.data?.items?.[0] && (
-              <FaqFolderTree tree={faq_structure.data.items[0]} />
-            )}
-          </>
-        )}
+              {!faq_structure?.loading &&
+                faq_structure.data?.items?.length > 0 && (
+                  <FaqFolderTree tree={faq_structure.data.items[0]} />
+                )}
+            </>
+          )}
+        </div>
 
         <PageMetadata content={content} />
       </Container>

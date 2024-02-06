@@ -63,7 +63,7 @@ msgstr "Vedi"
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
 # defaultMessage: Allinea immagine a destra
 msgid "CardImageRight"
-msgstr ""
+msgstr "Allinea immagine a destra"
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
@@ -89,12 +89,12 @@ msgstr "Cerca"
 #: components/ItaliaTheme/Search/SearchCTs
 # defaultMessage: Cerca i contenuti di tipo
 msgid "Cerca i contenuti di tipo"
-msgstr ""
+msgstr "Cerca i contenuti di tipo"
 
 #: components/ItaliaTheme/Search/SearchTopics
 # defaultMessage: Cerca per argomento
 msgid "Cerca per argomento"
-msgstr ""
+msgstr "Cerca per argomento"
 
 #: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
 #: components/ItaliaTheme/Blocks/EventSearch/DefaultFilters
@@ -168,7 +168,7 @@ msgstr "Descrizione..."
 #: config/Views/views
 # defaultMessage: Dettagli procedimento
 msgid "Dettagli procedimento"
-msgstr ""
+msgstr "Dettagli procedimento"
 
 #: config/Blocks/ListingOptions/mapTemplate
 # defaultMessage: Dimensione della mappa
@@ -178,7 +178,7 @@ msgstr "Dimensione della mappa"
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 # defaultMessage: Download
 msgid "Download"
-msgstr ""
+msgstr "Download"
 
 #: config/RichTextEditor/Plugins/AnchorPlugin/components/LinkButton/AddLinkForm
 # defaultMessage: Enter URL or select an item
@@ -219,7 +219,7 @@ msgstr "Grande"
 #: components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar
 # defaultMessage: Hero
 msgid "Hero"
-msgstr ""
+msgstr "Hero"
 
 #: components/ItaliaTheme/Search/SearchCTs
 #: components/ItaliaTheme/Search/SearchTopics
@@ -230,12 +230,12 @@ msgstr "Nascondi"
 #: components/ItaliaTheme/Search/SearchCTs
 # defaultMessage: Nascondi tutti i tipi di contenuto
 msgid "Hide all content types"
-msgstr ""
+msgstr "Nascondi tutti i tipi di contenuto"
 
 #: components/ItaliaTheme/Breadcrumbs/Breadcrumbs
 # defaultMessage: Home
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: ID Lighthouse
@@ -248,14 +248,14 @@ msgstr ""
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Identificativo di servizio a solo uso interno, utilizzato per le verifiche AgID inerenti al PNRR.
 msgid "ID Lighthouse Help Description"
-msgstr ""
+msgstr "Identificativo di servizio a solo uso interno, utilizzato per le verifiche AgID inerenti al PNRR."
 
 #: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
 #: components/ItaliaTheme/manage/Widgets/SecondaryMenuConfigurationForm
 #: components/ItaliaTheme/manage/Widgets/SubFooterConfigurationForm
 # defaultMessage: ID lighthouse
 msgid "ID lighthouse"
-msgstr ""
+msgstr "ID lighthouse"
 
 #: components/ItaliaTheme/Blocks/NumbersBlock/Edit
 # defaultMessage: Seleziona le icone dalla barra a lato
@@ -1990,6 +1990,7 @@ msgid "foto_attivita_politica"
 msgstr "Foto dell'attività politica"
 
 #: components/ItaliaTheme/Search/Search
+#: components/ItaliaTheme/View/FAQ/FaqFolder/FaqFolderView
 # defaultMessage: Trovati {total} risultati.
 msgid "found_n_results"
 msgstr "Trovati {total} risultati"
