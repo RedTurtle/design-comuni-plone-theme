@@ -94,7 +94,7 @@
         $subsite-link-color
       );
       @include it-cms-ui.cms-ui($subsite-primary, $subsite-primary-text);
-      @include it-search.search($subsite-primary-text);
+      @include it-search.search($subsite-link-color);
       @include it-card-image-evidence.card($subsite-link-color);
       @include it-complete-link.block(
         $subsite-secondary,
@@ -126,6 +126,9 @@
         &:hover {
           color: color-hover($subsite-link-color);
         }
+      }
+      .external-link {
+        fill: $subsite-link-color !important;
       }
     }
     .icon-primary {
