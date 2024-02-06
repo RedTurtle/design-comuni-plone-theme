@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Fix
+
+- [ Accessibilità ] Rimossi gli heading per alcuni blocchi nel caso il titolo non sia presente al fine di migliorare l'esperienza con l'uso di screen reader
+
 ## Versione 7.24.2 (11/01/2024)
 
 ### Migliorie
