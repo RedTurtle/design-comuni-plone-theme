@@ -1,8 +1,15 @@
 @use '../../all_variables' as *;
 
 @mixin forms($subsite-link-color) {
-  .public-ui .form-check [type='checkbox']:checked + label::after {
-    border-color: $subsite-link-color;
-    background-color: $subsite-link-color;
+  .public-ui .form-check {
+    [type='checkbox'],
+    [type='radio'] {
+      &:checked + label {
+        &::after {
+          border-color: $subsite-link-color;
+          background-color: $subsite-link-color;
+        }
+      }
+    }
   }
 }
