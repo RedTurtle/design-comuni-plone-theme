@@ -41,6 +41,11 @@
 - Sono stati apportati alcuni aggiustamenti ai sottositi con l'intento di migliorare l'esperienza e aumentare l'accessibilità. Ci sono state modifiche, principalmente riguardanti i colori, alla visualizzazione della ricerca, ai blocchi info, al blocco contenuto in primo piano e al blocco icone.
 - È stata corretta la visualizzazione dei pulsanti nel blocco testo per i sottositi.
 - Sono stati corretti alcuni errori nel menu mobile per i sottositi. Ora la lente di ingrandimento è visibile nei sottositi con colori scuri e la freccia nei pulsanti "link ad altro" è del colore del sottosito.
+## Versione x.x.x (xx/xx/xxxx)
+
+### Fix
+
+- [ Accessibilità ] Rimossi gli heading per alcuni blocchi nel caso il titolo non sia presente al fine di migliorare l'esperienza con l'uso di screen reader
 
 ## Versione 7.24.2 (11/01/2024)
 
