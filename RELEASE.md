@@ -34,7 +34,8 @@
 
 ### Fix
 
-- [ Accessibilità ] Migliorato l'HTML semantico per le card del blocco rss per migliorare l'esperienza d'uso con Screen Reader
+- Migliorato l'HTML semantico per le card del blocco rss per migliorare l'esperienza d'uso con Screen Reader
+- Rimossi gli heading per alcuni blocchi nel caso il titolo non sia presente al fine di migliorare l'esperienza con l'uso di screen reader
 
 ## Versione 7.24.2 (11/01/2024)
 
