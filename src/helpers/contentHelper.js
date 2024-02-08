@@ -68,9 +68,6 @@ export const renderPDCItemValue = (pdcValue, intl) => {
       return (
         <UniversalLink
           href={`${pdcValue?.pdc_value}`}
-          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
-            pdcValue?.pdc_value ?? ''
-          }`}
           aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
             pdcValue?.pdc_value ?? ''
           }`}
@@ -84,9 +81,6 @@ export const renderPDCItemValue = (pdcValue, intl) => {
           href={`tel:${pdcValue?.pdc_value}`}
           target="_blank"
           rel="noopener noreferrer"
-          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
-            pdcValue?.pdc_value ?? ''
-          }`}
           aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
             pdcValue?.pdc_value ?? ''
           }`}
@@ -100,9 +94,6 @@ export const renderPDCItemValue = (pdcValue, intl) => {
           href={`https://wa.me/${pdcValue?.pdc_value.replace(/\D/g, '')}`}
           target="_blank"
           rel="noopener noreferrer"
-          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
-            pdcValue?.pdc_value ?? ''
-          }`}
           aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
             pdcValue?.pdc_value ?? ''
           }`}
@@ -117,9 +108,6 @@ export const renderPDCItemValue = (pdcValue, intl) => {
           href={`https://t.me/${pdcValue?.pdc_value}`}
           target="_blank"
           rel="noopener noreferrer"
-          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
-            pdcValue?.pdc_value ?? ''
-          }`}
           aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
             pdcValue?.pdc_value ?? ''
           }`}
@@ -136,9 +124,6 @@ export const renderPDCItemValue = (pdcValue, intl) => {
           href={`skype:${pdcValue?.pdc_value}?call`}
           target="_blank"
           rel="noopener noreferrer"
-          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
-            pdcValue?.pdc_value ?? ''
-          }`}
           aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
             pdcValue?.pdc_value ?? ''
           }`}
@@ -153,9 +138,6 @@ export const renderPDCItemValue = (pdcValue, intl) => {
           href={`mailto:${pdcValue?.pdc_value}`}
           target="_blank"
           rel="noopener noreferrer"
-          title={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
-            pdcValue?.pdc_value ?? ''
-          }`}
           aria-label={`${intl.formatMessage(messages[pdcValue.pdc_type])}: ${
             pdcValue?.pdc_value ?? ''
           }`}
