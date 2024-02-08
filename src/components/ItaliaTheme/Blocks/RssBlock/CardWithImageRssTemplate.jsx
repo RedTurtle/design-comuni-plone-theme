@@ -80,7 +80,7 @@ const CardWithImageRssTemplate = ({
                         {getViewDate(item.pubDate || item.date, intl.locale)}
                       </span>{' '}
                     </div>
-                    <CardTitle className="big-heading" tag="h6">
+                    <CardTitle className="big-heading h6" tag="h3">
                       {item.title}
                     </CardTitle>
                     {item?.source?.length > 0 && (

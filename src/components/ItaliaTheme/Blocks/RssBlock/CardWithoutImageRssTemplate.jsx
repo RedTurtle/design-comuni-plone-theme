@@ -67,7 +67,7 @@ const CardWithoutImageRssTemplate = ({
                         </span>
                       )}
                     </div>
-                    <CardTitle className="big-heading" tag="h5">
+                    <CardTitle className="big-heading h6" tag="h3">
                       {item.title}
                     </CardTitle>
                     {item?.source?.length > 0 && (
