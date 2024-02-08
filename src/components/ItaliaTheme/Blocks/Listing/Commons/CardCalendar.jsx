@@ -61,6 +61,25 @@ export const CardCalendar = ({ start, end, recurrence, rrule }) => {
             </div>
           </div>
         );
+      } else {
+        return (
+          <div className="custom-calendar-card">
+            <div className="card-calendar extended d-flex flex-column justify-content-center px-2">
+              <span className="card-date d-flex justify-content-between align-items-baseline">
+                <div className="date-label me-1">
+                  {intl.formatMessage(messages.from)}
+                </div>
+                <span className="date">{_start.format('DD/MM')}</span>
+              </span>
+              <span className="card-date d-flex justify-content-between align-items-baseline">
+                <div className="date-label me-1">
+                  {intl.formatMessage(messages.to)}
+                </div>
+                <span className="date">{_end.format('DD/MM')}</span>
+              </span>
+            </div>
+          </div>
+        );
       }
     } else if (recurrenceDates) {
       let dateFormat = 'DD/MM';
