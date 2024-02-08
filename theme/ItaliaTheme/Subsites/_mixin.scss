@@ -90,10 +90,15 @@
       @include it-footer.footer($subsite-primary, $subsite-primary-text);
       @include it-main.main(
         $subsite-primary,
+        $subsite-secondary,
         $subsite-primary-text,
         $subsite-link-color
       );
-      @include it-cms-ui.cms-ui($subsite-primary, $subsite-primary-text);
+      @include it-cms-ui.cms-ui(
+        $subsite-primary,
+        $subsite-secondary,
+        $subsite-primary-text
+      );
       @include it-search.search($subsite-link-color);
       @include it-card-image-evidence.card($subsite-link-color);
       @include it-complete-link.block(
@@ -109,7 +114,11 @@
         $subsite-secondary-text,
         $subsite-light-theme
       );
-      @include it-info.info($subsite-primary, $subsite-light-theme);
+      @include it-info.info(
+        $subsite-primary,
+        $subsite-secondary,
+        $subsite-light-theme
+      );
 
       @include it-views.common(
         $subsite-primary,
@@ -126,9 +135,6 @@
         &:hover {
           color: color-hover($subsite-link-color);
         }
-      }
-      .external-link {
-        fill: $subsite-link-color !important;
       }
     }
     .icon-primary {

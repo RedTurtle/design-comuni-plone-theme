@@ -1,6 +1,11 @@
 @use '../all_variables' as *;
 
-@mixin main($subsite-primary, $subsite-primary-text, $subsite-link-color) {
+@mixin main(
+  $subsite-primary,
+  $subsite-secondary,
+  $subsite-primary-text,
+  $subsite-link-color
+) {
   &.public-ui,
   &.cms-ui {
     .draftjs-buttons {
@@ -39,6 +44,15 @@
       border-color: $subsite-primary;
       &.bg-color-true {
         background-color: $subsite-primary !important;
+      }
+    }
+    .bg-secondary {
+      background-color: $subsite-secondary !important;
+    }
+    .bg-alert-secondary {
+      border-color: $subsite-secondary;
+      &.bg-color-true {
+        background-color: $subsite-secondary !important;
       }
     }
   }

@@ -17,5 +17,13 @@ body.subsite-light-pink {
         }
       }
     }
+    .infoblock {
+      .bg-alert-primary {
+        svg.icon {
+          color: $subsite-light-pink-secondary;
+          fill: $subsite-light-pink-secondary;
+        }
+      }
+    }
   }
 }
