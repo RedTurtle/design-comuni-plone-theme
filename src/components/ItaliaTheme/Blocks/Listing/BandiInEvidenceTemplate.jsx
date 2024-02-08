@@ -36,6 +36,10 @@ const messages = defineMessages({
     id: 'chiusura_procedimento_bando',
     defaultMessage: 'Chiusura del procedimento',
   },
+  ultima_modifica: {
+    id: 'ultima_modifica_bando',
+    defaultMessage: 'Data di ultima modifica',
+  },
   stato: {
     id: 'bando_stato',
     defaultMessage: 'Stato:',
@@ -74,6 +78,8 @@ const BandiInEvidenceTemplate = ({
   show_ente,
   show_tipologia,
   show_description,
+  show_data_ultima_modifica,
+  show_note,
   linkTitle,
   linkHref,
   center_cards,
@@ -142,6 +148,18 @@ const BandiInEvidenceTemplate = ({
                         </div>
                         <span className="bando-dati-date">
                           {item.tipologia_bando?.title}
+                        </span>
+                      </span>
+                    )}
+
+                    {/* Data di ultima modifica */}
+                    {show_data_ultima_modifica && item.modified && (
+                      <span className="d-flex flex-wrap align-items-baseline bando-dati-info">
+                        <div className="bando-dati-label mr-2">
+                          {intl.formatMessage(messages.ultima_modifica)}:
+                        </div>
+                        <span className="bando-dati-date">
+                          {viewDate(intl.locale, item.modified, 'DD-MM-YYYY')}
                         </span>
                       </span>
                     )}
@@ -218,7 +236,8 @@ const BandiInEvidenceTemplate = ({
 
                     {/* Note aggiornamenti */}
                     {item.update_note &&
-                      (item.bando_state?.includes('open') ||
+                      ((show_note && item.bando_state?.includes('closed')) ||
+                        item.bando_state?.includes('open') ||
                         item.bando_state?.includes('inProgress')) && (
                         <span className="d-flex bando-note">
                           <strong>{item.update_note}</strong>

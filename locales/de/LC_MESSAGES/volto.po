@@ -2899,6 +2899,16 @@ msgid "searchBlock_help"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Questi filtri non verranno visualizzati dall'utente ma consentono di pre filtrare i bandi secondo alcuni criteri.
+msgid "searchBlock_help_filters"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Filtri pre-impostati
+msgid "searchBlock_pre_filters"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
 #: components/ItaliaTheme/Blocks/EventSearch/Sidebar
 #: components/ItaliaTheme/Blocks/UOSearch/Sidebar
 # defaultMessage: Primario
@@ -3218,6 +3228,11 @@ msgstr ""
 msgid "share"
 msgstr ""
 
+#: config/Blocks/ListingOptions/bandiInEvidenceTemplate
+# defaultMessage: Mostra la data di ultima modifica
+msgid "show_data_ultima_modifica"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
 # defaultMessage: Mostra la data
 msgid "show_date"
@@ -3267,6 +3282,11 @@ msgstr ""
 #: config/Blocks/ListingOptions/mapTemplate
 # defaultMessage: Mostra la mappa a tutta larghezza
 msgid "show_map_full_width"
+msgstr ""
+
+#: config/Blocks/ListingOptions/bandiInEvidenceTemplate
+# defaultMessage: Mostra le note anche per i bandi scaduti
+msgid "show_note"
 msgstr ""
 
 #: config/Blocks/ListingOptions/ribbonCardTemplate
@@ -3589,6 +3609,11 @@ msgstr ""
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Ulteriori informazioni
 msgid "ulteriori_informazioni"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
+# defaultMessage: Data di ultima modifica
+msgid "ultima_modifica_bando"
 msgstr ""
 
 #: helpers/amministrazioneTrasparenteHelper

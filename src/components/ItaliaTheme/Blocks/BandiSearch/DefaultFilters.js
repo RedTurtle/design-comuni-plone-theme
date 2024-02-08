@@ -65,7 +65,7 @@ const messages = defineMessages({
   },
 });
 
-const DefaultFilters = () => {
+const DefaultFilters = (pathSearch) => {
   const intl = useIntl();
   moment.locale(intl.locale);
   const subsite = useSelector((state) => state.subsite?.data);
@@ -99,7 +99,14 @@ const DefaultFilters = () => {
         props: {
           value: null,
           options: {
-            vocabulary: 'redturtle.bandi.tipologia.vocabulary',
+            // vocabulary: 'redturtle.bandi.tipologia.vocabulary',
+            // placeholder: intl.formatMessage(messages.tipologia),
+            dispatch: {
+              action: getSearchBandiFilters,
+              path: subsite ? flattenToAppURL(subsite['@id']) : pathSearch || '/',
+              stateSelector: 'searchBandiFilters',
+              resultProp: 'tipologie',
+            },
             placeholder: intl.formatMessage(messages.tipologia),
           },
         },
@@ -147,7 +154,7 @@ const DefaultFilters = () => {
           options: {
             dispatch: {
               action: getSearchBandiFilters,
-              path: subsite ? flattenToAppURL(subsite['@id']) : '/',
+              path: subsite ? flattenToAppURL(subsite['@id']) : pathSearch || '/',
               stateSelector: 'searchBandiFilters',
               resultProp: 'offices',
             },
@@ -175,7 +182,7 @@ const DefaultFilters = () => {
           options: {
             dispatch: {
               action: getSearchBandiFilters,
-              path: subsite ? flattenToAppURL(subsite['@id']) : '/',
+              path: subsite ? flattenToAppURL(subsite['@id']) : pathSearch || '/',
               stateSelector: 'searchBandiFilters',
               resultProp: 'subjects',
             },
@@ -201,10 +208,10 @@ const DefaultFilters = () => {
       widget: {
         component: DateFilter,
         props: {
-          value: {
-            startDate: moment().startOf('day'),
-            endDate: moment().endOf('day'),
-          },
+          // value: {
+          //   startDate: moment().startOf('day'),
+          //   endDate: moment().endOf('day'),
+          // },
           showClearDates: true,
           // defaultStart: moment().startOf('day'),
           // defaultEnd: moment().endOf('day'),
