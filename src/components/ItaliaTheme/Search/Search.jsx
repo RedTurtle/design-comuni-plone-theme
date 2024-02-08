@@ -358,7 +358,7 @@ const Search = () => {
     <>
       <Helmet title={intl.formatMessage(messages.searchResults)} />
 
-      <div className="public-ui">
+      <div className="public-ui" id="view">
         <Container className="px-4 my-4">
           <Row>
             <Col>
