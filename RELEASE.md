@@ -53,6 +53,7 @@
 - Migliorata l'accessibilità per il blocco Contenuti in Evidenza e per i bottoni nei sottositi
 - Sistemato l'html semantico degli heading per i template del Blocco Listing variazione RSS, migliorata l'esperienza d'uso per gli utenti che utilizzano screen reader
 - Migliorata l'accessibilità per i contatti, lo screen reader ora legge anche il tipo di contatto oltre al testo (ad es. Telefono: numero di telefono)
+- Risolto un problema riguardante la visualizzazione delle date nelle card che rappresentano uun CT Evento nei vari listati nel caso in cui l'evento si sviluppi su anni diversi
 
 ## Versione 11.4.0 (06/02/2024)
 
