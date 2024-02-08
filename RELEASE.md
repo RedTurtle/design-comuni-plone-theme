@@ -41,15 +41,30 @@
 - ...
 -->
 
-## Versione x.x.x (xx/xx/xxxx)
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Migliorata l'accessibilità per il blocco Contenuti in Evidenza e per i bottoni nei sottositi
+
+## Versione 11.4.0 (06/02/2024)
 
 ### Novità
 
 - Aggiunta l'icona per il formato di file CSV
+- Nel pannello di controllo di 'Design plone' è stata aggiunta la possibilità di mostrare o meno il footer autogenerato.
 
 ### Fix
 
 - [ Accessibilità ] Rimossi gli heading per alcuni blocchi nel caso il titolo non sia presente al fine di migliorare l'esperienza con l'uso di screen reader
+- Sistemata la gerarchia per i titoli dentro al blocco semplice
+
+## Versione 11.3.4 (31/01/2024)
+
+### Migliorie
+
+- Migliorata l'esperienza redattore per il blocco Immagine con allineamenti laterali rispetto al corpo del testo nell'editor a blocchi
+- Migliorata la resa e la responsività di alcune immagini nel corpo della pagina per diversi content type
 
 ## Versione 11.3.3 (30/01/2024)
 
