@@ -10,7 +10,8 @@
     .bg-primary {
       .card .card-body {
         .categoryicon-top {
-          span {
+          .text,
+          .data {
             color: $subsite-primary-text;
           }
 
@@ -38,6 +39,7 @@
 
         .chip.chip-primary {
           border-color: $subsite-primary-text;
+
           & > .chip-label {
             color: $subsite-primary-text;
           }
@@ -55,7 +57,8 @@
     .bg-secondary {
       .card .card-body {
         .categoryicon-top {
-          .text {
+          .text,
+          .data {
             color: $subsite-secondary-text;
           }
 
@@ -83,13 +86,16 @@
 
         .chip.chip-primary {
           border-color: $subsite-secondary-text;
+
           > .chip-label {
             color: $subsite-secondary-text;
           }
+
           &:hover,
           &:active {
             border-color: $subsite-secondary;
             background-color: $subsite-secondary-text;
+
             > .chip-label {
               color: $subsite-secondary;
             }
