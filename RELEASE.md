@@ -45,7 +45,8 @@
 
 ### Fix
 
-- Risolto un problema riguardante la visualizzazione delle date nelle card che rappresentano uun CT Evento nei vari listati nel caso in cui l'evento si sviluppi su anni diversi
+- Risolto un problema riguardante la visualizzazione delle date nelle card che rappresentano un CT Evento nei vari listati nel caso in cui l'evento si sviluppi su anni diversi
+- Risolto un problema riguardante la visualizzazione delle date nelle card che rappresentano uun CT Evento nei vari listati nel caso in cui l'evento si sviluppi su anni diversi per il template a 4 colonne
 
 - Nel blocco elenco, sono stati sistemati i filtri per percorso quando si clicca sul bottone configurato.
 
