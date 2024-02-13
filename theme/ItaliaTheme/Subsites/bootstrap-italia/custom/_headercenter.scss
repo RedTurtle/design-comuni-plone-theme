@@ -44,12 +44,11 @@
           a {
             &.rounded-icon {
               svg {
-                @if $subsite-light-theme {
-                  fill: $subsite-primary-text;
-                } @else {
-                  fill: $subsite-primary;
-                }
+                fill: $subsite-primary-text;
               }
+            }
+            &.search-link {
+              outline-color: $subsite-primary-text !important;
             }
           }
         }

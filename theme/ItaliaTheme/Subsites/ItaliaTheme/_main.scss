@@ -1,0 +1,59 @@
+@use '../all_variables' as *;
+
+@mixin main(
+  $subsite-primary,
+  $subsite-secondary,
+  $subsite-primary-text,
+  $subsite-link-color
+) {
+  &.public-ui,
+  &.cms-ui {
+    .draftjs-buttons {
+      a {
+        background-color: $subsite-primary;
+        border-radius: $subsite-primary;
+        color: $subsite-primary-text;
+
+        &:hover,
+        &:active {
+          background-color: darken($subsite-primary, 8);
+          color: $subsite-primary-text;
+        }
+      }
+    }
+    .pagination {
+      .page-item {
+        .page-link {
+          &[aria-current] {
+            border: 1px solid $subsite-primary;
+            color: $subsite-primary;
+          }
+          &:hover {
+            color: $subsite-link-color;
+            svg {
+              fill: $subsite-link-color !important;
+            }
+          }
+        }
+      }
+    }
+    .bg-primary {
+      background-color: $subsite-primary !important;
+    }
+    .bg-alert-primary {
+      border-color: $subsite-primary;
+      &.bg-color-true {
+        background-color: $subsite-primary !important;
+      }
+    }
+    .bg-secondary {
+      background-color: $subsite-secondary !important;
+    }
+    .bg-alert-secondary {
+      border-color: $subsite-secondary;
+      &.bg-color-true {
+        background-color: $subsite-secondary !important;
+      }
+    }
+  }
+}

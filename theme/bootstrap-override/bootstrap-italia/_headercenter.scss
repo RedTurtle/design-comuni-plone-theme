@@ -15,7 +15,7 @@
 
       .it-search-wrapper {
         a.search-link {
-          outline: $header-center-bg-color 2px solid !important;
+          outline: $header-center-bg-color 1px solid !important;
 
           &:focus {
             box-shadow: 0 0 0 5px $focus-outline-color !important;

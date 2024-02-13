@@ -1,0 +1,51 @@
+@use '../../all_variables' as *;
+
+@mixin info($subsite-primary, $subsite-secondary, $subsite-light-theme) {
+  .public-ui {
+    .infoblock {
+      .bg-alert-primary,
+      .bg-alert-secondary,
+      .bg-alert-tertiary {
+        &.bg-color-true {
+          .draftjs-buttons {
+            a {
+              &:hover {
+                border-color: $body-color;
+                background-color: $subsite-primary;
+                @if $subsite-light-theme {
+                  color: $body-color;
+                  span {
+                    color: $body-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .bg-alert-primary {
+        svg.icon {
+          color: $subsite-primary;
+          fill: $subsite-primary;
+        }
+        &.bg-color-true {
+          p,
+          span,
+          svg.icon {
+            color: $body-color;
+            fill: $body-color;
+          }
+        }
+        .draftjs-buttons {
+          a {
+            background-color: $subsite-secondary;
+            color: #fff;
+            span {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

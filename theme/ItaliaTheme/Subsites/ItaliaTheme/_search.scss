@@ -1,0 +1,13 @@
+@mixin search($subsite-link-color) {
+  .search-results-wrapper {
+    .ordering-widget {
+      .react-select__option--is-focused {
+        border-color: $subsite-link-color !important;
+        box-shadow: 0 0 0 2px $subsite-link-color !important;
+      }
+    }
+  }
+  .toggles label input[type='checkbox']:checked + .lever:after {
+    background-color: $subsite-link-color;
+  }
+}

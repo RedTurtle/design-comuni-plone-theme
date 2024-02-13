@@ -9,6 +9,7 @@
 @use 'bootstrap-italia/custom/buttons' as bs-buttons;
 @use 'bootstrap-italia/custom/chips' as bs-chips;
 @use 'bootstrap-italia/custom/card' as bs-card;
+@use 'bootstrap-italia/custom/forms' as bs-forms;
 @use 'bootstrap-italia/custom/dropdown' as bs-dropdown;
 @use 'bootstrap-italia/custom/linklist' as bs-linklist;
 @use 'bootstrap-italia/custom/navscroll' as bs-navscroll;
@@ -19,8 +20,12 @@
 @use 'ItaliaTheme/Blocks/highlitedContent' as it-highlight;
 @use 'ItaliaTheme/Blocks/argumentsInEvidence' as it-args-evidence;
 @use 'ItaliaTheme/Blocks/searchSections' as it-search-sections;
+@use 'ItaliaTheme/Blocks/info' as it-info;
 @use 'ItaliaTheme/Views/common' as it-views;
 @use 'ItaliaTheme/common' as it-common;
+@use 'ItaliaTheme/cms-ui' as it-cms-ui;
+@use 'ItaliaTheme/search' as it-search;
+@use 'ItaliaTheme/main' as it-main;
 
 @mixin define-subsite(
   $subsite-style,
@@ -78,10 +83,23 @@
         $subsite-secondary-text
       );
       @include bs-card.card($subsite-primary, $subsite-link-color);
+      @include bs-forms.forms($subsite-link-color);
       @include bs-dropdown.dropdown($subsite-link-color);
       @include bs-linklist.linklist($subsite-primary, $subsite-link-color);
       @include bs-navscroll.navscroll($subsite-link-color);
       @include it-footer.footer($subsite-primary, $subsite-primary-text);
+      @include it-main.main(
+        $subsite-primary,
+        $subsite-secondary,
+        $subsite-primary-text,
+        $subsite-link-color
+      );
+      @include it-cms-ui.cms-ui(
+        $subsite-primary,
+        $subsite-secondary,
+        $subsite-primary-text
+      );
+      @include it-search.search($subsite-link-color);
       @include it-card-image-evidence.card($subsite-link-color);
       @include it-complete-link.block(
         $subsite-secondary,
@@ -93,8 +111,15 @@
       @include it-search-sections.block(
         $subsite-primary,
         $subsite-secondary,
-        $subsite-secondary-text
+        $subsite-secondary-text,
+        $subsite-light-theme
       );
+      @include it-info.info(
+        $subsite-primary,
+        $subsite-secondary,
+        $subsite-light-theme
+      );
+
       @include it-views.common(
         $subsite-primary,
         $subsite-secondary,
@@ -111,10 +136,12 @@
           color: color-hover($subsite-link-color);
         }
       }
-
-      .icon-primary {
-        fill: $subsite-primary !important;
-      }
+    }
+    .icon-primary {
+      fill: $subsite-primary !important;
+    }
+    .btn-link {
+      color: $subsite-link-color;
     }
   }
 }

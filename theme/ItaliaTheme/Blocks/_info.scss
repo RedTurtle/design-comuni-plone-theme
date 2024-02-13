@@ -37,10 +37,19 @@ $tertiary-hover: darken($gray-border, 10%);
       &.bg-color-true {
         .draftjs-buttons a {
           background-color: #fff;
+          border: 1px solid transparent;
           color: $text-color;
+          span {
+            color: $text-color;
+          }
+
           &:hover {
-            background-color: #000;
+            background-color: $primary;
+            border-color: #fff;
             color: #fff;
+            span {
+              color: #fff;
+            }
           }
         }
       }
