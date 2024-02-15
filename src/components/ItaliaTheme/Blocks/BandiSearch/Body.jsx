@@ -78,6 +78,10 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
       }
     });
 
+    if (data.defaultQuerystring) {
+      query.push(...data.defaultQuerystring.filter(el => el.i !== 'portal_type'));
+    }
+
     if (data.location && data.location[0]) {
       query.push({
         i: 'path',
@@ -125,7 +129,8 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
     return newState;
   };
 
-  const filtersConfig = FiltersConfig(null);
+  const pathSearch = data?.location?.length > 0 ? data.location[0]['@id'] : '/';
+  const filtersConfig = FiltersConfig(null, pathSearch);
   const getInitialState = () => {
     return {
       filterOne: filtersConfig[data?.filter_one],

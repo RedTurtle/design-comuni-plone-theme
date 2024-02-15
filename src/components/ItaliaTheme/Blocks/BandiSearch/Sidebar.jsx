@@ -8,6 +8,7 @@ import {
   ObjectBrowserWidget,
   CheckboxWidget,
 } from '@plone/volto/components';
+import QueryWidget from '@plone/volto/components/manage/Widgets/QueryWidget';
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
 import FiltersConfig from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/BandiSearch/FiltersConfig';
@@ -57,6 +58,14 @@ const messages = defineMessages({
     id: 'searchBlock_style',
     defaultMessage: 'Aspetto',
   },
+  pre_filters: {
+    id: 'searchBlock_pre_filters',
+    defaultMessage: 'Filtri pre-impostati',
+  },
+  help_filters: {
+    id: 'searchBlock_help_filters',
+    defaultMessage: "Questi filtri non verranno visualizzati dall'utente ma consentono di pre filtrare i bandi secondo alcuni criteri.",
+  },
   text_filter: {
     id: 'searchBlock_text_filter',
     defaultMessage: 'Filtro di testo',
@@ -101,16 +110,12 @@ const messages = defineMessages({
 
 const Sidebar = ({ block, data, onChangeBlock, required }) => {
   const intl = useIntl();
-  const [activeAccIndex, setActiveAccIndex] = useState(1);
 
-  function handleAccClick(e, titleProps) {
-    const { index } = titleProps;
-    const newIndex = activeAccIndex === index ? -1 : index;
+  /* Accordions active */
+  const [activeAccLayout, setActiveAccLayout] = useState(true);
+  const [activeAccFilters, setActiveAccFilters] = useState(true);
 
-    setActiveAccIndex(newIndex);
-  }
-
-  let filtersConfig = FiltersConfig(null);
+  let filtersConfig = FiltersConfig(null, null);
 
   const filters = Object.keys(filtersConfig).map((k) => [
     k,
@@ -219,18 +224,43 @@ const Sidebar = ({ block, data, onChangeBlock, required }) => {
       </Segment>
       <Accordion fluid styled className="form">
         <Accordion.Title
-          active={activeAccIndex === 1}
+          active={activeAccFilters}
           index={1}
-          onClick={handleAccClick}
+          onClick={() => setActiveAccFilters(!activeAccFilters)}
         >
-          {intl.formatMessage(messages.styles)}
-          {activeAccIndex === 1 ? (
+          {intl.formatMessage(messages.pre_filters)}
+          {activeAccFilters ? (
             <Icon name={upSVG} size="20px" />
           ) : (
             <Icon name={downSVG} size="20px" />
           )}
         </Accordion.Title>
-        <Accordion.Content active={activeAccIndex === 1}>
+        <Accordion.Content active={activeAccFilters}>
+          <Segment padded>
+            <p className="help">{intl.formatMessage(messages.help_filters)}</p>
+            <QueryWidget block={block} onChange={(id, value)=> {
+              onChangeBlock(block, {
+                ...data,
+                [id]: value,
+              });
+            }} id='defaultQuerystring' value={data.defaultQuerystring} />
+          </Segment>
+        </Accordion.Content>
+      </Accordion>
+      <Accordion fluid styled className="form">
+        <Accordion.Title
+          active={setActiveAccLayout}
+          index={1}
+          onClick={() => setActiveAccLayout(!activeAccLayout)}
+        >
+          {intl.formatMessage(messages.styles)}
+          {activeAccLayout ? (
+            <Icon name={upSVG} size="20px" />
+          ) : (
+            <Icon name={downSVG} size="20px" />
+          )}
+        </Accordion.Title>
+        <Accordion.Content active={activeAccLayout}>
           <SelectWidget
             id="bg_color"
             title={intl.formatMessage(messages.bg_color)}

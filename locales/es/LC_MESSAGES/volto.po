@@ -2893,6 +2893,16 @@ msgid "searchBlock_help"
 msgstr "Seleccionar filtros de búsqueda para mostrar en bloquear."
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Questi filtri non verranno visualizzati dall'utente ma consentono di pre filtrare i bandi secondo alcuni criteri.
+msgid "searchBlock_help_filters"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Filtri pre-impostati
+msgid "searchBlock_pre_filters"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
 #: components/ItaliaTheme/Blocks/EventSearch/Sidebar
 #: components/ItaliaTheme/Blocks/UOSearch/Sidebar
 # defaultMessage: Primario
@@ -3212,6 +3222,11 @@ msgstr "Organizar en 4 columnas"
 msgid "share"
 msgstr "Compartir"
 
+#: config/Blocks/ListingOptions/bandiInEvidenceTemplate
+# defaultMessage: Mostra la data di ultima modifica
+msgid "show_data_ultima_modifica"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
 # defaultMessage: Mostra la data
 msgid "show_date"
@@ -3262,6 +3277,11 @@ msgstr "Mostrar el título de la imagen."
 # defaultMessage: Mostra la mappa a tutta larghezza
 msgid "show_map_full_width"
 msgstr "Mostrar el mapa en ancho completo"
+
+#: config/Blocks/ListingOptions/bandiInEvidenceTemplate
+# defaultMessage: Mostra le note anche per i bandi scaduti
+msgid "show_note"
+msgstr ""
 
 #: config/Blocks/ListingOptions/ribbonCardTemplate
 # defaultMessage: Mostra il nastro solo sulla prima card
@@ -3584,6 +3604,11 @@ msgstr "Oficina responsable"
 # defaultMessage: Ulteriori informazioni
 msgid "ulteriori_informazioni"
 msgstr "Más información"
+
+#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
+# defaultMessage: Data di ultima modifica
+msgid "ultima_modifica_bando"
+msgstr ""
 
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: unità operativa
