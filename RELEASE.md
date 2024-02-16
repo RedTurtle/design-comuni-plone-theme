@@ -45,6 +45,7 @@
 - Sistemato lo skiplink "Vai al contenuto" nella pagina principale di ricerca del sito
 - Migliorato l'HTML semantico per le card del blocco rss per migliorare l'esperienza d'uso con Screen Reader
 - Rimossi gli heading per alcuni blocchi nel caso il titolo non sia presente al fine di migliorare l'esperienza con l'uso di screen reader
+- Visualizzazione mobile per il blocco tabela sistemata.
 
 ## Versione 7.24.2 (11/01/2024)
 
