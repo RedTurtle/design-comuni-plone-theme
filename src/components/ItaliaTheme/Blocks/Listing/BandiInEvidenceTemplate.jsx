@@ -228,7 +228,7 @@ const BandiInEvidenceTemplate = ({
                                 item.bando_state?.includes('inProgress'),
                             })}
                           >
-                            {intl.formatMessage(messages[item.bando_state[0]])}
+                            {item.bando_state[1]}
                           </div>
                         </span>
                       </span>
