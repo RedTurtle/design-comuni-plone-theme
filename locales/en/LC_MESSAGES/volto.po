@@ -2552,7 +2552,7 @@ msgstr "nominative"
 #: components/ItaliaTheme/View/BandoView/BandoNoteAggiornamento
 # defaultMessage: Note di aggiornamento
 msgid "note_aggiornamento"
-msgstr ""
+msgstr "Update notes"
 
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Novità
