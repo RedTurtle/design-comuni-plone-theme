@@ -15,5 +15,11 @@
     .it-nav-wrapper .it-header-navbar-wrapper {
       margin-top: -20px;
     }
+
+    .navbar-toggler {
+      svg.fa-icon {
+        fill: $white;
+      }
+    }
   }
 }
