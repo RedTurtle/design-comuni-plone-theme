@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorata l'accessibilità del blocco Cerca nelle Sezioni
+
 ## Versione 11.5.1 (19/02/2024)
 
 ### Migliorie

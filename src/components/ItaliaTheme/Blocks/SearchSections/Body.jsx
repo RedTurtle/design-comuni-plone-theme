@@ -72,6 +72,7 @@ const Body = ({ block, sections }) => {
                 e.key === 'Enter' ? navigate(inputText, searchFilters()) : null
               }
               aria-label={block.placeholder}
+              title={block.placeholder}
             ></input>
           </div>
           <div className="buttonsContainer mt-2 d-flex">
