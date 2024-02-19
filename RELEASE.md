@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Le icone social nel menu laterale mobile sono tutte dello stesso colore.
+
 ## Versione 11.5.0 (16/02/2024)
 
 ### Migliorie
