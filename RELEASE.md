@@ -30,21 +30,25 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 7.25.0 (20/02/2024)
+
+### Novità
+- Sono state aggiunte delle nuove proprietà nel blocco elenco con variazione Bandi in Evidenza per mostrare le Note di aggiornamento anche per i bandi scaduti e la Data di ultima modifica per tutti i bandi.
+- Nella ricerca per Bandi sono stati implementati dei pre-filtri non visibili dall'utente configurabili dalla sidebar laterale per rendere la ricerca più specifica all'utente.
 
 ### Migliorie
 
-- ...
+- Nella ricerca per Bandi, i campi di tipo Tipologia/Categoria/Ufficio visibili all'utente, vengono valorizzati a partire dalla "Posizione in cui cercare" valorizzata nella sidebar laterale, non prendono più i valori generali del vocabolario.
+- Nella ricerca per Bandi sono stati azzerati i filtri Data quando si atterra in pagina togliendo così la forzatura alla ricerca per data odierna.
 
 ### Fix
 
-- Sono stati apportati alcuni aggiustamenti ai sottositi con l'intento di migliorare l'esperienza e aumentare l'accessibilità. Ci sono state modifiche, principalmente riguardanti i colori, alla visualizzazione della ricerca, ai blocchi info, al blocco contenuto in primo piano e al blocco icone.
-- È stata corretta la visualizzazione dei pulsanti nel blocco testo per i sottositi.
+- Sono stati apportati alcuni aggiustamenti ai sottositi con l'intento di migliorare l'esperienza e aumentare l'accessibilità. In particolare le modifiche riguardano colori, visualizzazione della ricerca, blocchi info, blocco contenuto in primo piano e blocco icone e pulsanti.
 - Sono stati corretti alcuni errori nel menu mobile per i sottositi. Ora la lente di ingrandimento è visibile nei sottositi con colori scuri e la freccia nei pulsanti "link ad altro" è del colore del sottosito.
-- Reso il link ai diversi social elencati parlante, ora viene riportato "Seguici su nome_del_social"
-- Sistemato lo skiplink "Vai al contenuto" nella pagina principale di ricerca del sito
-- Migliorato l'HTML semantico per le card del blocco rss per migliorare l'esperienza d'uso con Screen Reader
-- Rimossi gli heading per alcuni blocchi nel caso il titolo non sia presente al fine di migliorare l'esperienza con l'uso di screen reader
+- I link dei Social sono stati resi "parlanti" per motivi di accessibilità, ora viene riportato "Seguici su nome_del_social".
+- Sistemato lo skiplink "Vai al contenuto" nella pagina principale di ricerca del sito.
+- Migliorato l'HTML semantico per le card del blocco RSS per migliorare l'esperienza d'uso con Screen Reader.
+- Rimossi gli heading per alcuni blocchi nel caso il titolo non sia presente al fine di migliorare l'esperienza con l'utilizzo degli Screen Reader.
 
 ## Versione 7.24.2 (11/01/2024)
 
