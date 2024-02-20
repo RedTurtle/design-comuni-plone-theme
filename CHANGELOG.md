@@ -1,3 +1,35 @@
+## [7.25.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.24.2...v7.25.0) (2024-02-20)
+
+
+### Features
+
+* added pre-filters in BandoSearch and updated user selection filters, added parameters in bando listing block ([#537](https://github.com/RedTurtle/design-comuni-plone-theme/issues/537)) ([50a232d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/50a232d2eccb9e0cd1fdc34b4462413102c73c20))
+
+
+### Bug Fixes
+
+* added aria-live and aria-labels for filters in Search page ([#473](https://github.com/RedTurtle/design-comuni-plone-theme/issues/473)) ([b6ff543](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b6ff5430146cea272d5f1483bb2a3e0a5ea2351b))
+* added focus style for skiplinks for a11y ([#472](https://github.com/RedTurtle/design-comuni-plone-theme/issues/472)) ([2687ca9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2687ca90a3cfdb9c518a3bafab8bcba9865b4333))
+* added FocusLock for mobile navbar menu ([#478](https://github.com/RedTurtle/design-comuni-plone-theme/issues/478)) ([29990dc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/29990dcb07a2224c8d932b83c6db149b70700a33))
+* added type button to pop up button for html block editor ([#474](https://github.com/RedTurtle/design-comuni-plone-theme/issues/474)) ([5305939](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5305939606ecd38ff4ab0b1ecda124a9f5cb9aea))
+* aria tags to avoid double feedback on SR ([#484](https://github.com/RedTurtle/design-comuni-plone-theme/issues/484)) ([19b9617](https://github.com/RedTurtle/design-comuni-plone-theme/commit/19b9617752a1917d335934398851d9e427f226e5))
+* better a11y for social links ([#525](https://github.com/RedTurtle/design-comuni-plone-theme/issues/525)) ([2ee03bd](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2ee03bda9404677adf67c91d17fe04219e8efa6b))
+* changed background color for focused choice for greater contrast ([#471](https://github.com/RedTurtle/design-comuni-plone-theme/issues/471)) ([1736e7b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1736e7bbe6884fb8ced60c70b413116089b5f7fe))
+* do not show empty headings if title in block is not configured ([#526](https://github.com/RedTurtle/design-comuni-plone-theme/issues/526)) ([e6a35bb](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e6a35bb722462ca6518aeed755d7231d38aca540))
+* semantic headings levels in rss templates, all h3 now ([#523](https://github.com/RedTurtle/design-comuni-plone-theme/issues/523)) ([37a8ab9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/37a8ab94c433cc217ea105f5dafbfe85ad4184a0))
+* skip link go to content in site search page ([#524](https://github.com/RedTurtle/design-comuni-plone-theme/issues/524)) ([66c5181](https://github.com/RedTurtle/design-comuni-plone-theme/commit/66c51812a8e32a04e0d4ef7d866a462849246245))
+* subsite light colors contrast ([#513](https://github.com/RedTurtle/design-comuni-plone-theme/issues/513)) ([1c917f8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1c917f8828797acfd047d0889858ade81411ca1f))
+
+
+### Maintenance
+
+* updated bando_state from backend string label ([#540](https://github.com/RedTurtle/design-comuni-plone-theme/issues/540)) ([5e28d86](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5e28d86adca551aa16e58141d2703f3a7b80388e))
+
+
+### Documentation
+
+* updated RELEASE.md ([b50f9e6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b50f9e6b4b5dedc38a591883191c6c2213650691))
+
 ### [7.24.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.24.1...v7.24.2) (2024-01-11)
 
 
