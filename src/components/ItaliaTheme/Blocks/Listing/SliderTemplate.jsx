@@ -28,11 +28,11 @@ const messages = defineMessages({
   },
   play: {
     id: 'Play slider',
-    defaultMessage: 'Seleziona per riprodurre',
+    defaultMessage: 'Seleziona per riprodurre lo slider',
   },
   pause: {
     id: 'Pause slider',
-    defaultMessage: 'Seleziona per mettere in pausa',
+    defaultMessage: 'Seleziona per mettere in pausa lo slider',
   },
   precedente: {
     id: 'precedente',
@@ -49,6 +49,11 @@ const messages = defineMessages({
   slideDot: {
     id: 'slideDot',
     defaultMessage: 'Vai alla slide {index}',
+  },
+  carousel: { id: 'carousel', defaultMessage: 'Carosello' },
+  carouselSlide: {
+    id: 'carouselSlide',
+    defaultMessage: 'Slide',
   },
 });
 
@@ -135,7 +140,7 @@ function PrevArrow(props) {
 }
 
 const Slide = (props) => {
-  const { item, index, appearance, appearanceProp } = props;
+  const { item, index, appearance, appearanceProp, intl } = props;
   const handleKeyboardUsers = (e) => {
     const { key, shiftKey } = e;
     if (key === 'Tab') {
@@ -162,6 +167,10 @@ const Slide = (props) => {
       className="it-single-slide-wrapper"
       key={item['@id'] + index}
       data-slide={index}
+      role="group"
+      aria-label={
+        intl.formatMessage(messages.carouselSlide) + ' ' + (index + 1)
+      }
     >
       <div className={'slide-wrapper'}>
         <SlideItemAppearance
@@ -318,6 +327,11 @@ const SliderTemplate = ({
                       ? intl.formatMessage(messages.pause)
                       : intl.formatMessage(messages.play)
                   }
+                  aria-label={
+                    userAutoplay
+                      ? intl.formatMessage(messages.pause)
+                      : intl.formatMessage(messages.play)
+                  }
                   tabIndex={0}
                 >
                   <Icon
@@ -329,31 +343,36 @@ const SliderTemplate = ({
               </div>
             )}
 
-            <Slider {...settings} ref={slider}>
-              {items.map((item, index) => {
-                const image = ListingImage({
-                  item,
-                  loading: index === 0 ? 'eager' : 'lazy',
-                  sizes: `max-width(991px) 620px, ${1300 / nSlidesToShow}px`,
-                  critical: true,
-                });
-                return (
-                  <Slide
-                    image={image}
-                    index={index}
-                    full_width={full_width}
-                    item={item}
-                    show_image_title={show_image_title}
-                    intl={intl}
-                    setUserAutoplay={setUserAutoplay}
-                    userAutoplay={userAutoplay}
-                    slider={slider}
-                    appearance={slide_appearance}
-                    appearanceProp={appearanceProp}
-                  />
-                );
-              })}
-            </Slider>
+            <div
+              role="region"
+              aria-label={intl.formatMessage(messages.carousel)}
+            >
+              <Slider {...settings} role="region" ref={slider}>
+                {items.map((item, index) => {
+                  const image = ListingImage({
+                    item,
+                    loading: index === 0 ? 'eager' : 'lazy',
+                    sizes: `max-width(991px) 620px, ${1300 / nSlidesToShow}px`,
+                    critical: true,
+                  });
+                  return (
+                    <Slide
+                      image={image}
+                      index={index}
+                      full_width={full_width}
+                      item={item}
+                      show_image_title={show_image_title}
+                      intl={intl}
+                      setUserAutoplay={setUserAutoplay}
+                      userAutoplay={userAutoplay}
+                      slider={slider}
+                      appearance={slide_appearance}
+                      appearanceProp={appearanceProp}
+                    />
+                  );
+                })}
+              </Slider>
+            </div>
           </div>
         </div>
         <ListingLinkMore title={linkTitle} href={linkHref} className="my-4" />
