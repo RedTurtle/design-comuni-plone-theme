@@ -46,6 +46,9 @@
 ### Migliorie
 
 - Migliorata l'accessibilità del blocco Cerca nelle Sezioni
+### Fix
+
+- La descrizione nelle card per i punti di contatto non mostrano più tutte le iniziali in maiuscolo.
 
 ## Versione 11.5.1 (19/02/2024)
 
