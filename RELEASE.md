@@ -46,6 +46,7 @@
 ### Fix
 
 - L'icona per aprire il menu in mobile è ora visibile anche quando l'header del sito è bianca.
+- La descrizione nelle card per i punti di contatto non mostrano più tutte le iniziali in maiuscolo.
 
 ## Versione 11.5.1 (19/02/2024)
 
