@@ -445,9 +445,8 @@ msgstr ""
 msgid "Path filter filtro"
 msgstr "Filtro"
 
-#: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Metti in pausa
+#: components/ItaliaTheme/Slider/ButtonPlayPause
+# defaultMessage: Seleziona per mettere in pausa lo slider
 msgid "Pause slider"
 msgstr "Metti in pausa"
 
@@ -462,9 +461,8 @@ msgstr "Percorso"
 msgid "Piccolo"
 msgstr "Piccolo"
 
-#: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Play
+#: components/ItaliaTheme/Slider/ButtonPlayPause
+# defaultMessage: Seleziona per riprodurre lo slider
 msgid "Play slider"
 msgstr "Seleziona per riprodurre"
 
@@ -1086,19 +1084,9 @@ msgid "calendarBlockSidebarTitle"
 msgstr "Calendario"
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Prossimo
-msgid "calendar_next_arrow"
-msgstr "Prossimo"
-
-#: components/ItaliaTheme/Blocks/Calendar/Body
 # defaultMessage: Nessun evento disponibile al momento
 msgid "calendar_no_results"
 msgstr "Nessun evento disponibile al momento"
-
-#: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Precedente
-msgid "calendar_prev_arrow"
-msgstr "Precedente"
 
 #: components/ItaliaTheme/manage/Widgets/CanaleDigitaleWidget
 # defaultMessage: Accedere al servizio
@@ -1126,12 +1114,12 @@ msgstr "Vedi"
 msgid "card_width_image"
 msgstr "Card con immagine"
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/CarouselWrapper
 # defaultMessage: Carosello
 msgid "carousel"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/SingleSlideWrapper
 # defaultMessage: Slide
 msgid "carouselSlide"
 msgstr ""
@@ -2744,7 +2732,7 @@ msgstr "Testo di aiuto"
 msgid "playStoreLink"
 msgstr "PlayStore Link"
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/PrevArrow
 # defaultMessage: Precedente
 msgid "precedente"
 msgstr "Precedente"
@@ -3778,7 +3766,7 @@ msgstr "Visibile"
 msgid "subjects"
 msgstr "Tags"
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/NextArrow
 # defaultMessage: Successivo
 msgid "successivo"
 msgstr "Successivo"
@@ -3996,16 +3984,6 @@ msgstr "Variazione situazione patrimoniale"
 # defaultMessage: Luoghi
 msgid "venues"
 msgstr "Luoghi"
-
-#: components/ItaliaTheme/Blocks/VideoGallery/Body
-# defaultMessage: Prossimo video
-msgid "videogallery_next_arrow"
-msgstr "Prossimo video"
-
-#: components/ItaliaTheme/Blocks/VideoGallery/Body
-# defaultMessage: Video precedente
-msgid "videogallery_prev_arrow"
-msgstr "Video precedente"
 
 #: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 # defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra

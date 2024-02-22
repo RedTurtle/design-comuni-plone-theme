@@ -445,9 +445,8 @@ msgstr "Page"
 msgid "Path filter filtro"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Metti in pausa
+#: components/ItaliaTheme/Slider/ButtonPlayPause
+# defaultMessage: Seleziona per mettere in pausa lo slider
 msgid "Pause slider"
 msgstr "Pause"
 
@@ -462,9 +461,8 @@ msgstr ""
 msgid "Piccolo"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Play
+#: components/ItaliaTheme/Slider/ButtonPlayPause
+# defaultMessage: Seleziona per riprodurre lo slider
 msgid "Play slider"
 msgstr "Play"
 
@@ -1086,18 +1084,8 @@ msgid "calendarBlockSidebarTitle"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Prossimo
-msgid "calendar_next_arrow"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Calendar/Body
 # defaultMessage: Nessun evento disponibile al momento
 msgid "calendar_no_results"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Precedente
-msgid "calendar_prev_arrow"
 msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/CanaleDigitaleWidget
@@ -1126,12 +1114,12 @@ msgstr "Read more"
 msgid "card_width_image"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/CarouselWrapper
 # defaultMessage: Carosello
 msgid "carousel"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/SingleSlideWrapper
 # defaultMessage: Slide
 msgid "carouselSlide"
 msgstr ""
@@ -2744,7 +2732,7 @@ msgstr "Help text"
 msgid "playStoreLink"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/PrevArrow
 # defaultMessage: Precedente
 msgid "precedente"
 msgstr ""
@@ -3778,7 +3766,7 @@ msgstr ""
 msgid "subjects"
 msgstr "Tags"
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/NextArrow
 # defaultMessage: Successivo
 msgid "successivo"
 msgstr ""
@@ -3996,16 +3984,6 @@ msgstr "Change in balance sheet"
 # defaultMessage: Luoghi
 msgid "venues"
 msgstr "Venues"
-
-#: components/ItaliaTheme/Blocks/VideoGallery/Body
-# defaultMessage: Prossimo video
-msgid "videogallery_next_arrow"
-msgstr "Next video"
-
-#: components/ItaliaTheme/Blocks/VideoGallery/Body
-# defaultMessage: Video precedente
-msgid "videogallery_prev_arrow"
-msgstr "Previous video"
 
 #: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 # defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra

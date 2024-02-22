@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-02-22T11:52:48.638Z\n"
+"POT-Creation-Date: 2024-02-22T15:14:34.905Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -447,9 +447,8 @@ msgstr ""
 msgid "Path filter filtro"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Metti in pausa
+#: components/ItaliaTheme/Slider/ButtonPlayPause
+# defaultMessage: Seleziona per mettere in pausa lo slider
 msgid "Pause slider"
 msgstr ""
 
@@ -464,9 +463,8 @@ msgstr ""
 msgid "Piccolo"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Play
+#: components/ItaliaTheme/Slider/ButtonPlayPause
+# defaultMessage: Seleziona per riprodurre lo slider
 msgid "Play slider"
 msgstr ""
 
@@ -1088,18 +1086,8 @@ msgid "calendarBlockSidebarTitle"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Prossimo
-msgid "calendar_next_arrow"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Calendar/Body
 # defaultMessage: Nessun evento disponibile al momento
 msgid "calendar_no_results"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Precedente
-msgid "calendar_prev_arrow"
 msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/CanaleDigitaleWidget
@@ -1128,12 +1116,12 @@ msgstr ""
 msgid "card_width_image"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/CarouselWrapper
 # defaultMessage: Carosello
 msgid "carousel"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/SingleSlideWrapper
 # defaultMessage: Slide
 msgid "carouselSlide"
 msgstr ""
@@ -2746,7 +2734,7 @@ msgstr ""
 msgid "playStoreLink"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/PrevArrow
 # defaultMessage: Precedente
 msgid "precedente"
 msgstr ""
@@ -3780,7 +3768,7 @@ msgstr ""
 msgid "subjects"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/NextArrow
 # defaultMessage: Successivo
 msgid "successivo"
 msgstr ""
@@ -3997,16 +3985,6 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/UOSearch/DefaultFilters
 # defaultMessage: Luoghi
 msgid "venues"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/VideoGallery/Body
-# defaultMessage: Prossimo video
-msgid "videogallery_next_arrow"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/VideoGallery/Body
-# defaultMessage: Video precedente
-msgid "videogallery_prev_arrow"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/SliderTemplate
