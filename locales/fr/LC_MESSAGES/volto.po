@@ -2003,8 +2003,18 @@ msgid "feedback_form_button_next"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Avanti, disabilitato
+msgid "feedback_form_button_next_disabled"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Previous
 msgid "feedback_form_button_prev"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Indietro, disabilitato
+msgid "feedback_form_button_prev_disabled"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm

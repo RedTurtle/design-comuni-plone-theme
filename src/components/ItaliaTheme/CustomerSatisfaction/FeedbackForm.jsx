@@ -24,7 +24,7 @@ import {
 import cx from 'classnames';
 import AnswersStep from './Steps/AnswersStep';
 import CommentsStep from './Steps/CommentsStep';
-import Rating from './Steps/Commons/Rating';
+import RTRating from './Steps/Commons/Rating';
 import { PropTypes } from 'prop-types';
 
 const messages = defineMessages({
@@ -61,9 +61,17 @@ const messages = defineMessages({
     id: 'feedback_form_button_next',
     defaultMessage: 'Next',
   },
+  next_disabled: {
+    id: 'feedback_form_button_next_disabled',
+    defaultMessage: 'Avanti, disabilitato',
+  },
   prev: {
     id: 'feedback_form_button_prev',
     defaultMessage: 'Previous',
+  },
+  prev_disabled: {
+    id: 'feedback_form_button_prev_disabled',
+    defaultMessage: 'Indietro, disabilitato',
   },
   feedback_sent: {
     id: 'feedback_sent',
@@ -149,12 +157,15 @@ const FeedbackForm = ({ contentType, pathname }) => {
       [field]: value,
     });
   };
-
   const getFormFieldValue = (field) => formData?.[field] ?? undefined;
 
-  const nextStep = () => setStep(step + 1);
+  const nextStep = () => {
+    if (!invalidForm) setStep(step + 1);
+  };
 
-  const prevStep = () => setStep(step - 1);
+  const prevStep = () => {
+    if (!invalidForm && step !== 0) setStep(step - 1);
+  };
 
   useEffect(() => {
     setValidToken(null);
@@ -193,6 +204,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
   };
 
   const sendFormData = () => {
+    if (invalidForm) return;
     setStep(2);
     const data = {
       ...formData,
@@ -218,7 +230,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
       <Container>
         <Row className="d-flex justify-content-center bg-primary">
           <Col className="col-12 col-lg-6">
-            <div className="feedback-form" role="form">
+            <div className="feedback-form" role="form" aria-live="polite">
               <Card
                 className="shadow card-wrapper py-4 px-4"
                 data-element="feedback"
@@ -246,15 +258,31 @@ const FeedbackForm = ({ contentType, pathname }) => {
                           : intl.formatMessage(messages.title)}
                       </h2>
                       <div className="rating-container mb-0">
-                        <Rating
+                        <RTRating
                           name="satisfaction"
                           value={satisfaction}
+                          // Qui l'implementazione di design react kit sta su con gli stecchini, fatta funzionare a pugni
                           inputs={[
-                            'star1b',
-                            'star2b',
-                            'star3b',
-                            'star4b',
-                            'star5b',
+                            {
+                              name: 'star1b',
+                              value: 1,
+                            },
+                            {
+                              name: 'star2b',
+                              value: 2,
+                            },
+                            {
+                              name: 'star3b',
+                              value: 3,
+                            },
+                            {
+                              name: 'star4b',
+                              value: 4,
+                            },
+                            {
+                              name: 'star5b',
+                              value: 5,
+                            },
                           ]}
                           aria-controls={
                             satisfaction > threshold
@@ -296,41 +324,63 @@ const FeedbackForm = ({ contentType, pathname }) => {
                         className={cx(
                           'form-step-actions d-flex flex-nowrap w100 justify-content-center button-shadow',
                           {
-                            'pt-4': satisfaction !== null,
+                            'pt-4': satisfaction,
                           },
                         )}
-                        aria-hidden={satisfaction === null}
+                        aria-hidden={!satisfaction}
                       >
+                        {/* Bug bottoni del kit. Disabled e' settato anche se compare la prop aria-disabled,
+                        quando lo scopo sarebbe continuare a poter usufruire dei focus anche in screen reader */}
                         <Button
-                          className="prev-action"
-                          disabled={!!(step - 1)}
-                          onClick={prevStep}
                           type="button"
-                          outline
                           color="primary"
+                          onClick={prevStep}
+                          outline
+                          aria-labelledby={
+                            !invalidForm && step !== 0
+                              ? intl.formatMessage(messages.prev)
+                              : intl.formatMessage(messages.prev_disabled)
+                          }
+                          className={cx('prev-action', {
+                            disabled: step === 0,
+                          })}
+                          aria-disabled={!(!invalidForm && step !== 0)}
                         >
                           {intl.formatMessage(messages.prev)}
                         </Button>
+
                         {step !== numberOfSteps - 1 && (
                           <Button
-                            color="primary"
-                            onClick={nextStep}
-                            className="next-action fw-bold"
-                            disabled={invalidForm}
                             type="button"
+                            onClick={nextStep}
+                            aria-labelledby={
+                              !invalidForm
+                                ? intl.formatMessage(messages.next)
+                                : intl.formatMessage(messages.next_disabled)
+                            }
+                            className={cx('next-action fw-bold', {
+                              disabled: invalidForm,
+                            })}
                           >
                             {intl.formatMessage(messages.next)}
                           </Button>
                         )}
                         {step === numberOfSteps - 1 && (
                           <Button
-                            className="next-action fw-bold"
+                            className={cx('next-action fw-bold', {
+                              disabled: invalidForm,
+                            })}
                             color="primary"
-                            disabled={invalidForm}
+                            aria-labelledby={
+                              !invalidForm
+                                ? intl.formatMessage(messages.next)
+                                : intl.formatMessage(messages.next_disabled)
+                            }
                             type={'button'}
                             onClick={sendFormData}
                             onKeyDown={(e) => {
-                              if (e.key === 'Enter') sendFormData();
+                              if (e.key === 'Enter' && !invalidForm)
+                                sendFormData();
                             }}
                           >
                             {intl.formatMessage(messages.next)}
