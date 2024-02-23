@@ -1,3 +1,15 @@
+### [7.25.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.0...v7.25.1) (2024-02-23)
+
+
+### Bug Fixes
+
+* draftjs callout colors uniformed ([#547](https://github.com/RedTurtle/design-comuni-plone-theme/issues/547)) ([dc61074](https://github.com/RedTurtle/design-comuni-plone-theme/commit/dc61074717854b8c32632c05050682507baa3bfa))
+
+
+### Maintenance
+
+* preparing release 7.25.1 ([adc878c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/adc878c6101edf7635ca2917c9cd5d8f1182aa9f))
+
 ## [7.25.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.24.2...v7.25.0) (2024-02-20)
 
 
