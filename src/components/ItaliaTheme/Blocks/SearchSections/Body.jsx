@@ -65,6 +65,7 @@ const Body = ({ block, sections }) => {
                 e.key === 'Enter' ? navigate(inputText, searchFilters()) : null
               }
               aria-label={block.placeholder}
+              title={block.placeholder}
             ></input>
             <button
               className="rounded-right"
