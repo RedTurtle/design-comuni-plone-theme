@@ -30,9 +30,16 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorata l'accessibilità del blocco Cerca nelle Sezioni
+
 ## Versione 7.25.0 (20/02/2024)
 
 ### Novità
+
 - Sono state aggiunte delle nuove proprietà nel blocco elenco con variazione Bandi in Evidenza per mostrare le Note di aggiornamento anche per i bandi scaduti e la Data di ultima modifica per tutti i bandi.
 - Nella ricerca per Bandi sono stati implementati dei pre-filtri non visibili dall'utente configurabili dalla sidebar laterale per rendere la ricerca più specifica all'utente.
 
