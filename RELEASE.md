@@ -30,9 +30,24 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ... [`Istruzioni`](url della documentazione relativa alla novità)
+
+### Fix
+
+- Visualizzazione mobile per il blocco tabella sistemata.
+
 ## Versione 7.25.0 (20/02/2024)
 
 ### Novità
+
 - Sono state aggiunte delle nuove proprietà nel blocco elenco con variazione Bandi in Evidenza per mostrare le Note di aggiornamento anche per i bandi scaduti e la Data di ultima modifica per tutti i bandi.
 - Nella ricerca per Bandi sono stati implementati dei pre-filtri non visibili dall'utente configurabili dalla sidebar laterale per rendere la ricerca più specifica all'utente.
 
@@ -49,7 +64,6 @@
 - Sistemato lo skiplink "Vai al contenuto" nella pagina principale di ricerca del sito
 - Migliorato l'HTML semantico per le card del blocco rss per migliorare l'esperienza d'uso con Screen Reader
 - Rimossi gli heading per alcuni blocchi nel caso il titolo non sia presente al fine di migliorare l'esperienza con l'uso di screen reader
-- Visualizzazione mobile per il blocco tabela sistemata.
 - I link dei Social sono stati resi "parlanti" per motivi di accessibilità, ora viene riportato "Seguici su nome_del_social".
 - Sistemato lo skiplink "Vai al contenuto" nella pagina principale di ricerca del sito.
 - Migliorato l'HTML semantico per le card del blocco RSS per migliorare l'esperienza d'uso con Screen Reader.
