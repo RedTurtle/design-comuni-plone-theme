@@ -32,14 +32,6 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
-### Migliorie
-
-- ...
-
-### Novità
-
-- ... [`Istruzioni`](url della documentazione relativa alla novità)
-
 ### Fix
 
 - Visualizzazione mobile per il blocco tabella sistemata.
@@ -60,10 +52,6 @@
 
 - Sono stati apportati alcuni aggiustamenti ai sottositi con l'intento di migliorare l'esperienza e aumentare l'accessibilità. In particolare le modifiche riguardano colori, visualizzazione della ricerca, blocchi info, blocco contenuto in primo piano e blocco icone e pulsanti.
 - Sono stati corretti alcuni errori nel menu mobile per i sottositi. Ora la lente di ingrandimento è visibile nei sottositi con colori scuri e la freccia nei pulsanti "link ad altro" è del colore del sottosito.
-- Reso il link ai diversi social elencati parlante, ora viene riportato "Seguici su nome_del_social"
-- Sistemato lo skiplink "Vai al contenuto" nella pagina principale di ricerca del sito
-- Migliorato l'HTML semantico per le card del blocco rss per migliorare l'esperienza d'uso con Screen Reader
-- Rimossi gli heading per alcuni blocchi nel caso il titolo non sia presente al fine di migliorare l'esperienza con l'uso di screen reader
 - I link dei Social sono stati resi "parlanti" per motivi di accessibilità, ora viene riportato "Seguici su nome_del_social".
 - Sistemato lo skiplink "Vai al contenuto" nella pagina principale di ricerca del sito.
 - Migliorato l'HTML semantico per le card del blocco RSS per migliorare l'esperienza d'uso con Screen Reader.
