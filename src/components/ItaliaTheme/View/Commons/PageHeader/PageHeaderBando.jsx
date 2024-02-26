@@ -64,7 +64,7 @@ const PageHeaderBando = ({ content }) => {
                 size=""
               />
               {intl.formatMessage(messages.bando)}{' '}
-              {intl.formatMessage(messages[content.bando_state[0]])}
+              {content.bando_state[1]}
             </div>
           </div>
         </div>
