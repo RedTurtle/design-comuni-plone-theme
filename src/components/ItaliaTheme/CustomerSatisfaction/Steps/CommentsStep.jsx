@@ -47,14 +47,18 @@ const CommentsStep = ({
       className={cx('comments-step', {
         'd-none': step !== 1,
       })}
+      data-step={step}
+      aria-expanded={step === 1}
+      aria-hidden={step !== 1}
     >
       <FormHeader
         title={intl.formatMessage(messages.header_comments)}
         step={step + 1}
         totalSteps={totalSteps}
         className="comments-header"
+        hidden={step !== 1}
       />
-      <div className="comment">
+      <div className="comment w-100">
         <Form>
           <FormGroup key={`step-${step}-comment`}>
             <TextArea

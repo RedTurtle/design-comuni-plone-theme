@@ -29,7 +29,7 @@ const RTRating = ({
   const fieldClasses = classNames(className);
   const extraFieldAttrs = readOnly ? { 'aria-hidden': true } : {};
 
-  const legendContent = legend || null;
+  const legendContent = legend || '';
 
   const handleChange = (e) => {
     onChange(parseInt(e.target.value), name);
@@ -49,9 +49,8 @@ const RTRating = ({
       tag="fieldset"
       className={wrapperClasses}
       data-testid={testId}
-      // tabIndex={0}
     >
-      {legendContent}
+      <legend className="visually-hidden">{legendContent}</legend>
       {inputs.map((input, i) => {
         return (
           <Fragment key={input.name}>
@@ -66,12 +65,11 @@ const RTRating = ({
               checked={value === input.value}
               disabled={readOnly}
               data-element={'feedback-rate-' + input.value}
-              tabIndex={input.value === 1 ? 0 : -1}
               aria-label={labelFn(input.value)}
             />
             <Label
               for={input.name}
-              title={labelFn(input.value)}
+              // aria-label={labelFn(input.value)}
               onMouseEnter={(e) => {
                 const parentNode = e.currentTarget.parentElement;
                 const toBeHovered = getAllPrevSiblings(
@@ -98,7 +96,6 @@ const RTRating = ({
               <Icon
                 icon="it-star-full"
                 size="sm"
-                title={labelFn(input.value)}
                 className={cx('rating-star', {
                   starFilled: value >= input.value,
                 })}

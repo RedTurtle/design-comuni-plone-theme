@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useLayoutEffect,
+  useCallback,
+  useMemo,
+} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { useIntl, defineMessages } from 'react-intl';
@@ -9,7 +15,6 @@ import {
   Col,
   Spinner,
   Card,
-  Button,
   CardHeader,
 } from 'design-react-kit';
 import {
@@ -61,17 +66,9 @@ const messages = defineMessages({
     id: 'feedback_form_button_next',
     defaultMessage: 'Next',
   },
-  next_disabled: {
-    id: 'feedback_form_button_next_disabled',
-    defaultMessage: 'Avanti, disabilitato',
-  },
   prev: {
     id: 'feedback_form_button_prev',
     defaultMessage: 'Previous',
-  },
-  prev_disabled: {
-    id: 'feedback_form_button_prev_disabled',
-    defaultMessage: 'Indietro, disabilitato',
   },
   feedback_sent: {
     id: 'feedback_sent',
@@ -118,6 +115,10 @@ const messages = defineMessages({
     id: 'feedback_other_positive',
     defaultMessage: 'Other',
   },
+  feedback: {
+    id: 'feedback_stars',
+    defaultMessage: 'Valuta da 1 a 5 stelle',
+  },
 });
 
 const FeedbackForm = ({ contentType, pathname }) => {
@@ -137,12 +138,11 @@ const FeedbackForm = ({ contentType, pathname }) => {
     ? window.env.RAZZLE_HONEYPOT_FIELD
     : process.env.RAZZLE_HONEYPOT_FIELD;
 
-  const numberOfSteps = useMemo(() => getNumberOfSteps(), []);
+  const numberOfSteps = getNumberOfSteps();
 
   const changeSatisfaction = (e) => {
     setSatisfaction(e);
   };
-
   const updateFormData = (field, value) => {
     if (field === 'comment') {
       if (value?.length > 200) setInvalidForm(true);
@@ -226,11 +226,11 @@ const FeedbackForm = ({ contentType, pathname }) => {
     return null;
   }
   return (
-    <div className="bg-primary customer-satisfaction">
+    <section className="bg-primary customer-satisfaction">
       <Container>
         <Row className="d-flex justify-content-center bg-primary">
           <Col className="col-12 col-lg-6">
-            <div className="feedback-form" role="form" aria-live="polite">
+            <div className="feedback-form" role="form">
               <Card
                 className="shadow card-wrapper py-4 px-4"
                 data-element="feedback"
@@ -261,7 +261,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
                         <RTRating
                           name="satisfaction"
                           value={satisfaction}
-                          // Qui l'implementazione di design react kit sta su con gli stecchini, fatta funzionare a pugni
+                          // Qui l'implementazione di design react kit sta su con gli stecchini, rifatta
                           inputs={[
                             {
                               name: 'star1b',
@@ -291,7 +291,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
                           }
                           className="volto-feedback-rating mb-0"
                           onChangeRating={changeSatisfaction}
-                          legend=" "
+                          legend={intl.formatMessage(messages.feedback)}
                           wrapperClassName={'rating'}
                         />
                       </div>
@@ -322,69 +322,61 @@ const FeedbackForm = ({ contentType, pathname }) => {
                       />
                       <div
                         className={cx(
-                          'form-step-actions d-flex flex-nowrap w100 justify-content-center button-shadow',
+                          'form-step-actions flex-nowrap w100 justify-content-center button-shadow',
                           {
-                            'pt-4': satisfaction,
+                            'pt-4 d-flex': satisfaction,
+                            'd-none': !satisfaction,
                           },
                         )}
                         aria-hidden={!satisfaction}
                       >
                         {/* Bug bottoni del kit. Disabled e' settato anche se compare la prop aria-disabled,
-                        quando lo scopo sarebbe continuare a poter usufruire dei focus anche in screen reader */}
-                        <Button
+                        quando lo scopo sarebbe continuare a poter usufruire dei focus anche in screen reader.
+                        Per i vedenti, la classe dimmed fa il suo lavoro e disabilita i click/input utente */}
+                        <button
                           type="button"
-                          color="primary"
                           onClick={prevStep}
-                          outline
-                          aria-labelledby={
-                            !invalidForm && step !== 0
-                              ? intl.formatMessage(messages.prev)
-                              : intl.formatMessage(messages.prev_disabled)
-                          }
-                          className={cx('prev-action', {
-                            disabled: step === 0,
-                          })}
+                          disabled={false}
+                          className={cx(
+                            'me-4 fw-bold btn btn-outline-primary',
+                            {
+                              disabled: step === 0,
+                            },
+                          )}
                           aria-disabled={!(!invalidForm && step !== 0)}
                         >
                           {intl.formatMessage(messages.prev)}
-                        </Button>
+                        </button>
 
                         {step !== numberOfSteps - 1 && (
-                          <Button
+                          <button
                             type="button"
                             onClick={nextStep}
-                            aria-labelledby={
-                              !invalidForm
-                                ? intl.formatMessage(messages.next)
-                                : intl.formatMessage(messages.next_disabled)
-                            }
-                            className={cx('next-action fw-bold', {
+                            disabled={false}
+                            aria-disabled={invalidForm}
+                            className={cx('fw-bold btn btn-primary', {
                               disabled: invalidForm,
                             })}
                           >
                             {intl.formatMessage(messages.next)}
-                          </Button>
+                          </button>
                         )}
                         {step === numberOfSteps - 1 && (
-                          <Button
-                            className={cx('next-action fw-bold', {
+                          <button
+                            className={cx('fw-bold btn btn-primary', {
                               disabled: invalidForm,
                             })}
-                            color="primary"
-                            aria-labelledby={
-                              !invalidForm
-                                ? intl.formatMessage(messages.next)
-                                : intl.formatMessage(messages.next_disabled)
-                            }
-                            type={'button'}
+                            type="submit"
+                            disabled={false}
+                            aria-disabled={invalidForm}
                             onClick={sendFormData}
                             onKeyDown={(e) => {
                               if (e.key === 'Enter' && !invalidForm)
                                 sendFormData();
                             }}
                           >
-                            {intl.formatMessage(messages.next)}
-                          </Button>
+                            {intl.formatMessage(messages.submit)}
+                          </button>
                         )}
                       </div>
                     </>
@@ -409,7 +401,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
           </Col>
         </Row>
       </Container>
-    </div>
+    </section>
   );
 };
 
