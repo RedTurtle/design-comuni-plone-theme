@@ -45,8 +45,27 @@
 
 ### Fix
 
-- Risolto un problema riguardante la visualizzazione delle date nelle card che rappresentano uun CT Evento nei vari listati nel caso in cui l'evento si sviluppi su anni diversi
+- L'icona per aprire il menu in mobile è ora visibile anche quando l'header del sito è bianca.
+- La descrizione nelle card per i punti di contatto non mostrano più tutte le iniziali in maiuscolo.
+- Il colore dei link nel menu mobile è ora accessibile per tutti i temi.
 
+## Versione 11.5.1 (19/02/2024)
+
+### Migliorie
+
+- Il campo "Note aggiornamento" nel Tipo di Contenuto Bandi viene ora mostrato in pagina, se compilato.
+
+## Versione 11.5.0 (16/02/2024)
+
+### Migliorie
+
+- Rimosso il campo "Risultati per pagina" che non agiva sulle impostazioni del blocco Calendario.
+
+### Fix
+
+- Risolto un problema riguardante la visualizzazione delle date nelle card che rappresentano un CT Evento nei vari listati nel caso in cui l'evento si sviluppi su anni diversi
+
+- Risolto un problema di visualizzazione per la sezione Date e Orari nel CT Evento quando l'evento si sviluppa su anni diversi, ora viene mostrato anche l'anno se si rientra in questa casistica
 - Nel blocco elenco, sono stati sistemati i filtri per percorso quando si clicca sul bottone configurato.
 
 ## Versione 11.4.1 (08/02/2024)
