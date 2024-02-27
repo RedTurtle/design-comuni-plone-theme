@@ -46,6 +46,195 @@
 ### Novità
 
 - Modificata l'altezza delle immagini delle card, per essere in linea con i template agid.
+### Fix
+
+- L'icona per aprire il menu in mobile è ora visibile anche quando l'header del sito è bianca.
+- La descrizione nelle card per i punti di contatto non mostrano più tutte le iniziali in maiuscolo.
+- Il colore dei link nel menu mobile è ora accessibile per tutti i temi.
+
+## Versione 11.5.1 (19/02/2024)
+
+### Migliorie
+
+- Il campo "Note aggiornamento" nel Tipo di Contenuto Bandi viene ora mostrato in pagina, se compilato.
+
+## Versione 11.5.0 (16/02/2024)
+
+### Migliorie
+
+- Rimosso il campo "Risultati per pagina" che non agiva sulle impostazioni del blocco Calendario.
+
+### Fix
+
+- Risolto un problema riguardante la visualizzazione delle date nelle card che rappresentano un CT Evento nei vari listati nel caso in cui l'evento si sviluppi su anni diversi
+
+- Risolto un problema di visualizzazione per la sezione Date e Orari nel CT Evento quando l'evento si sviluppa su anni diversi, ora viene mostrato anche l'anno se si rientra in questa casistica
+- Nel blocco elenco, sono stati sistemati i filtri per percorso quando si clicca sul bottone configurato.
+
+## Versione 11.4.1 (08/02/2024)
+
+### Fix
+
+- Migliorata l'accessibilità e aggiunto elementi per migliorare l'esperienza d'uso degli utenti che utilizzano screen reader nella vista Cartella FAQ
+- Sistemato lo skiplink "Vai al contenuto" nella pagina principale di ricerca del sito
+- Risolto un problema relativo alla navigazione da tastiera e di gestione del focus nei menu a tendina "Condividi" e "Azioni" nelle testate delle viste dei Content Type che le implementano.
+- Reso il link ai diversi social elencati parlante, ora viene riportato "Seguici su nome_del_social"
+- Rimossi gli heading per alcuni blocchi nel caso il titolo non sia presente al fine di migliorare l'esperienza con l'uso di screen reader
+- Migliorata l'accessibilità per il blocco Contenuti in Evidenza e per i bottoni nei sottositi
+- Sistemato l'html semantico degli heading per i template del Blocco Listing variazione RSS, migliorata l'esperienza d'uso per gli utenti che utilizzano screen reader
+- Migliorata l'accessibilità per i contatti, lo screen reader ora legge anche il tipo di contatto oltre al testo (ad es. Telefono: numero di telefono)
+
+## Versione 11.4.0 (06/02/2024)
+
+### Novità
+
+- Aggiunta l'icona per il formato di file CSV
+- Nel pannello di controllo di 'Design plone' è stata aggiunta la possibilità di mostrare o meno il footer autogenerato.
+
+### Fix
+
+- Sistemata la gerarchia per i titoli dentro al blocco semplice
+
+## Versione 11.3.4 (31/01/2024)
+
+### Migliorie
+
+- Migliorata l'esperienza redattore per il blocco Immagine con allineamenti laterali rispetto al corpo del testo nell'editor a blocchi
+- Migliorata la resa e la responsività di alcune immagini nel corpo della pagina per diversi content type
+
+## Versione 11.3.3 (30/01/2024)
+
+### Migliorie
+
+- Migliorato il focus sulle immagini in edit del blocco Immagine quando queste sono allineate a sinistra o a destra.
+
+### Fix
+
+- Sistemato il layout del blocco elenco per i Bandi
+- Sistemato il layout del template Galliery a griglia per il blocco elenco, le immagini più piccole ora sono correttamente contenute dentro il loro riquadro e il titolo non fuoriesce più
+- Sistemati problemi negli stili per i sottositi
+- Risolto un problema di visualizzazione degli argomenti indicati come altri argomenti nel blocco Argomenti quando il loro numero è esiguo
+- Sistemato il layout e la visualizzazione della vista del CT Cartella Modulistica per gestire al meglio gli elementi
+  titolo, titolo del modulo e link al download in caso di testi lunghi, specialmente su mobile
+- Colore di sfondo per il blocco icone impostato sul colore primario. Sistemato il contrasto tra descrizione e lo sfondo
+- Sistemata la visualizzazione delle card Uffici (card Unità Organizzativa) nelle risoluzioni tablet più comuni
+- Layout delle card per i luoghi migliorato per dispositivi tablet
+- Risolto un problema di visualizzazione e allineamento delle immagini per le card dei blocchi elenco che rappresentano Persone,
+  migliorata la visualizzazione e il layout su dispositivi tablet (intervallo dimensioni: 992px-1199px)
+
+## Versione 11.3.2 (19/01/2024)
+
+### Fix
+
+- Risolto un problema di visualizzazione di alcune icone social.
+- Risolto un problema con il menù di navigazione del footer, in cui a volte scomparivano le voci di secondo livello.
+- Risolto problema di sovrapposizione del bottone "Chiudi" del menu laterale su mobile quando il menu è chiuso.
+
+## Versione 11.3.0 (16/01/2024)
+
+### Novità
+
+- Aggiunto un campo descrizione nei punti di contatto per aiutare nella disambiguazione.
+- Ora per gli eventi è obbligatorio inserire il campo "Luoghi correlati" oppure compilare i campi dell'indirizzo.
+
+### Fix
+
+- Migliorati gli stili per i sottositi.
+- Risolto un problema con i filtri per data nel blocco Calendario.
+
+## Versione 11.2.1 (15/01/2024)
+
+### Migliorie
+
+- Migliorata il testo della ricorrenza di un evento.
+
+### Fix
+
+- Risolto un problema nell'edit della ricorrenza di un evento.
+- Risolto problema con lo stile "callout", icona megafono dell'editor di testo con sfondo bianco e bordo grigio
+
+## Versione 11.2.0 (11/01/2024)
+
+### Migliorie
+
+- Migliorata l'accessibilità nella pagina di Ricerca.
+- Diminuita la larghezza del testo nelle card che indicano i luoghi.
+
+### Fix
+
+- Risolto un problema nel blocco Video Gallery, per cui alcuni video di youtube non erano riproducibili.
+- Risolto problema nel funzionamento della toolbar per il blocco HTML.
+- Sistemate spaziature e font su mobile del blocco Card con Immagine e Card Semplice, migliorato il layout di quest'ultimo.
+- È stato migliorato il contrasto minimo necessario tra sfondo e testo nei blocchi numeri, countdown e galleria a griglia.
+
+## Versione 11.1.4 (05/01/2024)
+
+### Fix
+
+- Risolto il problema di layout nelle card che indicano dei luoghi.
+
+## Versione 11.1.1 (22/12/2023)
+
+### Fix
+
+- Risolto un problema con la dimensione delle immagini, che risultava in alcuni casi troppo piccola causando immagini sgranate
+
+## Versione 11.0.1 (19/12/2023)
+
+### Fix
+
+- Risolto un problema con le anteprime dei video embeddati da youtube.
+
+## Versione 11.0.0 (18/12/2023)
+
+### Novità
+
+- Modificata l'altezza delle immagini delle card, per essere in linea con i template agid.
+
+### Fix
+
+- Sistemati gli stili per i sottositi per l'accessibilità.
+
+## Versione 10.6.4 (18/12/2023)
+
+### Fix
+
+- Colori delle icone che specificano che un link è esterno che in alcuni casi erano errati.
+
+## Versione 10.6.3 (15/12/2023)
+
+### Fix
+
+- Sistemati alcuni problemi di visualizzazione nei template disponibili per il blocco Cerca. Ora tutti i template disponibili per questo blocco rispecchiano graficamente quelli per il blocco Elenco sia in visualizzazione che in modifica.
+
+## Versione 10.6.2 (14/12/2023)
+
+### Fix
+
+- Ora si vedono correttamente gli stili di allineamento del testo in alcuni editor di testo, ad esempio header e footer dei sottositi.
+
+## Versione 10.6.1 (13/12/2023)
+
+### Novità
+
+- I seguenti campi sono ora riordinabili liberamente: "Timeline tempi e scadenze" per il tipo di contenuto _Servizio_ e "Valore punto di contatto" del tipo di contenuto _Punto di contatto_.
+
+### Fix
+
+- Rimosso pager-link automatico dal paginatore perché non riconosciuto dal validatore. È ora possibile inserire a mano il data-element pager-link nei blocchi di testo.
+
+## Versione 10.5.0 (06/12/2023)
+
+### Novità
+
+- Nel blocco elenco, nel criterio di configurazione 'Posizione', è ora presente uno strumento per facilitare la ricerca dei contenuti nel sito, senza dover scrivere il percorso a mano.
+
+### Fix
+
+- Le immagini nelle card dei contenuti correlati sono centrate verticalmente.
+- Il feedback form ora richiede necessariamente una risposta oltre al voto in stelle.
+- Dimensione del titolo del blocco calendario uniformata ai titoli degli altri blocchi elenco.
+
 ## Versione 10.4.3 (28/11/2023)
 
 ### Migliorie
@@ -80,6 +269,7 @@
 ### Novità
 
 - Aggiunta la possibilità di selezionare la dimensione dell'immagine nel blocco Alert, inoltre è stato aggiornato anche il widget per la selezione del colore di sfondo.
+- Aggiunte le breadcrumbs nella pagina dei risultati della ricerca
 
 ### Fix
 

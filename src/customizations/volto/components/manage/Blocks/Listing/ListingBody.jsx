@@ -68,7 +68,11 @@ const ListingBody = React.memo(
 
         if (!block?.show_block_bg && !isSearchBlockResults) return 'full-width';
 
-        let bg_color = data.bg_color ? `bg-${data.bg_color}` : '';
+        let bg_color = config.blocks?.blocksConfig[
+          'listing'
+        ]?.listing_bg_colors.some((color) => color.name === data.bg_color)
+          ? `bg-${data.bg_color}`
+          : 'bg-light';
 
         if (block.template === 'gridGalleryTemplate') {
           return `section section-muted section-inset-shadow py-5 ${bg_color} ${
@@ -76,7 +80,7 @@ const ListingBody = React.memo(
           }`;
         } else {
           return `py-5 ${bg_color} ${
-            isSearchBlockResults ? 'template-wrapper' : 'bg-light full-width'
+            isSearchBlockResults ? 'template-wrapper' : 'full-width'
           }`;
         }
       };
@@ -93,13 +97,6 @@ const ListingBody = React.memo(
       // Also need to purge title from searchblock schema, it's the name of the listing template used
       const listingBodyProps =
         variation?.['@type'] !== 'search' ? data : { ...variation, title: '' };
-
-      // Need to know if data-element is "service-link"
-      // to add data-element="pager-link" to pagination links
-      const isServiceLink =
-        data?.id_lighthouse === 'service-link' ||
-        variation?.id_lighthouse === 'service-link';
-
       return (
         <div className="public-ui">
           {loadingQuery && (
@@ -130,7 +127,6 @@ const ListingBody = React.memo(
                     activePage={currentPage}
                     totalPages={totalPages}
                     onPageChange={onPaginationChange}
-                    isServiceLink={isServiceLink}
                   />
                 </div>
               )}

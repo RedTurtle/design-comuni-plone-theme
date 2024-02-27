@@ -6557,8 +6557,8 @@ __metadata:
     postcss-scss: 4.0.9
     prettier: 3.1.0
     react-dropzone: 11.0.1
+    react-focus-lock: 2.9.4
     react-google-recaptcha-v3: 1.7.0
-    react-highlight-words: 0.18.0
     react-select: ^4.3.1
     react-slick: ^0.29.0
     release-it: 16.1.3
@@ -6572,14 +6572,15 @@ __metadata:
     typeface-roboto-mono: 0.0.75
     typeface-titillium-web: 0.0.72
     volto-blocks-widget: 3.1.0
-    volto-data-grid-widget: 2.2.3
-    volto-dropdownmenu: 4.1.0
+    volto-data-grid-widget: 2.3.1
+    volto-dropdownmenu: 4.1.1
     volto-editablefooter: 5.0.3
-    volto-feedback: 0.1.5
+    volto-feedback: 0.2.0
     volto-form-block: 3.1.0
-    volto-gdpr-privacy: 2.1.0
+    volto-gdpr-privacy: 2.1.1
     volto-google-analytics: 2.0.0
     volto-multilingual-widget: 3.0.0
+    volto-querywidget-with-browser: 0.4.1
     volto-rss-block: 3.0.0
     volto-secondarymenu: 4.0.0
     volto-social-settings: 3.0.0
@@ -6589,7 +6590,7 @@ __metadata:
     volto-venue: 4.0.2
     webpack-image-resize-loader: ^5.0.0
   peerDependencies:
-    "@plone/volto": 17.5.0
+    "@plone/volto": 17.7.0
   languageName: unknown
   linkType: soft
 
@@ -8449,13 +8450,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight-words-core@npm:^1.2.0":
-  version: 1.2.2
-  resolution: "highlight-words-core@npm:1.2.2"
-  checksum: 737758a8a572c82919552b031df300016164b7d0db6a819d24bc6c7ca2279d3cd6d03497728930d6402423c7a3fc2f42c628a9b01b025c704a0b56a635377511
-  languageName: node
-  linkType: hard
-
 "hoist-non-react-statics@npm:3.3.2, hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
@@ -8502,14 +8496,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"http-cache-semantics@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "http-cache-semantics@npm:4.1.0"
-  checksum: 974de94a81c5474be07f269f9fd8383e92ebb5a448208223bfb39e172a9dbc26feff250192ecc23b9593b3f92098e010406b0f24bd4d588d631f80214648ed42
-  languageName: node
-  linkType: hard
-
-"http-cache-semantics@npm:^4.1.1":
+"http-cache-semantics@npm:^4.1.0, http-cache-semantics@npm:^4.1.1":
   version: 4.1.1
   resolution: "http-cache-semantics@npm:4.1.1"
   checksum: 83ac0bc60b17a3a36f9953e7be55e5c8f41acc61b22583060e8dedc9dd5e3607c823a88d0926f9150e571f90946835c7fe150732801010845c72cd8bbff1a236
@@ -8799,9 +8786,9 @@ __metadata:
   linkType: hard
 
 "ip@npm:^1.1.8":
-  version: 1.1.8
-  resolution: "ip@npm:1.1.8"
-  checksum: a2ade53eb339fb0cbe9e69a44caab10d6e3784662285eb5d2677117ee4facc33a64679051c35e0dfdb1a3983a51ce2f5d2cb36446d52e10d01881789b76e28fb
+  version: 1.1.9
+  resolution: "ip@npm:1.1.9"
+  checksum: b6d91fd45a856e3bd6d4f601ea0619d90f3517638f6918ebd079f959a8a6308568d8db5ef4fdf037e0d9cfdcf264f46833dfeea81ca31309cf0a7eb4b1307b84
   languageName: node
   linkType: hard
 
@@ -9461,18 +9448,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "json5@npm:1.0.1"
-  dependencies:
-    minimist: ^1.2.0
-  bin:
-    json5: lib/cli.js
-  checksum: e76ea23dbb8fc1348c143da628134a98adf4c5a4e8ea2adaa74a80c455fc2cdf0e2e13e6398ef819bfe92306b610ebb2002668ed9fc1af386d593691ef346fc3
-  languageName: node
-  linkType: hard
-
-"json5@npm:^1.0.2":
+"json5@npm:^1.0.1, json5@npm:^1.0.2":
   version: 1.0.2
   resolution: "json5@npm:1.0.2"
   dependencies:
@@ -9483,16 +9459,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.1.2, json5@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "json5@npm:2.2.1"
-  bin:
-    json5: lib/cli.js
-  checksum: 74b8a23b102a6f2bf2d224797ae553a75488b5adbaee9c9b6e5ab8b510a2fc6e38f876d4c77dea672d4014a44b2399e15f2051ac2b37b87f74c0c7602003543b
-  languageName: node
-  linkType: hard
-
-"json5@npm:^2.2.3":
+"json5@npm:^2.1.2, json5@npm:^2.2.1, json5@npm:^2.2.3":
   version: 2.2.3
   resolution: "json5@npm:2.2.3"
   bin:
@@ -10106,13 +10073,6 @@ __metadata:
   version: 2.0.30
   resolution: "mdn-data@npm:2.0.30"
   checksum: d6ac5ac7439a1607df44b22738ecf83f48e66a0874e4482d6424a61c52da5cde5750f1d1229b6f5fa1b80a492be89465390da685b11f97d62b8adcc6e88189aa
-  languageName: node
-  linkType: hard
-
-"memoize-one@npm:^4.0.0":
-  version: 4.0.3
-  resolution: "memoize-one@npm:4.0.3"
-  checksum: addd18c046542f57440ba70bf8ebd48663d17626cade681f777522ef70900a87ec72c5041bed8ece4f6d40a2cb58803bae388b50a4b740d64f36bcda20c147b7
   languageName: node
   linkType: hard
 
@@ -11855,19 +11815,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-highlight-words@npm:0.18.0":
-  version: 0.18.0
-  resolution: "react-highlight-words@npm:0.18.0"
-  dependencies:
-    highlight-words-core: ^1.2.0
-    memoize-one: ^4.0.0
-    prop-types: ^15.5.8
-  peerDependencies:
-    react: ^0.14.0 || ^15.0.0 || ^16.0.0-0 || ^17.0.0-0 || ^18.0.0-0
-  checksum: ff9759e7ebeb140067854d8cad3021123ba0e3b78bda14d35d9b21dd7890986c858955885ddbcb537e9f88472aebe4a23a1841b7af190989efb0a8ecf7dc2a57
-  languageName: node
-  linkType: hard
-
 "react-input-autosize@npm:^3.0.0":
   version: 3.0.0
   resolution: "react-input-autosize@npm:3.0.0"
@@ -12768,11 +12715,11 @@ __metadata:
   linkType: hard
 
 "semver@npm:2 || 3 || 4 || 5, semver@npm:^5.4.1":
-  version: 5.7.1
-  resolution: "semver@npm:5.7.1"
+  version: 5.7.2
+  resolution: "semver@npm:5.7.2"
   bin:
-    semver: ./bin/semver
-  checksum: 57fd0acfd0bac382ee87cd52cd0aaa5af086a7dc8d60379dfe65fea491fb2489b6016400813930ecd61fd0952dae75c115287a1b16c234b1550887117744dfaf
+    semver: bin/semver
+  checksum: fb4ab5e0dd1c22ce0c937ea390b4a822147a9c53dbd2a9a0132f12fe382902beef4fbf12cf51bb955248d8d15874ce8cd89532569756384f994309825f10b686
   languageName: node
   linkType: hard
 
@@ -12787,7 +12734,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.5.2, semver@npm:^7.3.7":
+"semver@npm:7.5.2":
   version: 7.5.2
   resolution: "semver@npm:7.5.2"
   dependencies:
@@ -12798,7 +12745,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.5.4, semver@npm:^7.3.8":
+"semver@npm:7.5.4, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
@@ -12809,32 +12756,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^6.0.0, semver@npm:^6.1.1, semver@npm:^6.1.2, semver@npm:^6.3.0":
-  version: 6.3.0
-  resolution: "semver@npm:6.3.0"
-  bin:
-    semver: ./bin/semver.js
-  checksum: 1b26ecf6db9e8292dd90df4e781d91875c0dcc1b1909e70f5d12959a23c7eebb8f01ea581c00783bbee72ceeaad9505797c381756326073850dc36ed284b21b9
-  languageName: node
-  linkType: hard
-
-"semver@npm:^6.3.1":
+"semver@npm:^6.0.0, semver@npm:^6.1.1, semver@npm:^6.1.2, semver@npm:^6.3.0, semver@npm:^6.3.1":
   version: 6.3.1
   resolution: "semver@npm:6.3.1"
   bin:
     semver: bin/semver.js
   checksum: ae47d06de28836adb9d3e25f22a92943477371292d9b665fb023fae278d345d508ca1958232af086d85e0155aee22e313e100971898bbb8d5d89b8b1d4054ca2
-  languageName: node
-  linkType: hard
-
-"semver@npm:^7.3.4, semver@npm:^7.3.5":
-  version: 7.3.7
-  resolution: "semver@npm:7.3.7"
-  dependencies:
-    lru-cache: ^6.0.0
-  bin:
-    semver: bin/semver.js
-  checksum: 2fa3e877568cd6ce769c75c211beaed1f9fce80b28338cadd9d0b6c40f2e2862bafd62c19a6cff42f3d54292b7c623277bcab8816a2b5521cf15210d43e75232
   languageName: node
   linkType: hard
 
@@ -12984,13 +12911,13 @@ __metadata:
   linkType: hard
 
 "simple-git@npm:^3.3.0":
-  version: 3.14.1
-  resolution: "simple-git@npm:3.14.1"
+  version: 3.22.0
+  resolution: "simple-git@npm:3.22.0"
   dependencies:
     "@kwsites/file-exists": ^1.1.1
     "@kwsites/promise-deferred": ^1.1.1
     debug: ^4.3.4
-  checksum: f9d2282e1483f8f42325a7e80803389eb540101a88968bf9fd277c1eade8621d4c24dcf2677be5d611df8716934fb4c9676356052ac03e2fcec7517b4b922e8b
+  checksum: 118c43a3e1e27aecd8487205ed509acf925112de6edf1feb304d180c673f6e08279a13bcfae33c948de8b0809f2b929f9263fa7033ec7ef84908904eda0c3e2d
   languageName: node
   linkType: hard
 
@@ -14384,23 +14311,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-data-grid-widget@npm:2.2.3":
-  version: 2.2.3
-  resolution: "volto-data-grid-widget@npm:2.2.3"
+"volto-data-grid-widget@npm:2.3.1":
+  version: 2.3.1
+  resolution: "volto-data-grid-widget@npm:2.3.1"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: 17f680b8b4f4d598b32c536df098befe8dc0eef275dc93cb887b391dbe09b34724989380c2e2f6d008660ef5d8ed66d5b377b6f0a92fcc543d7a896950ea6f12
+  checksum: a464c7cbc7a4eef49bb0753c713fdd54842c425cb58dfb06c2debe85714ca5ca00e563bcefc00b21d4d3d05d225f16cf642b4a95197022953faf4f0071cdb0ea
   languageName: node
   linkType: hard
 
-"volto-dropdownmenu@npm:4.1.0":
-  version: 4.1.0
-  resolution: "volto-dropdownmenu@npm:4.1.0"
+"volto-dropdownmenu@npm:4.1.1":
+  version: 4.1.1
+  resolution: "volto-dropdownmenu@npm:4.1.1"
   dependencies:
     react-outside-click-handler: 1.3.0
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: ec608dfef948d2feb6d952313a9f3ec21c0b8c7b22a632d56cae050d98dde14cc6834e0088852e287b0db97b43477faecf43f8e31915b30e548ebe421bcb14c8
+  checksum: 81edb600753e8fbe3ec7a1fe2bac342925f5b3b6dbdec2377972fa6f06e3cf46396eb5857e7da99d8372d1c73c2c25d619f6ae092baf631501101208239e2913
   languageName: node
   linkType: hard
 
@@ -14415,15 +14342,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-feedback@npm:0.1.5":
-  version: 0.1.5
-  resolution: "volto-feedback@npm:0.1.5"
+"volto-feedback@npm:0.2.0":
+  version: 0.2.0
+  resolution: "volto-feedback@npm:0.2.0"
   dependencies:
     react-google-recaptcha-v3: 1.9.5
     semantic-ui-css: 2.5.0
   peerDependencies:
     "@plone/volto": ">=16.0.0"
-  checksum: 1674a91100f8410e6f0851b58febcfd21fbe0cb9a2daa8f6ce73f30b1dd57cc533b8612cf6af5fab89cf68583239dd6c0933d607f5c56027264834c913dd3780
+  checksum: ada1f08b987352d5856c2ade2aea4c26cf13a7d19f5e132fcb3213231b7f8e4b7d64fda981931a010c271002d3e76eb09759065274498a594c2dc0d0772e98b1
   languageName: node
   linkType: hard
 
@@ -14442,14 +14369,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-gdpr-privacy@npm:2.1.0":
-  version: 2.1.0
-  resolution: "volto-gdpr-privacy@npm:2.1.0"
+"volto-gdpr-privacy@npm:2.1.1":
+  version: 2.1.1
+  resolution: "volto-gdpr-privacy@npm:2.1.1"
   dependencies:
     react-focus-lock: 2.9.4
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: d83bfafaeee0ba773a98d7f8a43d99fc39e7cbf65b7fd36f0961926413e49611928fe8b36e8bab2572a2f8a8e610024835501864bdd52d2e9ddbaf73f9e874cb
+  checksum: 2246b9402782f305a45f6ee8dd69fe30f0fcc33dbbb0dcc493e3bcd53bad27263fc9da586ae23c28e0ce04f9c05d583b4e7809b510a59a99923bbb75bb8923fb
   languageName: node
   linkType: hard
 
@@ -14471,6 +14398,15 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
   checksum: 3fa0611e7966ceeb22ea93e361b1811134ce67b5e1487c02a335601c0d77edb5aa9f5989e470a823794d24d70a963adad25f5d6a593354ada544c8d3ccc69a1e
+  languageName: node
+  linkType: hard
+
+"volto-querywidget-with-browser@npm:0.4.1":
+  version: 0.4.1
+  resolution: "volto-querywidget-with-browser@npm:0.4.1"
+  peerDependencies:
+    "@plone/volto": ^17.0.0
+  checksum: a01eacb7fa67561066f288c7ba18f5af177a88deca142f57c33638eb63bc1894d46ac66f01c6d2e3ea4e4f43479b762a63246a08f6600d665174d55d2a49c207
   languageName: node
   linkType: hard
 

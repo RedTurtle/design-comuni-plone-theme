@@ -56,7 +56,8 @@ picture.volto-image {
 .ui.image img.full-width,
 picture.volto-image.responsive.full-width img,
 picture.volto-image.full-width img,
-picture.volto-image.responsive img.full-width {
+picture.volto-image.responsive img.full-width,
+.block.image.align.full img.full-width {
   position: relative;
   right: 50%;
   left: 50%;
@@ -102,6 +103,11 @@ picture.volto-image.responsive img.full-width {
   }
 
   .genericcard {
+    .img-wrapper {
+      display: flex;
+      // align-items: center;
+    }
+
     .card-title {
       margin: 0 !important;
       margin-bottom: 0.625rem !important;
@@ -260,12 +266,6 @@ div.sticky-wrapper {
     height: 24px;
     color: $argument-icon-color;
     fill: $argument-icon-color;
-  }
-}
-
-.wide-image:not(.row-full-width) {
-  img {
-    max-width: 100%;
   }
 }
 

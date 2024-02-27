@@ -727,6 +727,7 @@ msgid "accordion_block"
 msgstr "Acordeón"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Account
 msgid "account"
 msgstr ""
@@ -735,6 +736,11 @@ msgstr ""
 # defaultMessage: Vedi azioni
 msgid "actions"
 msgstr "Ver acciones"
+
+#: components/ItaliaTheme/Search/Search
+# defaultMessage: {filterNumber} filtri attivati
+msgid "active_filters"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Vai alla ricerca per sezioni avanzata
@@ -1829,6 +1835,7 @@ msgid "elementi_di_interesse"
 msgstr "Elementos de interés"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Email
 msgid "email"
 msgstr ""
@@ -1932,6 +1939,7 @@ msgstr "Escriba una palabra clave para encontrar respuestas"
 
 #: components/ItaliaTheme/View/Commons/ContactLink
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Fax
 msgid "fax"
 msgstr "Fax"
@@ -1979,6 +1987,11 @@ msgstr ""
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: The instructions were complete
 msgid "feedback_complete_instructions"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Error
+msgid "feedback_error"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
@@ -2102,6 +2115,7 @@ msgid "foto_attivita_politica"
 msgstr "Foto de la actividad política"
 
 #: components/ItaliaTheme/Search/Search
+#: components/ItaliaTheme/View/FAQ/FaqFolder/FaqFolderView
 # defaultMessage: Trovati {total} risultati.
 msgid "found_n_results"
 msgstr "Encontrados {total} resultados"
@@ -2240,11 +2254,6 @@ msgstr "Inserta un filtro del menú lateral para ver los resultados relacionados
 msgid "iter_del_procedimento"
 msgstr "Procedimiento"
 
-#: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-# defaultMessage: {value}:
-msgid "label"
-msgstr ""
-
 #: components/ItaliaTheme/View/UOView/UOStructure
 # defaultMessage: Servizi o uffici di riferimento
 msgid "legami_altre_strutture"
@@ -2293,6 +2302,7 @@ msgid "link_siti_esterni"
 msgstr "Enlaces útiles"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: LinkedIn
 msgid "linkedin"
 msgstr ""
@@ -2352,6 +2362,21 @@ msgstr ""
 msgid "login_agid_other_description"
 msgstr ""
 
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: CIE
+msgid "login_cie"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: Log in with CIE.
+msgid "login_cie_description"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: How to activate CIE
+msgid "login_cie_help"
+msgstr ""
+
 #: components/ItaliaTheme/LoginAgid/LoginAgid
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: Log in as employee
@@ -2374,6 +2399,11 @@ msgid "login_spid_help"
 msgstr ""
 
 #: components/ItaliaTheme/LoginAgid/LoginAgidButtons
+# defaultMessage: Login with CIE
+msgid "login_with_cie"
+msgstr ""
+
+#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: Login with SPID
 msgid "login_with_spid"
 msgstr "Iniciar sesión con Spid"
@@ -2387,6 +2417,11 @@ msgstr ""
 #: components/ItaliaTheme/View/VenueView/VenueLuoghiCorrelati
 # defaultMessage: Luoghi correlati
 msgid "luoghi_correlati"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/LuoghiCorrelatiEventoWidget
+# defaultMessage: Luogo dell'evento
+msgid "luoghi_correlati_evento_widget_title"
 msgstr ""
 
 #: components/ItaliaTheme/View/NewsItemView/NewsItemLuoghiCorrelati
@@ -2522,6 +2557,11 @@ msgstr "No hay vídeos seleccionados. Agregar un elemento para mostrar un vídeo
 # defaultMessage: nominativo
 msgid "nominativo"
 msgstr "nominativa"
+
+#: components/ItaliaTheme/View/BandoView/BandoNoteAggiornamento
+# defaultMessage: Note di aggiornamento
+msgid "note_aggiornamento"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Novità
@@ -2678,6 +2718,7 @@ msgstr "Patrocinado por"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 #: components/ItaliaTheme/View/VenueView/VenueContacts
+#: helpers/contentHelper
 # defaultMessage: PEC
 msgid "pec"
 msgstr "PEC"
@@ -2887,6 +2928,36 @@ msgstr "Derechos"
 # defaultMessage: Risultati indagini di customer satisfaction
 msgid "risultati_indagini_customer_satisfaction"
 msgstr "Resultados de la encuesta de satisfacción del cliente"
+
+#: overrideTranslations
+# defaultMessage: il giorno
+msgid "rrule_in"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: _
+msgid "rrule_nd"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: il
+msgid "rrule_on the"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: _
+msgid "rrule_rd"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: _
+msgid "rrule_st"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: _
+msgid "rrule_th"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithImageRssTemplate
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate
@@ -3132,6 +3203,11 @@ msgstr "Busca en el sitio"
 # defaultMessage: Filtri avanzati
 msgid "search_adv_filters"
 msgstr "Filtros avanzados"
+
+#: config/italiaConfig
+# defaultMessage: Ricerca
+msgid "search_brdc"
+msgstr ""
 
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Tipologia
@@ -3552,6 +3628,7 @@ msgid "skiplink-navigation"
 msgstr "Ir a navegación"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Skype
 msgid "skype"
 msgstr ""
@@ -3567,6 +3644,7 @@ msgid "slidesToShow"
 msgstr "N° diapositivas para mostrar"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Social
 msgid "social"
 msgstr ""
@@ -3713,6 +3791,7 @@ msgstr "Con el apoyo de"
 
 #: components/ItaliaTheme/View/Commons/ContactLink
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Tel
 msgid "telefono"
 msgstr "Teléfono"
@@ -3723,6 +3802,7 @@ msgid "telefono_sede"
 msgstr "Teléfono"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Telegram
 msgid "telegram"
 msgstr ""
@@ -3833,6 +3913,7 @@ msgid "trasparenza"
 msgstr "Transparencia"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Twitter
 msgid "twitter"
 msgstr ""
@@ -3902,6 +3983,7 @@ msgid "update_date"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Sito web
 msgid "url"
 msgstr ""
@@ -3961,6 +4043,7 @@ msgid "vincoli"
 msgstr "Restricciones"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Whatsapp
 msgid "whatsapp"
 msgstr ""

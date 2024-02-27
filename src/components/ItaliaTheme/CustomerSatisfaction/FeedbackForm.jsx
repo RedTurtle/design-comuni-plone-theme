@@ -11,6 +11,7 @@ import {
   Card,
   Button,
   CardHeader,
+  CardBody,
 } from 'design-react-kit';
 import {
   getNumberOfSteps,
@@ -110,6 +111,10 @@ const messages = defineMessages({
     id: 'feedback_other_positive',
     defaultMessage: 'Other',
   },
+  error: {
+    id: 'feedback_error',
+    defaultMessage: 'Error',
+  },
 });
 
 const FeedbackForm = ({ contentType, pathname }) => {
@@ -119,7 +124,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
   const dispatch = useDispatch();
   const [satisfaction, setSatisfaction] = useState(null);
   const [step, setStep] = useState(0);
-  const [invalidForm, setInvalidForm] = useState(false);
+  const [invalidForm, setInvalidForm] = useState(true);
   const [formData, setFormData] = useState({});
   const captcha = !!process.env.RAZZLE_RECAPTCHA_KEY ? 'GoogleReCaptcha' : null;
   const submitResults = useSelector((state) => state.submitFeedback);
@@ -138,6 +143,10 @@ const FeedbackForm = ({ contentType, pathname }) => {
   const updateFormData = (field, value) => {
     if (field === 'comment') {
       if (value?.length > 200) setInvalidForm(true);
+      else setInvalidForm(false);
+    }
+    if (field === 'answer') {
+      if (!value) setInvalidForm(true);
       else setInvalidForm(false);
     }
     setFormData({
@@ -209,6 +218,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
   if (isCmsUi(path)) {
     return null;
   }
+
   return (
     <div className="bg-primary customer-satisfaction">
       <Container>
@@ -312,6 +322,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
                             color="primary"
                             onClick={nextStep}
                             className="next-action fw-bold"
+                            disabled={invalidForm}
                             type="button"
                           >
                             {intl.formatMessage(messages.next)}
@@ -349,6 +360,26 @@ const FeedbackForm = ({ contentType, pathname }) => {
                     </h4>
                   </CardHeader>
                 )}
+                {step === 2 &&
+                  !submitResults?.loaded &&
+                  !submitResults.loading &&
+                  submitResults.error?.response?.body?.message && (
+                    <>
+                      <CardHeader className="border-0 mb-0 px-0">
+                        <h4
+                          id="rating-feedback"
+                          className="title-medium-2-semi-bold mb-0"
+                        >
+                          {intl.formatMessage(messages.error)}{' '}
+                          {submitResults.error?.response.status}:{' '}
+                          {submitResults.error?.response.statusText}
+                        </h4>
+                      </CardHeader>
+                      <CardBody>
+                        {submitResults.error?.response?.body?.message}
+                      </CardBody>
+                    </>
+                  )}
               </Card>
             </div>
           </Col>

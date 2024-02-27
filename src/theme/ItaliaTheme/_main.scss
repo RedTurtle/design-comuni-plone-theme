@@ -61,16 +61,12 @@ a {
 
 .public-ui {
   a.btn.btn-primary {
-    color: $primary-text;
-
     svg {
       fill: $primary-text;
     }
   }
 
   a.btn.btn-secondary {
-    color: $secondary-text;
-
     svg {
       fill: $secondary-text;
     }
@@ -101,7 +97,10 @@ iframe {
     }
   }
 
-  .callout {
+  p.callout {
+    max-width: none;
+    border-left-width: 0.4rem;
+
     p,
     .public-DraftStyleDefault-block {
       &:last-of-type {
