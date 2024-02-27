@@ -43,14 +43,13 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
-### Novità
-
-- Modificata l'altezza delle immagini delle card, per essere in linea con i template agid.
 ### Fix
 
 - L'icona per aprire il menu in mobile è ora visibile anche quando l'header del sito è bianca.
 - La descrizione nelle card per i punti di contatto non mostrano più tutte le iniziali in maiuscolo.
 - Il colore dei link nel menu mobile è ora accessibile per tutti i temi.
+- Il layout dei campi di input "in errore" del blocco Form è stato uniformato
+- La tendina delle select nel blocco Form non si sovrappone più ai campi sottostanti
 
 ## Versione 11.5.1 (19/02/2024)
 
