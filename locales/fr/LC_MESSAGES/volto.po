@@ -2117,6 +2117,11 @@ msgstr "Rechercher"
 msgid "fine_termine"
 msgstr "Fin du mandat"
 
+#: overrideTranslations
+# defaultMessage: Ricomincia
+msgid "form_reset"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Foto dell'attività politica
 msgid "foto_attivita_politica"

@@ -51,6 +51,7 @@ const FormView = ({
   data,
   onSubmit,
   resetFormState,
+  resetFormOnError,
   captcha,
 }) => {
   const intl = useIntl();
@@ -83,6 +84,11 @@ const FormView = ({
     }
   }
 
+  const submit = (e) => {
+    resetFormOnError();
+    onSubmit(e);
+  };
+
   return (
     <div className="block form">
       <div className="public-ui">
@@ -93,21 +99,7 @@ const FormView = ({
           )}
           <Card className="card-bg rounded py-3" noWrapper={false} tag="div">
             <CardBody tag="div">
-              {formState.error ? (
-                <Alert
-                  color="danger"
-                  fade
-                  isOpen
-                  tag="div"
-                  transition={alertTransition}
-                >
-                  <h4>{intl.formatMessage(messages.error)}</h4>
-                  <p>{formState.error}</p>
-                  <Button type="clear" onClick={resetFormState}>
-                    {intl.formatMessage(messages.reset)}
-                  </Button>
-                </Alert>
-              ) : formState.result ? (
+              {formState.result ? (
                 <Alert
                   color="success"
                   fade
@@ -117,13 +109,13 @@ const FormView = ({
                 >
                   <h4>{intl.formatMessage(messages.success)}</h4>
                   <br />
-                  <Button type="clear" onClick={resetFormState}>
+                  <Button color="primary" outline onClick={resetFormState}>
                     {intl.formatMessage(messages.reset)}
                   </Button>
                 </Alert>
               ) : (
                 <form
-                  onSubmit={onSubmit}
+                  onSubmit={submit}
                   noValidate
                   autoComplete="off"
                   method="post"
@@ -202,6 +194,18 @@ const FormView = ({
                     >
                       <h4>{intl.formatMessage(messages.error)}</h4>
                       <p>{intl.formatMessage(messages.empty_values)}</p>
+                    </Alert>
+                  )}
+                  {formState.error && (
+                    <Alert
+                      color="danger"
+                      fade
+                      isOpen
+                      tag="div"
+                      transition={alertTransition}
+                    >
+                      <h4>{intl.formatMessage(messages.error)}</h4>
+                      <p>{formState.error}</p>
                     </Alert>
                   )}
 

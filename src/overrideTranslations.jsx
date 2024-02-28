@@ -25,4 +25,9 @@ defineMessages({
     id: 'rrule_on the',
     defaultMessage: 'il',
   },
+  reset: {
+    //volto-form-block
+    id: 'form_reset',
+    defaultMessage: 'Ricomincia',
+  },
 });
