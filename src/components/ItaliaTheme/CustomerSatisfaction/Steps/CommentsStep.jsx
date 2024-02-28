@@ -73,7 +73,7 @@ const CommentsStep = ({
               }
               tabIndex="0"
               // eslint-disable-next-line jsx-a11y/no-autofocus
-              autoFocus={true}
+              autoFocus={step === 1}
               id="comment"
               label={intl.formatMessage(messages.label_comment)}
               aria-invalid={invalid}

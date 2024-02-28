@@ -9,7 +9,6 @@ export const FormHeader = ({ title, step, totalSteps, className, hidden }) => {
       className={cx(className, 'w-100', {
         'd-none': hidden,
       })}
-      aria-live="polite"
     >
       <div className={'m-0 fs-6'}>{title}</div>
       <div>{`${step}/${totalSteps}`}</div>

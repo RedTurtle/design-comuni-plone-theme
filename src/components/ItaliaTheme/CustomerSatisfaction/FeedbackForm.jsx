@@ -169,7 +169,9 @@ const FeedbackForm = ({ contentType, pathname }) => {
   };
 
   const prevStep = () => {
-    if (!invalidForm && step !== 0) setStep(step - 1);
+    if (!invalidForm && step !== 0) {
+      setStep(step - 1);
+    }
   };
 
   useEffect(() => {
@@ -182,6 +184,12 @@ const FeedbackForm = ({ contentType, pathname }) => {
   }, [path]);
 
   useEffect(() => {
+    const currentVote = getFormFieldValue('vote');
+    if (
+      (currentVote > threshold && satisfaction < threshold) ||
+      (currentVote < threshold && satisfaction > threshold)
+    )
+      updateFormData('answer', null);
     updateFormData('vote', satisfaction ?? null);
     setStep(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -192,6 +200,25 @@ const FeedbackForm = ({ contentType, pathname }) => {
     updateFormData(fieldHoney, '');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fieldHoney]);
+
+  // Motivazioni del focus programmatico
+  //  - su alcuni browser viene dichiarato "object replacement character" ai rerender di react
+  //    che sono inevitabili mentre il focus rimane sul bottone ma non viene detto
+  //  - replichiamo 1:1 il comportamento del secondo step, quando vai avanti hai autofocus sulla
+  //    textarea per i commenti
+  //  - essendo annunciato ora il titolo dello step, l'utente sr sa comunque benissimo dove si trova,
+  //    anzi, il flow di compilazione del form kb+sr e' molto piu' agevole
+  useEffect(() => {
+    if (step === 0 && getFormFieldValue('answer')) {
+      const selectedAnswer = document.getElementById(
+        `${
+          satisfaction > threshold ? 'positive' : 'negative'
+        }-${getFormFieldValue('answer')}`,
+      );
+      selectedAnswer.focus();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step]);
 
   const onVerifyCaptcha = useCallback(
     (token) => {
@@ -381,7 +408,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
                                 sendFormData();
                             }}
                           >
-                            {intl.formatMessage(messages.submit)}
+                            {intl.formatMessage(messages.next)}
                           </button>
                         )}
                       </div>
