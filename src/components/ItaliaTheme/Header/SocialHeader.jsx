@@ -62,7 +62,7 @@ const SocialHeader = () => {
                   icon={social.icon}
                   padding={false}
                   size=""
-                  title={social.title}
+                  altText={social.title}
                 />
               </a>
             </li>

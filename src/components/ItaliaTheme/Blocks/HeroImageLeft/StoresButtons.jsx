@@ -23,14 +23,14 @@ const StoresButtons = ({ data }) => {
         {data.playStoreLink && (
           <Button tag={UniversalLink} href={data.playStoreLink} color="primary">
             <span>PLAY STORE</span>
-            <Icon icon="fab google-play" />
+            <Icon icon="fab google-play" altText="Play store" />
           </Button>
         )}
 
         {data.appStoreLink && (
           <Button tag={UniversalLink} href={data.appStoreLink} color="primary">
             <span>APP STORE</span>
-            <Icon icon="fab apple" />
+            <Icon icon="fab apple" altText="App store" />
           </Button>
         )}
       </div>

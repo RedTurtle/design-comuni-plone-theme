@@ -81,7 +81,11 @@ function NextArrow(props) {
       onKeyDown={handleKeyboardUsers}
       id="sliderNextArrow"
     >
-      <Icon icon="chevron-right" key="chevron-right" />
+      <Icon
+        icon="chevron-right"
+        key="chevron-right"
+        altText="sliderNextArrow"
+      />
       <span class="visually-hidden">
         {intl.formatMessage(messages.successivo)}
       </span>
@@ -126,7 +130,11 @@ function PrevArrow(props) {
       id="sliderPrevArrow"
       onKeyDown={handleKeyboardUsers}
     >
-      <Icon icon="chevron-left" key="chevron-left-prev" />
+      <Icon
+        icon="chevron-left"
+        key="chevron-left-prev"
+        altText="sliderPrevArrow"
+      />
       <span class="visually-hidden">
         {intl.formatMessage(messages.precedente)}
       </span>
@@ -185,11 +193,21 @@ const Slide = ({
             >
               {full_width ? (
                 <Container>
-                  {item.title} <Icon icon="arrow-right" key="arrow-right-fw" />
+                  {item.title}{' '}
+                  <Icon
+                    icon="arrow-right"
+                    key="arrow-right-fw"
+                    altText="arrow-right"
+                  />
                 </Container>
               ) : (
                 <>
-                  {item.title} <Icon icon="arrow-right" key="arrow-right" />
+                  {item.title}{' '}
+                  <Icon
+                    icon="arrow-right"
+                    key="arrow-right"
+                    altText="arrow-right"
+                  />
                 </>
               )}
             </UniversalLink>
@@ -342,6 +360,7 @@ const SliderTemplate = ({
                   <Icon
                     key={userAutoplay ? 'pause' : 'play'}
                     icon={userAutoplay ? 'pause' : 'play'}
+                    altText="autoplay"
                   />
                   <span>{userAutoplay ? 'pause' : 'play'}</span>
                 </button>

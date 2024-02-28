@@ -57,6 +57,10 @@ const NextIcon = () => (
   </div>
 );
 
+const customArrowIcon = (props) => {
+  return <Icon icon="it-arrow-right" altText="date-range" />;
+};
+
 const CloseIcon = () => <Icon icon="it-close" size="24px" className="close" />;
 
 const DateRangeFacet = (props) => {
@@ -95,6 +99,7 @@ const DateRangeFacet = (props) => {
             isOutsideRange={() => false}
             navPrev={<PrevIcon />}
             navNext={<NextIcon />}
+            customArrowIcon={customArrowIcon()}
           />
         </div>
       </div>

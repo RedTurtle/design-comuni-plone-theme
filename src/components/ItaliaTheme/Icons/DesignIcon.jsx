@@ -16,7 +16,7 @@ const defaultProps = {
   padding: false,
 };
 
-const Icon = ({ icon, title, className, size }) => {
+const Icon = ({ icon, title, className, size, altText }) => {
   const ImportedIconRef = useRef(null);
   const [loading, setLoading] = useState(false);
 
@@ -53,7 +53,7 @@ const Icon = ({ icon, title, className, size }) => {
             ? `<title>${title}</title>${name.content}`
             : name.content,
         }}
-        alt={title}
+        alt={altText}
       />
     );
   }

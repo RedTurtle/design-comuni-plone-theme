@@ -79,6 +79,7 @@ class PaginationItem extends Component {
                 icon="it-chevron-left"
                 style={{ ariaHidden: true }}
                 color="primary"
+                altText="prevItem"
               />
 
               <span className="visually-hidden">
@@ -92,6 +93,7 @@ class PaginationItem extends Component {
                 icon="it-chevron-right"
                 style={{ ariaHidden: true }}
                 color="primary"
+                altText="nextItem"
               />
               <span className="visually-hidden">
                 {intl.formatMessage(messages.nextPage)}

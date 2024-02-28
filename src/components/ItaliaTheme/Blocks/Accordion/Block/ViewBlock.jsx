@@ -40,6 +40,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
               color="primary"
               icon={isOpen ? 'it-minus' : 'it-plus'}
               padding={false}
+              altText="toggle"
             />
 
             {redraft(
@@ -69,7 +70,10 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
             <div className="link-more">
               <UniversalLink href={data.href}>
                 {data.linkMoreTitle || intl.formatMessage(messages.vedi)}
-                <Icon icon="it-arrow-right" />
+                <Icon
+                  icon="it-arrow-right"
+                  altText={intl.formatMessage(messages.vedi)}
+                />
               </UniversalLink>
             </div>
           )}

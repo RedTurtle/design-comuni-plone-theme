@@ -50,9 +50,15 @@ const NumbersView = ({ data, block }) => {
                 <div className="block-header">
                   {(data.icon1 || data.icon2 || data.icon3) && (
                     <div className="icons">
-                      {data.icon1?.length > 0 && <Icon icon={data.icon1} />}
-                      {data.icon2?.length > 0 && <Icon icon={data.icon2} />}
-                      {data.icon3?.length > 0 && <Icon icon={data.icon3} />}
+                      {data.icon1?.length > 0 && (
+                        <Icon icon={data.icon1} altText={data.icon1} />
+                      )}
+                      {data.icon2?.length > 0 && (
+                        <Icon icon={data.icon2} altText={data.icon2} />
+                      )}
+                      {data.icon3?.length > 0 && (
+                        <Icon icon={data.icon3} altText={data.icon3} />
+                      )}
                     </div>
                   )}
 

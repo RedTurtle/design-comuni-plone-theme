@@ -12,7 +12,6 @@ const FontAwesomeIcon = (props) => {
     iconName: '',
     family: 'solid',
   });
-
   const getIconAlias = (icon, aliasList) => {
     if (icon in aliasList) {
       return aliasList[icon];

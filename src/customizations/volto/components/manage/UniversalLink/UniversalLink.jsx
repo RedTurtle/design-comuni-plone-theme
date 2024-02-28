@@ -128,9 +128,10 @@ const UniversalLink = ({
           config.settings.siteProperties.markSpecialLinks && (
             <Icon
               icon="it-external-link"
-              title={title || intl.formatMessage(messages.externalLink)}
+              title={title}
               size="xs"
               className="ms-1 align-sub external-link"
+              altText={title || intl.formatMessage(messages.externalLink)}
             />
           )}
       </a>

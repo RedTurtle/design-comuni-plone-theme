@@ -12,14 +12,14 @@ const section_icons = {
   novita: 'it-calendar',
   'documenti-e-dati': 'it-file',
 };
-const SectionIcon = ({ section, iconProps }) => {
+const SectionIcon = ({ section, iconProps, title }) => {
   const section_name = section.startsWith('/')
     ? section.substring(1, section.length)
     : section;
 
   const icon = section_icons[section_name];
 
-  return icon ? <Icon icon={icon} {...iconProps} /> : null;
+  return icon ? <Icon icon={icon} {...iconProps} altText={title} /> : null;
 };
 
 export default SectionIcon;

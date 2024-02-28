@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
+import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
@@ -174,6 +175,7 @@ const getDateRangePickerPhrases = (intl) => {
     ),
   };
 };
+
 const DateFilter = (props) => {
   const intl = useIntl();
   const [focusedDateInput, setFocusedDateInput] = useState(null);
@@ -189,6 +191,22 @@ const DateFilter = (props) => {
     ...rest
   } = props;
   const { DateRangePicker } = reactDates;
+
+  const customArrowIcon = (props) => {
+    return (
+      <Icon icon="it-arrow-right" color="white" altText="Intervallo date" />
+    );
+  };
+
+  const customCloseIcon = (props) => {
+    return (
+      <Icon
+        icon="it-close"
+        color="white"
+        altText={intl.formatMessage(messages.clearDates)}
+      />
+    );
+  };
 
   let isMobile = false;
   if (__CLIENT__) isMobile = window && window.innerWidth < 992;
@@ -251,6 +269,8 @@ const DateFilter = (props) => {
         hideKeyboardShortcutsPanel={true}
         showClearDates
         phrases={getDateRangePickerPhrases(intl)}
+        customArrowIcon={customArrowIcon()}
+        customCloseIcon={customCloseIcon()}
       />
     </div>
   );
