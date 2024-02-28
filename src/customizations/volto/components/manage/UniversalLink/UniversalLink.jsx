@@ -22,6 +22,13 @@ import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import config from '@plone/volto/registry';
 
+const messages = {
+  externalLink: {
+    id: 'external_link',
+    defaultMessage: 'Link esterno',
+  },
+};
+
 const UniversalLink = ({
   href,
   item = null,
@@ -121,7 +128,7 @@ const UniversalLink = ({
           config.settings.siteProperties.markSpecialLinks && (
             <Icon
               icon="it-external-link"
-              title={title}
+              title={title || intl.formatMessage(messages.externalLink)}
               size="xs"
               className="ms-1 align-sub external-link"
             />

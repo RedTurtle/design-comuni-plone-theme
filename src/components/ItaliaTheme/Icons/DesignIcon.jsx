@@ -53,6 +53,7 @@ const Icon = ({ icon, title, className, size }) => {
             ? `<title>${title}</title>${name.content}`
             : name.content,
         }}
+        alt={title}
       />
     );
   }

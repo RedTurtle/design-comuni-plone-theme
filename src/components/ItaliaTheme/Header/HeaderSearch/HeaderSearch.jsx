@@ -34,7 +34,7 @@ const HeaderSearch = () => {
           }}
           href="#search"
         >
-          <Icon icon="it-search" />
+          <Icon icon="it-search" title={intl.formatMessage(messages.search)} />
         </a>
       </div>
       <SearchModal
