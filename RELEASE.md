@@ -48,6 +48,7 @@
 - L'icona per aprire il menu in mobile è ora visibile anche quando l'header del sito è bianca.
 - La descrizione nelle card per i punti di contatto non mostrano più tutte le iniziali in maiuscolo.
 - Il colore dei link nel menu mobile è ora accessibile per tutti i temi.
+- Migliorata l'accessibilità della sezione dedicata al feedback utente per tutti i contenuti del sito
 
 ## Versione 11.5.1 (19/02/2024)
 
