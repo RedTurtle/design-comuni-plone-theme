@@ -47,8 +47,8 @@ const messages = defineMessages({
     defaultMessage: 'Primario',
   },
   color_secondary: {
-    id: 'color_primary',
-    defaultMessage: 'Primario',
+    id: 'color_secondary',
+    defaultMessage: 'Secondario',
   },
   color_transparent: {
     id: 'color_transparent',
