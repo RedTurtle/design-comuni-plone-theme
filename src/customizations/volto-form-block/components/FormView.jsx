@@ -1,6 +1,7 @@
 /*Customizatinos:
 - usati i componenti di design-react-kit
 - disabilitato il captcha se nelle siteProperties del config è stato disabilitato.
+- aggiunta legenda per i campi obbligatori
 */
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
@@ -24,6 +25,10 @@ const messages = defineMessages({
   default_submit_label: {
     id: 'form_default_submit_label',
     defaultMessage: 'Invia',
+  },
+  default_cancel_label: {
+    id: 'form_default_cancel_label',
+    defaultMessage: 'Annulla',
   },
   error: {
     id: 'Error',
@@ -79,6 +84,23 @@ const FormView = ({
     return formErrors?.indexOf(field) < 0;
   };
 
+  /* Function that replaces variables from the user customized message  */
+  const replaceMessage = (text) => {
+    let i = 0;
+    while (i < data.subblocks.length) {
+      let idField = getFieldName(
+        data.subblocks[i].label,
+        data.subblocks[i].field_id,
+      );
+      text = text.replaceAll(
+        '${' + idField + '}',
+        formData[idField]?.value || '',
+      );
+      i++;
+    }
+    return text;
+  };
+
   var FieldSchema = config.blocks.blocksConfig.form.fieldSchema;
   var fieldSchemaProperties = FieldSchema()?.properties;
   var fields_to_send = [];
@@ -113,6 +135,17 @@ const FormView = ({
                 >
                   <h4>{intl.formatMessage(messages.success)}</h4>
                   <br />
+                  {/* Custom message */}
+                  {data.send_message && (
+                    <>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: replaceMessage(data.send_message),
+                        }}
+                      />
+                      <br />
+                    </>
+                  )}
                   <Button color="primary" outline onClick={resetFormState}>
                     {intl.formatMessage(messages.reset)}
                   </Button>
@@ -223,6 +256,17 @@ const FormView = ({
 
                   <Row>
                     <Col align="center">
+                      {data?.show_cancel && (
+                        <Button
+                          color="secondary"
+                          type="clear"
+                          onClick={resetFormState}
+                          className="me-2"
+                        >
+                          {data.cancel_label ||
+                            intl.formatMessage(messages.default_cancel_label)}
+                        </Button>
+                      )}
                       <Button
                         color="primary"
                         type="submit"

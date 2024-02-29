@@ -43,6 +43,14 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Migliorie
+
+- Nel blocco form è stata aggiunta una legenda per i campi obbligatori.
+
+### Novità
+
+- Aggiornato il plugin del blocco Form, adesso si ha la possibilità di aggiungere un pulsante per resettare i campi e nella sidebar è presente un nuovo campo per creare un messaggio personalizzato dopo l'invio della form, i campi di tipo: testo, email, data e textarea hanno un identificativo che può essere utilizzato per restituire il valore di quei campi nel messaggio personalizzato.
+
 ### Fix
 
 - L'icona per aprire il menu in mobile è ora visibile anche quando l'header del sito è bianca.
@@ -57,7 +65,6 @@
 ### Migliorie
 
 - Il campo "Note aggiornamento" nel Tipo di Contenuto Bandi viene ora mostrato in pagina, se compilato.
-- Nel blocco form è stata aggiunta una dicitura per i campi obbligatori da compilari.
 
 ## Versione 11.5.0 (16/02/2024)
 

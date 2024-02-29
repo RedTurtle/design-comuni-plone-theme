@@ -35,4 +35,9 @@ defineMessages({
     id: 'legend_required',
     defaultMessage: 'I campi contrassegnati da (*) sono obbligatori.',
   },
+  default_cancel_label: {
+    //volto-form-block
+    id: 'form_default_cancel_label',
+    defaultMessage: 'Annulla',
+  },
 });
