@@ -1248,6 +1248,11 @@ msgstr ""
 msgid "color_primary"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Secondario
+msgid "color_secondary"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
 #: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 # defaultMessage: Trasparente
