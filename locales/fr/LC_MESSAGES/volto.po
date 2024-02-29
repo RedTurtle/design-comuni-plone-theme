@@ -2282,6 +2282,11 @@ msgstr ""
 msgid "legami_strutture_figlie"
 msgstr ""
 
+#: overrideTranslations
+# defaultMessage: I campi contrassegnati da (*) sono obbligatori.
+msgid "legend_required"
+msgstr "Les champs marqués d'une (*) sont obligatoires."
+
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Collegamento
 msgid "link"

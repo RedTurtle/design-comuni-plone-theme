@@ -30,4 +30,9 @@ defineMessages({
     id: 'form_reset',
     defaultMessage: 'Ricomincia',
   },
+  legend_required: {
+    //volto-form-block
+    id: 'legend_required',
+    defaultMessage: 'I campi contrassegnati da (*) sono obbligatori.',
+  },
 });

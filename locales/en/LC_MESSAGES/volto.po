@@ -2265,6 +2265,11 @@ msgstr "Association service or office"
 msgid "legami_strutture_figlie"
 msgstr "Internal services or offices"
 
+#: overrideTranslations
+# defaultMessage: I campi contrassegnati da (*) sono obbligatori.
+msgid "legend_required"
+msgstr "Fields marked with (*) are required."
+
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Collegamento
 msgid "link"

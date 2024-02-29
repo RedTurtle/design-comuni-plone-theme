@@ -48,14 +48,16 @@
 - L'icona per aprire il menu in mobile è ora visibile anche quando l'header del sito è bianca.
 - La descrizione nelle card per i punti di contatto non mostrano più tutte le iniziali in maiuscolo.
 - Il colore dei link nel menu mobile è ora accessibile per tutti i temi.
-- Il layout dei campi di input "in errore" del blocco Form è stato uniformato
-- La tendina delle select nel blocco Form non si sovrappone più ai campi sottostanti
+- Il layout dei campi di input "in errore" del blocco Form è stato uniformato.
+- La tendina delle select nel blocco Form non si sovrappone più ai campi sottostanti.
+- Sistemato alert di errore nel blocco Form che nascondeva il form quando un campo non era valido, ora continua a visualizzarsi anche la form.
 
 ## Versione 11.5.1 (19/02/2024)
 
 ### Migliorie
 
 - Il campo "Note aggiornamento" nel Tipo di Contenuto Bandi viene ora mostrato in pagina, se compilato.
+- Nel blocco form è stata aggiunta una dicitura per i campi obbligatori da compilari.
 
 ## Versione 11.5.0 (16/02/2024)
 
