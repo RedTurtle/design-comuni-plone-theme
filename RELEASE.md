@@ -35,6 +35,7 @@
 ### Fix
 
 - Visualizzazione mobile per il blocco tabella sistemata.
+- Quando si clicca sul bottone di login da una pagina specifica, dopo il login si viene reindirizzati alla pagina di provenienza.
 
 ## Versione 7.25.0 (20/02/2024)
 
