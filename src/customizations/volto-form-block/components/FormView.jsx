@@ -41,6 +41,10 @@ const messages = defineMessages({
     id: 'form_reset',
     defaultMessage: 'Ricomincia',
   },
+  legend_required: {
+    id: 'legend_required',
+    defaultMessage: 'I campi contrassegnati da (*) sono obbligatori.',
+  },
 });
 
 const FormView = ({
@@ -120,6 +124,14 @@ const FormView = ({
                   autoComplete="off"
                   method="post"
                 >
+                  {/* Controlla che ci siano campi obbligatori al suo interno e applica una legenda  */}
+                  {data.subblocks.some((item) => item.required === true) && (
+                    <legend className="text-muted text-end mb-3">
+                      <small>
+                        {intl.formatMessage(messages.legend_required)}
+                      </small>
+                    </legend>
+                  )}
                   {data.static_fields && (
                     <fieldset disabled>
                       {data.static_fields?.map((field) => (
