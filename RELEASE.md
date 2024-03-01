@@ -35,6 +35,7 @@
 ### Fix
 
 - Visualizzazione mobile per il blocco tabella sistemata.
+- Titolo e descrizione sistemati su blocco icone. Adesso quando il loro contenuto è cancellato non resta lo spazio vuoto sopra le icone.
 
 ## Versione 7.25.0 (20/02/2024)
 
