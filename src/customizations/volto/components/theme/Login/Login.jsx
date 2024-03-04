@@ -24,6 +24,7 @@ import { withRouter } from 'react-router-dom';
 
 import { Icon } from '@plone/volto/components';
 import { login } from '@plone/volto/actions';
+import { flattenToAppURL } from '@plone/volto/helpers';
 import { toast } from 'react-toastify';
 import { Toast } from '@plone/volto/components';
 
@@ -62,8 +63,7 @@ const messages = defineMessages({
     defaultMessage: 'Login Failed',
   },
   loginFailedContent: {
-    id:
-      'Both email address and password are case sensitive, check that caps lock is not enabled.',
+    id: 'Both email address and password are case sensitive, check that caps lock is not enabled.',
     defaultMessage:
       'Both email address and password are case sensitive, check that caps lock is not enabled.',
   },
@@ -316,6 +316,7 @@ export default compose(
       token: state.userSession.token,
       returnUrl:
         qs.parse(props.location.search).return_url ||
+        flattenToAppURL(qs.parse(props.location.search).came_from) ||
         props.location.pathname
           .replace(/\/login$/, '')
           .replace(/\/logout$/, '') ||

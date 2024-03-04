@@ -36,6 +36,10 @@
 
 - Migliorata l'accessibilità del menu in versione mobile.
 
+### Fix
+
+- Quando si clicca sul bottone di login da una pagina specifica, dopo il login si viene reindirizzati alla pagina di provenienza.
+
 ## Versione 7.25.2 (04/03/2024)
 
 ### Fix
