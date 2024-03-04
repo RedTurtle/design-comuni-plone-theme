@@ -36,6 +36,13 @@
 
 - Migliorata l'accessibilità del menu in versione mobile.
 
+## Versione 7.25.2 (04/03/2024)
+
+### Fix
+
+- Sistemata la visualizzazione mobile per il blocco tabella.
+- Blocco icone: sistemata la visualizzazione del Titolo e Descrizione nel caso in cui siano vuoti.
+
 ## Versione 7.25.0 (20/02/2024)
 
 ### Novità
