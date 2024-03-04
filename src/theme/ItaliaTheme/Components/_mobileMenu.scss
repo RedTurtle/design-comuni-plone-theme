@@ -105,7 +105,9 @@
 
               margin-left: 0;
 
-              .icon {
+              svg.icon {
+                width: 1em;
+                fill: currentColor;
                 width: 28px;
                 height: 28px;
               }
