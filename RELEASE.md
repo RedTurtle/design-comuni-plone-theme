@@ -32,10 +32,20 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Migliorie
+
+- Migliorata l'accessibilità del menu in versione mobile.
+
 ### Fix
 
-- Visualizzazione mobile per il blocco tabella sistemata.
 - Quando si clicca sul bottone di login da una pagina specifica, dopo il login si viene reindirizzati alla pagina di provenienza.
+
+## Versione 7.25.2 (04/03/2024)
+
+### Fix
+
+- Sistemata la visualizzazione mobile per il blocco tabella.
+- Blocco icone: sistemata la visualizzazione del Titolo e Descrizione nel caso in cui siano vuoti.
 
 ## Versione 7.25.0 (20/02/2024)
 

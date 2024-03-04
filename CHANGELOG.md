@@ -1,3 +1,18 @@
+### [7.25.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.1...v7.25.2) (2024-03-04)
+
+
+### Bug Fixes
+
+* check rich text has content in iconsBlock ([#561](https://github.com/RedTurtle/design-comuni-plone-theme/issues/561)) ([3c51192](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3c511927ed0740ade6f3aa0c1fc5edcc1ef15b36))
+* table mobile ([#539](https://github.com/RedTurtle/design-comuni-plone-theme/issues/539)) ([5ee242f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5ee242fd9c21665c79ff36b3d88c96e615796ace))
+
+
+### Maintenance
+
+* back to previous version 7.25.1 ([07ee781](https://github.com/RedTurtle/design-comuni-plone-theme/commit/07ee78198ed6223805e75891ad7a6d3b702ed26b))
+* preparing release 7.2.5.2 ([e92f69a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e92f69a819deff93b9730e8056ffdfcef6cc7067))
+* release v7.25.2 ([8a4b572](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8a4b5722ca33c9f8947055745bb6a5f537287372))
+
 ### [7.25.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.0...v7.25.1) (2024-02-23)
 
 
