@@ -56,6 +56,7 @@
 - L'icona per aprire il menu in mobile è ora visibile anche quando l'header del sito è bianca.
 - La descrizione nelle card per i punti di contatto non mostrano più tutte le iniziali in maiuscolo.
 - Il colore dei link nel menu mobile è ora accessibile per tutti i temi.
+- Titolo e descrizione sistemati su blocco icone. Adesso quando il loro contenuto è cancellato non resta lo spazio vuoto sopra le icone.
 - Migliorata l'accessibilità della sezione dedicata al feedback utente per tutti i contenuti del sito
 - Rimosso il title dall'immagine di apertura dei contenuti
 - Rimosso attributo title dall'immagine delle card: card con immagine, persona, blocco link completo, contenuto in evidenza, gallery a griglia, in evidenza
@@ -65,6 +66,7 @@
 - Sistemato alert di errore nel blocco Form che nascondeva il form quando un campo non era valido, ora continua a visualizzarsi anche la form.
 - Migliorato il testo alternativo per il logo NextGenerationEU nel footer.
 - Migliorata l'accessibilità del blocco Cerca.
+- Sistemato il contrasto delle icone nei pulsanti "primary" quando si attiva il focus col tab da tastiera
 
 ## Versione 11.5.1 (19/02/2024)
 
