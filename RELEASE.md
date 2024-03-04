@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorata l'accessibilità del menu in versione mobile.
+
 ## Versione 7.25.2 (04/03/2024)
 
 ### Fix
