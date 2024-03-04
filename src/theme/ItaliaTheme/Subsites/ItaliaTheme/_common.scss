@@ -78,7 +78,7 @@
   .select-all-cts.btn.btn-link.btn-mini,
   .subsite-header .text a.select-all-cts.btn-link.btn-mini {
     @if $subsite-light-theme {
-      color: $subsite-secondary !important;
+      color: $subsite-link-color !important;
     } @else {
       color: $subsite-primary !important;
     }
