@@ -261,7 +261,8 @@ iframe {
     font-size: 10em;
   }
 
-  svg.fa-icon {
+  svg.fa-icon,
+  .navbar-collapsable svg.icon {
     width: 1em;
     fill: currentColor;
   }

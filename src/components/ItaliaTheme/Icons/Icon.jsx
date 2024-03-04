@@ -15,7 +15,6 @@ const Icon = (props) => {
   if (icon) {
     const classes = classNames(
       'icon',
-      'fa-icon',
       className,
       {
         [`icon-${color}`]: color,
