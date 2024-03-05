@@ -61,16 +61,12 @@ a {
 
 .public-ui {
   a.btn.btn-primary {
-    color: $primary-text;
-
     svg {
       fill: $primary-text;
     }
   }
 
   a.btn.btn-secondary {
-    color: $secondary-text;
-
     svg {
       fill: $secondary-text;
     }
@@ -336,11 +332,11 @@ iframe {
 .it-footer .it-footer-main .it-brand-wrapper .footerTop,
 .footer-configuration-widget .footer-top-segment .block.gridBlock .grid-items {
   h2 {
+    margin-bottom: 0;
     font-size: 1.777778rem;
     font-weight: 600;
     letter-spacing: unset;
     line-height: 1.1;
-    margin-bottom: 0;
   }
 
   h3 {
@@ -348,8 +344,8 @@ iframe {
   }
 
   .block.image img {
-    height: 75px;
     width: auto;
+    height: 75px;
   }
 
   .block.gridBlock {

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-02-08T09:29:49.246Z\n"
+"POT-Creation-Date: 2024-02-29T16:36:05.160Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1983,6 +1983,11 @@ msgid "feedback_complete_instructions"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Error
+msgid "feedback_error"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Next
 msgid "feedback_form_button_next"
 msgstr ""
@@ -2054,6 +2059,11 @@ msgid "feedback_sent"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Valuta da 1 a 5 stelle
+msgid "feedback_stars"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: I ran into technical problems
 msgid "feedback_technical_problems"
 msgstr ""
@@ -2095,6 +2105,16 @@ msgstr ""
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Fine termine
 msgid "fine_termine"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Annulla
+msgid "form_default_cancel_label"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Ricomincia
+msgid "form_reset"
 msgstr ""
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
@@ -2255,6 +2275,11 @@ msgstr ""
 #: components/ItaliaTheme/View/UOView/UOStructure
 # defaultMessage: Servizi o uffici interni
 msgid "legami_strutture_figlie"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: I campi contrassegnati da (*) sono obbligatori.
+msgid "legend_required"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
@@ -2544,6 +2569,11 @@ msgstr ""
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: nominativo
 msgid "nominativo"
+msgstr ""
+
+#: components/ItaliaTheme/View/BandoView/BandoNoteAggiornamento
+# defaultMessage: Note di aggiornamento
+msgid "note_aggiornamento"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/RelatedItems

@@ -1981,6 +1981,11 @@ msgid "feedback_complete_instructions"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Error
+msgid "feedback_error"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Next
 msgid "feedback_form_button_next"
 msgstr ""
@@ -2052,6 +2057,11 @@ msgid "feedback_sent"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Valuta da 1 a 5 stelle
+msgid "feedback_stars"
+msgstr "Rate from 1 to 5 stars"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: I ran into technical problems
 msgid "feedback_technical_problems"
 msgstr ""
@@ -2094,6 +2104,16 @@ msgstr "Search"
 # defaultMessage: Fine termine
 msgid "fine_termine"
 msgstr "End of term"
+
+#: overrideTranslations
+# defaultMessage: Annulla
+msgid "form_default_cancel_label"
+msgstr "Cancel"
+
+#: overrideTranslations
+# defaultMessage: Ricomincia
+msgid "form_reset"
+msgstr "Restart"
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Foto dell'attività politica
@@ -2254,6 +2274,11 @@ msgstr "Association service or office"
 # defaultMessage: Servizi o uffici interni
 msgid "legami_strutture_figlie"
 msgstr "Internal services or offices"
+
+#: overrideTranslations
+# defaultMessage: I campi contrassegnati da (*) sono obbligatori.
+msgid "legend_required"
+msgstr "Fields marked with (*) are required."
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Collegamento
@@ -2543,6 +2568,11 @@ msgstr ""
 # defaultMessage: nominativo
 msgid "nominativo"
 msgstr "nominative"
+
+#: components/ItaliaTheme/View/BandoView/BandoNoteAggiornamento
+# defaultMessage: Note di aggiornamento
+msgid "note_aggiornamento"
+msgstr "Update notes"
 
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Novità

@@ -43,6 +43,50 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Migliorie
+
+- Nel blocco form è stata aggiunta una legenda per i campi obbligatori.
+
+### Novità
+
+- Aggiornato il plugin del blocco Form, adesso si ha la possibilità di aggiungere un pulsante per resettare i campi e nella sidebar è presente un nuovo campo per creare un messaggio personalizzato dopo l'invio della form, i campi di tipo: testo, email, data e textarea hanno un identificativo che può essere utilizzato per restituire il valore di quei campi nel messaggio personalizzato.
+
+### Fix
+
+- L'icona per aprire il menu in mobile è ora visibile anche quando l'header del sito è bianca.
+- La descrizione nelle card per i punti di contatto non mostrano più tutte le iniziali in maiuscolo.
+- Il colore dei link nel menu mobile è ora accessibile per tutti i temi.
+- Migliorata l'accessibilità della sezione dedicata al feedback utente per tutti i contenuti del sito
+- Rimosso il title dall'immagine di apertura dei contenuti
+- Rimosso attributo title dall'immagine delle card: card con immagine, persona, blocco link completo, contenuto in evidenza, gallery a griglia, in evidenza
+- Migliorata l'accessibilità del menu in versione mobile.
+- Il layout dei campi di input "in errore" del blocco Form è stato uniformato.
+- La tendina delle select nel blocco Form non si sovrappone più ai campi sottostanti.
+- Sistemato alert di errore nel blocco Form che nascondeva il form quando un campo non era valido, ora continua a visualizzarsi anche la form.
+- Migliorato il testo alternativo per il logo NextGenerationEU nel footer.
+- Migliorata l'accessibilità del blocco Cerca.
+- Sistemato il contrasto delle icone nei pulsanti "primary" quando si attiva il focus col tab da tastiera
+
+## Versione 11.5.1 (19/02/2024)
+
+### Migliorie
+
+- Il campo "Note aggiornamento" nel Tipo di Contenuto Bandi viene ora mostrato in pagina, se compilato.
+
+## Versione 11.5.0 (16/02/2024)
+
+### Migliorie
+
+- Rimosso il campo "Risultati per pagina" che non agiva sulle impostazioni del blocco Calendario.
+
+### Fix
+
+- Risolto un problema riguardante la visualizzazione delle date nelle card che rappresentano un CT Evento nei vari listati nel caso in cui l'evento si sviluppi su anni diversi
+- Risolto un problema di visualizzazione per la sezione Date e Orari nel CT Evento quando l'evento si sviluppa su anni diversi, ora viene mostrato anche l'anno se si rientra in questa casistica
+- Nel blocco elenco, sono stati sistemati i filtri per percorso quando si clicca sul bottone configurato.
+
+## Versione 11.4.1 (08/02/2024)
+
 ### Fix
 
 - Migliorata l'accessibilità e aggiunto elementi per migliorare l'esperienza d'uso degli utenti che utilizzano screen reader nella vista Cartella FAQ

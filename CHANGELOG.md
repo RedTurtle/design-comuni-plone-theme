@@ -1,5 +1,62 @@
 
 
+## [11.5.1](https://github.com/redturtle/design-comuni-plone-theme/compare/v11.5.0...v11.5.1) (2024-02-19)
+
+
+### Bug Fixes
+
+* added component to show update_note field on Bandi view ([#543](https://github.com/redturtle/design-comuni-plone-theme/issues/543)) ([a9e33fe](https://github.com/redturtle/design-comuni-plone-theme/commit/a9e33fe6765f5635afc6f856d778495cbe815350))
+
+
+### Documentation
+
+* updated publiccode and release log ([0f2200e](https://github.com/redturtle/design-comuni-plone-theme/commit/0f2200e7a433c7721f8521f5f79b617d1b8c6910))
+
+## [11.5.0](https://github.com/redturtle/design-comuni-plone-theme/compare/v11.4.1...v11.5.0) (2024-02-16)
+
+
+### Features
+
+* upgrade to volto-feedback 0.2.0 ([#541](https://github.com/redturtle/design-comuni-plone-theme/issues/541)) ([8f53eb9](https://github.com/redturtle/design-comuni-plone-theme/commit/8f53eb9fd8c85f3228a9d2fce129a3896b6c188d))
+
+
+### Bug Fixes
+
+* button keyboard focus color ([#535](https://github.com/redturtle/design-comuni-plone-theme/issues/535)) ([f3bb7a4](https://github.com/redturtle/design-comuni-plone-theme/commit/f3bb7a4a5252f826bce8c94abeb60ebef82e2d1a))
+* dates layout in CardWithImage template and 4 columns layout ([#532](https://github.com/redturtle/design-comuni-plone-theme/issues/532)) ([af9dfc7](https://github.com/redturtle/design-comuni-plone-theme/commit/af9dfc79f69e67969c4a7894e16ccd343dee76b1))
+* display error in feedback form ([#538](https://github.com/redturtle/design-comuni-plone-theme/issues/538)) ([51a2f8b](https://github.com/redturtle/design-comuni-plone-theme/commit/51a2f8b4d49d8490c5cf493712b981c208cc2341))
+* focus on link and card title links ([#536](https://github.com/redturtle/design-comuni-plone-theme/issues/536)) ([707b6ca](https://github.com/redturtle/design-comuni-plone-theme/commit/707b6ca599dbc430dc8ea2a1a9e3efc4d12f906c))
+* hidden pagination size field from calendar block props ([#531](https://github.com/redturtle/design-comuni-plone-theme/issues/531)) ([92d734e](https://github.com/redturtle/design-comuni-plone-theme/commit/92d734ec7a3b625498658d5d12b1681677d3da87))
+* navigation reducer bug happening in 404 pages ([a6837d0](https://github.com/redturtle/design-comuni-plone-theme/commit/a6837d0d8277ac8a5ae8b149651ce65039405471))
+* query for listing path filters ([#530](https://github.com/redturtle/design-comuni-plone-theme/issues/530)) ([34739ea](https://github.com/redturtle/design-comuni-plone-theme/commit/34739eac771ef385a9ad2d12ee1f64d0fe9490d7))
+* query listing path filter color status and a11y ([#534](https://github.com/redturtle/design-comuni-plone-theme/issues/534)) ([f51dbad](https://github.com/redturtle/design-comuni-plone-theme/commit/f51dbad4dd8beb7fbb8ab3e5fd4593cab194b992))
+* Timeline now also shows year if event spans multiple years in Event view ([#533](https://github.com/redturtle/design-comuni-plone-theme/issues/533)) ([30cf623](https://github.com/redturtle/design-comuni-plone-theme/commit/30cf6236522f9533144b3ad1c5e4788174c4f60b))
+* wrong date display for events that  span on multiple years ([#529](https://github.com/redturtle/design-comuni-plone-theme/issues/529)) ([e579fc4](https://github.com/redturtle/design-comuni-plone-theme/commit/e579fc4c05cac04f9f998916a2ea8285ff942311))
+
+
+### Documentation
+
+* updated publiccode and release log ([6209b62](https://github.com/redturtle/design-comuni-plone-theme/commit/6209b62ae5808972998b7bd0d6c8c1683018c469))
+
+## [11.4.1](https://github.com/redturtle/design-comuni-plone-theme/compare/v11.4.0...v11.4.1) (2024-02-08)
+
+
+### Bug Fixes
+
+* a11y use of Sharing and Actions menus ([#519](https://github.com/redturtle/design-comuni-plone-theme/issues/519)) ([67474cc](https://github.com/redturtle/design-comuni-plone-theme/commit/67474ccafcad1e3ac7e447a10c3b923e42b68206))
+* accessibility for subsites ([#527](https://github.com/redturtle/design-comuni-plone-theme/issues/527)) ([f1fbea7](https://github.com/redturtle/design-comuni-plone-theme/commit/f1fbea765646d2af081e54772c33843283fc741a))
+* better a11y for social links ([#518](https://github.com/redturtle/design-comuni-plone-theme/issues/518)) ([49ea781](https://github.com/redturtle/design-comuni-plone-theme/commit/49ea7812e624da5b7d09485d0ad528478a716f90))
+* better screen reader user experience in contacts, contact type is read now alongside value ([#516](https://github.com/redturtle/design-comuni-plone-theme/issues/516)) ([bdd96f2](https://github.com/redturtle/design-comuni-plone-theme/commit/bdd96f26f85c616c77fb4a34cdd2b3dc15210bfb))
+* do not show empty headings if title in block is not configured ([#517](https://github.com/redturtle/design-comuni-plone-theme/issues/517)) ([2152118](https://github.com/redturtle/design-comuni-plone-theme/commit/21521183e875118b793beccbcb964dc97f1ad982))
+* in FAQFolderView aria controls and live attributes correctly now and place regions accordingly ([#515](https://github.com/redturtle/design-comuni-plone-theme/issues/515)) ([49fd553](https://github.com/redturtle/design-comuni-plone-theme/commit/49fd553eb49144bd5374cae081cfccf27e139471))
+* semantic headings levels in rss templates, all h3 now ([#521](https://github.com/redturtle/design-comuni-plone-theme/issues/521)) ([b6b13fd](https://github.com/redturtle/design-comuni-plone-theme/commit/b6b13fd79fe417f15a97df4fadfc58bd6e66031e))
+* skip link go to content in site search page ([#520](https://github.com/redturtle/design-comuni-plone-theme/issues/520)) ([b78b47f](https://github.com/redturtle/design-comuni-plone-theme/commit/b78b47f4fb8424ff2a1e6c663edb72ded32f3fe4))
+
+
+### Documentation
+
+* updated publiccode and release log ([afc5083](https://github.com/redturtle/design-comuni-plone-theme/commit/afc50835eea3413f770ea8db4b9bfaad46dd1d5c))
+
 ## [11.4.0](https://github.com/redturtle/design-comuni-plone-theme/compare/v11.3.4...v11.4.0) (2024-02-06)
 
 
