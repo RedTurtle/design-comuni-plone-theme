@@ -10,19 +10,13 @@ import {
   SingleSlideWrapper,
   CarouselWrapper,
   ButtonPlayPause,
-  NextArrow,
-  PrevArrow,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import {
-  useSlider,
-  visibleSlideTitle,
-} from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
+import { useSlider } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
 import React, { useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import { v4 as uuid } from 'uuid';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -41,67 +35,17 @@ const messages = defineMessages({
   },
 });
 
-function SliderNextArrow(props) {
-  // Custom handling of focus for a11y
-  const { className, style, onClick, currentSlide, id } = props;
-  const handleClick = (options) => {
-    onClick(options, false);
-  };
-  const handleKeyboardUsers = (e) => {
-    if (e.key === 'Tab' && e.shiftKey) {
-      e.stopPropagation();
-      e.preventDefault();
-
-      const link = visibleSlideTitle(
-        `a.slide-link[data-slide="${currentSlide}"]`,
-      );
-      link && link.focus();
-    }
-  };
-
-  return (
-    <NextArrow
-      className={className}
-      style={{ ...style }}
-      onClick={handleClick}
-      onKeyDown={handleKeyboardUsers}
-      id={id}
-    />
-  );
-}
-
-function SliderPrevArrow(props) {
-  // Custom handling of focus for a11y
-  const { className, style, onClick, focusNext, currentSlide, slideCount, id } =
-    props;
-  const handleClick = (options) => {
-    onClick(options, false);
-  };
-  const handleKeyboardUsers = (e) => {
-    if (e.key === 'Tab' && !e.shiftKey) {
-      e.stopPropagation();
-      e.preventDefault();
-      if (currentSlide < slideCount) {
-        const link = visibleSlideTitle(
-          `a.slide-link[data-slide="${currentSlide}"]`,
-        );
-        link && link.focus();
-      } else focusNext(0);
-    }
-  };
-  return (
-    <PrevArrow
-      className={className}
-      style={{ ...style }}
-      onClick={handleClick}
-      onKeyDown={handleKeyboardUsers}
-      id={id}
-    />
-  );
-}
-
 const Slide = (props) => {
-  const { item, index, appearance, appearanceProp, block_id } = props;
+  const {
+    item,
+    index,
+    nextIndex,
+    prevIndex,
+    appearance,
+    appearanceProp,
+    block_id,
+  } = props;
+
   const handleKeyboardUsers = (e) => {
     const { key, shiftKey } = e;
     if (key === 'Tab') {
@@ -112,10 +56,21 @@ const Slide = (props) => {
       // if (userAutoplay) setUserAutoplay(false);
       // slider.current.slickPause();
       let elementToFocus;
+
       if (shiftKey) {
-        elementToFocus = document.getElementById('sliderPrevArrow_' + block_id);
+        elementToFocus =
+          prevIndex != null
+            ? document.querySelector(
+                `#slider_${block_id} .slick-slide[data-index="${prevIndex}"]`,
+              )
+            : document.getElementById('sliderPrevArrow_' + block_id);
       } else
-        elementToFocus = document.getElementById('sliderNextArrow_' + block_id);
+        elementToFocus =
+          nextIndex != null
+            ? document.querySelector(
+                `#slider_${block_id} .slick-slide[data-index="${nextIndex}"]`,
+              )
+            : document.getElementById('sliderNextArrow_' + block_id);
       elementToFocus.focus();
     }
   };
@@ -154,9 +109,10 @@ const SliderTemplate = ({
   autoplay_speed = 2, //seconds
   slide_appearance = 'default',
   reactSlick,
-  ...appearanceProp
+  block,
+  ...otherProps
 }) => {
-  const block_id = uuid();
+  const block_id = block;
   const intl = useIntl();
 
   const [userAutoplay, setUserAutoplay] = useState(autoplay);
@@ -165,7 +121,11 @@ const SliderTemplate = ({
       ? items.length
       : parseInt(slidesToShow);
   const Slider = reactSlick.default;
-  const { slider, focusNext } = useSlider(userAutoplay);
+  const { slider, focusNext, SliderNextArrow, SliderPrevArrow } = useSlider(
+    userAutoplay,
+    block_id,
+  );
+
   const toggleAutoplay = () => {
     if (!slider?.current) return;
     if (userAutoplay) {
@@ -237,20 +197,8 @@ const SliderTemplate = ({
     focusOnSelect: false,
     draggable: true,
     accessibility: true,
-    nextArrow: (
-      <SliderNextArrow
-        intl={intl}
-        focusNext={focusNext}
-        id={'sliderNextArrow_' + block_id}
-      />
-    ),
-    prevArrow: (
-      <SliderPrevArrow
-        intl={intl}
-        focusNext={focusNext}
-        id={'sliderPrevArrow_' + block_id}
-      />
-    ),
+    nextArrow: <SliderNextArrow intl={intl} focusNext={focusNext} />,
+    prevArrow: <SliderPrevArrow intl={intl} focusNext={focusNext} />,
     appendDots: renderCustomDots,
     // Custom handling of focus for a11y
     afterChange: focusNext,
@@ -271,6 +219,7 @@ const SliderTemplate = ({
         'no-margin': full_width,
         ['appearance_' + slide_appearance]: slide_appearance,
       })}
+      id={'slider_' + block_id}
     >
       <Container className="px-4">
         {title && (
@@ -305,6 +254,8 @@ const SliderTemplate = ({
                   <Slide
                     image={image}
                     index={index}
+                    nextIndex={index + 1 === items.length ? null : index + 1}
+                    prevIndex={index - 1 === -1 ? null : index - 1}
                     full_width={full_width}
                     item={item}
                     show_image_title={show_image_title}
@@ -313,7 +264,7 @@ const SliderTemplate = ({
                     userAutoplay={userAutoplay}
                     slider={slider}
                     appearance={slide_appearance}
-                    appearanceProp={appearanceProp}
+                    appearanceProp={otherProps}
                     block_id={block_id}
                   />
                 );

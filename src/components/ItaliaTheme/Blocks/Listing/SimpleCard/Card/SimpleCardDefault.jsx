@@ -56,6 +56,7 @@ const SimpleCardDefault = (props) => {
     id_lighthouse,
     rrule,
     index,
+    handleKeyboardUsers = () => {}, //for slider template handler
   } = props;
 
   const getItemClass = (item) => {
@@ -119,6 +120,7 @@ const SimpleCardDefault = (props) => {
             item={!isEditMode ? item : null}
             href={isEditMode ? '#' : null}
             data-element={id_lighthouse}
+            onKeyDown={handleKeyboardUsers}
           >
             {itemTitle}
           </UniversalLink>
