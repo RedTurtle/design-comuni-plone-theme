@@ -735,6 +735,7 @@ msgid "accordion_block"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Account
 msgid "account"
 msgstr ""
@@ -1842,6 +1843,7 @@ msgid "elementi_di_interesse"
 msgstr "Objets d'intérêt"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Email
 msgid "email"
 msgstr ""
@@ -1945,6 +1947,7 @@ msgstr "Tapez un mot-clé pour trouver des réponses"
 
 #: components/ItaliaTheme/View/Commons/ContactLink
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Fax
 msgid "fax"
 msgstr ""
@@ -1992,6 +1995,11 @@ msgstr ""
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: The instructions were complete
 msgid "feedback_complete_instructions"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Error
+msgid "feedback_error"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
@@ -2066,6 +2074,11 @@ msgid "feedback_sent"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Valuta da 1 a 5 stelle
+msgid "feedback_stars"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: I ran into technical problems
 msgid "feedback_technical_problems"
 msgstr ""
@@ -2109,12 +2122,23 @@ msgstr "Rechercher"
 msgid "fine_termine"
 msgstr "Fin du mandat"
 
+#: overrideTranslations
+# defaultMessage: Annulla
+msgid "form_default_cancel_label"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Ricomincia
+msgid "form_reset"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Foto dell'attività politica
 msgid "foto_attivita_politica"
 msgstr "Photo d'activité politique"
 
 #: components/ItaliaTheme/Search/Search
+#: components/ItaliaTheme/View/FAQ/FaqFolder/FaqFolderView
 # defaultMessage: Trovati {total} risultati.
 msgid "found_n_results"
 msgstr "{total} résultats trouvés"
@@ -2268,6 +2292,11 @@ msgstr ""
 msgid "legami_strutture_figlie"
 msgstr ""
 
+#: overrideTranslations
+# defaultMessage: I campi contrassegnati da (*) sono obbligatori.
+msgid "legend_required"
+msgstr "Les champs marqués d'une (*) sont obligatoires."
+
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Collegamento
 msgid "link"
@@ -2301,6 +2330,7 @@ msgid "link_siti_esterni"
 msgstr "Liens utiles"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: LinkedIn
 msgid "linkedin"
 msgstr ""
@@ -2556,6 +2586,11 @@ msgstr ""
 msgid "nominativo"
 msgstr "nominatif"
 
+#: components/ItaliaTheme/View/BandoView/BandoNoteAggiornamento
+# defaultMessage: Note di aggiornamento
+msgid "note_aggiornamento"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Novità
 msgid "novita"
@@ -2711,6 +2746,7 @@ msgstr "Sponsorisé par"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 #: components/ItaliaTheme/View/VenueView/VenueContacts
+#: helpers/contentHelper
 # defaultMessage: PEC
 msgid "pec"
 msgstr "PEC"
@@ -3620,6 +3656,7 @@ msgid "skiplink-navigation"
 msgstr "Aller à la navigation"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Skype
 msgid "skype"
 msgstr ""
@@ -3635,6 +3672,7 @@ msgid "slidesToShow"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Social
 msgid "social"
 msgstr ""
@@ -3781,6 +3819,7 @@ msgstr ""
 
 #: components/ItaliaTheme/View/Commons/ContactLink
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Tel
 msgid "telefono"
 msgstr "Tél."
@@ -3791,6 +3830,7 @@ msgid "telefono_sede"
 msgstr "Téléphone"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Telegram
 msgid "telegram"
 msgstr ""
@@ -3901,6 +3941,7 @@ msgid "trasparenza"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Twitter
 msgid "twitter"
 msgstr ""
@@ -3970,6 +4011,7 @@ msgid "update_date"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Sito web
 msgid "url"
 msgstr ""
@@ -4029,6 +4071,7 @@ msgid "vincoli"
 msgstr "Contraintes"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
+#: helpers/contentHelper
 # defaultMessage: Whatsapp
 msgid "whatsapp"
 msgstr ""

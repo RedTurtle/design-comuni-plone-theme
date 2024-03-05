@@ -27,10 +27,10 @@ const WideImage = ({
             fieldName={fieldName}
             className={cx('', { 'full-width': fullWidth })}
             alt=""
-            title={caption || title}
             critical
             loading="eager"
             sizes={sizes}
+            responsive={!fullWidth}
           />
         )}
         {caption && (
