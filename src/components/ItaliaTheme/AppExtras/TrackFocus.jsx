@@ -6,10 +6,11 @@ const CLASS_NAME_MOUSE_ACTIVE = 'active';
 
 const TrackFocus = () => {
   const [usingMouse, setUsingMouse] = useState(false);
+  const [activeElement, setActiveElement] = useState(null);
 
   useEffect(() => {
     const handleEvent = (e) => {
-      setUsingMouse(e.type === 'mousedown' ? true : false);
+      setUsingMouse(e.type === 'mousedown');
     };
 
     document.addEventListener('keydown', handleEvent);
@@ -24,14 +25,22 @@ const TrackFocus = () => {
   useEffect(() => {
     const handleFocusChange = (e) => {
       if (e.target) {
+        const isLinkOrButton =
+          e.target.tagName === 'A' || e.target.tagName === 'BUTTON';
+
         if (usingMouse) {
           e.target.classList.add(CLASS_NAME_MOUSE_FOCUS);
-          e.target.classList.add(CLASS_NAME_MOUSE_ACTIVE);
+          if (isLinkOrButton) {
+            if (activeElement && activeElement !== e.target) {
+              activeElement.classList.remove(CLASS_NAME_MOUSE_ACTIVE);
+            }
+            e.target.classList.add(CLASS_NAME_MOUSE_ACTIVE);
+            setActiveElement(e.target);
+          }
           e.target.setAttribute(DATA_FOCUS_MOUSE, true);
         } else {
           e.target.classList.remove(CLASS_NAME_MOUSE_FOCUS);
-          e.target.classList.remove(CLASS_NAME_MOUSE_ACTIVE);
-          e.target.setAttribute(DATA_FOCUS_MOUSE, false);
+          e.target.removeAttribute(DATA_FOCUS_MOUSE);
         }
       }
     };
@@ -39,8 +48,7 @@ const TrackFocus = () => {
     const handleFocusOut = (e) => {
       if (e.target) {
         e.target.classList.remove(CLASS_NAME_MOUSE_FOCUS);
-        e.target.classList.remove(CLASS_NAME_MOUSE_ACTIVE);
-        e.target.setAttribute(DATA_FOCUS_MOUSE, false);
+        e.target.removeAttribute(DATA_FOCUS_MOUSE);
       }
     };
 
@@ -51,7 +59,7 @@ const TrackFocus = () => {
       document.removeEventListener('focusin', handleFocusChange);
       document.removeEventListener('focusout', handleFocusOut);
     };
-  }, [usingMouse]);
+  }, [usingMouse, activeElement]);
 
   return null;
 };

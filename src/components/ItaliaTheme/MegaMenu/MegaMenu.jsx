@@ -117,7 +117,6 @@ const MegaMenu = ({ item, pathname }) => {
           href={item.linkUrl === '' ? '/' : null}
           item={item.linkUrl[0]?.['@id'] ? item.linkUrl[0] : '#'}
           tag={UniversalLink}
-          active={isItemActive}
           data-element={item.id_lighthouse}
           role="menuitem"
         >
@@ -239,7 +238,7 @@ const MegaMenu = ({ item, pathname }) => {
     }
 
     return (
-      <NavItem tag="li" className="megamenu" active={isItemActive} role="none">
+      <NavItem tag="li" className="megamenu" role="none">
         <UncontrolledDropdown
           nav
           inNavbar
