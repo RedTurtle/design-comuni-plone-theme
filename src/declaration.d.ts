@@ -22,3 +22,8 @@ declare module '*.module.less' {
 
 declare var __CLIENT__: boolean;
 declare var __SERVER__: boolean;
+
+// TODO remove when Contents customization is removed
+// declare module '@plone/volto/helpers' {
+//   export function getBaseUrl(pathname: string): string;
+// }

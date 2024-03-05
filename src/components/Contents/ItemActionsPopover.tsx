@@ -3,6 +3,7 @@ import {
   Link,
   Button,
   Popover,
+  type PopoverProps,
   EditIcon,
   EyeIcon,
   RowbeforeIcon,
@@ -12,7 +13,7 @@ import {
   BinIcon,
 } from '@plone/components';
 
-interface Props {
+interface Props extends Omit<PopoverProps, 'children'> {
   editLink: string;
   viewLink: string;
   onMoveToTop: () => Promise<void>;
@@ -30,9 +31,13 @@ export function ItemActionsPopover({
   onCut,
   onCopy,
   onDelete,
+  ...popoverProps
 }: Props) {
   return (
-    <Popover className="react-aria-Popover item-actions-popover">
+    <Popover
+      {...popoverProps}
+      className="react-aria-Popover item-actions-popover"
+    >
       <ul className="item-actions-list">
         <li className="item-actions-list-item edit">
           <Link href={editLink}>

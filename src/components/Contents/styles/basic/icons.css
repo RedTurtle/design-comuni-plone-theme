@@ -1,5 +1,3 @@
-@import './theme.css';
-
 :root {
   /* These has to be mapped to global css custom properties based on the SG scales */
   --quanta-icon-default-size-s: 18px;

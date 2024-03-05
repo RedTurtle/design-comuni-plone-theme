@@ -1,36 +1,34 @@
-import React from 'react';
+import React, { ComponentProps, useState } from 'react';
 import './styles/basic/main.css';
 import './styles/quanta/main.css';
 import type { ActionsResponse } from '@plone/types';
-import { ComponentProps, ReactNode, useState } from 'react';
-import {
-  DialogTrigger,
-  Tooltip,
-  TooltipTrigger,
-  useDragAndDrop,
-} from 'react-aria-components';
+import { useDragAndDrop } from 'react-aria-components';
 import cx from 'classnames';
 import {
-  AddIcon,
+  // AddIcon,
   Breadcrumbs,
-  Button,
   Container,
   QuantaTextField,
 } from '@plone/components';
 import { Table } from '../Table/Table';
 import { ContentsCell } from './ContentsCell';
-import { AddContentPopover } from './AddContentPopover';
+// import { AddContentPopover } from './AddContentPopover';
 import { indexes, defaultIndexes } from '../../helpers/indexes';
 import type { ArrayElement, Brain } from '../../helpers/types';
 
 interface ContentsProps {
   pathname: string;
+  breadcrumbs: ComponentProps<typeof Breadcrumbs>['items'];
   objectActions: ActionsResponse['object'];
   loading: boolean;
-  title: string;
   items: Brain[];
-  orderContent: (baseUrl: string, id: string, delta: number) => Promise<void>;
-  addableTypes: ComponentProps<typeof AddContentPopover>['addableTypes'];
+  cut: (value?: string) => Promise<void>;
+  copy: (value?: string) => Promise<void>;
+  deleteItem: (value?: string) => Promise<void>;
+  orderItem: (id: string, delta: number) => Promise<void>;
+  moveToTop: (index: number) => Promise<void>;
+  moveToBottom: (index: number) => Promise<void>;
+  // addableTypes: ComponentProps<typeof AddContentPopover>['addableTypes'];
 }
 
 /**
@@ -41,16 +39,18 @@ interface ContentsProps {
  */
 export function Contents({
   pathname,
+  breadcrumbs = [],
   objectActions,
   loading,
-  title,
   items,
-  orderContent,
-  addableTypes,
+  cut,
+  copy,
+  deleteItem,
+  orderItem,
+  moveToTop,
+  moveToBottom, // addableTypes,
 }: ContentsProps) {
   const [selected, setSelected] = useState<string[]>([]);
-  // const path = getBaseUrl(pathname);
-  const path = pathname;
 
   const folderContentsActions = objectActions.find(
     (action) => action.id === 'folderContents',
@@ -79,12 +79,21 @@ export function Contents({
     },
   ] as const;
 
-  const rows = items.map((item) =>
+  const rows = items.map((item, itemIndex) =>
     columns.reduce<ArrayElement<ComponentProps<typeof Table>['rows']>>(
       (cells, column) => ({
         ...cells,
         [column.id]: (
-          <ContentsCell key={column.id} item={item} column={column.id} />
+          <ContentsCell
+            key={column.id}
+            item={item}
+            column={column.id}
+            onMoveToBottom={() => moveToBottom(itemIndex)}
+            onMoveToTop={() => moveToTop(itemIndex)}
+            onCut={() => cut(item['@id'])}
+            onCopy={() => copy(item['@id'])}
+            onDelete={() => deleteItem(item['@id'])}
+          />
         ),
       }),
       { id: item['@id'] },
@@ -98,22 +107,28 @@ export function Contents({
       })),
     onReorder(e) {
       if (e.keys.size !== 1) {
+        // TODO mostrare toast o rendere non ordinabile quando più di un elemento è selezionato
         console.error('Only one item can be moved at a time');
+        return;
       }
-      const item = items.find((item) => item['@id'] === [...e.keys][0]);
+      const target = [...e.keys][0];
+      if (target === e.target.key) return;
+
+      const item = items.find((item) => item['@id'] === target);
       if (!item) return;
 
       const initialPosition = rows.findIndex((row) => row.id === item['@id']);
       if (initialPosition === -1) return;
 
-      let finalPosition = rows.findIndex((row) => row.id === e.target.key);
-      if (e.target.dropPosition === 'after') finalPosition += 1;
+      const finalPosition = rows.findIndex((row) => row.id === e.target.key);
 
-      orderContent(
-        path,
-        item.id.replace(/^.*\//, ''),
-        finalPosition - initialPosition,
-      );
+      let delta = finalPosition - initialPosition;
+      if (delta > 0 && e.target.dropPosition === 'before') delta -= 1;
+      if (delta < 0 && e.target.dropPosition === 'after') delta += 1;
+
+      if (delta !== 0) {
+        orderItem(item.id, delta);
+      }
     },
   });
 
@@ -132,28 +147,33 @@ export function Contents({
       <article id="content">
         <section className="topbar">
           <div className="title-block">
-            <Breadcrumbs includeRoot={true} items={[]} />
-            <h1>{title}</h1>
+            <Breadcrumbs
+              includeRoot={true}
+              root="/contents"
+              items={[...breadcrumbs].slice(0, -1)}
+            />
+            <h1>{[...breadcrumbs].slice(-1)[0]?.title}</h1>
           </div>
           <QuantaTextField
             name="sortable_title"
             placeholder="Search site"
             className="search-input"
           />
-          <TooltipTrigger>
+          {/* <TooltipTrigger>
             <DialogTrigger>
               <Button className="react-aria-Button add">
                 <AddIcon />
               </Button>
-              <AddContentPopover addableTypes={addableTypes} />
+              <AddContentPopover path={path} addableTypes={addableTypes} />
             </DialogTrigger>
             <Tooltip className="react-aria-Tooltip tooltip" placement="bottom">
               Add content
             </Tooltip>
-          </TooltipTrigger>
+          </TooltipTrigger> */}
         </section>
         <section className="contents-table">
           <Table
+            aria-label="Contents"
             columns={[...columns]}
             rows={rows}
             selectionMode="multiple"

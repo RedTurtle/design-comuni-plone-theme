@@ -1,8 +1,3 @@
-@import './Checkbox.css';
-@import './Form.css';
-@import './Button.css';
-@import './theme.css';
-
 .react-aria-CheckboxGroup {
   display: flex;
   flex-direction: column;

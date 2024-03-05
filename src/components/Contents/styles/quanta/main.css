@@ -9,6 +9,7 @@
 /* Views */
 @import './Contents.css';
 
-.it-header-wrapper {
+.view-contentsview .it-header-wrapper,
+.view-contentsview #briciole {
   display: none;
 }

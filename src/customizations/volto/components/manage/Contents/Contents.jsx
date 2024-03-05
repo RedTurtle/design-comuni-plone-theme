@@ -36,6 +36,8 @@ import {
 } from 'lodash';
 import move from 'lodash-move';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import { RouterProvider } from 'react-aria-components';
+import loadable from '@loadable/component';
 import { asyncConnect } from '@plone/volto/helpers';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
@@ -74,8 +76,6 @@ import {
 import { Helmet, getBaseUrl } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
-import { Contents as ContentsTable } from 'design-comuni-plone-theme/components/Contents/Contents';
-
 import config from '@plone/volto/registry';
 
 import backSVG from '@plone/volto/icons/back.svg';
@@ -98,6 +98,14 @@ import sortUpSVG from '@plone/volto/icons/sort-up.svg';
 import downKeySVG from '@plone/volto/icons/down-key.svg';
 import moreSVG from '@plone/volto/icons/more.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
+
+const ContentsTable = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "Contents" */ 'design-comuni-plone-theme/components/Contents/Contents'
+    ),
+  { resolveComponent: (module) => module.Contents },
+);
 
 const messages = defineMessages({
   back: {
@@ -768,11 +776,15 @@ class Contents extends Component {
    */
   onOrderItem(id, itemIndex, delta, backend) {
     if (backend) {
-      this.props.orderContent(
-        getBaseUrl(this.props.pathname),
-        id.replace(/^.*\//, ''),
-        delta,
-      );
+      this.props
+        .orderContent(
+          getBaseUrl(this.props.pathname),
+          id.replace(/^.*\//, ''),
+          delta,
+        )
+        .then(() => {
+          this.fetchContents();
+        });
     } else {
       this.setState({
         items: move(this.state.items, itemIndex, itemIndex + delta),
@@ -1198,15 +1210,60 @@ class Contents extends Component {
         {folderContentsAction ? (
           <>
             <Helmet title={this.props.intl.formatMessage(messages.contents)} />
-            <ContentsTable
-              pathname={getBaseUrl(this.props.pathname)}
-              objectActions={this.props.objectActions}
-              loading={loading}
-              title={this.props.title}
-              items={this.state.items}
-              orderContent={this.props.orderContent}
-              addableTypes={this.props.addableTypes}
-            />
+            <RouterProvider navigate={this.props.history.push}>
+              <ContentsTable
+                pathname={getBaseUrl(this.props.pathname)}
+                breadcrumbs={this.props.breadcrumbs.map((b) => ({
+                  '@id': `${b.url}/contents`,
+                  title: b.title,
+                }))}
+                objectActions={this.props.objectActions}
+                loading={loading}
+                title={this.props.title}
+                items={this.state.items}
+                cut={(id) =>
+                  Promise.resolve(this.cut(undefined, { value: id }))
+                }
+                copy={(id) =>
+                  Promise.resolve(this.copy(undefined, { value: id }))
+                }
+                deleteItem={(id) =>
+                  Promise.resolve(this.delete(undefined, { value: id }))
+                }
+                orderItem={(id, delta) =>
+                  Promise.resolve(this.onOrderItem(id, undefined, delta, true))
+                }
+                moveToTop={(index) =>
+                  Promise.resolve(this.onMoveToTop(undefined, { value: index }))
+                }
+                moveToBottom={(index) =>
+                  Promise.resolve(
+                    this.onMoveToBottom(undefined, { value: index }),
+                  )
+                }
+                addableTypes={this.props.addableTypes}
+              />
+            </RouterProvider>
+            {this.state.isClient && (
+              <Portal node={document.getElementById('toolbar')}>
+                <Toolbar
+                  pathname={this.props.pathname}
+                  inner={
+                    <Link
+                      to={`${path}`}
+                      aria-label={this.props.intl.formatMessage(messages.back)}
+                    >
+                      <Icon
+                        name={backSVG}
+                        className="contents circled"
+                        size="30px"
+                        title={this.props.intl.formatMessage(messages.back)}
+                      />
+                    </Link>
+                  }
+                />
+              </Portal>
+            )}
           </>
         ) : (
           // <Container
@@ -2210,25 +2267,25 @@ class Contents extends Component {
   }
 }
 
-let dndContext;
+// let dndContext;
 
-const DragDropConnector = (props) => {
-  const { DragDropContext } = props.reactDnd;
-  const HTML5Backend = props.reactDndHtml5Backend.default;
+// const DragDropConnector = (props) => {
+//   const { DragDropContext } = props.reactDnd;
+//   const HTML5Backend = props.reactDndHtml5Backend.default;
 
-  const DndConnectedContents = React.useMemo(() => {
-    if (!dndContext) {
-      dndContext = DragDropContext(HTML5Backend);
-    }
-    return dndContext(Contents);
-  }, [DragDropContext, HTML5Backend]);
+//   const DndConnectedContents = React.useMemo(() => {
+//     if (!dndContext) {
+//       dndContext = DragDropContext(HTML5Backend);
+//     }
+//     return dndContext(Contents);
+//   }, [DragDropContext, HTML5Backend]);
 
-  return <DndConnectedContents {...props} />;
-};
+//   return <DndConnectedContents {...props} />;
+// };
 
 export const __test__ = compose(
   injectIntl,
-  injectLazyLibs(['toastify', 'reactDnd']),
+  injectLazyLibs(['toastify']),
   connect(
     (store, props) => {
       return {
@@ -2250,7 +2307,9 @@ export const __test__ = compose(
         updateRequest: store.content.update,
         objectActions: store.actions.actions.object,
         orderRequest: store.content.order,
-        addableTypes: store.types.types.filter((t) => t.addable),
+        addableTypes: Array.isArray(store.types.types)
+          ? store.types.types.filter((t) => t.addable)
+          : [],
       };
     },
     {
@@ -2293,7 +2352,9 @@ export default compose(
         updateRequest: store.content.update,
         objectActions: store.actions.actions.object,
         orderRequest: store.content.order,
-        addableTypes: store.types.types.filter((t) => t.addable),
+        addableTypes: Array.isArray(store.types.types)
+          ? store.types.types.filter((t) => t.addable)
+          : [],
       };
     },
     {
@@ -2320,5 +2381,5 @@ export default compose(
         await dispatch(listActions(getBaseUrl(location.pathname))),
     },
   ]),
-  injectLazyLibs(['toastify', 'reactDnd', 'reactDndHtml5Backend']),
-)(DragDropConnector);
+  injectLazyLibs(['toastify']),
+)(Contents);

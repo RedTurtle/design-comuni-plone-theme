@@ -1,6 +1,3 @@
-@import './Checkbox.css';
-@import './theme.css';
-
 .react-aria-ListBox {
   display: flex;
   overflow: auto;

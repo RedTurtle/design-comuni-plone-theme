@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { ComponentProps, useRef, useState } from 'react';
 import { DialogTrigger } from 'react-aria-components';
 import { Brain } from '../../helpers/types';
-import { Button, Link, MoreoptionsIcon, PageIcon } from '@plone/components';
+import { Link, MoreoptionsIcon, PageIcon } from '@plone/components';
 import { indexes } from '../../helpers/indexes';
+import { Button } from '../Button';
 import { ItemActionsPopover } from './ItemActionsPopover';
 
 interface Props {
   item: Brain;
   column: keyof typeof indexes | 'title' | '_actions';
+  onMoveToTop: ComponentProps<typeof ItemActionsPopover>['onMoveToTop'];
+  onMoveToBottom: ComponentProps<typeof ItemActionsPopover>['onMoveToBottom'];
+  onCut: ComponentProps<typeof ItemActionsPopover>['onCut'];
+  onCopy: ComponentProps<typeof ItemActionsPopover>['onCopy'];
+  onDelete: ComponentProps<typeof ItemActionsPopover>['onDelete'];
 }
 
-export function ContentsCell({ item, column }: Props) {
+export function ContentsCell({
+  item,
+  column,
+  onMoveToTop,
+  onMoveToBottom,
+  onCut,
+  onCopy,
+  onDelete,
+}: Props) {
+  const [isMoreOptionsOpen, setIsMoreOptionsOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
   if (column === 'title') {
     return (
       <Link
@@ -31,27 +48,55 @@ export function ContentsCell({ item, column }: Props) {
     );
   } else if (column === '_actions') {
     return (
-      <DialogTrigger>
-        <Button aria-label="More options">
+      <>
+        <Button
+          className="react-aria-Button item-actions-trigger"
+          aria-label="More options"
+          onPress={() => setIsMoreOptionsOpen(true)}
+          ref={triggerRef}
+        >
           <MoreoptionsIcon />
         </Button>
         <ItemActionsPopover
+          triggerRef={triggerRef}
+          isOpen={isMoreOptionsOpen}
+          onOpenChange={setIsMoreOptionsOpen}
           editLink={`${item['@id']}/edit`}
           viewLink={item['@id']}
-          onMoveToBottom={async () => {}}
-          onMoveToTop={async () => {}}
-          onCopy={async () => {}}
-          onCut={async () => {}}
-          onDelete={async () => {}}
+          onMoveToBottom={async () => {
+            const res = await onMoveToBottom();
+            setIsMoreOptionsOpen(false);
+            return res;
+          }}
+          onMoveToTop={async () => {
+            const res = await onMoveToTop();
+            setIsMoreOptionsOpen(false);
+            return res;
+          }}
+          onCopy={async () => {
+            const res = await onCopy();
+            setIsMoreOptionsOpen(false);
+            return res;
+          }}
+          onCut={async () => {
+            const res = await onCut();
+            setIsMoreOptionsOpen(false);
+            return res;
+          }}
+          onDelete={async () => {
+            const res = await onDelete();
+            setIsMoreOptionsOpen(false);
+            return res;
+          }}
         />
-      </DialogTrigger>
+      </>
     );
   } else {
     if (indexes[column].type === 'boolean') {
-      return item[column] ? 'Yes' : 'No';
+      return <>{item[column] ? 'Yes' : 'No'}</>;
     } else if (indexes[column].type === 'string') {
       if (column !== 'review_state') {
-        return item[column];
+        return <>{item[column]}</>;
       } else {
         return (
           <div>
@@ -65,13 +110,16 @@ export function ContentsCell({ item, column }: Props) {
     } else if (indexes[column].type === 'date') {
       if (item[column] && item[column] !== 'None') {
         // @ts-ignore TODO fix this, maybe a more strict type for the indexes?
-        return new Date(item[column]).toLocaleDateString();
+        return <>{new Date(item[column]).toLocaleDateString()}</>;
       } else {
-        return 'None';
+        return <>None</>;
       }
     } else if (indexes[column].type === 'array') {
       const value = item[column];
-      return Array.isArray(value) ? value.join(', ') : value;
+      return <>{Array.isArray(value) ? value.join(', ') : value}</>;
+    } else {
+      // TODO do we get here? needed for type checking?
+      return null;
     }
   }
 }

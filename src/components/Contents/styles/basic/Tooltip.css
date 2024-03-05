@@ -1,6 +1,3 @@
-@import './Button.css';
-@import './theme.css';
-
 .react-aria-Tooltip {
   max-width: 150px;
   padding: 2px 8px;

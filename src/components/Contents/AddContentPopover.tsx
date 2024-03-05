@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, ChevronrightIcon, Popover } from '@plone/components';
 
 interface Props {
+  path: string;
   addableTypes: {
     '@id': string;
     id: string;
@@ -9,7 +10,7 @@ interface Props {
   }[];
 }
 
-export const AddContentPopover = ({ addableTypes }: Props) => {
+export const AddContentPopover = ({ path, addableTypes }: Props) => {
   // const page = addableTypes.find((type) => type.id === 'Document');
 
   return (
@@ -17,7 +18,7 @@ export const AddContentPopover = ({ addableTypes }: Props) => {
       <ul className="add-content-list">
         {addableTypes.map((type) => (
           <li key={type.id} className="add-content-list-item">
-            <Link href={type['@id']}>
+            <Link href={`${path}/add?type=${encodeURIComponent(type.id)}`}>
               {type.title}
               <ChevronrightIcon />
             </Link>

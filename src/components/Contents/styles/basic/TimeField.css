@@ -1,7 +1,3 @@
-@import './Form.css';
-@import './Button.css';
-@import './theme.css';
-
 .react-aria-TimeField {
   color: var(--text-color);
 }
