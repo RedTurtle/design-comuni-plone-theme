@@ -44,34 +44,52 @@ const Slide = (props) => {
     appearance,
     appearanceProp,
     block_id,
+    slider,
   } = props;
 
   const handleKeyboardUsers = (e) => {
     const { key, shiftKey } = e;
+
     if (key === 'Tab') {
-      e.preventDefault();
-      e.stopPropagation();
+      const slide_selector = `#slider_${block_id} .slick-slide[data-index="${index}"]`;
+
+      const focusableSlideElements = document.querySelectorAll(
+        `${slide_selector} a, ${slide_selector} button, ${slide_selector} [tabindex="0"]`,
+      );
+      const isFirstSlideFocusableElement =
+        e.target === focusableSlideElements[0];
+      const isLastSlideFocusableElement =
+        e.target === focusableSlideElements[focusableSlideElements.length - 1];
+
+      if (
+        (isFirstSlideFocusableElement && shiftKey) ||
+        (isLastSlideFocusableElement && !shiftKey)
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        //shift+tab ed è il primo elemento focusabile nella slide, oppure tab ed è l'ultimo elemento focusabile nella slide
+        //go to next/prev slide or to next/prev button.
+      } else {
+        return; //continue doing default bhv of Tab key, to focus next focusable element inside slide.
+      }
 
       // Keeping auto pause off for now
       // if (userAutoplay) setUserAutoplay(false);
       // slider.current.slickPause();
-      let elementToFocus;
-
+      console.log(index, prevIndex, nextIndex);
       if (shiftKey) {
-        elementToFocus =
-          prevIndex != null
-            ? document.querySelector(
-                `#slider_${block_id} .slick-slide[data-index="${prevIndex}"]`,
-              )
-            : document.getElementById('sliderPrevArrow_' + block_id);
-      } else
-        elementToFocus =
-          nextIndex != null
-            ? document.querySelector(
-                `#slider_${block_id} .slick-slide[data-index="${nextIndex}"]`,
-              )
-            : document.getElementById('sliderNextArrow_' + block_id);
-      elementToFocus.focus();
+        if (prevIndex != null) {
+          slider.current.slickGoTo(prevIndex);
+        } else {
+          document.getElementById('sliderPrevArrow_' + block_id).focus();
+        }
+      } else {
+        if (nextIndex != null) {
+          slider.current.slickGoTo(nextIndex);
+        } else {
+          document.getElementById('sliderNextArrow_' + block_id).focus();
+        }
+      }
     }
   };
 
@@ -81,13 +99,16 @@ const Slide = (props) => {
   const SlideItemAppearance = appearances[appearance] ?? appearances['default'];
 
   return (
-    <SingleSlideWrapper key={item['@id'] + index} index={index}>
-      <div className={'slide-wrapper'}>
+    <SingleSlideWrapper
+      key={item['@id'] + index}
+      index={index}
+      onKeyDown={handleKeyboardUsers}
+    >
+      <div className={'slide-wrapper'} role="presentation">
         <SlideItemAppearance
           {...props}
           {...appearanceProp}
           messages={messages}
-          handleKeyboardUsers={handleKeyboardUsers}
         />
       </div>
     </SingleSlideWrapper>
@@ -121,7 +142,7 @@ const SliderTemplate = ({
       ? items.length
       : parseInt(slidesToShow);
   const Slider = reactSlick.default;
-  const { slider, focusNext, SliderNextArrow, SliderPrevArrow } = useSlider(
+  const { slider, focusSlide, SliderNextArrow, SliderPrevArrow } = useSlider(
     userAutoplay,
     block_id,
   );
@@ -197,11 +218,11 @@ const SliderTemplate = ({
     focusOnSelect: false,
     draggable: true,
     accessibility: true,
-    nextArrow: <SliderNextArrow intl={intl} focusNext={focusNext} />,
-    prevArrow: <SliderPrevArrow intl={intl} focusNext={focusNext} />,
+    nextArrow: <SliderNextArrow intl={intl} />,
+    prevArrow: <SliderPrevArrow intl={intl} />,
     appendDots: renderCustomDots,
     // Custom handling of focus for a11y
-    afterChange: focusNext,
+    afterChange: focusSlide,
     responsive: [
       {
         breakpoint: 980,
@@ -254,8 +275,8 @@ const SliderTemplate = ({
                   <Slide
                     image={image}
                     index={index}
-                    nextIndex={index + 1 === items.length ? null : index + 1}
-                    prevIndex={index - 1 === -1 ? null : index - 1}
+                    nextIndex={index < items.length ? index + 1 : null}
+                    prevIndex={index > 0 ? index - 1 : null}
                     full_width={full_width}
                     item={item}
                     show_image_title={show_image_title}

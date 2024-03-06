@@ -25,7 +25,8 @@ export const getCategory = (item, show_type, show_section, props) => {
 export const useSlider = (userAutoplay, block_id) => {
   const slider = useRef(null);
   const sliderContainer = document.getElementById('outside-slider-' + block_id);
-  const sliderElement = document.querySelector(`#slider_${block_id}`);
+  const sliderElementSelector = `#slider_${block_id}`;
+  const sliderElement = document.querySelector(sliderElementSelector);
   const onIntersection = (entries, opt) => {
     entries.forEach((entry) =>
       entry.target.classList.toggle('visible', entry.isIntersecting),
@@ -42,7 +43,7 @@ export const useSlider = (userAutoplay, block_id) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const focusNext = (currentSlide) => {
+  const focusSlide = (slideIndex) => {
     if (!sliderElement) return;
     const sliderIsVisible = sliderContainer.classList.contains('visible');
 
@@ -50,8 +51,9 @@ export const useSlider = (userAutoplay, block_id) => {
       slider.current.slickPause();
       return;
     }
-    const slide = sliderElement.querySelector(
-      `#slider_${block_id} .slick-slide[data-index="${currentSlide}"]`,
+
+    const slide = document.querySelector(
+      `${sliderElementSelector} .slick-slide[data-index="${slideIndex}"] .it-single-slide-wrapper`,
     );
 
     if (userAutoplay && !slide) return;
@@ -59,15 +61,8 @@ export const useSlider = (userAutoplay, block_id) => {
     if (!slide || document.activeElement === slide) {
       return;
     }
-    // eslint-disable-next-line no-unused-expressions
-    else if (
-      // if the focus was already on a slide, move it to the current one
-      Array.from(
-        document.querySelectorAll(`#slider_${block_id} .slick-slide`),
-      ).some((el) => el.contains(document.activeElement))
-    ) {
-      slide.focus();
-    }
+
+    slide.focus();
   };
 
   const visibleSlide = (selector) => {
@@ -94,7 +89,7 @@ export const useSlider = (userAutoplay, block_id) => {
         e.preventDefault();
 
         const slide = visibleSlide(
-          `#slider_${block_id} .slick-slide[data-index="${currentSlide}"]`,
+          `${sliderElementSelector} .slick-slide[data-index="${currentSlide}"]`,
         );
         slide && slide.focus();
       }
@@ -113,8 +108,7 @@ export const useSlider = (userAutoplay, block_id) => {
 
   const SliderPrevArrow = (props) => {
     // Custom handling of focus for a11y
-    const { className, style, onClick, focusNext, currentSlide, slideCount } =
-      props;
+    const { className, style, onClick, currentSlide, slideCount } = props;
     const handleClick = (options) => {
       onClick(options, false);
     };
@@ -125,11 +119,11 @@ export const useSlider = (userAutoplay, block_id) => {
 
         if (currentSlide < slideCount) {
           const slide = visibleSlide(
-            `#slider_${block_id} .slick-slide[data-index="${currentSlide}"]`,
+            `${sliderElementSelector} .slick-slide[data-index="${currentSlide}"]`,
           );
 
           slide && slide.focus();
-        } else focusNext(0, block_id);
+        }
       }
     };
     return (
@@ -145,7 +139,7 @@ export const useSlider = (userAutoplay, block_id) => {
 
   return {
     slider,
-    focusNext,
+    focusSlide,
     visibleSlide,
     SliderNextArrow,
     SliderPrevArrow,

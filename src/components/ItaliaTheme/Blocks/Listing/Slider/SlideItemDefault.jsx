@@ -14,7 +14,6 @@ const SlideItemDefault = ({
   userAutoplay,
   slider,
   messages,
-  handleKeyboardUsers,
 }) => {
   return (
     <React.Fragment>
@@ -31,7 +30,6 @@ const SlideItemDefault = ({
             tabIndex={0}
             data-slide={index}
             className={'slide-link no-external-if-link'}
-            onKeyDown={handleKeyboardUsers}
           >
             {full_width ? (
               <Container>
