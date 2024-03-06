@@ -11,7 +11,7 @@ import {
   CarouselWrapper,
   ButtonPlayPause,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { useSlider } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
+import { useSlider } from 'design-comuni-plone-theme/components/ItaliaTheme/Slider/slider';
 import React, { useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -20,8 +20,8 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
-  viewImage: {
-    id: 'viewImage',
+  carouselItemAriaLabel: {
+    id: 'carousel-item-aria-label',
     defaultMessage:
       'Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra',
   },
@@ -36,6 +36,7 @@ const messages = defineMessages({
 });
 
 const Slide = (props) => {
+  const intl = useIntl();
   const { item, index, appearance, appearanceProp, onKeyDown } = props;
 
   const appearances = config.blocks.blocksConfig.listing.variations.filter(
@@ -48,13 +49,10 @@ const Slide = (props) => {
       key={item['@id'] + index}
       index={index}
       onKeyDown={onKeyDown}
+      aria-label={intl.formatMessage(messages.carouselItemAriaLabel)}
     >
       <div className={'slide-wrapper'} role="presentation">
-        <SlideItemAppearance
-          {...props}
-          {...appearanceProp}
-          messages={messages}
-        />
+        <SlideItemAppearance {...props} {...appearanceProp} />
       </div>
     </SingleSlideWrapper>
   );
@@ -93,7 +91,7 @@ const SliderTemplate = ({
     SliderNextArrow,
     SliderPrevArrow,
     handleSlideKeydown,
-  } = useSlider(userAutoplay, block_id);
+  } = useSlider(userAutoplay, setUserAutoplay, block_id);
 
   const toggleAutoplay = () => {
     if (!slider?.current) return;
@@ -219,19 +217,16 @@ const SliderTemplate = ({
                   sizes: `max-width(991px) 620px, ${1300 / nSlidesToShow}px`,
                   critical: true,
                 });
-                const nextIndex = index < items.length ? index + 1 : null;
+                const nextIndex = index < items.length - 1 ? index + 1 : null;
                 const prevIndex = index > 0 ? index - 1 : null;
                 return (
                   <Slide
                     image={image}
                     index={index}
-                    nextIndex={index < items.length ? index + 1 : null}
-                    prevIndex={index > 0 ? index - 1 : null}
                     full_width={full_width}
                     item={item}
                     show_image_title={show_image_title}
                     intl={intl}
-                    setUserAutoplay={setUserAutoplay}
                     userAutoplay={userAutoplay}
                     slider={slider}
                     appearance={slide_appearance}

@@ -124,6 +124,7 @@ const CardWithImageDefault = (props) => {
                 item={!isEditMode ? item : null}
                 href={isEditMode ? '#' : ''}
                 data-element={id_lighthouse}
+                tabIndex={0}
               >
                 {item.title || item.id}
               </UniversalLink>

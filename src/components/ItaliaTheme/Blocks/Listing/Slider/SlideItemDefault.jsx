@@ -13,7 +13,6 @@ const SlideItemDefault = ({
   setUserAutoplay,
   userAutoplay,
   slider,
-  messages,
 }) => {
   return (
     <React.Fragment>
@@ -26,7 +25,6 @@ const SlideItemDefault = ({
         <div className="slide-title">
           <UniversalLink
             item={item}
-            title={intl.formatMessage(messages.viewImage)}
             tabIndex={0}
             data-slide={index}
             className={'slide-link no-external-if-link'}

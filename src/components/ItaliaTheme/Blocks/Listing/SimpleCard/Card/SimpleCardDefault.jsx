@@ -119,6 +119,7 @@ const SimpleCardDefault = (props) => {
             item={!isEditMode ? item : null}
             href={isEditMode ? '#' : null}
             data-element={id_lighthouse}
+            tabIndex={0}
           >
             {itemTitle}
           </UniversalLink>

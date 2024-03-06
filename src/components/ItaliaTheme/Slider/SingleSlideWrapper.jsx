@@ -6,7 +6,8 @@ const messages = defineMessages({
     defaultMessage: 'Slide',
   },
 });
-const SingleSlideWrapper = ({ className, key, index, children, onKeyDown }) => {
+const SingleSlideWrapper = (props) => {
+  const { className, key, index, children, onKeyDown } = props;
   const intl = useIntl();
   const wrapperKey = key ?? 'slide-wrapper-' + index;
 
@@ -15,12 +16,13 @@ const SingleSlideWrapper = ({ className, key, index, children, onKeyDown }) => {
       className={`it-single-slide-wrapper ${className ?? ''}`}
       key={wrapperKey}
       data-slide={index}
-      role="button"
-      aria-roledescription="group"
+      role="group"
       aria-label={
         intl.formatMessage(messages.carouselSlide) +
         ' ' +
-        (index ? index + 1 : '')
+        (index ? index + 1 : '') +
+        ' - ' +
+        (props['aria-label'] ?? '')
       }
       onKeyDown={onKeyDown}
       onClick={(e) => {
