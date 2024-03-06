@@ -2973,12 +2973,12 @@ msgstr "th"
 #: overrideTranslations
 # defaultMessage: giorno feriale
 msgid "rrule_weekday"
-msgstr ""
+msgstr "weekday"
 
 #: overrideTranslations
 # defaultMessage: giorni feriali
 msgid "rrule_weekdays"
-msgstr ""
+msgstr "weekdays"
 
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithImageRssTemplate
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate
