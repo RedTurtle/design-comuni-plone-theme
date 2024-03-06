@@ -10,7 +10,7 @@ import ViewBlock from './Block/ViewBlock';
 import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
 import { flattenToAppURL, addAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
-import { richTextHasContent } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { checkRedraftHasContent } from 'design-comuni-plone-theme/helpers';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
 
@@ -47,7 +47,7 @@ const AccordionView = ({ data, block }) => {
           )}
           <Container className={`px-md-4 ${data.bg_color}`}>
             <div className="block-header">
-              {richTextHasContent(data.title) && (
+              {checkRedraftHasContent(data.title) && (
                 <div className="title">
                   {redraft(
                     data.title,
@@ -56,7 +56,7 @@ const AccordionView = ({ data, block }) => {
                   )}
                 </div>
               )}
-              {richTextHasContent(data.description) && (
+              {checkRedraftHasContent(data.description) && (
                 <div className="description">
                   {redraft(
                     data.description,
