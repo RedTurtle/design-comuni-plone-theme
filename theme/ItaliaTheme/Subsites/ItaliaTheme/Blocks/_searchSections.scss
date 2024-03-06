@@ -32,6 +32,9 @@
             }
           }
         }
+        .search-section-title {
+          color: #fff;
+        }
         @if $subsite-light-theme {
           button.rounded-right svg {
             fill: $body-color !important;
