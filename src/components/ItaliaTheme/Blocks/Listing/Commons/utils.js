@@ -137,11 +137,58 @@ export const useSlider = (userAutoplay, block_id) => {
     );
   };
 
+  const handleSlideKeydown = (index, prevIndex, nextIndex) => (e) => {
+    const { key, shiftKey } = e;
+
+    if (key === 'Tab') {
+      const slide_selector = `#slider_${block_id} .slick-slide[data-index="${index}"]`;
+
+      const focusableSlideElements = document.querySelectorAll(
+        `${slide_selector} a, ${slide_selector} button, ${slide_selector} [tabindex="0"]`,
+      );
+      const isFirstSlideFocusableElement =
+        e.target === focusableSlideElements[0];
+      const isLastSlideFocusableElement =
+        e.target === focusableSlideElements[focusableSlideElements.length - 1];
+
+      if (
+        (isFirstSlideFocusableElement && shiftKey) ||
+        (isLastSlideFocusableElement && !shiftKey)
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        //shift+tab ed è il primo elemento focusabile nella slide, oppure tab ed è l'ultimo elemento focusabile nella slide
+        //go to next/prev slide or to next/prev button.
+      } else {
+        return; //continue doing default bhv of Tab key, to focus next focusable element inside slide.
+      }
+
+      // Keeping auto pause off for now
+      // if (userAutoplay) setUserAutoplay(false);
+      // slider.current.slickPause();
+
+      if (shiftKey) {
+        if (prevIndex != null) {
+          slider.current.slickGoTo(prevIndex);
+        } else {
+          document.getElementById('sliderPrevArrow_' + block_id).focus();
+        }
+      } else {
+        if (nextIndex != null) {
+          slider.current.slickGoTo(nextIndex);
+        } else {
+          document.getElementById('sliderNextArrow_' + block_id).focus();
+        }
+      }
+    }
+  };
+
   return {
     slider,
     focusSlide,
     visibleSlide,
     SliderNextArrow,
     SliderPrevArrow,
+    handleSlideKeydown,
   };
 };

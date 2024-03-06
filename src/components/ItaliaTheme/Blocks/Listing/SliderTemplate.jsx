@@ -36,62 +36,7 @@ const messages = defineMessages({
 });
 
 const Slide = (props) => {
-  const {
-    item,
-    index,
-    nextIndex,
-    prevIndex,
-    appearance,
-    appearanceProp,
-    block_id,
-    slider,
-  } = props;
-
-  const handleKeyboardUsers = (e) => {
-    const { key, shiftKey } = e;
-
-    if (key === 'Tab') {
-      const slide_selector = `#slider_${block_id} .slick-slide[data-index="${index}"]`;
-
-      const focusableSlideElements = document.querySelectorAll(
-        `${slide_selector} a, ${slide_selector} button, ${slide_selector} [tabindex="0"]`,
-      );
-      const isFirstSlideFocusableElement =
-        e.target === focusableSlideElements[0];
-      const isLastSlideFocusableElement =
-        e.target === focusableSlideElements[focusableSlideElements.length - 1];
-
-      if (
-        (isFirstSlideFocusableElement && shiftKey) ||
-        (isLastSlideFocusableElement && !shiftKey)
-      ) {
-        e.preventDefault();
-        e.stopPropagation();
-        //shift+tab ed è il primo elemento focusabile nella slide, oppure tab ed è l'ultimo elemento focusabile nella slide
-        //go to next/prev slide or to next/prev button.
-      } else {
-        return; //continue doing default bhv of Tab key, to focus next focusable element inside slide.
-      }
-
-      // Keeping auto pause off for now
-      // if (userAutoplay) setUserAutoplay(false);
-      // slider.current.slickPause();
-      console.log(index, prevIndex, nextIndex);
-      if (shiftKey) {
-        if (prevIndex != null) {
-          slider.current.slickGoTo(prevIndex);
-        } else {
-          document.getElementById('sliderPrevArrow_' + block_id).focus();
-        }
-      } else {
-        if (nextIndex != null) {
-          slider.current.slickGoTo(nextIndex);
-        } else {
-          document.getElementById('sliderNextArrow_' + block_id).focus();
-        }
-      }
-    }
-  };
+  const { item, index, appearance, appearanceProp, onKeyDown } = props;
 
   const appearances = config.blocks.blocksConfig.listing.variations.filter(
     (v) => v.id === 'slider',
@@ -102,7 +47,7 @@ const Slide = (props) => {
     <SingleSlideWrapper
       key={item['@id'] + index}
       index={index}
-      onKeyDown={handleKeyboardUsers}
+      onKeyDown={onKeyDown}
     >
       <div className={'slide-wrapper'} role="presentation">
         <SlideItemAppearance
@@ -142,10 +87,13 @@ const SliderTemplate = ({
       ? items.length
       : parseInt(slidesToShow);
   const Slider = reactSlick.default;
-  const { slider, focusSlide, SliderNextArrow, SliderPrevArrow } = useSlider(
-    userAutoplay,
-    block_id,
-  );
+  const {
+    slider,
+    focusSlide,
+    SliderNextArrow,
+    SliderPrevArrow,
+    handleSlideKeydown,
+  } = useSlider(userAutoplay, block_id);
 
   const toggleAutoplay = () => {
     if (!slider?.current) return;
@@ -271,6 +219,8 @@ const SliderTemplate = ({
                   sizes: `max-width(991px) 620px, ${1300 / nSlidesToShow}px`,
                   critical: true,
                 });
+                const nextIndex = index < items.length ? index + 1 : null;
+                const prevIndex = index > 0 ? index - 1 : null;
                 return (
                   <Slide
                     image={image}
@@ -287,6 +237,7 @@ const SliderTemplate = ({
                     appearance={slide_appearance}
                     appearanceProp={otherProps}
                     block_id={block_id}
+                    onKeyDown={handleSlideKeydown(index, prevIndex, nextIndex)}
                   />
                 );
               })}
