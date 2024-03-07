@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- E' possibile aggiungere un testo alternativo per l'immagine del blocco Card con Immagine.
+
 ## Versione 11.6.1 (06/03/2024)
 
 ### Fix
@@ -52,6 +58,7 @@
 ### Fix
 
 - Le icone social nel menu laterale mobile sono tutte dello stesso colore.
+
 ### Migliorie
 
 - Nel blocco form è stata aggiunta una legenda per i campi obbligatori.
