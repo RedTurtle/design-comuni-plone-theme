@@ -43,13 +43,22 @@ const Slide = (props) => {
     (v) => v.id === 'slider',
   )[0]?.appearance;
   const SlideItemAppearance = appearances[appearance] ?? appearances['default'];
-
+  console.log(
+    intl.formatMessage(messages.carouselItemAriaLabel) +
+      (index + 1) +
+      props['aria-label']
+      ? ' - ' + props['aria-label']
+      : '',
+  );
   return (
     <SingleSlideWrapper
       key={item['@id'] + index}
       index={index}
       onKeyDown={onKeyDown}
-      aria-label={intl.formatMessage(messages.carouselItemAriaLabel)}
+      aria-label={
+        (props['aria-label'] ? props['aria-label'] + ' - ' : '') +
+        intl.formatMessage(messages.carouselItemAriaLabel)
+      }
     >
       <div className={'slide-wrapper'} role="presentation">
         <SlideItemAppearance {...props} {...appearanceProp} />
@@ -226,12 +235,16 @@ const SliderTemplate = ({
                     full_width={full_width}
                     item={item}
                     show_image_title={show_image_title}
-                    intl={intl}
                     userAutoplay={userAutoplay}
                     slider={slider}
                     appearance={slide_appearance}
                     appearanceProp={otherProps}
                     block_id={block_id}
+                    aria-label={
+                      !show_image_title && slide_appearance === 'default'
+                        ? item.title
+                        : null
+                    }
                     onKeyDown={handleSlideKeydown(index, prevIndex, nextIndex)}
                   />
                 );

@@ -32,7 +32,7 @@ export const useSlider = (userAutoplay, setUserAutoplay, block_id) => {
 
   const focusSlide = (slideIndex) => {
     if (!sliderElement) return;
-    const sliderIsVisible = sliderContainer.classList.contains('visible');
+    const sliderIsVisible = sliderContainer?.classList?.contains('visible');
 
     if (!sliderIsVisible) {
       setAutoplay(false);
