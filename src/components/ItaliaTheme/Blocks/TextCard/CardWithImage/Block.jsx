@@ -179,7 +179,7 @@ const Block = ({
                     data?.image,
                     hasImage,
                     data?.sizeNatural,
-                    data.altText,
+                    data?.altText,
                   )}
                 </Col>
                 <div
