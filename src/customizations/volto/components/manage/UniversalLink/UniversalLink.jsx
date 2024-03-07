@@ -22,13 +22,6 @@ import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import config from '@plone/volto/registry';
 
-const messages = {
-  externalLink: {
-    id: 'external_link',
-    defaultMessage: 'Link esterno',
-  },
-};
-
 const UniversalLink = ({
   href,
   item = null,
