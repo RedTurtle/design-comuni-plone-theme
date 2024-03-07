@@ -43,13 +43,7 @@ const Slide = (props) => {
     (v) => v.id === 'slider',
   )[0]?.appearance;
   const SlideItemAppearance = appearances[appearance] ?? appearances['default'];
-  console.log(
-    intl.formatMessage(messages.carouselItemAriaLabel) +
-      (index + 1) +
-      props['aria-label']
-      ? ' - ' + props['aria-label']
-      : '',
-  );
+
   return (
     <SingleSlideWrapper
       key={item['@id'] + index}
