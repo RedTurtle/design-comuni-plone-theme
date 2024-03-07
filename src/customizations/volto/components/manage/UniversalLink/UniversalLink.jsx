@@ -131,7 +131,6 @@ const UniversalLink = ({
               title={title}
               size="xs"
               className="ms-1 align-sub external-link"
-              altText={title || intl.formatMessage(messages.externalLink)}
             />
           )}
       </a>

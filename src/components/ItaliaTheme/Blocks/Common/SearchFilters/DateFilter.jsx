@@ -33,6 +33,10 @@ const messages = defineMessages({
     defaultMessage:
       'Interagisci con il calendario e seleziona le date di inizio e/o fine',
   },
+  dateInterval: {
+    id: 'dateRangePicker_dateInterval',
+    defaultMessage: 'Intervallo date',
+  },
   clearDate: {
     id: 'dateRangePicker_clearDate',
     defaultMessage: 'Cancella la data',
@@ -194,7 +198,11 @@ const DateFilter = (props) => {
 
   const customArrowIcon = (props) => {
     return (
-      <Icon icon="it-arrow-right" color="white" altText="Intervallo date" />
+      <Icon
+        icon="it-arrow-right"
+        color="white"
+        title={intl.formatMessage(messages.dateInterval)}
+      />
     );
   };
 
@@ -203,7 +211,7 @@ const DateFilter = (props) => {
       <Icon
         icon="it-close"
         color="white"
-        altText={intl.formatMessage(messages.clearDates)}
+        title={intl.formatMessage(messages.clearDates)}
       />
     );
   };

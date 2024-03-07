@@ -11,8 +11,7 @@ import XTwitterSVG from './svg/XTwitterSVG';
 import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const Icon = (props) => {
-  const { icon, className, color, size, padding, title, altText, ...rest } =
-    props;
+  const { icon, className, color, size, padding, title, ...rest } = props;
   if (icon) {
     const classes = classNames(
       'icon',
@@ -39,7 +38,7 @@ const Icon = (props) => {
         <FontAwesomeIcon
           icon={parts}
           className={`fal ${classes}`}
-          socialTitle={altText}
+          title={title}
           {...rest}
         />
       );
@@ -48,7 +47,7 @@ const Icon = (props) => {
         <FontAwesomeIcon
           icon={icon}
           className={`fal ${classes}`}
-          socialTitle={altText}
+          title={title}
           {...rest}
         />
       );

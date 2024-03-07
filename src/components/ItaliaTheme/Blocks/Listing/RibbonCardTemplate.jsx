@@ -119,7 +119,7 @@ const RibbonCardTemplate = (props) => {
                       {icon && (
                         <Icon
                           icon={icon}
-                          altText={intl.formatMessage(messages.argumentIcon, {
+                          title={intl.formatMessage(messages.argumentIcon, {
                             type: category || item.design_italia_meta_type,
                           })}
                         />

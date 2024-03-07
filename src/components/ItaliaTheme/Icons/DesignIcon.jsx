@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -16,9 +17,10 @@ const defaultProps = {
   padding: false,
 };
 
-const Icon = ({ icon, title, className, size, altText }) => {
+const Icon = ({ icon, title, className, size }) => {
   const ImportedIconRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const iconID = useMemo(() => uuid(), []);
 
   useEffect(() => {
     setLoading(true);
@@ -50,10 +52,10 @@ const Icon = ({ icon, title, className, size, altText }) => {
         aria-hidden="true"
         dangerouslySetInnerHTML={{
           __html: title
-            ? `<title>${title}</title>${name.content}`
+            ? `<title id="${iconID}">${title}</title>${name.content}`
             : name.content,
         }}
-        alt={altText}
+        aria-labelledby={iconID}
       />
     );
   }

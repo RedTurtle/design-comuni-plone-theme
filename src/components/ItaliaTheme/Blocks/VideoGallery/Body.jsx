@@ -110,7 +110,7 @@ const Body = ({ data, children, nItems = 0, reactSlick }) => {
               color="primary"
               icon="it-youtube"
               className="me-2"
-              altText="YouTube"
+              title="YouTube"
             />
             {data.channel_link ? (
               <UniversalLink

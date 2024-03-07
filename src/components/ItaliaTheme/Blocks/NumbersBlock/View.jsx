@@ -51,13 +51,13 @@ const NumbersView = ({ data, block }) => {
                   {(data.icon1 || data.icon2 || data.icon3) && (
                     <div className="icons">
                       {data.icon1?.length > 0 && (
-                        <Icon icon={data.icon1} altText={data.icon1} />
+                        <Icon icon={data.icon1} title={data.icon1} />
                       )}
                       {data.icon2?.length > 0 && (
-                        <Icon icon={data.icon2} altText={data.icon2} />
+                        <Icon icon={data.icon2} title={data.icon2} />
                       )}
                       {data.icon3?.length > 0 && (
-                        <Icon icon={data.icon3} altText={data.icon3} />
+                        <Icon icon={data.icon3} title={data.icon3} />
                       )}
                     </div>
                   )}

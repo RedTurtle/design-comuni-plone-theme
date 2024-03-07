@@ -19,7 +19,7 @@ const SectionIcon = ({ section, iconProps, title }) => {
 
   const icon = section_icons[section_name];
 
-  return icon ? <Icon icon={icon} {...iconProps} altText={title} /> : null;
+  return icon ? <Icon icon={icon} {...iconProps} title={title} /> : null;
 };
 
 export default SectionIcon;

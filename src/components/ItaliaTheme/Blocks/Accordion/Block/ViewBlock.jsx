@@ -40,7 +40,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
               color="primary"
               icon={isOpen ? 'it-minus' : 'it-plus'}
               padding={false}
-              altText="toggle"
+              title="toggle"
             />
 
             {redraft(
@@ -72,7 +72,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
                 {data.linkMoreTitle || intl.formatMessage(messages.vedi)}
                 <Icon
                   icon="it-arrow-right"
-                  altText={intl.formatMessage(messages.vedi)}
+                  title={intl.formatMessage(messages.vedi)}
                 />
               </UniversalLink>
             </div>

@@ -65,7 +65,7 @@ const Body = ({ block, sections }) => {
                 icon="it-search"
                 padding={false}
                 size="sm"
-                altText={intl.formatMessage(messages.doSearch)}
+                title={intl.formatMessage(messages.doSearch)}
               />
             </button>
             <input

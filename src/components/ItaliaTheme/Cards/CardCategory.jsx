@@ -39,7 +39,7 @@ const CardCategory = (props) => {
     <span className="text">{children}</span>
   );
   const categoryIcon = iconName && (
-    <Icon icon={iconName} altText={intl.formatMessage(messages.categoryIcon)} />
+    <Icon icon={iconName} title={intl.formatMessage(messages.categoryIcon)} />
   );
 
   return (

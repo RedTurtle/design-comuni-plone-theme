@@ -81,11 +81,7 @@ function NextArrow(props) {
       onKeyDown={handleKeyboardUsers}
       id="sliderNextArrow"
     >
-      <Icon
-        icon="chevron-right"
-        key="chevron-right"
-        altText="sliderNextArrow"
-      />
+      <Icon icon="chevron-right" key="chevron-right" title="sliderNextArrow" />
       <span class="visually-hidden">
         {intl.formatMessage(messages.successivo)}
       </span>
@@ -133,7 +129,7 @@ function PrevArrow(props) {
       <Icon
         icon="chevron-left"
         key="chevron-left-prev"
-        altText="sliderPrevArrow"
+        title="sliderPrevArrow"
       />
       <span class="visually-hidden">
         {intl.formatMessage(messages.precedente)}
@@ -197,7 +193,7 @@ const Slide = ({
                   <Icon
                     icon="arrow-right"
                     key="arrow-right-fw"
-                    altText="arrow-right"
+                    title="arrow-right"
                   />
                 </Container>
               ) : (
@@ -206,7 +202,7 @@ const Slide = ({
                   <Icon
                     icon="arrow-right"
                     key="arrow-right"
-                    altText="arrow-right"
+                    title="arrow-right"
                   />
                 </>
               )}
@@ -360,7 +356,7 @@ const SliderTemplate = ({
                   <Icon
                     key={userAutoplay ? 'pause' : 'play'}
                     icon={userAutoplay ? 'pause' : 'play'}
-                    altText="autoplay"
+                    title="autoplay"
                   />
                   <span>{userAutoplay ? 'pause' : 'play'}</span>
                 </button>

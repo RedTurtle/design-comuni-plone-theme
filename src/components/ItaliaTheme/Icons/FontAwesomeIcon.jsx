@@ -2,11 +2,13 @@
  * Icon component.
  * @module components/ItaliaTheme/Icons/SectionIcon
  */
-import React from 'react';
+import React, { useMemo } from 'react';
+import { v4 as uuid } from 'uuid';
 import { fontAwesomeAliases } from 'design-comuni-plone-theme/helpers/index';
 
 const FontAwesomeIcon = (props) => {
-  const { className, icon, prefix, title, socialTitle } = props;
+  const { className, icon, prefix, title } = props;
+  const iconID = useMemo(() => uuid(), []);
   const [loadedIcon, setLoadedIcon] = React.useState({
     module: null,
     iconName: '',
@@ -70,10 +72,10 @@ const FontAwesomeIcon = (props) => {
       className={`icon fa-icon ${className ?? ''}`}
       dangerouslySetInnerHTML={{
         __html: title
-          ? `<title>${title}</title>${loadedIcon.module.content}`
+          ? `<title id="${iconID}">${title}</title>${loadedIcon.module.content}`
           : loadedIcon.module.content,
       }}
-      alt={socialTitle || title}
+      aria-labelledby={iconID}
     />
   ) : icon ? (
     <span className={`icon fa-icon placeholder ${className ?? ''}`}></span>
