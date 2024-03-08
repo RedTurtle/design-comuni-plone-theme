@@ -10,6 +10,7 @@
 @import './Contents.css';
 
 .view-contentsview .it-header-wrapper,
-.view-contentsview #briciole {
+.view-contentsview #briciole,
+.view-contentsview .gdpr-privacy-show-banner {
   display: none;
 }

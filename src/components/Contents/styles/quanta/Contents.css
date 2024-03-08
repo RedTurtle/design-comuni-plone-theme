@@ -1,4 +1,10 @@
 .folder-contents {
+  #content {
+    padding: 0.5rem 2rem 6rem;
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+
   .topbar {
     display: flex;
     align-items: center;
@@ -6,8 +12,8 @@
   }
 
   .search-input {
-    margin-inline-end: 3.75rem;
-    margin-inline-start: auto;
+    /* margin-inline-end: 3.75rem; */
+    margin-inline-start: 1.5rem;
   }
 
   .contents-table {
@@ -74,10 +80,22 @@
   }
 }
 
+.contents-actions,
 .item-actions-trigger {
   --border-color: transparent;
   --border-color-pressed: transparent;
+  --border-color-disabled: transparent;
   padding: 0;
+}
+
+.contents-actions {
+  margin-inline-start: auto;
+}
+
+.contents-action-trigger {
+  &.delete {
+    --text-color: var(--quanta-candy);
+  }
 }
 
 .item-actions-list {
