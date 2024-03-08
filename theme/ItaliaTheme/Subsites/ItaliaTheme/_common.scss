@@ -1,6 +1,6 @@
 @use '../all_variables' as *;
 
-@mixin common($subsite-tertiary, $subsite-tertiary-text) {
+@mixin common($subsite-tertiary, $subsite-tertiary-text, $subsite-link-color) {
   .btn-tertiary {
     @include button-variant($subsite-tertiary, $subsite-tertiary-text);
 
@@ -22,5 +22,9 @@
 
   .btn-outline-tertiary {
     @include button-outline-variant($subsite-tertiary);
+  }
+  // simple list bullet color
+  .simple-list-template ul li {
+    color: $subsite-link-color;
   }
 }
