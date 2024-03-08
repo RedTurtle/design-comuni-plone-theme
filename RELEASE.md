@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- I bottoni per filtro percorso nel blocco Elenco hanno ora un contrasto corretto all'hover del mouse.
+
 ## Versione 7.25.3 (07/03/2024)
 
 ### Migliorie
