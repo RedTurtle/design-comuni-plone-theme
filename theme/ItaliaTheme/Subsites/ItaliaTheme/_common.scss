@@ -24,7 +24,7 @@
     @include button-outline-variant($subsite-tertiary);
   }
   // simple list bullet color
-  .simple-list-template ul li {
-    color: $subsite-link-color;
+  .simple-list-template ul li::marker {
+    color: $subsite-tertiary;
   }
 }
