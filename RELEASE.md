@@ -39,6 +39,7 @@
 ### Fix
 
 - Quando si clicca sul bottone di login da una pagina specifica, dopo il login si viene reindirizzati alla pagina di provenienza.
+- Sistemati i colori per i punti elenco per i sotto siti
 
 ## Versione 7.25.2 (04/03/2024)
 
