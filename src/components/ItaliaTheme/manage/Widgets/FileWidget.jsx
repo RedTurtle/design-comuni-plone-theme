@@ -56,8 +56,17 @@ const messages = defineMessages({
  * @returns {string} Markup of the component.
  */
 const FileWidget = (props) => {
-  const { id, value, onChange, label, onEdit, infoText, required, invalid } =
-    props;
+  const {
+    id,
+    value,
+    onChange,
+    label,
+    onEdit,
+    infoText,
+    required,
+    invalid,
+    validationText,
+  } = props;
   const [isImage, setIsImage] = React.useState(false);
   const intl = useIntl();
 
@@ -189,6 +198,11 @@ const FileWidget = (props) => {
           </div>
         )}
       </div>
+      {validationText && (
+        <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+          {validationText}
+        </div>
+      )}
     </div>
   );
 };

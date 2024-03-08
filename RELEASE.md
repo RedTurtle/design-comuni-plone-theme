@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Migliorie
+
+- Nel blocco form, se in fase di compilazione ci sono degli errori, viene mostrato un messaggio di errore specifico per ogni campo con errori.
+
 ## Versione 11.6.1 (06/03/2024)
 
 ### Fix

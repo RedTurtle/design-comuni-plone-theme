@@ -42,6 +42,7 @@ const Field = ({
   valid,
   disabled = false,
   formHasErrors = false,
+  errorMessage,
   id,
   reactSelect,
 }) => {
@@ -69,6 +70,7 @@ const Field = ({
           disabled={disabled}
           readOnly={disabled}
           invalid={isInvalid() ? 'true' : null}
+          validationText={errorMessage}
           onChange={(e) => {
             onChange(name, e.target.value);
           }}
@@ -87,6 +89,7 @@ const Field = ({
           disabled={disabled}
           readOnly={disabled}
           invalid={isInvalid() ? 'true' : null}
+          validationText={errorMessage}
           onChange={(e) => {
             onChange(name, e.target.value);
           }}
@@ -124,6 +127,11 @@ const Field = ({
             {description && (
               <small className="form-text text-muted">{description}</small>
             )}
+            {errorMessage && (
+              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                {errorMessage}
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -146,7 +154,7 @@ const Field = ({
                   onChange={(e) => {
                     onChange(name, v);
                   }}
-                  invalid={isInvalid() ? 'true' : null}
+                  validationText={errorMessage}
                   addon // Needed to avoid application of form-control class as of kit v4.0.2
                 />
                 <Label for={v + name} check>
@@ -156,6 +164,11 @@ const Field = ({
             ))}
             {description && (
               <small className="form-text text-muted">{description}</small>
+            )}
+            {errorMessage && (
+              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                {errorMessage}
+              </div>
             )}
           </div>
         </div>
@@ -195,6 +208,11 @@ const Field = ({
             {description && (
               <small className="form-text text-muted">{description}</small>
             )}
+            {errorMessage && (
+              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                {errorMessage}
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -225,6 +243,11 @@ const Field = ({
             {description && (
               <small className="form-text text-muted">{description}</small>
             )}
+            {errorMessage && (
+              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                {errorMessage}
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -239,6 +262,7 @@ const Field = ({
           disabled={disabled}
           readOnly={disabled}
           invalid={isInvalid() ? 'true' : null}
+          validationText={errorMessage}
           onChange={(e) => {
             onChange(name, e.target.value);
           }}
@@ -258,6 +282,7 @@ const Field = ({
           onChange={onChange}
           onEdit={isOnEdit}
           value={value}
+          validationText={errorMessage}
         />
       )}
       {(field_type === 'from' || field_type === 'email') && (
@@ -271,6 +296,7 @@ const Field = ({
           disabled={disabled}
           readOnly={disabled}
           invalid={isInvalid() ? 'true' : null}
+          validationText={errorMessage}
           onChange={(e) => {
             onChange(name, e.target.value);
           }}
@@ -311,6 +337,7 @@ const Field = ({
               isDisabled={disabled}
               formHasErrors={formHasErrors}
               invalid={isInvalid().toString()}
+              validationText={errorMessage}
               {...(isInvalid() ? { className: 'is-invalid' } : {})}
             />,
           ];
