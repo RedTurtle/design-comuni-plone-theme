@@ -38,7 +38,7 @@ const messages = defineMessages({
     id: 'Email Success',
     defaultMessage: 'Form inviato correttamente',
   },
-  formErrors: {
+  form_errors: {
     id: 'form_errors_validation',
     defaultMessage: 'Attenzione! Alcuni campi inseriti sono da controllare.',
   },
