@@ -1,3 +1,17 @@
+### [7.25.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.2...v7.25.3) (2024-03-07)
+
+
+### Bug Fixes
+
+* added returnUrl option for came_from parameter ([#563](https://github.com/RedTurtle/design-comuni-plone-theme/issues/563)) ([da80c23](https://github.com/RedTurtle/design-comuni-plone-theme/commit/da80c23ba70053b23c3ce3b9a9c1bc38591120d0))
+* check if title and description have content in icons block ([#571](https://github.com/RedTurtle/design-comuni-plone-theme/issues/571)) ([4df698d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4df698de0dda2acc91a75ca006ccdf22bae76646))
+* removed unnecessary special character from HeaderToggler aria-controls attribute ([#554](https://github.com/RedTurtle/design-comuni-plone-theme/issues/554)) ([74d145a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/74d145a401a0dd12efc1979642c303bb5689830f))
+
+
+### Maintenance
+
+* preparing release 7.25.3 ([7314707](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7314707d7f58eaf94c844ceacc2af2182a8be463))
+
 ### [7.25.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.1...v7.25.2) (2024-03-04)
 
 
