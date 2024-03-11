@@ -128,11 +128,7 @@
         $subsite-tertiary,
         $subsite-link-color
       );
-      @include it-common.common(
-        $subsite-tertiary,
-        $subsite-tertiary-text,
-        $subsite-link-color
-      );
+      @include it-common.common($subsite-tertiary, $subsite-tertiary-text);
 
       a,
       &.cms-ui .public-ui a {

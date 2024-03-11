@@ -1,6 +1,6 @@
 @use '../all_variables' as *;
 
-@mixin common($subsite-tertiary, $subsite-tertiary-text, $subsite-link-color) {
+@mixin common($subsite-tertiary, $subsite-tertiary-text) {
   .btn-tertiary {
     @include button-variant($subsite-tertiary, $subsite-tertiary-text);
 
