@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Gli stili del tipo di contenuto Unità Organizzativa sono stati ottimizzati per la stampa.
+
 ## Versione 11.6.1 (06/03/2024)
 
 ### Fix
@@ -52,6 +58,7 @@
 ### Fix
 
 - Le icone social nel menu laterale mobile sono tutte dello stesso colore.
+
 ### Migliorie
 
 - Nel blocco form è stata aggiunta una legenda per i campi obbligatori.
