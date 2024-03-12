@@ -23,4 +23,8 @@
   .btn-outline-tertiary {
     @include button-outline-variant($subsite-tertiary);
   }
+  // simple list bullet color
+  .simple-list-template ul li::marker {
+    color: $body-color;
+  }
 }
