@@ -24,7 +24,7 @@ const messages = defineMessages({
   },
 });
 
-const renderImage = (image, showImage, sizeNatural, altText) =>
+const renderImage = (image, showImage, sizeNatural, altText = '') =>
   showImage && image ? (
     <div className="img-responsive-wrapper">
       <div
@@ -35,7 +35,7 @@ const renderImage = (image, showImage, sizeNatural, altText) =>
         <figure className="img-wrapper">
           <img
             src={`data:${image['content-type']};${image.encoding},${image.data}`}
-            alt={altText || ''}
+            alt={altText}
             aria-hidden="true"
             loading="lazy"
           />
