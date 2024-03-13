@@ -111,7 +111,7 @@ const Sidebar = ({ data, block, onChangeBlock }) => {
             />
           </FormFieldWrapper>
           <TextWidget
-            id="AltText"
+            id="altText"
             title={intl.formatMessage(messages.altText)}
             value={data.altText}
             onChange={(name, value) => {
