@@ -43,21 +43,28 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Novità
+
+- Ora la fascia del footer contenente il logo e il nome del sito è configurabile da pannello di controllo
+- Nel pannello di controllo dei Feedback, ora gli utenti con permesso di eliminare elementi da questa sezione, possono eliminare i feedback.
+
 ### Migliorie
 
-- E' possibile aggiungere un testo alternativo per l'immagine del blocco Card con Immagine.
+- Nel blocco form, se in fase di compilazione ci sono degli errori, viene mostrato un messaggio di errore specifico per ogni campo con errori.
+- È possibile aggiungere un testo alternativo per l'immagine del blocco Card con Immagine.
+
+### Fix
+
+- Il bordo destro della variazione Link solo immagine del blocco Elenco è stato ripristinato.
 
 ## Versione 11.6.1 (06/03/2024)
 
 ### Fix
 
 - Quando si imposta una ricorrenza per giorni feriali negli Eventi, viene visualizzato il testo corretto "ogni giorno feriale".
+- Le icone social nel menu laterale mobile sono tutte dello stesso colore.
 
 ## Versione 11.6.0 (05/03/2024)
-
-### Fix
-
-- Le icone social nel menu laterale mobile sono tutte dello stesso colore.
 
 ### Migliorie
 
