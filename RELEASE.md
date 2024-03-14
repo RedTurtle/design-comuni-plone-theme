@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Migliorato l'allineamento dei filtri nella pagina di Ricerca.
+
 ## Versione 7.25.3 (07/03/2024)
 
 ### Migliorie
