@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Aggiustato il layout della card per il CT persone quando è impostata un'immagine.
+
 ## Versione 11.7.0 (15/03/2024)
 
 ### Novità

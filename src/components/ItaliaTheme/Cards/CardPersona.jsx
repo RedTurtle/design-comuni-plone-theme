@@ -38,7 +38,7 @@ export const CardPersona = ({
         className,
       )}
     >
-      <div className="card-image-wrapper">
+      <div className="card-image-wrapper col-12">
         <CardBody>
           {(icon || type) && (
             <CardCategory iconName={icon}>
