@@ -1105,6 +1105,11 @@ msgstr "Precedente"
 msgid "canale_digitale_widget_title"
 msgstr "Accedere al servizio"
 
+#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
+# defaultMessage: Aggiungi un argomento da visualizzare sulla card.
+msgid "cardDescription"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
 # defaultMessage: Seleziona l'immagine da mostrare
 msgid "cardImage"
@@ -3382,9 +3387,9 @@ msgid "sede_di"
 msgstr "Sede di"
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
-# defaultMessage: Seleziona gli altri argomenti
+# defaultMessage: Seleziona gli argomenti per le etichette
 msgid "selectOtherArguments"
-msgstr "Seleziona gli altri argomenti"
+msgstr "Seleziona gli argomenti per le etichette"
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Seleziona gli argomenti che vuoi cercare

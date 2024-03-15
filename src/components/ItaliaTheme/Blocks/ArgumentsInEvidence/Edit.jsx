@@ -48,7 +48,11 @@ class Edit extends SubblocksEdit {
           />
         </SidebarPortal>
 
-        <BottomBody data={this.props.data} intl={this.props.intl} />
+        <BottomBody
+          hasArguments={true}
+          data={this.props.data}
+          intl={this.props.intl}
+        />
       </div>
     );
   }

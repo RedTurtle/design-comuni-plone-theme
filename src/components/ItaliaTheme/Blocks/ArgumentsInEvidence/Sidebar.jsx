@@ -14,11 +14,15 @@ const messages = defineMessages({
   },
   selectOtherArguments: {
     id: 'selectOtherArguments',
-    defaultMessage: 'Seleziona gli altri argomenti',
+    defaultMessage: 'Seleziona gli argomenti per le etichette',
   },
   argument: {
     id: 'argoment',
     defaultMessage: 'Argomento',
+  },
+  cardDescription: {
+    id: 'cardDescription',
+    defaultMessage: 'Aggiungi un argomento da visualizzare sulla card.',
   },
 });
 
@@ -92,7 +96,6 @@ const Sidebar = ({
                   <ObjectBrowserWidget
                     id={'ObjectBrowserWidget'}
                     title={intl.formatMessage(messages.argument)}
-                    required={true}
                     mode={'link'}
                     value={subblock.argument}
                     widgetOptions={{
@@ -100,6 +103,7 @@ const Sidebar = ({
                         selectableTypes: ['Pagina Argomento'],
                       },
                     }}
+                    description={intl.formatMessage(messages.cardDescription)}
                     onChange={(name, value) => {
                       onChangeSubBlock(index, {
                         ...subblock,

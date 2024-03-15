@@ -2,6 +2,7 @@ import React from 'react';
 import { defineMessages } from 'react-intl';
 import { UniversalLink, ConditionalLink } from '@plone/volto/components';
 import { Chip, ChipLabel, Button, Container } from 'design-react-kit';
+import cx from 'classnames';
 
 const messages = defineMessages({
   view_all: {
@@ -14,10 +15,14 @@ const messages = defineMessages({
   },
 });
 
-const BottomBody = ({ data, intl }) => {
+const BottomBody = ({ data, intl, hasArguments }) => {
   return data?.arguments?.length > 0 ? (
-    <Container className="text-center">
-      <div className="row d-lg-inline-flex align-items-center pt-5">
+    <Container className="text-center argumentsChipsWrapper">
+      <div
+        className={cx('row d-lg-inline-flex align-items-center', {
+          'pt-5': hasArguments,
+        })}
+      >
         <div className="col-lg-auto">
           <h6 className="text-uppercase text-center mt-1">
             {intl?.formatMessage(messages.otherArguments)}
