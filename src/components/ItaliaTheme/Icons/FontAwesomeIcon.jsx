@@ -6,7 +6,7 @@ import React from 'react';
 import { fontAwesomeAliases } from 'design-comuni-plone-theme/helpers/index';
 
 const FontAwesomeIcon = (props) => {
-  const { className, icon, prefix, title } = props;
+  const { className, icon, prefix, title, ariaHidden } = props;
   const [loadedIcon, setLoadedIcon] = React.useState({
     module: null,
     iconName: '',
@@ -74,6 +74,7 @@ const FontAwesomeIcon = (props) => {
           ? `<title>${title}</title>${loadedIcon.module.content}`
           : loadedIcon.module.content,
       }}
+      aria-hidden={ariaHidden || null}
     />
   ) : icon ? (
     <span className={`icon fa-icon placeholder ${className ?? ''}`}></span>

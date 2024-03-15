@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorata l'accessibilità del blocco Icone.
+
 ## Versione 11.7.0 (15/03/2024)
 
 ### Novità
