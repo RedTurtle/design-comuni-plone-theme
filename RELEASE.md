@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorata l'accessibilità per la customer satisfaction.
+
 ## Versione 7.25.3 (07/03/2024)
 
 ### Migliorie
