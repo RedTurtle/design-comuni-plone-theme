@@ -98,7 +98,7 @@ const Navigation = ({ pathname }) => {
           <HeaderToggler
             aria-controls="it-navigation-collapse"
             aria-expanded={collapseOpen}
-            aria-label="Toggle navigation"
+            aria-label={intl.formatMessage(messages.ToggleMenu)}
             onClick={() => {
               setCollapseOpen(!collapseOpen);
               setFocusTrapActive(!focusTrapActive);
@@ -174,6 +174,10 @@ const messages = defineMessages({
   CloseMenu: {
     id: 'close-menu',
     defaultMessage: 'Chiudi menu',
+  },
+  ToggleMenu: {
+    id: 'toggle-menu',
+    defaultMessage: 'Apri o chiudi il menu',
   },
 });
 

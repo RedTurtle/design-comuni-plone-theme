@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Tradotto il messaggio per Screen Reader del bottone per aprire e chiudere il menu in mobile.
+
 ## Versione 7.25.3 (07/03/2024)
 
 ### Migliorie
