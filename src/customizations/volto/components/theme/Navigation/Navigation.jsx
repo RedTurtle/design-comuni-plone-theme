@@ -91,8 +91,6 @@ const Navigation = ({ pathname }) => {
       document.body.removeEventListener('click', blocksClickListener);
   }, []);
 
-  console.log(collapseOpen);
-
   return (
     <Header theme="" type="navbar">
       {menu?.length > 0 ? (
