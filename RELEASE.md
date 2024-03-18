@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Novità
+
+- Ora i link in testata nell'header slim sono configurabili da pannello di controllo
+
 ## Versione 11.7.0 (15/03/2024)
 
 ### Novità
