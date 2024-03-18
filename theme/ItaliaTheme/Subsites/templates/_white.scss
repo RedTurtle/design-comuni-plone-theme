@@ -32,6 +32,11 @@ body.subsite-white {
             a {
               width: 48px;
               height: 48px;
+              &.rounded-icon {
+                svg {
+                  fill: $subsite-white-primary;
+                }
+              }
             }
           }
 
