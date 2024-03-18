@@ -1,3 +1,12 @@
+### [7.25.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.3...v7.25.4) (2024-03-18)
+
+
+### Bug Fixes
+
+* mobile search icon in header ([#597](https://github.com/RedTurtle/design-comuni-plone-theme/issues/597)) ([7b8b0d9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7b8b0d93fc51fc8548661156660e1444d22becb4))
+* subsite styles for simple list, index of content, search block ([#572](https://github.com/RedTurtle/design-comuni-plone-theme/issues/572)) ([5869d83](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5869d83c16faace4e851450574954854cd9ed0cf))
+* subsites list bullet colors ([#574](https://github.com/RedTurtle/design-comuni-plone-theme/issues/574)) ([814d55d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/814d55d4a1510daa732956241b3a53ef9f063a5b))
+
 ### [7.25.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.2...v7.25.3) (2024-03-07)
 
 
