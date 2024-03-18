@@ -91,6 +91,8 @@ const Navigation = ({ pathname }) => {
       document.body.removeEventListener('click', blocksClickListener);
   }, []);
 
+  console.log(collapseOpen);
+
   return (
     <Header theme="" type="navbar">
       {menu?.length > 0 ? (
@@ -98,7 +100,9 @@ const Navigation = ({ pathname }) => {
           <HeaderToggler
             aria-controls="it-navigation-collapse"
             aria-expanded={collapseOpen}
-            aria-label={intl.formatMessage(messages.ToggleMenu)}
+            aria-label={intl.formatMessage(messages.ToggleMenu, {
+              action: collapseOpen ? 'Chiudi' : 'Apri',
+            })}
             onClick={() => {
               setCollapseOpen(!collapseOpen);
               setFocusTrapActive(!focusTrapActive);
@@ -177,7 +181,7 @@ const messages = defineMessages({
   },
   ToggleMenu: {
     id: 'toggle-menu',
-    defaultMessage: 'Apri o chiudi il menu',
+    defaultMessage: '{action} il menu',
   },
 });
 
