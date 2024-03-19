@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useLayoutEffect,
-  useCallback,
-  useMemo,
-} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { useIntl, defineMessages } from 'react-intl';
@@ -215,7 +209,9 @@ const FeedbackForm = ({ contentType, pathname }) => {
           satisfaction > threshold ? 'positive' : 'negative'
         }-${getFormFieldValue('answer')}`,
       );
-      selectedAnswer.focus();
+      if (selectedAnswer) {
+        selectedAnswer.focus();
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);

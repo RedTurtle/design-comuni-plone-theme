@@ -47,17 +47,35 @@
 
 - Gli stili del tipo di contenuto Unità Organizzativa sono stati ottimizzati per la stampa.
 
+### Novità
+
+- E' possibile scaricare il file o l'immagine caricata dal widget di upload file cliccando sul nome del file stesso.
+
+## Versione 11.7.0 (15/03/2024)
+
+### Novità
+
+- Ora la fascia del footer contenente il logo e il nome del sito è configurabile da pannello di controllo.
+- Nel pannello di controllo dei Feedback, ora gli utenti con permesso di eliminare elementi da questa sezione, possono eliminare i feedback.
+
+### Migliorie
+
+- Nel blocco form, se in fase di compilazione ci sono degli errori, viene mostrato un messaggio di errore specifico per ogni campo con errori.
+
+### Fix
+
+- Il bordo destro della variazione Link solo immagine del blocco Elenco è stato ripristinato.
+- Se si mettono due blocchi Form nella stessa pagina, ora funzionano correttamente.
+- Aggiustato il modulo di Feedback quando si cambia valutazione dopo averne già selezionata un'altra.
+
 ## Versione 11.6.1 (06/03/2024)
 
 ### Fix
 
 - Quando si imposta una ricorrenza per giorni feriali negli Eventi, viene visualizzato il testo corretto "ogni giorno feriale".
+- Le icone social nel menu laterale mobile sono tutte dello stesso colore.
 
 ## Versione 11.6.0 (05/03/2024)
-
-### Fix
-
-- Le icone social nel menu laterale mobile sono tutte dello stesso colore.
 
 ### Migliorie
 
