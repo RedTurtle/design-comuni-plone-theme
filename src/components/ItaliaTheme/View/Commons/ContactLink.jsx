@@ -35,53 +35,36 @@ const ContactLink = ({ tel, fax, email, label = true, strong = false }) => {
   let ret_label = null;
   let ret = null;
 
-  function ReplacePhoneNumbers(str, type) {
-    // eslint-disable-next-line no-useless-escape
-    let newhtml = str.replace(/\+?[0-9]( ?[0-9\/-]+)+.?[0-9]*/gm, function (v) {
-      let r =
-        "<a href='" +
-        type +
-        ':' +
-        v.trim().replace(/-|\/|\s/gm, '') +
-        "' title='" +
-        (type === 'tel'
-          ? intl.formatMessage(messages.call)
-          : intl.formatMessage(messages.call_fax)) +
-        "' >" +
-        v +
-        '</a>';
-      return r;
-    });
-    return newhtml;
-  }
-
-  function ReplaceEmails(str) {
-    let newhtml = str.replace(
-      /([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi,
-      function (v) {
-        let r =
-          "<a href='mailto:" +
-          v.trim().replace(/|\/|\s/gm, '') +
-          "' title='" +
-          intl.formatMessage(messages.write_to) +
-          "' >" +
-          v +
-          '</a>';
-        return r;
-      },
-    );
-    return newhtml;
-  }
-
   if (tel) {
     ret_label = intl.formatMessage(messages.telefono);
-    ret = ReplacePhoneNumbers(tel, 'tel');
+    ret = (
+      <a
+        href={`tel:${tel.trim().replace(/|\/|\s/gm, '')}`}
+        title={intl.formatMessage(messages.call)}
+      >
+        {tel}
+      </a>
+    );
   } else if (fax) {
     ret_label = intl.formatMessage(messages.fax);
-    ret = ReplacePhoneNumbers(fax, 'fax');
+    ret = (
+      <a
+        href={`fax:${fax.trim().replace(/|\/|\s/gm, '')}`}
+        title={intl.formatMessage(messages.call_fax)}
+      >
+        {fax}
+      </a>
+    );
   } else if (email) {
     ret_label = intl.formatMessage(messages.email_label);
-    ret = ReplaceEmails(email);
+    ret = (
+      <a
+        href={`mailto:${email.trim().replace(/|\/|\s/gm, '')}`}
+        title={intl.formatMessage(messages.write_to)}
+      >
+        {email}
+      </a>
+    );
   }
   ret_label = label ? <>{ret_label}: </> : null;
   ret_label = label ? strong ? <strong>{ret_label}</strong> : ret_label : null;
@@ -89,7 +72,7 @@ const ContactLink = ({ tel, fax, email, label = true, strong = false }) => {
   return ret ? (
     <>
       {ret_label}
-      <span dangerouslySetInnerHTML={{ __html: ret }} />
+      <span>{ret}</span>
     </>
   ) : null;
 };
