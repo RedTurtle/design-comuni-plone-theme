@@ -41,13 +41,18 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Novità
+
+- E' possibile scaricare il file o l'immagine caricata dal widget di upload file cliccando sul nome del file stesso.
+
 ## Versione 11.7.0 (15/03/2024)
 
 ### Novità
 
 - Ora la fascia del footer contenente il logo e il nome del sito è configurabile da pannello di controllo.
 - Nel pannello di controllo dei Feedback, ora gli utenti con permesso di eliminare elementi da questa sezione, possono eliminare i feedback.
-- E' possibile scaricare il file o l'immagine caricata dal widget di upload file cliccando sul nome del file stesso.
 
 ### Migliorie
 
