@@ -148,7 +148,15 @@ const FormView = ({
                       <br />
                     </>
                   )}
-                  <Button color="primary" outline onClick={resetFormState}>
+                  <Button
+                    color="primary"
+                    outline
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      resetFormState();
+                    }}
+                  >
                     {intl.formatMessage(messages.reset)}
                   </Button>
                 </Alert>
@@ -262,8 +270,12 @@ const FormView = ({
                       {data?.show_cancel && (
                         <Button
                           color="secondary"
-                          type="clear"
-                          onClick={resetFormState}
+                          type="button"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            resetFormState();
+                          }}
                           className="me-2"
                         >
                           {data.cancel_label ||
