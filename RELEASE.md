@@ -41,6 +41,15 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+
+### Novità
+
+- Aggiunto una nuova variazione del blocco elenco "Allegati" che permette di scaricare oggetti di tipo File o aprire l'anteprima di file PDF
+
+
+
 ## Versione 11.8.0 (19/03/2024)
 
 ### Migliorie
