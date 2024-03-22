@@ -4,12 +4,13 @@ import cx from 'classnames';
 const BodyWrapper = ({ data, inEditMode, children, id, hasArguments }) => {
   return (
     <div
-      className={cx('container pt-5 argumentsCardsWrapper', {
+      className={cx('container argumentsCardsWrapper', {
+        'pt-5': hasArguments,
         'p-5': inEditMode,
       })}
     >
       <h2 id={id + 'title'}>{data.text}</h2>
-      <div className="grid mt-5">{children}</div>
+      {children?.length > 0 && <div className="grid mt-5">{children}</div>}
     </div>
   );
 };

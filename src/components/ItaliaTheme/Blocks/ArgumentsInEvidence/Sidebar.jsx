@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Segment, Accordion } from 'semantic-ui-react';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { Icon, ObjectBrowserWidget, TextWidget } from '@plone/volto/components';
+import {
+  Icon,
+  ObjectBrowserWidget,
+  TextWidget,
+  CheckboxWidget,
+} from '@plone/volto/components';
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
 import { defineMessages, useIntl } from 'react-intl';
@@ -14,7 +19,7 @@ const messages = defineMessages({
   },
   selectOtherArguments: {
     id: 'selectOtherArguments',
-    defaultMessage: 'Seleziona gli argomenti per le etichette',
+    defaultMessage: 'Seleziona gli altri argomenti',
   },
   argument: {
     id: 'argoment',
@@ -23,6 +28,14 @@ const messages = defineMessages({
   cardDescription: {
     id: 'cardDescription',
     defaultMessage: 'Aggiungi un argomento da visualizzare sulla card.',
+  },
+  centerAlignment: {
+    id: 'centerAlignment',
+    defaultMessage: 'Allinea gli argomenti al centro',
+  },
+  hideButtonShowAll: {
+    id: 'hideButtonShowAll',
+    defaultMessage: 'Nascondi pulsante "Vedi tutti"',
   },
 });
 
@@ -37,7 +50,7 @@ const Sidebar = ({
   const intl = useIntl();
 
   return (
-    <Segment.Group raised>
+    <Segment.Group>
       <header className="header pulled">
         <h2>
           <FormattedMessage
@@ -71,6 +84,25 @@ const Sidebar = ({
                 ...data,
                 arguments: value,
               });
+            }}
+          />
+          <CheckboxWidget
+            id="centerAlignment"
+            title={intl.formatMessage(messages.centerAlignment)}
+            value={data.centerAlignment ? data.centerAlignment : false}
+            onChange={(name, value) => {
+              onChangeBlock(block, {
+                ...data,
+                centerAlignment: value,
+              });
+            }}
+          />
+          <CheckboxWidget
+            id="hideButtonShowAll"
+            title={intl.formatMessage(messages.hideButtonShowAll)}
+            value={data.hideButtonShowAll ? data.hideButtonShowAll : false}
+            onChange={(name, value) => {
+              onChangeBlock(block, { ...data, hideButtonShowAll: value });
             }}
           />
         </Accordion.Content>

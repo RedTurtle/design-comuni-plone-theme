@@ -1141,6 +1141,11 @@ msgstr "Formati scaricabili"
 msgid "casi_particolari"
 msgstr "Casi particolari"
 
+#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
+# defaultMessage: Allinea gli argomenti al centro
+msgid "centerAlignment"
+msgstr "Allinea gli argomenti al centro"
+
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Link al canale
 msgid "channel_link"
@@ -2182,6 +2187,11 @@ msgstr "Immagine precedente"
 # defaultMessage: Per questo template il numero di risultati per pagina deve essere 7. Controlla le impostazioni.
 msgid "grid-gallery-max-items-exceeded"
 msgstr "Per questo template il numero di risultati per pagina deve essere 7. Controlla le impostazioni."
+
+#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
+# defaultMessage: Nascondi pulsante "Vedi tutti"
+msgid "hideButtonShowAll"
+msgstr "Nascondi pulsante "Vedi tutti""
 
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Nascondi le date
@@ -3387,9 +3397,9 @@ msgid "sede_di"
 msgstr "Sede di"
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
-# defaultMessage: Seleziona gli argomenti per le etichette
+# defaultMessage: Seleziona gli altri argomenti
 msgid "selectOtherArguments"
-msgstr "Seleziona gli argomenti per le etichette"
+msgstr "Seleziona gli altri argomenti"
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Seleziona gli argomenti che vuoi cercare

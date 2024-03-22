@@ -17,18 +17,20 @@ const messages = defineMessages({
 
 const BottomBody = ({ data, intl, hasArguments }) => {
   return data?.arguments?.length > 0 ? (
-    <Container className="text-center argumentsChipsWrapper">
+    <Container className="text-center argumentsChipsWrapper pb-3">
       <div
         className={cx('row d-lg-inline-flex align-items-center', {
           'pt-5': hasArguments,
         })}
       >
-        <div className="col-lg-auto">
+        <div
+          className={data?.centerAlignment ? 'col-lg-12 mb-3' : 'col-lg-auto'}
+        >
           <h6 className="text-uppercase text-center mt-1">
             {intl?.formatMessage(messages.otherArguments)}
           </h6>
         </div>
-        <div className="col-lg-auto">
+        <div className={data?.centerAlignment ? 'col-lg-12' : 'col-lg-auto'}>
           {data?.arguments?.map((argument, index) => (
             <Chip
               color="primary"
@@ -48,17 +50,19 @@ const BottomBody = ({ data, intl, hasArguments }) => {
         </div>
       </div>
 
-      <div className="link-button mt-5">
-        <Button
-          color="primary"
-          icon={false}
-          tag={UniversalLink}
-          href="/argomenti"
-          className="view-all text-decoration-none"
-        >
-          {intl?.formatMessage(messages.view_all)}
-        </Button>
-      </div>
+      {!data?.hideButtonShowAll && (
+        <div className="link-button mt-3">
+          <Button
+            color="primary"
+            icon={false}
+            tag={UniversalLink}
+            href="/argomenti"
+            className="view-all text-decoration-none"
+          >
+            {intl?.formatMessage(messages.view_all)}
+          </Button>
+        </div>
+      )}
     </Container>
   ) : null;
 };
