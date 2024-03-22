@@ -175,6 +175,10 @@
       }
     }
 
+    .leaflet-container {
+      break-inside: avoid;
+    }
+
     #contenuti-correlati {
       display: none;
     }

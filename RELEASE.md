@@ -41,11 +41,22 @@
 - ...
 -->
 
-## Versione X.X.X (xx/xx/xxxx)
+## Versione 11.8.0 (19/03/2024)
+
+### Migliorie
+
+- Gli stili del tipo di contenuto Unità Organizzativa sono stati ottimizzati per la stampa.
 
 ### Novità
 
-- Ora la fascia del footer contenente il logo e il nome del sito è configurabile da pannello di controllo
+- È possibile scaricare il file o l'immagine caricata dal widget di upload file cliccando sul nome del file stesso.
+- È possibile aggiungere un testo alternativo per l'immagine del blocco Card con Immagine.
+
+## Versione 11.7.0 (15/03/2024)
+
+### Novità
+
+- Ora la fascia del footer contenente il logo e il nome del sito è configurabile da pannello di controllo.
 - Nel pannello di controllo dei Feedback, ora gli utenti con permesso di eliminare elementi da questa sezione, possono eliminare i feedback.
 
 ### Migliorie
@@ -55,6 +66,8 @@
 ### Fix
 
 - Il bordo destro della variazione Link solo immagine del blocco Elenco è stato ripristinato.
+- Se si mettono due blocchi Form nella stessa pagina, ora funzionano correttamente.
+- Aggiustato il modulo di Feedback quando si cambia valutazione dopo averne già selezionata un'altra.
 
 ## Versione 11.6.1 (06/03/2024)
 
