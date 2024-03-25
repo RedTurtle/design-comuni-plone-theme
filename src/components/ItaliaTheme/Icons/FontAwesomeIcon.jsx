@@ -40,7 +40,7 @@ const FontAwesomeIcon = (props) => {
           ? `<title>${title}</title>${loadedIcon.content}`
           : loadedIcon.content,
       }}
-      aria-hidden={ariaHidden || null}
+      aria-hidden={ariaHidden}
     />
   ) : icon ? (
     <span className={`icon fa-icon placeholder ${className ?? ''}`}></span>
