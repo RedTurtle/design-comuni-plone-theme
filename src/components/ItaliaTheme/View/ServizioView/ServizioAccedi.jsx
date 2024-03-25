@@ -55,6 +55,7 @@ const ServizioAccedi = ({ content }) => {
         <RichTextSection
           title={intl.formatMessage(messages.dove_rivolgersi)}
           lighthouseId="service-generic-access"
+          tag_id="dove-rivolgersi"
         >
           <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
             {content.dove_rivolgersi?.map?.((dove) => (
