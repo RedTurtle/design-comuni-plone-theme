@@ -1,0 +1,13 @@
+@import './Button.css';
+@import './TextField.css';
+@import './Modal.css';
+
+.react-aria-dialog {
+  outline: none;
+  padding: 30px;
+
+  .react-aria-Heading[slot='title'] {
+    line-height: 1em;
+    margin-top: 0;
+  }
+}

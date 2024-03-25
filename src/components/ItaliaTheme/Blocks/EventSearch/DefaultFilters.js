@@ -1,12 +1,11 @@
 import {
-  DateFilter,
+  DateRangeFilter,
   SelectFilter,
   TextFilter,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Common/SearchFilters';
 import { defineMessages, useIntl } from 'react-intl';
-
+import { getLocalTimeZone } from '@internationalized/date';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import moment from 'moment';
 import { useSelector } from 'react-redux';
 
 const messages = defineMessages({
@@ -34,7 +33,6 @@ const messages = defineMessages({
 
 const DefaultFilters = () => {
   const intl = useIntl();
-  moment.locale(intl.locale);
   const subsite = useSelector((state) => state.subsite?.data);
 
   return {
@@ -91,42 +89,49 @@ const DefaultFilters = () => {
       label: intl.formatMessage(messages.date_filter),
       type: 'date_filter',
       widget: {
-        component: DateFilter,
+        component: DateRangeFilter,
         props: {
           value: {
-            startDate: moment().startOf('day'),
-            endDate: moment().endOf('day'),
+            start: null,
+            end: null,
           },
           showClearDates: true,
-          defaultStart: moment().startOf('day'),
-          defaultEnd: moment().endOf('day'),
-          isOutsideRange: () => false,
+          showInputLabels: true,
+          // startLabel: intl.formatMessage(messages.scadenza_dal),
+          // endLabel: intl.formatMessage(messages.scadenza_al),
         },
       },
 
       reducer: (value, state) => {
+        let start, end;
+        if (value) {
+          start = value.start;
+          end = value.end;
+        } else {
+          start = state.widget.props.value.start;
+          end = state.widget.props.value.end;
+        }
         return {
-          startDate: value.start ?? state.widget.props.defaultStart,
-          endDate: value.end ?? state.widget.props.defaultEnd,
+          start,
+          end,
         };
       },
       query: (value, query) => {
-        const date_fmt = 'YYYY-MM-DD HH:mm';
-
-        if (value?.startDate) {
-          let start = value.startDate.startOf('day')?.format(date_fmt);
+        let start, end;
+        if (value?.start) {
+          start = value.start.toDate(getLocalTimeZone());
           query.push({
             i: 'start', //end
             o: 'plone.app.querystring.operation.date.largerThan', //plone.app.querystring.operation.date.largerThan
-            v: start,
+            v: start.toISOString(),
           });
         }
-        if (value?.endDate) {
-          let end = value.endDate.endOf('day')?.format(date_fmt);
+        if (value?.end) {
+          end = value.end.cycle('day', 1).toDate(getLocalTimeZone());
           query.push({
             i: 'end', //start
             o: 'plone.app.querystring.operation.date.lessThan', //plone.app.querystring.operation.date.lessThan
-            v: end,
+            v: end.toISOString(),
           });
         }
       },

@@ -1,3 +1,9 @@
 :root {
   --focus-outline-color: #{$focus-outline-color};
+  --calendar-width: 375px;
+  --calendar-highlighted-background: #{$link-color};
+  --calendar-highlighted-color: #{$primary-text};
+  --listbox-selected-background: #{$link-color};
+  --listbox-selected-color: #{$primary-text};
+  --popover-background: #fff;
 }

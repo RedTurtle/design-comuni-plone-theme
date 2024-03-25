@@ -1085,6 +1085,31 @@ msgstr ""
 msgid "calendarBlockSidebarTitle"
 msgstr "Calendario"
 
+#: overrideTranslations
+# defaultMessage: Clear selection
+msgid "calendarClearDates"
+msgstr "Cancella la selezione"
+
+#: overrideTranslations
+# defaultMessage: Invalid value
+msgid "calendarInvalid"
+msgstr "Valore non valido"
+
+#: overrideTranslations
+# defaultMessage: Month
+msgid "calendarMonth"
+msgstr "Mese"
+
+#: overrideTranslations
+# defaultMessage: Open calendar
+msgid "calendarOpenCalendar"
+msgstr "Apri il calendario"
+
+#: overrideTranslations
+# defaultMessage: Year
+msgid "calendarYear"
+msgstr "Anno"
+
 #: components/ItaliaTheme/Blocks/Calendar/Body
 # defaultMessage: Prossimo
 msgid "calendar_next_arrow"

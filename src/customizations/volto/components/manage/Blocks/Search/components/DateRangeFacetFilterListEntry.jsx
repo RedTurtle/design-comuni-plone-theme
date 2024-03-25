@@ -34,22 +34,21 @@ function DateRangeFacetFilterListEntry(props) {
       else if (queryIndex.o.includes('date.between'))
         [start, end] = queryIndex.v;
     }
-
     let label;
     if (start) {
       if (end)
         label = `${intl.formatMessage(
           commonSearchBlockMessages.DateRangeFacetFilterListEntryDalAl,
           {
-            start: moment(start).locale(intl.locale).format('DD-MM-YYYY'),
-            end: moment(end).locale(intl.locale).format('DD-MM-YYYY'),
+            start: moment(start).locale(intl.locale).utc().format('DD-MM-YYYY'),
+            end: moment(end).locale(intl.locale).utc().format('DD-MM-YYYY'),
           },
         )}`;
       else
         label = `${intl.formatMessage(
           commonSearchBlockMessages.DateRangeFacetFilterListEntryDal,
           {
-            start: moment(start).locale(intl.locale).format('DD-MM-YYYY'),
+            start: moment(start).locale(intl.locale).utc().format('DD-MM-YYYY'),
           },
         )}`;
     } else {
@@ -57,7 +56,7 @@ function DateRangeFacetFilterListEntry(props) {
         label = `${intl.formatMessage(
           commonSearchBlockMessages.DateRangeFacetFilterListEntryAl,
           {
-            end: moment(end).locale(intl.locale).format('DD-MM-YYYY'),
+            end: moment(end).locale(intl.locale).utc().format('DD-MM-YYYY'),
           },
         )}`;
     }

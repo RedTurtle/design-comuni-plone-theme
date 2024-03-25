@@ -2,68 +2,46 @@
   - Agid styling
   - Use with more plone.app.querystring.date operations
 */
-import React, { useState } from 'react';
-import { Icon } from 'design-react-kit';
-import { defineMessages, injectIntl } from 'react-intl';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import React from 'react';
+import { injectIntl } from 'react-intl';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import qs from 'query-string';
-
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
-
-const messages = defineMessages({
-  startDate: {
-    id: 'Start Date',
-    defaultMessage: 'Start Date',
-  },
-  endDate: {
-    id: 'End Date',
-    defaultMessage: 'End Date',
-  },
-});
-
-const PrevIcon = () => (
-  <div
-    className="prev-icon"
-    style={{
-      color: '#000',
-      left: '22px',
-      padding: '5px',
-      position: 'absolute',
-      top: '15px',
-    }}
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-    tabIndex="0"
-  >
-    <Icon icon="it-chevron-left" size="30px" />
-  </div>
-);
-const NextIcon = () => (
-  <div
-    className="next-icon"
-    style={{
-      color: '#000',
-      right: '22px',
-      padding: '5px',
-      position: 'absolute',
-      top: '15px',
-    }}
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-    tabIndex="0"
-  >
-    <Icon icon="it-chevron-right" size="30px" />
-  </div>
-);
-
-const CloseIcon = () => <Icon icon="it-close" size="24px" className="close" />;
+import { parseDate, getLocalTimeZone } from '@internationalized/date';
+import { DateRangeFilter } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Common/SearchFilters';
 
 const DateRangeFacet = (props) => {
-  const { facet, isEditMode, onChange, value, reactDates, intl, lang } = props;
-  const moment = props.moment.default;
-  const { DateRangePicker } = reactDates;
-  const [focused, setFocused] = useState(null);
+  const { facet, isEditMode, onChange, value } = props;
+  const onDatesChange = (id, incomingValue) => {
+    const newValue = [];
+    const { start, end } = incomingValue ?? {};
+    const [facetStart, facetEnd] = value;
+
+    if (start) {
+      const startDate = start.toDate(getLocalTimeZone());
+      if (startDate !== new Date(facetStart))
+        newValue.push(startDate.toISOString());
+      else newValue.push(facetStart);
+    } else newValue.push(null);
+    if (end) {
+      const endDate = end.toDate(getLocalTimeZone());
+
+      if (endDate !== new Date(facetEnd)) newValue.push(endDate.toISOString());
+      else newValue.push(facetEnd);
+    } else newValue.push(null);
+    onChange(facet.field.value, newValue);
+  };
+
+  const valueAdapter = () => {
+    const [startValue, endValue] = value ?? [null, null];
+    const start = startValue ? startValue.substring(0, 10) : null;
+    const end = endValue ? endValue.substring(0, 10) : null;
+    return {
+      start: start ? parseDate(start).cycle('day', 1) : null,
+      end: end ? parseDate(end).cycle('day', 1) : null,
+    };
+  };
+
   return (
     <div className="daterange-facet">
       <h6 className="mb-3 columnTextTitle">
@@ -71,30 +49,14 @@ const DateRangeFacet = (props) => {
       </h6>
       <div className="date-time-widget-wrapper">
         <div className="date-input">
-          <DateRangePicker
-            startDate={value && value[0] ? moment(value[0]) : null}
-            startDateId={`${facet['@id']}-start-date`}
-            startDatePlaceholderText={intl.formatMessage(messages.startDate)}
-            endDate={value && value[1] ? moment(value[1]) : null}
-            endDateId={`${facet['@id']}-end-date`}
-            endDatePlaceholderText={intl.formatMessage(messages.endDate)}
-            numberOfMonths={1}
-            disabled={isEditMode}
-            noBorder
+          <DateRangeFilter
+            value={valueAdapter()}
             showClearDates
-            customCloseIcon={<CloseIcon />}
-            displayFormat={moment.localeData(lang).longDateFormat('L')}
-            focusedInput={focused}
-            onFocusChange={(focusedInput) => setFocused(focusedInput)}
-            onDatesChange={({ startDate, endDate }) => {
-              onChange(facet.field.value, [
-                startDate ? startDate.format('YYYY-MM-DD') : null,
-                endDate ? endDate.format('YYYY-MM-DD') : null,
-              ]);
-            }}
-            isOutsideRange={() => false}
-            navPrev={<PrevIcon />}
-            navNext={<NextIcon />}
+            id="search-block-daterange-facet"
+            showInputLabels={false}
+            onChange={onDatesChange}
+            controlsBackgroundColor={'body'}
+            isDisabled={isEditMode}
           />
         </div>
       </div>
@@ -170,7 +132,6 @@ DateRangeFacet.valueToQuery = ({ value, facet }) => {
 };
 
 export default compose(
-  injectLazyLibs(['reactDates', 'moment']),
   connect((state) => ({
     lang: state.intl.locale,
   })),

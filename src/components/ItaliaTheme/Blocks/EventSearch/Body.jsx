@@ -2,14 +2,13 @@ import React, { useState, useReducer, useEffect, createRef } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Button, Spinner } from 'design-react-kit';
-import moment from 'moment';
 import cx from 'classnames';
 
 import { getQueryStringResults } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import CardWithImageTemplate from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/CardWithImageTemplate';
 import { Pagination } from 'design-comuni-plone-theme/components/ItaliaTheme';
-
+import { generateFiltersProps } from 'design-comuni-plone-theme/helpers';
 import FiltersConfig from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/EventSearch/FiltersConfig';
 
 const messages = defineMessages({
@@ -31,12 +30,17 @@ const messages = defineMessages({
     defaultMessage: 'Nessun risultato trovato',
   },
 });
+const EVENTS_SEARCH_FILTER_PROPS_OVERRIDES = {
+  date_filter: {
+    showInputLabels: false,
+    textColor: 'light',
+    controlsBackgroundColor: 'primary',
+  },
+};
 
 const Body = ({ data, inEditMode, path, onChangeBlock }) => {
   const intl = useIntl();
   const b_size = 6;
-
-  moment.locale(intl.locale);
 
   const [currentPage, setCurrentPage] = useState(1);
   const subsite = useSelector((state) => state.subsite?.data);
@@ -152,6 +156,13 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
     doRequest(current);
   }
 
+  const onChangeHandler = (filter, value) => {
+    dispatchFilter({
+      filter: filter,
+      value: value,
+    });
+  };
+
   return filterOne || filterTwo || filterThree ? (
     <Container>
       <div
@@ -170,38 +181,33 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
               {filterOne && (
                 <>
                   {React.createElement(filterOne.widget.component, {
-                    ...filterOne.widget?.props,
-                    id: 'filterOne',
-                    onChange: (filter, value) => {
-                      dispatchFilter({
-                        filter: filter,
-                        value: value,
-                      });
-                    },
+                    ...generateFiltersProps(
+                      filterOne,
+                      'filterOne',
+                      onChangeHandler,
+                      EVENTS_SEARCH_FILTER_PROPS_OVERRIDES,
+                    ),
                   })}
                 </>
               )}
               {filterTwo &&
                 React.createElement(filterTwo.widget?.component, {
-                  ...filterTwo.widget?.props,
-                  id: 'filterTwo',
-                  onChange: (filter, value) =>
-                    dispatchFilter({
-                      filter: filter,
-                      value: value,
-                    }),
+                  ...generateFiltersProps(
+                    filterTwo,
+                    'filterTwo',
+                    onChangeHandler,
+                    EVENTS_SEARCH_FILTER_PROPS_OVERRIDES,
+                  ),
                 })}
               {filterThree &&
                 React.createElement(filterThree.widget?.component, {
-                  ...filterThree.widget?.props,
-                  id: 'filterThree',
-                  onChange: (filter, value) =>
-                    dispatchFilter({
-                      filter: filter,
-                      value: value,
-                    }),
+                  ...generateFiltersProps(
+                    filterThree,
+                    'filterThree',
+                    onChangeHandler,
+                    EVENTS_SEARCH_FILTER_PROPS_OVERRIDES,
+                  ),
                 })}
-
               <Button
                 color={data.button_color || 'tertiary'}
                 icon={false}

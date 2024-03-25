@@ -1,0 +1,23 @@
+button#open-calendar {
+  border-bottom-right-radius: 4px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom: 0 !important;
+}
+#daterange-filter,
+.daterange-filter {
+  border-bottom-right-radius: 4px !important;
+  width: fit-content;
+}
+#search-block-daterange-facet {
+  border-bottom-color: var(--bs-gray-secondary) !important;
+  border-bottom-right-radius: 4px !important;
+  border-bottom-width: 2px;
+  width: fit-content;
+  color: var(--bs-gray-secondary) !important;
+  button#open-calendar {
+    border-color: var(--bs-gray-secondary) !important;
+  }
+  button#open-calendar svg {
+    fill: var(--bs-gray-secondary) !important;
+  }
+}

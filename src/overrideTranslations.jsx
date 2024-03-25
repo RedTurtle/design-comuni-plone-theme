@@ -48,4 +48,25 @@ defineMessages({
     id: 'form_default_cancel_label',
     defaultMessage: 'Annulla',
   },
+  // accessible calendar
+  calendarYear: {
+    id: 'calendarYear',
+    defaultMessage: 'Year',
+  },
+  calendarMonth: {
+    id: 'calendarMonth',
+    defaultMessage: 'Month',
+  },
+  calendarClearDates: {
+    id: 'calendarClearDates',
+    defaultMessage: 'Clear selection',
+  },
+  calendarInvalid: {
+    id: 'calendarInvalid',
+    defaultMessage: 'Invalid value',
+  },
+  calendarOpenCalendar: {
+    id: 'calendarOpenCalendar',
+    defaultMessage: 'Open calendar',
+  },
 });

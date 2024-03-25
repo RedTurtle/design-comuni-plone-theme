@@ -9,6 +9,7 @@ import { getQueryStringResults } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import BandiInEvidenceTemplate from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate';
 import { Pagination } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { generateFiltersProps } from 'design-comuni-plone-theme/helpers';
 
 import FiltersConfig from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/BandiSearch/FiltersConfig';
 
@@ -31,6 +32,14 @@ const messages = defineMessages({
     defaultMessage: 'Nessun risultato trovato',
   },
 });
+
+const BANDI_SEARCH_FILTER_PROPS_OVERRIDES = {
+  date_filter: {
+    showInputLabels: false,
+    textColor: 'light',
+    controlsBackgroundColor: 'primary',
+  },
+};
 
 const Body = ({ data, inEditMode, path, onChangeBlock }) => {
   const intl = useIntl();
@@ -107,7 +116,6 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
     let newState = {
       ...state,
     };
-
     if (action.type === 'reset') {
       newState = {
         ...getInitialState(),
@@ -141,6 +149,12 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
     setCurrentPage(current);
     doRequest(current);
   }
+  const onChangeHandler = (filter, value) => {
+    dispatchFilter({
+      filter: filter,
+      value: value,
+    });
+  };
 
   return filterOne || filterTwo || filterThree ? (
     <Container>
@@ -160,36 +174,32 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
               {filterOne && (
                 <>
                   {React.createElement(filterOne.widget.component, {
-                    ...filterOne.widget?.props,
-                    id: 'filterOne',
-                    onChange: (filter, value) => {
-                      dispatchFilter({
-                        filter: filter,
-                        value: value,
-                      });
-                    },
+                    ...generateFiltersProps(
+                      filterOne,
+                      'filterOne',
+                      onChangeHandler,
+                      BANDI_SEARCH_FILTER_PROPS_OVERRIDES,
+                    ),
                   })}
                 </>
               )}
               {filterTwo &&
                 React.createElement(filterTwo.widget?.component, {
-                  ...filterTwo.widget?.props,
-                  id: 'filterTwo',
-                  onChange: (filter, value) =>
-                    dispatchFilter({
-                      filter: filter,
-                      value: value,
-                    }),
+                  ...generateFiltersProps(
+                    filterTwo,
+                    'filterTwo',
+                    onChangeHandler,
+                    BANDI_SEARCH_FILTER_PROPS_OVERRIDES,
+                  ),
                 })}
               {filterThree &&
                 React.createElement(filterThree.widget?.component, {
-                  ...filterThree.widget?.props,
-                  id: 'filterThree',
-                  onChange: (filter, value) =>
-                    dispatchFilter({
-                      filter: filter,
-                      value: value,
-                    }),
+                  ...generateFiltersProps(
+                    filterThree,
+                    'filterThree',
+                    onChangeHandler,
+                    BANDI_SEARCH_FILTER_PROPS_OVERRIDES,
+                  ),
                 })}
 
               <Button

@@ -1,14 +1,13 @@
 import { useSelector } from 'react-redux';
-import moment from 'moment';
 import { useIntl, defineMessages } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers';
-
 import {
   TextFilter,
   SelectFilter,
-  DateFilter,
+  DateRangeFilter,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Common/SearchFilters';
 import { getSearchBandiFilters } from 'design-comuni-plone-theme/actions';
+import { getLocalTimeZone } from '@internationalized/date';
 
 const messages = defineMessages({
   text_filter: {
@@ -67,7 +66,6 @@ const messages = defineMessages({
 
 const DefaultFilters = () => {
   const intl = useIntl();
-  moment.locale(intl.locale);
   const subsite = useSelector((state) => state.subsite?.data);
 
   return {
@@ -197,59 +195,62 @@ const DefaultFilters = () => {
     },
     scadenza_filter: {
       label: intl.formatMessage(messages.scadenza_filter),
-      type: 'scadenza_filter',
+      type: 'date_filter',
       widget: {
-        component: DateFilter,
+        component: DateRangeFilter,
         props: {
           value: {
-            startDate: moment().startOf('day'),
-            endDate: moment().endOf('day'),
+            start: null,
+            end: null,
           },
           showClearDates: true,
-          // defaultStart: moment().startOf('day'),
-          // defaultEnd: moment().endOf('day'),
-          isOutsideRange: () => false,
+          showInputLabels: true,
           startLabel: intl.formatMessage(messages.scadenza_dal),
           endLabel: intl.formatMessage(messages.scadenza_al),
         },
       },
 
       reducer: (value, state) => {
+        let start, end;
+        if (value) {
+          start = value.start;
+          end = value.end;
+        } else {
+          start = state.widget.props.value.start;
+          end = state.widget.props.value.end;
+        }
         return {
-          startDate: value.start ?? state.widget.props.defaultStart,
-          endDate: value.end ?? state.widget.props.defaultEnd,
+          start,
+          end,
         };
       },
       query: (value, query) => {
-        const date_fmt = 'YYYY-MM-DD HH:mm';
-        if (value?.startDate || value?.endDate) {
-          if (value?.startDate && !value.endDate) {
-            let start_v = value.startDate.clone();
-            let start = start_v?.startOf('day')?.utc()?.format(date_fmt);
+        let start, end;
+        if (value?.start || value?.end) {
+          if (value?.start && !value.end) {
+            start = value.start.toDate(getLocalTimeZone());
+
             query.push({
               i: 'scadenza_bando',
               o: 'plone.app.querystring.operation.date.largerThan', //plone.app.querystring.operation.date.largerThan
-              v: start,
+              v: start.toISOString(),
             });
-          } else if (!value?.startDate && value?.endDate) {
-            let end_v = value.endDate.clone();
-            let end = end_v.add(1, 'd').startOf('day')?.utc().format(date_fmt);
+          } else if (!value?.start && value?.end) {
+            end = value.end.cycle('day', 1).toDate(getLocalTimeZone());
+
             query.push({
               i: 'scadenza_bando',
               o: 'plone.app.querystring.operation.date.lessThan', //plone.app.querystring.operation.date.lessThan
-              v: end,
+              v: end.toISOString(),
             });
           } else {
-            let start_v = value.startDate.clone();
-            let start = start_v.startOf('day')?.utc()?.format(date_fmt);
-
-            let end_v = value.endDate.clone();
-            let end = end_v.add(1, 'd').startOf('day')?.utc()?.format(date_fmt);
+            start = value.start.toDate(getLocalTimeZone());
+            end = value.end.cycle('day', 1).toDate(getLocalTimeZone());
 
             query.push({
               i: 'scadenza_bando',
               o: 'plone.app.querystring.operation.date.between',
-              v: [start, end],
+              v: [start.toISOString(), end.toISOString()],
             });
           }
         }

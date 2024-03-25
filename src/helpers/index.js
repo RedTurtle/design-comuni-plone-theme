@@ -52,3 +52,4 @@ export {
 export { commonSearchBlockMessages } from 'design-comuni-plone-theme/helpers/Translations/searchBlockExtendedTranslations';
 
 export { getComponentWithFallback } from 'design-comuni-plone-theme/helpers/registry';
+export { generateFiltersProps } from 'design-comuni-plone-theme/helpers/filters';

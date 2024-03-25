@@ -60,9 +60,11 @@ const RightColumnFacets = (props) => {
           </Row>
         )}
 
-        <Row>
+        <Row className="px-4">
           <div
-            className={showColumn ? 'col-lg-8 col-md-7 col-sm-12' : 'col-lg-12'}
+            className={
+              showColumn ? 'col-xl-8 col-md-12 col-sm-12' : 'col-lg-12'
+            }
           >
             {(Object.keys(data).includes('showSearchInput')
               ? data.showSearchInput
@@ -93,7 +95,7 @@ const RightColumnFacets = (props) => {
           </div>
 
           {showColumn && (
-            <div className="col-lg-4 col-md-5 col-sm-12 ps-5 sideColumn">
+            <div className="col-xl-4 col-md-12 col-sm-12 ps-5 sideColumn">
               {data.columnTextTitle && (
                 <h6 className="columnTextTitle mb-4">{data.columnTextTitle}</h6>
               )}

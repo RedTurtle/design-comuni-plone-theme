@@ -130,6 +130,7 @@
     "design-react-kit": "5.0.0-1",
     "htmldiff-js": "1.0.5",
     "marked": "9.0.0",
+    "react-aria-components": "1.1.1",
     "react-dropzone": "11.0.1",
     "react-focus-lock": "2.9.4",
     "react-google-recaptcha-v3": "1.7.0",

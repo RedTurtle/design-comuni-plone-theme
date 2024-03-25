@@ -5,6 +5,7 @@
 import React from 'react';
 import { resolveExtension } from '@plone/volto/helpers/Extensions/withBlockExtensions';
 import config from '@plone/volto/registry';
+import { omit } from 'lodash';
 import { hasNonValueOperation, hasDateOperation } from '../utils';
 
 const showFacet = (index) => {
@@ -34,6 +35,18 @@ const Facets = (props) => {
     {},
     ...(data?.query?.query?.map(({ i, v }) => ({ [i]: v })) || []),
   );
+
+  const facetOnChangeHandler = (id, value) => {
+    if (isEditMode) return;
+    let nextFacets = { ...facets };
+    if (
+      (!Array.isArray(value) && value) ||
+      (Array.isArray(value) && value.some(Boolean))
+    )
+      nextFacets = { ...nextFacets, [id]: value };
+    else nextFacets = { ...omit(nextFacets, id) };
+    setFacets(nextFacets);
+  };
 
   return (
     <>
@@ -92,9 +105,7 @@ const Facets = (props) => {
                 isMulti={isMulti}
                 value={value}
                 isEditMode={isEditMode}
-                onChange={(id, value) => {
-                  !isEditMode && setFacets({ ...facets, [id]: value });
-                }}
+                onChange={facetOnChangeHandler}
               />
             </FacetWrapper>
           ) : (

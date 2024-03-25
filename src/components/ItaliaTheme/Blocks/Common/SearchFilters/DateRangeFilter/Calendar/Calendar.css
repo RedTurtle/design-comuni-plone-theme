@@ -1,0 +1,120 @@
+/* To override variables, look at src/theme/_css_variables.scss, they are in :root */
+@import '../Commons/Button.css';
+
+/* Fixes RAC popover truncating html and denying scroll
+   while retaining common keyboard controls (esc) for dialog
+*/
+html:has(div[role='dialog'] .react-aria-calendar[role='application']) {
+  overflow: scroll !important;
+  height: fit-content;
+}
+
+.react-aria-calendar {
+  width: var(--calendar-width);
+  max-width: 100%;
+  /* color: var(--text-color); */
+
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow:
+    0 0 8px 0 rgba(0, 0, 0, 0.1),
+    0 2px 4px 0 rgba(0, 0, 0, 0.05),
+    0 2px 20px 0 rgba(0, 0, 0, 0.2);
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    td {
+      padding: 2px 0;
+    }
+  }
+
+  .react-aria-button {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+  }
+
+  .react-aria-calendarCell {
+    line-height: 2.5rem;
+    text-align: center;
+    /* border-radius: 6px; */
+    cursor: default;
+    outline: none;
+    padding: 1px;
+    forced-color-adjust: none;
+
+    &[data-outside-month] {
+      display: none;
+    }
+
+    &[data-pressed] {
+      /* background: var(--gray-100); */
+    }
+
+    &[data-focus-visible] {
+      outline: 2px solid var(--calendar-highlighted-background);
+      outline-offset: 2px;
+    }
+    &[data-disabled] {
+      color: var(--bs-gray);
+    }
+    &[data-unavailable] {
+      text-decoration: line-through;
+      color: var(--bs-danger);
+    }
+    &[data-invalid] {
+      /* background: var(--invalid-color); */
+      color: var(--bs-danger);
+    }
+    &[data-selected] {
+      background: var(--calendar-highlighted-background);
+      color: var(--calendar-highlighted-color);
+    }
+    &[data-selection-start] {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+    &[data-selection-end] {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+  }
+
+  [slot='errorMessage'] {
+    font-size: 12px;
+    color: var(--bs-danger);
+  }
+
+  .year-selector {
+    margin-right: 0.25rem;
+  }
+  .year-selector,
+  .month-selector {
+    border-bottom: 3px solid var(--calendar-highlighted-background);
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .year-selector button span,
+  .month-selector button span {
+    padding-left: 12px;
+  }
+  .year-selector button,
+  .month-selector button {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border: none;
+    background: none;
+    appearance: none;
+    outline: none;
+    width: fit-content;
+  }
+  svg {
+    fill: var(--calendar-highlighted-background);
+  }
+}
+.react-aria-DateInput {
+  display: flex;
+}
