@@ -46,6 +46,16 @@
 ### Migliorie
 
 - Migliorata l'accessibilità del blocco Icone.
+## Versione 11.8.0 (19/03/2024)
+
+### Migliorie
+
+- Gli stili del tipo di contenuto Unità Organizzativa sono stati ottimizzati per la stampa.
+
+### Novità
+
+- È possibile scaricare il file o l'immagine caricata dal widget di upload file cliccando sul nome del file stesso.
+- È possibile aggiungere un testo alternativo per l'immagine del blocco Card con Immagine.
 
 ## Versione 11.7.0 (15/03/2024)
 
