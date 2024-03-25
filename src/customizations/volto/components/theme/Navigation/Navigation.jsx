@@ -179,10 +179,6 @@ const messages = defineMessages({
     id: 'close-menu',
     defaultMessage: 'Chiudi menu',
   },
-  ToggleMenu: {
-    id: 'toggle-menu',
-    defaultMessage: '{action} il menu',
-  },
 });
 
 Navigation.propTypes = {

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-03-06T10:48:38.114Z\n"
+"POT-Creation-Date: 2024-03-25T16:36:34.513Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -3921,6 +3921,11 @@ msgstr ""
 #: helpers/ListingHelper
 # defaultMessage: al
 msgid "to"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: {action} il menu
+msgid "toggle-menu"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
