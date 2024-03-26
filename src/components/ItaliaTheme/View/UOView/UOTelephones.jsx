@@ -1,7 +1,7 @@
+// TODO REMOVEME Sembra non più usato, rimuovere
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// TODO REMOVEME Sembra non più usato, rimuovere
 import { defineMessages, useIntl } from 'react-intl';
 import { ContactLink } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
