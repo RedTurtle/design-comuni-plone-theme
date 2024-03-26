@@ -50,6 +50,10 @@ const messages = defineMessages({
     id: 'slideDot',
     defaultMessage: 'Vai alla slide {index}',
   },
+  openLink: {
+    id: 'openLink',
+    defaultMessage: 'Apri il link',
+  },
 });
 
 function NextArrow(props) {
@@ -81,7 +85,11 @@ function NextArrow(props) {
       onKeyDown={handleKeyboardUsers}
       id="sliderNextArrow"
     >
-      <Icon icon="chevron-right" key="chevron-right" title="sliderNextArrow" />
+      <Icon
+        icon="chevron-right"
+        key="chevron-right"
+        title={intl.formatMessage(messages.successivo)}
+      />
       <span class="visually-hidden">
         {intl.formatMessage(messages.successivo)}
       </span>
@@ -129,7 +137,7 @@ function PrevArrow(props) {
       <Icon
         icon="chevron-left"
         key="chevron-left-prev"
-        title="sliderPrevArrow"
+        title={intl.formatMessage(messages.precedente)}
       />
       <span class="visually-hidden">
         {intl.formatMessage(messages.precedente)}
@@ -193,7 +201,7 @@ const Slide = ({
                   <Icon
                     icon="arrow-right"
                     key="arrow-right-fw"
-                    title="arrow-right"
+                    title={intl.formatMessage(messages.openLink)}
                   />
                 </Container>
               ) : (
@@ -202,7 +210,7 @@ const Slide = ({
                   <Icon
                     icon="arrow-right"
                     key="arrow-right"
-                    title="arrow-right"
+                    title={intl.formatMessage(messages.openLink)}
                   />
                 </>
               )}
@@ -356,7 +364,7 @@ const SliderTemplate = ({
                   <Icon
                     key={userAutoplay ? 'pause' : 'play'}
                     icon={userAutoplay ? 'pause' : 'play'}
-                    title="autoplay"
+                    title={userAutoplay ? 'pause' : 'play'}
                   />
                   <span>{userAutoplay ? 'pause' : 'play'}</span>
                 </button>
