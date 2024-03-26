@@ -34,7 +34,7 @@
 
 ### Novità
 
-- ...  [`Istruzioni`](url della documentazione relativa alla novità)
+- ...
 
 ### Fix
 
@@ -43,11 +43,85 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
+## Versione 11.8.0 (19/03/2024)
+
+### Migliorie
+
+- Gli stili del tipo di contenuto Unità Organizzativa sono stati ottimizzati per la stampa.
+
+### Novità
+
+- È possibile scaricare il file o l'immagine caricata dal widget di upload file cliccando sul nome del file stesso.
+- È possibile aggiungere un testo alternativo per l'immagine del blocco Card con Immagine.
+
+### Fix
+
+- Nel blocco con icone, se era impostata una immagine di sfondo non si vedeva.
+
+## Versione 11.7.0 (15/03/2024)
+
+### Novità
+
+- Ora la fascia del footer contenente il logo e il nome del sito è configurabile da pannello di controllo.
+- Nel pannello di controllo dei Feedback, ora gli utenti con permesso di eliminare elementi da questa sezione, possono eliminare i feedback.
+
+### Migliorie
+
+- Nel blocco form, se in fase di compilazione ci sono degli errori, viene mostrato un messaggio di errore specifico per ogni campo con errori.
+
+### Fix
+
+- Il bordo destro della variazione Link solo immagine del blocco Elenco è stato ripristinato.
+- Se si mettono due blocchi Form nella stessa pagina, ora funzionano correttamente.
+- Aggiustato il modulo di Feedback quando si cambia valutazione dopo averne già selezionata un'altra.
+
+## Versione 11.6.1 (06/03/2024)
+
+### Fix
+
+- Quando si imposta una ricorrenza per giorni feriali negli Eventi, viene visualizzato il testo corretto "ogni giorno feriale".
+- Le icone social nel menu laterale mobile sono tutte dello stesso colore.
+
+## Versione 11.6.0 (05/03/2024)
+
+### Migliorie
+
+- Nel blocco form è stata aggiunta una legenda per i campi obbligatori.
+
+### Novità
+
+- Rimosso i contatti dalle card che rappresentano Unità Organizzative nelle varie viste dei diversi content type in cui sono implementate.
+  La lista delle viste comprende i CT: Persona, Unità Organizzativa, Documento, Bando, Servizio, Notizia, Evento, Incarico, Luogo, Argomento.
+- Aggiornato il plugin del blocco Form, adesso si ha la possibilità di aggiungere un pulsante per resettare i campi e nella sidebar è presente un nuovo campo per creare un messaggio personalizzato dopo l'invio della form, i campi di tipo: testo, email, data e textarea hanno un identificativo che può essere utilizzato per restituire il valore di quei campi nel messaggio personalizzato.
+
 ### Fix
 
 - L'icona per aprire il menu in mobile è ora visibile anche quando l'header del sito è bianca.
 - La descrizione nelle card per i punti di contatto non mostrano più tutte le iniziali in maiuscolo.
 - Il colore dei link nel menu mobile è ora accessibile per tutti i temi.
+- Titolo e descrizione sistemati su blocco icone. Adesso quando il loro contenuto è cancellato non resta lo spazio vuoto sopra le icone.
+- Migliorata l'accessibilità della sezione dedicata al feedback utente per tutti i contenuti del sito.
+- Rimosso il title dall'immagine di apertura dei contenuti.
+- Rimosso attributo title dall'immagine delle card: card con immagine, persona, blocco link completo, contenuto in evidenza, gallery a griglia, in evidenza.
+- Migliorata l'accessibilità del menu in versione mobile.
+- Il layout dei campi di input "in errore" del blocco Form è stato uniformato.
+- La tendina delle select nel blocco Form non si sovrappone più ai campi sottostanti.
+- Sistemato alert di errore nel blocco Form che nascondeva il form quando un campo non era valido, ora continua a visualizzarsi anche la form.
+- Migliorato il testo alternativo per il logo NextGenerationEU nel footer.
+- Migliorata l'accessibilità del blocco Cerca.
+- Sistemato il contrasto delle icone nei pulsanti "primary" quando si attiva il focus col tab da tastiera.
 
 ## Versione 11.5.1 (19/02/2024)
 
@@ -64,7 +138,6 @@
 ### Fix
 
 - Risolto un problema riguardante la visualizzazione delle date nelle card che rappresentano un CT Evento nei vari listati nel caso in cui l'evento si sviluppi su anni diversi
-
 - Risolto un problema di visualizzazione per la sezione Date e Orari nel CT Evento quando l'evento si sviluppa su anni diversi, ora viene mostrato anche l'anno se si rientra in questa casistica
 - Nel blocco elenco, sono stati sistemati i filtri per percorso quando si clicca sul bottone configurato.
 

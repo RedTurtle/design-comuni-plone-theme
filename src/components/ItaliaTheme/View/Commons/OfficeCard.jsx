@@ -3,7 +3,6 @@ import { UniversalLink } from '@plone/volto/components';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { ContactLink } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import config from '@plone/volto/registry';
 
 /**
@@ -58,7 +57,6 @@ const OfficeCard = ({
         <p className="card-text">{office.description}</p>
         {show_contacts && office?.sede?.length > 0 && (
           <div>
-            {' '}
             {office?.sede?.map((sede, i) => {
               return (
                 <div className="card-text" key={i}>
@@ -67,26 +65,6 @@ const OfficeCard = ({
                     <p>
                       {sede.zip_code} {sede.city}
                     </p>
-                  )}
-                  {office?.contact_info?.map((el) =>
-                    el?.value_punto_contatto?.map((pdc, i) => {
-                      if (pdc.pdc_type === 'telefono') {
-                        return (
-                          <div key={i}>
-                            <ContactLink tel={pdc.pdc_value} label={false} />
-                          </div>
-                        );
-                      } else if (
-                        pdc.pdc_type === 'email' ||
-                        pdc.pdc_type === 'pec'
-                      )
-                        return (
-                          <div key={i}>
-                            <ContactLink email={pdc.pdc_value} label={false} />
-                          </div>
-                        );
-                      return null;
-                    }),
                   )}
                 </div>
               );

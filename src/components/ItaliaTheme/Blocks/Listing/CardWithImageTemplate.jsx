@@ -50,7 +50,7 @@ const CardWithImageTemplate = (props) => {
     show_block_bg = false,
     always_show_image = false,
     set_four_columns = false,
-    show_type = true,
+    show_type = false,
     show_section,
     show_icon = true,
     show_description = true,
@@ -93,7 +93,7 @@ const CardWithImageTemplate = (props) => {
               <ListingText item={item} />
             ) : null;
 
-            const image = ListingImage({ item });
+            const image = ListingImage({ item, showTitleAttr: false });
 
             const showImage =
               (index < imagesToShow || always_show_image) && image != null;
