@@ -1487,11 +1487,6 @@ msgid "dateRangePicker_closeDatePicker"
 msgstr "Fermer le sélecteur de date"
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
-# defaultMessage: Intervallo date
-msgid "dateRangePicker_dateInterval"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
 # defaultMessage: Tasto invio
 msgid "dateRangePicker_enterKey"
 msgstr "Enter key"
@@ -2626,6 +2621,11 @@ msgstr ""
 # defaultMessage: Numero del comunicato stampa
 msgid "numero_progressivo_cs"
 msgstr "Numéro du communiqué de presse"
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Apri il link
+msgid "openLink"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/CTABlock/Block
 # defaultMessage: Apri link in una nuova scheda

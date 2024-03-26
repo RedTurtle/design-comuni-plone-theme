@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-03-07T14:23:55.309Z\n"
+"POT-Creation-Date: 2024-03-26T09:41:28.601Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1472,11 +1472,6 @@ msgid "dateRangePicker_closeDatePicker"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
-# defaultMessage: Intervallo date
-msgid "dateRangePicker_dateInterval"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
 # defaultMessage: Tasto invio
 msgid "dateRangePicker_enterKey"
 msgstr ""
@@ -2610,6 +2605,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderNewsItem
 # defaultMessage: Numero del comunicato stampa
 msgid "numero_progressivo_cs"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Apri il link
+msgid "openLink"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/CTABlock/Block
