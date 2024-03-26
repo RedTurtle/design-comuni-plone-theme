@@ -32,6 +32,10 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Migliorie
+
+- Migliorata l'accessibilità del bottone "Cerca".
+
 ### Fix
 
 - Migliorato l'allineamento dei filtri nella pagina di Ricerca.
