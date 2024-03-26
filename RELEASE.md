@@ -32,6 +32,10 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Migliorie
+
+- Migliorata l'accessibilità per la customer satisfaction.
+
 ### Fix
 
 - Migliorato l'allineamento dei filtri nella pagina di Ricerca.
