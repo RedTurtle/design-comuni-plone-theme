@@ -34,7 +34,7 @@
 
 ### Novità
 
-- ...  [`Istruzioni`](url della documentazione relativa alla novità)
+- ...
 
 ### Fix
 
