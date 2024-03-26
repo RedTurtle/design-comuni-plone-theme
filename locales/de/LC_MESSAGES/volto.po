@@ -778,6 +778,11 @@ msgstr ""
 msgid "allegati"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
+# defaultMessage: Testo alternativo per l'immagine
+msgid "altText"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Altre cariche
 msgid "altre_cariche"
@@ -2072,6 +2077,11 @@ msgid "feedback_sent"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Valuta da 1 a 5 stelle
+msgid "feedback_stars"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: I ran into technical problems
 msgid "feedback_technical_problems"
 msgstr ""
@@ -2978,6 +2988,16 @@ msgstr ""
 #: overrideTranslations
 # defaultMessage: _
 msgid "rrule_th"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: giorno feriale
+msgid "rrule_weekday"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: giorni feriali
+msgid "rrule_weekdays"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithImageRssTemplate
