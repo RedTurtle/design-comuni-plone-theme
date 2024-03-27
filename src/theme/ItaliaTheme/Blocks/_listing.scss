@@ -1,11 +1,6 @@
 .block.listing {
   .full-width {
     height: unset;
-
-    h2 {
-      @include rem-size(font-size, 32);
-      @include rem-size(line-height, 32);
-    }
   }
 
   .listing-item picture {
@@ -35,7 +30,7 @@
 
   //* customizzazione: checkbox linea sotto al titolo
   .title-bottom-line {
-    border-bottom: 1px solid #455b71;
     padding-bottom: 15px;
+    border-bottom: 1px solid #455b71;
   }
 }

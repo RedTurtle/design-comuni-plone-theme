@@ -11,16 +11,12 @@
 
   .listing-item {
     a {
-      display: inline;
-    }
-
-    img.listing-image {
-      max-width: 100%;
-      height: auto;
-      object-position: center;
+      display: inline-block;
     }
 
     .img-responsive-wrapper {
+      width: inherit;
+
       .img-responsive {
         .img-wrapper {
           display: flex;
@@ -74,7 +70,7 @@
 
     .card-title {
       a {
-        display: inline;
+        display: inline-block; //per avere il bordo tutto unito al focus di un link, ad esempio nelle card
         width: initial;
         color: $body-color;
         text-decoration: none;
@@ -98,9 +94,9 @@
   .listing-item.card {
     .card-body {
       .category-top {
+        color: $caption-text;
         font-size: 0.875rem;
         line-height: 1.313rem;
-        color: $caption-text;
 
         .text {
           font-weight: 600;
@@ -111,22 +107,34 @@
           font-weight: 400;
           letter-spacing: 1.1px;
         }
+
+        &.wrap-dates-four-columns {
+          flex-wrap: wrap;
+
+          .data {
+            margin-top: 0.5rem;
+          }
+
+          ::before {
+            display: none;
+          }
+        }
       }
 
       .card-title {
         a {
-          font-size: 1.3rem;
-          line-height: 1.75rem;
-          font-weight: 700;
           color: $link-color;
+          font-size: 1.3rem;
+          font-weight: 700;
+          line-height: 1.75rem;
         }
       }
 
       .card-text {
-        font-size: 1rem;
-        line-height: 1.5rem;
         color: $gray-secondary;
         font-family: $font-family-sans-serif;
+        font-size: 1rem;
+        line-height: 1.5rem;
       }
     }
   }
@@ -138,8 +146,8 @@
         }
 
         .data.data {
-          margin-top: 3px;
           flex-basis: 100%;
+          margin-top: 3px;
 
           &:before {
             display: none;
@@ -156,8 +164,8 @@
         }
 
         .data.data {
-          margin-top: 3px;
           flex-basis: 100%;
+          margin-top: 3px;
 
           &:before {
             display: none;

@@ -14,7 +14,6 @@ import {
   CardReadMore,
 } from 'design-react-kit';
 
-import Image from '@plone/volto/components/theme/Image/Image';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
@@ -22,15 +21,25 @@ import {
   CardCategory,
   getItemIcon,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { viewDate } from 'design-comuni-plone-theme/helpers';
+import {
+  viewDate,
+  getComponentWithFallback,
+} from 'design-comuni-plone-theme/helpers';
+import config from '@plone/volto/registry';
 
 const Body = (props) => {
   const { content, block } = props;
   const intl = useIntl();
+  const Image = config.getComponent({ name: 'Image' }).component;
   const icon = getItemIcon(content);
 
   const { show_type = true, show_section } = block;
   const category = getCategory(content, show_type, show_section, props);
+
+  const BlockExtraTags = getComponentWithFallback({
+    name: 'BlockExtraTags',
+    dependencies: ['HighlightedContent', content['@type']],
+  }).component;
 
   return (
     <div className={`${block.bg_color ? 'bg-' + block.bg_color : ''}`}>
@@ -38,12 +47,15 @@ const Body = (props) => {
         {(content.preview_image || content.image) && (
           <Col lg={{ size: 6, offset: 1, order: 2 }}>
             <Image
-              image={content.preview_image || content.image}
+              item={content}
+              imageField={content.preview_image ? 'preview_image' : 'image'}
               alt=""
               className={cx('item-image', {
                 'natural-image-size': block.natural_image_size,
               })}
               role={null}
+              responsive={true}
+              sizes="(max-width:768px) 90vw, (max-width:1024px) 450px, 560px"
             />
           </Col>
         )}
@@ -66,7 +78,7 @@ const Body = (props) => {
                 </ConditionalLink>
               </CardTitle>
               <CardText>{content.description}</CardText>
-
+              <BlockExtraTags {...props} item={content} itemIndex={0} />
               {content.tassonomia_argomenti &&
                 content.tassonomia_argomenti.length > 0 && (
                   <>

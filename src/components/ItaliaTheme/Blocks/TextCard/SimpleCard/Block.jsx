@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useRef, useEffect } from 'react';
-import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
+import React, { useState, useEffect } from 'react';
+import { Card, CardBody, CardTitle } from 'design-react-kit';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import redraft from 'redraft';
@@ -52,18 +52,12 @@ const Block = ({
 
   return (
     <div className="simple-text-card-wrapper">
-      <Card
-        color="white"
-        className=" card-bg rounded"
-        noWrapper={false}
-        space
-        tag="div"
-      >
+      <Card color="white" className="no-after card-bg rounded" space tag="div">
         <CardBody>
           <div className={cx('simple-text-card', { 'cms-ui': inEditMode })}>
             {inEditMode ? (
               <>
-                <CardTitle tag="h4">
+                <CardTitle tag="h3" className="h4">
                   <div
                     onClick={() => {
                       setSelectedField('title');
@@ -104,45 +98,39 @@ const Block = ({
                     setSelectedField('content');
                   }}
                 >
-                  <CardText>
-                    <TextEditorWidget
-                      data={data}
-                      fieldName="simple_card_content"
-                      selected={selectedField === 'content'}
-                      block={block}
-                      onChangeBlock={(data) =>
-                        onChange(data, 'simple_card_content')
-                      }
-                      placeholder={intl.formatMessage(
-                        messages.simple_card_content,
-                      )}
-                      showToolbar={true}
-                      onSelectBlock={onSelectBlock}
-                      onAddBlock={onAddBlock}
-                      index={index}
-                      onFocusNextBlock={onFocusNextBlock}
-                      onFocusPreviousBlock={() => {
-                        setSelectedField('title');
-                      }}
-                    />
-                  </CardText>
+                  <TextEditorWidget
+                    data={data}
+                    fieldName="simple_card_content"
+                    selected={selectedField === 'content'}
+                    block={block}
+                    onChangeBlock={(data) =>
+                      onChange(data, 'simple_card_content')
+                    }
+                    placeholder={intl.formatMessage(
+                      messages.simple_card_content,
+                    )}
+                    showToolbar={true}
+                    onSelectBlock={onSelectBlock}
+                    onAddBlock={onAddBlock}
+                    index={index}
+                    onFocusNextBlock={onFocusNextBlock}
+                    onFocusPreviousBlock={() => {
+                      setSelectedField('title');
+                    }}
+                  />
                 </div>
               </>
             ) : (
               <>
-                <CardTitle tag="h4" id={block.id + '-title'}>
+                <CardTitle tag="h3" id={block.id + '-title'} className="h4">
                   {title}
                 </CardTitle>
-                <Divider />
-                <div>
-                  <CardText>
-                    {redraft(
-                      content,
-                      config.settings.richtextViewSettings.ToHTMLRenderers,
-                      config.settings.richtextViewSettings.ToHTMLOptions,
-                    )}
-                  </CardText>
-                </div>
+                <hr />
+                {redraft(
+                  content,
+                  config.settings.richtextViewSettings.ToHTMLRenderers,
+                  config.settings.richtextViewSettings.ToHTMLOptions,
+                )}
               </>
             )}
           </div>

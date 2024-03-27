@@ -9,10 +9,16 @@
 }
 
 .card.border-left-card {
-  border-left: 8px solid $primary-a0;
-  box-shadow: 0px 4px 4px 0px #00000026;
   display: flex;
   flex-wrap: nowrap;
+  border-left: 8px solid $primary-a0;
+  box-shadow: 0px 4px 4px 0px #00000026;
+
+  .card-title {
+    a {
+      display: inline-block; //per avere il bordo tutto unito al focus di un link, ad esempio nelle card
+    }
+  }
 
   &.card-small {
     @include rem-size(line-height, 24);
@@ -40,6 +46,7 @@
     .text.fw-bold {
       color: $link-color;
       font-weight: 600;
+
       a {
         @include rem-size(font-size, 24);
         @include rem-size(line-height, 32);
@@ -59,7 +66,7 @@
   }
 
   &.card-teaser .card-body {
-    flex: 1 0 75%;
+    flex: 1 0 74%;
   }
 }
 
@@ -67,8 +74,10 @@
   &.card.card-teaser {
     display: flex;
   }
+
   .card-body {
     padding: 0em !important;
+
     .category-top {
       .category {
         text-decoration: none;
@@ -79,12 +88,16 @@
       margin-bottom: 0.3em !important;
       font-weight: 600;
 
+      a {
+        display: inline-block; //per avere il bordo tutto unito al focus di un link, ad esempio nelle card
+      }
+
       a,
       &.venue-card-title.venue-card-title {
         @include rem-size(font-size, 24);
         @include rem-size(line-height, 32);
-        text-decoration: none;
         font-weight: 600;
+        text-decoration: none;
       }
 
       a:hover {
@@ -105,6 +118,7 @@
     h5.card-title {
       a {
         @include rem-size(font-size, 18);
+        display: inline-block; //per avere il bordo tutto unito al focus di un link, ad esempio nelle card
         text-decoration: none;
         text-transform: none;
       }
@@ -118,8 +132,8 @@
 
 .card.preview-image-card {
   .image-container {
-    margin: auto;
     flex-basis: 20%;
+    margin: auto;
 
     img {
       max-width: 64px;
@@ -136,6 +150,7 @@
       a {
         @include rem-size(font-size, 18);
         @include rem-size(line-height, 24);
+        display: inline-block; //per avere il bordo tutto unito al focus di un link, ad esempio nelle card
         font-weight: 600;
         text-decoration: none;
       }
@@ -143,19 +158,9 @@
       a:hover {
         text-decoration: underline;
       }
+
       svg {
         fill: $link-color;
-      }
-    }
-  }
-}
-
-.block.highlitedContent {
-  div.card {
-    h2.card-title {
-      a {
-        color: $link-color;
-        font-size: 1.7rem;
       }
     }
   }
@@ -168,8 +173,8 @@
     }
 
     .card-body {
-      margin-left: 0em;
       flex-basis: 100%;
+      margin-left: 0em;
     }
   }
 }
@@ -183,21 +188,24 @@
 .custom-calendar-card {
   .card-calendar.extended {
     width: 100px;
+
     .card-date .date-label {
       @include rem-size(font-size, 16);
       font-weight: 600;
+
       + .date {
         @include rem-size(font-size, 20);
       }
     }
   }
+
   .card-calendar {
     .card-date {
       .date {
         font-family: $font-family-sans-serif;
         font-size: 1.3rem;
-        line-height: 1.4rem;
         font-weight: 700;
+        line-height: 1.4rem;
 
         &.day {
           @include rem-size(font-size, 28);
@@ -205,10 +213,10 @@
         }
 
         &.month {
+          font-weight: 600;
           text-transform: capitalize;
           @include rem-size(font-size, 16);
           @include rem-size(line-height, 21.1);
-          font-weight: 600;
         }
       }
     }

@@ -8,13 +8,15 @@
     ul {
       li {
         a.list-item,
+        a.list-item a,
         button.btn-link {
           display: flex;
           align-items: center;
+          font-size: var(--bs-dropdown-font-size);
 
           .icon {
-            height: 28px;
             width: 28px;
+            height: 28px;
             margin-right: 0.5em;
           }
         }

@@ -36,13 +36,12 @@
 
     .card-body {
       a {
+        display: inline-block; //per avere il bordo tutto unito al focus di un link, ad esempio nelle card
         &:link,
         &:visited {
           text-decoration: none;
         }
-      }
 
-      a {
         &:hover,
         &:active {
           text-decoration: underline;
@@ -55,7 +54,9 @@
         a {
           @include rem-size(font-size, 24);
           @include rem-size(line-height, 26);
+          display: inline-block; //per avere il bordo tutto unito al focus di un link, ad esempio nelle card
           font-weight: 700;
+
           &:hover,
           &:active {
             text-decoration: underline;
@@ -66,11 +67,11 @@
       .category-top {
         span.text {
           span.text.fw-bold {
-            font-size: 0.875rem;
-            line-height: 1.313rem;
-            letter-spacing: 1px;
-            font-weight: 600 !important;
             color: $link-color;
+            font-size: 0.875rem;
+            font-weight: 600 !important;
+            letter-spacing: 1px;
+            line-height: 1.313rem;
           }
         }
       }
@@ -78,6 +79,7 @@
       p.card-text {
         font-size: 1rem;
         line-height: 1.5rem;
+
         div.document-date {
           @include rem-size(font-size, 14);
         }
@@ -126,8 +128,10 @@
       a {
         @include rem-size(font-size, 32);
         @include rem-size(line-height, 32);
+        display: inline-block; //per avere il bordo tutto unito al focus di un link, ad esempio nelle card
         font-weight: 700;
         text-decoration: none;
+
         &:hover,
         &:active {
           text-decoration: underline;

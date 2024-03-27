@@ -127,13 +127,11 @@ const IncaricoView = (props) => {
             tag_id="ufficio"
             title={intl.formatMessage(messages.ufficio)}
           >
-            {content.unita_organizzativa?.map((item, i) => (
-              <OfficeCard
-                key={flattenToAppURL(item['@id'])}
-                office={item}
-                load_data={false}
-              />
-            ))}
+            <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+              {content.unita_organizzativa?.map((item) => (
+                <OfficeCard key={flattenToAppURL(item['@id'])} office={item} />
+              ))}
+            </div>
           </RichTextSection>
         )}
         {content.responsabile_struttura?.length > 0 && (
@@ -141,13 +139,11 @@ const IncaricoView = (props) => {
             tag_id="responsabile"
             title={intl.formatMessage(messages.responsabile)}
           >
-            {content.responsabile_struttura?.map((item, i) => (
-              <OfficeCard
-                key={flattenToAppURL(item['@id'])}
-                office={item}
-                load_data={false}
-              />
-            ))}
+            <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+              {content.responsabile_struttura?.map((item) => (
+                <OfficeCard key={flattenToAppURL(item['@id'])} office={item} />
+              ))}
+            </div>
           </RichTextSection>
         )}
         {content.atto_nomina?.length > 0 && (

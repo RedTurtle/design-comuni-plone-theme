@@ -6,7 +6,7 @@ import contentSVG from '@plone/volto/icons/content.svg';
 import bookSVG from '@plone/volto/icons/book.svg';
 import shareSVG from '@plone/volto/icons/share.svg';
 import searchIcon from 'bootstrap-italia/src/svg/it-search.svg';
-
+import { defineMessages } from 'react-intl';
 import { Search } from '@plone/volto/components';
 
 import {
@@ -65,9 +65,16 @@ import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/
 
 import reducers from 'design-comuni-plone-theme/reducers';
 
-const ReleaseLog = loadable(() =>
-  import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
+const ReleaseLog = loadable(
+  () => import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
 );
+
+const messages = defineMessages({
+  search_brdc: {
+    id: 'search_brdc',
+    defaultMessage: 'Ricerca',
+  },
+});
 
 export default function applyConfig(voltoConfig) {
   let config = applyRichTextConfig(voltoConfig);
@@ -97,6 +104,7 @@ export default function applyConfig(voltoConfig) {
       // },
     }),
     isMultilingual: false,
+    // DEPRECATED: isFooterCollapsed to be removed in version 12. Use siteProperties.footerNavigationDepth instead.
     isFooterCollapsed: false, // false(default) -> vedere il footer automatico esploso | true -> implodere il footer menu automatico
     supportedLanguages: ['it'],
     defaultLanguage: 'it',
@@ -105,6 +113,7 @@ export default function applyConfig(voltoConfig) {
     showSelfRegistration: false,
     useEmailAsLogin: false,
     defaultPageSize: 24,
+    navDepth: 2,
     cookieExpires: 15552000, //6 month
     serverConfig: {
       ...config.settings.serverConfig,
@@ -479,9 +488,16 @@ export default function applyConfig(voltoConfig) {
     },
   };
   // Remove Horizontal Menu variation of TOC Block
-  config.blocks.blocksConfig.toc.variations = config.blocks.blocksConfig.toc.variations.filter(
-    (v) => v.id !== 'horizontalMenu',
-  );
+  config.blocks.blocksConfig.toc.variations =
+    config.blocks.blocksConfig.toc.variations.filter(
+      (v) => v.id !== 'horizontalMenu',
+    );
+
+  // COMPONENTS
+  config.components = {
+    ...config.components,
+    BlockExtraTags: { component: () => null },
+  };
 
   // REDUCERS
   config.addonReducers = {
@@ -495,6 +511,7 @@ export default function applyConfig(voltoConfig) {
     {
       path: '/**/search',
       component: Search,
+      breadcrumbs_title: messages.search_brdc,
     },
     {
       path: ['/login', '/**/login'],

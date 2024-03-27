@@ -77,6 +77,9 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
               {start.format('DD')}
             </span>
             <span className="point-month">{start.format('MMMM')}</span>
+            {!start.isSame(end, 'year') && (
+              <span className="point-month">{start.format('YYYY')}</span>
+            )}
           </div>
           <div className="point-list-content">
             <Card
@@ -101,10 +104,13 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         {!openEnd && (
           <div className="point-list">
             <div className="point-list-aside point-list-warning">
-              <span className="point-date text-monospace">
+              <span className="point-date font-monospace">
                 {end.format('DD')}
               </span>
               <span className="point-month">{end.format('MMMM')}</span>
+              {!end.isSame(start, 'year') && (
+                <span className="point-month">{end.format('YYYY')}</span>
+              )}
             </div>
             <div className="point-list-content">
               <Card

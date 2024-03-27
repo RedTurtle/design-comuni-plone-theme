@@ -1,3 +1,6 @@
+/*
+ * componente per visulizzare un CT "Persona" nei Listing o in aclune pagine
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -23,6 +26,7 @@ import {
 import {
   getCalendarDate,
   getEventRecurrenceMore,
+  getComponentWithFallback,
 } from 'design-comuni-plone-theme/helpers';
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
 
@@ -46,7 +50,7 @@ const CardWithImageTemplate = (props) => {
     show_block_bg = false,
     always_show_image = false,
     set_four_columns = false,
-    show_type = true,
+    show_type = false,
     show_section,
     show_icon = true,
     show_description = true,
@@ -89,22 +93,30 @@ const CardWithImageTemplate = (props) => {
               <ListingText item={item} />
             ) : null;
 
-            const image = ListingImage({ item });
+            const image = ListingImage({ item, showTitleAttr: false });
 
             const showImage =
               (index < imagesToShow || always_show_image) && image != null;
             const category = getCategory(item, show_type, show_section, props);
             const topics = show_topics ? item.tassonomia_argomenti : null;
+
+            const BlockExtraTags = getComponentWithFallback({
+              name: 'BlockExtraTags',
+              dependencies: ['CardWithImageTemplate', item['@type']],
+            }).component;
+            const layoutSelected = set_four_columns ? '3' : '4';
+
             return (
               <Col
-                lg={set_four_columns ? '3' : '4'}
+                xl={layoutSelected}
+                lg={item['@type'] === 'Persona' ? 6 : layoutSelected}
                 key={item['@id']}
                 className="col-item mb-3"
               >
                 {item['@type'] === 'Persona' ? (
                   <CardPersona
                     item={item}
-                    className="listing-item card-bg shadow-sm"
+                    className="card-bg shadow-sm"
                     showImage={showImage}
                     natural_image_size={natural_image_size}
                     show_description={show_description}
@@ -115,7 +127,6 @@ const CardWithImageTemplate = (props) => {
                 ) : (
                   <Card
                     className={cx('listing-item card-bg', {
-                      'card-img': showImage,
                       'card-teaser-image card-flex no-after':
                         item['@type'] === 'Persona',
                     })}
@@ -141,7 +152,13 @@ const CardWithImageTemplate = (props) => {
                     )}
                     <CardBody className="px-4">
                       {(icon || category || date) && (
-                        <CardCategory iconName={icon} date={date}>
+                        <CardCategory
+                          iconName={icon}
+                          date={date}
+                          className={cx('category-top categoryicon-top', {
+                            'wrap-dates-four-columns': set_four_columns,
+                          })}
+                        >
                           <ListingCategory category={category} item={item} />
                         </CardCategory>
                       )}
@@ -163,7 +180,11 @@ const CardWithImageTemplate = (props) => {
                           {listingText}
                         </CardText>
                       )}
-
+                      <BlockExtraTags
+                        {...props}
+                        item={item}
+                        itemIndex={index}
+                      />
                       {topics?.length > 0 && (
                         <div
                           className={cx('', {

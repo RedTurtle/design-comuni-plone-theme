@@ -9,6 +9,7 @@ import { LocationFiltersWidget } from 'design-comuni-plone-theme/components/Ital
 
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   calendarBlockSidebarTitle: {
@@ -55,7 +56,6 @@ const ListingSidebar = (props) => {
 
     setActiveAccIndex(newIndex);
   }
-
   return (
     <Segment.Group raised>
       <header className="header pulled">
@@ -127,8 +127,14 @@ const ListingSidebar = (props) => {
             <Icon name={downSVG} size="20px" />
           )}
         </Accordion.Title>
-        <Accordion.Content active={activeAccIndex === 1}>
-          <ListingData {...props} />
+        <Accordion.Content
+          active={activeAccIndex === 1}
+          className="listing-calendar-props"
+        >
+          <ListingData
+            blocksConfig={{ listing: config.blocks.blocksConfig.listing }}
+            {...props}
+          />
         </Accordion.Content>
       </Accordion>
     </Segment.Group>

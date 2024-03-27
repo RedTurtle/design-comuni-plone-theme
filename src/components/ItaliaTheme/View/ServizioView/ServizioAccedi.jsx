@@ -44,7 +44,6 @@ const ServizioAccedi = ({ content }) => {
               <OfficeCard
                 key={canale['@id']}
                 office={canale}
-                load_data={false}
                 data-element="service-generic-access"
               />
             </div>
@@ -57,18 +56,15 @@ const ServizioAccedi = ({ content }) => {
           title={intl.formatMessage(messages.dove_rivolgersi)}
           lighthouseId="service-generic-access"
         >
-          {content.dove_rivolgersi?.map?.((dove) => (
-            <div
-              key={dove['@id']}
-              className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal"
-            >
+          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+            {content.dove_rivolgersi?.map?.((dove) => (
               <OfficeCard
                 office={dove}
-                load_data={false}
                 data-element="service-generic-access"
+                key={dove['@id']}
               />
-            </div>
-          ))}
+            ))}
+          </div>
           <RichText
             data={content.dove_rivolgersi_extra}
             lighthouseId="service-generic-access"

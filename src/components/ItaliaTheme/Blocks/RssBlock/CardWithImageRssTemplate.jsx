@@ -53,7 +53,7 @@ const CardWithImageRssTemplate = ({
           <Row>
             {items.map((item) => (
               <Col lg={3} className="mb-3" key={item['@id']}>
-                <Card className="card-bg card-img" noWrapper={false} tag="div">
+                <Card className="card-bg" noWrapper={false} tag="div">
                   {item.enclosure?.url && (
                     <div className="img-responsive-wrapper">
                       <div className="img-responsive img-responsive-panoramic">
@@ -82,7 +82,9 @@ const CardWithImageRssTemplate = ({
                         {getViewDate(item.pubDate || item.date, intl.locale)}
                       </span>{' '}
                     </div>
-                    <CardTitle tag="h6">{item.title}</CardTitle>
+                    <CardTitle tag="h3" className="h6">
+                      {item.title}
+                    </CardTitle>
                     {item?.source?.length > 0 && (
                       <div className="source-title">
                         <span className="source">{item.source}</span>

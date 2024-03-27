@@ -17,10 +17,6 @@ module.exports = {
   ],
   moduleNameMapper: {
     '\\.(css|less|scss|sass|svg)$': 'identity-obj-proxy',
-    '@plone/volto/components/theme/Image/Image':
-      '<rootDir>/src/addons/design-comuni-plone-theme/src/components/Image/Image.jsx',
-    '@plone/volto/helpers/Image/Image':
-      '<rootDir>/src/addons/design-comuni-plone-theme/src/components/Image/helpers.js',
     '@plone/volto/cypress': '<rootDir>/node_modules/@plone/volto/cypress',
     '@plone/volto/babel': '<rootDir>/node_modules/@plone/volto/babel',
     '@plone/volto/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
@@ -43,6 +39,8 @@ module.exports = {
     '^volto-dropdownmenu/(.*)$':
       '<rootDir>/node_modules/volto-dropdownmenu/src/$1',
     '^volto-feedback/(.*)$': '<rootDir>/node_modules/volto-feedback/src/$1',
+    '^volto-blocks-widget/(.*)$':
+      '<rootDir>/node_modules/volto-blocks-widget/src/$1',
   },
   collectCoverage: false,
   collectCoverageFrom: [

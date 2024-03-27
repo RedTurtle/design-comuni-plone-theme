@@ -5,7 +5,10 @@ import cx from 'classnames';
 
 import { UniversalLink } from '@plone/volto/components';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import { getCalendarDate } from 'design-comuni-plone-theme/helpers';
+import {
+  getCalendarDate,
+  getComponentWithFallback,
+} from 'design-comuni-plone-theme/helpers';
 import {
   ListingLinkMore,
   ListingCategory,
@@ -53,12 +56,17 @@ const CardWithSlideUpTextTemplate = (props) => {
         </div>
         <div className="grid mb-3 mt-5">
           {items.map((item, index) => {
-            const image = getListingImageBackground(item, 'teaser');
+            const image = getListingImageBackground(item, 'large');
             const category = getCategory(item, show_type, show_section, props);
             const date = hide_dates
               ? null
               : getCalendarDate(item, rrule.rrulestr);
             const title = item?.title || '';
+
+            const BlockExtraTags = getComponentWithFallback({
+              name: 'BlockExtraTags',
+              dependencies: ['CardWithSlideUpTextTemplate', item['@type']],
+            }).component;
 
             return (
               <UniversalLink
@@ -93,16 +101,15 @@ const CardWithSlideUpTextTemplate = (props) => {
                   {show_description && item.description && (
                     <p>{item.description}</p>
                   )}
-                  <div className="read-more">
-                    <CardReadMore
-                      iconName="it-arrow-right"
-                      tag={UniversalLink}
-                      item={!isEditMode ? item : null}
-                      href={isEditMode ? '#' : null}
-                      text={intl.formatMessage(messages.vedi)}
-                      className="justify-content-end"
-                    />
-                  </div>
+                  <BlockExtraTags {...props} item={item} itemIndex={index} />
+                  <CardReadMore
+                    iconName="it-arrow-right"
+                    tag={UniversalLink}
+                    item={!isEditMode ? item : null}
+                    href={isEditMode ? '#' : null}
+                    text={intl.formatMessage(messages.vedi)}
+                    className="justify-content-end"
+                  />
                 </div>
               </UniversalLink>
             );
