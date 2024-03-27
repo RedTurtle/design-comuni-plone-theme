@@ -35,6 +35,7 @@
 ### Migliorie
 
 - Migliorata l'accessibilità del bottone "Cerca".
+- Migliorata l'accessibilità per la customer satisfaction.
 
 ### Fix
 
