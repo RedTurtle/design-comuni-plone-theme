@@ -46,18 +46,10 @@
 ### Fix
 
 - Aggiustato il layout della card per il CT persone quando è impostata un'immagine.
+
 ### Migliorie
 
 - Migliorata l'accessibilità del blocco Icone.
-- ...
-
-### Novità
-
-- ...
-
-### Fix
-
-- ...
 
 ## Versione 11.8.0 (19/03/2024)
 
