@@ -46,6 +46,8 @@
 ### Migliorie
 
 - Migliorata l'accessibilità del bottone "Ricerca".
+- Migliorata l'accessibilità del blocco Icone.
+- ...
 
 ### Novità
 
