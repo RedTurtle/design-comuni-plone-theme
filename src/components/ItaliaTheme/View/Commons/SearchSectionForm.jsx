@@ -103,7 +103,7 @@ const SearchSectionForm = ({ content }) => {
             icon="it-search"
             aria-hidden={true}
             size="sm"
-            altText={intl.formatMessage(messages.search)}
+            title={intl.formatMessage(messages.search)}
           />
         </Button>
       </div>

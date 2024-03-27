@@ -41,7 +41,7 @@ const OfficeCard = ({
       {icon && (
         <Icon
           icon={icon}
-          altText={intl.formatMessage(messages.icona_ufficio)}
+          title={intl.formatMessage(messages.icona_ufficio)}
         ></Icon>
       )}
       <div className="card-body pe-3">

@@ -828,7 +828,7 @@ msgstr "Topic"
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateCompact
 # defaultMessage: Icona {type}
 msgid "argument_icon"
-msgstr ""
+msgstr "{type} Icon"
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
 # defaultMessage: Argomenti in evidenza
@@ -1150,7 +1150,7 @@ msgstr "Special cases"
 #: components/ItaliaTheme/Cards/CardCategory
 # defaultMessage: Icona categoria
 msgid "category_icon"
-msgstr ""
+msgstr "Category icon"
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Link al canale
@@ -1209,6 +1209,11 @@ msgstr ""
 # defaultMessage: Chiudi menu
 msgid "close-menu"
 msgstr ""
+
+#: components/ItaliaTheme/Blocks/Accordion/Block/ViewBlock
+# defaultMessage: Chiudi l'accordion
+msgid "closeAccordion"
+msgstr "Close the accordion"
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Chiudi cerca
@@ -1754,7 +1759,7 @@ msgstr ""
 #: components/SelectInput/SelectInput
 # defaultMessage: Apri il menu
 msgid "dropdown_indicator"
-msgstr ""
+msgstr "Open the menu"
 
 #: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
 # defaultMessage: Additional classes
@@ -2230,24 +2235,24 @@ msgid "iconDescription"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Argument/ArgumentIcon
-# defaultMessage: Icona per l'argomento {argument_title}
+# defaultMessage: Icona per l'argomento {topic_title}
 msgid "icon_title"
-msgstr ""
+msgstr "Icon for {topic_title} topic"
 
 #: components/ItaliaTheme/View/Commons/LocationItem
 # defaultMessage: Icona luoghi
 msgid "icona_luoghi"
-msgstr ""
+msgstr "Venues icon"
 
 #: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
 # defaultMessage: Icona telefono
 msgid "icona_telefono"
-msgstr ""
+msgstr "Phone icon"
 
 #: components/ItaliaTheme/View/Commons/OfficeCard
 # defaultMessage: Icona ufficio
 msgid "icona_ufficio"
-msgstr ""
+msgstr "Office icon"
 
 #: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 # defaultMessage: Blocco con icone
@@ -2630,10 +2635,15 @@ msgstr ""
 msgid "numero_progressivo_cs"
 msgstr "Press release number"
 
+#: components/ItaliaTheme/Blocks/Accordion/Block/ViewBlock
+# defaultMessage: Apri l'accordion
+msgid "openAccordion"
+msgstr "Open the accordion"
+
 #: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 # defaultMessage: Apri il link
 msgid "openLink"
-msgstr ""
+msgstr "Open link"
 
 #: components/ItaliaTheme/Blocks/CTABlock/Block
 # defaultMessage: Apri link in una nuova scheda
@@ -3998,7 +4008,7 @@ msgstr "Responsible office"
 #: components/ItaliaTheme/View/Commons/HelpBox
 # defaultMessage: Icona ulteriori informazioni
 msgid "ulteriori_info"
-msgstr ""
+msgstr "Further information icon"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks

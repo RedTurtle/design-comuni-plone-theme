@@ -192,26 +192,6 @@ const DateFilter = (props) => {
   } = props;
   const { DateRangePicker } = reactDates;
 
-  const customArrowIcon = (props) => {
-    return (
-      <Icon
-        icon="it-arrow-right"
-        color="white"
-        title={intl.formatMessage(messages.roleDescription)}
-      />
-    );
-  };
-
-  const customCloseIcon = (props) => {
-    return (
-      <Icon
-        icon="it-close"
-        color="white"
-        title={intl.formatMessage(messages.clearDates)}
-      />
-    );
-  };
-
   let isMobile = false;
   if (__CLIENT__) isMobile = window && window.innerWidth < 992;
 
@@ -273,8 +253,20 @@ const DateFilter = (props) => {
         hideKeyboardShortcutsPanel={true}
         showClearDates
         phrases={getDateRangePickerPhrases(intl)}
-        customArrowIcon={customArrowIcon()}
-        customCloseIcon={customCloseIcon()}
+        customArrowIcon={
+          <Icon
+            icon="it-arrow-right"
+            color="white"
+            title={intl.formatMessage(messages.roleDescription)}
+          />
+        }
+        customCloseIcon={
+          <Icon
+            icon="it-close"
+            color="white"
+            title={intl.formatMessage(messages.clearDates)}
+          />
+        }
       />
     </div>
   );

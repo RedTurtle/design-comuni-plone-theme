@@ -17,6 +17,14 @@ const messages = defineMessages({
     id: 'Vedi',
     defaultMessage: 'Vedi',
   },
+  closeAccordion: {
+    id: 'closeAccordion',
+    defaultMessage: "Chiudi l'accordion",
+  },
+  openAccordion: {
+    id: 'openAccordion',
+    defaultMessage: "Apri l'accordion",
+  },
 });
 
 /**
@@ -40,7 +48,11 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
               color="primary"
               icon={isOpen ? 'it-minus' : 'it-plus'}
               padding={false}
-              title="toggle"
+              title={
+                isOpen
+                  ? intl.formatMessage(messages.closeAccordion)
+                  : intl.formatMessage(messages.openAccordion)
+              }
             />
 
             {redraft(

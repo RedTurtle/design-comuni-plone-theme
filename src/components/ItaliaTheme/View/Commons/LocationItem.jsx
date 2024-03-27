@@ -52,7 +52,7 @@ const LocationItem = ({
       {show_icon && (
         <Icon
           icon={'it-pin'}
-          altText={intl.formatMessage(messages.icona_luoghi)}
+          title={intl.formatMessage(messages.icona_luoghi)}
         />
       )}
       <div className="card-body">

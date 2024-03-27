@@ -364,7 +364,11 @@ const SliderTemplate = ({
                   <Icon
                     key={userAutoplay ? 'pause' : 'play'}
                     icon={userAutoplay ? 'pause' : 'play'}
-                    title={userAutoplay ? 'pause' : 'play'}
+                    title={
+                      userAutoplay
+                        ? intl.formatMessage(messages.pause)
+                        : intl.formatMessage(messages.play)
+                    }
                   />
                   <span>{userAutoplay ? 'pause' : 'play'}</span>
                 </button>

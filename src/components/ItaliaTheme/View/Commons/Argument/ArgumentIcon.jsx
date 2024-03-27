@@ -17,7 +17,7 @@ const ArgumentIcon = ({ icon, title }) => {
       <Icon
         icon={icon}
         title={intl.formatMessage(messages.iconTitle, {
-          argument_title: title,
+          topic_title: title,
         })}
       />
     </div>
@@ -33,6 +33,6 @@ ArgumentIcon.propTypes = {
 const messages = defineMessages({
   iconTitle: {
     id: 'icon_title',
-    defaultMessage: "Icona per l'argomento {argument_title}",
+    defaultMessage: "Icona per l'argomento {topic_title}",
   },
 });

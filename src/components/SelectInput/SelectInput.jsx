@@ -142,7 +142,7 @@ const DropdownIndicator = injectLazyLibs('reactSelect')((props) => {
       <Icon
         icon="it-arrow-down-triangle"
         style={{ ariaHidden: true }}
-        altText={intl.formatMessage(messages.dropwdown_indicator)}
+        title={intl.formatMessage(messages.dropwdown_indicator)}
       />
     </components.DropdownIndicator>
   );
@@ -177,7 +177,7 @@ const ClearIndicator = (props) => {
         <Icon
           icon="it-close"
           style={{ ariaHidden: true }}
-          altText={intl.formatMessage(messages.ay11_for_cancel)}
+          title={intl.formatMessage(messages.ay11_for_cancel)}
         />
       </div>
     </div>

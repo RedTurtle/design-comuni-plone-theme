@@ -22,7 +22,7 @@ const EventoContattiOrganizzatoreEsterno = ({ content }) => {
       >
         <Icon
           icon="it-telephone"
-          altText={intl.formatMessage(messages.icona_telefono)}
+          title={intl.formatMessage(messages.icona_telefono)}
         />
 
         <CardBody tag="div" className={'card-body pe-3'}>

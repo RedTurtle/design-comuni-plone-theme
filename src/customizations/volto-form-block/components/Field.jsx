@@ -37,7 +37,7 @@ const DropdownIndicator = injectLazyLibs('reactSelect')((props) => {
       <Icon
         icon="chevron-down"
         style={{ ariaHidden: true }}
-        altText={intl.formatMessage(messages.open_menu)}
+        title={intl.formatMessage(messages.open_menu)}
       />
     </components.DropdownIndicator>
   );

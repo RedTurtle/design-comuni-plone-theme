@@ -16,7 +16,7 @@ const HelpBox = ({ text }) => {
           padding={false}
           size=""
           aria-hidden
-          altText={intl.formatMessage(messages.ulteriori_info)}
+          title={intl.formatMessage(messages.ulteriori_info)}
         />
         <span className="text"></span>
       </CalloutTitle>
