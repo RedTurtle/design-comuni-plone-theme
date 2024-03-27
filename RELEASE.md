@@ -35,6 +35,11 @@
 ### Migliorie
 
 - Migliorata l'accessibilità del blocco Icone.
+- Migliorata l'accessibilità per la customer satisfaction.
+
+### Fix
+
+- Migliorato l'allineamento dei filtri nella pagina di Ricerca.
 
 ## Versione 7.25.3 (07/03/2024)
 

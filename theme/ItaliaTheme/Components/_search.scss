@@ -1,3 +1,10 @@
-.search-results-wrapper .ordering-widget .react-select__option--is-focused {
-  background-color: $primary;
+.section-search {
+  .search-results-wrapper .ordering-widget .react-select__option--is-focused {
+    background-color: $primary;
+  }
+
+  #categoryCollapse .form-checck .group-col .form-check .float-right {
+    position: absolute;
+    right: 0px;
+  }
 }
