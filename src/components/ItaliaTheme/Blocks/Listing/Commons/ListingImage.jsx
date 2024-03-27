@@ -16,7 +16,7 @@ const ListingImage = ({
   let commonImageProps = {
     item,
     'aria-hidden': true,
-    alt: item.title,
+    alt: imageProps.alt ?? '',
     role: 'presentation',
     className,
     loading,
