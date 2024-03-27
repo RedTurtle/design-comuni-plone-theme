@@ -100,8 +100,10 @@ const Navigation = ({ pathname }) => {
           <HeaderToggler
             aria-controls="it-navigation-collapse"
             aria-expanded={collapseOpen}
-            aria-label={intl.formatMessage(messages.ToggleMenu, {
-              action: collapseOpen ? 'Chiudi' : 'Apri',
+            aria-label={intl.formatMessage(messages.toggleMenu, {
+              action: collapseOpen
+                ? intl.formatMessage(messages.toggleMenu_close)
+                : intl.formatMessage(messages.toggleMenu_open),
             })}
             onClick={() => {
               setCollapseOpen(!collapseOpen);
@@ -178,6 +180,18 @@ const messages = defineMessages({
   CloseMenu: {
     id: 'close-menu',
     defaultMessage: 'Chiudi menu',
+  },
+  toggleMenu: {
+    id: 'toggle-menu',
+    defaultMessage: '{action} il menu',
+  },
+  toggleMenu_open: {
+    id: 'toggleMenu_open',
+    defaultMessage: 'Apri',
+  },
+  toggleMenu_close: {
+    id: 'toggleMenu_close',
+    defaultMessage: 'Chiudi',
   },
 });
 

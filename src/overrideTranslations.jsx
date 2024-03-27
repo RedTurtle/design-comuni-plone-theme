@@ -48,8 +48,16 @@ defineMessages({
     id: 'form_default_cancel_label',
     defaultMessage: 'Annulla',
   },
-  ToggleMenu: {
+  toggleMenu: {
     id: 'toggle-menu',
     defaultMessage: '{action} il menu',
+  },
+  toggleMenu_open: {
+    id: 'toggleMenu_open',
+    defaultMessage: 'Apri',
+  },
+  toggleMenu_close: {
+    id: 'toggleMenu_close',
+    defaultMessage: 'Chiudi',
   },
 });
