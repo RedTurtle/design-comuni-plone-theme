@@ -34,6 +34,7 @@
 
 ### Migliorie
 
+- Migliorata l'accessibilità del bottone "Cerca".
 - Migliorata l'accessibilità del blocco Icone.
 - Migliorata l'accessibilità per la customer satisfaction.
 
