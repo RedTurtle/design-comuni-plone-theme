@@ -75,7 +75,7 @@ const FontAwesomeIcon = (props) => {
           ? `<title id="${iconID}">${title}</title>${loadedIcon.module.content}`
           : loadedIcon.module.content,
       }}
-      aria-labelledby={iconID}
+      aria-hidden={props['aria-hidden']}
     />
   ) : icon ? (
     <span className={`icon fa-icon placeholder ${className ?? ''}`}></span>
