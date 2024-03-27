@@ -32,7 +32,7 @@ const HeaderSearch = () => {
             e.preventDefault();
             setShowSearchModal(true);
           }}
-          href="#search"
+          href="/search"
           role="button"
         >
           <Icon icon="it-search" />
