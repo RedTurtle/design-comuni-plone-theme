@@ -43,13 +43,13 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
-### Fix
-
-- Aggiustato il layout della card per il CT persone quando è impostata un'immagine.
-
 ### Migliorie
 
 - Migliorata l'accessibilità del blocco Icone.
+
+### Fix
+
+- Aggiustato il layout della card per il CT persone quando è impostata un'immagine.
 
 ## Versione 11.8.0 (19/03/2024)
 
