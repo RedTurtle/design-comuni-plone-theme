@@ -43,13 +43,18 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
-### Novità
-
-- Aggiunto una nuova variazione del blocco elenco "Allegati" che permette di scaricare oggetti di tipo File o aprire l'anteprima di file PDF
-
 ### Migliorie
 
+- Migliorata l'accessibilità del bottone "Ricerca".
 - Migliorata l'accessibilità del blocco Icone.
+
+### Novità
+
+- Aggiunto una nuova variazione del blocco elenco "Allegati" che permette di scaricare oggetti di tipo File o aprire l'anteprima di file PDF.
+
+### Fix
+
+- Aggiustato il layout della card per il CT persone quando è impostata un'immagine.
 
 ## Versione 11.8.0 (19/03/2024)
 
