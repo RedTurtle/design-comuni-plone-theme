@@ -5,7 +5,7 @@
 import React from 'react';
 
 const FontAwesomeIcon = (props) => {
-  const { className, icon, prefix, title, ariaHidden } = props;
+  const { className, icon, prefix, title } = props;
   const [loadedIcon, setLoadedIcon] = React.useState(null);
   let prefixKey = prefix;
   let iconName = icon;
@@ -40,7 +40,7 @@ const FontAwesomeIcon = (props) => {
           ? `<title>${title}</title>${loadedIcon.content}`
           : loadedIcon.content,
       }}
-      aria-hidden={ariaHidden}
+      aria-hidden={props['aria-hidden']}
     />
   ) : icon ? (
     <span className={`icon fa-icon placeholder ${className ?? ''}`}></span>
