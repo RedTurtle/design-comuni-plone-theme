@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-03-20T16:10:46.827Z\n"
+"POT-Creation-Date: 2024-03-27T08:54:22.652Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -2290,7 +2290,7 @@ msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/AttachmentCardTemplate
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
-# defaultMessage: Link
+# defaultMessage: Collegamento
 msgid "link"
 msgstr ""
 

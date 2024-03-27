@@ -2303,7 +2303,7 @@ msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/AttachmentCardTemplate
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
-# defaultMessage: Link
+# defaultMessage: Collegamento
 msgid "link"
 msgstr ""
 

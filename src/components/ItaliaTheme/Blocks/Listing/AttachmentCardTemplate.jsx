@@ -3,14 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
-import {
-  Container,
-  Card,
-  CardBody,
-  CardTitle,
-  Row,
-  Col,
-} from 'design-react-kit';
+import { Container, Card, CardBody, CardTitle } from 'design-react-kit';
 import {
   Icon,
   ListingLinkMore,
@@ -19,7 +12,7 @@ import {
 const messages = defineMessages({
   link: {
     id: 'link',
-    defaultMessage: 'Link',
+    defaultMessage: 'Collegamento',
   },
   attachment: {
     id: 'attachment',
@@ -46,18 +39,14 @@ const AttachmentCardTemplate = ({
     <Container className="px-4">
       <div className="simple-card-compact-template">
         {title && (
-          <Row>
-            <Col>
-              <h2
-                className={cx('mb-4', {
-                  'mt-5': !show_block_bg,
-                  'title-bottom-line': titleLine,
-                })}
-              >
-                {title}
-              </h2>
-            </Col>
-          </Row>
+          <h2
+            className={cx('mb-4', {
+              'mt-5': !show_block_bg,
+              'title-bottom-line': titleLine,
+            })}
+          >
+            {title}
+          </h2>
         )}
         <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 mb-3">
           {items.map((item, index) => {
@@ -83,13 +72,11 @@ const AttachmentCardTemplate = ({
                   <Icon
                     icon="it-clip"
                     alt={intl.formatMessage(messages.attachment)}
-                    title={intl.formatMessage(messages.attachment)}
                   />
                 ) : (
                   <Icon
                     icon="it-link"
                     alt={intl.formatMessage(messages.link)}
-                    title={intl.formatMessage(messages.link)}
                   />
                 )}
                 <CardBody tag="div">
