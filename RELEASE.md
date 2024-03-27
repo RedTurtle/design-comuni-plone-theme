@@ -46,18 +46,10 @@
 ### Fix
 
 - L'etichetta della Card con Nastro (Blocco Elenco) non si sovrappone più all'immagine del nastro.
+
 ### Migliorie
 
 - Migliorata l'accessibilità del blocco Icone.
-- ...
-
-### Novità
-
-- ...
-
-### Fix
-
-- ...
 
 ## Versione 11.8.0 (19/03/2024)
 
