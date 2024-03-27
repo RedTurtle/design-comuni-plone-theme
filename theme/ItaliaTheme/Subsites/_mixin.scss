@@ -22,6 +22,7 @@
 @use 'ItaliaTheme/Blocks/tableOfContents' as it-table-contents;
 @use 'ItaliaTheme/Blocks/searchSections' as it-search-sections;
 @use 'ItaliaTheme/Blocks/info' as it-info;
+@use 'ItaliaTheme/Blocks/iconBlocks' as it-iconBlocks;
 @use 'ItaliaTheme/Views/common' as it-views;
 @use 'ItaliaTheme/common' as it-common;
 @use 'ItaliaTheme/cms-ui' as it-cms-ui;
@@ -121,6 +122,7 @@
         $subsite-secondary,
         $subsite-light-theme
       );
+      @include it-iconBlocks.iconBlocks($subsite-primary, $subsite-secondary);
 
       @include it-views.common(
         $subsite-primary,

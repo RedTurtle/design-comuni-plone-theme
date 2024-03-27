@@ -1,0 +1,17 @@
+@use '../../all_variables' as *;
+
+@mixin iconBlocks($subsite-primary, $subsite-secondary) {
+  .block.iconBlocks {
+    .background-image {
+      &.primary:after {
+        background-color: rgba($subsite-primary, 0.85);
+      }
+      &.secondary:after {
+        background-color: rgba($subsite-secondary, 0.85);
+      }
+      &.transparent:after {
+        background-color: none;
+      }
+    }
+  }
+}
