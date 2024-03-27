@@ -34,7 +34,7 @@
 
 ### Novità
 
-- ...  [`Istruzioni`](url della documentazione relativa alla novità)
+- ...
 
 ### Fix
 
@@ -46,6 +46,33 @@
 ### Fix
 
 - Aggiustato il layout della card per il CT persone quando è impostata un'immagine.
+### Migliorie
+
+- Migliorata l'accessibilità del blocco Icone.
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
+## Versione 11.8.0 (19/03/2024)
+
+### Migliorie
+
+- Gli stili del tipo di contenuto Unità Organizzativa sono stati ottimizzati per la stampa.
+
+### Novità
+
+- È possibile scaricare il file o l'immagine caricata dal widget di upload file cliccando sul nome del file stesso.
+- È possibile aggiungere un testo alternativo per l'immagine del blocco Card con Immagine.
+
+### Fix
+
+- Nel blocco con icone, se era impostata una immagine di sfondo non si vedeva.
 
 ## Versione 11.7.0 (15/03/2024)
 
