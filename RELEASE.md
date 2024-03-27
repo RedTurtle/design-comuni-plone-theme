@@ -47,6 +47,10 @@
 
 - Migliorata l'accessibilità del blocco Icone.
 
+### Novità
+
+- ...
+
 ### Fix
 
 - Aggiustato il layout della card per il CT persone quando è impostata un'immagine.
