@@ -1098,9 +1098,9 @@ msgid "calendarBlockSidebarTitle"
 msgstr "Calendario"
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Prossimo
+# defaultMessage: Prossimi eventi
 msgid "calendar_next_arrow"
-msgstr "Prossimo"
+msgstr "Prossimi eventi"
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
 # defaultMessage: Nessun evento disponibile al momento
@@ -1108,9 +1108,9 @@ msgid "calendar_no_results"
 msgstr "Nessun evento disponibile al momento"
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Precedente
+# defaultMessage: Eventi precedenti
 msgid "calendar_prev_arrow"
-msgstr "Precedente"
+msgstr "Eventi precedenti"
 
 #: components/ItaliaTheme/manage/Widgets/CanaleDigitaleWidget
 # defaultMessage: Accedere al servizio
@@ -2786,7 +2786,6 @@ msgid "patrocinato_da"
 msgstr "Patrocinato da"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-#: components/ItaliaTheme/View/VenueView/VenueContacts
 #: helpers/contentHelper
 # defaultMessage: PEC
 msgid "pec"
@@ -2947,46 +2946,6 @@ msgstr "Responsabile del procedimento"
 # defaultMessage: Riferimenti normativi
 msgid "riferimenti_normativi"
 msgstr "Riferimenti normativi"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Fax
-msgid "riferimento_fax_luogo"
-msgstr "Fax"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Fax
-msgid "riferimento_fax_struttura"
-msgstr "Fax"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: E-mail
-msgid "riferimento_mail_luogo"
-msgstr "E-mail"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: E-mail
-msgid "riferimento_mail_struttura"
-msgstr "E-mail"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: PEC
-msgid "riferimento_pec_luogo"
-msgstr "PEC"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Telefono
-msgid "riferimento_telefonico_luogo"
-msgstr "Telefono"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Telefono
-msgid "riferimento_telefonico_struttura"
-msgstr "Telefono"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Web
-msgid "riferimento_web"
-msgstr "Web"
 
 #: components/ItaliaTheme/View/Commons/Metadata
 # defaultMessage: Diritti

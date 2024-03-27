@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-03-27T14:59:28.025Z\n"
+"POT-Creation-Date: 2024-03-27T15:08:22.683Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1100,7 +1100,7 @@ msgid "calendarBlockSidebarTitle"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Prossimo
+# defaultMessage: Prossimi eventi
 msgid "calendar_next_arrow"
 msgstr ""
 
@@ -1110,7 +1110,7 @@ msgid "calendar_no_results"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Precedente
+# defaultMessage: Eventi precedenti
 msgid "calendar_prev_arrow"
 msgstr ""
 
@@ -2788,7 +2788,6 @@ msgid "patrocinato_da"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-#: components/ItaliaTheme/View/VenueView/VenueContacts
 #: helpers/contentHelper
 # defaultMessage: PEC
 msgid "pec"
@@ -2948,46 +2947,6 @@ msgstr ""
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Riferimenti normativi
 msgid "riferimenti_normativi"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Fax
-msgid "riferimento_fax_luogo"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Fax
-msgid "riferimento_fax_struttura"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: E-mail
-msgid "riferimento_mail_luogo"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: E-mail
-msgid "riferimento_mail_struttura"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: PEC
-msgid "riferimento_pec_luogo"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Telefono
-msgid "riferimento_telefonico_luogo"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Telefono
-msgid "riferimento_telefonico_struttura"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Web
-msgid "riferimento_web"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Metadata
