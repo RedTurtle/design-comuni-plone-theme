@@ -6576,11 +6576,11 @@ __metadata:
     volto-dropdownmenu: 4.1.1
     volto-editablefooter: 5.1.0
     volto-feedback: 0.3.0
-    volto-form-block: 3.5.2
+    volto-form-block: 3.7.2
     volto-gdpr-privacy: 2.1.1
     volto-google-analytics: 2.0.0
     volto-multilingual-widget: 3.0.0
-    volto-querywidget-with-browser: 0.4.1
+    volto-querywidget-with-browser: 0.4.2
     volto-rss-block: 3.0.0
     volto-secondarymenu: 4.0.0
     volto-slimheader: 0.1.0
@@ -14356,9 +14356,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-form-block@npm:3.5.2":
-  version: 3.5.2
-  resolution: "volto-form-block@npm:3.5.2"
+"volto-form-block@npm:3.7.2":
+  version: 3.7.2
+  resolution: "volto-form-block@npm:3.7.2"
   dependencies:
     "@hcaptcha/react-hcaptcha": ^0.3.6
     file-saver: ^2.0.5
@@ -14367,7 +14367,7 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
     volto-subblocks: ^2.0.0
-  checksum: 8154132d440df4cd6d240fb4b913607890ca9128fae7b9efc7d2037bf47fbe0007cab51cc009fca14793db5dc38b18432383e5b491d0d9aeb56ab89cf65942df
+  checksum: 7387a1b85a877c3da5dd800b33b6a01673ef60e2bcecd2c25cafd22f8474bf167e0f39befc289d2ae8614abf35fdd424066dd83a77ad0bdced2d297ef8652eeb
   languageName: node
   linkType: hard
 
@@ -14403,12 +14403,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-querywidget-with-browser@npm:0.4.1":
-  version: 0.4.1
-  resolution: "volto-querywidget-with-browser@npm:0.4.1"
+"volto-querywidget-with-browser@npm:0.4.2":
+  version: 0.4.2
+  resolution: "volto-querywidget-with-browser@npm:0.4.2"
   peerDependencies:
     "@plone/volto": ^17.0.0
-  checksum: a01eacb7fa67561066f288c7ba18f5af177a88deca142f57c33638eb63bc1894d46ac66f01c6d2e3ea4e4f43479b762a63246a08f6600d665174d55d2a49c207
+  checksum: 881cede295a8609f1f01d67835533b73f0f8199e3fc2c209f350897b670a40f9c631567dacbbd0db8160a94c36c9b97465e87c2b90a82e2e128619f07658a212
   languageName: node
   linkType: hard
 
