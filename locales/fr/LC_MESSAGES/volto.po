@@ -2235,7 +2235,7 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
 # defaultMessage: Nascondi pulsante "Vedi tutti"
 msgid "hideButtonShowAll"
-msgstr "Masquer le bouton \"Tout voir""
+msgstr "Masquer le bouton \"Tout voir\""
 
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Nascondi le date
