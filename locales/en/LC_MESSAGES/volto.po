@@ -1421,7 +1421,7 @@ msgid "customer_satisfaction"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: No
+# defaultMessage: No, it was not useful
 msgid "customer_satisfaction_no"
 msgstr ""
 
@@ -1446,7 +1446,7 @@ msgid "customer_satisfaction_title"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: Yes
+# defaultMessage: Yes, it was useful
 msgid "customer_satisfaction_yes"
 msgstr ""
 

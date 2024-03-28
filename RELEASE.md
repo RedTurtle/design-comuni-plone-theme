@@ -35,6 +35,11 @@
 ### Novità
 
 - Aggiunto nuovo filtro per Data di chiusura del procedimento nel blocco di ricerca Bandi
+### Migliorie
+
+- Migliorata l'accessibilità del bottone "Cerca".
+- Migliorata l'accessibilità del blocco Icone.
+- Migliorata l'accessibilità per la customer satisfaction.
 
 ### Fix
 

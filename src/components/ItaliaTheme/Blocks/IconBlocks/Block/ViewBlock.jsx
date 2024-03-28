@@ -41,7 +41,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
       <CardBody tag="div">
         {data.icon?.length > 0 && (
           <div className="iconblock-icon">
-            <Icon icon={data.icon} />
+            <Icon icon={data.icon} aria-hidden={true} />
           </div>
         )}
 
@@ -69,6 +69,11 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
             tag={UniversalLink}
             href={data.href ?? '#'}
             text={data.linkMoreTitle || intl.formatMessage(messages.vedi)}
+            aria-label={
+              data.linkMoreTitle
+                ? data.linkMoreTitle
+                : intl.formatMessage(messages.vedi) + ' ' + data.title
+            }
           />
         )}
       </CardBody>
