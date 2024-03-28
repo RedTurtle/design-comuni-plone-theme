@@ -10,6 +10,7 @@ import { useIntl, defineMessages } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { RichTextRender } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { Card, CardBody, CardReadMore } from 'design-react-kit';
 import config from '@plone/volto/registry';
 
@@ -26,6 +27,16 @@ const messages = defineMessages({
  * @extends Component
  */
 const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
+  console.log(config.settings.richtextViewSettings);
+  console.log(data);
+
+  const rawStringRenderer = {
+    blocks: {
+      unstyled: (children) => children.join('m'),
+    },
+  };
+
+  console.log(redraft(data.title, rawStringRenderer));
   const intl = useIntl();
   return (
     <Card
