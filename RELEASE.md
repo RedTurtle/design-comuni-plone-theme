@@ -34,7 +34,7 @@
 
 ### Novità
 
-- ...  [`Istruzioni`](url della documentazione relativa alla novità)
+- ...
 
 ### Fix
 
@@ -46,13 +46,18 @@
 ### Migliorie
 
 - Nel blocco Argomenti in Evidenza, è stata rimossa l'obbligatorietà di aggiungere una card argomento, ora si possono inserire anche solo le etichette.
+- Migliorata l'accessibilità del bottone "Ricerca".
+- Migliorata l'accessibilità del blocco Icone.
 
 ### Novità
 
+- Aggiunto una nuova variazione del blocco elenco "Allegati" che permette di scaricare oggetti di tipo File o aprire l'anteprima di file PDF.
 - Nel blocco Argomenti in Evidenza sono state aggiunte due nuove proprietà, una permette di allineare gli "Altri argomenti" al centro e la seconda serve a nascondere o meno il bottone "Vedi tutti" che punta alla pagina argomenti.
 
 ### Fix
 
+- L'etichetta della Card con Nastro (Blocco Elenco) non si sovrappone più all'immagine del nastro.
+- Aggiustato il layout della card per il CT persone quando è impostata un'immagine.
 - Nel blocco Argomenti in Evidenza se non ci sono card ma etichette argomento, il blocco non renderizza più lo sfondo per un maggiore contrasto con le etichette, di conseguenza il titolo del blocco rimane nero e non bianco.
 
 ## Versione 11.8.0 (19/03/2024)
@@ -65,6 +70,10 @@
 
 - È possibile scaricare il file o l'immagine caricata dal widget di upload file cliccando sul nome del file stesso.
 - È possibile aggiungere un testo alternativo per l'immagine del blocco Card con Immagine.
+
+### Fix
+
+- Nel blocco con icone, se era impostata una immagine di sfondo non si vedeva.
 
 ## Versione 11.7.0 (15/03/2024)
 

@@ -841,6 +841,12 @@ msgstr "Zone responsable"
 msgid "argoment"
 msgstr "Sujet"
 
+#: components/ItaliaTheme/Blocks/Listing/RibbonCardTemplate
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateCompact
+# defaultMessage: Icona {type}
+msgid "argument_icon"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
 # defaultMessage: Argomenti in evidenza
 msgid "arguments_in_evidence_block"
@@ -861,6 +867,7 @@ msgstr "Conseiller de"
 msgid "assessore_riferimento"
 msgstr "Référence du conseiller"
 
+#: components/ItaliaTheme/Blocks/Listing/AttachmentCardTemplate
 #: components/ItaliaTheme/View/Commons/Attachment
 # defaultMessage: Allegato
 msgid "attachment"
@@ -1108,7 +1115,7 @@ msgid "calendarBlockSidebarTitle"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Prossimo
+# defaultMessage: Prossimi eventi
 msgid "calendar_next_arrow"
 msgstr ""
 
@@ -1118,7 +1125,7 @@ msgid "calendar_no_results"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Precedente
+# defaultMessage: Eventi precedenti
 msgid "calendar_prev_arrow"
 msgstr ""
 
@@ -1162,6 +1169,11 @@ msgstr "Formats téléchargeables"
 # defaultMessage: Casi particolari
 msgid "casi_particolari"
 msgstr "Cas spéciaux"
+
+#: components/ItaliaTheme/Cards/CardCategory
+# defaultMessage: Icona categoria
+msgid "category_icon"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
 # defaultMessage: Allinea gli argomenti al centro
@@ -1224,6 +1236,11 @@ msgstr ""
 #: components/Collapse
 # defaultMessage: Chiudi menu
 msgid "close-menu"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Accordion/Block/ViewBlock
+# defaultMessage: Chiudi l'accordion
+msgid "closeAccordion"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
@@ -1767,6 +1784,11 @@ msgstr "Télécharger"
 msgid "downloadPlayVideo"
 msgstr ""
 
+#: components/SelectInput/SelectInput
+# defaultMessage: Apri il menu
+msgid "dropdown_indicator"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
 # defaultMessage: Additional classes
 msgid "dropdownmenu-additionalClasses"
@@ -2245,6 +2267,26 @@ msgstr ""
 msgid "iconDescription"
 msgstr ""
 
+#: components/ItaliaTheme/View/Commons/Argument/ArgumentIcon
+# defaultMessage: Icona per l'argomento {topic_title}
+msgid "icon_title"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/LocationItem
+# defaultMessage: Icona luoghi
+msgid "icona_luoghi"
+msgstr ""
+
+#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
+# defaultMessage: Icona telefono
+msgid "icona_telefono"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/OfficeCard
+# defaultMessage: Icona ufficio
+msgid "icona_ufficio"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 # defaultMessage: Blocco con icone
 msgid "iconss_blocks"
@@ -2317,6 +2359,7 @@ msgstr ""
 msgid "legend_required"
 msgstr "Les champs marqués d'une (*) sont obligatoires."
 
+#: components/ItaliaTheme/Blocks/Listing/AttachmentCardTemplate
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Collegamento
 msgid "link"
@@ -2626,6 +2669,16 @@ msgstr ""
 msgid "numero_progressivo_cs"
 msgstr "Numéro du communiqué de presse"
 
+#: components/ItaliaTheme/Blocks/Accordion/Block/ViewBlock
+# defaultMessage: Apri l'accordion
+msgid "openAccordion"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Apri il link
+msgid "openLink"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/CTABlock/Block
 # defaultMessage: Apri link in una nuova scheda
 msgid "openLinkInNewTab"
@@ -2765,7 +2818,6 @@ msgid "patrocinato_da"
 msgstr "Sponsorisé par"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-#: components/ItaliaTheme/View/VenueView/VenueContacts
 #: helpers/contentHelper
 # defaultMessage: PEC
 msgid "pec"
@@ -2926,46 +2978,6 @@ msgstr ""
 # defaultMessage: Riferimenti normativi
 msgid "riferimenti_normativi"
 msgstr "Exigences normatives"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Fax
-msgid "riferimento_fax_luogo"
-msgstr "Fax"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Fax
-msgid "riferimento_fax_struttura"
-msgstr "Fax"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: E-mail
-msgid "riferimento_mail_luogo"
-msgstr "E-mail"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: E-mail
-msgid "riferimento_mail_struttura"
-msgstr "E-mail"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: PEC
-msgid "riferimento_pec_luogo"
-msgstr "PEC"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Telefono
-msgid "riferimento_telefonico_luogo"
-msgstr "Téléphone"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Telefono
-msgid "riferimento_telefonico_struttura"
-msgstr "Téléphone"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Web
-msgid "riferimento_web"
-msgstr "Web"
 
 #: components/ItaliaTheme/View/Commons/Metadata
 # defaultMessage: Diritti
@@ -3616,6 +3628,16 @@ msgstr ""
 msgid "show_only_first_ribbon"
 msgstr ""
 
+#: config/Blocks/ListingOptions/attachmentCardTemplate
+# defaultMessage: Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata altrimenti vengono scaricati.
+msgid "show_pdf_desc"
+msgstr "Permet d'ouvrir l'aperçu de tous les PDF de cette liste dans un onglet séparé sinon ils seront téléchargés."
+
+#: config/Blocks/ListingOptions/attachmentCardTemplate
+# defaultMessage: Mostra i PDF in anteprima
+msgid "show_pdf_preview"
+msgstr "Afficher les PDF en aperçu"
+
 #: config/Blocks/ListingOptions/simpleListTemplate
 # defaultMessage: Mostra elenco puntato
 msgid "show_pointer_list"
@@ -3985,6 +4007,11 @@ msgstr ""
 # defaultMessage: Ufficio responsabile
 msgid "ufficio_responsabile"
 msgstr "Bureau responsable"
+
+#: components/ItaliaTheme/View/Commons/HelpBox
+# defaultMessage: Icona ulteriori informazioni
+msgid "ulteriori_info"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks
