@@ -2864,6 +2864,21 @@ msgstr ""
 msgid "searchBlock_categoria_filter"
 msgstr "Catégorie"
 
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Filtro per data di chiusura del procedimento
+msgid "searchBlock_chiusura_filter"
+msgstr "Filtrer par date de clôture de la procédure"
+
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Chiusura dal
+msgid "searchBlock_chiusura_filter_from"
+msgstr "Fermeture à partir de"
+
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Chiusura al
+msgid "searchBlock_chiusura_filter_to"
+msgstr "Clôture à"
+
 #: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
 #: components/ItaliaTheme/Blocks/EventSearch/DefaultFilters
 #: components/ItaliaTheme/Blocks/EventSearch/Sidebar

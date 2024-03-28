@@ -51,6 +51,10 @@ const messages = defineMessages({
     id: 'searchBlock_scadenza_filter',
     defaultMessage: 'Filtro per data di scadenza del bando',
   },
+  chiusura_filter: {
+    id: 'searchBlock_chiusura_filter',
+    defaultMessage: 'Filtro per data di chiusura del procedimento',
+  },
   scadenza_dal: {
     id: 'searchBlock_scadenza_filter_from',
     defaultMessage: 'Scadenza dal',
@@ -58,6 +62,14 @@ const messages = defineMessages({
   scadenza_al: {
     id: 'searchBlock_scadenza_filter_to',
     defaultMessage: 'Scadenza al',
+  },
+  chiusura_dal: {
+    id: 'searchBlock_chiusura_filter_from',
+    defaultMessage: 'Chiusura dal',
+  },
+  chiusura_al: {
+    id: 'searchBlock_chiusura_filter_to',
+    defaultMessage: 'Chiusura al',
   },
   search_keyword: {
     id: 'Cerca per parola chiave',
@@ -103,7 +115,9 @@ const DefaultFilters = (pathSearch) => {
             // placeholder: intl.formatMessage(messages.tipologia),
             dispatch: {
               action: getSearchBandiFilters,
-              path: subsite ? flattenToAppURL(subsite['@id']) : pathSearch || '/',
+              path: subsite
+                ? flattenToAppURL(subsite['@id'])
+                : pathSearch || '/',
               stateSelector: 'searchBandiFilters',
               resultProp: 'tipologie',
             },
@@ -154,7 +168,9 @@ const DefaultFilters = (pathSearch) => {
           options: {
             dispatch: {
               action: getSearchBandiFilters,
-              path: subsite ? flattenToAppURL(subsite['@id']) : pathSearch || '/',
+              path: subsite
+                ? flattenToAppURL(subsite['@id'])
+                : pathSearch || '/',
               stateSelector: 'searchBandiFilters',
               resultProp: 'offices',
             },
@@ -182,7 +198,9 @@ const DefaultFilters = (pathSearch) => {
           options: {
             dispatch: {
               action: getSearchBandiFilters,
-              path: subsite ? flattenToAppURL(subsite['@id']) : pathSearch || '/',
+              path: subsite
+                ? flattenToAppURL(subsite['@id'])
+                : pathSearch || '/',
               stateSelector: 'searchBandiFilters',
               resultProp: 'subjects',
             },
@@ -220,7 +238,6 @@ const DefaultFilters = (pathSearch) => {
           endLabel: intl.formatMessage(messages.scadenza_al),
         },
       },
-
       reducer: (value, state) => {
         return {
           startDate: value.start ?? state.widget.props.defaultStart,
@@ -255,6 +272,65 @@ const DefaultFilters = (pathSearch) => {
 
             query.push({
               i: 'scadenza_bando',
+              o: 'plone.app.querystring.operation.date.between',
+              v: [start, end],
+            });
+          }
+        }
+      },
+    },
+    chiusura_filter: {
+      label: intl.formatMessage(messages.chiusura_filter),
+      type: 'chiusura_filter',
+      widget: {
+        component: DateFilter,
+        props: {
+          // value: {
+          //   startDate: moment().startOf('day'),
+          //   endDate: moment().endOf('day'),
+          // },
+          showClearDates: true,
+          // defaultStart: moment().startOf('day'),
+          // defaultEnd: moment().endOf('day'),
+          isOutsideRange: () => false,
+          startLabel: intl.formatMessage(messages.chiusura_dal),
+          endLabel: intl.formatMessage(messages.chiusura_al),
+        },
+      },
+      reducer: (value, state) => {
+        return {
+          startDate: value.start ?? state.widget.props.defaultStart,
+          endDate: value.end ?? state.widget.props.defaultEnd,
+        };
+      },
+      query: (value, query) => {
+        const date_fmt = 'YYYY-MM-DD HH:mm';
+        if (value?.startDate || value?.endDate) {
+          if (value?.startDate && !value.endDate) {
+            let start_v = value.startDate.clone();
+            let start = start_v?.startOf('day')?.utc()?.format(date_fmt);
+            query.push({
+              i: 'chiusura_procedimento_bando',
+              o: 'plone.app.querystring.operation.date.largerThan', //plone.app.querystring.operation.date.largerThan
+              v: start,
+            });
+          } else if (!value?.startDate && value?.endDate) {
+            let end_v = value.endDate.clone();
+            let end = end_v.add(1, 'd').startOf('day')?.utc().format(date_fmt);
+            query.push({
+              i: 'chiusura_procedimento_bando',
+              o: 'plone.app.querystring.operation.date.lessThan', //plone.app.querystring.operation.date.lessThan
+              v: end,
+            });
+          } else {
+            let start_v = value.startDate.clone();
+            let start = start_v.startOf('day')?.utc()?.format(date_fmt);
+
+            let end_v = value.endDate.clone();
+            let end = end_v.add(1, 'd').startOf('day')?.utc()?.format(date_fmt);
+
+            query.push({
+              i: 'chiusura_procedimento_bando',
               o: 'plone.app.querystring.operation.date.between',
               v: [start, end],
             });

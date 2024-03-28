@@ -32,6 +32,9 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Novità
+
+- Aggiunto nuovo filtro per Data di chiusura del procedimento nel blocco di ricerca Bandi
 ### Migliorie
 
 - Migliorata l'accessibilità del bottone "Cerca".
@@ -41,6 +44,8 @@
 ### Fix
 
 - Migliorato l'allineamento dei filtri nella pagina di Ricerca.
+- Sistemato al cambio pagina il reset dei risultati di ricerca nei blocchi di ricerca Bandi, Eventi e UO
+- Sistemato layout del menu laterale sinistro nella vista del Bando
 
 ## Versione 7.25.3 (07/03/2024)
 
