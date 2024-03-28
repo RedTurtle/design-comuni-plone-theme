@@ -1,3 +1,21 @@
+## [7.26.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.4...v7.26.0) (2024-03-28)
+
+
+### Features
+
+* added new date filter in bandiSearch block, fixed reset of search results and sidemenu layout ([#624](https://github.com/RedTurtle/design-comuni-plone-theme/issues/624)) ([8f838fb](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8f838fbe56bfee29a9496f918d42b84294e155e0))
+
+
+### Bug Fixes
+
+* added aria-hidden attribute to icons block ([#595](https://github.com/RedTurtle/design-comuni-plone-theme/issues/595)) ([da2e1a4](https://github.com/RedTurtle/design-comuni-plone-theme/commit/da2e1a4f368e87f93696333b726348d7002271cf))
+* added aria-label for cardReadMore component in iconBlock ([#619](https://github.com/RedTurtle/design-comuni-plone-theme/issues/619)) ([bce4f36](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bce4f36bf9ff8f98079436e709ee963e0e611b3b))
+* added role='button' to search link ([#612](https://github.com/RedTurtle/design-comuni-plone-theme/issues/612)) ([c8b7440](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c8b744021b5063172621b6481cc48ce26dd64b3a))
+* changed accessible labels for customer satisfaction ([#589](https://github.com/RedTurtle/design-comuni-plone-theme/issues/589)) ([48320ad](https://github.com/RedTurtle/design-comuni-plone-theme/commit/48320ad6e3c5db3f58621e3a127c41178aa37695))
+* collapse button alignment for filters in Search page ([#585](https://github.com/RedTurtle/design-comuni-plone-theme/issues/585)) ([3e91b8e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3e91b8e6d248c6f261f18bbb20e0011cb6ec3cc9))
+* general background color for icon block ([#609](https://github.com/RedTurtle/design-comuni-plone-theme/issues/609)) ([1edc6f1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1edc6f1a51f498d48cb7e5e5880454d2071595fd))
+* removed unnecessary h3 in footer ([#593](https://github.com/RedTurtle/design-comuni-plone-theme/issues/593)) ([44a7484](https://github.com/RedTurtle/design-comuni-plone-theme/commit/44a7484ace7ecb74ccff06bcb256eaf3c759459c))
+
 ### [7.25.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.3...v7.25.4) (2024-03-18)
 
 
