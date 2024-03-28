@@ -43,11 +43,6 @@
 
 ## Versione x.x.x (xx/xx/xxxx)
 
-### Novità
-
-- Ora i link in testata nell'header slim sono configurabili da pannello di controllo
-## Versione X.X.X (dd/mm/yyyy)
-
 ### Migliorie
 
 - Migliorata l'accessibilità del bottone "Ricerca".
@@ -55,6 +50,7 @@
 
 ### Novità
 
+- Ora i link in testata nell'header slim sono configurabili da pannello di controllo
 - Aggiunto una nuova variazione del blocco elenco "Allegati" che permette di scaricare oggetti di tipo File o aprire l'anteprima di file PDF.
 
 ### Fix
