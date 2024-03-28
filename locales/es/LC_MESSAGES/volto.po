@@ -2227,7 +2227,7 @@ msgstr "Para esta plantilla el número de resultados por página debe ser 7. Com
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
 # defaultMessage: Nascondi pulsante "Vedi tutti"
 msgid "hideButtonShowAll"
-msgstr "Ocultar el botón "Ver todo""
+msgstr "Ocultar el botón \"Ver todo""
 
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Nascondi le date

@@ -2218,7 +2218,7 @@ msgstr "Per questo template il numero di risultati per pagina deve essere 7. Con
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
 # defaultMessage: Nascondi pulsante "Vedi tutti"
 msgid "hideButtonShowAll"
-msgstr "Nascondi pulsante "Vedi tutti""
+msgstr "Nascondi pulsante \"Vedi tutti""
 
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Nascondi le date
