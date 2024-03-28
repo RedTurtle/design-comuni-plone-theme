@@ -33,6 +33,11 @@ const ButtonPlayPause = ({ onClick, autoplay, showLabel = true, children }) => {
         <Icon
           key={autoplay ? 'pause' : 'play'}
           icon={autoplay ? 'pause' : 'play'}
+          title={
+            autoplay
+              ? intl.formatMessage(messages.pause)
+              : intl.formatMessage(messages.play)
+          }
         />
         {showLabel && <span>{autoplay ? 'pause' : 'play'}</span>}
       </button>

@@ -33,6 +33,10 @@ const messages = defineMessages({
     id: 'slideDot',
     defaultMessage: 'Vai alla slide {index}',
   },
+  openLink: {
+    id: 'openLink',
+    defaultMessage: 'Apri il link',
+  },
 });
 
 const Slide = (props) => {

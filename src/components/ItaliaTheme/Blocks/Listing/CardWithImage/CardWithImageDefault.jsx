@@ -60,7 +60,7 @@ const CardWithImageDefault = (props) => {
     : getEventRecurrenceMore(item, isEditMode);
   const listingText = show_description ? <ListingText item={item} /> : null;
 
-  const image = ListingImage({ item });
+  const image = ListingImage({ item, showTitleAttr: false });
 
   const showImage =
     (index < imagesToShow || always_show_image) && image != null;

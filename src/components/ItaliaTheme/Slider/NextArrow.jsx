@@ -24,7 +24,7 @@ export default function NextArrow(props) {
       onKeyDown={onKeyDown}
       id={id}
     >
-      <Icon icon="chevron-right" key="chevron-right" />
+      <Icon icon="chevron-right" key="chevron-right" title={_title} />
       <span class="visually-hidden">{_title}</span>
     </button>
   );

@@ -52,14 +52,21 @@ const Body = ({ block, sections }) => {
       )}
       <div className="container">
         <div className="searchContainer d-flex w-100">
-          <h2 className="search-section-title mb-4">{block.title}</h2>
+          {block.title && (
+            <h2 className="search-section-title mb-4">{block.title}</h2>
+          )}
           <div className="searchbar shadow-sm rounded d-flex w-100">
             <button
               className="rounded-start"
               onClick={(e) => navigate(inputText, searchFilters())}
               aria-label={intl.formatMessage(messages.doSearch)}
             >
-              <Icon icon="it-search" padding={false} size="sm" />
+              <Icon
+                icon="it-search"
+                padding={false}
+                size="sm"
+                title={intl.formatMessage(messages.doSearch)}
+              />
             </button>
             <input
               className="inputSearch"

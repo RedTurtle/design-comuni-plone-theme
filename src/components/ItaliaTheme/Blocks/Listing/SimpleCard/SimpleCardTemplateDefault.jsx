@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Button, Row, Col } from 'design-react-kit';
-
+import { v4 as uuid } from 'uuid';
 import SimpleCardDefault from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault';
 import { ListingLinkMore } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
@@ -21,6 +21,8 @@ const SimpleCardTemplateDefault = (props) => {
     additionalFilters = [],
     linkmore_id_lighthouse,
   } = props;
+
+  const resultsUID = uuid();
 
   let currentPathFilter = additionalFilters
     ?.filter((f) => {
@@ -89,14 +91,17 @@ const SimpleCardTemplateDefault = (props) => {
                   <Button
                     key={i}
                     color="primary"
-                    outline={button.path['@id'] !== pathFilter}
+                    outline={button.path['UID'] !== pathFilter}
                     size="xs"
                     icon={false}
                     tag="button"
                     className="ms-3"
                     onClick={(e) => {
-                      addPathFilter(button.path['@id']);
+                      addPathFilter(button.path['UID']);
                     }}
+                    role="switch"
+                    aria-checked={button.path['UID'] === pathFilter}
+                    aria-controls={resultsUID + '_results'}
                   >
                     {button.label}
                   </Button>
@@ -107,7 +112,10 @@ const SimpleCardTemplateDefault = (props) => {
         </Row>
       )}
 
-      <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 mb-3">
+      <div
+        className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 mb-3"
+        id={resultsUID + '_results'}
+      >
         {items.map((item, index) => (
           <SimpleCardDefault {...props} item={item} index={index} key={index} />
         ))}

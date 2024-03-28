@@ -10,7 +10,7 @@
 
   .listing-item {
     a {
-      display: inline;
+      display: inline-block;
     }
 
     .img-responsive-wrapper {
@@ -69,7 +69,7 @@
 
     .card-title {
       a {
-        display: inline;
+        display: inline-block; //per avere il bordo tutto unito al focus di un link, ad esempio nelle card
         width: initial;
         color: $body-color;
         text-decoration: none;
