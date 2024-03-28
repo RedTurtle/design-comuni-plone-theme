@@ -27,16 +27,19 @@ const messages = defineMessages({
  * @extends Component
  */
 const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
-  console.log(config.settings.richtextViewSettings);
-  console.log(data);
-
   const rawStringRenderer = {
     blocks: {
-      unstyled: (children) => children.join('m'),
+      unstyled: (children) => {
+        const text = children.map((child) => child[1]).join(''); // Join the text elements
+        return text.trim(); // Remove leading/trailing whitespace
+      },
     },
   };
 
-  console.log(redraft(data.title, rawStringRenderer));
+  const cardTitle = redraft(data.title, rawStringRenderer, {
+    cleanup: false,
+  });
+
   const intl = useIntl();
   return (
     <Card
@@ -76,11 +79,9 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
             tag={UniversalLink}
             href={data.href ?? '#'}
             text={data.linkMoreTitle || intl.formatMessage(messages.vedi)}
-            aria-label={
-              data.linkMoreTitle
-                ? data.linkMoreTitle
-                : intl.formatMessage(messages.vedi) + ' ' + data.title
-            }
+            aria-label={`${
+              data.linkMoreTitle || intl.formatMessage(messages.vedi)
+            } ${data.title ? cardTitle[0] : ''}`}
           />
         )}
       </CardBody>
