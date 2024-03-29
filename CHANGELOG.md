@@ -1,3 +1,10 @@
+### [7.26.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.26.0...v7.26.1) (2024-03-29)
+
+
+### Bug Fixes
+
+* fixed tipologia_bandi in BandiInEvidenceTemplate ([#627](https://github.com/RedTurtle/design-comuni-plone-theme/issues/627)) ([38549fc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/38549fc778be9b24321b95da3a1b2bd2c089d21d))
+
 ## [7.26.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.4...v7.26.0) (2024-03-28)
 
 
