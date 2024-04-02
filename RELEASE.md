@@ -48,15 +48,19 @@
 - Tradotto il messaggio per Screen Reader del bottone per aprire e chiudere il menu in mobile.
 ### Migliorie
 
-- ...
+- Migliorata l'accessibilità del bottone "Ricerca".
+- Migliorata l'accessibilità del blocco Icone.
 
 ### Novità
 
-- ...
+- Aggiunto una nuova variazione del blocco elenco "Allegati" che permette di scaricare oggetti di tipo File o aprire l'anteprima di file PDF.
 
 ### Fix
 
-- ...
+- Sistemata la visualizzazione dei blocchi elenco all'interno del blocco griglia
+- L'etichetta della Card con Nastro (Blocco Elenco) non si sovrappone più all'immagine del nastro.
+- Aggiustato il layout della card per il CT persone quando è impostata un'immagine.
+- Sistemato bug su blocchi di ricerca Bandi, Eventi e UO nei quali rimanevano memorizzati i risultati di ricerca anche se si lasciava la pagina con questi blocchi.
 
 ## Versione 11.8.0 (19/03/2024)
 

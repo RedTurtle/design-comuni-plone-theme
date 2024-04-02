@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { Card, CardBody } from 'design-react-kit';
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import {
   RichText,
   richTextHasContent,
@@ -18,8 +17,6 @@ const EventoContattiOrganizzatoreEsterno = ({ content }) => {
         noWrapper={true}
         tag="div"
       >
-        <Icon icon="it-telephone" />
-
         <CardBody tag="div" className={'card-body pe-3'}>
           <RichText data={content.organizzato_da_esterno} />
           {content?.telefono && (
