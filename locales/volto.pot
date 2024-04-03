@@ -1,11 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2024-03-27T13:23:48.779Z\n"
-=======
 "POT-Creation-Date: 2024-03-28T15:22:56.240Z\n"
->>>>>>> main
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -2251,11 +2247,6 @@ msgstr ""
 msgid "icona_luoghi"
 msgstr ""
 
-#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
-# defaultMessage: Icona telefono
-msgid "icona_telefono"
-msgstr ""
-
 #: components/ItaliaTheme/View/Commons/OfficeCard
 # defaultMessage: Icona ufficio
 msgid "icona_ufficio"
@@ -3289,7 +3280,7 @@ msgid "search_startDate"
 msgstr ""
 
 #: helpers/Translations/searchBlockExtendedTranslations
-# defaultMessage: Ricerca per: <em>{searchedtext}</em>. 
+# defaultMessage: Ricerca per: <em>{searchedtext}</em>.
 msgid "searchedFor"
 msgstr ""
 
