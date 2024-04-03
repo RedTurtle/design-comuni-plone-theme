@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Migliorati gli stili per la stampa del CT pagina.
+
 ## Versione 11.9.1 (03/04/2024)
 
 ### Fix
