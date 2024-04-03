@@ -140,21 +140,21 @@ const BandiInEvidenceTemplate = ({
                       </span>
                     )}
 
-                    {/* Tipologia */}
-                    {show_tipologia && item.tipologia_bando?.title?.length > 0 && (
+                    {/* Tipologia del bando */}
+                    {show_tipologia && item?.tipologia_bando_label && (
                       <span className="d-flex flex-wrap align-items-baseline bando-dati-info">
                         <div className="bando-dati-label mr-2">
                           {intl.formatMessage(messages.tipologia)}:
                         </div>
                         <span className="bando-dati-date">
-                          {item.tipologia_bando?.title}
+                          {item.tipologia_bando_label}
                         </span>
                       </span>
                     )}
 
                     {/* Data di ultima modifica */}
                     {show_data_ultima_modifica && item.modified && (
-                      <span className="d-flex flex-wrap align-items-baseline bando-dati-info">
+                      <span className="d-flex flex-wrap align-items-baseline bando-dati-info data-ultima-modifica">
                         <div className="bando-dati-label mr-2">
                           {intl.formatMessage(messages.ultima_modifica)}:
                         </div>

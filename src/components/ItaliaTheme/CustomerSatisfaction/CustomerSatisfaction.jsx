@@ -27,11 +27,11 @@ const messages = defineMessages({
   },
   yes: {
     id: 'customer_satisfaction_yes',
-    defaultMessage: 'Yes',
+    defaultMessage: 'Yes, it was useful',
   },
   no: {
     id: 'customer_satisfaction_no',
-    defaultMessage: 'No',
+    defaultMessage: 'No, it was not useful',
   },
   suggestions_placeholder: {
     id: 'customer_satisfaction_suggestions_placeholder',

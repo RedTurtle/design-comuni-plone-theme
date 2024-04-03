@@ -1430,7 +1430,7 @@ msgid "customer_satisfaction"
 msgstr "Resultados de las encuestas de satisfacción del cliente"
 
 #: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: No
+# defaultMessage: No, it was not useful
 msgid "customer_satisfaction_no"
 msgstr "No"
 
@@ -1455,7 +1455,7 @@ msgid "customer_satisfaction_title"
 msgstr "¿Fue esta página útil para usted?"
 
 #: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: Yes
+# defaultMessage: Yes, it was useful
 msgid "customer_satisfaction_yes"
 msgstr "Sí"
 
@@ -2855,6 +2855,21 @@ msgstr "Color de botones"
 # defaultMessage: Filtro per Categoria
 msgid "searchBlock_categoria_filter"
 msgstr "Filtrar por Categoría"
+
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Filtro per data di chiusura del procedimento
+msgid "searchBlock_chiusura_filter"
+msgstr "Filtrar por fecha de cierre del procedimiento"
+
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Chiusura dal
+msgid "searchBlock_chiusura_filter_from"
+msgstr "Cerrando desde"
+
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Chiusura al
+msgid "searchBlock_chiusura_filter_to"
+msgstr "Cerrando a las"
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
 #: components/ItaliaTheme/Blocks/EventSearch/DefaultFilters

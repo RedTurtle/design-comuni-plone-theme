@@ -1421,9 +1421,9 @@ msgid "customer_satisfaction"
 msgstr "Risultati indagini di customer satisfaction"
 
 #: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: No
+# defaultMessage: No, it was not useful
 msgid "customer_satisfaction_no"
-msgstr "No"
+msgstr "No, questa pagina non mi è stata utile."
 
 #: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
 # defaultMessage: Submit your comment
@@ -1446,9 +1446,9 @@ msgid "customer_satisfaction_title"
 msgstr "Questa pagina ti è stata utile?"
 
 #: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: Yes
+# defaultMessage: Yes, it was useful
 msgid "customer_satisfaction_yes"
-msgstr "Sì"
+msgstr "Sì, questa pagina mi è stata utile"
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderEventDates
 # defaultMessage: dal {dateStart} fino a conclusione
@@ -2845,6 +2845,21 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
 # defaultMessage: Filtro per Categoria
 msgid "searchBlock_categoria_filter"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Filtro per data di chiusura del procedimento
+msgid "searchBlock_chiusura_filter"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Chiusura dal
+msgid "searchBlock_chiusura_filter_from"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Chiusura al
+msgid "searchBlock_chiusura_filter_to"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Sidebar

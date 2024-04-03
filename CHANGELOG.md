@@ -1,3 +1,37 @@
+### [7.26.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.26.0...v7.26.1) (2024-03-29)
+
+
+### Bug Fixes
+
+* fixed tipologia_bandi in BandiInEvidenceTemplate ([#627](https://github.com/RedTurtle/design-comuni-plone-theme/issues/627)) ([38549fc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/38549fc778be9b24321b95da3a1b2bd2c089d21d))
+
+## [7.26.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.4...v7.26.0) (2024-03-28)
+
+
+### Features
+
+* added new date filter in bandiSearch block, fixed reset of search results and sidemenu layout ([#624](https://github.com/RedTurtle/design-comuni-plone-theme/issues/624)) ([8f838fb](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8f838fbe56bfee29a9496f918d42b84294e155e0))
+
+
+### Bug Fixes
+
+* added aria-hidden attribute to icons block ([#595](https://github.com/RedTurtle/design-comuni-plone-theme/issues/595)) ([da2e1a4](https://github.com/RedTurtle/design-comuni-plone-theme/commit/da2e1a4f368e87f93696333b726348d7002271cf))
+* added aria-label for cardReadMore component in iconBlock ([#619](https://github.com/RedTurtle/design-comuni-plone-theme/issues/619)) ([bce4f36](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bce4f36bf9ff8f98079436e709ee963e0e611b3b))
+* added role='button' to search link ([#612](https://github.com/RedTurtle/design-comuni-plone-theme/issues/612)) ([c8b7440](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c8b744021b5063172621b6481cc48ce26dd64b3a))
+* changed accessible labels for customer satisfaction ([#589](https://github.com/RedTurtle/design-comuni-plone-theme/issues/589)) ([48320ad](https://github.com/RedTurtle/design-comuni-plone-theme/commit/48320ad6e3c5db3f58621e3a127c41178aa37695))
+* collapse button alignment for filters in Search page ([#585](https://github.com/RedTurtle/design-comuni-plone-theme/issues/585)) ([3e91b8e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3e91b8e6d248c6f261f18bbb20e0011cb6ec3cc9))
+* general background color for icon block ([#609](https://github.com/RedTurtle/design-comuni-plone-theme/issues/609)) ([1edc6f1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1edc6f1a51f498d48cb7e5e5880454d2071595fd))
+* removed unnecessary h3 in footer ([#593](https://github.com/RedTurtle/design-comuni-plone-theme/issues/593)) ([44a7484](https://github.com/RedTurtle/design-comuni-plone-theme/commit/44a7484ace7ecb74ccff06bcb256eaf3c759459c))
+
+### [7.25.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.3...v7.25.4) (2024-03-18)
+
+
+### Bug Fixes
+
+* mobile search icon in header ([#597](https://github.com/RedTurtle/design-comuni-plone-theme/issues/597)) ([7b8b0d9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7b8b0d93fc51fc8548661156660e1444d22becb4))
+* subsite styles for simple list, index of content, search block ([#572](https://github.com/RedTurtle/design-comuni-plone-theme/issues/572)) ([5869d83](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5869d83c16faace4e851450574954854cd9ed0cf))
+* subsites list bullet colors ([#574](https://github.com/RedTurtle/design-comuni-plone-theme/issues/574)) ([814d55d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/814d55d4a1510daa732956241b3a53ef9f063a5b))
+
 ### [7.25.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.25.2...v7.25.3) (2024-03-07)
 
 

@@ -1438,7 +1438,7 @@ msgid "customer_satisfaction"
 msgstr "Résultats des enquêtes de satisfaction client"
 
 #: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: No
+# defaultMessage: No, it was not useful
 msgid "customer_satisfaction_no"
 msgstr "No"
 
@@ -1463,7 +1463,7 @@ msgid "customer_satisfaction_title"
 msgstr "Est-ce que cette page vous a été utile?"
 
 #: components/ItaliaTheme/CustomerSatisfaction/CustomerSatisfaction
-# defaultMessage: Yes
+# defaultMessage: Yes, it was useful
 msgid "customer_satisfaction_yes"
 msgstr "Oui"
 
@@ -2863,6 +2863,21 @@ msgstr ""
 # defaultMessage: Filtro per Categoria
 msgid "searchBlock_categoria_filter"
 msgstr "Catégorie"
+
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Filtro per data di chiusura del procedimento
+msgid "searchBlock_chiusura_filter"
+msgstr "Filtrer par date de clôture de la procédure"
+
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Chiusura dal
+msgid "searchBlock_chiusura_filter_from"
+msgstr "Fermeture à partir de"
+
+#: components/ItaliaTheme/Blocks/BandiSearch/DefaultFilters
+# defaultMessage: Chiusura al
+msgid "searchBlock_chiusura_filter_to"
+msgstr "Clôture à"
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
 #: components/ItaliaTheme/Blocks/EventSearch/DefaultFilters
