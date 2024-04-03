@@ -41,6 +41,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Aggiunto il titolo per la sezione "Organizzatore esterno" quando il campo è compilato nel Content Type Evento
+
 ## Versione 11.9.1 (03/04/2024)
 
 ### Fix
