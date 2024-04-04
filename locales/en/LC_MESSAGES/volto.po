@@ -2218,7 +2218,7 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
 # defaultMessage: Nascondi pulsante "Vedi tutti"
 msgid "hideButtonShowAll"
-msgstr "Hide \"See all\" button"
+msgstr "Hide "See all" button"
 
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Nascondi le date
@@ -2259,11 +2259,6 @@ msgstr "Icon for {topic_title} topic"
 # defaultMessage: Icona luoghi
 msgid "icona_luoghi"
 msgstr "Venues icon"
-
-#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
-# defaultMessage: Icona telefono
-msgid "icona_telefono"
-msgstr "Phone icon"
 
 #: components/ItaliaTheme/View/Commons/OfficeCard
 # defaultMessage: Icona ufficio
@@ -3962,6 +3957,21 @@ msgstr "title"
 # defaultMessage: al
 msgid "to"
 msgstr "to"
+
+#: overrideTranslations
+# defaultMessage: {action} il menu
+msgid "toggle-menu"
+msgstr "{action} the menu"
+
+#: overrideTranslations
+# defaultMessage: Chiudi
+msgid "toggleMenu_close"
+msgstr "Close"
+
+#: overrideTranslations
+# defaultMessage: Apri
+msgid "toggleMenu_open"
+msgstr "Open"
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 #: components/ItaliaTheme/Search/Search

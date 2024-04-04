@@ -46,19 +46,38 @@
 ### Migliorie
 
 - Nel blocco Argomenti in Evidenza, è stata rimossa l'obbligatorietà di aggiungere una card argomento, ora si possono inserire anche solo le etichette.
-- Migliorata l'accessibilità del bottone "Ricerca".
-- Migliorata l'accessibilità del blocco Icone.
 
 ### Novità
 
-- Aggiunto una nuova variazione del blocco elenco "Allegati" che permette di scaricare oggetti di tipo File o aprire l'anteprima di file PDF.
 - Nel blocco Argomenti in Evidenza sono state aggiunte due nuove proprietà, una permette di allineare gli "Altri argomenti" al centro e la seconda serve a nascondere o meno il bottone "Vedi tutti" che punta alla pagina argomenti.
 
 ### Fix
 
-- L'etichetta della Card con Nastro (Blocco Elenco) non si sovrappone più all'immagine del nastro.
-- Aggiustato il layout della card per il CT persone quando è impostata un'immagine.
 - Nel blocco Argomenti in Evidenza se non ci sono card ma etichette argomento, il blocco non renderizza più lo sfondo per un maggiore contrasto con le etichette, di conseguenza il titolo del blocco rimane nero e non bianco.
+
+## Versione 11.9.1 (03/04/2024)
+
+### Fix
+
+- Risolto un problema dovuto all'assenza di una id specifico nelle traduzioni.
+
+## Versione 11.9.0 (03/04/2024)
+
+### Migliorie
+
+- Effettuate diverse migliorie di accessibilità.
+
+### Novità
+
+- Aggiunta una nuova variazione del blocco elenco "Allegati" che permette di scaricare oggetti di tipo File o aprire l'anteprima di file PDF.
+
+### Fix
+
+- Sistemata la visualizzazione dei blocchi elenco all'interno del blocco griglia.
+- L'etichetta della Card con Nastro (Blocco Elenco) non si sovrappone più all'icona del nastro.
+- Aggiustato il layout della card per le persone quando è impostata un'immagine.
+- Sistemato bug su blocchi di ricerca Bandi, Eventi e UO nei quali rimanevano memorizzati i risultati di ricerca anche abbandonando la pagina.
+- Tradotto il messaggio per Screen Reader del bottone per aprire e chiudere il menu in mobile.
 
 ## Versione 11.8.0 (19/03/2024)
 

@@ -2218,7 +2218,7 @@ msgstr "Per questo template il numero di risultati per pagina deve essere 7. Con
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
 # defaultMessage: Nascondi pulsante "Vedi tutti"
 msgid "hideButtonShowAll"
-msgstr "Nascondi pulsante \"Vedi tutti\""
+msgstr "Nascondi pulsante "Vedi tutti""
 
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Nascondi le date
@@ -2258,11 +2258,6 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/LocationItem
 # defaultMessage: Icona luoghi
 msgid "icona_luoghi"
-msgstr ""
-
-#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
-# defaultMessage: Icona telefono
-msgid "icona_telefono"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/OfficeCard
@@ -3962,6 +3957,21 @@ msgstr "titolo"
 # defaultMessage: al
 msgid "to"
 msgstr "al"
+
+#: overrideTranslations
+# defaultMessage: {action} il menu
+msgid "toggle-menu"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Chiudi
+msgid "toggleMenu_close"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Apri
+msgid "toggleMenu_open"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 #: components/ItaliaTheme/Search/Search
