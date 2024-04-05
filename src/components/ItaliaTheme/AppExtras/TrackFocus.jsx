@@ -1,42 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const DATA_FOCUS_MOUSE = 'data-focus-mouse';
 const CLASS_NAME_MOUSE_FOCUS = 'focus--mouse';
-const CLASS_NAME_MOUSE_ACTIVE = 'active';
 
 const TrackFocus = () => {
-  const [usingMouse, setUsingMouse] = useState(false);
-  const [activeElement, setActiveElement] = useState(null);
+  const usingMouse = useRef(false);
 
   useEffect(() => {
     const handleEvent = (e) => {
-      setUsingMouse(e.type === 'mousedown');
+      usingMouse.current = e.type === 'mousedown';
     };
-
-    document.addEventListener('keydown', handleEvent);
-    document.addEventListener('mousedown', handleEvent);
-
-    return () => {
-      document.removeEventListener('keydown', handleEvent);
-      document.removeEventListener('mousedown', handleEvent);
-    };
-  }, []);
-
-  useEffect(() => {
     const handleFocusChange = (e) => {
       if (e.target) {
-        const isLinkOrButton =
-          e.target.tagName === 'A' || e.target.tagName === 'BUTTON';
-
-        if (usingMouse) {
+        if (usingMouse.current) {
           e.target.classList.add(CLASS_NAME_MOUSE_FOCUS);
-          if (isLinkOrButton) {
-            if (activeElement && activeElement !== e.target) {
-              activeElement.classList.remove(CLASS_NAME_MOUSE_ACTIVE);
-            }
-            e.target.classList.add(CLASS_NAME_MOUSE_ACTIVE);
-            setActiveElement(e.target);
-          }
           e.target.setAttribute(DATA_FOCUS_MOUSE, true);
         } else {
           e.target.classList.remove(CLASS_NAME_MOUSE_FOCUS);
@@ -44,7 +21,6 @@ const TrackFocus = () => {
         }
       }
     };
-
     const handleFocusOut = (e) => {
       if (e.target) {
         e.target.classList.remove(CLASS_NAME_MOUSE_FOCUS);
@@ -52,14 +28,18 @@ const TrackFocus = () => {
       }
     };
 
+    document.addEventListener('keydown', handleEvent);
+    document.addEventListener('mousedown', handleEvent);
     document.addEventListener('focusin', handleFocusChange);
     document.addEventListener('focusout', handleFocusOut);
 
     return () => {
+      document.removeEventListener('keydown', handleEvent);
+      document.removeEventListener('mousedown', handleEvent);
       document.removeEventListener('focusin', handleFocusChange);
       document.removeEventListener('focusout', handleFocusOut);
     };
-  }, [usingMouse, activeElement]);
+  }, [usingMouse.current]);
 
   return null;
 };

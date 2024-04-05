@@ -114,10 +114,12 @@ const MegaMenu = ({ item, pathname }) => {
     return item.linkUrl?.length > 0 ? (
       <NavItem tag="li" active={isItemActive} role="none">
         <NavLink
+          className={isItemActive ? 'focus--mouse' : ''}
           href={item.linkUrl === '' ? '/' : null}
           item={item.linkUrl[0]?.['@id'] ? item.linkUrl[0] : '#'}
           tag={UniversalLink}
           data-element={item.id_lighthouse}
+          active={isItemActive}
           role="menuitem"
         >
           <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
@@ -238,7 +240,12 @@ const MegaMenu = ({ item, pathname }) => {
     }
 
     return (
-      <NavItem tag="li" className="megamenu" role="none">
+      <NavItem
+        tag="li"
+        className={isItemActive ? 'focus--mouse megamenu' : 'megamenu'}
+        active={isItemActive}
+        role="none"
+      >
         <UncontrolledDropdown
           nav
           inNavbar
