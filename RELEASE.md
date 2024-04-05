@@ -43,9 +43,19 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Migliorie
+
+- Aggiunta la possibilità di inserire testo nel filtro luogo nel blocco Ricerca Eventi
+- Le opzioni del menu a tendina per il filtro luogo nel blocco Ricerca Eventi sono ordinate alfabeticamente
+- Migliorati gli stili per la stampa del CT pagina.
+
+### Novità
+
+- ...
+
 ### Fix
 
-- Aggiunto il titolo per la sezione "Organizzatore esterno" quando il campo è compilato nel Content Type Evento
+- Aggiunto il titolo per la sezione "Organizzatore esterno" quando il campo è compilato nel tipo di contenuto Evento.
 
 ## Versione 11.9.1 (03/04/2024)
 
