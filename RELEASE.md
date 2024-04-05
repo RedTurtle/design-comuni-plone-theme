@@ -54,6 +54,8 @@
 ### Fix
 
 - Nel blocco Argomenti in Evidenza se non ci sono card ma etichette argomento, il blocco non renderizza più lo sfondo per un maggiore contrasto con le etichette, di conseguenza il titolo del blocco rimane nero e non bianco.
+- Aggiunta la possibilità di inserire testo nel filtro luogo nel blocco Ricerca Eventi
+- Le opzioni del menu a tendina per il filtro luogo nel blocco Ricerca Eventi sono ordinate alfabeticamente
 
 ## Versione 11.9.1 (03/04/2024)
 
