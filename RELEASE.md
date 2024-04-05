@@ -43,8 +43,10 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
-### Fix
+### Migliorie
 
+- Aggiunta la possibilità di inserire testo nel filtro luogo nel blocco Ricerca Eventi
+- Le opzioni del menu a tendina per il filtro luogo nel blocco Ricerca Eventi sono ordinate alfabeticamente
 - Migliorati gli stili per la stampa del CT pagina.
 
 ## Versione 11.9.1 (03/04/2024)
