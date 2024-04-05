@@ -100,13 +100,24 @@ const Navigation = ({ pathname }) => {
           <HeaderToggler
             aria-controls="it-navigation-collapse"
             aria-expanded={collapseOpen}
-            aria-label="Toggle navigation"
+            aria-label={intl.formatMessage(messages.toggleMenu, {
+              action: collapseOpen
+                ? intl.formatMessage(messages.toggleMenu_close)
+                : intl.formatMessage(messages.toggleMenu_open),
+            })}
             onClick={() => {
               setCollapseOpen(!collapseOpen);
               setFocusTrapActive(!focusTrapActive);
             }}
           >
-            <Icon icon="it-burger" />
+            <Icon
+              icon="it-burger"
+              title={intl.formatMessage(messages.toggleMenu, {
+                action: collapseOpen
+                  ? intl.formatMessage(messages.toggleMenu_close)
+                  : intl.formatMessage(messages.toggleMenu_open),
+              })}
+            />
           </HeaderToggler>
           <Collapse
             header
@@ -161,7 +172,12 @@ const Navigation = ({ pathname }) => {
                   title={intl.formatMessage(messages.CloseMenu)}
                   onClick={() => setCollapseOpen(!collapseOpen)}
                 >
-                  <Icon color="white" icon="it-close-big" padding={false} />
+                  <Icon
+                    color="white"
+                    icon="it-close-big"
+                    padding={false}
+                    title={intl.formatMessage(messages.CloseMenu)}
+                  />
                 </button>
               </div>
             </FocusLock>
@@ -176,6 +192,18 @@ const messages = defineMessages({
   CloseMenu: {
     id: 'close-menu',
     defaultMessage: 'Chiudi menu',
+  },
+  toggleMenu: {
+    id: 'toggle-menu',
+    defaultMessage: '{action} il menu',
+  },
+  toggleMenu_open: {
+    id: 'toggleMenu_open',
+    defaultMessage: 'Apri',
+  },
+  toggleMenu_close: {
+    id: 'toggleMenu_close',
+    defaultMessage: 'Chiudi',
   },
 });
 
