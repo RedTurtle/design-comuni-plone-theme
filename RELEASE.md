@@ -44,7 +44,9 @@
 ## Versione x.x.x (xx/xx/xxxx)
 
 ### Novità
+
 - Nel template Slider del blocco elenco, ora è possibile scegliere l'aspetto degli elementi dello slider (default: slide semplice con immagine e titolo cliccabile, Card semplice, Card con immagine).
+
 ## Versione X.X.X (dd/mm/yyyy)
 
 ### Migliorie
@@ -63,8 +65,7 @@
 
 - Nel blocco Argomenti in Evidenza se non ci sono card ma etichette argomento, il blocco non renderizza più lo sfondo per un maggiore contrasto con le etichette, di conseguenza il titolo del blocco rimane nero e non bianco.
 - Aggiunto il titolo per la sezione "Organizzatore esterno" quando il campo è compilato nel tipo di contenuto Evento.
-
-
+- Sistemato un problema nella vista del CT Evento, che mostrava tra le date aggiuntive della ricorrenza anche le date escluse
 
 ## Versione 11.9.1 (03/04/2024)
 
