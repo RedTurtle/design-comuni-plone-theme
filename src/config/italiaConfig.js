@@ -22,6 +22,7 @@ import CardWithoutImageRssTemplateSkeleton from 'design-comuni-plone-theme/compo
 import HandleAnchor from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HandleAnchor';
 import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/GenericAppExtras';
 import PageLoader from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/PageLoader';
+import TrackFocus from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/TrackFocus';
 
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
 
@@ -258,6 +259,10 @@ export default function applyConfig(voltoConfig) {
       {
         match: '',
         component: PageLoader,
+      },
+      {
+        match: '',
+        component: TrackFocus,
       },
     ],
     'volto-blocks-widget': {
