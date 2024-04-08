@@ -39,7 +39,7 @@ const TrackFocus = () => {
       document.removeEventListener('focusin', handleFocusChange);
       document.removeEventListener('focusout', handleFocusOut);
     };
-  }, [usingMouse.current]);
+  }, []);
 
   return null;
 };
