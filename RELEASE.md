@@ -47,12 +47,12 @@
 
 - Aggiunta la possibilità di inserire testo nel filtro luogo nel blocco Ricerca Eventi
 - Le opzioni del menu a tendina per il filtro luogo nel blocco Ricerca Eventi sono ordinate alfabeticamente
+- Il focus quando un elemento (link o pulsante) è cliccato con il mouse non ha più il bordo giallo/arancione.
 
 ## Versione 11.9.1 (03/04/2024)
 
 ### Fix
 
-- Il focus quando un elemento (link o pulsante) è cliccato con il mouse non ha più il bordo giallo/arancione.
 - Risolto un problema dovuto all'assenza di una id specifico nelle traduzioni.
 
 ## Versione 11.9.0 (03/04/2024)
