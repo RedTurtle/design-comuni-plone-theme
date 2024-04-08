@@ -140,6 +140,9 @@ const Navigation = ({ pathname }) => {
                         item={item}
                         pathname={pathname}
                         key={index + 'mm'}
+                        closeMenu={() => {
+                          setCollapseOpen(false);
+                        }}
                       />
                     ))}
                 </Nav>

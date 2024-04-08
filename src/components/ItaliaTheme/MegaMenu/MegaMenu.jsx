@@ -70,7 +70,7 @@ const isChildActive = (itemUrl, pathname) => {
   return pathname.indexOf(itemUrl) > -1;
 };
 
-const MegaMenu = ({ item, pathname }) => {
+const MegaMenu = ({ item, pathname, closeMenu }) => {
   const intl = useIntl();
   const blocksFieldname = getBlocksFieldname(item);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(item);
@@ -317,7 +317,10 @@ const MegaMenu = ({ item, pathname }) => {
                                   title={child.title}
                                   condition={!!child['@id']}
                                   key={child['@id']}
-                                  onClick={() => setMenuStatus(false)}
+                                  onClick={() => {
+                                    setMenuStatus(false);
+                                    closeMenu();
+                                  }}
                                   className={cx('list-item', {
                                     active: isChildActive(
                                       flattenToAppURL(child['@id']),
