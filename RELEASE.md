@@ -57,6 +57,7 @@
 ### Fix
 
 - Aggiunto il titolo per la sezione "Organizzatore esterno" quando il campo è compilato nel tipo di contenuto Evento.
+- Sistemato un problema per cui la visualizzazione della sitemap in presenza di un sito multilingua generava errore
 
 ## Versione 11.9.1 (03/04/2024)
 
