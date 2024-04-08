@@ -2258,11 +2258,6 @@ msgstr ""
 msgid "icona_luoghi"
 msgstr ""
 
-#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
-# defaultMessage: Icona telefono
-msgid "icona_telefono"
-msgstr ""
-
 #: components/ItaliaTheme/View/Commons/OfficeCard
 # defaultMessage: Icona ufficio
 msgid "icona_ufficio"
@@ -2745,6 +2740,11 @@ msgstr "Ordenado por"
 #: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreInterno
 # defaultMessage: Organizzato da
 msgid "organizzato_da"
+msgstr ""
+
+#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
+# defaultMessage: Organizzatore
+msgid "organizzatore"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
@@ -3976,6 +3976,21 @@ msgstr "título"
 # defaultMessage: al
 msgid "to"
 msgstr "a"
+
+#: overrideTranslations
+# defaultMessage: {action} il menu
+msgid "toggle-menu"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Chiudi
+msgid "toggleMenu_close"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Apri
+msgid "toggleMenu_open"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 #: components/ItaliaTheme/Search/Search
