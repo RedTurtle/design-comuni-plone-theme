@@ -1,19 +1,23 @@
 import React from 'react';
 import cx from 'classnames';
 import { useIntl } from 'react-intl';
-import { SiteTitle } from 'volto-site-settings';
+import { SiteProperty } from 'volto-site-settings';
 import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
 
 const BrandText = ({ mobile = false, subsite }) => {
-  //TODO: rimuovere subsite quando si legge anche la description da volto-site-settings
   const intl = useIntl();
-  const title = SiteTitle({
-    defaultTitle: getSiteProperty('siteTitle', intl.locale),
-    defaultParentSiteTitle: getSiteProperty('parentSiteTitle', intl.locale),
+  const title = SiteProperty({
+    property: 'site_title',
+    forceValue: !subsite ? getSiteProperty('siteTitle', intl.locale) : null,
+    defaultValue: getSiteProperty('siteTitle', intl.locale),
+    getValue: true,
   });
 
-  const description =
-    subsite?.description || getSiteProperty('siteSubtitle', intl.locale);
+  const description = SiteProperty({
+    property: 'site_subtitle',
+    defaultValue: getSiteProperty('siteSubtitle', intl.locale),
+    getValue: true,
+  });
 
   return (
     <div className="it-brand-text">

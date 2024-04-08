@@ -1,6 +1,6 @@
 import { useIntl } from 'react-intl';
 import { Helmet, toPublicURL, isInternalURL } from '@plone/volto/helpers';
-import { SiteTitle } from 'volto-site-settings';
+import { SiteProperty } from 'volto-site-settings';
 import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
 import { richTextHasContent } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
@@ -16,10 +16,10 @@ const fieldDataToPlainText = (field) => {
 
 const ServizioMetatag = ({ content }) => {
   const intl = useIntl();
-  const siteTitle = SiteTitle({
+  const siteTitle = SiteProperty({
+    prperty: 'site_title',
     getValue: true,
     defaultTitle: getSiteProperty('siteTitle', intl.locale),
-    defaultParentSiteTitle: getSiteProperty('parentSiteTitle', intl.locale),
   });
 
   const schemaOrg = {

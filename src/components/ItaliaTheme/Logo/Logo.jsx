@@ -20,9 +20,17 @@
 // eslint-disable-next-line import/no-unresolved
 //import logo from './logo.png?width=164';
 import logo from './logo.png';
+import { SiteProperty } from 'volto-site-settings';
 
-const Logo = () => (
-  <img className="icon" src={logo} width="82" height="82" alt="Logo" />
-);
+const Logo = () => {
+  return (
+    <SiteProperty
+      property="site_logo"
+      defaultValue={{ url: logo, width: 82, height: 82 }}
+      className="icon"
+      alt="Logo"
+    />
+  );
+};
 
 export default Logo;

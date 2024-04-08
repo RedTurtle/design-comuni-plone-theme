@@ -1,20 +1,20 @@
 /*
 CUSTOMIZATIONS:
-- get defaultTitle and defaultParentSiteTitle from siteProperties
+- get defaultValue from siteProperties
 */
 
 import React from 'react';
 import { useIntl } from 'react-intl';
 import { Helmet } from '@plone/volto/helpers';
-import { SiteTitle } from 'volto-site-settings';
+import { SiteProperty } from 'volto-site-settings';
 import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
 
 const SiteSettingsExtras = (props) => {
   const intl = useIntl();
-  const siteTitle = SiteTitle({
+  const siteTitle = SiteProperty({
+    property: 'site_title',
     getValue: true,
-    defaultTitle: getSiteProperty('siteTitle', intl.locale),
-    defaultParentSiteTitle: getSiteProperty('parentSiteTitle', intl.locale),
+    defaultValue: getSiteProperty('siteTitle', intl.locale),
   });
 
   return (

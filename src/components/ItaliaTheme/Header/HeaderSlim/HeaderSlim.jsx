@@ -14,7 +14,7 @@ import {
 } from 'design-react-kit';
 import { useIntl } from 'react-intl';
 import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
-import { SiteTitle } from 'volto-site-settings';
+import { SiteProperty } from 'volto-site-settings';
 
 const HeaderSlim = () => {
   const subsite = useSelector((state) => state.subsite?.data);
@@ -24,11 +24,14 @@ const HeaderSlim = () => {
     ? '/'
     : getSiteProperty('parentSiteURL', intl.locale);
 
-  const parentSiteTile = SiteTitle({
+  const parentSiteTile = SiteProperty({
+    property: 'site_title',
+    forceValue: subsite
+      ? getSiteProperty('subsiteParentSiteTitle', intl.locale)
+      : null,
+    defaultValue: getSiteProperty('parentSiteTitle', intl.locale),
     getValue: true,
     getParent: true,
-    defaultTitle: getSiteProperty('siteTitle', intl.locale),
-    defaultParentSiteTitle: getSiteProperty('parentSiteTitle', intl.locale),
   });
 
   const target = subsite ? null : '_blank';
