@@ -46,6 +46,10 @@
 ### Migliorie
 
 - Nel blocco Argomenti in Evidenza, è stata rimossa l'obbligatorietà di aggiungere una card argomento, ora si possono inserire anche solo le etichette.
+- Aggiunta la possibilità di inserire testo nel filtro luogo nel blocco Ricerca Eventi.
+- Le opzioni del menu a tendina per il filtro luogo nel blocco Ricerca Eventi sono ordinate alfabeticamente.
+- Il focus quando un elemento (link o pulsante) è cliccato con il mouse non ha più il bordo giallo/arancione.
+- Migliorati gli stili per la stampa del CT pagina.
 
 ### Novità
 
@@ -54,8 +58,9 @@
 ### Fix
 
 - Nel blocco Argomenti in Evidenza se non ci sono card ma etichette argomento, il blocco non renderizza più lo sfondo per un maggiore contrasto con le etichette, di conseguenza il titolo del blocco rimane nero e non bianco.
-- Aggiunta la possibilità di inserire testo nel filtro luogo nel blocco Ricerca Eventi
-- Le opzioni del menu a tendina per il filtro luogo nel blocco Ricerca Eventi sono ordinate alfabeticamente
+- Aggiunto il titolo per la sezione "Organizzatore esterno" quando il campo è compilato nel tipo di contenuto Evento.
+
+
 
 ## Versione 11.9.1 (03/04/2024)
 
