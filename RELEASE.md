@@ -34,12 +34,53 @@
 
 ### Novità
 
-- ...  [`Istruzioni`](url della documentazione relativa alla novità)
+- ...
 
 ### Fix
 
 - ...
 -->
+
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Aggiunta la possibilità di inserire testo nel filtro luogo nel blocco Ricerca Eventi.
+- Le opzioni del menu a tendina per il filtro luogo nel blocco Ricerca Eventi sono ordinate alfabeticamente.
+- Il focus quando un elemento (link o pulsante) è cliccato con il mouse non ha più il bordo giallo/arancione.
+- Migliorati gli stili per la stampa del CT pagina.
+
+### Novità
+
+- ...
+
+### Fix
+
+- Aggiunto il titolo per la sezione "Organizzatore esterno" quando il campo è compilato nel tipo di contenuto Evento.
+
+## Versione 11.9.1 (03/04/2024)
+
+### Fix
+
+- Risolto un problema dovuto all'assenza di una id specifico nelle traduzioni.
+
+## Versione 11.9.0 (03/04/2024)
+
+### Migliorie
+
+- Effettuate diverse migliorie di accessibilità.
+
+### Novità
+
+- Aggiunta una nuova variazione del blocco elenco "Allegati" che permette di scaricare oggetti di tipo File o aprire l'anteprima di file PDF.
+
+### Fix
+
+- Sistemata la visualizzazione dei blocchi elenco all'interno del blocco griglia.
+- L'etichetta della Card con Nastro (Blocco Elenco) non si sovrappone più all'icona del nastro.
+- Aggiustato il layout della card per le persone quando è impostata un'immagine.
+- Sistemato bug su blocchi di ricerca Bandi, Eventi e UO nei quali rimanevano memorizzati i risultati di ricerca anche abbandonando la pagina.
+- Tradotto il messaggio per Screen Reader del bottone per aprire e chiudere il menu in mobile.
 
 ## Versione 11.8.0 (19/03/2024)
 
@@ -51,6 +92,10 @@
 
 - È possibile scaricare il file o l'immagine caricata dal widget di upload file cliccando sul nome del file stesso.
 - È possibile aggiungere un testo alternativo per l'immagine del blocco Card con Immagine.
+
+### Fix
+
+- Nel blocco con icone, se era impostata una immagine di sfondo non si vedeva.
 
 ## Versione 11.7.0 (15/03/2024)
 
