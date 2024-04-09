@@ -35,7 +35,6 @@ const UniversalLink = ({
 }) => {
   const intl = useIntl();
   const token = useSelector((state) => state.userSession?.token);
-  console.log(props);
 
   let url = href;
   if (!href && item) {
