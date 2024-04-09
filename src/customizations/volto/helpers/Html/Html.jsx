@@ -4,7 +4,7 @@
  */
 /*
  CUSTOMIZATIONS:
- - Add <link rel="shortcut icon" href="/favicon.ico" />
+ - Rimosso <link rel="shortcut icon" href="/favicon.ico" /> perchè creato da volto-site-settings
  - Add shrink-to-fit=no in viewport meta
  - Remove link for manifest and svg/apple icons
  */
@@ -106,7 +106,6 @@ class Html extends Component {
           {head.meta.toComponent()}
           {head.link.toComponent()}
           {head.script.toComponent()}
-
           <script
             dangerouslySetInnerHTML={{
               __html: `window.env = ${serialize({
@@ -122,7 +121,8 @@ class Html extends Component {
               })};`,
             }}
           />
-          <link rel="shortcut icon" href="/favicon.ico" />
+          {/* <link rel="shortcut icon" href="/favicon.ico" /> viene impostata da volto-site.settings*/}
+
           <meta property="og:type" content="website" />
           <meta name="generator" content="Plone 6 - https://plone.org" />
           <meta
@@ -143,8 +143,8 @@ class Html extends Component {
               rel: !criticalCss
                 ? elem.props.rel
                 : elem.props.as === 'style'
-                  ? 'prefetch'
-                  : elem.props.rel,
+                ? 'prefetch'
+                : elem.props.rel,
             }),
           )}
           {/* Styles in development are loaded with Webpack's style-loader, in production,
