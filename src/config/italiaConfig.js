@@ -33,6 +33,7 @@ import LeftColumnFacets from '@plone/volto/components/manage/Blocks/Search/layou
 import HandleAnchor from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HandleAnchor';
 import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/GenericAppExtras';
 import PageLoader from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/PageLoader';
+import TrackFocus from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/TrackFocus';
 import redraft from 'redraft';
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
 
@@ -216,6 +217,10 @@ export default function applyConfig(voltoConfig) {
       // arLogoutUrl: '/logout?e=1',
       // spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
       headerslimTertiaryMenu: {
+        default: [
+          //{ title: 'Contatti', url: '/it/contatti' },
+          //{ title: 'Novità', url: '/it/novita' },
+        ],
         it: [
           //{ title: 'Contatti', url: '/it/contatti' },
           //{ title: 'Novità', url: '/it/novita' },
@@ -286,6 +291,10 @@ export default function applyConfig(voltoConfig) {
       {
         match: '',
         component: PageLoader,
+      },
+      {
+        match: '',
+        component: TrackFocus,
       },
     ],
     maxFileUploadSize: null,
