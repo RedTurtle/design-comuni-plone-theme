@@ -66,8 +66,8 @@ import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/
 
 import reducers from 'design-comuni-plone-theme/reducers';
 
-const ReleaseLog = loadable(() =>
-  import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
+const ReleaseLog = loadable(
+  () => import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
 );
 
 const messages = defineMessages({
@@ -217,6 +217,10 @@ export default function applyConfig(voltoConfig) {
       // arLogoutUrl: '/logout?e=1',
       // spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
       headerslimTertiaryMenu: {
+        default: [
+          //{ title: 'Contatti', url: '/it/contatti' },
+          //{ title: 'Novità', url: '/it/novita' },
+        ],
         it: [
           //{ title: 'Contatti', url: '/it/contatti' },
           //{ title: 'Novità', url: '/it/novita' },
