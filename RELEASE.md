@@ -61,7 +61,7 @@
 
 - Nel blocco Argomenti in Evidenza se non ci sono card ma etichette argomento, il blocco non renderizza più lo sfondo per un maggiore contrasto con le etichette, di conseguenza il titolo del blocco rimane nero e non bianco.
 - Aggiunto il titolo per la sezione "Organizzatore esterno" quando il campo è compilato nel tipo di contenuto Evento.
-- Il chip che indica lo status del CT servizio non si comporta più come un link.
+- I chip che non hanno collegamenti non si comportano più come link al posizionamento del mouse.
 
 ## Versione 11.9.1 (03/04/2024)
 
