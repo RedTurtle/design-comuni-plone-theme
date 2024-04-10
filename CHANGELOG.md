@@ -1,3 +1,10 @@
+### [7.27.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.27.0...v7.27.1) (2024-04-10)
+
+
+### Documentation
+
+* updated release.md ([0d79804](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0d79804339bb1520e286cb95d8fccdb7df91ef50))
+
 ## [7.27.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.26.1...v7.27.0) (2024-04-10)
 
 
