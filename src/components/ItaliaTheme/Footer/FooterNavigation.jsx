@@ -74,7 +74,7 @@ const FooterNavigation = () => {
                   }
                 >
                   {item.title}
-                  <Icon icon="it-arrow-right" color="white" />
+                  <Icon icon="it-arrow-right" color="white" size="sm" />
                 </Link>
               </h4>
               {!config.settings.isFooterCollapsed && item.items && (
