@@ -39,3 +39,14 @@
     cursor: default;
   }
 }
+
+a.chip,
+.chip:has(a) {
+  cursor: pointer;
+}
+
+a:has(.chip) {
+  .chip {
+    cursor: pointer;
+  }
+}
