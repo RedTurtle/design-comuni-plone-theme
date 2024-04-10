@@ -30,7 +30,7 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 7.27.1 (10/04/2024)
 
 ### Novità
 
