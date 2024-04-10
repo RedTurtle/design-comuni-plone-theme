@@ -1,3 +1,16 @@
+## [7.27.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.26.1...v7.27.0) (2024-04-10)
+
+
+### Features
+
+* trackFocus ([#636](https://github.com/RedTurtle/design-comuni-plone-theme/issues/636)) ([0674d8b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0674d8b0cbad5a30a324fc9eed605a0179463ef2))
+
+
+### Bug Fixes
+
+* close Megamenu on mobile when click on subsite link ([#635](https://github.com/RedTurtle/design-comuni-plone-theme/issues/635)) ([60c9eb9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/60c9eb9bdd97a17acb8676159d0467e15572dfc6))
+* translated aria-label of menu hamburger icon ([#592](https://github.com/RedTurtle/design-comuni-plone-theme/issues/592)) ([7d74181](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7d741814e508a67669834d49fb7ec9cf1a048412))
+
 ### [7.26.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.26.0...v7.26.1) (2024-03-29)
 
 
