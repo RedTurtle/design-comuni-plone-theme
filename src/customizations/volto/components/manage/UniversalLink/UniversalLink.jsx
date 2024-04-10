@@ -25,7 +25,7 @@ import config from '@plone/volto/registry';
 const UniversalLink = ({
   href,
   item = null,
-  openLinkInNewTab,
+  openLinkInNewTab = false,
   download = false,
   children,
   className = null,

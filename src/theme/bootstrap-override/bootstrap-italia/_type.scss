@@ -1,10 +1,13 @@
 html,
 body.public-ui {
-  font-size: 16px;
-  line-height: 1.5;
+  // font-size: 16px;  ? Already set by bootstrap-italia
+  // line-height: 1.5; ? Already set by bootstrap-italia
 
   @include media-breakpoint-up(sm) {
     font-size: 18px;
-    line-height: 1.555;
+    // line-height: 1.555; ? Already set by bootstrap-italia
+  }
+  blockquote:before {
+    top: 0.78rem; // Fix bootstrap-italia 2.8.4
   }
 }

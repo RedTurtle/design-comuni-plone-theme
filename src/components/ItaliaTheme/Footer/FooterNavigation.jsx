@@ -42,9 +42,10 @@ const FooterNavigation = () => {
         <Row tag="div">
           {items.map((item) => (
             <Col
-              lg={3}
-              md={3}
               sm={6}
+              md={6}
+              lg={4}
+              xl={3}
               className="pb-4"
               widths={['xs', 'sm', 'md', 'lg', 'xl']}
               key={item.url}

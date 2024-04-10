@@ -3,3 +3,8 @@
     flex: 0 0 100%;
   }
 }
+
+// Fix bootstrap-italia 2.8.x
+.card.card-teaser.office-card .card-body div .card-text + .card-text {
+  margin-top: 0;
+}

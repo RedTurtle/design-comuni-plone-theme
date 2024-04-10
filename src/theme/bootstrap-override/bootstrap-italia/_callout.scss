@@ -6,3 +6,23 @@ div.callout {
   margin: 0;
   box-shadow: none;
 }
+
+// Fix display bug in bootstrap-italia 2.8.x
+.callout:not(.callout-highlight):not(.callout-more) .callout-title .text:after {
+  content: '';
+  top: 0.78em; // Fix
+  border-top: 2px solid;
+  position: absolute;
+  width: 100lvw; // Fix
+  margin-left: -1rem; // Fix
+  @media (max-width: #{map-get($grid-breakpoints, sm)}) {
+    top: 0.6em; // Fix
+  }
+  @media (min-width: #{map-get($grid-breakpoints, sm)}) and (max-width: #{map-get($grid-breakpoints, xl)}) {
+    top: 0.75em; // Fix
+  }
+}
+
+.callout:not(.callout-highlight):not(.callout-more) .callout-title.text:empty {
+  padding: 0;
+}

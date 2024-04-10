@@ -34,7 +34,7 @@ const PageHeaderBando = ({ content }) => {
           )}
         >
           <div className="card-body">
-            <div className="card-text">
+            <p className="card-text">
               <Icon
                 className="me-2"
                 color=""
@@ -51,7 +51,7 @@ const PageHeaderBando = ({ content }) => {
               />
               {intl.formatMessage(messages.bando)}{' '}
               <BandoStatus content={content} />
-            </div>
+            </p>
           </div>
         </div>
       )}

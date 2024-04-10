@@ -59,7 +59,8 @@
   }
 
   .block-header {
-    .title {
+    .title,
+    .title p {
       margin: 1rem 0 2rem 0;
       color: #fff;
       font-size: 2.35rem;
@@ -192,7 +193,8 @@
       }
     }
 
-    .iconblock-title {
+    .iconblock-title,
+    .iconblock-title p {
       font-size: 1.5rem;
       font-weight: bold;
       line-height: 1.8rem;

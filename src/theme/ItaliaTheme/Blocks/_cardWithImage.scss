@@ -82,15 +82,14 @@
         }
       }
     }
-
-    .event-recurrences-more {
-      bottom: $v-gap * 3;
-    }
   }
 }
 
 .card-with-image-default-item.listing-item.card {
   .card-body {
+    display: flex;
+    flex-direction: column;
+
     .category-top {
       color: $caption-text;
       font-size: 0.875rem;

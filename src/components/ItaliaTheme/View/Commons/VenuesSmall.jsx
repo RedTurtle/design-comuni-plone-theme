@@ -33,15 +33,15 @@ const Location = ({ location, show_icon }) => {
         {show_icon && <Icon icon={'it-pin'} />}
         <div className="card-body">
           <div className="card-title h5">{location.title}</div>
-          <div className="card-text">
+          <div>
             {(location.street || location.zip_code) && (
-              <p>
+              <p className="card-text">
                 {location.street && location.street}
                 {location.street && location.zip_code ? ' - ' : ' '}
                 {location.zip_code}
               </p>
             )}
-            <p className="mt-3">
+            <p className="mt-3 card-text">
               <Link
                 to={flattenToAppURL(location['@id'])}
                 title={location.title}

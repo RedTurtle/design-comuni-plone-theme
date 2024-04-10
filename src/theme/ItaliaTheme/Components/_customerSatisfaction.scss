@@ -72,7 +72,7 @@
           fill: $primary;
         }
 
-        input.volto-feedback-rating:focus + label {
+        input.volto-feedback-rating:not(.focus--mouse):focus + label {
           border: 0;
           box-shadow:
             0 0 0.2rem $focus-outline-color,
