@@ -78,9 +78,7 @@ const SideMenu = ({ data, content_uid }) => {
 
   const handleScroll = useCallback(() => {
     const scrollOffset = 0.1 * window.innerHeight;
-    console.log('sosteniamo di aver scrollato per ', window.scrollY);
     setScrollY(window.scrollY);
-    // debugger;
     const headersHeights = headers
       .map((section) => {
         const element = document.getElementById(section.id);
