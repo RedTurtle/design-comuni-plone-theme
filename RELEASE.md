@@ -50,6 +50,7 @@
 - Sistemato il flag Mostra tipologia bandi nel blocco elenco con variazione Bandi in Evidenza
 - Tradotto il messaggio per Screen Reader del bottone per aprire e chiudere il menu in mobile.
 - Menu dropdown si chiude correttamente quando il percorso è un sottosito con un menu diverso rispetto al sito principale
+- Migliorata l'accessibilità del blocco Elenco nella variazione Slider.
 
 ## Versione 7.25.3 (07/03/2024)
 
