@@ -2,9 +2,12 @@
 .public-ui .chip {
   display: inline-block;
   height: unset;
-  cursor: default;
   line-height: 1rem;
   text-align: center;
+
+  &:hover {
+    cursor: default;
+  }
 
   &:not(:disabled):not(.chip-primary):not(.chip-secondary) {
     &.selected,
@@ -41,12 +44,13 @@
 }
 
 a.chip,
-.chip:has(a) {
-  cursor: pointer;
-}
-
-a:has(.chip) {
-  .chip {
+.chip:has(a),
+a .chip {
+  &:hover {
     cursor: pointer;
   }
+}
+
+a:has(.chip):hover {
+  cursor: default;
 }
