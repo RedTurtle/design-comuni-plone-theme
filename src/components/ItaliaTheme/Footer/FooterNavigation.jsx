@@ -66,7 +66,7 @@ const FooterNavigation = () => {
                   }
                 >
                   {item.title}
-                  <Icon icon="it-arrow-right" color="white" />
+                  <Icon icon="it-arrow-right" color="white" size="sm" />
                 </Link>
               </h4>
               {/* DEPRECATED: isFooterCollapsed to be removed in version 12 */}
