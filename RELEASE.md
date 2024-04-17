@@ -66,6 +66,7 @@
 - Sistemato un problema per cui la visualizzazione della sitemap in presenza di un sito multilingua generava errore.
 - Migliorata l'accessibilità dei link nel footer.
 - Migliorata l'accessibilità del blocco elenco nella variazione Slider.
+- Migliorati gli stili del blocco accordion.
 
 ## Versione 11.9.1 (03/04/2024)
 
