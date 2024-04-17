@@ -49,6 +49,8 @@ const FooterNavigation = () => {
     );
   }, [path, dispatch]);
 
+  const markFooterLinks = config.settings.siteProperties.markFooterLinks;
+
   return (
     <>
       {items && (
@@ -74,7 +76,9 @@ const FooterNavigation = () => {
                   }
                 >
                   {item.title}
-                  <Icon icon="it-arrow-right" color="white" size="sm" />
+                  {markFooterLinks && (
+                    <Icon icon="it-arrow-right" color="white" size="sm" />
+                  )}
                 </Link>
               </h4>
               {!config.settings.isFooterCollapsed && item.items && (
