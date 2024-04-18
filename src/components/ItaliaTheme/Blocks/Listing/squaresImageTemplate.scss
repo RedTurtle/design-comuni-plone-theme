@@ -1,3 +1,5 @@
+@import 'design-comuni-plone-theme/theme/variables';
+
 .squares-image-template {
   .data:before {
     content: none;
@@ -12,6 +14,7 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      overflow: hidden;
     }
   }
 
@@ -66,7 +69,6 @@
       &:before {
         content: none;
       }
-      background-color: $skeleton-bg;
 
       .skeleton-item-title {
         position: absolute;

@@ -9,6 +9,8 @@ import {
   getListingImageBackground,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import './squaresImageTemplate.scss';
+
 const SquaresImageTemplate = ({
   items,
   title,

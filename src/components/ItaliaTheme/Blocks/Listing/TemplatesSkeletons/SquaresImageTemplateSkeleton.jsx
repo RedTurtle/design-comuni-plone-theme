@@ -5,6 +5,8 @@ import { UniversalLink } from '@plone/volto/components';
 
 import { Container, Row, Col } from 'design-react-kit';
 
+import '../squaresImageTemplate.scss';
+
 const SquaresImageTemplateSkeleton = ({
   isEditMode,
   title,
@@ -28,7 +30,7 @@ const SquaresImageTemplateSkeleton = ({
               <UniversalLink
                 href="#"
                 key={i}
-                className="listing-item box bg-img card"
+                className="listing-item box bg-img card skeleton-bg"
               >
                 <span className="title skeleton-item-title"> </span>
               </UniversalLink>
