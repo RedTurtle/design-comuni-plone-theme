@@ -9,6 +9,8 @@ import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaThe
 import { Sidebar } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/CountDown';
 import CountDown from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/CountDown/CountDown';
 
+import './countdownBlock.scss';
+
 const messages = defineMessages({
   text: {
     id: 'Inserisci il testo…',

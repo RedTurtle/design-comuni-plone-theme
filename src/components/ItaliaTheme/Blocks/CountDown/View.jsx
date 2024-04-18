@@ -8,6 +8,8 @@ import cx from 'classnames';
 import CountDown from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/CountDown/CountDown';
 import config from '@plone/volto/registry';
 
+import './countdownBlock.scss';
+
 const View = ({ data, id }) => {
   return (
     <div className="block count_down">

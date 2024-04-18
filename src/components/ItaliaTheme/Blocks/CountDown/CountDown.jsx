@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { viewDate } from 'design-comuni-plone-theme/helpers';
 
+import './countDown.scss';
+
 const messages = defineMessages({
   days: {
     id: 'countdown_days',
