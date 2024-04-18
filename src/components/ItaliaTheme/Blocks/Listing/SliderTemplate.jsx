@@ -18,6 +18,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import config from '@plone/volto/registry';
+import './sliderTemplate.scss';
 
 const messages = defineMessages({
   carouselItemAriaLabel: {
