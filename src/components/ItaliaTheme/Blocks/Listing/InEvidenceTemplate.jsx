@@ -36,6 +36,8 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
 
+import './inEvidenceTemplate.scss';
+
 const InEvidenceTemplate = (props) => {
   const {
     items,

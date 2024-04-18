@@ -14,6 +14,8 @@ import cx from 'classnames';
 
 import { CardCategory } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import '../inEvidenceTemplate.scss';
+
 const InEvidenceTemplateSkeleton = ({
   title,
   isEditMode,

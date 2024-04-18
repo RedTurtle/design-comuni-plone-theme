@@ -1,9 +1,11 @@
+@import 'design-comuni-plone-theme/theme/variables';
+
 .block.listing .in-evidence {
   .col-item {
     margin-bottom: 22px;
   }
 
-  .icon {
+  .card .categoryicon-top .icon {
     width: 32px;
     height: 32px;
   }
