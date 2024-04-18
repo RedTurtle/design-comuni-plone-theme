@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'design-react-kit';
 
+import '../smallBlockLinksTemplate.scss';
+
 const SmallBlockLinksTemplateSkeleton = ({
   title,
   isEditMode,

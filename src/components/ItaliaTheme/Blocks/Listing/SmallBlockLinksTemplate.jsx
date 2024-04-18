@@ -12,6 +12,8 @@ import {
   ListingImage,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import './smallBlockLinksTemplate.scss';
+
 const SmallBlockLinksTemplate = ({
   items,
   title,
