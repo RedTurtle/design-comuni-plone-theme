@@ -19,7 +19,6 @@ import {
   LinkListItem,
 } from 'design-react-kit/dist/design-react-kit';
 import { SectionIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -74,11 +73,9 @@ const FooterNavigation = () => {
                   title={
                     intl.formatMessage(messages.goToPage) + ': ' + item.title
                   }
+                  className={markFooterLinks ? 'underlined' : ''}
                 >
                   {item.title}
-                  {markFooterLinks && (
-                    <Icon icon="it-arrow-right" color="white" size="sm" />
-                  )}
                 </Link>
               </h4>
               {!config.settings.isFooterCollapsed && item.items && (
