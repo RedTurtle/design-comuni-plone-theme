@@ -6,6 +6,7 @@ import { v4 as uuid } from 'uuid';
 import SimpleCardDefault from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault';
 import { ListingLinkMore } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import './simpleCardTemplateDefault.scss';
 const SimpleCardTemplateDefault = (props) => {
   const {
     items,

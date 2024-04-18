@@ -1,0 +1,48 @@
+@import 'design-comuni-plone-theme/theme/variables';
+
+.public-ui .simple-card-compact-template {
+  .card-teaser-wrapper {
+    .icon-argument-container + .card-body {
+      margin-left: 1em;
+    }
+
+    .card-title {
+      margin-bottom: 10px;
+
+      a {
+        @include rem-size(font-size, 32);
+        @include rem-size(line-height, 32);
+        display: inline-block; //per avere il bordo tutto unito al focus di un link, ad esempio nelle card
+        font-weight: 700;
+        text-decoration: none;
+
+        &:hover,
+        &:active {
+          text-decoration: underline;
+        }
+
+        @include media-breakpoint-only(md) {
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+        }
+      }
+    }
+
+    .card-teaser {
+      .icon {
+        min-width: unset;
+      }
+    }
+
+    &.card-teaser-block-3 {
+      & > .card-teaser {
+        flex-wrap: nowrap;
+
+        > .icon {
+          color: $gray-secondary;
+          fill: $gray-secondary;
+        }
+      }
+    }
+  }
+}
