@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { UniversalLink } from '@plone/volto/components';
 import { Container, Row, Col } from 'design-react-kit';
 
+import '../simpleListTemplate.scss';
+
 const SimpleListTemplateSkeleton = ({
   isEditMode,
   title,
@@ -11,28 +13,26 @@ const SimpleListTemplateSkeleton = ({
   show_pointer_list,
 }) => {
   return (
-    <div>
+    <div className="simple-list-template simple-list-skeleton-template">
       <Container className="px-4">
-        <div className="simple-list-skeleton-template">
-          {title && (
-            <Row>
-              <Col>
-                <h2 className="mb-4">{title}</h2>
-              </Col>
-            </Row>
-          )}
+        {title && (
+          <Row>
+            <Col>
+              <h2 className="mb-4">{title}</h2>
+            </Col>
+          </Row>
+        )}
 
-          <ul className={show_pointer_list ? 'decoration-pointer' : ''}>
-            {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-              <li key={i}>
-                <UniversalLink href="#">
-                  <h3 className="skeleton-item-title"> </h3>
-                </UniversalLink>
-              </li>
-            ))}
-          </ul>
-          {linkHref && <div className="link-button text-center my-5"></div>}
-        </div>
+        <ul className={show_pointer_list ? 'decoration-pointer' : ''}>
+          {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+            <li key={i}>
+              <UniversalLink href="#">
+                <h3 className="skeleton-item-title"> </h3>
+              </UniversalLink>
+            </li>
+          ))}
+        </ul>
+        {linkHref && <div className="link-button text-center my-5"></div>}
       </Container>
     </div>
   );

@@ -6,6 +6,8 @@ import { ConditionalLink } from '@plone/volto/components';
 import { Container, Row, Col } from 'design-react-kit';
 import { ListingLinkMore } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import './simpleListTemplate.scss';
+
 const SimpleListTemplate = ({
   items,
   title,
