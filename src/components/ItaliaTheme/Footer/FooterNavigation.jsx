@@ -3,6 +3,7 @@
  * @module components/ItaliaTheme/Footer/FooterNavigation
  */
 
+import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -11,7 +12,6 @@ import { isEqual } from 'lodash';
 import { UniversalLink } from '@plone/volto/components';
 import { Row, Col, LinkList, LinkListItem } from 'design-react-kit';
 import { SectionIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -66,11 +66,9 @@ const FooterNavigation = () => {
                   title={
                     intl.formatMessage(messages.goToPage) + ': ' + item.title
                   }
+                  className={markFooterLinks ? 'underlined' : ''}
                 >
                   {item.title}
-                  {markFooterLinks && (
-                    <Icon icon="it-arrow-right" color="white" size="sm" />
-                  )}
                 </Link>
               </h4>
               {/* DEPRECATED: isFooterCollapsed to be removed in version 12 */}
