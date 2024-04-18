@@ -1,8 +1,4 @@
-@import 'addonsThemeCustomizationsVariables';
-@import 'site-variables';
-@import 'bootstrap-override/bootstrap-italia-site';
-@import 'cms-ui';
-@import 'mixins';
+@import 'variables';
 @import 'extras/blocks';
 @import 'extras/sidebar';
 @import 'extras/toolbar';
@@ -50,7 +46,6 @@
 @import 'ItaliaTheme/Blocks/common/searchBlockFilters';
 @import 'ItaliaTheme/Blocks/calendar';
 @import 'ItaliaTheme/Blocks/alert';
-@import 'ItaliaTheme/Blocks/highlitedContent';
 @import 'ItaliaTheme/Blocks/iconBlocks';
 @import 'ItaliaTheme/Blocks/imageBlock';
 @import 'ItaliaTheme/Blocks/searchSections';

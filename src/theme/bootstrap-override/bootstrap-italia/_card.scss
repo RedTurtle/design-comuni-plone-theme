@@ -53,6 +53,12 @@
       fill: $gray-secondary;
     }
   }
+
+  .card-body {
+    .card-text {
+      line-height: 1.5em;
+    }
+  }
 }
 
 a.read-more {

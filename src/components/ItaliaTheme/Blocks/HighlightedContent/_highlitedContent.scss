@@ -1,10 +1,6 @@
-.block.highlitedContent {
-  .empty-selection {
-    padding: 0.5em;
-    background-color: #eee;
-    text-align: center;
-  }
+@import 'design-comuni-plone-theme/theme/variables';
 
+.block.highlitedContent {
   .item-image {
     width: 100%;
     height: 100%;
