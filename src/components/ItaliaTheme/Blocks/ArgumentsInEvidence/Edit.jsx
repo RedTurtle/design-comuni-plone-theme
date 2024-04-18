@@ -12,6 +12,9 @@ import { SidebarPortal } from '@plone/volto/components';
 import { Sidebar } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/ArgumentsInEvidence';
 import { ArgumentsInEvidenceBackground } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import './argumentsInEvidence.scss';
+import './argumentsInEvidence_edit.scss';
+
 class Edit extends SubblocksEdit {
   render() {
     const hasArguments = this.props.data.subblocks?.some((subblock) => {

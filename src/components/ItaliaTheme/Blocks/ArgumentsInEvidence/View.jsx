@@ -6,6 +6,8 @@ import Block from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Argum
 import { ArgumentsInEvidenceBackground } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { useIntl } from 'react-intl';
 
+import './argumentsInEvidence.scss';
+
 const View = ({ data, id }) => {
   const currentIntl = useIntl();
 
