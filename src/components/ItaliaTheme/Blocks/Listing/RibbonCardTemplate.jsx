@@ -30,6 +30,8 @@ import {
 } from 'design-comuni-plone-theme/helpers';
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
 
+import './ribbonCardTemplate.scss';
+
 const messages = defineMessages({
   default_detail_link: {
     id: 'Vedi',

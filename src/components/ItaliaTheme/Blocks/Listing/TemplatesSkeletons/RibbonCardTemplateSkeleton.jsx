@@ -15,6 +15,7 @@ import {
 } from 'design-react-kit';
 
 import { Link } from 'react-router-dom';
+import '../ribbonCardTemplate.scss';
 
 const RibbonCardTemplateSkeleton = ({
   isEditMode,
