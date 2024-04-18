@@ -25,6 +25,8 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { GalleryPreview } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import './photogalleryTemplate.scss';
+
 const messages = defineMessages({
   viewImage: {
     id: "Vedi l'immagine",
