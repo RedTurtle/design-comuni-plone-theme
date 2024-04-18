@@ -21,6 +21,8 @@ import { viewDate } from 'design-comuni-plone-theme/helpers';
 
 import { BandoStatus } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
+import './bandiInEvidenceTemplate.scss';
+
 const messages = defineMessages({
   vedi: {
     id: 'bando_vedi',

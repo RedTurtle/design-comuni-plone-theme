@@ -1,3 +1,5 @@
+@import 'design-comuni-plone-theme/theme/variables';
+
 .bandi-in-evidence {
   .bandi-in-evidence-cards-wrapper {
     display: -ms-grid;
@@ -150,20 +152,20 @@
 
   .open {
     /* background-color: #00cf86;*/
-    background-color: $complementary-3-a9;
+    background-color: $bando-open;
   }
 
   .scheduled {
-    background-color: $analogue-1-b5;
+    background-color: $bando-scheduled;
   }
 
   .closed {
-    background-color: $neutral-1-a7;
+    background-color: $bando-closed;
   }
 
   .in-progress,
   .inProgress {
-    background-color: $analogue-1-a9;
+    background-color: $bando-in-progress;
   }
 
   .skeleton-template {

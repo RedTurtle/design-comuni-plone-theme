@@ -12,6 +12,8 @@ import {
   CardReadMore,
 } from 'design-react-kit';
 
+import '../bandiInEvidenceTemplate.scss';
+
 const BandiInEvidenceTemplateSkeleton = ({
   title,
   isEditMode,

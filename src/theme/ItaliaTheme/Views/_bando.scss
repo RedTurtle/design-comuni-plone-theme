@@ -52,38 +52,38 @@
     text-transform: uppercase;
 
     &.open {
-      border-left: 5px solid $complementary-3-a9;
+      border-left: 5px solid $bando-open;
 
       svg {
         padding-right: 10px;
-        fill: $complementary-3-a9;
+        fill: $bando-open;
       }
     }
 
     &.closed {
-      border-left: 5px solid $neutral-1-a7;
+      border-left: 5px solid $bando-closed;
 
       svg {
         padding-right: 10px;
-        fill: $neutral-1-a7;
+        fill: $bando-closed;
       }
     }
 
     &.scheduled {
-      border-left: 5px solid $analogue-1-b5;
+      border-left: 5px solid $bando-scheduled;
 
       svg {
         padding-right: 10px;
-        fill: $analogue-1-b5;
+        fill: $bando-scheduled;
       }
     }
 
     &.inProgress {
-      border-left: 5px solid $analogue-1-a7;
+      border-left: 5px solid $bando-in-progress;
 
       svg {
         padding-right: 10px;
-        fill: $analogue-1-a7;
+        fill: $bando-in-progress;
       }
     }
   }
