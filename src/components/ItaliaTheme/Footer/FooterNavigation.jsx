@@ -48,6 +48,8 @@ const FooterNavigation = () => {
     );
   }, [path, dispatch]);
 
+  const markFooterLinks = config.settings.siteProperties.markFooterLinks;
+
   return (
     <>
       {items && (
@@ -71,6 +73,7 @@ const FooterNavigation = () => {
                   title={
                     intl.formatMessage(messages.goToPage) + ': ' + item.title
                   }
+                  className={markFooterLinks ? 'underlined' : ''}
                 >
                   {item.title}
                 </Link>
