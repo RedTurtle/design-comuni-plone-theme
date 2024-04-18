@@ -8,6 +8,7 @@ import cx from 'classnames';
 import { OSMMap } from 'volto-venue';
 import { Row, Col, Container } from 'design-react-kit';
 import { ListingLinkMore } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import './mapTemplate.scss';
 
 const messages = defineMessages({
   default_detail_link: {

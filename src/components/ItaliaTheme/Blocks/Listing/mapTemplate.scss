@@ -1,3 +1,5 @@
+@import 'design-comuni-plone-theme/theme/variables';
+
 .block.listing .map-template {
   .leaflet-container {
     width: 100%;
@@ -39,8 +41,6 @@
   .template-skeleton {
     .map-skeleton {
       height: 300px;
-      background-color: $skeleton-bg;
-      @extend %skeleton-animation;
     }
   }
 }
