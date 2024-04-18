@@ -6,6 +6,8 @@ import { UniversalLink } from '@plone/volto/components';
 
 import { Container, Row, Col } from 'design-react-kit';
 
+import '../gridGalleryTemplate.scss';
+
 const GridGalleryTemplateSkeleton = ({
   isEditMode,
   title,

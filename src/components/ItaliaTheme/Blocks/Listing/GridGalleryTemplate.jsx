@@ -14,6 +14,8 @@ import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
+import './gridGalleryTemplate.scss';
+
 const messages = defineMessages({
   maxItemsExceeded: {
     id: 'grid-gallery-max-items-exceeded',
