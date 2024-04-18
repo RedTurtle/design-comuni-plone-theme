@@ -16,8 +16,7 @@
 @use 'ItaliaTheme/Blocks/cardWithImageAndInEvidence' as it-card-image-evidence;
 @use 'ItaliaTheme/Blocks/completeBlockLinktemplate' as it-complete-link;
 @use 'ItaliaTheme/Blocks/ribbonCardTemplate' as it-ribbon-card;
-@use 'components/ItaliaTheme/Blocks/HighlightedContent/highlitedContent' as
-  it-highlight;
+@use 'ItaliaTheme/Blocks/highlitedContent' as it-highlight;
 @use 'ItaliaTheme/Blocks/argumentsInEvidence' as it-args-evidence;
 @use 'ItaliaTheme/Blocks/searchSections' as it-search-sections;
 @use 'ItaliaTheme/Views/common' as it-views;
