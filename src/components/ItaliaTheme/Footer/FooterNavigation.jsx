@@ -3,7 +3,6 @@
  * @module components/ItaliaTheme/Footer/FooterNavigation
  */
 
-import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
