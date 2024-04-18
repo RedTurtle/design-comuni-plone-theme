@@ -17,6 +17,8 @@ import {
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
 import { defineMessages, useIntl } from 'react-intl';
 
+import './cardWithSlideUpTextTemplate.scss';
+
 const messages = defineMessages({
   vedi: {
     id: 'card_vedi',
