@@ -33,6 +33,8 @@ import {
   ListingImage,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import './contentInEvidenceTemplate.scss';
+
 const ContentInEvidenceTemplate = (props) => {
   const {
     items,

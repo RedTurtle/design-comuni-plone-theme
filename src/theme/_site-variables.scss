@@ -51,13 +51,15 @@ $alert-info-text: #000 !default;
 
 $argument-icon-color: $tertiary !default;
 $argument-icon-bg: #f5f6f7 !default;
+
 $external-link-fill-buttons: $tertiary-text !default;
 $external-link-fill-subfooter: $tertiary-text !default;
 
-$bando-open: $complementary-3-a9;
-$bando-scheduled: $analogue-1-b5;
-$bando-closed: $neutral-1-a7;
-$bando-in-progress: $analogue-1-a9;
+// BANDI COLORS
+$bando-open: #008053;
+$bando-scheduled: #585499;
+$bando-closed: #5b6f82;
+$bando-in-progress: #191380;
 
 // $dvt-header-center-max-height: 166px;
 // $header-center-max-height-mob: 80px;

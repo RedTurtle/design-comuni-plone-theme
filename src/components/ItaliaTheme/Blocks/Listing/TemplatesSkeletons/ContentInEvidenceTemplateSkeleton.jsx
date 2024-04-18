@@ -14,6 +14,7 @@ import cx from 'classnames';
 
 import { CardCategory } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import '../contentInEvidenceTemplate.scss';
 const ContentInEvidenceTemplateSkeleton = ({
   title,
   isEditMode,
@@ -21,7 +22,7 @@ const ContentInEvidenceTemplateSkeleton = ({
   linkHref,
 }) => {
   return (
-    <div className="contentInEvidence">
+    <div className="contentInEvidenceTemplate">
       <Container>
         <div className="skeleton-template">
           {title && (
@@ -38,7 +39,7 @@ const ContentInEvidenceTemplateSkeleton = ({
             return (
               <Row key={i}>
                 <Col lg={{ size: 6, offset: 1, order: 2 }}>
-                  <div className="img-responsive-wrapper item-image">
+                  <div className="img-responsive-wrapper item-image img-skeleton">
                     <div className="img-responsive">
                       <figure className="img-wrapper"></figure>
                     </div>
