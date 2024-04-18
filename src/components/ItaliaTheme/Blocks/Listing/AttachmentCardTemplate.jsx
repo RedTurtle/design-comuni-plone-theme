@@ -9,6 +9,8 @@ import {
   ListingLinkMore,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import './SimpleCard/simpleCardTemplateCompact.scss';
+
 const messages = defineMessages({
   link: {
     id: 'link',

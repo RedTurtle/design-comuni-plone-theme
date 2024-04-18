@@ -38,9 +38,11 @@
       & > .card-teaser {
         flex-wrap: nowrap;
 
-        > .icon {
-          color: $gray-secondary;
-          fill: $gray-secondary;
+        &:not(.attachment) {
+          > .icon {
+            color: $gray-secondary;
+            fill: $gray-secondary;
+          }
         }
       }
     }
