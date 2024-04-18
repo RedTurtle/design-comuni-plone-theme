@@ -8,7 +8,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import Body from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HighlightedContent/Body';
 import Skeleton from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HighlightedContent/Skeleton';
 
-import './_highlitedContent.scss';
+import './highlitedContent.scss';
 
 const View = ({ data, id }) => {
   const content = useSelector((state) => state.content.subrequests[id]?.data);

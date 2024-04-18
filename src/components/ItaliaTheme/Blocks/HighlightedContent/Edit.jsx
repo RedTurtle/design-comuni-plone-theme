@@ -10,8 +10,8 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import Body from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HighlightedContent/Body';
 import { Sidebar } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HighlightedContent';
 
-import './_highlitedContent.scss';
-import './_highlitedContent_edit.scss';
+import './highlitedContent.scss';
+import './highlitedContent_edit.scss';
 
 const messages = defineMessages({
   emptySelection: {

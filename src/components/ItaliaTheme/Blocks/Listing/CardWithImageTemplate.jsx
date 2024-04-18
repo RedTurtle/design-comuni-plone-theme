@@ -10,6 +10,8 @@ import { ListingLinkMore } from 'design-comuni-plone-theme/components/ItaliaThem
 
 import CardWithImageDefault from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/CardWithImage/CardWithImageDefault';
 
+import './cardWithImageTemplate.scss';
+
 const CardWithImageTemplate = (props) => {
   const {
     items,

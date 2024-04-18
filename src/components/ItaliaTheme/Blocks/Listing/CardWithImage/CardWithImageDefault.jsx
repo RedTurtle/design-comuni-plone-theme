@@ -33,6 +33,8 @@ import {
   CardPersona,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import './cardWithImageDefault.scss';
+
 const CardWithImageDefault = (props) => {
   const {
     item,
