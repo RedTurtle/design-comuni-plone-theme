@@ -23,6 +23,7 @@ import { getComponentWithFallback } from 'design-comuni-plone-theme/helpers';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 
 import config from '@plone/volto/registry';
+import './completeBlockLinksTemplate.scss';
 
 const CompleteBlockLinksTemplate = (props) => {
   const {

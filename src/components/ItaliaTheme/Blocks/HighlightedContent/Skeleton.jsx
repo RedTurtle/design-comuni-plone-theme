@@ -15,6 +15,8 @@ import {
 
 import { CardCategory } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import './highlitedContent.scss';
+
 const Skeleton = ({ content, pathname, block }) => {
   return (
     <div className="skeleton-template">

@@ -15,6 +15,8 @@ import {
 
 import { CardCategory } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import '../cardWithImageTemplate.scss';
+
 const CardWithImageTemplateSkeleton = ({
   isEditMode,
   title,

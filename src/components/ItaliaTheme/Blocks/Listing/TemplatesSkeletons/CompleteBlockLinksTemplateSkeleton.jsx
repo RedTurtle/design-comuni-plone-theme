@@ -10,6 +10,8 @@ import {
   Col,
 } from 'design-react-kit';
 
+import '../completeBlockLinksTemplate.scss';
+
 const CompleteBlockLinksTemplateSkeleton = ({
   title,
   isEditMode,
