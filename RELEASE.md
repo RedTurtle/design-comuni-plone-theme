@@ -41,12 +41,32 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 11.10.0 (17/04/2024)
 
 ### Migliorie
 
-- Aggiunta la possibilità di inserire testo nel filtro luogo nel blocco Ricerca Eventi
-- Le opzioni del menu a tendina per il filtro luogo nel blocco Ricerca Eventi sono ordinate alfabeticamente
+- Nel blocco Argomenti in Evidenza, è stata rimossa l'obbligatorietà di aggiungere una card argomento, ora si possono inserire anche solo le etichette.
+- Aggiunta la possibilità di inserire testo nel filtro luogo nel blocco Ricerca Eventi.
+- Le opzioni del menu a tendina per il filtro luogo nel blocco Ricerca Eventi sono ordinate alfabeticamente.
+- Il focus quando un elemento (link o pulsante) è cliccato con il mouse non ha più il bordo giallo/arancione.
+- Migliorati gli stili per la stampa del CT pagina.
+
+### Novità
+
+- Ora i link in testata nell'header slim sono configurabili da pannello di controllo.
+- Nel template Slider del blocco elenco, ora è possibile scegliere l'aspetto degli elementi dello slider (default: slide semplice con immagine e titolo cliccabile, Card semplice, Card con immagine).
+- Nel blocco Argomenti in Evidenza sono state aggiunte due nuove proprietà, una permette di allineare gli "Altri argomenti" al centro e la seconda serve a nascondere o meno il bottone "Vedi tutti" che punta alla pagina argomenti.
+
+### Fix
+
+- Nel blocco Argomenti in Evidenza se non ci sono card ma etichette argomento, il blocco non renderizza più lo sfondo per un maggiore contrasto con le etichette, di conseguenza il titolo del blocco rimane nero e non bianco.
+- Aggiunto il titolo per la sezione "Organizzatore esterno" quando il campo è compilato nel tipo di contenuto Evento.
+- I chip che non hanno collegamenti non si comportano più come link al posizionamento del mouse.
+- Sistemato un problema nella vista del CT Evento, che mostrava tra le date aggiuntive della ricorrenza anche le date escluse.
+- Sistemato un problema per cui la visualizzazione della sitemap in presenza di un sito multilingua generava errore.
+- Migliorata l'accessibilità dei link nel footer.
+- Migliorata l'accessibilità del blocco elenco nella variazione Slider.
+- Migliorati gli stili del blocco accordion.
 
 ## Versione 11.9.1 (03/04/2024)
 
