@@ -1,22 +1,29 @@
+/*
+ * Photogallery
+ */
 import 'slick-carousel/slick/slick.css';
 import 'design-comuni-plone-theme/components/slick-carousel/slick/slick-theme.css';
 
+import React, { useRef, useState } from 'react';
+import { defineMessages, useIntl } from 'react-intl';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
 import { Col, Container, Row } from 'design-react-kit';
+
+import { UniversalLink } from '@plone/volto/components';
+import { flattenToAppURL } from '@plone/volto/helpers';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+
 import {
   ListingImage,
   ListingLinkMore,
   NextArrow,
   PrevArrow,
+  SingleSlideWrapper,
+  CarouselWrapper,
+  ButtonPlayPause,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import React, { useRef, useState } from 'react';
-import { defineMessages, useIntl } from 'react-intl';
 import { GalleryPreview } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import PropTypes from 'prop-types';
-import { UniversalLink } from '@plone/volto/components';
-import cx from 'classnames';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
 const messages = defineMessages({
   viewImage: {
@@ -26,14 +33,6 @@ const messages = defineMessages({
   viewPreview: {
     id: 'gallery_viewPreview',
     defaultMessage: "Vedi l'anteprima di",
-  },
-  play: {
-    id: 'Play slider',
-    defaultMessage: 'Play',
-  },
-  pause: {
-    id: 'Pause slider',
-    defaultMessage: 'Metti in pausa',
   },
 });
 
@@ -113,21 +112,12 @@ const PhotogalleryTemplate = ({
     prevArrow: <PrevArrow />,
     appendDots: (dots) => (
       <div>
-        <div className="play-pause-wrapper">
-          <button
-            onClick={() => toggleAutoplay()}
-            title={
-              autoplay
-                ? intl.formatMessage(messages.pause)
-                : intl.formatMessage(messages.play)
-            }
-          >
-            <Icon
-              key={autoplay ? 'pause' : 'play'}
-              icon={autoplay ? 'pause' : 'play'}
-            />
-          </button>
-        </div>
+        <ButtonPlayPause
+          onClick={toggleAutoplay}
+          autoplay={autoplay}
+          showLabel={false}
+        />
+
         <ul className="slick-dots" style={{ margin: '0px' }}>
           {dots}
         </ul>
@@ -139,7 +129,7 @@ const PhotogalleryTemplate = ({
 
   const figure = (image, item) => {
     return (
-      <figure className="img-wrapper">
+      <figure className="img-wrapper volto-image responsive">
         {image}
         {getCaption(item) && <figcaption>{getCaption(item)}</figcaption>}
       </figure>
@@ -159,17 +149,28 @@ const PhotogalleryTemplate = ({
           </Row>
         )}
         <div className="slider-container px-4 px-md-0">
-          <div className="it-carousel-all it-card-bg">
+          <CarouselWrapper className="it-card-bg">
             <Slider {...settings} ref={slider}>
               {items.map((item, i) => {
-                const image = ListingImage({ item });
-
+                const image = ListingImage({
+                  item,
+                  sizes: `(max-width:600px) 450px, (max-width:1024px) ${
+                    items.length < 2 ? '1000' : '500'
+                  }px, ${
+                    items.length === 1
+                      ? '1300'
+                      : items.length === 2
+                        ? '650'
+                        : '450'
+                  }px`,
+                });
                 return (
-                  <div
-                    className={cx('it-single-slide-wrapper', {
+                  <SingleSlideWrapper
+                    className={cx('', {
                       'single-slide': items.length === 1,
                     })}
                     key={item['@id']}
+                    index={i}
                   >
                     {!show_image_popup ? (
                       <UniversalLink
@@ -205,7 +206,7 @@ const PhotogalleryTemplate = ({
                         {figure(image, item)}
                       </a>
                     )}
-                  </div>
+                  </SingleSlideWrapper>
                 );
               })}
             </Slider>
@@ -218,7 +219,7 @@ const PhotogalleryTemplate = ({
                 items={items}
               />
             ) : null}
-          </div>
+          </CarouselWrapper>
         </div>
         <ListingLinkMore
           title={linkTitle}

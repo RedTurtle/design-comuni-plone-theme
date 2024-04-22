@@ -50,14 +50,20 @@ const SocialHeader = () => {
           {socials?.map((social, idx) => (
             <li key={idx}>
               <a
-                title={
-                  social.title + ' ' + intl.formatMessage(messages.socialOpen)
-                }
+                title={`${intl.formatMessage(messages.followUs)} ${
+                  social.title
+                } ${intl.formatMessage(messages.socialOpen)}`}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Icon color="" icon={social.icon} padding={false} size="" />
+                <Icon
+                  color=""
+                  icon={social.icon}
+                  padding={false}
+                  size=""
+                  title={social.title}
+                />
               </a>
             </li>
           ))}

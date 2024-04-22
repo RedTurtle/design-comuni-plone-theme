@@ -61,16 +61,12 @@ a {
 
 .public-ui {
   a.btn.btn-primary {
-    color: $primary-text;
-
     svg {
       fill: $primary-text;
     }
   }
 
   a.btn.btn-secondary {
-    color: $secondary-text;
-
     svg {
       fill: $secondary-text;
     }
@@ -101,12 +97,9 @@ iframe {
     }
   }
 
-  .callout {
-    padding: 1.25rem;
-    border: 1px solid $neutral-1-a2;
-    border-radius: 0.25rem;
+  p.callout {
+    max-width: none;
     border-left-width: 0.4rem;
-    margin: 1.25rem 0;
 
     p,
     .public-DraftStyleDefault-block {
@@ -330,6 +323,36 @@ iframe {
       content: '';
       @media (max-width: #{map-get($grid-breakpoints, md)}) {
         content: none;
+      }
+    }
+  }
+}
+
+//fix footer styles for volto-editablefooter footerTop field
+.it-footer .it-footer-main .it-brand-wrapper .footerTop,
+.footer-configuration-widget .footer-top-segment .block.gridBlock .grid-items {
+  h2 {
+    margin-bottom: 0;
+    font-size: 1.777778rem;
+    font-weight: 600;
+    letter-spacing: unset;
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-weight: 600;
+  }
+
+  .block.image img {
+    width: auto;
+    max-height: 75px;
+  }
+
+  .block.gridBlock {
+    .col {
+      &:has(.block.image) {
+        width: auto;
+        flex: 0 0 auto;
       }
     }
   }

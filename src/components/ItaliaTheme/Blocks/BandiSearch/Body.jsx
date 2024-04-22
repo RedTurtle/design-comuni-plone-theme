@@ -9,7 +9,7 @@ import { getQueryStringResults } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import BandiInEvidenceTemplate from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate';
 import { Pagination } from 'design-comuni-plone-theme/components/ItaliaTheme';
-
+import { resetQuerystringResults } from 'design-comuni-plone-theme/actions';
 import FiltersConfig from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/BandiSearch/FiltersConfig';
 
 const messages = defineMessages({
@@ -32,7 +32,7 @@ const messages = defineMessages({
   },
 });
 
-const Body = ({ data, inEditMode, path, onChangeBlock }) => {
+const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
   const intl = useIntl();
   const b_size = 6;
 
@@ -44,14 +44,19 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
   const dispatch = useDispatch();
 
   const querystringResults = useSelector((state) => {
-    return state.querystringsearch?.subrequests?.bandi_search;
+    return state.querystringsearch?.subrequests?.[id + '_bandi_search'];
   });
   const items = useSelector((state) => {
-    return state.querystringsearch?.subrequests?.bandi_search?.items ?? [];
+    return (
+      state.querystringsearch?.subrequests?.[id + '_bandi_search']?.items ?? []
+    );
   });
 
   const loading = useSelector((state) => {
-    return state.querystringsearch?.subrequests?.bandi_search?.loading || false;
+    return (
+      state.querystringsearch?.subrequests?.[id + '_bandi_search']?.loading ||
+      false
+    );
   });
 
   const resultsRef = createRef();
@@ -92,7 +97,7 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
           sort_on: data.sort_on,
           sort_order: data.sort_order ? 'descending' : 'ascending',
         },
-        'bandi_search',
+        id + '_bandi_search',
         page,
       ),
     );
@@ -112,6 +117,7 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
       newState = {
         ...getInitialState(),
       };
+      dispatch(resetQuerystringResults(id + '_bandi_search'));
     } else {
       const f = newState[action.filter];
       const defaultReducer = (value, state) => value;
@@ -149,54 +155,60 @@ const Body = ({ data, inEditMode, path, onChangeBlock }) => {
           'public-ui': inEditMode,
         })}
       >
-        <div className="d-flex justify-content-center">
-          <div className="d-flex search-container align-items-center justify-content-center flex-wrap">
-            {filterOne && (
-              <>
-                {React.createElement(filterOne.widget.component, {
-                  ...filterOne.widget?.props,
-                  id: 'filterOne',
-                  onChange: (filter, value) => {
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            doRequest(1);
+          }}
+        >
+          <div className="d-flex justify-content-center">
+            <div className="d-flex search-container align-items-center justify-content-center flex-wrap">
+              {filterOne && (
+                <>
+                  {React.createElement(filterOne.widget.component, {
+                    ...filterOne.widget?.props,
+                    id: 'filterOne',
+                    onChange: (filter, value) => {
+                      dispatchFilter({
+                        filter: filter,
+                        value: value,
+                      });
+                    },
+                  })}
+                </>
+              )}
+              {filterTwo &&
+                React.createElement(filterTwo.widget?.component, {
+                  ...filterTwo.widget?.props,
+                  id: 'filterTwo',
+                  onChange: (filter, value) =>
                     dispatchFilter({
                       filter: filter,
                       value: value,
-                    });
-                  },
+                    }),
                 })}
-              </>
-            )}
-            {filterTwo &&
-              React.createElement(filterTwo.widget?.component, {
-                ...filterTwo.widget?.props,
-                id: 'filterTwo',
-                onChange: (filter, value) =>
-                  dispatchFilter({
-                    filter: filter,
-                    value: value,
-                  }),
-              })}
-            {filterThree &&
-              React.createElement(filterThree.widget?.component, {
-                ...filterThree.widget?.props,
-                id: 'filterThree',
-                onChange: (filter, value) =>
-                  dispatchFilter({
-                    filter: filter,
-                    value: value,
-                  }),
-              })}
+              {filterThree &&
+                React.createElement(filterThree.widget?.component, {
+                  ...filterThree.widget?.props,
+                  id: 'filterThree',
+                  onChange: (filter, value) =>
+                    dispatchFilter({
+                      filter: filter,
+                      value: value,
+                    }),
+                })}
 
-            <Button
-              color={data.button_color || 'tertiary'}
-              icon={false}
-              tag="button"
-              onClick={() => doRequest(1)}
-              className="my-2 my-lg-1"
-            >
-              {intl.formatMessage(messages.find)}
-            </Button>
+              <Button
+                color={data.button_color || 'tertiary'}
+                icon={false}
+                tag="button"
+                className="my-2 my-lg-1"
+              >
+                {intl.formatMessage(messages.find)}
+              </Button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
 
       {!loading ? (

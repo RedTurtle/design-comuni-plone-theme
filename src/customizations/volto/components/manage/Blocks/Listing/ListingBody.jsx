@@ -5,6 +5,7 @@ CUSTOMIZATIONS:
 - 'background class' and 'block class'
 - 'background class' and 'block class' logic for search block
 - search block integration
+- pass 'block'  prop to listing variation
 */
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
@@ -37,7 +38,9 @@ const ListingBody = React.memo(
         loadingQuery,
         listingRef,
         additionalFilters,
+        block,
       } = props;
+
       let ListingBodyTemplate;
       let templateConfig;
       // Legacy support if template is present
@@ -68,7 +71,11 @@ const ListingBody = React.memo(
 
         if (!block?.show_block_bg && !isSearchBlockResults) return 'full-width';
 
-        let bg_color = data.bg_color ? `bg-${data.bg_color}` : '';
+        let bg_color = config.blocks?.blocksConfig[
+          'listing'
+        ]?.listing_bg_colors.some((color) => color.name === data.bg_color)
+          ? `bg-${data.bg_color}`
+          : 'bg-light';
 
         if (block.template === 'gridGalleryTemplate') {
           return `section section-muted section-inset-shadow py-5 ${bg_color} ${
@@ -76,7 +83,7 @@ const ListingBody = React.memo(
           }`;
         } else {
           return `py-5 ${bg_color} ${
-            isSearchBlockResults ? 'template-wrapper' : 'bg-light full-width'
+            isSearchBlockResults ? 'template-wrapper' : 'full-width'
           }`;
         }
       };
@@ -93,6 +100,7 @@ const ListingBody = React.memo(
       // Also need to purge title from searchblock schema, it's the name of the listing template used
       const listingBodyProps =
         variation?.['@type'] !== 'search' ? data : { ...variation, title: '' };
+
       return (
         <div className="public-ui">
           {loadingQuery && (
@@ -110,6 +118,7 @@ const ListingBody = React.memo(
               <ListingBodyTemplate
                 items={listingItems}
                 isEditMode={isEditMode}
+                block={block}
                 {...listingBodyProps}
                 addFilters={addFilters}
                 additionalFilters={additionalFilters}

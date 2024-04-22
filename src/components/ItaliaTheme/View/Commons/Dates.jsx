@@ -67,6 +67,14 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
   const end = viewDate(intl.locale, content.end);
   const openEnd = content?.open_end;
   const wholeDay = content?.whole_day;
+  const rdates = rruleSet?.rdates() ?? [];
+  const exdates = rruleSet?.exdates() ?? [];
+  const additionalDates = rdates.reduce((acc, curr) => {
+    const isExdate = exdates.some((b) => b.toString() === curr.toString());
+    if (!isExdate) {
+      return [...acc, curr];
+    } else return acc;
+  }, []);
 
   return content ? (
     <>
@@ -77,6 +85,9 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
               {start.format('DD')}
             </span>
             <span className="point-month">{start.format('MMMM')}</span>
+            {!start.isSame(end, 'year') && (
+              <span className="point-month">{start.format('YYYY')}</span>
+            )}
           </div>
           <div className="point-list-content">
             <Card
@@ -101,10 +112,13 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         {!openEnd && (
           <div className="point-list">
             <div className="point-list-aside point-list-warning">
-              <span className="point-date text-monospace">
+              <span className="point-date font-monospace">
                 {end.format('DD')}
               </span>
               <span className="point-month">{end.format('MMMM')}</span>
+              {!end.isSame(start, 'year') && (
+                <span className="point-month">{end.format('YYYY')}</span>
+              )}
             </div>
             <div className="point-list-content">
               <Card
@@ -128,20 +142,20 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
           <strong>{recurrenceText}</strong>
         </div>
       )}
-      {rruleSet?.rdates().length > 0 && (
+      {additionalDates.length > 0 && (
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.additional_dates)}</h5>
-          {rruleSet.rdates().map((additionalDate) => (
+          {additionalDates.map((additionalDate) => (
             <div className="font-serif">
               {viewDate(intl.locale, additionalDate, 'dddd DD MMMM YYYY')}
             </div>
           ))}
         </div>
       )}
-      {rruleSet?.exdates().length > 0 && (
+      {exdates.length > 0 && (
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.excluded_dates)}</h5>
-          {rruleSet.exdates().map((exDate) => (
+          {exdates.map((exDate) => (
             <div className="font-serif">
               {viewDate(intl.locale, exDate, 'dddd DD MMMM YYYY')}
             </div>

@@ -2,7 +2,7 @@
   "name": "design-comuni-plone-theme",
   "description": "Volto Theme for Italia design guidelines",
   "license": "GPL-v3",
-  "version": "10.6.3",
+  "version": "11.10.0",
   "main": "src/index.js",
   "keywords": [
     "volto-addon",
@@ -31,7 +31,8 @@
     "volto-data-grid-widget",
     "volto-querywidget-with-browser",
     "@eeacms/volto-taxonomy",
-    "volto-feedback"
+    "volto-feedback",
+    "volto-slimheader"
   ],
   "scripts": {
     "prepare": "husky install",
@@ -120,18 +121,19 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "7.18.9",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "7.18.6",
     "@babel/plugin-proposal-throw-expressions": "7.18.6",
     "@eeacms/volto-taxonomy": "^1.0.0",
     "@loadable/babel-plugin": "5.13.2",
     "@plone-collective/volto-sentry": "0.3.0",
-    "bootstrap-italia": "2.2.0",
+    "bootstrap-italia": "2.6.1",
     "classnames": "^2.3.2",
-    "design-react-kit": "italia/design-react-kit#fc9b40257ba3cb613141faf217f1f5b806489740",
+    "design-react-kit": "5.0.0-1",
     "htmldiff-js": "1.0.5",
     "marked": "9.0.0",
     "react-dropzone": "11.0.1",
+    "react-focus-lock": "2.9.4",
     "react-google-recaptcha-v3": "1.7.0",
-    "react-highlight-words": "0.18.0",
     "react-select": "^4.3.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "1.8.1",
@@ -140,18 +142,19 @@
     "typeface-lora": "0.0.72",
     "typeface-roboto-mono": "0.0.75",
     "typeface-titillium-web": "0.0.72",
-    "volto-blocks-widget": "3.1.0",
+    "volto-blocks-widget": "3.4.0",
     "volto-data-grid-widget": "2.3.1",
-    "volto-dropdownmenu": "4.1.0",
-    "volto-editablefooter": "5.0.1",
-    "volto-feedback": "0.1.5",
-    "volto-form-block": "3.1.0",
-    "volto-gdpr-privacy": "2.1.1",
+    "volto-dropdownmenu": "4.1.1",
+    "volto-editablefooter": "5.1.1",
+    "volto-feedback": "0.3.0",
+    "volto-form-block": "3.7.2",
+    "volto-gdpr-privacy": "2.2.0",
     "volto-google-analytics": "2.0.0",
     "volto-multilingual-widget": "3.0.0",
-    "volto-querywidget-with-browser": "0.4.0",
+    "volto-querywidget-with-browser": "0.4.2",
     "volto-rss-block": "3.0.0",
     "volto-secondarymenu": "4.0.0",
+    "volto-slimheader": "0.1.1",
     "volto-social-settings": "3.0.0",
     "volto-subblocks": "2.0.0",
     "volto-subfooter": "3.0.0",
@@ -191,7 +194,7 @@
     "stylelint-prettier": "4.0.2"
   },
   "peerDependencies": {
-    "@plone/volto": "17.0.0-alpha.19"
+    "@plone/volto": "17.7.0"
   },
   "packageManager": "yarn@3.2.3"
 }

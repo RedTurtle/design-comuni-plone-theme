@@ -56,7 +56,8 @@ picture.volto-image {
 .ui.image img.full-width,
 picture.volto-image.responsive.full-width img,
 picture.volto-image.full-width img,
-picture.volto-image.responsive img.full-width {
+picture.volto-image.responsive img.full-width,
+.block.image.align.full img.full-width {
   position: relative;
   right: 50%;
   left: 50%;
@@ -67,14 +68,43 @@ picture.volto-image.responsive img.full-width {
   margin-left: -50vw !important;
   object-fit: cover;
 
+  $toolbar-width: 80px;
+  $toolbar-collapsed-width: 20px;
+  $sidebar-width: 375px;
+  $sidebar-collapsed-width: 20px;
+
   .has-toolbar & {
-    left: calc(50% + 40px);
-    width: calc(100vw - 80px) !important;
+    left: calc(50% + calc($toolbar-width / 2));
+    width: calc(100vw - $toolbar-width) !important;
+  }
+
+  .has-toolbar.has-sidebar & {
+    $toolbars-width: calc($toolbar-width + $sidebar-width);
+    left: calc(50% + calc($toolbars-width / 2));
+    width: calc(100vw - $toolbars-width) !important;
+  }
+
+  .has-toolbar.has-sidebar-collapsed & {
+    $toolbars-width: calc($toolbar-width + $sidebar-collapsed-width);
+    left: calc(50% + calc($toolbars-width / 2));
+    width: calc(100vw - $toolbars-width) !important;
   }
 
   .has-toolbar-collapsed & {
-    left: calc(50% + 10px);
-    width: calc(100vw - 20px) !important;
+    left: calc(50% + calc($toolbar-collapsed-width / 2));
+    width: calc(100vw - $toolbar-collapsed-width) !important;
+  }
+
+  .has-toolbar-collapsed.has-sidebar & {
+    $toolbars-width: calc($toolbar-collapsed-width + $sidebar-width);
+    left: calc(50% + calc($toolbars-width / 2));
+    width: calc(100vw - $toolbars-width) !important;
+  }
+
+  .has-toolbar-collapsed.has-sidebar-collapsed & {
+    $toolbars-width: calc($toolbar-collapsed-width + $sidebar-collapsed-width);
+    left: calc(50% + calc($toolbars-width / 2));
+    width: calc(100vw - $toolbars-width) !important;
   }
 }
 
@@ -265,12 +295,6 @@ div.sticky-wrapper {
     height: 24px;
     color: $argument-icon-color;
     fill: $argument-icon-color;
-  }
-}
-
-.wide-image:not(.row-full-width) {
-  img {
-    max-width: 100%;
   }
 }
 

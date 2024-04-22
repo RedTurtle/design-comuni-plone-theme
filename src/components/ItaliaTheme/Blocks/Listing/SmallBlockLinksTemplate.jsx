@@ -1,3 +1,6 @@
+/*
+ * Blocco link solo immagini
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'design-react-kit';
@@ -35,7 +38,11 @@ const SmallBlockLinksTemplate = ({
         )}
         <Row className="items">
           {items.map((item, index) => {
-            const image = ListingImage({ item, maxSize: 200, style: {} });
+            const image = ListingImage({
+              item,
+              sizes: '(max-width:575px) 520px, 200px',
+              style: {},
+            });
 
             return (
               <Col

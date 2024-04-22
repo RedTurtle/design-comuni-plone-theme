@@ -227,9 +227,9 @@ maintenance:
 name: io-Comune - Il sito AgID per Comuni ed Enti Pubblici
 platforms:
   - web
-releaseDate: '2023-12-15'
+releaseDate: '2024-04-17'
 softwareType: standalone/web
-softwareVersion: 10.6.3
+softwareVersion: 11.10.0
 url: 'https://github.com/italia/design-comuni-plone-theme'
 usedBy:
   - ASP Comuni Modenesi Area Nord
@@ -245,14 +245,22 @@ usedBy:
   - Camera di Commercio di Reggio Emilia
   - Comune della Spezia
   - Comune di Bibbiano
+  - Comune di Borgo Tossignano
+  - Comune di Campegine
   - Comune di Camposanto
+  - Comune di Canossa
   - Comune di Cantagallo
+  - Comune di Casalfiumanese
+  - Comune di Castel del Rio
+  - Comune di Castel Guelfo di Bologna
   - Comune di Cavezzo
   - Comune di Cavriago
   - Comune di Concordia sul Secchia
+  - Comune di Dozza
   - Comune di Gattatico
   - Comune di Finale Emilia
   - Comune di Fiorano Modenese
+  - Comune di Fontanelice
   - Comune di Formigine
   - Comune di Frassinoro
   - Comune di Imola
@@ -262,12 +270,14 @@ usedBy:
   - Comune di Modena
   - Comune di Montecchio Emilia
   - Comune di Montefiorino
+  - Comune di Mordano
   - Comune di Novellara
   - Comune di Palagano
   - Comune di Parma
   - Comune di Piacenza
   - Comune di Prignano
   - Comune di Reggio Emilia
+  - Comune di Rolo
   - Comune di San Felice sul Panaro
   - Comune di San Lazzaro di Savena
   - Comune di San Polo d'Enza

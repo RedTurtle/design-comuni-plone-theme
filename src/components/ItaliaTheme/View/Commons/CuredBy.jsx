@@ -1,3 +1,7 @@
+/*
+ * CuredBy component class, used in `NewsItemACuraDi` component.
+ */
+
 import { defineMessages, useIntl } from 'react-intl';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -24,21 +28,13 @@ const messages = defineMessages({
   },
 });
 
-/**
- * CuredBy view component class.
- * @function CuredBy
- * @params {object} content: Content object.
- * @params {string} office_field: field where office is related
- * @params {string} office_field: field where people is related
- * @returns {string} Markup of the component.
- */
-const CuredBy = ({ office, people, title }) => {
+const CuredBy = ({ office, people }) => {
   const intl = useIntl();
   return (
     <RichTextSection
       tag_id="a-cura-di"
       title={intl.formatMessage(messages.cured_by)}
-      className="it-page-section anchor-offset mt-5"
+      className="it-page-section anchor-offset mb-5"
     >
       <div className="row">
         {office && (

@@ -33,6 +33,7 @@ import LeftColumnFacets from '@plone/volto/components/manage/Blocks/Search/layou
 import HandleAnchor from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HandleAnchor';
 import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/GenericAppExtras';
 import PageLoader from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/PageLoader';
+import TrackFocus from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/TrackFocus';
 import redraft from 'redraft';
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
 
@@ -65,8 +66,8 @@ import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/
 
 import reducers from 'design-comuni-plone-theme/reducers';
 
-const ReleaseLog = loadable(
-  () => import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
+const ReleaseLog = loadable(() =>
+  import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
 );
 
 const messages = defineMessages({
@@ -86,6 +87,7 @@ export default function applyConfig(voltoConfig) {
 
   config.settings = {
     ...config.settings,
+    openExternalLinkInNewTab: true,
     sentryOptions: (libraries) => ({
       ...voltoSentryOptions(libraries),
       ignoreErrors: [
@@ -104,6 +106,7 @@ export default function applyConfig(voltoConfig) {
       // },
     }),
     isMultilingual: false,
+    // DEPRECATED: isFooterCollapsed to be removed in version 12. Use siteProperties.footerNavigationDepth instead.
     isFooterCollapsed: false, // false(default) -> vedere il footer automatico esploso | true -> implodere il footer menu automatico
     supportedLanguages: ['it'],
     defaultLanguage: 'it',
@@ -112,6 +115,7 @@ export default function applyConfig(voltoConfig) {
     showSelfRegistration: false,
     useEmailAsLogin: false,
     defaultPageSize: 24,
+    navDepth: 2,
     cookieExpires: 15552000, //6 month
     serverConfig: {
       ...config.settings.serverConfig,
@@ -214,6 +218,10 @@ export default function applyConfig(voltoConfig) {
       // arLogoutUrl: '/logout?e=1',
       // spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
       headerslimTertiaryMenu: {
+        default: [
+          //{ title: 'Contatti', url: '/it/contatti' },
+          //{ title: 'Novità', url: '/it/novita' },
+        ],
         it: [
           //{ title: 'Contatti', url: '/it/contatti' },
           //{ title: 'Novità', url: '/it/novita' },
@@ -263,6 +271,7 @@ export default function applyConfig(voltoConfig) {
       splitMegamenuColumns: true, //se impostato a false, non spezza le colonne con intestazioni nel megamenu
       footerNavigationDepth: 2, //valori possibili: [1,2]. Se impostato ad 1 non verranno mostrati nel footer i link agli elementi contenuti nelle sezioni di primo livello.
       markSpecialLinks: true, // se impostato a false, non marca con icona i link esterni
+      markFooterLinks: true, // se impostato a true, viene aggiunta un'icona ai link del footer per renderli riconoscibili
     },
     apiExpanders: [
       ...config.settings.apiExpanders,
@@ -284,6 +293,10 @@ export default function applyConfig(voltoConfig) {
       {
         match: '',
         component: PageLoader,
+      },
+      {
+        match: '',
+        component: TrackFocus,
       },
     ],
     maxFileUploadSize: null,
@@ -382,6 +395,7 @@ export default function applyConfig(voltoConfig) {
 
   const customBlocks = {
     ...getItaliaBlocks(config),
+
     listing: {
       ...config.blocks.blocksConfig.listing,
       showLinkMore: true,
@@ -451,6 +465,12 @@ export default function applyConfig(voltoConfig) {
     showEditBlocksInBabelView: true,
   };
 
+  //per avere la conf dei blocchi anche nel blocco grid, altrimenti nel blocco grid prende la conf base di volto.
+  config.blocks.blocksConfig.gridBlock = {
+    ...config.blocks.blocksConfig.gridBlock,
+    blocksConfig: config.blocks.blocksConfig,
+  };
+
   removeListingVariation(config, 'default'); // removes default volto template, because it will be overrided
   removeListingVariation(config, 'summary'); // removes summary volto template, because is unused
   removeListingVariation(config, 'imageGallery'); // removes imageGallery volto template, because we have our photoGallery template
@@ -490,6 +510,12 @@ export default function applyConfig(voltoConfig) {
     config.blocks.blocksConfig.toc.variations.filter(
       (v) => v.id !== 'horizontalMenu',
     );
+
+  // COMPONENTS
+  config.components = {
+    ...config.components,
+    BlockExtraTags: { component: () => null },
+  };
 
   // REDUCERS
   config.addonReducers = {

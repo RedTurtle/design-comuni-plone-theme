@@ -26,6 +26,7 @@ import {
 import {
   getCalendarDate,
   getEventRecurrenceMore,
+  getComponentWithFallback,
 } from 'design-comuni-plone-theme/helpers';
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
 
@@ -33,6 +34,10 @@ const messages = defineMessages({
   default_detail_link: {
     id: 'Vedi',
     defaultMessage: 'Vedi',
+  },
+  argumentIcon: {
+    id: 'argument_icon',
+    defaultMessage: 'Icona {type}',
   },
 });
 
@@ -91,6 +96,10 @@ const RibbonCardTemplate = (props) => {
               <ListingText item={item} />
             ) : null;
 
+            const BlockExtraTags = getComponentWithFallback({
+              name: 'BlockExtraTags',
+              dependencies: ['RibbonCardTemplate', item['@type']],
+            }).component;
             return (
               <Col lg={4} sm={12} key={index}>
                 <Card
@@ -107,7 +116,14 @@ const RibbonCardTemplate = (props) => {
 
                   {(category || icon) && (
                     <div className="etichetta">
-                      {icon && <Icon icon={icon} />}
+                      {icon && (
+                        <Icon
+                          icon={icon}
+                          title={intl.formatMessage(messages.argumentIcon, {
+                            type: category || item.design_italia_meta_type,
+                          })}
+                        />
+                      )}
                       {category && <span>{category}</span>}
                     </div>
                   )}
@@ -127,7 +143,7 @@ const RibbonCardTemplate = (props) => {
                       </UniversalLink>
                     </CardTitle>
                     {listingText && <CardText>{listingText}</CardText>}
-
+                    <BlockExtraTags {...props} item={item} itemIndex={index} />
                     {eventRecurrenceMore}
                     {show_detail_link && (
                       <CardReadMore

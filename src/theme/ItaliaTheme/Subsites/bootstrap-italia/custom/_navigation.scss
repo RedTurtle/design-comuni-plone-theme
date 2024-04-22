@@ -13,28 +13,15 @@
       .navbar-nav {
         li {
           a.nav-link {
-            @if $subsite-light-theme {
-              color: $subsite-primary-text;
-            } @else {
-              color: $subsite-primary;
-            }
+            color: $subsite-primary-text;
 
             &.active {
-              @if $subsite-light-theme {
-                border-left-color: $subsite-primary-text;
-              } @else {
-                border-left-color: $subsite-primary;
-              }
+              border-left-color: $subsite-primary-text;
             }
-          }
-        }
-      }
 
-      .menu-wrapper {
-        .it-brand-wrapper {
-          @if $subsite-light-theme {
-          } @else {
-            //background-color: $subsite-primary;
+            svg {
+              fill: $subsite-primary-text !important;
+            }
           }
         }
       }
@@ -77,17 +64,12 @@
   }
 
   //Tablet horizontal / small desktop
-  @media (min-width: #{map-get($grid-breakpoints, lg)}) {
+  @media (min-width: #{map-get($grid-breakpoints, md)}) and (max-width: #{map-get($grid-breakpoints, lg)}) {
     .navbar {
       background: $subsite-primary;
 
       // navbar mobile
       .navbar-collapsable {
-        /*menu vrapper
-      .menu-wrapper {
-        background: $navigation-bg-color-desktop;
-      }*/
-
         /*lista menu*/
         .navbar-nav {
           li {
@@ -149,8 +131,21 @@
       .navbar-collapsable {
         .navbar-nav {
           li a.nav-link {
+            color: $subsite-link-color;
             font-size: 16px;
+
+            &.active {
+              border-left-color: $subsite-link-color;
+            }
+
+            svg {
+              fill: $subsite-link-color !important;
+            }
           }
+        }
+
+        .it-socials ul li .icon {
+          fill: $subsite-link-color;
         }
 
         .link-list-wrapper {
