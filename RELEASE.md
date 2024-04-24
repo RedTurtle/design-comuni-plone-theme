@@ -41,6 +41,20 @@
 - ...
 -->
 
+# Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Aggiunte le date degli eventi figli nel caso questi non presentino immagini nella card
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 11.10.0 (17/04/2024)
 
 ### Migliorie
