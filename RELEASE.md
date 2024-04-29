@@ -53,7 +53,7 @@
 
 ### Fix
 
-- ...
+- Aggiustato problema per il blocco elenco, variazione card con Immagine, per gli eventi con ricorrenza.
 
 ## Versione 11.10.0 (17/04/2024)
 
