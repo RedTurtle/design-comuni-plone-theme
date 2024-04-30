@@ -192,7 +192,6 @@ const PersonaDocumenti = ({ content }) => {
           />
         </RichTextSection>
       )}
-<<<<<<< HEAD
       {contentFolderHasItems(content, 'altri-documenti') && (
         <RichTextSection
           tag_id="documenti-altri-documenti"
@@ -202,17 +201,6 @@ const PersonaDocumenti = ({ content }) => {
             content={content}
             folder_name={'altri-documenti'}
             // title={intl.formatMessage(messages.altri_documenti_persona)}
-=======
-      {contentFolderHasItems(content, 'altri-allegati') && (
-        <RichTextSection
-          tag_id="documenti-altri-allegati"
-          title={intl.formatMessage(messages.altri_allegati)}
-        >
-          <Attachments
-            content={content}
-            folder_name={'altri-allegati'}
-            // title={intl.formatMessage(messages.altri_allegati)}
->>>>>>> main
             as_section={false}
           />
         </RichTextSection>
