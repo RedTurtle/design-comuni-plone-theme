@@ -46,7 +46,7 @@ const EventoCosE = ({ content }) => {
     contentFolderHasItems(content, 'video') ||
     content?.persone_amministrazione?.length > 0 ||
     richTextHasContent(content?.descrizione_destinatari) ||
-    richTextHasContent(content?.tipologia_evento) ? (
+    content?.tipologia_evento ? (
     <RichTextSection
       tag_id={'text-body'}
       title={intl.formatMessage(messages.cos_e)}
