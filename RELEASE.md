@@ -41,6 +41,20 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Cambiato il layout delle immagini all'interno del blocco Griglia.
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 11.11.1 (02/05/2024)
 
 ### Migliorie
