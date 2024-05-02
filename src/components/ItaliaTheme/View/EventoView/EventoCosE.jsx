@@ -95,7 +95,7 @@ const EventoCosE = ({ content }) => {
 
       {content?.tipologia_evento && (
         <div className="mb-5 pt-2">
-          <h3 className="parteciperanno-section h5">
+          <h3 className="tipologia-section h5">
             {intl.formatMessage(messages.tipologia_evento)}
           </h3>
           <p key={content?.tipologia_evento?.token} className="font-serif">
