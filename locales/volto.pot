@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-04-24T09:25:12.565Z\n"
+"POT-Creation-Date: 2024-05-02T08:10:06.063Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -3938,6 +3938,11 @@ msgstr ""
 #: components/ItaliaTheme/View/BandoView/BandoTextTipologia
 # defaultMessage: Tipologia del bando
 msgid "tipologia_bando"
+msgstr ""
+
+#: components/ItaliaTheme/View/EventoView/EventoCosE
+# defaultMessage: Tipo evento
+msgid "tipologia_evento"
 msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
