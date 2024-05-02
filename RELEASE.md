@@ -34,12 +34,115 @@
 
 ### Novità
 
-- ...  [`Istruzioni`](url della documentazione relativa alla novità)
+- ...
 
 ### Fix
 
 - ...
 -->
+
+## Versione 11.11.1 (02/05/2024)
+
+### Migliorie
+
+- Il campo tipologia è ora mostrato all'interno della pagina del CT Evento, se compilato.
+
+## Versione 11.11.0 (29/04/2024)
+
+### Migliorie
+
+- Aggiunte le date degli eventi figli nel caso questi non presentino immagini nella card.
+
+### Novità
+
+- Modificato vista del tipo di contenuto Persona per mostrare anche la cartella interna "Altri allegati".
+
+### Fix
+
+- Aggiustato problema per il blocco elenco, variazione card con Immagine, per gli eventi con ricorrenza.
+
+## Versione 11.10.0 (17/04/2024)
+
+### Migliorie
+
+- Nel blocco Argomenti in Evidenza, è stata rimossa l'obbligatorietà di aggiungere una card argomento, ora si possono inserire anche solo le etichette.
+- Aggiunta la possibilità di inserire testo nel filtro luogo nel blocco Ricerca Eventi.
+- Le opzioni del menu a tendina per il filtro luogo nel blocco Ricerca Eventi sono ordinate alfabeticamente.
+- Il focus quando un elemento (link o pulsante) è cliccato con il mouse non ha più il bordo giallo/arancione.
+- Migliorati gli stili per la stampa del CT pagina.
+
+### Novità
+
+- Ora i link in testata nell'header slim sono configurabili da pannello di controllo.
+- Nel template Slider del blocco elenco, ora è possibile scegliere l'aspetto degli elementi dello slider (default: slide semplice con immagine e titolo cliccabile, Card semplice, Card con immagine).
+- Nel blocco Argomenti in Evidenza sono state aggiunte due nuove proprietà, una permette di allineare gli "Altri argomenti" al centro e la seconda serve a nascondere o meno il bottone "Vedi tutti" che punta alla pagina argomenti.
+
+### Fix
+
+- Nel blocco Argomenti in Evidenza se non ci sono card ma etichette argomento, il blocco non renderizza più lo sfondo per un maggiore contrasto con le etichette, di conseguenza il titolo del blocco rimane nero e non bianco.
+- Aggiunto il titolo per la sezione "Organizzatore esterno" quando il campo è compilato nel tipo di contenuto Evento.
+- I chip che non hanno collegamenti non si comportano più come link al posizionamento del mouse.
+- Sistemato un problema nella vista del CT Evento, che mostrava tra le date aggiuntive della ricorrenza anche le date escluse.
+- Sistemato un problema per cui la visualizzazione della sitemap in presenza di un sito multilingua generava errore.
+- Migliorata l'accessibilità dei link nel footer.
+- Migliorata l'accessibilità del blocco elenco nella variazione Slider.
+- Migliorati gli stili del blocco accordion.
+
+## Versione 11.9.1 (03/04/2024)
+
+### Fix
+
+- Risolto un problema dovuto all'assenza di una id specifico nelle traduzioni.
+
+## Versione 11.9.0 (03/04/2024)
+
+### Migliorie
+
+- Effettuate diverse migliorie di accessibilità.
+
+### Novità
+
+- Aggiunta una nuova variazione del blocco elenco "Allegati" che permette di scaricare oggetti di tipo File o aprire l'anteprima di file PDF.
+
+### Fix
+
+- Sistemata la visualizzazione dei blocchi elenco all'interno del blocco griglia.
+- L'etichetta della Card con Nastro (Blocco Elenco) non si sovrappone più all'icona del nastro.
+- Aggiustato il layout della card per le persone quando è impostata un'immagine.
+- Sistemato bug su blocchi di ricerca Bandi, Eventi e UO nei quali rimanevano memorizzati i risultati di ricerca anche abbandonando la pagina.
+- Tradotto il messaggio per Screen Reader del bottone per aprire e chiudere il menu in mobile.
+
+## Versione 11.8.0 (19/03/2024)
+
+### Migliorie
+
+- Gli stili del tipo di contenuto Unità Organizzativa sono stati ottimizzati per la stampa.
+
+### Novità
+
+- È possibile scaricare il file o l'immagine caricata dal widget di upload file cliccando sul nome del file stesso.
+- È possibile aggiungere un testo alternativo per l'immagine del blocco Card con Immagine.
+
+### Fix
+
+- Nel blocco con icone, se era impostata una immagine di sfondo non si vedeva.
+
+## Versione 11.7.0 (15/03/2024)
+
+### Novità
+
+- Ora la fascia del footer contenente il logo e il nome del sito è configurabile da pannello di controllo.
+- Nel pannello di controllo dei Feedback, ora gli utenti con permesso di eliminare elementi da questa sezione, possono eliminare i feedback.
+
+### Migliorie
+
+- Nel blocco form, se in fase di compilazione ci sono degli errori, viene mostrato un messaggio di errore specifico per ogni campo con errori.
+
+### Fix
+
+- Il bordo destro della variazione Link solo immagine del blocco Elenco è stato ripristinato.
+- Se si mettono due blocchi Form nella stessa pagina, ora funzionano correttamente.
+- Aggiustato il modulo di Feedback quando si cambia valutazione dopo averne già selezionata un'altra.
 
 ## Versione 11.6.1 (06/03/2024)
 

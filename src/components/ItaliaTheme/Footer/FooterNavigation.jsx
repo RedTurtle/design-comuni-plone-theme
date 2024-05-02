@@ -35,6 +35,8 @@ const FooterNavigation = () => {
     );
   }
 
+  const markFooterLinks = config.settings.siteProperties.markFooterLinks;
+
   return show_navigation ? (
     <>
       {items && (
@@ -51,13 +53,19 @@ const FooterNavigation = () => {
               <h4>
                 <SectionIcon
                   section={item.url}
-                  iconProps={{ size: 'sm', color: 'white', className: 'me-2' }}
+                  iconProps={{
+                    size: 'sm',
+                    color: 'white',
+                    className: 'me-2',
+                    title: item.title,
+                  }}
                 />
                 <Link
                   to={item.url}
                   title={
                     intl.formatMessage(messages.goToPage) + ': ' + item.title
                   }
+                  className={markFooterLinks ? 'underlined' : ''}
                 >
                   {item.title}
                 </Link>

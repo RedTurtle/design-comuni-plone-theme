@@ -36,6 +36,7 @@ msgid "Allow Externals"
 msgstr "Accetta URL esterni per l'embed"
 
 #: config/Blocks/ListingOptions/simpleCardTemplate
+#: config/Blocks/ListingOptions/sliderTemplate
 # defaultMessage: Aspetto
 msgid "Aspetto"
 msgstr "Aspetto"
@@ -60,7 +61,7 @@ msgstr "Titolo del blocco..."
 msgid "Block style"
 msgstr "Stile del blocco"
 
-#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Vedi
 msgid "Card detail label"
@@ -444,9 +445,8 @@ msgstr ""
 msgid "Path filter filtro"
 msgstr "Filtro"
 
-#: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Metti in pausa
+#: components/ItaliaTheme/Slider/ButtonPlayPause
+# defaultMessage: Seleziona per mettere in pausa lo slider
 msgid "Pause slider"
 msgstr "Metti in pausa"
 
@@ -461,9 +461,8 @@ msgstr "Percorso"
 msgid "Piccolo"
 msgstr "Piccolo"
 
-#: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Play
+#: components/ItaliaTheme/Slider/ButtonPlayPause
+# defaultMessage: Seleziona per riprodurre lo slider
 msgid "Play slider"
 msgstr "Seleziona per riprodurre"
 
@@ -763,6 +762,11 @@ msgstr "Tutti gli argomenti"
 msgid "allegati"
 msgstr "Documenti allegati"
 
+#: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
+# defaultMessage: Testo alternativo per l'immagine
+msgid "altText"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Altre cariche
 msgid "altre_cariche"
@@ -777,6 +781,11 @@ msgstr "Altre modalità di invio"
 # defaultMessage: Documenti
 msgid "altri_documenti"
 msgstr "Documenti"
+
+#: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
+# defaultMessage: Altri documenti
+msgid "altri_documenti_persona"
+msgstr "Altri documenti"
 
 #: config/Blocks/ListingOptions/cardWithImageTemplate
 # defaultMessage: Mostra l'immagine per tutti gli elementi
@@ -819,6 +828,12 @@ msgstr "Area responsabile"
 msgid "argoment"
 msgstr "Argomento"
 
+#: components/ItaliaTheme/Blocks/Listing/RibbonCardTemplate
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateCompact
+# defaultMessage: Icona {type}
+msgid "argument_icon"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
 # defaultMessage: Argomenti in evidenza
 msgid "arguments_in_evidence_block"
@@ -839,6 +854,7 @@ msgstr "Assessore di"
 msgid "assessore_riferimento"
 msgstr "Assessore di riferimento"
 
+#: components/ItaliaTheme/Blocks/Listing/AttachmentCardTemplate
 #: components/ItaliaTheme/View/Commons/Attachment
 # defaultMessage: Allegato
 msgid "attachment"
@@ -1086,24 +1102,19 @@ msgid "calendarBlockSidebarTitle"
 msgstr "Calendario"
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Prossimo
-msgid "calendar_next_arrow"
-msgstr "Prossimo"
-
-#: components/ItaliaTheme/Blocks/Calendar/Body
 # defaultMessage: Nessun evento disponibile al momento
 msgid "calendar_no_results"
 msgstr "Nessun evento disponibile al momento"
-
-#: components/ItaliaTheme/Blocks/Calendar/Body
-# defaultMessage: Precedente
-msgid "calendar_prev_arrow"
-msgstr "Precedente"
 
 #: components/ItaliaTheme/manage/Widgets/CanaleDigitaleWidget
 # defaultMessage: Accedere al servizio
 msgid "canale_digitale_widget_title"
 msgstr "Accedere al servizio"
+
+#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
+# defaultMessage: Aggiungi un argomento da visualizzare sulla card.
+msgid "cardDescription"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
 # defaultMessage: Seleziona l'immagine da mostrare
@@ -1126,6 +1137,21 @@ msgstr "Vedi"
 msgid "card_width_image"
 msgstr "Card con immagine"
 
+#: components/ItaliaTheme/Slider/CarouselWrapper
+# defaultMessage: Carosello
+msgid "carousel"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra
+msgid "carousel-item-aria-label"
+msgstr ""
+
+#: components/ItaliaTheme/Slider/SingleSlideWrapper
+# defaultMessage: Slide
+msgid "carouselSlide"
+msgstr ""
+
 #: components/ItaliaTheme/View/CartellaModulisticaView/CartellaModulisticaView
 # defaultMessage: Formati scaricabili
 msgid "cartellamodulistica_formati_scaricabili"
@@ -1135,6 +1161,16 @@ msgstr "Formati scaricabili"
 # defaultMessage: Casi particolari
 msgid "casi_particolari"
 msgstr "Casi particolari"
+
+#: components/ItaliaTheme/Cards/CardCategory
+# defaultMessage: Icona categoria
+msgid "category_icon"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
+# defaultMessage: Allinea gli argomenti al centro
+msgid "centerAlignment"
+msgstr "Allinea gli argomenti al centro"
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Link al canale
@@ -1193,6 +1229,11 @@ msgstr "Rimuovi ricerca testuale"
 # defaultMessage: Chiudi menu
 msgid "close-menu"
 msgstr "Chiudi menu"
+
+#: components/ItaliaTheme/Blocks/Accordion/Block/ViewBlock
+# defaultMessage: Chiudi l'accordion
+msgid "closeAccordion"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Chiudi cerca
@@ -1735,6 +1776,11 @@ msgstr "Scarica"
 msgid "downloadPlayVideo"
 msgstr "Scarica e riproduci video"
 
+#: components/SelectInput/SelectInput
+# defaultMessage: Apri il menu
+msgid "dropdown_indicator"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
 # defaultMessage: Additional classes
 msgid "dropdownmenu-additionalClasses"
@@ -2178,6 +2224,11 @@ msgstr "Immagine precedente"
 msgid "grid-gallery-max-items-exceeded"
 msgstr "Per questo template il numero di risultati per pagina deve essere 7. Controlla le impostazioni."
 
+#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
+# defaultMessage: Nascondi pulsante "Vedi tutti"
+msgid "hideButtonShowAll"
+msgstr "Nascondi pulsante "Vedi tutti""
+
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Nascondi le date
 msgid "hide_dates"
@@ -2207,6 +2258,21 @@ msgstr "Icona"
 # defaultMessage: Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6
 msgid "iconDescription"
 msgstr "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6"
+
+#: components/ItaliaTheme/View/Commons/Argument/ArgumentIcon
+# defaultMessage: Icona per l'argomento {topic_title}
+msgid "icon_title"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/LocationItem
+# defaultMessage: Icona luoghi
+msgid "icona_luoghi"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/OfficeCard
+# defaultMessage: Icona ufficio
+msgid "icona_ufficio"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 # defaultMessage: Blocco con icone
@@ -2280,6 +2346,7 @@ msgstr "Servizi o uffici interni"
 msgid "legend_required"
 msgstr "I campi contrassegnati da (*) sono obbligatori."
 
+#: components/ItaliaTheme/Blocks/Listing/AttachmentCardTemplate
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Collegamento
 msgid "link"
@@ -2589,6 +2656,17 @@ msgstr "Blocco numeri"
 msgid "numero_progressivo_cs"
 msgstr "Numero del comunicato stampa"
 
+#: components/ItaliaTheme/Blocks/Accordion/Block/ViewBlock
+# defaultMessage: Apri l'accordion
+msgid "openAccordion"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/Slider/SlideItemDefault
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Apri il link
+msgid "openLink"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/CTABlock/Block
 # defaultMessage: Apri link in una nuova scheda
 msgid "openLinkInNewTab"
@@ -2675,6 +2753,11 @@ msgstr "Ordina per"
 msgid "organizzato_da"
 msgstr "Organizzato da"
 
+#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
+# defaultMessage: Organizzatore
+msgid "organizzatore"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Organo competente adozione provvedimento finale
@@ -2728,7 +2811,6 @@ msgid "patrocinato_da"
 msgstr "Patrocinato da"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
-#: components/ItaliaTheme/View/VenueView/VenueContacts
 #: helpers/contentHelper
 # defaultMessage: PEC
 msgid "pec"
@@ -2769,7 +2851,7 @@ msgstr "Testo di aiuto"
 msgid "playStoreLink"
 msgstr "PlayStore Link"
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/PrevArrow
 # defaultMessage: Precedente
 msgid "precedente"
 msgstr "Precedente"
@@ -2795,7 +2877,7 @@ msgstr "Procedura informatizzata online"
 msgid "provvedimento_finale"
 msgstr "Provvedimento finale"
 
-#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Data di pubblicazione
 msgid "publication_date"
@@ -2890,46 +2972,6 @@ msgstr "Responsabile del procedimento"
 msgid "riferimenti_normativi"
 msgstr "Riferimenti normativi"
 
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Fax
-msgid "riferimento_fax_luogo"
-msgstr "Fax"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Fax
-msgid "riferimento_fax_struttura"
-msgstr "Fax"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: E-mail
-msgid "riferimento_mail_luogo"
-msgstr "E-mail"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: E-mail
-msgid "riferimento_mail_struttura"
-msgstr "E-mail"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: PEC
-msgid "riferimento_pec_luogo"
-msgstr "PEC"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Telefono
-msgid "riferimento_telefonico_luogo"
-msgstr "Telefono"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Telefono
-msgid "riferimento_telefonico_struttura"
-msgstr "Telefono"
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Web
-msgid "riferimento_web"
-msgstr "Web"
-
 #: components/ItaliaTheme/View/Commons/Metadata
 # defaultMessage: Diritti
 msgid "rights"
@@ -2951,7 +2993,7 @@ msgid "rrule_nd"
 msgstr " "
 
 #: overrideTranslations
-# defaultMessage: il
+# defaultMessage: di
 msgid "rrule_on the"
 msgstr "il giorno"
 
@@ -3579,6 +3621,16 @@ msgstr "Mostra la mappa a tutta larghezza"
 msgid "show_only_first_ribbon"
 msgstr "Mostra il nastro solo sulla prima card"
 
+#: config/Blocks/ListingOptions/attachmentCardTemplate
+# defaultMessage: Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata altrimenti vengono scaricati.
+msgid "show_pdf_desc"
+msgstr "Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata altrimenti vengono scaricati."
+
+#: config/Blocks/ListingOptions/attachmentCardTemplate
+# defaultMessage: Mostra i PDF in anteprima
+msgid "show_pdf_preview"
+msgstr "Mostra i PDF in anteprima"
+
 #: config/Blocks/ListingOptions/simpleListTemplate
 # defaultMessage: Mostra elenco puntato
 msgid "show_pointer_list"
@@ -3658,6 +3710,21 @@ msgstr "Skype"
 # defaultMessage: Vai alla slide {index}
 msgid "slideDot"
 msgstr "Vai alla slide {index}"
+
+#: config/Blocks/ListingOptions/sliderTemplate
+# defaultMessage: Qui puoi selezionare, per il template 'Slider', un aspetto diverso da quello di default per gli elementi mostrati nello slider.
+msgid "slider_listing_appearance_description"
+msgstr ""
+
+#: config/Blocks/ListingOptions/sliderTemplate
+# defaultMessage: Card con immagine
+msgid "slider_listing_appearance_imagecard"
+msgstr ""
+
+#: config/Blocks/ListingOptions/sliderTemplate
+# defaultMessage: Card semplice
+msgid "slider_listing_appearance_simplecard"
+msgstr ""
 
 #: config/Blocks/ListingOptions/sliderTemplate
 # defaultMessage: N° slide da mostrare
@@ -3800,7 +3867,7 @@ msgstr "Visibile"
 msgid "subjects"
 msgstr "Tags"
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+#: components/ItaliaTheme/Slider/NextArrow
 # defaultMessage: Successivo
 msgid "successivo"
 msgstr "Successivo"
@@ -3871,6 +3938,11 @@ msgstr "Impossibile aggiungere un elemento alla timeline senza aver compilato il
 msgid "tipologia_bando"
 msgstr "Tipologia del bando"
 
+#: components/ItaliaTheme/View/EventoView/EventoCosE
+# defaultMessage: Tipo evento
+msgid "tipologia_evento"
+msgstr ""
+
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Tipo di incarico
@@ -3921,6 +3993,21 @@ msgstr "titolo"
 msgid "to"
 msgstr "al"
 
+#: overrideTranslations
+# defaultMessage: {action} il menu
+msgid "toggle-menu"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Chiudi
+msgid "toggleMenu_close"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Apri
+msgid "toggleMenu_open"
+msgstr ""
+
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 #: components/ItaliaTheme/Search/Search
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderTassonomiaArgomenti
@@ -3948,6 +4035,11 @@ msgstr "Unità organizzativa"
 # defaultMessage: Ufficio responsabile
 msgid "ufficio_responsabile"
 msgstr "Ufficio responsabile"
+
+#: components/ItaliaTheme/View/Commons/HelpBox
+# defaultMessage: Icona ulteriori informazioni
+msgid "ulteriori_info"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks
@@ -3997,7 +4089,7 @@ msgstr "Cerca una struttura"
 msgid "uo_type"
 msgstr "Tipologia"
 
-#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Data di aggiornamento
 msgid "update_date"
@@ -4022,21 +4114,6 @@ msgstr "Variazione situazione patrimoniale"
 # defaultMessage: Luoghi
 msgid "venues"
 msgstr "Luoghi"
-
-#: components/ItaliaTheme/Blocks/VideoGallery/Body
-# defaultMessage: Prossimo video
-msgid "videogallery_next_arrow"
-msgstr "Prossimo video"
-
-#: components/ItaliaTheme/Blocks/VideoGallery/Body
-# defaultMessage: Video precedente
-msgid "videogallery_prev_arrow"
-msgstr "Video precedente"
-
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra
-msgid "viewImage"
-msgstr "Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra"
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/BottomBody
 # defaultMessage: Vedi tutti

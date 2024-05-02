@@ -38,9 +38,9 @@ const messages = defineMessages({
     id: 'Email Success',
     defaultMessage: 'Form inviato correttamente',
   },
-  empty_values: {
-    id: 'form_empty_values_validation',
-    defaultMessage: 'Compila i campi richiesti',
+  form_errors: {
+    id: 'form_errors_validation',
+    defaultMessage: 'Attenzione! Alcuni campi inseriti sono da controllare.',
   },
   reset: {
     id: 'form_reset',
@@ -62,6 +62,8 @@ const FormView = ({
   resetFormState,
   resetFormOnError,
   captcha,
+  id,
+  getErrorMessage,
 }) => {
   const intl = useIntl();
   const alertTransition = {
@@ -81,7 +83,7 @@ const FormView = ({
     config.settings.siteProperties.enableVoltoFormBlockCaptcha;
 
   const isValidField = (field) => {
-    return formErrors?.indexOf(field) < 0;
+    return formErrors?.filter((e) => e.field === field).length === 0;
   };
 
   /* Function that replaces variables from the user customized message  */
@@ -146,7 +148,15 @@ const FormView = ({
                       <br />
                     </>
                   )}
-                  <Button color="primary" outline onClick={resetFormState}>
+                  <Button
+                    color="primary"
+                    outline
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      resetFormState();
+                    }}
+                  >
                     {intl.formatMessage(messages.reset)}
                   </Button>
                 </Alert>
@@ -220,6 +230,7 @@ const FormView = ({
                                 : formData[name]?.value
                             }
                             valid={isValidField(name)}
+                            errorMessage={getErrorMessage(name)}
                             formHasErrors={formErrors.length > 0}
                           />
                         </Col>
@@ -238,7 +249,7 @@ const FormView = ({
                       transition={alertTransition}
                     >
                       <h4>{intl.formatMessage(messages.error)}</h4>
-                      <p>{intl.formatMessage(messages.empty_values)}</p>
+                      <p>{intl.formatMessage(messages.form_errors)}</p>
                     </Alert>
                   )}
                   {formState.error && (
@@ -259,8 +270,12 @@ const FormView = ({
                       {data?.show_cancel && (
                         <Button
                           color="secondary"
-                          type="clear"
-                          onClick={resetFormState}
+                          type="button"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            resetFormState();
+                          }}
                           className="me-2"
                         >
                           {data.cancel_label ||
