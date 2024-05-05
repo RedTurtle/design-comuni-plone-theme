@@ -2,14 +2,21 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
-
+import {
+  Card,
+  CardBody,
+  Row,
+  Col,
+} from 'design-react-kit/dist/design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 import { searchContent, resetSearchContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import {
+  Icon,
+  CardCalendar,
+} from 'design-comuni-plone-theme/components/ItaliaTheme';
 
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import Image from '@plone/volto/components/theme/Image/Image';
-import { viewDate } from 'design-comuni-plone-theme/helpers';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   events: {
@@ -34,44 +41,53 @@ const messages = defineMessages({
  */
 const Evento = ({ event, show_image }) => {
   const intl = useIntl();
+  const Image = config.getComponent({ name: 'Image' }).component;
 
   return event ? (
-    <div className="card card-teaser card-flex rounded shadow">
-      <div className="card-body p-4">
-        <h5 className="card-title card-title-icon">
-          <Icon icon={'it-calendar'}></Icon>
-          <span className="text-uppercase">
-            {intl.formatMessage(messages.title)}
-          </span>
-        </h5>
-        <div className="card-text">
-          <p className="text-uppercase">
-            {event.luogo_evento && event.luogo_evento[0]?.title}
-          </p>
+    <Col lg="6">
+      <Card className="card-teaser-image no-after rounded shadow">
+        {show_image &&
+          (event.image_field || event.preview_image || event.image) && (
+            <div className="img-responsive-wrapper">
+              <div className="img-responsive img-responsive-panoramic">
+                <figure className="img-wrapper">
+                  <Image
+                    item={event}
+                    alt={intl.formatMessage(messages.immagine)}
+                    loading="lazy"
+                    sizes="(max-width:320px) 300px, (max-width:425px) 400px, (max-width:768px) 600px, 300px"
+                  />
+                </figure>
+                <CardCalendar
+                  start={event.start}
+                  end={event.end}
+                  recurrence={event.recurrence}
+                />
+              </div>
+            </div>
+          )}
+        <CardBody>
+          <h5 className="card-title card-title-icon">
+            <Icon icon={'it-calendar'}></Icon>
+            <span className="text-uppercase">
+              {intl.formatMessage(messages.title)}
+            </span>
+          </h5>
+          <div className="card-text">
+            {event.luogo_evento?.length > 0 && (
+              <p className="text-uppercase">{event.luogo_evento[0]?.title}</p>
+            )}
 
-          <div className="pt-4 pb-3">
             <UniversalLink
               href={flattenToAppURL(event['@id'])}
               title={event.title}
             >
-              <h6 className="font-weight-semibold">{event.title}</h6>
+              <h6 className="font-weight-semibold card-title">{event.title}</h6>
             </UniversalLink>
           </div>
-        </div>
-      </div>
-      {show_image && event.image && (
-        <div className="card-image card-image-rounded">
-          <div className="card-date text-center rounded shadow">
-            {viewDate(intl.locale, event.start, 'DD MMM')}
-          </div>
-          <Image
-            image={event.image}
-            alt={intl.formatMessage(messages.immagine)}
-            className="event-center-cropped"
-          />
-        </div>
-      )}
-    </div>
+        </CardBody>
+      </Card>
+    </Col>
   ) : null;
 };
 
@@ -89,7 +105,10 @@ const Events = ({ content, title, show_image, folder_name, isChild }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (isChild && !searchResults?.[folder_name]?.loading) {
+    if (
+      !searchResults?.[folder_name]?.loading &&
+      !searchResults?.[folder_name]?.loaded
+    ) {
       dispatch(
         searchContent(
           flattenToAppURL(path),
@@ -104,14 +123,13 @@ const Events = ({ content, title, show_image, folder_name, isChild }) => {
       );
     }
     return () => {
-      dispatch(resetSearchContent(folder_name));
+      // dispatch(resetSearchContent(folder_name)); //quando si passa agli eventi figli non si vedono piu gli eventi se questo è abilitato
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content]);
 
-  let events = isChild
-    ? searchResults?.[folder_name]?.items || []
-    : content?.items?.filter((el) => el['@type'] === 'Event') || [];
+  let events = searchResults?.[folder_name]?.items || [];
+
   if (isChild) {
     events = [...events].filter((el) => !content['@id'].includes(el['@id']));
   }
@@ -131,11 +149,17 @@ const Events = ({ content, title, show_image, folder_name, isChild }) => {
               {intl.formatMessage(messages.events)}
             </h4>
           )}
-          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
-            {events.map((item, i) => (
-              <Evento key={item['@id']} event={item} show_image={show_image} />
-            ))}
-          </div>
+          <Row>
+            <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-2">
+              {events.map((item, i) => (
+                <Evento
+                  key={item['@id']}
+                  event={item}
+                  show_image={show_image}
+                />
+              ))}
+            </div>
+          </Row>
         </article>
       ) : null}
     </>

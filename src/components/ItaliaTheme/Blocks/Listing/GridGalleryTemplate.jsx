@@ -55,7 +55,6 @@ const GridGalleryTemplate = ({
           {items.map((item, index) => {
             let image = ListingImage({
               item,
-              useOriginal: false,
               className: '',
             });
 
@@ -72,7 +71,7 @@ const GridGalleryTemplate = ({
 
             if (scale && item?.image?.scales?.[scale]) {
               image = (
-                <picture class="volto-image responsive">
+                <picture>
                   <img
                     src={flattenToAppURL(item.image.scales[scale].download)}
                     width={item.image.scales[scale].width}
@@ -82,6 +81,7 @@ const GridGalleryTemplate = ({
                     aria-hidden="true"
                     title={item.title}
                     loading={critical ? 'eager' : 'lazy'}
+                    className="responsive"
                   />
                 </picture>
               );

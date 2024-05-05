@@ -31,7 +31,7 @@ const SmallBlockLinksTemplate = ({
         )}
         <Row className={cx('items', { 'center-cards': center_cards })}>
           {items.map((item, index) => {
-            const image = ListingImage({ item, maxSize: 200, style: {} });
+            const image = ListingImage({ item, sizes: '200px', style: {} });
 
             return (
               <Col

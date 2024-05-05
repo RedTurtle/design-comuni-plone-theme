@@ -126,8 +126,6 @@ module.exports = Object.assign({}, volto_config, {
 
     base_config.resolve.alias = {
       // TODO remove the next two when implemented in core
-      '@plone/volto/components/theme/Image/Image': `${projectRootPath}/src/components/Image/Image.jsx`,
-      '@plone/volto/helpers/Image/Image': `${projectRootPath}/src/components/Image/helpers.js`,
       ...webpackConfig.resolve.alias,
       ...base_config.resolve.alias,
       '@italia': `${projectRootPath}/src`, // TODO deprecated: remove in version 8
