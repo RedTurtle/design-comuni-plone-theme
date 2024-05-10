@@ -3952,6 +3952,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@plone-collective/volto-contents-next@npm:0.4.0":
+  version: 0.4.0
+  resolution: "@plone-collective/volto-contents-next@npm:0.4.0"
+  dependencies:
+    "@plone/components": alpha
+    react-aria: 3.33.0
+    react-aria-components: 1.2.0
+    usehooks-ts: 3.1.0
+  peerDependencies:
+    "@plone/volto": ">=17.0.0"
+  checksum: fb31c5def867595a647f7447942224fb990d565d3c62c33f53e7fa0419a0827e3d42187ab0a0f1b9819ff568069f938f1efd872533076cd124a7034936ef4df6
+  languageName: node
+  linkType: hard
+
 "@plone-collective/volto-sentry@npm:0.3.0":
   version: 0.3.0
   resolution: "@plone-collective/volto-sentry@npm:0.3.0"
@@ -3964,7 +3978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone/components@npm:2.0.0-alpha.7":
+"@plone/components@npm:2.0.0-alpha.7, @plone/components@npm:alpha":
   version: 2.0.0-alpha.7
   resolution: "@plone/components@npm:2.0.0-alpha.7"
   dependencies:
@@ -8169,6 +8183,7 @@ __metadata:
     "@commitlint/config-conventional": 17.6.6
     "@eeacms/volto-taxonomy": ^1.0.0
     "@loadable/babel-plugin": 5.13.2
+    "@plone-collective/volto-contents-next": 0.4.0
     "@plone-collective/volto-sentry": 0.3.0
     "@plone/scripts": "*"
     "@release-it/conventional-changelog": 5.1.1
@@ -13332,7 +13347,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-aria-components@npm:^1.1.1":
+"react-aria-components@npm:1.2.0, react-aria-components@npm:^1.1.1":
   version: 1.2.0
   resolution: "react-aria-components@npm:1.2.0"
   dependencies:
@@ -13366,7 +13381,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-aria@npm:^3.33.0":
+"react-aria@npm:3.33.0, react-aria@npm:^3.33.0":
   version: 3.33.0
   resolution: "react-aria@npm:3.33.0"
   dependencies:
@@ -15990,6 +16005,17 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: fe07c071c4da3645f112c38c0e57beb479a8838616ff4e92598256ecce527f2888c08febc7f9b2f0ce2f0e18540ba3cde41eb2035e4fafcb4f52955037098a81
+  languageName: node
+  linkType: hard
+
+"usehooks-ts@npm:3.1.0":
+  version: 3.1.0
+  resolution: "usehooks-ts@npm:3.1.0"
+  dependencies:
+    lodash.debounce: ^4.0.8
+  peerDependencies:
+    react: ^16.8.0  || ^17 || ^18
+  checksum: 4f850c0c5ab408afa52fa2ea2c93c488cd7065c82679eb1fb62cba12ca4c57ff62d52375acc6738823421fe6579ce3adcea1e2dc345ce4f549c593d2e51455b3
   languageName: node
   linkType: hard
 
