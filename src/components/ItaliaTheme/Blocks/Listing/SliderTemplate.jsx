@@ -74,7 +74,7 @@ function NextArrow(props) {
       onClick={handleClick}
       title={intl.formatMessage(messages.successivo)}
       aria-label={intl.formatMessage(messages.successivo)}
-      aria-hidden={true}
+      aria-hidden={false}
       onKeyDown={handleKeyboardUsers}
       id="sliderNextArrow"
     >
@@ -117,7 +117,7 @@ function PrevArrow(props) {
       onClick={handleClick}
       title={intl.formatMessage(messages.precedente)}
       aria-label={intl.formatMessage(messages.precedente)}
-      aria-hidden={true}
+      aria-hidden={false}
       id="sliderPrevArrow"
       onKeyDown={handleKeyboardUsers}
     >
