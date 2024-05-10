@@ -42,7 +42,7 @@ jobs:
           cluster-id: ${{ secrets.RANCHER_CLUSTER_ID }}
           project-id: ${{ secrets.RANCHER_PROJECT_ID }}
           namespace: ${{ secrets.RANCHER_NAMESPACE_DEVELOP }}
-          workload: ${{ secrets.RANCHER_WORKLOAD_PERF }}
+          workload: ${{ secrets.RANCHER_WORKLOAD_CONTENTS }}
           image: redturtletech/io-comune-base:contents
           slack-hook-url: ${{ secrets.RANCHER_SLACK_HOOK_URL }}
 
