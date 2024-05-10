@@ -3952,9 +3952,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone-collective/volto-contents-next@npm:0.4.1":
-  version: 0.4.1
-  resolution: "@plone-collective/volto-contents-next@npm:0.4.1"
+"@plone-collective/volto-contents-next@npm:0.4.2":
+  version: 0.4.2
+  resolution: "@plone-collective/volto-contents-next@npm:0.4.2"
   dependencies:
     "@plone/components": alpha
     react-aria: 3.33.0
@@ -3962,7 +3962,7 @@ __metadata:
     usehooks-ts: 3.1.0
   peerDependencies:
     "@plone/volto": ">=17.0.0"
-  checksum: 570dae6414365e7f1e2bd639064835064d2bad8db047ad91224f739db0723fe874a1f71e0a144af188fa519ff8c1358032789f5e91a3e62b109867b60176f198
+  checksum: 57604915bf711e3cb46795f558ea77eb3ba7a5785a28ffce8a86d977a9dd2bd3586ac97e0c0e4d26f74be15c9b987a8bf1328497df8b0d493371f758cee77288
   languageName: node
   linkType: hard
 
@@ -8183,7 +8183,7 @@ __metadata:
     "@commitlint/config-conventional": 17.6.6
     "@eeacms/volto-taxonomy": ^1.0.0
     "@loadable/babel-plugin": 5.13.2
-    "@plone-collective/volto-contents-next": 0.4.1
+    "@plone-collective/volto-contents-next": 0.4.2
     "@plone-collective/volto-sentry": 0.3.0
     "@plone/scripts": "*"
     "@release-it/conventional-changelog": 5.1.1
