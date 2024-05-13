@@ -99,8 +99,8 @@ class Pagination extends Component {
                   onClick={this.handleItemClick}
                   type={type}
                   ellipsisItem={ellipsisItem}
-                  prevButton={inactivePrevButton}
-                  forwButton={inactiveForwButton}
+                  isPrevButtonInactive={inactivePrevButton}
+                  isForwButtonInactive={inactiveForwButton}
                 >
                   {value}
                 </PaginationItem>

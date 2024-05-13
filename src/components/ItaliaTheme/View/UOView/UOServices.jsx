@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import _ from 'lodash';
 import { defineMessages, useIntl } from 'react-intl';
 import {
   Row,
@@ -36,15 +37,10 @@ const UOServices = ({ content }) => {
 
   //* Calcolo numero pagine
 
-  const pageNumbers = [];
-
-  for (
-    let i = 1;
-    i <= Math.ceil(content?.servizi_offerti?.length / bSize);
-    i++
-  ) {
-    pageNumbers.push(i);
-  }
+  const pageNumbers = _.range(
+    1,
+    Math.ceil(content?.servizi_offerti?.length / bSize + 1),
+  );
 
   const onPaginationChange = (activePage) => {
     const current = activePage?.children ?? 1;

@@ -52,8 +52,8 @@ class PaginationItem extends Component {
       'lastItem',
     ]),
 
-    prevButton: PropTypes.bool,
-    forwButton: PropTypes.bool,
+    isPrevButtonInactive: PropTypes.bool,
+    isForwButtonInactive: PropTypes.bool,
   };
 
   handleClick = (e) => {
@@ -73,8 +73,8 @@ class PaginationItem extends Component {
       children,
       intl,
       ellipsisItem,
-      forwButton,
-      prevButton,
+      isPrevButtonInactive,
+      isForwButtonInactive,
     } = this.props;
     const disabled = this.props.disabled || type === 'ellipsisItem';
     return (
@@ -91,7 +91,7 @@ class PaginationItem extends Component {
                 icon="it-chevron-left"
                 style={{ ariaHidden: true }}
                 color="primary"
-                className={cx({ disabled: prevButton })}
+                className={cx({ disabled: isPrevButtonInactive })}
                 title={intl.formatMessage(messages.prevPage)}
               />
 
@@ -106,7 +106,7 @@ class PaginationItem extends Component {
                 icon="it-chevron-right"
                 style={{ ariaHidden: true }}
                 color="primary"
-                className={cx({ disabled: forwButton })}
+                className={cx({ disabled: isForwButtonInactive })}
                 title={intl.formatMessage(messages.nextPage)}
               />
               <span className="visually-hidden">
