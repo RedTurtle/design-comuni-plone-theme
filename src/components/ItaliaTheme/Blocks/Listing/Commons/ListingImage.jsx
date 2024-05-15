@@ -1,3 +1,4 @@
+import { UniversalLink } from '@plone/volto/components';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
@@ -30,9 +31,9 @@ const ListingImage = ({
   // https://stackoverflow.com/questions/33136399/is-there-a-way-to-tell-if-reactelement-renders-null
 
   const image = (
-    <a href={item['@id']} rel="noopener noreferrer">
+    <UniversalLink href={item['@id']} rel="noopener noreferrer">
       {Image(commonImageProps)}
-    </a>
+    </UniversalLink>
   );
   if (image === null)
     return showDefault ? <img src={DefaultImageSVG} alt="" /> : null;
