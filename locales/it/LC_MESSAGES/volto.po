@@ -3282,6 +3282,11 @@ msgstr "Tipologia"
 msgid "search_endDate"
 msgstr "Data fine"
 
+#: components/ItaliaTheme/View/FAQ/FaqFolder/SearchBar
+# defaultMessage: Search icon
+msgid "search_icon"
+msgstr "Icona cerca"
+
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Dove cercare
 msgid "search_sections"

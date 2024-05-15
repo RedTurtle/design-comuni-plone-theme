@@ -3291,6 +3291,11 @@ msgstr "Tipo de elementos"
 msgid "search_endDate"
 msgstr "Fecha de fin"
 
+#: components/ItaliaTheme/View/FAQ/FaqFolder/SearchBar
+# defaultMessage: Search icon
+msgid "search_icon"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Dove cercare
 msgid "search_sections"
