@@ -31,9 +31,7 @@ const ListingImage = ({
   // https://stackoverflow.com/questions/33136399/is-there-a-way-to-tell-if-reactelement-renders-null
 
   const image = (
-    <UniversalLink href={item['@id']} rel="noopener noreferrer">
-      {Image(commonImageProps)}
-    </UniversalLink>
+    <UniversalLink href={item}>{Image(commonImageProps)}</UniversalLink>
   );
   if (image === null)
     return showDefault ? <img src={DefaultImageSVG} alt="" /> : null;
