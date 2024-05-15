@@ -103,7 +103,7 @@ const DateRangeFacet = (props) => {
             disabled={isEditMode}
             noBorder
             showClearDates
-            customCloseIcon={CloseIcon(props)}
+            customCloseIcon={<CloseIcon {...props} />}
             displayFormat={moment.localeData(lang).longDateFormat('L')}
             focusedInput={focused}
             onFocusChange={(focusedInput) => setFocused(focusedInput)}

@@ -104,6 +104,11 @@ msgstr "Cerca per argomento"
 msgid "Cerca per parola chiave"
 msgstr "Cerca per parola chiave"
 
+#: overrideTranslations
+# defaultMessage: Pulisci i campi
+msgid "Clear dates"
+msgstr ""
+
 #: helpers/Translations/searchBlockExtendedTranslations
 # defaultMessage: Clear filters
 msgid "Clear filters"
