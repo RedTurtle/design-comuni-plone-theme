@@ -20,27 +20,29 @@ const messages = defineMessages({
   },
 });
 
+//* Pagination **/
+const divideServicesIntoBatches = (arr, batchSize) => {
+  const batches = [];
+  for (let i = 0; i < arr.length; i += batchSize) {
+    batches.push(arr.slice(i, i + batchSize));
+  }
+  return batches;
+};
+
 const UOServices = ({ content }) => {
   const intl = useIntl();
-
-  //* Pagination **/
-  const divideServicesIntoBatches = (arr, batchSize) => {
-    const batches = [];
-    for (let i = 0; i < arr.length; i += batchSize) {
-      batches.push(arr.slice(i, i + batchSize));
-    }
-    return batches;
-  };
 
   const [currentPage, setCurrentPage] = useState(1);
   const bSize = 4;
 
   //* Calcolo numero pagine
 
-  const pageNumbers = _.range(
-    1,
-    Math.ceil(content?.servizi_offerti?.length / bSize + 1),
-  );
+  const servizi_offerti =
+    content.servizi_offerti === undefined || content.servizi_offerti === null
+      ? []
+      : content.servizi_offerti;
+
+  const pageNumbers = Math.ceil(servizi_offerti.length / bSize);
 
   const onPaginationChange = (activePage) => {
     const current = activePage?.children ?? 1;
@@ -77,7 +79,7 @@ const UOServices = ({ content }) => {
       <div className="pagination-wrapper">
         <Pagination
           activePage={currentPage}
-          totalPages={pageNumbers.length}
+          totalPages={pageNumbers}
           onPageChange={(e, { activePage }) => onPaginationChange(activePage)}
         />
       </div>
