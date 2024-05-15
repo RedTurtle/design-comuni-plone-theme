@@ -28,7 +28,12 @@ const ListingImage = ({
     commonImageProps = { ...commonImageProps, title: item.title };
   // photogallery needs to check for null image
   // https://stackoverflow.com/questions/33136399/is-there-a-way-to-tell-if-reactelement-renders-null
-  const image = Image(commonImageProps);
+
+  const image = (
+    <a href={item['@id']} rel="noopener noreferrer">
+      {Image(commonImageProps)}
+    </a>
+  );
   if (image === null)
     return showDefault ? <img src={DefaultImageSVG} alt="" /> : null;
 
