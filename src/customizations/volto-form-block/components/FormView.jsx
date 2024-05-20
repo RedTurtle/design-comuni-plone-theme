@@ -5,19 +5,17 @@
 */
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
-import {
-  Card,
-  CardBody,
-  Row,
-  Col,
-  Button,
-  Alert,
-  Progress,
-} from 'design-react-kit';
+import { Card, CardBody, Row, Col, Alert, Progress } from 'design-react-kit';
 // eslint-disable-next-line import/no-unresolved
 import { getFieldName } from 'volto-form-block/components/utils';
 // eslint-disable-next-line import/no-unresolved
 import Field from 'volto-form-block/components/Field';
+import {
+  OTPWidget,
+  OTP_FIELDNAME_EXTENDER,
+  Button,
+} from 'volto-form-block/components/Widget';
+import { FormResult } from 'volto-form-block/components';
 // eslint-disable-next-line import/no-unresolved
 import config from '@plone/volto/registry';
 
@@ -64,6 +62,8 @@ const FormView = ({
   captcha,
   id,
   getErrorMessage,
+  path,
+  block_id,
 }) => {
   const intl = useIntl();
   const alertTransition = {
@@ -86,23 +86,6 @@ const FormView = ({
     return formErrors?.filter((e) => e.field === field).length === 0;
   };
 
-  /* Function that replaces variables from the user customized message  */
-  const replaceMessage = (text) => {
-    let i = 0;
-    while (i < data.subblocks.length) {
-      let idField = getFieldName(
-        data.subblocks[i].label,
-        data.subblocks[i].field_id,
-      );
-      text = text.replaceAll(
-        '${' + idField + '}',
-        formData[idField]?.value || '',
-      );
-      i++;
-    }
-    return text;
-  };
-
   var FieldSchema = config.blocks.blocksConfig.form.fieldSchema;
   var fieldSchemaProperties = FieldSchema()?.properties;
   var fields_to_send = [];
@@ -117,6 +100,26 @@ const FormView = ({
     onSubmit(e);
   };
 
+  const getFieldsToSendWithValue = (subblock) => {
+    var fields_to_send = [];
+    var fieldSchemaProperties = FieldSchema(subblock)?.properties;
+    for (var key in fieldSchemaProperties) {
+      if (fieldSchemaProperties[key].send_to_backend) {
+        fields_to_send.push(key);
+      }
+    }
+
+    var fields_to_send_with_value = Object.assign(
+      {},
+      ...fields_to_send.map((field) => {
+        return {
+          [field]: subblock[field],
+        };
+      }),
+    );
+    return fields_to_send_with_value;
+  };
+
   return (
     <div className="block form">
       <div className="public-ui">
@@ -128,38 +131,11 @@ const FormView = ({
           <Card className="card-bg rounded py-3" noWrapper={false} tag="div">
             <CardBody tag="div">
               {formState.result ? (
-                <Alert
-                  color="success"
-                  fade
-                  isOpen
-                  tag="div"
-                  transition={alertTransition}
-                >
-                  <h4>{intl.formatMessage(messages.success)}</h4>
-                  <br />
-                  {/* Custom message */}
-                  {data.send_message && (
-                    <>
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: replaceMessage(data.send_message),
-                        }}
-                      />
-                      <br />
-                    </>
-                  )}
-                  <Button
-                    color="primary"
-                    outline
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      resetFormState();
-                    }}
-                  >
-                    {intl.formatMessage(messages.reset)}
-                  </Button>
-                </Alert>
+                <FormResult
+                  formState={formState}
+                  data={data}
+                  resetFormState={resetFormState}
+                />
               ) : (
                 <form
                   onSubmit={submit}
@@ -201,14 +177,8 @@ const FormView = ({
                   )}
                   {data.subblocks.map((subblock, index) => {
                     let name = getFieldName(subblock.label, subblock.id);
-                    var fields_to_send_with_value = Object.assign(
-                      {},
-                      ...fields_to_send.map((field) => {
-                        return {
-                          [field]: subblock[field],
-                        };
-                      }),
-                    );
+                    const fields_to_send_with_value =
+                      getFieldsToSendWithValue(subblock);
 
                     return (
                       <Row key={'row' + index}>
@@ -237,6 +207,49 @@ const FormView = ({
                       </Row>
                     );
                   })}
+
+                  {/*OTP*/}
+                  {data.subblocks
+                    .filter((subblock) => subblock.use_as_bcc)
+                    .map((subblock, index) => {
+                      const fieldName = getFieldName(
+                        subblock.label,
+                        subblock.id,
+                      );
+                      const name = fieldName + OTP_FIELDNAME_EXTENDER;
+                      const fieldValue = formData[fieldName]?.value;
+                      const value = formData[fieldName]?.otp;
+                      const fields_to_send_with_value =
+                        getFieldsToSendWithValue(subblock);
+
+                      return (
+                        <Row key={'row_otp' + index}>
+                          <Col className="py-2">
+                            <OTPWidget
+                              {...subblock}
+                              fieldValue={fieldValue}
+                              onChange={(field, value) => {
+                                onChangeFormData(
+                                  subblock.id,
+                                  fieldName,
+                                  fieldValue,
+                                  {
+                                    ...fields_to_send_with_value,
+                                    otp: value,
+                                  },
+                                );
+                              }}
+                              value={value}
+                              valid={isValidField(name)}
+                              errorMessage={getErrorMessage(name)}
+                              formHasErrors={formErrors?.length > 0}
+                              path={path}
+                              block_id={block_id}
+                            />
+                          </Col>
+                        </Row>
+                      );
+                    })}
 
                   {enableCaptcha && <>{captcha.render()}</>}
 
