@@ -10,7 +10,6 @@ import { useIntl, defineMessages } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { RichTextRender } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { Card, CardBody, CardReadMore } from 'design-react-kit';
 import config from '@plone/volto/registry';
 
@@ -51,7 +50,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
       <CardBody tag="div">
         {data.icon?.length > 0 && (
           <div className="iconblock-icon">
-            <Icon icon={data.icon} aria-hidden={true} />
+            <Icon icon={data.icon} aria-hidden={true} title={cardTitle} />
           </div>
         )}
 
