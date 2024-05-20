@@ -1,5 +1,137 @@
 
 
+## [11.11.2](https://github.com/redturtle/design-comuni-plone-theme/compare/v11.11.1...v11.11.2) (2024-05-02)
+
+
+### Bug Fixes
+
+* error while exiting design plone controlpanel ([cbf7d2a](https://github.com/redturtle/design-comuni-plone-theme/commit/cbf7d2a544a282c42c328d1aed54b8dc3507afc2))
+* no load PuntoDiContatto in ContactsCard ([#674](https://github.com/redturtle/design-comuni-plone-theme/issues/674)) ([d2647b9](https://github.com/redturtle/design-comuni-plone-theme/commit/d2647b90af8af03fe33abe96fd80cbd26dfa2be2))
+* patches for volto-gdpr-privacy and volto-multilingual-widget ([eeada47](https://github.com/redturtle/design-comuni-plone-theme/commit/eeada47d3063e01e6b3a653d0b4c90f5e2090176))
+
+
+### Maintenance
+
+* switch to npm instead of yarn in npm release script ([6d0d2f2](https://github.com/redturtle/design-comuni-plone-theme/commit/6d0d2f24528b7d8c05a76db8a2dc00fb739f2ddd))
+
+
+### Documentation
+
+* updated publiccode ([b981375](https://github.com/redturtle/design-comuni-plone-theme/commit/b98137529e7ad2590bfd810f7c30487c42692b93))
+
+## [11.11.1](https://github.com/redturtle/design-comuni-plone-theme/compare/v11.11.0...v11.11.1) (2024-05-02)
+
+
+### Bug Fixes
+
+* changed recurrence buttons spacing and rrule translation for on_the ([#672](https://github.com/redturtle/design-comuni-plone-theme/issues/672)) ([383f241](https://github.com/redturtle/design-comuni-plone-theme/commit/383f241ece965ba13071da4e536907c382279e83))
+* spacing for event-recurrences-more ([#673](https://github.com/redturtle/design-comuni-plone-theme/issues/673)) ([675ba21](https://github.com/redturtle/design-comuni-plone-theme/commit/675ba214a52bae7ea9d947b7d238f1490061cced))
+* tipologia evento shown in page ([#670](https://github.com/redturtle/design-comuni-plone-theme/issues/670)) ([13ea54b](https://github.com/redturtle/design-comuni-plone-theme/commit/13ea54bc9aa109738b65ebf775ad1d79c731addd))
+
+
+### Documentation
+
+* fix release log heading ([5e1dbb9](https://github.com/redturtle/design-comuni-plone-theme/commit/5e1dbb904a1362c5d288df5cf3c75fae374d9203))
+* updated publiccode and release log ([3d9c8e5](https://github.com/redturtle/design-comuni-plone-theme/commit/3d9c8e579fe57eb2ce8db8e880dc6f572a58366e))
+
+
+### Maintenance
+
+* abbiamo deciso che la cartella deve essere "altri documenti" ([#671](https://github.com/redturtle/design-comuni-plone-theme/issues/671)) ([0dac7db](https://github.com/redturtle/design-comuni-plone-theme/commit/0dac7dbbdd913bb746f18dbab1f3cad6c56fbffc))
+* switch to releasing to npm with github actions ([7781ab0](https://github.com/redturtle/design-comuni-plone-theme/commit/7781ab01d5f19fb2d16ea0d0a8f89752af5fd152))
+
+## [11.11.0](https://github.com/redturtle/design-comuni-plone-theme/compare/v11.10.2...v11.11.0) (2024-04-29)
+
+
+### Features
+
+* modificato vista persona per mostrare anche la cartella altri allegati ([#668](https://github.com/redturtle/design-comuni-plone-theme/issues/668)) ([eb47ca0](https://github.com/redturtle/design-comuni-plone-theme/commit/eb47ca02152abf351697dac58dc2704a17a7ba57))
+
+
+### Bug Fixes
+
+* add event start date for subevents that do not have an image ([#667](https://github.com/redturtle/design-comuni-plone-theme/issues/667)) ([0426435](https://github.com/redturtle/design-comuni-plone-theme/commit/04264359589c05d1617fdb060aa716f9e7cab57c))
+* added conditional chaining in cardCalendar ([#669](https://github.com/redturtle/design-comuni-plone-theme/issues/669)) ([a8dacc8](https://github.com/redturtle/design-comuni-plone-theme/commit/a8dacc8049c09b8f0742ee4c1904597610331ec7))
+
+
+### Documentation
+
+* updated publiccode and release log ([1a61edf](https://github.com/redturtle/design-comuni-plone-theme/commit/1a61edf4ad4fd22b906ca012fa9c2f4f26ad2640))
+
+## [11.10.2](https://github.com/redturtle/design-comuni-plone-theme/compare/v11.10.1...v11.10.2) (2024-04-24)
+
+
+### Bug Fixes
+
+* update gdpr addon to remove breaking change ([e0490f2](https://github.com/redturtle/design-comuni-plone-theme/commit/e0490f2ac2d1a42575eb509d65fed1b65199d075))
+
+
+### Documentation
+
+* updated publiccode ([40cb8dc](https://github.com/redturtle/design-comuni-plone-theme/commit/40cb8dcd22cec06f436cb0190a7b082d7c26d1f6))
+
+## [11.10.1](https://github.com/redturtle/design-comuni-plone-theme/compare/v11.10.0...v11.10.1) (2024-04-22)
+
+
+### Bug Fixes
+
+* better tolerance for files in highlighted content block ([44dc055](https://github.com/redturtle/design-comuni-plone-theme/commit/44dc055240b07575c8608c914a6d118dbccc5df5))
+* slider focus and external links ([#664](https://github.com/redturtle/design-comuni-plone-theme/issues/664)) ([e00e1a9](https://github.com/redturtle/design-comuni-plone-theme/commit/e00e1a970f526d357e617520ad51f915fb8d4e6e))
+* used underlined text decoration for footer link marker ([#660](https://github.com/redturtle/design-comuni-plone-theme/issues/660)) ([ad8c549](https://github.com/redturtle/design-comuni-plone-theme/commit/ad8c5498922a57a01b3b79f0cf0acd07324472a7))
+
+
+### Documentation
+
+* updated publiccode ([74e29aa](https://github.com/redturtle/design-comuni-plone-theme/commit/74e29aa9ed25ae1dde57f5ab022bb88160647172))
+
+## [11.10.0](https://github.com/redturtle/design-comuni-plone-theme/compare/v11.9.1...v11.10.0) (2024-04-17)
+
+
+### Features
+
+* added appearance SimpleCard and ImageCard to listing slider template ([#512](https://github.com/redturtle/design-comuni-plone-theme/issues/512)) ([a37e985](https://github.com/redturtle/design-comuni-plone-theme/commit/a37e98590cd31b2c6be20865af614cef1e99bc24))
+* added control panel to manage cookie banner ([#604](https://github.com/redturtle/design-comuni-plone-theme/issues/604)) ([47b9c70](https://github.com/redturtle/design-comuni-plone-theme/commit/47b9c70ac59f66a16b2cc9c435c1daf80c5661df))
+* argomenti in Evidenza - Gestione sfondo, testo e sidebar ([#590](https://github.com/redturtle/design-comuni-plone-theme/issues/590)) ([0215448](https://github.com/redturtle/design-comuni-plone-theme/commit/0215448f7f16f27c83dc5547a8cff8f9db6097cd))
+* configurable Slim header from control panel ([#598](https://github.com/redturtle/design-comuni-plone-theme/issues/598)) ([3edde55](https://github.com/redturtle/design-comuni-plone-theme/commit/3edde55d828bf2b50d59013f3d94b61e490e4561))
+* new trackMouse component ([#568](https://github.com/redturtle/design-comuni-plone-theme/issues/568)) ([3db432a](https://github.com/redturtle/design-comuni-plone-theme/commit/3db432ad8ce74233446713fffcc6721a403ee6e9))
+* selectFilter is now searchable for venue search in EventSearch ([#631](https://github.com/redturtle/design-comuni-plone-theme/issues/631)) ([93ecc0b](https://github.com/redturtle/design-comuni-plone-theme/commit/93ecc0b73b109f604a439c907d369a279dda4608))
+* use config.settings.openExternalLinkInNewTab in UniversalLink ([#645](https://github.com/redturtle/design-comuni-plone-theme/issues/645)) ([7dd5bb1](https://github.com/redturtle/design-comuni-plone-theme/commit/7dd5bb181f3049be1152de2246f328917b4a105b))
+
+
+### Bug Fixes
+
+* added aria-label for cardReadMore component in iconBlock ([#618](https://github.com/redturtle/design-comuni-plone-theme/issues/618)) ([77cfb05](https://github.com/redturtle/design-comuni-plone-theme/commit/77cfb059a1f1b03954a8637e319277d97263e3ef))
+* added arrow icon to links in footerNavigation ([#641](https://github.com/redturtle/design-comuni-plone-theme/issues/641)) ([a957571](https://github.com/redturtle/design-comuni-plone-theme/commit/a957571a1b7a8fb028d218e0b9b4e25e24d2a485))
+* added cursor pointer on chips that have links ([#643](https://github.com/redturtle/design-comuni-plone-theme/issues/643)) ([581f1b6](https://github.com/redturtle/design-comuni-plone-theme/commit/581f1b62129f6c2d128cb2ce5347481c1ba45b2a))
+* added label for organizzatore esterno field ([#629](https://github.com/redturtle/design-comuni-plone-theme/issues/629)) ([b2c4e2d](https://github.com/redturtle/design-comuni-plone-theme/commit/b2c4e2d333082b27648dd9484a0dab61a57d4dba))
+* added parameter to show footer links marker ([#658](https://github.com/redturtle/design-comuni-plone-theme/issues/658)) ([f5dc57d](https://github.com/redturtle/design-comuni-plone-theme/commit/f5dc57d28e3bfa43ecc3513d41be7a87cb21a2a1))
+* calculation of prefix of fontawesome icon if prefix is in icon string ([#650](https://github.com/redturtle/design-comuni-plone-theme/issues/650)) ([10f5b69](https://github.com/redturtle/design-comuni-plone-theme/commit/10f5b69a3b36f87b4553e3db67c0f60809615af7))
+* card servizi same height in ct UO ([#637](https://github.com/redturtle/design-comuni-plone-theme/issues/637)) ([d3d8689](https://github.com/redturtle/design-comuni-plone-theme/commit/d3d8689c96fa44201868b400c74dd561022beaee))
+* changed aria-hidden to false in slider listing template ([#653](https://github.com/redturtle/design-comuni-plone-theme/issues/653)) ([62c93b6](https://github.com/redturtle/design-comuni-plone-theme/commit/62c93b6634704aae0554eaf804eca1b5496e18de))
+* conditions for showing fields in ct documento ([a765cb9](https://github.com/redturtle/design-comuni-plone-theme/commit/a765cb9b21430fdaf939212862a4618e7ca93eb1))
+* display item in evidence in tertiary-menu ([#644](https://github.com/redturtle/design-comuni-plone-theme/issues/644)) ([413e309](https://github.com/redturtle/design-comuni-plone-theme/commit/413e309683dde21cd93f012f68383492a4778b76))
+* error generating contact link ([#657](https://github.com/redturtle/design-comuni-plone-theme/issues/657)) ([b9ef297](https://github.com/redturtle/design-comuni-plone-theme/commit/b9ef2977124b925dd0cfd527bcb151b9d1a86a1f))
+* print minutes instead month in last modified info ([#633](https://github.com/redturtle/design-comuni-plone-theme/issues/633)) ([c77afc6](https://github.com/redturtle/design-comuni-plone-theme/commit/c77afc679c8e3fbb0fdedb0f68bda8af40b6f27d))
+* print styles for page ct and text editor ([#630](https://github.com/redturtle/design-comuni-plone-theme/issues/630)) ([c051454](https://github.com/redturtle/design-comuni-plone-theme/commit/c051454fb4caebc3a35fa5130247c1edd6c9acb2))
+* remove exdates from additionalDates in recurrences for ct Event ([#638](https://github.com/redturtle/design-comuni-plone-theme/issues/638)) ([266bc3d](https://github.com/redturtle/design-comuni-plone-theme/commit/266bc3d081210c9b41db50348d5c9e86c4428d76))
+* removed bottom line in accordion block ([#655](https://github.com/redturtle/design-comuni-plone-theme/issues/655)) ([9c9882d](https://github.com/redturtle/design-comuni-plone-theme/commit/9c9882d8a6ce62537fa60b346a9c9944ffdf3a2c))
+* removed cursor pointer from service status chip ([#640](https://github.com/redturtle/design-comuni-plone-theme/issues/640)) ([0c5ed55](https://github.com/redturtle/design-comuni-plone-theme/commit/0c5ed55df8723b5959072f78db07f2fed22bbaf5))
+* sitemap in multilingual sites was erroring ([#639](https://github.com/redturtle/design-comuni-plone-theme/issues/639)) ([c86add5](https://github.com/redturtle/design-comuni-plone-theme/commit/c86add5490350d96645c813a3b8ba76589775470))
+* slideItemDefault translations ([e4c128e](https://github.com/redturtle/design-comuni-plone-theme/commit/e4c128eddbaaa005f9694e8a53cdffcb8630cf2b))
+* view luoghi se c'è solo il nome della sede ([#649](https://github.com/redturtle/design-comuni-plone-theme/issues/649)) ([ba4eef4](https://github.com/redturtle/design-comuni-plone-theme/commit/ba4eef480ea01a9d4c1fda746014366cefa32aa3))
+
+
+### Maintenance
+
+* **deps:** bump postcss from 7.0.39 to 8.4.31 ([#656](https://github.com/redturtle/design-comuni-plone-theme/issues/656)) ([4ad67ad](https://github.com/redturtle/design-comuni-plone-theme/commit/4ad67ad9b0e973cce88a883d49e20f63ac91c9a3))
+* **deps:** bump tar from 6.1.11 to 6.2.1 ([#648](https://github.com/redturtle/design-comuni-plone-theme/issues/648)) ([cd782d9](https://github.com/redturtle/design-comuni-plone-theme/commit/cd782d9431eac9b71dbc8b1d4b45de85ee1e19a3))
+* updated volto-slim-header to fix bug in controlpanel ([be44a36](https://github.com/redturtle/design-comuni-plone-theme/commit/be44a36e494020acf7b05bbdbe54d8a4641d3911))
+
+
+### Documentation
+
+* updated publiccode and release log ([7569df7](https://github.com/redturtle/design-comuni-plone-theme/commit/7569df73437af05bad97855157119ae988ccfced))
+
 ## [11.9.1](https://github.com/redturtle/design-comuni-plone-theme/compare/v11.9.0...v11.9.1) (2024-04-03)
 
 
