@@ -11,6 +11,7 @@ const ListingImage = ({
   responsive = true,
   showTitleAttr = true,
   sizes = '(max-width:320px) 200px, (max-width:425px) 300px, (max-width:767px) 500px, 410px',
+  noWrapLink = false,
   ...imageProps
 }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
@@ -30,7 +31,7 @@ const ListingImage = ({
   // photogallery needs to check for null image
   // https://stackoverflow.com/questions/33136399/is-there-a-way-to-tell-if-reactelement-renders-null
 
-  const image = !imageProps.noWrapLink ? (
+  const image = !noWrapLink ? (
     <UniversalLink item={item} className="img-wrapper">
       {Image(commonImageProps)}
     </UniversalLink>
