@@ -30,10 +30,12 @@ const ListingImage = ({
   // photogallery needs to check for null image
   // https://stackoverflow.com/questions/33136399/is-there-a-way-to-tell-if-reactelement-renders-null
 
-  const image = (
+  const image = !imageProps.noWrapLink ? (
     <UniversalLink item={item} className="img-wrapper">
       {Image(commonImageProps)}
     </UniversalLink>
+  ) : (
+    Image(commonImageProps)
   );
   if (image === null)
     return showDefault ? <img src={DefaultImageSVG} alt="" /> : null;
