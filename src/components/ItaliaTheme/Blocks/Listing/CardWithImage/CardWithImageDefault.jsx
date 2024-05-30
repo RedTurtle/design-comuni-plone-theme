@@ -72,6 +72,13 @@ const CardWithImageDefault = (props) => {
     dependencies: ['CardWithImageDefault', item['@type']],
   }).component;
 
+  const isAppuntamento =
+    item['@type'] === 'Event' &&
+    item.getURL.startsWith(item.parent['@id']) &&
+    item.getURL !== item.parent['@id'];
+  console.log(isAppuntamento);
+  console.log(item);
+
   return (
     <>
       {item['@type'] === 'Persona' ? (
