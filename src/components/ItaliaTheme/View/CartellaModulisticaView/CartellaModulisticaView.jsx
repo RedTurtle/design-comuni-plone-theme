@@ -108,7 +108,9 @@ const CartellaModulisticaView = ({ content }) => {
         <TextOrBlocks content={content} />
 
         {/* -------SEARCH------- */}
-        <CartellaModulisticaSearchBar setSearchableText={setSearchableText} />
+        {content?.ricerca_in_testata && (
+          <CartellaModulisticaSearchBar setSearchableText={setSearchableText} />
+        )}
 
         {modulistica.length > 0 && (
           <section className="modulistica">
@@ -137,7 +139,7 @@ const CartellaModulisticaView = ({ content }) => {
                               doc={doc}
                               key={doc['@id']}
                               items={items.length === 0 ? doc.items : items}
-                              /*se items.length ===0 significa che è stato fatto il match sul titolo del 
+                              /*se items.length ===0 significa che è stato fatto il match sul titolo del
                                 documento, quindi devo mostrare tutti i suoi figli*/
                             />
                           );
