@@ -138,10 +138,12 @@ const CartellaModulisticaView = ({ content }) => {
                             <DocRow
                               doc={doc}
                               key={doc['@id']}
-                              items={items.length === 0 ? doc.items : items}
                               searchableText={searchableText}
-                              /*se items.length ===0 significa che è stato fatto il match sul titolo del
-                                documento, quindi devo mostrare tutti i suoi figli*/
+                              collapsable={!content.non_collassare_gli_elementi}
+                              items={
+                                items.length === 0 ? doc.items : items
+                              } /*se items.length ===0 significa che è stato fatto il match sul titolo del
+                              documento, quindi devo mostrare tutti i suoi figli*/
                             />
                           );
                         } else {
@@ -150,6 +152,7 @@ const CartellaModulisticaView = ({ content }) => {
                               doc={doc}
                               key={doc['@id']}
                               searchableText={searchableText}
+                              collapsable={!content.non_collassare_gli_elementi}
                             />
                           );
                         }
@@ -165,12 +168,17 @@ const CartellaModulisticaView = ({ content }) => {
                       section.items ? section.items.filter(filterItemsFN) : []
                     }
                     searchableText={searchableText}
+                    collapsable={!content.non_collassare_gli_elementi}
                   />
                 </div>
               ) : (
                 <div className="document-row-section" key={section['@id']}>
                   {/*file,immagine,link*/}
-                  <DocRow doc={section} searchableText={searchableText} />
+                  <DocRow
+                    doc={section}
+                    searchableText={searchableText}
+                    collapsable={!content.non_collassare_gli_elementi}
+                  />
                 </div>
               );
             })}

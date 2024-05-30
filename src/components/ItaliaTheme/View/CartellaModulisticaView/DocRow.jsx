@@ -56,19 +56,21 @@ const Downloads = ({ item, titleDoc, filteredWords }) => {
   );
 };
 
-const DocRow = ({ doc, items, searchableText }) => {
+const DocRow = ({ doc, items, searchableText, collapsable }) => {
   const filteredWords = searchableText.split(' ');
 
-  const [itemOpen, setItemOpen] = useState(searchableText?.length > 0 ?? false);
+  const [itemOpen, setItemOpen] = useState(!collapsable);
 
   useEffect(() => {
     //se ho fatto una ricerca, espando l'elemento
-    if (searchableText?.length > 0) {
-      setItemOpen(true);
-    } else {
-      setItemOpen(false);
+    if (collapsable) {
+      if (searchableText?.length > 0) {
+        setItemOpen(true);
+      } else {
+        setItemOpen(false);
+      }
     }
-  }, [searchableText]);
+  }, [searchableText, collapsable]);
 
   const titleWrapper = (
     <div
@@ -123,20 +125,22 @@ const DocRow = ({ doc, items, searchableText }) => {
             <div id="headingAccordion" className="accordion-header doc">
               {titleWrapper}
             </div>
-            <button
-              onClick={() => {
-                setItemOpen(itemOpen ? false : true);
-              }}
-              aria-expanded={itemOpen}
-              aria-controls="collapsedContent"
-              aria-labelledby={`title-${doc.id}`}
-            >
-              <Icon
-                color="primary"
-                icon={itemOpen ? 'it-minus' : 'it-plus'}
-                padding={false}
-              />
-            </button>
+            {collapsable && (
+              <button
+                onClick={() => {
+                  setItemOpen(itemOpen ? false : true);
+                }}
+                aria-expanded={itemOpen}
+                aria-controls="collapsedContent"
+                aria-labelledby={`title-${doc.id}`}
+              >
+                <Icon
+                  color="primary"
+                  icon={itemOpen ? 'it-minus' : 'it-plus'}
+                  padding={false}
+                />
+              </button>
+            )}
           </div>
           <div
             id="collapsedContent"
