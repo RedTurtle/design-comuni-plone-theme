@@ -4,12 +4,14 @@
  */
 
 import React, { useState } from 'react';
+import cx from 'classnames';
+import Highlighter from 'react-highlight-words';
+
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { DownloadFileFormat } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import cx from 'classnames';
 
 /**
  * DocRow view component class.
@@ -18,13 +20,18 @@ import cx from 'classnames';
  * @returns {string} Markup of the component.
  */
 
-const Downloads = ({ item, titleDoc }) => {
+const Downloads = ({ item, titleDoc, filteredWords }) => {
   return item['@type'] === 'Modulo' ? (
     <React.Fragment>
-      {!titleDoc ? (
-        <div className="title">{item.title}</div>
-      ) : (
-        titleDoc !== item.title && <div className="title">{item.title}</div>
+      {(!titleDoc || titleDoc !== item.title) && (
+        <div className="title">
+          <Highlighter
+            highlightClassName="highlighted-text"
+            searchWords={filteredWords}
+            autoEscape={true}
+            textToHighlight={item.title}
+          />
+        </div>
       )}
       <div className="downloads">
         <DownloadFileFormat file={item?.file_principale} />
@@ -49,7 +56,9 @@ const Downloads = ({ item, titleDoc }) => {
   );
 };
 
-const DocRow = ({ doc, items }) => {
+const DocRow = ({ doc, items, searchableText }) => {
+  const filteredWords = searchableText.split(' ');
+
   const [itemOpen, setItemOpen] = useState(false);
 
   const titleWrapper = (
@@ -60,7 +69,12 @@ const DocRow = ({ doc, items }) => {
     >
       <div id={`title-${doc.id}`} className="title">
         <UniversalLink href={doc.remoteUrl || flattenToAppURL(doc['@id'])}>
-          {doc.title}
+          <Highlighter
+            highlightClassName="highlighted-text"
+            searchWords={filteredWords}
+            autoEscape={true}
+            textToHighlight={doc.title}
+          />
         </UniversalLink>
         {doc?.description && (
           <p className="description text-muted">{doc.description}</p>
@@ -85,7 +99,11 @@ const DocRow = ({ doc, items }) => {
       {items?.length === 1 && (
         <div className="doc">
           {titleWrapper}
-          <Downloads item={items[0]} titleDoc={doc.title} />
+          <Downloads
+            item={items[0]}
+            titleDoc={doc.title}
+            filteredWords={filteredWords}
+          />
         </div>
       )}
 
@@ -120,7 +138,11 @@ const DocRow = ({ doc, items }) => {
             <div className="accordion-inner">
               {items.map((modulo) => (
                 <div className="doc modulo" key={modulo['@id']}>
-                  <Downloads item={modulo} titleDoc={null} />
+                  <Downloads
+                    item={modulo}
+                    titleDoc={null}
+                    filteredWords={filteredWords}
+                  />
                 </div>
               ))}
             </div>

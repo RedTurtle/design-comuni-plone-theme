@@ -16,6 +16,11 @@ $docs-section-margin: 3em;
     }
   }
 
+  mark.highlighted-text {
+    padding: 0.2rem 0;
+    background-color: $highlight-search;
+  }
+
   section.modulistica {
     .documents-section,
     .document-row-section {
@@ -52,6 +57,7 @@ $docs-section-margin: 3em;
         &.has-children {
           padding-bottom: 1em;
         }
+
         .description {
           font-size: 0.9rem;
         }
@@ -68,10 +74,12 @@ $docs-section-margin: 3em;
             &.single-row {
               max-width: 70%;
             }
+
             .title {
               font-size: 1.2em;
               font-weight: 500;
             }
+
             p.description {
               margin: 0;
             }
@@ -124,6 +132,7 @@ $docs-section-margin: 3em;
             color: $secondary;
             font-size: 1rem;
           }
+
           button {
             padding: 0 0.4em;
             border: none;
@@ -135,6 +144,7 @@ $docs-section-margin: 3em;
             }
           }
         }
+
         .accordion-content {
           overflow: hidden;
           height: auto;
@@ -186,11 +196,13 @@ $docs-section-margin: 3em;
             flex-wrap: wrap;
             align-items: unset;
             justify-content: unset;
+
             .title-wrap {
               &.single-row {
                 max-width: none;
               }
             }
+
             .title,
             .downloads {
               flex: 1 1 100%;
