@@ -3,7 +3,7 @@
  * @module components/theme/View/DocRow
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import Highlighter from 'react-highlight-words';
 
@@ -59,7 +59,16 @@ const Downloads = ({ item, titleDoc, filteredWords }) => {
 const DocRow = ({ doc, items, searchableText }) => {
   const filteredWords = searchableText.split(' ');
 
-  const [itemOpen, setItemOpen] = useState(false);
+  const [itemOpen, setItemOpen] = useState(searchableText?.length > 0 ?? false);
+
+  useEffect(() => {
+    //se ho fatto una ricerca, espando l'elemento
+    if (searchableText?.length > 0) {
+      setItemOpen(true);
+    } else {
+      setItemOpen(false);
+    }
+  }, [searchableText]);
 
   const titleWrapper = (
     <div

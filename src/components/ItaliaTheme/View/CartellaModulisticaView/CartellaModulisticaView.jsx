@@ -108,7 +108,7 @@ const CartellaModulisticaView = ({ content }) => {
         <TextOrBlocks content={content} />
 
         {/* -------SEARCH------- */}
-        {content?.ricerca_in_testata && (
+        {(true || content?.ricerca_in_testata) && (
           <CartellaModulisticaSearchBar setSearchableText={setSearchableText} />
         )}
 
