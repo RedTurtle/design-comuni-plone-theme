@@ -66,8 +66,8 @@ import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/
 
 import reducers from 'design-comuni-plone-theme/reducers';
 
-const ReleaseLog = loadable(
-  () => import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
+const ReleaseLog = loadable(() =>
+  import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
 );
 
 const messages = defineMessages({
@@ -315,10 +315,10 @@ export default function applyConfig(voltoConfig) {
       showRestricted: false,
     },
 
-    'volto-gdpr-privacy': {
-      ...config.settings['volto-gdpr-privacy'],
-      defaultPanelConfig: gdprPrivacyPanelConfig,
-    },
+    // 'volto-gdpr-privacy': {
+    //   ...config.settings['volto-gdpr-privacy'],
+    //   // defaultPanelConfig: gdprPrivacyPanelConfig,
+    // },
 
     'volto-editablefooter': {
       ...config.settings['volto-editablefooter'],
