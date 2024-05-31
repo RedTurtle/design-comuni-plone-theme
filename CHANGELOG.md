@@ -1,5 +1,46 @@
 
 
+## [11.12.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.12.5...v11.12.6) (2024-05-30)
+
+
+### Bug Fixes
+
+* applied img-wrapper styles to all html elements with class ([#688](https://github.com/RedTurtle/design-comuni-plone-theme/issues/688)) ([b66d5af](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b66d5af94a754eaebc55336ad1c136611a9b01fe))
+
+
+### Documentation
+
+* updated publiccode and release log ([6d86f99](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6d86f99887b6622aa4f238a020d546fa8004eeb5))
+
+## [11.12.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.12.4...v11.12.5) (2024-05-30)
+
+
+### Bug Fixes
+
+* card with image when elements have no image ([ff99a3b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ff99a3b0081d734e63a853e6d44830cf9624a3f3))
+
+
+### Maintenance
+
+* update release jobs ([1318aad](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1318aad487cb310b7d445a305fb311243ee2fac5))
+
+## [11.12.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.12.3...v11.12.4) (2024-05-30)
+
+
+### Bug Fixes
+
+* added styles for recurrence widget fields layout ([#686](https://github.com/RedTurtle/design-comuni-plone-theme/issues/686)) ([ec415d1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ec415d1615524b79755d3f562fcef909f1a126d1))
+
+
+### Maintenance
+
+* improve cors error logging ([6c483a7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6c483a79fbe6d40d688c33a36bb61e96f37372fb))
+
+
+### Documentation
+
+* updated publiccode and release log ([312af90](https://github.com/RedTurtle/design-comuni-plone-theme/commit/312af90e5c708e090df1ccd7eaa194a7f03360ec))
+
 ## [11.12.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.12.2...v11.12.3) (2024-05-28)
 
 
