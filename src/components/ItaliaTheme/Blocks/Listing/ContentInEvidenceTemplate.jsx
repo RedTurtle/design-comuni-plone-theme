@@ -80,7 +80,7 @@ const ContentInEvidenceTemplate = (props) => {
           }).component;
 
           const isEventAppointment =
-            item.parent['@type'] === 'Event' && item['@type'] === 'Event';
+            item?.parent?.['@type'] === 'Event' && item?.['@type'] === 'Event';
 
           return (
             <Row key={item['@id']} className="content-in-evidence">

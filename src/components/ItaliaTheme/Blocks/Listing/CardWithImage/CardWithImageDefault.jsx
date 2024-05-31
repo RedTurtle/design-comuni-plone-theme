@@ -74,7 +74,7 @@ const CardWithImageDefault = (props) => {
   }).component;
 
   const isEventAppointment =
-    item.parent['@type'] === 'Event' && item['@type'] === 'Event';
+    item?.parent?.['@type'] === 'Event' && item?.['@type'] === 'Event';
 
   return (
     <>

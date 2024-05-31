@@ -96,7 +96,8 @@ const InEvidenceTemplate = (props) => {
             const topics = show_topics ? item.tassonomia_argomenti : null;
 
             const isEventAppointment =
-              item.parent['@type'] === 'Event' && item['@type'] === 'Event';
+              item?.parent?.['@type'] === 'Event' &&
+              item?.['@type'] === 'Event';
 
             return item['@type'] === 'Persona' ? (
               <CardPersona
