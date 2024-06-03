@@ -41,6 +41,24 @@
 - ...
 -->
 
+## Versione 11.12.6 (30/05/2024)
+
+### Fix
+
+- Il layout delle card con immagini rimane corretto anche selezionando l'opzione "Non alterare le dimensioni naturali dell'immagine".
+
+## Versione 11.12.5 (30/05/2024)
+
+### Fix
+
+- Sistemato il layout "Card con immagine" dei blocchi elenco quando gli elementi non hanno immagine.
+
+## Versione 11.12.4 (30/05/2024)
+
+### Fix
+
+- Aggiustato il layout dei campi nel widget delle ricorrenze.
+
 ## Versione 11.12.1 (21/05/2024)
 
 ### Migliorie
