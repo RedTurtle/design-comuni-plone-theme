@@ -11,6 +11,7 @@ import {
   contentFolderHasItems,
   viewDate,
 } from 'design-comuni-plone-theme/helpers';
+import { Chip, ChipLabel } from 'design-react-kit';
 
 const messages = defineMessages({
   ruolo: {
@@ -74,6 +75,10 @@ const messages = defineMessages({
     defaultMessage:
       "Ha fatto parte dell'organizzazione comunale come {incarico} fino al",
   },
+  altri_incarichi: {
+    id: 'altri_incarichi',
+    defaultMessage: 'Altri incarichi',
+  },
 });
 
 const PersonaRuolo = ({ content }) => {
@@ -86,16 +91,16 @@ const PersonaRuolo = ({ content }) => {
             tag_id="incarico"
             title={intl.formatMessage(messages.ruolo)}
           >
-            {content?.incarichi_persona?.map((incarico) => (
-              <div className="font-serif" key={incarico.id}>
-                <p>{incarico.title}</p>
-                {incarico.atto_di_nomina && (
-                  <UniversalLink href={incarico.atto_di_nomina}>
-                    {intl.formatMessage(messages.atto_nomina)}
-                  </UniversalLink>
-                )}
-              </div>
-            ))}
+            <div className="font-serif" key={content?.incarichi_persona[0]?.id}>
+              <p>{content?.incarichi_persona[0]?.title}</p>
+              {content?.incarichi_persona[0]?.atto_di_nomina && (
+                <UniversalLink
+                  href={content?.incarichi_persona[0]?.atto_di_nomina}
+                >
+                  {intl.formatMessage(messages.atto_nomina)}
+                </UniversalLink>
+              )}
+            </div>
           </RichTextSection>
           {content.incarichi_persona[0]?.tipologia_incarico?.title && (
             <RichTextSection
@@ -233,6 +238,29 @@ const PersonaRuolo = ({ content }) => {
           )}
         </>
       )}
+
+      {content.incarichi_persona?.length > 1 && (
+        <RichTextSection
+          tag_id="altri_incarichi"
+          title={intl.formatMessage(messages.altri_incarichi)}
+        >
+          {content.incarichi_persona.map((incarico, index) =>
+            index > 0 ? (
+              <Chip
+                color="primary"
+                simple
+                tag={UniversalLink}
+                href={incarico['@id']}
+                key={index}
+                className="me-2"
+              >
+                <ChipLabel>{incarico.title}</ChipLabel>
+              </Chip>
+            ) : null,
+          )}
+        </RichTextSection>
+      )}
+
       {content.assessore_di?.length > 0 && (
         <RichTextSection
           tag_id="assessore_di"
