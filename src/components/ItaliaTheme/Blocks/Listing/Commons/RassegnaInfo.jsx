@@ -1,7 +1,6 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
-import { flattenToAppURL } from '@plone/volto/helpers';
 
 const RassegnaInfo = ({ eventoPadre }) => {
   const intl = useIntl();
@@ -11,7 +10,7 @@ const RassegnaInfo = ({ eventoPadre }) => {
         {intl.formatMessage(messages.rassegna_label)}
       </span>
       <span className="rassegna-name">
-        <UniversalLink href={flattenToAppURL(eventoPadre['@id'])}>
+        <UniversalLink href={eventoPadre['@id']}>
           {eventoPadre.title}
         </UniversalLink>
       </span>
