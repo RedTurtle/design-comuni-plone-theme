@@ -184,7 +184,7 @@ const CartellaModulisticaView = ({ content }) => {
             })}
           </section>
         )}
-        <PageMetadata content={content} />
+        {content.show_modified && <PageMetadata content={content} />}
       </div>
 
       <CartellaModulisticaAfterContent content={content} />
