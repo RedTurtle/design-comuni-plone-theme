@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
+import { v4 as uuid } from 'uuid';
 import Highlighter from 'react-highlight-words';
 
 import { UniversalLink } from '@plone/volto/components';
@@ -40,24 +41,41 @@ const Downloads = ({ item, titleDoc, filteredWords }) => {
       </div>
     </React.Fragment>
   ) : (
-    <UniversalLink
-      href={item.remoteUrl || flattenToAppURL(item['@id'])}
-      title={item.title}
-      className="modulistica-link"
-    >
-      <div className="title">{item.title}</div>
-      <FontAwesomeIcon
-        icon={['fas', 'link']}
-        alt={item.title}
-        role="presentation"
-        aria-hidden={true}
-      />
-    </UniversalLink>
+    <>
+      <div className="title">
+        <UniversalLink
+          href={item.remoteUrl || flattenToAppURL(item['@id'])}
+          title={item.title}
+        >
+          <Highlighter
+            highlightClassName="highlighted-text"
+            searchWords={filteredWords}
+            autoEscape={true}
+            textToHighlight={item.title}
+          />
+        </UniversalLink>
+      </div>
+      <div className="downloads">
+        <UniversalLink
+          href={item.remoteUrl || flattenToAppURL(item['@id'])}
+          title={item.title}
+          className="modulistica-link"
+        >
+          <FontAwesomeIcon
+            icon={['fas', 'link']}
+            alt={item.title}
+            role="presentation"
+            aria-hidden={true}
+          />
+        </UniversalLink>
+      </div>
+    </>
   );
 };
 
 const DocRow = ({ doc, items, searchableText, collapsable }) => {
   const filteredWords = searchableText.split(' ');
+  const id = uuid();
 
   const [itemOpen, setItemOpen] = useState(!collapsable);
 
@@ -131,19 +149,20 @@ const DocRow = ({ doc, items, searchableText, collapsable }) => {
                   setItemOpen(itemOpen ? false : true);
                 }}
                 aria-expanded={itemOpen}
-                aria-controls="collapsedContent"
+                aria-controls={`accordion-content-${id}`}
                 aria-labelledby={`title-${doc.id}`}
               >
                 <Icon
                   color="primary"
                   icon={itemOpen ? 'it-minus' : 'it-plus'}
                   padding={false}
+                  key={itemOpen + id}
                 />
               </button>
             )}
           </div>
           <div
-            id="collapsedContent"
+            id={`accordion-content-${id}`}
             className={cx('accordion-content', { open: itemOpen })}
             role="region"
             aria-labelledby="headingAccordion"

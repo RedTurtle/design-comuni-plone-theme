@@ -110,10 +110,9 @@ $docs-section-margin: 3em;
           }
 
           a.modulistica-link {
-            display: flex;
-            width: 100%;
-            align-items: center;
-            justify-content: space-between;
+            .external-link {
+              display: none;
+            }
 
             svg {
               width: 2em;
