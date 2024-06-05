@@ -41,6 +41,20 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Il blocco Ricerca Eventi permette di eliminare il filtro date.
+
 ## Versione 11.12.6 (30/05/2024)
 
 ### Fix
