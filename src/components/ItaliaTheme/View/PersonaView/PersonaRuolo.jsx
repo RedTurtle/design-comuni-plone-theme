@@ -157,7 +157,7 @@ const PersonaRuolo = ({ content }) => {
               title={intl.formatMessage(
                 messages.importi_di_viaggio_e_o_servizi,
               )}
-              data={content.incarichi_persona[0].importi_di_viaggio_e_o_servizi}
+              data={content.incarichi_persona[0].importi_viaggio_servizio}
             >
               {content.incarichi_persona[0]?.importi_di_viaggio_e_o_servizi
                 ?.length > 0 && (
