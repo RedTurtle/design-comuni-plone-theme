@@ -11,7 +11,6 @@ import {
   contentFolderHasItems,
   viewDate,
 } from 'design-comuni-plone-theme/helpers';
-import { Chip, ChipLabel } from 'design-react-kit';
 
 const messages = defineMessages({
   ruolo: {
