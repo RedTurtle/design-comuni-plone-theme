@@ -49,11 +49,18 @@
 
 ### Novità
 
-- ...
+- Aggiunte informazioni sulle rassegne di eventi nei blocchi elenco.
 
 ### Fix
 
+- Il bottone "callout con sfondo" della barra degli strumenti per il testo è nuovamente visibile.
 - Il blocco Ricerca Eventi permette di eliminare il filtro date.
+
+## Versione 11.12.9 (06/06/2024)
+
+### Fix
+
+- La pagina di login e di reset della password usano il font corretto.
 
 ## Versione 11.12.6 (30/05/2024)
 
