@@ -246,16 +246,11 @@ const PersonaRuolo = ({ content }) => {
         >
           {content.incarichi_persona.map((incarico, index) =>
             index > 0 ? (
-              <Chip
-                color="primary"
-                simple
-                tag={UniversalLink}
-                href={incarico['@id']}
-                key={index}
-                className="me-2"
-              >
-                <ChipLabel>{incarico.title}</ChipLabel>
-              </Chip>
+              <li key={index}>
+                <UniversalLink href={incarico['@id']}>
+                  {incarico.title}
+                </UniversalLink>
+              </li>
             ) : null,
           )}
         </RichTextSection>
