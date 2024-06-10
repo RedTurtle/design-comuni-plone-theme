@@ -41,6 +41,88 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- Aggiunte informazioni sulle rassegne di eventi nei blocchi elenco.
+
+### Fix
+
+- Il bottone "callout con sfondo" della barra degli strumenti per il testo è nuovamente visibile.
+- Il blocco Ricerca Eventi permette di eliminare il filtro date.
+
+## Versione 11.12.9 (06/06/2024)
+
+### Fix
+
+- La pagina di login e di reset della password usano il font corretto.
+
+## Versione 11.12.6 (30/05/2024)
+
+### Fix
+
+- Il layout delle card con immagini rimane corretto anche selezionando l'opzione "Non alterare le dimensioni naturali dell'immagine".
+
+## Versione 11.12.5 (30/05/2024)
+
+### Fix
+
+- Sistemato il layout "Card con immagine" dei blocchi elenco quando gli elementi non hanno immagine.
+
+## Versione 11.12.4 (30/05/2024)
+
+### Fix
+
+- Aggiustato il layout dei campi nel widget delle ricorrenze.
+
+## Versione 11.12.1 (21/05/2024)
+
+### Migliorie
+
+- Migliorate le performance di navigazione per alcuni link agli argomenti nella testata delle pagine.
+
+## Versione 11.12.0 (21/05/2024)
+
+### Migliorie
+
+- Se una Unità Organizzativa è collegata a più di 4 servizi, le card dei servizi collegati verranno divise in diverse pagine navigabili da uno strumento di paginazione per rendere lo scorrimento della pagina più semplice.
+- Cambiato il layout delle immagini all'interno del blocco Griglia.
+- Migliorata la visualizzazione delle parole evidenziate nella pagina di Ricerca.
+- Rinominato il contenitore "Altri allegati" dentro i contenuti di tipo Persona in "Altri documenti".
+
+### Novità
+
+- Le immagini delle Card con Immagine del blocco Elenco sono ora cliccabili. Cliccandole si apre il contenuto della Card.
+
+### Fix
+
+- Corretto il testo per la ricorrenza eventi nel CT Eventi.
+
+## Versione 11.11.1 (02/05/2024)
+
+### Migliorie
+
+- Il campo tipologia è ora mostrato all'interno della pagina del CT Evento, se compilato.
+
+## Versione 11.11.0 (29/04/2024)
+
+### Migliorie
+
+- Aggiunte le date degli eventi figli nel caso questi non presentino immagini nella card.
+
+### Novità
+
+- Modificato vista del tipo di contenuto Persona per mostrare anche la cartella interna "Altri allegati".
+
+### Fix
+
+- Aggiustato problema per il blocco elenco, variazione card con Immagine, per gli eventi con ricorrenza.
+
 ## Versione 11.10.0 (17/04/2024)
 
 ### Migliorie

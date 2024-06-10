@@ -21,9 +21,13 @@ defineMessages({
     id: 'rrule_in',
     defaultMessage: 'il giorno',
   },
+  rrule_on: {
+    id: 'rrule_on',
+    defaultMessage: 'di',
+  },
   rrule_on_the: {
     id: 'rrule_on the',
-    defaultMessage: 'il',
+    defaultMessage: 'di',
   },
   weekdays: {
     id: 'rrule_weekdays',
@@ -59,5 +63,9 @@ defineMessages({
   toggleMenu_close: {
     id: 'toggleMenu_close',
     defaultMessage: 'Chiudi',
+  },
+  clearDates: {
+    id: 'Clear dates',
+    defaultMessage: 'Pulisci i campi',
   },
 });
