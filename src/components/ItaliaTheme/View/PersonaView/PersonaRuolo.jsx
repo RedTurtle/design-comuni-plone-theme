@@ -243,15 +243,17 @@ const PersonaRuolo = ({ content }) => {
           tag_id="altri_incarichi"
           title={intl.formatMessage(messages.altri_incarichi)}
         >
-          {content.incarichi_persona.map((incarico, index) =>
-            index > 0 ? (
-              <li key={index}>
-                <UniversalLink href={incarico['@id']}>
-                  {incarico.title}
-                </UniversalLink>
-              </li>
-            ) : null,
-          )}
+          <ul>
+            {content.incarichi_persona.map((incarico, index) =>
+              index > 0 ? (
+                <li key={index}>
+                  <UniversalLink href={incarico['@id']}>
+                    {incarico.title}
+                  </UniversalLink>
+                </li>
+              ) : null,
+            )}
+          </ul>
         </RichTextSection>
       )}
 

@@ -2914,6 +2914,11 @@ msgstr ""
 msgid "quartiere"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Listing/Commons/RassegnaInfo
+# defaultMessage: Rassegna:
+msgid "rassegna_label"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeader
 # defaultMessage: Tempo di lettura
 msgid "reading_time"
