@@ -74,9 +74,9 @@ const GenericCard = ({
             <UniversalLink item={item}>{item.title}</UniversalLink>
           </div>
           {(showDescription || children) && (
-            <div className="card-text">
+            <p className="card-text">
               {item.description} {children}
-            </div>
+            </p>
           )}
         </div>
       </div>
@@ -94,9 +94,9 @@ const GenericCard = ({
             <UniversalLink item={item}>{item.title}</UniversalLink>
           </div>
           {(showDescription || children) && (
-            <div className="card-text">
+            <p className="card-text">
               {item.description} {children}
-            </div>
+            </p>
           )}
         </div>
       </div>

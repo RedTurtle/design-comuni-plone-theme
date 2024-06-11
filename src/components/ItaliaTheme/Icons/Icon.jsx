@@ -27,6 +27,9 @@ const Icon = (props) => {
     const parts = icon.split(' ');
 
     // TO DO: rimuovere le condizioni dell'icona di twitter quando verrà aggiornato Bootstrap Italia
+    // Il commento qui sopra e' fuorviante. La 2.8.0 di bootstrap-italia ha l'icona twitter, la versione
+    // usata oggi di design-react-kit e' la 5.0.0-1 e ha bootstrap-italia alla 2.6.1
+    // Finche' design-react-kit non ha > 2.8.0 non possiamo usarla, dipende da design-react-kit
     if (icon.indexOf('it-') === 0 && icon !== 'it-twitter') {
       return <DesignIcon {...props} className={classes} {...rest} />;
     } else if (icon === 'telegram') {

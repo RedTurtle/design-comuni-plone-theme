@@ -41,29 +41,29 @@ const SmallVenue = ({ venue }) => {
               {venue_fo.title}
             </UniversalLink>
           </div>
-          <div className="card-text">
+          <div>
             {venue_fo.telefono && (
-              <p>
+              <p className="card-text">
                 <ContactLink tel={venue_fo.telefono} />
               </p>
             )}
             {venue_fo.fax && (
-              <p>
+              <p className="card-text">
                 <ContactLink fax={venue_fo.fax} />
               </p>
             )}
             {venue_fo.email && (
-              <p>
+              <p className="card-text">
                 <ContactLink email={venue_fo.email} />
               </p>
             )}
             {venue_fo.pec && (
-              <p>
+              <p className="card-text">
                 <ContactLink email={venue_fo.pec} />
               </p>
             )}
             {venue_fo.web && (
-              <p>
+              <p className="card-text">
                 <a
                   href={
                     venue_fo.web.match(/^(http:\/\/|https:\/\/)/gm)

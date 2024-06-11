@@ -137,7 +137,7 @@
   @import './bootstrap-italia/callout';
   @import 'bootstrap-italia/src/scss/custom/toolbar';
   @import 'bootstrap-italia/src/scss/custom/sections';
-  @import 'bootstrap-italia/src/scss/custom/dialog';
+  // @import 'bootstrap-italia/src/scss/custom/dialog';  Rimosso in bootstrap-italia v2.7.0
   @import 'bootstrap-italia/src/scss/custom/notifications';
   @import 'bootstrap-italia/src/scss/custom/avatar';
   @import 'bootstrap-italia/src/scss/custom/thumbnav';
@@ -205,4 +205,6 @@
   @import 'bootstrap-italia/src/scss/utilities/focus';
   @import 'bootstrap-italia/src/scss/utilities/icons';
   @import './bootstrap-italia/focus';
+
+  @import './bootstrap-italia/mobileMenu';
 }

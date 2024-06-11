@@ -2,10 +2,10 @@
   .navbar {
     .navbar-collapsable {
       .navbar-nav {
-        li {
+        li.nav-item {
           a.nav-link {
             &.focus--mouse {
-              border-color: unset !important;
+              border-color: $navigation-link-active-bar-color-desk !important; // Bugged with bootstrap-italia 2.8.3
             }
           }
         }

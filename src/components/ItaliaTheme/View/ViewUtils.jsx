@@ -43,7 +43,6 @@ export const useSideMenu = (content, documentBody) => {
   const SideMenuComponent =
     config.settings?.italiaThemeViewsConfig?.[content['@type']]?.sideMenu ??
     SideMenu;
-
   useEffect(() => {
     if (documentBody.current) {
       if (__CLIENT__) {

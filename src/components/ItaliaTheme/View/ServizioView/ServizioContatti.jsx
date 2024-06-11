@@ -17,7 +17,9 @@ const messages = defineMessages({
 
 const ServizioContatti = ({ content }) => {
   const intl = useIntl();
-  return content.ufficio_responsabile?.length > 0 || content.area.length > 0 ? (
+  return content.ufficio_responsabile?.length > 0 ||
+    content.area.length > 0 ||
+    content.contact_info.length > 0 ? (
     <RichTextSection
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}

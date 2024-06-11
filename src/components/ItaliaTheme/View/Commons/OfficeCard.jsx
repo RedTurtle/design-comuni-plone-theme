@@ -59,10 +59,10 @@ const OfficeCard = ({
           <div>
             {office?.sede?.map((sede, i) => {
               return (
-                <div className="card-text" key={i}>
-                  {sede.street && <p>{sede.street}</p>}
+                <div key={i}>
+                  {sede.street && <p className="card-text">{sede.street}</p>}
                   {(sede.city || sede.zip_code) && (
-                    <p>
+                    <p className="card-text">
                       {sede.zip_code} {sede.city}
                     </p>
                   )}
@@ -71,8 +71,10 @@ const OfficeCard = ({
             })}
           </div>
         )}
-
-        {children && <div className="card-text">{children}</div>}
+        {/* Con bootstrap-italia 2.8.x e' OBBLIGATORIO che i children siano in clusi in un p
+        con class card-text se volete che si veda bene e con la stessa tipografia del resto
+        della card */}
+        {children && <div>{children}</div>}
       </div>
       {image && <div className="image-container">{image}</div>}
     </div>

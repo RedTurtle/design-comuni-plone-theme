@@ -3,7 +3,7 @@
  * @module components/theme/View/ServizioView
  */
 
-import React, { createRef } from 'react';
+import React, { createRef, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
@@ -108,7 +108,7 @@ const ServizioView = ({ content, moment }) => {
   const Moment = moment.default;
   Moment.locale(intl.locale);
 
-  const documentBody = createRef();
+  const documentBody = useRef(null);
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
   return (
