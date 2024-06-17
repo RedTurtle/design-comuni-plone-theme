@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Blocchi elenco dentro ad un grid con la corretta visualizzazione quando scelto una variazione.
+
 ## Versione 7.27.1 (10/04/2024)
 
 ### Novità
