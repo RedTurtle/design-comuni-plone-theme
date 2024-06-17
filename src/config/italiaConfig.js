@@ -397,6 +397,12 @@ export default function applyConfig(voltoConfig) {
     showEditBlocksInBabelView: true,
   };
 
+  //per avere la conf dei blocchi anche nel blocco grid, altrimenti nel blocco grid prende la conf base di volto.
+  config.blocks.blocksConfig.gridBlock = {
+    ...config.blocks.blocksConfig.gridBlock,
+    blocksConfig: config.blocks.blocksConfig,
+  };
+
   removeListingVariation(config, 'default'); // removes default volto template, because it will be overrided
   removeListingVariation(config, 'summary'); // removes summary volto template, because is unused
   removeListingVariation(config, 'imageGallery'); // removes imageGallery volto template, because we have our photoGallery template
