@@ -3,13 +3,16 @@
  * @module components/theme/View/DocRow
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
+import { v4 as uuid } from 'uuid';
+import Highlighter from 'react-highlight-words';
+
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { DownloadFileFormat } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import cx from 'classnames';
 
 /**
  * DocRow view component class.
@@ -18,13 +21,18 @@ import cx from 'classnames';
  * @returns {string} Markup of the component.
  */
 
-const Downloads = ({ item, titleDoc }) => {
+const Downloads = ({ item, titleDoc, filteredWords }) => {
   return item['@type'] === 'Modulo' ? (
     <React.Fragment>
-      {!titleDoc ? (
-        <div className="title">{item.title}</div>
-      ) : (
-        titleDoc !== item.title && <div className="title">{item.title}</div>
+      {(!titleDoc || titleDoc !== item.title) && (
+        <div className="title">
+          <Highlighter
+            highlightClassName="highlighted-text"
+            searchWords={filteredWords}
+            autoEscape={true}
+            textToHighlight={item.title}
+          />
+        </div>
       )}
       <div className="downloads">
         <DownloadFileFormat file={item?.file_principale} />
@@ -33,24 +41,54 @@ const Downloads = ({ item, titleDoc }) => {
       </div>
     </React.Fragment>
   ) : (
-    <UniversalLink
-      href={item.remoteUrl || flattenToAppURL(item['@id'])}
-      title={item.title}
-      className="modulistica-link"
-    >
-      <div className="title">{item.title}</div>
-      <FontAwesomeIcon
-        icon={['fas', 'link']}
-        alt={item.title}
-        role="presentation"
-        aria-hidden={true}
-      />
-    </UniversalLink>
+    <>
+      <div className="title">
+        <UniversalLink
+          href={item.remoteUrl || flattenToAppURL(item['@id'])}
+          title={item.title}
+        >
+          <Highlighter
+            highlightClassName="highlighted-text"
+            searchWords={filteredWords}
+            autoEscape={true}
+            textToHighlight={item.title}
+          />
+        </UniversalLink>
+      </div>
+      <div className="downloads">
+        <UniversalLink
+          href={item.remoteUrl || flattenToAppURL(item['@id'])}
+          title={item.title}
+          className="modulistica-link"
+        >
+          <FontAwesomeIcon
+            icon={['fas', 'link']}
+            alt={item.title}
+            role="presentation"
+            aria-hidden={true}
+          />
+        </UniversalLink>
+      </div>
+    </>
   );
 };
 
-const DocRow = ({ doc, items }) => {
-  const [itemOpen, setItemOpen] = useState(false);
+const DocRow = ({ doc, items, searchableText, collapsable }) => {
+  const filteredWords = searchableText.split(' ');
+  const id = uuid();
+
+  const [itemOpen, setItemOpen] = useState(!collapsable);
+
+  useEffect(() => {
+    //se ho fatto una ricerca, espando l'elemento
+    if (collapsable) {
+      if (searchableText?.length > 0) {
+        setItemOpen(true);
+      } else {
+        setItemOpen(false);
+      }
+    }
+  }, [searchableText, collapsable]);
 
   const titleWrapper = (
     <div
@@ -60,7 +98,12 @@ const DocRow = ({ doc, items }) => {
     >
       <div id={`title-${doc.id}`} className="title">
         <UniversalLink href={doc.remoteUrl || flattenToAppURL(doc['@id'])}>
-          {doc.title}
+          <Highlighter
+            highlightClassName="highlighted-text"
+            searchWords={filteredWords}
+            autoEscape={true}
+            textToHighlight={doc.title}
+          />
         </UniversalLink>
         {doc?.description && (
           <p className="description text-muted">{doc.description}</p>
@@ -85,7 +128,11 @@ const DocRow = ({ doc, items }) => {
       {items?.length === 1 && (
         <div className="doc">
           {titleWrapper}
-          <Downloads item={items[0]} titleDoc={doc.title} />
+          <Downloads
+            item={items[0]}
+            titleDoc={doc.title}
+            filteredWords={filteredWords}
+          />
         </div>
       )}
 
@@ -96,23 +143,26 @@ const DocRow = ({ doc, items }) => {
             <div id="headingAccordion" className="accordion-header doc">
               {titleWrapper}
             </div>
-            <button
-              onClick={() => {
-                setItemOpen(itemOpen ? false : true);
-              }}
-              aria-expanded={itemOpen}
-              aria-controls="collapsedContent"
-              aria-labelledby={`title-${doc.id}`}
-            >
-              <Icon
-                color="primary"
-                icon={itemOpen ? 'it-minus' : 'it-plus'}
-                padding={false}
-              />
-            </button>
+            {collapsable && (
+              <button
+                onClick={() => {
+                  setItemOpen(itemOpen ? false : true);
+                }}
+                aria-expanded={itemOpen}
+                aria-controls={`accordion-content-${id}`}
+                aria-labelledby={`title-${doc.id}`}
+              >
+                <Icon
+                  color="primary"
+                  icon={itemOpen ? 'it-minus' : 'it-plus'}
+                  padding={false}
+                  key={itemOpen + id}
+                />
+              </button>
+            )}
           </div>
           <div
-            id="collapsedContent"
+            id={`accordion-content-${id}`}
             className={cx('accordion-content', { open: itemOpen })}
             role="region"
             aria-labelledby="headingAccordion"
@@ -120,7 +170,11 @@ const DocRow = ({ doc, items }) => {
             <div className="accordion-inner">
               {items.map((modulo) => (
                 <div className="doc modulo" key={modulo['@id']}>
-                  <Downloads item={modulo} titleDoc={null} />
+                  <Downloads
+                    item={modulo}
+                    titleDoc={null}
+                    filteredWords={filteredWords}
+                  />
                 </div>
               ))}
             </div>
