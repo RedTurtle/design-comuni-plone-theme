@@ -1,3 +1,21 @@
+## [7.28.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.27.1...v7.28.0) (2024-06-17)
+
+
+### Features
+
+* CartellaModulistica view improvements ([#687](https://github.com/RedTurtle/design-comuni-plone-theme/issues/687)) ([bcca3ea](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bcca3ea159d11b0fb4709a689a8b6e5b34689e26))
+
+
+### Bug Fixes
+
+* border color and width ([#699](https://github.com/RedTurtle/design-comuni-plone-theme/issues/699)) ([80312b4](https://github.com/RedTurtle/design-comuni-plone-theme/commit/80312b4f55064f206099f39e7225ac2bbd3d0f41))
+* changed aria-hidden to false for slider arrows ([#654](https://github.com/RedTurtle/design-comuni-plone-theme/issues/654)) ([6cd4661](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6cd4661a7377d79fa928a14dccee57c5db9064ef))
+
+
+### Maintenance
+
+* preparing release 7.28.0 ([029128f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/029128f0dac3bfa9c1775efe8bce2529407332af))
+
 ### [7.27.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.27.0...v7.27.1) (2024-04-10)
 
 
