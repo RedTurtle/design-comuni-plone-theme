@@ -3,6 +3,18 @@
     all: unset;
   }
   .block.listing {
+    .full-width,
+    &.full-width {
+      right: unset;
+      left: unset;
+      width: auto !important;
+      margin-right: unset !important;
+      margin-left: unset !important;
+    }
+
+    .container {
+      width: auto !important;
+    }
     &.simpleCard,
     &.attachmentCardTemplate {
       .card-teaser-block-3 {
