@@ -1,3 +1,18 @@
+### [7.28.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.28.0...v7.28.2) (2024-06-18)
+
+
+### Bug Fixes
+
+* added css for listing blocks inside grid block ([#702](https://github.com/RedTurtle/design-comuni-plone-theme/issues/702)) ([bc4a06e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bc4a06ed5e625a400896c85deba70df1d840bd6a))
+* config for block grid ([#701](https://github.com/RedTurtle/design-comuni-plone-theme/issues/701)) ([d8a45fa](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d8a45fa9f464c1310c3c9fac229fe05592d656ba))
+* locations for Venue ([#705](https://github.com/RedTurtle/design-comuni-plone-theme/issues/705)) ([3d7c44b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3d7c44b94475d449fe42749b1833ae9f3269fd94))
+
+
+### Maintenance
+
+* preparing release ([c9ac206](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c9ac206be80813c7154ff64c2eed952694dc0707))
+* release v7.28.1 ([eaa515d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/eaa515d3bafe6a9ed8a88e0fe43e413c577d56a5))
+
 ### [7.28.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.28.0...v7.28.1) (2024-06-17)
 
 
