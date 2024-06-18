@@ -17,19 +17,25 @@ import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
 import { SiteProperty } from 'volto-site-settings';
 
 const HeaderSlim = () => {
-  const subsite = useSelector((state) => state.subsite?.data);
+  const subsite = useSelector((state) =>
+    state.subsite?.data
+      ? Object.keys(state.subsite.data)?.length > 0
+        ? state.subsite.data
+        : null
+      : null,
+  );
   const intl = useIntl();
 
   const parentSiteURL = subsite
     ? '/'
     : getSiteProperty('parentSiteURL', intl.locale);
 
+  const staticParentSiteTitle = getSiteProperty('parentSiteTitle', intl.locale);
+
   const parentSiteTile = SiteProperty({
     property: 'site_title',
-    forceValue: subsite
-      ? getSiteProperty('subsiteParentSiteTitle', intl.locale)
-      : null,
-    defaultValue: getSiteProperty('parentSiteTitle', intl.locale),
+    forceValue: subsite ? null : staticParentSiteTitle,
+    defaultValue: staticParentSiteTitle,
     getValue: true,
     getParent: true,
   });
@@ -44,7 +50,7 @@ const HeaderSlim = () => {
           target={target}
           rel="noopener noreferrer"
         >
-          {parentSiteTile}
+          {parentSiteTile.replaceAll('\\n', ' - ')}
         </HeaderBrand>
         <HeaderRightZone>
           <HeaderSlimRightZone />

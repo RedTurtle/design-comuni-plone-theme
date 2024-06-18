@@ -16,11 +16,12 @@ const fieldDataToPlainText = (field) => {
 
 const ServizioMetatag = ({ content }) => {
   const intl = useIntl();
-  const siteTitle = SiteProperty({
-    prperty: 'site_title',
+  let siteTitle = SiteProperty({
+    property: 'site_title',
     getValue: true,
     defaultTitle: getSiteProperty('siteTitle', intl.locale),
   });
+  siteTitle = siteTitle.replaceAll('\\n', ' - ');
 
   const schemaOrg = {
     '@context': 'https://schema.org',
