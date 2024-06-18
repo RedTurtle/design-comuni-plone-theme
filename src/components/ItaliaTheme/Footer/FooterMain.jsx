@@ -13,6 +13,7 @@ import {
   LogoFooter,
   BrandTextFooter,
   FooterPNRRLogo,
+  HomeLink,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/';
 
 import { FooterTop } from 'volto-editablefooter';
@@ -35,10 +36,10 @@ const FooterMain = () => {
                 {footerTopContent ?? (
                   <>
                     <FooterPNRRLogo />
-                    <UniversalLink href="/">
+                    <HomeLink>
                       <LogoFooter />
                       <BrandTextFooter />
-                    </UniversalLink>
+                    </HomeLink>
                   </>
                 )}
               </div>

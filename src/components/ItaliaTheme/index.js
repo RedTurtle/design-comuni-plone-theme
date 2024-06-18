@@ -70,6 +70,7 @@ export Breadcrumbs from 'design-comuni-plone-theme/components/ItaliaTheme/Breadc
 export FeedbackForm from 'design-comuni-plone-theme/components/ItaliaTheme/CustomerSatisfaction/FeedbackForm';
 export AnswersStep from 'design-comuni-plone-theme/components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep';
 export CommentsStep from 'design-comuni-plone-theme/components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep';
+export HomeLink from 'design-comuni-plone-theme/components/ItaliaTheme/HomeLink/HomeLink';
 
 /********* BLOCKS ********* */
 export AlertSidebar from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Alert/Sidebar';

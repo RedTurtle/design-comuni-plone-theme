@@ -14,6 +14,7 @@ import {
   SocialHeader,
   HeaderSearch,
   BrandText,
+  HomeLink,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const messages = defineMessages({
@@ -43,13 +44,13 @@ const HeaderCenter = () => {
     <Header small={false} theme="" type="center">
       <HeaderContent>
         <div className="it-brand-wrapper ps-4">
-          <UniversalLink
-            href={subsite?.['@id'] ? flattenToAppURL(subsite['@id']) : '/'}
+          <HomeLink
+            href={subsite?.['@id'] ? flattenToAppURL(subsite['@id']) : null}
             title={intl.formatMessage(messages.subsiteUniversalLink)}
           >
             {subsite?.subsite_logo ? logoSubsite : <Logo />}
             <BrandText subsite={subsite} />
-          </UniversalLink>
+          </HomeLink>
         </div>
         <HeaderRightZone>
           <SocialHeader />

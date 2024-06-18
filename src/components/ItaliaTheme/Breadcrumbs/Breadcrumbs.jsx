@@ -21,6 +21,7 @@ import {
 import { UniversalLink } from '@plone/volto/components';
 import { Row, Col, BreadcrumbItem } from 'design-react-kit';
 import GoogleBreadcrumbs from 'design-comuni-plone-theme/components/ItaliaTheme/Breadcrumbs/GoogleBreadcrumbs';
+import { HomeLink } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -110,9 +111,7 @@ const Breadcrumbs = ({ pathname }) => {
           >
             <ol className="breadcrumb" data-element="breadcrumb">
               <BreadcrumbItem tag="li">
-                <UniversalLink href="/">
-                  {intl.formatMessage(messages.home)}
-                </UniversalLink>
+                <HomeLink>{intl.formatMessage(messages.home)}</HomeLink>
                 <span className="separator">/</span>
               </BreadcrumbItem>
               {items.map((item, index, items) => (
