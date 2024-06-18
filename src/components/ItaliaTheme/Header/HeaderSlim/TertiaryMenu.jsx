@@ -5,8 +5,10 @@
 
 import React from 'react';
 import { Nav, NavItem, NavLink } from 'design-react-kit';
-import { UniversalLink } from '@plone/volto/components';
+import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { useIntl } from 'react-intl';
+import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 
 const TertiaryMenu = () => {
