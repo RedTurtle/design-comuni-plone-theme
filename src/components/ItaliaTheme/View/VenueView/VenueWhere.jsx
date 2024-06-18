@@ -42,7 +42,6 @@ const VenueWhere = ({ content }) => {
           locations={content.sede ?? []}
           show_icon={true}
           load={true}
-          show_title_link={false}
           details_link={false}
         />
       )}
