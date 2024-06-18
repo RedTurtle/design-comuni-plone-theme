@@ -41,11 +41,11 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 11.13.0 (12/06/2024)
 
 ### Migliorie
 
-- ...
+- Nel CT Persona viene visualizzato anche il testo del campo "Importi di viaggio e/o servizi" impostato nel CT Incarico collegato e, se presente più di un Incarico collegato, vengono mostrati i link a ciascun Incarico nella sezione "Altri incarichi".
 
 ### Novità
 
