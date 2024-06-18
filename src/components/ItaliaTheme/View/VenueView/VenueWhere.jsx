@@ -46,6 +46,12 @@ const VenueWhere = ({ content }) => {
           details_link={false}
         />
       )}
+
+      {richTextHasContent(content.notes) && (
+        <div className="mt-5">
+          <RichText content={content.notes} />
+        </div>
+      )}
     </RichTextArticle>
   ) : (
     <></>
