@@ -1,14 +1,33 @@
-name: Update related themes
+name: Release latest version on npm
 
 on:
   release:
     types: [released]
 
 jobs:
-  update:
-    name: Update themes
+  release_to_npm:
+    name: Release to npm
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: npm install -g npm
+
+      - run: yarn
+
+      - name: Release to npm
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Get the version
         id: get_version
         run: echo "VERSION=${GITHUB_REF/refs\/tags\//}" >> "$GITHUB_OUTPUT"

@@ -37,6 +37,10 @@ const FontAwesomeIcon = (props) => {
         ? 'brands'
         : prefixKey === 'far'
         ? 'regular'
+        : prefixKey === 'fas'
+        ? 'solid'
+        : prefixKey != null
+        ? prefixKey
         : 'solid',
       iconName,
     ];
