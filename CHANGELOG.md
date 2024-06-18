@@ -1,3 +1,10 @@
+### [7.28.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.28.2...v7.28.3) (2024-06-18)
+
+
+### Bug Fixes
+
+* undo link modifications for locations ([#707](https://github.com/RedTurtle/design-comuni-plone-theme/issues/707)) ([44629dd](https://github.com/RedTurtle/design-comuni-plone-theme/commit/44629dd1632152341a20d94aa5ac6935a0920e6c))
+
 ### [7.28.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.28.0...v7.28.2) (2024-06-18)
 
 
