@@ -79,6 +79,7 @@ msgid "Block style"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Vedi
 msgid "Card detail label"
@@ -467,8 +468,10 @@ msgstr ""
 msgid "Path filter filtro"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 #: components/ItaliaTheme/Slider/ButtonPlayPause
-# defaultMessage: Seleziona per mettere in pausa lo slider
+# defaultMessage: Metti in pausa
 msgid "Pause slider"
 msgstr "Pause"
 
@@ -483,8 +486,10 @@ msgstr ""
 msgid "Piccolo"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Listing/PhotogalleryTemplate
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 #: components/ItaliaTheme/Slider/ButtonPlayPause
-# defaultMessage: Seleziona per riprodurre lo slider
+# defaultMessage: Play
 msgid "Play slider"
 msgstr "Début"
 
@@ -1129,18 +1134,23 @@ msgid "calendarBlockSidebarTitle"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Calendar/Body
+# defaultMessage: Prossimi eventi
+msgid "calendar_next_arrow"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Calendar/Body
 # defaultMessage: Nessun evento disponibile al momento
 msgid "calendar_no_results"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Calendar/Body
+# defaultMessage: Eventi precedenti
+msgid "calendar_prev_arrow"
 msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/CanaleDigitaleWidget
 # defaultMessage: Accedere al servizio
 msgid "canale_digitale_widget_title"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
-# defaultMessage: Aggiungi un argomento da visualizzare sulla card.
-msgid "cardDescription"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
@@ -1169,11 +1179,6 @@ msgstr ""
 msgid "carousel"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
-# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra
-msgid "carousel-item-aria-label"
-msgstr ""
-
 #: components/ItaliaTheme/Slider/SingleSlideWrapper
 # defaultMessage: Slide
 msgid "carouselSlide"
@@ -1193,11 +1198,6 @@ msgstr "Cas spéciaux"
 # defaultMessage: Icona categoria
 msgid "category_icon"
 msgstr ""
-
-#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
-# defaultMessage: Allinea gli argomenti al centro
-msgid "centerAlignment"
-msgstr "Aligner les sujets au centre"
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Link al canale
@@ -2251,11 +2251,6 @@ msgstr "Voir l'image précédente"
 msgid "grid-gallery-max-items-exceeded"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Sidebar
-# defaultMessage: Nascondi pulsante "Vedi tutti"
-msgid "hideButtonShowAll"
-msgstr "Masquer le bouton "Tout voir""
-
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Nascondi le date
 msgid "hide_dates"
@@ -2780,11 +2775,6 @@ msgstr "Trier par"
 msgid "organizzato_da"
 msgstr ""
 
-#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
-# defaultMessage: Organizzatore
-msgid "organizzatore"
-msgstr ""
-
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Organo competente adozione provvedimento finale
@@ -2878,6 +2868,7 @@ msgstr ""
 msgid "playStoreLink"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 #: components/ItaliaTheme/Slider/PrevArrow
 # defaultMessage: Precedente
 msgid "precedente"
@@ -2905,6 +2896,7 @@ msgid "provvedimento_finale"
 msgstr "Disposition finale"
 
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Data di pubblicazione
 msgid "publication_date"
@@ -3909,6 +3901,7 @@ msgstr ""
 msgid "subjects"
 msgstr "Sujettes"
 
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 #: components/ItaliaTheme/Slider/NextArrow
 # defaultMessage: Successivo
 msgid "successivo"
@@ -4132,6 +4125,7 @@ msgid "uo_type"
 msgstr "Typologie"
 
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
+#: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Data di aggiornamento
 msgid "update_date"
@@ -4156,6 +4150,21 @@ msgstr "Changement de bilan"
 # defaultMessage: Luoghi
 msgid "venues"
 msgstr "Lieux"
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Body
+# defaultMessage: Prossimo video
+msgid "videogallery_next_arrow"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Body
+# defaultMessage: Video precedente
+msgid "videogallery_prev_arrow"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/SliderTemplate
+# defaultMessage: Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra
+msgid "viewImage"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/BottomBody
 # defaultMessage: Vedi tutti

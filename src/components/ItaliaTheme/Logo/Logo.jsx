@@ -15,13 +15,14 @@
 import logo from './logo.png';
 import { SiteProperty } from 'volto-site-settings';
 
-const Logo = ({ alt = 'Logo' }) => {
+const Logo = ({ alt = 'Logo', getParent = false }) => {
   return (
     <SiteProperty
       property="site_logo"
       defaultValue={{ url: logo, width: 82, height: 82 }}
       className="icon"
       alt={alt}
+      getParent={getParent}
     />
   );
 };

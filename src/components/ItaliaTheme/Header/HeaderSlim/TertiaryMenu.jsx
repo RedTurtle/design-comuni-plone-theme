@@ -9,9 +9,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
-import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers';
 import { getSlimHeader, getItemsByPath } from 'volto-slimheader';
-import config from '@plone/volto/registry';
+import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
 
 const TertiaryMenu = () => {
   const intl = useIntl();
