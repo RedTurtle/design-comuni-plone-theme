@@ -51,6 +51,7 @@
 ### Novità
 
 - ...
+- Aggiunte informazioni sulle rassegne di eventi nei blocchi elenco.
 
 ### Fix
 
@@ -66,6 +67,11 @@
 ### Novità
 
 - ...
+### Fix
+
+- La pagina di login e di reset della password usano il font corretto.
+
+## Versione 11.12.6 (30/05/2024)
 
 ### Fix
 
@@ -80,6 +86,11 @@
 ### Novità
 
 - ...
+### Fix
+
+- Sistemato il layout "Card con immagine" dei blocchi elenco quando gli elementi non hanno immagine.
+
+## Versione 11.12.4 (30/05/2024)
 
 ### Fix
 
