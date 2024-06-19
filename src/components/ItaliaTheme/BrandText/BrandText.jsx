@@ -19,8 +19,7 @@ const BrandText = ({ mobile = false, getParent = false }) => {
     getValue: true,
     getParent: getParent,
   });
-
-  const titleSplit = title?.split('\\n') ?? null;
+  const titleSplit = title?.split('\n') ?? null;
   title = titleSplit?.map((t, i) => (
     <>
       {t}
