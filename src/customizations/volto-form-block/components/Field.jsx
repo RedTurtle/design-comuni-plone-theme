@@ -14,6 +14,7 @@ import {
   FormGroup,
   Label,
 } from 'design-react-kit/dist/design-react-kit';
+import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import FileWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/FileWidget';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
@@ -26,6 +27,24 @@ const messages = defineMessages({
     id: 'form_select_a_value',
     defaultMessage: 'Seleziona un valore',
   },
+  open_menu: {
+    id: 'open_menu',
+    defaultMessage: 'Apri il menu',
+  },
+});
+
+const DropdownIndicator = injectLazyLibs('reactSelect')((props) => {
+  const intl = useIntl();
+  const components = props.reactSelect.components;
+  return (
+    <components.DropdownIndicator {...props}>
+      <Icon
+        icon="chevron-down"
+        style={{ ariaHidden: true }}
+        title={intl.formatMessage(messages.open_menu)}
+      />
+    </components.DropdownIndicator>
+  );
 });
 
 /**
@@ -46,6 +65,7 @@ const Field = ({
   valid,
   disabled = false,
   formHasErrors = false,
+  errorMessage,
   id,
   reactSelect,
 }) => {
@@ -60,6 +80,15 @@ const Field = ({
     return !isOnEdit && !valid;
   };
 
+  const infoText = errorMessage ? (
+    <>
+      <div className="form-text">{description}</div>
+      {errorMessage}
+    </>
+  ) : (
+    description
+  );
+
   return (
     <div className="field">
       {field_type === 'text' && (
@@ -69,7 +98,7 @@ const Field = ({
           label={getLabel()}
           type="text"
           required={required}
-          infoText={description}
+          infoText={infoText}
           disabled={disabled}
           readOnly={disabled}
           invalid={isInvalid() ? 'true' : null}
@@ -87,14 +116,14 @@ const Field = ({
           type="textarea"
           rows={10}
           required={required}
-          infoText={description}
+          infoText={infoText}
           disabled={disabled}
           readOnly={disabled}
           invalid={isInvalid() ? 'true' : null}
           onChange={(e) => {
             onChange(name, e.target.value);
           }}
-          {...(value ? { value } : {})}
+          value={value ?? undefined}
         />
       )}
       {field_type === 'select' && (
@@ -108,6 +137,7 @@ const Field = ({
             <Select
               components={{
                 IndicatorSeparator: null,
+                DropdownIndicator,
               }}
               id={name}
               name={name}
@@ -124,9 +154,15 @@ const Field = ({
               aria-label={intl.formatMessage(messages.select_a_value)}
               classNamePrefix="react-select"
               className={isInvalid() ? 'is-invalid' : ''}
+              value={value ? [{ value: value, label: value }] : []}
             />
             {description && (
               <small className="form-text text-muted">{description}</small>
+            )}
+            {errorMessage && (
+              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                {errorMessage}
+              </div>
             )}
           </div>
         </div>
@@ -150,7 +186,9 @@ const Field = ({
                   onChange={(e) => {
                     onChange(name, v);
                   }}
-                  invalid={isInvalid() ? 'true' : null}
+                  // invalid={isInvalid() ? 'true' : null}
+                  // addon // Needed to avoid application of form-control class as of kit v4.0.2
+                  checked={value === v}
                 />
                 <Label for={v + name} check>
                   {v}
@@ -159,6 +197,11 @@ const Field = ({
             ))}
             {description && (
               <small className="form-text text-muted">{description}</small>
+            )}
+            {errorMessage && (
+              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                {errorMessage}
+              </div>
             )}
           </div>
         </div>
@@ -188,6 +231,7 @@ const Field = ({
                     onChange(name, values);
                   }}
                   invalid={isInvalid() ? 'true' : null}
+                  // addon // Needed to avoid application of form-control class as of kit v4.0.2
                 />
                 <Label for={v + name} check>
                   {v}
@@ -196,6 +240,11 @@ const Field = ({
             ))}
             {description && (
               <small className="form-text text-muted">{description}</small>
+            )}
+            {errorMessage && (
+              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                {errorMessage}
+              </div>
             )}
           </div>
         </div>
@@ -218,6 +267,7 @@ const Field = ({
                 }}
                 invalid={isInvalid() ? 'true' : null}
                 required={required}
+                // addon // Needed to avoid application of form-control class as of kit v4.0.2
               />
               <Label for={name} check>
                 {getLabel()}
@@ -225,6 +275,11 @@ const Field = ({
             </FormGroup>
             {description && (
               <small className="form-text text-muted">{description}</small>
+            )}
+            {errorMessage && (
+              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                {errorMessage}
+              </div>
             )}
           </div>
         </div>
@@ -236,13 +291,14 @@ const Field = ({
           label={getLabel()}
           type="date"
           required={required}
-          infoText={description}
+          infoText={infoText}
           disabled={disabled}
           readOnly={disabled}
           invalid={isInvalid() ? 'true' : null}
           onChange={(e) => {
             onChange(name, e.target.value);
           }}
+          value={value ?? ''}
         />
       )}
       {field_type === 'attachment' && (
@@ -252,7 +308,7 @@ const Field = ({
           label={getLabel()}
           type="file"
           required={required}
-          infoText={description}
+          infoText={infoText}
           disabled={disabled}
           readOnly={disabled}
           invalid={isInvalid() ? 'true' : null}
@@ -268,14 +324,15 @@ const Field = ({
           label={getLabel()}
           type="email"
           required={true}
-          infoText={description}
+          infoText={infoText}
           disabled={disabled}
           readOnly={disabled}
           invalid={isInvalid() ? 'true' : null}
+          validationtext={errorMessage}
           onChange={(e) => {
             onChange(name, e.target.value);
           }}
-          {...(value ? { value } : {})}
+          value={value ?? ''}
         />
       )}
       {field_type === 'static_text' &&
@@ -306,6 +363,7 @@ const Field = ({
               name={name}
               title={label}
               description={description}
+              infoText={infoText}
               required={required}
               onChange={onChange}
               value={value}
