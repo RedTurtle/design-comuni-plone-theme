@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import { defineMessages, useIntl } from 'react-intl';
@@ -30,6 +31,18 @@ const messages = defineMessages({
     id: 'tipologia_incarico',
     defaultMessage: 'Tipo di incarico',
   },
+  data_inizio_incarico: {
+    id: 'data_inizio_incarico',
+    defaultMessage: 'Data di inizio incarico',
+  },
+  data_conclusione_incarico: {
+    id: 'data_conclusione_incarico',
+    defaultMessage: 'Data di conclusione incarico',
+  },
+  data_insediamento: {
+    id: 'data_insediamento',
+    defaultMessage: 'Data di insediamento',
+  },
   importi_viaggio: {
     id: 'importi_viaggio',
     defaultMessage: 'Importi di viaggio e/o servizio',
@@ -54,10 +67,6 @@ const messages = defineMessages({
     id: 'data_conclusione',
     defaultMessage: 'Data conclusione incarico',
   },
-  data_insediamento: {
-    id: 'data_insediamento',
-    defaultMessage: 'Data insediamento',
-  },
   atto_nomina: {
     id: 'atto_nomina',
     defaultMessage: 'Atto di nomina',
@@ -72,6 +81,7 @@ const messages = defineMessages({
 const IncaricoView = (props) => {
   const { content } = props;
   const intl = useIntl();
+
   return (
     <div className="container px-4 my-4 incarico-view">
       <SkipToMainContent />
@@ -91,6 +101,36 @@ const IncaricoView = (props) => {
             title={intl.formatMessage(messages.tipologia_incarico)}
           >
             <div className="font-serif">{content.tipologia_incarico.title}</div>
+          </RichTextSection>
+        )}
+        {content.data_inizio_incarico && (
+          <RichTextSection
+            tag_id="data_inizio_incarico"
+            title={intl.formatMessage(messages.data_inizio_incarico)}
+          >
+            <div className="font-serif">
+              {moment(content.data_inizio_incarico).format('D-MM-YYYY')}
+            </div>
+          </RichTextSection>
+        )}
+        {content.data_conclusione_incarico && (
+          <RichTextSection
+            tag_id="data_conclusione_incarico"
+            title={intl.formatMessage(messages.data_conclusione_incarico)}
+          >
+            <div className="font-serif">
+              {moment(content.data_conclusione_incarico).format('D-MM-YYYY')}
+            </div>
+          </RichTextSection>
+        )}
+        {content.data_insediamento && (
+          <RichTextSection
+            tag_id="data_insediamento"
+            title={intl.formatMessage(messages.data_insediamento)}
+          >
+            <div className="font-serif">
+              {moment(content.data_insediamento).format('D-MM-YYYY')}
+            </div>
           </RichTextSection>
         )}
         {richTextHasContent(content.compensi) && (
