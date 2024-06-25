@@ -55,51 +55,47 @@ const replaceMessage = (text, sent_data) => {
 
 const FormResult = ({ formState, data, resetFormState }) => {
   const intl = useIntl();
-  return !formState.warning ? (
-    <Alert color="success" fade isOpen tag="div" transition={alertTransition}>
-      <h4>{intl.formatMessage(messages.success)}</h4>
+  return (
+    <Alert
+      color={!formState.warning ? 'success' : 'warning'}
+      fade
+      isOpen
+      tag="div"
+      transition={alertTransition}
+    >
+      <h4>
+        {!formState.warning
+          ? intl.formatMessage(messages.success)
+          : intl.formatMessage(messages.success_warning)}
+      </h4>
       <br />
       {/* Custom message */}
-      {data.send_message && (
+      {!formState.warning ? (
+        (
+          data.send_message && (
+            <>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: replaceMessage(
+                    data.send_message,
+                    formState.result.data,
+                  ),
+                }}
+              />
+              <br />
+            </>
+          )
+        )(
+          <>
+            <p>{intl.formatMessage(messages.success_warning_description)}</p>
+          </>,
+        )
+      ) : (
         <>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: replaceMessage(data.send_message, formState.result.data),
-            }}
-          />
-          <br />
+          <p>{intl.formatMessage(messages.success_warning_description)}</p>
         </>
       )}
-      <Button
-        color="primary"
-        outline
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          resetFormState();
-        }}
-      >
-        {intl.formatMessage(messages.reset)}
-      </Button>
-    </Alert>
-  ) : (
-    <Alert color="warning" fade isOpen tag="div" transition={alertTransition}>
-      <h4>{intl.formatMessage(messages.success_warning)}</h4>
-      <br />
-      {/* Custom message */}
-      <>
-        <p>{intl.formatMessage(messages.success_warning_description)}</p>
-      </>
-      {data.send_message && (
-        <>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: replaceMessage(data.send_message, formState.result.data),
-            }}
-          />
-          <br />
-        </>
-      )}
+
       <Button
         color="primary"
         outline
