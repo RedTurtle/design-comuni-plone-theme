@@ -29,8 +29,7 @@
 ### Fix
 - ...
 -->
-## Versione X.X.X (dd/mm/yyyy)
-
+## Versione 7.28.4 (25/06/2024)
 
 ### Novità
 * Aggiornato il Blocco Form con diverse proprietà aggiuntive:
