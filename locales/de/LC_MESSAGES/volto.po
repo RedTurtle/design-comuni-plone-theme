@@ -2186,6 +2186,16 @@ msgstr ""
 msgid "form_reset"
 msgstr ""
 
+#: overrideTranslations
+# defaultMessage: Sei stato inserito in lista d'attesa
+msgid "form_submit_success_warning"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: I tuoi dati sono stati inviati, ma è già stato raggiunto il limite di iscrizioni, sei stato inserito in lista d'attesa.
+msgid "form_submit_success_warning_description"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Foto dell'attività politica
 msgid "foto_attivita_politica"
