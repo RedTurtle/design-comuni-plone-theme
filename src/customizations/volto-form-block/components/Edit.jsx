@@ -11,6 +11,7 @@ import React from 'react';
 import EditBlock from 'volto-form-block/components/EditBlock';
 // eslint-disable-next-line import/no-unresolved
 import Sidebar from 'volto-form-block/components/Sidebar';
+import ValidateConfigForm from 'volto-form-block/components/ValidateConfigForm';
 
 import {
   Card,
@@ -37,6 +38,10 @@ const messages = defineMessages({
   default_submit_label: {
     id: 'form_default_submit_label',
     defaultMessage: 'Invia',
+  },
+  default_cancel_label: {
+    id: 'form_default_cancel_label',
+    defaultMessage: 'Annulla',
   },
   warning: {
     id: 'form_edit_warning',
@@ -80,17 +85,24 @@ class Edit extends SubblocksEdit {
 
     return (
       <div className="public-ui">
-        <div className="px-4 py-5">
-          {this.props?.data?.title && <h2>{this.props.data.title}</h2>}
-          {this.props?.data?.description && (
-            <div className="block-description">
-              {this.props.data.description}
-            </div>
-          )}
-          <Card className="card-bg rounded py-3" noWrapper={false} tag="div">
-            <CardBody tag="div">
-              <SubblocksWrapper node={this.node}>
-                {/*this.state.subblocks.filter((s) => s.field_type === 'from')
+        <ValidateConfigForm
+          data={this.props.data}
+          onEdit={true}
+          onChangeBlock={(data) => {
+            this.props.onChangeBlock(this.props.block, data);
+          }}
+        >
+          <div className="px-4 py-5">
+            {this.props?.data?.title && <h2>{this.props.data.title}</h2>}
+            {this.props?.data?.description && (
+              <div className="block-description">
+                {this.props.data.description}
+              </div>
+            )}
+            <Card className="card-bg rounded py-3" noWrapper={false} tag="div">
+              <CardBody tag="div">
+                <SubblocksWrapper node={this.node}>
+                  {/*this.state.subblocks.filter((s) => s.field_type === 'from')
                   .length == 0 && (
                   <Alert color="warning" fade isOpen tag="div">
                     <h4>{this.props.intl.formatMessage(messages.warning)}</h4>
@@ -100,40 +112,49 @@ class Edit extends SubblocksEdit {
                   </Alert>
                 )*/}
 
-                {this.state.subblocks.map((subblock, subindex) => (
-                  <div className="form-field" key={subblock.id}>
-                    <EditBlock
-                      data={subblock}
-                      index={subindex}
-                      selected={this.isSubblockSelected(subindex)}
-                      {...this.subblockProps}
-                      openObjectBrowser={this.props.openObjectBrowser}
-                    />
-                  </div>
-                ))}
+                  {this.state.subblocks.map((subblock, subindex) => (
+                    <div className="form-field" key={subblock.id}>
+                      <EditBlock
+                        data={subblock}
+                        index={subindex}
+                        selected={this.isSubblockSelected(subindex)}
+                        {...this.subblockProps}
+                        openObjectBrowser={this.props.openObjectBrowser}
+                      />
+                    </div>
+                  ))}
 
-                {this.props.selected && (
-                  <div className="form-field">
-                    {this.renderAddBlockButton(
-                      this.props.intl.formatMessage(messages.addField),
-                    )}
-                  </div>
-                )}
+                  {this.props.selected && (
+                    <div className="form-field">
+                      {this.renderAddBlockButton(
+                        this.props.intl.formatMessage(messages.addField),
+                      )}
+                    </div>
+                  )}
 
-                <Row>
-                  <Col align="center">
-                    <Button color="primary">
-                      {this.props.data.submit_label ||
-                        this.props.intl.formatMessage(
-                          messages.default_submit_label,
-                        )}
-                    </Button>
-                  </Col>
-                </Row>
-              </SubblocksWrapper>
-            </CardBody>
-          </Card>
-        </div>
+                  <Row>
+                    <Col align="center">
+                      {this.props.data?.show_cancel && (
+                        <Button color="secondary" className="mr-2">
+                          {this.props.data.cancel_label ||
+                            this.props.intl.formatMessage(
+                              messages.default_cancel_label,
+                            )}
+                        </Button>
+                      )}
+                      <Button color="primary">
+                        {this.props.data.submit_label ||
+                          this.props.intl.formatMessage(
+                            messages.default_submit_label,
+                          )}
+                      </Button>
+                    </Col>
+                  </Row>
+                </SubblocksWrapper>
+              </CardBody>
+            </Card>
+          </div>
+        </ValidateConfigForm>
 
         <SidebarPortal selected={this.props.selected || false}>
           <Sidebar

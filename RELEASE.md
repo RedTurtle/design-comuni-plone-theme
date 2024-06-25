@@ -29,12 +29,24 @@
 ### Fix
 - ...
 -->
-
 ## Versione X.X.X (dd/mm/yyyy)
+
+
+### Novità
+* Aggiornato il Blocco Form con diverse proprietà aggiuntive:
+  * è possibile aggiungere un testo in header e in footer nell'email inviata,
+  * è stato inserito un nuovo livello di sicurezza OTP nel caso in cui venga scelta l'opzione dell'invio copia della mail,
+  * è stato aggiunto un messaggio personalizzabile da mostrare dopo l'invio del form,
+  * è possibile mostrare un pulsante per il reset dei campi della form,
+  * sono stati sistemati i messaggi d'errore dei campi,
+  * è stata aggiunta una legenda per i campi obbligatori.
+
+
+## Versione 7.28.2 (18/06/2024)
 
 ### Fix
 
-- Blocchi elenco dentro ad un grid con la corretta visualizzazione quando scelto una variazione.
+- Sistemati Blocchi Elenco dentro al un Blocco Grid, ora viene mostrata la variazione scelta.
 
 ## Versione 7.27.1 (10/04/2024)
 

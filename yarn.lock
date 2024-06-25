@@ -12252,7 +12252,7 @@ __metadata:
     volto-customer-satisfaction: 1.0.0
     volto-dropdownmenu: 4.0.0
     volto-editablefooter: 5.0.1
-    volto-form-block: 3.1.0
+    volto-form-block: 3.9.0
     volto-gdpr-privacy: 2.1.0
     volto-google-analytics: 2.0.0
     volto-multilingual-widget: 3.0.0
@@ -28946,18 +28946,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-form-block@npm:3.1.0":
-  version: 3.1.0
-  resolution: "volto-form-block@npm:3.1.0"
+"volto-form-block@npm:3.9.0":
+  version: 3.9.0
+  resolution: "volto-form-block@npm:3.9.0"
   dependencies:
     "@hcaptcha/react-hcaptcha": ^0.3.6
     file-saver: ^2.0.5
     react-google-recaptcha-v3: ^1.8.0
-    volto-subblocks: ^2.0.0
+    volto-subblocks: ^2.1.0
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-    volto-subblocks: ^2.0.0
-  checksum: a8707b864ee32acf99151d302de6389d9a395623b2c384dbae3a1acb9e2b5c57f355f5d9318834fa9e49b004f14f97494534dd435daea65414ddce087e340009
+    volto-subblocks: ^2.1.0
+  checksum: 0019fe78d6d4cdbdf8ce5124132d9b158c103da269ca39b7b3de8e7808d71bca6cef5103feee5d590bcce3e185a7b9f934c50f5266ae86fd4a8eb27d9d146dc9
   languageName: node
   linkType: hard
 
@@ -29022,7 +29022,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-subblocks@npm:2.0.0, volto-subblocks@npm:^2.0.0":
+"volto-subblocks@npm:2.0.0":
   version: 2.0.0
   resolution: "volto-subblocks@npm:2.0.0"
   dependencies:
@@ -29031,6 +29031,18 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
   checksum: 7e4774cd63aad14d46f8371d725d800cc978dafb3672cb9ddb16e032b8fc849948d7e39301c3d55864a40d5143e101fd819165ba5254a016be31812f826c4f76
+  languageName: node
+  linkType: hard
+
+"volto-subblocks@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "volto-subblocks@npm:2.1.0"
+  dependencies:
+    react-dnd: ^5.0.0
+    react-dnd-html5-backend: ^5.0.1
+  peerDependencies:
+    "@plone/volto": ">=16.0.0-alpha.38"
+  checksum: a1cc02ca26176b44398445084c9b90330e898ccb725247f131e71dcc8b1c9e70b3352b8dd4fcf322ea60df7970c02f001454151ab7a82b7a6f6ab96ed4ffc8d5
   languageName: node
   linkType: hard
 

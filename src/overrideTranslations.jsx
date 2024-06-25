@@ -37,4 +37,19 @@ const messages = defineMessages({
     id: 'toggleMenu_close',
     defaultMessage: 'Chiudi',
   },
+  reset: {
+    //volto-form-block
+    id: 'form_reset',
+    defaultMessage: 'Ricomincia',
+  },
+  legend_required: {
+    //volto-form-block
+    id: 'legend_required',
+    defaultMessage: 'I campi contrassegnati da (*) sono obbligatori.',
+  },
+  default_cancel_label: {
+    //volto-form-block
+    id: 'form_default_cancel_label',
+    defaultMessage: 'Annulla',
+  },
 });

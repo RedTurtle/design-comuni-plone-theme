@@ -5,6 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { Dimmer, Button } from 'design-react-kit/dist/design-react-kit';
 import { readAsDataURL } from 'promise-file-reader';
 import { injectIntl, defineMessages, useIntl } from 'react-intl';
@@ -56,13 +57,25 @@ const messages = defineMessages({
  * @returns {string} Markup of the component.
  */
 const FileWidget = (props) => {
-  const { id, value, onChange, label, onEdit, infoText } = props;
+  const {
+    id,
+    value,
+    onChange,
+    label,
+    onEdit,
+    infoText,
+    required,
+    invalid,
+    validationText,
+  } = props;
   const [isImage, setIsImage] = React.useState(false);
   const intl = useIntl();
 
   React.useEffect(() => {
     if (value && imageMimetypes.includes(value['content-type'])) {
       setIsImage(true);
+    } else {
+      setIsImage(false);
     }
   }, [value]);
 
@@ -97,6 +110,16 @@ const FileWidget = (props) => {
     };
     reader.readAsDataURL(files[0]);
   };
+
+  let attributes = {};
+  if (required) {
+    attributes.required = true;
+    attributes['aria-required'] = true;
+  }
+  const isInvalid = invalid === true || invalid === 'true';
+  if (isInvalid) {
+    attributes['aria-invalid'] = true;
+  }
 
   return (
     <div className="form-group ">
@@ -154,12 +177,22 @@ const FileWidget = (props) => {
                   name={id}
                   type="file"
                   disabled={props.disabled || null}
+                  {...attributes}
                 />
               )}
             </div>
           )}
         </Dropzone>
-        {infoText && <small className="form-text text-muted">{infoText}</small>}
+        {infoText && (
+          <small
+            className={cx('form-text', {
+              'invalid-feedback form-feedback just-validate-error-label form-feedback just-validate-error-label':
+                invalid,
+            })}
+          >
+            {infoText}
+          </small>
+        )}
         {value && (
           <div className="field-file-name">
             {value.filename}
@@ -177,6 +210,11 @@ const FileWidget = (props) => {
           </div>
         )}
       </div>
+      {validationText && (
+        <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+          {validationText}
+        </div>
+      )}
     </div>
   );
 };
