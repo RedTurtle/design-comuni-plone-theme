@@ -192,32 +192,6 @@ body.cms-ui {
     }
   }
 
-  .skiplinks {
-    position: absolute;
-    top: -100%;
-
-    a {
-      display: inline-block;
-      color: $link-color;
-
-      &:focus {
-        position: fixed;
-        z-index: 9999;
-        top: 10px;
-        left: 10px;
-        padding: 10px;
-        border: 2px solid $link-color;
-        background: #fff;
-        outline: 3px solid $link-color;
-      }
-
-      &:hover {
-        border-color: $link-color;
-        color: $link-color;
-      }
-    }
-  }
-
   .react-select__menu {
     z-index: 11;
 
@@ -268,6 +242,11 @@ body.cms-ui {
       color: #999 !important;
       fill: #999 !important;
     }
+  }
+
+  /*Block chooser*/
+  [data-popper-placement] {
+    z-index: 1000;
   }
 
   .sidebar-container {
@@ -646,6 +625,12 @@ body.cms-ui {
   }
 
   #page-login {
+    .ui.text.container,
+    .ui.form input[type='text'],
+    .ui.form input[type='password'] {
+      font-family: $font-family-sans-serif;
+    }
+
     .help {
       a {
         color: $link-color;
@@ -703,6 +688,14 @@ body.cms-ui {
     }
   }
 
+  #page-password-reset {
+    &,
+    h1,
+    .ui.message .header {
+      font-family: $font-family-sans-serif;
+    }
+  }
+
   .objectbrowser-field {
     .selected-values {
       .ui.label {
@@ -744,6 +737,22 @@ body.cms-ui {
     @import 'bootstrap/scss/card';
     @import 'bootstrap-italia/src/scss/custom/card';
     @import './bootstrap-override/bootstrap-italia/_card.scss';
+  }
+
+  .recurrence-form {
+    .byday-field {
+      .ui.button {
+        padding: 0px;
+      }
+    }
+
+    .byyear-field {
+      .byyear-byday {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+    }
   }
 }
 

@@ -42,6 +42,8 @@ const SmallBlockLinksTemplate = ({
               item,
               sizes: '(max-width:575px) 520px, 200px',
               style: {},
+              alt: item.title,
+              noWrapLink: true,
             });
 
             return (

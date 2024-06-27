@@ -86,7 +86,7 @@ export default function applyConfig(voltoConfig) {
    * SETTINGS
    ******************************************************************************/
   const voltoSentryOptions = voltoConfig.settings.sentryOptions;
-
+  config.experimental.addBlockButton.enabled = true; //per spostare il bottone di aggiunta dei blocchi in basso, e fare in modo che i bottoni di edit dei blocchi siano usabili anche da tablet/mobile
   config.settings = {
     ...config.settings,
     openExternalLinkInNewTab: true,
@@ -273,7 +273,7 @@ export default function applyConfig(voltoConfig) {
       splitMegamenuColumns: true, //se impostato a false, non spezza le colonne con intestazioni nel megamenu
       footerNavigationDepth: 2, //valori possibili: [1,2]. Se impostato ad 1 non verranno mostrati nel footer i link agli elementi contenuti nelle sezioni di primo livello.
       markSpecialLinks: true, // se impostato a false, non marca con icona i link esterni
-      markFooterLinks: false, // se impostato a true, viene aggiunta un'icona ai link del footer per renderli riconoscibili
+      markFooterLinks: true, // se impostato a true, viene aggiunta un'icona ai link del footer per renderli riconoscibili
     },
     apiExpanders: [
       ...config.settings.apiExpanders,
@@ -344,8 +344,10 @@ export default function applyConfig(voltoConfig) {
   };
 
   config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
-    (route) => route !== '/contact-form',
+    (route) => route !== '/contact-form' && route !== '/diff',
   );
+  config.settings.nonContentRoutes.push(/\/diff$/);
+  config.settings.nonContentRoutes.push('/diff\\?');
   config.settings.nonContentRoutes.push('/release-log');
 
   /******************************************************************************

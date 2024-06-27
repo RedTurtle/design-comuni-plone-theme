@@ -104,6 +104,11 @@ msgstr "Search by topic"
 msgid "Cerca per parola chiave"
 msgstr "Search by keyword"
 
+#: overrideTranslations
+# defaultMessage: Pulisci i campi
+msgid "Clear dates"
+msgstr ""
+
 #: helpers/Translations/searchBlockExtendedTranslations
 # defaultMessage: Clear filters
 msgid "Clear filters"
@@ -781,6 +786,16 @@ msgstr ""
 # defaultMessage: Documenti
 msgid "altri_documenti"
 msgstr "Other documents"
+
+#: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
+# defaultMessage: Altri documenti
+msgid "altri_documenti_persona"
+msgstr "Other documents"
+
+#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
+# defaultMessage: Altri incarichi
+msgid "altri_incarichi"
+msgstr "Other roles"
 
 #: config/Blocks/ListingOptions/cardWithImageTemplate
 # defaultMessage: Mostra l'immagine per tutti gli elementi
@@ -2884,6 +2899,11 @@ msgstr ""
 msgid "quartiere"
 msgstr "District "
 
+#: components/ItaliaTheme/Blocks/Listing/Commons/RassegnaInfo
+# defaultMessage: Rassegna:
+msgid "rassegna_label"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeader
 # defaultMessage: Tempo di lettura
 msgid "reading_time"
@@ -2988,7 +3008,12 @@ msgid "rrule_nd"
 msgstr "nd"
 
 #: overrideTranslations
-# defaultMessage: il
+# defaultMessage: di
+msgid "rrule_on"
+msgstr "on"
+
+#: overrideTranslations
+# defaultMessage: di
 msgid "rrule_on the"
 msgstr "on the"
 
@@ -3275,6 +3300,11 @@ msgstr "Types"
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
 # defaultMessage: Data fine
 msgid "search_endDate"
+msgstr ""
+
+#: components/ItaliaTheme/View/FAQ/FaqFolder/SearchBar
+# defaultMessage: Search icon
+msgid "search_icon"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
@@ -3932,6 +3962,11 @@ msgstr ""
 # defaultMessage: Tipologia del bando
 msgid "tipologia_bando"
 msgstr "Type of call"
+
+#: components/ItaliaTheme/View/EventoView/EventoCosE
+# defaultMessage: Tipo evento
+msgid "tipologia_evento"
+msgstr "Event type"
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo

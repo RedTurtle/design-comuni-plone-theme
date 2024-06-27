@@ -43,9 +43,15 @@ const messages = defineMessages({
     id: 'spese_elettorali',
     defaultMessage: 'Spese elettorali',
   },
+
   variazione_situazione_patrimoniale: {
     id: 'variazione_situazione_patrimoniale',
     defaultMessage: 'Variazione situazione patrimoniale',
+  },
+
+  altri_documenti_persona: {
+    id: 'altri_documenti_persona',
+    defaultMessage: 'Altri documenti',
   },
 });
 
@@ -182,6 +188,19 @@ const PersonaDocumenti = ({ content }) => {
             content={content}
             folder_name={'altre-cariche'}
             // title={intl.formatMessage(messages.altre_cariche)}
+            as_section={false}
+          />
+        </RichTextSection>
+      )}
+      {contentFolderHasItems(content, 'altri-documenti') && (
+        <RichTextSection
+          tag_id="documenti-altri-documenti"
+          title={intl.formatMessage(messages.altri_documenti_persona)}
+        >
+          <Attachments
+            content={content}
+            folder_name={'altri-documenti'}
+            // title={intl.formatMessage(messages.altri_documenti_persona)}
             as_section={false}
           />
         </RichTextSection>
