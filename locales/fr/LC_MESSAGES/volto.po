@@ -1952,6 +1952,11 @@ msgstr "Rendez-vous"
 msgid "expandItems"
 msgstr ""
 
+#: components/ItaliaTheme/manage/Widgets/SearchSectionsConfigurationWidget/SearchSectionsConfigurationForm
+# defaultMessage: Uncheck to omit children items
+msgid "expandItems_description"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza
 msgid "expire"

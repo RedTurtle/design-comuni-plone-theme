@@ -1933,7 +1933,12 @@ msgstr "Appuntamenti"
 #: components/ItaliaTheme/manage/Widgets/SearchSectionsConfigurationWidget/SearchSectionsConfigurationForm
 # defaultMessage: Expand items
 msgid "expandItems"
-msgstr "Espande i sotto-elementi nei filtri di ricerca (togliere la spunta per sezioni con un numero elevato di elementi)"
+msgstr "Espande i sotto-elementi nei filtri di ricerca"
+
+#: components/ItaliaTheme/manage/Widgets/SearchSectionsConfigurationWidget/SearchSectionsConfigurationForm
+# defaultMessage: Uncheck to omit children items
+msgid "expandItems_description"
+msgstr "Togliere la spunta per sezioni con un numero elevato di elementi"
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza

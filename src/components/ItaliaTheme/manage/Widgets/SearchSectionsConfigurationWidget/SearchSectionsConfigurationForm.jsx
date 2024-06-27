@@ -30,6 +30,10 @@ const messages = defineMessages({
     id: 'expandItems',
     defaultMessage: 'Expand items',
   },
+  expandItems_description: {
+    id: 'expandItems_description',
+    defaultMessage: 'Uncheck to omit children items',
+  },
 });
 
 const SearchSectionsConfigurationForm = ({
@@ -123,6 +127,7 @@ const SearchSectionsConfigurationForm = ({
       <CheckboxWidget
           id={`${id}-expandItems`}
           title={intl.formatMessage(messages.expandItems)}
+          description={intl.formatMessage(messages.expandItems_description)}
           value={item.expandItems ?? true}
           onChange={(id, value) => onChangeFormData('expandItems', value)}
         />
