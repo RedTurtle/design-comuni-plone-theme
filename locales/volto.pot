@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-06-21T09:58:51.722Z\n"
+"POT-Creation-Date: 2024-06-27T17:10:09.287Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1932,6 +1932,11 @@ msgstr ""
 msgid "events"
 msgstr ""
 
+#: components/ItaliaTheme/manage/Widgets/SearchSectionsConfigurationWidget/SearchSectionsConfigurationForm
+# defaultMessage: Expand items
+msgid "expandItems"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza
 msgid "expire"
@@ -2134,7 +2139,6 @@ msgstr ""
 msgid "info_color_tertiary"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/BandiSearch/Body
 #: components/ItaliaTheme/Blocks/Calendar/Body
 #: components/ItaliaTheme/Blocks/EventSearch/Body
 #: components/ItaliaTheme/Blocks/UOSearch/Body
@@ -3694,7 +3698,6 @@ msgstr ""
 msgid "variazione_situazione_patrimoniale"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/BandiSearch/Body
 #: components/ItaliaTheme/Blocks/EventSearch/Body
 #: components/ItaliaTheme/Blocks/EventSearch/DefaultFilters
 #: components/ItaliaTheme/Blocks/UOSearch/Body

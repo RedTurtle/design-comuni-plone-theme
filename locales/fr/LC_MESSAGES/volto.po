@@ -1947,6 +1947,11 @@ msgstr "Site Web de l'événement"
 msgid "events"
 msgstr "Rendez-vous"
 
+#: components/ItaliaTheme/manage/Widgets/SearchSectionsConfigurationWidget/SearchSectionsConfigurationForm
+# defaultMessage: Expand items
+msgid "expandItems"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza
 msgid "expire"
@@ -2149,7 +2154,6 @@ msgstr ""
 msgid "info_color_tertiary"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/BandiSearch/Body
 #: components/ItaliaTheme/Blocks/Calendar/Body
 #: components/ItaliaTheme/Blocks/EventSearch/Body
 #: components/ItaliaTheme/Blocks/UOSearch/Body
@@ -3709,7 +3713,6 @@ msgstr "Typologie"
 msgid "variazione_situazione_patrimoniale"
 msgstr "Changement de bilan"
 
-#: components/ItaliaTheme/Blocks/BandiSearch/Body
 #: components/ItaliaTheme/Blocks/EventSearch/Body
 #: components/ItaliaTheme/Blocks/EventSearch/DefaultFilters
 #: components/ItaliaTheme/Blocks/UOSearch/Body
