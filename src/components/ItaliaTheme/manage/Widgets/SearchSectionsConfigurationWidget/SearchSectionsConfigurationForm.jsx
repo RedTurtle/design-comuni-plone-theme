@@ -4,7 +4,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Form, Grid, Button } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import withObjectBrowser from '@plone/volto/components/manage/Sidebar/ObjectBrowser';
-import { TextWidget } from '@plone/volto/components';
+import { TextWidget, CheckboxWidget } from '@plone/volto/components';
 import navTreeSVG from '@plone/volto/icons/nav.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
 
@@ -25,6 +25,14 @@ const messages = defineMessages({
   deleteButton: {
     id: 'searchsectionswidget-deleteitem-button',
     defaultMessage: 'Delete section item',
+  },
+  expandItems: {
+    id: 'expandItems',
+    defaultMessage: 'Expand items',
+  },
+  expandItems_description: {
+    id: 'expandItems_description',
+    defaultMessage: 'Uncheck to omit children items',
   },
 });
 
@@ -115,6 +123,14 @@ const SearchSectionsConfigurationForm = ({
         }
         onChange={(id, value) => onChangeFormData('href', value)}
       />
+
+      <CheckboxWidget
+          id={`${id}-expandItems`}
+          title={intl.formatMessage(messages.expandItems)}
+          description={intl.formatMessage(messages.expandItems_description)}
+          value={item.expandItems ?? true}
+          onChange={(id, value) => onChangeFormData('expandItems', value)}
+        />
 
       <Form.Field inline className="delete wide" id="item-delete">
         <Grid>

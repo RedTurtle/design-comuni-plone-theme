@@ -21,15 +21,6 @@ const messages = defineMessages({
     id: 'find',
     defaultMessage: 'Cerca',
   },
-  insert_filter: {
-    id: 'insert_filter',
-    defaultMessage:
-      'Inserire un filtro dal menù laterale per visualizzare i relativi risultati',
-  },
-  venues: {
-    id: 'venues',
-    defaultMessage: 'Luoghi',
-  },
   noResult: {
     id: 'noResult',
     defaultMessage: 'Nessun risultato trovato',
