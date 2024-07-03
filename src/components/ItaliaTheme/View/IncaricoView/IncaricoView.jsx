@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import moment from 'moment';
+import { compose } from 'redux';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import { defineMessages, useIntl } from 'react-intl';
@@ -25,6 +25,7 @@ import {
 import { contentFolderHasItems } from 'design-comuni-plone-theme/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
 const messages = defineMessages({
   tipologia_incarico: {
@@ -79,8 +80,8 @@ const messages = defineMessages({
  * @param {Object} content Content object.
  * @returns {string} Markup of the component.
  */
-const IncaricoView = (props) => {
-  const { content } = props;
+const IncaricoView = ({ content, moment: momentlib }) => {
+  const moment = momentlib.default;
   const intl = useIntl();
 
   return (
@@ -239,4 +240,4 @@ IncaricoView.propTypes = {
   }).isRequired,
 };
 
-export default injectIntl(IncaricoView);
+export default compose(injectIntl, injectLazyLibs(['moment']))(IncaricoView);
