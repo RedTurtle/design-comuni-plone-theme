@@ -45,6 +45,26 @@
 
 ### Migliorie
 
+- ...
+
+### Novità
+
+- Le informazioni sulla data di inizio e fine incarico sul CT persona vengono ora mostrate subito dopo l'incarico.
+
+### Fix
+
+- ...
+
+## Versione 11.14.0 (21/06/2024)
+
+### Migliorie
+
+- Il pulsante di aggiunta dei blocchi è stato spostato nella parte bassa del blocco (non si trova più alla sua sinistra), per migliorare l'usabilità della gestione dei blocchi anche su mobile/tablet.
+
+## Versione 11.13.0 (12/06/2024)
+
+### Migliorie
+
 - Nel CT Persona viene visualizzato anche il testo del campo "Importi di viaggio e/o servizi" impostato nel CT Incarico collegato e, se presente più di un Incarico collegato, vengono mostrati i link a ciascun Incarico nella sezione "Altri incarichi".
 
 ### Novità
