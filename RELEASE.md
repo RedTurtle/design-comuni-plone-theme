@@ -50,6 +50,11 @@
 ### Novità
 
 - ...
+- ...
+
+### Novità
+
+- Le informazioni sulla data di inizio e fine incarico sul CT persona vengono ora mostrate subito dopo l'incarico.
 
 ### Fix
 
