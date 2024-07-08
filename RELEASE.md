@@ -55,6 +55,12 @@
 
 - ...
 
+## Versione 11.15.0 (05/07/2024)
+
+### Novità
+
+- Le informazioni sulla data di inizio e fine incarico sul CT persona vengono ora mostrate subito dopo l'incarico.
+
 ## Versione 11.14.0 (21/06/2024)
 
 ### Migliorie
