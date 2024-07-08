@@ -41,6 +41,20 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- Il blocco form ha nuove funzionalità come il limite di iscrizioni e la possibilità di impostare un campo come univoco.
+
+### Fix
+
+- ...
+
 ## Versione 11.15.0 (05/07/2024)
 
 ### Novità

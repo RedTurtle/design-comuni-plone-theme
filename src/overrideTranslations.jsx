@@ -68,4 +68,13 @@ defineMessages({
     id: 'Clear dates',
     defaultMessage: 'Pulisci i campi',
   },
+  success_warning: {
+    id: 'form_submit_success_warning',
+    defaultMessage: "Sei stato inserito in lista d'attesa",
+  },
+  success_warning_description: {
+    id: 'form_submit_success_warning_description',
+    defaultMessage:
+      "I tuoi dati sono stati inviati, ma è già stato raggiunto il limite di iscrizioni, sei stato inserito in lista d'attesa.",
+  },
 });
