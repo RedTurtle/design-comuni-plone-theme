@@ -41,11 +41,6 @@
 - ...
 -->
 
-## Versione xx.xx.xx (dd/mm/yyyy)
-
-### Novità
-
-- aggiunti due campi nel blocco Form che permette di configurare un testo per l'intestazione e uno a piè di pagina nella mail inviata
 ## Versione X.X.X (dd/mm/yyyy)
 
 ### Migliorie
@@ -54,7 +49,7 @@
 
 ### Novità
 
-- ...
+- Aggiunti due campi nel blocco Form che permettono di configurare un testo per l'intestazione e uno a piè di pagina nella mail inviata.
 
 ### Fix
 
