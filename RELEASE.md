@@ -63,10 +63,6 @@
 
 ## Versione 11.14.0 (21/06/2024)
 
-### Fix
-
-- il pulsante di aggiunta del blocco è stato spostato nella parte bassa del blocco (non si trova più alla sua sinistra), per migliorare l'usabilità della gestione dei blocchi anche su mobile/tablet
-
 ### Migliorie
 
 - Il pulsante di aggiunta dei blocchi è stato spostato nella parte bassa del blocco (non si trova più alla sua sinistra), per migliorare l'usabilità della gestione dei blocchi anche su mobile/tablet.
