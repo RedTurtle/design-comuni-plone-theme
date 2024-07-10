@@ -4,9 +4,7 @@
  */
 
 import React from 'react';
-import { compose } from 'redux';
 import PropTypes from 'prop-types';
-import { injectIntl } from 'react-intl';
 import { defineMessages, useIntl } from 'react-intl';
 import {
   PageHeader,
@@ -240,4 +238,4 @@ IncaricoView.propTypes = {
   }).isRequired,
 };
 
-export default compose(injectIntl, injectLazyLibs(['moment']))(IncaricoView);
+export default injectLazyLibs(['moment'])(IncaricoView);
