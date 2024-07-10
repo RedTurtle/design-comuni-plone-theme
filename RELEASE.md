@@ -41,6 +41,28 @@
 - ...
 -->
 
+## Versione 11.16.0 (10/07/2024)
+
+### Migliorie
+
+- Tutti i campi compilabili nel CT Incarico vengono ora visualizzati nella vista corrispondente.
+
+### Novità
+
+- Aggiunti due campi nel blocco Form che permettono di configurare un testo per l'intestazione e uno a piè di pagina nella mail inviata.
+
+## Versione 11.15.0 (05/07/2024)
+
+### Novità
+
+- Le informazioni sulla data di inizio e fine incarico sul CT persona vengono ora mostrate subito dopo l'incarico.
+
+## Versione 11.14.0 (21/06/2024)
+
+### Migliorie
+
+- Il pulsante di aggiunta dei blocchi è stato spostato nella parte bassa del blocco (non si trova più alla sua sinistra), per migliorare l'usabilità della gestione dei blocchi anche su mobile/tablet.
+
 ## Versione 11.13.0 (12/06/2024)
 
 ### Migliorie

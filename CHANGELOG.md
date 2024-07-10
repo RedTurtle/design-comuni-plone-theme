@@ -1,5 +1,60 @@
 
 
+## [11.16.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.15.0...v11.16.0) (2024-07-10)
+
+
+### Features
+
+* added date fields to incarico view ([#711](https://github.com/RedTurtle/design-comuni-plone-theme/issues/711)) ([038ef58](https://github.com/RedTurtle/design-comuni-plone-theme/commit/038ef5803af9bcb417fc757bb8ee6a57e065bad7))
+* updated volto-form-block v3.9.2 ([#709](https://github.com/RedTurtle/design-comuni-plone-theme/issues/709)) ([1b9fde0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1b9fde00f01f646eb27f088e09e662c9c1c8d9d6))
+
+
+### Bug Fixes
+
+* update to volto 17.18.2 ([c1ce5ac](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c1ce5ac3239b77b819909e224cbb07f0097230ea))
+
+
+### Documentation
+
+* updated publiccode and release log ([5ea19f6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5ea19f65ffeac054e318c77014d4a0bab478415f))
+
+## [11.15.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.14.0...v11.15.0) (2024-07-05)
+
+
+### Features
+
+* moved start and end date of incarico after incarico name ([#715](https://github.com/RedTurtle/design-comuni-plone-theme/issues/715)) ([c07c1ea](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c07c1ea41b3534ad0c05ba2b9990c7b1c8f226ff))
+* update to volto 17.18.1 ([8896926](https://github.com/RedTurtle/design-comuni-plone-theme/commit/889692614b5728bd812754dea9191c5bcb127a0a))
+
+
+### Bug Fixes
+
+* updated form validation customization ([f3d2e72](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f3d2e72b47c8ce33326d0b4b5ca87daf9e874668))
+* upgrade dependencies ([4ea3806](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4ea38067018f2bbd35566b4d70ed87e9362988ef))
+
+
+### Documentation
+
+* updated publiccode and release log ([91a58b6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/91a58b6f124da03e10437c0ee4f48b9545d51ddf))
+
+## [11.14.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.13.0...v11.14.0) (2024-06-21)
+
+
+### Features
+
+* button block pos editor ([#704](https://github.com/RedTurtle/design-comuni-plone-theme/issues/704)) ([8cf55af](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8cf55afe4d2864ec72a2eba166d9e838b2304899))
+
+
+### Bug Fixes
+
+* megamenu active item ([#703](https://github.com/RedTurtle/design-comuni-plone-theme/issues/703)) ([f6668ef](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f6668ef7e7f6eaf624a3c3bd2eaf557d7f32ac14))
+* volto-form-block form result ([#700](https://github.com/RedTurtle/design-comuni-plone-theme/issues/700)) ([746502f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/746502f827359205374d54eda99ac4efd47502ba))
+
+
+### Documentation
+
+* updated publiccode and release log ([309474a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/309474adfde862d56c35c9b0832925cc157ecef0))
+
 ## [11.13.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.12.9...v11.13.0) (2024-06-12)
 
 
