@@ -46,6 +46,25 @@
 ### Novità
 
 - aggiunti due campi nel blocco Form che permette di configurare un testo per l'intestazione e uno a piè di pagina nella mail inviata
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Tutti i campi compilabili nel CT Incarico vengono ora visualizzati nella vista corrispondente.
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
+## Versione 11.15.0 (05/07/2024)
+
+### Novità
+
+- Le informazioni sulla data di inizio e fine incarico sul CT persona vengono ora mostrate subito dopo l'incarico.
 
 ## Versione 11.14.0 (21/06/2024)
 
