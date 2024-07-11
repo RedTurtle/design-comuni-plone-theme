@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-06-25T10:03:45.105Z\n"
+"POT-Creation-Date: 2024-07-11T10:18:48.032Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -2134,6 +2134,16 @@ msgstr ""
 msgid "feedback_unclear_proceeding"
 msgstr ""
 
+#: overrideTranslations
+# defaultMessage: Check this box if the value entered in this field can be used only once.
+msgid "field_unique_description"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Unique field
+msgid "field_unique_title"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: File correlato
@@ -2169,8 +2179,18 @@ msgid "form_default_cancel_label"
 msgstr ""
 
 #: overrideTranslations
+# defaultMessage: Submission limit
+msgid "form_limit"
+msgstr ""
+
+#: overrideTranslations
 # defaultMessage: Ricomincia
 msgid "form_reset"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Set a submission limit
+msgid "form_set_limit"
 msgstr ""
 
 #: overrideTranslations
