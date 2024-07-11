@@ -71,24 +71,18 @@ const FormResult = ({ formState, data, resetFormState }) => {
       <br />
       {/* Custom message */}
       {!formState.warning ? (
-        (
-          data.send_message && (
-            <>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: replaceMessage(
-                    data.send_message,
-                    formState.result.data,
-                  ),
-                }}
-              />
-              <br />
-            </>
-          )
-        )(
+        data.send_message && (
           <>
-            <p>{intl.formatMessage(messages.success_warning_description)}</p>
-          </>,
+            <p
+              dangerouslySetInnerHTML={{
+                __html: replaceMessage(
+                  data.send_message,
+                  formState.result.data,
+                ),
+              }}
+            />
+            <br />
+          </>
         )
       ) : (
         <>
