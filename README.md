@@ -5,7 +5,7 @@ conforme alle nuove linee guida AgID, accessibile a tutti ed usabile da smartpho
 
 ![io-comune](/docs/01-io-comune.png)
 
-### AgID 3.0
+### AgID 3.0 ciaobel2
 
 io-Comune segue le linee guida ufficiali per il design dei siti web dei Comuni italiani: layout grafico, architettura informativa, struttura dei contenuti e flussi di navigazione rispecchiano gli standard definiti da AgID.
 
