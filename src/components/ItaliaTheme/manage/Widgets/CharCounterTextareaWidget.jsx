@@ -68,7 +68,7 @@ const CharCounterTextareaWidget = (props) => {
       >
         {value?.length ?? 0}/{maxLength}
       </span>
-      {forceMaxLength && textChar.length > maxLength && (
+      {textChar.length > maxLength && (
         <Label basic color="red" pointing>
           {intl.formatMessage(messages.exceeded_chars)}
         </Label>
