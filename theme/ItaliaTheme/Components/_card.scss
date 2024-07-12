@@ -1,0 +1,88 @@
+.public-ui {
+  .card-title {
+    margin: 0 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1em;
+
+    a {
+      color: $primary;
+      font-size: 1.125rem;
+      line-height: 1.625rem;
+    }
+  }
+
+  .genericcard {
+    .card-title {
+      margin: 0 !important;
+      margin-bottom: 0.625rem !important;
+      line-height: 1em;
+
+      a {
+        color: $primary;
+        font-size: 1.125rem;
+        line-height: 1.625rem;
+      }
+    }
+  }
+
+  .card-wrapper.card-teaser-wrapper > .card-teaser {
+    &.attachment {
+      flex-wrap: nowrap;
+
+      .card-title {
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .card-body {
+      .category-top {
+        hyphens: auto;
+      }
+    }
+  }
+
+  .card.bigborder {
+    border: 1px solid #d9dadb;
+    border-left-width: 10px !important;
+  }
+}
+
+.custom-calendar-card {
+  .card-calendar.extended {
+    width: 100px;
+
+    .card-date .date-label {
+      @include rem-size(font-size, 16);
+      font-weight: 600;
+
+      + .date {
+        @include rem-size(font-size, 20);
+      }
+    }
+  }
+
+  .card-calendar {
+    .card-date {
+      .date {
+        font-family: $font-family-sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        line-height: 1.4rem;
+
+        &.day {
+          @include rem-size(font-size, 28);
+          @include rem-size(line-height, 28);
+        }
+
+        &.month {
+          font-weight: 600;
+          text-transform: capitalize;
+          @include rem-size(font-size, 16);
+          @include rem-size(line-height, 21.1);
+        }
+      }
+    }
+  }
+}
