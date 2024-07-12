@@ -11,16 +11,20 @@ import { Button } from 'design-react-kit/dist/design-react-kit';
 import config from '@plone/volto/registry';
 
 const LoginButton = ({ children, size = 'full' }) => {
-  let [loginURL, setLoginURL] = useState(
+  const [loginURL, setLoginURL] = useState(
     config.settings.siteProperties?.arLoginUrl,
   );
 
   useEffect(() => {
     if (loginURL && __CLIENT__) {
-      if (loginURL.indexOf('came_from') < 0) {
-        let came_from = loginURL.indexOf('?') >= 0 ? '&' : '?';
-        came_from += 'came_from=' + window?.location?.href ?? '';
-        setLoginURL(loginURL + came_from);
+      const current = window?.location?.href;
+      if (
+        current &&
+        loginURL.indexOf('came_from') < 0 &&
+        current.indexOf('came_from') < 0
+      ) {
+        const sep = loginURL.indexOf('?') >= 0 ? '&' : '?';
+        setLoginURL(`${loginURL}${sep}came_from=${current}`);
       }
     }
   }, []);
