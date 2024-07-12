@@ -15,7 +15,7 @@ io-Comune è [pubblicato](https://developers.italia.it/it/software/italia-design
 ### Pensato per i cittadini, costruito con i redattori
 
 io-Comune è la soluzione versatile e facile da usare per garantire ai cittadini un rapido accesso ai contenuti e ai servizi del tuo Comune, sia dal PC che da mobile.      
-      
+      ciaobel
 ### Trovabilità dei contenuti
 
 io-Comune integra componenti e flussi di navigazione suggeriti da AgID, con l'esperienza ventennale di [RedTurtle](https://www.redturtle.it/) nella gestione di complesse basi informative per darti la migliore esperienza di fruizione e portarti velocemente al contenuto desiderato.
