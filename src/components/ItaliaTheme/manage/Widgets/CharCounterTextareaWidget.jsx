@@ -42,17 +42,16 @@ const CharCounterTextareaWidget = (props) => {
       <TextArea
         id={`field-${id}`}
         name={id}
-        value={value?.slice(0, 255) || ''}
+        value={value?.slice(0, forceMaxLength ? maxLength : 5000) || ''}
         disabled={props.isDisabled}
         placeholder={placeholder}
         onChange={({ target }) => {
           setTextChar(target.value);
           onChange(
             id,
-            target.value === '' ? undefined : target.value.slice(0, 255),
+            target.value === '' ? undefined : target.value.slice(0, forceMaxLength ? maxLength : 5000),
           );
         }}
-        // maxLength={(forceMaxLength && maxLength) || null}
       />
       {/* forceMaxLength &&  */}
       <span
