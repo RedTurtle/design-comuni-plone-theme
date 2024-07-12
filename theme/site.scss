@@ -1,6 +1,7 @@
 @import 'site-variables';
 @import 'bootstrap-override/bootstrap-italia-site';
 @import 'cms-ui';
+@import 'mixins';
 @import 'extras/blocks';
 @import 'extras/sidebar';
 @import 'extras/toolbar';
@@ -25,6 +26,7 @@
 @import 'ItaliaTheme/Addons/customerSatisfaction';
 @import 'ItaliaTheme/Addons/volto-gdpr-privacy';
 @import 'ItaliaTheme/Components/unauthorized';
+@import 'ItaliaTheme/Components/card';
 @import 'ItaliaTheme/Components/parentSiteMenu';
 @import 'ItaliaTheme/Components/tertiaryMenu';
 @import 'ItaliaTheme/Components/subsiteHeader';
