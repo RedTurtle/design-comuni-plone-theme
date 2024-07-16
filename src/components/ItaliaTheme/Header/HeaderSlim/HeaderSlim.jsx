@@ -26,7 +26,7 @@ const HeaderSlim = () => {
 
   const staticParentSiteTitle = getSiteProperty('parentSiteTitle', intl.locale);
 
-  const parentSiteTitle = SiteProperty({
+  const subsiteParentSiteTitle = SiteProperty({
     property: 'site_title',
     defaultValue: getSiteProperty('subsiteParentSiteTitle', intl.locale),
     getValue: true,
@@ -44,7 +44,7 @@ const HeaderSlim = () => {
           rel="noopener noreferrer"
         >
           {!subsite && staticParentSiteTitle}
-          {subsite && parentSiteTitle.replaceAll('\\n', ' - ')}
+          {subsite && subsiteParentSiteTitle.replaceAll('\\n', ' - ')}
         </HeaderBrand>
         <HeaderRightZone>
           <HeaderSlimRightZone />
