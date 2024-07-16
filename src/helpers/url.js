@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useIntl } from 'react-intl';
 
 import config from '@plone/volto/registry';
-import { useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 export const useHomePath = () => {
   const [path, setPath] = useState('/');
 
-  const locale = useSelector((state) => state.intl.locale);
-  //const { pathname } = useLocation();
+  const { locale } = useIntl();
 
   useEffect(() => {
     setPath(config.settings.isMultilingual ? '/' + locale : '/');
