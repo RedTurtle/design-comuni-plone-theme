@@ -1,5 +1,68 @@
 
 
+## [11.17.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.16.0...v11.17.0) (2024-07-16)
+
+
+### Features
+
+* Site settings to manage title, logo, favicon  ([#666](https://github.com/RedTurtle/design-comuni-plone-theme/issues/666)) ([fecf6c2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fecf6c25281016e6e893c85bfcdce28e5d5967c7))
+
+
+### Bug Fixes
+
+* added check for subsite to path in venue query for events search filter ([#718](https://github.com/RedTurtle/design-comuni-plone-theme/issues/718)) ([cd96ee0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/cd96ee0c77e2bb91225528db7c85ffdf824f66d5))
+* backward compatibility for new site settings panel ([f186923](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f1869233022ba4372b78c8b404034b1e97b708e2))
+* better variables naming and resolved minor warnings ([4eb0c8d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4eb0c8d630bec8cb830a1903d4f3d6643a1dd2a4))
+* blocks widget table block toolbar position ([#716](https://github.com/RedTurtle/design-comuni-plone-theme/issues/716)) ([a116542](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a116542fa741193fe754417e3cd777a2b7c375eb))
+* home link per languageRootFoolder ([#724](https://github.com/RedTurtle/design-comuni-plone-theme/issues/724)) ([5b0f809](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5b0f8099ec411a86d63c0a755451615f28238f3c))
+
+
+### Maintenance
+
+* resolve linting issue ([c67a574](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c67a574480053edd493d54729489b2e58e301323))
+
+
+### Documentation
+
+* updated publiccode and release log ([f7becf8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f7becf81ef119ce1dc9c5b1138dd77e71a5c1754))
+
+## [11.16.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.15.0...v11.16.0) (2024-07-10)
+
+
+### Features
+
+* added date fields to incarico view ([#711](https://github.com/RedTurtle/design-comuni-plone-theme/issues/711)) ([038ef58](https://github.com/RedTurtle/design-comuni-plone-theme/commit/038ef5803af9bcb417fc757bb8ee6a57e065bad7))
+* updated volto-form-block v3.9.2 ([#709](https://github.com/RedTurtle/design-comuni-plone-theme/issues/709)) ([1b9fde0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1b9fde00f01f646eb27f088e09e662c9c1c8d9d6))
+
+
+### Bug Fixes
+
+* update to volto 17.18.2 ([c1ce5ac](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c1ce5ac3239b77b819909e224cbb07f0097230ea))
+
+
+### Documentation
+
+* updated publiccode and release log ([5ea19f6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5ea19f65ffeac054e318c77014d4a0bab478415f))
+
+## [11.15.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.14.0...v11.15.0) (2024-07-05)
+
+
+### Features
+
+* moved start and end date of incarico after incarico name ([#715](https://github.com/RedTurtle/design-comuni-plone-theme/issues/715)) ([c07c1ea](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c07c1ea41b3534ad0c05ba2b9990c7b1c8f226ff))
+* update to volto 17.18.1 ([8896926](https://github.com/RedTurtle/design-comuni-plone-theme/commit/889692614b5728bd812754dea9191c5bcb127a0a))
+
+
+### Bug Fixes
+
+* updated form validation customization ([f3d2e72](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f3d2e72b47c8ce33326d0b4b5ca87daf9e874668))
+* upgrade dependencies ([4ea3806](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4ea38067018f2bbd35566b4d70ed87e9362988ef))
+
+
+### Documentation
+
+* updated publiccode and release log ([91a58b6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/91a58b6f124da03e10437c0ee4f48b9545d51ddf))
+
 ## [11.14.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.13.0...v11.14.0) (2024-06-21)
 
 
