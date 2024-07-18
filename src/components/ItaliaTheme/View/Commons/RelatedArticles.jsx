@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { OfficeCard } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
-import { usePaginatedCardsSection } from 'design-comuni-plone-theme/helpers';
+import { usePaginatedItemsSection } from 'design-comuni-plone-theme/helpers';
 import { Pagination } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const RelatedArticles = ({
@@ -15,7 +15,7 @@ const RelatedArticles = ({
   noMargin = false,
 }) => {
   const { batches, currentPage, onPaginationChange, pageNumbers } =
-    usePaginatedCardsSection({ data: items });
+    usePaginatedItemsSection({ data: items });
 
   return (
     <article

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import type { IntlShape } from 'react-intl';
 
-interface usePaginatedCardsSectionProps {
+interface usePaginatedItemsSectionProps {
   data: Array<any> | null | undefined;
   bSize?: number;
 }
@@ -26,8 +26,8 @@ type PaginationFunctionExtraArgs = {
 
 export const DEFAULT_PAGINATED_CARDS_SECTION_BSIZE = 4;
 
-function divideServicesIntoBatches(
-  arr: usePaginatedCardsSectionProps['data'],
+function getBatches(
+  arr: usePaginatedItemsSectionProps['data'],
   batchSize: number,
 ): any[][] {
   const batches = [];
@@ -39,10 +39,10 @@ function divideServicesIntoBatches(
   return batches;
 }
 
-export function usePaginatedCardsSection({
+export function usePaginatedItemsSection({
   data,
   bSize = DEFAULT_PAGINATED_CARDS_SECTION_BSIZE,
-}: usePaginatedCardsSectionProps) {
+}: usePaginatedItemsSectionProps) {
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const pageNumbers = data ? Math.ceil(data.length / bSize) : 0;
@@ -56,7 +56,7 @@ export function usePaginatedCardsSection({
   };
   const batches: Array<any> = useMemo(() => {
     const currentIndex = currentPage - 1;
-    return divideServicesIntoBatches(data, bSize)[currentIndex];
+    return getBatches(data, bSize)[currentIndex];
   }, [data, bSize, currentPage]);
 
   return { batches, currentPage, onPaginationChange, pageNumbers };

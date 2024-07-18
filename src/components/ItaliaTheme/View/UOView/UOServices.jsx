@@ -11,7 +11,7 @@ import {
 } from 'design-react-kit';
 import { Pagination } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { UniversalLink } from '@plone/volto/components';
-import { usePaginatedCardsSection } from 'design-comuni-plone-theme/helpers';
+import { usePaginatedItemsSection } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   servizi_offerti: {
@@ -28,7 +28,7 @@ const UOServices = ({ content }) => {
       ? []
       : content.servizi_offerti;
   const { batches, currentPage, onPaginationChange, pageNumbers } =
-    usePaginatedCardsSection({ data: servizi_offerti });
+    usePaginatedItemsSection({ data: servizi_offerti });
 
   return content?.servizi_offerti?.length > 0 ? (
     <section
