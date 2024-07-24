@@ -29,10 +29,12 @@ const BrandText = ({ mobile = false }) => {
 
   return (
     <div className="it-brand-text">
-      {title && <div className="it-brand-title">{title}</div>}
+      {title && <div className="it-brand-title h2">{title}</div>}
       {description && (
         <div
-          className={cx('it-brand-tagline', { 'd-none d-md-block': !mobile })}
+          className={cx('it-brand-tagline h3', {
+            'd-none d-md-block': !mobile,
+          })}
         >
           {description}
         </div>
