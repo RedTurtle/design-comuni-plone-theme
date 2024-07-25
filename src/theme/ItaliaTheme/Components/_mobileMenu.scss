@@ -32,16 +32,16 @@
             }
           }
 
-          h2 {
-            margin-bottom: 0;
+          .it-brand-title {
             color: $text-color;
-            font-size: 1.5rem;
+            font-size: 1.333rem;
+            font-weight: 700;
           }
 
-          h3 {
-            margin-bottom: 0;
+          .it-brand-tagline {
             color: $gray-secondary;
             font-size: 1rem;
+            font-weight: 700;
           }
 
           svg {
