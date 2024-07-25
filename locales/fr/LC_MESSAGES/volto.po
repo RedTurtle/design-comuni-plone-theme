@@ -3583,11 +3583,6 @@ msgstr "terme"
 msgid "termini_del_procedimento"
 msgstr "Termes de la procédure"
 
-#: config/RichTextEditor/ToolbarButtons/TextSizeButton
-# defaultMessage: Dimensione del testo
-msgid "text-size-button"
-msgstr ""
-
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/TextFilter
 # defaultMessage: Inserisci un valore
 msgid "text_filter_placeholder"
