@@ -1,3 +1,16 @@
+### [7.29.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.29.0...v7.29.1) (2024-07-25)
+
+
+### Bug Fixes
+
+* fixed list style format in sidebar context and TextSize icon ([#729](https://github.com/RedTurtle/design-comuni-plone-theme/issues/729)) ([7addcf3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7addcf32f830929035ee828e2d97f443936159f2))
+* view dates for Events in Listing image template ([#717](https://github.com/RedTurtle/design-comuni-plone-theme/issues/717)) ([0b2d71d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0b2d71d7699be7fa1f8bf21ac575b354a2f2dda9))
+
+
+### Maintenance
+
+* updated locales ([7450b03](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7450b036c70ef9539efc7a8dbc45b950d5449683))
+
 ## [7.29.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.28.5...v7.29.0) (2024-07-03)
 
 
