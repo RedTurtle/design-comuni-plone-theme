@@ -21,13 +21,13 @@ const NewsItemText = ({ content }) => {
   // (richtext senza blocchi).
   //
   // TODO: al momento viene presentato uno solo dei due, valutare se
-  // mettere entrambi, il componente comunqu non mostra nulla se il
+  // mettere entrambi, il componente comunque non mostra nulla se il
   // contenuto è vuoto.
   //
   // La condizione sul campo descrizione_estesa è volutamente semplificata
   // senza `richTextHasContent` perchè non interessa tanto se il campo
   // ha o non ha contenuto, ma se il campo esiste o non esiste
-  return content.descrizione_estesa ? (
+  return Object.hasOwn(content, 'descrizione_estesa') ? (
     <RichTextSection
       data={content.descrizione_estesa}
       tag_id={'text-body'}
