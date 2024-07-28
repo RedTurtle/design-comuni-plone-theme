@@ -39,6 +39,7 @@ const NewsItemText = ({ content }) => {
 NewsItemText.propTypes = {
   content: PropTypes.shape({
     descrizione_estesa: PropTypes.object,
+    text: PropTypes.object,
   }).isRequired,
 };
 
