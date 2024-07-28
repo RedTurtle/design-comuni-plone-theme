@@ -20,10 +20,6 @@ const NewsItemText = ({ content }) => {
   // altri CT (come i Comunicati Stampa) potrebbero avere `text`
   // (richtext senza blocchi).
   //
-  // TODO: al momento viene presentato uno solo dei due, valutare se
-  // mettere entrambi, il componente comunque non mostra nulla se il
-  // contenuto è vuoto.
-  //
   // La condizione sul campo descrizione_estesa è volutamente semplificata
   // senza `richTextHasContent` perchè non interessa tanto se il campo
   // ha o non ha contenuto, ma se il campo esiste o non esiste
