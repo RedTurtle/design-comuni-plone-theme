@@ -4,6 +4,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import {
   RichText,
   RichTextSection,
+  richTextHasContent,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
@@ -23,17 +24,25 @@ const NewsItemText = ({ content }) => {
   // La condizione sul campo descrizione_estesa è volutamente semplificata
   // senza `richTextHasContent` perchè non interessa tanto se il campo
   // ha o non ha contenuto, ma se il campo esiste o non esiste
-  return Object.hasOwn(content, 'descrizione_estesa') ? (
-    <RichTextSection
-      data={content.descrizione_estesa}
-      tag_id={'text-body'}
-      field="descrizione_estesa"
-      title={intl.formatMessage(messages.news_item_contenuto)}
-      show_title={false}
-    />
-  ) : (
-    <RichText data={content.text} />
-  );
+  return Object.hasOwn(content, 'descrizione_estesa')
+    ? richTextHasContent(content.descrizione_estesa) && (
+        <RichTextSection
+          data={content.descrizione_estesa}
+          tag_id={'text-body'}
+          field="descrizione_estesa"
+          title={intl.formatMessage(messages.news_item_contenuto)}
+          show_title={false}
+        />
+      )
+    : content.text && (
+        <RichTextSection
+          tag_id={'text-body'}
+          title={intl.formatMessage(messages.news_item_contenuto)}
+          show_title={false}
+        >
+          <RichText data={content.text} />
+        </RichTextSection>
+      );
 };
 
 NewsItemText.propTypes = {
