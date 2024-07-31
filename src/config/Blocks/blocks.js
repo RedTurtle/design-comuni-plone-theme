@@ -61,7 +61,7 @@ import {
 import newsSVG from '@plone/volto/icons/news.svg';
 import {
   HighlightedContentView,
-  getHiglitedContentAsyncData,
+  // getHiglitedContentAsyncData,
   HighlightedContentEdit,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HighlightedContent';
 
@@ -119,7 +119,7 @@ const italiaBlocks = {
       view: [],
     },
     sidebarTab: 1,
-    getAsyncData: getHiglitedContentAsyncData,
+    // getAsyncData: getHiglitedContentAsyncData,
   },
   searchSections: {
     id: 'searchSections',
