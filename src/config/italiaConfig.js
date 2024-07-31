@@ -35,6 +35,8 @@ import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/A
 import PageLoader from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/PageLoader';
 import TrackFocus from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/TrackFocus';
 import redraft from 'redraft';
+
+import SiteSettingsExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/SiteSettingsExtras';
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
 
 // CTs icons
@@ -127,6 +129,16 @@ export default function applyConfig(voltoConfig) {
         errorPages: true,
       },
     },
+    /*
+      Set to 100mb in BINARY bytes, not decimal, see volto/helpers/FormValidation.js.validateFileUploadSize error message
+      ...
+      messages.fileTooLarge, {
+        limit: `${Math.floor(
+          config.settings.maxFileUploadSize / 1024 / 1024,
+        )}MB`,
+      }
+    */
+    maxFileUploadSize: 104857600,
     querystringAdditionalFields: [],
     searchBlockTemplates: [
       'simpleCard',
@@ -300,8 +312,11 @@ export default function applyConfig(voltoConfig) {
         match: '',
         component: TrackFocus,
       },
+      {
+        match: '',
+        component: SiteSettingsExtras,
+      },
     ],
-    maxFileUploadSize: null,
     'volto-blocks-widget': {
       allowedBlocks: [
         ...(config.settings['volto-blocks-widget']?.allowedBlocks ?? []).filter(
@@ -520,6 +535,10 @@ export default function applyConfig(voltoConfig) {
     ...config.components,
     BlockExtraTags: { component: () => null },
   };
+  config.registerComponent({
+    name: 'SiteSettingsExtras',
+    component: SiteSettingsExtras,
+  });
 
   // REDUCERS
   config.addonReducers = {

@@ -13,19 +13,35 @@ import {
   HeaderRightZone,
 } from 'design-react-kit';
 import { useIntl } from 'react-intl';
-import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
+import {
+  getSiteProperty,
+  useHomePath,
+} from 'design-comuni-plone-theme/helpers';
+import { SiteProperty } from 'volto-site-settings';
 
 const HeaderSlim = () => {
   const subsite = useSelector((state) => state.subsite?.data);
   const intl = useIntl();
-
+  const homepath = useHomePath();
   const parentSiteURL = subsite
-    ? '/'
+    ? homepath
     : getSiteProperty('parentSiteURL', intl.locale);
 
-  const parentSiteTile = subsite
-    ? getSiteProperty('subsiteParentSiteTitle', intl.locale)
-    : getSiteProperty('parentSiteTitle', intl.locale);
+  const staticParentSiteTitle = getSiteProperty('parentSiteTitle', intl.locale);
+
+  // TODO DEPRECATED use only SiteProperty
+  const deprecatedSubsiteParentSiteTitle = getSiteProperty(
+    'subsiteParentSiteTitle',
+    intl.locale,
+  );
+
+  const subsiteParentSiteTitle = SiteProperty({
+    property: 'site_title',
+    forceValue: deprecatedSubsiteParentSiteTitle,
+    defaultValue: getSiteProperty('subsiteParentSiteTitle', intl.locale),
+    getValue: true,
+    getParent: true,
+  });
 
   const target = subsite ? null : '_blank';
   return (
@@ -37,7 +53,8 @@ const HeaderSlim = () => {
           target={target}
           rel="noopener noreferrer"
         >
-          {parentSiteTile}
+          {!subsite && staticParentSiteTitle}
+          {subsite && (subsiteParentSiteTitle?.replaceAll('\\n', ' - ') ?? '')}
         </HeaderBrand>
         <HeaderRightZone>
           <HeaderSlimRightZone />

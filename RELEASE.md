@@ -41,6 +41,54 @@
 - ...
 -->
 
+## Versione 11.18.2 (25/07/2024)
+
+### Fix
+
+- Nel CT Persona, tutte le sezioni Incarico appaiono ora nel menu
+
+## Versione 11.18.1 (25/07/2024)
+
+### Fix
+
+- Migliorata la visualizzazione delle card risultato nella ricerca Eventi e Unità Organizzativa.
+
+## Versione 11.18.0 (19/07/2024)
+
+### Migliorie
+
+- Aggiunta la paginazione per le card presenti sotto i campi "Sede di" e "Servizi presenti nel luogo", ora verranno mostrati solo 4 elementi alla volta.
+
+## Versione 11.17.0 (16/07/2024)
+
+### Novità
+
+- Ora il titolo, sottotitolo, favicon, logo e logo del footer sono editabili dal pannello di controllo del Sito. Se non impostati, verranno usati quelli definiti dagli sviluppatori.
+
+### Fix
+
+- Ripristinato il funzionamento del filtro luogo nella ricerca eventi.
+
+### Migliorie
+
+- Viene ora mostrato un errore parlante nel caso si tenti di caricare un file che superi le dimensioni massime consentite, di default 100mb, come già esplicitato sul manuale utente.
+
+## Versione 11.16.0 (10/07/2024)
+
+### Migliorie
+
+- Tutti i campi compilabili nel CT Incarico vengono ora visualizzati nella vista corrispondente.
+
+### Novità
+
+- Aggiunti due campi nel blocco Form che permettono di configurare un testo per l'intestazione e uno a piè di pagina nella mail inviata.
+
+## Versione 11.15.0 (05/07/2024)
+
+### Novità
+
+- Le informazioni sulla data di inizio e fine incarico sul CT persona vengono ora mostrate subito dopo l'incarico.
+
 ## Versione 11.14.0 (21/06/2024)
 
 ### Migliorie
