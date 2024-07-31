@@ -6,12 +6,12 @@ export getHiglitedContentAsyncData from 'design-comuni-plone-theme/components/It
 export const HighlightedContentEdit = loadable(
   () =>
     import(
-      /* webpackChunkName: "DCPTMange" */ 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HighlightedContent/Edit'
+      /* webpackChunkName: "DCPTManage" */ 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HighlightedContent/Edit'
     ),
 );
 export const Sidebar = loadable(
   () =>
     import(
-      /* webpackChunkName: "DCPTMange" */ 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HighlightedContent/Sidebar'
+      /* webpackChunkName: "DCPTManage" */ 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HighlightedContent/Sidebar'
     ),
 );
