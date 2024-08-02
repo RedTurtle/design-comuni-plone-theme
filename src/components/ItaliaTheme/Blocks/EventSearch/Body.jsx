@@ -140,7 +140,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
     return newState;
   };
 
-  const filtersConfig = FiltersConfig(null);
+  const filtersConfig = FiltersConfig({ data });
   const getInitialState = () => {
     return {
       filterOne: filtersConfig[data?.filter_one],
