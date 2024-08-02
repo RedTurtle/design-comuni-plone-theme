@@ -1,3 +1,15 @@
+## [7.30.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.29.1...v7.30.0) (2024-08-02)
+
+
+### Features
+
+* passed data config to FiltersConfig of EventsSearch block ([f32f9ed](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f32f9edd27fb20982283f7b4ea63f41a2a122ac1))
+
+
+### Maintenance
+
+* preparing release ([1092d6b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1092d6b5fe5e370f77b76592300b8826f5dea9bf))
+
 ### [7.29.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.29.0...v7.29.1) (2024-07-25)
 
 
