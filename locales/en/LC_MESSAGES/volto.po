@@ -39,7 +39,7 @@ msgstr "Accept external URL to embed"
 #: config/Blocks/ListingOptions/sliderTemplate
 # defaultMessage: Aspetto
 msgid "Aspetto"
-msgstr "Aspect"
+msgstr "Appearance"
 
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Attenzione!
@@ -185,12 +185,12 @@ msgstr ""
 #: config/Views/views
 # defaultMessage: Dettagli procedimento
 msgid "Dettagli procedimento"
-msgstr "Details of the procedure"
+msgstr "Procedure details"
 
 #: config/Blocks/ListingOptions/mapTemplate
 # defaultMessage: Dimensione della mappa
 msgid "Dimensione della mappa"
-msgstr "Map dimension"
+msgstr "Map dimensions"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 # defaultMessage: Download
@@ -709,7 +709,7 @@ msgstr "You are trying to access a protected resource, please {login} first."
 #: components/ItaliaTheme/View/EventoView/EventoCosE
 # defaultMessage: A chi è rivolto
 msgid "a_chi_rivolto"
-msgstr "Who is it addressed to"
+msgstr "Intended for"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioAChiSiRivolge
 # defaultMessage: A chi è rivolto
@@ -1451,7 +1451,7 @@ msgstr "from {dateStart} until the end"
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 # defaultMessage: Data conclusione incarico
 msgid "data_conclusione"
-msgstr "Date of completion of assignment"
+msgstr "Assignment start date"
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
@@ -1462,7 +1462,7 @@ msgstr "He was part of the municipal organization until"
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 # defaultMessage: Data inizio incarico
 msgid "data_inizio"
-msgstr "Start date of the assignment"
+msgstr "Assignment start date"
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
@@ -1735,7 +1735,7 @@ msgstr "Available formats"
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDocumento
 # defaultMessage: Protocollo {protocollo} del {data_protocollo}
 msgid "documento_header_protocollo"
-msgstr "Protocol {protocollo} of {data_protocollo}"
+msgstr "Protocol number {protocollo} from {data_protocollo}"
 
 #: components/ItaliaTheme/View/DocumentoView/DocumentoDescrizione
 # defaultMessage: Licenza di distribuzione
@@ -1750,7 +1750,7 @@ msgstr "Normative requirements"
 #: components/ItaliaTheme/View/DocumentoView/DocumentoDescrizione
 # defaultMessage: Tipo di documento albo pretorio
 msgid "documento_tipologia_documenti_albopretorio"
-msgstr "Type of document in the public register"
+msgstr "Public register document type"
 
 #: components/ItaliaTheme/View/DocumentoView/DocumentoDescrizione
 # defaultMessage: Tipo di documento
@@ -1770,7 +1770,7 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/Listing/SliderTemplate
 # defaultMessage: Navigazione elementi slider
 msgid "dots"
-msgstr "Slider item navigation"
+msgstr "Slider items navigation"
 
 #: components/ItaliaTheme/View/VenueView/VenueWhere
 # defaultMessage: Indirizzo
@@ -2310,7 +2310,7 @@ msgstr "Travel and / or service charges"
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 # defaultMessage: Importi di viaggio e/o servizio
 msgid "importi_viaggio"
-msgstr "Travel and/or service amounts"
+msgstr "Travel and/or service expenses"
 
 #: components/ItaliaTheme/Blocks/Listing/serviziAmministrazioneTrasparenteTemplate
 #: helpers/amministrazioneTrasparenteHelper
@@ -2904,7 +2904,7 @@ msgstr "District "
 #: components/ItaliaTheme/Blocks/Listing/Commons/RassegnaInfo
 # defaultMessage: Rassegna:
 msgid "rassegna_label"
-msgstr "Summary:"
+msgstr "Event collection:"
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeader
 # defaultMessage: Tempo di lettura
@@ -3535,12 +3535,12 @@ msgstr "Access the service"
 #: components/ItaliaTheme/View/ServizioView/ServizioComeFare
 # defaultMessage: Come fare
 msgid "servizio_come_fare"
-msgstr "How to"
+msgstr "Instructions"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCondizioni
 # defaultMessage: Condizioni di servizio
 msgid "servizio_condizioni"
-msgstr "Service conditions"
+msgstr "Terms of service"
 
 #: components/ItaliaTheme/View/ServizioView/ServizioCondizioni
 # defaultMessage: Termini e condizioni di servizio
@@ -3857,7 +3857,7 @@ msgstr "Responsible structure"
 #: components/ItaliaTheme/View/PuntoDiContattoView/RelatedItemsChipsPDC
 # defaultMessage: Strutture correlate
 msgid "strutture_correlate"
-msgstr "Related structures"
+msgstr "Related offices"
 
 #: components/ItaliaTheme/manage/Widgets/SubFooterConfigurationForm
 # defaultMessage: Delete menu item
@@ -3974,7 +3974,7 @@ msgstr "Event type"
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Tipo di incarico
 msgid "tipologia_incarico"
-msgstr "Type of assignment"
+msgstr "Assignment type"
 
 #: components/ItaliaTheme/View/VenueView/VenueTipologia
 # defaultMessage: Tipo di luogo
