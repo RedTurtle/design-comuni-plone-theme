@@ -36,41 +36,49 @@ const ContactLink = ({ tel, fax, email, label = true, strong = false }) => {
   let ret = null;
 
   function ReplacePhoneNumbers(str, type) {
-    // eslint-disable-next-line no-useless-escape
-    let newhtml = str.replace(/\+?[0-9]( ?[0-9\/-]+)+.?[0-9]*/gm, function (v) {
-      let r =
-        "<a href='" +
-        type +
-        ':' +
-        v.trim().replace(/-|\/|\s/gm, '') +
-        "' title='" +
-        (type === 'tel'
-          ? intl.formatMessage(messages.call)
-          : intl.formatMessage(messages.call_fax)) +
-        "' >" +
-        v +
-        '</a>';
-      return r;
-    });
-    return newhtml;
+    if (typeof str === 'string') {
+      // eslint-disable-next-line no-useless-escape
+      let newhtml = str?.replace(
+        /\+?[0-9]( ?[0-9\/-]+)+.?[0-9]*/gm,
+        function (v) {
+          let r =
+            "<a href='" +
+            type +
+            ':' +
+            v.trim().replace(/-|\/|\s/gm, '') +
+            "' title='" +
+            (type === 'tel'
+              ? intl.formatMessage(messages.call)
+              : intl.formatMessage(messages.call_fax)) +
+            "' >" +
+            v +
+            '</a>';
+          return r;
+        },
+      );
+      return newhtml;
+    }
   }
 
   function ReplaceEmails(str) {
-    let newhtml = str.replace(
-      /([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi,
-      function (v) {
-        let r =
-          "<a href='mailto:" +
-          v.trim().replace(/|\/|\s/gm, '') +
-          "' title='" +
-          intl.formatMessage(messages.write_to) +
-          "' >" +
-          v +
-          '</a>';
-        return r;
-      },
-    );
-    return newhtml;
+    if (typeof str === 'string') {
+      let newhtml = str?.replace(
+        /([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi,
+        function (v) {
+          let r =
+            "<a href='mailto:" +
+            v.trim().replace(/|\/|\s/gm, '') +
+            "' title='" +
+            intl.formatMessage(messages.write_to) +
+            "' >" +
+            v +
+            '</a>';
+          return r;
+        },
+      );
+      return newhtml;
+    }
+    return null;
   }
 
   if (tel) {

@@ -6,7 +6,7 @@ import cx from 'classnames';
 import { UniversalLink } from '@plone/volto/components';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import Image from '@plone/volto/components/theme/Image/Image';
+import config from '@plone/volto/registry';
 
 import { getCalendarDate } from 'design-comuni-plone-theme/helpers';
 import {
@@ -25,7 +25,6 @@ import {
 const GenericCard = ({
   item,
   showimage,
-  image_field,
   show_icon,
   showDescription = true,
   showInfos = false,
@@ -37,6 +36,7 @@ const GenericCard = ({
   const url = flattenToAppURL(item['@id']);
   const key = `generic_card_${url}`;
   const icon = getItemIcon(item);
+  const Image = config.getComponent({ name: 'Image' }).component;
 
   const infos = (
     <>
@@ -71,7 +71,11 @@ const GenericCard = ({
           <div className="img-responsive img-responsive-panoramic">
             <figure className="img-wrapper">
               <Image
-                image={item_fo.preview_image || item_fo.image}
+                item={item_fo}
+                imageField={
+                  item.image_field ||
+                  (item_fo.preview_image ? 'preview_image' : 'image')
+                }
                 alt={item_fo.title}
                 title={item_fo.title}
               />

@@ -33,3 +33,5 @@ export {
   blockIsNotEmptyPlaceholder,
   SSRRenderHtml,
 } from 'design-comuni-plone-theme/helpers/htmlDiff';
+
+export { getImageAttributes } from 'design-comuni-plone-theme/helpers/image';

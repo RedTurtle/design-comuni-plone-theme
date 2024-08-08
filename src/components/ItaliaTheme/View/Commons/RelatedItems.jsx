@@ -145,7 +145,6 @@ const RelatedItems = ({
                               index={item['@id']}
                               item={item}
                               showimage={true}
-                              image_field="image"
                               showInfos={true}
                             />
                           </div>

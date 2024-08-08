@@ -15,7 +15,7 @@ import {
   CardBody,
   CardText,
 } from 'design-react-kit/dist/design-react-kit';
-import Image from '@plone/volto/components/theme/Image/Image';
+
 import {
   BodyClass,
   flattenToAppURL,
@@ -38,6 +38,7 @@ import {
   richTextHasContent,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
+import config from '@plone/volto/registry';
 /**
  * PaginaArgomentoView view component class.
  * @function PaginaArgomentoView
@@ -50,6 +51,7 @@ const PaginaArgomentoView = ({ content }) => {
   const dispatch = useDispatch();
 
   const searchResults = useSelector((state) => state.content?.subrequests);
+  const Image = config.getComponent({ name: 'Image' }).component;
 
   // one request is made for every 'unita_amministrative_responsabili' selected
   useEffect(() => {
@@ -134,6 +136,7 @@ const PaginaArgomentoView = ({ content }) => {
                                   title={
                                     searchResults[u['@id'].data?.image_caption]
                                   }
+                                  sizes="100px"
                                 />
                               </div>
                             )}
@@ -154,10 +157,12 @@ const PaginaArgomentoView = ({ content }) => {
               >
                 <div>
                   <Image
-                    image={content.image}
+                    item={content}
                     alt={content.caption ?? content.title}
                     title={content.caption ?? content.title}
                     key={content.image.download}
+                    responsive={true}
+                    sizes="100vw"
                   />
                 </div>
               </Portal>
