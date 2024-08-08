@@ -1,3 +1,15 @@
+### [7.30.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.1...v7.30.2) (2024-08-08)
+
+
+### Bug Fixes
+
+* eventsearch add metadata_fields ([c6b3238](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c6b3238d23387e26f7e39619267b4e9e5d81b341))
+
+
+### Maintenance
+
+* preparing release 7.30.2 ([5ed5d94](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5ed5d9436ab69cf6c29d78c6cbe46c75a5dba7e6))
+
 ### [7.30.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.0...v7.30.1) (2024-08-08)
 
 
