@@ -59,6 +59,7 @@
 - Migliorata l'accessibilità del bottone "Cerca".
 - Migliorata l'accessibilità del blocco Icone.
 - Migliorata l'accessibilità per la customer satisfaction.
+- Migliorata la visibilità della navigazione utilizando il mouse, adesso non si vede il focus quando un bottone/link è selezionato
 
 ### Fix
 
