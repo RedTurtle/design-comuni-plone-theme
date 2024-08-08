@@ -103,9 +103,9 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
       getQueryStringResults(
         subsite ? flattenToAppURL(subsite['@id']) : '',
         {
-          fullobjects: 1,
           query: query,
           b_size: b_size,
+          metadata_fields: '_all',
         },
         id + '_events_search',
         page,
