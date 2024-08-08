@@ -1,3 +1,10 @@
+### [7.30.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.0...v7.30.1) (2024-08-08)
+
+
+### Maintenance
+
+* moved render EventSearch items in a separate component ([2966a8b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2966a8b338607411595704a42844f1b7a46c8835))
+
 ## [7.30.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.29.1...v7.30.0) (2024-08-02)
 
 
