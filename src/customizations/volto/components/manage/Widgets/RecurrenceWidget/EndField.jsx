@@ -25,6 +25,7 @@ const messages = defineMessages({
  * @returns {string} Markup of the component.
  */
 const EndField = ({ value, count, until, onChange, intl }) => {
+  console.log('cane di dio porco');
   return (
     <Form.Field inline className="text">
       <Grid>
@@ -57,10 +58,8 @@ const EndField = ({ value, count, until, onChange, intl }) => {
                   name="count"
                   value={count || ''}
                   onChange={({ target }) => {
-                    onChange(
-                      target.id,
-                      target.value === '' ? undefined : target.value,
-                    );
+                    debugger;
+                    onChange(target.id, target.value ?? '1');
                   }}
                 />
               </Form.Field>
