@@ -1,3 +1,15 @@
+### [7.30.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.2...v7.30.3) (2024-08-12)
+
+
+### Bug Fixes
+
+* removed align-item from slick-track ([#740](https://github.com/RedTurtle/design-comuni-plone-theme/issues/740)) ([05b2d5d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/05b2d5de5050e8474bdfe8957449206193ccc327))
+
+
+### Maintenance
+
+* preparing release 7.30.3 ([6a8e3c9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6a8e3c9affc4d4f65e46617a1df560a1605b4582))
+
 ### [7.30.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.1...v7.30.2) (2024-08-08)
 
 
