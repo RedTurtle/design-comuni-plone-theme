@@ -11,6 +11,21 @@ import loadable from '@loadable/component';
  * };
  */
 
+/********* ICONS ********* */
+export getItemIcon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/common/common';
+// export const Icon = loadable(() =>
+//   import(
+//     /* webpackChunkName: "DCPTIcons" */ 'design-comuni-plone-theme/components/ItaliaTheme/Icons/Icon'
+//   ),
+// );
+export Icon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/Icon';
+export SectionIcon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/SectionIcon';
+// export const FontAwesomeIcon = loadable(() =>
+//   import(
+//     /* webpackChunkName: "DCPTIcons" */ 'design-comuni-plone-theme/components/ItaliaTheme/Icons/FontAwesomeIcon'
+//   ),
+// );
+export FontAwesomeIcon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/FontAwesomeIcon';
 /********* WIDGETS ********* */
 export {
   FileWidget,
@@ -21,20 +36,6 @@ export {
   LocationFiltersWidget,
   CanaleDigitaleWidget,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets';
-
-/********* ICONS ********* */
-export getItemIcon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/common/common';
-export const Icon = loadable(() =>
-  import(
-    /* webpackChunkName: "DCPTIcons" */ 'design-comuni-plone-theme/components/ItaliaTheme/Icons/Icon'
-  ),
-);
-export SectionIcon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/SectionIcon';
-export const FontAwesomeIcon = loadable(() =>
-  import(
-    /* webpackChunkName: "DCPTIcons" */ 'design-comuni-plone-theme/components/ItaliaTheme/Icons/FontAwesomeIcon'
-  ),
-);
 
 /********* COMMONS ********* */
 export CardCategory from 'design-comuni-plone-theme/components/ItaliaTheme/Cards/CardCategory';
