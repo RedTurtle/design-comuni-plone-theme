@@ -16,6 +16,7 @@ import PropTypes from 'prop-types';
 import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import {shuffle} from 'lodash';
 
 const messages = defineMessages({
   viewImage: {
@@ -206,6 +207,7 @@ const SliderTemplate = ({
   show_dots = true,
   autoplay = false,
   autoplay_speed = 2, //seconds
+  shuffle_items = false,
   reactSlick,
 }) => {
   const intl = useIntl();
@@ -342,7 +344,7 @@ const SliderTemplate = ({
             )}
 
             <Slider {...settings} ref={slider}>
-              {items.map((item, index) => {
+              {(shuffle_items ? shuffle(items) : items).map((item, index) => {
                 const image = ListingImage({
                   item,
                   loading: index === 0 ? 'eager' : 'lazy',
