@@ -35,6 +35,8 @@ import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/A
 import PageLoader from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/PageLoader';
 import TrackFocus from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/TrackFocus';
 import redraft from 'redraft';
+
+import SiteSettingsExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/SiteSettingsExtras';
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
 
 // CTs icons
@@ -66,8 +68,8 @@ import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/
 
 import reducers from 'design-comuni-plone-theme/reducers';
 
-const ReleaseLog = loadable(() =>
-  import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
+const ReleaseLog = loadable(
+  () => import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
 );
 
 const messages = defineMessages({
@@ -87,6 +89,7 @@ export default function applyConfig(voltoConfig) {
   config.experimental.addBlockButton.enabled = true; //per spostare il bottone di aggiunta dei blocchi in basso, e fare in modo che i bottoni di edit dei blocchi siano usabili anche da tablet/mobile
   config.settings = {
     ...config.settings,
+    contextualVocabularies: config.settings.contextualVocabularies || [],
     openExternalLinkInNewTab: true,
     sentryOptions: (libraries) => ({
       ...voltoSentryOptions(libraries),
@@ -125,6 +128,16 @@ export default function applyConfig(voltoConfig) {
         errorPages: true,
       },
     },
+    /*
+      Set to 100mb in BINARY bytes, not decimal, see volto/helpers/FormValidation.js.validateFileUploadSize error message
+      ...
+      messages.fileTooLarge, {
+        limit: `${Math.floor(
+          config.settings.maxFileUploadSize / 1024 / 1024,
+        )}MB`,
+      }
+    */
+    maxFileUploadSize: 104857600,
     querystringAdditionalFields: [],
     searchBlockTemplates: [
       'simpleCard',
@@ -298,8 +311,11 @@ export default function applyConfig(voltoConfig) {
         match: '',
         component: TrackFocus,
       },
+      {
+        match: '',
+        component: SiteSettingsExtras,
+      },
     ],
-    maxFileUploadSize: null,
     'volto-blocks-widget': {
       allowedBlocks: [
         ...(config.settings['volto-blocks-widget']?.allowedBlocks ?? []).filter(
@@ -518,6 +534,10 @@ export default function applyConfig(voltoConfig) {
     ...config.components,
     BlockExtraTags: { component: () => null },
   };
+  config.registerComponent({
+    name: 'SiteSettingsExtras',
+    component: SiteSettingsExtras,
+  });
 
   // REDUCERS
   config.addonReducers = {
