@@ -2045,14 +2045,9 @@ msgid "gallery_close_preview"
 msgstr "Cerrar vista previa"
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
-# defaultMessage: Titolo del video
+# defaultMessage: Didascalia del video
 msgid "gallery_video_title"
 msgstr "Título del vídeo"
-
-#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
-# defaultMessage: Non viene mostrato. Serve al redattore per identificare meglio il video all'interno della gallery.
-msgid "gallery_video_title_description"
-msgstr "No se muestra. El editor lo utiliza para identificar mejor el vídeo dentro de la galería."
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Video URL
@@ -3265,6 +3260,11 @@ msgstr "Organizar en 4 columnas"
 # defaultMessage: Condividi
 msgid "share"
 msgstr "Compartir"
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Mostra didascalie
+msgid "showVideoCaption"
+msgstr ""
 
 #: config/Blocks/ListingOptions/bandiInEvidenceTemplate
 # defaultMessage: Mostra la data di ultima modifica
