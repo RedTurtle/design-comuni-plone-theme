@@ -32,7 +32,12 @@ const messages = defineMessages({
  * @class ViewBlock
  * @extends Component
  */
-const ViewBlock = ({ data, index, isEditMode = false }) => {
+const ViewBlock = ({
+  data,
+  showVideoCaption = false,
+  index,
+  isEditMode = false,
+}) => {
   const intl = useIntl();
   let placeholder = data.preview_image
     ? isInternalURL(data.preview_image)
@@ -89,52 +94,67 @@ const ViewBlock = ({ data, index, isEditMode = false }) => {
         {data.url.match('youtu') ? (
           <>
             {data.url.match('list') ? (
-              <Embed
-                url={`https://www.youtube.com/embed/videoseries?list=${
-                  data.url.match(/^.*\?list=(.*)$/)[1]
-                }`}
-                {...embedSettings}
-              />
+              <>
+                <Embed
+                  url={`https://www.youtube.com/embed/videoseries?list=${
+                    data.url.match(/^.*\?list=(.*)$/)[1]
+                  }`}
+                  {...embedSettings}
+                />
+                {showVideoCaption && <p className="px-3">{data.title}</p>}
+              </>
             ) : (
-              <Embed
-                id={
-                  data.url.match(/.be\//)
-                    ? data.url.match(/^.*\.be\/(.*)/)?.[1]
-                    : data.url.match(/^.*\?v=(.*)$/)?.[1]
-                }
-                source="youtube"
-                {...embedSettings}
-              />
+              <>
+                <Embed
+                  id={
+                    data.url.match(/.be\//)
+                      ? data.url.match(/^.*\.be\/(.*)/)?.[1]
+                      : data.url.match(/^.*\?v=(.*)$/)?.[1]
+                  }
+                  source="youtube"
+                  {...embedSettings}
+                />
+                {showVideoCaption && <p className="px-3">{data.title}</p>}
+              </>
             )}
           </>
         ) : (
           <>
             {data.url.match('vimeo') ? (
-              <Embed
-                id={data.url.match(/^.*\.com\/(.*)/)[1]}
-                source="vimeo"
-                {...embedSettings}
-              />
+              <>
+                <Embed
+                  id={data.url.match(/^.*\.com\/(.*)/)[1]}
+                  source="vimeo"
+                  {...embedSettings}
+                />
+                {showVideoCaption && <p className="px-3">{data.title}</p>}
+              </>
             ) : (
               <>
                 {data.url.match('.mp4') ? (
                   // eslint-disable-next-line jsx-a11y/media-has-caption
-                  <video
-                    src={
-                      isInternalURL(
-                        data.url.replace(
-                          getParentUrl(config.settings.apiPath),
-                          '',
-                        ),
-                      )
-                        ? `${data.url}/@@download/file`
-                        : data.url
-                    }
-                    controls
-                    type="video/mp4"
-                  />
+                  <>
+                    <video
+                      src={
+                        isInternalURL(
+                          data.url.replace(
+                            getParentUrl(config.settings.apiPath),
+                            '',
+                          ),
+                        )
+                          ? `${data.url}/@@download/file`
+                          : data.url
+                      }
+                      controls
+                      type="video/mp4"
+                    />
+                    {showVideoCaption && <p className="px-3">{data.title}</p>}
+                  </>
                 ) : data.allowExternals ? (
-                  <Embed url={data.url} {...embedSettings} />
+                  <>
+                    <Embed url={data.url} {...embedSettings} />
+                    {showVideoCaption && <p className="px-3">{data.title}</p>}
+                  </>
                 ) : (
                   <div className="invalidVideoFormat" />
                 )}
