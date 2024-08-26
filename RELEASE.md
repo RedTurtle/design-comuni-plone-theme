@@ -30,6 +30,44 @@
 - ...
 -->
 
+## Versione 7.30.4 (26/08/2024)
+
+### Fix
+
+- Sistemato la mancanza di allineamento dentro la galleria d'immagine dentro i content types notizia, evento e luogo.
+
+## Versione 7.30.3 (12/08/2024)
+
+### Fix
+
+- Sistemato la mancanza di allineamento dentro la photogallery
+
+## Versione 7.29.1 (25/07/2024)
+
+### Migliorie
+
+- Aggiunte le date dentro i blocchi elenco.
+
+### Fix
+
+- Sistemato errore dentro a draftJS, l'elenco puntato non veniva stilizzato e l'icona del TextSize nella toolbar non si vedeva con il title applicato
+
+## Versione 7.29.0 (03/07/2024)
+
+### Migliorie
+
+- Aggiornamento volto-form-blocks
+
+### Fix
+
+- Aggiunto checkbox che espande i sotto-elementi nei filtri di ricerca
+
+## Versione 7.28.5 (26/06/2024)
+
+### Migliorie
+
+- Aggiornamento volto-form-blocks
+
 ## Versione 7.28.4 (25/06/2024)
 
 ### Novità
