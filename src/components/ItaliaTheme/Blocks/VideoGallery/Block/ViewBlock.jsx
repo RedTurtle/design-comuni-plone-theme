@@ -101,7 +101,9 @@ const ViewBlock = ({
                   }`}
                   {...embedSettings}
                 />
-                {showVideoCaption && <p className="px-3">{data.title}</p>}
+                {showVideoCaption && (
+                  <p className="px-3 mt-2 figure-caption">{data.title}</p>
+                )}
               </>
             ) : (
               <>
@@ -114,7 +116,9 @@ const ViewBlock = ({
                   source="youtube"
                   {...embedSettings}
                 />
-                {showVideoCaption && <p className="px-3">{data.title}</p>}
+                {showVideoCaption && (
+                  <p className="px-3 mt-2 figure-caption">{data.title}</p>
+                )}
               </>
             )}
           </>
@@ -127,7 +131,9 @@ const ViewBlock = ({
                   source="vimeo"
                   {...embedSettings}
                 />
-                {showVideoCaption && <p className="px-3">{data.title}</p>}
+                {showVideoCaption && (
+                  <p className="px-3 mt-2 figure-caption">{data.title}</p>
+                )}
               </>
             ) : (
               <>
@@ -148,12 +154,16 @@ const ViewBlock = ({
                       controls
                       type="video/mp4"
                     />
-                    {showVideoCaption && <p className="px-3">{data.title}</p>}
+                    {showVideoCaption && (
+                      <p className="px-3 mt-2 figure-caption">{data.title}</p>
+                    )}
                   </>
                 ) : data.allowExternals ? (
                   <>
                     <Embed url={data.url} {...embedSettings} />
-                    {showVideoCaption && <p className="px-3">{data.title}</p>}
+                    {showVideoCaption && (
+                      <p className="px-3 mt-2 figure-caption">{data.title}</p>
+                    )}
                   </>
                 ) : (
                   <div className="invalidVideoFormat" />
