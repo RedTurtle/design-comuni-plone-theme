@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione 7.30.5 (27/08/2024)
+
+### Migliorie
+
+- Aggiunto opzione per la didascalia per il blocco galleria video
+
 ## Versione 7.30.4 (26/08/2024)
 
 ### Fix
