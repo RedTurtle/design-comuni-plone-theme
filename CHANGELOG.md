@@ -1,3 +1,16 @@
+### [7.30.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.3...v7.30.4) (2024-08-27)
+
+
+### Bug Fixes
+
+* set height to the gallery inside news ([#742](https://github.com/RedTurtle/design-comuni-plone-theme/issues/742)) ([026c4aa](https://github.com/RedTurtle/design-comuni-plone-theme/commit/026c4aa6abdd71b9dd0ee9bf53ae730a56698466))
+
+
+### Documentation
+
+* release-log ([#646](https://github.com/RedTurtle/design-comuni-plone-theme/issues/646)) ([b93069a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b93069a04c9e957c927d63a8e63c1cd36b073888))
+* release-log ([#748](https://github.com/RedTurtle/design-comuni-plone-theme/issues/748)) ([d816167](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d816167a3ff4ea5007ad3c3d05087e49f3fce6c4))
+
 ### [7.30.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.2...v7.30.3) (2024-08-12)
 
 
