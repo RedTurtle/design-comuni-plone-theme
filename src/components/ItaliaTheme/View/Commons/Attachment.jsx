@@ -6,13 +6,18 @@ import {
   CardBody,
   CardTitle,
 } from 'design-react-kit/dist/design-react-kit';
-import { flattenToAppURL, viewDate } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers';
+import { viewDate } from 'design-comuni-plone-theme/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const messages = defineMessages({
   attachment: {
     id: 'attachment',
     defaultMessage: 'Allegato',
+  },
+  last_update: {
+    id: 'last_update',
+    defaultMessage: 'Ultimo agg.to:',
   },
 });
 
@@ -34,7 +39,11 @@ const Attachment = ({ title, description, download_url, item }) => {
           <a href={flattenToAppURL(download_url)}>{title}</a>
         </CardTitle>
         {description && <p>{description}</p>}
-        {viewDate(intl.locale, item.modified, 'DD-MM-Y HH:MM')}
+
+        <p>
+          {intl.formatMessage(messages.last_update)}{' '}
+          {viewDate(intl.locale, item.modified, 'DD-MM-Y HH:MM')}
+        </p>
       </CardBody>
     </Card>
   );
