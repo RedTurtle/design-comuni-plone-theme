@@ -42,7 +42,7 @@ const Attachment = ({ title, description, download_url, item }) => {
 
         <p>
           {intl.formatMessage(messages.last_update)}{' '}
-          {viewDate(intl.locale, item.modified, 'DD-MM-Y HH:MM')}
+          {viewDate(intl.locale, item?.modified, 'DD-MM-Y HH:MM')}
         </p>
       </CardBody>
     </Card>
