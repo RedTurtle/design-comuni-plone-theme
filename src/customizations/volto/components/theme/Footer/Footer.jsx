@@ -29,12 +29,12 @@ const Footer = () => {
     contentType = currentContent?.['@type'];
   }
   // const NoFeedbackFormFor = ['Plone Site', 'LRF', 'Subsite'];
-  const noFeedbackFormFor = config.settings.noFeedbackFormFor || [];
+  const noFeedbackFormFor = config.settings.siteProperties.noFeedbackFormFor || [];
 
   return (
     <>
       {contentType != null &&
-        noFeedbackFormFor.includes(contentType) &&
+        !noFeedbackFormFor.includes(contentType) &&
         config.settings.siteProperties.enableFeedbackForm && (
           <FeedbackForm contentType={contentType} />
         )}
