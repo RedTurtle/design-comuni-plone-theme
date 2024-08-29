@@ -24,19 +24,15 @@ import config from '@plone/volto/registry';
 const Footer = () => {
   useGoogleAnalytics();
   const currentContent = useSelector((state) => state.content?.data);
-  let contentType = null;
-  if (currentContent != null) {
-    contentType = currentContent?.['@type'];
-  }
-  // const NoFeedbackFormFor = ['Plone Site', 'LRF', 'Subsite'];
+  const contentType = currentContent ? currentContent['@type'] : null;
   const noFeedbackFormFor = config.settings.siteProperties.noFeedbackFormFor || [];
 
   return (
     <>
-      {contentType != null &&
+      {contentType &&
         !noFeedbackFormFor.includes(contentType) &&
         config.settings.siteProperties.enableFeedbackForm && (
-          <FeedbackForm contentType={contentType} />
+          <FeedbackForm />
         )}
 
       <SubsiteFooter />

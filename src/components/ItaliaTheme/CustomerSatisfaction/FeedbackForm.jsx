@@ -116,7 +116,7 @@ const messages = defineMessages({
   },
 });
 
-const FeedbackForm = ({ contentType, title, pathname }) => {
+const FeedbackForm = ({ title, pathname }) => {
   const intl = useIntl();
   const location = useLocation();
   const path = pathname ?? location.pathname ?? '/';
@@ -456,7 +456,7 @@ const FeedbackForm = ({ contentType, title, pathname }) => {
 };
 
 FeedbackForm.propTypes = {
-  contentType: PropTypes.string,
+  title: PropTypes.string,
   pathname: PropTypes.string,
 };
 
