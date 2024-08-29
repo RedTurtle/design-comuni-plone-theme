@@ -32,10 +32,6 @@ const messages = defineMessages({
     id: 'feedback_form_title',
     defaultMessage: 'How clear is the information on this page?',
   },
-  service_title: {
-    id: 'feedback_form_title_service',
-    defaultMessage: 'How easy was it to use this service?',
-  },
   yes: {
     id: 'feedback_form_yes',
     defaultMessage: 'Yes',
@@ -120,7 +116,7 @@ const messages = defineMessages({
   },
 });
 
-const FeedbackForm = ({ contentType, pathname }) => {
+const FeedbackForm = ({ contentType, title, pathname }) => {
   const intl = useIntl();
   const location = useLocation();
   const path = pathname ?? location.pathname ?? '/';
@@ -282,9 +278,14 @@ const FeedbackForm = ({ contentType, pathname }) => {
                           : intl.formatMessage(messages.title)} */}
 
                         {/* Aggiunto titolo per compatibilità modello AGID di io-cittadino */}
-                        {contentType === 'ModelloPratica'
+                        {/* {contentType === 'ModelloPratica'
                           ? intl.formatMessage(messages.service_title)
-                          : intl.formatMessage(messages.title)}
+                          : intl.formatMessage(messages.title)} */}
+
+                        {/* Se serve un titolo custom va passato come prop, il ModelloPratica passerà
+                            un titolo custom a seconda dello step in cui ci si trova "... this service"
+                            va messo solo dopo l'invio */}
+                        {title ? title : intl.formatMessage(messages.title)}
                       </h2>
                       <div className="rating-container mb-0">
                         <RTRating
