@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-06T16:50:24.401Z\n"
+"POT-Creation-Date: 2024-08-29T10:45:20.617Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -575,11 +575,6 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/IconBlocks/Block/EditBlock
 # defaultMessage: Text...
 msgid "Text placeholder"
-msgstr ""
-
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: Thank you.
-msgid "Thank you."
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
@@ -2430,6 +2425,11 @@ msgstr ""
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: log in
 msgid "log in"
+msgstr ""
+
+#: components/ItaliaTheme/Unauthorized/Unauthorized
+# defaultMessage: Log in
+msgid "login"
 msgstr ""
 
 #: components/ItaliaTheme/LoginAgid/LoginAgid

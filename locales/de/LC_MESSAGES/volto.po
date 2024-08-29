@@ -590,11 +590,6 @@ msgstr ""
 msgid "Text placeholder"
 msgstr ""
 
-#: components/ItaliaTheme/Unauthorized/Unauthorized
-# defaultMessage: Thank you.
-msgid "Thank you."
-msgstr ""
-
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/IconBlocks/Edit
 #: components/ItaliaTheme/Blocks/VideoGallery/Edit
@@ -2443,6 +2438,11 @@ msgstr ""
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: log in
 msgid "log in"
+msgstr ""
+
+#: components/ItaliaTheme/Unauthorized/Unauthorized
+# defaultMessage: Log in
+msgid "login"
 msgstr ""
 
 #: components/ItaliaTheme/LoginAgid/LoginAgid

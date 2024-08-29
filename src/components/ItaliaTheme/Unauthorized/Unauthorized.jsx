@@ -25,6 +25,10 @@ import {
  */
 
 const messages = defineMessages({
+  login: {
+    id: 'login',
+    defaultMessage: 'Log in',
+  },
   unauthorizedDescription: {
     id: 'unauthorized_description',
     defaultMessage:
@@ -59,21 +63,15 @@ const Unauthorized = (props) => {
     <div id="unauthorized-agid" className="view-wrapper">
       <BodyClass className="public-ui" />
       <RemoveBodyClass className="cms-ui" />
-
       <Container className="view-wrapper py-5">
         {spidLoginUrl || spidLogin ? (
           <>
             <Row className="view-container">
               <Col xs={12} lg={{ size: 10, offset: 1 }}>
-                <h1>
-                  <FormattedMessage
-                    id="Unauthorized"
-                    defaultMessage="Unauthorized"
-                  />
-                </h1>
-                <p className="description">
+                <h1>{intl.formatMessage(messages.login)}</h1>
+                {/* <p className="description">
                   <FormattedMessage {...messages.unauthorizedDescription} />
-                </p>
+                </p> */}
               </Col>
             </Row>
             <hr className="d-none d-lg-block mt-0 mb-4" />
@@ -152,10 +150,11 @@ const Unauthorized = (props) => {
                   ),
                 }}
               />
-            </p> */}
+            </p>
             <p>
               <FormattedMessage id="Thank you." defaultMessage="Thank you." />
             </p>
+            */}
           </Col>
         </Row>
       </Container>
