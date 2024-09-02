@@ -40,10 +40,10 @@ const Attachment = ({ title, description, download_url, item }) => {
         </CardTitle>
         {description && <p>{description}</p>}
 
-        <p>
+       {item?.modified && <p>
           {intl.formatMessage(messages.last_update)}{' '}
           {viewDate(intl.locale, item?.modified, 'DD-MM-Y HH:MM')}
-        </p>
+        </p>}
       </CardBody>
     </Card>
   );
