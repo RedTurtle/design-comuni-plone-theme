@@ -46,7 +46,7 @@ const Attachment = ({
         </CardTitle>
         {description && <p>{description}</p>}
 
-        {showModified && (
+        {showModified && item?.modified && (
           <p>
             {intl.formatMessage(messages.last_update)}{' '}
             {viewDate(intl.locale, item?.modified, 'DD-MM-Y HH:MM')}
