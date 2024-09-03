@@ -94,32 +94,22 @@ const ViewBlock = ({
         {data.url.match('youtu') ? (
           <>
             {data.url.match('list') ? (
-              <>
-                <Embed
-                  url={`https://www.youtube.com/embed/videoseries?list=${
-                    data.url.match(/^.*\?list=(.*)$/)[1]
-                  }`}
-                  {...embedSettings}
-                />
-                {showVideoCaption && (
-                  <p className="px-3 mt-2 figure-caption">{data.title}</p>
-                )}
-              </>
+              <Embed
+                url={`https://www.youtube.com/embed/videoseries?list=${
+                  data.url.match(/^.*\?list=(.*)$/)[1]
+                }`}
+                {...embedSettings}
+              />
             ) : (
-              <>
-                <Embed
-                  id={
-                    data.url.match(/.be\//)
-                      ? data.url.match(/^.*\.be\/(.*)/)?.[1]
-                      : data.url.match(/^.*\?v=(.*)$/)?.[1]
-                  }
-                  source="youtube"
-                  {...embedSettings}
-                />
-                {showVideoCaption && (
-                  <p className="px-3 mt-2 figure-caption">{data.title}</p>
-                )}
-              </>
+              <Embed
+                id={
+                  data.url.match(/.be\//)
+                    ? data.url.match(/^.*\.be\/(.*)/)?.[1]
+                    : data.url.match(/^.*\?v=(.*)$/)?.[1]
+                }
+                source="youtube"
+                {...embedSettings}
+              />
             )}
           </>
         ) : (
