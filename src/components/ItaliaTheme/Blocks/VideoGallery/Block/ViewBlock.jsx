@@ -125,39 +125,29 @@ const ViewBlock = ({
         ) : (
           <>
             {data.url.match('vimeo') ? (
-              <>
-                <Embed
-                  id={data.url.match(/^.*\.com\/(.*)/)[1]}
-                  source="vimeo"
-                  {...embedSettings}
-                />
-                {showVideoCaption && (
-                  <p className="px-3 mt-2 figure-caption">{data.title}</p>
-                )}
-              </>
+              <Embed
+                id={data.url.match(/^.*\.com\/(.*)/)[1]}
+                source="vimeo"
+                {...embedSettings}
+              />
             ) : (
               <>
                 {data.url.match('.mp4') ? (
                   // eslint-disable-next-line jsx-a11y/media-has-caption
-                  <>
-                    <video
-                      src={
-                        isInternalURL(
-                          data.url.replace(
-                            getParentUrl(config.settings.apiPath),
-                            '',
-                          ),
-                        )
-                          ? `${data.url}/@@download/file`
-                          : data.url
-                      }
-                      controls
-                      type="video/mp4"
-                    />
-                    {showVideoCaption && (
-                      <p className="px-3 mt-2 figure-caption">{data.title}</p>
-                    )}
-                  </>
+                  <video
+                    src={
+                      isInternalURL(
+                        data.url.replace(
+                          getParentUrl(config.settings.apiPath),
+                          '',
+                        ),
+                      )
+                        ? `${data.url}/@@download/file`
+                        : data.url
+                    }
+                    controls
+                    type="video/mp4"
+                  />
                 ) : data.allowExternals ? (
                   <>
                     <Embed url={data.url} {...embedSettings} />
@@ -167,6 +157,9 @@ const ViewBlock = ({
                   </>
                 ) : (
                   <div className="invalidVideoFormat" />
+                )}
+                {showVideoCaption && (
+                  <p className="px-3 mt-2 figure-caption">{data.title}</p>
                 )}
               </>
             )}
