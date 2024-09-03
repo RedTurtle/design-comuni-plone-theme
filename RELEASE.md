@@ -34,7 +34,7 @@
 
 ### Migliorie
 
-- Aggiunto opzione per la didascalia per il blocco galleria video
+- Aggiunta una opzione scegliere se mostrare la didascalia nel blocco Video Gallery
 
 ## Versione 7.30.4 (26/08/2024)
 
