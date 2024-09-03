@@ -21,7 +21,13 @@ const messages = defineMessages({
   },
 });
 
-const Attachment = ({ title, description, download_url, item }) => {
+const Attachment = ({
+  title,
+  description,
+  download_url,
+  item,
+  showModified = false,
+}) => {
   const intl = useIntl();
   return (
     <Card
@@ -40,10 +46,19 @@ const Attachment = ({ title, description, download_url, item }) => {
         </CardTitle>
         {description && <p>{description}</p>}
 
+<<<<<<< Updated upstream
        {item?.modified && <p>
           {intl.formatMessage(messages.last_update)}{' '}
           {viewDate(intl.locale, item?.modified, 'DD-MM-Y HH:MM')}
         </p>}
+=======
+        {showModified && (
+          <p>
+            {intl.formatMessage(messages.last_update)}{' '}
+            {viewDate(intl.locale, item?.modified, 'DD-MM-Y HH:MM')}
+          </p>
+        )}
+>>>>>>> Stashed changes
       </CardBody>
     </Card>
   );
