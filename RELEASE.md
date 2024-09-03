@@ -47,6 +47,10 @@
 
 - Aggiunti al CT Persona i campi per la gestione della Trasparenza per allegare i file sugli emolumenti a carico della finanza pubblica e le dichiarazioni di insussistenza e incompatibilità.
 
+### Fix
+
+- Ripristinato l'informazione sull'ultimo aggiornamento nel CT UO
+
 ## Versione 11.21.0 (14/08/2024)
 
 ### Fix
