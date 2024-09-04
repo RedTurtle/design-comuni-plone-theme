@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione 7.30.5 (02/09/2024)
+
+### Migliorie
+
+- Aggiunto la data di modifica nei documenti allegati del CT Bando
+
 ## Versione 7.30.4 (26/08/2024)
 
 ### Fix
