@@ -24,6 +24,35 @@
     }
   }
 
+  .section.section-inset-shadow {
+    box-shadow: none;
+  }
+
+  .public-ui {
+    .block.alertblock {
+      .bg-alert-danger,
+      .bg-alert-info,
+      .bg-alert-warning {
+        color: #000;
+        .container {
+          padding-top: 1rem !important;
+          padding-bottom: 1rem !important;
+        }
+      }
+    }
+  }
+
+  .block.form {
+    h2,
+    .block-description {
+      page-break-after: avoid;
+    }
+
+    .card-wrapper {
+      page-break-before: avoid;
+    }
+  }
+
   .block.image {
     max-width: 50%;
     margin: 0 auto;
@@ -61,17 +90,94 @@
     }
   }
 
+  .block.image-text-block {
+    .image-text-card-wrapper {
+      page-break-inside: avoid;
+
+      h2 {
+        page-break-after: avoid;
+      }
+    }
+  }
+
   .block.accordion {
-    .accordion-header {
-      button {
-        svg {
-          display: none;
+    .public-ui {
+      width: 100%;
+    }
+
+    .section.full-width {
+      padding: 0px !important;
+      .card {
+        .card-body .accordion-item {
+          .accordion-header {
+            button {
+              svg {
+                display: none;
+              }
+            }
+          }
+          .accordion-content {
+            max-height: unset;
+
+            .accordion-inner {
+              padding: 0px;
+            }
+          }
+        }
+
+        &:after {
+          margin-top: 0px;
         }
       }
     }
+  }
 
-    .section.full-width .card .card-body .accordion-item .accordion-content {
-      max-height: unset;
+  .block.numbersBlock {
+    page-break-inside: avoid;
+    color: #000;
+    .section.py-5 {
+      padding: 12px !important;
+      page-break-inside: avoid;
+
+      .container {
+        page-break-inside: avoid;
+        .title,
+        .subblock-title {
+          font-size: 1.5rem;
+        }
+
+        .block-number {
+          page-break-inside: avoid;
+        }
+      }
+    }
+  }
+
+  .block.iconBlocks {
+    .block-header {
+      .title {
+        font-size: 1.5rem;
+        margin: 0.5rem;
+      }
+    }
+
+    .card {
+      padding-top: 0px;
+
+      .card-body {
+        padding: 12px;
+
+        .iconblock-icon {
+          margin-bottom: 1rem;
+          .icon {
+            height: 2rem;
+          }
+        }
+
+        .iconblock-title {
+          font-size: 1rem;
+        }
+      }
     }
   }
 
