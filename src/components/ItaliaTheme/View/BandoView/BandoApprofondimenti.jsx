@@ -35,6 +35,7 @@ const BandoApprofondimenti = ({ content }) => {
           description={item.description}
           download_url={item.url}
           item={item}
+          showModified={true}
         />
         // item={item} viene utilizzato nelle customizzazioni per ottenere altre proprietà
       );

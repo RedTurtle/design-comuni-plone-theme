@@ -35,6 +35,9 @@
 ### Migliorie
 
 - Aggiunta una opzione scegliere se mostrare la didascalia nel blocco Video Gallery
+- Aggiunto la data di modifica nei documenti allegati del CT Bando
+odifica nei documenti allegati del CT Bando
+
 
 ## Versione 7.30.4 (26/08/2024)
 

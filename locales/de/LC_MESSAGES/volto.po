@@ -2165,6 +2165,11 @@ msgstr ""
 msgid "iter_del_procedimento"
 msgstr ""
 
+#: components/ItaliaTheme/View/Commons/Attachment
+# defaultMessage: Ultimo agg.to:
+msgid "last_update"
+msgstr ""
+
 #: components/ItaliaTheme/View/UOView/UOStructure
 # defaultMessage: Servizi o uffici di riferimento
 msgid "legami_altre_strutture"

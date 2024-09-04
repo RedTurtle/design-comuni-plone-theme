@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-23T12:31:13.362Z\n"
+
+"POT-Creation-Date: 2024-08-28T08:55:19.173Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -2150,6 +2151,11 @@ msgstr ""
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Iter del procedimento
 msgid "iter_del_procedimento"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/Attachment
+# defaultMessage: Ultimo agg.to:
+msgid "last_update"
 msgstr ""
 
 #: components/ItaliaTheme/View/UOView/UOStructure

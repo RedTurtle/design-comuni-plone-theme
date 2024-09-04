@@ -2150,6 +2150,11 @@ msgstr "Inserire un filtro dal menù laterale per visualizzare i relativi risult
 msgid "iter_del_procedimento"
 msgstr "Iter del procedimento"
 
+#: components/ItaliaTheme/View/Commons/Attachment
+# defaultMessage: Ultimo agg.to:
+msgid "last_update"
+msgstr ""
+
 #: components/ItaliaTheme/View/UOView/UOStructure
 # defaultMessage: Servizi o uffici di riferimento
 msgid "legami_altre_strutture"
