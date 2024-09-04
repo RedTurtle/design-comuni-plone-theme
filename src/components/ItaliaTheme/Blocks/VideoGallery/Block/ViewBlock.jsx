@@ -111,9 +111,6 @@ const ViewBlock = ({
                 {...embedSettings}
               />
             )}
-            {showVideoCaption && (
-              <p className="px-3 mt-2 figure-caption">{data.title}</p>
-            )}
           </>
         ) : (
           <>
@@ -146,12 +143,12 @@ const ViewBlock = ({
                 ) : (
                   <div className="invalidVideoFormat" />
                 )}
-                {showVideoCaption && (
-                  <p className="px-3 mt-2 figure-caption">{data.title}</p>
-                )}
               </>
             )}
           </>
+        )}
+        {showVideoCaption && (
+          <p className="px-3 mt-2 figure-caption">{data.title}</p>
         )}
       </ConditionalEmbed>
     </div>
