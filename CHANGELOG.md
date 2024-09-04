@@ -1,3 +1,17 @@
+## [7.31.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.4...v7.31.0) (2024-09-04)
+
+
+### Features
+
+* added option to display caption in VideoGallery block ([#747](https://github.com/RedTurtle/design-comuni-plone-theme/issues/747)) ([b2ceb27](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b2ceb27435f12a4992e348bff034ca9a187a2f28))
+* show Last modified date for documents in ct Bando([#749](https://github.com/RedTurtle/design-comuni-plone-theme/issues/749)) ([bcaa25f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bcaa25f9afaaef95e287a6885186209cdad99848))
+
+
+### Maintenance
+
+* preparing release 7.31.0 ([2ee250b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2ee250bed5a2ca999429f30f4387184bb03fef3d))
+* updated locales ([20397bc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/20397bcd22f8157485c9ad5cf4f974a664d0278c))
+
 ### [7.30.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.3...v7.30.4) (2024-08-27)
 
 
