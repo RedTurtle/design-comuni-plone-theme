@@ -32,7 +32,12 @@ const messages = defineMessages({
  * @class ViewBlock
  * @extends Component
  */
-const ViewBlock = ({ data, index, isEditMode = false }) => {
+const ViewBlock = ({
+  data,
+  showVideoCaption = false,
+  index,
+  isEditMode = false,
+}) => {
   const intl = useIntl();
   let placeholder = data.preview_image
     ? isInternalURL(data.preview_image)
@@ -134,9 +139,12 @@ const ViewBlock = ({ data, index, isEditMode = false }) => {
                     type="video/mp4"
                   />
                 ) : data.allowExternals ? (
-                  <Embed url={data.url} {...embedSettings} />
+                    <Embed url={data.url} {...embedSettings} />                    
                 ) : (
                   <div className="invalidVideoFormat" />
+                )}
+                {showVideoCaption && (
+                  <p className="px-3 mt-2 figure-caption">{data.title}</p>
                 )}
               </>
             )}

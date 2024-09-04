@@ -1,6 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
+
 "POT-Creation-Date: 2024-08-28T08:55:19.173Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
@@ -2038,13 +2039,8 @@ msgid "gallery_close_preview"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
-# defaultMessage: Titolo del video
+# defaultMessage: Didascalia del video
 msgid "gallery_video_title"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
-# defaultMessage: Non viene mostrato. Serve al redattore per identificare meglio il video all'interno della gallery.
-msgid "gallery_video_title_description"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
@@ -3262,6 +3258,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/Sharing
 # defaultMessage: Condividi
 msgid "share"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Mostra didascalie
+msgid "showVideoCaption"
 msgstr ""
 
 #: config/Blocks/ListingOptions/bandiInEvidenceTemplate

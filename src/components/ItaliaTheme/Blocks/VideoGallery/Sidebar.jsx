@@ -23,16 +23,15 @@ const messages = defineMessages({
   video_url: { id: 'gallery_video_url', defaultMessage: 'Video URL' },
   video_title: {
     id: 'gallery_video_title',
-    defaultMessage: 'Titolo del video',
-  },
-  video_title_description: {
-    id: 'gallery_video_title_description',
-    defaultMessage:
-      "Non viene mostrato. Serve al redattore per identificare meglio il video all'interno della gallery.",
+    defaultMessage: 'Didascalia del video',
   },
   allowExternals: {
     id: 'Allow Externals',
     defaultMessage: 'Allow Externals',
+  },
+  showVideoCaption: {
+    id: 'showVideoCaption',
+    defaultMessage: 'Mostra didascalie',
   },
 });
 
@@ -103,6 +102,17 @@ const Sidebar = ({
               });
             }}
           />
+          <CheckboxWidget
+            id="showVideoCaption"
+            title={intl.formatMessage(messages.showVideoCaption)}
+            value={data.showVideoCaption ? data.showVideoCaption : false}
+            onChange={(name, value) => {
+              onChangeBlock(block, {
+                ...data,
+                showVideoCaption: value,
+              });
+            }}
+          />
         </Segment>
         <Accordion fluid styled className="form">
           {data.subblocks &&
@@ -139,9 +149,6 @@ const Sidebar = ({
                     <TextWidget
                       id="title"
                       title={intl.formatMessage(messages.video_title)}
-                      description={intl.formatMessage(
-                        messages.video_title_description,
-                      )}
                       value={subblock.title}
                       onChange={(name, value) => {
                         onChangeSubBlock(index, {
