@@ -34,7 +34,7 @@
 
 ### Migliorie
 
-- Aggiunto la data di modifica per mostrare la data dentro i documenti allegati nei CT Bando
+- Aggiunto la data di modifica nei documenti allegati del CT Bando
 
 ## Versione 7.30.4 (26/08/2024)
 
