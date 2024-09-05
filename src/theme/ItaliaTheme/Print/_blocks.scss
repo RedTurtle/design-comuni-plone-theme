@@ -144,39 +144,63 @@
         .title,
         .subblock-title {
           font-size: 1.5rem;
+          page-break-after: avoid;
         }
 
         .block-number {
           page-break-inside: avoid;
+        }
+
+        .subblock-text {
+          page-break-before: avoid;
+        }
+
+        .block-header {
+          page-break-after: avoid;
         }
       }
     }
   }
 
   .block.iconBlocks {
-    .block-header {
-      .title {
-        font-size: 1.5rem;
-        margin: 0.5rem;
-      }
-    }
+    .section.full-width {
+      padding: 12px !important;
+      .block-header {
+        .title {
+          font-size: 1.5rem;
+          margin: 0px;
+          line-height: 1.5rem;
+        }
 
-    .card {
-      padding-top: 0px;
-
-      .card-body {
-        padding: 12px;
-
-        .iconblock-icon {
-          margin-bottom: 1rem;
-          .icon {
-            height: 2rem;
+        .description {
+          margin-bottom: 10px;
+          p {
+            margin-top: 10px;
           }
         }
+      }
 
-        .iconblock-title {
-          font-size: 1rem;
+      .card {
+        padding-top: 0px;
+
+        .card-body {
+          padding: 12px;
+
+          .iconblock-icon {
+            margin-bottom: 1rem;
+            .icon {
+              height: 2rem;
+            }
+          }
+
+          .iconblock-title {
+            font-size: 1rem;
+          }
         }
+      }
+
+      .link-button {
+        display: none;
       }
     }
   }
@@ -218,13 +242,19 @@
     }
   }
 
+  // listing variations
   div.block.listing {
+    page-break-inside: avoid;
     .full-width {
+      page-break-inside: avoid;
       right: unset !important;
       left: unset !important;
       width: 100% !important;
       margin-right: 0 !important;
       margin-left: 0 !important;
+
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
 
       .container {
         max-width: 100% !important;
@@ -253,9 +283,227 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        flex-direction: column;
 
         .card-wrapper {
           flex: 0 0 30%;
+          page-break-inside: avoid;
+
+          .card {
+            page-break-inside: avoid;
+            .img-responsive-wrapper {
+              height: 150px;
+
+              .img-responsive {
+                height: 100%;
+              }
+            }
+
+            h3 {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+
+    .link-button,
+    .link-more-button-align-right {
+      display: none;
+    }
+
+    div.pagination-wrapper {
+      position: relative;
+      &:after {
+        content: '...';
+        text-align: center;
+        font-size: 1.5rem;
+        position: absolute;
+        bottom: -5px;
+      }
+      nav.pagination-wrapper {
+        display: none;
+      }
+    }
+
+    // listing cards
+    .card.card-teaser {
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .card-big-io-comune .card-body .card-title a {
+      font-size: 1.2rem;
+    }
+
+    .card {
+      .rassegna-info {
+        margin-bottom: 0px !important;
+      }
+      &:after {
+        display: none;
+      }
+    }
+
+    .card .card-body {
+      .category-top {
+        margin-bottom: 10px;
+        .icon {
+          height: 1rem;
+        }
+      }
+    }
+
+    // simple card template - compatto
+    .simple-card-compact-template {
+      page-break-inside: avoid;
+      .card-teaser-wrapper {
+        flex-direction: column;
+        margin-bottom: none;
+
+        &:after {
+          display: none;
+        }
+
+        .card-title a {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    // simple card template - default
+    .simple-card-default {
+      page-break-inside: avoid;
+      .template-header.with-filters .path-filter-buttons {
+        display: none;
+      }
+      .card-teaser-wrapper {
+        flex-direction: column;
+
+        .card-body {
+          padding-bottom: 0px !important;
+          .category-top {
+            // margin-bottom: 0px;
+            .icon {
+              height: 1rem;
+            }
+          }
+
+          .card-title {
+            margin-bottom: 0px;
+          }
+
+          .card-text {
+            margin-bottom: 0px !important;
+          }
+        }
+      }
+    }
+
+    // card with image
+    .card-with-image-template {
+      flex-direction: column;
+
+      .col-item.col-xl-4 {
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 5px !important;
+        .card-wrapper {
+          .card {
+            page-break-inside: avoid;
+
+            .img-responsive-wrapper {
+              height: 100px;
+
+              .img-responsive {
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // card with image - card persona
+    .card-persona.card-flex {
+      .card-body {
+        padding: 10px;
+        .card-title {
+          margin-bottom: 0px;
+        }
+
+        .card-text {
+          margin-top: 5px;
+        }
+      }
+      .card-image img {
+        height: 120px !important;
+      }
+    }
+
+    // content in evidence - contenuto in evidenza
+    .contentInEvidenceTemplate {
+      .content-in-evidence {
+        page-break-inside: avoid;
+        .item-image {
+          height: 100px;
+        }
+
+        .card-title a {
+          font-size: 1.2rem;
+        }
+
+        .read-more {
+          display: none;
+        }
+
+        .event-recurrences-more {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    // ribbon card - card con nastro
+    &.ribbonCardTemplate {
+      .mb-4.row {
+        flex-direction: column;
+
+        .col-lg-4 {
+          max-width: 100%;
+          width: 100%;
+          flex: 0 0 100%;
+
+          .card {
+            .flag-icon {
+              display: none;
+            }
+            .etichetta {
+              right: 10px;
+              top: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    // card with slide up text - card con testo animato
+  }
+
+  // media
+  .block.video,
+  .block.video_gallery {
+    max-width: 50%;
+    &,
+    & .video-wrapper {
+      .ui.embed .icon-play {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          fill: #000;
+          height: 1rem;
         }
       }
     }
