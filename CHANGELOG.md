@@ -1,3 +1,15 @@
+### [7.31.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.0...v7.31.1) (2024-09-05)
+
+
+### Bug Fixes
+
+* view caption for all videos in video gallery block ([#760](https://github.com/RedTurtle/design-comuni-plone-theme/issues/760)) ([34e43d7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/34e43d77f7510e623216d4b2b431bbd038fdcca3))
+
+
+### Maintenance
+
+* preparing release ([624ac89](https://github.com/RedTurtle/design-comuni-plone-theme/commit/624ac89163a5d4632d30936bc1dc9940f9e55db7))
+
 ## [7.31.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.4...v7.31.0) (2024-09-04)
 
 
