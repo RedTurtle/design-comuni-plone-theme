@@ -56,7 +56,7 @@ const messages = defineMessages({
 
   dichiarazioni_di_insussistenza_e_incompatibilita: {
     id: 'dichiarazioni_di_insussistenza_e_incompatibilita',
-    defaultMessage: 'Dichiarazioni di insussistenza e incompatibilita',
+    defaultMessage: 'Dichiarazioni di insussistenza e incompatibilità',
   },
 
   emolumenti_a_carico_della_finanza_pubblica: {
