@@ -41,6 +41,42 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Ripristinato l'informazione sull'ultimo aggiornamento nel CT UO
+
+## Versione 11.21.0 (14/08/2024)
+
+### Fix
+
+- Le date delle card nella Ricerca Eventi vengono mostrate correttamente come impostate nell'evento.
+
+## Versione 11.20.2 (12/08/2024)
+
+### Fix
+
+- Risolto un problema per cui veniva mostrato temporaneamente un messaggio di errore quando si visitava un indirizzo alternativo creato con lo strumento Gestione URL.
+
+## Versione 11.20.1 (09/08/2024)
+
+### Fix
+
+- Il testo che descrive la ricorrenza mensile è stato corretto per coprire tutti i casi.
+
+## Versione 11.18.2 (25/07/2024)
+
+### Fix
+
+- Nel CT Persona, tutte le sezioni Incarico appaiono ora nel menu
+
+## Versione 11.18.1 (25/07/2024)
+
+### Fix
+
+- Migliorata la visualizzazione delle card risultato nella ricerca Eventi e Unità Organizzativa.
+
 ## Versione 11.18.0 (19/07/2024)
 
 ### Migliorie
@@ -56,6 +92,10 @@
 ### Fix
 
 - Ripristinato il funzionamento del filtro luogo nella ricerca eventi.
+
+### Migliorie
+
+- Viene ora mostrato un errore parlante nel caso si tenti di caricare un file che superi le dimensioni massime consentite, di default 100mb, come già esplicitato sul manuale utente.
 
 ## Versione 11.16.0 (10/07/2024)
 
