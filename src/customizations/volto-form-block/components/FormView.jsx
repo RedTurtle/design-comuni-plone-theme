@@ -123,7 +123,7 @@ const FormView = ({
   return (
     <div className="block form">
       <div className="public-ui">
-        <div className="p-4 form-wrapper">
+        <div className="p-4">
           {data?.title && <h2>{data.title}</h2>}
           {data?.description && (
             <div className="block-description">{data.description}</div>
