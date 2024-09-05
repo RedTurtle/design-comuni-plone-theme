@@ -269,23 +269,7 @@ const FeedbackForm = ({ title, pathname }) => {
                         className="title-medium-2-semi-bold mb-0"
                         data-element="feedback-title"
                       >
-                        {/* Il validatore a quanto pare fa il check per titolo.
-                            Il titolo da specifiche deve essere diverso per Servizi, ma loro non lo sanno
-                            https://github.com/italia/pa-website-validator/blob/main/src/storage/municipality/feedbackComponentStructure.ts#L8
-                        */}
-                        {/* {contentType === 'Servizio'
-                          ? intl.formatMessage(messages.service_title)
-                          : intl.formatMessage(messages.title)} */}
-
-                        {/* Aggiunto titolo per compatibilità modello AGID di io-cittadino */}
-                        {/* {contentType === 'ModelloPratica'
-                          ? intl.formatMessage(messages.service_title)
-                          : intl.formatMessage(messages.title)} */}
-
-                        {/* Se serve un titolo custom va passato come prop, il ModelloPratica passerà
-                            un titolo custom a seconda dello step in cui ci si trova "... this service"
-                            va messo solo dopo l'invio */}
-                        {title ? title : intl.formatMessage(messages.title)}
+                        {title || intl.formatMessage(messages.title)}
                       </h2>
                       <div className="rating-container mb-0">
                         <RTRating
