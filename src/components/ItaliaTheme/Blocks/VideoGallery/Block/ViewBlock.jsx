@@ -139,16 +139,16 @@ const ViewBlock = ({
                     type="video/mp4"
                   />
                 ) : data.allowExternals ? (
-                    <Embed url={data.url} {...embedSettings} />                    
+                  <Embed url={data.url} {...embedSettings} />
                 ) : (
                   <div className="invalidVideoFormat" />
-                )}
-                {showVideoCaption && (
-                  <p className="px-3 mt-2 figure-caption">{data.title}</p>
                 )}
               </>
             )}
           </>
+        )}
+        {showVideoCaption && (
+          <p className="px-3 mt-2 figure-caption">{data.title}</p>
         )}
       </ConditionalEmbed>
     </div>
