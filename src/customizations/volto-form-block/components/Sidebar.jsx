@@ -35,7 +35,7 @@ import { BlockDataForm } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { getFieldName } from 'volto-form-block/components/utils';
 
-import './Sidebar.css';
+import 'volto-form-block/components/Sidebar.css';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({

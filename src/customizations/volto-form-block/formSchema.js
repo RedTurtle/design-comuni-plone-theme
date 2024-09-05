@@ -1,3 +1,5 @@
+// CUSTOMIZATION:
+// - added field to set a subscription limit
 import { defineMessages } from 'react-intl';
 import { useIntl } from 'react-intl';
 

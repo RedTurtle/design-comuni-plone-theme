@@ -1,6 +1,7 @@
 /*
 CUSTOMIZATIONS:
 - used design-react-kit components to render form result
+- added warning message when subscription limit (if set) has been exceeded
 */
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';

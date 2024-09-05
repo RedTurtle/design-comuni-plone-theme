@@ -1,3 +1,6 @@
+// CUSTOMIZATION:
+// - added warning state to form
+
 import React, { useState, useEffect, useReducer, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';

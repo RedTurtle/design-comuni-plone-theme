@@ -1,3 +1,5 @@
+// CUSTOMIZATION:
+// - added unique parameter to fields to allow preventing users from using same value more than once in the same field e.g. submitting form with same email more than once
 /* eslint-disable import/no-anonymous-default-export */
 import config from '@plone/volto/registry';
 import { defineMessages } from 'react-intl';
