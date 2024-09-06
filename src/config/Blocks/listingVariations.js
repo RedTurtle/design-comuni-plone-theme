@@ -151,7 +151,7 @@ const italiaListingVariations = [
     cloneData: cloneBlock,
   },
   {
-    id: 'squaresImageTemplate',
+    id: 'quaresImageTemplate',
     isDefault: false,
     title: 'Quadratoni con immagine',
     template: SquaresImageTemplate,
