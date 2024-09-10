@@ -24,6 +24,14 @@ const messages = defineMessages({
     id: 'Add accordion item',
     defaultMessage: 'Aggiungi elemento',
   },
+  title: {
+    id: 'Title',
+    defaultMessage: 'Titolo...',
+  },
+  description: {
+    id: 'Description placeholder',
+    defaultMessage: 'Descrizione...',
+  },
 });
 /**
  * Edit Accordion block class.
@@ -108,6 +116,42 @@ class Edit extends SubblocksEdit {
           <Container className="px-md-4">
             <Card className="card-bg rounded" noWrapper={false} space tag="div">
               <CardBody tag="div">
+                <TextEditorWidget
+                  data={this.props.data}
+                  fieldName="title"
+                  selected={this.state.selectedField === 'title'}
+                  block={this.props.block}
+                  onChangeBlock={(data) => {
+                    this.props.onChangeBlock(this.props.block, {
+                      ...data,
+                    });
+                  }}
+                  placeholder={this.props.intl.formatMessage(messages.title)}
+                  showToolbar={false}
+                  onSelectBlock={() => {}}
+                  onAddBlock={() => {
+                    this.setState({ selectedField: 'description' });
+                  }}
+                />
+                <div className="description">
+                  <TextEditorWidget
+                    data={this.props.data}
+                    fieldName="description"
+                    selected={this.state.selectedField === 'description'}
+                    block={this.props.block}
+                    onChangeBlock={(data) =>
+                      this.props.onChangeBlock(this.props.block, {
+                        ...data,
+                      })
+                    }
+                    placeholder={this.props.intl.formatMessage(
+                      messages.description,
+                    )}
+                    showToolbar={true}
+                    onSelectBlock={() => {}}
+                    onAddBlock={() => {}}
+                  />
+                </div>
                 <SubblocksWrapper node={this.node}>
                   {this.state.subblocks.map((subblock, subindex) => (
                     <div className="accordion-item" key={subblock.id}>
