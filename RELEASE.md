@@ -41,6 +41,20 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorato il layout della galleria immagini nei CT.
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 11.22.0 (05/09/2024)
 
 ### Migliorie
