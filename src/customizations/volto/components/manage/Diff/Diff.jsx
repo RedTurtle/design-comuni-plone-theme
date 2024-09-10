@@ -14,6 +14,7 @@
 */
 
 import React, { Component } from 'react';
+import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { Helmet } from '@plone/volto/helpers';
 import { connect } from 'react-redux';
@@ -21,7 +22,6 @@ import { compose } from 'redux';
 import { filter, map } from 'lodash';
 import { Container, Button, Dropdown, Grid, Table } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
-import { Portal } from 'react-portal';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { updateGdprPrivacyConsent } from 'volto-gdpr-privacy/actions/gdprPrivacyConsent';
 import qs from 'query-string';
@@ -388,8 +388,8 @@ class Diff extends Component {
               }),
             )}
 
-          {this.state.isClient && (
-            <Portal node={document.getElementById('toolbar')}>
+          {this.state.isClient &&
+            createPortal(
               <Toolbar
                 pathname={this.props.pathname}
                 hideDefaultViewButtons
@@ -406,9 +406,9 @@ class Diff extends Component {
                     />
                   </Link>
                 }
-              />
-            </Portal>
-          )}
+              />,
+              document.getElementById('toolbar'),
+            )}
         </Container>
       )
     );

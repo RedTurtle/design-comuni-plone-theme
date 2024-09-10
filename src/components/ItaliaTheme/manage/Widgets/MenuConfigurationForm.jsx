@@ -6,6 +6,7 @@
  */
 
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { defineMessages, useIntl } from 'react-intl';
 import { v4 as uuid } from 'uuid';
 import { isEmpty } from 'lodash';
@@ -20,7 +21,6 @@ import {
 } from '@plone/volto/components';
 import RadioWidget from 'volto-dropdownmenu/widget/RadioWidget';
 /* import SelectWidget from './SelectWidget'; */
-import { Portal } from 'react-portal';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -319,9 +319,7 @@ const MenuConfigurationForm = ({ id, menuItem, onChange, deleteMenuItem }) => {
           </Grid.Row>
         </Grid>
       </UIForm.Field>
-      <Portal node={document.getElementById('sidebar')}>
-        <Sidebar />
-      </Portal>
+      {createPortal(<Sidebar />, document.getElementById('sidebar'))}
     </>
   );
 };

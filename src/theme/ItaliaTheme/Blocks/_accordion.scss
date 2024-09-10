@@ -15,12 +15,12 @@ $accordion-icon-color: #7fb2e5;
       }
 
       .card-body {
+        padding: 0 3em;
+
         @media (min-width: #{map-get($grid-breakpoints, md)+1}) {
           max-height: 70vh;
           overflow-y: scroll;
         }
-
-        padding: 0 3em;
 
         @media (max-width: #{map-get($grid-breakpoints, md)}) {
           padding: 0;

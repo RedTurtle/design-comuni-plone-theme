@@ -106,12 +106,13 @@
   // smartphone
   @media (max-width: 585px) {
     .in-evidence-cards-wrapper {
+      display: block;
+      height: 100%;
+
       .card-wrapper {
         width: 100%;
         margin: 0px;
       }
-      display: block;
-      height: 100%;
     }
   }
   // tablet

@@ -57,7 +57,7 @@ module.exports = {
   },
   setupFiles: [
     '@plone/volto/test-setup-globals.js',
-    '@plone/volto/test-setup-config.js',
+    '@plone/volto/test-setup-config.jsx',
     './src/addons/design-comuni-plone-theme/test-setup-config.js',
   ],
   globalSetup: '@plone/volto/global-test-setup.js',
