@@ -45,7 +45,7 @@
 
 ### Migliorie
 
-- ...
+- Aggiunto campo per l'inserimento del titolo e della descrizione nel blocco accordion
 
 ### Novità
 
