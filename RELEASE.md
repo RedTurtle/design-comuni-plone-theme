@@ -41,6 +41,20 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Aggiunto campo per l'inserimento del titolo e della descrizione nel blocco accordion
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 11.22.0 (05/09/2024)
 
 ### Migliorie
