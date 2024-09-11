@@ -46,6 +46,7 @@
 ### Migliorie
 
 - Aggiunto campo per l'inserimento del titolo e della descrizione nel blocco accordion
+- ...
 
 ### Novità
 
@@ -54,6 +55,7 @@
 ### Fix
 
 - ...
+- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore. Pianificato evento per ripristinarlo.
 
 ## Versione 11.22.0 (05/09/2024)
 
