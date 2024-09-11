@@ -72,25 +72,23 @@ class Edit extends SubblocksEdit {
                     this.setState({ selectedField: 'description' });
                   }}
                 />
-                <div className="description">
-                  <TextEditorWidget
-                    data={this.props.data}
-                    fieldName="description"
-                    selected={this.state.selectedField === 'description'}
-                    block={this.props.block}
-                    onChangeBlock={(data) =>
-                      this.props.onChangeBlock(this.props.block, {
-                        ...data,
-                      })
-                    }
-                    placeholder={this.props.intl.formatMessage(
-                      messages.description,
-                    )}
-                    showToolbar={true}
-                    onSelectBlock={() => {}}
-                    onAddBlock={() => {}}
-                  />
-                </div>
+                <TextEditorWidget
+                  data={this.props.data}
+                  fieldName="description"
+                  selected={this.state.selectedField === 'description'}
+                  block={this.props.block}
+                  onChangeBlock={(data) =>
+                    this.props.onChangeBlock(this.props.block, {
+                      ...data,
+                    })
+                  }
+                  placeholder={this.props.intl.formatMessage(
+                    messages.description,
+                  )}
+                  showToolbar={true}
+                  onSelectBlock={() => {}}
+                  onAddBlock={() => {}}
+                />
                 <SubblocksWrapper node={this.node}>
                   {this.state.subblocks.map((subblock, subindex) => (
                     <div className="accordion-item" key={subblock.id}>
