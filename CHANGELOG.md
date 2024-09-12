@@ -1,3 +1,11 @@
+### [7.31.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.1...v7.31.2) (2024-09-12)
+
+
+### Maintenance
+
+* preparing release 7.31.2 ([d629068](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d6290688066159f5e9cb4da661027cbfcbe24c43))
+* udpated volto-form-block ([09e085d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/09e085d3a9f7ffaaa666150122035d09e4bb1af9))
+
 ### [7.31.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.0...v7.31.1) (2024-09-05)
 
 
