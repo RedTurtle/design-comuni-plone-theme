@@ -45,11 +45,11 @@
 
 ### Migliorie
 
-- Aggiunti campi per l'inserimento del titolo e della descrizione nel blocco accordion
+- ...
 
 ### Novità
 
-- ...
+- Aggiunti campi per l'inserimento del titolo e della descrizione nel blocco accordion
 
 ### Fix
 
