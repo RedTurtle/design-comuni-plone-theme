@@ -1,6 +1,7 @@
 /**
  * RecurrenceWidget component.
  * @module components/manage/Widgets/RecurrenceWidget
+ * See https://github.com/RedTurtle/design-comuni-plone-theme/pull/741 for notable changes and reasons
  */
 
 import React, { Component } from 'react';

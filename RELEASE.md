@@ -41,6 +41,51 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- Aggiunto campo per l'inserimento del titolo e della descrizione nel blocco accordion
+
+### Fix
+
+- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore. Pianificato evento per ripristinarlo.
+- Sistemate diverse incogruenze e errori generati dal widget per la creazione delle ricorrenze nel CT Evento
+
+## Versione 11.22.0 (05/09/2024)
+
+### Migliorie
+
+- Modificata la lista dei Luoghi per filtrare la ricerca degli eventi. Si prendevano tutti i luoghi, ora solo quelli legati agli eventi per avere una lista più corta.
+- Migliorato l'ordinamento della ricerca nel blocco cerca: la ricerca iniziale rispetta l'eventuale selezione del redattore; nel momento in cui si cerca inserendo un testo allora si ordina per ranking.
+- Mostrato il numero di risultati della ricerca nel blocco cerca.
+
+### Novità
+
+- Il blocco Form ha nuove funzionalità come il limite di iscrizioni e la possibilità di impostare un campo come univoco.
+- Aggiunti al CT Persona i campi per la gestione della Trasparenza per allegare i file sugli emolumenti a carico della finanza pubblica e le dichiarazioni di insussistenza e incompatibilità.
+
+### Fix
+
+- Ripristinata l'informazione sull'ultimo aggiornamento nel CT Unità Organizzativa.
+- Risolto un problema con la spaziatura nel testo di presentazione dei risultati di ricerca nel blocco cerca.
+
+## Versione 11.21.0 (14/08/2024)
+
+### Fix
+
+- Le date delle card nella Ricerca Eventi vengono mostrate correttamente come impostate nell'evento.
+
+## Versione 11.20.2 (12/08/2024)
+
+### Fix
+
+- Risolto un problema per cui veniva mostrato temporaneamente un messaggio di errore quando si visitava un indirizzo alternativo creato con lo strumento Gestione URL.
+
 ## Versione 11.20.1 (09/08/2024)
 
 ### Fix
