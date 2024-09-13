@@ -519,7 +519,23 @@ class RecurrenceWidget extends Component {
 
   updateRruleSet = (rruleSet, formValues, field, value) => {
     let rruleOptions = this.formValuesToRRuleOptions(formValues);
-    let dstart = rruleSet.dtstart() ? rruleSet.dtstart() : new Date();
+    let dstart = undefined;
+    if (rruleSet.dtstart()) {
+      // Se hai una ricorrenza usala
+      dstart = rruleSet.dtstart();
+    } else {
+      if (this.props.formData.start) {
+        // Verifica chi tra start e end vuoi usare in base al contronto tra le date e al flag fine aperta
+        const mstart = this.moment(new Date(this.props.formData.start));
+        const mend = this.moment(new Date(this.props.formData.end));
+        if (mstart.isSame(mend, 'day')) {
+          dstart = mstart.toDate();
+        } else {
+          if (this.props.formData.open_end) dstart = mstart.toDate();
+          else dstart = mend.toDate();
+        }
+      }
+    }
     let exdates = Object.assign([], rruleSet.exdates());
     let rdates = Object.assign([], rruleSet.rdates());
     if (field === 'dstart') dstart = value;
