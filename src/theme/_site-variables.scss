@@ -63,3 +63,7 @@ $dvt-navigation-v-padding: 15px !default;
 $spacer: 16px;
 $ribbon-spacing-h: calc($spacer * 3);
 $ribbon-width: calc($spacer * 2);
+
+// accessible focus colors
+$outer-focus-outline: #fff !default;
+$inner-focus-border: #000 !default;
