@@ -177,6 +177,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
                 <>
                   {React.createElement(filterOne.widget.component, {
                     ...filterOne.widget?.props,
+                    blockID: id,
                     id: 'filterOne',
                     onChange: (filter, value) => {
                       dispatchFilter({
@@ -190,6 +191,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
               {filterTwo &&
                 React.createElement(filterTwo.widget?.component, {
                   ...filterTwo.widget?.props,
+                  blockID: id,
                   id: 'filterTwo',
                   onChange: (filter, value) =>
                     dispatchFilter({
@@ -200,6 +202,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
               {filterThree &&
                 React.createElement(filterThree.widget?.component, {
                   ...filterThree.widget?.props,
+                  blockID: id,
                   id: 'filterThree',
                   onChange: (filter, value) =>
                     dispatchFilter({
