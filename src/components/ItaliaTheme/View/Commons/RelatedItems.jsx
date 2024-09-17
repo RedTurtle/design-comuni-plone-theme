@@ -82,9 +82,9 @@ const RelatedItems = ({
                   <>
                     <Row>
                       <Col className="text-center">
-                        <p className="h3">
-                          {intl.formatMessage(messages.related_items)}
-                        </p>
+                        <h2 className="h3">
+                          {intl.formatMessage(messages.related_items)} ???
+                        </h2>
                       </Col>
                     </Row>
                     <Row className="mt-lg-4">
@@ -133,7 +133,9 @@ const RelatedItems = ({
               <>
                 <Row>
                   <Col className="text-center">
-                    <h3>{intl.formatMessage(messages.related_items)}</h3>
+                    <h2 className="h3">
+                      {intl.formatMessage(messages.related_items)}
+                    </h2>
                   </Col>
                 </Row>
                 <Row className="mt-lg-4">
