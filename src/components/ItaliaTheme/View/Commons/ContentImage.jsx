@@ -14,15 +14,17 @@ const ContentImage = ({ content, position }) => {
     (content?.image || content?.image_caption) &&
     config.settings.italiaThemeViewsConfig.imagePosition === position;
 
+  const fullWidth =
+    config.settings.italiaThemeViewsConfig.imagePosition === 'afterHeader';
+  console.log(fullWidth);
   return view ? (
     <div className="content-image">
       <WideImage
         title={content?.title}
         image={content?.image}
         caption={content?.image_caption}
-        fullWidth={
-          config.settings.italiaThemeViewsConfig.imagePosition === 'afterHeader'
-        }
+        fullWidth={fullWidth}
+        sizes={fullWidth ? '100vw' : '(max-width: 768px) 90vw, 800px'}
       />
     </div>
   ) : null;

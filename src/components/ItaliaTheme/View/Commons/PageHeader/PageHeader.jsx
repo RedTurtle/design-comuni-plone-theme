@@ -3,8 +3,6 @@ import { defineMessages, useIntl } from 'react-intl';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-import Image from '@plone/volto/components/theme/Image/Image';
-
 import {
   Sharing,
   Actions,
@@ -17,6 +15,8 @@ import {
   PageHeaderExtend,
   ArgumentIcon,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+
+import config from '@plone/volto/registry';
 
 /**
  * PageHeader view component class.
@@ -38,6 +38,7 @@ const messages = defineMessages({
 
 const PageHeader = (props) => {
   const intl = useIntl();
+  const Image = config.getComponent({ name: 'Image' }).component;
 
   return (
     <div className="PageHeaderWrapper mb-4">
@@ -102,10 +103,11 @@ const PageHeader = (props) => {
           <div className="col-lg-2 page-header-image">
             <figure>
               <Image
-                image={props.content[props.imageinheader_field]}
+                item={props.content}
+                imageField={props.imageinheader_field}
                 alt=""
                 className="img-fluid"
-                maxSize={300}
+                sizes="(max-width:768px) 300px, 200px"
               />
             </figure>
           </div>

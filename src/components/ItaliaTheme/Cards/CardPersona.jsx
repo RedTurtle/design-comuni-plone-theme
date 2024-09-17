@@ -25,36 +25,32 @@ export const CardPersona = ({
 }) => {
   const image = ListingImage({
     item,
-    maxSize: 300,
-    useOriginal: false,
+    sizes: '80px',
+    style: { margin: 0 },
   });
   return (
     <Card
-      className={`card-persona card-teaser-image card-flex no-after ${
+      className={`card-persona card-teaser card-flex no-after ${
         className ?? ''
       }`}
     >
-      <div className="card-image-wrapper">
-        <CardBody>
-          {(icon || type) && (
-            <CardCategory iconName={icon}>
-              <ListingCategory category={type} item={item} />
-            </CardCategory>
-          )}
-          <CardTitle tag="h3">
-            <UniversalLink
-              item={!isEditMode ? item : null}
-              href={isEditMode ? '#' : ''}
-            >
-              {item.title || item.id}
-            </UniversalLink>
-          </CardTitle>
-          {listingText && <CardText>{listingText}</CardText>}
-        </CardBody>
-        {showImage && (
-          <div className="card-image card-image-rounded">{image}</div>
+      <CardBody>
+        {(icon || type) && (
+          <CardCategory iconName={icon}>
+            <ListingCategory category={type} item={item} />
+          </CardCategory>
         )}
-      </div>
+        <CardTitle tag="h3">
+          <UniversalLink
+            item={!isEditMode ? item : null}
+            href={isEditMode ? '#' : ''}
+          >
+            {item.title || item.id}
+          </UniversalLink>
+        </CardTitle>
+        {listingText && <CardText>{listingText}</CardText>}
+      </CardBody>
+      {showImage && <div className="avatar ml-3 size-xl">{image}</div>}
     </Card>
   );
 };

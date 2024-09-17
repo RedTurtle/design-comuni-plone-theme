@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Image from '@plone/volto/components/theme/Image/Image';
+import config from '@plone/volto/registry';
 
 /**
  * WideImage view component class.
@@ -9,19 +9,22 @@ import Image from '@plone/volto/components/theme/Image/Image';
  * @params {object} content: Content object.
  * @returns {string} Markup of the component.
  */
-const WideImage = ({ image, title, caption, fullWidth = true }) => {
+const WideImage = ({ image, title, caption, fullWidth = true, sizes }) => {
+  const Image = config.getComponent({ name: 'Image' }).component;
+
   return (
     <div className={cx('row wide-image', { 'row-full-width my-3': fullWidth })}>
       <figure className="figure">
         {image && (
           <Image
-            image={image}
+            item={{ image: image, image_field: 'image' }}
             className={cx('', { 'full-width': fullWidth })}
             alt=""
             title={caption || title}
             critical
-            loading="eager"
             key={image?.download}
+            sizes={sizes}
+            responsive={true}
           />
         )}
         {caption && (

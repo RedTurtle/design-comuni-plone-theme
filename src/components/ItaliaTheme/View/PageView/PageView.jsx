@@ -22,7 +22,6 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { defineMessages, useIntl } from 'react-intl';
 import { getLayoutFieldname } from '@plone/volto/helpers';
-import Image from '@plone/volto/components/theme/Image/Image';
 
 import config from '@plone/volto/registry';
 
@@ -51,6 +50,7 @@ const messages = defineMessages({
 const PageView = ({ content, token, location, history }) => {
   const intl = useIntl();
   const layout = content[getLayoutFieldname(content)];
+  const Image = config.getComponent({ name: 'Image' }).component;
 
   if (layout === 'document_view') {
     const rightHeaderHasContent =
@@ -89,13 +89,15 @@ const PageView = ({ content, token, location, history }) => {
                       <Actions url={content['@id']} title={content.title} />
                     </div>
                   )}
-                  {content.image?.scales && (
+                  {content.image && (
                     <div className="header-image px-4 mb-3">
                       <Image
-                        image={content.image}
+                        item={content}
+                        imageField="image"
                         alt={content.title}
-                        maxSize={300}
                         key={content.image?.download}
+                        responsive={true}
+                        sizes="250px"
                       />
                     </div>
                   )}

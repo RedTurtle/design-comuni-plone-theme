@@ -1,41 +1,40 @@
-import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
-import Image from '@plone/volto/components/theme/Image/Image';
 import React from 'react';
-import { getImageAttributes } from '@plone/volto/helpers/Image/Image';
+
+import config from '@plone/volto/registry';
+import { getImageAttributes } from 'design-comuni-plone-theme/helpers';
 
 const ListingImage = ({
   item,
-  showDefault = false,
-  useOriginal = false,
-  maxSize,
+  loading,
   className = 'listing-image',
+  responsive = true,
+  sizes = '(max-width:320px) 200px, (max-width:425px) 300px, (max-width:768px) 400px, 300px',
   ...imageProps
 }) => {
-  if (!item.image_field) {
-    if (showDefault) {
-      return <img src={DefaultImageSVG} alt="" />;
-    }
-    return null;
-  } else {
-    return (
-      <Image
-        className={className}
-        image={
-          item.image_scales?.[item.image_field]?.[0] ||
-          item.image ||
-          item['@id']
-        }
-        aria-hidden="true"
-        alt=""
-        title={item.title}
-        role="presentation"
-        imageField={item.image_field}
-        useOriginal={useOriginal}
-        maxSize={maxSize}
-        {...imageProps}
-      />
-    );
-  }
+  const Image = config.getComponent({ name: 'Image' }).component;
+
+  const image = (
+    <Image
+      aria-hidden="true"
+      alt=""
+      role="presentation"
+      className={className}
+      item={{
+        ...item,
+        image_field: 'image', //[ToDo]: rimuove image_field quando cekk ritorna i dati corretti per i listing
+        image: { ...item.image, download: item.image?.scales?.huge?.download }, //[ToDo]: rimuove image_field quando cekk ritorna i dati corretti per i listing
+      }}
+      loading={loading}
+      title={item.title}
+      responsive={responsive}
+      sizes={sizes}
+      {...imageProps}
+    />
+  );
+
+  if (!image) return null;
+
+  return image;
 };
 
 export const getListingImageBackground = (item, size) => {
