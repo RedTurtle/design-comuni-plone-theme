@@ -5,10 +5,9 @@
  * - added new select field with lighthouse options
  */
 
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useId } from 'react';
 import { createPortal } from 'react-dom';
 import { defineMessages, useIntl } from 'react-intl';
-import { v4 as uuid } from 'uuid';
 import { isEmpty } from 'lodash';
 import { Form as UIForm, Grid, Button } from 'semantic-ui-react';
 import {
@@ -98,7 +97,7 @@ const messages = defineMessages({
 
 const MenuConfigurationForm = ({ id, menuItem, onChange, deleteMenuItem }) => {
   const intl = useIntl();
-  const defaultBlockId = uuid();
+  const defaultBlockId = useId();
 
   if (!menuItem.blocks_layout || isEmpty(menuItem.blocks_layout.items)) {
     menuItem.blocks_layout = {
@@ -117,11 +116,11 @@ const MenuConfigurationForm = ({ id, menuItem, onChange, deleteMenuItem }) => {
     e.preventDefault();
   };
 
-  const preventEnter = (e) => {
+  const preventEnter = useCallback((e) => {
     if (e.code === 'Enter') {
       preventClick(e);
     }
-  };
+  }, []);
 
   useEffect(() => {
     document
@@ -144,7 +143,7 @@ const MenuConfigurationForm = ({ id, menuItem, onChange, deleteMenuItem }) => {
         item.removeEventListener('keypress', preventEnter);
       });
     };
-  }, []);
+  }, [preventEnter]);
 
   const onChangeFormData = (id, value) => {
     onChange({ ...menuItem, [id]: value });
