@@ -75,6 +75,11 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
         o: 'plone.app.querystring.operation.selection.any',
         v: ['Event'],
       },
+      {
+        i: 'rassegna',
+        o: 'plone.app.querystring.operation.boolean.isFalse',
+        v: '',
+      },
     ];
 
     [filterOne, filterTwo, filterThree].forEach((f) => {
@@ -213,6 +218,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
                 icon={false}
                 tag="button"
                 className="my-2 my-lg-1"
+                type="submit"
               >
                 {intl.formatMessage(messages.find)}
               </Button>
