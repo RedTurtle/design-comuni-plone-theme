@@ -30,14 +30,27 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ... [`Istruzioni`](url della documentazione relativa alla novità)
+
+### Fix
+
+- Risolto problema con l'anteprima dei video youtube sul blocco video galerry
+
 ## Versione 7.30.5 (27/08/2024)
 
 ### Migliorie
 
 - Aggiunta una opzione scegliere se mostrare la didascalia nel blocco Video Gallery
 - Aggiunto la data di modifica nei documenti allegati del CT Bando
-odifica nei documenti allegati del CT Bando
-
+  odifica nei documenti allegati del CT Bando
 
 ## Versione 7.30.4 (26/08/2024)
 
