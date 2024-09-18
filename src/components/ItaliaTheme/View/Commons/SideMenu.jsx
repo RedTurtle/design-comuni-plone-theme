@@ -163,7 +163,7 @@ const SideMenu = ({ data, content_uid }) => {
                   }}
                   aria-controls="side-menu-body"
                 >
-                  <p className="h3">{intl.formatMessage(messages.index)}</p>
+                  <h2 className="h3">{intl.formatMessage(messages.index)}</h2>
                 </AccordionHeader>
                 <div className="mb-3">
                   <Progress
