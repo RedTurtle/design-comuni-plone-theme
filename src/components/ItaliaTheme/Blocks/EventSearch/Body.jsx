@@ -75,6 +75,11 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
         o: 'plone.app.querystring.operation.selection.any',
         v: ['Event'],
       },
+      {
+        i: 'rassegna',
+        o: 'plone.app.querystring.operation.boolean.isFalse',
+        v: '',
+      },
     ];
 
     [filterOne, filterTwo, filterThree].forEach((f) => {
@@ -177,6 +182,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
                 <>
                   {React.createElement(filterOne.widget.component, {
                     ...filterOne.widget?.props,
+                    blockID: id,
                     id: 'filterOne',
                     onChange: (filter, value) => {
                       dispatchFilter({
@@ -190,6 +196,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
               {filterTwo &&
                 React.createElement(filterTwo.widget?.component, {
                   ...filterTwo.widget?.props,
+                  blockID: id,
                   id: 'filterTwo',
                   onChange: (filter, value) =>
                     dispatchFilter({
@@ -200,6 +207,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
               {filterThree &&
                 React.createElement(filterThree.widget?.component, {
                   ...filterThree.widget?.props,
+                  blockID: id,
                   id: 'filterThree',
                   onChange: (filter, value) =>
                     dispatchFilter({
@@ -213,6 +221,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
                 icon={false}
                 tag="button"
                 className="my-2 my-lg-1"
+                type="submit"
               >
                 {intl.formatMessage(messages.find)}
               </Button>
