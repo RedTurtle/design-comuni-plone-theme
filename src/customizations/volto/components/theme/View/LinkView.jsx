@@ -1,3 +1,6 @@
+// CUSTOMIZATION:
+// - Added condition to check if user is SPID user (16-18 and 21)
+
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
