@@ -96,8 +96,8 @@ const SimpleCardDefault = (props) => {
   const isEventAppointment =
     item?.parent?.['@type'] === 'Event' && item?.['@type'] === 'Event';
 
-  const showDatesInListingFor =
-    config.settings.siteProperties.showDatesInListingFor;
+  const showContentDateInListingFor =
+    config.settings.siteProperties.showContentDateInListingFor;
 
   return (
     <Card
@@ -141,7 +141,7 @@ const SimpleCardDefault = (props) => {
         {listingText && (
           <CardText className={cx('', { 'mb-5': eventRecurrenceMore })}>
             {listingText}
-            {showDatesInListingFor.includes(type) && !hide_dates && (
+            {showContentDateInListingFor.includes(type) && !hide_dates && (
               <div className="document-date mt-3">
                 {item?.effective && (
                   <p className="mb-0">
