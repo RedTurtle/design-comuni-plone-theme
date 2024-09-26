@@ -41,6 +41,20 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Cambiato il titolo della sezione "fine incarico" nel CT Persona.
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 11.23.2 (24/09/2024)
 
 ### Migliorie
