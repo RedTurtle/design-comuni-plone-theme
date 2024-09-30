@@ -16,6 +16,7 @@ import FileWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { TextInput } from 'design-comuni-plone-theme/components';
 import config from '@plone/volto/registry';
 
 import { fromHtml } from 'design-comuni-plone-theme/config/Slate/utils';
@@ -70,7 +71,9 @@ const Field = ({
   errorMessage,
   id,
   reactSelect,
+  autocomplete,
 }) => {
+  console.log(autocomplete);
   const intl = useIntl();
   const Select = reactSelect.default;
 
@@ -117,6 +120,7 @@ const Field = ({
             onChange(name, e.target.value);
           }}
           value={value ?? ''}
+          autoComplete={autocomplete}
         />
       )}
       {field_type === 'textarea' && (
@@ -135,6 +139,7 @@ const Field = ({
             onChange(name, e.target.value);
           }}
           value={value ?? undefined}
+          autoComplete={autocomplete}
         />
       )}
       {field_type === 'select' && (
@@ -166,6 +171,7 @@ const Field = ({
               classNamePrefix="react-select"
               className={isInvalid() ? 'is-invalid' : ''}
               value={value ? [{ value: value, label: value }] : []}
+              autoComplete={autocomplete}
             />
             {description && <small className="form-text">{description}</small>}
             {errorMessage && (
@@ -301,6 +307,7 @@ const Field = ({
             onChange(name, e.target.value);
           }}
           value={value ?? ''}
+          autoComplete={autocomplete}
         />
       )}
       {field_type === 'attachment' && (
@@ -335,6 +342,7 @@ const Field = ({
             onChange(name, e.target.value);
           }}
           value={value ?? ''}
+          autoComplete={autocomplete}
         />
       )}
 
@@ -405,6 +413,7 @@ Field.propTypes = {
   value: PropTypes.any,
   formHasErrors: PropTypes.bool,
   onChange: PropTypes.func,
+  autoComplete: PropTypes.string,
 };
 
 export default injectLazyLibs('reactSelect')(Field);
