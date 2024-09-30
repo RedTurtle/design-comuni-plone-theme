@@ -1,3 +1,7 @@
+// CUSTOMIZATION:
+// - 124: Set AuthenticatedUsers roles as authenticatedRole for all groups
+// - 263: Changed updateGroupRole function to update all checkboxes when changing the AuthenticatedUsers checkboxes
+
 /**
  * Users controlpanel container.
  * @module components/manage/Controlpanels/UsersControlpanel

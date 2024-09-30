@@ -1,3 +1,5 @@
+// CUSTOMIZATION:
+// - 97: changed condition check or uncheck Checkboxes
 /**
  * Users controlpanel groups.
  * @module components/manage/Controlpanels/UsersControlpanelGroups
