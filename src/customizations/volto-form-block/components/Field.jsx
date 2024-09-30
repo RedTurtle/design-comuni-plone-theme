@@ -16,7 +16,6 @@ import FileWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { TextInput } from 'design-comuni-plone-theme/components';
 import config from '@plone/volto/registry';
 
 import { fromHtml } from 'design-comuni-plone-theme/config/Slate/utils';
@@ -73,7 +72,6 @@ const Field = ({
   reactSelect,
   autocomplete,
 }) => {
-  console.log(autocomplete);
   const intl = useIntl();
   const Select = reactSelect.default;
 
