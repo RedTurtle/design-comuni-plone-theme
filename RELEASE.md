@@ -41,6 +41,81 @@
 - ...
 -->
 
+## Versione 11.23.1 (19/09/2024)
+
+### Migliorie
+
+- Il colore del focus da tastiera sugli elementi della pagina è ora bianco e nero per garantire sempre un contrasto ottimale su tutti gli sfondi.
+
+## Versione 11.23.0 (19/09/2024)
+
+### Migliorie
+
+- Migliorato il layout della galleria immagini nei CT.
+- Nel blocco Cerca Evento, nel caso di un Evento Rassegna, tra i risultati vengono ora visualizzati solo gli appuntamenti della rassegna e non l'evento contenitore.
+
+### Novità
+
+- Aggiunto campo per l'inserimento del titolo e della descrizione nel blocco Accordion.
+
+### Fix
+
+- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore. Pianificato evento per ripristinarlo.
+
+## Versione 11.22.0 (05/09/2024)
+
+### Migliorie
+
+- Modificata la lista dei Luoghi per filtrare la ricerca degli eventi. Si prendevano tutti i luoghi, ora solo quelli legati agli eventi per avere una lista più corta.
+- Migliorato l'ordinamento della ricerca nel blocco cerca: la ricerca iniziale rispetta l'eventuale selezione del redattore; nel momento in cui si cerca inserendo un testo allora si ordina per ranking.
+- Mostrato il numero di risultati della ricerca nel blocco cerca.
+
+### Novità
+
+- Il blocco Form ha nuove funzionalità come il limite di iscrizioni e la possibilità di impostare un campo come univoco.
+- Aggiunti al CT Persona i campi per la gestione della Trasparenza per allegare i file sugli emolumenti a carico della finanza pubblica e le dichiarazioni di insussistenza e incompatibilità.
+
+### Fix
+
+- Ripristinata l'informazione sull'ultimo aggiornamento nel CT Unità Organizzativa.
+- Risolto un problema con la spaziatura nel testo di presentazione dei risultati di ricerca nel blocco cerca.
+
+## Versione 11.21.0 (14/08/2024)
+
+### Fix
+
+- Le date delle card nella Ricerca Eventi vengono mostrate correttamente come impostate nell'evento.
+
+## Versione 11.20.2 (12/08/2024)
+
+### Fix
+
+- Risolto un problema per cui veniva mostrato temporaneamente un messaggio di errore quando si visitava un indirizzo alternativo creato con lo strumento Gestione URL.
+
+## Versione 11.20.1 (09/08/2024)
+
+### Fix
+
+- Il testo che descrive la ricorrenza mensile è stato corretto per coprire tutti i casi.
+
+## Versione 11.18.2 (25/07/2024)
+
+### Fix
+
+- Nel CT Persona, tutte le sezioni Incarico appaiono ora nel menu
+
+## Versione 11.18.1 (25/07/2024)
+
+### Fix
+
+- Migliorata la visualizzazione delle card risultato nella ricerca Eventi e Unità Organizzativa.
+
+## Versione 11.18.0 (19/07/2024)
+
+### Migliorie
+
+- Aggiunta la paginazione per le card presenti sotto i campi "Sede di" e "Servizi presenti nel luogo", ora verranno mostrati solo 4 elementi alla volta.
+
 ## Versione 11.17.0 (16/07/2024)
 
 ### Novità
@@ -50,6 +125,10 @@
 ### Fix
 
 - Ripristinato il funzionamento del filtro luogo nella ricerca eventi.
+
+### Migliorie
+
+- Viene ora mostrato un errore parlante nel caso si tenti di caricare un file che superi le dimensioni massime consentite, di default 100mb, come già esplicitato sul manuale utente.
 
 ## Versione 11.16.0 (10/07/2024)
 

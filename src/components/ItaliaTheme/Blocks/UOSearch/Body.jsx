@@ -88,7 +88,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
       getQueryStringResults(
         subsite ? flattenToAppURL(subsite['@id']) : '',
         {
-          fullobjects: 1,
+          metadata_fields: '_all',
           query: query,
           b_size: b_size,
         },
@@ -198,6 +198,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
                 icon={false}
                 tag="button"
                 className="my-2 my-lg-1"
+                type="submit"
               >
                 {intl.formatMessage(messages.find)}
               </Button>

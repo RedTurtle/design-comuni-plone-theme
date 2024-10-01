@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-07-15T11:07:19.251Z\n"
+"POT-Creation-Date: 2024-09-10T12:46:37.907Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -178,6 +178,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Accordion/Edit
 #: components/ItaliaTheme/Blocks/IconBlocks/Edit
 #: components/ItaliaTheme/Blocks/NumbersBlock/Block/EditBlock
 # defaultMessage: Descrizione...
@@ -582,6 +583,7 @@ msgstr ""
 msgid "Thank you."
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Accordion/Edit
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/IconBlocks/Edit
 #: components/ItaliaTheme/Blocks/VideoGallery/Edit
@@ -1688,6 +1690,11 @@ msgstr ""
 msgid "dichiarazione_dei_redditi"
 msgstr ""
 
+#: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
+# defaultMessage: Dichiarazioni di insussistenza e incompatibilità
+msgid "dichiarazioni_di_insussistenza_e_incompatibilita"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Dirigente
@@ -1901,6 +1908,11 @@ msgstr ""
 msgid "embedVideo"
 msgstr ""
 
+#: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
+# defaultMessage: Emolumenti a carico della finanza pubblica
+msgid "emolumenti_a_carico_della_finanza_pubblica"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/HighlightedContent/Edit
 # defaultMessage: Please select an item in the sidebar in order to show it here
 msgid "emptySelection"
@@ -2082,11 +2094,6 @@ msgid "feedback_form_title"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
-# defaultMessage: How easy was it to use this service?
-msgid "feedback_form_title_service"
-msgstr ""
-
-#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Yes
 msgid "feedback_form_yes"
 msgstr ""
@@ -2136,6 +2143,16 @@ msgstr ""
 msgid "feedback_unclear_proceeding"
 msgstr ""
 
+#: overrideTranslations
+# defaultMessage: Check this box if the value entered in this field can be used only once.
+msgid "field_unique_description"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Unique field
+msgid "field_unique_title"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: File correlato
@@ -2171,8 +2188,28 @@ msgid "form_default_cancel_label"
 msgstr ""
 
 #: overrideTranslations
+# defaultMessage: Submission limit
+msgid "form_limit"
+msgstr ""
+
+#: overrideTranslations
 # defaultMessage: Ricomincia
 msgid "form_reset"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Set a submission limit
+msgid "form_set_limit"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Sei stato inserito in lista d'attesa
+msgid "form_submit_success_warning"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: I tuoi dati sono stati inviati, ma è già stato raggiunto il limite di iscrizioni, sei stato inserito in lista d'attesa.
+msgid "form_submit_success_warning_description"
 msgstr ""
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
@@ -3017,7 +3054,7 @@ msgid "rrule_on"
 msgstr ""
 
 #: overrideTranslations
-# defaultMessage: di
+# defaultMessage: il
 msgid "rrule_on the"
 msgstr ""
 

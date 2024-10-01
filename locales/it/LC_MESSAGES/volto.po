@@ -176,6 +176,7 @@ msgstr "Dal {start} al {end}"
 msgid "Description"
 msgstr "Descrizione"
 
+#: components/ItaliaTheme/Blocks/Accordion/Edit
 #: components/ItaliaTheme/Blocks/IconBlocks/Edit
 #: components/ItaliaTheme/Blocks/NumbersBlock/Block/EditBlock
 # defaultMessage: Descrizione...
@@ -580,6 +581,7 @@ msgstr "Testo..."
 msgid "Thank you."
 msgstr "Grazie."
 
+#: components/ItaliaTheme/Blocks/Accordion/Edit
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/IconBlocks/Edit
 #: components/ItaliaTheme/Blocks/VideoGallery/Edit
@@ -1686,6 +1688,11 @@ msgstr "Dettaglio tipologia procedimento"
 msgid "dichiarazione_dei_redditi"
 msgstr "Dichiarazione dei redditi"
 
+#: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
+# defaultMessage: Dichiarazioni di insussistenza e incompatibilità
+msgid "dichiarazioni_di_insussistenza_e_incompatibilita"
+msgstr "Dichiarazioni di insussistenza e incompatibilità"
+
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Dirigente
@@ -1899,6 +1906,11 @@ msgstr "E-mail"
 msgid "embedVideo"
 msgstr "YouTube Video {id}"
 
+#: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
+# defaultMessage: Emolumenti a carico della finanza pubblica
+msgid "emolumenti_a_carico_della_finanza_pubblica"
+msgstr "Emolumenti a carico della finanza pubblica"
+
 #: components/ItaliaTheme/Blocks/HighlightedContent/Edit
 # defaultMessage: Please select an item in the sidebar in order to show it here
 msgid "emptySelection"
@@ -2080,11 +2092,6 @@ msgid "feedback_form_title"
 msgstr "Quanto sono chiare le informazioni su questa pagina?"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
-# defaultMessage: How easy was it to use this service?
-msgid "feedback_form_title_service"
-msgstr "Quanto è stato facile usare questo servizio?"
-
-#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Yes
 msgid "feedback_form_yes"
 msgstr "Si"
@@ -2134,6 +2141,16 @@ msgstr "A volte le indicazioni non erano chiare"
 msgid "feedback_unclear_proceeding"
 msgstr "A volte non capivo se stavo procedendo correttamente"
 
+#: overrideTranslations
+# defaultMessage: Check this box if the value entered in this field can be used only once.
+msgid "field_unique_description"
+msgstr "Seleziona questo checkbox se il valore inserito in questo campo può essere utilizzato solo una volta"
+
+#: overrideTranslations
+# defaultMessage: Unique field
+msgid "field_unique_title"
+msgstr "Campo univoco"
+
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: File correlato
@@ -2169,9 +2186,29 @@ msgid "form_default_cancel_label"
 msgstr "Annulla"
 
 #: overrideTranslations
+# defaultMessage: Submission limit
+msgid "form_limit"
+msgstr "Limite iscrizioni"
+
+#: overrideTranslations
 # defaultMessage: Ricomincia
 msgid "form_reset"
 msgstr "Ricomincia"
+
+#: overrideTranslations
+# defaultMessage: Set a submission limit
+msgid "form_set_limit"
+msgstr "Imposta un limite iscrizioni"
+
+#: overrideTranslations
+# defaultMessage: Sei stato inserito in lista d'attesa
+msgid "form_submit_success_warning"
+msgstr "Sei stato inserito in lista d'attesa"
+
+#: overrideTranslations
+# defaultMessage: I tuoi dati sono stati inviati, ma è già stato raggiunto il limite di iscrizioni, sei stato inserito in lista d'attesa.
+msgid "form_submit_success_warning_description"
+msgstr "I tuoi dati sono stati inviati, ma è già stato raggiunto il limite di iscrizioni, sei stato inserito in lista d'attesa."
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Foto dell'attività politica
@@ -3015,9 +3052,9 @@ msgid "rrule_on"
 msgstr "di"
 
 #: overrideTranslations
-# defaultMessage: di
+# defaultMessage: il
 msgid "rrule_on the"
-msgstr "di"
+msgstr "il"
 
 #: overrideTranslations
 # defaultMessage: _
