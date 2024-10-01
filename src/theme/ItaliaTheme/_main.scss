@@ -80,20 +80,25 @@ iframe {
 
 .public-ui,
 .cms-ui {
-  blockquote {
-    position: relative;
-    margin: 1.5rem 2rem;
-    font-family: $font-family-serif;
+  blockquote,
+  .blockquote {
+    display: flow-root; //serve per quando i blockquote sono affiancati alle immagini allineate a dx o sx
+    border-color: $primary !important;
 
-    &:before {
-      position: absolute;
-      top: -1.8rem;
-      left: -2rem;
-      display: block;
-      height: 0;
-      color: $neutral-2-b2;
-      content: '“';
-      font-size: 400%;
+    ul:first-child,
+    ol:first-child {
+      margin-top: 0;
+    }
+
+    ul:last-child,
+    ol:last-child {
+      margin-bottom: 0;
+    }
+
+    &.dark {
+      a {
+        color: $primary-text;
+      }
     }
   }
 
@@ -109,61 +114,44 @@ iframe {
     }
   }
 
-  .callout-bg {
-    padding: 1.25rem;
-    margin: 1.25rem 0;
-    background-color: $primary-c1;
-
-    p,
-    .public-DraftStyleDefault-block {
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  .draftjs-text-smaller {
-    font-size: 0.75em;
-  }
-
-  .draftjs-text-larger {
+  .text-larger {
+    //.text-larger: stile applicabile da editor Slate
     font-size: 1.75em;
   }
+}
 
-  .draftjs-buttons {
+//slate LINK
+// .inline-link {
+//   margin-left: 0.5rem;
+//   margin-right: 0.5rem;
+// }
+
+.slate-editor-link {
+  clear: both;
+
+  &.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: $btn-border-radius;
     margin: 0;
-    clear: both;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
 
-    a {
-      display: inline-block;
-      padding: 1em 2em;
-      border-radius: $btn-border-radius;
-      margin: 0.5em 1em 0.5em 0;
+    &:hover,
+    &:active {
+      font-weight: 600;
+    }
+
+    &.btn-primary {
       background-color: $primary;
       color: $primary-text;
-      font-weight: 700;
-      text-align: center;
-      text-decoration: none;
 
       &:hover,
       &:active {
         background-color: darken($primary, 8);
         color: $primary-text;
-        font-weight: 700;
       }
-    }
-  }
-
-  div[class^='draftJsToolbar__toolbar__'] {
-    line-height: 1rem;
-
-    .icon {
-      font-size: 1rem;
-    }
-
-    .ui.input > input {
-      height: auto;
-      font-size: 0.8rem;
     }
   }
 }

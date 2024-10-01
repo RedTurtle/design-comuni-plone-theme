@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card, CardBody, Container, Row, Col } from 'design-react-kit';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import redraft from 'redraft';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import config from '@plone/volto/registry';
+import { useHandleDetachedBlockFocus } from 'design-comuni-plone-theme/helpers/blocks';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import cx from 'classnames';
 
 const messages = defineMessages({
@@ -44,63 +44,35 @@ const renderImage = (image, showImage, sizeNatural, altText = '') =>
     </div>
   ) : null;
 
-const Block = ({
-  data,
-  block,
-  inEditMode,
-  onChange,
-  onSelectBlock,
-  onAddBlock,
-  onFocusPreviousBlock,
-  onFocusNextBlock,
-  index,
-  selected,
-}) => {
+const Block = (props) => {
+  const { data, block, inEditMode, onChange, selected, ...otherProps } = props;
   const intl = useIntl();
-  const title = data?.image_card_title?.blocks[0]?.text;
+  const title = data?.image_card_title;
   const hasImage = data?.showImage;
   const content = data?.image_card_content;
 
-  const [selectedField, setSelectedField] = useState('title');
-
-  useEffect(() => {
-    if (selected) {
-      setSelectedField('title');
-    } else {
-      setSelectedField(null);
-    }
-  }, [selected]);
-
+  const { selectedField, setSelectedField } = useHandleDetachedBlockFocus(
+    props,
+    'image_card_title',
+  );
   return (
     <div className="image-text-card-wrapper">
       <h2 className="mb-4 mt-5" id={block.id + 'title'}>
         {inEditMode ? (
-          <div
-            onClick={() => {
-              setSelectedField('title');
+          <TextEditorWidget
+            {...otherProps}
+            showToolbar={false}
+            data={data}
+            block={block}
+            fieldName="image_card_title"
+            selected={selected && selectedField === 'image_card_title'}
+            onChangeBlock={(block, data) => onChange(data)}
+            placeholder={intl.formatMessage(messages.image_card_title)}
+            setSelected={setSelectedField}
+            focusNextField={() => {
+              setSelectedField('image_card_content');
             }}
-            onFocus={() => {
-              setSelectedField('title');
-            }}
-          >
-            <TextEditorWidget
-              data={data}
-              fieldName="image_card_title"
-              selected={selectedField === 'title'}
-              block={block}
-              onChangeBlock={(data) => onChange(data)}
-              placeholder={intl.formatMessage(messages.image_card_title)}
-              showToolbar={false}
-              onSelectBlock={() => {}}
-              onAddBlock={() => {
-                setSelectedField('content');
-              }}
-              onFocusNextBlock={() => {
-                setSelectedField('content');
-              }}
-              onFocusPreviousBlock={onFocusPreviousBlock}
-            />
-          </div>
+          />
         ) : (
           title
         )}
@@ -139,28 +111,28 @@ const Block = ({
                 >
                   <div
                     onClick={() => {
-                      setSelectedField('content');
+                      setSelectedField('image_card_content');
                     }}
                     onFocus={() => {
-                      setSelectedField('content');
+                      setSelectedField('image_card_content');
                     }}
                   >
                     <TextEditorWidget
+                      {...otherProps}
+                      showToolbar={true}
                       data={data}
                       fieldName="image_card_content"
-                      selected={selectedField === 'content'}
                       block={block}
-                      onChangeBlock={(data) => onChange(data)}
+                      selected={
+                        selected && selectedField === 'image_card_content'
+                      }
+                      onChangeBlock={(block, data) => onChange(data)}
                       placeholder={intl.formatMessage(
                         messages.image_card_content,
                       )}
-                      showToolbar={true}
-                      onSelectBlock={onSelectBlock}
-                      onAddBlock={onAddBlock}
-                      index={index}
-                      onFocusNextBlock={onFocusNextBlock}
-                      onFocusPreviousBlock={() => {
-                        setSelectedField('title');
+                      setSelected={setSelectedField}
+                      focusPrevField={() => {
+                        setSelectedField('image_card_title');
                       }}
                     />
                   </div>
@@ -195,11 +167,7 @@ const Block = ({
                     'ps-0': data?.rightImage,
                   })}
                 >
-                  {redraft(
-                    content,
-                    config.settings.richtextViewSettings.ToHTMLRenderers,
-                    config.settings.richtextViewSettings.ToHTMLOptions,
-                  )}
+                  <TextBlockView data={{ value: content }} />
                 </div>
               </Row>
             </Container>

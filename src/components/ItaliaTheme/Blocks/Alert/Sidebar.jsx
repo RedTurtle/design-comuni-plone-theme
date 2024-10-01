@@ -68,6 +68,7 @@ class Sidebar extends Component {
         <Segment className="form">
           <ColorListWidget
             id="bg_color"
+            className="alert-colors-widget"
             title={this.props.intl.formatMessage(messages.Color)}
             value={this.props.data.bg_color}
             onChange={(id, value) => {

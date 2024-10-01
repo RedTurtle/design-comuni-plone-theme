@@ -52,7 +52,6 @@ const Attachments = ({
           {
             'path.depth': 1,
             sort_on: 'getObjPositionInParent',
-            metadata_fields: '_all',
             fullobjects: 1,
             // the default maximum b_size allowed in redturtle.volto is 500
             b_size: 499,

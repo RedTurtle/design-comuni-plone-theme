@@ -1,3 +1,28 @@
+.alert-colors-widget {
+  .color-list-widget {
+    .ui.button.info {
+      &,
+      &.active {
+        background-color: $alert-info;
+      }
+    }
+
+    .ui.button.warning {
+      &,
+      &.active {
+        background-color: $alert-warning;
+      }
+    }
+
+    .ui.button.danger {
+      &,
+      &.active {
+        background-color: $alert-danger;
+      }
+    }
+  }
+}
+
 .public-ui {
   .block.alertblock,
   .alertblock {
@@ -5,7 +30,7 @@
       height: auto;
     }
 
-    .draftjs-buttons a {
+    a.btn.btn-primary.inline-link {
       background-color: $white;
       color: $body-color;
 
@@ -19,6 +44,15 @@
       background-color: $alert-danger;
       color: $alert-danger-text;
 
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $alert-danger-text;
+      }
+
       a {
         color: $alert-danger-text;
       }
@@ -28,6 +62,15 @@
       background-color: $alert-warning;
       color: $alert-warning-text;
 
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $alert-warning-text;
+      }
+
       a {
         color: $alert-warning-text;
       }
@@ -36,6 +79,15 @@
     .bg-alert-info {
       background-color: $alert-info;
       color: $alert-info-text;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $alert-info-text;
+      }
 
       a {
         color: $alert-info-text;

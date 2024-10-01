@@ -23,13 +23,14 @@ class Body extends SubblockEdit {
     return (
       <Subblock subblock={this} className="subblock-edit">
         <Block
+          {...this.props}
           data={this.props.data}
           index={this.props.index}
           key={this.props.index}
           inEditMode={this.props.inEditMode}
           selected={this.props.selected || this.state.focusOn === 'title'}
           block={this.props.block}
-          focusOn={this.props.focusOn}
+          focusOn={this.state.focusOn}
           intl={this.props.intl}
           onChange={this.onChange}
         />

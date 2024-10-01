@@ -5,9 +5,10 @@ import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { UniversalLink } from '@plone/volto/components';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
+import { useHandleDetachedBlockFocus } from 'design-comuni-plone-theme/helpers/blocks';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
-import redraft from 'redraft';
 
 const messages = defineMessages({
   cta_title: {
@@ -24,36 +25,19 @@ const messages = defineMessages({
   },
 });
 
-
-const Block = ({
-  data,
-  block,
-  inEditMode,
-  onChangeBlock,
-  onSelectBlock,
-  onAddBlock,
-  index,
-  onFocusNextBlock,
-  onFocusPreviousBlock,
-  selected,
-}) => {
+const Block = (props) => {
+  const { data, block, inEditMode, selected, ...otherProps } = props;
   const intl = useIntl();
   const Image = config.getComponent({ name: 'Image' }).component;
-  const title = data?.cta_title?.blocks[0]?.text;
+  const title = data?.cta_title;
   const hasImage = data?.showImage && data?.ctaImage?.length > 0;
   const content = data?.cta_content;
   const showFullwidth = data?.showFullWidth;
 
-  const [selectedField, setSelectedField] = useState('title');
-  const titleRef = useRef();
-  const contentRef = useRef();
-  useEffect(() => {
-    if (selected) {
-      setSelectedField('title');
-    } else {
-      setSelectedField(null);
-    }
-  }, [selected]);
+  const { selectedField, setSelectedField } = useHandleDetachedBlockFocus(
+    props,
+    'cta_title',
+  );
 
   return (
     <div
@@ -61,20 +45,6 @@ const Block = ({
         'has-image': hasImage,
         'full-width': showFullwidth,
       })}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
-          if (
-            !titleRef.current.contains(e.target) &&
-            !contentRef.current.contains(e.target)
-          ) {
-            this.props.onAddBlock('text', index + 1);
-          }
-
-          if (titleRef.current.contains(e.target)) {
-            setSelectedField('content');
-          }
-        }
-      }}
     >
       {hasImage && data?.ctaImage?.length > 0 && (
         <figure className="img-wrapper">
@@ -94,70 +64,40 @@ const Block = ({
         <div className="cta-tile-text">
           <h2 className="title mt-0" id={block + 'title'}>
             {inEditMode ? (
-              <div
-                ref={titleRef}
-                onClick={() => {
-                  setSelectedField('title');
+              <TextEditorWidget
+                {...otherProps}
+                showToolbar={false}
+                data={data}
+                fieldName="cta_title"
+                selected={selected && selectedField === 'cta_title'}
+                setSelected={setSelectedField}
+                block={block}
+                placeholder={intl.formatMessage(messages.cta_title)}
+                focusNextField={() => {
+                  setSelectedField('cta_content');
                 }}
-                onFocus={() => {
-                  setSelectedField('title');
-                }}
-              >
-                <TextEditorWidget
-                  data={data}
-                  fieldName="cta_title"
-                  selected={selectedField === 'title'}
-                  block={block}
-                  onChangeBlock={(data) => onChangeBlock(block, data)}
-                  placeholder={intl.formatMessage(messages.cta_title)}
-                  showToolbar={false}
-                  onSelectBlock={() => {}}
-                  onAddBlock={() => {
-                    setSelectedField('content');
-                  }}
-                  onFocusNextBlock={() => {
-                    setSelectedField('content');
-                  }}
-                  onFocusPreviousBlock={onFocusPreviousBlock}
-                />
-              </div>
+              />
             ) : (
               title
             )}
           </h2>
+
           {inEditMode ? (
-            <div
-              ref={contentRef}
-              onClick={() => {
-                setSelectedField('content');
+            <TextEditorWidget
+              {...otherProps}
+              showToolbar={true}
+              data={data}
+              fieldName="cta_content"
+              block={block}
+              selected={selected && selectedField === 'cta_content'}
+              placeholder={intl.formatMessage(messages.cta_content)}
+              setSelected={setSelectedField}
+              focusPrevField={() => {
+                setSelectedField('cta_title');
               }}
-              onFocus={() => {
-                setSelectedField('content');
-              }}
-            >
-              <TextEditorWidget
-                data={data}
-                fieldName="cta_content"
-                selected={selectedField === 'content'}
-                block={block}
-                onChangeBlock={(data) => onChangeBlock(block, data)}
-                placeholder={intl.formatMessage(messages.cta_content)}
-                showToolbar={true}
-                onSelectBlock={onSelectBlock}
-                onAddBlock={onAddBlock}
-                index={index}
-                onFocusNextBlock={onFocusNextBlock}
-                onFocusPreviousBlock={() => {
-                  setSelectedField('title');
-                }}
-              />
-            </div>
+            />
           ) : (
-            redraft(
-              content,
-              config.settings.richtextViewSettings.ToHTMLRenderers,
-              config.settings.richtextViewSettings.ToHTMLOptions,
-            )
+            <TextBlockView data={{ value: content }} />
           )}
           {data.ctaLink?.length > 0 && data.ctaLinkTitle?.length > 0 && (
             <div className="mt-5">

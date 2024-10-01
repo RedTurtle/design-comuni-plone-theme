@@ -34,9 +34,8 @@ import HandleAnchor from 'design-comuni-plone-theme/components/ItaliaTheme/AppEx
 import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/GenericAppExtras';
 import PageLoader from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/PageLoader';
 import TrackFocus from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/TrackFocus';
-import redraft from 'redraft';
-
 import SiteSettingsExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/SiteSettingsExtras';
+
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
 
 // CTs icons
@@ -60,9 +59,7 @@ import faQuestionSVG from 'design-comuni-plone-theme/icons/question-solid.svg';
 import bandoSVG from 'design-comuni-plone-theme/icons/bando.svg';
 import logSVG from 'design-comuni-plone-theme/icons/log.svg';
 
-import applyRichTextConfig from 'design-comuni-plone-theme/config/RichTextEditor/config';
-
-import gdprPrivacyPanelConfig from 'design-comuni-plone-theme/config/volto-gdpr-privacy-defaultPanelConfig.js';
+import applyItaliaSlateConfig from 'design-comuni-plone-theme/config/Slate/config';
 
 import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/schema.js';
 
@@ -80,7 +77,7 @@ const messages = defineMessages({
 });
 
 export default function applyConfig(voltoConfig) {
-  let config = applyRichTextConfig(voltoConfig);
+  let config = applyItaliaSlateConfig(voltoConfig);
 
   /******************************************************************************
    * SETTINGS
@@ -204,7 +201,7 @@ export default function applyConfig(voltoConfig) {
       'social-settings': shareSVG,
       'release-log': logSVG,
     },
-    defaultBlockType: 'text',
+    //defaultBlockType: 'text',
     defaultExcludedFromSearch: {
       portalTypes: ['Image', 'File'],
     },
@@ -325,16 +322,12 @@ export default function applyConfig(voltoConfig) {
         'break',
         'testo_riquadro_semplice',
         'testo_riquadro_immagine',
+        'callout_block',
         'rssBlock',
         //se si aggiunge un nuovo blocco, verificare che in edit non ci siano bottoni che provocano il submit della form. Se succede, gestirli con e.prevenDefault() e.stopPropagation().
       ],
 
       showRestricted: false,
-    },
-
-    'volto-gdpr-privacy': {
-      ...config.settings['volto-gdpr-privacy'],
-      defaultPanelConfig: gdprPrivacyPanelConfig,
     },
 
     'volto-editablefooter': {
@@ -429,6 +422,7 @@ export default function applyConfig(voltoConfig) {
     },
     hero: {
       ...config.blocks.blocksConfig.hero,
+      hasOwnFocusManagement: true,
       sidebarTab: 1,
     },
     html: {
@@ -436,22 +430,6 @@ export default function applyConfig(voltoConfig) {
       sidebarTab: 1,
     },
     rssBlock,
-    text: {
-      ...config.blocks.blocksConfig.text,
-      restricted: false,
-    },
-    slate: {
-      ...config.blocks.blocksConfig.slate,
-      restricted: true,
-    },
-    table: {
-      ...config.blocks.blocksConfig.table,
-      restricted: false,
-    },
-    slateTable: {
-      ...config.blocks.blocksConfig.slateTable,
-      restricted: true,
-    },
     maps: {
       ...config.blocks.blocksConfig.maps,
       restricted: true,
@@ -499,31 +477,6 @@ export default function applyConfig(voltoConfig) {
   // comment out the following line and add the leadimage behavior in Document.xml file
   delete config.blocks.blocksConfig['leadimage'];
 
-  // TOC block anchors not working, customizing tocEntry
-  // to also return draftJS block id
-  config.settings.slate = {
-    ...(config.settings.slate ?? {}),
-    topLevelTargetElements: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-  };
-  config.blocks.blocksConfig.text = {
-    ...config.blocks.blocksConfig.text,
-    tocEntry: (block = {}) => {
-      const draft = redraft(
-        block.text,
-        config.settings.richtextViewSettings.ToHTMLRenderers,
-        config.settings.richtextViewSettings.ToHTMLOptions,
-      );
-      const type = draft?.[0]?.[0]?.type;
-
-      return config.settings.slate.topLevelTargetElements.includes(type)
-        ? [
-            parseInt(type.slice(1)),
-            block.text.blocks[0].text,
-            block.text.blocks[0].key,
-          ]
-        : null;
-    },
-  };
   // Remove Horizontal Menu variation of TOC Block
   config.blocks.blocksConfig.toc.variations =
     config.blocks.blocksConfig.toc.variations.filter(

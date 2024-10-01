@@ -38,7 +38,7 @@ class EditBlock extends SubblockEdit {
    * Constructor
    * @method constructor
    * @param {Object} props Component properties
-   * @constructs WysiwygEditor
+   * @constructs Contacts Blocks edit
    */
   constructor(props) {
     super(props);
@@ -58,6 +58,18 @@ class EditBlock extends SubblockEdit {
       }
     });
   }
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (!this.props.selected && nextProps.focusOn) {
+      this.props.onSelectBlock(this.props.block);
+    }
+
+    if (nextProps.selected && !this.state.focusOn) {
+      this.setState({ focusOn: 'title' });
+    } else if (!nextProps.selected) {
+      this.setState({ focusOn: null });
+    }
+  }
   /**
    * Render method.
    * @method render
@@ -69,7 +81,7 @@ class EditBlock extends SubblockEdit {
     }
 
     return (
-      <Subblock subblock={this} className="subblock-edit">
+      <Subblock subblock={this} className="subblock-edit" tabIndex="-1">
         <Card
           className="card-bg rounded"
           noWrapper={false}
@@ -81,104 +93,113 @@ class EditBlock extends SubblockEdit {
           <CardBody tag="div">
             <div className="contact-title">
               {/* eslint-disable */}
-              <div
-                onClick={() => {
-                  this.setState({ focusOn: 'title' });
-                }}
-              >
-                <TextEditorWidget
-                  data={this.props.data}
-                  fieldName="title"
-                  selected={
-                    this.props.selected && this.state.focusOn === 'title'
-                  }
-                  block={this.props.block}
-                  onChangeBlock={this.onChange}
-                  placeholder={this.props.intl.formatMessage(
-                    messages.titlePlaceholder,
-                  )}
-                  nextFocus="text"
-                  setFocus={(f) => {
-                    this.setState({ focusOn: f });
-                  }}
-                  showToolbar={false}
-                  key="title"
-                />
-              </div>
-            </div>
-
-            <div
-              className="contact-text"
-              onClick={() => {
-                this.setState({ focusOn: 'text' });
-              }}
-            >
               <TextEditorWidget
+                {...this.props}
+                key="title"
+                showToolbar={false}
                 data={this.props.data}
-                fieldName="text"
-                selected={this.props.selected && this.state.focusOn === 'text'}
-                block={this.props.block}
-                onChangeBlock={this.onChange}
+                fieldName="title"
+                onChangeBlock={(block, _data) => {
+                  this.props.onChangeBlock(this.props.index, _data);
+                }}
                 placeholder={this.props.intl.formatMessage(
-                  messages.textPlaceholder,
+                  messages.titlePlaceholder,
                 )}
-                prevFocus="title"
-                nextFocus="tel"
-                setFocus={(f) => {
+                selected={this.props.selected && this.state.focusOn === 'title'}
+                setSelected={(f) => {
                   this.setState({ focusOn: f });
                 }}
-                key="text"
+                focusNextField={() => {
+                  this.setState({ focusOn: 'text' });
+                }}
+                focusPrevField={
+                  this.props.isFirst
+                    ? this.props.onFocusPreviousBlock
+                    : () => {
+                        this.props.onSubblockChangeFocus(this.props.index - 1);
+                      }
+                }
               />
             </div>
 
-            <div
-              className="contact-info"
-              onClick={() => {
-                this.setState({ focusOn: 'tel' });
-              }}
-            >
+            <div className="contact-text">
+              <TextEditorWidget
+                {...this.props}
+                key="text"
+                data={this.props.data}
+                fieldName="text"
+                placeholder={this.props.intl.formatMessage(
+                  messages.textPlaceholder,
+                )}
+                onChangeBlock={(block, _data) => {
+                  this.props.onChangeBlock(this.props.index, _data);
+                }}
+                selected={this.props.selected && this.state.focusOn === 'text'}
+                setSelected={(f) => this.setState({ focusOn: f })}
+                focusPrevField={() => {
+                  this.setState({ focusOn: 'title' });
+                }}
+                focusNextField={() => {
+                  this.setState({ focusOn: 'tel' });
+                }}
+              />
+            </div>
+
+            <div className="contact-info">
               <div className="icon-wrapper">
                 <Icon icon="phone-alt" />
               </div>
               <TextEditorWidget
+                {...this.props}
+                key="tel"
                 data={this.props.data}
                 fieldName="tel"
+                wrapClass="tel"
                 selected={this.props.selected && this.state.focusOn === 'tel'}
-                block={this.props.block}
-                onChangeBlock={this.onChange}
+                onChangeBlock={(block, _data) => {
+                  this.props.onChangeBlock(this.props.index, _data);
+                }}
                 placeholder={this.props.intl.formatMessage(
                   messages.textPlaceholder,
                 )}
-                prevFocus="text"
-                setFocus={(f) => {
-                  this.setState({ focusOn: f });
+                setSelected={(f) => this.setState({ focusOn: f })}
+                focusPrevField={() => {
+                  this.setState({ focusOn: 'text' });
                 }}
-                key="tel"
+                focusNextField={() => {
+                  this.setState({ focusOn: 'email' });
+                }}
               />
             </div>
-            <div
-              className="contact-info"
-              onClick={() => {
-                this.setState({ focusOn: 'email' });
-              }}
-            >
+            <div className="contact-info">
               <div className="icon-wrapper">
                 <Icon icon="envelope" />
               </div>
               <TextEditorWidget
+                {...this.props}
+                key="email"
+                wrapClass="email"
                 data={this.props.data}
                 fieldName="email"
                 selected={this.props.selected && this.state.focusOn === 'email'}
-                block={this.props.block}
-                onChangeBlock={this.onChange}
+                onChangeBlock={(block, _data) => {
+                  this.props.onChangeBlock(this.props.index, _data);
+                }}
                 placeholder={this.props.intl.formatMessage(
                   messages.textPlaceholder,
                 )}
-                prevFocus="email"
-                setFocus={(f) => {
-                  this.setState({ focusOn: f });
+                setSelected={(f) => this.setState({ focusOn: f })}
+                focusPrevField={() => {
+                  this.setState({ focusOn: 'tel' });
                 }}
-                key="email"
+                focusNextField={
+                  !this.props.isLast
+                    ? () => {
+                        this.setState({ focusOn: null });
+                        this.props.onSubblockChangeFocus(this.props.index + 1);
+                      }
+                    : null //default go to next block
+                }
               />
             </div>
           </CardBody>

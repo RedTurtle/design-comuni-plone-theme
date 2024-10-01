@@ -5,6 +5,8 @@
  * export { Api } from './Api/Api';
  */
 
+import EnhanceLink from 'design-comuni-plone-theme/helpers/EnhanceLink';
+
 export { defaultIconWidgetOptions } from 'design-comuni-plone-theme/helpers/IconWidget/IconWidgetHelper';
 export { fontAwesomeAliases } from 'design-comuni-plone-theme/helpers/IconWidget/IconAliasHelper';
 export {
@@ -15,7 +17,7 @@ export {
   contentFolderHasItems,
   renderPDCItemValue,
 } from 'design-comuni-plone-theme/helpers/contentHelper';
-export { checkRedraftHasContent } from 'design-comuni-plone-theme/helpers/redraftHelper';
+export { checkRichTextHasContent } from 'design-comuni-plone-theme/helpers/richTextHelper';
 export { getTableRowData } from 'design-comuni-plone-theme/helpers/amministrazioneTrasparenteHelper';
 export { getItemsByPath } from 'design-comuni-plone-theme/helpers/getItemsByPath';
 export {
@@ -48,9 +50,8 @@ export {
   realWidgetType,
   CUSTOM_DGFIELD_VALIDATION,
 } from 'design-comuni-plone-theme/helpers/FormValidation/DataGridFormValidationHelpers';
-
 export { commonSearchBlockMessages } from 'design-comuni-plone-theme/helpers/Translations/searchBlockExtendedTranslations';
-
 export { getComponentWithFallback } from 'design-comuni-plone-theme/helpers/registry';
+export { EnhanceLink };
 export { useHomePath } from 'design-comuni-plone-theme/helpers/url';
 export { usePaginatedItemsSection } from 'design-comuni-plone-theme/helpers/usePaginatedItemsSection.hook.ts';

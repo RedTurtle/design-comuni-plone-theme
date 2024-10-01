@@ -10,7 +10,7 @@ import { Container, Row, Col } from 'design-react-kit';
 import { SidebarPortal } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
-
+import { handleKeyDownOwnFocusManagement } from 'design-comuni-plone-theme/helpers/blocks';
 import {
   withDNDContext,
   SubblocksEdit,
@@ -44,7 +44,68 @@ class Edit extends SubblocksEdit {
   constructor(props) {
     super(props);
     this.state.selectedField = 'title';
+    this.nodeF = React.createRef();
   }
+
+  UNSAFE_componentWillReceiveProps(newProps) {
+    if (newProps.selected) {
+      if (!this.props.selected) {
+        this.setState({ selectedField: 'title' });
+      }
+    } else {
+      this.setState({ selectedField: null });
+    }
+  }
+
+  handleEnter = (e) => {
+    if (
+      this.props.selected &&
+      this.state.subIndexSelected < 0 &&
+      !this.state.selectedField
+    ) {
+      handleKeyDownOwnFocusManagement(e, this.props);
+    }
+  };
+
+  handleClick = (e) => {
+    const hasParent = (element, className) => {
+      if (!element.parentNode) {
+        return false;
+      }
+
+      if (element.classList.contains(className)) {
+        return true;
+      }
+
+      return hasParent(element.parentNode, className);
+    };
+    const clickOutsideSubblocks =
+      !e.target.classList.contains('volto-subblocks-wrapper') &&
+      !hasParent(e.target, 'volto-subblocks-wrapper');
+
+    if (clickOutsideSubblocks) {
+      this.setState({ subIndexSelected: -1 });
+    }
+  };
+
+  componentDidMount() {
+    if (this.props.selected && this.node) {
+      this.node.focus();
+    }
+    if (this.props.selected && this.nodeF.current) {
+      this.nodeF.current.focus();
+    }
+
+    if (this.state.subblocks.length === 0) {
+      this.addSubblock();
+    }
+
+    if (this.nodeF && this.nodeF.current) {
+      this.nodeF.current.addEventListener('keydown', this.handleEnter, false);
+      this.nodeF.current.addEventListener('click', this.handleClick, false);
+    }
+  }
+
   /**
    * Render method.
    * @method render
@@ -56,7 +117,7 @@ class Edit extends SubblocksEdit {
     }
 
     return (
-      <div className="public-ui">
+      <div className="public-ui" tabIndex="-1" ref={this.nodeF}>
         <div
           className={`full-width section bg-${
             this.props.data.bg_color ?? 'primary'
@@ -66,19 +127,18 @@ class Edit extends SubblocksEdit {
             <div className="block-header">
               <div className="title">
                 <TextEditorWidget
+                  {...this.props}
+                  key="title"
+                  showToolbar={false}
                   data={this.props.data}
                   fieldName="title"
                   selected={this.state.selectedField === 'title'}
-                  block={this.props.block}
-                  onChangeBlock={(data) => {
-                    this.props.onChangeBlock(this.props.block, {
-                      ...data,
-                    });
-                  }}
                   placeholder={this.props.intl.formatMessage(messages.title)}
-                  showToolbar={false}
                   onSelectBlock={() => {}}
-                  onAddBlock={() => {
+                  setSelected={(f) => {
+                    this.setState({ selectedField: f, subIndexSelected: -1 });
+                  }}
+                  focusNextField={() => {
                     this.setState({ selectedField: 'description' });
                   }}
                 />
@@ -86,21 +146,24 @@ class Edit extends SubblocksEdit {
 
               <div className="description">
                 <TextEditorWidget
+                  {...this.props}
+                  key="description"
                   data={this.props.data}
                   fieldName="description"
                   selected={this.state.selectedField === 'description'}
-                  block={this.props.block}
-                  onChangeBlock={(data) =>
-                    this.props.onChangeBlock(this.props.block, {
-                      ...data,
-                    })
-                  }
                   placeholder={this.props.intl.formatMessage(
                     messages.description,
                   )}
-                  showToolbar={true}
                   onSelectBlock={() => {}}
-                  onAddBlock={() => {}}
+                  setSelected={(f) => {
+                    this.setState({ selectedField: f, subIndexSelected: -1 });
+                  }}
+                  focusPrevField={() => {
+                    this.setState({ selectedField: 'title' });
+                  }}
+                  focusNextField={() => {
+                    this.setState({ selectedField: null, subIndexSelected: 0 });
+                  }}
                 />
               </div>
             </div>
@@ -116,11 +179,22 @@ class Edit extends SubblocksEdit {
                 {this.state.subblocks.map((subblock, subindex) => (
                   <Col lg="4" key={subblock.id} className="pb-3">
                     <EditBlock
+                      {...this.props}
                       data={subblock}
                       index={subindex}
                       selected={this.isSubblockSelected(subindex)}
                       {...this.subblockProps}
                       openObjectBrowser={this.props.openObjectBrowser}
+                      onSubblockChangeFocus={this.onSubblockChangeFocus}
+                      onChangeFocus={this.onSubblockChangeFocus}
+                      isLast={this.state.subblocks.length - 1 === subindex}
+                      isFirst={subindex === 0}
+                      onFocusPreviousBlock={() => {
+                        this.setState({
+                          selectedField: 'description',
+                          subIndexSelected: -1,
+                        });
+                      }}
                     />
                   </Col>
                 ))}
@@ -134,7 +208,6 @@ class Edit extends SubblocksEdit {
                 )}
               </Row>
             </SubblocksWrapper>
-
             {this.props.data.href && this.props.data.linkMoreTitle && (
               <div className="link-button text-center my-4">
                 <UniversalLink

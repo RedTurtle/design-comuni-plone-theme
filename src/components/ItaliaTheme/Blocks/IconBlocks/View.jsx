@@ -5,13 +5,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import redraft from 'redraft';
 import ViewBlock from './Block/ViewBlock';
 import { Container, Row, Col } from 'design-react-kit';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import config from '@plone/volto/registry';
-import { checkRedraftHasContent } from 'design-comuni-plone-theme/helpers';
 
 /**
  * View IconsBlock block class.
@@ -41,22 +40,10 @@ const IconsBlockView = ({ data, block }) => {
           )}
           <Container className="px-md-4">
             <div className="block-header">
-              {checkRedraftHasContent(data.title) && (
-                <div className="title">
-                  {redraft(
-                    data.title,
-                    config.settings.richtextViewSettings.ToHTMLRenderers,
-                    config.settings.richtextViewSettings.ToHTMLOptions,
-                  )}
-                </div>
-              )}
-              {checkRedraftHasContent(data.description) && (
+              {data.title && <div className="title">{data.title}</div>}
+              {data.description && (
                 <div className="description">
-                  {redraft(
-                    data.description,
-                    config.settings.richtextViewSettings.ToHTMLRenderers,
-                    config.settings.richtextViewSettings.ToHTMLOptions,
-                  )}
+                  <TextBlockView data={{ value: data.description }} />
                 </div>
               )}
             </div>

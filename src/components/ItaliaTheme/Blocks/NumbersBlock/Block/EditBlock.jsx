@@ -31,7 +31,7 @@ class EditBlock extends SubblockEdit {
    * Constructor
    * @method constructor
    * @param {Object} props Component properties
-   * @constructs WysiwygEditor
+   * @constructs Numbers Block edit
    */
   constructor(props) {
     super(props);
@@ -51,6 +51,7 @@ class EditBlock extends SubblockEdit {
     //   }
     // });
   }
+
   /**
    * Render method.
    * @method render
@@ -72,25 +73,39 @@ class EditBlock extends SubblockEdit {
               }}
             >
               <TextEditorWidget
+                {...this.props}
+                showToolbar={false}
                 data={this.props.data}
                 fieldName="title"
                 selected={this.props.selected && this.state.focusOn === 'title'}
+                setSelected={(f) => {
+                  this.setState({ focusOn: f });
+                  if (!f) {
+                    this.props.onSubblockChangeFocus(-1);
+                  }
+                }}
                 block={this.props.block}
-                onChangeBlock={this.onChange}
+                index={this.props.blockIndex}
+                onChangeBlock={(block, _data) => {
+                  this.props.onChangeBlock(this.props.index, _data);
+                }}
                 placeholder={this.props.intl.formatMessage(
                   messages.numberPlaceholder,
                 )}
-                prevFocus="text"
-                nextFocus="text"
-                setFocus={(f) => {
-                  this.setState({ focusOn: f });
+                focusPrevField={
+                  this.props.isFirst
+                    ? this.props.onFocusPreviousBlock
+                    : () => {
+                        this.props.onSubblockChangeFocus(this.props.index - 1);
+                      }
+                }
+                focusNextField={() => {
+                  this.setState({ focusOn: 'text' });
                 }}
-                showToolbar={false}
                 key="title"
               />
             </div>
           </div>
-
           <div
             className="subblock-text"
             onClick={() => {
@@ -98,21 +113,37 @@ class EditBlock extends SubblockEdit {
             }}
           >
             <TextEditorWidget
+              {...this.props}
+              showToolbar={false}
               data={this.props.data}
+              key="text"
               fieldName="text"
               selected={this.props.selected && this.state.focusOn === 'text'}
+              setSelected={(f) => {
+                this.setState({ focusOn: f });
+                if (!f) {
+                  this.props.onSubblockChangeFocus(-1);
+                }
+              }}
               block={this.props.block}
-              onChangeBlock={this.onChange}
+              index={this.props.blockIndex}
+              onChangeBlock={(block, _data) => {
+                this.props.onChangeBlock(this.props.index, _data);
+              }}
               placeholder={this.props.intl.formatMessage(
                 messages.descriptionPlaceholder,
               )}
-              prevFocus="title"
-              nextFocus="title"
-              setFocus={(f) => {
-                this.setState({ focusOn: f });
+              focusNextField={
+                !this.props.isLast
+                  ? () => {
+                      this.setState({ focusOn: null });
+                      this.props.onSubblockChangeFocus(this.props.index + 1);
+                    }
+                  : null //default go to next block
+              }
+              focusPrevField={() => {
+                this.setState({ focusOn: 'title' });
               }}
-              showToolbar={false}
-              key="text"
             />
           </div>
         </div>

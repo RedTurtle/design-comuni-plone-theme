@@ -1,17 +1,17 @@
 /**
  * ViewBlock.
- * @module components/ItaliaTheme/Blocks/Accordion/Block/ViewBlock
+ * @module components/ItaliaTheme/Blocks/IconBlocks/Block/ViewBlock
  */
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import redraft from 'redraft';
 import { useIntl, defineMessages } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { Card, CardBody, CardReadMore } from 'design-react-kit';
-import config from '@plone/volto/registry';
+
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const messages = defineMessages({
   vedi: {
@@ -26,20 +26,8 @@ const messages = defineMessages({
  * @extends Component
  */
 const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
-  const rawStringRenderer = {
-    blocks: {
-      unstyled: (children) => {
-        const text = children.map((child) => child[1]).join(''); // Join the text elements
-        return text.trim(); // Remove leading/trailing whitespace
-      },
-    },
-  };
-
-  const cardTitle = redraft(data.title, rawStringRenderer, {
-    cleanup: false,
-  });
-
   const intl = useIntl();
+
   return (
     <Card
       className="card-bg rounded subblock-view"
@@ -50,26 +38,14 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
       <CardBody tag="div">
         {data.icon?.length > 0 && (
           <div className="iconblock-icon">
-            <Icon icon={data.icon} aria-hidden={true} title={cardTitle} />
+            <Icon icon={data.icon} aria-hidden={true} title={data.title} />
           </div>
         )}
 
-        {data.title && (
-          <div className="iconblock-title">
-            {redraft(
-              data.title,
-              config.settings.richtextViewSettings.ToHTMLRenderers,
-              config.settings.richtextViewSettings.ToHTMLOptions,
-            )}
-          </div>
-        )}
+        {data.title && <div className="iconblock-title">{data.title}</div>}
         {data.text && (
           <div className="iconblock-text">
-            {redraft(
-              data.text,
-              config.settings.richtextViewSettings.ToHTMLRenderers,
-              config.settings.richtextViewSettings.ToHTMLOptions,
-            )}
+            <TextBlockView data={{ value: data.text }} />
           </div>
         )}
         {data.href && (
@@ -80,7 +56,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
             text={data.linkMoreTitle || intl.formatMessage(messages.vedi)}
             aria-label={`${
               data.linkMoreTitle || intl.formatMessage(messages.vedi)
-            } ${data.title ? cardTitle[0] : ''}`}
+            } ${data.title ?? ''}`}
           />
         )}
       </CardBody>

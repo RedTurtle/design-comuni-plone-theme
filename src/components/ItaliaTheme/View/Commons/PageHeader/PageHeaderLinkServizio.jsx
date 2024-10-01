@@ -8,8 +8,12 @@ const PageHeaderLinkServizio = ({ content }) => {
     content.canale_digitale_link &&
     !content.stato_servizio ? (
     <div className="mb-4">
-      <p className="draftjs-buttons">
-        <UniversalLink href={content.canale_digitale_link}>
+      <p className="canale-digitale">
+        <UniversalLink
+          className="btn btn-primary btn-lg"
+          href={content.canale_digitale_link}
+          data-element="service-online-access"
+        >
           {intl.formatMessage(messages.canale_digitale_link)}
         </UniversalLink>
       </p>

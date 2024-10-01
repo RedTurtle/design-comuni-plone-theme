@@ -4,6 +4,7 @@
  */
 
 import React, { useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -17,6 +18,8 @@ import {
   FooterSocials,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
+import { fromHtml } from 'design-comuni-plone-theme/config/Slate/utils';
 import { useHomePath } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
@@ -41,10 +44,15 @@ const FooterInfos = () => {
   }, [dispatch, location]);
 
   //filter rootpaths
-  const footerColumns = getItemsByPath(
+  let footerColumns = getItemsByPath(
     footerConfiguration,
     location?.pathname?.length ? location.pathname : homepath,
   );
+  footerColumns.forEach((column) => {
+    if (__CLIENT__) {
+      column.slateText = fromHtml(column.text);
+    }
+  });
 
   const colWidth =
     12 / (footerColumns.length < N_COLUMNS ? footerColumns.length : N_COLUMNS);
@@ -77,13 +85,18 @@ const FooterInfos = () => {
               )}
             </p>
             {column.showSocial && <FooterSocials />}
-
-            <div
-              dangerouslySetInnerHTML={{
-                __html: flattenHTMLToAppURL(column.text.data),
-              }}
-            />
-
+            {column.slateText ? (
+              <TextBlockView data={{ value: column.slateText }} />
+            ) : (
+              column.text && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: flattenHTMLToAppURL(column.text.data),
+                  }}
+                />
+              )
+            )}
+            {/* <TextBlockView id={index} data={{ value: data.text }} /> */}
             {column.newsletterSubscribe && <FooterNewsletterSubscribe />}
           </Col>
         ))}

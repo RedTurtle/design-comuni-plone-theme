@@ -5,12 +5,11 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import redraft from 'redraft';
 import { useIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { UniversalLink } from '@plone/volto/components';
-import config from '@plone/volto/registry';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const messages = defineMessages({
   vedi: {
@@ -34,6 +33,7 @@ const messages = defineMessages({
  */
 const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
   const intl = useIntl();
+
   return (
     <div className="accordion-item subblock-view">
       {data.title && (
@@ -55,11 +55,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
               }
             />
 
-            {redraft(
-              data.title,
-              config.settings.richtextViewSettings.ToHTMLRenderers,
-              config.settings.richtextViewSettings.ToHTMLOptions,
-            )}
+            {data.title}
           </button>
         </h3>
       )}
@@ -72,11 +68,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
           aria-labelledby={`${id}-${index}`}
         >
           <div className="accordion-inner" onFocus={toggle()}>
-            {redraft(
-              data.text,
-              config.settings.richtextViewSettings.ToHTMLRenderers,
-              config.settings.richtextViewSettings.ToHTMLOptions,
-            )}
+            <TextBlockView id={id} data={{ value: data.text }} />
           </div>
           {data.href && (
             <div className="link-more">

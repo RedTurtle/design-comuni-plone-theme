@@ -14,6 +14,7 @@ import {
   CarouselWrapper,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { useSlider } from 'design-comuni-plone-theme/components/ItaliaTheme/Slider/slider';
+
 import PropTypes from 'prop-types';
 import { contentFolderHasItems } from 'design-comuni-plone-theme/helpers';
 import { UniversalLink } from '@plone/volto/components';

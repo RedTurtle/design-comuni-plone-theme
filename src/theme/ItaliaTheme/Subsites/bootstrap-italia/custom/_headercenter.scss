@@ -87,6 +87,7 @@
             a {
               &.rounded-icon {
                 background-color: $subsite-primary-text;
+
                 svg {
                   @if $subsite-light-theme {
                     color: color-contrast($subsite-primary-text);

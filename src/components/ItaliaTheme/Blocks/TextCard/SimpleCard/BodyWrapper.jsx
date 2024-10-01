@@ -7,8 +7,9 @@ const BodyWrapper = ({ inEditMode, children }) => {
       className={cx('block simple-text-block', {
         'public-ui': inEditMode,
       })}
+      {...(inEditMode ? { tabIndex: '-1' } : {})}
     >
-      <div>{children}</div>
+      {children}
     </div>
   );
 };

@@ -48,9 +48,11 @@ $docs-section-margin: 3em;
           justify-content: space-between;
           padding: 0.4em 0;
           gap: 4rem;
+
           .title {
             flex: 1;
           }
+
           .title-wrap {
             flex: 1;
 
@@ -77,13 +79,18 @@ $docs-section-margin: 3em;
             justify-content: center;
 
             a {
-              width: 2.4em;
+              // width: 2.4em;
+              margin-left: 0.5rem;
               text-align: center;
 
               svg {
                 width: 1.4rem !important;
                 height: 1.4rem !important;
                 font-size: 1.3em;
+              }
+
+              .enhance-link {
+                font-size: 0.8rem;
               }
             }
           }
@@ -188,10 +195,12 @@ $docs-section-margin: 3em;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
+
             .downloads {
               width: 100%;
             }
           }
+
           .doc {
             flex-wrap: wrap;
             align-items: center;
@@ -220,8 +229,8 @@ $docs-section-margin: 3em;
             }
 
             &.modulo {
-              justify-content: space-between;
               flex-wrap: nowrap;
+              justify-content: space-between;
 
               .title,
               .downloads {

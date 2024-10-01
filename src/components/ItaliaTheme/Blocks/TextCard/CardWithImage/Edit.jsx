@@ -89,19 +89,13 @@ class Edit extends Component {
       return <div />;
     }
     return (
-      <div>
+      <div tabIndex="-1">
         <BodyWrapper data={this.state.currentBlockData} inEditMode={true}>
           <Block
+            {...this.props}
             data={this.state.currentBlockData}
-            block={this.props.block}
             onChange={(obj) => this.onChange(obj)}
             inEditMode={true}
-            onSelectBlock={this.props.onSelectBlock}
-            onAddBlock={this.props.onAddBlock}
-            index={this.props.index}
-            selected={this.props.selected}
-            onFocusPreviousBlock={this.props.onFocusPreviousBlock}
-            onFocusNextBlock={this.props.onFocusNextBlock}
           />
         </BodyWrapper>
         <SidebarPortal selected={this.props.selected || false}>

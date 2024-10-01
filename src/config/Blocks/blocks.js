@@ -65,7 +65,11 @@ import countDownSVG from 'design-comuni-plone-theme/icons/count-down.svg';
 import CountDownBlockView from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/CountDown/View';
 import CountDownBlockEdit from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/CountDown/Edit';
 
-import { cloneBlock } from 'design-comuni-plone-theme/config/Blocks/ListingOptions';
+import calloutSVG from '@plone/volto/icons/megaphone.svg';
+import CalloutView from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Callout/View';
+import CalloutEdit from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Callout/Edit';
+
+import { cloneBlock } from 'design-comuni-plone-theme/helpers/blocks';
 
 const italiaBlocks = {
   highlitedContent: {
@@ -204,7 +208,6 @@ const italiaBlocks = {
     restricted: false,
     mostUsed: false,
     cloneData: cloneBlock,
-    blockHasOwnFocusManagement: true,
     security: {
       addPermission: [],
       view: [],
@@ -222,7 +225,6 @@ const italiaBlocks = {
     restricted: false,
     mostUsed: false,
     cloneData: cloneBlock,
-    blockHasOwnFocusManagement: true,
     security: {
       addPermission: [],
       view: [],
@@ -238,7 +240,6 @@ const italiaBlocks = {
     restricted: false,
     mostUsed: false,
     cloneData: cloneBlock,
-    blockHasOwnFocusManagement: true,
     security: {
       addPermission: [],
       view: [],
@@ -277,6 +278,7 @@ const italiaBlocks = {
       view: [],
     },
     sidebarTab: 1,
+    blockHasOwnFocusManagement: true,
   },
   iconBlocks: {
     id: 'iconBlocks',
@@ -293,6 +295,7 @@ const italiaBlocks = {
       view: [],
     },
     sidebarTab: 1,
+    blockHasOwnFocusManagement: true,
   },
   contacts: {
     id: 'contacts',
@@ -309,6 +312,7 @@ const italiaBlocks = {
       view: [],
     },
     sidebarTab: 1,
+    blockHasOwnFocusManagement: true,
   },
 
   video_gallery: {
@@ -337,7 +341,6 @@ const italiaBlocks = {
     restricted: false,
     mostUsed: false,
     cloneData: cloneBlock,
-    blockHasOwnFocusManagement: true,
     security: {
       addPermission: [],
       view: [],
@@ -359,15 +362,33 @@ const italiaBlocks = {
       view: [],
     },
     sidebarTab: 1,
+    blockHasOwnFocusManagement: true,
+  },
+  callout_block: {
+    id: 'callout_block',
+    title: 'Callout',
+    icon: calloutSVG,
+    group: 'text',
+    view: CalloutView,
+    edit: CalloutEdit,
+    restricted: false,
+    mostUsed: false,
+    cloneData: cloneBlock,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+    sidebarTab: 1,
+    blockHasOwnFocusManagement: true,
   },
 };
 
 const getItaliaBlocks = (config) => {
   delete config.blocks.blocksConfig.teaser;
   config.blocks.blocksConfig.gridBlock.allowedBlocks =
-    config.blocks.blocksConfig.gridBlock.allowedBlocks
-      .filter((item) => !['slate', 'teaser'].includes(item))
-      .concat(['text']);
+    config.blocks.blocksConfig.gridBlock.allowedBlocks.filter(
+      (item) => !['teaser'].includes(item),
+    );
   return italiaBlocks;
 };
 export default getItaliaBlocks;

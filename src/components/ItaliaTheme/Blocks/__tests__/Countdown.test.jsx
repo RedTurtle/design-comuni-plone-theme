@@ -202,40 +202,32 @@ const mock_fields = {
       whole_day: null,
     },
   ],
-  countdown_text: {
-    blocks: [
-      {
-        data: {},
-        depth: 0,
-        entityRanges: [],
-        inlineStyleRanges: [],
-        key: '6chjd',
-        text: 'Insatiable an appetite',
-        type: 'unstyled',
-      },
-    ],
-    entityMap: {},
-  },
+  countdown_text: [
+    {
+      children: [
+        {
+          text: 'Insatiable an appetite',
+        },
+      ],
+      type: 'p',
+    },
+  ],
   countDownPosition: 'right',
   endDate: '2050-02-28T09:48:37.327Z',
   showFullWidth: true,
   showHours: true,
   showMinutes: true,
   showSeconds: true,
-  text: {
-    blocks: [
-      {
-        data: {},
-        depth: 0,
-        entityRanges: [],
-        inlineStyleRanges: [],
-        key: '4ir6b',
-        text: 'Recommended at the price',
-        type: 'unstyled',
-      },
-    ],
-    entityMap: {},
-  },
+  text: [
+    {
+      children: [
+        {
+          text: 'Recommended at the price',
+        },
+      ],
+      type: 'p',
+    },
+  ],
 };
 
 const store = mockStore({

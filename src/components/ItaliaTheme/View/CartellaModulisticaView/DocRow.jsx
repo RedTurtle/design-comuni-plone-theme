@@ -27,9 +27,15 @@ const Downloads = ({ item, titleDoc }) => {
         titleDoc !== item.title && <div className="title">{item.title}</div>
       )}
       <div className="downloads">
-        <DownloadFileFormat file={item?.file_principale} />
-        <DownloadFileFormat file={item?.formato_alternativo_1} />
-        <DownloadFileFormat file={item?.formato_alternativo_2} />
+        <DownloadFileFormat file={item?.file_principale} title={item.title} />
+        <DownloadFileFormat
+          file={item?.formato_alternativo_1}
+          title={item.title}
+        />
+        <DownloadFileFormat
+          file={item?.formato_alternativo_2}
+          title={item.title}
+        />
       </div>
     </React.Fragment>
   ) : (
@@ -37,6 +43,7 @@ const Downloads = ({ item, titleDoc }) => {
       href={item.remoteUrl || flattenToAppURL(item['@id'])}
       title={item.title}
       className="modulistica-link"
+      item={item}
     >
       <div className="title">{item.title}</div>
       <FontAwesomeIcon
@@ -51,7 +58,6 @@ const Downloads = ({ item, titleDoc }) => {
 
 const DocRow = ({ doc }) => {
   const [itemOpen, setItemOpen] = useState(false);
-
   const titleWrapper = (
     <div
       className={cx('title-wrap', {
@@ -59,7 +65,10 @@ const DocRow = ({ doc }) => {
       })}
     >
       <div id={`title-${doc.id}`} className="title">
-        <UniversalLink href={doc.remoteUrl || flattenToAppURL(doc['@id'])}>
+        <UniversalLink
+          href={doc.remoteUrl || flattenToAppURL(doc['@id'])}
+          item={doc}
+        >
           {doc.title}
         </UniversalLink>
         {doc?.description && (

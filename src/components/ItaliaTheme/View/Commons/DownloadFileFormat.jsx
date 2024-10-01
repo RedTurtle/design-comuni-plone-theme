@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { FontAwesomeIcon as IconFA } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { defineMessages, useIntl } from 'react-intl';
-import { Icon } from '@plone/volto/components';
+import { Icon, UniversalLink } from '@plone/volto/components';
 import { getFileViewFormat } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
@@ -23,6 +23,8 @@ const DownloadFileFormat = ({
   formatsize = '2x',
   className,
   showLabel = false,
+  title,
+  hideFileFormatLabel = false,
 }) => {
   const intl = useIntl();
   const defaultIcon = { lib: 'far', name: 'file', svg_format: false };
@@ -40,15 +42,17 @@ const DownloadFileFormat = ({
 
     icon = viewFormat?.icon ?? defaultIcon;
   }
-  const pdfFile = file?.download?.includes('@@display-file');
 
   return file ? (
-    <a
-      href={flattenToAppURL(file.download)}
+    <UniversalLink
+      item={{
+        ...file,
+        ['@id']: file.download,
+      }}
       title={file.filename}
       className={className}
-      target={pdfFile ? '_blank' : '_self'}
-      rel={pdfFile ? 'noopener noreferrer' : ''}
+      aria-label={(title ?? file.filename) + ': ' + label}
+      hideFileFormat={hideFileFormatLabel}
     >
       {!icon.svg_format ? (
         <IconFA
@@ -61,7 +65,7 @@ const DownloadFileFormat = ({
         <Icon className="icon-svg-custom" name={icon.name} />
       )}
       {showLabel && <span className="ms-4">{label}</span>}
-    </a>
+    </UniversalLink>
   ) : null;
 };
 

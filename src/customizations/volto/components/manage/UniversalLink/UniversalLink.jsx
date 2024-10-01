@@ -5,11 +5,13 @@
  * CUSTOMIZATIONS:
  * - aggiunto icona per link esterni
  * - aggiunto title informativo per link esterni
+ * - aggiunta la dimensione del file se il link punta a un file (enhanced_link_infos)
+ * - aggiunto il parametro hideFileFormat per nascondere il formato del file dall'enhance link
  */
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useIntl } from 'react-intl';
+import { useIntl, defineMessages } from 'react-intl';
 import { HashLink as Link } from 'react-router-hash-link';
 import { useSelector } from 'react-redux';
 import {
@@ -19,9 +21,15 @@ import {
 } from '@plone/volto/helpers/Url/Url';
 import { matchPath } from 'react-router';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-
+import { EnhanceLink } from 'design-comuni-plone-theme/helpers';
 import config from '@plone/volto/registry';
 
+const messages = defineMessages({
+  opensInNewTab: {
+    id: 'opensInNewTab',
+    defaultMessage: 'Apre in un nuovo tab',
+  },
+});
 const UniversalLink = ({
   href,
   item = null,
@@ -31,13 +39,31 @@ const UniversalLink = ({
   className = null,
   title = null,
   overrideMarkSpecialLinks = false,
+  hideFileFormat = false,
   ...props
 }) => {
-  const intl = useIntl();
+  let translations = {
+    opensInNewTab: {
+      defaultMessage: messages.opensInNewTab.defaultMessage,
+    },
+  };
+  //questo perchè il provider di intl non è sempre definito, ad esempio in slate_wysiwyg_box (Slate RichTextWidget)
+  let intl = null;
+  try {
+    intl = useIntl();
+    Object.keys(translations).forEach(
+      (k) => (translations[k].message = intl.formatMessage(messages[k])),
+    );
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.log('Cannot use intl here. View default messages.', e);
+  }
   const token = useSelector((state) => state.userSession?.token);
   const { openExternalLinkInNewTab } = config.settings;
 
   let url = href;
+  let enhanced_link_infos = null;
+
   if (!href && item) {
     if (!item['@id']) {
       // eslint-disable-next-line no-console
@@ -75,6 +101,16 @@ const UniversalLink = ({
     }
   }
 
+  if (item && item['@id']) {
+    /*enhance link*/
+    if (item && item.enhanced_links_enabled) {
+      enhanced_link_infos = { ...item };
+      if (!enhanced_link_infos.filename) {
+        enhanced_link_infos.filename = item['@id'];
+      }
+    }
+  }
+
   const isBlacklisted =
     (config.settings.externalRoutes ?? []).find((route) =>
       matchPath(flattenToAppURL(url), route.match),
@@ -87,6 +123,16 @@ const UniversalLink = ({
   const checkedURL = URLUtils.checkAndNormalizeUrl(url);
   url = checkedURL.url;
 
+  let aria_label = props['aria-label'] ?? item?.title ?? null;
+  let enhanced_link = null;
+  let extended_children = <></>;
+
+  if (enhanced_link_infos) {
+    enhanced_link = EnhanceLink({ enhanced_link_infos, aria_label });
+    extended_children = enhanced_link.children;
+    aria_label = enhanced_link.aria_label;
+  }
+
   let tag = (
     <Link
       to={flattenToAppURL(url)}
@@ -95,8 +141,10 @@ const UniversalLink = ({
       className={className}
       smooth={config.settings.hashLinkSmoothScroll}
       {...props}
+      aria-label={aria_label}
     >
       {children}
+      {extended_children}
     </Link>
   );
 
@@ -109,9 +157,10 @@ const UniversalLink = ({
     tag = (
       <a
         href={url}
-        title={`${title ? title + ' - ' : ''}${intl.formatMessage({
-          id: 'opensInNewTab',
-        })}`}
+        title={`${title ? title + ' - ' : ''}${
+          translations.opensInNewTab.message ??
+          translations.opensInNewTab.defaultMessage
+        }`}
         target={
           !checkedURL.isMail && !checkedURL.isTelephone && openInNewTab
             ? '_blank'
@@ -120,13 +169,14 @@ const UniversalLink = ({
         rel="noopener noreferrer"
         className={className}
         {...props}
+        aria-label={aria_label}
       >
         {children}
         {!overrideMarkSpecialLinks &&
           config.settings.siteProperties.markSpecialLinks && (
             <Icon
               icon="it-external-link"
-              title={`${title ? title + ' - ' : ''}${intl.formatMessage({
+              title={`${title ? title + ' - ' : ''}${intl?.formatMessage({
                 id: 'opensInNewTab',
               })}`}
               size="xs"
@@ -143,8 +193,10 @@ const UniversalLink = ({
         title={title}
         className={className}
         {...props}
+        aria-label={aria_label}
       >
         {children}
+        {extended_children}
       </a>
     );
   } else if (isDisplayFile) {
@@ -156,8 +208,10 @@ const UniversalLink = ({
         rel="noopener noreferrer"
         className={className}
         {...props}
+        aria-label={aria_label}
       >
         {children}
+        {extended_children}
       </a>
     );
   }

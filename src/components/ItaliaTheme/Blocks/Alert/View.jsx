@@ -6,27 +6,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import redraft from 'redraft';
 import { Container, Row, Col } from 'design-react-kit';
 //import { isCmsUi } from '@plone/volto/helpers';
-import config from '@plone/volto/registry';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 /**
  * View Alert block class.
  * @class View
  * @extends Component
  */
-const View = ({ data, pathname }) => {
-  //const isCmsUI = pathname ? isCmsUi(pathname) : false
-
-  const content = data.text
-    ? redraft(
-        data.text,
-        config.settings.richtextViewSettings.ToHTMLRenderers,
-        config.settings.richtextViewSettings.ToHTMLOptions,
-      )
-    : '';
-
+const View = ({ data, id }) => {
   const background_color = data.bg_color ?? data.color; // backwards compatibility with previous background-color variable name 'color'
 
   return (
@@ -47,7 +36,9 @@ const View = ({ data, pathname }) => {
                 />
               </Col>
             )}
-            <Col>{content}</Col>
+            <Col>
+              <TextBlockView id={id} data={{ value: data.text }} />
+            </Col>
           </Row>
         </Container>
       </div>

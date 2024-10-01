@@ -1,6 +1,7 @@
 /*
 CUSTOMIZATIONS:
 - Added stores link
+- Added slate
 */
 
 /**
@@ -17,8 +18,7 @@ import { Button, Dimmer, Loader, Message } from 'semantic-ui-react';
 import { isEqual } from 'lodash';
 import { defineMessages, injectIntl } from 'react-intl';
 import cx from 'classnames';
-
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import { handleKeyDownOwnFocusManagement } from 'design-comuni-plone-theme/helpers/blocks';
 import {
   flattenToAppURL,
   getBaseUrl,
@@ -29,6 +29,7 @@ import { Icon, SidebarPortal } from '@plone/volto/components';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
 
+import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import StoresButtons from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons';
 import HeroSidebar from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar';
 
@@ -104,7 +105,7 @@ class EditComponent extends Component {
    * Constructor
    * @method constructor
    * @param {Object} props Component properties
-   * @constructs WysiwygEditor
+   * @constructs Hero Image left edit
    */
   constructor(props) {
     super(props);
@@ -114,58 +115,20 @@ class EditComponent extends Component {
       uploading: false,
     };
 
-    const { Map } = this.props.immutableLib;
-
     if (!__SERVER__) {
-      const { DefaultDraftBlockRenderMap, EditorState } = props.draftJs;
-      const { stateFromHTML } = props.draftJsImportHtml;
-
-      const blockTitleRenderMap = Map({
-        unstyled: {
-          element: 'h1',
-        },
-      });
-
-      const blockDescriptionRenderMap = Map({
-        unstyled: {
-          element: 'div',
-        },
-      });
-
-      this.extendedBlockRenderMap =
-        DefaultDraftBlockRenderMap.merge(blockTitleRenderMap);
-
-      this.extendedDescripBlockRenderMap = DefaultDraftBlockRenderMap.merge(
-        blockDescriptionRenderMap,
-      );
-
-      let titleEditorState;
-      let descriptionEditorState;
-      if (props.data && props.data.title) {
-        titleEditorState = EditorState.createWithContent(
-          stateFromHTML(props.data.title),
-        );
-      } else {
-        titleEditorState = EditorState.createEmpty();
-      }
-      if (props.data && props.data.description) {
-        descriptionEditorState = EditorState.createWithContent(
-          stateFromHTML(props.data.description),
-        );
-      } else {
-        descriptionEditorState = EditorState.createEmpty();
-      }
       this.state = {
         uploading: false,
-        titleEditorState,
-        descriptionEditorState,
         currentFocused: 'title',
       };
     }
-
-    this.onChangeTitle = this.onChangeTitle.bind(this);
-    this.onChangeDescription = this.onChangeDescription.bind(this);
   }
+  blockRef = React.createRef();
+
+  handleEnter = (e) => {
+    if (this.props.selected) {
+      handleKeyDownOwnFocusManagement(e, this.props);
+    }
+  };
 
   /**
    * Component did mount
@@ -174,7 +137,22 @@ class EditComponent extends Component {
    */
   componentDidMount() {
     if (this.props.selected) {
-      this.titleEditor.focus();
+      this.setState(() => ({ currentFocused: 'title' }));
+    }
+
+    const blockNode = this.props.blockNode;
+
+    if (this.props.selected && this.node) {
+      this.node.focus();
+    }
+    if (blockNode && blockNode.current) {
+      blockNode.current.addEventListener('keydown', this.handleEnter, false);
+    } else if (this.blockRef && this.blockRef.current) {
+      this.blockRef.current.addEventListener(
+        'keydown',
+        this.handleEnter,
+        false,
+      );
     }
   }
 
@@ -199,44 +177,14 @@ class EditComponent extends Component {
       });
     }
 
-    const { EditorState } = this.props.draftJs;
-    const { stateFromHTML } = this.props.draftJsImportHtml;
-
-    if (
-      nextProps.data.title &&
-      this.props.data.title !== nextProps.data.title &&
-      !this.props.selected
-    ) {
-      const contentState = stateFromHTML(nextProps.data.title);
-      this.setState({
-        titleEditorState: nextProps.data.title
-          ? EditorState.createWithContent(contentState)
-          : EditorState.createEmpty(),
-      });
-    }
-
-    if (
-      nextProps.data.description &&
-      this.props.data.description !== nextProps.data.description &&
-      !this.props.selected
-    ) {
-      const contentState = stateFromHTML(nextProps.data.description);
-      this.setState({
-        descriptionEditorState: nextProps.data.description
-          ? EditorState.createWithContent(contentState)
-          : EditorState.createEmpty(),
-      });
-    }
-
-    if (nextProps.selected !== this.props.selected) {
-      if (this.state.currentFocused === 'title') {
-        this.titleEditor.focus();
-      } else {
-        this.descriptionEditor.focus();
+    if (nextProps.selected) {
+      if (!this.props.selected) {
+        this.setState({ currentFocused: 'title' });
       }
+    } else {
+      this.setState({ currentFocused: null });
     }
   }
-
   /**
    * @param {*} nextProps
    * @param {*} nextState
@@ -245,36 +193,6 @@ class EditComponent extends Component {
    */
   shouldComponentUpdate(nextProps) {
     return this.props.selected || !isEqual(this.props.data, nextProps.data);
-  }
-
-  /**
-   * Change Title handler
-   * @method onChangeTitle
-   * @param {object} titleEditorState Editor state.
-   * @returns {undefined}
-   */
-  onChangeTitle(titleEditorState) {
-    this.setState({ titleEditorState }, () => {
-      this.props.onChangeBlock(this.props.block, {
-        ...this.props.data,
-        title: titleEditorState.getCurrentContent().getPlainText(),
-      });
-    });
-  }
-
-  /**
-   * Change Description handler
-   * @method onChangeDescription
-   * @param {object} descriptionEditorState Editor state.
-   * @returns {undefined}
-   */
-  onChangeDescription(descriptionEditorState) {
-    this.setState({ descriptionEditorState }, () => {
-      this.props.onChangeBlock(this.props.block, {
-        ...this.props.data,
-        description: descriptionEditorState.getCurrentContent().getPlainText(),
-      });
-    });
   }
 
   /**
@@ -315,13 +233,21 @@ class EditComponent extends Component {
     if (__SERVER__) {
       return <div />;
     }
-    const { Editor } = this.props.draftJs;
+
     const placeholder =
       this.props.data.placeholder ||
       this.props.intl.formatMessage(messages.placeholder);
 
     return (
-      <div className="public-ui">
+      <div
+        className="public-ui"
+        tabIndex="-1"
+        ref={(node) => {
+          if (node) {
+            this.blockRef.current = node;
+          }
+        }}
+      >
         <div
           className={cx('block hero', {
             selected: this.props.selected,
@@ -392,92 +318,43 @@ class EditComponent extends Component {
               })}
             >
               <div className="edit-title">
-                <Editor
-                  ref={(node) => {
-                    this.titleEditor = node;
-                  }}
-                  readOnly={!this.props.editable}
-                  onChange={this.onChangeTitle}
-                  editorState={this.state.titleEditorState}
-                  blockRenderMap={this.extendedBlockRenderMap}
-                  handleReturn={() => true}
-                  placeholder={this.props.intl.formatMessage(messages.title)}
-                  blockStyleFn={() => 'title-editor'}
-                  onUpArrow={() => {
-                    const selectionState =
-                      this.state.titleEditorState.getSelection();
-                    const { titleEditorState } = this.state;
-                    if (
-                      titleEditorState
-                        .getCurrentContent()
-                        .getBlockMap()
-                        .first()
-                        .getKey() === selectionState.getFocusKey()
-                    ) {
-                      this.props.onFocusPreviousBlock(
-                        this.props.block,
-                        this.props.blockNode.current,
-                      );
-                    }
-                  }}
-                  onDownArrow={() => {
-                    const selectionState =
-                      this.state.titleEditorState.getSelection();
-                    const { titleEditorState } = this.state;
-                    if (
-                      titleEditorState
-                        .getCurrentContent()
-                        .getBlockMap()
-                        .last()
-                        .getKey() === selectionState.getFocusKey()
-                    ) {
+                <h1>
+                  <TextEditorWidget
+                    {...this.props}
+                    showToolbar={false}
+                    data={this.props.data}
+                    fieldName="title"
+                    selected={this.state.currentFocused === 'title'}
+                    placeholder={this.props.intl.formatMessage(messages.title)}
+                    setSelected={(f) => {
+                      this.setState(() => ({ currentFocused: f }));
+                    }}
+                    focusNextField={() => {
                       this.setState(() => ({ currentFocused: 'description' }));
-                      this.descriptionEditor.focus();
-                    }
+                    }}
+                  />
+                </h1>
+              </div>
+
+              <p>
+                <TextEditorWidget
+                  {...this.props}
+                  showToolbar={false}
+                  data={this.props.data}
+                  fieldName="description"
+                  selected={this.state.currentFocused === 'description'}
+                  placeholder={this.props.intl.formatMessage(
+                    messages.description,
+                  )}
+                  setSelected={(f) => {
+                    this.setState(() => ({ currentFocused: f }));
+                  }}
+                  focusPrevField={() => {
+                    this.setState(() => ({ currentFocused: 'title' }));
                   }}
                 />
-              </div>
-              <Editor
-                ref={(node) => {
-                  this.descriptionEditor = node;
-                }}
-                readOnly={!this.props.editable}
-                onChange={this.onChangeDescription}
-                editorState={this.state.descriptionEditorState}
-                blockRenderMap={this.extendedDescripBlockRenderMap}
-                handleReturn={() => true}
-                placeholder={this.props.intl.formatMessage(
-                  messages.description,
-                )}
-                blockStyleFn={() => 'description-editor'}
-                onUpArrow={() => {
-                  const selectionState =
-                    this.state.descriptionEditorState.getSelection();
-                  const currentCursorPosition = selectionState.getStartOffset();
+              </p>
 
-                  if (currentCursorPosition === 0) {
-                    this.setState(() => ({ currentFocused: 'title' }));
-                    this.titleEditor.focus();
-                  }
-                }}
-                onDownArrow={() => {
-                  const selectionState =
-                    this.state.descriptionEditorState.getSelection();
-                  const { descriptionEditorState } = this.state;
-                  const currentCursorPosition = selectionState.getStartOffset();
-                  const blockLength = descriptionEditorState
-                    .getCurrentContent()
-                    .getFirstBlock()
-                    .getLength();
-
-                  if (currentCursorPosition === blockLength) {
-                    this.props.onFocusNextBlock(
-                      this.props.block,
-                      this.props.blockNode.current,
-                    );
-                  }
-                }}
-              />
               <StoresButtons data={this.props.data} />
             </div>
           </div>
@@ -490,9 +367,7 @@ class EditComponent extends Component {
   }
 }
 
-const Edit = injectLazyLibs(['draftJs', 'immutableLib', 'draftJsImportHtml'])(
-  EditComponent,
-);
+const Edit = EditComponent;
 
 export default compose(
   injectIntl,

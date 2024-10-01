@@ -29,15 +29,8 @@ const HeaderSlim = () => {
 
   const staticParentSiteTitle = getSiteProperty('parentSiteTitle', intl.locale);
 
-  // TODO DEPRECATED use only SiteProperty
-  const deprecatedSubsiteParentSiteTitle = getSiteProperty(
-    'subsiteParentSiteTitle',
-    intl.locale,
-  );
-
   const subsiteParentSiteTitle = SiteProperty({
     property: 'site_title',
-    forceValue: deprecatedSubsiteParentSiteTitle,
     defaultValue: getSiteProperty('subsiteParentSiteTitle', intl.locale),
     getValue: true,
     getParent: true,

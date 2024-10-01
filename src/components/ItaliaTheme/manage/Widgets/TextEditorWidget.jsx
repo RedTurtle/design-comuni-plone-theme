@@ -1,16 +1,27 @@
 /**
  * Edit text block.
  * @module components/Widgets/TextEditorWidget/TextEditorWidget
+ *
+ * E' come il componente DetatchedTextBlockEditor di @plone/volto-slate,
+ * ma in più ha il withBlockProperties,
+ * che serve per getire gli handler (le function di focusPrev e focusNext)
  */
 
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { defineMessages, injectIntl } from 'react-intl';
-import { includes, isEqual } from 'lodash';
-import loadable from '@loadable/component';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
+import { defineMessages, useIntl } from 'react-intl';
+import { useInView } from 'react-intersection-observer';
+import { SlateEditor } from '@plone/volto-slate/editor';
+import { serializeNodesToText } from '@plone/volto-slate/editor/render';
+import { handleKeyDetached } from '@plone/volto-slate/blocks/Text/keyboard';
+import {
+  uploadContent,
+  saveSlateBlockSelection,
+} from '@plone/volto-slate/actions';
+import SimpleTextEditorWidget from './SimpleTextEditorWidget';
+import { breakList as customBreakList } from 'design-comuni-plone-theme/config/Slate/extensions/breakList';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -20,284 +31,170 @@ const messages = defineMessages({
   },
 });
 
-const Editor = loadable(() => import('draft-js-plugins-editor'));
+const TextEditorWidget = (props) => {
+  const {
+    showToolbar = true,
+    setSelected,
+    wrapClass,
+    index,
+    properties,
+    value,
+    fieldName,
+    block,
+    selected,
+    onSelectBlock,
+    onChangeBlock,
+    data = {},
+    ...otherProps
+  } = props;
 
-/**
- * TextEditorWidget class.
- * @class Edit
- * @extends Component
- */
-class TextEditorWidgetComponent extends Component {
-  /**
-   * Property types.
-   * @property {Object} propTypes Property types.
-   * @static
-   */
-  static propTypes = {
-    data: PropTypes.objectOf(PropTypes.any).isRequired,
-    fieldName: PropTypes.string.isRequired,
-    selected: PropTypes.bool.isRequired,
-    block: PropTypes.string.isRequired,
-    onChangeBlock: PropTypes.func.isRequired,
-    placeholder: PropTypes.string,
-    focusOn: PropTypes.func,
-    nextFocus: PropTypes.any,
-    prevFocus: PropTypes.any,
-    onFocusNextBlock: PropTypes.any,
-    onFocusPreviousBlock: PropTypes.any,
-    showToolbar: PropTypes.bool,
-    onSelectBlock: PropTypes.func,
-    onAddBlock: PropTypes.func,
-    disableMoveToNearest: PropTypes.bool,
-  };
-
-  /**
-   * Default properties
-   * @property {Object} defaultProps Default properties.
-   * @static
-   */
-  static defaultProps = {
-    showToolbar: true,
-  };
-
-  /**
-   * Constructor
-   * @method constructor
-   * @param {Object} props Component properties
-   * @constructs WysiwygEditor
-   */
-  constructor(props) {
-    super(props);
-    const { settings } = config;
-
-    this.draftConfig = settings.richtextEditorSettings(props);
-
-    const { EditorState, convertFromRaw } = props.draftJs;
-    const createInlineToolbarPlugin = props.draftJsInlineToolbarPlugin.default;
-
-    if (!__SERVER__) {
-      let editorState;
-      if (props.data && props.data[props.fieldName]) {
-        editorState = EditorState.createWithContent(
-          convertFromRaw(props.data[props.fieldName]),
-        );
-      } else {
-        editorState = EditorState.createEmpty();
-      }
-
-      const inlineToolbarPlugin = createInlineToolbarPlugin({
-        structure: this.draftConfig.richTextEditorInlineToolbarButtons,
-      });
-
-      this.state = {
-        editorState,
-        inlineToolbarPlugin,
-        addNewBlockOpened: false,
+  const { slate } = config.settings;
+  const { textblockExtensions } = slate;
+  const withBlockProperties = React.useCallback(
+    (editor) => {
+      const p = {
+        ...props,
+        showToolbar: showToolbar,
+        data: { ...props.data, disableNewBlocks: true },
       };
-    }
-  }
+      editor.getBlockProps = () => p;
+      return editor;
+    },
+    [props, showToolbar],
+  );
+  //const [uid, setUid] = useState();
+  // const getEditor = React.useCallback((editor) => {
+  //   setUid(editor.uid);
+  //   return editor;
+  // });
 
-  /**
-   * Component will receive props
-   * @method componentDidMount
-   * @returns {undefined}
-   */
-  componentDidMount() {
-    if (this.props.selected && this.node) {
-      setTimeout(this.node.focus, 0);
-    }
-  }
+  //const link_pid = `${uid}-link`;
+  // const show_sidebar_editor = useSelector((state) => {
+  //   return state['slate_plugins']?.[link_pid]?.show_sidebar_editor;
+  // });
 
-  /**
-   * Component will receive props
-   * @method componentWillReceiveProps
-   * @param {Object} nextProps Next properties
-   * @returns {undefined}
-   */
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (!this.props.selected && nextProps.selected) {
-      // See https://github.com/draft-js-plugins/draft-js-plugins/issues/800
-      setTimeout(this.node.focus, 0);
-      const { EditorState } = this.props.draftJs;
+  const intl = useIntl();
+  const placeholder =
+    otherProps.placeholder || intl.formatMessage(messages.text);
 
-      this.setState({
-        editorState: EditorState.moveFocusToEnd(this.state.editorState),
-      });
-    }
-  }
+  const { ref, inView } = useInView({
+    threshold: 0,
+    rootMargin: '0px 0px 200px 0px',
+  });
 
-  /**
-   * Change handler
-   * @method onChange
-   * @param {object} editorState Editor state.
-   * @returns {undefined}
-   */
-  onChange = (editorState) => {
-    const { convertToRaw } = this.props.draftJs;
-    if (
-      !isEqual(
-        convertToRaw(editorState.getCurrentContent()),
-        convertToRaw(this.state.editorState.getCurrentContent()),
-      )
-    ) {
-      this.props.onChangeBlock({
-        ...this.props.data,
-        [this.props.fieldName]: convertToRaw(editorState.getCurrentContent()),
-      });
+  const _value = fieldName ? data[fieldName] : value;
+
+  const selectThis = () => {
+    if (setSelected) {
+      setSelected(fieldName ?? true);
+    } else if (onSelectBlock) {
+      onSelectBlock(block);
     }
-    this.setState({ editorState });
   };
 
-  /**
-   * Render method.
-   * @method render
-   * @returns {string} Markup for the component.
-   */
-  render() {
-    if (__SERVER__) {
-      return <div />;
+  const extensions = [...textblockExtensions].map((f) => {
+    if (f.name === 'breakList') {
+      return customBreakList;
     }
+    return f;
+  });
+  return (
+    <div
+      className={wrapClass}
+      onClick={() => selectThis()}
+      onFocus={() => selectThis()}
+      onKeyDown={() => selectThis()}
+      role={'textbox'}
+      tabIndex="-1"
+    >
+      {showToolbar ? (
+        <div
+          className="text-slate-editor-inner detached-slate-editor"
+          ref={ref}
+        >
+          <SlateEditor
+            index={index}
+            readOnly={!inView}
+            properties={properties}
+            extensions={extensions}
+            renderExtensions={[withBlockProperties /*, getEditor*/]}
+            value={_value}
+            block={block /* is this needed? */}
+            slateSettings={otherProps.slateSettings}
+            onFocus={() => {
+              if (!selected) {
+                selectThis();
+              }
+            }}
+            onChange={(value, selection, editor) => {
+              let v = value;
 
-    const { InlineToolbar } = this.state.inlineToolbarPlugin;
-    let placeholder = this.props.placeholder
-      ? this.props.placeholder
-      : this.props.intl.formatMessage(messages.text);
-    let disableMoveToNearest = this.props.disableMoveToNearest;
-    const isSoftNewlineEvent = this.props.draftJsLibIsSoftNewlineEvent.default;
-    const { RichUtils } = this.props.draftJs;
+              let retVal = {
+                value: v,
+                plaintext: serializeNodesToText(value || []),
+              };
 
-    return (
-      <>
-        <div className={[this.props.fieldName]}>
-          <Editor
-            onChange={this.onChange}
-            editorState={this.state.editorState}
-            plugins={[
-              this.state.inlineToolbarPlugin,
-              ...this.draftConfig.richTextEditorPlugins,
-            ]}
-            blockRenderMap={this.draftConfig.extendedBlockRenderMap}
-            blockStyleFn={this.draftConfig.blockStyleFn}
-            customStyleMap={this.draftConfig.customStyleMap}
+              if (fieldName) {
+                retVal = { [fieldName]: v };
+              }
+              onChangeBlock(block, {
+                ...data,
+                ...retVal,
+              });
+            }}
+            selected={selected}
             placeholder={placeholder}
-            handleReturn={(e) => {
-              // if (disableMoveToNearest) {
-              //   e.stopPropagation();
+            onKeyDown={handleKeyDetached}
+            editableProps={{
+              'aria-multiline': 'true',
+            }}
+            onBlur={() => {
+              // //fix: click on toolbar dropdown items. But you cannot reselect h2 text for example if you go out of the block
+              // if (!show_sidebar_editor) {
+              //   setSelected(fieldName ? null : false);
               // }
-              if (isSoftNewlineEvent(e)) {
-                this.onChange(
-                  RichUtils.insertSoftNewline(this.state.editorState),
-                );
-                return 'handled';
-              }
-
-              if (
-                !disableMoveToNearest &&
-                this.props.onSelectBlock &&
-                this.props.onAddBlock
-              ) {
-                const selectionState = this.state.editorState.getSelection();
-                const anchorKey = selectionState.getAnchorKey();
-                const currentContent =
-                  this.state.editorState.getCurrentContent();
-                const currentContentBlock =
-                  currentContent.getBlockForKey(anchorKey);
-                const blockType = currentContentBlock.getType();
-                if (!includes(this.draftConfig.listBlockTypes, blockType)) {
-                  this.props.onSelectBlock(
-                    this.props.onAddBlock('text', this.props.index + 1),
-                  );
-                  return 'handled';
-                }
-                return 'un-handled';
-              }
-
-              return {};
-            }}
-            onUpArrow={(e) => {
-              if (this.props.prevFocus) {
-                this.props.setFocus(this.props.prevFocus);
-                e.stopPropagation();
-              } else {
-                if (this.props.disableMoveToNearest) {
-                  e.stopPropagation();
-                } else {
-                  if (this.props.onFocusPreviousBlock) {
-                    const selectionState =
-                      this.state.editorState.getSelection();
-                    const currentCursorPosition =
-                      selectionState.getStartOffset();
-
-                    if (currentCursorPosition === 0) {
-                      this.props.onFocusPreviousBlock(
-                        this.props.block,
-                        this.node,
-                      );
-                    }
-                  }
-                }
-              }
-            }}
-            onDownArrow={(e) => {
-              if (this.props.nextFocus) {
-                this.props.setFocus(this.props.nextFocus);
-                e.stopPropagation();
-              } else {
-                if (this.props.disableMoveToNearest) {
-                  e.stopPropagation();
-                } else {
-                  if (this.props.onFocusNextBlock) {
-                    const selectionState =
-                      this.state.editorState.getSelection();
-                    const { editorState } = this.state;
-                    const currentCursorPosition =
-                      selectionState.getStartOffset();
-                    const blockLength = editorState
-                      .getCurrentContent()
-                      .getFirstBlock()
-                      .getLength();
-
-                    if (currentCursorPosition === blockLength) {
-                      this.props.onFocusNextBlock(this.props.block, this.node);
-                    }
-                  }
-                }
-              }
-            }}
-            ref={(node) => {
-              this.node = node;
             }}
           />
-          {this.props.showToolbar && this.node && <InlineToolbar />}
         </div>
-      </>
-    );
-  }
-}
-
-export const TextEditorWidget = React.memo(
-  compose(
-    injectIntl,
-    injectLazyLibs([
-      'draftJs',
-      'draftJsLibIsSoftNewlineEvent',
-      'draftJsFilters',
-      'draftJsInlineToolbarPlugin',
-      'draftJsBlockBreakoutPlugin',
-      'draftJsCreateInlineStyleButton',
-      'draftJsCreateBlockStyleButton',
-      'immutableLib',
-      // TODO: add all plugin dependencies, also in Wysiwyg and Cell
-    ]),
-  )(TextEditorWidgetComponent),
-);
-
-const Preloader = (props) => {
-  const [loaded, setLoaded] = React.useState(false);
-  React.useEffect(() => {
-    Editor.load().then(() => setLoaded(true));
-  }, []);
-  return loaded ? <TextEditorWidget {...props} /> : null;
+      ) : (
+        <div className="text-editor-inner simple-text">
+          <SimpleTextEditorWidget {...props} index={index} value={_value} />
+        </div>
+      )}
+    </div>
+  );
 };
 
-export default Preloader;
+TextEditorWidget.propTypes = {
+  data: PropTypes.objectOf(PropTypes.any).isRequired,
+  setSelected: PropTypes.func,
+  onChangeBlock: PropTypes.func.isRequired,
+  block: PropTypes.string.isRequired,
+  selected: PropTypes.bool.isRequired,
+  showToolbar: PropTypes.bool,
+  wrapClass: PropTypes.string,
+  focusPrevField: PropTypes.func,
+  focusNextField: PropTypes.func,
+  //from block props:
+  properties: PropTypes.objectOf(PropTypes.any).isRequired,
+  onFocusPreviousBlock: PropTypes.func.isRequired,
+  onFocusNextBlock: PropTypes.func.isRequired,
+  onSelectBlock: PropTypes.func.isRequired,
+};
+
+export default connect(
+  (state, props) => {
+    const blockId = props.block;
+    return {
+      defaultSelection: blockId
+        ? state.slate_block_selections?.[blockId]
+        : null,
+      uploadRequest: state.upload_content?.[props.block]?.upload || {},
+      uploadedContent: state.upload_content?.[props.block]?.data || {},
+    };
+  },
+  {
+    uploadContent,
+    saveSlateBlockSelection, // needed as editor blockProps
+  },
+)(TextEditorWidget);

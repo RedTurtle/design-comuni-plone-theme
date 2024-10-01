@@ -38,7 +38,7 @@ class EditBlock extends SubblockEdit {
    * Constructor
    * @method constructor
    * @param {Object} props Component properties
-   * @constructs WysiwygEditor
+   * @constructs Accordion Edit
    */
   constructor(props) {
     super(props);
@@ -87,30 +87,33 @@ class EditBlock extends SubblockEdit {
               }}
             >
               <TextEditorWidget
+                {...this.props}
+                key="title"
+                showToolbar={false}
                 data={this.props.data}
                 fieldName="title"
-                selected={this.props.selected && this.state.focusOn === 'title'}
-                block={this.props.block}
-                onChangeBlock={this.onChange}
+                onChangeBlock={(block, _data) => {
+                  this.onChange(_data);
+                }}
                 placeholder={this.props.intl.formatMessage(
                   messages.titlePlaceholder,
                 )}
-                onSelectBlock={() => {}}
-                onAddBlock={() => {
+                selected={this.props.selected && this.state.focusOn === 'title'}
+                setSelected={(f) => {
+                  this.setState({
+                    focusOn: f,
+                  });
+                }}
+                focusNextField={() => {
                   this.setState({ focusOn: 'text' });
                 }}
-                onFocusNextBlock={() => {
-                  this.setState({ focusOn: 'text' });
-                }}
-                onFocusPreviousBlock={
+                focusPrevField={
                   this.props.isFirst
                     ? this.props.onFocusPreviousBlock
                     : () => {
                         this.props.onSubblockChangeFocus(this.props.index - 1);
                       }
                 }
-                showToolbar={false}
-                key="title"
               />
             </div>
           </h3>
@@ -123,31 +126,33 @@ class EditBlock extends SubblockEdit {
             >
               <div className="accordion-inner">
                 <TextEditorWidget
+                  {...this.props}
+                  key="text"
                   data={this.props.data}
                   fieldName="text"
                   selected={
                     this.props.selected && this.state.focusOn === 'text'
                   }
-                  block={this.props.block}
-                  onChangeBlock={this.onChange}
                   placeholder={this.props.intl.formatMessage(
                     messages.textPlaceholder,
                   )}
-                  onAddBlock={this.props.onFocusNextBlock}
-                  onFocusNextBlock={
-                    this.props.isLast
-                      ? this.props.onFocusNextBlock
-                      : () => {
-                          this.setState({ focusOn: null });
-                          this.props.onSubblockChangeFocus(
-                            this.props.index + 1,
-                          );
+                  onChangeBlock={(block, _data) => {
+                    this.onChange(_data);
+                  }}
+                  setSelected={(f) => this.setState({ focusOn: f })}
+                  focusNextField={
+                    !this.props.isLast
+                      ? () => {
+                          this.setState({
+                            focusOn: null,
+                            subIndexSelected: this.props.index + 1,
+                          });
                         }
+                      : null //default go to next block
                   }
-                  onFocusPreviousBlock={() => {
+                  focusPrevField={() => {
                     this.setState({ focusOn: 'title' });
                   }}
-                  key="text"
                 />
               </div>
               {this.props.data.href && (

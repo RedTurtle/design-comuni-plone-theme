@@ -59,6 +59,7 @@ const Collapse = ({
           className="overlay"
           style={{ display: isOpen ? 'block' : 'none' }}
           onClick={onOverlayClick}
+          onKeyDown={() => {}}
         ></div>
         {/* Deprecato - non viene più utilizzato da v12.0.0 per ragioni di accessibilità
           Close button ora presente in Navigation.jsx

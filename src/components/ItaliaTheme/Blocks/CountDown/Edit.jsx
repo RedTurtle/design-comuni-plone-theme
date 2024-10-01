@@ -8,6 +8,7 @@ import cx from 'classnames';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import Sidebar from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/CountDown/Sidebar';
 import CountDown from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/CountDown/CountDown';
+import { useHandleDetachedBlockFocus } from 'design-comuni-plone-theme/helpers/blocks';
 
 const messages = defineMessages({
   text: {
@@ -17,20 +18,16 @@ const messages = defineMessages({
 });
 
 const Edit = (props) => {
-  const {
-    data,
-    block,
-    onChangeBlock,
-    selected,
-    onSelectBlock,
-    onAddBlock,
-    index,
-  } = props;
+  const { data, block, selected, ...otherProps } = props;
   const intl = useIntl();
+  const { selectedField, setSelectedField } = useHandleDetachedBlockFocus(
+    props,
+    'text',
+  );
 
   return (
     <>
-      <div className="public-ui">
+      <div className="public-ui" tabIndex="-1">
         <div
           className={cx('block-content', { 'full-width': data.showFullWidth })}
         >
@@ -68,17 +65,16 @@ const Edit = (props) => {
                 className="text"
               >
                 <TextEditorWidget
+                  {...otherProps}
                   data={data}
                   fieldName="text"
-                  selected={selected}
+                  selected={selected && selectedField === 'text'}
                   block={block}
-                  onChangeBlock={(data) => onChangeBlock(block, data)}
                   placeholder={intl.formatMessage(messages.text)}
-                  showToolbar={true}
-                  onSelectBlock={onSelectBlock}
-                  onAddBlock={onAddBlock}
-                  index={index}
-                  disableMoveToNearest={true}
+                  setSelected={setSelectedField}
+                  focusNextField={() => {
+                    setSelectedField('countdown_text');
+                  }}
                 />
               </Col>
               <Col
@@ -99,17 +95,17 @@ const Edit = (props) => {
                   showSeconds={data.showSeconds}
                 />
                 <TextEditorWidget
-                  data={data}
-                  fieldName="countdown_text"
-                  selected={selected}
-                  block={block}
-                  onChangeBlock={(data) => onChangeBlock(block, data)}
-                  placeholder={intl.formatMessage(messages.text)}
+                  {...otherProps}
                   showToolbar={true}
-                  onSelectBlock={onSelectBlock}
-                  onAddBlock={onAddBlock}
-                  index={index}
-                  disableMoveToNearest={true}
+                  data={data}
+                  block={block}
+                  fieldName="countdown_text"
+                  selected={selected && selectedField === 'countdown_text'}
+                  placeholder={intl.formatMessage(messages.text)}
+                  setSelected={setSelectedField}
+                  focusPrevField={() => {
+                    setSelectedField('text');
+                  }}
                 />
               </Col>
             </Row>

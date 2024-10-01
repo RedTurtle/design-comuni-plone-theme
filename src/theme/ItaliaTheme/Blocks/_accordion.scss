@@ -4,16 +4,9 @@ $accordion-icon-color: #7fb2e5;
   .section.full-width {
     height: auto;
     .title {
-      font-size: 2.35rem !important;
+      font-size: 2.35rem;
       font-weight: bold;
       line-height: 3rem;
-
-      .DraftEditor-root {
-        .public-DraftEditorPlaceholder-root {
-          width: 100%;
-          font-size: 2.35rem;
-        }
-      }
     }
 
     @media (max-width: #{map-get($grid-breakpoints, md)}) {
@@ -96,6 +89,7 @@ $accordion-icon-color: #7fb2e5;
                 color: $primary;
                 font-size: 1.2rem;
                 font-weight: bold;
+                text-align: left;
 
                 .icon {
                   flex-shrink: 0;
@@ -157,16 +151,6 @@ $accordion-icon-color: #7fb2e5;
               }
             }
           }
-        }
-      }
-    }
-
-    &.is-edit-mode {
-      .card {
-        .card-body {
-          //per mostrare la barra di formattazione di draft-js
-          padding-left: 10em;
-          margin-left: -7em;
         }
       }
     }
