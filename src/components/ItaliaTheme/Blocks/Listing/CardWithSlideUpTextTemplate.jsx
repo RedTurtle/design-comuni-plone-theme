@@ -76,8 +76,14 @@ const CardWithSlideUpTextTemplate = (props) => {
                     <p>{item.description}</p>
                   )}
                   <div className="read-more">
+                    {/*
+                    because of https://developer.chrome.com/blog/migrate-way-from-data-urls-in-svg-use
+                    current implementation of Icon in CardReadMore component is not working.
+                    we disable it for now.
+                    iconName="it-arrow-right"
+                    */}
                     <CardReadMore
-                      iconName="it-arrow-right"
+                      iconName={false}
                       tag={UniversalLink}
                       item={!isEditMode ? item : null}
                       href={isEditMode ? '#' : null}
