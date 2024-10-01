@@ -1,14 +1,7 @@
-<<<<<<<< HEAD:.github/workflows/newcontents.yml
 name: Docker build for new folder contents test version
 on:
   push:
     branches: ['new-folder-contents']
-========
-name: Docker build for latest main version with newsletter add-on
-on:
-  push:
-    branches: [main]
->>>>>>>> main:.github/workflows/withnewsletter.yml
 
 jobs:
   build_develop:
@@ -29,19 +22,11 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-<<<<<<<< HEAD:.github/workflows/newcontents.yml
           file: ./dockerfiles/Dockerfile
           tags: redturtletech/io-comune-base:contents
           pull: true
           push: true
           cache-from: type=registry,ref=redturtletech/io-comune-base:contents
-========
-          file: ./dockerfiles/Dockerfile.withnewsletter
-          tags: redturtletech/io-comune-base:withnewsletter
-          pull: true
-          push: true
-          cache-from: type=registry,ref=redturtletech/io-comune-base:withnewsletter
->>>>>>>> main:.github/workflows/withnewsletter.yml
           cache-to: type=inline
           build-args: |
             ADDON_NAME=design-comuni-plone-theme
@@ -57,12 +42,7 @@ jobs:
           cluster-id: ${{ secrets.RANCHER_CLUSTER_ID }}
           project-id: ${{ secrets.RANCHER_PROJECT_ID }}
           namespace: ${{ secrets.RANCHER_NAMESPACE_DEVELOP }}
-<<<<<<<< HEAD:.github/workflows/newcontents.yml
           workload: ${{ secrets.RANCHER_WORKLOAD_CONTENTS }}
           image: redturtletech/io-comune-base:contents
-========
-          workload: ${{ secrets.RANCHER_WORKLOAD_DEVELOP }}
-          image: redturtletech/io-comune-base:withnewsletter
->>>>>>>> main:.github/workflows/withnewsletter.yml
           slack-hook-url: ${{ secrets.RANCHER_SLACK_HOOK_URL }}
 

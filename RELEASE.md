@@ -71,7 +71,6 @@
 
 ### Novità
 
-- Aggiunto campo per l'inserimento del titolo e della descrizione nel blocco Accordion.
 - Aggiunti campi per l'inserimento del titolo e della descrizione nel blocco accordion
 
 ### Fix
