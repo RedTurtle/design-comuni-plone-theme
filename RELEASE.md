@@ -53,7 +53,7 @@
 
 ### Fix
 
-- Risolto un problema con il blocco Form che in alcuni casi poteva dare problemi di validazione dei campi obbligatori.
+- Risolto un problema con il blocco Form che in alcuni casi poteva dare problemi di validazione dei campi di tipo 'testo statico'.
 
 ## Versione 11.23.2 (24/09/2024)
 
