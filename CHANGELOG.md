@@ -1,3 +1,10 @@
+### [7.31.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.2...v7.31.3) (2024-10-01)
+
+
+### Maintenance
+
+* preparing release 7.31.3 ([0373213](https://github.com/RedTurtle/design-comuni-plone-theme/commit/03732132166f05f799d46f2fc65abeaec61879a1))
+
 ### [7.31.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.1...v7.31.2) (2024-09-12)
 
 

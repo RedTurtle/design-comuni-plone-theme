@@ -30,15 +30,7 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
-
-### Migliorie
-
-- ...
-
-### Novità
-
-- ... [`Istruzioni`](url della documentazione relativa alla novità)
+## Versione 7.31.3 (01/10/2024)
 
 ### Fix
 
