@@ -86,7 +86,7 @@ export default function withQuerystringResults(WrappedComponent) {
     const [additionalFilters, setAdditionalFilters] = React.useState([]);
 
     const originalQuery = useSelector((state) => {
-      return state.originalQuery?.[properties['@id']]?.[
+      return state.originalQuery?.[properties?.['@id'] || content?.['@id']]?.[
         subrequestID
       ]?.toArray?.();
     });
@@ -153,13 +153,13 @@ export default function withQuerystringResults(WrappedComponent) {
     useEffect(() => {
       if (
         !originalQuery &&
-        properties['@id'] &&
+        (properties?.['@id'] || content?.['@id']) &&
         data.block &&
         querystring.query?.length > 0
       ) {
         dispatch(
           setOriginalQuery(
-            properties['@id'],
+            properties?.['@id'] || content?.['@id'],
             data.block,
             JSON.parse(JSON.stringify(querystring.query)),
           ),
