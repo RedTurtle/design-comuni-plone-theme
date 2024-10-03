@@ -1,5 +1,53 @@
 
 
+## [11.23.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.23.1...v11.23.2) (2024-09-24)
+
+
+### Bug Fixes
+
+* added condition for spid user link redirect ([#776](https://github.com/RedTurtle/design-comuni-plone-theme/issues/776)) ([8ab726b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8ab726b52fb22df66d76f1b00089cb4aa0f07968))
+
+
+### Documentation
+
+* updated publiccode and release log ([19a712d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/19a712d35570da2a97bf811c72f4d87343c4e2dc))
+
+## [11.23.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.23.0...v11.23.1) (2024-09-19)
+
+
+### Bug Fixes
+
+* **a11y:** used p with h classname to ensure correct heading order ([#770](https://github.com/RedTurtle/design-comuni-plone-theme/issues/770)) ([2ab487e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2ab487e1a799e48fbbb98e89ca7d195ed37b3ea6))
+* changed focus color ([#772](https://github.com/RedTurtle/design-comuni-plone-theme/issues/772)) ([e3c4e45](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e3c4e45cc06e18c10ae1c51327e4762d0197f767))
+
+
+### Documentation
+
+* updated publiccode and release log ([de02c1e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/de02c1e5ad7f71ecdd8f1dbd6b97dfe7bdec67d2))
+
+## [11.23.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.22.1...v11.23.0) (2024-09-19)
+
+
+### Features
+
+* title and description for block accordion - v11 ([#765](https://github.com/RedTurtle/design-comuni-plone-theme/issues/765)) ([93e4926](https://github.com/RedTurtle/design-comuni-plone-theme/commit/93e49267e1d896ea08b99ad1860b479f4b7bcd89))
+
+
+### Bug Fixes
+
+* added autocomplete attribute in search and customer satisfaction fields ([#768](https://github.com/RedTurtle/design-comuni-plone-theme/issues/768)) ([8de28b9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8de28b9325ffba67e47431d948f035556e100649))
+* added block id to date ids to ensure unique field ids ([#771](https://github.com/RedTurtle/design-comuni-plone-theme/issues/771)) ([4c9f6c1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4c9f6c1cead8f6185effd7d287823bb6d8cdaa0c))
+* added filter for eventi rassegne in Event Search ([#774](https://github.com/RedTurtle/design-comuni-plone-theme/issues/774)) ([2f6c69c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2f6c69c20326568350d32d540a75da28bf017b70))
+* added max-width attribute to row to fit elements within page when zoomed in ([#773](https://github.com/RedTurtle/design-comuni-plone-theme/issues/773)) ([92ab586](https://github.com/RedTurtle/design-comuni-plone-theme/commit/92ab5867ee677280e326b9af2af14decbc163cc8))
+* added submit type attribute to search submit buttons ([#769](https://github.com/RedTurtle/design-comuni-plone-theme/issues/769)) ([bf5a9a6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bf5a9a6f03bbb27322816743b4b8d1e2cbcafdb1))
+* removed id_lighthouse field in cardWithSlideUpTextTemplate ([#762](https://github.com/RedTurtle/design-comuni-plone-theme/issues/762)) ([aa4fe58](https://github.com/RedTurtle/design-comuni-plone-theme/commit/aa4fe58d6db372a2848efe429e78fceb1203f54d))
+* slider styles + arrows in ct gallery ([#764](https://github.com/RedTurtle/design-comuni-plone-theme/issues/764)) ([c1bbdb9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c1bbdb998a145c608e0fc8da5d23223ddaa0ac12))
+
+
+### Documentation
+
+* updated publiccode and release log ([f43b737](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f43b737e4ef0438182f371f46d30002d1459d21d))
+
 ## [11.22.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.22.0...v11.22.1) (2024-09-09)
 
 
