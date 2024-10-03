@@ -1,3 +1,15 @@
+### [7.31.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.3...v7.31.4) (2024-10-03)
+
+
+### Bug Fixes
+
+* switchable OTP email validation ([#784](https://github.com/RedTurtle/design-comuni-plone-theme/issues/784)) ([610ed6f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/610ed6f3cb0a847772e9f9da2bb229eb9893a0be))
+
+
+### Maintenance
+
+* preparing release 7.31.4 ([c3b6a13](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c3b6a133190a84cb0ebeff5b0df59b3c757db8cf))
+
 ### [7.31.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.2...v7.31.3) (2024-10-01)
 
 
