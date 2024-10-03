@@ -54,6 +54,7 @@
 ### Fix
 
 - Risolto un problema con il blocco Form che in alcuni casi poteva dare problemi di validazione dei campi di tipo 'testo statico'.
+- Sistemate diverse incogruenze e errori generati dal widget per la creazione delle ricorrenze nel CT Evento.
 
 ## Versione 11.23.2 (24/09/2024)
 
@@ -89,7 +90,6 @@
 ### Fix
 
 - Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore. Pianificato evento per ripristinarlo.
-- Sistemate diverse incogruenze e errori generati dal widget per la creazione delle ricorrenze nel CT Evento
 
 ## Versione 11.22.0 (05/09/2024)
 
