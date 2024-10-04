@@ -41,17 +41,47 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 11.24.0 (03/10/2024)
+
+### Migliorie
+
+- Cambiato il titolo della sezione "fine incarico" nel CT Persona.
+
+### Fix
+
+- Risolto un problema con il blocco Form che in alcuni casi poteva dare problemi di validazione dei campi di tipo 'testo statico'.
+- Sistemate diverse incogruenze e errori generati dal widget per la creazione delle ricorrenze nel CT Evento.
+
+## Versione 11.23.2 (24/09/2024)
+
+### Migliorie
+
+- Gli utenti SPID vengono ora direttamente rediretti al link finale quando viene utilizzato un CT di tipo Collegamento
+
+### Novità
+
+- ...
+
+### Fix
+
+- L'assegnazione dei ruoli nella vista gruppi funziona correttamente per tutti i gruppi di utenti.
+
+## Versione 11.23.1 (19/09/2024)
+
+### Migliorie
+
+- Il colore del focus da tastiera sugli elementi della pagina è ora bianco e nero per garantire sempre un contrasto ottimale su tutti gli sfondi.
+
+## Versione 11.23.0 (19/09/2024)
 
 ### Migliorie
 
 - Migliorato il layout della galleria immagini nei CT.
-- Il colore del focus da tastiera sugli elementi della pagina è ora bianco e nero per garantire sempre un contrasto ottimale su tutti gli sfondi.
 - Nel blocco Cerca Evento, nel caso di un Evento Rassegna, tra i risultati vengono ora visualizzati solo gli appuntamenti della rassegna e non l'evento contenitore.
 
 ### Novità
 
-- Aggiunti campi per l'inserimento del titolo e della descrizione nel blocco accordion
+- Aggiunto campo per l'inserimento del titolo e della descrizione nel blocco Accordion.
 
 ### Fix
 
