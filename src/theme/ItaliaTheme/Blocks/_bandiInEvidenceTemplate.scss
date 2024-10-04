@@ -49,12 +49,13 @@
   // smartphone
   @media (max-width: #{map-get($grid-breakpoints, sm)}) {
     .bandi-in-evidence-cards-wrapper {
+      display: block;
+      height: 100%;
+
       .card-wrapper {
         width: 100%;
         margin: 0px;
       }
-      display: block;
-      height: 100%;
     }
   }
 

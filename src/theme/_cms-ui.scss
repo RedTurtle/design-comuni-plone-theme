@@ -41,7 +41,10 @@ body.cms-ui {
     h4 {
       @extend %heading;
       @include font-size($h4-font-size);
-      font-weight: 600;
+
+      & {
+        font-weight: 600;
+      }
     }
 
     h5 {

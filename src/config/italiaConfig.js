@@ -117,14 +117,6 @@ export default function applyConfig(voltoConfig) {
     defaultPageSize: 24,
     navDepth: 2,
     cookieExpires: 15552000, //6 month
-    serverConfig: {
-      ...config.settings.serverConfig,
-      //criticalCssPath: 'node_modules/design-comuni-plone-theme/public/critical.css', //valido solo per i siti figli. Rimosso temporaneamente perchè fa un brutto effetto al caricamento della pagina
-      extractScripts: {
-        ...config.settings.serverConfig.extractScripts,
-        errorPages: true,
-      },
-    },
     /*
       Set to 100mb in BINARY bytes, not decimal, see volto/helpers/FormValidation.js.validateFileUploadSize error message
       ...
