@@ -13,12 +13,12 @@ import config from '@plone/volto/registry';
 
 const LinkView = ({ token, content }) => {
   const history = useHistory();
-  const isReader = useSelector((state) =>
+  const userWithoutRoles = useSelector((state) =>
     state.users?.user ? state.users.user?.roles?.length === 0 : true,
   );
 
   useEffect(() => {
-    if (!token || isReader) {
+    if (!token || userWithoutRoles) {
       const { remoteUrl } = content;
       if (isInternalURL(remoteUrl)) {
         history.replace(flattenToAppURL(remoteUrl));
@@ -26,7 +26,7 @@ const LinkView = ({ token, content }) => {
         window.location.href = flattenToAppURL(remoteUrl);
       }
     }
-  }, [content, history, token, isReader]);
+  }, [content, history, token, userWithoutRoles]);
   const { title, description, remoteUrl } = content;
   const { openExternalLinkInNewTab } = config.settings;
   const Container =
