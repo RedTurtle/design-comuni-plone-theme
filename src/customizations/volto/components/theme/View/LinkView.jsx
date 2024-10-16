@@ -14,7 +14,7 @@ import config from '@plone/volto/registry';
 const LinkView = ({ token, content }) => {
   const history = useHistory();
   const isReader = useSelector((state) =>
-    state.users.user ? state.users.user.roles.length === 0 : true,
+    state.users?.user ? state.users.user?.roles?.length === 0 : true,
   );
 
   useEffect(() => {
