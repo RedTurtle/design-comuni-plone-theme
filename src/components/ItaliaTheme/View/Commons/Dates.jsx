@@ -48,6 +48,8 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
 
   let rruleSet = null;
   let recurrenceText = null;
+  // initialize variable for end date
+  let actualEndDate = content.end;
 
   if (content.recurrence) {
     const isRecurrenceByDay = content.recurrence.includes('BYDAY=+');
@@ -59,6 +61,9 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
       compatible: true, //If set to True, the parser will operate in RFC-compatible mode. Right now it means that unfold will be turned on, and if a DTSTART is found, it will be considered the first recurrence instance, as documented in the RFC.
       forceset: true,
     });
+
+    // overwrite end date variable if event has recurrence
+    actualEndDate = rruleSet.rrules()[0].options.until;
 
     recurrenceText = rruleSet.rrules()[0]?.toText(
       (t) => {
@@ -79,7 +84,8 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
     );
   }
   const start = viewDate(intl.locale, content.start);
-  const end = viewDate(intl.locale, content.end);
+  // format and save date into new variable depending on recurrence of event
+  const end = viewDate(intl.locale, actualEndDate);
   const openEnd = content?.open_end;
   const wholeDay = content?.whole_day;
   const rdates = rruleSet?.rdates() ?? [];

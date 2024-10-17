@@ -27,10 +27,14 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
   const rrulestr = rrule.rrulestr;
   const wholeDay = content?.whole_day;
   const openEnd = content?.open_end;
+  // show only start when event starts and ends in same day or if a recurrence is set
+  // because to set a recurrence, the event must have the same date as start and end date
   const renderOnlyStart =
     Moment(content.end).format('DD-MM-Y') ===
-    Moment(content.start).format('DD-MM-Y');
+      Moment(content.start).format('DD-MM-Y') && !content.recurrence;
   let eventRecurrenceText = null;
+  // initialize variable for end date
+  let actualEndDate = content.end;
 
   if (content['@type'] === 'Event') {
     if (content.recurrence) {
@@ -42,6 +46,10 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
         compatible: true, //If set to True, the parser will operate in RFC-compatible mode. Right now it means that unfold will be turned on, and if a DTSTART is found, it will be considered the first recurrence instance, as documented in the RFC.
         forceset: true,
       });
+
+      // overwrite end date variable if event has recurrence
+      actualEndDate = rruleSet.rrules()[0].options.until;
+
       const RRULE_LANGUAGE = rrulei18n(intl, Moment);
       eventRecurrenceText = rruleSet.rrules()[0]?.toText(
         (t) => {
@@ -55,6 +63,7 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
               RRULE_LANGUAGE.strings['on the'] = 'la';
             }
           }
+
           return RRULE_LANGUAGE.strings[t];
         },
         RRULE_LANGUAGE,
@@ -62,14 +71,16 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
       );
     }
   }
+
+  // format and save date into new variable depending on recurrence of event
+  const endDate = Moment(actualEndDate).format('DD-MM-Y');
+
   return content['@type'] === 'Event' ? (
     <p className="h4 py-2">
       {!wholeDay &&
         !openEnd &&
         !renderOnlyStart &&
-        `dal ${Moment(content.start).format('DD-MM-Y')} al ${Moment(
-          content.end,
-        ).format('DD-MM-Y')}`}
+        `dal ${Moment(content.start).format('DD-MM-Y')} al ${endDate}`}
       {(wholeDay || renderOnlyStart) &&
         !openEnd &&
         `${Moment(content.start).format('DD-MM-Y')}`}
