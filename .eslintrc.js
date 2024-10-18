@@ -63,4 +63,7 @@ module.exports = {
       },
     },
   },
+  globals: {
+    structuredClone: true,
+  },
 };
