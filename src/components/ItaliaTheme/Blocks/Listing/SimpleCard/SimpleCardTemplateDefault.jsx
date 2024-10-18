@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Button, Row, Col } from 'design-react-kit';
-import { v4 as uuid } from 'uuid';
 import SimpleCardDefault from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault';
 import { ListingLinkMore } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
@@ -22,7 +21,7 @@ const SimpleCardTemplateDefault = (props) => {
     linkmore_id_lighthouse,
   } = props;
 
-  const resultsUID = uuid();
+  const resultsUID = useId();
 
   let currentPathFilter = additionalFilters
     ?.filter((f) => {

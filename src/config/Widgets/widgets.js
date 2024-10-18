@@ -1,8 +1,10 @@
 import React from 'react';
 import CharCounterTextareaWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CharCounterTextareaWidget';
 import CharCounterTextWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CharCounterTextWidget';
-import { DatetimeWidget } from '@plone/volto/config/Widgets';
-import { ArrayWidget } from '@plone/volto/components';
+import {
+  ArrayWidget,
+  DatetimeWidget,
+} from '@plone/volto/components/manage/Widgets';
 import { MultilingualWidget } from 'volto-multilingual-widget';
 import IconWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/IconWidget';
 import SubsiteSocialLinksWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/SubsiteSocialLinksWidget';

@@ -1,7 +1,6 @@
 /* CUSTOMIZATIONS:
   - Use with more plone.app.querystring.date operations
 */
-import { defineMessages } from 'react-intl';
 import { useEffect } from 'react';
 
 export const NONVALUE_OPERATIONS = new Set([
