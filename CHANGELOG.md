@@ -1,3 +1,16 @@
+## [7.32.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.4...v7.32.0) (2024-10-21)
+
+
+### Features
+
+* changed clone blocks structure ([#787](https://github.com/RedTurtle/design-comuni-plone-theme/issues/787)) ([d8ebfae](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d8ebfae48adf82347224f5a010f632a7510c36e8))
+
+
+### Maintenance
+
+* preparing release ([c2bbbba](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c2bbbba701569b5baead6de08e9ef01e8ebdb020))
+* preparing release ([7f2b04d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7f2b04ddba340033a74b0be0f58e198654cb3507))
+
 ### [7.31.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.3...v7.31.4) (2024-10-03)
 
 
