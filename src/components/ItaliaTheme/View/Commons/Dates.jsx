@@ -4,7 +4,7 @@ import { rrulei18n } from '@plone/volto/components/manage/Widgets/RecurrenceWidg
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { Card, CardTitle, CardBody } from 'design-react-kit';
 import PropTypes from 'prop-types';
-import { viewDate } from 'design-comuni-plone-theme/helpers';
+import { viewDate, getRealEventEnd } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   start: {
@@ -55,15 +55,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
       })
     : null;
 
-  const getRealEventEnd = (content) => {
-    let actualEndDate = content.end;
-    if (content.recurrence) {
-      actualEndDate = rruleSet.rrules()[0].options.until;
-    }
-    return actualEndDate;
-  };
-
-  const actualEndDate = getRealEventEnd(content);
+  const actualEndDate = getRealEventEnd(content, rruleSet);
 
   if (content.recurrence) {
     const isRecurrenceByDay = content.recurrence.includes('BYDAY=+');

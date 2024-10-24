@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { rrulei18n } from '@plone/volto/components/manage/Widgets/RecurrenceWidget/Utils';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import { getRealEventEnd } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   dateStart: {
@@ -33,15 +34,7 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
       })
     : null;
 
-  const getRealEventEnd = (content) => {
-    let actualEndDate = content.end;
-    if (content.recurrence) {
-      actualEndDate = rruleSet.rrules()[0].options.until;
-    }
-    return actualEndDate;
-  };
-
-  const actualEndDate = getRealEventEnd(content);
+  const actualEndDate = getRealEventEnd(content, rruleSet);
 
   const wholeDay = content?.whole_day;
   const openEnd = content?.open_end;
@@ -58,10 +51,6 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
       const isWeekdaySunday = content.recurrence
         .split('BYDAY')[1]
         ?.includes('SU');
-      // const rruleSet = rrulestr(content.recurrence, {
-      //   compatible: true, //If set to True, the parser will operate in RFC-compatible mode. Right now it means that unfold will be turned on, and if a DTSTART is found, it will be considered the first recurrence instance, as documented in the RFC.
-      //   forceset: true,
-      // });
 
       const RRULE_LANGUAGE = rrulei18n(intl, Moment);
       eventRecurrenceText = rruleSet.rrules()[0]?.toText(
@@ -87,15 +76,6 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
 
   // format and save date into new variable depending on recurrence of event
   const endDate = Moment(actualEndDate).format('DD-MM-Y');
-  console.log(Moment(content.end).isSame(actualEndDate));
-  console.log(content.end);
-  console.log(actualEndDate);
-  console.log(
-    (wholeDay || renderOnlyStart) &&
-      !openEnd &&
-      Moment(content.end).isSame(actualEndDate),
-  );
-  console.log(renderOnlyStart);
 
   return content['@type'] === 'Event' ? (
     <p className="h4 py-2">
