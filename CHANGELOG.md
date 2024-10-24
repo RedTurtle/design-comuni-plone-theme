@@ -1,3 +1,15 @@
+### [7.32.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.32.0...v7.32.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* set the nSlidesToShow prop correctly ([#792](https://github.com/RedTurtle/design-comuni-plone-theme/issues/792)) ([cc106cf](https://github.com/RedTurtle/design-comuni-plone-theme/commit/cc106cf0e6e3f0e05380c6abb81c6bf16dc539b8))
+
+
+### Maintenance
+
+* preparing release ([2d721c8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2d721c810b9e6125bd127b66c2cac8e88bde0ff7))
+
 ## [7.32.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.4...v7.32.0) (2024-10-21)
 
 
