@@ -4,20 +4,23 @@
  */
 
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import redraft from 'redraft';
 import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
 //import { isCmsUi } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
+import Dates from './Dates';
 
 /**
  * View Alert block class.
  * @class View
  * @extends Component
  */
-const View = ({ data, pathname }) => {
-  //const isCmsUI = pathname ? isCmsUi(pathname) : false
+const View = (props) => {
+  const { data, pathname } = props;
+  const userLogged = useSelector((state) => state.userSession.token);
 
   const content = data.text
     ? redraft(
@@ -29,6 +32,9 @@ const View = ({ data, pathname }) => {
 
   return content ? (
     <section role="alert" className="block alertblock">
+      {userLogged && (
+        <Dates startDate={data.startDate} endDate={data.endDate} {...props} />
+      )}
       <Row className={cx('row-full-width', 'bg-alert-' + data.color)}>
         <Container className="p-4 pt-5 pb-5">
           <Row className="align-items-start">

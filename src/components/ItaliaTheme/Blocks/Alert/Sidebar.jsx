@@ -5,6 +5,7 @@ import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
 import { FileWidget } from '@plone/volto/components';
 import { ColorListWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import ImageSizeWidget from '@plone/volto/components/manage/Widgets/ImageSizeWidget';
+import { DatetimeWidget } from '@plone/volto/components';
 
 const messages = defineMessages({
   Color: {
@@ -31,9 +32,17 @@ const messages = defineMessages({
     id: 'CardImageSize',
     defaultMessage: 'Dimensione immagine',
   },
-  CardImageSize: {
-    id: 'CardImageSize',
-    defaultMessage: 'Dimensione immagine',
+  startDate: {
+    id: 'startDate',
+    defaultMessage: 'Inizio',
+  },
+  endDate: {
+    id: 'endDate',
+    defaultMessage: 'Scadenza',
+  },
+  dateTitle: {
+    id: 'dateTitle',
+    defaultMessage: 'Periodo di visualizzazione',
   },
 });
 
@@ -102,6 +111,33 @@ class Sidebar extends Component {
               });
             }}
             value={this.props.data.sizeImage}
+          />
+        </Segment>
+        <Segment className="form">
+          <header className="header pulled">
+            <h2>{this.props.intl.formatMessage(messages.dateTitle)}</h2>
+          </header>
+          <DatetimeWidget
+            id="startDate"
+            title={this.props.intl.formatMessage(messages.startDate)}
+            value={this.props.data.startDate}
+            onChange={(name, value) => {
+              this.props.onChangeBlock(this.props.block, {
+                ...this.props.data,
+                [name]: value,
+              });
+            }}
+          />
+          <DatetimeWidget
+            id="endDate"
+            title={this.props.intl.formatMessage(messages.endDate)}
+            value={this.props.data.endDate}
+            onChange={(name, value) => {
+              this.props.onChangeBlock(this.props.block, {
+                ...this.props.data,
+                [name]: value,
+              });
+            }}
           />
         </Segment>
       </Segment.Group>

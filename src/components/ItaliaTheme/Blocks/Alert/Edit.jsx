@@ -14,6 +14,7 @@ import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
 import { createContent } from '@plone/volto/actions';
 import { SidebarPortal } from '@plone/volto/components';
 import { EditTextBlock } from '@plone/volto/components';
+import Dates from './Dates';
 
 import { AlertSidebar } from 'design-comuni-plone-theme/components/ItaliaTheme';
 /**
@@ -53,65 +54,77 @@ class Edit extends Component {
       this.props.data.color = 'warning';
     }
     this.blockNode = React.createRef();
+    this.state = {
+      startDate: null,
+      endDate: null,
+    };
   }
 
   render() {
     if (__SERVER__) {
       return <div />;
     }
+
     return (
-      <div className="public-ui">
-        <div
-          className={cx('alertblock', {
-            selected: this.props.selected,
-          })}
-        >
-          <Row
-            className={cx(
-              'row-full-width p-5',
-              'bg-alert-' + this.props.data.color,
-            )}
+      <>
+        <div className="public-ui">
+          <div
+            className={cx('alertblock', {
+              selected: this.props.selected,
+            })}
           >
-            <Container className="ui">
-              <Row className="align-items-start">
-                {this.props.data.image?.data && (
-                  <Col sm={2} className="pb-3 image-col">
-                    <img
-                      src={`data:${this.props.data.image['content-type']};${this.props.data.image.encoding},${this.props.data.image.data}`}
-                      alt=""
-                      className={cx('left-image', [
-                        this.props.data.sizeImage
-                          ? 'size-' + this.props.data.sizeImage
-                          : 'size-l',
-                      ])}
+            <Dates
+              startDate={this.props.data.startDate}
+              endDate={this.props.data.endDate}
+              {...this.props}
+            />
+            <Row
+              className={cx(
+                'row-full-width p-5',
+                'bg-alert-' + this.props.data.color,
+              )}
+            >
+              <Container className="ui">
+                <Row className="align-items-start">
+                  {this.props.data.image?.data && (
+                    <Col sm={2} className="pb-3 image-col">
+                      <img
+                        src={`data:${this.props.data.image['content-type']};${this.props.data.image.encoding},${this.props.data.image.data}`}
+                        alt=""
+                        className={cx('left-image', [
+                          this.props.data.sizeImage
+                            ? 'size-' + this.props.data.sizeImage
+                            : 'size-l',
+                        ])}
+                      />
+                    </Col>
+                  )}
+                  <Col>
+                    <EditTextBlock
+                      data={this.props.data}
+                      detached={true}
+                      index={this.props.index}
+                      selected={this.props.selected}
+                      block={this.props.block}
+                      onAddBlock={this.props.onAddBlock}
+                      onChangeBlock={this.props.onChangeBlock}
+                      onDeleteBlock={this.props.onDeleteBlock}
+                      onMutateBlock={this.props.onMutateBlock}
+                      onFocusPreviousBlock={this.props.onFocusPreviousBlock}
+                      onFocusNextBlock={this.props.onFocusNextBlock}
+                      onSelectBlock={this.props.onSelectBlock}
+                      blockNode={this.blockNode}
                     />
                   </Col>
-                )}
-                <Col>
-                  <EditTextBlock
-                    data={this.props.data}
-                    detached={true}
-                    index={this.props.index}
-                    selected={this.props.selected}
-                    block={this.props.block}
-                    onAddBlock={this.props.onAddBlock}
-                    onChangeBlock={this.props.onChangeBlock}
-                    onDeleteBlock={this.props.onDeleteBlock}
-                    onMutateBlock={this.props.onMutateBlock}
-                    onFocusPreviousBlock={this.props.onFocusPreviousBlock}
-                    onFocusNextBlock={this.props.onFocusNextBlock}
-                    onSelectBlock={this.props.onSelectBlock}
-                    blockNode={this.blockNode}
-                  />
-                </Col>
-              </Row>
-            </Container>
-          </Row>
+                </Row>
+              </Container>
+            </Row>
+          </div>
+          <SidebarPortal selected={this.props.selected}>
+            <AlertSidebar {...this.props} />
+          </SidebarPortal>
         </div>
-        <SidebarPortal selected={this.props.selected}>
-          <AlertSidebar {...this.props} />
-        </SidebarPortal>
-      </div>
+      </>
     );
   }
 }
@@ -122,6 +135,7 @@ export default compose(
     (state) => ({
       request: state.content.create,
       content: state.content.data,
+      userLogged: state.users.user,
     }),
     { createContent },
   ),
