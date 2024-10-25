@@ -19,7 +19,7 @@ import Dates from './Dates';
  * @extends Component
  */
 const View = (props) => {
-  const { data, pathname } = props;
+  const { data } = props;
   const userLogged = useSelector((state) => state.userSession.token);
 
   const content = data.text
@@ -31,12 +31,11 @@ const View = (props) => {
     : '';
 
   const currentDate = new Date();
-  const startDateObj = data.startDate ? new Date(data.startDate) : null; // Convertire la data di inizio in oggetto Date
-  const endDateObj = data.endDate ? new Date(data.endDate) : null; // Convertire la data di fine in oggetto Date
+  const startDateObj = data.startDate ? new Date(data.startDate) : null;
+  const endDateObj = data.endDate ? new Date(data.endDate) : null;
 
-  // Verificações para garantir que o alerta é ativo
-  const isStartActive = startDateObj ? startDateObj <= currentDate : true; // A data de início deve ser anterior ou igual à atual
-  const isEndActive = endDateObj ? endDateObj >= currentDate : true; // A data de fim deve ser posterior ou igual à atual
+  const isStartActive = startDateObj ? startDateObj <= currentDate : true;
+  const isEndActive = endDateObj ? endDateObj >= currentDate : true;
 
   const isAlertActive =
     startDateObj && endDateObj
