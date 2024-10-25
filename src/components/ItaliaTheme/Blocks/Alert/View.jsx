@@ -27,7 +27,7 @@ const View = ({ data, pathname }) => {
       )
     : '';
 
-  return (
+  return content ? (
     <section role="alert" className="block alertblock">
       <Row className={cx('row-full-width', 'bg-alert-' + data.color)}>
         <Container className="p-4 pt-5 pb-5">
@@ -50,6 +50,8 @@ const View = ({ data, pathname }) => {
         </Container>
       </Row>
     </section>
+  ) : (
+    <></>
   );
 };
 
