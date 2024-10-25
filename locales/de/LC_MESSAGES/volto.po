@@ -734,6 +734,11 @@ msgstr ""
 msgid "actions"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Alert/Dates
+# defaultMessage: Pubblicazione attiva
+msgid "activeDate"
+msgstr ""
+
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: {filterNumber} filtri attivati
 msgid "active_filters"
@@ -1630,6 +1635,11 @@ msgstr ""
 msgid "dateRangePicker_upArrowDownArrow"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Periodo di visualizzazione
+msgid "dateTitle"
+msgstr ""
+
 #: components/ItaliaTheme/View/EventoView/EventoDateOrari
 # defaultMessage: Date e orari
 msgid "date_e_orari"
@@ -1894,6 +1904,16 @@ msgstr ""
 msgid "end"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Scadenza
+msgid "endDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Dates
+# defaultMessage: Data fine pubblicazione:
+msgid "endTitle"
+msgstr ""
+
 #: components/ItaliaTheme/View/EventoView/EventoCosE
 # defaultMessage: Cos'è
 msgid "event_cos_e"
@@ -1958,6 +1978,11 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza
 msgid "expire"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Dates
+# defaultMessage: Pubblicazione scaduta
+msgid "expiredDate"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/RelatedItemInEvidence/ItemInEvidence
@@ -2038,6 +2063,11 @@ msgstr ""
 #: helpers/ListingHelper
 # defaultMessage: dal
 msgid "from"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Dates
+# defaultMessage: Pubblicazione futura
+msgid "futureDate"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Gallery
@@ -3485,6 +3515,16 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/Dates
 # defaultMessage: Inizio evento
 msgid "start"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Inizio
+msgid "startDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Dates
+# defaultMessage: Data inizio pubblicazione:
+msgid "startTitle"
 msgstr ""
 
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView

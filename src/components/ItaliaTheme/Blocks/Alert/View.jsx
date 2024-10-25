@@ -30,7 +30,22 @@ const View = (props) => {
       )
     : '';
 
-  return content ? (
+  const currentDate = new Date();
+  const startDateObj = data.startDate ? new Date(data.startDate) : null; // Convertire la data di inizio in oggetto Date
+  const endDateObj = data.endDate ? new Date(data.endDate) : null; // Convertire la data di fine in oggetto Date
+
+  // Verificações para garantir que o alerta é ativo
+  const isStartActive = startDateObj ? startDateObj <= currentDate : true; // A data de início deve ser anterior ou igual à atual
+  const isEndActive = endDateObj ? endDateObj >= currentDate : true; // A data de fim deve ser posterior ou igual à atual
+
+  const isAlertActive =
+    startDateObj && endDateObj
+      ? isStartActive && isEndActive
+      : startDateObj
+      ? isStartActive
+      : isEndActive;
+
+  return content && (userLogged || isAlertActive) ? (
     <section role="alert" className="block alertblock">
       {userLogged && (
         <Dates startDate={data.startDate} endDate={data.endDate} {...props} />
