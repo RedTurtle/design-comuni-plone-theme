@@ -14,14 +14,10 @@ import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
 import { createContent } from '@plone/volto/actions';
 import { SidebarPortal } from '@plone/volto/components';
 import { EditTextBlock } from '@plone/volto/components';
-import Dates from './Dates';
+import Dates from './dateUtils';
 
 import { AlertSidebar } from 'design-comuni-plone-theme/components/ItaliaTheme';
-/**
- * Edit Alert block class.
- * @class Edit
- * @extends Component
- */
+
 class Edit extends Component {
   /**
    * Property types.

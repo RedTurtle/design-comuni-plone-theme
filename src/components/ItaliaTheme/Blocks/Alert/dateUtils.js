@@ -25,57 +25,72 @@ const messages = defineMessages({
   },
 });
 
+export const isActive = (startDate, endDate) => {
+  const today = new Date().getTime();
+  const start = startDate ? new Date(startDate).getTime() : null;
+  const end = endDate ? new Date(endDate).getTime() : null;
+
+  if (start && end) {
+    return today >= start && today <= end;
+  }
+  if (start) {
+    return today >= start;
+  }
+  if (end) {
+    return today <= end;
+  }
+  return false;
+};
+
 const Dates = ({ startDate, endDate }) => {
   const intl = useIntl();
-  const currentDate = new Date();
-  const startDateObj = startDate ? new Date(startDate) : null; // Convertire la data di inizio in oggetto Date
-  const endDateObj = endDate ? new Date(endDate) : null; // Convertire la data di fine in oggetto Date
-  const hasStartOrEnd = startDateObj || endDateObj; // Controlla se almeno una delle date è definita
+  const currentDate = new Date().getTime();
+  const startDateObj = startDate ? new Date(startDate).getTime() : null;
+  const endDateObj = endDate ? new Date(endDate).getTime() : null;
 
-  let currentStatus = intl.formatMessage(messages.expiredDate); // Stato predefinito
+  let currentStatus = null;
 
-  // Current date state logic
   if (startDateObj && endDateObj) {
-    if (endDateObj < currentDate) {
-      currentStatus = intl.formatMessage(messages.expiredDate);
-    } else if (startDateObj > currentDate) {
+    if (currentDate < startDateObj) {
       currentStatus = intl.formatMessage(messages.futureDate);
+    } else if (currentDate > endDateObj) {
+      currentStatus = intl.formatMessage(messages.expiredDate);
     } else {
       currentStatus = intl.formatMessage(messages.activeDate);
     }
   } else if (startDateObj) {
     currentStatus =
-      startDateObj > currentDate
+      currentDate < startDateObj
         ? intl.formatMessage(messages.futureDate)
         : intl.formatMessage(messages.activeDate);
   } else if (endDateObj) {
     currentStatus =
-      endDateObj > currentDate
+      currentDate <= endDateObj
         ? intl.formatMessage(messages.activeDate)
         : intl.formatMessage(messages.expiredDate);
   }
 
   return (
-    hasStartOrEnd && (
+    currentStatus && (
       <Container className="alert-info-dates">
         <Row>
           <p>{currentStatus}</p>
         </Row>
         <Row>
           <ul>
-            {startDateObj && (
+            {startDate && (
               <li>
                 <p>
                   {intl.formatMessage(messages.startTitle)}{' '}
-                  {startDateObj.toLocaleString()}{' '}
+                  {new Date(startDate).toLocaleString()}{' '}
                 </p>
               </li>
             )}
-            {endDateObj && (
+            {endDate && (
               <li>
                 <p>
                   {intl.formatMessage(messages.endTitle)}{' '}
-                  {endDateObj.toLocaleString()}
+                  {new Date(endDate).toLocaleString()}
                 </p>
               </li>
             )}
