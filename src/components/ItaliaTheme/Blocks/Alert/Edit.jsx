@@ -3,14 +3,13 @@
  * @module components/manage/Blocks/Image/Edit
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl } from 'react-intl';
 import cx from 'classnames';
 import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
 
 import { EditTextBlock } from '@plone/volto/components';
-import Dates from './dateUtils';
+import AlertWrapper from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Alert/AlertWrapper.jsx';
 
 import { SidebarPortal } from '@plone/volto/components';
 import { AlertSidebar } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -18,6 +17,7 @@ import { AlertSidebar } from 'design-comuni-plone-theme/components/ItaliaTheme';
 const Edit = (props) => {
   const {
     data,
+    block,
     selected,
     index,
     onChangeBlock,
@@ -28,52 +28,58 @@ const Edit = (props) => {
     onAddBlock,
   } = props;
 
-  if (!data.color) {
-    data.color = 'warning';
-  }
+  useEffect(() => {
+    if (!data.bg_color) {
+      onChangeBlock(block, {
+        ...data,
+        bg_color: data.color ?? 'warning',
+      });
+    }
+  }, [data, onChangeBlock, block]);
 
   return (
-    <div className="public-ui">
-      <div className={cx('alertblock', { selected })}>
-        <Dates startDate={data.startDate} endDate={data.endDate} {...props} />
-        <Row className={cx('row-full-width p-5', 'bg-alert-' + data.color)}>
-          <Container className="ui">
-            <Row className="align-items-start">
-              {data.image?.data && (
-                <Col sm={2} className="pb-3 image-col">
-                  <img
-                    src={`data:${data.image['content-type']};${data.image.encoding},${data.image.data}`}
-                    alt=""
-                    className={cx('left-image', [
-                      data.sizeImage ? 'size-' + data.sizeImage : 'size-l',
-                    ])}
+    <AlertWrapper data={data} {...props}>
+      <div className="public-ui">
+        <div className={cx('alertblock', { selected })}>
+          <Row className={cx('row-full-width p-5', 'bg-alert-' + data.color)}>
+            <Container className="ui">
+              <Row className="align-items-start">
+                {data.image?.data && (
+                  <Col sm={2} className="pb-3 image-col">
+                    <img
+                      src={`data:${data.image['content-type']};${data.image.encoding},${data.image.data}`}
+                      alt=""
+                      className={cx('left-image', [
+                        data.sizeImage ? 'size-' + data.sizeImage : 'size-l',
+                      ])}
+                    />
+                  </Col>
+                )}
+                <Col>
+                  <EditTextBlock
+                    data={data}
+                    detached={true}
+                    index={index}
+                    selected={selected}
+                    block={props.block}
+                    onAddBlock={onAddBlock}
+                    onChangeBlock={onChangeBlock}
+                    onDeleteBlock={onDeleteBlock}
+                    onMutateBlock={props.onMutateBlock}
+                    onFocusPreviousBlock={onFocusPreviousBlock}
+                    onFocusNextBlock={onFocusNextBlock}
+                    onSelectBlock={onSelectBlock}
                   />
                 </Col>
-              )}
-              <Col>
-                <EditTextBlock
-                  data={data}
-                  detached={true}
-                  index={index}
-                  selected={selected}
-                  block={props.block}
-                  onAddBlock={onAddBlock}
-                  onChangeBlock={onChangeBlock}
-                  onDeleteBlock={onDeleteBlock}
-                  onMutateBlock={props.onMutateBlock}
-                  onFocusPreviousBlock={onFocusPreviousBlock}
-                  onFocusNextBlock={onFocusNextBlock}
-                  onSelectBlock={onSelectBlock}
-                />
-              </Col>
-            </Row>
-          </Container>
-        </Row>
+              </Row>
+            </Container>
+          </Row>
+        </div>
+        <SidebarPortal selected={selected}>
+          <AlertSidebar {...props} />
+        </SidebarPortal>
       </div>
-      <SidebarPortal selected={selected}>
-        <AlertSidebar {...props} />
-      </SidebarPortal>
-    </div>
+    </AlertWrapper>
   );
 };
 
@@ -100,5 +106,4 @@ Edit.propTypes = {
   handleKeyDown: PropTypes.func.isRequired,
   createContent: PropTypes.func.isRequired,
 };
-
-export default injectIntl(Edit);
+export default Edit;
