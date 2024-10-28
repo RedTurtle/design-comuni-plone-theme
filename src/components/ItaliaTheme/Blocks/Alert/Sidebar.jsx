@@ -37,7 +37,7 @@ const messages = defineMessages({
     defaultMessage: 'Inizio',
   },
   endDate: {
-    id: 'endDate',
+    id: 'alertblock_endDate',
     defaultMessage: 'Scadenza',
   },
   dateTitle: {
