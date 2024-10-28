@@ -9,6 +9,7 @@ import Dates from './dateUtils';
 import { isActive } from './dateUtils';
 
 const View = ({ data }) => {
+  const { startDate, endDate } = data;
   const userLogged = useSelector((state) => state.userSession.token);
 
   const content = data.text
@@ -19,7 +20,7 @@ const View = ({ data }) => {
       )
     : '';
 
-  return content && (userLogged || isActive(data.startDate, data.endDate)) ? (
+  return content && (userLogged || isActive(startDate, endDate)) ? (
     <section role="alert" className="block alertblock">
       {userLogged && (
         <Dates startDate={data.startDate} endDate={data.endDate} />
