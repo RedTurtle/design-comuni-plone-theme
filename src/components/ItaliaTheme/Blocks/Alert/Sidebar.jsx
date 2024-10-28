@@ -41,7 +41,7 @@ const messages = defineMessages({
     defaultMessage: 'Scadenza',
   },
   dateTitle: {
-    id: 'dateTitle',
+    id: 'alertblock_dateTitle',
     defaultMessage: 'Periodo di visualizzazione',
   },
 });
