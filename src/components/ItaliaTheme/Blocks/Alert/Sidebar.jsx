@@ -33,7 +33,7 @@ const messages = defineMessages({
     defaultMessage: 'Dimensione immagine',
   },
   startDate: {
-    id: 'startDate',
+    id: 'alertblock_startDate',
     defaultMessage: 'Inizio',
   },
   endDate: {
