@@ -32,15 +32,15 @@ const messages = defineMessages({
     id: 'CardImageSize',
     defaultMessage: 'Dimensione immagine',
   },
-  startDate: {
+  alertblock_startDate: {
     id: 'alertblock_startDate',
     defaultMessage: 'Inizio',
   },
-  endDate: {
+  alertblock_endDate: {
     id: 'alertblock_endDate',
     defaultMessage: 'Scadenza',
   },
-  dateTitle: {
+  alertblock_dateTitle: {
     id: 'alertblock_dateTitle',
     defaultMessage: 'Periodo di visualizzazione',
   },
@@ -115,11 +115,13 @@ class Sidebar extends Component {
         </Segment>
         <Segment className="form">
           <header className="header pulled">
-            <h2>{this.props.intl.formatMessage(messages.dateTitle)}</h2>
+            <h2>
+              {this.props.intl.formatMessage(messages.alertblock_dateTitle)}
+            </h2>
           </header>
           <DatetimeWidget
             id="startDate"
-            title={this.props.intl.formatMessage(messages.startDate)}
+            title={this.props.intl.formatMessage(messages.alertblock_startDate)}
             value={this.props.data.startDate}
             onChange={(name, value) => {
               this.props.onChangeBlock(this.props.block, {
@@ -130,7 +132,7 @@ class Sidebar extends Component {
           />
           <DatetimeWidget
             id="endDate"
-            title={this.props.intl.formatMessage(messages.endDate)}
+            title={this.props.intl.formatMessage(messages.alertblock_endDate)}
             value={this.props.data.endDate}
             onChange={(name, value) => {
               this.props.onChangeBlock(this.props.block, {

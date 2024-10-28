@@ -736,7 +736,8 @@ msgstr ""
 msgid "actions"
 msgstr "Voir les actions"
 
-#: components/ItaliaTheme/Blocks/Alert/Dates
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+#: components/ItaliaTheme/Blocks/Alert/utils
 # defaultMessage: Pubblicazione attiva
 msgid "activeDate"
 msgstr ""
@@ -750,6 +751,21 @@ msgstr ""
 # defaultMessage: Vai alla ricerca per sezioni avanzata
 msgid "advandedSectionsFilters"
 msgstr "Aller à la recherche avancée par rubrique"
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Periodo di visualizzazione
+msgid "alertblock_dateTitle"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Scadenza
+msgid "alertblock_endDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Inizio
+msgid "alertblock_startDate"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 # defaultMessage: Centrare i card
@@ -1637,11 +1653,6 @@ msgstr ""
 msgid "dateRangePicker_upArrowDownArrow"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Periodo di visualizzazione
-msgid "dateTitle"
-msgstr ""
-
 #: components/ItaliaTheme/View/EventoView/EventoDateOrari
 # defaultMessage: Date e orari
 msgid "date_e_orari"
@@ -1906,14 +1917,15 @@ msgstr ""
 msgid "end"
 msgstr "fin"
 
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Scadenza
-msgid "endDate"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Alert/Dates
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+#: components/ItaliaTheme/Blocks/Alert/utils
 # defaultMessage: Data fine pubblicazione:
 msgid "endTitle"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Data di scadenza anteriore a data d'inizio
+msgid "errorDate"
 msgstr ""
 
 #: components/ItaliaTheme/View/EventoView/EventoCosE
@@ -1982,7 +1994,8 @@ msgstr ""
 msgid "expire"
 msgstr "Expiration"
 
-#: components/ItaliaTheme/Blocks/Alert/Dates
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+#: components/ItaliaTheme/Blocks/Alert/utils
 # defaultMessage: Pubblicazione scaduta
 msgid "expiredDate"
 msgstr ""
@@ -2067,7 +2080,8 @@ msgstr "{total} résultats trouvés"
 msgid "from"
 msgstr "du"
 
-#: components/ItaliaTheme/Blocks/Alert/Dates
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+#: components/ItaliaTheme/Blocks/Alert/utils
 # defaultMessage: Pubblicazione futura
 msgid "futureDate"
 msgstr ""
@@ -3519,12 +3533,8 @@ msgstr "Sponsor"
 msgid "start"
 msgstr "Début de l'événement"
 
-#: components/ItaliaTheme/Blocks/Alert/Sidebar
-# defaultMessage: Inizio
-msgid "startDate"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Alert/Dates
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+#: components/ItaliaTheme/Blocks/Alert/utils
 # defaultMessage: Data inizio pubblicazione:
 msgid "startTitle"
 msgstr ""
