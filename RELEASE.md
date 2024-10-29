@@ -41,6 +41,20 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Inserito messaggio di avviso quando si tenta di caricare un file dalla cartella Modulistica all'interno di un Servizio per segnalare limitazione sull'upload
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 11.24.3 (24/10/2024)
 
 ### Migliorie
