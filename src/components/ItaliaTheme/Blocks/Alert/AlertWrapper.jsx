@@ -38,7 +38,12 @@ const AlertWrapper = ({ data, children }) => {
       ? new Date(data.endDate).getTime()
       : Number.MAX_SAFE_INTEGER;
 
-    const returnValue = { active: false, message: null };
+    const returnValue = {
+      active: false,
+      message: intl.formatMessage(messages.expiredDate, {
+        date: new Date(data.endDate).toLocaleString(),
+      }),
+    };
 
     if (end < start) {
       returnValue.message = intl.formatMessage(messages.errorDate);
@@ -56,11 +61,8 @@ const AlertWrapper = ({ data, children }) => {
           });
       }
       returnValue.active = true;
-    } else {
-      returnValue.message = intl.formatMessage(messages.expiredDate, {
-        date: new Date(data.endDate).toLocaleString(),
-      });
     }
+
     return returnValue;
   };
 
