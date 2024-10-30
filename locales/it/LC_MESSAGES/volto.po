@@ -719,12 +719,6 @@ msgstr ""
 msgid "actions"
 msgstr "Vedi azioni"
 
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Pubblicazione attiva
-msgid "activeDate"
-msgstr ""
-
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: {filterNumber} filtri attivati
 msgid "active_filters"
@@ -733,6 +727,31 @@ msgstr ""
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Vai alla ricerca per sezioni avanzata
 msgid "advandedSectionsFilters"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Pubblicazione attiva.
+msgid "alert_activeDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio
+msgid "alert_errorDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. E' scaduto il {date}.
+msgid "alert_expiredDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. Verà pubblicato il {date}
+msgid "alert_futureDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Scadrà il {date}
+msgid "alert_willExpire"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
@@ -1900,17 +1919,6 @@ msgstr "Seleziona un elemento nella barra laterale per mostrarlo qui."
 msgid "end"
 msgstr "Fine evento"
 
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Data fine pubblicazione:
-msgid "endTitle"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-# defaultMessage: Data di scadenza anteriore a data d'inizio
-msgid "errorDate"
-msgstr ""
-
 #: components/ItaliaTheme/View/EventoView/EventoCosE
 # defaultMessage: Cos'è
 msgid "event_cos_e"
@@ -1976,12 +1984,6 @@ msgstr "Togliere la spunta per sezioni con un numero elevato di elementi"
 # defaultMessage: Scadenza
 msgid "expire"
 msgstr "Scadenza"
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Pubblicazione scaduta
-msgid "expiredDate"
-msgstr ""
 
 #: components/ItaliaTheme/View/Commons/RelatedItemInEvidence/ItemInEvidence
 # defaultMessage: Esplora
@@ -2062,12 +2064,6 @@ msgstr "Trovati {total} risultati"
 # defaultMessage: dal
 msgid "from"
 msgstr "dal"
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Pubblicazione futura
-msgid "futureDate"
-msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Gallery
 # defaultMessage: Galleria immagini
@@ -3515,12 +3511,6 @@ msgstr "Sponsor"
 # defaultMessage: Inizio evento
 msgid "start"
 msgstr "Inizio evento"
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Data inizio pubblicazione:
-msgid "startTitle"
-msgstr ""
 
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Strumenti di tutela

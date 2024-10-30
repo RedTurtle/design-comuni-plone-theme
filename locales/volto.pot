@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-10-28T13:13:14.478Z\n"
+"POT-Creation-Date: 2024-10-30T13:16:00.707Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -721,12 +721,6 @@ msgstr ""
 msgid "actions"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Pubblicazione attiva
-msgid "activeDate"
-msgstr ""
-
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: {filterNumber} filtri attivati
 msgid "active_filters"
@@ -735,6 +729,31 @@ msgstr ""
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Vai alla ricerca per sezioni avanzata
 msgid "advandedSectionsFilters"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Pubblicazione attiva.
+msgid "alert_activeDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio
+msgid "alert_errorDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. E' scaduto il {date}.
+msgid "alert_expiredDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. Verà pubblicato il {date}
+msgid "alert_futureDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Scadrà il {date}
+msgid "alert_willExpire"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
@@ -1902,17 +1921,6 @@ msgstr ""
 msgid "end"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Data fine pubblicazione:
-msgid "endTitle"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-# defaultMessage: Data di scadenza anteriore a data d'inizio
-msgid "errorDate"
-msgstr ""
-
 #: components/ItaliaTheme/View/EventoView/EventoCosE
 # defaultMessage: Cos'è
 msgid "event_cos_e"
@@ -1977,12 +1985,6 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza
 msgid "expire"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Pubblicazione scaduta
-msgid "expiredDate"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/RelatedItemInEvidence/ItemInEvidence
@@ -2063,12 +2065,6 @@ msgstr ""
 #: helpers/ListingHelper
 # defaultMessage: dal
 msgid "from"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Pubblicazione futura
-msgid "futureDate"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Gallery
@@ -3516,12 +3512,6 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/Dates
 # defaultMessage: Inizio evento
 msgid "start"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Data inizio pubblicazione:
-msgid "startTitle"
 msgstr ""
 
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView

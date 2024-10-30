@@ -719,12 +719,6 @@ msgstr ""
 msgid "actions"
 msgstr "View actions"
 
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Pubblicazione attiva
-msgid "activeDate"
-msgstr ""
-
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: {filterNumber} filtri attivati
 msgid "active_filters"
@@ -734,6 +728,31 @@ msgstr ""
 # defaultMessage: Vai alla ricerca per sezioni avanzata
 msgid "advandedSectionsFilters"
 msgstr "Go to advanced search by sections"
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Pubblicazione attiva.
+msgid "alert_activeDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio
+msgid "alert_errorDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. E' scaduto il {date}.
+msgid "alert_expiredDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. Verà pubblicato il {date}
+msgid "alert_futureDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Scadrà il {date}
+msgid "alert_willExpire"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
 # defaultMessage: Periodo di visualizzazione
@@ -1900,17 +1919,6 @@ msgstr ""
 msgid "end"
 msgstr "End of event"
 
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Data fine pubblicazione:
-msgid "endTitle"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-# defaultMessage: Data di scadenza anteriore a data d'inizio
-msgid "errorDate"
-msgstr ""
-
 #: components/ItaliaTheme/View/EventoView/EventoCosE
 # defaultMessage: Cos'è
 msgid "event_cos_e"
@@ -1976,12 +1984,6 @@ msgstr ""
 # defaultMessage: Scadenza
 msgid "expire"
 msgstr "Expire"
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Pubblicazione scaduta
-msgid "expiredDate"
-msgstr ""
 
 #: components/ItaliaTheme/View/Commons/RelatedItemInEvidence/ItemInEvidence
 # defaultMessage: Esplora
@@ -2062,12 +2064,6 @@ msgstr "Found {total} results"
 # defaultMessage: dal
 msgid "from"
 msgstr "from"
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Pubblicazione futura
-msgid "futureDate"
-msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Gallery
 # defaultMessage: Galleria immagini
@@ -3515,12 +3511,6 @@ msgstr ""
 # defaultMessage: Inizio evento
 msgid "start"
 msgstr "Event start"
-
-#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
-#: components/ItaliaTheme/Blocks/Alert/utils
-# defaultMessage: Data inizio pubblicazione:
-msgid "startTitle"
-msgstr ""
 
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Strumenti di tutela
