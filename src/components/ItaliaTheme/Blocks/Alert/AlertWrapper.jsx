@@ -46,7 +46,6 @@ const AlertWrapper = ({ data, children }) => {
       returnValue.message = intl.formatMessage(messages.futureDate, {
         date: new Date(data.startDate).toLocaleString(),
       });
-      returnValue.active = false;
     } else if (today < end) {
       returnValue.message = intl.formatMessage(messages.activeDate);
       if (data.endDate) {
