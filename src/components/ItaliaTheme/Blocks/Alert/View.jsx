@@ -5,19 +5,12 @@ import redraft from 'redraft';
 import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
 import config from '@plone/volto/registry';
 import AlertWrapper from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Alert/AlertWrapper.jsx';
+import { checkRedraftHasContent } from 'design-comuni-plone-theme/helpers';
 
 const View = ({ data }) => {
-  const content = data.text
-    ? redraft(
-        data.text,
-        config.settings.richtextViewSettings.ToHTMLRenderers,
-        config.settings.richtextViewSettings.ToHTMLOptions,
-      )
-    : '';
-
-  return content ? (
-    <AlertWrapper data={data}>
-      <section role="alert" className="block alertblock">
+  return checkRedraftHasContent(data.text) ? (
+    <section role="alert" className="block alertblock">
+      <AlertWrapper data={data}>
         <Row className={cx('row-full-width', 'bg-alert-' + data.color)}>
           <Container className="p-4 pt-5 pb-5">
             <Row className="align-items-start">
@@ -34,12 +27,18 @@ const View = ({ data }) => {
                   />
                 </Col>
               )}
-              <Col>{content}</Col>
+              <Col>
+                {redraft(
+                  data.text,
+                  config.settings.richtextViewSettings.ToHTMLRenderers,
+                  config.settings.richtextViewSettings.ToHTMLOptions,
+                )}
+              </Col>
             </Row>
           </Container>
         </Row>
-      </section>
-    </AlertWrapper>
+      </AlertWrapper>
+    </section>
   ) : null;
 };
 

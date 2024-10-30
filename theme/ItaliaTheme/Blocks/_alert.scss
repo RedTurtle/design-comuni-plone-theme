@@ -1,6 +1,7 @@
 .public-ui {
   .block.alertblock,
   .alertblock {
+    position: relative;
     .bg-alert-warning-orange,
     .bg-alert-warning,
     .bg-alert-danger {
@@ -119,6 +120,14 @@
     }
   }
   .alert-info-dates {
-    border-top: 1px solid $gray-100;
+    position: absolute;
+    content: '';
+    top: -1em;
+    .alert-info-text {
+      padding: 0 1em;
+      background-color: #fff;
+      border: 1px solid #000;
+      text-align: center;
+    }
   }
 }

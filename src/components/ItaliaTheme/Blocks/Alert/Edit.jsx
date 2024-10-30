@@ -47,10 +47,10 @@ const Edit = (props) => {
                 {data.image?.data && (
                   <Col sm={2} className="pb-3 image-col">
                     <img
-                      src={`data:${data.image['content-type']};${data.image.encoding},${data.image.data}`}
+                      src={`data:${data?.image['content-type']};${data?.image?.encoding},${data?.image?.data}`}
                       alt=""
                       className={cx('left-image', [
-                        data.sizeImage ? 'size-' + data.sizeImage : 'size-l',
+                        data?.sizeImage ? 'size-' + data.sizeImage : 'size-l',
                       ])}
                     />
                   </Col>

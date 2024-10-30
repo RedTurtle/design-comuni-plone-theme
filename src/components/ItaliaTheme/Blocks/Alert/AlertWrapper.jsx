@@ -5,28 +5,25 @@ import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
   expiredDate: {
-    id: 'expiredDate',
-    defaultMessage: 'Pubblicazione scaduta',
+    id: 'alert_expiredDate',
+    defaultMessage: "Non visibile. E' scaduto il {date}.",
   },
   activeDate: {
-    id: 'activeDate',
-    defaultMessage: 'Pubblicazione attiva',
+    id: 'alert_activeDate',
+    defaultMessage: 'Pubblicazione attiva.',
   },
   futureDate: {
-    id: 'futureDate',
-    defaultMessage: 'Pubblicazione futura',
-  },
-  startTitle: {
-    id: 'startTitle',
-    defaultMessage: 'Data inizio pubblicazione:',
-  },
-  endTitle: {
-    id: 'endTitle',
-    defaultMessage: 'Data fine pubblicazione:',
+    id: 'alert_futureDate',
+    defaultMessage: 'Non visibile. Verà pubblicato il {date}',
   },
   errorDate: {
-    id: 'errorDate',
-    defaultMessage: "Data di scadenza anteriore a data d'inizio",
+    id: 'alert_errorDate',
+    defaultMessage:
+      "Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio",
+  },
+  willExpire: {
+    id: 'alert_willExpire',
+    defaultMessage: 'Scadrà il {date}',
   },
 });
 
@@ -45,16 +42,25 @@ const AlertWrapper = ({ data, children }) => {
 
     if (end < start) {
       returnValue.message = intl.formatMessage(messages.errorDate);
-      returnValue.active = false;
     } else if (today < start) {
-      returnValue.message = intl.formatMessage(messages.futureDate);
+      returnValue.message = intl.formatMessage(messages.futureDate, {
+        date: new Date(data.startDate).toLocaleString(),
+      });
       returnValue.active = false;
     } else if (today < end) {
       returnValue.message = intl.formatMessage(messages.activeDate);
+      if (data.endDate) {
+        returnValue.message +=
+          ' ' +
+          intl.formatMessage(messages.willExpire, {
+            date: new Date(data.endDate).toLocaleString(),
+          });
+      }
       returnValue.active = true;
     } else {
-      returnValue.message = intl.formatMessage(messages.expiredDate);
-      returnValue.active = false;
+      returnValue.message = intl.formatMessage(messages.expiredDate, {
+        date: new Date(data.endDate).toLocaleString(),
+      });
     }
     return returnValue;
   };
@@ -68,27 +74,7 @@ const AlertWrapper = ({ data, children }) => {
           {userLogged && (
             <Container className="alert-info-dates">
               <Row>
-                <p>{activeStatus.message}</p>
-              </Row>
-              <Row>
-                <ul>
-                  {data.startDate && (
-                    <li>
-                      <p>
-                        {intl.formatMessage(messages.startTitle)}{' '}
-                        {new Date(data.startDate).toLocaleString()}
-                      </p>
-                    </li>
-                  )}
-                  {data.endDate && (
-                    <li>
-                      <p>
-                        {intl.formatMessage(messages.endTitle)}{' '}
-                        {new Date(data.endDate).toLocaleString()}
-                      </p>
-                    </li>
-                  )}
-                </ul>
+                <p className="alert-info-text">{activeStatus.message}</p>
               </Row>
             </Container>
           )}
