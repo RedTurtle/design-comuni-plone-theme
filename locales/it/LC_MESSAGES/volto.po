@@ -729,6 +729,46 @@ msgstr ""
 msgid "advandedSectionsFilters"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Pubblicazione attiva.
+msgid "alert_activeDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio
+msgid "alert_errorDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. E' scaduto il {date}.
+msgid "alert_expiredDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. Verà pubblicato il {date}
+msgid "alert_futureDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Scadrà il {date}
+msgid "alert_willExpire"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Periodo di visualizzazione
+msgid "alertblock_dateTitle"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Scadenza
+msgid "alertblock_endDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Inizio
+msgid "alertblock_startDate"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 # defaultMessage: Centrare i card
 msgid "alignCards"
