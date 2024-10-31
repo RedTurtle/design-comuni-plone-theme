@@ -1,3 +1,15 @@
+## [7.33.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.32.1...v7.33.0) (2024-10-31)
+
+
+### Features
+
+* added validity dates to Alert block ([#795](https://github.com/RedTurtle/design-comuni-plone-theme/issues/795)) ([069c248](https://github.com/RedTurtle/design-comuni-plone-theme/commit/069c248ddaf21d86463fc8dcf08d2611bea96aae))
+
+
+### Maintenance
+
+* preparing release 7.33.0 ([4cd8275](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4cd82754e33e833108fde5bc8c6b64ea480f9140))
+
 ### [7.32.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.32.0...v7.32.1) (2024-10-24)
 
 
