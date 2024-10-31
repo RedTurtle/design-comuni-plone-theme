@@ -1,5 +1,47 @@
 # Changelog
 
+## [12.0.0-alpha.24](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.0.0-alpha.23...v12.0.0-alpha.24) (2024-10-24)
+
+
+### Bug Fixes
+
+* append / to the end of apiPath because if it hasn't, internal url check for mp4 links fails. ([#788](https://github.com/RedTurtle/design-comuni-plone-theme/issues/788)) ([0b4fbac](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0b4fbac295ca46f22611a655b5dc8f89b6fc378b))
+* porting of end date in event view ([#793](https://github.com/RedTurtle/design-comuni-plone-theme/issues/793)) ([f5c6507](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f5c650753bc0277e82c4aa5db7c7d6074eb0306f))
+
+
+### Maintenance
+
+* added BE info in release.md bc impacts usability ([#790](https://github.com/RedTurtle/design-comuni-plone-theme/issues/790)) ([a922fe5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a922fe50ab69fd08af90f594e63ee02a2821d5af))
+
+
+### Documentation
+
+* updated publiccode and release log ([4e30cac](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4e30cac22da529b9635bca370cf462d2c5ba27f9))
+
+## [12.0.0-alpha.23](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.0.0-alpha.22...v12.0.0-alpha.23) (2024-10-16)
+
+
+### Bug Fixes
+
+* do not break LinkView for anonymous users ([#786](https://github.com/RedTurtle/design-comuni-plone-theme/issues/786)) ([c773e5d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c773e5de150c51525d534a289fbb1863c912b257))
+
+
+### Documentation
+
+* updated publiccode ([09e5bdc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/09e5bdc3b6d34e6077b93b3c211a0c8014da1699))
+
+## [12.0.0-alpha.22](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.0.0-alpha.21...v12.0.0-alpha.22) (2024-10-09)
+
+
+### Bug Fixes
+
+* changed double focus to outline and box-shadow ([#785](https://github.com/RedTurtle/design-comuni-plone-theme/issues/785)) ([46fdcb5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/46fdcb50f89f15f23bdb0278e482762594e78f9f))
+
+
+### Documentation
+
+* cleaned up release log ([3d879ae](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3d879aed36099fd82a9f8a0c4bdb4b5ad508af10))
+
 ## [12.0.0-alpha.21](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.0.0-alpha.20...v12.0.0-alpha.21) (2024-10-03)
 
 
