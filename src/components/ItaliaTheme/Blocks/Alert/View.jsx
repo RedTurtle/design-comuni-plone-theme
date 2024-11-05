@@ -9,7 +9,7 @@ import { checkRedraftHasContent } from 'design-comuni-plone-theme/helpers';
 
 const View = ({ data }) => {
   return checkRedraftHasContent(data.text) ? (
-    <section role="alert" className="block alertblock">
+    <section role="alert" className="alertblock">
       <AlertWrapper data={data}>
         <Row className={cx('row-full-width', 'bg-alert-' + data.color)}>
           <Container className="p-4 pt-5 pb-5">
