@@ -6,12 +6,11 @@
     height: auto;
     min-height: 280px;
     padding: 10px 50px;
+    color: $secondary-text;
 
     @media (max-width: #{map-get($grid-breakpoints, lg) - 1px}) {
       padding: 10px 6px;
     }
-
-    color: $secondary-text;
 
     .searchSections-background {
       position: absolute;

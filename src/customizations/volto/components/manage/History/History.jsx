@@ -9,6 +9,7 @@
 */
 
 import React, { Component } from 'react';
+import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { Helmet } from '@plone/volto/helpers';
 import { Link } from 'react-router-dom';
@@ -16,7 +17,6 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Container, Dropdown, Icon, Segment, Table } from 'semantic-ui-react';
 import { concat, map, reverse, find } from 'lodash';
-import { Portal } from 'react-portal';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { asyncConnect } from '@plone/volto/helpers';
 
@@ -306,8 +306,8 @@ class History extends Component {
             </Table.Body>
           </Table>
         </Segment.Group>
-        {this.state.isClient && (
-          <Portal node={document.getElementById('toolbar')}>
+        {this.state.isClient &&
+          createPortal(
             <Toolbar
               pathname={this.props.pathname}
               hideDefaultViewButtons
@@ -324,9 +324,9 @@ class History extends Component {
                   />
                 </Link>
               }
-            />
-          </Portal>
-        )}
+            />,
+            document.getElementById('toolbar'),
+          )}
       </Container>
     );
   }

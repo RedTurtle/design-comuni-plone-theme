@@ -31,7 +31,7 @@ import {
   clearFormData,
 } from 'volto-form-block/actions';
 
-import { BlockDataForm } from '@plone/volto/components';
+import { BlockDataForm } from '@plone/volto/components/manage/Form';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { getFieldName } from 'volto-form-block/components/utils';
 
@@ -87,6 +87,9 @@ const Sidebar = ({
   onChangeSubBlock,
   selected = 0,
   setSelected,
+  blocksErrors,
+  navRoot,
+  contentType,
 }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
@@ -136,7 +139,11 @@ const Sidebar = ({
                 [id]: value,
               });
             }}
+            onChangeBlock={onChangeBlock}
             formData={data}
+            navRoot={navRoot}
+            contentType={contentType}
+            errors={blocksErrors}
           />
           {properties?.['@components']?.form_data && (
             <Form.Field inline>

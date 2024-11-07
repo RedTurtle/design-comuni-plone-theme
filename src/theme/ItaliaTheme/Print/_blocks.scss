@@ -229,6 +229,8 @@
   .container {
     .block {
       .searchSections {
+        border: 1px solid $gray-border;
+
         .searchSections-background {
           display: none;
         }
@@ -236,8 +238,6 @@
         h2.text-secondary {
           color: $link-color !important;
         }
-
-        border: 1px solid $gray-border;
       }
     }
   }

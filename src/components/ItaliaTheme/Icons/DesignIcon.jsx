@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { v4 as uuid } from 'uuid';
+import React, { useState, useEffect, useRef, useId } from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -20,7 +19,7 @@ const defaultProps = {
 const Icon = ({ icon, title, className, size }) => {
   const ImportedIconRef = useRef(null);
   const [loading, setLoading] = useState(false);
-  const iconID = useMemo(() => uuid(), []);
+  const iconID = useId();
 
   useEffect(() => {
     setLoading(true);
