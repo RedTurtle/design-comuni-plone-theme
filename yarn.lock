@@ -8644,7 +8644,7 @@ __metadata:
     volto-venue: 4.1.0
     webpack-image-resize-loader: ^5.0.0
   peerDependencies:
-    "@plone/volto": 18.0.0-alpha.41
+    "@plone/volto": 18.0.3
   languageName: unknown
   linkType: soft
 
