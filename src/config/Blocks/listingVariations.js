@@ -61,10 +61,8 @@ import {
   addSmallBlockLinksTemplateOptions,
 } from 'design-comuni-plone-theme/config/Blocks/ListingOptions';
 
-import {
-  addLighthouseField,
-  cloneBlock,
-} from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
+import { addLighthouseField } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
+import { cloneBlock } from 'design-comuni-plone-theme/helpers/blocks';
 
 const italiaListingVariations = [
   {

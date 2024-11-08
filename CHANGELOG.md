@@ -1,3 +1,106 @@
+## [7.33.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.32.1...v7.33.0) (2024-10-31)
+
+
+### Features
+
+* added validity dates to Alert block ([#795](https://github.com/RedTurtle/design-comuni-plone-theme/issues/795)) ([069c248](https://github.com/RedTurtle/design-comuni-plone-theme/commit/069c248ddaf21d86463fc8dcf08d2611bea96aae))
+
+
+### Maintenance
+
+* preparing release 7.33.0 ([4cd8275](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4cd82754e33e833108fde5bc8c6b64ea480f9140))
+
+### [7.32.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.32.0...v7.32.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* set the nSlidesToShow prop correctly ([#792](https://github.com/RedTurtle/design-comuni-plone-theme/issues/792)) ([cc106cf](https://github.com/RedTurtle/design-comuni-plone-theme/commit/cc106cf0e6e3f0e05380c6abb81c6bf16dc539b8))
+
+
+### Maintenance
+
+* preparing release ([2d721c8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2d721c810b9e6125bd127b66c2cac8e88bde0ff7))
+
+## [7.32.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.4...v7.32.0) (2024-10-21)
+
+
+### Features
+
+* changed clone blocks structure ([#787](https://github.com/RedTurtle/design-comuni-plone-theme/issues/787)) ([d8ebfae](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d8ebfae48adf82347224f5a010f632a7510c36e8))
+
+
+### Maintenance
+
+* preparing release ([c2bbbba](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c2bbbba701569b5baead6de08e9ef01e8ebdb020))
+* preparing release ([7f2b04d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7f2b04ddba340033a74b0be0f58e198654cb3507))
+
+### [7.31.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.3...v7.31.4) (2024-10-03)
+
+
+### Bug Fixes
+
+* switchable OTP email validation ([#784](https://github.com/RedTurtle/design-comuni-plone-theme/issues/784)) ([610ed6f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/610ed6f3cb0a847772e9f9da2bb229eb9893a0be))
+
+
+### Maintenance
+
+* preparing release 7.31.4 ([c3b6a13](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c3b6a133190a84cb0ebeff5b0df59b3c757db8cf))
+
+### [7.31.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.2...v7.31.3) (2024-10-01)
+
+
+### Maintenance
+
+* preparing release 7.31.3 ([0373213](https://github.com/RedTurtle/design-comuni-plone-theme/commit/03732132166f05f799d46f2fc65abeaec61879a1))
+
+### [7.31.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.1...v7.31.2) (2024-09-12)
+
+
+### Maintenance
+
+* preparing release 7.31.2 ([d629068](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d6290688066159f5e9cb4da661027cbfcbe24c43))
+* udpated volto-form-block ([09e085d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/09e085d3a9f7ffaaa666150122035d09e4bb1af9))
+
+### [7.31.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.0...v7.31.1) (2024-09-05)
+
+
+### Bug Fixes
+
+* view caption for all videos in video gallery block ([#760](https://github.com/RedTurtle/design-comuni-plone-theme/issues/760)) ([34e43d7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/34e43d77f7510e623216d4b2b431bbd038fdcca3))
+
+
+### Maintenance
+
+* preparing release ([624ac89](https://github.com/RedTurtle/design-comuni-plone-theme/commit/624ac89163a5d4632d30936bc1dc9940f9e55db7))
+
+## [7.31.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.4...v7.31.0) (2024-09-04)
+
+
+### Features
+
+* added option to display caption in VideoGallery block ([#747](https://github.com/RedTurtle/design-comuni-plone-theme/issues/747)) ([b2ceb27](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b2ceb27435f12a4992e348bff034ca9a187a2f28))
+* show Last modified date for documents in ct Bando([#749](https://github.com/RedTurtle/design-comuni-plone-theme/issues/749)) ([bcaa25f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bcaa25f9afaaef95e287a6885186209cdad99848))
+
+
+### Maintenance
+
+* preparing release 7.31.0 ([2ee250b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2ee250bed5a2ca999429f30f4387184bb03fef3d))
+* updated locales ([20397bc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/20397bcd22f8157485c9ad5cf4f974a664d0278c))
+
+### [7.30.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.3...v7.30.4) (2024-08-27)
+
+
+### Bug Fixes
+
+* set height to the gallery inside news ([#742](https://github.com/RedTurtle/design-comuni-plone-theme/issues/742)) ([026c4aa](https://github.com/RedTurtle/design-comuni-plone-theme/commit/026c4aa6abdd71b9dd0ee9bf53ae730a56698466))
+
+
+### Documentation
+
+* release-log ([#646](https://github.com/RedTurtle/design-comuni-plone-theme/issues/646)) ([b93069a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b93069a04c9e957c927d63a8e63c1cd36b073888))
+* release-log ([#748](https://github.com/RedTurtle/design-comuni-plone-theme/issues/748)) ([d816167](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d816167a3ff4ea5007ad3c3d05087e49f3fce6c4))
+
 ### [7.30.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.30.2...v7.30.3) (2024-08-12)
 
 

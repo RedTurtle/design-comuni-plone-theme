@@ -30,6 +30,64 @@
 - ...
 -->
 
+## Versione 7.33.0 (31/10/2024)
+
+### Novità
+
+- Aggiunte le date di validità nel blocco Alert
+
+## Versione 7.31.3 (01/10/2024)
+
+### Fix
+
+- Risolto problema con l'anteprima dei video youtube sul blocco video galery
+
+## Versione 7.30.5 (27/08/2024)
+
+### Migliorie
+
+- Aggiunta una opzione scegliere se mostrare la didascalia nel blocco Video Gallery
+- Aggiunto la data di modifica nei documenti allegati del CT Bando
+  odifica nei documenti allegati del CT Bando
+
+## Versione 7.30.4 (26/08/2024)
+
+### Fix
+
+- Sistemato la mancanza di allineamento dentro la galleria d'immagine dentro i content types notizia, evento e luogo.
+
+## Versione 7.30.3 (12/08/2024)
+
+### Fix
+
+- Sistemato la mancanza di allineamento dentro la photogallery
+
+## Versione 7.29.1 (25/07/2024)
+
+### Migliorie
+
+- Aggiunte le date dentro i blocchi elenco.
+
+### Fix
+
+- Sistemato errore dentro a draftJS, l'elenco puntato non veniva stilizzato e l'icona del TextSize nella toolbar non si vedeva con il title applicato
+
+## Versione 7.29.0 (03/07/2024)
+
+### Migliorie
+
+- Aggiornamento volto-form-blocks
+
+### Fix
+
+- Aggiunto checkbox che espande i sotto-elementi nei filtri di ricerca
+
+## Versione 7.28.5 (26/06/2024)
+
+### Migliorie
+
+- Aggiornamento volto-form-blocks
+
 ## Versione 7.28.4 (25/06/2024)
 
 ### Novità
@@ -59,6 +117,7 @@
 - Migliorata l'accessibilità del bottone "Cerca".
 - Migliorata l'accessibilità del blocco Icone.
 - Migliorata l'accessibilità per la customer satisfaction.
+- Migliorata la visibilità della navigazione utilizando il mouse, adesso non si vede il focus quando un bottone/link è selezionato
 
 ### Fix
 
