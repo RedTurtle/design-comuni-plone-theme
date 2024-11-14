@@ -1,3 +1,40 @@
+## [7.33.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.32.1...v7.33.0) (2024-10-31)
+
+
+### Features
+
+* added validity dates to Alert block ([#795](https://github.com/RedTurtle/design-comuni-plone-theme/issues/795)) ([069c248](https://github.com/RedTurtle/design-comuni-plone-theme/commit/069c248ddaf21d86463fc8dcf08d2611bea96aae))
+
+
+### Maintenance
+
+* preparing release 7.33.0 ([4cd8275](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4cd82754e33e833108fde5bc8c6b64ea480f9140))
+
+### [7.32.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.32.0...v7.32.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* set the nSlidesToShow prop correctly ([#792](https://github.com/RedTurtle/design-comuni-plone-theme/issues/792)) ([cc106cf](https://github.com/RedTurtle/design-comuni-plone-theme/commit/cc106cf0e6e3f0e05380c6abb81c6bf16dc539b8))
+
+
+### Maintenance
+
+* preparing release ([2d721c8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2d721c810b9e6125bd127b66c2cac8e88bde0ff7))
+
+## [7.32.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.4...v7.32.0) (2024-10-21)
+
+
+### Features
+
+* changed clone blocks structure ([#787](https://github.com/RedTurtle/design-comuni-plone-theme/issues/787)) ([d8ebfae](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d8ebfae48adf82347224f5a010f632a7510c36e8))
+
+
+### Maintenance
+
+* preparing release ([c2bbbba](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c2bbbba701569b5baead6de08e9ef01e8ebdb020))
+* preparing release ([7f2b04d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7f2b04ddba340033a74b0be0f58e198654cb3507))
+
 ### [7.31.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.31.3...v7.31.4) (2024-10-03)
 
 

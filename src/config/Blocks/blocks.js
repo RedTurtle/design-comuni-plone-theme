@@ -69,7 +69,7 @@ import countDownSVG from 'design-comuni-plone-theme/icons/count-down.svg';
 import CountDownBlockView from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/CountDown/View';
 import CountDownBlockEdit from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/CountDown/Edit';
 
-import { cloneBlock } from 'design-comuni-plone-theme/config/Blocks/ListingOptions';
+import { cloneBlock } from 'design-comuni-plone-theme/helpers/blocks';
 
 const italiaBlocks = {
   highlitedContent: {

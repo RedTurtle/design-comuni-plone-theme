@@ -30,11 +30,17 @@
 - ...
 -->
 
+## Versione 7.33.0 (31/10/2024)
+
+### Novità
+
+- Aggiunte le date di validità nel blocco Alert
+
 ## Versione 7.31.3 (01/10/2024)
 
 ### Fix
 
-- Risolto problema con l'anteprima dei video youtube sul blocco video galerry
+- Risolto problema con l'anteprima dei video youtube sul blocco video galery
 
 ## Versione 7.30.5 (27/08/2024)
 
