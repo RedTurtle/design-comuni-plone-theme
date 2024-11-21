@@ -15,7 +15,6 @@ const messages = defineMessages({
     id: 'email_label',
     defaultMessage: 'E-mail',
   },
-
   call: {
     id: 'chiama_il_numero',
     defaultMessage: 'Chiama il numero',
@@ -32,70 +31,90 @@ const messages = defineMessages({
 
 const ContactLink = ({ tel, fax, email, label = true, strong = false }) => {
   const intl = useIntl();
-  let ret_label = null;
-  let ret = null;
 
-  function ReplacePhoneNumbers(str, type) {
-    // eslint-disable-next-line no-useless-escape
-    let newhtml = str.replace(/\+?[0-9]( ?[0-9\/-]+)+.?[0-9]*/gm, function (v) {
-      let r =
-        "<a href='" +
-        type +
-        ':' +
-        v.trim().replace(/-|\/|\s/gm, '') +
-        "' title='" +
-        (type === 'tel'
-          ? intl.formatMessage(messages.call)
-          : intl.formatMessage(messages.call_fax)) +
-        "' >" +
-        v +
-        '</a>';
-      return r;
-    });
-    return newhtml;
-  }
-
-  function ReplaceEmails(str) {
-    let newhtml = str.replace(
-      /([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi,
-      function (v) {
-        let r =
-          "<a href='mailto:" +
-          v.trim().replace(/|\/|\s/gm, '') +
-          "' title='" +
-          intl.formatMessage(messages.write_to) +
-          "' >" +
-          v +
-          '</a>';
-        return r;
-      },
+  const formatTel = (str, type) =>
+    str.split(/\+?[0-9]( ?[0-9/-]+)+.?[0-9]*/gm).map((v, i) =>
+      i % 2 === 0 ? (
+        <span key={i}>{` ${v} `}</span>
+      ) : (
+        <a
+          key={i}
+          href={`${type}:${v}`}
+          title={
+            type === 'tel'
+              ? intl.formatMessage(messages.call)
+              : intl.formatMessage(messages.call_fax)
+          }
+        >
+          {v}
+        </a>
+      ),
     );
-    return newhtml;
-  }
+
+  const formatEmail = (str) =>
+    str
+      .split(/([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi)
+      .map((v, i) =>
+        i % 2 === 0 ? (
+          <span key={i}>{` ${v} `}</span>
+        ) : (
+          <a
+            key={i}
+            href={`mailto:${v}`}
+            title={intl.formatMessage(messages.write_to)}
+          >
+            {v}
+          </a>
+        ),
+      );
 
   if (tel) {
-    ret_label = intl.formatMessage(messages.telefono);
-    ret = ReplacePhoneNumbers(tel, 'tel');
+    return (
+      <>
+        {label &&
+          (strong ? (
+            <strong>{intl.formatMessage(messages.telefono)}</strong>
+          ) : (
+            intl.formatMessage(messages.telefono)
+          ))}
+        {formatTel(tel, 'tel')}
+      </>
+    );
   } else if (fax) {
-    ret_label = intl.formatMessage(messages.fax);
-    ret = ReplacePhoneNumbers(fax, 'fax');
+    return (
+      <>
+        {label &&
+          (strong ? (
+            <strong>{intl.formatMessage(messages.fax)}</strong>
+          ) : (
+            intl.formatMessage(messages.fax)
+          ))}
+        {formatTel(fax, 'fax')}
+      </>
+    );
   } else if (email) {
-    ret_label = intl.formatMessage(messages.email_label);
-    ret = ReplaceEmails(email);
+    return (
+      <>
+        {label &&
+          (strong ? (
+            <strong>{intl.formatMessage(messages.email_label)}</strong>
+          ) : (
+            intl.formatMessage(messages.email_label)
+          ))}
+        {formatEmail(email)}
+      </>
+    );
+  } else {
+    return null;
   }
-  ret_label = label ? <>{ret_label}: </> : null;
-  ret_label = label ? strong ? <strong>{ret_label}</strong> : ret_label : null;
-
-  return ret ? (
-    <>
-      {ret_label}
-      <span dangerouslySetInnerHTML={{ __html: ret }} />
-    </>
-  ) : null;
 };
 
 ContactLink.propTypes = {
   tel: PropTypes.string,
+  fax: PropTypes.string,
+  email: PropTypes.string,
+  label: PropTypes.bool,
+  strong: PropTypes.bool,
 };
 
 export default ContactLink;
