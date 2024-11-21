@@ -39,7 +39,13 @@
 ### Fix
 
 - ...
--->
+ -->
+
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Risolto un problema di visualizzazione grafica per il bottone di login all'area personale per alcune specifiche dimensioni di schermi
 
 ## Versione X.X.X (dd/mm/yyyy)
 
