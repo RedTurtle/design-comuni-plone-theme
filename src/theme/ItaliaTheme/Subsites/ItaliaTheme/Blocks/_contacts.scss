@@ -12,8 +12,12 @@
             color: $subsite-primary-text;
           }
 
-          .description {
-            color: $subsite-primary-text;
+          .description,
+          a {
+            &,
+            span {
+              color: $subsite-primary-text;
+            }
           }
         }
 

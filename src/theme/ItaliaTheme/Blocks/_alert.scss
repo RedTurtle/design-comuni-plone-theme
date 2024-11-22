@@ -49,12 +49,13 @@
       h3,
       h4,
       h5,
-      h6 {
-        color: $alert-danger-text;
-      }
-
+      h6,
       a {
-        color: $alert-danger-text;
+        &,
+        span {
+          color: $alert-danger-text;
+          text-decoration-color: $alert-warning-text;
+        }
       }
     }
 
@@ -67,12 +68,13 @@
       h3,
       h4,
       h5,
-      h6 {
-        color: $alert-warning-text;
-      }
-
+      h6,
       a {
-        color: $alert-warning-text;
+        &,
+        span {
+          color: $alert-warning-text;
+          text-decoration-color: $alert-warning-text;
+        }
       }
     }
 
