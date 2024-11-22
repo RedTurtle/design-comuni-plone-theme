@@ -81,7 +81,11 @@
       h5,
       h6,
       a {
-        color: #fff;
+        &,
+        span {
+          color: #fff;
+          text-decoration-color: #fff;
+        }
       }
     }
   }
