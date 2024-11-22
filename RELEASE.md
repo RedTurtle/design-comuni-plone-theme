@@ -39,7 +39,37 @@
 ### Fix
 
 - ...
--->
+ -->
+
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Risolto un problema di visualizzazione grafica per il bottone di login all'area personale per alcune specifiche dimensioni di schermi
+
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Inserito messaggio di avviso quando si tenta di caricare un file dalla cartella Modulistica all'interno di un Servizio per segnalare limitazione sull'upload
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
+## Versione 11.24.3 (24/10/2024)
+
+### Migliorie
+
+- Quando viene impostata una ricorrenza, nel tipo di contenuto Evento viene mostrata la data di fine della ricorrenza invece che del singolo evento
+
+### Fix
+
+- Risolto problema con i video esterni che puntano a degli mp4: ora non vengono più erroneamente visti come link interni.
 
 ## Versione 11.24.0 (03/10/2024)
 
@@ -81,7 +111,7 @@
 
 ### Fix
 
-- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore. Pianificato evento per ripristinarlo.
+- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore.
 
 ## Versione 11.22.0 (05/09/2024)
 
@@ -195,6 +225,10 @@
 - La pagina di login e di reset della password usano il font corretto.
 
 ## Versione 11.12.6 (30/05/2024)
+
+### Novità
+
+- Per ragioni di conformità alle linee guida Agid, inibito l'inserimento di CT File nella cartella modulistica.
 
 ### Fix
 

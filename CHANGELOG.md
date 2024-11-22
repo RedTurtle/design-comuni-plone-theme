@@ -1,5 +1,41 @@
 # Changelog
 
+## [12.0.0-alpha.25](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.0.0-alpha.24...v12.0.0-alpha.25) (2024-11-07)
+
+
+### Features
+
+* show end of recurrence date instead of end date in event ct when set ([#789](https://github.com/RedTurtle/design-comuni-plone-theme/issues/789)) ([18c900a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/18c900aa92325b95fc27cce3e0e42e8878ee8fde))
+
+
+### Bug Fixes
+
+* arlogin styles in 992px-1200px media query space ([#802](https://github.com/RedTurtle/design-comuni-plone-theme/issues/802)) ([a909372](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a909372af462968b2880133d47760b37bbcba032))
+* page freeze when updateSideMenuOnLoadingBlocks=true and page has gallery ([#805](https://github.com/RedTurtle/design-comuni-plone-theme/issues/805)) ([e210bee](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e210bee91a092b6da098aefac6e902db672e24ec))
+
+
+### Documentation
+
+* update docs link in publiccode.yml ([#190](https://github.com/RedTurtle/design-comuni-plone-theme/issues/190)) ([82f9d0f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/82f9d0f00274efeb3c95cb8e5c3e1aa26859e487))
+
+## [12.0.0-alpha.24](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.0.0-alpha.23...v12.0.0-alpha.24) (2024-10-24)
+
+
+### Bug Fixes
+
+* append / to the end of apiPath because if it hasn't, internal url check for mp4 links fails. ([#788](https://github.com/RedTurtle/design-comuni-plone-theme/issues/788)) ([0b4fbac](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0b4fbac295ca46f22611a655b5dc8f89b6fc378b))
+* porting of end date in event view ([#793](https://github.com/RedTurtle/design-comuni-plone-theme/issues/793)) ([f5c6507](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f5c650753bc0277e82c4aa5db7c7d6074eb0306f))
+
+
+### Maintenance
+
+* added BE info in release.md bc impacts usability ([#790](https://github.com/RedTurtle/design-comuni-plone-theme/issues/790)) ([a922fe5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a922fe50ab69fd08af90f594e63ee02a2821d5af))
+
+
+### Documentation
+
+* updated publiccode and release log ([4e30cac](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4e30cac22da529b9635bca370cf462d2c5ba27f9))
+
 ## [12.0.0-alpha.23](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.0.0-alpha.22...v12.0.0-alpha.23) (2024-10-16)
 
 
