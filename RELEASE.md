@@ -47,6 +47,20 @@
 
 - Risolto un problema di visualizzazione grafica per il bottone di login all'area personale per alcune specifiche dimensioni di schermi
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Inserito messaggio di avviso quando si tenta di caricare un file dalla cartella Modulistica all'interno di un Servizio per segnalare limitazione sull'upload
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 11.24.3 (24/10/2024)
 
 ### Migliorie
@@ -97,7 +111,7 @@
 
 ### Fix
 
-- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore. Pianificato evento per ripristinarlo.
+- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore.
 
 ## Versione 11.22.0 (05/09/2024)
 
