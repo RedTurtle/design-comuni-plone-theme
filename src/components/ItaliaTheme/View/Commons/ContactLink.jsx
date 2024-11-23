@@ -33,23 +33,27 @@ const ContactLink = ({ tel, fax, email, label = true, strong = false }) => {
   const intl = useIntl();
 
   const formatTel = (str, type) =>
-    str.split(/\+?[0-9]( ?[0-9/-]+)+.?[0-9]*/gm).map((v, i) =>
-      i % 2 === 0 ? (
-        <span key={i}>{` ${v} `}</span>
-      ) : (
-        <a
-          key={i}
-          href={`${type}:${v}`}
-          title={
-            type === 'tel'
-              ? intl.formatMessage(messages.call)
-              : intl.formatMessage(messages.call_fax)
-          }
-        >
-          {v}
-        </a>
-      ),
-    );
+    str
+      .split(
+        /((?:\+?\d{1,3}[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4})/gm,
+      )
+      .map((v, i) =>
+        i % 2 === 0 ? (
+          <span key={i}>{` ${v} `}</span>
+        ) : (
+          <a
+            key={i}
+            href={`${type}:${v}`}
+            title={
+              type === 'tel'
+                ? intl.formatMessage(messages.call)
+                : intl.formatMessage(messages.call_fax)
+            }
+          >
+            {v}
+          </a>
+        ),
+      );
 
   const formatEmail = (str) =>
     str
