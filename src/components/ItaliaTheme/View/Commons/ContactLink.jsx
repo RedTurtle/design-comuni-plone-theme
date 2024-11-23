@@ -34,9 +34,7 @@ const ContactLink = ({ tel, fax, email, label = true, strong = false }) => {
 
   const formatTel = (str, type) =>
     str
-      .split(
-        /((?:\+?\d{1,3}[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4})/gm,
-      )
+      .split(/((?:\+?\d{1,3}[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d+)/gm)
       .map((v, i) =>
         i % 2 === 0 ? (
           <span key={i}>{` ${v} `}</span>
