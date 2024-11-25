@@ -3183,6 +3183,7 @@ msgid "searchBlock"
 msgstr "Búsqueda de eventos"
 
 #: components/ItaliaTheme/Blocks/EventSearch/Sidebar
+#: components/ItaliaTheme/Blocks/UOSearch/Sidebar
 # defaultMessage: Mostra l'immagine per tutti gli elementi
 msgid "searchBlock_always_show_image"
 msgstr ""
