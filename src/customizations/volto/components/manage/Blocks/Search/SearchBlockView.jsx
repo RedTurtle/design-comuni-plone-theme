@@ -83,7 +83,6 @@ const applyDefaults = (data, root) => {
     ...data,
     query: data?.query?.length ? data.query : defaultQuery,
   };
-
   if (!sort_on) {
     delete result.sort_on;
   }
