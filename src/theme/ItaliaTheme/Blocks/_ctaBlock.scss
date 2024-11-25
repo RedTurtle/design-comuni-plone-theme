@@ -26,12 +26,8 @@
       }
       h2,
       h3,
-      a {
-        &,
-        span {
-          color: $secondary-text;
-          text-decoration-color: $secondary-text;
-        }
+      a:not(.btn) {
+        color: $secondary-text;
       }
 
       p:last-of-type {

@@ -80,12 +80,8 @@
       h4,
       h5,
       h6,
-      a {
-        &,
-        span {
-          color: #fff;
-          text-decoration-color: #fff;
-        }
+      a:not(.btn) {
+        color: #fff;
       }
     }
   }
