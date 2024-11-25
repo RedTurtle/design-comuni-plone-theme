@@ -3,7 +3,8 @@
 @mixin block($subsite-primary, $subsite-primary-text) {
   .contacts {
     .full-width.section {
-      &.bg-primary {
+      &.bg-primary,
+      &.bg-secondary {
         background-color: $subsite-primary !important;
 
         .block-header {
@@ -11,15 +12,14 @@
             color: $subsite-primary-text;
           }
 
-          .description,
-          a:not(.btn) {
+          .description {
             color: $subsite-primary-text;
           }
+          a:not(.btn) {
+            color: currentColor;
+          }
         }
-      }
 
-      &.bg-primary,
-      &.bg-secondary {
         .card {
           .card-body {
             color: #000;
