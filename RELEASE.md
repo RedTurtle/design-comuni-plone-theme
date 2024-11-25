@@ -41,7 +41,19 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 11.24.5 (22/11/2024)
+
+### Migliorie
+
+- Inserito messaggio di avviso quando si tenta di caricare un file dalla cartella Modulistica all'interno di un Servizio per segnalare limitazione sull'upload
+
+### Fix
+
+- L'impostazione "Solo cookie tecnici" non causa problemi nell'apertura del cookie banner.
+- [WebKit, Safari, iOS] Risolto un problema di visualizzazione grafica di alcuni bottoni che contengono al loro interno un link ad un sito esterno.
+- Quando un evento ha impostata l'opzione "Tutta la giornata", le date sotto il titolo vengono visualizzate in maniera corretta.
+
+## Versione 11.24.4 (07/11/2024)
 
 ### Fix
 
@@ -99,7 +111,7 @@
 
 ### Fix
 
-- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore. Pianificato evento per ripristinarlo.
+- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore.
 
 ## Versione 11.22.0 (05/09/2024)
 
