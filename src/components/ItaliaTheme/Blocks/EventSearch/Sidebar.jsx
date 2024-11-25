@@ -75,6 +75,10 @@ const messages = defineMessages({
     id: 'searchBlock_show_default_results',
     defaultMessage: 'Di default, mostra i risultati',
   },
+  always_show_image: {
+    id: 'searchBlock_always_show_image',
+    defaultMessage: "Mostra l'immagine per tutti gli elementi",
+  },
 });
 
 const Sidebar = (props) => {
@@ -164,6 +168,21 @@ const Sidebar = (props) => {
             value={
               props.data.show_default_results
                 ? props.data.show_default_results
+                : false
+            }
+            onChange={(id, value) => {
+              props.onChangeBlock(props.block, {
+                ...props.data,
+                [id]: value,
+              });
+            }}
+          />
+          <CheckboxWidget
+            id="always_show_image"
+            title={props.intl.formatMessage(messages.always_show_image)}
+            value={
+              props.data.always_show_image
+                ? props.data.always_show_image
                 : false
             }
             onChange={(id, value) => {
