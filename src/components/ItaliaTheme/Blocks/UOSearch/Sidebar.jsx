@@ -161,11 +161,7 @@ const Sidebar = (props) => {
           <CheckboxWidget
             id="always_show_image"
             title={props.intl.formatMessage(messages.always_show_image)}
-            value={
-              props.data.always_show_image
-                ? props.data.always_show_image
-                : false
-            }
+            value={props.data.always_show_image}
             onChange={(id, value) => {
               props.onChangeBlock(props.block, {
                 ...props.data,
