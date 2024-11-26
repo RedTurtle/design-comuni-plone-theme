@@ -1,3 +1,17 @@
+### [7.33.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.0...v7.33.1) (2024-11-26)
+
+
+### Bug Fixes
+
+* loading search results modal ([a84380b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a84380b5a9b1244a13ef87793d246d55840a04fd))
+* removed class block from block Alert View ([#804](https://github.com/RedTurtle/design-comuni-plone-theme/issues/804)) ([3b5b9ae](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3b5b9ae270222c311a75feb96cde4a7b5c2343ed))
+
+
+### Maintenance
+
+* preparing release ([669c99b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/669c99ba6feba957bb3eae1bc6257e2ceaa60ff0))
+* updated RELASE.md ([a6b4ed1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a6b4ed1a99f03dd2b79b7addb7e968cc15070a01))
+
 ## [7.33.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.32.1...v7.33.0) (2024-10-31)
 
 
