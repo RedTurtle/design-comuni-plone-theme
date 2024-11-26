@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione 7.33.1 (26/11/2024)
+
+### Fix
+
+- Sistemata la ricerca nel sito: ora viene mostrato un overlay di caricamento finchè non si viene rediretti alla pagina del risultato, in modo che l'utente capisca che la ricerca è in corso.
+
 ## Versione 7.33.0 (31/10/2024)
 
 ### Novità
