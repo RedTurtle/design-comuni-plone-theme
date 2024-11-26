@@ -26,6 +26,7 @@ import {
   FormGroup,
   Input,
   Label,
+  Spinner,
   Toggle,
 } from 'design-react-kit/dist/design-react-kit';
 
@@ -167,7 +168,7 @@ const SearchModal = ({ closeModal, show }) => {
 
   const dispatch = useDispatch();
   const location = useLocation();
-
+  const [redirectingToResults, setRedirectingToResults] = useState(false);
   const [advancedSearch, setAdvancedSearch] = useState(false);
   const [advancedTab, setAdvancedTab] = useState(null);
   const [searchableText, setSearchableText] = useState(
@@ -291,10 +292,11 @@ const SearchModal = ({ closeModal, show }) => {
     setOptions((prevOptions) => ({ ...prevOptions, [optId]: value }));
 
   const submitSearch = () => {
+    setRedirectingToResults(true);
     setAdvancedSearch(false);
-    setTimeout(() => {
-      closeModal();
-    }, 500);
+    // setTimeout(() => {
+    //   closeModal();
+    // }, 500);
   };
 
   const handleEnterSearch = (e) => {
@@ -915,6 +917,11 @@ const SearchModal = ({ closeModal, show }) => {
             </div>
           )}
         </Container>
+        {redirectingToResults && (
+          <div className="overlay loading-results">
+            <Spinner active />
+          </div>
+        )}
       </ModalBody>
     </Modal>
   );
