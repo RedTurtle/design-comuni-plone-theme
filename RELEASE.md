@@ -43,37 +43,39 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Migliorie
+
+- Rimossa dal CT Evento la data di scadenza del CT per evitare confusione con le date effettive dell'evento
+- Durante la ricerca nel sito dalla popup che compare cliccando sul bottone 'Cerca' nella testa del sito, viene mostrato un loader in overlay durante il caricamento della pagina dei risultati perchè questo potrebbe richiedere un po' di tempo. Prima di questa modifica non era chiaro se la ricerca fosse iniziata.
+- Nel CT Evento per una rassegna, se gli eventi figli hanno una ricorrenza o un periodo di date impostato, il range di date verrà mostrato nella card all'interno dell'evento padre.
+
+### Novità
+
+- E' ora possibile decidere se mostrare l'immagine di anteprima per tutte le card nel blocco di ricerca Evento e Unità Organizzativa.
+
 ### Fix
 
-- Risolto un problema di visualizzazione grafica per il bottone di login all'area personale per alcune specifiche dimensioni di schermi
+- ...
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 11.24.5 (22/11/2024)
 
 ### Migliorie
 
 - Inserito messaggio di avviso quando si tenta di caricare un file dalla cartella Modulistica all'interno di un Servizio per segnalare limitazione sull'upload
 
-### Novità
-
-- ...
-
 ### Fix
 
-- ...
-
-## Versione X.X.X (dd/mm/yyyy)
-
-### Migliorie
-
-- ...
-
-### Novità
-
-- ...
-
-### Fix
-
+- L'impostazione "Solo cookie tecnici" non causa problemi nell'apertura del cookie banner.
+- [WebKit, Safari, iOS] Risolto un problema di visualizzazione grafica di alcuni bottoni che contengono al loro interno un link ad un sito esterno.
 - Quando un evento ha impostata l'opzione "Tutta la giornata", le date sotto il titolo vengono visualizzate in maniera corretta.
+
+## Versione 11.24.4 (07/11/2024)
+
+### Fix
+
+- Risolto un problema di visualizzazione grafica per il bottone di login all'area personale per alcune specifiche dimensioni di schermi
+
+- Se l'url di una immagine è rotto, viene mostrato un avviso al posto dell'immagine rotta.
 
 ## Versione 11.24.3 (24/10/2024)
 
