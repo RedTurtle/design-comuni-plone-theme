@@ -54,6 +54,7 @@
 ### Novità
 
 - E' ora possibile decidere se mostrare l'immagine di anteprima per tutte le card nel blocco di ricerca Evento e Unità Organizzativa.
+- Nel blocco 'Cerca' è stata aggiunta l'opzione "Usa l'ordinamento dei risultati di Plone" nella sezione 'Controlli'.
 
 ## Versione 11.24.5 (22/11/2024)
 
