@@ -82,7 +82,7 @@ const PaginaArgomentoView = ({ content }) => {
                     uo_object?.image_scales?.image?.length > 0 &&
                     uo_object?.image_caption
                   ) {
-                    alt = uo_object.image_caption;
+                    alt = uo_object?.image_caption;
                   }
 
                   return (
