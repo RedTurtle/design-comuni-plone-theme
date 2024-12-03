@@ -74,15 +74,15 @@ const PaginaArgomentoView = ({ content }) => {
                   const uo_object = u;
                   let alt = u.title;
                   if (
-                    uo_object.image_scales.preview_image.length > 0 &&
+                    uo_object?.image_scales?.preview_image?.length > 0 &&
                     uo_object?.preview_caption
                   ) {
-                    alt = uo_object.preview_caption;
+                    alt = uo_object?.preview_caption;
                   } else if (
-                    uo_object.image_scales.image.length > 0 &&
+                    uo_object?.image_scales?.image.length > 0 &&
                     uo_object?.image_caption
                   ) {
-                    alt = uo_object.image_caption;
+                    alt = uo_object?.image_caption;
                   }
 
                   return (
@@ -109,8 +109,8 @@ const PaginaArgomentoView = ({ content }) => {
                               </CardText>
                             </CardBody>
                             {uo_object &&
-                              (uo_object.image_scales.image.length > 0 ||
-                                uo_object.image_scales.preview_image.length >
+                              (uo_object.image_scales?.image?.length > 0 ||
+                                uo_object.image_scales?.preview_image?.length >
                                   0) && (
                                 <div className="image-container me-3">
                                   <Image
