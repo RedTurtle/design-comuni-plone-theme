@@ -53,7 +53,7 @@
 
 ### Fix
 
-- ...
+- La pagina non dà più errore quando si imposta una ricorrenza con impostazione "Termina dopo tot. ricorrenze".
 
 ## Versione 11.25.1 (28/11/2024)
 
