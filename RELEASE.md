@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Rimossa l'opzione non selezionabile "nessun valore" dal widget ricorrenza.
+
 ## Versione 11.25.1 (28/11/2024)
 
 ### Fix
