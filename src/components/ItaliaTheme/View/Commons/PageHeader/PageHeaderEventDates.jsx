@@ -105,10 +105,9 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
       {eventRecurrenceText && (
         <div className="recurrence small">
           <span>{eventRecurrenceText}</span>
-          {additionalDates.length > 0 ||
-            (removedDates.length > 0 && (
-              <span> {intl.formatMessage(messages.exceptionDates)}</span>
-            ))}
+          {(additionalDates.length > 0 || removedDates.length > 0) && (
+            <span> {intl.formatMessage(messages.exceptionDates)}</span>
+          )}
         </div>
       )}
     </p>
