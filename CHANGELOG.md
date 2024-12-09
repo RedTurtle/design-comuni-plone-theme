@@ -1,3 +1,10 @@
+### [7.33.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.1...v7.33.2) (2024-12-09)
+
+
+### Bug Fixes
+
+* component HandleAnchor when loading deferred items ([75b27ad](https://github.com/RedTurtle/design-comuni-plone-theme/commit/75b27ad5298e4733cab9784a1e7ad1c2f622fdee))
+
 ### [7.33.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.0...v7.33.1) (2024-11-26)
 
 
