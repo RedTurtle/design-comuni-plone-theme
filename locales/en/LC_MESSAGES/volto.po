@@ -1984,7 +1984,7 @@ msgid "exceeded_chars"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderEventDates
-# defaultMessage: con alcune eccezioni. Per maggiori informazioni controlla la sezione dedicata
+# defaultMessage: con alcune eccezioni. Per maggiori informazioni controllare la sezione dedicata.
 msgid "exceptionDates"
 msgstr "with some exceptions. Please see the dedicated section for more information"
 

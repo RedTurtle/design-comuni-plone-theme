@@ -1984,9 +1984,9 @@ msgid "exceeded_chars"
 msgstr "Il testo supera la lunghezza consigliata perciò verrà tagliato."
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderEventDates
-# defaultMessage: con alcune eccezioni. Per maggiori informazioni controlla la sezione dedicata
+# defaultMessage: con alcune eccezioni. Per maggiori informazioni controllare la sezione dedicata.
 msgid "exceptionDates"
-msgstr "con alcune eccezioni. Per maggiori informazioni controlla la sezione dedicata"
+msgstr "con alcune eccezioni. Per maggiori informazioni controllare la sezione dedicata"
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza

@@ -17,7 +17,7 @@ const messages = defineMessages({
   exceptionDates: {
     id: 'exceptionDates',
     defaultMessage:
-      'con alcune eccezioni. Per maggiori informazioni controlla la sezione dedicata',
+      'con alcune eccezioni. Per maggiori informazioni controllare la sezione dedicata.',
   },
 });
 
