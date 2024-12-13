@@ -55,6 +55,12 @@
 
 - Colore del font del bottone DraftJS nell'editor sistemato a bianco.
 
+## Versione 11.25.3 (12/12/2024)
+
+### Migliorie
+
+- Aggiornate diverse traduzioni italiane.
+
 ## Versione 11.25.1 (28/11/2024)
 
 ### Fix
