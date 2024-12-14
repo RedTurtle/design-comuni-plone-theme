@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione 7.33.2 (09/12/2024)
+
+### Fix
+
+- Sistemato lo scroll delle pagine con url con ancora, nel caso in cui la pagina abbia degli oggetti caricati separatamente. (es la vista di una UO).
+
 ## Versione 7.33.1 (26/11/2024)
 
 ### Fix
