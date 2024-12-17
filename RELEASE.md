@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione xxx (xx/xx/xxxx)
+
+### Migliorie
+
+- sistemata l'accessibilità riguardante il focus lato operatore.
+
 ## Versione 11.25.3 (12/12/2024)
 
 ### Migliorie
