@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Il menu a tendina da cui è possibile filtrare i luoghi nel blocco Ricerca Eventi mostra tutti i luoghi collegati agli eventi presenti nel percorso selezionato dalla Sidebar, senza limitarne il numero.
+
 ## Versione 11.25.3 (12/12/2024)
 
 ### Migliorie
