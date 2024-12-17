@@ -1,3 +1,10 @@
+### [7.33.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.2...v7.33.3) (2024-12-17)
+
+
+### Bug Fixes
+
+* closeMenu on mobile when click item inside it ([#842](https://github.com/RedTurtle/design-comuni-plone-theme/issues/842)) ([ad8ccd7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ad8ccd7106c7acfa65e12dd12271bd2435cea4b8))
+
 ### [7.33.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.1...v7.33.2) (2024-12-09)
 
 
