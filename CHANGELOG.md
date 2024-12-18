@@ -1,3 +1,10 @@
+### [7.33.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.3...v7.33.4) (2024-12-18)
+
+
+### Bug Fixes
+
+* default sorting items in Calendar block ([e44e2c3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e44e2c36e9885a3662cc6123f749049b6b6e32de))
+
 ### [7.33.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.2...v7.33.3) (2024-12-17)
 
 
