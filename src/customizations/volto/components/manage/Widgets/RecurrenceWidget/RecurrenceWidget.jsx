@@ -408,9 +408,11 @@ class RecurrenceWidget extends Component {
               } else if (isEqual(value, MONDAYFRIDAY_DAYS)) {
                 formValues['freq'] = FREQUENCES.MONDAYFRIDAY;
               } else
-                formValues[option] = value.map((d) => {
-                  return this.getWeekday(d);
-                });
+                formValues[option] = value
+                  ? value.map((d) => {
+                      return this.getWeekday(d);
+                    })
+                  : [];
             }
             break;
           case 'bymonthday':
@@ -538,7 +540,7 @@ class RecurrenceWidget extends Component {
     }
     let exdates = Object.assign([], rruleSet.exdates());
     let rdates = Object.assign([], rruleSet.rdates());
-    if (field === 'dstart') dstart = value;
+    if (field === 'dtstart') dstart = value;
     else if (field === 'exdates') exdates = value;
     else if (field === 'rdates') rdates = value;
     else if (field === 'freq') {
