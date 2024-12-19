@@ -4,7 +4,11 @@ import { rrulei18n } from '@plone/volto/components/manage/Widgets/RecurrenceWidg
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { Card, CardTitle, CardBody } from 'design-react-kit';
 import PropTypes from 'prop-types';
-import { viewDate, getRealEventEnd } from 'design-comuni-plone-theme/helpers';
+import {
+  viewDate,
+  getRealEventEnd,
+  getRecurrenceExceptionDates,
+} from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   start: {
@@ -85,16 +89,12 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
   const start = viewDate(intl.locale, content.start);
   // format and save date into new variable depending on recurrence of event
   const end = viewDate(intl.locale, actualEndDate);
+
   const openEnd = content?.open_end;
   const wholeDay = content?.whole_day;
-  const rdates = rruleSet?.rdates() ?? [];
-  const exdates = rruleSet?.exdates() ?? [];
-  const additionalDates = rdates.reduce((acc, curr) => {
-    const isExdate = exdates.some((b) => b.toString() === curr.toString());
-    if (!isExdate) {
-      return [...acc, curr];
-    } else return acc;
-  }, []);
+
+  const { additionalDates, removedDates } =
+    getRecurrenceExceptionDates(rruleSet);
 
   return content ? (
     <>
@@ -133,11 +133,11 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
           <div className="point-list">
             <div className="point-list-aside point-list-warning">
               <span className="point-date font-monospace">
-                {end.format('DD')}
+                {end?.format('DD')}
               </span>
-              <span className="point-month">{end.format('MMMM')}</span>
-              {!end.isSame(start, 'year') && (
-                <span className="point-month">{end.format('YYYY')}</span>
+              <span className="point-month">{end?.format('MMMM')}</span>
+              {!end?.isSame(start, 'year') && (
+                <span className="point-month">{end?.format('YYYY')}</span>
               )}
             </div>
             <div className="point-list-content">
@@ -148,7 +148,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
               >
                 <CardBody tag="div" className={'card-body'}>
                   <CardTitle tag="p">
-                    {!content.whole_day && `${end.format('HH:mm')} - `}
+                    {!content.whole_day && `${end?.format('HH:mm')} - `}
                     {intl.formatMessage(messages.end)}
                   </CardTitle>
                 </CardBody>
@@ -172,10 +172,10 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
           ))}
         </div>
       )}
-      {exdates.length > 0 && (
+      {removedDates.length > 0 && (
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.excluded_dates)}</h5>
-          {exdates.map((exDate) => (
+          {removedDates.map((exDate) => (
             <div className="font-serif">
               {viewDate(intl.locale, exDate, 'dddd DD MMMM YYYY')}
             </div>
