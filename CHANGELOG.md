@@ -1,5 +1,35 @@
 
 
+## [11.25.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.25.3...v11.25.4) (2024-12-16)
+
+
+### Bug Fixes
+
+* enable ImageWithErrors to return null value ([#841](https://github.com/RedTurtle/design-comuni-plone-theme/issues/841)) ([d7aacb9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d7aacb9ac906307e430cd50ec5843e07f638aec1))
+
+
+### Documentation
+
+* updated publiccode ([f5dce8d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f5dce8d55ff6b9eea393fe07a6b0030e7f0ddbb7))
+
+
+### Maintenance
+
+* fix npm release script ([1f71995](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1f719950e75c0ef5f40093400c43f15520351973))
+* upgrade to volto 17.20.3 ([2490838](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2490838a0eec206e430c46bc94e1ebb6c40feba0))
+
+## [11.25.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.25.2...v11.25.3) (2024-12-12)
+
+
+### Bug Fixes
+
+* translations ([6c2379b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6c2379b8a263ecbc6b69695788e82d9c1deba272))
+
+
+### Documentation
+
+* updated publiccode and release log ([10abdae](https://github.com/RedTurtle/design-comuni-plone-theme/commit/10abdae4068ea883640769c48df06337b6478b99))
+
 ## [11.25.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v11.25.1...v11.25.2) (2024-11-28)
 
 
