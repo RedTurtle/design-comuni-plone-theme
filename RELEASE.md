@@ -54,6 +54,7 @@
 
 ### Fix
 
+- Il menu a tendina da cui è possibile filtrare i luoghi nel blocco Ricerca Eventi mostra tutti i luoghi collegati agli eventi presenti nel percorso selezionato dalla Sidebar, senza limitarne il numero.
 - Rimossa l'opzione non selezionabile "nessun valore" dal widget ricorrenza.
 - La pagina non dà più errore quando si imposta una ricorrenza con impostazione "Termina dopo tot. ricorrenze".
 
