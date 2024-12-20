@@ -4,6 +4,14 @@ body.cms-ui {
   font-size: 16px;
   line-height: 1.5;
 
+  :focus:not(.focus--mouse),
+  input[type='checkbox']:focus + label:before {
+    outline: 2px solid #000 !important;
+    outline-offset: 2px;
+    border: none !important;
+    box-shadow: 0 0 0 2px #fff !important;
+  }
+
   @include media-breakpoint-up(sm) {
     font-size: 18px;
     line-height: 1.555;
@@ -73,6 +81,48 @@ body.cms-ui {
 
     .block.text {
       line-height: 1.555;
+    }
+
+    &.table {
+      @import 'bootstrap/scss/reboot';
+      @import 'bootstrap/scss/tables';
+      @import 'bootstrap-italia/src/scss/custom/tables';
+      @import 'extras/tables';
+
+      .ui.table {
+        &.inverted {
+          th,
+          td {
+            border-color: inherit !important;
+          }
+        }
+        thead th {
+          font-weight: bold;
+          text-transform: unset;
+          color: var(--bs-table-color);
+        }
+
+        &.very.basic {
+          &:not(.sortable):not(.striped) {
+            th:first-child,
+            td:first-child {
+              padding-left: 0.5rem;
+            }
+            thead tr:first-child th {
+              padding-top: 0.5rem;
+            }
+            td:last-child {
+              padding-right: 0.5rem;
+            }
+          }
+        }
+
+        &.striped {
+          tbody tr:nth-child(2n) {
+            background-color: rgba(0, 0, 50, 0.02) !important;
+          }
+        }
+      }
     }
   }
 
