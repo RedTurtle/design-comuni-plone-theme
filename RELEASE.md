@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Se vengono aggiunte o rimosse date dalla ricorrenza di un CT evento, nel sottotitolo viene aggiunta l'indicazione di controllare le eccezioni nella sezione apposita.
+
+### Novità
+
+- ...
+
+### Fix
+
+- Rimossa l'opzione non selezionabile "nessun valore" dal widget ricorrenza.
+
 ## Versione 11.25.3 (12/12/2024)
 
 ### Migliorie
