@@ -7909,13 +7909,13 @@ __metadata:
   linkType: hard
 
 "cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
-  version: 7.0.3
-  resolution: "cross-spawn@npm:7.0.3"
+  version: 7.0.6
+  resolution: "cross-spawn@npm:7.0.6"
   dependencies:
     path-key: ^3.1.0
     shebang-command: ^2.0.0
     which: ^2.0.1
-  checksum: 671cc7c7288c3a8406f3c69a3ae2fc85555c04169e9d611def9a675635472614f1c0ed0ef80955d5b6d4e724f6ced67f0ad1bb006c2ea643488fcfef994d7f52
+  checksum: 8d306efacaf6f3f60e0224c287664093fa9185680b2d195852ba9a863f85d02dcc737094c6e512175f8ee0161f9b87c73c6826034c2422e39de7d6569cf4503b
   languageName: node
   linkType: hard
 
@@ -8261,13 +8261,13 @@ __metadata:
     typeface-lora: 0.0.72
     typeface-roboto-mono: 0.0.75
     typeface-titillium-web: 0.0.72
-    volto-blocks-widget: 3.4.1
+    volto-blocks-widget: 3.4.3
     volto-data-grid-widget: 2.3.1
     volto-dropdownmenu: 4.1.3
     volto-editablefooter: 5.1.7
-    volto-feedback: 0.3.2
-    volto-form-block: 3.9.2
-    volto-gdpr-privacy: 2.2.7
+    volto-feedback: 0.5.2
+    volto-form-block: 3.10.0
+    volto-gdpr-privacy: 2.2.12
     volto-google-analytics: 2.0.0
     volto-multilingual-widget: 3.2.1
     volto-querywidget-with-browser: 0.4.2
@@ -8282,7 +8282,7 @@ __metadata:
     volto-venue: 4.1.0
     webpack-image-resize-loader: ^5.0.0
   peerDependencies:
-    "@plone/volto": 17.18.2
+    "@plone/volto": 17.20.3
   languageName: unknown
   linkType: soft
 
@@ -12149,11 +12149,11 @@ __metadata:
   linkType: hard
 
 "nanoid@npm:^3.3.6":
-  version: 3.3.6
-  resolution: "nanoid@npm:3.3.6"
+  version: 3.3.8
+  resolution: "nanoid@npm:3.3.8"
   bin:
     nanoid: bin/nanoid.cjs
-  checksum: 7d0eda657002738aa5206107bd0580aead6c95c460ef1bdd0b1a87a9c7ae6277ac2e9b945306aaa5b32c6dcb7feaf462d0f552e7f8b5718abfc6ead5c94a71b3
+  checksum: dfe0adbc0c77e9655b550c333075f51bb28cfc7568afbf3237249904f9c86c9aaaed1f113f0fddddba75673ee31c758c30c43d4414f014a52a7a626efc5958c9
   languageName: node
   linkType: hard
 
@@ -16144,12 +16144,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-blocks-widget@npm:3.4.1":
-  version: 3.4.1
-  resolution: "volto-blocks-widget@npm:3.4.1"
+"volto-blocks-widget@npm:3.4.3":
+  version: 3.4.3
+  resolution: "volto-blocks-widget@npm:3.4.3"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: 4f5c183698e38edd40f24d7f35d3d59745c67b77ffaf0b2e448d8c7696453e9c83bbcd1b3c91599e6ccb77d64177fd7923d9ad36607dc1a41cba7fa9b20029b2
+  checksum: 68490569a49d79c4a7921af19d00225325b206992faf7d94b96a320266cf4679341e65e9472993039302aecaeceacfce4804f9ca12abe9222605438281ad2898
   languageName: node
   linkType: hard
 
@@ -16185,21 +16185,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-feedback@npm:0.3.2":
-  version: 0.3.2
-  resolution: "volto-feedback@npm:0.3.2"
+"volto-feedback@npm:0.5.2":
+  version: 0.5.2
+  resolution: "volto-feedback@npm:0.5.2"
   dependencies:
     react-google-recaptcha-v3: 1.9.5
     semantic-ui-css: 2.5.0
   peerDependencies:
     "@plone/volto": ">=16.0.0"
-  checksum: bfc7951ca5761640896e54fbe84c612176f95bad06682b198596425905b592bf1a287664cc1a8ebade814325c4514313043e62568ae3ac2325a18a43d2c43722
+  checksum: 48c07636787d4422fdf58e03953860bb6359da47dd34861ad8bf876b7f5ce00425fdd6f28c0334508b79c257e6fb9484e3be06bce296e2a27c98be7cd94e1d84
   languageName: node
   linkType: hard
 
-"volto-form-block@npm:3.9.2":
-  version: 3.9.2
-  resolution: "volto-form-block@npm:3.9.2"
+"volto-form-block@npm:3.10.0":
+  version: 3.10.0
+  resolution: "volto-form-block@npm:3.10.0"
   dependencies:
     "@hcaptcha/react-hcaptcha": ^0.3.6
     file-saver: ^2.0.5
@@ -16208,19 +16208,19 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
     volto-subblocks: ^2.1.0
-  checksum: a47c5241bed9e5959241ccadd3992753718b0b1fae5f3104089600c5f0d2b71193d9c0a41235e7e9f3fadce9691a5c0bc14722d667cbcf8a1a5793a381c4a746
+  checksum: 8ddce2c624cf329f446a63772ce8dd643aed957b8d967463e76f3f83383704ca9b3d1fe0669390c5a965d9a2568123fdbb3408cf831cadb9e5cebfd164ca0aa9
   languageName: node
   linkType: hard
 
-"volto-gdpr-privacy@npm:2.2.7":
-  version: 2.2.7
-  resolution: "volto-gdpr-privacy@npm:2.2.7"
+"volto-gdpr-privacy@npm:2.2.12":
+  version: 2.2.12
+  resolution: "volto-gdpr-privacy@npm:2.2.12"
   dependencies:
     react-focus-lock: 2.9.4
     volto-multilingual-widget: 3.2.1
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: beb301d21ff8f831fd1c1b924830e2b23fea91050f139d0211c2f91a009e81ac336334df77a636245cb50c199fba8d88ba9742048c81befad20ef7c9d995b1b0
+  checksum: ba1b9c012716b325e29fa5764f319bdb339a81424b292f30331695d5f940b4db17ccffffd59ecd17ff5058899c8b53f0f0cacd30e2e9927e35fa5c6907136635
   languageName: node
   linkType: hard
 

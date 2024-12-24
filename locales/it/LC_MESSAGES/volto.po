@@ -1533,6 +1533,11 @@ msgstr "Data conclusione incarico"
 msgid "data_conclusione_incarico"
 msgstr "Ha fatto parte dell'organizzazione comunale come {incarico} fino al"
 
+#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
+# defaultMessage: Data di fine dell'incarico
+msgid "data_conclusione_incarico_label"
+msgstr "Data di conclusione dell'incarico"
+
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 # defaultMessage: Data inizio incarico
 msgid "data_inizio"
@@ -2049,6 +2054,11 @@ msgstr "Leggi di più"
 # defaultMessage: Il testo supera la lunghezza consigliata perciò verrà tagliato.
 msgid "exceeded_chars"
 msgstr "Il testo supera la lunghezza consigliata perciò verrà tagliato."
+
+#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderEventDates
+# defaultMessage: con alcune eccezioni. Per maggiori informazioni controllare la sezione dedicata.
+msgid "exceptionDates"
+msgstr "con alcune eccezioni. Per maggiori informazioni controllare la sezione dedicata."
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza
@@ -2697,6 +2707,11 @@ msgstr "Ultimo aggiornamento"
 msgid "modulistica"
 msgstr "Modulistica"
 
+#: overrideTranslations
+# defaultMessage: As per the official information architecture outlined in measure 1.4.1, all forms must be properly uploaded in the designated section within Amministrazione > Documenti e Dati > Modulistica, and linked to the relevant service sheet. It is no longer possible to upload files and attachments directly into this container.
+msgid "modulistica_restraint"
+msgstr "Come da architettura informativa ufficiale prevista dalla misura 1.4.1, tutta la modulistica dovrà essere correttamente caricata nella sezione apposita, all'interno di amministrazione, documenti e dati, modulistica, e relazionata con la scheda servizio. Non è più possibile caricare file ed allegati direttamente in questo contenitore."
+
 #: components/ItaliaTheme/View/Commons/DownloadFileFormat
 # defaultMessage: Scarica il file
 msgid "modulo_download_file"
@@ -3235,6 +3250,12 @@ msgstr "Cerca tutti gli argomenti"
 # defaultMessage: Ricerca eventi
 msgid "searchBlock"
 msgstr "Ricerca eventi"
+
+#: components/ItaliaTheme/Blocks/EventSearch/Sidebar
+#: components/ItaliaTheme/Blocks/UOSearch/Sidebar
+# defaultMessage: Mostra l'immagine per tutti gli elementi
+msgid "searchBlock_always_show_image"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
 #: components/ItaliaTheme/Blocks/EventSearch/Sidebar

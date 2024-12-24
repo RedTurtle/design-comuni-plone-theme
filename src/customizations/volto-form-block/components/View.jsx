@@ -1,14 +1,14 @@
 // CUSTOMIZATION:
 // - added warning state to form
+// - backport for https://github.com/collective/volto-form-block/pull/122
 
 import React, { useState, useEffect, useReducer, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
-import { submitForm } from 'volto-form-block/actions';
+import { submitForm, resetOTP } from 'volto-form-block/actions';
 import { getFieldName } from 'volto-form-block/components/utils';
 import FormView from 'volto-form-block/components/FormView';
-import { formatDate } from '@plone/volto/helpers/Utils/Date';
 import config from '@plone/volto/registry';
 import { Captcha } from 'volto-form-block/components/Widget';
 import { isValidEmail } from 'volto-form-block/helpers/validators';
@@ -127,6 +127,9 @@ const View = ({ data, id, path }) => {
 
   const [formData, setFormData] = useReducer((state, action) => {
     if (action.reset) {
+      if (data.email_otp_verification) {
+        dispatch(resetOTP(id));
+      }
       return getInitialData(data);
     }
 
@@ -209,7 +212,11 @@ const View = ({ data, id, path }) => {
             field: name,
             message: intl.formatMessage(messages.invalidEmailMessage),
           });
-        } else if (isBCC && !formData[name].otp) {
+        } else if (
+          data.email_otp_verification &&
+          isBCC &&
+          !formData[name].otp
+        ) {
           v.push({
             field: name + OTP_FIELDNAME_EXTENDER,
             message: intl.formatMessage(messages.insertOtp),
@@ -253,20 +260,21 @@ const View = ({ data, id, path }) => {
                 config.blocks.blocksConfig.form.attachment_fields.includes(
                   subblock.field_type,
                 );
-              const isDate = subblock.field_type === 'date';
+              // const isDate = subblock.field_type === 'date';
 
               if (isAttachment) {
                 attachments[name] = formattedFormData[name].value;
                 delete formattedFormData[name];
               }
 
-              if (isDate) {
-                formattedFormData[name].value = formatDate({
-                  date: formattedFormData[name].value,
-                  format: 'DD-MM-YYYY',
-                  locale: intl.locale,
-                });
-              }
+              // XXX: dates should be sent as ISO format, not DD-MM-YYYY !
+              // if (isDate) {
+              //   formattedFormData[name].value = formatDate({
+              //     date: formattedFormData[name].value,
+              //     format: 'DD-MM-YYYY',
+              //     locale: intl.locale,
+              //   });
+              // }
             }
           });
           dispatch(
@@ -316,7 +324,7 @@ const View = ({ data, id, path }) => {
 
   useEffect(() => {
     if (submitResults?.loaded) {
-      if (submitResults?.result?.data?.waiting_list) {
+      if (submitResults?.result?.waiting_list) {
         setFormState({
           type: FORM_STATES.warning,
           result: {

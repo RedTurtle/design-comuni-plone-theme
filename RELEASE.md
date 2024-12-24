@@ -39,21 +39,100 @@
 ### Fix
 
 - ...
--->
+ -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 11.26.0 (20/12/2024)
+
+### Migliorie
+
+- Se vengono aggiunte o rimosse date dalla ricorrenza di un CT evento, nel sottotitolo viene aggiunta l'indicazione di controllare le eccezioni nella sezione apposita.
+- Il sottotitolo del CT Evento mostra il range di date per tutti gli eventi con ricorrenza o con una data di fine diversa dalla data di inizio.
+- Sistemata l'accessibilità riguardante il focus lato operatore.
+
+### Novità
+
+- Nel blocco 'Cerca' è stata aggiunta l'opzione "Usa l'ordinamento dei risultati di Plone" nella sezione 'Controlli'.
+
+### Fix
+
+- Il menu a tendina da cui è possibile filtrare i luoghi nel blocco Ricerca Eventi mostra tutti i luoghi collegati agli eventi presenti nel percorso selezionato dalla Sidebar, senza limitarne il numero.
+- Risolto un problema con il colore del testo del bottone nell'editor.
+- Rimossa l'opzione non selezionabile "nessun valore" dal widget ricorrenza.
+- La pagina non dà più errore quando si imposta una ricorrenza con impostazione "Termina dopo tot. ricorrenze".
+
+## Versione 11.25.3 (12/12/2024)
+
+### Migliorie
+
+- Aggiornate diverse traduzioni italiane.
+
+## Versione 11.25.1 (28/11/2024)
+
+### Fix
+
+- Aggiustato il collegamento alla UO nella pagina Argomento.
+
+## Versione 11.25.0 (26/11/2024)
+
+### Migliorie
+
+- Rimossa dal CT Evento la data di scadenza del CT per evitare confusione con le date effettive dell'evento
+- Durante la ricerca nel sito dalla popup che compare cliccando sul bottone 'Cerca' nella testa del sito, viene mostrato un loader in overlay durante il caricamento della pagina dei risultati perchè questo potrebbe richiedere un po' di tempo. Prima di questa modifica non era chiaro se la ricerca fosse iniziata.
+- Nel CT Evento per una rassegna, se gli eventi figli hanno una ricorrenza o un periodo di date impostato, il range di date verrà mostrato nella card all'interno dell'evento padre.
+- Se l'url di una immagine è rotto, viene mostrato un avviso al posto dell'immagine rotta.
+
+### Novità
+
+- E' ora possibile decidere se mostrare l'immagine di anteprima per tutte le card nel blocco di ricerca Evento e Unità Organizzativa.
+
+## Versione 11.24.5 (22/11/2024)
+
+### Migliorie
+
+- Inserito messaggio di avviso quando si tenta di caricare un file dalla cartella Modulistica all'interno di un Servizio per segnalare limitazione sull'upload
+
+### Fix
+
+- L'impostazione "Solo cookie tecnici" non causa problemi nell'apertura del cookie banner.
+- [WebKit, Safari, iOS] Risolto un problema di visualizzazione grafica di alcuni bottoni che contengono al loro interno un link ad un sito esterno.
+- Quando un evento ha impostata l'opzione "Tutta la giornata", le date sotto il titolo vengono visualizzate in maniera corretta.
+
+## Versione 11.24.4 (07/11/2024)
+
+### Fix
+
+- Risolto un problema di visualizzazione grafica per il bottone di login all'area personale per alcune specifiche dimensioni di schermi
+
+## Versione 11.24.3 (24/10/2024)
+
+### Migliorie
+
+- Quando viene impostata una ricorrenza, nel tipo di contenuto Evento viene mostrata la data di fine della ricorrenza invece che del singolo evento
+
+### Fix
+
+- Risolto problema con i video esterni che puntano a degli mp4: ora non vengono più erroneamente visti come link interni.
+
+## Versione 11.24.0 (03/10/2024)
+
+### Migliorie
+
+- Cambiato il titolo della sezione "fine incarico" nel CT Persona.
+
+### Fix
+
+- Risolto un problema con il blocco Form che in alcuni casi poteva dare problemi di validazione dei campi di tipo 'testo statico'.
+- Sistemate diverse incogruenze e errori generati dal widget per la creazione delle ricorrenze nel CT Evento.
+
+## Versione 11.23.2 (24/09/2024)
 
 ### Migliorie
 
 - Gli utenti SPID vengono ora direttamente rediretti al link finale quando viene utilizzato un CT di tipo Collegamento
 
-### Novità
-
-- ...
-
 ### Fix
 
-- ...
+- L'assegnazione dei ruoli nella vista gruppi funziona correttamente per tutti i gruppi di utenti.
 
 ## Versione 11.23.1 (19/09/2024)
 
@@ -66,16 +145,15 @@
 ### Migliorie
 
 - Migliorato il layout della galleria immagini nei CT.
-- Il colore del focus da tastiera sugli elementi della pagina è ora bianco e nero per garantire sempre un contrasto ottimale su tutti gli sfondi.
 - Nel blocco Cerca Evento, nel caso di un Evento Rassegna, tra i risultati vengono ora visualizzati solo gli appuntamenti della rassegna e non l'evento contenitore.
 
 ### Novità
 
-- Aggiunti campi per l'inserimento del titolo e della descrizione nel blocco accordion
+- Aggiunto campo per l'inserimento del titolo e della descrizione nel blocco Accordion.
 
 ### Fix
 
-- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore. Pianificato evento per ripristinarlo.
+- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore
 
 ## Versione 11.22.0 (05/09/2024)
 
@@ -195,6 +273,10 @@
 - Il layout delle card con immagini rimane corretto anche selezionando l'opzione "Non alterare le dimensioni naturali dell'immagine".
 
 ## Versione 11.12.5 (30/05/2024)
+
+### Novità
+
+- Per ragioni di conformità alle linee guida Agid, inibito l'inserimento di CT File nella cartella modulistica.
 
 ### Fix
 

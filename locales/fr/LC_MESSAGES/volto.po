@@ -1550,6 +1550,11 @@ msgstr ""
 msgid "data_conclusione_incarico"
 msgstr "Date de conclusion de la mission"
 
+#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
+# defaultMessage: Data di fine dell'incarico
+msgid "data_conclusione_incarico_label"
+msgstr ""
+
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 # defaultMessage: Data inizio incarico
 msgid "data_inizio"
@@ -2065,6 +2070,11 @@ msgstr ""
 #: components/ItaliaTheme/manage/Widgets/CharCounterTextWidget
 # defaultMessage: Il testo supera la lunghezza consigliata perciò verrà tagliato.
 msgid "exceeded_chars"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderEventDates
+# defaultMessage: con alcune eccezioni. Per maggiori informazioni controllare la sezione dedicata.
+msgid "exceptionDates"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
@@ -2714,6 +2724,11 @@ msgstr "Dernière mise à jour"
 msgid "modulistica"
 msgstr "Formes"
 
+#: overrideTranslations
+# defaultMessage: As per the official information architecture outlined in measure 1.4.1, all forms must be properly uploaded in the designated section within Amministrazione > Documenti e Dati > Modulistica, and linked to the relevant service sheet. It is no longer possible to upload files and attachments directly into this container.
+msgid "modulistica_restraint"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/DownloadFileFormat
 # defaultMessage: Scarica il file
 msgid "modulo_download_file"
@@ -3251,6 +3266,12 @@ msgstr "Rechercher tous les sujets"
 #: components/ItaliaTheme/Blocks/EventSearch/Sidebar
 # defaultMessage: Ricerca eventi
 msgid "searchBlock"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/EventSearch/Sidebar
+#: components/ItaliaTheme/Blocks/UOSearch/Sidebar
+# defaultMessage: Mostra l'immagine per tutti gli elementi
+msgid "searchBlock_always_show_image"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Sidebar

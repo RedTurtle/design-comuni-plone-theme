@@ -11,8 +11,8 @@ export const viewDate = (locale, value, format) => {
         ? // Since we assume UTC everywhere, then transform to local (momentjs default)
           moment(value)
         : value.match(/T(.)/g)
-          ? moment(`${value}Z`) // This might happen in old Plone versions dates
-          : moment(value); //This when date is like '2021-05-05'
+        ? moment(`${value}Z`) // This might happen in old Plone versions dates
+        : moment(value); //This when date is like '2021-05-05'
     } else {
       datetime = moment(value);
     }
@@ -44,4 +44,32 @@ export const getRealStartAndEndWithRecurrence = (
       recurrenceresults?.[recurrenceresults?.length - 1],
     ),
   };
+};
+
+export const getRealEventEnd = (content, rruleSet) => {
+  let actualEndDate = content.end;
+
+  if (content.recurrence && rruleSet.rrules()[0].options.until) {
+    actualEndDate = rruleSet.rrules()[0].options.until;
+  }
+  return actualEndDate;
+};
+
+export const getRecurrenceExceptionDates = (rruleSet) => {
+  const rdates = rruleSet?.rdates() ?? [];
+  const exdates = rruleSet?.exdates() ?? [];
+
+  const additionalDates = rdates.reduce((acc, curr) => {
+    const isExdate = exdates.some((b) => b.toString() === curr.toString());
+    if (!isExdate) {
+      return [...acc, curr];
+    } else return acc;
+  }, []);
+
+  const exceptionDates = {
+    additionalDates: additionalDates,
+    removedDates: exdates,
+  };
+
+  return exceptionDates;
 };

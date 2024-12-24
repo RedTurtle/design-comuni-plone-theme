@@ -8,7 +8,7 @@ import shareSVG from '@plone/volto/icons/share.svg';
 import searchIcon from 'bootstrap-italia/src/svg/it-search.svg';
 import { defineMessages } from 'react-intl';
 import { Search } from '@plone/volto/components';
-
+import ImageWithErrors from 'design-comuni-plone-theme/components/ImageWithErrors/ImageWithErrors';
 import {
   getItaliaListingVariations,
   removeListingVariation,
@@ -186,7 +186,7 @@ export default function applyConfig(voltoConfig) {
       ...(config.settings.controlpanels ?? []),
       {
         '@id': '/release-log',
-        group: 'Generali',
+        group: 'General',
         title: 'Novità ultimi rilasci',
         id: 'release-log',
       },
@@ -283,6 +283,7 @@ export default function applyConfig(voltoConfig) {
       footerNavigationDepth: 2, //valori possibili: [1,2]. Se impostato ad 1 non verranno mostrati nel footer i link agli elementi contenuti nelle sezioni di primo livello.
       markSpecialLinks: true, // se impostato a false, non marca con icona i link esterni
       markFooterLinks: true, // se impostato a true, viene aggiunta un'icona ai link del footer per renderli riconoscibili
+      showContentDateInListingFor: ['Modulo', 'Documento'], // elenco dei content types per i quali mostrare la data di pubblicazione/modifica in listing
     },
     apiExpanders: [
       ...config.settings.apiExpanders,
@@ -487,6 +488,9 @@ export default function applyConfig(voltoConfig) {
   config.components = {
     ...config.components,
     BlockExtraTags: { component: () => null },
+    Image: {
+      component: ImageWithErrors,
+    },
   };
   config.registerComponent({
     name: 'SiteSettingsExtras',
