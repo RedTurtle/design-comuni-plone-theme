@@ -120,4 +120,8 @@ defineMessages({
     id: 'Table block',
     defaultMessage: 'Table block',
   },
+  divideRows: {
+    id: 'Divide each row into separate cells',
+    defaultMessage: 'Add border to inner columns',
+  },
 });

@@ -234,6 +234,11 @@ msgstr "Dettagli procedimento"
 msgid "Dimensione della mappa"
 msgstr "Dimensione della mappa"
 
+#: overrideTranslations
+# defaultMessage: Add border to inner columns
+msgid "Divide each row into separate cells"
+msgstr "Mostra i margini delle colonne"
+
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 # defaultMessage: Download
 msgid "Download"
