@@ -26,8 +26,16 @@ const ListingImage = ({
     sizes,
     ...imageProps,
   };
-  if (showTitleAttr)
-    commonImageProps = { ...commonImageProps, title: item.title };
+  if (showTitleAttr) {
+    commonImageProps = {
+      ...commonImageProps,
+      title: item.hasPreviewImage
+        ? item.preview_caption || item.title
+        : item.image_field
+        ? item.image_caption || item.title
+        : '',
+    };
+  }
   // photogallery needs to check for null image
   // https://stackoverflow.com/questions/33136399/is-there-a-way-to-tell-if-reactelement-renders-null
 

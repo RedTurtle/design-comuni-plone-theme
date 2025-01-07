@@ -60,7 +60,6 @@ const CompleteBlockLinksTemplate = (props) => {
               item,
               className: '',
               sizes: '60px',
-              showTitleAttr: false,
               alt: item.title,
             });
 
