@@ -9,16 +9,30 @@ const ListingImage = ({
   showDefault = false,
   className = 'listing-image',
   responsive = true,
-  showTitleAttr = true,
+  showTitleAttr = !!(
+    (item.hasPreviewImage && item.preview_caption) ||
+    (item.image_field && item.image_caption)
+  ), // show title only if the listing image have an image and caption
   sizes = '(max-width:320px) 200px, (max-width:425px) 300px, (max-width:767px) 500px, 410px',
   noWrapLink = false,
   ...imageProps
 }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
+
+  const imageCaption = item.hasPreviewImage
+    ? item.preview_caption
+      ? item.preview_caption
+      : ''
+    : item.image_field
+    ? item.image_caption
+      ? item.image_caption
+      : ''
+    : '';
+
   let commonImageProps = {
     item,
     'aria-hidden': imageProps.alt || item.title ? false : true,
-    alt: imageProps.alt ?? item.title ?? '',
+    alt: imageCaption,
     role: imageProps.alt || item.title ? '' : 'presentation',
     className,
     loading,
@@ -26,14 +40,12 @@ const ListingImage = ({
     sizes,
     ...imageProps,
   };
+
+  // show title attribute if preview_caption or image_caption is present for the alt text
   if (showTitleAttr) {
     commonImageProps = {
       ...commonImageProps,
-      title: item.hasPreviewImage
-        ? item.preview_caption || item.title
-        : item.image_field
-        ? item.image_caption || item.title
-        : '',
+      title: imageCaption,
     };
   }
   // photogallery needs to check for null image
