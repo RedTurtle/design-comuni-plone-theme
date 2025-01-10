@@ -19,20 +19,17 @@ const ListingImage = ({
 }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
 
-  const imageCaption = item.hasPreviewImage
-    ? item.preview_caption
+  const imageCaption =
+    item.hasPreviewImage && item.preview_caption
       ? item.preview_caption
-      : ''
-    : item.image_field
-    ? item.image_caption
+      : item.image_field && item.image_caption
       ? item.image_caption
-      : ''
-    : '';
+      : null;
 
   let commonImageProps = {
     item,
     'aria-hidden': imageProps.alt || item.title ? false : true,
-    alt: imageCaption,
+    alt: imageProps.alt ?? imageCaption ?? '',
     role: imageProps.alt || item.title ? '' : 'presentation',
     className,
     loading,
@@ -45,7 +42,7 @@ const ListingImage = ({
   if (showTitleAttr) {
     commonImageProps = {
       ...commonImageProps,
-      title: imageCaption,
+      title: item.title,
     };
   }
   // photogallery needs to check for null image
