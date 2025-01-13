@@ -198,7 +198,7 @@ class ContentsUploadModal extends Component {
     // this is enough to identify this only case bc even if another page is called 'modulistica', it will have 'File'
     // and "Modulo" as addable type
     const showFileRestraint =
-      this.props.pathname.includes('modulistica') &&
+      getBaseUrl(this.props.pathname).match(/\/servizi\/.*\/modulistica\/?$/) &&
       !this.props.types.some(
         (type) => type.id === 'File' || type.id === 'Modulo',
       );
