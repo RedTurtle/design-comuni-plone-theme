@@ -199,7 +199,9 @@ class ContentsUploadModal extends Component {
     // as addable type
     const showFileRestraint =
       this.props.pathname.includes('modulistica') &&
-      !this.props.types.some((type) => type.id === 'File');
+      !this.props.types.some(
+        (type) => type.id === 'File' || type.id === 'Modulo',
+      );
 
     return (
       this.props.open && (
