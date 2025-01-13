@@ -23,6 +23,12 @@ const getFallbackImageStyle = ({
   }
 };
 
+/*
+  Hook per l'utilizzo di immagini con fallback per immagini rotte.
+  NB: il backend a volte torna ./resolveuid/xxxxx se non trova il brain
+  dell'immagine nella property per la src. Siamo tutti d'accordo a
+  classificarlo come immagine rotta in questo caso.
+*/
 const useFallbackImageSrc = ({
   src,
   customFallbackSrc = '',
