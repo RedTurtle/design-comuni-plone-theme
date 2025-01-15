@@ -64,13 +64,6 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
     );
   });
 
-  const firstLoading = useSelector((state) => {
-    return (
-      !state.querystringsearch?.subrequests?.[id + '_events_search']?.loading &&
-      !state.querystringsearch?.subrequests?.[id + '_events_search']?.loaded
-    );
-  });
-
   const resultsRef = createRef();
 
   const doRequest = (page = currentPage) => {
@@ -116,7 +109,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
   // Se cambia uno dei tre filtri resetto lo stato dei filtri
   useEffect(() => {
     dispatchFilter({ type: 'reset' });
-    if (data.show_default_results && firstLoading) {
+    if (data.show_default_results) {
       doRequest();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
