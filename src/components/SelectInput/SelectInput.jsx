@@ -317,7 +317,7 @@ const SelectInput = ({
   options,
   components = {},
   reactSelect,
-  describedBy,
+  labelledby,
   defaultValue,
 }) => {
   const intl = useIntl();
@@ -346,7 +346,7 @@ const SelectInput = ({
         isMulti={isMulti}
         isClearable={isClearable}
         aria-label={labelDefined}
-        {...(describedBy ? { 'aria-labelledby': describedBy } : {})}
+        aria-labelledby={labelledby}
         aria-live="polite"
         ariaLiveMessages={getSelectAriaLiveMessages(intl)}
         noOptionsMessage={() =>
