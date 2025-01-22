@@ -94,7 +94,7 @@ const messages = defineMessages({
   },
   default_label: {
     id: 'default_label',
-    defaultMessage: "Selezione un'opzione",
+    defaultMessage: "Seleziona un'opzione",
   },
 });
 

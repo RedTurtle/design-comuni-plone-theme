@@ -1756,7 +1756,7 @@ msgid "decorrenza_termine"
 msgstr "Fecha límite"
 
 #: components/SelectInput/SelectInput
-# defaultMessage: Selezione un'opzione
+# defaultMessage: Seleziona un'opzione
 msgid "default_label"
 msgstr ""
 

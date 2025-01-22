@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-01-22T08:03:11.075Z\n"
+"POT-Creation-Date: 2025-01-22T10:26:08.842Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1749,7 +1749,7 @@ msgid "decorrenza_termine"
 msgstr ""
 
 #: components/SelectInput/SelectInput
-# defaultMessage: Selezione un'opzione
+# defaultMessage: Seleziona un'opzione
 msgid "default_label"
 msgstr ""
 

@@ -1764,7 +1764,7 @@ msgid "decorrenza_termine"
 msgstr "Date effective"
 
 #: components/SelectInput/SelectInput
-# defaultMessage: Selezione un'opzione
+# defaultMessage: Seleziona un'opzione
 msgid "default_label"
 msgstr ""
 
