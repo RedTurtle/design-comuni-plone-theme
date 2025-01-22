@@ -92,6 +92,10 @@ const messages = defineMessages({
     id: 'dropdown_indicator',
     defaultMessage: 'Apri il menu',
   },
+  default_label: {
+    id: 'default_label',
+    defaultMessage: "Selezione un'opzione",
+  },
 });
 
 const SelectContainer = injectLazyLibs('reactSelect')(({
@@ -316,6 +320,7 @@ const SelectInput = ({
   defaultValue,
 }) => {
   const intl = useIntl();
+  const labelDefined = label || intl.formatMessage(messages.default_label);
   const Select = reactSelect.default;
   return (
     <div className="bootstrap-select-wrapper">
@@ -341,7 +346,7 @@ const SelectInput = ({
         isSearchable={isSearchable}
         isMulti={isMulti}
         isClearable={isClearable}
-        aria-label={label}
+        aria-label={labelDefined}
         aria-live="polite"
         ariaLiveMessages={getSelectAriaLiveMessages(intl)}
         noOptionsMessage={() =>

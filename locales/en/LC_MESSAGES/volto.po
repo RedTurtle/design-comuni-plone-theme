@@ -1746,6 +1746,11 @@ msgstr "Dates and times"
 msgid "decorrenza_termine"
 msgstr "Term effective date"
 
+#: components/SelectInput/SelectInput
+# defaultMessage: Selezione un'opzione
+msgid "default_label"
+msgstr "Select an option"
+
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Deleghe
 msgid "deleghe"

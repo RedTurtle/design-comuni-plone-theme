@@ -1761,6 +1761,11 @@ msgstr ""
 msgid "decorrenza_termine"
 msgstr ""
 
+#: components/SelectInput/SelectInput
+# defaultMessage: Selezione un'opzione
+msgid "default_label"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Deleghe
 msgid "deleghe"
