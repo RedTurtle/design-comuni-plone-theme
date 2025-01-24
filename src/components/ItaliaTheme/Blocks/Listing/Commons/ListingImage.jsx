@@ -27,8 +27,6 @@ const ListingImage = ({
       ? item.image_caption
       : null;
 
-  console.log('imageCaption', imageCaption);
-
   let commonImageProps = {
     item,
     'aria-hidden': imageProps.alt || item.title ? false : true,
