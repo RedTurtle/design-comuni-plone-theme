@@ -9,15 +9,16 @@ const ListingImage = ({
   showDefault = false,
   className = 'listing-image',
   responsive = true,
-  showTitleAttr = !!(
-    (item.hasPreviewImage && item.preview_caption) ||
-    (item.image_field && item.image_caption)
-  ), // show title only if the listing image have an image and caption
   sizes = '(max-width:320px) 200px, (max-width:425px) 300px, (max-width:767px) 500px, 410px',
   noWrapLink = false,
   ...imageProps
 }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
+
+  const showTitleAttr = !!(
+    (item.hasPreviewImage && item.preview_caption) ||
+    (item.image_field && item.image_caption)
+  );
 
   const imageCaption =
     item.hasPreviewImage && item.preview_caption
@@ -25,6 +26,8 @@ const ListingImage = ({
       : item.image_field && item.image_caption
       ? item.image_caption
       : null;
+
+  console.log('imageCaption', imageCaption);
 
   let commonImageProps = {
     item,
@@ -42,7 +45,7 @@ const ListingImage = ({
   if (showTitleAttr) {
     commonImageProps = {
       ...commonImageProps,
-      title: item.title,
+      title: imageCaption,
     };
   }
   // photogallery needs to check for null image
