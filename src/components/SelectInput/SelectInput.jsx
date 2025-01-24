@@ -92,8 +92,8 @@ const messages = defineMessages({
     id: 'dropdown_indicator',
     defaultMessage: 'Apri il menu',
   },
-  default_label: {
-    id: 'default_label',
+  SelectInput_default_label: {
+    id: 'SelectInput_default_label',
     defaultMessage: "Seleziona un'opzione",
   },
 });
@@ -321,7 +321,8 @@ const SelectInput = ({
   defaultValue,
 }) => {
   const intl = useIntl();
-  const labelDefined = label || intl.formatMessage(messages.default_label);
+  const labelDefined =
+    label || intl.formatMessage(messages.SelectInput_default_label);
   const Select = reactSelect.default;
   return (
     <div className="bootstrap-select-wrapper">

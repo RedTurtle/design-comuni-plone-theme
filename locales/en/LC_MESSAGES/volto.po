@@ -584,6 +584,11 @@ msgstr "Select all content types or none"
 msgid "Select all or none"
 msgstr "Select all or none"
 
+#: components/SelectInput/SelectInput
+# defaultMessage: Seleziona un'opzione
+msgid "SelectInput_default_label"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/FileWidget
 # defaultMessage: Seleziona un file
 msgid "Seleziona un file"
@@ -1745,11 +1750,6 @@ msgstr "Dates and times"
 # defaultMessage: Decorrenza termine
 msgid "decorrenza_termine"
 msgstr "Term effective date"
-
-#: components/SelectInput/SelectInput
-# defaultMessage: Seleziona un'opzione
-msgid "default_label"
-msgstr "Select an option"
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Deleghe
