@@ -19,7 +19,10 @@ import {
   ListingImage,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { getComponentWithFallback } from 'design-comuni-plone-theme/helpers';
+import {
+  getComponentWithFallback,
+  contentHasImage,
+} from 'design-comuni-plone-theme/helpers';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 
 import config from '@plone/volto/registry';
@@ -63,7 +66,7 @@ const CompleteBlockLinksTemplate = (props) => {
               showTitleAttr: false,
               alt: item.title,
             });
-
+            const hasImage = contentHasImage(item);
             const BlockExtraTags = getComponentWithFallback({
               name: 'BlockExtraTags',
               dependencies: ['CompleteBlockLinksTemplate', item['@type']],
@@ -84,7 +87,9 @@ const CompleteBlockLinksTemplate = (props) => {
                     className={'no-external-if-link'}
                   >
                     <div className="d-flex">
-                      {image && <div className="image-container">{image}</div>}
+                      {hasImage && (
+                        <div className="image-container">{image}</div>
+                      )}
                       <div>
                         <CardBody>
                           <CardTitle tag="h3" className="text-secondary">

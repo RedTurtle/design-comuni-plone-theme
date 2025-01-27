@@ -223,6 +223,7 @@ const SliderTemplate = ({
                   loading: index === 0 ? 'eager' : 'lazy',
                   sizes: `max-width(991px) 620px, ${1300 / nSlidesToShow}px`,
                   critical: true,
+                  showDefault: true,
                 });
                 const nextIndex = index < items.length - 1 ? index + 1 : null;
                 const prevIndex = index > 0 ? index - 1 : null;

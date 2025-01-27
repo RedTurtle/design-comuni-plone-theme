@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Sistemata la visualizzazione delle card con immagine in cui il contenuto rappresentato non ha un'immagine da mostrare
+
 ## Versione 11.26.3 (15/01/2025)
 
 ### Fix

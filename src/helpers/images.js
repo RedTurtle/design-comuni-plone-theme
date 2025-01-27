@@ -50,4 +50,22 @@ const useFallbackImageSrc = ({
   return { currentSrc, handleError, getFallbackImageStyle };
 };
 
-export { FALLBACK_IMAGE_SRC, FALLBACK_IMAGE_SRC_MAX_W, useFallbackImageSrc };
+/*
+ Check if a Content item has a related image
+ This check is done on image_field and image_scales fields, which are
+ the default fields in a JSON response for a content in plone.restapi
+ The additional argument, customValidation, can be provided for custom checks
+
+ @param {Object} item - The Plone item/brain/content
+ @param {boolean|undefined} customValidation - Your custom validation that resolves to a boolean
+*/
+const contentHasImage = (item, customValidation = true) => {
+  return (item?.image_field || item?.image_scales) && customValidation;
+};
+
+export {
+  FALLBACK_IMAGE_SRC,
+  FALLBACK_IMAGE_SRC_MAX_W,
+  useFallbackImageSrc,
+  contentHasImage,
+};

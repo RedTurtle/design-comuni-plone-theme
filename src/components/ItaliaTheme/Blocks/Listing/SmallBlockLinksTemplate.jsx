@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
-
 import {
   ListingLinkMore,
   ListingImage,
@@ -44,6 +43,7 @@ const SmallBlockLinksTemplate = ({
               style: {},
               alt: item.title,
               noWrapLink: true,
+              showDefault: true,
             });
 
             return (
@@ -52,20 +52,18 @@ const SmallBlockLinksTemplate = ({
                 key={item['@id']}
                 className="col-item col-sm-4 col-lg-2"
               >
-                {image && (
-                  <div className="center-image-card">
-                    <UniversalLink
-                      item={!isEditMode ? item : null}
-                      href={isEditMode ? '#' : ''}
-                      className="img-link"
-                      overrideMarkSpecialLinks={
-                        override_links_accessibility_marker
-                      }
-                    >
-                      {image}
-                    </UniversalLink>
-                  </div>
-                )}
+                <div className="center-image-card">
+                  <UniversalLink
+                    item={!isEditMode ? item : null}
+                    href={isEditMode ? '#' : ''}
+                    className="img-link"
+                    overrideMarkSpecialLinks={
+                      override_links_accessibility_marker
+                    }
+                  >
+                    {image}
+                  </UniversalLink>
+                </div>
               </Col>
             );
           })}

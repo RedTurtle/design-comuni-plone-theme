@@ -8,6 +8,7 @@ import {
   ListingCategory,
   ListingImage,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { contentHasImage } from 'design-comuni-plone-theme/helpers';
 
 export const CardPersona = ({
   item,
@@ -26,7 +27,7 @@ export const CardPersona = ({
     showTitleAttr: false,
   });
 
-  const hasImage = image !== null && showImage;
+  const hasImage = contentHasImage(item, showImage);
 
   return (
     <Card

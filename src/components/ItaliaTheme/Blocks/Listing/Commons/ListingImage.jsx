@@ -2,6 +2,17 @@ import { UniversalLink } from '@plone/volto/components';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
+import { contentHasImage } from 'design-comuni-plone-theme/helpers';
+
+const ListingImageWrapper = ({ children, item, noWrapLink }) => {
+  return noWrapLink ? (
+    children
+  ) : (
+    <UniversalLink item={item} className="img-wrapper">
+      {children}
+    </UniversalLink>
+  );
+};
 
 const ListingImage = ({
   item = {},
@@ -14,6 +25,26 @@ const ListingImage = ({
   noWrapLink = false,
   ...imageProps
 }) => {
+  let image = null;
+  if (!contentHasImage(item, !imageProps?.image_field)) {
+    if (showDefault) {
+      return (
+        <ListingImageWrapper item={item} noWrapLink={noWrapLink}>
+          <img
+            src={DefaultImageSVG}
+            alt=""
+            aria-hidden={true}
+            role="presentation"
+            className="listing-image responsive"
+            style={{
+              minHeight: 'unset',
+              height: '100%',
+            }}
+          />
+        </ListingImageWrapper>
+      );
+    } else return null;
+  }
   const Image = config.getComponent({ name: 'Image' }).component;
   let commonImageProps = {
     item,
@@ -28,20 +59,13 @@ const ListingImage = ({
   };
   if (showTitleAttr)
     commonImageProps = { ...commonImageProps, title: item.title };
-  // photogallery needs to check for null image
-  // https://stackoverflow.com/questions/33136399/is-there-a-way-to-tell-if-reactelement-renders-null
 
-  const image = Image(commonImageProps);
-  const defaultImage = <img src={DefaultImageSVG} alt="" />;
+  image = <Image {...commonImageProps} />;
 
-  if (image === null && !showDefault) return null;
-
-  return !noWrapLink ? (
-    <UniversalLink item={item} className="img-wrapper">
-      {image ?? defaultImage}
-    </UniversalLink>
-  ) : (
-    image ?? defaultImage
+  return (
+    <ListingImageWrapper item={item} noWrapLink={noWrapLink}>
+      {image}
+    </ListingImageWrapper>
   );
 };
 

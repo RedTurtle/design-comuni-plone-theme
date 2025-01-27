@@ -23,6 +23,7 @@ import {
   getCalendarDate,
   getEventRecurrenceMore,
   getComponentWithFallback,
+  contentHasImage,
 } from 'design-comuni-plone-theme/helpers';
 import {
   ListingCategory,
@@ -73,6 +74,7 @@ const ContentInEvidenceTemplate = (props) => {
             sizes: '(max-width:425px) 400px, (max-width:767px) 520px, 650px',
             showTitleAttr: false,
           });
+          const hasImage = contentHasImage(item);
           const icon = getItemIcon(item);
           const BlockExtraTags = getComponentWithFallback({
             name: 'BlockExtraTags',
@@ -84,7 +86,7 @@ const ContentInEvidenceTemplate = (props) => {
 
           return (
             <Row key={item['@id']} className="content-in-evidence">
-              {image && (
+              {hasImage && (
                 <Col lg={{ size: 6, offset: 1, order: 2 }}>{image}</Col>
               )}
               <Col lg={{ size: 5, order: 1 }}>
