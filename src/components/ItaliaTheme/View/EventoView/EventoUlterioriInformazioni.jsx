@@ -6,7 +6,6 @@ import { defineMessages, useIntl } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 import {
   richTextHasContent,
-  RichText,
   Metadata,
   HelpBox,
   GenericCard,
@@ -49,18 +48,6 @@ const EventoUlterioriInformazioni = ({ content }) => {
           <UniversalLink href={content.event_url}>
             {content.event_url}
           </UniversalLink>
-        </div>
-      )}
-      {richTextHasContent(content?.patrocinato_da) && (
-        <div className="mt-4">
-          {richTextHasContent(content?.patrocinato_da) && (
-            <div className="mb-5">
-              <RichText
-                title={intl.formatMessage(messages.patrocinato_da)}
-                data={content?.patrocinato_da}
-              />
-            </div>
-          )}
         </div>
       )}
       {content?.strutture_politiche?.length > 0 && (
