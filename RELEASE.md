@@ -53,9 +53,9 @@
 
 ### Fix
 
-- Aggiunta una nuova condizione per la corretta compilazione dell’attributo alt nelle immagini dei blocchi listing. Ora il campo alt utilizza correttamente i testi delle didascalie delle immagini di anteprima o testata se impostati.
-- Aggiunta una nuova condizione per la corretta compilazione dell’attributo title nelle immagini dei blocchi listing. Ora il campo title viene valorizzato solo se esiste una didascalia associata all’immagine di anteprima o testata.
-- Rimosso l’attributo showTitleAttr dai tipi di card nei blocchi listing: card con immagine, persona, blocco link completo, contenuto in evidenza, gallery a griglia, e in evidenza. Questo attributo ora viene settato dentro a ListingImage.
+- Aggiunta una nuova condizione per la corretta compilazione dell’attributo **alt** e **title** nelle immagini dei blocchi listing. Ora questi attributi utilizzano correttamente i testi delle didascalie dell'immagine di anteprima o testata se impostati. L'attributo **title** viene valorizzato solo se esiste una didascalia associata all’immagine.
+
+- Rimosso l’attributo **showTitleAttr** dal componente _ListingImage_ utilizzato nei template del blocco listing: card con immagine, persona, blocco link completo, contenuto in evidenza, gallery a griglia, e in evidenza. Ora gli attributi **title** e **alt** vengono calcolati e impostati direttamente dal componente _ListingImage_.
 ## Versione 11.26.3 (15/01/2025)
 
 ### Fix
