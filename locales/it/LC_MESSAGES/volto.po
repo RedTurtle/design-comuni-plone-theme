@@ -2173,6 +2173,11 @@ msgid "feedback_error"
 msgstr "Errore"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Feedback form
+msgid "feedback_form_aria_title"
+msgstr "Modulo di soddisfazione del cliente"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Next
 msgid "feedback_form_button_next"
 msgstr "Avanti"
@@ -2971,6 +2976,11 @@ msgstr "Questa pagina è gestita da"
 # defaultMessage: Selettore di pagina
 msgid "paginationLabel"
 msgstr "Selettore di pagina"
+
+#: components/ItaliaTheme/Header/ParentSiteMenu
+# defaultMessage: Main site menu
+msgid "parent_site_menu"
+msgstr "Menu sito principale"
 
 #: components/ItaliaTheme/View/EventoView/EventoCosE
 # defaultMessage: Parteciperanno
@@ -3892,6 +3902,11 @@ msgstr "Vai al contenuto"
 # defaultMessage: Skip to navigation
 msgid "skiplink-navigation"
 msgstr "Vai alla navigazione"
+
+#: components/ItaliaTheme/SkipLinks/SkipLinks
+# defaultMessage: Skiplinks
+msgid "skiplinks-description"
+msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 #: helpers/contentHelper
