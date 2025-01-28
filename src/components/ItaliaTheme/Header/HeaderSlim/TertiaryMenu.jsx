@@ -7,19 +7,13 @@ import React, { useEffect } from 'react';
 import cx from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { defineMessages, useIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import { Nav, NavItem, NavLink } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
 import { getSlimHeader, getItemsByPath } from 'volto-slimheader';
 
-const messages = defineMessages({
-  utilityMenu: {
-    id: 'utilityMenu',
-    defaultMessage: 'Utility Menu',
-  },
-});
 const TertiaryMenu = () => {
   const intl = useIntl();
   const pathname = useLocation().pathname;
@@ -46,11 +40,7 @@ const TertiaryMenu = () => {
   const items = slimHeaderItems?.length > 0 ? slimHeaderItems : staticMenu;
 
   return items?.length > 0 ? (
-    <Nav
-      vertical={false}
-      className="tertiary-menu"
-      aria-label={intl.formatMessage(messages.utilityMenu)}
-    >
+    <Nav vertical={false} className="tertiary-menu">
       {items.map((navitem, id) => (
         <NavItem
           tag="li"

@@ -2711,6 +2711,11 @@ msgstr ""
 msgid "mailto"
 msgstr "Soumettre"
 
+#: overrideTranslations
+# defaultMessage: Menu principale
+msgid "mainMenu"
+msgstr ""
+
 #: config/Blocks/ListingOptions/mapTemplate
 # defaultMessage: Grande
 msgid "map_size_large"
@@ -4322,7 +4327,7 @@ msgstr ""
 msgid "url"
 msgstr ""
 
-#: components/ItaliaTheme/Header/HeaderSlim/TertiaryMenu
+#: components/ItaliaTheme/Header/HeaderSlim/HeaderSlim
 # defaultMessage: Utility Menu
 msgid "utilityMenu"
 msgstr ""

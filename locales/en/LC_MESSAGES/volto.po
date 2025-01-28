@@ -2694,6 +2694,11 @@ msgstr ""
 msgid "mailto"
 msgstr "Send"
 
+#: overrideTranslations
+# defaultMessage: Menu principale
+msgid "mainMenu"
+msgstr "Main menu"
+
 #: config/Blocks/ListingOptions/mapTemplate
 # defaultMessage: Grande
 msgid "map_size_large"
@@ -4305,7 +4310,7 @@ msgstr "Update date"
 msgid "url"
 msgstr "website"
 
-#: components/ItaliaTheme/Header/HeaderSlim/TertiaryMenu
+#: components/ItaliaTheme/Header/HeaderSlim/HeaderSlim
 # defaultMessage: Utility Menu
 msgid "utilityMenu"
 msgstr ""
