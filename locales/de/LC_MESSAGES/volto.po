@@ -3470,6 +3470,7 @@ msgstr ""
 msgid "searchInSection"
 msgstr ""
 
+#: components/ItaliaTheme/Header/HeaderSearch/HeaderSearch
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Cerca nel sito
 msgid "searchLabel"
@@ -3498,11 +3499,6 @@ msgstr ""
 #: components/ItaliaTheme/View/FAQ/FaqFolder/SearchBar
 # defaultMessage: Search icon
 msgid "search_icon"
-msgstr ""
-
-#: components/ItaliaTheme/Header/HeaderSearch/HeaderSearch
-# defaultMessage: Cerca nel sito
-msgid "search_label"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar

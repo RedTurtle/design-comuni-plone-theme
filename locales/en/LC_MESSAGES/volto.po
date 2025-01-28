@@ -3455,6 +3455,7 @@ msgstr "Search contents in"
 msgid "searchInSection"
 msgstr "Search in sections"
 
+#: components/ItaliaTheme/Header/HeaderSearch/HeaderSearch
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Cerca nel sito
 msgid "searchLabel"
@@ -3484,11 +3485,6 @@ msgstr "End date"
 # defaultMessage: Search icon
 msgid "search_icon"
 msgstr ""
-
-#: components/ItaliaTheme/Header/HeaderSearch/HeaderSearch
-# defaultMessage: Cerca nel sito
-msgid "search_label"
-msgstr "Site search"
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Dove cercare

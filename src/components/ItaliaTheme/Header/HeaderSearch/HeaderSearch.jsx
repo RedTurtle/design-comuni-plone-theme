@@ -13,8 +13,8 @@ const messages = defineMessages({
     id: 'Cerca',
     defaultMessage: 'Cerca',
   },
-  search_label: {
-    id: 'search_label',
+  searchLabel: {
+    id: 'searchLabel',
     defaultMessage: 'Cerca nel sito',
   },
 });
@@ -28,7 +28,7 @@ const HeaderSearch = () => {
       <div
         className="it-search-wrapper"
         role="search"
-        aria-label={intl.formatMessage(messages.search_label)}
+        aria-label={intl.formatMessage(messages.searchLabel)}
       >
         <span className="d-none d-md-block">
           {intl.formatMessage(messages.search)}
