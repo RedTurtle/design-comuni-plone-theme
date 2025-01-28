@@ -3494,6 +3494,11 @@ msgstr "Fecha de fin"
 msgid "search_icon"
 msgstr ""
 
+#: components/ItaliaTheme/Header/HeaderSearch/HeaderSearch
+# defaultMessage: Cerca nel sito
+msgid "search_label"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Dove cercare
 msgid "search_sections"

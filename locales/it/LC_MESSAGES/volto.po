@@ -3485,6 +3485,11 @@ msgstr "Data fine"
 msgid "search_icon"
 msgstr "Icona cerca"
 
+#: components/ItaliaTheme/Header/HeaderSearch/HeaderSearch
+# defaultMessage: Cerca nel sito
+msgid "search_label"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Dove cercare
 msgid "search_sections"
