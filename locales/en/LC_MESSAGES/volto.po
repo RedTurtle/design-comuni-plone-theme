@@ -4305,6 +4305,11 @@ msgstr "Update date"
 msgid "url"
 msgstr "website"
 
+#: components/ItaliaTheme/Header/HeaderSlim/TertiaryMenu
+# defaultMessage: Utility Menu
+msgid "utilityMenu"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Variazione situazione patrimoniale
 msgid "variazione_situazione_patrimoniale"

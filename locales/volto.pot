@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-01-28T09:38:30.655Z\n"
+"POT-Creation-Date: 2025-01-28T10:51:55.726Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -4305,6 +4305,11 @@ msgstr ""
 #: helpers/contentHelper
 # defaultMessage: Sito web
 msgid "url"
+msgstr ""
+
+#: components/ItaliaTheme/Header/HeaderSlim/TertiaryMenu
+# defaultMessage: Utility Menu
+msgid "utilityMenu"
 msgstr ""
 
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
