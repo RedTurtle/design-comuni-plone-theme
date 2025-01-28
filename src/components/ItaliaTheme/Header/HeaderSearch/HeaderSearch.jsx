@@ -41,6 +41,7 @@ const HeaderSearch = () => {
             setShowSearchModal(true);
           }}
           href="/search"
+          role="button"
         >
           <Icon icon="it-search" title={intl.formatMessage(messages.search)} />
         </a>
