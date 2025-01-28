@@ -62,8 +62,6 @@ const CardWithImageDefault = (props) => {
     : getEventRecurrenceMore(item, isEditMode);
   const listingText = show_description ? <ListingText item={item} /> : null;
 
-  const image = ListingImage({ item, showTitleAttr: false });
-
   const showImage = contentHasImage(
     item,
     index < imagesToShow || always_show_image,
@@ -108,7 +106,7 @@ const CardWithImageDefault = (props) => {
               })}
             >
               <div className="img-responsive img-responsive-panoramic">
-                {image}
+                <ListingImage item={item} showTitleAttr={false} />
                 {item['@type'] === 'Event' && (
                   <CardCalendar
                     start={item.start}

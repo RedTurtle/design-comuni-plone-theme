@@ -37,15 +37,6 @@ const SmallBlockLinksTemplate = ({
         )}
         <Row className="items">
           {items.map((item, index) => {
-            const image = ListingImage({
-              item,
-              sizes: '(max-width:575px) 520px, 200px',
-              style: {},
-              alt: item.title,
-              noWrapLink: true,
-              showDefault: true,
-            });
-
             return (
               <Col
                 md="3"
@@ -61,7 +52,14 @@ const SmallBlockLinksTemplate = ({
                       override_links_accessibility_marker
                     }
                   >
-                    {image}
+                    <ListingImage
+                      item={item}
+                      sizes="(max-width:575px) 520px, 200px"
+                      style={{}}
+                      alt={item.title}
+                      noWrapLink
+                      showDefault
+                    />
                   </UniversalLink>
                 </div>
               </Col>

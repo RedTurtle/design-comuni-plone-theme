@@ -24,7 +24,6 @@ const ListingView = ({ content }) => (
     <PageHeader content={content} />
     <section id="content-core">
       {content.items.map((item) => {
-        const image = ListingImage({ item });
         const hasImage = contentHasImage(item);
         return (
           <div key={item.url} className="listing-item my-4">
@@ -36,7 +35,7 @@ const ListingView = ({ content }) => (
               </h2>
               {item.description && <p>{item.description}</p>}
             </div>
-            {hasImage && <>{image}</>}
+            {hasImage && <ListingImage item={item} />}
           </div>
         );
       })}

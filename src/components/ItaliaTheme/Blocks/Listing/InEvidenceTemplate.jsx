@@ -88,11 +88,6 @@ const InEvidenceTemplate = (props) => {
             const listingText = show_description ? (
               <ListingText item={item} />
             ) : null;
-            const image = ListingImage({
-              item,
-              sizes: '(max-width:320px) 200px, 300px',
-              showTitleAttr: false,
-            });
             const hasImage = contentHasImage(item);
             const category = getCategory(item, show_type, show_section, props);
             const topics = show_topics ? item.tassonomia_argomenti : null;
@@ -116,7 +111,11 @@ const InEvidenceTemplate = (props) => {
                 {index === 0 && hasImage && (
                   <div className="img-responsive-wrapper">
                     <div className="img-responsive">
-                      {image}
+                      <ListingImage
+                        item={item}
+                        sizes="(max-width:320px) 200px, 300px"
+                        showTitleAttr={false}
+                      />
                       {item['@type'] === 'Event' && (
                         <CardCalendar start={item.start} end={item.end} />
                       )}

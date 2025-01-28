@@ -59,13 +59,6 @@ const CompleteBlockLinksTemplate = (props) => {
         )}
         <Row className="items">
           {items.map((item, index) => {
-            const image = ListingImage({
-              item,
-              className: '',
-              sizes: '60px',
-              showTitleAttr: false,
-              alt: item.title,
-            });
             const hasImage = contentHasImage(item);
             const BlockExtraTags = getComponentWithFallback({
               name: 'BlockExtraTags',
@@ -88,7 +81,15 @@ const CompleteBlockLinksTemplate = (props) => {
                   >
                     <div className="d-flex">
                       {hasImage && (
-                        <div className="image-container">{image}</div>
+                        <div className="image-container">
+                          <ListingImage
+                            item={item}
+                            className=""
+                            sizes="60px"
+                            showTitleAttr={false}
+                            alt={item.title}
+                          />
+                        </div>
                       )}
                       <div>
                         <CardBody>

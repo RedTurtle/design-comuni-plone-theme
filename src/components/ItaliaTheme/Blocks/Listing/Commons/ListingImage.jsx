@@ -1,8 +1,8 @@
 import { UniversalLink } from '@plone/volto/components';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import config from '@plone/volto/registry';
 import { contentHasImage } from 'design-comuni-plone-theme/helpers';
+import config from '@plone/volto/registry';
 
 const ListingImageWrapper = ({ children, item, noWrapLink }) => {
   return noWrapLink ? (
@@ -25,7 +25,6 @@ const ListingImage = ({
   noWrapLink = false,
   ...imageProps
 }) => {
-  let image = null;
   if (!contentHasImage(item, !imageProps?.image_field)) {
     if (showDefault) {
       return (
@@ -33,6 +32,7 @@ const ListingImage = ({
           <img
             src={DefaultImageSVG}
             alt=""
+            sizes={sizes}
             aria-hidden={true}
             role="presentation"
             className="listing-image responsive"
@@ -60,11 +60,9 @@ const ListingImage = ({
   if (showTitleAttr)
     commonImageProps = { ...commonImageProps, title: item.title };
 
-  image = <Image {...commonImageProps} />;
-
   return (
     <ListingImageWrapper item={item} noWrapLink={noWrapLink}>
-      {image}
+      <Image {...commonImageProps} />
     </ListingImageWrapper>
   );
 };

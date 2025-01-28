@@ -21,12 +21,6 @@ export const CardPersona = ({
   type,
   isEditMode,
 }) => {
-  const image = ListingImage({
-    item,
-    sizes: '130px',
-    showTitleAttr: false,
-  });
-
   const hasImage = contentHasImage(item, showImage);
 
   return (
@@ -59,7 +53,9 @@ export const CardPersona = ({
           )}
         </CardBody>
         {hasImage && (
-          <div className="card-image card-image-rounded">{image}</div>
+          <div className="card-image card-image-rounded">
+            <ListingImage item={item} sizes="130px" showTitleAttr={false} />
+          </div>
         )}
       </div>
     </Card>
