@@ -58,6 +58,7 @@ export const BandoViewSectionsOrder = [
  */
 const BandoView = ({ content, location }) => {
   let documentBody = createRef();
+  const intl = useIntl();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
   return (

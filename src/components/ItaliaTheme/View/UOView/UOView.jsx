@@ -72,6 +72,7 @@ export const UOViewSectionsOrder = [
  */
 const UOView = ({ content }) => {
   let documentBody = createRef();
+  const intl = useIntl();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
   return (

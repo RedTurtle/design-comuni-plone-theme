@@ -69,6 +69,7 @@ export const VenueViewSectionsOrder = [
  */
 const VenueView = ({ content }) => {
   const documentBody = createRef();
+  const intl = useIntl();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
   useEffect(() => {
