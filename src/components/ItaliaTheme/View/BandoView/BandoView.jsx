@@ -5,6 +5,7 @@
 
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
+import { defineMessages, useIntl } from 'react-intl';
 
 import {
   PageHeader,
@@ -24,7 +25,16 @@ import {
   ContentTypeViewSections,
   useSideMenu,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
-
+const messages = defineMessages({
+  sideMenuNavigation: {
+    id: 'sideMenuNavigation',
+    defaultMessage: 'Navigazione della pagina',
+  },
+  bandoContent: {
+    id: 'bandoContent',
+    defaultMessage: 'Contenuto del Bando',
+  },
+});
 export const BandoViewSectionsOrder = [
   { /* Testo */ component: BandoText },
   /* Responsabili */
@@ -61,7 +71,11 @@ const BandoView = ({ content, location }) => {
           showbandostate={true}
         />
         <div className="row row-column-border border-light row-column-menu-left">
-          <aside className="col-lg-4">
+          <aside
+            className="col-lg-4"
+            role="navigation"
+            aria-label={intl.formatMessage(messages.sideMenuNavigation)}
+          >
             {__CLIENT__ && (
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
             )}
@@ -70,6 +84,8 @@ const BandoView = ({ content, location }) => {
             ref={documentBody}
             id="main-content-section"
             className="col-lg-8 it-page-sections-container border-light"
+            role="region"
+            aria-label={intl.formatMessage(messages.bandoContent)}
           >
             {/* SEZIONI */}
             <ContentTypeViewSections

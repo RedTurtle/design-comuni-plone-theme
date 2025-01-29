@@ -25,6 +25,17 @@ import {
   useSideMenu,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
+const messages = defineMessages({
+  sideMenuNavigation: {
+    id: 'sideMenuNavigation',
+    defaultMessage: 'Navigazione della pagina',
+  },
+  venueContent: {
+    id: 'venueContent',
+    defaultMessage: 'Contenuto della struttura',
+  },
+});
+
 export const VenueViewSectionsOrder = [
   {
     /* HEADER IMAGE */
@@ -82,7 +93,11 @@ const VenueView = ({ content }) => {
         <ContentImage content={content} position="afterHeader" />
 
         <div className="row row-column-border border-light row-column-menu-left">
-          <aside className="col-lg-4">
+          <aside
+            className="col-lg-4"
+            role="navigation"
+            aria-label={intl.formatMessage(messages.sideMenuNavigation)}
+          >
             {__CLIENT__ && (
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
             )}
@@ -91,6 +106,8 @@ const VenueView = ({ content }) => {
             className="col-lg-8 it-page-sections-container border-light"
             id="main-content-section"
             ref={documentBody}
+            role="region"
+            aria-label={intl.formatMessage(messages.venueContent)}
           >
             {/* SEZIONI */}
             <ContentTypeViewSections
