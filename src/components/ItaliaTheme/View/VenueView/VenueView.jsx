@@ -34,7 +34,7 @@ const messages = defineMessages({
   },
   venueContent: {
     id: 'venueContent',
-    defaultMessage: 'Contenuto della struttura',
+    defaultMessage: 'Informazioni sulla struttura',
   },
 });
 

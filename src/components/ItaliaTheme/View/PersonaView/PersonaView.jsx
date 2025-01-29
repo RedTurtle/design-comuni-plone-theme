@@ -30,7 +30,7 @@ const messages = defineMessages({
   },
   personaContent: {
     id: 'personaContent',
-    defaultMessage: 'Contenuto della persona',
+    defaultMessage: 'Contenuto del profilo della persona',
   },
 });
 
