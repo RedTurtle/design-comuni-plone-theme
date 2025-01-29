@@ -6,6 +6,13 @@ import {
   RichText,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
+const messages = defineMessages({
+  patrocinato_da: {
+    id: 'patrocinato_da',
+    defaultMessage: 'Patrocinato da',
+  },
+});
+
 const EventoPatrocinatoDa = ({ content }) => {
   const intl = useIntl();
   return richTextHasContent(content?.patrocinato_da) ? (
@@ -29,10 +36,3 @@ const EventoPatrocinatoDa = ({ content }) => {
 };
 
 export default EventoPatrocinatoDa;
-
-const messages = defineMessages({
-  patrocinato_da: {
-    id: 'patrocinato_da',
-    defaultMessage: 'Patrocinato da',
-  },
-});
