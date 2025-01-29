@@ -66,6 +66,7 @@ export const EventoViewSectionsOrder = [
  */
 const EventoView = ({ content, location }) => {
   let documentBody = createRef();
+  const intl = useIntl();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
   return (

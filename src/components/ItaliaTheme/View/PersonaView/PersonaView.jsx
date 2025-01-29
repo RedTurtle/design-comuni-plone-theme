@@ -49,6 +49,7 @@ export const PersonaViewSectionsOrder = [
  */
 const PersonaView = ({ content }) => {
   let documentBody = createRef();
+  const intl = useIntl();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
   return (

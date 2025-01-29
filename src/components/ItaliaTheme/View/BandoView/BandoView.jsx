@@ -25,6 +25,7 @@ import {
   ContentTypeViewSections,
   useSideMenu,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+
 const messages = defineMessages({
   sideMenuNavigation: {
     id: 'sideMenuNavigation',
@@ -35,6 +36,7 @@ const messages = defineMessages({
     defaultMessage: 'Contenuto del Bando',
   },
 });
+
 export const BandoViewSectionsOrder = [
   { /* Testo */ component: BandoText },
   /* Responsabili */

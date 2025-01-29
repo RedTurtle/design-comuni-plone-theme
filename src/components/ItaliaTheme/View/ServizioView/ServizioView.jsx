@@ -5,7 +5,6 @@
 
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
-import { useIntl } from 'react-intl';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import {
   PageHeader,

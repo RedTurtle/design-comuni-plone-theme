@@ -24,6 +24,7 @@ import {
   ContentTypeViewSections,
   useSideMenu,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -60,6 +61,7 @@ export const DocumentoViewSectionsOrder = [
  */
 const DocumentoView = ({ content, location }) => {
   let documentBody = createRef();
+  const intl = useIntl();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
   //const userLogged = useSelector((state) => state.userSession);
