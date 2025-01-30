@@ -3911,7 +3911,7 @@ msgstr ""
 #: components/ItaliaTheme/View/Commons/SideMenu
 # defaultMessage: Elementi del menu laterale
 msgid "sideMenuItems"
-msgstr ""
+msgstr "Side menu elements"
 
 #: components/ItaliaTheme/View/BandoView/BandoView
 #: components/ItaliaTheme/View/DocumentoView/DocumentoView
