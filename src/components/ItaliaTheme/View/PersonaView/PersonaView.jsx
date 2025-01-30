@@ -24,9 +24,9 @@ import {
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
-  sideMenuNavigation: {
-    id: 'sideMenuNavigation',
-    defaultMessage: 'Navigazione della pagina',
+  sideMenuIndex: {
+    id: 'sideMenuIndex',
+    defaultMessage: 'Indice della pagina',
   },
   personaContent: {
     id: 'personaContent',
@@ -68,8 +68,7 @@ const PersonaView = ({ content }) => {
         <div className="row row-column-border border-light row-column-menu-left">
           <aside
             className="col-lg-4"
-            role="navigation"
-            aria-label={intl.formatMessage(messages.sideMenuNavigation)}
+            aria-label={intl.formatMessage(messages.sideMenuIndex)}
           >
             <SideMenu data={sideMenuElements} content_uid={content?.UID} />
           </aside>

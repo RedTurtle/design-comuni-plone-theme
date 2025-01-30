@@ -24,9 +24,9 @@ const messages = defineMessages({
     id: 'Contenuto',
     defaultMessage: 'Contenuto',
   },
-  sideMenuItems: {
-    id: 'sideMenuItems',
-    defaultMessage: 'Elementi del menu laterale',
+  sideMenuNavigation: {
+    id: 'sideMenuNavigation',
+    defaultMessage: 'Navigazione della pagina',
   },
 });
 
@@ -155,7 +155,10 @@ const SideMenu = ({ data, content_uid }) => {
 
   return headers?.length > 0 ? (
     <div className="sticky-wrapper navbar-wrapper page-side-menu">
-      <div className="navbar it-navscroll-wrapper navbar-expand-lg">
+      <nav
+        className="navbar it-navscroll-wrapper navbar-expand-lg"
+        aria-label={intl.formatMessage(messages.sideMenuNavigation)}
+      >
         <div className="menu-wrapper">
           <div className="link-list-wrapper menu-link-list">
             <div className="accordion-wrapper">
@@ -200,7 +203,7 @@ const SideMenu = ({ data, content_uid }) => {
             </div>
           </div>
         </div>
-      </div>
+      </nav>
     </div>
   ) : null;
 };

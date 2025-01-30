@@ -2497,6 +2497,11 @@ msgstr "Travel and / or service charges"
 msgid "importi_viaggio"
 msgstr "Travel and/or service expenses"
 
+#: components/ItaliaTheme/View/Commons/RelatedItemInEvidence/RelatedItemInEvidence
+# defaultMessage: Contenuti in evidenza
+msgid "inEvidenceItems"
+msgstr "In evidence items"
+
 #: components/ItaliaTheme/Blocks/Listing/serviziAmministrazioneTrasparenteTemplate
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: incarico
@@ -3908,11 +3913,6 @@ msgstr ""
 msgid "show_type"
 msgstr ""
 
-#: components/ItaliaTheme/View/Commons/SideMenu
-# defaultMessage: Elementi del menu laterale
-msgid "sideMenuItems"
-msgstr "Side menu elements"
-
 #: components/ItaliaTheme/View/BandoView/BandoView
 #: components/ItaliaTheme/View/DocumentoView/DocumentoView
 #: components/ItaliaTheme/View/EventoView/EventoView
@@ -3922,6 +3922,11 @@ msgstr "Side menu elements"
 #: components/ItaliaTheme/View/ServizioView/ServizioView
 #: components/ItaliaTheme/View/UOView/UOView
 #: components/ItaliaTheme/View/VenueView/VenueView
+# defaultMessage: Indice della pagina
+msgid "sideMenuIndex"
+msgstr "Page index"
+
+#: components/ItaliaTheme/View/Commons/SideMenu
 # defaultMessage: Navigazione della pagina
 msgid "sideMenuNavigation"
 msgstr "Elements of the sidebar menu"

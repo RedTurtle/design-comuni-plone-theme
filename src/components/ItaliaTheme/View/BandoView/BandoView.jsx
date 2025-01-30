@@ -27,9 +27,9 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 const messages = defineMessages({
-  sideMenuNavigation: {
-    id: 'sideMenuNavigation',
-    defaultMessage: 'Navigazione della pagina',
+  sideMenuIndex: {
+    id: 'sideMenuIndex',
+    defaultMessage: 'Indice della pagina',
   },
   bandoContent: {
     id: 'bandoContent',
@@ -76,8 +76,7 @@ const BandoView = ({ content, location }) => {
         <div className="row row-column-border border-light row-column-menu-left">
           <aside
             className="col-lg-4"
-            role="navigation"
-            aria-label={intl.formatMessage(messages.sideMenuNavigation)}
+            aria-label={intl.formatMessage(messages.sideMenuIndex)}
           >
             {__CLIENT__ && (
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
