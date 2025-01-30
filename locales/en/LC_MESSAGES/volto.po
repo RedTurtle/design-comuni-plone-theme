@@ -3296,7 +3296,7 @@ msgstr "Responsible office"
 #: components/ItaliaTheme/View/Commons/BandoDates
 # defaultMessage: Scadenza dei termini per partecipare al bando
 msgid "scadenza_bando"
-msgstr "Deadline for submitting applications to the call"
+msgstr "Deadline for submitting applications"
 
 #: components/ItaliaTheme/Blocks/Calendar/Item
 #: components/ItaliaTheme/View/Commons/BandoDates
