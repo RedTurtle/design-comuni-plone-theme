@@ -3015,7 +3015,7 @@ msgstr "Selettore di pagina"
 #: components/ItaliaTheme/Header/ParentSiteMenu
 # defaultMessage: Main site menu
 msgid "parent_site_menu"
-msgstr "Menu sito principale"
+msgstr "Menu principale del sito"
 
 #: components/ItaliaTheme/View/EventoView/EventoCosE
 # defaultMessage: Parteciperanno
