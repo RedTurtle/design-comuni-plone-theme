@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (x/x/x)
+
+### Fix
+
+- sistemata l'opzione "Mostra i PDF in anteprima" dell template 'Allegati' del blocco elenco, perchè non aveva alcun effetto.
+
 ## Versione 11.26.3 (15/01/2025)
 
 ### Fix
