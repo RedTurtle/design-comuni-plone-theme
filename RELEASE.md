@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- I bottoni del menu nel pannello di controllo dei cookies visualizzano correttamente le icone.
+
 ## Versione 11.26.3 (15/01/2025)
 
 ### Fix
