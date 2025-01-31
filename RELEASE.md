@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Nei blocchi elenco, gli stili dei testi nelle card che richiamano un CT persona sono conformi alle card che rappresentano gli altri CT.
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 11.26.3 (15/01/2025)
 
 ### Fix
