@@ -118,7 +118,6 @@ class Edit extends SubblocksEdit {
     if (__SERVER__) {
       return <div />;
     }
-    console.log(this.props);
 
     return (
       <div className="public-ui" tabIndex="-1" ref={this.nodeF}>
