@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Fix
+
+- Sistemata la visualizzazione del blocco griglia su mobile: disposti verticalmente ogni blocco della griglia
+
 ## Versione 11.26.3 (15/01/2025)
 
 ### Fix
