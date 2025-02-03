@@ -46,6 +46,7 @@
 ### Migliorie
 
 - Nei blocchi elenco, gli stili dei testi nelle card che richiamano un CT persona sono conformi alle card che rappresentano gli altri CT.
+- Impostando degli heading all'interno delle sezioni di testo nei vari CT, gli stili sono ora coerenti con l'ordine corretto dei titoli utilizzati.
 
 ### Novità
 
@@ -53,7 +54,9 @@
 
 ### Fix
 
-- ...
+- I bottoni del menu nel pannello di controllo dei cookies visualizzano correttamente le icone.
+- Gli argomenti nelle card con immagine sono allineati correttamente.
+
 
 ## Versione 11.26.3 (15/01/2025)
 
