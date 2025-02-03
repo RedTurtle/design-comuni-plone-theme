@@ -45,7 +45,10 @@
 
 ### Migliorie
 
+
 - La sezione contatti del CT Evento è stata riorganizzata per una maggiore chiarezza e coerenza.
+- Impostando degli heading all'interno delle sezioni di testo nei vari CT, gli stili sono ora coerenti con l'ordine corretto dei titoli utilizzati.
+
 
 ### Novità
 
