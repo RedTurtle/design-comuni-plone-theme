@@ -45,7 +45,7 @@
 
 ### Migliorie
 
-- ...
+- Impostando degli heading all'interno delle sezioni di testo nei vari CT, gli stili sono ora coerenti con l'ordine corretto dei titoli utilizzati.
 
 ### Novità
 
