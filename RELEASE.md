@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Fix
+
+- a11y - Migliorata l'accessibilità in edit dei blocchi Contatti, Icone, Numeri
+
 ## Versione 11.26.3 (15/01/2025)
 
 ### Fix
