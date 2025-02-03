@@ -8,6 +8,7 @@ import {
 import PropTypes from 'prop-types';
 
 import { viewDate } from 'design-comuni-plone-theme/helpers';
+import { id } from '../../../../../build/VoltoFormBlockEdit.chunk';
 
 const messages = defineMessages({
   effective: {
@@ -63,24 +64,32 @@ const BandoDates = ({ content }) => {
 
   const ordinatedDates = [
     {
+      id: 'effective',
       date: effective,
-      label: 'effective',
+      label: intl.formatMessage(messages.effective),
     },
     {
+      id: 'apertura_bando',
       date: apertura_bando,
-      label: 'apertura_bando',
+      label: intl.formatMessage(messages.apertura_bando),
+      show_hour: true,
     },
     {
+      id: 'scadenza_domande_bando',
       date: scadenza_domande_bando,
-      label: 'scadenza_domande_bando',
+      label: intl.formatMessage(messages.scadenza_domande_bando),
+      show_hour: true,
     },
     {
+      id: 'scadenza_bando',
       date: scadenza_bando,
-      label: 'scadenza_bando',
+      label: intl.formatMessage(messages.scadenza_bando),
+      show_hour: true,
     },
     {
+      id: 'chiusura_procedimento_bando',
       date: chiusura_procedimento_bando,
-      label: 'chiusura_procedimento_bando',
+      label: intl.formatMessage(messages.chiusura_procedimento_bando),
     },
   ];
 
@@ -108,7 +117,8 @@ const BandoDates = ({ content }) => {
                 >
                   <CardBody tag="div" className={'card-body'}>
                     <CardTitle tag="p">
-                      {intl.formatMessage(messages[item.label])}
+                      {item.show_hour && `${item.date.format('HH:mm')} - `}
+                      {item.label}
                     </CardTitle>
                   </CardBody>
                 </Card>
