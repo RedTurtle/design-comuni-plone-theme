@@ -4,8 +4,9 @@
 
 .avatar {
   &.size-lg {
-    width: $avatar-base-size * 7;
-    height: $avatar-base-size * 7;
+    //  Dal figma, sti tondi sono 64x64
+    width: $avatar-base-size * 8;
+    height: $avatar-base-size * 8;
     p {
       font-size: 24px;
     }

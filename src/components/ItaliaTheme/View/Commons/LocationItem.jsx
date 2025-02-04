@@ -42,7 +42,7 @@ const LocationItem = ({
 }) => {
   const intl = useIntl();
   const Image = config.getComponent({ name: 'Image' }).component;
-  const showImage = contentHasImage(location);
+  const showImage = contentHasImage(location) && location['@type'] === 'Venue';
   const address = ['street', 'city', 'zip_code']
     .map((key) => location?.[key])
     .filter(Boolean)
