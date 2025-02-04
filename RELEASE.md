@@ -59,6 +59,7 @@
 - I bottoni del menu nel pannello di controllo dei cookies visualizzano correttamente le icone.
 - Gli argomenti nelle card con immagine sono allineati correttamente.
 - Sistemata l'opzione "Mostra i PDF in anteprima" dell template "Allegati" del blocco elenco, perchè non aveva alcun effetto.
+- Sistemata la visualizzazione del blocco griglia su mobile: disposti verticalmente ogni blocco della griglia
 
 
 ## Versione 11.26.3 (15/01/2025)
