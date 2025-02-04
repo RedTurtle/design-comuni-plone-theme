@@ -1,0 +1,27 @@
+// @import 'bootstrap-italia/src/scss/variables';
+@use 'sass:math';
+// $avatar-base-size: 8px;
+
+.avatar {
+  &.size-lg {
+    width: $avatar-base-size * 7;
+    height: $avatar-base-size * 7;
+    p {
+      font-size: 24px;
+    }
+    .icon {
+      height: 28px;
+      width: 28px;
+    }
+    .avatar-presence,
+    .avatar-status {
+      right: 2px;
+      width: 14px;
+      height: 14px;
+    }
+
+    .avatar-status {
+      top: math.div($avatar-base-size, 28);
+    }
+  }
+}

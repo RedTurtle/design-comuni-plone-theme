@@ -49,17 +49,18 @@ const LocationItem = ({
     .join(' - ');
 
   return location ? (
-    <div className="card card-teaser shadow mt-3 border-left-card card-big-io-comune p-4 rounded location-item">
-      {show_icon && (
-        <Icon
-          icon={'it-pin'}
-          title={intl.formatMessage(messages.icona_luoghi)}
-        />
-      )}
+    <div className="card card-teaser shadow mt-3 border-left-card card-big-io-comune pt-4 pb-4 ps-3 pe-4 rounded location-item">
       <div className="card-body">
         <div className="card-title h5 venue-card-title">
           {(location.nome_sede || location.title) && (
             <>
+              {show_icon && (
+                <Icon
+                  icon={'it-pin'}
+                  title={intl.formatMessage(messages.icona_luoghi)}
+                  className="pin-icon"
+                />
+              )}
               {location['@type'] === 'Venue' ||
               (location['@type'] === 'UnitaOrganizzativa' &&
                 show_title_link) ? (
@@ -106,7 +107,7 @@ const LocationItem = ({
         </div>
       </div>
       {showImage && (
-        <div className="avatar size-xl">
+        <div className="avatar size-lg">
           <Image item={location} sizes="80px" loading="lazy" />
         </div>
       )}
