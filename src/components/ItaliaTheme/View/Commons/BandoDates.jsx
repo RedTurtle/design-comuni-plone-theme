@@ -8,7 +8,6 @@ import {
 import PropTypes from 'prop-types';
 
 import { viewDate } from 'design-comuni-plone-theme/helpers';
-import { id } from '../../../../../build/VoltoFormBlockEdit.chunk';
 
 const messages = defineMessages({
   effective: {
@@ -62,42 +61,37 @@ const BandoDates = ({ content }) => {
     ? viewDate(intl.locale, content.chiusura_procedimento_bando)
     : null;
 
-  const ordinatedDates = [
+  const dates = [
     {
-      id: 'effective',
       date: effective,
       label: intl.formatMessage(messages.effective),
     },
     {
-      id: 'apertura_bando',
       date: apertura_bando,
       label: intl.formatMessage(messages.apertura_bando),
       show_hour: true,
     },
     {
-      id: 'scadenza_domande_bando',
       date: scadenza_domande_bando,
       label: intl.formatMessage(messages.scadenza_domande_bando),
       show_hour: true,
     },
     {
-      id: 'scadenza_bando',
       date: scadenza_bando,
       label: intl.formatMessage(messages.scadenza_bando),
       show_hour: true,
     },
     {
-      id: 'chiusura_procedimento_bando',
       date: chiusura_procedimento_bando,
       label: intl.formatMessage(messages.chiusura_procedimento_bando),
     },
   ];
 
-  ordinatedDates.sort((a, b) => a.date - b.date);
+  dates.sort((a, b) => a.date - b.date);
 
   return content ? (
     <div className="point-list-wrapper my-4 mb-5">
-      {ordinatedDates.map((item, index) => {
+      {dates.map((item, index) => {
         return (
           item.date && (
             <div className="point-list">
@@ -117,7 +111,7 @@ const BandoDates = ({ content }) => {
                 >
                   <CardBody tag="div" className={'card-body'}>
                     <CardTitle tag="p">
-                      {item.show_hour && `${item.date.format('HH:mm')} - `}
+                      {item.show_hour && <>{item.date.format('HH:mm')} - </>}
                       {item.label}
                     </CardTitle>
                   </CardBody>
