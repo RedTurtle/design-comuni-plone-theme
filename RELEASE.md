@@ -47,6 +47,26 @@
 
 - a11y - Migliorata l'accessibilità in edit dei blocchi Contatti, Icone, Numeri
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Nei blocchi elenco, gli stili dei testi nelle card che richiamano un CT persona sono conformi alle card che rappresentano gli altri CT.
+- Impostando degli heading all'interno delle sezioni di testo nei vari CT, gli stili sono ora coerenti con l'ordine corretto dei titoli utilizzati.
+- La sezione contatti del CT Evento è stata riorganizzata per una maggiore chiarezza e coerenza.
+
+### Novità
+
+- ...
+
+### Fix
+
+- I bottoni del menu nel pannello di controllo dei cookies visualizzano correttamente le icone.
+- Gli argomenti nelle card con immagine sono allineati correttamente.
+- Sistemata l'opzione "Mostra i PDF in anteprima" dell template "Allegati" del blocco elenco, perchè non aveva alcun effetto.
+- Sistemata la visualizzazione del blocco griglia su mobile: disposti verticalmente ogni blocco della griglia
+
+
 ## Versione 11.26.3 (15/01/2025)
 
 ### Fix
