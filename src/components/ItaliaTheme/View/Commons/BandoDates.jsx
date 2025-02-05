@@ -94,7 +94,7 @@ const BandoDates = ({ content }) => {
       {dates.map((item, index) => {
         return (
           item.date && (
-            <div className="point-list">
+            <div className="point-list" key={index}>
               <div className="point-list-aside point-list-warning">
                 <span className="point-date text-monospace">
                   {item.date.format('DD')}
