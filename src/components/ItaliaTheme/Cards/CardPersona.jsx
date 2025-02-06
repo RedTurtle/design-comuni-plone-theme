@@ -21,7 +21,7 @@ export const CardPersona = ({
   type,
   isEditMode,
 }) => {
-  const hasImage = contentHasImage(item, showImage);
+  const hasImage = contentHasImage(item) && showImage;
 
   return (
     <Card

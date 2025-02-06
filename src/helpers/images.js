@@ -54,13 +54,19 @@ const useFallbackImageSrc = ({
  Check if a Content item has a related image
  This check is done on image_field and image_scales fields, which are
  the default fields in a JSON response for a content in plone.restapi
- The additional argument, customValidation, can be provided for custom checks
 
  @param {Object} item - The Plone item/brain/content
- @param {boolean|undefined} customValidation - Your custom validation that resolves to a boolean
 */
-const contentHasImage = (item, customValidation = true) => {
-  return (item?.image_field || item?.image_scales) && customValidation;
+const contentHasImage = (item) => {
+  if (!item) return false;
+  const isFromRealObject = !item.image_scales;
+  const imageFieldWithDefault = item.image_field || 'image';
+
+  const image = isFromRealObject
+    ? item[imageFieldWithDefault]
+    : item.image_scales[imageFieldWithDefault]?.[0];
+
+  return Boolean(image);
 };
 
 export {

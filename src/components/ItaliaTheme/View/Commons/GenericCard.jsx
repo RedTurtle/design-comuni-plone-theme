@@ -51,7 +51,7 @@ const GenericCard = ({
     </>
   );
   const cooked_image_field = image_field || item.image_field;
-  const showImage = contentHasImage(item, showimage && cooked_image_field);
+  const showImage = showimage && contentHasImage(item) && cooked_image_field;
 
   return item ? (
     showImage ? (
@@ -62,7 +62,7 @@ const GenericCard = ({
               <Image
                 item={item}
                 imageField={cooked_image_field}
-                alt={item.title ?? ''}
+                alt={''}
                 title={item.title}
               />
             </figure>

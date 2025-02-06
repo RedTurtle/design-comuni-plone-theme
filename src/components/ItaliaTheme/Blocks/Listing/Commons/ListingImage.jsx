@@ -25,7 +25,7 @@ const ListingImage = ({
   noWrapLink = false,
   ...imageProps
 }) => {
-  if (!contentHasImage(item, !imageProps?.image_field)) {
+  if (!contentHasImage(item) && !imageProps?.image_field) {
     if (showDefault) {
       return (
         <ListingImageWrapper item={item} noWrapLink={noWrapLink}>

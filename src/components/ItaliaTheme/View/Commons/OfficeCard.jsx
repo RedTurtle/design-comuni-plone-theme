@@ -25,7 +25,7 @@ const OfficeCard = ({
 }) => {
   const intl = useIntl();
   const Image = config.getComponent({ name: 'Image' }).component;
-  const showImage = contentHasImage(office, showimage);
+  const showImage = showimage && contentHasImage(office);
 
   return (
     <div
