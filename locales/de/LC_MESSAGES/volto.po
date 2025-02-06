@@ -249,6 +249,11 @@ msgstr ""
 msgid "Dimensione della mappa"
 msgstr ""
 
+#: overrideTranslations
+# defaultMessage: Add border to inner columns
+msgid "Divide each row into separate cells"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 # defaultMessage: Download
 msgid "Download"
@@ -299,6 +304,11 @@ msgstr ""
 #: components/ItaliaTheme/Search/SearchCTs
 # defaultMessage: Nascondi tutti i tipi di contenuto
 msgid "Hide all content types"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Hide headers
+msgid "Hide headers"
 msgstr ""
 
 #: components/ItaliaTheme/Breadcrumbs/Breadcrumbs
@@ -413,6 +423,11 @@ msgstr ""
 #: components/ItaliaTheme/manage/Widgets/LocationFiltersWidget
 # defaultMessage: Luogo
 msgid "Luogo location filter"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Make the table sortable
+msgid "Make the table sortable"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
@@ -584,6 +599,11 @@ msgstr ""
 msgid "Select all or none"
 msgstr ""
 
+#: components/SelectInput/SelectInput
+# defaultMessage: Seleziona un'opzione
+msgid "SelectInput_default_label"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/FileWidget
 # defaultMessage: Seleziona un file
 msgid "Seleziona un file"
@@ -613,6 +633,16 @@ msgstr ""
 #: components/ItaliaTheme/Footer/FooterNewsletterSubscribe
 # defaultMessage: Iscriviti
 msgid "Subscribe"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Table block
+msgid "Table block"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Table color inverted
+msgid "Table color inverted"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Accordion/Block/EditBlock
@@ -751,6 +781,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Video Gallery
 msgid "VideoGalleryBlock"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Visible only in view mode
+msgid "Visible only in view mode"
 msgstr ""
 
 #: components/ItaliaTheme/Unauthorized/Unauthorized
@@ -2900,14 +2935,9 @@ msgstr ""
 msgid "order_by"
 msgstr ""
 
-#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreInterno
+#: components/ItaliaTheme/View/EventoView/EventoOrganizzatoDa
 # defaultMessage: Organizzato da
 msgid "organizzato_da"
-msgstr ""
-
-#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
-# defaultMessage: Organizzatore
-msgid "organizzatore"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
@@ -2957,7 +2987,7 @@ msgstr ""
 msgid "parteciperanno"
 msgstr ""
 
-#: components/ItaliaTheme/View/EventoView/EventoUlterioriInformazioni
+#: components/ItaliaTheme/View/EventoView/EventoPatrocinatoDa
 # defaultMessage: Patrocinato da
 msgid "patrocinato_da"
 msgstr ""

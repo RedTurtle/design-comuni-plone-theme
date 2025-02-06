@@ -1,5 +1,35 @@
 # Changelog
 
+## [12.0.0-alpha.35](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.0.0-alpha.34...v12.0.0-alpha.35) (2025-01-15)
+
+
+### Bug Fixes
+
+* remove file upload restraint from contents modal if modules are allowed ([17f8356](https://github.com/RedTurtle/design-comuni-plone-theme/commit/17f8356d90b969a22c177773cb36377e5a6c65ec))
+* remove file upload restraint from contents modal if modules are allowed - main ([#855](https://github.com/RedTurtle/design-comuni-plone-theme/issues/855)) ([9fea7b2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9fea7b200ab8d8c8c58b78bf9b1175557aaa4013))
+* remove file upload restraint from contents modal if modules are allowed ([#854](https://github.com/RedTurtle/design-comuni-plone-theme/issues/854)) ([99b87e2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/99b87e21daea4d219b8033ae12138346124d1310))
+* revert of commit 17f8356d90b969a22c177773cb36377e5a6c65ec ([1e3bb1b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1e3bb1b872ece29f22dbdf550100b6457805f8c9))
+* table block translations ([#848](https://github.com/RedTurtle/design-comuni-plone-theme/issues/848)) ([f950246](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f950246720b036d7711a9b0a1733e9950a42f2bc))
+* uo responsabili image check ([#853](https://github.com/RedTurtle/design-comuni-plone-theme/issues/853)) ([889e165](https://github.com/RedTurtle/design-comuni-plone-theme/commit/889e165003dcfa508ee4c79b95111cd800c52097))
+
+
+### Documentation
+
+* updated publiccode and release log ([fb9e46a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fb9e46a9b26d486d062ef71e2c486e25e14e046b))
+
+## [12.0.0-alpha.34](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.0.0-alpha.33...v12.0.0-alpha.34) (2024-12-27)
+
+
+### Bug Fixes
+
+* getFileViewFormat regex inconsistencies with different filenames that included @@download/**, added anti-regression tests ([#847](https://github.com/RedTurtle/design-comuni-plone-theme/issues/847)) ([195c079](https://github.com/RedTurtle/design-comuni-plone-theme/commit/195c079a5acf04782bbd18331d34c3c885b4453f))
+
+
+### Documentation
+
+* updated publiccode and release log ([41e8c8e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/41e8c8e5c1f5f8d28c23406ce27cf8a26b2c2517))
+* updated release log ([acc56ff](https://github.com/RedTurtle/design-comuni-plone-theme/commit/acc56fff9f00c0f703b417f9d565e538a83edae4))
+
 ## [12.0.0-alpha.33](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.0.0-alpha.32...v12.0.0-alpha.33) (2024-12-20)
 
 
