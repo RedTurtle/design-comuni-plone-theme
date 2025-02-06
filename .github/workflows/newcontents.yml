@@ -1,7 +1,7 @@
-name: Docker build for latest main version with newsletter add-on
+name: Docker build for new folder contents test version
 on:
   push:
-    branches: [main]
+    branches: ['new-folder-contents']
 
 jobs:
   build_develop:
@@ -22,16 +22,16 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./dockerfiles/Dockerfile.withnewsletter
-          tags: redturtletech/io-comune-base:withnewsletter
+          file: ./dockerfiles/Dockerfile
+          tags: redturtletech/io-comune-base:contents
           pull: true
           push: true
-          cache-from: type=registry,ref=redturtletech/io-comune-base:withnewsletter
+          cache-from: type=registry,ref=redturtletech/io-comune-base:contents
           cache-to: type=inline
           build-args: |
             ADDON_NAME=design-comuni-plone-theme
             ADDON_PATH=design-comuni-plone-theme
-            VOLTO_VERSION=17.20.4
+            VOLTO_VERSION=17.20.3
 
       - name: Deploy to rancher
         uses: redturtle/rancher-deploy-action@v0.2.0
@@ -42,7 +42,7 @@ jobs:
           cluster-id: ${{ secrets.RANCHER_CLUSTER_ID }}
           project-id: ${{ secrets.RANCHER_PROJECT_ID }}
           namespace: ${{ secrets.RANCHER_NAMESPACE_DEVELOP }}
-          workload: ${{ secrets.RANCHER_WORKLOAD_DEVELOP }}
-          image: redturtletech/io-comune-base:withnewsletter
+          workload: ${{ secrets.RANCHER_WORKLOAD_CONTENTS }}
+          image: redturtletech/io-comune-base:contents
           slack-hook-url: ${{ secrets.RANCHER_SLACK_HOOK_URL }}
 
