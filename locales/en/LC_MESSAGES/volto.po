@@ -4369,9 +4369,9 @@ msgid "url"
 msgstr "website"
 
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderSlim
-# defaultMessage: Utility Menu
+# defaultMessage: Link utili
 msgid "utilityMenu"
-msgstr ""
+msgstr "Utility menu"
 
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Variazione situazione patrimoniale

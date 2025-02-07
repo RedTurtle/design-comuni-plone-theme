@@ -3970,7 +3970,7 @@ msgstr "Vai alla navigazione"
 #: components/ItaliaTheme/SkipLinks/SkipLinks
 # defaultMessage: Skiplinks
 msgid "skiplinks-description"
-msgstr ""
+msgstr "Punti di riferimento"
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 #: helpers/contentHelper
@@ -4369,7 +4369,7 @@ msgid "url"
 msgstr "Sito web"
 
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderSlim
-# defaultMessage: Utility Menu
+# defaultMessage: Link utili
 msgid "utilityMenu"
 msgstr "Menu di utilità"
 

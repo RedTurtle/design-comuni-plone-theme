@@ -4384,7 +4384,7 @@ msgid "url"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderSlim
-# defaultMessage: Utility Menu
+# defaultMessage: Link utili
 msgid "utilityMenu"
 msgstr ""
 

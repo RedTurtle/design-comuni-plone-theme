@@ -22,7 +22,7 @@ import { SiteProperty } from 'volto-site-settings';
 const messages = defineMessages({
   utilityMenu: {
     id: 'utilityMenu',
-    defaultMessage: 'Utility Menu',
+    defaultMessage: 'Link utili',
   },
 });
 
