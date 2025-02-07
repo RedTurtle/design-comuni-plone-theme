@@ -56,6 +56,28 @@
 - Aggiunta una nuova condizione per la corretta compilazione dell’attributo **alt** e **title** nelle immagini dei blocchi listing. Ora questi attributi utilizzano correttamente i testi delle didascalie dell'immagine di anteprima o testata se impostati. L'attributo **title** viene valorizzato solo se esiste una didascalia associata all’immagine.
 
 - Rimosso l’attributo **showTitleAttr** dal componente _ListingImage_ utilizzato nei template del blocco listing: card con immagine, persona, blocco link completo, contenuto in evidenza, gallery a griglia, e in evidenza. Ora gli attributi **title** e **alt** vengono calcolati e impostati direttamente dal componente _ListingImage_.
+## Versione 11.26.5 (06/02/2025)
+
+### Migliorie
+
+- La sezione contatti del CT Evento è stata riorganizzata per una maggiore chiarezza e coerenza.
+- Nei blocchi elenco, gli stili dei testi nelle card che richiamano un CT persona sono conformi alle card che rappresentano gli altri CT.
+- Impostando degli heading all'interno delle sezioni di testo nei vari CT, gli stili sono ora coerenti con l'ordine corretto dei titoli utilizzati.
+- Aggiornate le traduzioni italiane.
+- Nella sezione Documenti della vista dei tipi di contenuto Documento vengono ora mostrati sia i Moduli che i Collegamenti.
+
+### Fix
+
+- I bottoni del menu nel pannello di controllo dei cookies visualizzano correttamente le icone.
+- Gli argomenti nelle card con immagine sono allineati correttamente.
+- Sistemata l'opzione "Mostra i PDF in anteprima" dell template "Allegati" del blocco elenco, perchè non aveva alcun effetto.
+- Sistemata la visualizzazione del blocco griglia su mobile: disposti verticalmente ogni blocco della griglia
+- Sistemata l'opzione "Mostra i PDF in anteprima" dell template "Allegati" del blocco elenco, perchè non aveva alcun effetto.
+- Sistemata la visualizzazione del blocco griglia su mobile: disposti verticalmente ogni blocco della griglia
+- Sistemata la visualizzazione delle card con immagine in cui il contenuto rappresentato non ha un'immagine da mostrare.
+- Migliorata l'accessibilità in modifica dei blocchi Contatti, Icone, Numeri.
+- Sistemati alcuni problemi di visualizzazione delle card con avatar.
+
 ## Versione 11.26.3 (15/01/2025)
 
 ### Fix

@@ -2920,15 +2920,10 @@ msgstr "Opening time"
 msgid "order_by"
 msgstr "Order by"
 
-#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreInterno
+#: components/ItaliaTheme/View/EventoView/EventoOrganizzatoDa
 # defaultMessage: Organizzato da
 msgid "organizzato_da"
 msgstr "Organized by"
-
-#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
-# defaultMessage: Organizzatore
-msgid "organizzatore"
-msgstr "Organizer"
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
@@ -2977,7 +2972,7 @@ msgstr "Page selector"
 msgid "parteciperanno"
 msgstr "Will participate"
 
-#: components/ItaliaTheme/View/EventoView/EventoUlterioriInformazioni
+#: components/ItaliaTheme/View/EventoView/EventoPatrocinatoDa
 # defaultMessage: Patrocinato da
 msgid "patrocinato_da"
 msgstr "Sponsored by"
@@ -3815,9 +3810,9 @@ msgid "show_only_first_ribbon"
 msgstr ""
 
 #: config/Blocks/ListingOptions/attachmentCardTemplate
-# defaultMessage: Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata altrimenti vengono scaricati.
+# defaultMessage: Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata. Se non impostato, i PDF vengono scaricati.
 msgid "show_pdf_desc"
-msgstr "Allows you to open the preview of all the PDFs in this list in a separate tab otherwise they will be downloaded."
+msgstr "Allows preview of all PDF files in this list to be opened in a separate tab. If not set, PDF files are downloaded instead."
 
 #: config/Blocks/ListingOptions/attachmentCardTemplate
 # defaultMessage: Mostra i PDF in anteprima

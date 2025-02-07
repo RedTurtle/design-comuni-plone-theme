@@ -7,7 +7,7 @@ import {
   ListingLinkMore,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { defineMessages, useIntl } from 'react-intl';
-
+import { contentHasImage } from 'design-comuni-plone-theme/helpers';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { UniversalLink } from '@plone/volto/components';
@@ -60,6 +60,7 @@ const GridGalleryTemplate = ({
               className: '',
             });
             let scale = null;
+            let hasImage = contentHasImage(item);
             if (index % 7 === 0 || index % 7 === 6 || index % 7 === 3) {
               scale = 'great';
             }
@@ -82,6 +83,7 @@ const GridGalleryTemplate = ({
                   loading={critical ? 'eager' : 'lazy'}
                 />
               );
+              hasImage = true;
             }
 
             return (
@@ -93,7 +95,7 @@ const GridGalleryTemplate = ({
                   item={!isEditMode ? item : null}
                   href={isEditMode ? '#' : null}
                 >
-                  {image && (
+                  {hasImage && (
                     <picture className="volto-image responsive">
                       {image}
                     </picture>
