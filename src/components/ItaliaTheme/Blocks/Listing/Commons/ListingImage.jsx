@@ -47,18 +47,11 @@ const ListingImage = ({
   const Image = config.getComponent({ name: 'Image' }).component;
 
   //Verifies if the item has a preview image or an header image
-  const showTitleAttr = !!(
-    (item.hasPreviewImage && item.preview_caption) ||
-    (item.image_field && item.image_caption)
-  );
+  const showTitleAttr = !!(item.hasPreviewImage && item.preview_caption);
 
   //Verifies with caption to show as alt and title text
   const imageCaption =
-    item.hasPreviewImage && item.preview_caption
-      ? item.preview_caption
-      : item.image_field && item.image_caption
-      ? item.image_caption
-      : null;
+    item.hasPreviewImage && item.preview_caption ? item.preview_caption : null;
 
   let commonImageProps = {
     item,
