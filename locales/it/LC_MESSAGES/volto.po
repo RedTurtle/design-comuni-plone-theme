@@ -4371,7 +4371,7 @@ msgstr "Sito web"
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderSlim
 # defaultMessage: Link utili
 msgid "utilityMenu"
-msgstr "Menu di utilità"
+msgstr "Link utili"
 
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Variazione situazione patrimoniale
