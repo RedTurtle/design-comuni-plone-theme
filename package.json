@@ -2,7 +2,7 @@
   "name": "design-comuni-plone-theme",
   "description": "Volto Theme for Italia design guidelines",
   "license": "GPL-v3",
-  "version": "12.0.0-alpha.35",
+  "version": "12.0.0-alpha.36",
   "main": "src/index.js",
   "repository": {
     "type": "git",
@@ -165,7 +165,7 @@
     "volto-subblocks": "2.1.0",
     "volto-subfooter": "3.1.1",
     "volto-subsites": "4.0.2",
-    "volto-venue": "4.1.0",
+    "volto-venue": "4.1.1",
     "webpack-image-resize-loader": "^5.0.0"
   },
   "devDependencies": {
