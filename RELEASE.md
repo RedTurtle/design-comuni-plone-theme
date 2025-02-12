@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (x/x/x)
+
+### Migliorie
+
+- a11y - migliorata l'accessibilità nel blocco Accordion
+
 ## Versione 11.26.5 (06/02/2025)
 
 ### Migliorie
