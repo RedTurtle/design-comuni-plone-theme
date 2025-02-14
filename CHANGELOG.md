@@ -1,3 +1,15 @@
+## [7.34.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.4...v7.34.0) (2025-02-14)
+
+
+### Features
+
+* sorted dates in BandoDates (bandi timeline) ([#874](https://github.com/RedTurtle/design-comuni-plone-theme/issues/874)) ([8014592](https://github.com/RedTurtle/design-comuni-plone-theme/commit/801459241f75171900fd19f6a18e20794ca46ad7))
+
+
+### Maintenance
+
+* updated volto-form-block to send dates with ISO format! ([4ddb7e7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4ddb7e7228dc38b028353181a92b1d472fc8eb71))
+
 ### [7.33.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.3...v7.33.4) (2024-12-18)
 
 
