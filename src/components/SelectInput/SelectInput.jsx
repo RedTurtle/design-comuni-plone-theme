@@ -98,19 +98,18 @@ const messages = defineMessages({
   },
 });
 
-const SelectContainer = injectLazyLibs('reactSelect')(({
-  children,
-  ...props
-}) => {
-  const components = props.reactSelect.components;
-  return (
-    <div>
-      <components.SelectContainer {...props}>
-        {children}
-      </components.SelectContainer>
-    </div>
-  );
-});
+const SelectContainer = injectLazyLibs('reactSelect')(
+  ({ children, ...props }) => {
+    const components = props.reactSelect.components;
+    return (
+      <div>
+        <components.SelectContainer {...props}>
+          {children}
+        </components.SelectContainer>
+      </div>
+    );
+  },
+);
 
 SelectContainer.propTypes = {
   children: PropTypes.node,
@@ -326,6 +325,7 @@ const SelectInput = ({
   const Select = reactSelect.default;
   return (
     <div className="bootstrap-select-wrapper">
+      {label && <label>{label}</label>}
       <Select
         components={{
           MenuList,
