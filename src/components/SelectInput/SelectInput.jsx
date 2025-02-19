@@ -98,18 +98,19 @@ const messages = defineMessages({
   },
 });
 
-const SelectContainer = injectLazyLibs('reactSelect')(
-  ({ children, ...props }) => {
-    const components = props.reactSelect.components;
-    return (
-      <div>
-        <components.SelectContainer {...props}>
-          {children}
-        </components.SelectContainer>
-      </div>
-    );
-  },
-);
+const SelectContainer = injectLazyLibs('reactSelect')(({
+  children,
+  ...props
+}) => {
+  const components = props.reactSelect.components;
+  return (
+    <div>
+      <components.SelectContainer {...props}>
+        {children}
+      </components.SelectContainer>
+    </div>
+  );
+});
 
 SelectContainer.propTypes = {
   children: PropTypes.node,
@@ -325,7 +326,7 @@ const SelectInput = ({
   const Select = reactSelect.default;
   return (
     <div className="bootstrap-select-wrapper">
-      {label && <label>{label}</label>}
+      {label && <label htmlFor={id}>{label}</label>}
       <Select
         components={{
           MenuList,
@@ -347,7 +348,7 @@ const SelectInput = ({
         isMulti={isMulti}
         isClearable={isClearable}
         aria-label={labelDefined}
-        aria-labelledby={labelledby}
+        aria-labelledby={!label ? labelledby : ''}
         aria-live="polite"
         ariaLiveMessages={getSelectAriaLiveMessages(intl)}
         noOptionsMessage={() =>
