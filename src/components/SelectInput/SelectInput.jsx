@@ -348,7 +348,7 @@ const SelectInput = ({
         isMulti={isMulti}
         isClearable={isClearable}
         aria-label={labelDefined}
-        aria-labelledby={!label ? labelledby : null}
+        aria-labelledby={!label ? labelledby : undefined}
         aria-live="polite"
         ariaLiveMessages={getSelectAriaLiveMessages(intl)}
         noOptionsMessage={() =>
