@@ -326,7 +326,7 @@ const SelectInput = ({
   const Select = reactSelect.default;
   return (
     <div className="bootstrap-select-wrapper">
-      {label && <label htmlFor={!labelledby?id:null}>{label}</label>}
+      {label && <label htmlFor={!labelledby ? id : undefined}>{label}</label>}
       <Select
         components={{
           MenuList,
