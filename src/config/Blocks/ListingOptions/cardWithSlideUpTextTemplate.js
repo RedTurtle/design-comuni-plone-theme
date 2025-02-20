@@ -18,7 +18,7 @@ export const addCardWithSlideUpTextTemplateOptions = (
   // 1. clients instructed not to use this variation when data-element is needed
   // 2. planned intervention to change structure of variation to allow use of
   //    data element without wrapping entire card in link
-  // pos = addLighthouseField(schema, intl, pos);
+  pos = addLighthouseField(schema, intl, pos);
 
   pos = addDefaultOptions(schema, formData, intl, pos);
 
