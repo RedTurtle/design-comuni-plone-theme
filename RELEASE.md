@@ -54,6 +54,7 @@
 ### Fix
 
 - Condizione per la Label per i select ripristinata.
+- Sistemata la visualizzazione del sottotitolo nel content-type Luogo (in alcuni casi non si vedeva).
 
 ## Versione 11.26.5 (06/02/2025)
 
