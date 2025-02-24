@@ -53,7 +53,7 @@
 
 ### Fix
 
-- Aggiunto l'id lighthouse ai link della card con testo animato del blocco Elenco
+- Aggiunto correttamente il data-element ai link della card con testo animato del blocco Elenco.
 
 ## Versione 11.26.5 (06/02/2025)
 
