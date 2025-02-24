@@ -45,7 +45,7 @@
 
 ### Migliorie
 
-- a11y - migliorata l'accessibilità nel blocco Accordion
+- Migliorata l'accessibilità del blocco Accordion.
 
 ## Versione 11.26.5 (06/02/2025)
 
