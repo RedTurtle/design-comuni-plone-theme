@@ -20,6 +20,8 @@ import {
   submitFeedback,
   resetSubmitFeedback,
   getFeedbackThreshold,
+  isFeedbackEnabledForRoute,
+  getStaticFeedbackRouteTitle,
 } from 'volto-feedback';
 import cx from 'classnames';
 import AnswersStep from './Steps/AnswersStep';
@@ -234,20 +236,29 @@ const FeedbackForm = ({ title, pathname }) => {
       ...formData,
       ...(captcha && { 'g-recaptcha-response': validToken }),
       answer: getTranslatedQuestion(intl, formData.answer),
+      content:
+        !isFeedbackEnabledForRoute(path) && isCmsUi(path)
+          ? getStaticFeedbackRouteTitle(path)
+          : path,
     };
-    dispatch(submitFeedback(path, data));
+    dispatch(submitFeedback(data));
     resetFormData();
   };
 
+  if (!isFeedbackEnabledForRoute(path)) {
+    return null;
+  }
+  console.table({
+    content:
+      isFeedbackEnabledForRoute(path) && isCmsUi(path)
+        ? getStaticFeedbackRouteTitle(path)
+        : path,
+  });
   let action = path?.length > 1 ? path.replace(/\//g, '') : path;
   if (action?.length > 0) {
     action = action?.replace(/-/g, '_');
   } else {
     action = 'homepage';
-  }
-
-  if (isCmsUi(path)) {
-    return null;
   }
 
   return (

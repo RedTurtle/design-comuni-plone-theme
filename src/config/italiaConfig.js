@@ -81,6 +81,11 @@ const messages = defineMessages({
     id: 'search_brdc',
     defaultMessage: 'Ricerca',
   },
+
+  sitemap_ft: {
+    id: 'sitemap_ft',
+    defaultMessage: 'Sitemap',
+  },
 });
 
 export default function applyConfig(voltoConfig) {
@@ -359,6 +364,18 @@ export default function applyConfig(voltoConfig) {
           step: 1,
           pane: CommentsStep,
         },
+      ],
+      // Enable Feedback component in your CMS/Non content routes
+      feedbackEnabledNonContentRoutes: [
+        ...config.settings['volto-feedback'].feedbackEnabledNonContentRoutes,
+        //  NO because io-cittadino handles those?
+        // {
+        //   path: '/login',
+        //   feedbackTitle: messages.auth_brdc,
+        // },
+        // { path: '/logout', feedbackTitle: messages.auth_brdc },
+        { path: '/sitemap', feedbackTitle: messages.sitemap_ft },
+        { path: '/search', feedbackTitle: messages.search_brdc },
       ],
     },
     videoAllowExternalsDefault: false,
