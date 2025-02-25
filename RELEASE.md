@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Se su un evento si imposta una ricorrenza mensile per eventi che avvengono in uno specifico giorno della settimana, la ricorrenza viene calcolata correttamente.
+
 ## Versione 11.26.5 (06/02/2025)
 
 ### Migliorie
