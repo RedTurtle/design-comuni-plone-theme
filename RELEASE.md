@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Tutti i bottoni della sezione "Accedi al servizio" hanno lo stesso font.
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 11.27.0 (26/02/2025)
 
 ### Migliorie
