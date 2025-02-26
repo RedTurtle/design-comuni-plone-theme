@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- Per caricare documenti per "Dichiarazioni di insussistenza e incompatibilità" e per "Emolumenti a carico della finanza pubblica" è ora possibile caricare anche documenti multipli dalle cartelle contenute nel CT Persona, non solo dai campi specifici.
+
+### Fix
+
+- ...
+
 ## Versione 11.27.0 (26/02/2025)
 
 ### Migliorie
