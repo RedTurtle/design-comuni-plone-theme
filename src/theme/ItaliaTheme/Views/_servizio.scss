@@ -26,8 +26,8 @@
       margin-bottom: 1.2em;
     }
 
-    .richtext-blocks {
-      .draftjs-buttons a {
+    .richtext-blocks.font-serif {
+      a.btn.btn-primary.inline-link {
         font-family: 'Titillium Web';
       }
     }
