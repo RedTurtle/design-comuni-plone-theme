@@ -53,7 +53,8 @@
 
 ### Fix
 
-- ...
+- Per caricare documenti per "Dichiarazioni di insussistenza e incompatibilità" e per "Emolumenti a carico della finanza pubblica" è ora possibile caricare anche documenti multipli dalle cartelle contenute nel CT Persona, non solo dai campi specifici.
+- I campi del CT Servizio - sezione Accedi al Servizio funzionano correttamente.
 
 ## Versione 11.27.0 (26/02/2025)
 
