@@ -83,7 +83,7 @@ const ItaliaTeaserBody = (props) => {
   return (
     <div
       className={cx('block teaser highlitedContent', className, {
-        'public-ui': isEditMode,
+        'public-ui': isEditMode && content,
       })}
       style={style}
     >
