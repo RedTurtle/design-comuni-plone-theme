@@ -77,6 +77,16 @@ const italiaTeaserSchemaEnhancer = ({ schema, FormData, intl }) => {
           ],
         },
       ];
+    else if (curr.id === 'default')
+      return [
+        ...acc,
+        {
+          ...curr,
+          fields: curr.fields.filter(
+            (f) => !['head_title', 'description'].includes(f),
+          ),
+        },
+      ];
     return [...acc, curr];
   }, []);
   schema.fieldsets.push({
@@ -162,6 +172,7 @@ const italiaTeaserSchemaEnhancer = ({ schema, FormData, intl }) => {
     actions: ['left', 'right'],
     default: 'right',
   };
+  delete schema.properties.head_title;
   return schema;
 };
 

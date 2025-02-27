@@ -45,13 +45,13 @@ const alignmentHelper = (align) => {
   const alignment = ALIGNMENTS[align];
   if (alignment === 1) {
     return {
-      imageAlignment: { order: alignment, offset: 0 },
-      contentAlignment: { order: 2, offset: 0 },
+      imageAlignment: { order: alignment, offset: 0, size: 6 },
+      contentAlignment: { order: 2, offset: 0, size: 6 },
     };
   } else if (alignment === 2) {
     return {
-      imageAlignment: { order: alignment, offset: 1 },
-      contentAlignment: { order: 1, offset: 0 },
+      imageAlignment: { order: alignment, offset: 0, size: 6 },
+      contentAlignment: { order: 1, offset: 0, size: 6 },
     };
   }
 };
@@ -107,14 +107,19 @@ const ItaliaTeaserBody = (props) => {
         //       : null
         //   }
         // >
-        <div className={`${data.bg_color ? 'bg-' + data.bg_color : ''}`}>
-          <Row>
+        <div
+          className={`${
+            data.bg_color ? 'bg-' + data.bg_color : ''
+          } d-flex justify-content-center`}
+        >
+          <Row className="w-100">
             {(content.hasPreviewImage || content.image_field || image) && (
               <Col
                 lg={{
-                  size: 6,
+                  // size: 6,
                   ...imageAlignment,
                 }}
+                className="p-0"
               >
                 <Image
                   item={image || content}
@@ -130,7 +135,13 @@ const ItaliaTeaserBody = (props) => {
                 />
               </Col>
             )}
-            <Col lg={{ size: 5, ...contentAlignment }}>
+            <Col
+              lg={{
+                // size: 5,
+                ...contentAlignment,
+              }}
+              className="p-0"
+            >
               <Card>
                 <CardBody className="pb-2">
                   <CardCategory
@@ -148,7 +159,7 @@ const ItaliaTeaserBody = (props) => {
                       condition={!!content['@id']}
                       item={content}
                     >
-                      {data.head_title || content.title}
+                      {data.title || content.title}
                     </ConditionalLink>
                   </CardTitle>
                   {!data.hide_description && (
