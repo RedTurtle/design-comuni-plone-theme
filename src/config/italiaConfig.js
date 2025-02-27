@@ -72,8 +72,8 @@ import {
   FALLBACK_IMAGE_SRC_MAX_W,
 } from 'design-comuni-plone-theme/helpers/images';
 
-const ReleaseLog = loadable(() =>
-  import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
+const ReleaseLog = loadable(
+  () => import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
 );
 
 const messages = defineMessages({
@@ -371,7 +371,8 @@ export default function applyConfig(voltoConfig) {
       ],
       // Enable Feedback component in your CMS/Non content routes
       feedbackEnabledNonContentRoutes: [
-        ...config.settings['volto-feedback'].feedbackEnabledNonContentRoutes,
+        ...(config.settings['volto-feedback']
+          ?.feedbackEnabledNonContentRoutes ?? []),
         {
           path: '/login',
           feedbackTitle: messages.auth_ft,
