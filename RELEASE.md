@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- Nel campo "Assessori di riferimento" nel CT Unità Organizzativa è ora possibile collegare due CT Persona.
+
+### Fix
+
+- ...
+
 ## Versione 11.27.0 (26/02/2025)
 
 ### Migliorie
