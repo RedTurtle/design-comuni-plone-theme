@@ -29,6 +29,8 @@ import CommentsStep from './Steps/CommentsStep';
 import RTRating from './Steps/Commons/Rating';
 import { PropTypes } from 'prop-types';
 
+import 'volto-feedback/components/FeedbackForm/feedback-form.css';
+
 const messages = defineMessages({
   title: {
     id: 'feedback_form_title',
@@ -232,14 +234,17 @@ const FeedbackForm = ({ title, pathname }) => {
   const sendFormData = () => {
     if (invalidForm) return;
     setStep(2);
+    let content =
+      isFeedbackEnabledForRoute(path) && isCmsUi(path)
+        ? getStaticFeedbackRouteTitle(path)
+        : path;
+    if (typeof content === 'object' && content.id)
+      content = intl.formatMessage(content);
     const data = {
       ...formData,
       ...(captcha && { 'g-recaptcha-response': validToken }),
       answer: getTranslatedQuestion(intl, formData.answer),
-      content:
-        !isFeedbackEnabledForRoute(path) && isCmsUi(path)
-          ? getStaticFeedbackRouteTitle(path)
-          : path,
+      content,
     };
     dispatch(submitFeedback(data));
     resetFormData();
@@ -248,12 +253,7 @@ const FeedbackForm = ({ title, pathname }) => {
   if (!isFeedbackEnabledForRoute(path)) {
     return null;
   }
-  console.table({
-    content:
-      isFeedbackEnabledForRoute(path) && isCmsUi(path)
-        ? getStaticFeedbackRouteTitle(path)
-        : path,
-  });
+
   let action = path?.length > 1 ? path.replace(/\//g, '') : path;
   if (action?.length > 0) {
     action = action?.replace(/-/g, '_');

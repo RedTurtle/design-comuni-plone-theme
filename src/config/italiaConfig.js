@@ -81,7 +81,10 @@ const messages = defineMessages({
     id: 'search_brdc',
     defaultMessage: 'Ricerca',
   },
-
+  auth_ft: {
+    id: 'auth_ft',
+    defaultMessage: 'Login/Logout',
+  },
   sitemap_ft: {
     id: 'sitemap_ft',
     defaultMessage: 'Sitemap',
@@ -289,6 +292,7 @@ export default function applyConfig(voltoConfig) {
       },
       enableFeedbackForm: true,
       noFeedbackFormFor: ['ModelloPratica'],
+      enableNoFeedbackFormFor: false,
       enableFeedbackFormCaptcha: false,
       enableVoltoFormBlockCaptcha: true,
       splitMegamenuColumns: true, //se impostato a false, non spezza le colonne con intestazioni nel megamenu
@@ -368,12 +372,11 @@ export default function applyConfig(voltoConfig) {
       // Enable Feedback component in your CMS/Non content routes
       feedbackEnabledNonContentRoutes: [
         ...config.settings['volto-feedback'].feedbackEnabledNonContentRoutes,
-        //  NO because io-cittadino handles those?
-        // {
-        //   path: '/login',
-        //   feedbackTitle: messages.auth_brdc,
-        // },
-        // { path: '/logout', feedbackTitle: messages.auth_brdc },
+        {
+          path: '/login',
+          feedbackTitle: messages.auth_ft,
+        },
+        // { path: '/logout', feedbackTitle: messages.auth_ft },
         { path: '/sitemap', feedbackTitle: messages.sitemap_ft },
         { path: '/search', feedbackTitle: messages.search_brdc },
       ],
