@@ -15,7 +15,6 @@ import { LoginAgidButtons } from 'design-comuni-plone-theme/components/ItaliaThe
 import { Button } from 'design-react-kit';
 import { useLocation } from 'react-router-dom';
 import { getBaseUrl } from '@plone/volto/helpers';
-import { FeedbackForm } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const messages = defineMessages({
   login: {
@@ -65,9 +64,7 @@ const LoginAgid = (props) => {
   return (
     <>
       {showFormLogin ? (
-        <>
-          <Login {...props}></Login>
-        </>
+        <Login {...props}></Login>
       ) : (
         <div id="page-login">
           <Helmet title={intl.formatMessage(messages.login)} />
