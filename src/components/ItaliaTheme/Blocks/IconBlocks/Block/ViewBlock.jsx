@@ -42,7 +42,11 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
           </div>
         )}
 
-        {data.title && <div className="iconblock-title">{data.title}</div>}
+        {data.title && (
+          <div className="iconblock-title">
+            <h3>{data.title}</h3>
+          </div>
+        )}
         {data.text && (
           <div className="iconblock-text">
             <TextBlockView data={{ value: data.text }} />
