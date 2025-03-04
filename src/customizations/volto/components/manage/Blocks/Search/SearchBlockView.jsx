@@ -101,10 +101,6 @@ const SearchBlockView = (props) => {
     dataListingBodyVariation,
   );
 
-  const [defaultListingBodyData, setDefaultListingBodyData] = React.useState(
-    applyDefaults(searchData, root, data.usePloneRanking),
-  );
-
   // in the block edit you can change the used listing block variation,
   // but it's cached here in the state. So we reset it.
   React.useEffect(() => {
@@ -114,6 +110,9 @@ const SearchBlockView = (props) => {
   }, [dataListingBodyVariation, mode]);
 
   const root = useSelector((state) => state.breadcrumbs.root);
+  const [defaultListingBodyData] = React.useState(
+    applyDefaults(searchData, root, data.usePloneRanking),
+  );
   const listingBodyData = applyDefaults(searchData, root, data.usePloneRanking);
 
   const { variations } = config.blocks.blocksConfig.listing;
