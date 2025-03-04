@@ -59,6 +59,7 @@ const IconsBlockView = ({ data, block }) => {
                     key={index}
                     id={id}
                     index={index}
+                    blockHasTitle={!!data.title}
                   />
                 </Col>
               ))}
