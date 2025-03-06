@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (x.x.x)
+
+### Migliorie
+
+- accessibilità: migliorata l'accessibilità per gli elementi di tipo blockquote
+
 ## Versione 11.28.0 (04/03/2025)
 
 ### Migliorie
