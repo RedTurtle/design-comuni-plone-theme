@@ -3,7 +3,6 @@ import BlockquoteMenu from './BlockquoteMenu';
 
 export default function install(config) {
   const { slate } = config.settings;
-  console.log(slate);
 
   (slate.elements.blockquote = ({ children }) => (
     <blockquote>
