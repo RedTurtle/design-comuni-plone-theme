@@ -2,7 +2,6 @@
 body.public-ui.contenttype-lrf {
   .block-editor-title,
   .documentFirstHeading {
-    // display: none;
     @include visually-hidden;
   }
 }
