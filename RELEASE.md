@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Correzione del testo visualizzato sul pulsante "cancella tutti i commenti" per la Customer Satisfaction, migliorando la leggibilità e conformità
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 11.28.0 (04/03/2025)
 
 ### Migliorie
