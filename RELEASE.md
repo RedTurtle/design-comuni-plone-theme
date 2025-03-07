@@ -46,6 +46,9 @@
 ### Migliorie
 
 - Correzione del testo visualizzato sul pulsante "cancella tutti i commenti" per la Customer Satisfaction, migliorando la leggibilità e conformità
+- Migliorata l'accessibilità per il widget dei campi di tipo Slate che salvano i dati in formato HTML
+- accessibilità: migliorata l'accessibilità per gli elementi di tipo blockquote
+- a11y: migliorata la lettura delle timline di date nel dettaglio di Bando e Evento
 
 ### Novità
 
@@ -53,7 +56,7 @@
 
 ### Fix
 
-- ...
+- Il titolo della homepage del sito è ora accessibile.
 
 ## Versione 11.28.0 (04/03/2025)
 
