@@ -3089,6 +3089,11 @@ msgstr "Busca en el sitio"
 msgid "search_adv_filters"
 msgstr "Filtros avanzados"
 
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Aspetto dei risultati
+msgid "search_bandi_variation"
+msgstr ""
+
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Tipologia
 msgid "search_content_types"

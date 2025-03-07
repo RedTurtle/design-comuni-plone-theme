@@ -3095,6 +3095,11 @@ msgstr ""
 msgid "search_adv_filters"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Aspetto dei risultati
+msgid "search_bandi_variation"
+msgstr ""
+
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Tipologia
 msgid "search_content_types"

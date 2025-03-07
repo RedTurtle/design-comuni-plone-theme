@@ -150,6 +150,9 @@ const italiaBlocks = {
       addPermission: [],
       view: [],
     },
+    variations: [
+      /*{'id':'table', name: 'Tabella', component:Component}*/
+    ],
     sidebarTab: 1,
   },
   searchUO: {

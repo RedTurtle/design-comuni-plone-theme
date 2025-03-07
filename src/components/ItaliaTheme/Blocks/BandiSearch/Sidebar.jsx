@@ -12,6 +12,7 @@ import QueryWidget from '@plone/volto/components/manage/Widgets/QueryWidget';
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
 import FiltersConfig from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/BandiSearch/FiltersConfig';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   help: {
@@ -64,7 +65,8 @@ const messages = defineMessages({
   },
   help_filters: {
     id: 'searchBlock_help_filters',
-    defaultMessage: "Questi filtri non verranno visualizzati dall'utente ma consentono di pre filtrare i bandi secondo alcuni criteri.",
+    defaultMessage:
+      "Questi filtri non verranno visualizzati dall'utente ma consentono di pre filtrare i bandi secondo alcuni criteri.",
   },
   text_filter: {
     id: 'searchBlock_text_filter',
@@ -106,9 +108,13 @@ const messages = defineMessages({
     id: 'sort_modified_date',
     defaultMessage: 'Data di modifica',
   },
+  variation: {
+    id: 'search_bandi_variation',
+    defaultMessage: 'Aspetto dei risultati',
+  },
 });
 
-const Sidebar = ({ block, data, onChangeBlock, required }) => {
+const Sidebar = ({ block, data, onChangeBlock, required, ...others }) => {
   const intl = useIntl();
 
   /* Accordions active */
@@ -137,6 +143,15 @@ const Sidebar = ({ block, data, onChangeBlock, required }) => {
     ['effective', intl.formatMessage(messages.sort_effective_date)],
     ['modified', intl.formatMessage(messages.sort_modified_date)],
   ];
+
+  const variations = config.blocks.blocksConfig.searchBandi.variations;
+  let variations_options = null;
+  if (variations.length > 0) {
+    variations_options = [['default', 'Card']];
+    variations.forEach((v) => {
+      variations_options.push([v.id, v.name]);
+    });
+  }
 
   return (
     <Segment.Group raised>
@@ -222,6 +237,7 @@ const Sidebar = ({ block, data, onChangeBlock, required }) => {
           />
         </div>
       </Segment>
+
       <Accordion fluid styled className="form">
         <Accordion.Title
           active={activeAccFilters}
@@ -238,12 +254,17 @@ const Sidebar = ({ block, data, onChangeBlock, required }) => {
         <Accordion.Content active={activeAccFilters}>
           <Segment padded>
             <p className="help">{intl.formatMessage(messages.help_filters)}</p>
-            <QueryWidget block={block} onChange={(id, value)=> {
-              onChangeBlock(block, {
-                ...data,
-                [id]: value,
-              });
-            }} id='defaultQuerystring' value={data.defaultQuerystring} />
+            <QueryWidget
+              block={block}
+              onChange={(id, value) => {
+                onChangeBlock(block, {
+                  ...data,
+                  [id]: value,
+                });
+              }}
+              id="defaultQuerystring"
+              value={data.defaultQuerystring}
+            />
           </Segment>
         </Accordion.Content>
       </Accordion>
@@ -288,6 +309,21 @@ const Sidebar = ({ block, data, onChangeBlock, required }) => {
               ['tertiary', intl.formatMessage(messages.tertiary)],
             ]}
           />
+
+          {variations_options?.length > 0 && (
+            <SelectWidget
+              id="variation"
+              title={intl.formatMessage(messages.variation)}
+              value={data.variation}
+              onChange={(id, value) => {
+                onChangeBlock(block, {
+                  ...data,
+                  variation: value,
+                });
+              }}
+              choices={variations_options}
+            />
+          )}
         </Accordion.Content>
       </Accordion>
     </Segment.Group>
