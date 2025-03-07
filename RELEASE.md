@@ -45,7 +45,7 @@
 
 ### Migliorie
 
-- Migliorata l'accessibilità quando è necessario l'uso di Slate dentro ai form fields.
+- Migliorata l'accessibilità per il widget dei campi di tipo Slate che salvano i dati in formato HTML
 
 ### Novità
 
