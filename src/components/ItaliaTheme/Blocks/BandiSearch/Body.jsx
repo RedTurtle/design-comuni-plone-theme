@@ -155,7 +155,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
   let Variation = BandiInEvidenceTemplate;
   if (data.variation?.length > 0) {
     let filtered_variations =
-      config.blocks.blocksConfig.searchBandi.variations.filter(
+      config.blocks.blocksConfig.searchBandi.results_variations.filter(
         (v) => v.id === data.variation,
       );
     if (filtered_variations.length > 0) {

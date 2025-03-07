@@ -144,7 +144,7 @@ const Sidebar = ({ block, data, onChangeBlock, required, ...others }) => {
     ['modified', intl.formatMessage(messages.sort_modified_date)],
   ];
 
-  const variations = config.blocks.blocksConfig.searchBandi.variations;
+  const variations = config.blocks.blocksConfig.searchBandi.results_variations;
   let variations_options = null;
   if (variations.length > 0) {
     variations_options = [['default', 'Card']];

@@ -150,7 +150,7 @@ const italiaBlocks = {
       addPermission: [],
       view: [],
     },
-    variations: [
+    results_variations: [
       /*{'id':'table', name: 'Tabella', component:Component}*/
     ],
     sidebarTab: 1,
