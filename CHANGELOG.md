@@ -1,3 +1,10 @@
+### [7.35.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.35.0...v7.35.1) (2025-03-07)
+
+
+### Maintenance
+
+* changed variations variable name for bandiSearch to avoid reserved name conflicts with volto ([ddbd2d6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ddbd2d64e721c6e7602bd47f2fe38f227de93865))
+
 ## [7.35.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.34.0...v7.35.0) (2025-03-07)
 
 
