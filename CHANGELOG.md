@@ -1,3 +1,10 @@
+## [7.35.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.34.0...v7.35.0) (2025-03-07)
+
+
+### Features
+
+* enable configurable variations for block 'Ricerca bandi ([691d0a5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/691d0a53a629d496efed457871a4a4bbfa6e5bec))
+
 ## [7.34.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.4...v7.34.0) (2025-02-14)
 
 
