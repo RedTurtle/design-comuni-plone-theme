@@ -41,6 +41,21 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Nel CT Documento ora è possibile gestire anche il CT File tramite taglia/incolla, la dove serva spostare dei File dentro uno specifico documento
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
+
 ## Versione 11.28.0 (04/03/2025)
 
 ### Migliorie
