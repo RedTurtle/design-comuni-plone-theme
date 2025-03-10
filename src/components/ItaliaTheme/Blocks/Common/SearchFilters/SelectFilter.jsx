@@ -49,9 +49,13 @@ const SelectFilter = ({ options, value, id, onChange, placeholder }) => {
     }
   }, []);
 
-  const select_options = options?.vocabulary
-    ? vocabularies?.[options.vocabulary]?.items
-    : selectOptions;
+  const select_options = (
+    options?.vocabulary
+      ? vocabularies?.[options.vocabulary]?.items
+      : selectOptions
+  )?.filter((opt) => {
+    return options?.filterOptions ? options.filterOptions(opt) : true;
+  });
 
   return (
     <div className="mr-lg-3 my-2 my-lg-1 filter-wrapper select-filter">

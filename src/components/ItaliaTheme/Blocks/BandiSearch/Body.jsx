@@ -130,7 +130,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
   };
 
   const pathSearch = data?.location?.length > 0 ? data.location[0]['@id'] : '/';
-  const filtersConfig = FiltersConfig(null, pathSearch);
+  const filtersConfig = FiltersConfig(null, pathSearch, data);
 
   const getInitialState = () => {
     return {
