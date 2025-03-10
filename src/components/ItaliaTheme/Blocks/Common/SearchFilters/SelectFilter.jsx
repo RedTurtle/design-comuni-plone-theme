@@ -67,7 +67,7 @@ const SelectFilter = ({
   let _defaultValue = defaultValue;
   if (typeof defaultValue === 'string') {
     //find relative option
-    const filteredOptionsDefaultV = select_options.filter(
+    const filteredOptionsDefaultV = select_options?.filter(
       (o) => o.value === defaultValue,
     );
     _defaultValue =
