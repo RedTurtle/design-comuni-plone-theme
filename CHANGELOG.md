@@ -1,3 +1,10 @@
+### [7.37.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.37.0...v7.37.1) (2025-03-10)
+
+
+### Bug Fixes
+
+* default value for SelectFilter ([87d1933](https://github.com/RedTurtle/design-comuni-plone-theme/commit/87d193384c5bc461350b436700305dcb00d5949e))
+
 ## [7.37.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.36.0...v7.37.0) (2025-03-10)
 
 
