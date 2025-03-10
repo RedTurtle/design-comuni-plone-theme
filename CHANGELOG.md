@@ -1,3 +1,10 @@
+## [7.36.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.35.1...v7.36.0) (2025-03-10)
+
+
+### Features
+
+* enable filter options in Select widget ([5679dde](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5679dde6f231949480d970b1220548168a4567af))
+
 ### [7.35.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.35.0...v7.35.1) (2025-03-07)
 
 
