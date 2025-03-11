@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Il filtro di testo dei blocchi ricerca è ora dotato di una label che lo rende accessibile.
+
 ## Versione 11.29.0 (07/03/2025)
 
 ### Migliorie
