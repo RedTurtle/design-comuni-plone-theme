@@ -1,6 +1,5 @@
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
-import { v4 as uuid } from 'uuid';
 
 const messages = defineMessages({
   text_filter_placeholder: {
@@ -9,12 +8,12 @@ const messages = defineMessages({
   },
 });
 
-const TextFilter = ({ value, id, onChange, placeholder }) => {
+const TextFilter = ({ value, id, onChange, placeholder, blockID }) => {
   const intl = useIntl();
-  const filterID = uuid();
+
   return (
     <div className="me-lg-3 my-2 my-lg-1 filter-wrapper text-filter">
-      <label for={filterID} className="visually-hidden">
+      <label htmlFor={`${blockID}-${id}`} className="visually-hidden">
         {placeholder}
       </label>
       <input
@@ -27,7 +26,7 @@ const TextFilter = ({ value, id, onChange, placeholder }) => {
           onChange(id, e.target.value ?? '');
         }}
         autocomplete="off"
-        id={filterID}
+        id={`${blockID}-${id}`}
       />
     </div>
   );
