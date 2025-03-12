@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- I bottoni presentano un contrasto corretto quando selezionati, e il bottone "scroll to top" può essere selezionato tramite navigazione da tastiera.
+
 ## Versione 11.29.0 (07/03/2025)
 
 ### Migliorie
