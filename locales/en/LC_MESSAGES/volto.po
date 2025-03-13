@@ -1717,6 +1717,16 @@ msgstr "Tax declaration"
 msgid "dirigente"
 msgstr "Manager"
 
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Mostra subito i risultati
+msgid "display_results_by_default"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Mostra subito i risultati della ricerca, senza che l'utente abbia gia applicato dei filtri
+msgid "display_results_by_default_description"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Documenti
 msgid "documenti"

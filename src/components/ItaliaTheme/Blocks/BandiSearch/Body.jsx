@@ -105,9 +105,14 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
     );
   };
 
-  // Se cambia uno dei tre filtri resetto lo stato dei filtri
+  // Se cambia uno dei tre filtri o una impostazione nella sidebar, resetto lo stato dei filtri
   useEffect(() => {
-    dispatchFilter({ type: 'reset' });
+    if (data.display_results_by_default) {
+      doRequest(1);
+    } else {
+      dispatchFilter({ type: 'reset' });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const filtersReducer = (state = getInitialState(), action) => {
