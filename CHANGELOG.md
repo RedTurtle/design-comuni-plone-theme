@@ -1,3 +1,10 @@
+## [7.38.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.37.1...v7.38.0) (2025-03-13)
+
+
+### Features
+
+* added option to Search Bandi block to default display results ([e4b726c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e4b726cef1aaecbd2ab4bd22688dada52e7a8a64))
+
 ### [7.37.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.37.0...v7.37.1) (2025-03-10)
 
 
