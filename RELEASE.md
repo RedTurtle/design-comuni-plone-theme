@@ -55,6 +55,7 @@
 
 - Nel titolo e nel testo del campo "Data di fine dell'incarico" è stato rimosso il riferimento al nome dell'incarico.
 - Risolto un problema con la validazione dei link inseriti nei campi url (ad es. URL del CT Collegamento).
+- Risolto un problema con il template del blocco Elenco, variazione Card con testo animato.
 
 ## Versione 11.29.0 (07/03/2025)
 
