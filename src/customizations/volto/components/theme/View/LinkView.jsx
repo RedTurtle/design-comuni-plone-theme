@@ -13,7 +13,7 @@ import { Redirect } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import config from '@plone/volto/registry';
 
-const LinkView = ({ token, content }) => {
+const LinkView = ({ content }) => {
   const history = useHistory();
   const userCanEdit = useSelector(
     (state) =>
