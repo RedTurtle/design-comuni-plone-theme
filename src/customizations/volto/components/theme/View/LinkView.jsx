@@ -29,7 +29,7 @@ const LinkView = ({ token, content }) => {
         window.location.href = flattenToAppURL(remoteUrl);
       }
     }
-  }, [content, history, token, userCanEdit]);
+  }, [content, history, userCanEdit]);
   if (__SERVER__ && !userCanEdit && content.remoteUrl) {
     return <Redirect to={content.remoteUrl} />;
   }
