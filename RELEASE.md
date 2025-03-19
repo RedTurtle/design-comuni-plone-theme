@@ -49,7 +49,7 @@
 
 ### Novità
 
-- ...
+- Rimosso il limite al numero di persone collegabili nel campo "Assessori di riferimento" nel CT Unità Organizzativa
 
 ### Fix
 
