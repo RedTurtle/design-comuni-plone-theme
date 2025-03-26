@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- I campi link accettano url contenenti un "/" e altre parti di link dopo un carattere di tipo "#".
+
 ## Versione 11.29.1 (24/03/2025)
 
 ### Migliorie
