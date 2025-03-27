@@ -227,20 +227,16 @@ maintenance:
 name: io-Comune - Il sito AgID per Comuni ed Enti Pubblici
 platforms:
   - web
-releaseDate: '2024-12-17'
+releaseDate: '2025-03-27'
 softwareType: standalone/web
-softwareVersion: 7.33.3
+softwareVersion: 7.38.1
 url: 'https://github.com/italia/design-comuni-plone-theme'
 usedBy:
   - ASP Comuni Modenesi Area Nord
   - Azienda Ospedaliero-Universitaria di Ferrara
-  - Azienda USL di Ferrara
   - Biblioteche Pianura Est
   - ASP Comuni Modenesi Area Nord
-  - Azienda Ospedaliero-Universitaria di Ferrara
-  - Azienda USL di Ferrara
   - Biblioteca comunale di Imola
-  - Biblioteche Pianura Est
   - Camera di Commercio dell'Umbria
   - Camera di Commercio di Reggio Emilia
   - Comune di Bibbiano
