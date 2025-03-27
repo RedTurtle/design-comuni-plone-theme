@@ -1,3 +1,10 @@
+### [7.38.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.38.0...v7.38.1) (2025-03-27)
+
+
+### Bug Fixes
+
+* date timestamp now print minutes instead months ([#928](https://github.com/RedTurtle/design-comuni-plone-theme/issues/928)) ([54f85c2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/54f85c22f0691f9011aa83b0b237c8d804d64752))
+
 ## [7.38.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.37.1...v7.38.0) (2025-03-13)
 
 
