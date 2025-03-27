@@ -57,7 +57,7 @@ const Metadata = ({
         {intl.formatMessage(messages.modified)}
       </p>
       <strong>
-        {viewDate(intl.locale, content.modified, 'DD-MM-Y HH:MM')}
+        {viewDate(intl.locale, content.modified, 'DD-MM-Y HH:mm')}
       </strong>
       {content.rights && (
         <>
