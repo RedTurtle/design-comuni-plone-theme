@@ -6,6 +6,7 @@ import { UniversalLink } from '@plone/volto/components';
 import { Container, Card, CardBody, CardTitle } from 'design-react-kit';
 import {
   Icon,
+  ListingText,
   ListingLinkMore,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
@@ -26,6 +27,7 @@ const AttachmentCardTemplate = ({
   linkTitle,
   linkHref,
   show_pdf_preview,
+  show_description,
   show_block_bg,
   title,
   id_lighthouse,
@@ -64,7 +66,7 @@ const AttachmentCardTemplate = ({
                   : item?.['@id'] + '/@@download/file',
               };
             }
-
+            const listingText = <ListingText item={item} />;
             return (
               <Card
                 className="card card-teaser shadow p-4 mt-3 rounded attachment"
@@ -93,6 +95,9 @@ const AttachmentCardTemplate = ({
                       {item.title || item.id}
                     </UniversalLink>
                   </CardTitle>
+                  {show_description && listingText && (
+                    <div className="bando-description">{listingText}</div>
+                  )}
                 </CardBody>
               </Card>
             );
