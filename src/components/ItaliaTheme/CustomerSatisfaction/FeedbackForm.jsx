@@ -20,6 +20,8 @@ import {
   submitFeedback,
   resetSubmitFeedback,
   getFeedbackThreshold,
+  isFeedbackEnabledForRoute,
+  getStaticFeedbackRouteTitle,
 } from 'volto-feedback';
 import cx from 'classnames';
 import AnswersStep from './Steps/AnswersStep';
@@ -27,10 +29,16 @@ import CommentsStep from './Steps/CommentsStep';
 import RTRating from './Steps/Commons/Rating';
 import { PropTypes } from 'prop-types';
 
+import 'volto-feedback/components/FeedbackForm/feedback-form.css';
+
 const messages = defineMessages({
   title: {
     id: 'feedback_form_title',
     defaultMessage: 'How clear is the information on this page?',
+  },
+  aria_title_feedback: {
+    id: 'feedback_form_aria_title',
+    defaultMessage: 'Feedback form',
   },
   yes: {
     id: 'feedback_form_yes',
@@ -230,14 +238,25 @@ const FeedbackForm = ({ title, pathname }) => {
   const sendFormData = () => {
     if (invalidForm) return;
     setStep(2);
+    let content =
+      isFeedbackEnabledForRoute(path) && isCmsUi(path)
+        ? getStaticFeedbackRouteTitle(path)
+        : path;
+    if (typeof content === 'object' && content.id)
+      content = intl.formatMessage(content);
     const data = {
       ...formData,
       ...(captcha && { 'g-recaptcha-response': validToken }),
       answer: getTranslatedQuestion(intl, formData.answer),
+      content,
     };
-    dispatch(submitFeedback(path, data));
+    dispatch(submitFeedback(data));
     resetFormData();
   };
+
+  if (!isFeedbackEnabledForRoute(path)) {
+    return null;
+  }
 
   let action = path?.length > 1 ? path.replace(/\//g, '') : path;
   if (action?.length > 0) {
@@ -246,16 +265,16 @@ const FeedbackForm = ({ title, pathname }) => {
     action = 'homepage';
   }
 
-  if (isCmsUi(path)) {
-    return null;
-  }
-
   return (
     <section className="bg-primary customer-satisfaction">
       <Container>
         <Row className="d-flex justify-content-center bg-primary">
           <Col className="col-12 col-lg-6">
-            <div className="feedback-form" role="form">
+            <div
+              className="feedback-form"
+              role="form"
+              aria-label={intl.formatMessage(messages.aria_title_feedback)}
+            >
               <Card
                 className="shadow card-wrapper py-4 px-4"
                 data-element="feedback"

@@ -41,6 +41,70 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Nel titolo e nel testo del campo "Data di fine dell'incarico" è stato rimosso il riferimento al nome dell'incarico.
+- Risolto un problema con la validazione dei link inseriti nei campi url (ad es. URL del CT Collegamento).
+
+## Versione 11.29.0 (07/03/2025)
+
+### Migliorie
+
+- Nel CT Documento ora è possibile gestire anche il CT File tramite taglia/incolla, laddove serva spostare dei File dentro uno specifico documento.
+- Correzione del testo visualizzato sul pulsante "Cancella tutti i commenti" per la Customer Satisfaction, migliorando la leggibilità e conformità.
+- Migliorata l'accessibilità per il widget dei campi di tipo Slate che salvano i dati in formato HTML.
+- Migliorata l'accessibilità per gli elementi di tipo blockquote.
+- Migliorata la lettura delle timeline di date nel dettaglio di Bando e Evento.
+
+### Fix
+
+- Sistemata la visualizzazione su mobile dei blocchi elenco inseriti all'interno dei blocchi griglia.
+- Il titolo della homepage del sito è ora accessibile.
+- Risolto un problema con i link all'interno dei blocchi Accordion.
+
+## Versione 11.28.0 (04/03/2025)
+
+### Migliorie
+
+- Tutti i bottoni della sezione "Accedi al servizio" hanno lo stesso font.
+- Nel blocco 'Cerca' ora viene fatto lo scroll automatico nel punto dove iniziano i risultati di ricerca quando vengono modificati i filtri.
+
+### Novità
+
+- Nel campo "Assessori di riferimento" nel CT Unità Organizzativa è ora possibile collegare due CT Persona.
+- Per caricare documenti per "Dichiarazioni di insussistenza e incompatibilità" e per "Emolumenti a carico della finanza pubblica" è ora possibile caricare anche documenti multipli dalle cartelle contenute nel CT Persona, non solo dai campi specifici.
+
+### Fix
+
+- I campi del CT Servizio - sezione Accedi al Servizio funzionano correttamente.
+- Sistemato lo stile del focus nelle select del blocco 'Cerca'.
+
+## Versione 11.27.0 (26/02/2025)
+
+### Migliorie
+
+- Migliorata l'accessibilità del blocco Accordion.
+
+### Fix
+
+- Se su un evento si imposta una ricorrenza mensile per eventi che avvengono in uno specifico giorno della settimana, la ricorrenza viene calcolata correttamente.
+- Aggiunto correttamente il data-element ai link della card con testo animato del blocco Elenco.
+- Aggiunta una nuova condizione per la corretta compilazione dell’attributo **alt** e **title** nelle immagini dei blocchi listing. Ora questi attributi utilizzano correttamente i testi delle didascalie dell'immagine di anteprima o testata se impostati. L'attributo **title** viene valorizzato solo se esiste una didascalia associata all’immagine.
+- Rimosso l’attributo **showTitleAttr** dal componente _ListingImage_ utilizzato nei template del blocco listing: card con immagine, persona, blocco link completo, contenuto in evidenza, gallery a griglia, e in evidenza. Ora gli attributi **title** e **alt** vengono calcolati e impostati direttamente dal componente _ListingImage_.
+- Condizione per la Label per i select ripristinata.
+- Sistemata la visualizzazione del sottotitolo nel content-type Luogo (in alcuni casi non si vedeva).
+- Rimosse le scrollbar dal widget 'Select' dei filtri di ricerca del blocco 'Cerca'.
+
 ## Versione 11.26.5 (06/02/2025)
 
 ### Migliorie
