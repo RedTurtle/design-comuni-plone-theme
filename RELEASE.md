@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Risolti dei problemi nella ricorrenza mensile del widget delle ricorrenze all'interno del CT Evento.
+
 ## Versione 12.0.0 (31/03/2025)
 
 ### Migliorie
