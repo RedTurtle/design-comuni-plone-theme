@@ -41,6 +41,21 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- Aggiunto un nuovo blocco: blocco Teaser. Questo blocco va a sostituire per funzionalità il blocco Contenuto in primo piano, che ora non è più aggiungibile. Consultare il manuale per indicazioni aggiornate.
+
+### Fix
+
+- ...
+  -->
+
 ## Versione 11.29.2 (26/03/2025)
 
 ### Fix
