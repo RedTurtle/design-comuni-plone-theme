@@ -23,7 +23,6 @@ import {
   getComponentWithFallback,
 } from 'design-comuni-plone-theme/helpers';
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
-import { MaybeWrap } from '@plone/volto/components';
 import { UniversalLink, ConditionalLink } from '@plone/volto/components';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
@@ -50,8 +49,8 @@ const alignmentHelper = (align) => {
     };
   } else if (alignment === 2) {
     return {
-      imageAlignment: { order: alignment, offset: 0, size: 6 },
-      contentAlignment: { order: 1, offset: 0, size: 6 },
+      imageAlignment: { order: alignment, offset: 1, size: 6 },
+      contentAlignment: { order: 1, offset: 0, size: 5 },
     };
   }
 };
@@ -61,9 +60,7 @@ const ItaliaTeaserBody = (props) => {
   const intl = useIntl();
   const content = data.href?.[0];
   const image = data.preview_image?.[0];
-  console.log(content);
   const Image = config.getComponent('Image').component;
-  const { openExternalLinkInNewTab } = config.settings;
   const icon = getItemIcon(content);
   const category = getCategory(
     content,
@@ -79,7 +76,6 @@ const ItaliaTeaserBody = (props) => {
   const { imageAlignment, contentAlignment } = alignmentHelper(
     data.styles.align || 'right',
   );
-  console.log('tua mamma puttana', data.href, data.moreHref);
   return (
     <div
       className={cx('block teaser highlitedContent', className, {
@@ -96,30 +92,13 @@ const ItaliaTeaserBody = (props) => {
         </Message>
       )}
       {content && (
-        // <MaybeWrap
-        //   condition={!isEditMode}
-        //   as={UniversalLink}
-        //   href={content['@id']}
-        //   target={
-        //     data.openLinkInNewTab ||
-        //     (openExternalLinkInNewTab && !isInternalURL(content['@id']))
-        //       ? '_blank'
-        //       : null
-        //   }
-        // >
-        <div
-          className={`${
-            data.bg_color ? 'bg-' + data.bg_color : ''
-          } d-flex justify-content-center`}
-        >
-          <Row className="w-100">
+        <div className={`${data.bg_color ? 'bg-' + data.bg_color : ''} `}>
+          <Row>
             {(content.hasPreviewImage || content.image_field || image) && (
               <Col
                 lg={{
-                  // size: 6,
                   ...imageAlignment,
                 }}
-                className="p-0"
               >
                 <Image
                   item={image || content}
@@ -137,10 +116,8 @@ const ItaliaTeaserBody = (props) => {
             )}
             <Col
               lg={{
-                // size: 5,
                 ...contentAlignment,
               }}
-              className="p-0"
             >
               <Card>
                 <CardBody className="pb-2">
@@ -200,7 +177,6 @@ const ItaliaTeaserBody = (props) => {
             </Col>
           </Row>
         </div>
-        // </MaybeWrap>
       )}
     </div>
   );

@@ -76,8 +76,8 @@ const italiaBlocks = {
     group: 'homePage',
     view: HighlightedContentView,
     edit: HighlightedContentEdit,
-    restricted: false,
-    mostUsed: true,
+    restricted: true,
+    mostUsed: false,
     security: {
       addPermission: [],
       view: [],
