@@ -112,6 +112,15 @@ const messages = defineMessages({
     id: 'search_bandi_variation',
     defaultMessage: 'Aspetto dei risultati',
   },
+  display_results_by_default: {
+    id: 'display_results_by_default',
+    defaultMessage: 'Mostra subito i risultati',
+  },
+  display_results_by_default_description: {
+    id: 'display_results_by_default_description',
+    defaultMessage:
+      "Mostra subito i risultati della ricerca, senza che l'utente abbia gia applicato dei filtri",
+  },
 });
 
 const Sidebar = ({ block, data, onChangeBlock, required, ...others }) => {
@@ -202,6 +211,21 @@ const Sidebar = ({ block, data, onChangeBlock, required, ...others }) => {
               });
             }}
             choices={filters}
+          />
+          <CheckboxWidget
+            id="display_results_by_default"
+            title={intl.formatMessage(messages.display_results_by_default)}
+            description={intl.formatMessage(
+              messages.display_results_by_default_description,
+            )}
+            value={
+              data.display_results_by_default
+                ? data.display_results_by_default
+                : false
+            }
+            onChange={(name, checked) => {
+              onChangeBlock(block, { ...data, [name]: checked });
+            }}
           />
           <SelectWidget
             id="sort_on"

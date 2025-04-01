@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-03-07T11:46:58.711Z\n"
+"POT-Creation-Date: 2025-03-13T10:50:39.957Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1717,6 +1717,16 @@ msgstr ""
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Dirigente
 msgid "dirigente"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Mostra subito i risultati
+msgid "display_results_by_default"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Mostra subito i risultati della ricerca, senza che l'utente abbia gia applicato dei filtri
+msgid "display_results_by_default_description"
 msgstr ""
 
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
