@@ -1,3 +1,9 @@
+/*
+Customizations:
+- remove unnecessary hasType check and hasType value in dependencies, supported content type is ALL for our use case
+- fix relative import
+*/
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import DefaultBody from '@plone/volto/components/manage/Blocks/Teaser/DefaultBody';
