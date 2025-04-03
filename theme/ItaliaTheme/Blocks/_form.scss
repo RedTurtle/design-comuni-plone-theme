@@ -275,3 +275,10 @@
 .grecaptcha-badge {
   bottom: 115px !important;
 }
+
+.cms-ui .ui.modal.modal_visibility_conditions {
+  .column.choice-actions {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
