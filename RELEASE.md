@@ -53,7 +53,7 @@
 
 ### Fix
 
-- ...
+- I campi link accettano url contenenti un "/" e altre parti di link dopo un carattere di tipo "#".
 
 ## Versione 11.29.2 (26/03/2025)
 
@@ -61,20 +61,6 @@
 
 - Risolto un problema con l'aggiunta di un blocco di testo attraverso il selettore dei blocchi all'interno dei campi a blocchi delle form dei Content Type che li prevedono.
 - Risolto un problema che impediva la visualizzazione della sidebar dei blocchi all'interno di alcuni campi a blocchi delle form dei Content Type che li prevedono, impattandone l'utilizzo e la modifica.
-
-## Versione X.X.X (dd/mm/yyyy)
-
-### Migliorie
-
-- ...
-
-### Novità
-
-- ...
-
-### Fix
-
-- I campi link accettano url contenenti un "/" e altre parti di link dopo un carattere di tipo "#".
 
 ## Versione 11.29.1 (24/03/2025)
 
