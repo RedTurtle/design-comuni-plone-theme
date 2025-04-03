@@ -40,6 +40,27 @@
 
 - ...
  -->
+ 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Rimosso il limite al numero di persone collegabili nel campo "Assessori di riferimento" nel CT Unità Organizzativa.
+
+### Novità
+
+- Aggiunto alla persona le cartelle "Emolumenti complessivi percepiti a carico della finanza" e "Dichiarazione insussistenza cause di inconferibilità e incompatibilità" per la gestione dei suddetti allegati.
+
+### Fix
+
+- ...
+
+## Versione 11.29.2 (26/03/2025)
+
+### Fix
+
+- Risolto un problema con l'aggiunta di un blocco di testo attraverso il selettore dei blocchi all'interno dei campi a blocchi delle form dei Content Type che li prevedono.
+- Risolto un problema che impediva la visualizzazione della sidebar dei blocchi all'interno di alcuni campi a blocchi delle form dei Content Type che li prevedono, impattandone l'utilizzo e la modifica.
 
 ## Versione X.X.X (dd/mm/yyyy)
 
