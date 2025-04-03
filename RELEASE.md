@@ -40,6 +40,21 @@
 
 - ...
  -->
+ 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Rimosso il limite al numero di persone collegabili nel campo "Assessori di riferimento" nel CT Unità Organizzativa.
+
+### Novità
+
+- Aggiunto alla persona le cartelle "Emolumenti complessivi percepiti a carico della finanza" e "Dichiarazione insussistenza cause di inconferibilità e incompatibilità" per la gestione dei suddetti allegati.
+
+### Fix
+
+- I campi link accettano url contenenti un "/" e altre parti di link dopo un carattere di tipo "#".
+- Il filtro di testo dei blocchi ricerca è ora dotato di una label che lo rende accessibile.
 
 ## Versione X.X.X (dd/mm/yyyy)
 
@@ -70,7 +85,6 @@
 
 ### Fix
 
-- I bottoni presentano un contrasto corretto quando selezionati, e il bottone "scroll to top" può essere selezionato tramite navigazione da tastiera.
 - Nel titolo e nel testo del campo "Data di fine dell'incarico" è stato rimosso il riferimento al nome dell'incarico.
 - Risolto un problema con la validazione dei link inseriti nei campi url (ad es. URL del CT Collegamento).
 - Risolto un problema con il template del blocco Elenco, variazione Card con testo animato.
