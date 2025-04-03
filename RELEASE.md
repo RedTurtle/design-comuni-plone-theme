@@ -40,22 +40,40 @@
 
 - ...
  -->
-
+ 
 ## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Rimosso il limite al numero di persone collegabili nel campo "Assessori di riferimento" nel CT Unità Organizzativa.
+
+### Novità
+
+- Aggiunto alla persona le cartelle "Emolumenti complessivi percepiti a carico della finanza" e "Dichiarazione insussistenza cause di inconferibilità e incompatibilità" per la gestione dei suddetti allegati.
+
+### Fix
+
+- I campi link accettano url contenenti un "/" e altre parti di link dopo un carattere di tipo "#".
+- Il filtro di testo dei blocchi ricerca è ora dotato di una label che lo rende accessibile.
+
+## Versione 11.29.2 (26/03/2025)
+
+### Fix
+
+- Risolto un problema con l'aggiunta di un blocco di testo attraverso il selettore dei blocchi all'interno dei campi a blocchi delle form dei Content Type che li prevedono.
+- Risolto un problema che impediva la visualizzazione della sidebar dei blocchi all'interno di alcuni campi a blocchi delle form dei Content Type che li prevedono, impattandone l'utilizzo e la modifica.
+
+## Versione 11.29.1 (24/03/2025)
 
 ### Migliorie
 
 - Il CT Collegamento identifica meglio i permessi dell'utente e di conseguenza il reindirizzamento automatico è più preciso.
 
-### Novità
-
-- ...
-
 ### Fix
 
-- Il filtro di testo dei blocchi ricerca è ora dotato di una label che lo rende accessibile.
 - Nel titolo e nel testo del campo "Data di fine dell'incarico" è stato rimosso il riferimento al nome dell'incarico.
 - Risolto un problema con la validazione dei link inseriti nei campi url (ad es. URL del CT Collegamento).
+- Risolto un problema con il template del blocco Elenco, variazione Card con testo animato.
 
 ## Versione 11.29.0 (07/03/2025)
 
