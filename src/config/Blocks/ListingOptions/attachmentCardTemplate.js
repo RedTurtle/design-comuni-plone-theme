@@ -26,14 +26,18 @@ export const addAttachmentCardTemplateOptions = (
     schema,
     formData,
     intl,
-    ['show_pdf_preview'],
+    ['show_pdf_preview', 'show_description'],
     {
       show_pdf_preview: {
         default: false,
         label: intl.formatMessage(messages.show_pdf_preview),
         description: intl.formatMessage(messages.show_pdf_desc),
       },
+      show_description: {
+        default: false,
+      },
     },
+
     pos,
   );
   return pos;
