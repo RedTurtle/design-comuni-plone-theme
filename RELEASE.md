@@ -41,11 +41,25 @@
 - ...
  -->
 
-## Versione x.x.x (x/x/x)
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- a11y: Migliorata la lettura dei lettori di schermo della dimensione di un file: il separatore dei decimali è ora una virgola.
 
 ### Novità
 
-- E' ora possibile nascondere il titolo del sito nella testa del sito, spuntando l'apposita opzione del Pannello di contorllo del Sito.
+- È ora possibile nascondere il titolo nella testata del sito, spuntando l'apposita opzione del Pannello di controllo del Sito.
+
+### Fix
+
+- Risolti dei problemi nella ricorrenza mensile del widget delle ricorrenze all'interno del CT Evento.
+
+## Versione 12.0.0 (31/03/2025)
+
+### Migliorie
+
+- Aggiornato l'editor predefinito del sito, ora usa un motore più performante.
 
 ## Versione 11.29.2 (26/03/2025)
 
