@@ -41,11 +41,32 @@
 - ...
  -->
 
-## Versione x.x.x (xx/xx/xxxx)
+## Versione X.X.X (dd/mm/yyyy)
 
 ### Migliorie
 
 - a11y: Migliorata la lettura dei lettori di schermo della dimensione di un file: il separatore dei decimali è ora una virgola.
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
+## Versione 12.0.0 (31/03/2025)
+
+### Migliorie
+
+- Aggiornato l'editor predefinito del sito, ora usa un motore più performante.
+
+## Versione 11.29.2 (26/03/2025)
+
+### Fix
+
+- Risolto un problema con l'aggiunta di un blocco di testo attraverso il selettore dei blocchi all'interno dei campi a blocchi delle form dei Content Type che li prevedono.
+- Risolto un problema che impediva la visualizzazione della sidebar dei blocchi all'interno di alcuni campi a blocchi delle form dei Content Type che li prevedono, impattandone l'utilizzo e la modifica.
 
 ## Versione 11.29.1 (24/03/2025)
 
