@@ -45,7 +45,7 @@
 
 ### Migliorie
 
-- ...
+- a11y: Migliorata la lettura dei lettori di schermo della dimensione di un file: il separatore dei decimali è ora una virgola.
 
 ### Novità
 
