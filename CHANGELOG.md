@@ -1,3 +1,10 @@
+### [7.38.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.38.1...v7.38.2) (2025-04-03)
+
+
+### Bug Fixes
+
+* file icon name for powerpoint icon ([#932](https://github.com/RedTurtle/design-comuni-plone-theme/issues/932)) ([28cbaf8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/28cbaf8ad7c54f2a733963cfea15fdcfe22ccb22))
+
 ### [7.38.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.38.0...v7.38.1) (2025-03-27)
 
 
