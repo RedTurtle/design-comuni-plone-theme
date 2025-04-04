@@ -51,26 +51,13 @@
 
 - Aggiunto alla persona le cartelle "Emolumenti complessivi percepiti a carico della finanza" e "Dichiarazione insussistenza cause di inconferibilità e incompatibilità" per la gestione dei suddetti allegati.
 - È ora possibile nascondere il titolo nella testata del sito, spuntando l'apposita opzione del Pannello di controllo del Sito.
+- Aggiunta una versione aggiornata del blocco Contenuto in primo piano più performante e consistente.
 
 ### Fix
 
 - I campi link accettano url contenenti un "/" e altre parti di link dopo un carattere di tipo "#".
 - Il filtro di testo dei blocchi ricerca è ora dotato di una label che lo rende accessibile.
 - Risolti dei problemi nella ricorrenza mensile del widget delle ricorrenze all'interno del CT Evento.
-
-## Versione X.X.X (dd/mm/yyyy)
-
-### Migliorie
-
-- ...
-
-### Novità
-
-- Aggiunto un nuovo blocco: blocco Teaser. Questo blocco va a sostituire per funzionalità il blocco Contenuto in primo piano, che ora non è più aggiungibile. Consultare il manuale per indicazioni aggiornate.
-
-### Fix
-
-- ...
 
 ## Versione 11.29.2 (26/03/2025)
 
