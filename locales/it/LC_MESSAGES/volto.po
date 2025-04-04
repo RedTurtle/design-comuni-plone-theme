@@ -608,6 +608,11 @@ msgstr "Blocco Tabella"
 msgid "Table color inverted"
 msgstr "Inverti i colori della tabella"
 
+#: overrideTranslations
+# defaultMessage: Teaser
+msgid "Teaser"
+msgstr "Contenuto in primo piano"
+
 #: components/ItaliaTheme/Blocks/Accordion/Block/EditBlock
 #: components/ItaliaTheme/Blocks/ContactsBlock/Block/EditBlock
 #: components/ItaliaTheme/Blocks/IconBlocks/Block/EditBlock

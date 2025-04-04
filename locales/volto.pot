@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-04-01T10:28:21.583Z\n"
+"POT-Creation-Date: 2025-04-04T13:47:56.109Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -608,6 +608,11 @@ msgstr ""
 #: overrideTranslations
 # defaultMessage: Table color inverted
 msgid "Table color inverted"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Teaser
+msgid "Teaser"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Accordion/Block/EditBlock

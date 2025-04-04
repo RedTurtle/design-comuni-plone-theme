@@ -617,6 +617,11 @@ msgstr ""
 msgid "Table color inverted"
 msgstr ""
 
+#: overrideTranslations
+# defaultMessage: Teaser
+msgid "Teaser"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Accordion/Block/EditBlock
 #: components/ItaliaTheme/Blocks/ContactsBlock/Block/EditBlock
 #: components/ItaliaTheme/Blocks/IconBlocks/Block/EditBlock
