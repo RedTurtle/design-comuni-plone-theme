@@ -30,6 +30,12 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+- Sistemato un bug che non restituiva i risultati di ricerca nel blocco di Ricerca Eventi anche se il flag "Di default, mostra i risultati" era attivo. Risolto problema che mandava in errore il blocco alla creazione di esso.
+
+
 ## Versione 7.33.2 (09/12/2024)
 
 ### Fix
