@@ -188,7 +188,11 @@ const Search = () => {
 
   const [customPath] = useState(qs.parse(location.search)?.custom_path ?? '');
 
-  const [sortOn, setSortOn] = useState('relevance');
+  const [sortOn, setSortOn] = useState(
+    qs.parse(location.search)?.sort_on === 'Date'
+      ? 'date'
+      : qs.parse(location.search)?.sort_on ?? 'relevance',
+  );
   const [currentPage, setCurrentPage] = useState(
     qs.parse(location.search)?.b_start
       ? qs.parse(location.search).b_start / config.settings.defaultPageSize + 1
