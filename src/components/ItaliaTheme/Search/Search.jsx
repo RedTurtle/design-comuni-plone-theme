@@ -158,7 +158,7 @@ const messages = defineMessages({
 
 const searchOrderDict = {
   relevance: {},
-  date: {
+  Date: {
     sort_on: 'Date',
   },
   sortable_title: {
@@ -189,9 +189,7 @@ const Search = () => {
   const [customPath] = useState(qs.parse(location.search)?.custom_path ?? '');
 
   const [sortOn, setSortOn] = useState(
-    qs.parse(location.search)?.sort_on === 'Date'
-      ? 'date'
-      : qs.parse(location.search)?.sort_on ?? 'relevance',
+    qs.parse(location.search)?.sort_on ?? 'relevance',
   );
   const [currentPage, setCurrentPage] = useState(
     qs.parse(location.search)?.b_start
@@ -219,7 +217,7 @@ const Search = () => {
       label: intl.formatMessage(messages.sort_on_relevance),
     },
     {
-      value: 'date',
+      value: 'Date',
       label: intl.formatMessage(messages.sort_on_date),
     },
     {
