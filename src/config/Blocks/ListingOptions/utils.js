@@ -71,9 +71,6 @@ export const addSchemaField = (
 ) => {
   let fieldsetIndex = schema.fieldsets.findIndex((x) => x.id === fieldset);
 
-  schema.fieldsets[fieldsetIndex] = {
-    ...schema.fieldsets[fieldsetIndex],
-  };
   // eslint-disable-next-line no-unused-expressions
   schema.fieldsets[fieldsetIndex]?.fields?.splice(position, 0, field);
   schema.properties[field] = { title, description, ...properties };
