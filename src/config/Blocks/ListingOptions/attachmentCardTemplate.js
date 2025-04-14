@@ -33,9 +33,6 @@ export const addAttachmentCardTemplateOptions = (
         label: intl.formatMessage(messages.show_pdf_preview),
         description: intl.formatMessage(messages.show_pdf_desc),
       },
-      show_description: {
-        default: false,
-      },
     },
 
     pos,

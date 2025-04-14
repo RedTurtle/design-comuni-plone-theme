@@ -41,6 +41,14 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+
+### Novità
+
+- Aggiunto nella variazione elenco Allegati il flag "Mostra la descrizione"
+
+
 ## Versione 11.29.2 (26/03/2025)
 
 ### Fix

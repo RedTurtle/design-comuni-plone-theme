@@ -66,7 +66,9 @@ const AttachmentCardTemplate = ({
                   : item?.['@id'] + '/@@download/file',
               };
             }
-            const listingText = <ListingText item={item} />;
+            const listingText = show_description ? (
+              <ListingText item={item} />
+            ) : null;
             return (
               <Card
                 className="card card-teaser shadow p-4 mt-3 rounded attachment"
@@ -95,7 +97,7 @@ const AttachmentCardTemplate = ({
                       {item.title || item.id}
                     </UniversalLink>
                   </CardTitle>
-                  {show_description && listingText && (
+                  {listingText && (
                     <div className="bando-description">{listingText}</div>
                   )}
                 </CardBody>
