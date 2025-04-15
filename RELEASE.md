@@ -48,6 +48,36 @@
 
 - Aggiunto nella variazione elenco Allegati il flag "Mostra la descrizione"
 
+## Versione 12.1.1 (14/04/2025)
+
+### Fix
+
+- Sistemato select di ordinamento dei risultati di ricerca nella pagina di ricerca generale del sito, ora tramite url se si inserisce il parametro sort_on con valore "Date", "relevance" o "sortable_title" risultati di ricerca sono ordinati correttamente.
+
+## Versione 12.1.0 (04/04/2025)
+
+### Migliorie
+
+- Rimosso il limite al numero di persone collegabili nel campo "Assessori di riferimento" nel CT Unità Organizzativa.
+- a11y: Migliorata la lettura dei lettori di schermo della dimensione di un file: il separatore dei decimali è ora una virgola.
+
+### Novità
+
+- Aggiunto alla persona le cartelle "Emolumenti complessivi percepiti a carico della finanza" e "Dichiarazione insussistenza cause di inconferibilità e incompatibilità" per la gestione dei suddetti allegati.
+- È ora possibile nascondere il titolo nella testata del sito, spuntando l'apposita opzione del Pannello di controllo del Sito.
+- Aggiunta una versione aggiornata del blocco Contenuto in primo piano più performante e consistente.
+
+### Fix
+
+- I campi link accettano url contenenti un "/" e altre parti di link dopo un carattere di tipo "#".
+- Il filtro di testo dei blocchi ricerca è ora dotato di una label che lo rende accessibile.
+- Risolti dei problemi nella ricorrenza mensile del widget delle ricorrenze all'interno del CT Evento.
+
+## Versione 12.0.0 (31/03/2025)
+
+### Migliorie
+
+- Aggiornato l'editor predefinito del sito, ora usa un motore più performante.
 
 ## Versione 11.29.2 (26/03/2025)
 
@@ -64,7 +94,6 @@
 
 ### Fix
 
-- I bottoni presentano un contrasto corretto quando selezionati, e il bottone "scroll to top" può essere selezionato tramite navigazione da tastiera.
 - Nel titolo e nel testo del campo "Data di fine dell'incarico" è stato rimosso il riferimento al nome dell'incarico.
 - Risolto un problema con la validazione dei link inseriti nei campi url (ad es. URL del CT Collegamento).
 - Risolto un problema con il template del blocco Elenco, variazione Card con testo animato.
