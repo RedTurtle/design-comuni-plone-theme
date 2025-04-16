@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Sistemato stile del blocco callout per la versione mobile.
+
 ## Versione 12.1.1 (14/04/2025)
 
 ### Fix
