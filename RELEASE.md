@@ -41,6 +41,13 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Sistemato stile del blocco callout per la versione mobile.
+- Uniformato le varie spaziature e allineamenti dei blocchi Elenco.
+
 ## Versione 12.1.1 (14/04/2025)
 
 ### Fix
