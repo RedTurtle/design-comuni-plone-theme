@@ -3856,6 +3856,11 @@ msgstr "Mostrar fecha"
 msgid "show_description"
 msgstr "Mostrar descripción"
 
+#: config/Blocks/ListingOptions/attachmentCardTemplate
+# defaultMessage: Mostra la descrizione degli allegati
+msgid "show_description_attachment"
+msgstr "Mostrar descripción del archivo adjunto"
+
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Mostra il link al dettaglio
 msgid "show_detail_link"

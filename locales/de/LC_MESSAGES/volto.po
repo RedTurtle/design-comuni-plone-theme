@@ -3862,6 +3862,11 @@ msgstr ""
 msgid "show_description"
 msgstr ""
 
+#: config/Blocks/ListingOptions/attachmentCardTemplate
+# defaultMessage: Mostra la descrizione degli allegati
+msgid "show_description_attachment"
+msgstr ""
+
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Mostra il link al dettaglio
 msgid "show_detail_link"

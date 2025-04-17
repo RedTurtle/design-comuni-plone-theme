@@ -43,10 +43,9 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
-
 ### Novità
 
-- Aggiunto nella variazione elenco Allegati il flag "Mostra la descrizione"
+- Aggiunto nella variazione elenco Allegati il flag "Mostra la descrizione degli allegati"
 
 ## Versione 12.1.1 (14/04/2025)
 

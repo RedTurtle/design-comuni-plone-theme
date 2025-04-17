@@ -27,7 +27,7 @@ const AttachmentCardTemplate = ({
   linkTitle,
   linkHref,
   show_pdf_preview,
-  show_description,
+  show_description_attachment,
   show_block_bg,
   title,
   id_lighthouse,
@@ -66,7 +66,7 @@ const AttachmentCardTemplate = ({
                   : item?.['@id'] + '/@@download/file',
               };
             }
-            const listingText = show_description ? (
+            const listingText = show_description_attachment ? (
               <ListingText item={item} />
             ) : null;
             return (

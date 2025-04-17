@@ -3,6 +3,10 @@ import { defineMessages } from 'react-intl';
 import { templatesOptions } from 'design-comuni-plone-theme/config/Blocks/ListingOptions';
 
 const messages = defineMessages({
+  show_description_attachment: {
+    id: 'show_description_attachment',
+    defaultMessage: 'Mostra la descrizione degli allegati',
+  },
   show_pdf_preview: {
     id: 'show_pdf_preview',
     defaultMessage: 'Mostra i PDF in anteprima',
@@ -26,8 +30,12 @@ export const addAttachmentCardTemplateOptions = (
     schema,
     formData,
     intl,
-    ['show_pdf_preview', 'show_description'],
+    ['show_description_attachment', 'show_pdf_preview'],
     {
+      show_description_attachment: {
+        default: false,
+        label: intl.formatMessage(messages.show_description_attachment),
+      },
       show_pdf_preview: {
         default: false,
         label: intl.formatMessage(messages.show_pdf_preview),
