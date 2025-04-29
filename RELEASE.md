@@ -53,7 +53,7 @@
 
 ### Fix
 
-- L’altezza delle immagini all’interno del blocco ‘link solo immagini’ è stata aumentata fino a un massimo di 300px. Ora tutte le card avranno la stessa altezza.
+L'altezza delle immagini all'interno del blocco 'link solo immagini' è stata aumentata e non ha più un limite massimo. Ora tutte le card avranno la stessa altezza.
 
 ## Versione 12.1.1 (14/04/2025)
 
