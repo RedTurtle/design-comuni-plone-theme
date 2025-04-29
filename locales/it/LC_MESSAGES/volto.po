@@ -1303,61 +1303,51 @@ msgstr "Compensi"
 msgid "competenze"
 msgstr "Competenze"
 
-#: helpers/conditions-list-form
 #: overrideTranslations
 # defaultMessage: Contiene
 msgid "condition_contains"
 msgstr "Contiene"
 
-#: helpers/conditions-list-form
 #: overrideTranslations
-# defaultMessage: È maggiore o uguale a
+# defaultMessage: È maggiore o uguale
 msgid "condition_greater_or_equal"
 msgstr "È maggiore o uguale"
 
-#: helpers/conditions-list-form
 #: overrideTranslations
 # defaultMessage: È maggiore di
 msgid "condition_greater_than"
 msgstr "È maggiore di"
 
-#: helpers/conditions-list-form
 #: overrideTranslations
 # defaultMessage: È vuoto
 msgid "condition_is_empty"
 msgstr "È vuoto"
 
-#: helpers/conditions-list-form
 #: overrideTranslations
 # defaultMessage: È uguale a
 msgid "condition_is_equal_to"
 msgstr "È uguale a"
 
-#: helpers/conditions-list-form
 #: overrideTranslations
 # defaultMessage: Non è vuoto
 msgid "condition_is_not_empty"
 msgstr "Non è vuoto"
 
-#: helpers/conditions-list-form
 #: overrideTranslations
 # defaultMessage: Non è uguale a
 msgid "condition_is_not_equal_to"
 msgstr "Non è uguale a"
 
-#: helpers/conditions-list-form
 #: overrideTranslations
-# defaultMessage: È minore o uguale a
+# defaultMessage: È minore o uguale
 msgid "condition_less_or_equal"
 msgstr "È minore o uguale"
 
-#: helpers/conditions-list-form
 #: overrideTranslations
 # defaultMessage: È minore di
 msgid "condition_less_than"
 msgstr "È minore di"
 
-#: helpers/conditions-list-form
 #: overrideTranslations
 # defaultMessage: Non contiene
 msgid "condition_not_contains"

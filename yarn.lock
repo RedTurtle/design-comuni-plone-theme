@@ -10916,7 +10916,7 @@ __metadata:
     volto-customer-satisfaction: 1.0.0
     volto-dropdownmenu: 4.0.0
     volto-editablefooter: 5.0.1
-    volto-form-block: "github:collective/volto-form-block#visible-fields-and-conditions"
+    volto-form-block: 3.12.0
     volto-gdpr-privacy: 2.1.0
     volto-google-analytics: 2.0.0
     volto-multilingual-widget: 3.0.0
@@ -27516,9 +27516,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-form-block@github:collective/volto-form-block#visible-fields-and-conditions":
-  version: 3.11.0
-  resolution: "volto-form-block@https://github.com/collective/volto-form-block.git#commit=ca8d9c1e608d01c6b0517fc8f165bf428ac81a57"
+"volto-form-block@npm:3.12.0":
+  version: 3.12.0
+  resolution: "volto-form-block@npm:3.12.0"
   dependencies:
     "@hcaptcha/react-hcaptcha": ^0.3.6
     file-saver: ^2.0.5
@@ -27527,7 +27527,7 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
     volto-subblocks: ^2.1.0
-  checksum: 4f384233fa84e92def7955e755642d2b867911e75856a9e5f7c54d5cc88a63fde2ae8aeb61fc46cddba1965610c4d267522b80c970aff65f2fa7a9c4255d482e
+  checksum: 878c6f6af889fbf2bcbbd19860a832a2084a680ea452f0f7a13007a5dae4308ce4a3b15a133be1adf44841f908b7068fb59305c9a16d09ae9ac21bad25e7578c
   languageName: node
   linkType: hard
 
