@@ -49,7 +49,7 @@
 
 ### Novità
 
-- ...
+- Blocco form aggiornato, ora è possibile rendere visibili i vari campi solo quando vengono soddisfatte determinate condizioni create dal redattore.
 
 ### Fix
 
