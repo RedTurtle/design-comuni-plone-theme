@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- I titoli degli elementi del blocco Accordion hanno ora tutti lo stesso stile.
+
 ## Versione 11.30.1 (14/04/2025)
 
 ### Fix
