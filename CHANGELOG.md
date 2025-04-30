@@ -1,3 +1,15 @@
+## [7.39.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.38.2...v7.39.0) (2025-04-30)
+
+
+### Features
+
+* added new feature of volto-form-block, conditions to show or hide fields ([#938](https://github.com/RedTurtle/design-comuni-plone-theme/issues/938)) ([b5eea75](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b5eea754ff5da4aca29dd78ed30b5f94d8afc629))
+
+
+### Documentation
+
+* updated RELESE.md ([9bfed4f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9bfed4fe828f4fe453aad5e512d2518f48faa3ec))
+
 ### [7.38.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.38.1...v7.38.2) (2025-04-03)
 
 
