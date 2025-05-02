@@ -5115,6 +5115,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/react-table@npm:8.21.2":
+  version: 8.21.2
+  resolution: "@tanstack/react-table@npm:8.21.2"
+  dependencies:
+    "@tanstack/table-core": 8.21.2
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 3cda97794c10777d48d01de29d087a33edd8af153b3096ac9798c7ebddd31bd34f2b7838ecf4bddaf469d661a777556bd8021e15a41f692eb2e3dd79dd0e5c3b
+  languageName: node
+  linkType: hard
+
+"@tanstack/table-core@npm:8.21.2":
+  version: 8.21.2
+  resolution: "@tanstack/table-core@npm:8.21.2"
+  checksum: 21573388b26cef9c6fcabe3785640c470ea072a6d6ec34543e7eaf54ee742bf5fb12f8a04b172d7e08bd828a35afd7133add5adb4729dd4f94eaf4745b1cab14
+  languageName: node
+  linkType: hard
+
 "@testing-library/cypress@npm:8.0.7":
   version: 8.0.7
   resolution: "@testing-library/cypress@npm:8.0.7"
@@ -10916,7 +10935,7 @@ __metadata:
     volto-customer-satisfaction: 1.0.0
     volto-dropdownmenu: 4.0.0
     volto-editablefooter: 5.0.1
-    volto-form-block: 3.12.0
+    volto-form-block: "github:collective/volto-form-block#datatable"
     volto-gdpr-privacy: 2.1.0
     volto-google-analytics: 2.0.0
     volto-multilingual-widget: 3.0.0
@@ -27516,18 +27535,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-form-block@npm:3.12.0":
+"volto-form-block@github:collective/volto-form-block#datatable":
   version: 3.12.0
-  resolution: "volto-form-block@npm:3.12.0"
+  resolution: "volto-form-block@https://github.com/collective/volto-form-block.git#commit=b438da211242a43d6c3c57b4a80a5d2740fa934e"
   dependencies:
     "@hcaptcha/react-hcaptcha": ^0.3.6
+    "@tanstack/react-table": 8.21.2
     file-saver: ^2.0.5
     react-google-recaptcha-v3: ^1.8.0
     volto-subblocks: ^2.1.0
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
     volto-subblocks: ^2.1.0
-  checksum: 878c6f6af889fbf2bcbbd19860a832a2084a680ea452f0f7a13007a5dae4308ce4a3b15a133be1adf44841f908b7068fb59305c9a16d09ae9ac21bad25e7578c
+  checksum: dce04b9c707904e455ff1ddaf78fe40de65df3bc7e9152ddf167e92de0bfb7ed90a90dfe5dee04d104d8d71e30049991a91d5eebb49712c41de6aa12d643d6c6
   languageName: node
   linkType: hard
 
