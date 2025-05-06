@@ -43,6 +43,10 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Fix
+
+- Sistemato stile del blocco callout per la versione mobile.
+- Uniformato le varie spaziature e allineamenti dei blocchi Elenco.
 ### Migliorie
 
 - ...
