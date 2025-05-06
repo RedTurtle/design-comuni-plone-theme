@@ -80,7 +80,7 @@ const RibbonCardTemplate = (props) => {
           </Row>
         )}
 
-        <Row className={show_block_bg && 'pb-3'}>
+        <Row className={cx({ 'pb-3': show_block_bg })}>
           {items.map((item, index) => {
             const itemTitle = item.title || item.id;
             const showRibbon =
