@@ -49,7 +49,7 @@
 
 ### Novità
 
-- ...
+- Nel blocco form è stata aggiunta la possibilità di consultare i dati compilati di ogni singolo form nella tab "Dati" all'interno del blocco, è possibile inoltre scaricare il file CSV o pulire i dati sempre dalla stessa sezione.
 
 ### Fix
 
