@@ -130,7 +130,6 @@ const PaginaArgomentoView = ({ content }) => {
                 })}
             </div>
           )}
-          {console.log('content', content)}
           {content?.image && (
             <>
               <Portal
