@@ -276,9 +276,22 @@
   bottom: 115px !important;
 }
 
-.cms-ui .ui.modal.modal_visibility_conditions {
-  .column.choice-actions {
-    padding-left: 0;
-    padding-right: 0;
+.cms-ui {
+  .ui.modal.modal_visibility_conditions {
+    .column.choice-actions {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .ui.tab.container {
+    .dt-wrapper {
+      button.ui.button {
+        padding: 1.2rem;
+        width: auto;
+      }
+      .dt-wrapper-table .ui.table {
+        font-size: 0.9rem;
+      }
+    }
   }
 }
