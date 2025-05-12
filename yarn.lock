@@ -10935,7 +10935,7 @@ __metadata:
     volto-customer-satisfaction: 1.0.0
     volto-dropdownmenu: 4.0.0
     volto-editablefooter: 5.0.1
-    volto-form-block: "github:collective/volto-form-block#datatable"
+    volto-form-block: 3.13.0
     volto-gdpr-privacy: 2.1.0
     volto-google-analytics: 2.0.0
     volto-multilingual-widget: 3.0.0
@@ -27535,9 +27535,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-form-block@github:collective/volto-form-block#datatable":
-  version: 3.12.0
-  resolution: "volto-form-block@https://github.com/collective/volto-form-block.git#commit=0dadf23ad2f362cedf500107a53d0efa06276a6e"
+"volto-form-block@npm:3.13.0":
+  version: 3.13.0
+  resolution: "volto-form-block@npm:3.13.0"
   dependencies:
     "@hcaptcha/react-hcaptcha": ^0.3.6
     "@tanstack/react-table": 8.21.2
@@ -27547,7 +27547,7 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
     volto-subblocks: ^2.1.0
-  checksum: 5dbe3757aca0b0573dd0ba4b3b97bae91c7b629f19edc6c6976626d4b3a4fb04ecf78f9443984ce28d9fecb0cf270fc9525fad56d25b8795613cee8804d56a21
+  checksum: 0ce41843f5d2be216271bb074cb9db5b3f6b2948fee573c66025401a976c51a61f82c43aaa86c037fd7d673542dd7a7b8a3d3f072556a7265bec29748f291a3c
   languageName: node
   linkType: hard
 
