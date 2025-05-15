@@ -77,7 +77,7 @@ const messages = defineMessages({
   },
 });
 
-const DefaultFilters = (pathSearch) => {
+const DefaultFilters = (pathSearch, data) => {
   const intl = useIntl();
   moment.locale(intl.locale);
   const subsite = useSelector((state) => state.subsite?.data);
@@ -121,6 +121,9 @@ const DefaultFilters = (pathSearch) => {
               stateSelector: 'searchBandiFilters',
               resultProp: 'tipologie',
             },
+            filterOptions: null /*(opt) => {
+              return true;
+            },*/,
             placeholder: intl.formatMessage(messages.tipologia),
           },
         },

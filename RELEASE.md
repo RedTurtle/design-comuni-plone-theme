@@ -30,6 +30,18 @@
 - ...
 -->
 
+## Versione 7.40.0 (12/05/2025)
+
+### Novità
+
+- Nel blocco form è stata aggiunta la possibilità di consultare i dati compilati di ogni singolo form nella tab "Dati" all'interno del blocco, è possibile inoltre scaricare il file CSV o pulire i dati sempre dalla stessa sezione.
+
+## Versione 7.39.0 (30/04/2025)
+
+### Novità
+
+- Blocco form aggiornato, ora è possibile rendere visibili i vari campi solo quando vengono soddisfatte determinate condizioni create dal redattore.
+
 ## Versione 7.33.2 (09/12/2024)
 
 ### Fix

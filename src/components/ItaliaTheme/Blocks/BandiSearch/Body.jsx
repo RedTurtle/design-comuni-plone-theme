@@ -15,6 +15,7 @@ import BandiInEvidenceTemplate from 'design-comuni-plone-theme/components/Italia
 import { Pagination } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { resetQuerystringResults } from 'design-comuni-plone-theme/actions';
 import FiltersConfig from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/BandiSearch/FiltersConfig';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   find: {
@@ -104,9 +105,14 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
     );
   };
 
-  // Se cambia uno dei tre filtri resetto lo stato dei filtri
+  // Se cambia uno dei tre filtri o una impostazione nella sidebar, resetto lo stato dei filtri
   useEffect(() => {
-    dispatchFilter({ type: 'reset' });
+    if (data.display_results_by_default) {
+      doRequest(1);
+    } else {
+      dispatchFilter({ type: 'reset' });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const filtersReducer = (state = getInitialState(), action) => {
@@ -129,7 +135,8 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
   };
 
   const pathSearch = data?.location?.length > 0 ? data.location[0]['@id'] : '/';
-  const filtersConfig = FiltersConfig(null, pathSearch);
+  const filtersConfig = FiltersConfig(null, pathSearch, data);
+
   const getInitialState = () => {
     return {
       filterOne: filtersConfig[data?.filter_one],
@@ -148,6 +155,17 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
     const current = activePage?.children ?? 1;
     setCurrentPage(current);
     doRequest(current);
+  }
+
+  let Variation = BandiInEvidenceTemplate;
+  if (data.variation?.length > 0) {
+    let filtered_variations =
+      config.blocks.blocksConfig.searchBandi.results_variations.filter(
+        (v) => v.id === data.variation,
+      );
+    if (filtered_variations.length > 0) {
+      Variation = filtered_variations[0].component;
+    }
   }
 
   return filterOne || filterTwo || filterThree ? (
@@ -217,7 +235,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
         items?.length > 0 ? (
           <div className="mt-4" ref={resultsRef} aria-live="polite">
             <div className="block listing">
-              <BandiInEvidenceTemplate items={items} full_width={false} />
+              <Variation items={items} full_width={false} data={data} />
             </div>
             {querystringResults.total > b_size && (
               <Pagination

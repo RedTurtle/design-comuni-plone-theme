@@ -385,7 +385,10 @@ const MegaMenu = ({ item, pathname, closeMenu }) => {
                         <UniversalLink
                           className="list-item medium"
                           item={item.showMoreLink[0]}
-                          onClick={() => setMenuStatus(false)}
+                          onClick={() => {
+                            setMenuStatus(false);
+                            closeMenu();
+                          }}
                           role="menuitem"
                         >
                           <span>

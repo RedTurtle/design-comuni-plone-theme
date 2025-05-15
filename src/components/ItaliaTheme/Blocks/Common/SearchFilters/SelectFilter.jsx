@@ -4,7 +4,14 @@ import { SelectInput } from 'design-comuni-plone-theme/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchContent, getVocabulary } from '@plone/volto/actions';
 
-const SelectFilter = ({ options, value, id, onChange, placeholder }) => {
+const SelectFilter = ({
+  options,
+  value,
+  id,
+  onChange,
+  placeholder,
+  defaultValue,
+}) => {
   const dispatch = useDispatch();
 
   const state = useSelector((state) => {
@@ -49,15 +56,28 @@ const SelectFilter = ({ options, value, id, onChange, placeholder }) => {
     }
   }, []);
 
-  const select_options = options?.vocabulary
-    ? vocabularies?.[options.vocabulary]?.items
-    : selectOptions;
+  const select_options = (
+    options?.vocabulary
+      ? vocabularies?.[options.vocabulary]?.items
+      : selectOptions
+  )?.filter((opt) => {
+    return options?.filterOptions ? options.filterOptions(opt) : true;
+  });
 
+  let _defaultValue = defaultValue;
+  if (typeof defaultValue === 'string') {
+    //find relative option
+    const filteredOptionsDefaultV = select_options?.filter(
+      (o) => o.value === defaultValue,
+    );
+    _defaultValue =
+      filteredOptionsDefaultV?.length > 0 ? filteredOptionsDefaultV : null;
+  }
   return (
     <div className="mr-lg-3 my-2 my-lg-1 filter-wrapper select-filter">
       <SelectInput
         id={id}
-        value={value}
+        value={value ?? _defaultValue}
         placeholder={options?.placeholder}
         onChange={(opt) => {
           onChange(id, opt);

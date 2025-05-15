@@ -1,3 +1,109 @@
+## [7.40.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.39.0...v7.40.0) (2025-05-12)
+
+
+### Features
+
+* updated volto-form-block with datatable new feature ([#948](https://github.com/RedTurtle/design-comuni-plone-theme/issues/948)) ([8d9b680](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8d9b680ae45d7f38c55956bdcb093587f1005320))
+
+
+### Documentation
+
+* updated release.md ([4aba83a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4aba83ad7e88511c16bdae2aeca36f38800dcbf1))
+
+## [7.39.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.38.2...v7.39.0) (2025-04-30)
+
+
+### Features
+
+* added new feature of volto-form-block, conditions to show or hide fields ([#938](https://github.com/RedTurtle/design-comuni-plone-theme/issues/938)) ([b5eea75](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b5eea754ff5da4aca29dd78ed30b5f94d8afc629))
+
+
+### Documentation
+
+* updated RELESE.md ([9bfed4f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9bfed4fe828f4fe453aad5e512d2518f48faa3ec))
+
+### [7.38.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.38.1...v7.38.2) (2025-04-03)
+
+
+### Bug Fixes
+
+* file icon name for powerpoint icon ([#932](https://github.com/RedTurtle/design-comuni-plone-theme/issues/932)) ([28cbaf8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/28cbaf8ad7c54f2a733963cfea15fdcfe22ccb22))
+
+### [7.38.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.38.0...v7.38.1) (2025-03-27)
+
+
+### Bug Fixes
+
+* date timestamp now print minutes instead months ([#928](https://github.com/RedTurtle/design-comuni-plone-theme/issues/928)) ([54f85c2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/54f85c22f0691f9011aa83b0b237c8d804d64752))
+
+## [7.38.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.37.1...v7.38.0) (2025-03-13)
+
+
+### Features
+
+* added option to Search Bandi block to default display results ([e4b726c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e4b726cef1aaecbd2ab4bd22688dada52e7a8a64))
+
+### [7.37.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.37.0...v7.37.1) (2025-03-10)
+
+
+### Bug Fixes
+
+* default value for SelectFilter ([87d1933](https://github.com/RedTurtle/design-comuni-plone-theme/commit/87d193384c5bc461350b436700305dcb00d5949e))
+
+## [7.37.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.36.0...v7.37.0) (2025-03-10)
+
+
+### Features
+
+* defaultValue in SelectFilter ([ea378c5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ea378c5778aacefcaa46de748398d1fa6d4f3af4))
+
+## [7.36.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.35.1...v7.36.0) (2025-03-10)
+
+
+### Features
+
+* enable filter options in Select widget ([5679dde](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5679dde6f231949480d970b1220548168a4567af))
+
+### [7.35.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.35.0...v7.35.1) (2025-03-07)
+
+
+### Maintenance
+
+* changed variations variable name for bandiSearch to avoid reserved name conflicts with volto ([ddbd2d6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ddbd2d64e721c6e7602bd47f2fe38f227de93865))
+
+## [7.35.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.34.0...v7.35.0) (2025-03-07)
+
+
+### Features
+
+* enable configurable variations for block 'Ricerca bandi ([691d0a5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/691d0a53a629d496efed457871a4a4bbfa6e5bec))
+
+## [7.34.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.4...v7.34.0) (2025-02-14)
+
+
+### Features
+
+* sorted dates in BandoDates (bandi timeline) ([#874](https://github.com/RedTurtle/design-comuni-plone-theme/issues/874)) ([8014592](https://github.com/RedTurtle/design-comuni-plone-theme/commit/801459241f75171900fd19f6a18e20794ca46ad7))
+
+
+### Maintenance
+
+* updated volto-form-block to send dates with ISO format! ([4ddb7e7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4ddb7e7228dc38b028353181a92b1d472fc8eb71))
+
+### [7.33.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.3...v7.33.4) (2024-12-18)
+
+
+### Bug Fixes
+
+* default sorting items in Calendar block ([e44e2c3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e44e2c36e9885a3662cc6123f749049b6b6e32de))
+
+### [7.33.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.2...v7.33.3) (2024-12-17)
+
+
+### Bug Fixes
+
+* closeMenu on mobile when click item inside it ([#842](https://github.com/RedTurtle/design-comuni-plone-theme/issues/842)) ([ad8ccd7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ad8ccd7106c7acfa65e12dd12271bd2435cea4b8))
+
 ### [7.33.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.33.1...v7.33.2) (2024-12-09)
 
 
