@@ -55,6 +55,13 @@
 
 - I titoli degli elementi del blocco Accordion hanno ora tutti lo stesso stile.
 
+## Versione 11.30.2 (07/05/2025)
+
+### Fix
+
+- L'altezza delle immagini all'interno del blocco "link solo immagini" è stata aumentata e non ha più un limite massimo. Ora tutte le card avranno la stessa altezza.
+- Sistemati i formati "A pieno schermo" e "Allineamento al centro" del blocco Video, l'immagine in anteprima dava problemi nella visualizzazione di video di Youtube.
+
 ## Versione 11.30.1 (14/04/2025)
 
 ### Fix
