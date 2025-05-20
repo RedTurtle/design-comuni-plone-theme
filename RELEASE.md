@@ -43,10 +43,6 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
-### Fix
-
-- Sistemato stile del blocco callout per la versione mobile.
-- Uniformato le varie spaziature e allineamenti dei blocchi Elenco.
 ### Migliorie
 
 - ...
@@ -58,6 +54,7 @@
 ### Fix
 
 - Corretta la descrizione per la didascalia per l'immagine di testata dentro al CT Argomento.
+- Uniformato le varie spaziature e allineamenti dei blocchi Elenco.
 
 ## Versione 12.1.2 (07/05/2025)
 
