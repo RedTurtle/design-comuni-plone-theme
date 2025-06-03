@@ -32,8 +32,9 @@ const messages = defineMessages({
  * ```
  */
 const CharCounterTextareaWidget = (props) => {
-  const { id, maxLength, value, onChange, placeholder, intl, forceMaxLength } =
-    props;
+  const { id, value, onChange, placeholder, intl } = props;
+  const maxLength = Math.max(props.maxLength || 255, 1);
+  const forceMaxLength = props.forceMaxLength ?? true;
   const [textChar, setTextChar] = useState('');
 
   const lengthError = value?.length > 0 && value.length > maxLength;
@@ -42,19 +43,23 @@ const CharCounterTextareaWidget = (props) => {
       <TextArea
         id={`field-${id}`}
         name={id}
-        value={value?.slice(0, 255) || ''}
+        value={
+          value ? (forceMaxLength ? value.slice(0, maxLength) : value) : ''
+        }
         disabled={props.isDisabled}
         placeholder={placeholder}
         onChange={({ target }) => {
           setTextChar(target.value);
           onChange(
             id,
-            target.value === '' ? undefined : target.value.slice(0, 255),
+            target.value === ''
+              ? undefined
+              : forceMaxLength
+                ? target.value.slice(0, maxLength)
+                : target.value,
           );
         }}
-        // maxLength={(forceMaxLength && maxLength) || null}
       />
-      {/* forceMaxLength &&  */}
       <span
         style={{
           textAlign: 'right',
