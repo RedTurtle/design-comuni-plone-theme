@@ -13,6 +13,10 @@
       display: inline-block;
     }
 
+    .card-with-image-additional-links a {
+      width: auto;
+    }
+
     .img-responsive-wrapper {
       width: inherit;
 
@@ -99,6 +103,7 @@
       .text {
         font-weight: 600;
         letter-spacing: 1px;
+        color: $caption-text;
       }
 
       .data {

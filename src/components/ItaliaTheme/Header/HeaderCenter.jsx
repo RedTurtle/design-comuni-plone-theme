@@ -15,6 +15,7 @@ import {
   HeaderSearch,
   BrandText,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { useHomePath } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   logoSubsiteAlt: {
@@ -30,18 +31,22 @@ const messages = defineMessages({
 const HeaderCenter = () => {
   const intl = useIntl();
   const subsite = useSelector((state) => state.subsite?.data);
+  const logoSubsite = subsite?.subsite_logo && (
+    <figure className="icon">
+      <Logo alt={intl.formatMessage(messages.logoSubsiteAlt)} />
+    </figure>
+  );
+  const homepath = useHomePath();
 
   return (
     <Header small={false} theme="" type="center">
       <HeaderContent>
         <div className="it-brand-wrapper ps-4">
           <UniversalLink
-            href={subsite?.['@id'] ? flattenToAppURL(subsite['@id']) : '/'}
+            href={subsite?.['@id'] ? flattenToAppURL(subsite['@id']) : homepath}
             title={intl.formatMessage(messages.subsiteUniversalLink)}
           >
-            <Logo
-              alt={subsite ? intl.formatMessage(messages.logoSubsiteAlt) : null}
-            />
+            {subsite?.subsite_logo ? logoSubsite : <Logo className="icon" />}
             <BrandText subsite={subsite} />
           </UniversalLink>
         </div>

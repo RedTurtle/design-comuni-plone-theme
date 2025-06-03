@@ -21,23 +21,26 @@ import config from '@plone/volto/registry';
  * @extends Component
  */
 
-const Footer = ({ intl }) => {
+const Footer = () => {
   useGoogleAnalytics();
   const currentContent = useSelector((state) => state.content?.data);
-  let contentType = null;
-  if (currentContent != null) {
-    contentType = currentContent?.['@type'];
-  }
-  // const NoFeedbackFormFor = ['Plone Site', 'LRF', 'Subsite'];
-  const NoFeedbackFormFor = [];
+  const contentType = currentContent ? currentContent['@type'] : null;
+  const noFeedbackFormFor =
+    config.settings.siteProperties.noFeedbackFormFor || [];
+  const showFeedbackForm = config.settings.siteProperties
+    .enableNoFeedbackFormFor
+    ? contentType &&
+      !noFeedbackFormFor.includes(contentType) &&
+      config.settings.siteProperties.enableFeedbackForm
+    : true;
 
-  let content = (
+  return (
     <>
-      {contentType != null &&
-        NoFeedbackFormFor.indexOf(contentType) < 0 &&
-        config.settings.siteProperties.enableFeedbackForm && (
-          <FeedbackForm contentType={contentType} />
-        )}
+      {showFeedbackForm && (
+        <div className="public-ui" id="customer-satisfaction-form">
+          <FeedbackForm />
+        </div>
+      )}
 
       <SubsiteFooter />
       <footer className="it-footer" id="footer">
@@ -46,8 +49,6 @@ const Footer = ({ intl }) => {
       </footer>
     </>
   );
-
-  return content;
 };
 
 export default Footer;

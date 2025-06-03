@@ -28,6 +28,7 @@ import {
   Input,
   Label,
   Toggle,
+  Spinner,
 } from 'design-react-kit';
 
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
@@ -165,6 +166,10 @@ const messages = defineMessages({
     id: 'currentActive',
     defaultMessage: 'attivo',
   },
+  searchLabel: {
+    id: 'searchLabel',
+    defaultMessage: 'Cerca nel sito',
+  },
 });
 
 const SearchModal = ({ closeModal, show }) => {
@@ -173,6 +178,7 @@ const SearchModal = ({ closeModal, show }) => {
   const dispatch = useDispatch();
   const location = useLocation();
 
+  const [redirectingToResults, setRedirectingToResults] = useState(false);
   const [advancedSearch, setAdvancedSearch] = useState(false);
   const [advancedTab, setAdvancedTab] = useState(null);
   const [searchableText, setSearchableText] = useState(
@@ -296,10 +302,11 @@ const SearchModal = ({ closeModal, show }) => {
     setOptions((prevOptions) => ({ ...prevOptions, [optId]: value }));
 
   const submitSearch = () => {
+    setRedirectingToResults(true);
     setAdvancedSearch(false);
-    setTimeout(() => {
-      closeModal();
-    }, 500);
+    // setTimeout(() => {
+    //   closeModal();
+    // }, 500);
   };
 
   const handleEnterSearch = (e) => {
@@ -331,6 +338,7 @@ const SearchModal = ({ closeModal, show }) => {
       id="search-modal"
       isOpen={show}
       toggle={closeModal}
+      role="alertdialog"
     >
       <ModalHeader toggle={closeModal}>
         <Container>
@@ -389,7 +397,11 @@ const SearchModal = ({ closeModal, show }) => {
             <>
               <div className="search-filters search-filters-text">
                 <div className="form-group">
-                  <div className="input-group mb-3">
+                  <div
+                    className="input-group mb-3"
+                    role="search"
+                    aria-label={intl.formatMessage(messages.searchLabel)}
+                  >
                     <input
                       id="search-text"
                       type="text"
@@ -923,6 +935,11 @@ const SearchModal = ({ closeModal, show }) => {
             </div>
           )}
         </Container>
+        {redirectingToResults && (
+          <div className="overlay loading-results">
+            <Spinner active />
+          </div>
+        )}
       </ModalBody>
     </Modal>
   );

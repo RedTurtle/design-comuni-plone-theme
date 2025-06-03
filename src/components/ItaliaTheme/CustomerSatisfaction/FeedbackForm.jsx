@@ -20,6 +20,8 @@ import {
   submitFeedback,
   resetSubmitFeedback,
   getFeedbackThreshold,
+  isFeedbackEnabledForRoute,
+  getStaticFeedbackRouteTitle,
 } from 'volto-feedback';
 import cx from 'classnames';
 import AnswersStep from './Steps/AnswersStep';
@@ -27,14 +29,16 @@ import CommentsStep from './Steps/CommentsStep';
 import RTRating from './Steps/Commons/Rating';
 import { PropTypes } from 'prop-types';
 
+import 'volto-feedback/components/FeedbackForm/feedback-form.css';
+
 const messages = defineMessages({
   title: {
     id: 'feedback_form_title',
     defaultMessage: 'How clear is the information on this page?',
   },
-  service_title: {
-    id: 'feedback_form_title_service',
-    defaultMessage: 'How easy was it to use this service?',
+  aria_title_feedback: {
+    id: 'feedback_form_aria_title',
+    defaultMessage: 'Feedback form',
   },
   yes: {
     id: 'feedback_form_yes',
@@ -120,7 +124,7 @@ const messages = defineMessages({
   },
 });
 
-const FeedbackForm = ({ contentType, pathname }) => {
+const FeedbackForm = ({ title, pathname }) => {
   const intl = useIntl();
   const location = useLocation();
   const path = pathname ?? location.pathname ?? '/';
@@ -234,14 +238,25 @@ const FeedbackForm = ({ contentType, pathname }) => {
   const sendFormData = () => {
     if (invalidForm) return;
     setStep(2);
+    let content =
+      isFeedbackEnabledForRoute(path) && isCmsUi(path)
+        ? getStaticFeedbackRouteTitle(path)
+        : path;
+    if (typeof content === 'object' && content.id)
+      content = intl.formatMessage(content);
     const data = {
       ...formData,
       ...(captcha && { 'g-recaptcha-response': validToken }),
       answer: getTranslatedQuestion(intl, formData.answer),
+      content,
     };
-    dispatch(submitFeedback(path, data));
+    dispatch(submitFeedback(data));
     resetFormData();
   };
+
+  if (!isFeedbackEnabledForRoute(path)) {
+    return null;
+  }
 
   let action = path?.length > 1 ? path.replace(/\//g, '') : path;
   if (action?.length > 0) {
@@ -250,16 +265,16 @@ const FeedbackForm = ({ contentType, pathname }) => {
     action = 'homepage';
   }
 
-  if (isCmsUi(path)) {
-    return null;
-  }
-
   return (
     <section className="bg-primary customer-satisfaction">
       <Container>
         <Row className="d-flex justify-content-center bg-primary">
           <Col className="col-12 col-lg-6">
-            <div className="feedback-form" role="form">
+            <div
+              className="feedback-form"
+              role="form"
+              aria-label={intl.formatMessage(messages.aria_title_feedback)}
+            >
               <Card
                 className="shadow card-wrapper py-4 px-4"
                 data-element="feedback"
@@ -273,18 +288,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
                         className="title-medium-2-semi-bold mb-0"
                         data-element="feedback-title"
                       >
-                        {/* Il validatore a quanto pare fa il check per titolo.
-                            Il titolo da specifiche deve essere diverso per Servizi, ma loro non lo sanno
-                            https://github.com/italia/pa-website-validator/blob/main/src/storage/municipality/feedbackComponentStructure.ts#L8
-                        */}
-                        {/* {contentType === 'Servizio'
-                          ? intl.formatMessage(messages.service_title)
-                          : intl.formatMessage(messages.title)} */}
-
-                        {/* Aggiunto titolo per compatibilità modello AGID di io-cittadino */}
-                        {contentType === 'ModelloPratica'
-                          ? intl.formatMessage(messages.service_title)
-                          : intl.formatMessage(messages.title)}
+                        {title || intl.formatMessage(messages.title)}
                       </h2>
                       <div className="rating-container mb-0">
                         <RTRating
@@ -455,7 +459,7 @@ const FeedbackForm = ({ contentType, pathname }) => {
 };
 
 FeedbackForm.propTypes = {
-  contentType: PropTypes.string,
+  title: PropTypes.string,
   pathname: PropTypes.string,
 };
 

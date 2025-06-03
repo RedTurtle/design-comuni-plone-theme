@@ -21,6 +21,8 @@ export { getItemsByPath } from 'design-comuni-plone-theme/helpers/getItemsByPath
 export {
   viewDate,
   getRealStartAndEndWithRecurrence,
+  getRealEventEnd,
+  getRecurrenceExceptionDates,
 } from 'design-comuni-plone-theme/helpers/dates';
 export { getSiteProperty } from 'design-comuni-plone-theme/helpers/config';
 export { useDebouncedEffect } from 'design-comuni-plone-theme/helpers/debounce';
@@ -52,3 +54,12 @@ export {
 export { commonSearchBlockMessages } from 'design-comuni-plone-theme/helpers/Translations/searchBlockExtendedTranslations';
 
 export { getComponentWithFallback } from 'design-comuni-plone-theme/helpers/registry';
+export {
+  useHomePath,
+  isResolveUID,
+} from 'design-comuni-plone-theme/helpers/url';
+export { usePaginatedItemsSection } from 'design-comuni-plone-theme/helpers/usePaginatedItemsSection.hook.ts';
+export {
+  useFallbackImageSrc,
+  contentHasImage,
+} from 'design-comuni-plone-theme/helpers/images';

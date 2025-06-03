@@ -23,6 +23,7 @@ import {
   getCalendarDate,
   getEventRecurrenceMore,
   getComponentWithFallback,
+  contentHasImage,
 } from 'design-comuni-plone-theme/helpers';
 import {
   ListingCategory,
@@ -52,7 +53,7 @@ const ContentInEvidenceTemplate = (props) => {
 
   return (
     <div className="contentInEvidenceTemplate">
-      <Container>
+      <Container className="px-4 pt-3">
         {title && (
           <Row>
             <Col>
@@ -66,13 +67,7 @@ const ContentInEvidenceTemplate = (props) => {
           const date = getCalendarDate(item, rrule.rrulestr);
           const eventRecurrenceMore = getEventRecurrenceMore(item, isEditMode);
           const listingText = <ListingText item={item} />;
-          const image = ListingImage({
-            item,
-            className: 'item-image',
-            loading: 'eager',
-            sizes: '(max-width:425px) 400px, (max-width:767px) 520px, 650px',
-            showTitleAttr: false,
-          });
+          const hasImage = contentHasImage(item);
           const icon = getItemIcon(item);
           const BlockExtraTags = getComponentWithFallback({
             name: 'BlockExtraTags',
@@ -83,9 +78,16 @@ const ContentInEvidenceTemplate = (props) => {
             item?.parent?.['@type'] === 'Event' && item?.['@type'] === 'Event';
 
           return (
-            <Row key={item['@id']} className="content-in-evidence">
-              {image && (
-                <Col lg={{ size: 6, offset: 1, order: 2 }}>{image}</Col>
+            <Row key={item['@id']} className="content-in-evidence my-3">
+              {hasImage && (
+                <Col lg={{ size: 6, offset: 1, order: 2 }}>
+                  <ListingImage
+                    item={item}
+                    className="item-image"
+                    loading="eager"
+                    sizes="(max-width:425px) 400px, (max-width:767px) 520px, 650px"
+                  />
+                </Col>
               )}
               <Col lg={{ size: 5, order: 1 }}>
                 <Card>

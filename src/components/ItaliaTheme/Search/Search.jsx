@@ -24,7 +24,7 @@ import {
 import { Skiplink, SkiplinkItem } from 'design-react-kit';
 import { useLocation, useHistory } from 'react-router-dom';
 
-import { Helmet, flattenToAppURL } from '@plone/volto/helpers';
+import { Helmet, flattenToAppURL, BodyClass } from '@plone/volto/helpers';
 import { resetSubsite } from 'volto-subsites';
 
 import {
@@ -33,7 +33,6 @@ import {
   SearchTopics,
   SearchCTs,
   Icon,
-  RemoveBodyClass,
   SearchResultItem,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import {
@@ -159,7 +158,7 @@ const messages = defineMessages({
 
 const searchOrderDict = {
   relevance: {},
-  date: {
+  Date: {
     sort_on: 'Date',
   },
   sortable_title: {
@@ -189,7 +188,9 @@ const Search = () => {
 
   const [customPath] = useState(qs.parse(location.search)?.custom_path ?? '');
 
-  const [sortOn, setSortOn] = useState('relevance');
+  const [sortOn, setSortOn] = useState(
+    qs.parse(location.search)?.sort_on ?? 'relevance',
+  );
   const [currentPage, setCurrentPage] = useState(
     qs.parse(location.search)?.b_start
       ? qs.parse(location.search).b_start / config.settings.defaultPageSize + 1
@@ -216,7 +217,7 @@ const Search = () => {
       label: intl.formatMessage(messages.sort_on_relevance),
     },
     {
-      value: 'date',
+      value: 'Date',
       label: intl.formatMessage(messages.sort_on_date),
     },
     {
@@ -727,7 +728,7 @@ const Search = () => {
         </Container>
       </div>
       {/*force remove body class for subsite search pages*/}
-      <RemoveBodyClass className="cms-ui" />
+      <BodyClass className="cms-ui" remove={true} />
     </>
   );
 };

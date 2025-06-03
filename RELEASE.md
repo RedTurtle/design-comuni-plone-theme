@@ -39,13 +39,336 @@
 ### Fix
 
 - ...
--->
+ -->
 
-## Versione x.x.x (dd/MM/yyyy)
+## Versione 11.30.4 (22/05/2025)
+
+### Fix
+
+- Spazio aggiunto tra le righe se la variazione "Blocco link completo" ha più di due righe di contenuto.
+
+## Versione 11.30.3 (20/05/2025)
+
+### Fix
+
+- I titoli degli elementi del blocco Accordion hanno ora tutti lo stesso stile.
+- Corretta la descrizione per la didascalia per l'immagine di testata dentro al CT Argomento.
+- Uniformato le varie spaziature e allineamenti dei blocchi Elenco.
+
+## Versione 11.30.2 (07/05/2025)
+
+### Fix
+
+- L'altezza delle immagini all'interno del blocco "link solo immagini" è stata aumentata e non ha più un limite massimo. Ora tutte le card avranno la stessa altezza.
+- Sistemati i formati "A pieno schermo" e "Allineamento al centro" del blocco Video, l'immagine in anteprima dava problemi nella visualizzazione di video di Youtube.
+
+## Versione 11.30.1 (14/04/2025)
+
+### Fix
+
+- Sistemato select di ordinamento dei risultati di ricerca nella pagina di ricerca generale del sito, ora tramite url se si inserisce il parametro sort_on con valore "Date", "relevance" o "sortable_title" risultati di ricerca sono ordinati correttamente.
+
+## Versione 11.30.0 (04/04/2025)
+
+### Migliorie
+
+- Rimosso il limite al numero di persone collegabili nel campo "Assessori di riferimento" nel CT Unità Organizzativa.
+
+### Novità
+
+- Aggiunto alla persona le cartelle "Emolumenti complessivi percepiti a carico della finanza" e "Dichiarazione insussistenza cause di inconferibilità e incompatibilità" per la gestione dei suddetti allegati.
+- È ora possibile nascondere il titolo nella testata del sito, spuntando l'apposita opzione del Pannello di controllo del Sito.
+- Aggiunta una versione aggiornata del blocco Contenuto in primo piano più performante e consistente.
+
+### Fix
+
+- I campi link accettano url contenenti un "/" e altre parti di link dopo un carattere di tipo "#".
+- Il filtro di testo dei blocchi ricerca è ora dotato di una label che lo rende accessibile.
+- Risolti dei problemi nella ricorrenza mensile del widget delle ricorrenze all'interno del CT Evento.
+
+## Versione 11.29.2 (26/03/2025)
+
+### Fix
+
+- Risolto un problema con l'aggiunta di un blocco di testo attraverso il selettore dei blocchi all'interno dei campi a blocchi delle form dei Content Type che li prevedono.
+- Risolto un problema che impediva la visualizzazione della sidebar dei blocchi all'interno di alcuni campi a blocchi delle form dei Content Type che li prevedono, impattandone l'utilizzo e la modifica.
+
+## Versione 11.29.1 (24/03/2025)
+
+### Migliorie
+
+- Il CT Collegamento identifica meglio i permessi dell'utente e di conseguenza il reindirizzamento automatico è più preciso.
+
+### Fix
+
+- Nel titolo e nel testo del campo "Data di fine dell'incarico" è stato rimosso il riferimento al nome dell'incarico.
+- Risolto un problema con la validazione dei link inseriti nei campi url (ad es. URL del CT Collegamento).
+- Risolto un problema con il template del blocco Elenco, variazione Card con testo animato.
+
+## Versione 11.29.0 (07/03/2025)
+
+### Migliorie
+
+- Nel CT Documento ora è possibile gestire anche il CT File tramite taglia/incolla, laddove serva spostare dei File dentro uno specifico documento.
+- Correzione del testo visualizzato sul pulsante "Cancella tutti i commenti" per la Customer Satisfaction, migliorando la leggibilità e conformità.
+- Migliorata l'accessibilità per il widget dei campi di tipo Slate che salvano i dati in formato HTML.
+- Migliorata l'accessibilità per gli elementi di tipo blockquote.
+- Migliorata la lettura delle timeline di date nel dettaglio di Bando e Evento.
+
+### Fix
+
+- Sistemata la visualizzazione su mobile dei blocchi elenco inseriti all'interno dei blocchi griglia.
+- Il titolo della homepage del sito è ora accessibile.
+- Risolto un problema con i link all'interno dei blocchi Accordion.
+
+## Versione 11.28.0 (04/03/2025)
+
+### Migliorie
+
+- Tutti i bottoni della sezione "Accedi al servizio" hanno lo stesso font.
+- Nel blocco 'Cerca' ora viene fatto lo scroll automatico nel punto dove iniziano i risultati di ricerca quando vengono modificati i filtri.
+
+### Novità
+
+- Nel campo "Assessori di riferimento" nel CT Unità Organizzativa è ora possibile collegare due CT Persona.
+- Per caricare documenti per "Dichiarazioni di insussistenza e incompatibilità" e per "Emolumenti a carico della finanza pubblica" è ora possibile caricare anche documenti multipli dalle cartelle contenute nel CT Persona, non solo dai campi specifici.
+
+### Fix
+
+- I campi del CT Servizio - sezione Accedi al Servizio funzionano correttamente.
+- Sistemato lo stile del focus nelle select del blocco 'Cerca'.
+
+## Versione 11.27.0 (26/02/2025)
+
+### Migliorie
+
+- Migliorata l'accessibilità del blocco Accordion.
+
+### Fix
+
+- Se su un evento si imposta una ricorrenza mensile per eventi che avvengono in uno specifico giorno della settimana, la ricorrenza viene calcolata correttamente.
+- Aggiunto correttamente il data-element ai link della card con testo animato del blocco Elenco.
+- Aggiunta una nuova condizione per la corretta compilazione dell’attributo **alt** e **title** nelle immagini dei blocchi listing. Ora questi attributi utilizzano correttamente i testi delle didascalie dell'immagine di anteprima o testata se impostati. L'attributo **title** viene valorizzato solo se esiste una didascalia associata all’immagine.
+- Rimosso l’attributo **showTitleAttr** dal componente _ListingImage_ utilizzato nei template del blocco listing: card con immagine, persona, blocco link completo, contenuto in evidenza, gallery a griglia, e in evidenza. Ora gli attributi **title** e **alt** vengono calcolati e impostati direttamente dal componente _ListingImage_.
+- Condizione per la Label per i select ripristinata.
+- Sistemata la visualizzazione del sottotitolo nel content-type Luogo (in alcuni casi non si vedeva).
+- Rimosse le scrollbar dal widget 'Select' dei filtri di ricerca del blocco 'Cerca'.
+
+## Versione 11.26.5 (06/02/2025)
+
+### Migliorie
+
+- La sezione contatti del CT Evento è stata riorganizzata per una maggiore chiarezza e coerenza.
+- Nei blocchi elenco, gli stili dei testi nelle card che richiamano un CT persona sono conformi alle card che rappresentano gli altri CT.
+- Impostando degli heading all'interno delle sezioni di testo nei vari CT, gli stili sono ora coerenti con l'ordine corretto dei titoli utilizzati.
+- Aggiornate le traduzioni italiane.
+- Nella sezione Documenti della vista dei tipi di contenuto Documento vengono ora mostrati sia i Moduli che i Collegamenti.
+
+### Fix
+
+- I bottoni del menu nel pannello di controllo dei cookies visualizzano correttamente le icone.
+- Gli argomenti nelle card con immagine sono allineati correttamente.
+- Sistemata l'opzione "Mostra i PDF in anteprima" dell template "Allegati" del blocco elenco, perchè non aveva alcun effetto.
+- Sistemata la visualizzazione del blocco griglia su mobile: disposti verticalmente ogni blocco della griglia
+- Sistemata l'opzione "Mostra i PDF in anteprima" dell template "Allegati" del blocco elenco, perchè non aveva alcun effetto.
+- Sistemata la visualizzazione del blocco griglia su mobile: disposti verticalmente ogni blocco della griglia
+- Sistemata la visualizzazione delle card con immagine in cui il contenuto rappresentato non ha un'immagine da mostrare.
+- Migliorata l'accessibilità in modifica dei blocchi Contatti, Icone, Numeri.
+- Sistemati alcuni problemi di visualizzazione delle card con avatar.
+
+## Versione 11.26.3 (15/01/2025)
+
+### Fix
+
+- E' possibile caricare moduli in maniera massiva nei documenti all'interno delle aree corrette dentro Documenti e Dati > Modulistica
+
+## Versione 11.26.1 (27/12/2024)
+
+### Fix
+
+- Risolto un problema riguardante la visualizzazione delle estensioni dei file quando si utilizza un link ad un documento nei blocchi di testo.
+
+## Versione 11.26.0 (20/12/2024)
+
+### Migliorie
+
+- Se vengono aggiunte o rimosse date dalla ricorrenza di un CT evento, nel sottotitolo viene aggiunta l'indicazione di controllare le eccezioni nella sezione apposita.
+- Il sottotitolo del CT Evento mostra il range di date per tutti gli eventi con ricorrenza o con una data di fine diversa dalla data di inizio.
+- Sistemata l'accessibilità riguardante il focus lato operatore.
+
+### Novità
+
+- Nel blocco 'Cerca' è stata aggiunta l'opzione "Usa l'ordinamento dei risultati di Plone" nella sezione 'Controlli'.
+
+### Fix
+
+- Il menu a tendina da cui è possibile filtrare i luoghi nel blocco Ricerca Eventi mostra tutti i luoghi collegati agli eventi presenti nel percorso selezionato dalla Sidebar, senza limitarne il numero.
+- Risolto un problema con il colore del testo del bottone nell'editor.
+- Rimossa l'opzione non selezionabile "nessun valore" dal widget ricorrenza.
+- La pagina non dà più errore quando si imposta una ricorrenza con impostazione "Termina dopo tot. ricorrenze".
+
+## Versione 11.25.3 (12/12/2024)
+
+### Migliorie
+
+- Aggiornate diverse traduzioni italiane.
+
+## Versione 11.25.1 (28/11/2024)
+
+### Fix
+
+- Aggiustato il collegamento alla UO nella pagina Argomento.
+
+## Versione 11.25.0 (26/11/2024)
+
+### Migliorie
+
+- Rimossa dal CT Evento la data di scadenza del CT per evitare confusione con le date effettive dell'evento
+- Durante la ricerca nel sito dalla popup che compare cliccando sul bottone 'Cerca' nella testa del sito, viene mostrato un loader in overlay durante il caricamento della pagina dei risultati perchè questo potrebbe richiedere un po' di tempo. Prima di questa modifica non era chiaro se la ricerca fosse iniziata.
+- Nel CT Evento per una rassegna, se gli eventi figli hanno una ricorrenza o un periodo di date impostato, il range di date verrà mostrato nella card all'interno dell'evento padre.
+- Se l'url di una immagine è rotto, viene mostrato un avviso al posto dell'immagine rotta.
+
+### Novità
+
+- E' ora possibile decidere se mostrare l'immagine di anteprima per tutte le card nel blocco di ricerca Evento e Unità Organizzativa.
+
+## Versione 11.24.5 (22/11/2024)
+
+### Migliorie
+
+- Inserito messaggio di avviso quando si tenta di caricare un file dalla cartella Modulistica all'interno di un Servizio per segnalare limitazione sull'upload
+
+### Fix
+
+- L'impostazione "Solo cookie tecnici" non causa problemi nell'apertura del cookie banner.
+- [WebKit, Safari, iOS] Risolto un problema di visualizzazione grafica di alcuni bottoni che contengono al loro interno un link ad un sito esterno.
+- Quando un evento ha impostata l'opzione "Tutta la giornata", le date sotto il titolo vengono visualizzate in maniera corretta.
+
+## Versione 11.24.4 (07/11/2024)
+
+### Fix
+
+- Risolto un problema di visualizzazione grafica per il bottone di login all'area personale per alcune specifiche dimensioni di schermi
+
+## Versione 11.24.3 (24/10/2024)
+
+### Migliorie
+
+- Quando viene impostata una ricorrenza, nel tipo di contenuto Evento viene mostrata la data di fine della ricorrenza invece che del singolo evento
+
+### Fix
+
+- Risolto problema con i video esterni che puntano a degli mp4: ora non vengono più erroneamente visti come link interni.
+
+## Versione 11.24.0 (03/10/2024)
+
+### Migliorie
+
+- Cambiato il titolo della sezione "fine incarico" nel CT Persona.
+
+### Fix
+
+- Risolto un problema con il blocco Form che in alcuni casi poteva dare problemi di validazione dei campi di tipo 'testo statico'.
+- Sistemate diverse incogruenze e errori generati dal widget per la creazione delle ricorrenze nel CT Evento.
+
+## Versione 11.23.2 (24/09/2024)
+
+### Migliorie
+
+- Gli utenti SPID vengono ora direttamente rediretti al link finale quando viene utilizzato un CT di tipo Collegamento
+
+### Fix
+
+- L'assegnazione dei ruoli nella vista gruppi funziona correttamente per tutti i gruppi di utenti.
+
+## Versione 11.23.1 (19/09/2024)
+
+### Migliorie
+
+- Il colore del focus da tastiera sugli elementi della pagina è ora bianco e nero per garantire sempre un contrasto ottimale su tutti gli sfondi.
+
+## Versione 11.23.0 (19/09/2024)
+
+### Migliorie
+
+- Migliorato il layout della galleria immagini nei CT.
+- Nel blocco Cerca Evento, nel caso di un Evento Rassegna, tra i risultati vengono ora visualizzati solo gli appuntamenti della rassegna e non l'evento contenitore.
+
+### Novità
+
+- Aggiunto campo per l'inserimento del titolo e della descrizione nel blocco Accordion.
+
+### Fix
+
+- Rimosso il campo "ID lighthouse" dal blocco elenco con variazione Card con Testo Animato perchè entra in contrasto con asseveratore
+
+## Versione 11.22.0 (05/09/2024)
+
+### Migliorie
+
+- Modificata la lista dei Luoghi per filtrare la ricerca degli eventi. Si prendevano tutti i luoghi, ora solo quelli legati agli eventi per avere una lista più corta.
+- Migliorato l'ordinamento della ricerca nel blocco cerca: la ricerca iniziale rispetta l'eventuale selezione del redattore; nel momento in cui si cerca inserendo un testo allora si ordina per ranking.
+- Mostrato il numero di risultati della ricerca nel blocco cerca.
+
+### Novità
+
+- Il blocco Form ha nuove funzionalità come il limite di iscrizioni e la possibilità di impostare un campo come univoco.
+- Aggiunti al CT Persona i campi per la gestione della Trasparenza per allegare i file sugli emolumenti a carico della finanza pubblica e le dichiarazioni di insussistenza e incompatibilità.
+
+### Fix
+
+- Ripristinata l'informazione sull'ultimo aggiornamento nel CT Unità Organizzativa.
+- Risolto un problema con la spaziatura nel testo di presentazione dei risultati di ricerca nel blocco cerca.
+
+## Versione 11.21.0 (14/08/2024)
+
+### Fix
+
+- Le date delle card nella Ricerca Eventi vengono mostrate correttamente come impostate nell'evento.
+
+## Versione 11.20.2 (12/08/2024)
+
+### Fix
+
+- Risolto un problema per cui veniva mostrato temporaneamente un messaggio di errore quando si visitava un indirizzo alternativo creato con lo strumento Gestione URL.
+
+## Versione 11.20.1 (09/08/2024)
+
+### Fix
+
+- Il testo che descrive la ricorrenza mensile è stato corretto per coprire tutti i casi.
+
+## Versione 11.18.2 (25/07/2024)
+
+### Fix
+
+- Nel CT Persona, tutte le sezioni Incarico appaiono ora nel menu
+
+## Versione 11.18.1 (25/07/2024)
+
+### Fix
+
+- Migliorata la visualizzazione delle card risultato nella ricerca Eventi e Unità Organizzativa.
+
+## Versione 11.18.0 (19/07/2024)
+
+### Migliorie
+
+- Aggiunta la paginazione per le card presenti sotto i campi "Sede di" e "Servizi presenti nel luogo", ora verranno mostrati solo 4 elementi alla volta.
+
+## Versione 11.17.0 (16/07/2024)
 
 ### Novità
 
 - Ora il titolo, sottotitolo, favicon, logo e logo del footer sono editabili dal pannello di controllo del Sito. Se non impostati, verranno usati quelli definiti dagli sviluppatori.
+
+### Fix
+
+- Ripristinato il funzionamento del filtro luogo nella ricerca eventi.
+
+### Migliorie
+
+- Viene ora mostrato un errore parlante nel caso si tenti di caricare un file che superi le dimensioni massime consentite, di default 100mb, come già esplicitato sul manuale utente.
 
 ## Versione 11.16.0 (10/07/2024)
 
@@ -97,6 +420,10 @@
 - Il layout delle card con immagini rimane corretto anche selezionando l'opzione "Non alterare le dimensioni naturali dell'immagine".
 
 ## Versione 11.12.5 (30/05/2024)
+
+### Novità
+
+- Per ragioni di conformità alle linee guida Agid, inibito l'inserimento di CT File nella cartella modulistica.
 
 ### Fix
 

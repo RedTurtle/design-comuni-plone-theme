@@ -4,7 +4,11 @@ import { rrulei18n } from '@plone/volto/components/manage/Widgets/RecurrenceWidg
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { Card, CardTitle, CardBody } from 'design-react-kit';
 import PropTypes from 'prop-types';
-import { viewDate } from 'design-comuni-plone-theme/helpers';
+import {
+  viewDate,
+  getRealEventEnd,
+  getRecurrenceExceptionDates,
+} from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   start: {
@@ -46,17 +50,36 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
 
   const rrulestr = rrule.rrulestr;
 
-  let rruleSet = null;
   let recurrenceText = null;
 
+  const rruleSet = content.recurrence
+    ? rrulestr(content?.recurrence, {
+        compatible: true, //If set to True, the parser will operate in RFC-compatible mode. Right now it means that unfold will be turned on, and if a DTSTART is found, it will be considered the first recurrence instance, as documented in the RFC.
+        forceset: true,
+      })
+    : null;
+
+  const actualEndDate = getRealEventEnd(content, rruleSet);
+
   if (content.recurrence) {
+    const isRecurrenceByDay = content.recurrence.includes('BYDAY=+');
+    const isWeekdaySunday = content.recurrence
+      .split('BYDAY')[1]
+      ?.includes('SU');
     const RRULE_LANGUAGE = rrulei18n(intl, moment);
-    rruleSet = rrulestr(content.recurrence, {
-      compatible: true, //If set to True, the parser will operate in RFC-compatible mode. Right now it means that unfold will be turned on, and if a DTSTART is found, it will be considered the first recurrence instance, as documented in the RFC.
-      forceset: true,
-    });
+
     recurrenceText = rruleSet.rrules()[0]?.toText(
       (t) => {
+        if (moment.locale(intl.locale) === 'it' && isRecurrenceByDay) {
+          RRULE_LANGUAGE.strings.th = '°';
+          RRULE_LANGUAGE.strings.nd = '°';
+          RRULE_LANGUAGE.strings.rd = '°';
+          RRULE_LANGUAGE.strings.st = '°';
+
+          if (isWeekdaySunday) {
+            RRULE_LANGUAGE.strings['on the'] = 'la';
+          }
+        }
         return RRULE_LANGUAGE.strings[t];
       },
       RRULE_LANGUAGE,
@@ -64,29 +87,33 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
     );
   }
   const start = viewDate(intl.locale, content.start);
-  const end = viewDate(intl.locale, content.end);
+  // format and save date into new variable depending on recurrence of event
+  const end = viewDate(intl.locale, actualEndDate);
+
   const openEnd = content?.open_end;
   const wholeDay = content?.whole_day;
-  const rdates = rruleSet?.rdates() ?? [];
-  const exdates = rruleSet?.exdates() ?? [];
-  const additionalDates = rdates.reduce((acc, curr) => {
-    const isExdate = exdates.some((b) => b.toString() === curr.toString());
-    if (!isExdate) {
-      return [...acc, curr];
-    } else return acc;
-  }, []);
+
+  const { additionalDates, removedDates } =
+    getRecurrenceExceptionDates(rruleSet);
 
   return content ? (
     <>
       <div className="point-list-wrapper my-4 mb-5">
         <div className="point-list">
-          <div className="point-list-aside point-list-warning">
-            <span className="point-date font-monospace">
+          <div
+            className="point-list-aside point-list-warning"
+            aria-label={start.format('DD MMMM Y')}
+          >
+            <span className="point-date font-monospace" aria-hidden={true}>
               {start.format('DD')}
             </span>
-            <span className="point-month">{start.format('MMMM')}</span>
+            <span className="point-month" aria-hidden={true}>
+              {start.format('MMMM')}
+            </span>
             {!start.isSame(end, 'year') && (
-              <span className="point-month">{start.format('YYYY')}</span>
+              <span className="point-month" aria-hidden={true}>
+                {start.format('YYYY')}
+              </span>
             )}
           </div>
           <div className="point-list-content">
@@ -111,13 +138,20 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         </div>
         {!openEnd && (
           <div className="point-list">
-            <div className="point-list-aside point-list-warning">
-              <span className="point-date font-monospace">
-                {end.format('DD')}
+            <div
+              className="point-list-aside point-list-warning"
+              aria-label={end.format('DD MMMM Y')}
+            >
+              <span className="point-date font-monospace" aria-hidden={true}>
+                {end?.format('DD')}
               </span>
-              <span className="point-month">{end.format('MMMM')}</span>
-              {!end.isSame(start, 'year') && (
-                <span className="point-month">{end.format('YYYY')}</span>
+              <span className="point-month" aria-hidden={true}>
+                {end?.format('MMMM')}
+              </span>
+              {!end?.isSame(start, 'year') && (
+                <span className="point-month" aria-hidden={true}>
+                  {end?.format('YYYY')}
+                </span>
               )}
             </div>
             <div className="point-list-content">
@@ -128,7 +162,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
               >
                 <CardBody tag="div" className={'card-body'}>
                   <CardTitle tag="p">
-                    {!content.whole_day && `${end.format('HH:mm')} - `}
+                    {!content.whole_day && `${end?.format('HH:mm')} - `}
                     {intl.formatMessage(messages.end)}
                   </CardTitle>
                 </CardBody>
@@ -152,10 +186,10 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
           ))}
         </div>
       )}
-      {exdates.length > 0 && (
+      {removedDates.length > 0 && (
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.excluded_dates)}</h5>
-          {exdates.map((exDate) => (
+          {removedDates.map((exDate) => (
             <div className="font-serif">
               {viewDate(intl.locale, exDate, 'dddd DD MMMM YYYY')}
             </div>

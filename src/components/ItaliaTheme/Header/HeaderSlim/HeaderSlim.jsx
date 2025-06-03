@@ -12,31 +12,53 @@ import {
   HeaderContent,
   HeaderRightZone,
 } from 'design-react-kit';
-import { useIntl } from 'react-intl';
-import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
+import { defineMessages, useIntl } from 'react-intl';
+import {
+  getSiteProperty,
+  useHomePath,
+} from 'design-comuni-plone-theme/helpers';
 import { SiteProperty } from 'volto-site-settings';
+
+const messages = defineMessages({
+  utilityMenu: {
+    id: 'utilityMenu',
+    defaultMessage: 'Utility Menu',
+  },
+});
 
 const HeaderSlim = () => {
   const subsite = useSelector((state) => state.subsite?.data);
   const intl = useIntl();
-
+  const homepath = useHomePath();
   const parentSiteURL = subsite
-    ? '/'
+    ? homepath
     : getSiteProperty('parentSiteURL', intl.locale);
 
   const staticParentSiteTitle = getSiteProperty('parentSiteTitle', intl.locale);
 
-  const parentSiteTile = SiteProperty({
+  // TODO DEPRECATED use only SiteProperty
+  const deprecatedSubsiteParentSiteTitle = getSiteProperty(
+    'subsiteParentSiteTitle',
+    intl.locale,
+  );
+
+  const subsiteParentSiteTitle = SiteProperty({
     property: 'site_title',
-    forceValue: subsite ? null : staticParentSiteTitle,
-    defaultValue: staticParentSiteTitle,
+    forceValue: deprecatedSubsiteParentSiteTitle,
+    defaultValue: getSiteProperty('subsiteParentSiteTitle', intl.locale),
     getValue: true,
     getParent: true,
   });
 
   const target = subsite ? null : '_blank';
   return (
-    <Header small={false} theme="" type="slim" role="navigation">
+    <Header
+      small={false}
+      theme=""
+      type="slim"
+      role="navigation"
+      aria-label={intl.formatMessage(messages.utilityMenu)}
+    >
       <HeaderContent>
         <HeaderBrand
           responsive
@@ -44,7 +66,8 @@ const HeaderSlim = () => {
           target={target}
           rel="noopener noreferrer"
         >
-          {parentSiteTile.replaceAll('\\n', ' - ')}
+          {!subsite && staticParentSiteTitle}
+          {subsite && (subsiteParentSiteTitle?.replaceAll('\\n', ' - ') ?? '')}
         </HeaderBrand>
         <HeaderRightZone>
           <HeaderSlimRightZone />

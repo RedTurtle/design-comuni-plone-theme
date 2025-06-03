@@ -36,6 +36,8 @@ const DefaultFilters = () => {
   const intl = useIntl();
   moment.locale(intl.locale);
   const subsite = useSelector((state) => state.subsite?.data);
+  const isSubsiteValid = subsite && Object.keys(subsite).length > 0;
+  const path = isSubsiteValid ? flattenToAppURL(subsite['@id']) : '/';
 
   return {
     text_filter: {
@@ -67,19 +69,10 @@ const DefaultFilters = () => {
           value: null,
           isSearchable: true,
           options: {
-            dispatch: {
-              path: subsite ? flattenToAppURL(subsite['@id']) : '/',
-              portal_types: ['Venue'],
-              fullobjects: 0,
-              b_size: 10000,
-              subrequests_name: 'venues',
-              additionalParams: {
-                sort_on: 'sortable_title',
-                sort_order: 'ascending',
-              },
-            },
+            vocabulary: 'design.plone.vocabularies.event_location',
             placeholder: intl.formatMessage(messages.venues),
           },
+          optionsQuerySize: -1,
         },
       },
       query: (value, query) => {

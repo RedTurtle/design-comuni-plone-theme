@@ -38,10 +38,7 @@ const Navigation = ({ pathname }) => {
   const subsite = useSelector((state) => state.subsite?.data);
   const logoSubsite = subsite?.subsite_logo && (
     <figure className="icon">
-      <img
-        src={flattenToAppURL(subsite.subsite_logo.scales?.mini?.download)}
-        alt="Logo"
-      />
+      <Logo />
     </figure>
   );
 
@@ -96,7 +93,12 @@ const Navigation = ({ pathname }) => {
   return (
     <Header theme="" type="navbar">
       {menu?.length > 0 ? (
-        <HeaderContent expand="lg" megamenu id="navigation">
+        <HeaderContent
+          expand="lg"
+          megamenu
+          id="navigation"
+          aria-label={intl.formatMessage(messages.mainMenu)}
+        >
           <HeaderToggler
             aria-controls="it-navigation-collapse"
             aria-expanded={collapseOpen}
@@ -136,12 +138,21 @@ const Navigation = ({ pathname }) => {
                     }
                     onClick={() => setCollapseOpen(false)}
                   >
-                    {subsite?.subsite_logo ? logoSubsite : <Logo />}
+                    {subsite?.subsite_logo ? (
+                      logoSubsite
+                    ) : (
+                      <Logo className="icon" />
+                    )}
                     <BrandText mobile={true} subsite={subsite} />
                   </UniversalLink>
                 </div>
                 {/* Main Menu */}
-                <Nav data-element="main-navigation" navbar role="menubar">
+                <Nav
+                  data-element="main-navigation"
+                  navbar
+                  role="menubar"
+                  aria-label={intl.formatMessage(messages.mainMenu)}
+                >
                   {menu
                     ?.filter((item) => item.visible)
                     ?.map((item, index) => (
@@ -204,6 +215,10 @@ const messages = defineMessages({
   toggleMenu_close: {
     id: 'toggleMenu_close',
     defaultMessage: 'Chiudi',
+  },
+  mainMenu: {
+    id: 'mainMenu',
+    defaultMessage: 'Menu principale',
   },
 });
 

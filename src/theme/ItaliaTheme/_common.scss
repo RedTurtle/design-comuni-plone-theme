@@ -7,12 +7,13 @@
   button.btn,
   button.rounded-right {
     &:focus {
-      border-color: $focus-outline-color !important;
-      box-shadow:
-        inset 0 1px 0 $focus-outline-color,
-        0 1px 1px $focus-outline-color,
-        0 0 0 0.2rem $focus-outline-color !important;
-      outline: none;
+      outline: 2px solid $outer-focus-outline !important;
+      outline-offset: 2px;
+
+      box-shadow: 0 0 0 2px $inner-focus-shadow !important;
+
+      // adds additional internal black border to buttons
+      border: 2px solid $outer-focus-outline !important;
     }
   }
 
@@ -41,6 +42,9 @@
         0 1px 1px $focus-outline-color,
         0 0 0 0.2rem $focus-outline-color;
       outline: none;
+
+      // adds additional black internal border to tertiary buttons
+      border: 2px solid $focus-outline-color !important;
     }
   }
 

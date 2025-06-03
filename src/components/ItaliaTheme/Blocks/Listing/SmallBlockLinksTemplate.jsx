@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
-
 import {
   ListingLinkMore,
   ListingImage,
@@ -26,7 +25,7 @@ const SmallBlockLinksTemplate = ({
 }) => {
   return (
     <div className="small-block-links">
-      <Container className="px-4">
+      <Container className="px-4 pt-3">
         {title && (
           <Row>
             <Col>
@@ -36,36 +35,33 @@ const SmallBlockLinksTemplate = ({
             </Col>
           </Row>
         )}
-        <Row className="items">
+        <Row className={cx('items', { 'pb-3': show_block_bg })}>
           {items.map((item, index) => {
-            const image = ListingImage({
-              item,
-              sizes: '(max-width:575px) 520px, 200px',
-              style: {},
-              alt: item.title,
-              noWrapLink: true,
-            });
-
             return (
               <Col
                 md="3"
                 key={item['@id']}
-                className="col-item col-sm-4 col-lg-2"
+                className="col-item col-sm-4 col-lg-2 my-3"
               >
-                {image && (
-                  <div className="center-image-card">
-                    <UniversalLink
-                      item={!isEditMode ? item : null}
-                      href={isEditMode ? '#' : ''}
-                      className="img-link"
-                      overrideMarkSpecialLinks={
-                        override_links_accessibility_marker
-                      }
-                    >
-                      {image}
-                    </UniversalLink>
-                  </div>
-                )}
+                <div className="center-image-card">
+                  <UniversalLink
+                    item={!isEditMode ? item : null}
+                    href={isEditMode ? '#' : ''}
+                    className="img-link"
+                    overrideMarkSpecialLinks={
+                      override_links_accessibility_marker
+                    }
+                  >
+                    <ListingImage
+                      item={item}
+                      sizes="(max-width:575px) 520px, 200px"
+                      style={{}}
+                      alt={item.title}
+                      noWrapLink
+                      showDefault
+                    />
+                  </UniversalLink>
+                </div>
               </Col>
             );
           })}

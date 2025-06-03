@@ -71,7 +71,11 @@ const RelatedItems = ({
   }
 
   return related?.length > 0 || children ? (
-    <section id="contenuti-correlati">
+    <section
+      id="contenuti-correlati"
+      role="complementary"
+      aria-label={intl.formatMessage(messages.related_items)}
+    >
       <section className="section section-muted section-inset-shadow">
         <div className="section-content">
           <Container>
@@ -82,7 +86,9 @@ const RelatedItems = ({
                   <>
                     <Row>
                       <Col className="text-center">
-                        <h3>{intl.formatMessage(messages.related_items)}</h3>
+                        <h2 className="h3">
+                          {intl.formatMessage(messages.related_items)} ???
+                        </h2>
                       </Col>
                     </Row>
                     <Row className="mt-lg-4">
@@ -131,7 +137,9 @@ const RelatedItems = ({
               <>
                 <Row>
                   <Col className="text-center">
-                    <h3>{intl.formatMessage(messages.related_items)}</h3>
+                    <h2 className="h3">
+                      {intl.formatMessage(messages.related_items)}
+                    </h2>
                   </Col>
                 </Row>
                 <Row className="mt-lg-4">

@@ -1,6 +1,22 @@
 @import 'cms-ui_container';
 
 body.cms-ui {
+  font-size: 16px;
+  line-height: 1.5;
+
+  :focus:not(.focus--mouse),
+  input[type='checkbox']:focus + label:before {
+    outline: 2px solid #000 !important;
+    outline-offset: 2px;
+    border: none !important;
+    box-shadow: 0 0 0 2px #fff !important;
+  }
+
+  @include media-breakpoint-up(sm) {
+    font-size: 18px;
+    line-height: 1.555;
+  }
+
   .block {
     font-family: $font-family-serif;
 
@@ -79,6 +95,48 @@ body.cms-ui {
     .block.text {
       line-height: 1.555;
     }
+
+    &.table {
+      @import 'bootstrap/scss/reboot';
+      @import 'bootstrap/scss/tables';
+      @import 'bootstrap-italia/src/scss/custom/tables';
+      @import 'extras/tables';
+
+      .ui.table {
+        &.inverted {
+          th,
+          td {
+            border-color: inherit !important;
+          }
+        }
+        thead th {
+          font-weight: bold;
+          text-transform: unset;
+          color: var(--bs-table-color);
+        }
+
+        &.very.basic {
+          &:not(.sortable):not(.striped) {
+            th:first-child,
+            td:first-child {
+              padding-left: 0.5rem;
+            }
+            thead tr:first-child th {
+              padding-top: 0.5rem;
+            }
+            td:last-child {
+              padding-right: 0.5rem;
+            }
+          }
+        }
+
+        &.striped {
+          tbody tr:nth-child(2n) {
+            background-color: rgba(0, 0, 50, 0.02) !important;
+          }
+        }
+      }
+    }
   }
 
   &.contenttype-document,
@@ -91,6 +149,12 @@ body.cms-ui {
         font-weight: 300;
         line-height: 1.555;
       }
+    }
+  }
+
+  .blocks-widget-container {
+    .block.table .toolbar {
+      top: -3.34rem;
     }
   }
 
@@ -230,6 +294,27 @@ body.cms-ui {
     .menu-blocks-container {
       .DraftEditor-editorContainer .public-DraftEditor-content {
         min-height: 19px;
+      }
+    }
+  }
+
+  //cookie banner icons
+  // replaced icon code with left and right as they actually render correctly
+  // and rotated the icon
+  &.section-gdpr-cookie-settings {
+    .cookies-widget .move-buttons {
+      i.icon.arrow.up {
+        transform: rotate(90deg);
+        &::before {
+          content: '\e911';
+        }
+      }
+
+      i.icon.arrow.down {
+        transform: rotate(90deg);
+        &::before {
+          content: '\e905';
+        }
       }
     }
   }
@@ -465,6 +550,14 @@ body.cms-ui {
   }
 
   &.section-controlpanel {
+    .grid > .row {
+      // HIDE TAXONOMIES CONTROLPANEL UNTIL #62343 IS DONE
+      > .column:has([href='/controlpanel/taxonomies']),
+      > .column:has([href='/controlpanel/volto-settings']) {
+        display: none;
+      }
+    }
+
     a {
       text-decoration: none;
 
@@ -477,6 +570,18 @@ body.cms-ui {
       .menu-item-field-additionalClasses {
         display: none;
       }
+    }
+    // Hide the help text in the configuration widgets
+    // TODO this is a temporary fix, a release needs to be made on every add-on to fix this
+    .footer-configuration-widget .stretched.twelve.wide.column:has(p.help),
+    .slimheader-configuration-widget
+      .wrapper:has(label[for='menu-configuration']),
+    .subfooter-configuration-widget
+      .wrapper:has(label[for='menu-configuration']),
+    .secondary-menu-configuration-widget
+      .wrapper:has(label[for='menu-configuration']),
+    .menu-configuration-widget .wrapper:has(label[for='menu-configuration']) {
+      display: none !important;
     }
   }
 

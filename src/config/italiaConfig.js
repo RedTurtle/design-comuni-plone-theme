@@ -8,7 +8,7 @@ import shareSVG from '@plone/volto/icons/share.svg';
 import searchIcon from 'bootstrap-italia/src/svg/it-search.svg';
 import { defineMessages } from 'react-intl';
 import { Search } from '@plone/volto/components';
-
+import ImageWithErrors from 'design-comuni-plone-theme/components/ImageWithErrors/ImageWithErrors';
 import {
   getItaliaListingVariations,
   removeListingVariation,
@@ -67,15 +67,28 @@ import gdprPrivacyPanelConfig from 'design-comuni-plone-theme/config/volto-gdpr-
 import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/schema.js';
 
 import reducers from 'design-comuni-plone-theme/reducers';
+import {
+  FALLBACK_IMAGE_SRC,
+  FALLBACK_IMAGE_SRC_MAX_W,
+} from 'design-comuni-plone-theme/helpers/images';
+import ItaliaTeaserBody from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Teaser/ItaliaTeaserBody';
 
-const ReleaseLog = loadable(() =>
-  import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
+const ReleaseLog = loadable(
+  () => import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
 );
 
 const messages = defineMessages({
   search_brdc: {
     id: 'search_brdc',
     defaultMessage: 'Ricerca',
+  },
+  auth_ft: {
+    id: 'auth_ft',
+    defaultMessage: 'Login/Logout',
+  },
+  sitemap_ft: {
+    id: 'sitemap_ft',
+    defaultMessage: 'Sitemap',
   },
 });
 
@@ -89,6 +102,7 @@ export default function applyConfig(voltoConfig) {
   config.experimental.addBlockButton.enabled = true; //per spostare il bottone di aggiunta dei blocchi in basso, e fare in modo che i bottoni di edit dei blocchi siano usabili anche da tablet/mobile
   config.settings = {
     ...config.settings,
+    contextualVocabularies: config.settings.contextualVocabularies || [],
     openExternalLinkInNewTab: true,
     sentryOptions: (libraries) => ({
       ...voltoSentryOptions(libraries),
@@ -127,6 +141,16 @@ export default function applyConfig(voltoConfig) {
         errorPages: true,
       },
     },
+    /*
+      Set to 100mb in BINARY bytes, not decimal, see volto/helpers/FormValidation.js.validateFileUploadSize error message
+      ...
+      messages.fileTooLarge, {
+        limit: `${Math.floor(
+          config.settings.maxFileUploadSize / 1024 / 1024,
+        )}MB`,
+      }
+    */
+    maxFileUploadSize: 104857600,
     querystringAdditionalFields: [],
     searchBlockTemplates: [
       'simpleCard',
@@ -178,7 +202,7 @@ export default function applyConfig(voltoConfig) {
       ...(config.settings.controlpanels ?? []),
       {
         '@id': '/release-log',
-        group: 'Generali',
+        group: 'General',
         title: 'Novità ultimi rilasci',
         id: 'release-log',
       },
@@ -268,12 +292,17 @@ export default function applyConfig(voltoConfig) {
         ],
       },
       enableFeedbackForm: true,
+      noFeedbackFormFor: ['ModelloPratica'],
+      enableNoFeedbackFormFor: false,
       enableFeedbackFormCaptcha: false,
       enableVoltoFormBlockCaptcha: true,
       splitMegamenuColumns: true, //se impostato a false, non spezza le colonne con intestazioni nel megamenu
       footerNavigationDepth: 2, //valori possibili: [1,2]. Se impostato ad 1 non verranno mostrati nel footer i link agli elementi contenuti nelle sezioni di primo livello.
       markSpecialLinks: true, // se impostato a false, non marca con icona i link esterni
       markFooterLinks: true, // se impostato a true, viene aggiunta un'icona ai link del footer per renderli riconoscibili
+      showContentDateInListingFor: ['Modulo', 'Documento'], // elenco dei content types per i quali mostrare la data di pubblicazione/modifica in listing
+      fallbackImageSrc: FALLBACK_IMAGE_SRC,
+      fallbackImageSrcMaxW: FALLBACK_IMAGE_SRC_MAX_W,
     },
     apiExpanders: [
       ...config.settings.apiExpanders,
@@ -305,21 +334,6 @@ export default function applyConfig(voltoConfig) {
         component: SiteSettingsExtras,
       },
     ],
-    maxFileUploadSize: null,
-    'volto-blocks-widget': {
-      allowedBlocks: [
-        ...(config.settings['volto-blocks-widget']?.allowedBlocks ?? []).filter(
-          (block) => block !== 'maps',
-        ),
-        'break',
-        'testo_riquadro_semplice',
-        'testo_riquadro_immagine',
-        'rssBlock',
-        //se si aggiunge un nuovo blocco, verificare che in edit non ci siano bottoni che provocano il submit della form. Se succede, gestirli con e.prevenDefault() e.stopPropagation().
-      ],
-
-      showRestricted: false,
-    },
 
     'volto-gdpr-privacy': {
       ...config.settings['volto-gdpr-privacy'],
@@ -342,9 +356,39 @@ export default function applyConfig(voltoConfig) {
           pane: CommentsStep,
         },
       ],
+      // Enable Feedback component in your CMS/Non content routes
+      feedbackEnabledNonContentRoutes: [
+        ...(config.settings['volto-feedback']
+          ?.feedbackEnabledNonContentRoutes ?? []),
+        {
+          path: '/login',
+          feedbackTitle: messages.auth_ft,
+        },
+        // { path: '/logout', feedbackTitle: messages.auth_ft },
+        { path: '/sitemap', feedbackTitle: messages.sitemap_ft },
+        { path: '/search', feedbackTitle: messages.search_brdc },
+      ],
     },
     videoAllowExternalsDefault: false,
     showTrasparenzaFields: false,
+  };
+  // Moved outside as config.settings.defaultBlockType keeps default value (slate) until object spread is concluded
+  config.settings['volto-blocks-widget'] = {
+    ...config.settings['volto-blocks-widget'],
+    allowedBlocks: [
+      ...(config.settings['volto-blocks-widget']?.allowedBlocks ?? []).filter(
+        (block) => !['maps', 'text', 'slate'].includes(block),
+      ),
+      'break',
+      'testo_riquadro_semplice',
+      'testo_riquadro_immagine',
+      'rssBlock',
+      config.settings.defaultBlockType,
+      //se si aggiunge un nuovo blocco, verificare che in edit non ci siano bottoni che provocano il submit della form. Se succede, gestirli con e.prevenDefault() e.stopPropagation().
+      // Se sono bottoni semantic basta mettere type="button"
+    ],
+
+    showRestricted: false,
   };
 
   config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
@@ -523,6 +567,12 @@ export default function applyConfig(voltoConfig) {
   config.components = {
     ...config.components,
     BlockExtraTags: { component: () => null },
+    Image: {
+      component: ImageWithErrors,
+    },
+    Teaser: {
+      component: ItaliaTeaserBody,
+    },
   };
   config.registerComponent({
     name: 'SiteSettingsExtras',

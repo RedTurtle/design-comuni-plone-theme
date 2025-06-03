@@ -38,6 +38,7 @@ const CardWithSlideUpTextTemplate = (props) => {
     show_section,
     show_description = true,
     hide_dates = false,
+    show_block_bg,
     id_lighthouse,
     linkmore_id_lighthouse,
     titleLine,
@@ -46,7 +47,7 @@ const CardWithSlideUpTextTemplate = (props) => {
 
   return (
     <div className="card-slide-text-template">
-      <Container>
+      <Container className="px-4 mt-3">
         <div className="title">
           {title && (
             <h2 className={cx('', { 'title-bottom-line': titleLine })}>
@@ -54,7 +55,7 @@ const CardWithSlideUpTextTemplate = (props) => {
             </h2>
           )}
         </div>
-        <div className="grid mb-3 mt-5">
+        <div className={cx('grid pt-3', { 'mb-3': show_block_bg })}>
           {items.map((item, index) => {
             const image = getListingImageBackground(item, 'large');
             const category = getCategory(item, show_type, show_section, props);
@@ -69,17 +70,13 @@ const CardWithSlideUpTextTemplate = (props) => {
             }).component;
 
             return (
-              <UniversalLink
-                item={!isEditMode ? item : null}
-                href={isEditMode ? '#' : null}
+              <div
+                className="listing-item box bg-img mb-2"
                 style={
                   image && {
                     backgroundImage: `url(${image})`,
                   }
                 }
-                className="listing-item box bg-img"
-                key={index}
-                data-element={id_lighthouse}
               >
                 <div className="bg-gradient"></div>
                 {(category || date) && (
@@ -89,14 +86,25 @@ const CardWithSlideUpTextTemplate = (props) => {
                     {date}
                   </div>
                 )}
-                <h3
-                  className={cx('title', {
-                    ellipsis: title.length > 50,
+                <UniversalLink
+                  item={!isEditMode ? item : null}
+                  href={isEditMode ? '#' : null}
+                  key={index}
+                  data-element={id_lighthouse}
+                  className={cx('title-link', {
+                    'auto-margin-link': !category && !date,
                   })}
-                  title={title.length > 50 ? title : undefined}
                 >
-                  {title.substring(0, 50)}
-                </h3>
+                  <h3
+                    className={cx('title', {
+                      ellipsis: title.length > 50,
+                    })}
+                    title={title.length > 50 ? title : undefined}
+                  >
+                    {title.substring(0, 50)}
+                  </h3>
+                </UniversalLink>
+
                 <div className="box-slide-up">
                   {show_description && item.description && (
                     <p>{item.description}</p>
@@ -111,7 +119,12 @@ const CardWithSlideUpTextTemplate = (props) => {
                     className="justify-content-end"
                   />
                 </div>
-              </UniversalLink>
+                <UniversalLink
+                  item={!isEditMode ? item : null}
+                  className="card-link"
+                  aria-hidden="true"
+                ></UniversalLink>
+              </div>
             );
           })}
         </div>

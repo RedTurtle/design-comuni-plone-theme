@@ -53,6 +53,16 @@ const messages = defineMessages({
     id: 'altri_documenti_persona',
     defaultMessage: 'Altri documenti',
   },
+
+  dichiarazioni_di_insussistenza_e_incompatibilita: {
+    id: 'dichiarazioni_di_insussistenza_e_incompatibilita',
+    defaultMessage: 'Dichiarazioni di insussistenza e incompatibilità',
+  },
+
+  emolumenti_a_carico_della_finanza_pubblica: {
+    id: 'emolumenti_a_carico_della_finanza_pubblica',
+    defaultMessage: 'Emolumenti a carico della finanza pubblica',
+  },
 });
 
 const PersonaDocumenti = ({ content }) => {
@@ -203,6 +213,83 @@ const PersonaDocumenti = ({ content }) => {
             // title={intl.formatMessage(messages.altri_documenti_persona)}
             as_section={false}
           />
+        </RichTextSection>
+      )}
+      {(content.dichiarazioni_di_insussistenza_e_incompatibilita?.download ||
+        contentFolderHasItems(
+          content,
+          'dichiarazione-insussistenza-cause-di-inconferibilita-e-incompatibilita',
+        )) && (
+        <RichTextSection
+          tag_id="dichiarazioni_di_insussistenza_e_incompatibilita"
+          title={intl.formatMessage(
+            messages.dichiarazioni_di_insussistenza_e_incompatibilita,
+          )}
+        >
+          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+            {content.dichiarazioni_di_insussistenza_e_incompatibilita
+              ?.download && (
+              <Attachment
+                download_url={
+                  content.dichiarazioni_di_insussistenza_e_incompatibilita
+                    .download
+                }
+                title={
+                  content.dichiarazioni_di_insussistenza_e_incompatibilita
+                    .filename
+                }
+              />
+            )}
+          </div>
+          {contentFolderHasItems(
+            content,
+            'dichiarazione-insussistenza-cause-di-inconferibilita-e-incompatibilita',
+          ) && (
+            <Attachments
+              content={content}
+              folder_name={
+                'dichiarazione-insussistenza-cause-di-inconferibilita-e-incompatibilita'
+              }
+              as_section={false}
+            />
+          )}
+        </RichTextSection>
+      )}
+      {(content.emolumenti_a_carico_della_finanza_pubblica?.download ||
+        contentFolderHasItems(
+          content,
+          'emolumenti-complessivi-percepiti-a-carico-della-finanza-pubblica',
+        )) && (
+        <RichTextSection
+          tag_id="emolumenti_a_carico_della_finanza_pubblica"
+          title={intl.formatMessage(
+            messages.emolumenti_a_carico_della_finanza_pubblica,
+          )}
+        >
+          <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+            {content.emolumenti_a_carico_della_finanza_pubblica?.download && (
+              <Attachment
+                download_url={
+                  content.emolumenti_a_carico_della_finanza_pubblica.download
+                }
+                title={
+                  content.emolumenti_a_carico_della_finanza_pubblica.filename
+                }
+              />
+            )}
+          </div>
+          {contentFolderHasItems(
+            content,
+            'emolumenti-complessivi-percepiti-a-carico-della-finanza-pubblica',
+          ) && (
+            <Attachments
+              content={content}
+              folder_name={
+                'emolumenti-complessivi-percepiti-a-carico-della-finanza-pubblica'
+              }
+              as_section={false}
+            />
+          )}
         </RichTextSection>
       )}
     </>

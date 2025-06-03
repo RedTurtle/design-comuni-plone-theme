@@ -88,7 +88,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
       getQueryStringResults(
         subsite ? flattenToAppURL(subsite['@id']) : '',
         {
-          fullobjects: 1,
+          metadata_fields: '_all',
           query: query,
           b_size: b_size,
         },
@@ -162,6 +162,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
                 <>
                   {React.createElement(filterOne.widget.component, {
                     ...filterOne.widget?.props,
+                    blockID: id,
                     id: 'filterOne',
                     onChange: (filter, value) => {
                       dispatchFilter({
@@ -175,6 +176,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
               {filterTwo &&
                 React.createElement(filterTwo.widget?.component, {
                   ...filterTwo.widget?.props,
+                  blockID: id,
                   id: 'filterTwo',
                   onChange: (filter, value) =>
                     dispatchFilter({
@@ -185,6 +187,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
               {filterThree &&
                 React.createElement(filterThree.widget?.component, {
                   ...filterThree.widget?.props,
+                  blockID: id,
                   id: 'filterThree',
                   onChange: (filter, value) =>
                     dispatchFilter({
@@ -198,6 +201,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
                 icon={false}
                 tag="button"
                 className="my-2 my-lg-1"
+                type="submit"
               >
                 {intl.formatMessage(messages.find)}
               </Button>
@@ -210,7 +214,11 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
         items?.length > 0 ? (
           <div className="mt-4" ref={resultsRef} aria-live="polite">
             <div className="block listing">
-              <CardWithImageTemplate items={items} full_width={false} />
+              <CardWithImageTemplate
+                items={items}
+                full_width={false}
+                always_show_image={data.always_show_image}
+              />
             </div>
             {querystringResults.total > b_size && (
               <Pagination

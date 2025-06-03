@@ -41,7 +41,7 @@ const messages = defineMessages({
 
 const Slide = (props) => {
   const intl = useIntl();
-  const { item, index, appearance, appearanceProp, onKeyDown } = props;
+  const { index, appearance, appearanceProp, onKeyDown } = props;
 
   const appearances = config.blocks.blocksConfig.listing.variations.filter(
     (v) => v.id === 'slider',
@@ -50,7 +50,6 @@ const Slide = (props) => {
 
   return (
     <SingleSlideWrapper
-      key={item['@id'] + index}
       index={index}
       onKeyDown={onKeyDown}
       aria-label={
@@ -130,6 +129,7 @@ const SliderTemplate = ({
             };
           return (
             <El
+              key={index}
               className={`${item.props.className} slick-dot`}
               tabIndex={-1}
               title={intl.formatMessage(messages.slideDot, {
@@ -218,16 +218,20 @@ const SliderTemplate = ({
 
             <Slider {...settings} ref={slider}>
               {items.map((item, index) => {
-                const image = ListingImage({
-                  item,
-                  loading: index === 0 ? 'eager' : 'lazy',
-                  sizes: `max-width(991px) 620px, ${1300 / nSlidesToShow}px`,
-                  critical: true,
-                });
+                const image = (
+                  <ListingImage
+                    item={item}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    sizes={`max-width(991px) 620px, ${1300 / nSlidesToShow}px`}
+                    critical
+                    showDefault
+                  />
+                );
                 const nextIndex = index < items.length - 1 ? index + 1 : null;
                 const prevIndex = index > 0 ? index - 1 : null;
                 return (
                   <Slide
+                    key={item['@id'] + index}
                     image={image}
                     index={index}
                     full_width={full_width}

@@ -2,22 +2,26 @@
   - Agid styling
   - Add class .block.listing in listing body container div to use
     existing listing template styles
+  - Inspired from
+    https://github.com/plone/volto/commit/211d9bea13119cc430db9d53a4740a860781ca2e
+    the way to handle search sort. If searchableText is setted, discard default sorting and uses plone's ranking only if is configured from sidebar. (Changed applyDefaults fn passing usePloneRanking)
 */
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBody';
 import { withBlockExtensions } from '@plone/volto/helpers';
 
+import {
+  withQueryString,
+  withSearch,
+} from '@plone/volto/components/manage/Blocks/Search/hocs';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
-import {
-  withSearch,
-  withQueryString,
-} from '@plone/volto/components/manage/Blocks/Search/hocs';
-import { compose } from 'redux';
-import { useSelector } from 'react-redux';
 import { isEqual, isFunction } from 'lodash';
+import { useSelector } from 'react-redux';
+import { compose } from 'redux';
+import { useEffect } from 'react';
 
 const getListingBodyVariation = (data) => {
   const { variations } = config.blocks.blocksConfig.listing;
@@ -49,7 +53,7 @@ const blockPropsAreChanged = (prevProps, nextProps) => {
   return isEqual(prev, next);
 };
 
-const applyDefaults = (data, root) => {
+const applyDefaults = (data, root, usePloneRanking) => {
   const defaultQuery = [
     {
       i: 'path',
@@ -57,12 +61,30 @@ const applyDefaults = (data, root) => {
       v: root || '/',
     },
   ];
-  return {
+
+  const searchBySearchableText = data.query.filter(
+    (item) => item['i'] === 'SearchableText',
+  ).length;
+
+  let sort_on = { sort_on: data?.sort_on ?? 'effective' };
+  let sort_order = { sort_order: data?.sort_order ?? 'descending' };
+
+  if (usePloneRanking && searchBySearchableText > 0) {
+    sort_on = undefined;
+    sort_order = undefined;
+  }
+
+  const result = {
     ...data,
-    sort_on: data?.sort_on || 'effective',
-    sort_order: data?.sort_order || 'descending',
     query: data?.query?.length ? data.query : defaultQuery,
   };
+  if (!sort_on) {
+    delete result.sort_on;
+  }
+  if (!sort_order) {
+    delete result.sort_order;
+  }
+  return result;
 };
 
 const SearchBlockView = (props) => {
@@ -88,10 +110,26 @@ const SearchBlockView = (props) => {
   }, [dataListingBodyVariation, mode]);
 
   const root = useSelector((state) => state.breadcrumbs.root);
-  const listingBodyData = applyDefaults(searchData, root);
+  const [defaultListingBodyData] = React.useState(
+    applyDefaults(searchData, root, data.usePloneRanking),
+  );
+  const listingBodyData = applyDefaults(searchData, root, data.usePloneRanking);
 
   const { variations } = config.blocks.blocksConfig.listing;
   const listingBodyVariation = variations.find(({ id }) => id === selectedView);
+
+  const query = listingBodyData.query;
+  const resultsRef = React.forwardRef(null);
+
+  useEffect(() => {
+    if (
+      JSON.stringify(defaultListingBodyData.query) !== JSON.stringify(query)
+    ) {
+      //fai lo scroll solo quando vengono modificati i filtri dall'utente. Evita lo scroll al primo load
+      resultsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [query]);
+
   if (!Layout) return null;
   return (
     <div className={cx('block search', { 'public-ui': mode === 'edit' })}>
@@ -100,6 +138,7 @@ const SearchBlockView = (props) => {
         isEditMode={mode === 'edit'}
         selectedView={selectedView}
         setSelectedView={setSelectedView}
+        resultsRef={resultsRef}
       >
         {/* Add class .block.listing to benefit from existing listing template styles */}
         <div className="block listing search-results">

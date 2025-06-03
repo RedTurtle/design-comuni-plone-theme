@@ -1,15 +1,9 @@
 .small-block-links {
-  margin: 40px 0;
-
-  .col-item {
-    margin-bottom: 22px;
-  }
-
   .center-image-card {
     position: relative;
     display: flex;
     overflow: hidden;
-    height: 100px;
+    height: 100%;
     align-items: center;
     justify-content: center;
     border: 8px solid $white;
