@@ -32,8 +32,9 @@ const messages = defineMessages({
  * ```
  */
 const CharCounterTextareaWidget = (props) => {
-  const { id, maxLength, value, onChange, placeholder, intl, forceMaxLength } =
-    props;
+  const { id, value, onChange, placeholder, intl } = props;
+  const maxLength = Math.max(props.maxLength || 255, 1);
+  const forceMaxLength = props.forceMaxLength || true;
   const [textChar, setTextChar] = useState('');
 
   const lengthError = value?.length > 0 && value.length > maxLength;
