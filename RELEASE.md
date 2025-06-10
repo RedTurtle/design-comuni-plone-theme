@@ -41,6 +41,13 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+
+### Fix
+
+- Sistemata la dimensione delle card nel template Bandi del blocco elenco.
+
 ## Versione 12.1.4 (22/05/2025)
 
 ### Fix
