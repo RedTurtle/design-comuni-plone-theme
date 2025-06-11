@@ -274,6 +274,7 @@ const SliderTemplate = ({
   const settings = {
     dots: show_dots,
     infinite: true,
+    lazyLoad: true,
     autoplay: autoplay,
     speed: 500,
     slidesToShow: nSlidesToShow,

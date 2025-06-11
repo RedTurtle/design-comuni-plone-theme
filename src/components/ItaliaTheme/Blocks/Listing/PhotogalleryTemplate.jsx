@@ -70,6 +70,7 @@ const PhotogalleryTemplate = ({
     dots: true,
     infinite: true,
     autoplay: autoplay,
+    lazyLoad: true,
     speed: 500,
     slidesToShow: items.length < 3 ? items.length : 3,
     slidesToScroll: 1,
