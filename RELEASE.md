@@ -43,10 +43,13 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Migliorie
+
+- Le immagini negli slider vengono ora caricate in modalità 'lazy', in modo da alleggerire il caricamento iniziale della pagina.
 
 ### Fix
 
-- Sistemata la dimensione delle card nel template Bandi del blocco elenco.
+- Sistemata la dimensione delle card nella variazione Bandi del blocco elenco.
 
 ## Versione 12.1.4 (22/05/2025)
 
