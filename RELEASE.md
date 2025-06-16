@@ -45,7 +45,7 @@
 
 ### Migliorie
 
-- ...
+- Le immagini negli slider vengono ora caricate in modalità 'lazy', in modo da alleggerire il caricamento iniziale della pagina.
 
 ### Novità
 
@@ -53,7 +53,20 @@
 
 ### Fix
 
+- Sistemata la dimensione delle card nella variazione Bandi del blocco elenco.
+
+## Versione 12.1.4 (22/05/2025)
+
+### Fix
+
+- Spazio aggiunto tra le righe se la variazione "Blocco link completo" ha più di due righe di contenuto.
+
+## Versione 12.1.3 (20/05/2025)
+
+### Fix
+
 - Corretta la descrizione per la didascalia per l'immagine di testata dentro al CT Argomento.
+- Uniformato le varie spaziature e allineamenti dei blocchi Elenco.
 
 ## Versione 12.1.2 (07/05/2025)
 
