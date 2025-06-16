@@ -45,7 +45,7 @@
 
 ### Migliorie
 
-- ...
+- Le immagini negli slider vengono ora caricate in modalità 'lazy', in modo da alleggerire il caricamento iniziale della pagina.
 
 ### Novità
 
@@ -53,9 +53,28 @@
 
 ### Fix
 
-- L'altezza delle immagini all'interno del blocco 'link solo immagini' è stata aumentata e non ha più un limite massimo. Ora tutte le card avranno la stessa altezza.
+- Sistemata la dimensione delle card nella variazione Bandi del blocco elenco.
+
+## Versione 12.1.4 (22/05/2025)
+
+### Fix
+
+- Spazio aggiunto tra le righe se la variazione "Blocco link completo" ha più di due righe di contenuto.
+
+## Versione 12.1.3 (20/05/2025)
+
+### Fix
+
+- Corretta la descrizione per la didascalia per l'immagine di testata dentro al CT Argomento.
+- Uniformato le varie spaziature e allineamenti dei blocchi Elenco.
+
+## Versione 12.1.2 (07/05/2025)
+
+### Fix
+
+- L'altezza delle immagini all'interno del blocco "link solo immagini" è stata aumentata e non ha più un limite massimo. Ora tutte le card avranno la stessa altezza.
 - Sistemato stile del blocco callout per la versione mobile.
-- Sistemati i formati 'A pieno schermo' e 'Allineamento al centro' del blocco Video, l'immagine in anteprima dava problemi nella visualizzazione di video di Youtube.
+- Sistemati i formati "A pieno schermo" e "Allineamento al centro" del blocco Video, l"immagine in anteprima dava problemi nella visualizzazione di video di YouTube.
 
 ## Versione 12.1.1 (14/04/2025)
 

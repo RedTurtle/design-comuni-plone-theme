@@ -1,5 +1,46 @@
 # Changelog
 
+## [12.1.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.1.3...v12.1.4) (2025-05-22)
+
+
+### Bug Fixes
+
+* added a gap between the lines if the completeBlockLinks has 2+ lines of content ([#953](https://github.com/RedTurtle/design-comuni-plone-theme/issues/953)) ([a3c1269](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a3c1269cd2725d268052b08f37468356f0901ce4))
+
+
+### Documentation
+
+* updated publiccode and release log ([0ac938b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0ac938bca9e948ae1ab17397ca5ad637a6374ef7))
+
+## [12.1.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.1.2...v12.1.3) (2025-05-20)
+
+
+### Bug Fixes
+
+* correct the alt and title on the Argomento header image ([#950](https://github.com/RedTurtle/design-comuni-plone-theme/issues/950)) ([e21820c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e21820cd00937a062ac035ac332731ed0556c441))
+* spacings and alignments of listing blocks ([#945](https://github.com/RedTurtle/design-comuni-plone-theme/issues/945)) ([2cdf137](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2cdf1378d55e096ef141227dcc86191ab69a6456))
+* url validation for path and querystring with @, :, ... ([#952](https://github.com/RedTurtle/design-comuni-plone-theme/issues/952)) ([93a5243](https://github.com/RedTurtle/design-comuni-plone-theme/commit/93a52435f463e1cdb3ca54c1e0c5ca35a184c913))
+
+
+### Documentation
+
+* updated publiccode and release log ([c3a5545](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c3a554516326b39fd4632275b92e90548db9d209))
+
+## [12.1.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.1.1...v12.1.2) (2025-05-07)
+
+
+### Bug Fixes
+
+* full width and center alignment of video block ([#941](https://github.com/RedTurtle/design-comuni-plone-theme/issues/941)) ([51b57da](https://github.com/RedTurtle/design-comuni-plone-theme/commit/51b57dac7fb120b29541a3c0261a3ec37397325e))
+* mobile style of callout block ([#944](https://github.com/RedTurtle/design-comuni-plone-theme/issues/944)) ([dcf13fa](https://github.com/RedTurtle/design-comuni-plone-theme/commit/dcf13faaa6617ef8b654ddc3a3f3026c0f805217))
+* multiple location condition in query widget ([#943](https://github.com/RedTurtle/design-comuni-plone-theme/issues/943)) ([8177214](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8177214242124f8e7ebe2413d39085a5a5d293f7))
+* small blocks links image height ([#940](https://github.com/RedTurtle/design-comuni-plone-theme/issues/940)) ([37f3f4c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/37f3f4c6edc604d0b35dc01d895b71997a671b3e))
+
+
+### Documentation
+
+* updated publiccode and release log ([fe19c88](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fe19c887770a07d86b1d1e86aa7a3eec0eea0143))
+
 ## [12.1.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.1.0...v12.1.1) (2025-04-14)
 
 
