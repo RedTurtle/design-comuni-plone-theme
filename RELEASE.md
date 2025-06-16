@@ -47,6 +47,10 @@
 
 - Le immagini negli slider vengono ora caricate in modalità 'lazy', in modo da alleggerire il caricamento iniziale della pagina.
 
+### Novità
+
+- Nel blocco form è stata aggiunta la possibilità di consultare i dati compilati di ogni singolo form nella tab "Dati" all'interno del blocco, è possibile inoltre scaricare il file CSV o pulire i dati sempre dalla stessa sezione.
+
 ### Fix
 
 - Sistemata la dimensione delle card nella variazione Bandi del blocco elenco.
