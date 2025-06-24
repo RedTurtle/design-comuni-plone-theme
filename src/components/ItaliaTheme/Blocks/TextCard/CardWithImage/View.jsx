@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BodyWrapper from './BodyWrapper';
-
-import Block from './Block';
+import BodyWrapper from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/TextCard/CardWithImage/BodyWrapper';
+import Block from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/TextCard/CardWithImage/Block';
 
 const TextCardWithImageView = ({ data, id }) => {
   return (
