@@ -1,3 +1,18 @@
+
+
+### [7.40.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.0...v7.40.1) (2025-06-24)
+
+
+### Bug Fixes
+
+* lazyloading images in slick ([#957](https://github.com/RedTurtle/design-comuni-plone-theme/issues/957)) ([aeec8d3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/aeec8d3e7cef021feee90a607c0495e640e7a9df))
+
+
+### Maintenance
+
+* import paths in cardWithImage components ([#961](https://github.com/RedTurtle/design-comuni-plone-theme/issues/961)) ([77576e7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/77576e708f829b3c3b92a83209d51b83ec697713))
+* updated imageCardText block with draft formatting ([#960](https://github.com/RedTurtle/design-comuni-plone-theme/issues/960)) ([5cfdeb7](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5cfdeb70cb5c584c86f5004330d6c87309a7dabc))
+
 ## [7.40.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.39.0...v7.40.0) (2025-05-12)
 
 
