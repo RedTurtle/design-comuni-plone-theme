@@ -2,7 +2,7 @@
 body.public-ui.contenttype-lrf {
   .block-editor-title,
   .documentFirstHeading {
-    @extend .visually-hidden;
+    @include sr-only;
   }
 }
 
