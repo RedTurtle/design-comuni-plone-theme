@@ -1,3 +1,10 @@
+### [7.40.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.1...v7.40.2) (2025-06-30)
+
+
+### Bug Fixes
+
+* visually-hidden h1 in siteroot ([#962](https://github.com/RedTurtle/design-comuni-plone-theme/issues/962)) ([6f608e4](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6f608e43fa36ce43b6667fb39d26018fd7a4e9f0))
+
 
 
 ### [7.40.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.0...v7.40.1) (2025-06-24)
