@@ -1,3 +1,10 @@
+### [7.40.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.2...v7.40.3) (2025-07-01)
+
+
+### Bug Fixes
+
+* package.json ([d91a02e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d91a02e0785652ef46a9274b3c6d0385bc98e649))
+
 ### [7.40.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.1...v7.40.2) (2025-06-30)
 
 
