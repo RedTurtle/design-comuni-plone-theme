@@ -258,6 +258,5 @@
   },
   "volta": {
     "node": "16.18.0"
-  },
-  "packageManager": "yarn@3.2.3"
+  }
 }
