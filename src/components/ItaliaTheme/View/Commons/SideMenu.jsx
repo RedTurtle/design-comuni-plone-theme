@@ -177,6 +177,8 @@ const SideMenu = ({ data, content_uid }) => {
                   <Progress
                     value={progressValue > 0 ? 100 * progressValue : 0}
                     role="progressbar"
+                    aria-label={intl.formatMessage(messages.sideMenuNavigation)}
+                    aria-labelledby={`item-${activeSection}`}
                   />
                 </div>
                 <AccordionBody active={isNavOpen} id="side-menu-body">
