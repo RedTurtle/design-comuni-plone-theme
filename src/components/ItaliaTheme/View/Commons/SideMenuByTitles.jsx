@@ -168,8 +168,7 @@ const SideMenuByTitles = ({ data, content_uid, index_title }) => {
                 <div className="mb-3">
                   <Progress
                     value={progressValue > 0 ? 100 * progressValue : 0}
-                    role="progressbar"
-                    aria-label={intl.formatMessage(messages.sideMenuNavigation)}
+                    role="progressbar"                    
                     aria-labelledby={`item-${activeSection}`}
                   />
                 </div>
