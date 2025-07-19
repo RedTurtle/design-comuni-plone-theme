@@ -10,6 +10,7 @@
  * - Rimossi <link per rle favicon perchè creato da volto-site-settings
  * - Add shrink-to-fit=no in viewport meta
  * - Remove link for manifest and svg/apple icons
+ * - Aggiunto og:type website
  */
   
 import React, { Component } from 'react';
@@ -139,6 +140,7 @@ class Html extends Component {
             * <link rel="manifest" href="/site.webmanifest" /> 
             */}
 
+          <meta property="og:type" content="website" />
           <meta name="generator" content="Plone 6 - https://plone.org" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
