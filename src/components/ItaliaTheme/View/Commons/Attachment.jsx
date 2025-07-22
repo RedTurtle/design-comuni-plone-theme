@@ -12,7 +12,13 @@ const messages = defineMessages({
   },
 });
 
-const Attachment = ({ title, description, download_url, item = {} }) => {
+const Attachment = ({
+  title,
+  description,
+  download_url,
+  item = {},
+  iconClass = 'it-clip',
+}) => {
   const intl = useIntl();
   let _item = { ...item };
   if (item['@type'] === 'File') {
@@ -28,7 +34,7 @@ const Attachment = ({ title, description, download_url, item = {} }) => {
       tag="div"
     >
       <Icon
-        icon="it-clip"
+        icon={iconClass}
         alt={intl.formatMessage(messages.attachment)}
         title={intl.formatMessage(messages.attachment)}
       />
