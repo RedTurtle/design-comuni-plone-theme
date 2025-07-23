@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Sistemata la visualizzazione delle immagini all’interno della card del blocco Link completo quando sono in landscape.
+
 ## Versione 12.2.2 (14/07/2025)
 
 ### Fix
