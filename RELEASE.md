@@ -40,6 +40,13 @@
 
 - ...
  -->
+ ## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Migliorata l'accessibilità rimuovendo la visibilità delle immagini di presentazione nei blocchi elenco.
+- Sistemata la semantica dei titoli nei blocchi Card Semplice ed elenco migliorando così l'accessibilità della pagina.
+
 
 ## Versione 12.2.2 (14/07/2025)
 
