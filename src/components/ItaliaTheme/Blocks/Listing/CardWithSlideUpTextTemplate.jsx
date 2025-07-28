@@ -62,7 +62,7 @@ const CardWithSlideUpTextTemplate = (props) => {
             const date = hide_dates
               ? null
               : getCalendarDate(item, rrule.rrulestr);
-            const title = item?.title || '';
+            const itemTitle = item?.title || '';
 
             const BlockExtraTags = getComponentWithFallback({
               name: 'BlockExtraTags',
@@ -95,14 +95,25 @@ const CardWithSlideUpTextTemplate = (props) => {
                     'auto-margin-link': !category && !date,
                   })}
                 >
-                  <h3
-                    className={cx('title', {
-                      ellipsis: title.length > 50,
-                    })}
-                    title={title.length > 50 ? title : undefined}
-                  >
-                    {title.substring(0, 50)}
-                  </h3>
+                  {title ? (
+                    <h3
+                      className={cx('title', {
+                        ellipsis: itemTitle.length > 50,
+                      })}
+                      title={itemTitle.length > 50 ? itemTitle : undefined}
+                    >
+                      {itemTitle.substring(0, 50)}
+                    </h3>
+                  ) : (
+                    <h2
+                      className={cx('title h3', {
+                        ellipsis: itemTitle.length > 50,
+                      })}
+                      title={itemTitle.length > 50 ? itemTitle : undefined}
+                    >
+                      {itemTitle.substring(0, 50)}
+                    </h2>
+                  )}
                 </UniversalLink>
                 <div className="box-slide-up">
                   {show_description && item.description && (
