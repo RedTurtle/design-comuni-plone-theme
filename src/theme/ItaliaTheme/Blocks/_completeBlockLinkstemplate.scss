@@ -52,4 +52,9 @@
   .no-external-if-link > .external-link {
     display: none;
   }
+
+  img.responsive {
+    height: 100%;
+    object-fit: cover;
+  }
 }
