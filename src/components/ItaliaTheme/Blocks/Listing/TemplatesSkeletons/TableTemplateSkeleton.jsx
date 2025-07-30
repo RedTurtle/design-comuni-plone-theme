@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Row, Col, Table, Container } from 'design-react-kit';
 
 const SimpleListTemplateSkeleton = (props) => {
-  const { isEditMode, title, linkHref } = props;
+  const { title, linkHref } = props;
   return (
     <div className="table-skeleton-template">
       <Container className="px-4">

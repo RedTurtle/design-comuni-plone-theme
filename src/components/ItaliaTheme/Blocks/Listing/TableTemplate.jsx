@@ -32,17 +32,10 @@ const TableTemplate = (props) => {
   } = props;
 
   const intl = useIntl();
-  const dispatch = useDispatch();
   const { views } = config.widgets;
-  const ct_schemas = useSelector((state) => state.ct_schema?.subrequests);
 
-  useEffect(() => {
-    (columns ?? []).forEach((c) => {
-      if (!ct_schemas?.[c.ct]) {
-        dispatch(getCTSchema(c.ct));
-      }
-    });
-  }, [columns, ct_schemas, dispatch]);
+  // necessario per gli edditor nel momento in cui aggiungono nuove colonne
+  const ct_schema = useSelector((state) => state.ct_schema?.subrequests);
 
   let render_columns =
     (columns ?? []).filter((c) => c.field === 'title').length > 0
@@ -51,7 +44,6 @@ const TableTemplate = (props) => {
           { field: 'title', title: intl.formatMessage(messages.title) },
           ...(columns ?? []),
         ];
-
   return (
     <div className="table-template">
       <Container className="px-4 pt-3">
@@ -60,7 +52,9 @@ const TableTemplate = (props) => {
             <tr>
               {render_columns.map((c, index) => {
                 const field_properties =
-                  ct_schemas?.[c.ct]?.result?.properties?.[c.field] ?? {};
+                  c.field_properties ??
+                  ct_schema?.[c.ct]?.result?.properties?.[c.field] ??
+                  {};
 
                 return (
                   <th
@@ -83,34 +77,44 @@ const TableTemplate = (props) => {
               <tr key={index}>
                 {render_columns.map((c, index) => {
                   const field_properties =
-                    ct_schemas?.[c.ct]?.result?.properties?.[c.field];
+                    c.field_properties ??
+                    ct_schema?.[c.ct]?.result?.properties?.[c.field] ??
+                    {};
                   let render_value = JSON.stringify(item[c.field]);
 
                   if (field_properties) {
-                    let field = {
+                    const field = {
                       ...field_properties,
                       id: c.field,
                       widget: getWidget(c.field, field_properties),
                     };
+                    const Widget = views?.getWidget(field);
 
-                    let Widget = views?.getWidget(field);
-
-                    let widget_props = {};
+                    const widget_props = {
+                      behavior: field_properties.behavior,
+                    };
                     switch (c.field) {
                       case 'apertura_bando':
                       case 'chiusura_procedimento_bando':
                       case 'scadenza_domande_bando':
                       case 'scadenza_bando':
-                        widget_props.format = 'd MMM yyyy';
+                        widget_props.format = 'DD MMM yyyy';
                         break;
                       default:
                         break;
                     }
-
+                    // rimuove ora, se non valorizzata
+                    if (
+                      field_properties.widget === 'datetime' &&
+                      item[c.field]?.indexOf('T00:00') > 0
+                    ) {
+                      widget_props.format = 'DD MMM yyyy';
+                    }
                     if (field_properties.vocabulary) {
                       widget_props.vocabulary =
                         field_properties.vocabulary['@id'];
                     }
+
                     render_value = (
                       <Widget value={item[c.field]} {...widget_props} />
                     );
