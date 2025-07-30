@@ -16,6 +16,8 @@ import {
   PathFiltersWidget,
   LocationFiltersWidget,
   CanaleDigitaleWidget,
+  CTFieldsWidget,
+  CTTitleColumnWidget,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import LuoghiCorrelatiEventoWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/LuoghiCorrelatiEventoWidget';
 
@@ -88,6 +90,8 @@ const getItaliaWidgets = (config) => {
       path_filters: PathFiltersWidget,
       location_filter: LocationFiltersWidget,
       luoghi_correlati_evento: LuoghiCorrelatiEventoWidget,
+      ct_fields: CTFieldsWidget,
+      ct_title_column: CTTitleColumnWidget,
     },
   };
 };

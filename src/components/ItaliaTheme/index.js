@@ -17,6 +17,8 @@ export FileWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/
 export PathFiltersWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/PathFiltersWidget';
 export LocationFiltersWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/LocationFiltersWidget';
 export CanaleDigitaleWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CanaleDigitaleWidget';
+export CTFieldsWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CTFieldsWidget';
+export CTTitleColumnWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CTTitleColumnWidget';
 
 /********* ICONS ********* */
 export getItemIcon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/common/common';
