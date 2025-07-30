@@ -2758,6 +2758,11 @@ msgstr "Rimuovi argomento"
 msgid "reperimento_modulistica"
 msgstr "Dove reperire la modulistica"
 
+#: overrideTranslations
+# defaultMessage: In alcuni casi, il problema potrebbe essere causato anche dalla presenza di estensioni come AdBlock installate sul browser: prova a disattivarle temporaneamente e ripeti l’operazione.
+msgid "requestTimeout_adBlockMessage"
+msgstr "In alcuni casi, il problema potrebbe essere causato anche dalla presenza di estensioni come AdBlock installate sul browser: prova a disattivarle temporaneamente e ripeti l’operazione."
+
 #: components/ItaliaTheme/View/UOView/UOStructure
 # defaultMessage: Responsabile
 msgid "responsabile"
