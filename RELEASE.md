@@ -30,7 +30,13 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 7.40.4 (31/07/2025)
+
+### Migliorie
+
+- Tra i messaggi di errore del sito è stata aggiunta la specifica all'utilizzo dell'adBlock potenzialmente attivo da parte dell'utente
+
+## Versione 7.40.1 (24/06/2025)
 
 ### Migliorie
 
