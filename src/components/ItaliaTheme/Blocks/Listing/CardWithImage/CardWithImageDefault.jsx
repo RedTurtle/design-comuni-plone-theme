@@ -128,7 +128,7 @@ const CardWithImageDefault = (props) => {
               tag={title ? 'h3' : 'h2'}
               className={cx('', {
                 'rassegna-appointment-title': isEventAppointment,
-                'line-height-title': !title,
+                h3: !title,
               })}
             >
               <UniversalLink

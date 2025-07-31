@@ -221,7 +221,7 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
                 <CardTitle
                   tag={title ? 'h3' : 'h2'}
                   className={cx('', {
-                    'line-height-title': !title,
+                    h3: !title,
                   })}
                 >
                   <UniversalLink

@@ -185,15 +185,12 @@
       &.rassegna-appointment-title {
         margin-bottom: 0px !important;
       }
-      &.line-height-title {
-        line-height: 0.8em;
-      }
     }
 
     .rassegna-info {
-      font-size: 0.9rem;
       display: inline-flex;
       column-gap: 0.3rem;
+      font-size: 0.9rem;
 
       a {
         text-decoration: none;

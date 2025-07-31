@@ -45,6 +45,8 @@ const CardWithSlideUpTextTemplate = (props) => {
     rrule,
   } = props;
 
+  const TitleTag = title ? 'h3' : 'h2';
+
   return (
     <div className="card-slide-text-template">
       <Container className="px-4 mt-3">
@@ -95,25 +97,15 @@ const CardWithSlideUpTextTemplate = (props) => {
                     'auto-margin-link': !category && !date,
                   })}
                 >
-                  {title ? (
-                    <h3
-                      className={cx('title', {
-                        ellipsis: itemTitle.length > 50,
-                      })}
-                      title={itemTitle.length > 50 ? itemTitle : undefined}
-                    >
-                      {itemTitle.substring(0, 50)}
-                    </h3>
-                  ) : (
-                    <h2
-                      className={cx('title h3', {
-                        ellipsis: itemTitle.length > 50,
-                      })}
-                      title={itemTitle.length > 50 ? itemTitle : undefined}
-                    >
-                      {itemTitle.substring(0, 50)}
-                    </h2>
-                  )}
+                  <TitleTag
+                    className={cx('title', {
+                      h3: !title,
+                      ellipsis: itemTitle.length > 50,
+                    })}
+                    title={itemTitle.length > 50 ? itemTitle : undefined}
+                  >
+                    {itemTitle.substring(0, 50)}
+                  </TitleTag>
                 </UniversalLink>
                 <div className="box-slide-up">
                   {show_description && item.description && (
