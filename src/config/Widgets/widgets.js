@@ -19,6 +19,7 @@ import {
   CTFieldsWidget,
   CTTitleColumnWidget,
   BlocksViewWidget,
+  PDCViewWidget,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import LuoghiCorrelatiEventoWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/LuoghiCorrelatiEventoWidget';
 
@@ -99,6 +100,10 @@ const getItaliaWidgets = (config) => {
       widget: {
         ...config.widgets.views.widget,
         blocks: BlocksViewWidget,
+      },
+      id: {
+        ...config.widgets.views.id,
+        value_punto_contatto: PDCViewWidget,
       },
     },
   };

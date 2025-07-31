@@ -106,7 +106,9 @@ const TableTemplate = (props) => {
                     // rimuove ora, se non valorizzata
                     if (
                       field_properties.widget === 'datetime' &&
-                      item[c.field]?.indexOf('T00:00') > 0
+                      c.field !== 'whole_day' &&
+                      c.field !== 'open_end' &&
+                      item?.[c.field]?.indexOf('T00:00') > 0
                     ) {
                       widget_props.format = 'DD MMM yyyy';
                     }
@@ -114,7 +116,6 @@ const TableTemplate = (props) => {
                       widget_props.vocabulary =
                         field_properties.vocabulary['@id'];
                     }
-
                     render_value = (
                       <Widget value={item[c.field]} {...widget_props} />
                     );
@@ -131,6 +132,7 @@ const TableTemplate = (props) => {
                     );
                   }
 
+                  // return <td key={index}>ciao</td>;
                   return <td key={index}>{render_value}</td>;
                 })}
               </tr>

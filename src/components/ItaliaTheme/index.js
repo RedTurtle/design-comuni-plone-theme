@@ -20,6 +20,7 @@ export CanaleDigitaleWidget from 'design-comuni-plone-theme/components/ItaliaThe
 export CTFieldsWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CTFieldsWidget';
 export CTTitleColumnWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CTTitleColumnWidget';
 export BlocksViewWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/BlocksViewWidget.jsx';
+export PDCViewWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/PDCViewWidget.jsx';
 
 /********* ICONS ********* */
 export getItemIcon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/common/common';
