@@ -18,6 +18,7 @@ import {
   CanaleDigitaleWidget,
   CTFieldsWidget,
   CTTitleColumnWidget,
+  BlocksViewWidget,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import LuoghiCorrelatiEventoWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/LuoghiCorrelatiEventoWidget';
 
@@ -92,6 +93,13 @@ const getItaliaWidgets = (config) => {
       luoghi_correlati_evento: LuoghiCorrelatiEventoWidget,
       ct_fields: CTFieldsWidget,
       ct_title_column: CTTitleColumnWidget,
+    },
+    views: {
+      ...config.widgets.views,
+      widget: {
+        ...config.widgets.views.widget,
+        blocks: BlocksViewWidget,
+      },
     },
   };
 };
