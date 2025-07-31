@@ -1,3 +1,15 @@
+### [7.40.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.3...v7.40.4) (2025-07-31)
+
+
+### Maintenance
+
+* updated requestTimeout with adBlock message ([#976](https://github.com/RedTurtle/design-comuni-plone-theme/issues/976)) ([0f83ef9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0f83ef9f145206e0c9fd7b0c71470327caefeb23))
+
+
+### Documentation
+
+* updated release.md ([670ed97](https://github.com/RedTurtle/design-comuni-plone-theme/commit/670ed9732590fc561261cecf87c631fd689b8b48))
+
 ### [7.40.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.2...v7.40.3) (2025-07-01)
 
 
