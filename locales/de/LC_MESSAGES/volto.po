@@ -2773,6 +2773,11 @@ msgstr ""
 msgid "reperimento_modulistica"
 msgstr ""
 
+#: overrideTranslations
+# defaultMessage: In alcuni casi, il problema potrebbe essere causato anche dalla presenza di estensioni come AdBlock installate sul browser: prova a disattivarle temporaneamente e ripeti l’operazione.
+msgid "requestTimeout_adBlockMessage"
+msgstr ""
+
 #: components/ItaliaTheme/View/UOView/UOStructure
 # defaultMessage: Responsabile
 msgid "responsabile"
