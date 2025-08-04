@@ -5,7 +5,6 @@
 /*
   Custumizations:
     - Added check for blocked keywords in the URL to display new Adblock message
-    - Changed paragraph size
 */
 
 import React from 'react';
@@ -20,10 +19,18 @@ import { useLocation } from 'react-router-dom';
  */
 
 const messages = defineMessages({
+  attention_adBlockMessage: {
+    id: 'requestTimeout_attention_adBlockMessage',
+    defaultMessage: 'Attention',
+  },
+  problem_adBlockMessage: {
+    id: 'requestTimeout_problem_adBlockMessage',
+    defaultMessage: 'a problem occurred.',
+  },
   adBlockMessage: {
     id: 'requestTimeout_adBlockMessage',
     defaultMessage:
-      'In some cases, the problem could also be caused by extensions like AdBlock installed on the browser: try temporarily disabling them and repeating the operation.',
+      'Check your internet connection and any browser extensions (e.g., AdBlock), then try again.',
   },
 });
 
@@ -60,16 +67,20 @@ const RequestTimeout = () => {
       style={{
         textAlign: 'center',
         margin: '20px auto',
-        width: hasBlockedKeyword ? 'auto' : '475px',
-        maxWidth: '780px',
+        width: '475px',
       }}
     >
-      <FormattedMessage
-        id="The backend is not responding, due to a server timeout or a connection problem of your device. Please check your connection and try again."
-        defaultMessage="The backend is not responding, due to a server timeout or a connection problem of your device. Please check your connection and try again."
-      />
-      {hasBlockedKeyword && (
+      {!hasBlockedKeyword ? (
+        <FormattedMessage
+          id="The backend is not responding, due to a server timeout or a connection problem of your device. Please check your connection and try again."
+          defaultMessage="The backend is not responding, due to a server timeout or a connection problem of your device. Please check your connection and try again."
+        />
+      ) : (
         <>
+          <strong>
+            {intl.formatMessage(messages.attention_adBlockMessage)}:
+          </strong>{' '}
+          {intl.formatMessage(messages.problem_adBlockMessage)}
           <br />
           {intl.formatMessage(messages.adBlockMessage)}
         </>
