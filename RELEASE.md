@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Migliorata la visualizzazione dei link sulle immagini nei blocchi elenco, rimosso testo non necessario con tipo e dimensione dei file
+
 ## Versione 12.3.0 (31/07/2025)
 
 ### Novità
