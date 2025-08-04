@@ -79,9 +79,17 @@ const messages = defineMessages({
     defaultMessage: 'È minore o uguale',
   },
   //---- end Volto-form-block ----//
+  attention_adBlockMessage: {
+    id: 'requestTimeout_attention_adBlockMessage',
+    defaultMessage: 'Attenzione',
+  },
+  problem_adBlockMessage: {
+    id: 'requestTimeout_problem_adBlockMessage',
+    defaultMessage: 'si è verificato un problema.',
+  },
   adBlockMessage: {
     id: 'requestTimeout_adBlockMessage',
     defaultMessage:
-      'In alcuni casi, il problema potrebbe essere causato anche dalla presenza di estensioni come AdBlock installate sul browser: prova a disattivarle temporaneamente e ripeti l’operazione.',
+      'Controlla la connessione internet ed eventuali estensioni del browser (es. AdBlock), poi riprova.',
   },
 });

@@ -2759,9 +2759,19 @@ msgid "reperimento_modulistica"
 msgstr "Dove reperire la modulistica"
 
 #: overrideTranslations
-# defaultMessage: In alcuni casi, il problema potrebbe essere causato anche dalla presenza di estensioni come AdBlock installate sul browser: prova a disattivarle temporaneamente e ripeti l’operazione.
+# defaultMessage: Controlla la connessione internet ed eventuali estensioni del browser (es. AdBlock), poi riprova.
 msgid "requestTimeout_adBlockMessage"
-msgstr "In alcuni casi, il problema potrebbe essere causato anche dalla presenza di estensioni come AdBlock installate sul browser: prova a disattivarle temporaneamente e ripeti l’operazione."
+msgstr "Controlla la connessione internet ed eventuali estensioni del browser (es. AdBlock), poi riprova."
+
+#: overrideTranslations
+# defaultMessage: Attenzione
+msgid "requestTimeout_attention_adBlockMessage"
+msgstr "Attenzione"
+
+#: overrideTranslations
+# defaultMessage: si è verificato un problema.
+msgid "requestTimeout_problem_adBlockMessage"
+msgstr "si è verificato un problema."
 
 #: components/ItaliaTheme/View/UOView/UOStructure
 # defaultMessage: Responsabile
