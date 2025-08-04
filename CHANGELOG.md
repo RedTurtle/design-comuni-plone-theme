@@ -1,3 +1,10 @@
+### [7.40.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.4...v7.40.5) (2025-08-04)
+
+
+### Bug Fixes
+
+* updated adBlock error message ([#977](https://github.com/RedTurtle/design-comuni-plone-theme/issues/977)) ([59b10fa](https://github.com/RedTurtle/design-comuni-plone-theme/commit/59b10fad9b81eb11b29290e6a57867c4fc7dc883))
+
 ### [7.40.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.3...v7.40.4) (2025-07-31)
 
 
