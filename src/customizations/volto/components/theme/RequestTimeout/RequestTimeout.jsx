@@ -30,7 +30,7 @@ const messages = defineMessages({
   adBlockMessage: {
     id: 'requestTimeout_adBlockMessage',
     defaultMessage:
-      'Check your internet connection and any browser extensions (e.g., AdBlock), then try again.',
+      'Check your internet connection, temporarily disable any browser extensions (e.g., AdBlock), then try again.',
   },
 });
 

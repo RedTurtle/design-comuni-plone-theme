@@ -2759,9 +2759,9 @@ msgid "reperimento_modulistica"
 msgstr "Dove reperire la modulistica"
 
 #: overrideTranslations
-# defaultMessage: Controlla la connessione internet ed eventuali estensioni del browser (es. AdBlock), poi riprova.
+# defaultMessage: Controlla la connessione internet, disattiva temporaneamente eventuali estensioni del browser (es. AdBlock), poi riprova.
 msgid "requestTimeout_adBlockMessage"
-msgstr "Controlla la connessione internet ed eventuali estensioni del browser (es. AdBlock), poi riprova."
+msgstr "Controlla la connessione internet, disattiva temporaneamente eventuali estensioni del browser (es. AdBlock), poi riprova."
 
 #: overrideTranslations
 # defaultMessage: Attenzione

@@ -90,6 +90,6 @@ const messages = defineMessages({
   adBlockMessage: {
     id: 'requestTimeout_adBlockMessage',
     defaultMessage:
-      'Controlla la connessione internet ed eventuali estensioni del browser (es. AdBlock), poi riprova.',
+      'Controlla la connessione internet, disattiva temporaneamente eventuali estensioni del browser (es. AdBlock), poi riprova.',
   },
 });
