@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Ora il calendario si chiude automaticamente quando si passa al campo successivo dopo aver selezionato la data di fine, nei blocchi di ricerca dove è possibile indicare una data di inizio e fine.
+
 ## Versione 12.3.0 (31/07/2025)
 
 ### Novità
