@@ -54,6 +54,8 @@
 ### Fix
 
 - Sistemata la visualizzazione delle immagini all’interno della card del blocco Link completo quando sono in landscape.
+- Ripristinata la funzionalità per mostrare tutte le immagini del blocco elenco o solo quelle della prima fila, se presenti.
+
 ## Versione 12.3.0 (31/07/2025)
 
 ### Novità
