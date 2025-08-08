@@ -53,6 +53,9 @@
 
 ### Fix
 
+- Migliorata l'accessibilità rimuovendo la visibilità delle immagini di presentazione nei blocchi elenco.
+- Sistemata la semantica dei titoli nei blocchi elenco migliorando così l'accessibilità della pagina.
+- Sistemata la visualizzazione delle immagini all’interno della card del blocco Link completo quando sono in landscape.
 - Ora il calendario si chiude automaticamente quando si passa al campo successivo dopo aver selezionato la data di fine, nei blocchi di ricerca dove è possibile indicare una data di inizio e fine.
 
 ## Versione 12.3.0 (31/07/2025)
