@@ -104,7 +104,8 @@ export const spanTagDeserializer = (editor, el, options) => {
   }
 
   if (parseStyles(style).length > 0) {
-    return jsx('element', {}, nestStyles(children, style));
+    const styled = nestStyles(children, style);
+    return Array.isArray(styled) && styled.length === 1 ? styled[0] : styled;
   }
 
   // TODO: handle sub/sup as <sub> and <sup>
