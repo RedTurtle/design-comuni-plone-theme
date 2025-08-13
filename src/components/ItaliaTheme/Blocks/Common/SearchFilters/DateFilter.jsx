@@ -234,11 +234,21 @@ const DateFilter = (props) => {
         setFocusedDateInput(null);
       }
     }
+    console.log(e.key);
+    if (e.key === 'Escape') {
+      setFocusedDateInput(null);
+    }
   };
   const endDateListener = (e) => {
-    if (e.key === 'Tab' && !e.shiftKey) setFocusedDateInput(null);
+    if (e.key === 'Tab' && !e.shiftKey) {
+      setFocusedDateInput(null);
+    }
+    if (e.key === 'Escape') {
+      setFocusedDateInput(null);
+    }
   };
   useEffect(() => {
+    console.log('focusedDateInput', focusedDateInput);
     //start input
     if (focusedDateInput == 'startDate' && !startDateInputRef.current) {
       startDateInputRef.current = document.getElementById(
