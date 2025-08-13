@@ -38,7 +38,9 @@ export const blockTagDeserializer = (tagname) => (editor, el, options) => {
 };
 
 /*rispetto a quello di volto-slate:
-- se il tag body contiene direttamente dei children <li> allora crea un <ul> wrapper
+- se il tag body contiene direttamente dei children <li> allora crea un <ul> wrapper.
+- se il tag body contiene una lista da Word Online, la normalizza.
+- se il tag body contiene una lista da Word Desktop, la normalizza.
 */
 export const bodyTagDeserializer = () => (editor, el, options) => {
   if (
@@ -51,6 +53,112 @@ export const bodyTagDeserializer = () => (editor, el, options) => {
       deserializeChildren(el, editor, options),
     );
   }
+
+  const children = Array.from(el.children);
+
+  // START: Gestione Word Online
+  const hasWordOnlineList = children.some(
+    (child) =>
+      child.nodeName === 'DIV' &&
+      child.classList?.contains('ListContainerWrapper'),
+  );
+
+  if (hasWordOnlineList) {
+    const newBody = document.createElement('body');
+    let currentList = null;
+
+    for (const child of children) {
+      const isWordListWrapper =
+        child.nodeName === 'DIV' &&
+        child.classList?.contains('ListContainerWrapper') &&
+        (child.firstElementChild?.nodeName === 'UL' ||
+          child.firstElementChild?.nodeName === 'OL');
+
+      if (isWordListWrapper) {
+        const listNode = child.firstElementChild;
+        const listType = listNode.nodeName.toLowerCase();
+        const listItem = listNode.querySelector('li');
+
+        if (listItem) {
+          const paragraph = listItem.querySelector('p.Paragraph');
+          if (paragraph) {
+            while (paragraph.firstChild) {
+              listItem.appendChild(paragraph.firstChild);
+            }
+            listItem.removeChild(paragraph);
+          }
+
+          if (currentList && currentList.nodeName.toLowerCase() === listType) {
+            currentList.appendChild(listItem);
+          } else {
+            currentList = document.createElement(listType);
+            currentList.appendChild(listItem);
+            newBody.appendChild(currentList);
+          }
+        }
+      } else {
+        currentList = null;
+        newBody.appendChild(child.cloneNode(true));
+      }
+    }
+    return jsx('fragment', {}, deserializeChildren(newBody, editor, options));
+  }
+  // END: Gestione Word Online
+
+  // START: NUOVA GESTIONE Word Desktop
+  const hasWordDesktopList = children.some((child) =>
+    child.matches('p[class*="MsoListParagraph"]'),
+  );
+
+  if (hasWordDesktopList) {
+    const newBody = document.createElement('body');
+    let currentList = null;
+
+    for (const child of children) {
+      // Verifica se l'elemento è un paragrafo di lista di Word
+      if (child.matches('p[class*="MsoListParagraph"]')) {
+        let listType = 'ul'; // Default a lista non ordinata
+
+        // Rimuove gli elementi specifici di Word e determina il tipo di lista
+        const bulletSpan = child.querySelector(
+          'span[style*="mso-list:Ignore"]',
+        );
+        if (bulletSpan) {
+          // Se il bullet non è il classico pallino, la lista è ordinata (ol)
+          if (bulletSpan.textContent.trim() !== '·') {
+            listType = 'ol';
+          }
+          // Rimuove l'intero blocco del bullet, che è un commento condizionale o un span
+          bulletSpan.closest('span')?.remove();
+        }
+
+        // Rimuove i tag <o:p> vuoti di Office
+        child.querySelectorAll('o\\:p').forEach((el) => el.remove());
+
+        // Se la lista corrente non esiste o è di tipo diverso, ne crea una nuova
+        if (!currentList || currentList.nodeName.toLowerCase() !== listType) {
+          currentList = document.createElement(listType);
+          newBody.appendChild(currentList);
+        }
+
+        // Crea il nuovo elemento <li> e ci sposta dentro tutto il contenuto del <p>
+        const listItem = document.createElement('li');
+        while (child.firstChild) {
+          listItem.appendChild(child.firstChild);
+        }
+        currentList.appendChild(listItem);
+      } else {
+        // Se non è un elemento di lista, interrompe il raggruppamento
+        currentList = null;
+        // Aggiunge gli altri elementi (es. paragrafi normali) così come sono
+        newBody.appendChild(child.cloneNode(true));
+      }
+    }
+    // Deserializza il nuovo body pulito e ristrutturato
+    return jsx('fragment', {}, deserializeChildren(newBody, editor, options));
+  }
+  // END: NUOVA GESTIONE Word Desktop
+
   return jsx('fragment', {}, deserializeChildren(el, editor, options));
 };
 
