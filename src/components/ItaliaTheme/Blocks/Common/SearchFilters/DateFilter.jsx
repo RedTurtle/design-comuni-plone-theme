@@ -6,7 +6,6 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
-import { handleKeyDownOwnFocusManagement } from '../../../../../helpers/blocks';
 
 const messages = defineMessages({
   eventSearchStartDate: {
@@ -234,7 +233,7 @@ const DateFilter = (props) => {
         setFocusedDateInput(null);
       }
     }
-    console.log(e.key);
+
     if (e.key === 'Escape') {
       setFocusedDateInput(null);
     }
@@ -248,7 +247,6 @@ const DateFilter = (props) => {
     }
   };
   useEffect(() => {
-    console.log('focusedDateInput', focusedDateInput);
     //start input
     if (focusedDateInput == 'startDate' && !startDateInputRef.current) {
       startDateInputRef.current = document.getElementById(
