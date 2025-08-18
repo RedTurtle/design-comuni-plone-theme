@@ -31,6 +31,11 @@ const messages = defineMessages({
     id: 'autoplay_speed_description',
     defaultMessage: 'La velocità di autoplay deve essere espressa in secondi.',
   },
+  shuffle_items: {
+    id: 'shuffle_items',
+    defaultMessage:
+      'Ordine casuale (in caso di paginazione solo la prima pagina sarà ordinata casualmente)',
+  },
 });
 
 export const addSliderTemplateOptions = (
@@ -99,5 +104,16 @@ export const addSliderTemplateOptions = (
     { type: 'number', default: 1 },
     pos,
   );
+  pos++;
+
+  addSchemaField(
+    schema,
+    'shuffle_items',
+    intl.formatMessage(messages.shuffle_items),
+    null,
+    { type: 'boolean', default: false },
+    pos,
+  );
+
   return pos;
 };
