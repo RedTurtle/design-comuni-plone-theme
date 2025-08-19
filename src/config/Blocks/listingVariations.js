@@ -267,7 +267,6 @@ const italiaListingVariations = [
       return schema;
     },
     cloneData: cloneBlock,
-    fullobjects: true,
   },
   {
     id: 'simpleListTemplate',
