@@ -43,9 +43,17 @@
 
 ## Versione X.X.X (dd/mm/yyyy)
 
+### Migliorie
+
+- ...
+
+### Novità
+
+- Introdotto il campo CIG per il CT Bando.
+
 ### Fix
 
-- Sistemata l'accessibilità del bottone "Torna Su" del sito
+- Sistemata l'accessibilità del bottone "Torna Su" del sito.
 
 ## Versione 12.3.1 (08/08/2025)
 
