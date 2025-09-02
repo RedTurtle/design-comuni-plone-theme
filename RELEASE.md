@@ -40,6 +40,13 @@
 
 - ...
  -->
+ ## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorata l'accessibilità sui campi di input quando vengono applicate delle label ai campi.
+
+
 
 ## Versione 12.4.0 (22/08/2025)
 
