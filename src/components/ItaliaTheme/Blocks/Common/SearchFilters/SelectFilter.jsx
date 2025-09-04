@@ -9,9 +9,10 @@ const SelectFilter = ({
   value,
   id,
   onChange,
-  placeholder,
   isSearchable = false,
   optionsQuerySize = 25,
+  activeTopLabel = false,
+  selectLabel = '',
 }) => {
   const dispatch = useDispatch();
 
@@ -77,6 +78,7 @@ const SelectFilter = ({
         onChange={(opt) => {
           onChange(id, opt);
         }}
+        label={activeTopLabel && selectLabel}
         options={select_options?.filter((opt) => !!opt.value?.toString()) ?? []}
         isClearable={options?.isClearable ?? true}
         isSearchable={isSearchable}

@@ -217,6 +217,8 @@ const DateFilter = (props) => {
     defaultStart,
     defaultEnd,
     blockID,
+    activeTopLabel = false,
+    legendLabel = '',
     ...rest
   } = props;
   const { DateRangePicker } = reactDates;
@@ -289,6 +291,10 @@ const DateFilter = (props) => {
 
   return (
     <div className="me-lg-3 my-2 my-lg-1 filter-wrapper date-filter">
+      <fieldset>
+      {activeTopLabel && legendLabel && (
+        <legend>{legendLabel}</legend>
+      )}
       <DateRangePicker
         {...rest}
         startDate={value?.startDate || defaultStart}
@@ -333,6 +339,7 @@ const DateFilter = (props) => {
           />
         }
       />
+      </fieldset>
     </div>
   );
 };
