@@ -52,6 +52,7 @@ const TextFilter = ({
             onChange={(e, data) => {
               onChange(id, e.target.value ?? '');
             }}
+            id={`${blockID}-${id}`}
           />
         </>
       )}
