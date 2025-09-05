@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Sistemato il menu laterale nei content type per migliorare l’accessibilità e permettere la navigazione da tastiera.
+
 ## Versione 12.4.0 (22/08/2025)
 
 ### Novità
