@@ -327,7 +327,11 @@ const SelectInput = ({
 
   return (
     <div className="bootstrap-select-wrapper">
-      {label && <label className="active" htmlFor={id}>{label}</label>}
+      {label && (
+        <label className="active" htmlFor={!labelledby ? id : undefined}>
+          {label}
+        </label>
+      )}
       <Select
         components={{
           MenuList,
