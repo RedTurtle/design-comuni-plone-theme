@@ -41,6 +41,21 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Blocco Elenco Card con testo animato: rimosso il focus dal card e dal pulsante “Vedi/Read More”, lasciando la navigazione solo sul titolo.
+- Blocco Elenco Card con testo animato: Aggiunto aria-hidden a “Vedi/Read More” per escluderlo dai lettori di schermo.
+
 ## Versione 12.4.0 (22/08/2025)
 
 ### Novità
