@@ -13,7 +13,7 @@ import {
 import Component from '@plone/volto/components/theme/Component/Component';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { TextWidget } from '@plone/volto/components';
-import UniversalLink from '../../../../../customizations/volto/components/manage/UniversalLink/UniversalLink';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 const messages = defineMessages({
   add_contacts_path: {
