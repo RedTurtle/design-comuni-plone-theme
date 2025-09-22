@@ -13,6 +13,7 @@ import {
 import Component from '@plone/volto/components/theme/Component/Component';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { TextWidget } from '@plone/volto/components';
+import UniversalLink from '../../../../../customizations/volto/components/manage/UniversalLink/UniversalLink';
 
 const messages = defineMessages({
   add_contacts_path: {
@@ -39,17 +40,21 @@ const messages = defineMessages({
     id: 'move_menu_item_down',
     defaultMessage: 'Move menu item down',
   },
-  add_menu_item: {
-    id: 'add_menu_item',
-    defaultMessage: 'Add menu item',
+  add_contacts_item: {
+    id: 'add_contacts_item',
+    defaultMessage: 'Add contacts item',
   },
   empty_active_contacts_item: {
     id: 'empty_active_contacts_item',
-    defaultMessage: 'Select a contacts item',
+    defaultMessage: 'Add a contact item',
   },
   empty_active_contacts_path: {
     id: 'empty_active_contacts_path',
-    defaultMessage: 'Select a menu path',
+    defaultMessage: 'Add a contacts path',
+  },
+  icon_list_help_text: {
+    id: 'icon_list_help_text',
+    defaultMessage: 'For a complete list of icon names, see:',
   },
 });
 
@@ -311,7 +316,9 @@ const ContactsConfigWidget = ({ id, title, value, onChange }) => {
                             ),
                           )}
                           <Menu.Item
-                            name={intl.formatMessage(messages.add_menu_item)}
+                            name={intl.formatMessage(
+                              messages.add_contacts_item,
+                            )}
                             onClick={(e) => addContactItem(e, activeContact)}
                           >
                             <Icon name="plus" />
@@ -319,6 +326,21 @@ const ContactsConfigWidget = ({ id, title, value, onChange }) => {
                         </Menu>
                       </Grid.Column>
                       <Grid.Column stretched width={8}>
+                        <div className="help-text">
+                          {intl.formatMessage(messages.icon_list_help_text)}
+                          <ul>
+                            <li>
+                              <UniversalLink href="https://italia.github.io/bootstrap-italia/docs/utilities/icone/#lista-delle-icone-disponibili">
+                                Bootstrap Italia
+                              </UniversalLink>
+                            </li>
+                            <li>
+                              <UniversalLink href="https://fontawesome.com/v5/search?ic=free&o=r">
+                                Fontawesome
+                              </UniversalLink>
+                            </li>
+                          </ul>
+                        </div>
                         {activeContactItem > -1 &&
                         activeContactItem <
                           contactsConfiguration[activeContact].items.length ? (

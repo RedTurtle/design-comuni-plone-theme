@@ -42,7 +42,7 @@ const Footer = () => {
 
   return (
     <>
-      {/* {showContactsBlock && <ContactsBlock />} */}
+      {showContactsBlock && <ContactsBlock />}
       {showFeedbackForm && (
         <div className="public-ui" id="customer-satisfaction-form">
           <FeedbackForm />
