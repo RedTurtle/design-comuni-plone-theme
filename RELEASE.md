@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Sistemato un problema nell’editor di testo sulla barra laterale delle pagine. Adesso è possibile inserire correttamente link a file ed immagini interni al sito senza errori.
+
 ## Versione 12.4.0 (22/08/2025)
 
 ### Novità
