@@ -217,7 +217,6 @@ const DateFilter = (props) => {
     defaultStart,
     defaultEnd,
     blockID,
-    activeTopLabel = false,
     legendLabel = '',
     ...rest
   } = props;
@@ -289,57 +288,57 @@ const DateFilter = (props) => {
     };
   }, []);
 
+  const WrapperDate = legendLabel ? 'fielset' : 'div';
+
   return (
     <div className="me-lg-3 my-2 my-lg-1 filter-wrapper date-filter">
-      <fieldset>
-      {activeTopLabel && legendLabel && (
-        <legend>{legendLabel}</legend>
-      )}
-      <DateRangePicker
-        {...rest}
-        startDate={value?.startDate || defaultStart}
-        startDateId={`start-date-filter-${blockID}`}
-        startDatePlaceholderText={
-          startLabel ?? intl.formatMessage(messages.eventSearchStartDate)
-        }
-        endDate={value?.endDate || defaultEnd}
-        endDateId={`end-date-filter-${blockID}`}
-        endDatePlaceholderText={
-          endLabel ?? intl.formatMessage(messages.eventSearchEndDate)
-        }
-        onDatesChange={({ startDate, endDate }) => {
-          let start = startDate || defaultStart;
-          let end = endDate || defaultEnd;
-          onChange(id, { start, end });
-        }}
-        noBorder={true}
-        numberOfMonths={isMobile ? 1 : 2}
-        minimumNights={0}
-        focusedInput={focusedDateInput}
-        onFocusChange={(focusedInput) => {
-          setFocusedDateInput(focusedInput);
-        }}
-        displayFormat="DD/MM/YYYY"
-        hideKeyboardShortcutsPanel={true}
-        showClearDates
-        phrases={getDateRangePickerPhrases(intl)}
-        dayAriaLabelFormat="dddd, DD MMMM YYYY"
-        customArrowIcon={
-          <Icon
-            icon="it-arrow-right"
-            color="white"
-            title={intl.formatMessage(messages.roleDescription)}
-          />
-        }
-        customCloseIcon={
-          <Icon
-            icon="it-close"
-            color="black"
-            title={intl.formatMessage(messages.clearDates)}
-          />
-        }
-      />
-      </fieldset>
+      <WrapperDate>
+        {legendLabel && <legend>{legendLabel}</legend>}
+        <DateRangePicker
+          {...rest}
+          startDate={value?.startDate || defaultStart}
+          startDateId={`start-date-filter-${blockID}`}
+          startDatePlaceholderText={
+            startLabel ?? intl.formatMessage(messages.eventSearchStartDate)
+          }
+          endDate={value?.endDate || defaultEnd}
+          endDateId={`end-date-filter-${blockID}`}
+          endDatePlaceholderText={
+            endLabel ?? intl.formatMessage(messages.eventSearchEndDate)
+          }
+          onDatesChange={({ startDate, endDate }) => {
+            let start = startDate || defaultStart;
+            let end = endDate || defaultEnd;
+            onChange(id, { start, end });
+          }}
+          noBorder={true}
+          numberOfMonths={isMobile ? 1 : 2}
+          minimumNights={0}
+          focusedInput={focusedDateInput}
+          onFocusChange={(focusedInput) => {
+            setFocusedDateInput(focusedInput);
+          }}
+          displayFormat="DD/MM/YYYY"
+          hideKeyboardShortcutsPanel={true}
+          showClearDates
+          phrases={getDateRangePickerPhrases(intl)}
+          dayAriaLabelFormat="dddd, DD MMMM YYYY"
+          customArrowIcon={
+            <Icon
+              icon="it-arrow-right"
+              color="white"
+              title={intl.formatMessage(messages.roleDescription)}
+            />
+          }
+          customCloseIcon={
+            <Icon
+              icon="it-close"
+              color="black"
+              title={intl.formatMessage(messages.clearDates)}
+            />
+          }
+        />
+      </WrapperDate>
     </div>
   );
 };
