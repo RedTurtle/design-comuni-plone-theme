@@ -46,6 +46,7 @@
 ### Migliorie
 
 - ...
+- Il pulsante Stile bottone dentro all'editor Slate è ora disponibile soltanto quando si seleziona un link con href.
 
 ### Novità
 
@@ -54,6 +55,8 @@
 ### Fix
 
 - Sistemato il menu laterale nei content type per migliorare l’accessibilità e permettere la navigazione da tastiera.
+- Migliorato la gestione del link "Vedi" nelle card: ora il titolo è sempre cliccabile e il link "Vedi" non viene più raggiunto dai lettori di schermo o dalla tastiera, garantendo un’esperienza più chiara e accessibile.
+- ...
 
 ## Versione 12.4.0 (22/08/2025)
 
