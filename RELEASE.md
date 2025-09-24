@@ -41,6 +41,38 @@
 - ...
  -->
 
+## Versione 12.4.0 (22/08/2025)
+
+### Novità
+
+- Introdotto il campo CIG per il CT Bando.
+
+### Fix
+
+- Sistemata l'accessibilità del bottone "Torna Su" del sito.
+
+## Versione 12.3.1 (08/08/2025)
+
+### Fix
+
+- Migliorata l'accessibilità rimuovendo la visibilità delle immagini di presentazione nei blocchi elenco.
+- Sistemata la semantica dei titoli nei blocchi elenco migliorando così l'accessibilità della pagina.
+- Sistemata la visualizzazione delle immagini all’interno della card del blocco Link completo quando sono in landscape.
+- Ripristinata la funzionalità per mostrare tutte le immagini del blocco elenco o solo quelle della prima fila, se presenti.
+- Ora il calendario si chiude automaticamente quando si passa al campo successivo dopo aver selezionato la data di fine, nei blocchi di ricerca dove è possibile indicare una data di inizio e fine.
+- Migliorata la visualizzazione dei link sulle immagini nei blocchi elenco, rimosso testo non necessario con tipo e dimensione dei file
+
+## Versione 12.3.0 (31/07/2025)
+
+### Novità
+
+- Nuovo tipo di blocco Elenco disponibile: Tabella
+
+### Fix
+
+- Migliorata l'accessibilità nel blocco elenco Link solo Immagini, ora il focus si vede in tutte le immagini.
+- Rimossa la possibilità di raggiungere tramite Tab le immagini nei card quando sono link, evitando doppie letture del titolo.
+
 ## Versione 12.2.2 (14/07/2025)
 
 ### Fix

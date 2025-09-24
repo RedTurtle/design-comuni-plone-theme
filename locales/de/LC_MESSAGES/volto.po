@@ -693,6 +693,11 @@ msgstr ""
 msgid "Titolo"
 msgstr ""
 
+#: components/ItaliaTheme/ScrollToTop/ScrollToTop
+# defaultMessage: Torna all'inizio della pagina
+msgid "Torna all'inizio della pagina"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/FileWidget
 # defaultMessage: Trascina qui il file...
 msgid "Trascina qui il file ..."
@@ -1727,6 +1732,26 @@ msgid "dateRangePicker_closeDatePicker"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: è selezionata
+msgid "dateRangePicker_dateIsSelected"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: è selezionata come data di fine
+msgid "dateRangePicker_dateIsSelectedAsEndDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: è selezionata come data di inizio
+msgid "dateRangePicker_dateIsSelectedAsStartDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: non disponibile
+msgid "dateRangePicker_dateIsUnavailable"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
 # defaultMessage: Tasto invio
 msgid "dateRangePicker_enterKey"
 msgstr ""
@@ -1762,12 +1787,12 @@ msgid "dateRangePicker_jumpToPrevMonth"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
-# defaultMessage: Naviga indietro per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date.
+# defaultMessage: Naviga indietro per interagire con il calendario e selezionare una data.
 msgid "dateRangePicker_keyboardBackwardNavigationInstructions"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
-# defaultMessage: Naviga avanti per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date.
+# defaultMessage: Naviga avanti per interagire con il calendario e selezionare una data.
 msgid "dateRangePicker_keyboardForwardNavigationInstructions"
 msgstr ""
 
@@ -4243,6 +4268,46 @@ msgstr ""
 #: components/ItaliaTheme/View/EventoView/EventoContattiSupportatoDa
 # defaultMessage: Con il supporto di
 msgid "supported_by"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Colore delle righe alternato
+msgid "table_variation_alternate_rows"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Colonne della tabella
+msgid "table_variation_columns"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Colonna
+msgid "table_variaton_column"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Tipo di contenuto
+msgid "table_variaton_ct"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Campo
+msgid "table_variaton_field"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Titolo
+msgid "table_variaton_title"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Titolo della colonna. Se vuoi, puoi modificare il titolo di default.
+msgid "table_variaton_title_description"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/TableTemplate
+# defaultMessage: Titolo
+msgid "tabletemplate_column_title"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/ContactLink
