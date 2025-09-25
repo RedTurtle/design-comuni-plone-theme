@@ -119,6 +119,7 @@ const CardWithSlideUpTextTemplate = (props) => {
                     text={intl.formatMessage(messages.vedi)}
                     className="justify-content-end"
                     tabIndex={-1}
+                    aria-hidden="true"
                   />
                 </div>
                 <UniversalLink
