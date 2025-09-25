@@ -22,6 +22,8 @@ export CTTitleColumnWidget from 'design-comuni-plone-theme/components/ItaliaThem
 export BlocksViewWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/BlocksViewWidget.jsx';
 export PDCViewWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/PDCViewWidget.jsx';
 export DataGridWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/DataGridWidget.jsx';
+export ContactsConfigWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget.jsx';
+export ContactsConfigForm from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigForm.jsx';
 
 /********* ICONS ********* */
 export getItemIcon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/common/common';
