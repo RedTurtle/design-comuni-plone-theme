@@ -65,8 +65,8 @@ const SelectFilter = ({
   const select_options = options?.choices
     ? options.choices
     : options?.vocabulary
-    ? vocabularies?.[options.vocabulary]?.items
-    : selectOptions;
+      ? vocabularies?.[options.vocabulary]?.items
+      : selectOptions;
 
   return (
     <div className="me-lg-3 my-2 my-lg-1 filter-wrapper select-filter">
@@ -77,6 +77,7 @@ const SelectFilter = ({
         onChange={(opt) => {
           onChange(id, opt);
         }}
+        label={placeholder}
         options={select_options?.filter((opt) => !!opt.value?.toString()) ?? []}
         isClearable={options?.isClearable ?? true}
         isSearchable={isSearchable}
