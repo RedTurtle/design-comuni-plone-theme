@@ -7,8 +7,6 @@ const ConditionallyRequiredDateWidget = (props) => {
   // Check tipo di incarico in formData
   const tipoIncarico = formData?.tipologia_incarico;
 
-  console.log(props);
-
   // Make required only if tipo di incarico !== "amministrativo"
   const isRequired = tipoIncarico !== 'amministrativo';
 
