@@ -147,15 +147,15 @@ const Field = ({
               isInvalid() ? 'is-invalid' : ''
             }`}
           >
-            <label htmlFor={name}>{getLabel()}</label>
+            <label id={`${name}-label`} htmlFor={name}>
+              {getLabel()}
+            </label>
             <Select
               components={{
                 IndicatorSeparator: null,
                 DropdownIndicator,
               }}
               inputId={name}
-              name={name}
-              label={getLabel()}
               isSearchable={true}
               onChange={(v) => {
                 onChange(name, v.value);
@@ -163,9 +163,11 @@ const Field = ({
               options={[
                 ...(input_values?.map((v) => ({ value: v, label: v })) ?? []),
               ]}
+              aria-live="polite"
               isDisabled={disabled}
               placeholder={intl.formatMessage(messages.select_a_value)}
               aria-label={intl.formatMessage(messages.select_a_value)}
+              aria-labelledby={`${name}-label`}
               classNamePrefix="react-select"
               className={isInvalid() ? 'is-invalid' : ''}
               value={value ? [{ value: value, label: value }] : []}
