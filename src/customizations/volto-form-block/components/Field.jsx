@@ -153,7 +153,7 @@ const Field = ({
                 IndicatorSeparator: null,
                 DropdownIndicator,
               }}
-              id={name}
+              inputId={name}
               name={name}
               label={getLabel()}
               isSearchable={true}
@@ -187,32 +187,36 @@ const Field = ({
               isInvalid() ? 'is-invalid' : ''
             }`}
           >
-            <label className="active">{getLabel()}</label>
-            {input_values?.map((v, index) => (
-              <FormGroup check key={v + name + index}>
-                <Input
-                  id={v + name}
-                  name={name}
-                  type="radio"
-                  disabled={disabled}
-                  readOnly={disabled}
-                  onChange={(e) => {
-                    onChange(name, v);
-                  }}
-                  addon // Needed to avoid application of form-control class as of kit v4.0.2
-                  checked={value === v}
-                />
-                <Label for={v + name} check>
-                  {v}
-                </Label>
-              </FormGroup>
-            ))}
-            {description && <small className="form-text">{description}</small>}
-            {errorMessage && (
-              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
-                {errorMessage}
-              </div>
-            )}
+            <fieldset className="radio-group">
+              <legend>{getLabel()}</legend>
+              {input_values?.map((v, index) => (
+                <FormGroup check key={v + name + index}>
+                  <Input
+                    id={v + name}
+                    name={name}
+                    type="radio"
+                    disabled={disabled}
+                    readOnly={disabled}
+                    onChange={(e) => {
+                      onChange(name, v);
+                    }}
+                    addon // Needed to avoid application of form-control class as of kit v4.0.2
+                    checked={value === v}
+                  />
+                  <Label for={v + name} check>
+                    {v}
+                  </Label>
+                </FormGroup>
+              ))}
+              {description && (
+                <small className="form-text">{description}</small>
+              )}
+              {errorMessage && (
+                <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                  {errorMessage}
+                </div>
+              )}
+            </fieldset>
           </div>
         </div>
       )}
@@ -223,37 +227,41 @@ const Field = ({
               isInvalid() ? 'is-invalid' : ''
             }`}
           >
-            <label className="active">{getLabel()}</label>
-            {input_values?.map((v, index) => (
-              <FormGroup check key={v + name + index}>
-                <Input
-                  id={v + name}
-                  name={name}
-                  type="checkbox"
-                  checked={value?.indexOf(v) > -1}
-                  onChange={(e) => {
-                    let values = JSON.parse(JSON.stringify(value ?? []));
-                    if (e.target.checked) {
-                      values.push(v);
-                    } else {
-                      values.splice(values.indexOf(v), 1);
-                    }
-                    onChange(name, values);
-                  }}
-                  invalid={isInvalid() ? 'true' : null}
-                  addon // Needed to avoid application of form-control class as of kit v4.0.2
-                />
-                <Label for={v + name} check>
-                  {v}
-                </Label>
-              </FormGroup>
-            ))}
-            {description && <small className="form-text">{description}</small>}
-            {errorMessage && (
-              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
-                {errorMessage}
-              </div>
-            )}
+            <fieldset className="checkbox-group">
+              <legend>{getLabel()}</legend>
+              {input_values?.map((v, index) => (
+                <FormGroup check key={v + name + index}>
+                  <Input
+                    id={v + name}
+                    name={name}
+                    type="checkbox"
+                    checked={value?.indexOf(v) > -1}
+                    onChange={(e) => {
+                      let values = JSON.parse(JSON.stringify(value ?? []));
+                      if (e.target.checked) {
+                        values.push(v);
+                      } else {
+                        values.splice(values.indexOf(v), 1);
+                      }
+                      onChange(name, values);
+                    }}
+                    invalid={isInvalid() ? 'true' : null}
+                    addon // Needed to avoid application of form-control class as of kit v4.0.2
+                  />
+                  <Label for={v + name} check>
+                    {v}
+                  </Label>
+                </FormGroup>
+              ))}
+              {description && (
+                <small className="form-text">{description}</small>
+              )}
+              {errorMessage && (
+                <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                  {errorMessage}
+                </div>
+              )}
+            </fieldset>
           </div>
         </div>
       )}
