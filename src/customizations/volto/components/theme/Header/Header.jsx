@@ -34,14 +34,13 @@ const useDisableHeaderInteractions = () => {
         if (!header) return;
 
         const focusables = header.querySelectorAll(
-          'a, button, input, select, textarea, [tabindex]',
+          'a, button, input, select, textarea, [tabindex], .it-socials a',
         );
-        const socials = header.querySelectorAll('.it-socials a');
 
-        [...focusables, ...socials].forEach((el) => {
-          el.setAttribute('tabindex', '-1');
-          el.setAttribute('aria-hidden', 'true');
-          // el.style.pointerEvents = 'none'; - disabilitare il mouse click?
+        [...focusables].forEach((item) => {
+          item.setAttribute('tabindex', '-1');
+          item.setAttribute('aria-hidden', 'true');
+          // item.style.pointerEvents = 'none'; - disabilitare il mouse click?
         });
       }
     };
