@@ -38,7 +38,7 @@ const useDisableHeaderInteractions = () => {
         );
 
         [...focusables].forEach((item) => {
-          item.setAttribute('tabindex', '-1');
+          item.setAttribute('tabIndex', '-1');
           item.setAttribute('aria-hidden', 'true');
           // item.style.pointerEvents = 'none'; - disabilitare il mouse click?
         });
