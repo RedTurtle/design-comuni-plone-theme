@@ -181,30 +181,35 @@ const FormView = ({
                     getFieldsToSendWithValue(subblock);
 
                   return (
-                    <Row key={'row' + index}>
-                      <Col className="py-2">
-                        <Field
-                          {...subblock}
-                          name={name}
-                          onChange={(field, value) =>
-                            onChangeFormData(
-                              subblock.id,
-                              field,
-                              value,
-                              fields_to_send_with_value,
-                            )
-                          }
-                          value={
-                            subblock.field_type === 'static_text'
-                              ? subblock.value
-                              : formData[name]?.value
-                          }
-                          valid={isValidField(name)}
-                          errorMessage={getErrorMessage(name)}
-                          formHasErrors={formErrors.length > 0}
-                        />
-                      </Col>
-                    </Row>
+                    evaluateAllConditions(
+                      subblock?.visibility_conditions,
+                      formData,
+                    ) && (
+                      <Row key={'row' + index}>
+                        <Col className="py-2">
+                          <Field
+                            {...subblock}
+                            name={name}
+                            onChange={(field, value) =>
+                              onChangeFormData(
+                                subblock.id,
+                                field,
+                                value,
+                                fields_to_send_with_value,
+                              )
+                            }
+                            value={
+                              subblock.field_type === 'static_text'
+                                ? subblock.value
+                                : formData[name]?.value
+                            }
+                            valid={isValidField(name)}
+                            errorMessage={getErrorMessage(name)}
+                            formHasErrors={formErrors.length > 0}
+                          />
+                        </Col>
+                      </Row>
+                    )
                   );
                 })}
 
