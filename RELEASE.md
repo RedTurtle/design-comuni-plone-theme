@@ -47,7 +47,8 @@
 
 - Migliorata l'accessibilità sui campi di input quando vengono applicate delle label ai campi.
 - Il pulsante Stile bottone dentro all'editor Slate è ora disponibile soltanto quando si seleziona un link con href.
-
+- Migliorata la gestione del copia/incolla da Word e Word online. Ora vengono mantenuti stili e formattazione.
+  
 ### Novità
 
 - ...
