@@ -1,7 +1,8 @@
 // CUSTOMIZATION:
 // - 112-113 reset subscription limit to default when set_limit is not active
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Segment, Accordion, Form, Grid } from 'semantic-ui-react';
 import { defineMessages, useIntl, FormattedMessage } from 'react-intl';
@@ -12,6 +13,8 @@ import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
 
 import config from '@plone/volto/registry';
+
+import { setSubblocksIDList } from 'volto-form-block/actions';
 
 import { BlockDataForm } from '@plone/volto/components';
 import { getFieldName } from 'volto-form-block/components/utils';
@@ -49,6 +52,7 @@ const Sidebar = ({
   setSelected,
 }) => {
   const intl = useIntl();
+  const dispatch = useDispatch();
 
   if (data.send_email === undefined) data.send_email = true;
 
@@ -61,6 +65,14 @@ const Sidebar = ({
     });
   var FormSchema = config.blocks.blocksConfig.form.formSchema;
   var FieldSchema = config.blocks.blocksConfig.form.fieldSchema;
+
+  // update list of fields ID
+  useEffect(() => {
+    if (data.subblocks?.length > 0) {
+      dispatch(setSubblocksIDList(data.subblocks));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
   return (
     <Form>

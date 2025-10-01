@@ -140,10 +140,11 @@ const RibbonCardTemplate = (props) => {
                   >
                     {date && <div className="dates">{date}</div>}
                     <CardTitle
-                      tag="h3"
-                      className={`${
-                        isEventAppointment ? 'rassegna-appointment-title' : ''
-                      }`}
+                      tag={title ? 'h3' : 'h2'}
+                      className={cx('', {
+                        'rassegna-appointment-title': isEventAppointment,
+                        h3: !title,
+                      })}
                     >
                       <UniversalLink
                         item={!isEditMode ? item : null}
@@ -171,6 +172,7 @@ const RibbonCardTemplate = (props) => {
                           intl.formatMessage(messages.default_detail_link)
                         }
                         aria-hidden="true"
+                        tabindex="-1"
                       />
                     )}
                   </CardBody>

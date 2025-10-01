@@ -2,11 +2,15 @@
  * Html helper.
  * @module helpers/Html
  */
+
 /*
- CUSTOMIZATIONS:
- - Rimosso <link rel="shortcut icon" href="/favicon.ico" /> perchè creato da volto-site-settings
- - Add shrink-to-fit=no in viewport meta
- - Remove link for manifest and svg/apple icons
+ * original: https://raw.githubusercontent.com/plone/volto/refs/tags/17.20.4/src/helpers/Html/Html.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Rimossi <link per rle favicon perchè creato da volto-site-settings
+ * - Add shrink-to-fit=no in viewport meta
+ * - Remove link for manifest and svg/apple icons
+ * - Aggiunto og:type website
  */
 
 import React, { Component } from 'react';
@@ -97,8 +101,10 @@ class Html extends Component {
       this.props;
     const head = Helmet.rewind();
     const bodyClass = join(BodyClass.rewind(), ' ');
+    const htmlAttributes = head.htmlAttributes.toComponent();
+
     return (
-      <html lang="en">
+      <html lang={htmlAttributes.lang}>
         <head>
           <meta charSet="utf-8" />
           {head.base.toComponent()}
@@ -122,7 +128,18 @@ class Html extends Component {
               })};`,
             }}
           />
-          {/* <link rel="shortcut icon" href="/favicon.ico" /> */}
+
+          {/*
+           * <link rel="icon" href="/favicon.ico" sizes="any" />
+           * <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+           * <link
+           * rel="apple-touch-icon"
+           * sizes="180x180"
+           * href="/apple-touch-icon.png"
+           * />
+           * <link rel="manifest" href="/site.webmanifest" />
+           */}
+
           <meta property="og:type" content="website" />
           <meta name="generator" content="Plone 6 - https://plone.org" />
           <meta
@@ -177,7 +194,8 @@ class Html extends Component {
         <body className={bodyClass}>
           <div role="navigation" aria-label="Toolbar" id="toolbar" />
           <div id="main" dangerouslySetInnerHTML={{ __html: markup }} />
-          <div id="sidebar" />
+          <div role="complementary" aria-label="Sidebar" id="sidebar" />
+
           <script
             dangerouslySetInnerHTML={{
               __html: `window.__data=${serialize(

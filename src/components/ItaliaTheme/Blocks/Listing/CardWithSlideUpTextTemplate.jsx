@@ -45,6 +45,8 @@ const CardWithSlideUpTextTemplate = (props) => {
     rrule,
   } = props;
 
+  const TitleTag = title ? 'h3' : 'h2';
+
   return (
     <div className="card-slide-text-template">
       <Container className="px-4 mt-3">
@@ -62,7 +64,7 @@ const CardWithSlideUpTextTemplate = (props) => {
             const date = hide_dates
               ? null
               : getCalendarDate(item, rrule.rrulestr);
-            const title = item?.title || '';
+            const itemTitle = item?.title || '';
 
             const BlockExtraTags = getComponentWithFallback({
               name: 'BlockExtraTags',
@@ -77,6 +79,7 @@ const CardWithSlideUpTextTemplate = (props) => {
                     backgroundImage: `url(${image})`,
                   }
                 }
+                tabIndex={-1}
               >
                 <div className="bg-gradient"></div>
                 {(category || date) && (
@@ -95,14 +98,15 @@ const CardWithSlideUpTextTemplate = (props) => {
                     'auto-margin-link': !category && !date,
                   })}
                 >
-                  <h3
+                  <TitleTag
                     className={cx('title', {
-                      ellipsis: title.length > 50,
+                      h3: !title,
+                      ellipsis: itemTitle.length > 50,
                     })}
-                    title={title.length > 50 ? title : undefined}
+                    title={itemTitle.length > 50 ? itemTitle : undefined}
                   >
-                    {title.substring(0, 50)}
-                  </h3>
+                    {itemTitle.substring(0, 50)}
+                  </TitleTag>
                 </UniversalLink>
                 <div className="box-slide-up">
                   {show_description && item.description && (
@@ -116,12 +120,15 @@ const CardWithSlideUpTextTemplate = (props) => {
                     href={isEditMode ? '#' : null}
                     text={intl.formatMessage(messages.vedi)}
                     className="justify-content-end"
+                    tabIndex={-1}
+                    aria-hidden="true"
                   />
                 </div>
                 <UniversalLink
                   item={!isEditMode ? item : null}
                   className="card-link"
                   aria-hidden="true"
+                  tabIndex="-1"
                 ></UniversalLink>
               </div>
             );

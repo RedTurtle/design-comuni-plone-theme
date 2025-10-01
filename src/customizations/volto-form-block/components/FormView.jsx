@@ -6,18 +6,19 @@
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { Card, CardBody, Row, Col, Alert, Progress } from 'design-react-kit';
-// eslint-disable-next-line import/no-unresolved
 import { getFieldName } from 'volto-form-block/components/utils';
-// eslint-disable-next-line import/no-unresolved
 import Field from 'volto-form-block/components/Field';
 import {
   OTPWidget,
   OTP_FIELDNAME_EXTENDER,
   Button,
 } from 'volto-form-block/components/Widget';
-import { FormResult } from 'volto-form-block/components';
-// eslint-disable-next-line import/no-unresolved
 import config from '@plone/volto/registry';
+import { FormResult } from 'volto-form-block/components';
+import { evaluateAllConditions } from 'volto-form-block/helpers/conditions-list';
+
+/* Style */
+import 'volto-form-block/components/FormView.css';
 
 const messages = defineMessages({
   default_submit_label: {

@@ -279,6 +279,22 @@
   @extend .active;
 }
 
+.cms-ui .ui.modal.modal_visibility_conditions {
+  .column.choice-actions {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.cms-ui .ui.page.modals.dimmer {
+  .ui.modal.modal_visibility_conditions {
+    .content {
+      min-height: 50vh;
+      overflow-y: auto;
+    }
+  }
+}
+
 .grecaptcha-badge {
   bottom: 115px !important;
 }

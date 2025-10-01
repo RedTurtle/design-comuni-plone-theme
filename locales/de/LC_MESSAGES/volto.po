@@ -693,6 +693,11 @@ msgstr ""
 msgid "Titolo"
 msgstr ""
 
+#: components/ItaliaTheme/ScrollToTop/ScrollToTop
+# defaultMessage: Torna all'inizio della pagina
+msgid "Torna all'inizio della pagina"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/FileWidget
 # defaultMessage: Trascina qui il file...
 msgid "Trascina qui il file ..."
@@ -841,6 +846,16 @@ msgstr ""
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: {filterNumber} filtri attivati
 msgid "active_filters"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Add contacts item
+msgid "add_contacts_item"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Add contacts path
+msgid "add_contacts_path"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
@@ -1455,9 +1470,89 @@ msgstr ""
 msgid "competenze"
 msgstr ""
 
+#: overrideTranslations
+# defaultMessage: Contiene
+msgid "condition_contains"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: È maggiore o uguale
+msgid "condition_greater_or_equal"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: È maggiore di
+msgid "condition_greater_than"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: È vuoto
+msgid "condition_is_empty"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: È uguale a
+msgid "condition_is_equal_to"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Non è vuoto
+msgid "condition_is_not_empty"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Non è uguale a
+msgid "condition_is_not_equal_to"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: È minore o uguale
+msgid "condition_less_or_equal"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: È minore di
+msgid "condition_less_than"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Non contiene
+msgid "condition_not_contains"
+msgstr ""
+
+#: components/ItaliaTheme/ContactsBlock/ContactsBlock
+# defaultMessage: Contatta il comune
+msgid "contact_block_title"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Contact items
+msgid "contact_items_header"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaContatti
 # defaultMessage: Contatti
 msgid "contacts"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigForm
+# defaultMessage: Contact
+msgid "contacts-config-contact"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigForm
+# defaultMessage: Delete contact
+msgid "contacts-config-delete-item"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigForm
+# defaultMessage: Icon name
+msgid "contacts-config-icon"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigForm
+# defaultMessage: Contact title
+msgid "contacts-config-title"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
@@ -1677,6 +1772,26 @@ msgid "dateRangePicker_closeDatePicker"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: è selezionata
+msgid "dateRangePicker_dateIsSelected"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: è selezionata come data di fine
+msgid "dateRangePicker_dateIsSelectedAsEndDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: è selezionata come data di inizio
+msgid "dateRangePicker_dateIsSelectedAsStartDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: non disponibile
+msgid "dateRangePicker_dateIsUnavailable"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
 # defaultMessage: Tasto invio
 msgid "dateRangePicker_enterKey"
 msgstr ""
@@ -1712,12 +1827,12 @@ msgid "dateRangePicker_jumpToPrevMonth"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
-# defaultMessage: Naviga indietro per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date.
+# defaultMessage: Naviga indietro per interagire con il calendario e selezionare una data.
 msgid "dateRangePicker_keyboardBackwardNavigationInstructions"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
-# defaultMessage: Naviga avanti per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date.
+# defaultMessage: Naviga avanti per interagire con il calendario e selezionare una data.
 msgid "dateRangePicker_keyboardForwardNavigationInstructions"
 msgstr ""
 
@@ -1805,6 +1920,11 @@ msgstr ""
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Deleghe
 msgid "deleghe"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Delete
+msgid "delete_button"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
@@ -2082,6 +2202,16 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/HighlightedContent/Edit
 # defaultMessage: Please select an item in the sidebar in order to show it here
 msgid "emptySelection"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Add a contact item
+msgid "empty_active_contacts_item"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Add a contacts path
+msgid "empty_active_contacts_path"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Dates
@@ -2492,6 +2622,11 @@ msgstr ""
 msgid "iconDescription"
 msgstr ""
 
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: For a complete list of icon names, see:
+msgid "icon_list_help_text"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/Argument/ArgumentIcon
 # defaultMessage: Icona per l'argomento {topic_title}
 msgid "icon_title"
@@ -2841,6 +2976,16 @@ msgstr ""
 #: components/ItaliaTheme/View/ModuloView/ModuloFormatiAlternativi
 # defaultMessage: Formati alternativi
 msgid "modulo_formati_alternativi"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Move menu item down
+msgid "move_menu_item_down"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Move menu item up
+msgid "move_menu_item_up"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
@@ -3244,6 +3389,11 @@ msgstr ""
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Risultati indagini di customer satisfaction
 msgid "risultati_indagini_customer_satisfaction"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Root path
+msgid "root_path"
 msgstr ""
 
 #: overrideTranslations
@@ -3962,6 +4112,7 @@ msgid "sideMenuIndex"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/SideMenu
+#: components/ItaliaTheme/View/Commons/SideMenuByTitles
 # defaultMessage: Navigazione della pagina
 msgid "sideMenuNavigation"
 msgstr ""
@@ -4192,6 +4343,46 @@ msgstr ""
 #: components/ItaliaTheme/View/EventoView/EventoContattiSupportatoDa
 # defaultMessage: Con il supporto di
 msgid "supported_by"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Colore delle righe alternato
+msgid "table_variation_alternate_rows"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Colonne della tabella
+msgid "table_variation_columns"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Colonna
+msgid "table_variaton_column"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Tipo di contenuto
+msgid "table_variaton_ct"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Campo
+msgid "table_variaton_field"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Titolo
+msgid "table_variaton_title"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Titolo della colonna. Se vuoi, puoi modificare il titolo di default.
+msgid "table_variaton_title_description"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/TableTemplate
+# defaultMessage: Titolo
+msgid "tabletemplate_column_title"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/ContactLink

@@ -45,11 +45,69 @@
 
 ### Migliorie
 
+- Migliorata l'accessibilità sui campi di input quando vengono applicate delle label ai campi.
+- Il pulsante Stile bottone dentro all'editor Slate è ora disponibile soltanto quando si seleziona un link con href.
+
+### Novità
+
+- E' ora disponibile il blocco contatti: dal pannello di controllo è possibile impostare una lista di contatti da mostrare sopra al footer.
+
+### Fix
+
+- Sistemato un problema nell’editor di testo sulla barra laterale delle pagine. Adesso è possibile inserire correttamente link a file ed immagini interni al sito senza errori.
+- Blocco Elenco Card con testo animato: rimosso il focus dal card e dal pulsante “Vedi/Read More”, lasciando la navigazione solo sul titolo.
+- Blocco Elenco Card con testo animato: Aggiunto aria-hidden a “Vedi/Read More” per escluderlo dai lettori di schermo.
+- Migliorato la gestione del link "Vedi" nelle card: ora il titolo è sempre cliccabile e il link "Vedi" non viene più raggiunto dai lettori di schermo o dalla tastiera, garantendo un’esperienza più chiara e accessibile.
+
+
+## Versione 12.4.0 (22/08/2025)
+
+### Novità
+
+- Introdotto il campo CIG per il CT Bando.
+
+### Fix
+
+- Sistemata l'accessibilità del bottone "Torna Su" del sito.
+
+## Versione 12.3.1 (08/08/2025)
+
+### Fix
+
+- Migliorata l'accessibilità rimuovendo la visibilità delle immagini di presentazione nei blocchi elenco.
+- Sistemata la semantica dei titoli nei blocchi elenco migliorando così l'accessibilità della pagina.
+- Sistemata la visualizzazione delle immagini all’interno della card del blocco Link completo quando sono in landscape.
+- Ripristinata la funzionalità per mostrare tutte le immagini del blocco elenco o solo quelle della prima fila, se presenti.
+- Ora il calendario si chiude automaticamente quando si passa al campo successivo dopo aver selezionato la data di fine, nei blocchi di ricerca dove è possibile indicare una data di inizio e fine.
+- Migliorata la visualizzazione dei link sulle immagini nei blocchi elenco, rimosso testo non necessario con tipo e dimensione dei file
+
+## Versione 12.3.0 (31/07/2025)
+
+### Novità
+
+- Nuovo tipo di blocco Elenco disponibile: Tabella
+
+### Fix
+
+- Migliorata l'accessibilità nel blocco elenco Link solo Immagini, ora il focus si vede in tutte le immagini.
+- Rimossa la possibilità di raggiungere tramite Tab le immagini nei card quando sono link, evitando doppie letture del titolo.
+
+## Versione 12.2.2 (14/07/2025)
+
+### Fix
+
+- La toolbar della tabella è stata riposizionata per non ostacolare la compilazione dei dati, e l'intestazione non forza le lettere maiuscole in modalità di Modifica.
+
+## Versione 12.2.0 (17/06/2025)
+
+### Migliorie
+
 - Le immagini negli slider vengono ora caricate in modalità 'lazy', in modo da alleggerire il caricamento iniziale della pagina.
 
 ### Novità
 
 - Nel blocco form è stata aggiunta la possibilità di consultare i dati compilati di ogni singolo form nella tab "Dati" all'interno del blocco, è possibile inoltre scaricare il file CSV o pulire i dati sempre dalla stessa sezione.
+- Blocco form aggiornato, ora è possibile rendere visibili i vari campi solo quando vengono soddisfatte determinate condizioni create dal redattore.
 
 ### Fix
 

@@ -92,7 +92,7 @@ const BandiInEvidenceTemplate = ({
               <Col lg={4} sm={6} xs={12} key={index} className="pb-3">
                 <Card key={index} className="listing-item card-bg mt-2">
                   <CardBody>
-                    <CardTitle tag="h3" className="title">
+                    <CardTitle tag={title ? 'h3' : 'h2'} className="title">
                       <UniversalLink
                         className="bando-title"
                         item={!isEditMode ? item : null}
@@ -131,7 +131,7 @@ const BandiInEvidenceTemplate = ({
                               {intl.formatMessage(messages.tipologia)}:
                             </div>
                             <span className="bando-dati-date">
-                              {item.tipologia_bando}
+                              {item.tipologia_bando.title}
                             </span>
                           </span>
                         )}
@@ -213,6 +213,14 @@ const BandiInEvidenceTemplate = ({
                           </span>
                         )}
 
+                        {/* cig */}
+                        {item.cig && (
+                          <span className="d-flex flex-wrap align-items-baseline bando-dati-info">
+                            <div className="bando-dati-label me-2">CIG:</div>
+                            <span className="bando-dati-date">{item.cig}</span>
+                          </span>
+                        )}
+
                         {/* Note aggiornamenti */}
                         {item.update_note &&
                           (item.bando_state?.includes('open') ||
@@ -229,6 +237,8 @@ const BandiInEvidenceTemplate = ({
                           item={!isEditMode ? item : null}
                           href={isEditMode ? '#' : null}
                           text={intl.formatMessage(messages.vedi)}
+                          aria-hidden="true"
+                          tabindex="-1"
                         />
                       </div>
                     </div>

@@ -58,6 +58,7 @@ const SimpleCardDefault = (props) => {
     id_lighthouse,
     rrule,
     index,
+    title,
   } = props;
 
   const getItemClass = (item) => {
@@ -123,10 +124,11 @@ const SimpleCardDefault = (props) => {
           </CardCategory>
         )}
         <CardTitle
-          tag="h3"
-          className={`${
-            isEventAppointment ? 'rassegna-appointment-title' : ''
-          }`}
+          tag={title ? 'h3' : 'h2'}
+          className={cx('', {
+            'rassegna-appointment-title': isEventAppointment,
+            h3: !title,
+          })}
         >
           <UniversalLink
             item={!isEditMode ? item : null}
@@ -176,6 +178,7 @@ const SimpleCardDefault = (props) => {
               intl.formatMessage(messages.card_detail_label)
             }
             aria-hidden="true"
+            tabindex="-1"
           />
         )}
       </CardBody>

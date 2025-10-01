@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
@@ -122,21 +122,49 @@ const messages = defineMessages({
   keyboardForwardNavigationInstructions: {
     id: 'dateRangePicker_keyboardForwardNavigationInstructions',
     defaultMessage:
-      "Naviga avanti per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date.",
+      'Naviga avanti per interagire con il calendario e selezionare una data.', //(rimosso questo perchè abbiamo messo hideKeyboardShortcutsPanel=true --> )Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date.
   },
   keyboardBackwardNavigationInstructions: {
     id: 'dateRangePicker_keyboardBackwardNavigationInstructions',
     defaultMessage:
-      "Naviga indietro per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date.",
+      'Naviga indietro per interagire con il calendario e selezionare una data.', //(rimosso questo perchè abbiamo messo hideKeyboardShortcutsPanel=true --> )Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date.
   },
   choose: {
     id: 'dateRangePicker_choose',
     defaultMessage: 'Scegli',
   },
+  dateIsUnavailable: {
+    id: 'dateRangePicker_dateIsUnavailable',
+    defaultMessage: 'non disponibile',
+  },
+  dateIsSelected: {
+    id: 'dateRangePicker_dateIsSelected',
+    defaultMessage: 'è selezionata',
+  },
+  dateIsSelectedAsStartDate: {
+    id: 'dateRangePicker_dateIsSelectedAsStartDate',
+    defaultMessage: 'è selezionata come data di inizio',
+  },
+  dateIsSelectedAsEndDate: {
+    id: 'dateRangePicker_dateIsSelectedAsEndDate',
+    defaultMessage: 'è selezionata come data di fine',
+  },
 });
 
 const getDateRangePickerPhrases = (intl) => {
   return {
+    chooseAvailableDate: ({ date }) => `${date}`,
+    chooseAvailableStartDate: ({ date }) => `${date}`,
+    chooseAvailableEndDate: ({ date }) => `${date}`,
+    dateIsUnavailable: ({ date }) =>
+      `${date} ${intl.formatMessage(messages.dateIsUnavailable)}`,
+    dateIsSelected: ({ date }) =>
+      `${date} ${intl.formatMessage(messages.dateIsSelected)}`,
+    dateIsSelectedAsStartDate: ({ date }) =>
+      `${date} ${intl.formatMessage(messages.dateIsSelectedAsStartDate)}`,
+    dateIsSelectedAsEndDate: ({ date }) =>
+      `${date} ${intl.formatMessage(messages.dateIsSelectedAsEndDate)}`,
+    //
     calendarLabel: intl.formatMessage(messages.calendarLabel),
     roleDescription: intl.formatMessage(messages.roleDescription),
     closeDatePicker: intl.formatMessage(messages.closeDatePicker),
@@ -189,6 +217,7 @@ const DateFilter = (props) => {
     defaultStart,
     defaultEnd,
     blockID,
+    legendLabel = '',
     ...rest
   } = props;
   const { DateRangePicker } = reactDates;
@@ -196,79 +225,120 @@ const DateFilter = (props) => {
   let isMobile = false;
   if (__CLIENT__) isMobile = window && window.innerWidth < 992;
 
-  useEffect(() => {
-    let startDateInput = document.getElementById('start-date-filter');
+  const startDateInputRef = useRef(null);
+  const endDateInputRef = useRef(null);
 
-    if (startDateInput) {
-      let removeStartDateListener = startDateInput.addEventListener(
-        'keydown',
-        (e) => {
-          if (e.key === 'Tab' && e.shiftKey) setFocusedDateInput(null);
-        },
+  const startDateListener = (e) => {
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        setFocusedDateInput(null);
+      }
+    }
+
+    if (e.key === 'Escape') {
+      setFocusedDateInput(null);
+    }
+  };
+  const endDateListener = (e) => {
+    if (e.key === 'Tab' && !e.shiftKey) {
+      setFocusedDateInput(null);
+    }
+    if (e.key === 'Escape') {
+      setFocusedDateInput(null);
+    }
+  };
+  useEffect(() => {
+    //start input
+    if (focusedDateInput == 'startDate' && !startDateInputRef.current) {
+      startDateInputRef.current = document.getElementById(
+        `start-date-filter-${blockID}`,
       );
 
-      if (removeStartDateListener) return () => removeStartDateListener();
+      if (startDateInputRef.current) {
+        startDateInputRef.current.addEventListener(
+          'keydown',
+          startDateListener,
+        );
+      }
     }
-  }, []);
 
-  useEffect(() => {
-    let endDateInput = document.getElementById('end-date-filter');
-
-    if (endDateInput) {
-      let removeEndDateListener = endDateInput.addEventListener(
-        'keydown',
-        (e) => {
-          if (e.key === 'Tab' && !e.shiftKey) setFocusedDateInput(null);
-        },
+    //end input
+    if (focusedDateInput == 'endDate' && !endDateInputRef.current) {
+      endDateInputRef.current = document.getElementById(
+        `end-date-filter-${blockID}`,
       );
 
-      if (removeEndDateListener) return () => removeEndDateListener();
+      if (endDateInputRef.current) {
+        endDateInputRef.current.addEventListener('keydown', endDateListener);
+      }
     }
+  }, [focusedDateInput]);
+
+  useEffect(() => {
+    return () => {
+      if (startDateInputRef.current) {
+        startDateInputRef.current.removeEventListener(
+          'keydown',
+          startDateListener,
+        );
+      }
+      if (endDateInputRef.current) {
+        endDateInputRef.current.removeEventListener('keydown', endDateListener);
+      }
+    };
   }, []);
+
+  const WrapperDate = legendLabel ? 'fielset' : 'div';
 
   return (
     <div className="me-lg-3 my-2 my-lg-1 filter-wrapper date-filter">
-      <DateRangePicker
-        {...rest}
-        startDate={value?.startDate || defaultStart}
-        startDateId={`start-date-filter-${blockID}`}
-        startDatePlaceholderText={
-          startLabel ?? intl.formatMessage(messages.eventSearchStartDate)
-        }
-        endDate={value?.endDate || defaultEnd}
-        endDateId={`end-date-filter-${blockID}`}
-        endDatePlaceholderText={
-          endLabel ?? intl.formatMessage(messages.eventSearchEndDate)
-        }
-        onDatesChange={({ startDate, endDate }) => {
-          let start = startDate || defaultStart;
-          let end = endDate || defaultEnd;
-          onChange(id, { start, end });
-        }}
-        noBorder={true}
-        numberOfMonths={isMobile ? 1 : 2}
-        minimumNights={0}
-        focusedInput={focusedDateInput}
-        onFocusChange={(focusedInput) => setFocusedDateInput(focusedInput)}
-        displayFormat="DD/MM/YYYY"
-        hideKeyboardShortcutsPanel={true}
-        showClearDates
-        phrases={getDateRangePickerPhrases(intl)}
-        customArrowIcon={
-          <Icon
-            icon="it-arrow-right"
-            color="white"
-            title={intl.formatMessage(messages.roleDescription)}
-          />
-        }
-        customCloseIcon={
-          <Icon
-            icon="it-close"
-            color="white"
-            title={intl.formatMessage(messages.clearDates)}
-          />
-        }
-      />
+      <WrapperDate>
+        {legendLabel && <legend>{legendLabel}</legend>}
+        <DateRangePicker
+          {...rest}
+          startDate={value?.startDate || defaultStart}
+          startDateId={`start-date-filter-${blockID}`}
+          startDatePlaceholderText={
+            startLabel ?? intl.formatMessage(messages.eventSearchStartDate)
+          }
+          endDate={value?.endDate || defaultEnd}
+          endDateId={`end-date-filter-${blockID}`}
+          endDatePlaceholderText={
+            endLabel ?? intl.formatMessage(messages.eventSearchEndDate)
+          }
+          onDatesChange={({ startDate, endDate }) => {
+            let start = startDate || defaultStart;
+            let end = endDate || defaultEnd;
+            onChange(id, { start, end });
+          }}
+          noBorder={true}
+          numberOfMonths={isMobile ? 1 : 2}
+          minimumNights={0}
+          focusedInput={focusedDateInput}
+          onFocusChange={(focusedInput) => {
+            setFocusedDateInput(focusedInput);
+          }}
+          displayFormat="DD/MM/YYYY"
+          hideKeyboardShortcutsPanel={true}
+          showClearDates
+          phrases={getDateRangePickerPhrases(intl)}
+          dayAriaLabelFormat="dddd, DD MMMM YYYY"
+          customArrowIcon={
+            <Icon
+              icon="it-arrow-right"
+              color="white"
+              title={intl.formatMessage(messages.roleDescription)}
+            />
+          }
+          customCloseIcon={
+            <Icon
+              icon="it-close"
+              color="black"
+              title={intl.formatMessage(messages.clearDates)}
+            />
+          }
+        />
+      </WrapperDate>
     </div>
   );
 };
