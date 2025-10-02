@@ -16,12 +16,12 @@ const messages = defineMessages({
   },
   success_warning: {
     id: 'form_submit_success_warning',
-    defaultMessage: "Your registration is on the waiting list.",
+    defaultMessage: 'Your registration is on the waiting list.',
   },
   success_warning_description: {
     id: 'form_submit_success_warning_description',
     defaultMessage:
-      "Your data has been submitted successfully. However, the maximum number of registrations has been reached: your request has been placed on the waiting list.",
+      'Your data has been submitted successfully. However, the maximum number of registrations has been reached: your request has been placed on the waiting list.',
   },
   reset: {
     id: 'form_reset',
@@ -57,8 +57,8 @@ const replaceMessage = (text, sent_data) => {
 
 const FormResult = ({ formState, data, resetFormState }) => {
   const intl = useIntl();
-  const showExtraMessageFormBlock =
-    config.settings.siteProperties.showExtraMessageFormBlock;
+  const displayThankYouInAlertMessageFormBlock =
+    config.settings.siteProperties.displayThankYouInAlertMessageFormBlock;
 
   return (
     <Alert
@@ -83,7 +83,7 @@ const FormResult = ({ formState, data, resetFormState }) => {
       {/* Custom message */}
       {!formState.warning ||
         (formState.warning &&
-          showExtraMessageFormBlock &&
+          displayThankYouInAlertMessageFormBlock &&
           data.send_message && (
             <>
               <p
