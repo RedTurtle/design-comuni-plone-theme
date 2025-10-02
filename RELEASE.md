@@ -62,6 +62,7 @@
 - Blocco Elenco Card con testo animato: rimosso il focus dal card e dal pulsante “Vedi/Read More”, lasciando la navigazione solo sul titolo.
 - Blocco Elenco Card con testo animato: Aggiunto aria-hidden a “Vedi/Read More” per escluderlo dai lettori di schermo.
 - Migliorato la gestione del link "Vedi" nelle card: ora il titolo è sempre cliccabile e il link "Vedi" non viene più raggiunto dai lettori di schermo o dalla tastiera, garantendo un’esperienza più chiara e accessibile.
+- Sistemato lo stile del paragrafo Ulteriori Informazioni all'interno dei vari content type.
 
 
 ## Versione 12.4.0 (22/08/2025)
