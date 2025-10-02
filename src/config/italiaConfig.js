@@ -383,6 +383,7 @@ export default function applyConfig(voltoConfig) {
     ],
 
     showRestricted: false,
+    voltoVersion: '17',
   };
 
   config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
