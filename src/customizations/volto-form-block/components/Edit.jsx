@@ -49,7 +49,7 @@ const messages = defineMessages({
   warning_enable_save: {
     id: 'warning_enable_save',
     defaultMessage:
-      'Selezionare la voce "Salva i dati compilati" nella barra laterale per abilitare il salvatggio e la visualizzazione dei dati',
+      'Selezionare la voce "Salva i dati compilati" nella barra laterale per abilitare il salvataggio e la visualizzazione dei dati',
   },
 });
 

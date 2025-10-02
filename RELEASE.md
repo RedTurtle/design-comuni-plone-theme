@@ -53,6 +53,7 @@
 ### Novità
 
 - E' ora disponibile il blocco contatti: dal pannello di controllo è possibile impostare una lista di contatti da mostrare sopra al footer.
+- Nel blocco form è stata aggiunta la possibilità di consultare i dati compilati di ogni singolo form nella tab "Dati" all'interno del blocco, è possibile inoltre scaricare il file CSV o pulire i dati sempre dalla stessa sezione.
 
 ### Fix
 
@@ -108,7 +109,6 @@
 
 ### Novità
 
-- Nel blocco form è stata aggiunta la possibilità di consultare i dati compilati di ogni singolo form nella tab "Dati" all'interno del blocco, è possibile inoltre scaricare il file CSV o pulire i dati sempre dalla stessa sezione.
 - Blocco form aggiornato, ora è possibile rendere visibili i vari campi solo quando vengono soddisfatte determinate condizioni create dal redattore.
 
 ### Fix
