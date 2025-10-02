@@ -166,7 +166,6 @@ const Field = ({
               aria-live="polite"
               isDisabled={disabled}
               placeholder={intl.formatMessage(messages.select_a_value)}
-              aria-label={intl.formatMessage(messages.select_a_value)}
               aria-labelledby={`${name}-label`}
               classNamePrefix="react-select"
               className={isInvalid() ? 'is-invalid' : ''}
