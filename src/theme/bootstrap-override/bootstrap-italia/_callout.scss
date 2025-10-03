@@ -5,6 +5,9 @@ div.callout {
   border-radius: unset;
   margin: 0;
   box-shadow: none;
+  p {
+    font-family: $font-family-base;
+  }
 
   .callout-title {
     display: flex;
