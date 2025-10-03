@@ -24,7 +24,7 @@ const PageHeaderTassonomiaArgomenti = ({ content }) => {
 
   return content?.tassonomia_argomenti?.length > 0 ? (
     <div className="mt-4 mb-4 page-arguments">
-      <h2>
+      <h2 className="h5">
         <small>{intl.formatMessage(messages.topics)}</small>
       </h2>
       {content.tassonomia_argomenti.map((item, i) => (
