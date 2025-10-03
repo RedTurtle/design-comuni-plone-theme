@@ -125,9 +125,13 @@
     background-position: 99% !important;
     background-size: 22px 20px !important;
 
+    legend {
+      font-weight: 600;
+      line-height: 1.8rem;
+    }
+
     > label {
       position: unset;
-
       display: block;
       padding: 0 $input-spacing-x;
       margin-bottom: 0.55rem;
@@ -297,4 +301,19 @@
 
 .grecaptcha-badge {
   bottom: 115px !important;
+}
+
+.cms-ui {
+  .ui.tab.container {
+    .dt-wrapper {
+      button.ui.button {
+        width: auto;
+        padding: 1.2rem;
+      }
+
+      .dt-wrapper-table .ui.table {
+        font-size: 0.9rem;
+      }
+    }
+  }
 }

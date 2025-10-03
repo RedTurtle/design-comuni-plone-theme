@@ -2508,12 +2508,12 @@ msgid "form_set_limit"
 msgstr ""
 
 #: overrideTranslations
-# defaultMessage: Sei stato inserito in lista d'attesa
+# defaultMessage: La tua iscrizione è in lista d'attesa
 msgid "form_submit_success_warning"
 msgstr ""
 
 #: overrideTranslations
-# defaultMessage: I tuoi dati sono stati inviati, ma è già stato raggiunto il limite di iscrizioni, sei stato inserito in lista d'attesa.
+# defaultMessage: I tuoi dati sono stati inviati correttamente. Tuttavia, è stato raggiunto il limite massimo di iscrizioni: la tua richiesta è stata inserita in lista d’attesa.
 msgid "form_submit_success_warning_description"
 msgstr ""
 
@@ -4646,6 +4646,11 @@ msgstr "Ver en Google Maps"
 # defaultMessage: Vincoli
 msgid "vincoli"
 msgstr "Restricciones"
+
+#: overrideTranslations
+# defaultMessage: Selezionare la voce "Salva i dati compilati" nella barra laterale per abilitare il salvataggio e la visualizzazione dei dati
+msgid "warning_enable_save"
+msgstr "Seleccione el elemento 'Guardar datos completados' en la barra lateral para habilitar el guardado y la visualización de datos."
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 #: helpers/contentHelper

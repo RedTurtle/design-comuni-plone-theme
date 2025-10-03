@@ -101,12 +101,12 @@ defineMessages({
   },
   success_warning: {
     id: 'form_submit_success_warning',
-    defaultMessage: "Sei stato inserito in lista d'attesa",
+    defaultMessage: "La tua iscrizione è in lista d'attesa",
   },
   success_warning_description: {
     id: 'form_submit_success_warning_description',
     defaultMessage:
-      "I tuoi dati sono stati inviati, ma è già stato raggiunto il limite di iscrizioni, sei stato inserito in lista d'attesa.",
+      'I tuoi dati sono stati inviati correttamente. Tuttavia, è stato raggiunto il limite massimo di iscrizioni: la tua richiesta è stata inserita in lista d’attesa.',
   },
   field_unique_title: {
     id: 'field_unique_title',
@@ -129,6 +129,11 @@ defineMessages({
     id: 'modulistica_restraint',
     defaultMessage:
       'As per the official information architecture outlined in measure 1.4.1, all forms must be properly uploaded in the designated section within Amministrazione > Documenti e Dati > Modulistica, and linked to the relevant service sheet. It is no longer possible to upload files and attachments directly into this container.',
+  },
+  warning_enable_save: {
+    id: 'warning_enable_save',
+    defaultMessage:
+      'Selezionare la voce "Salva i dati compilati" nella barra laterale per abilitare il salvataggio e la visualizzazione dei dati',
   },
   //table block
   hideHeaders: {
