@@ -58,7 +58,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
   const resultsRef = createRef();
 
   const doRequest = (page = currentPage) => {
-    let query = [
+    const query = [
       {
         i: 'portal_type',
         o: 'plone.app.querystring.operation.selection.any',
@@ -75,12 +75,6 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
       }
     });
 
-    if (data.defaultQuerystring) {
-      query.push(
-        ...data.defaultQuerystring.filter((el) => el.i !== 'portal_type'),
-      );
-    }
-
     if (data.location && data.location[0]) {
       query.push({
         i: 'path',
@@ -88,6 +82,15 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
         v: flattenToAppURL(data.location[0]['@id']),
       });
     }
+
+    if (data.defaultQuerystring) {
+      query.push(
+        ...data.defaultQuerystring.filter(
+          (el) => !query.map((q) => q.i).includes(el.i)
+        ),
+      );
+    }
+
 
     dispatch(
       getQueryStringResults(
