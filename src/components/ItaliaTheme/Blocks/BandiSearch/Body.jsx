@@ -86,7 +86,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
     if (data.defaultQuerystring) {
       query.push(
         ...data.defaultQuerystring.filter(
-          (el) => !query.map((q) => q.i).includes(el.i) && el.i !=='portal_type'
+          (el) => !query.map((q) => q.i).includes(el.i)
         ),
       );
     }
