@@ -40,6 +40,13 @@
 
 - ...
  -->
+ ## Versione X.X.X (dd/mm/yyyy)
+
+
+
+### Fix
+
+- Sistemato paragrafo con stile callout nel campo Ulteriori Informazioni dei vari CT
 
 ## Versione 12.5.2 (03/10/2025)
 
@@ -66,10 +73,6 @@
 
 - Sistemato un problema nell'editor di testo sulla barra laterale delle pagine. Adesso è possibile inserire correttamente link a file ed immagini interni al sito senza errori.
 - Blocco Elenco Card con testo animato: rimosso il focus dal card e dal pulsante “Vedi/Read More”, lasciando la navigazione solo sul titolo.
-- Blocco Elenco Card con testo animato: Aggiunto aria-hidden a “Vedi/Read More” per escluderlo dai lettori di schermo.
-- Migliorato la gestione del link "Vedi" nelle card: ora il titolo è sempre cliccabile e il link "Vedi" non viene più raggiunto dai lettori di schermo o dalla tastiera, garantendo un’esperienza più chiara e accessibile.
-- Sistemato lo stile del paragrafo Ulteriori Informazioni all'interno dei vari content type.
-
 - Blocco Elenco Card con testo animato: aggiunto aria-hidden a “Vedi/Read More” per escluderlo dai lettori di schermo.
 - Migliorato la gestione del link "Vedi" nelle card: ora il titolo è sempre cliccabile e il link "Vedi" non viene più raggiunto dai lettori di schermo o dalla tastiera, garantendo un'esperienza più chiara e accessibile.
 - Aggiornata intestazione della sezione Argomento da H5 a H2 all'interno di una pagina per migliorare la gerarchia.
