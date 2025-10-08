@@ -1916,6 +1916,11 @@ msgstr "Fecha límite"
 msgid "deleghe"
 msgstr "Delegaciones"
 
+#: overrideTranslations
+# defaultMessage: delete {type} block
+msgid "delete_block"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
 # defaultMessage: Delete
 msgid "delete_button"
@@ -2075,6 +2080,11 @@ msgstr "Descargar"
 #: components/ItaliaTheme/View/Commons/EmbeddedVideo
 # defaultMessage: Download and Play video
 msgid "downloadPlayVideo"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: drag {type} block
+msgid "drag_block"
 msgstr ""
 
 #: components/SelectInput/SelectInput

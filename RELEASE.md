@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorata la gestione del focus tra i blocchi in modalità di modifica.
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 12.5.2 (03/10/2025)
 
 ### Fix
