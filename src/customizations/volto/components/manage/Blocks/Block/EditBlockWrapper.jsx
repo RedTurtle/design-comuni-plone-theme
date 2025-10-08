@@ -1,3 +1,7 @@
+// customization:
+// - 91-95 focus on block sets block as selected
+// - porting of specific block action aria-labels from Volto
+
 import React from 'react';
 import { Icon } from '@plone/volto/components';
 import {
