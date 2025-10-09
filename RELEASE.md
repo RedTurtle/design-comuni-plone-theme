@@ -40,13 +40,6 @@
 
 - ...
  -->
- ## Versione X.X.X (dd/mm/yyyy)
-
-
-
-### Fix
-
-- Sistemato paragrafo con stile callout nel campo Ulteriori Informazioni dei vari CT
 
 ## Versione X.X.X (dd/mm/yyyy)
 
@@ -61,6 +54,7 @@
 ### Fix
 
 - Il widget Contatti è ora visibile in tutte le rotte, comprese quelle del flusso prenotazioni e la ricerca.
+- Sistemato paragrafo con stile callout nel campo Ulteriori Informazioni dei vari CT
 
 ## Versione X.X.X (dd/mm/yyyy)
 

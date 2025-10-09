@@ -7,7 +7,6 @@ import { UniversalLink } from '@plone/volto/components';
 import { getBaseUrl } from '@plone/volto/helpers';
 import { getContacts } from 'design-comuni-plone-theme/actions';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   contact_block_title: {
@@ -21,11 +20,7 @@ const ContactsBlock = () => {
   const { pathname } = useLocation();
   const dispatch = useDispatch();
 
-  const path = config.settings.nonContentRoutes.some((route) =>
-    typeof route === 'string' ? pathname.includes(route) : route.test(pathname),
-  )
-    ? getBaseUrl(pathname)
-    : pathname;
+  const path = getBaseUrl(pathname);
 
   useEffect(() => {
     dispatch(getContacts(path));
