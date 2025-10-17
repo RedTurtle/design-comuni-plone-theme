@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Sistemata la visualizzazione del blocco Callout all’interno del content type Evento..
+
 ## Versione 12.6.1 (09/10/2025)
 
 ### Fix
