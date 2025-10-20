@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Rimossi gli argomenti dalla fascia dei contenuti correlati in evidenza.
+
 ## Versione 12.6.1 (09/10/2025)
 
 ### Fix
