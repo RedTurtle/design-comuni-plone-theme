@@ -4,6 +4,7 @@ import { useIntl, defineMessages } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Row, Col, Spinner, Card, CardBody } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
+import { getBaseUrl } from '@plone/volto/helpers';
 import { getContacts } from 'design-comuni-plone-theme/actions';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
@@ -19,9 +20,11 @@ const ContactsBlock = () => {
   const { pathname } = useLocation();
   const dispatch = useDispatch();
 
+  const path = getBaseUrl(pathname);
+
   useEffect(() => {
-    dispatch(getContacts(pathname));
-  }, [dispatch, pathname]);
+    dispatch(getContacts(path));
+  }, [dispatch, path]);
 
   const contacts = useSelector((state) => state.contacts) ?? {};
   const contactsItems = contacts?.result?.items ?? [];
@@ -29,7 +32,7 @@ const ContactsBlock = () => {
   const isContactsLoaded = contacts.loaded;
 
   return contactsItems.length > 0 ? (
-    <section className="contacts-block bg-light py-5">
+    <section className="public-ui contacts-block bg-light">
       <Container>
         <Row className="d-flex justify-content-center">
           <Col xs={12} lg={6} xl={6} xxl={6}>
@@ -42,7 +45,7 @@ const ContactsBlock = () => {
               <Card className="contacts-box">
                 <CardBody>
                   <h2>{intl.formatMessage(messages.contact_block_title)}</h2>
-                  <div>
+                  <div className="contacts-list-container">
                     <ul className="mb-0 mt-3 contacts-list">
                       {contactsItems.map((contact, idx) => (
                         <li key={idx}>

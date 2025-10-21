@@ -53,7 +53,16 @@
 
 ### Fix
 
-- ...
+- Sistemata la visualizzazione del blocco Callout all’interno del content type Evento.
+- Rimossi gli argomenti dalla fascia dei contenuti correlati in evidenza.
+- Il widget contatti mantiene gli stili anche nelle rotte di back-office.
+
+## Versione 12.6.1 (09/10/2025)
+
+### Fix
+
+- Il widget Contatti è ora visibile in tutte le rotte, comprese quelle del flusso prenotazioni e la ricerca.
+- Sistemato paragrafo con stile callout nel campo Ulteriori Informazioni dei vari CT
 
 ## Versione 12.5.2 (03/10/2025)
 

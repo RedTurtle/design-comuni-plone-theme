@@ -1,5 +1,35 @@
 # Changelog
 
+## [12.6.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.6.0...v12.6.1) (2025-10-09)
+
+
+### Bug Fixes
+
+* helpbox style ([#1013](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1013)) ([8cbb827](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8cbb827727a434ead75fcaa244ea495bf20dcfcf))
+* non content routes query for contacts block ([#1020](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1020)) ([77486b0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/77486b0ff95dc31c911af7927239a64fd37e542e))
+
+
+### Documentation
+
+* updated publiccode and release log ([2d9bc39](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2d9bc396f70abc8e1ce7b977e7bad3d245e7c6ed))
+
+## [12.6.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.5.3...v12.6.0) (2025-10-07)
+
+
+### Features
+
+* listing table variant is now optional ([#1018](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1018)) ([635bbd1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/635bbd1c14c69440dcf499cd2f1200f5efd403bb))
+
+
+### Bug Fixes
+
+* contact blocks styles ([#1016](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1016)) ([6b39d90](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6b39d9073fbbb4b5c32385cfa220fccf21305a26))
+
+
+### Documentation
+
+* updated publiccode ([1aae29d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/1aae29d5a03a3b632eb504b18f781127c2c36132))
+
 ## [12.5.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.5.2...v12.5.3) (2025-10-03)
 
 

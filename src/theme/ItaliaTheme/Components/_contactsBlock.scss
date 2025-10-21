@@ -1,5 +1,8 @@
 .contacts-block {
   box-shadow: inset 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  padding-top: 48px;
+  padding-bottom: 48px;
+
   .contacts-box {
     background-color: #fff;
 
@@ -13,25 +16,32 @@
       line-height: 1.2;
     }
 
-    .contacts-list {
-      padding: 0;
-      li {
-        list-style-type: none;
+    .contacts-list-container {
+      display: flex;
+      .contacts-list {
+        padding: 0;
 
-        a {
-          column-gap: 2%;
-          .icon-container {
-            width: 5%;
-            display: flex;
+        li {
+          list-style-type: none;
+          line-height: 2.2;
 
-            .icon {
-              color: currentColor;
-              fill: currentColor;
+          a {
+            .icon-container {
+              min-width: 1.5rem;
+              display: flex;
+              margin-right: 0.5rem;
+
+              .icon {
+                max-width: 1.5rem;
+                height: auto;
+                color: currentColor;
+                fill: currentColor;
+              }
             }
-          }
 
-          .text-container {
-            width: 93%;
+            .text-container {
+              width: 93%;
+            }
           }
         }
       }
