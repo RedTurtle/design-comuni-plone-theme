@@ -45,7 +45,7 @@
 
 ### Migliorie
 
-- ...
+- Migliorata la gestione del focus tra i blocchi in modalità di modifica.
 
 ### Novità
 

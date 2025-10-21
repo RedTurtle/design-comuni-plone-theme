@@ -1907,6 +1907,11 @@ msgstr "Decorrenza termine"
 msgid "deleghe"
 msgstr "Deleghe"
 
+#: overrideTranslations
+# defaultMessage: delete {type} block
+msgid "delete_block"
+msgstr "Elimina blocco {type}"
+
 #: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
 # defaultMessage: Delete
 msgid "delete_button"
@@ -2067,6 +2072,11 @@ msgstr "Scarica"
 # defaultMessage: Download and Play video
 msgid "downloadPlayVideo"
 msgstr "Scarica e riproduci video"
+
+#: overrideTranslations
+# defaultMessage: drag {type} block
+msgid "drag_block"
+msgstr "Trascina blocco {type}"
 
 #: components/SelectInput/SelectInput
 # defaultMessage: Apri il menu

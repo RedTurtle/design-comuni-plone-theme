@@ -37,6 +37,15 @@ defineMessages({
     id: 'rrule_weekday',
     defaultMessage: 'giorno feriale',
   },
+  // blocks
+  delete_block: {
+    id: 'delete_block',
+    defaultMessage: 'delete {type} block',
+  },
+  drag_block: {
+    id: 'drag_block',
+    defaultMessage: 'drag {type} block',
+  },
   //---- Volto-form-block ----//
   reset: {
     id: 'form_reset',
