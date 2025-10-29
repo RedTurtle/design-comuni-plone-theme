@@ -36,10 +36,6 @@
 
 - ...
 
-### Novità
-
-- ... [`Istruzioni`](url della documentazione relativa alla novità)
-
 ### Fix
 
 - Rimossi gli argomenti dalla fascia dei contenuti correlati in evidenza.
