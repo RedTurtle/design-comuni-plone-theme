@@ -71,6 +71,8 @@ const CardWithSlideUpTextTemplate = (props) => {
               dependencies: ['CardWithSlideUpTextTemplate', item['@type']],
             }).component;
 
+            item.enhanced_links_enabled = false;
+
             return (
               <div
                 className="listing-item box bg-img mb-2"
