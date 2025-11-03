@@ -154,6 +154,7 @@ const UniversalLink = ({
       {extended_children}
     </Link>
   );
+  console.log(item, className);
 
   if (isExternal) {
     const openInNewTab =
@@ -181,7 +182,7 @@ const UniversalLink = ({
         aria-label={aria_label}
       >
         {children}
-        {showExternalIcon && (
+        {showExternalIcon && !item?.image_field && (
           <Icon
             icon="it-external-link"
             title={`${title ? title + ' - ' : ''}${intl?.formatMessage({
