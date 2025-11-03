@@ -1,3 +1,11 @@
+### [7.40.7](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.6...v7.40.7) (2025-11-03)
+
+
+### Bug Fixes
+
+* bandisearch ([#1017](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1017)) ([f1cd18c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f1cd18c5353a8874ea5d7af9fe4ea8585c062eac)), closes [/github.com/RedTurtle/design-comuni-plone-theme/pull/1017/files#diff-4800ec19519717459419d693cfbf4f1baaf24aec9a2be827b4695bcecb380cefR62](https://github.com/RedTurtle//github.com/RedTurtle/design-comuni-plone-theme/pull/1017/files/issues/diff-4800ec19519717459419d693cfbf4f1baaf24aec9a2be827b4695bcecb380cefR62)
+* removed the unnecessary arguments part from content in evidence ([#1025](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1025)) ([c51c176](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c51c176713c09da2d73bd7a074fd0da507b619f2))
+
 ### [7.40.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.5...v7.40.6) (2025-08-06)
 
 
