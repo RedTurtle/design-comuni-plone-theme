@@ -51,6 +51,7 @@ const UniversalLink = ({
   };
   //questo perchè il provider di intl non è sempre definito, ad esempio in slate_wysiwyg_box (Slate RichTextWidget)
   let intl = null;
+
   try {
     intl = useIntl();
     Object.keys(translations).forEach(
@@ -154,7 +155,6 @@ const UniversalLink = ({
       {extended_children}
     </Link>
   );
-  console.log(item, className);
 
   if (isExternal) {
     const openInNewTab =
@@ -176,13 +176,14 @@ const UniversalLink = ({
         }
         rel="noopener noreferrer"
         className={cx(className, {
-          'with-external-link-icon': showExternalIcon,
+          'with-external-link-icon':
+            showExternalIcon && className !== 'img-wrapper',
         })}
         {...props}
         aria-label={aria_label}
       >
         {children}
-        {showExternalIcon && !item?.image_field && (
+        {showExternalIcon && className !== 'img-wrapper' && (
           <Icon
             icon="it-external-link"
             title={`${title ? title + ' - ' : ''}${intl?.formatMessage({
