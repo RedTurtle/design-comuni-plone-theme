@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Sistemata la corretta visualizzazione dell’icona per i link esterni con immagine.
+
 ## Versione 12.6.3 (27/10/2025)
 
 ### Fix
