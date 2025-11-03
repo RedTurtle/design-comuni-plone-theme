@@ -30,6 +30,16 @@
 - ...
 -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Fix
+
+- Rimossi gli argomenti dalla fascia dei contenuti correlati in evidenza.
+
 ## Versione 7.40.4 (31/07/2025)
 
 ### Migliorie
