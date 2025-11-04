@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- L'etichetta dei campi nel blocco Form va a capo se troppo lunga.
+
 ## Versione 12.6.5 (04/11/2025)
 
 ### Fix
