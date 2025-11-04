@@ -54,6 +54,11 @@
 ### Fix
 
 - Sistemata la corretta visualizzazione dell’icona per i link esterni con immagine.
+## Versione 12.6.5 (04/11/2025)
+
+### Fix
+
+- Rimosse le estensioni file dalla variazione del blocco elenco Card con testo animato.
 
 ## Versione 12.6.3 (27/10/2025)
 
