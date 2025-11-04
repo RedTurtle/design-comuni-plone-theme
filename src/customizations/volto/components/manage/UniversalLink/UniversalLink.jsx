@@ -176,14 +176,13 @@ const UniversalLink = ({
         }
         rel="noopener noreferrer"
         className={cx(className, {
-          'with-external-link-icon':
-            showExternalIcon && className !== 'img-wrapper',
+          'with-external-link-icon': showExternalIcon,
         })}
         {...props}
         aria-label={aria_label}
       >
         {children}
-        {showExternalIcon && className !== 'img-wrapper' && (
+        {showExternalIcon && (
           <Icon
             icon="it-external-link"
             title={`${title ? title + ' - ' : ''}${intl?.formatMessage({
