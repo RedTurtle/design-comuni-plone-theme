@@ -53,7 +53,8 @@
 
 ### Fix
 
-- Sistemata la corretta visualizzazione dell’icona per i link esterni con immagine.
+- Rimossa la visualizzazione dell’icona per i link esterni sulle immagine per il blocco card con immagine.
+
 ## Versione 12.6.5 (04/11/2025)
 
 ### Fix
