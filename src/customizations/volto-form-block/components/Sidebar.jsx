@@ -103,7 +103,7 @@ const Sidebar = ({
           {data.subblocks &&
             data.subblocks.map((subblock, index) => {
               return (
-                <div key={'subblock' + index}>
+                <div key={'subblock' + subblock.id}>
                   <Accordion.Title
                     active={selected === index}
                     index={index}
@@ -137,12 +137,14 @@ const Sidebar = ({
                       </Segment>
                     )}
                     <BlockDataForm
+                      id={subblock.id}
                       schema={FieldSchema(subblock)}
                       onChangeField={(name, value) => {
                         const update_values = {};
                         if (subblock.field_type === 'static_text') {
                           update_values.required = false;
                         }
+                        console.log(name, value);
                         onChangeSubBlock(index, {
                           ...subblock,
                           [name]: value,
