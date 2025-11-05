@@ -144,7 +144,6 @@ const Sidebar = ({
                         if (subblock.field_type === 'static_text') {
                           update_values.required = false;
                         }
-                        console.log(name, value);
                         onChangeSubBlock(index, {
                           ...subblock,
                           [name]: value,
