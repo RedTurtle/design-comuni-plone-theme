@@ -137,7 +137,6 @@ const Sidebar = ({
                       </Segment>
                     )}
                     <BlockDataForm
-                      id={subblock.id}
                       schema={FieldSchema(subblock)}
                       onChangeField={(name, value) => {
                         const update_values = {};
