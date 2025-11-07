@@ -72,7 +72,6 @@ const Field = ({
   id,
   reactSelect,
   autocomplete,
-  ...props
 }) => {
   const intl = useIntl();
   const Select = reactSelect.default;
