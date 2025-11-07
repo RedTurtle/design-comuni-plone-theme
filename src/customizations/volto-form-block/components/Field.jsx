@@ -58,6 +58,7 @@ const Field = ({
   label,
   description,
   name,
+  required,
   field_type,
   field_id,
   input_values,
@@ -73,7 +74,6 @@ const Field = ({
   autocomplete,
   ...props
 }) => {
-  const required = props[`required-${field_id}`];
   const intl = useIntl();
   const Select = reactSelect.default;
 
