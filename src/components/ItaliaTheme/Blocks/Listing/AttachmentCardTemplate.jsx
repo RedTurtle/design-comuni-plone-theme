@@ -93,7 +93,6 @@ const AttachmentCardTemplate = ({
                       item={!isEditMode ? itemUrl : null}
                       href={isEditMode ? '#' : null}
                       data-element={id_lighthouse}
-                      // download={!show_pdf_preview}
                     >
                       {item.title || item.id}
                     </UniversalLink>
