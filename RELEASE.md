@@ -53,7 +53,7 @@
 
 ### Fix
 
-- La variazione "Allegati" mostra la vista File quando un utente è autenticato, e presenta il comportamento richiesto (mostra anteprima PDF se l'opzione è selezionata e il file è un PDF, scarica il file se il file non è un PDF o l'opzione non è selezionata) se l'utente è anonimo.
+- La variazione "Allegati" del blocco Elenco mostra ora la vista File quando un utente è autenticato, e presenta il comportamento richiesto (mostra anteprima PDF se l'opzione è selezionata e il file è un PDF, scarica il file se il file non è un PDF o l'opzione non è selezionata) se l'utente è anonimo.
 
 ## Versione 12.7.0 (12/11/2025)
 
