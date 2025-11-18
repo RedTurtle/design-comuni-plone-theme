@@ -51,6 +51,7 @@ class Edit extends SubblocksEdit {
             {this.state.subblocks.map((subblock, subindex) => (
               <div className="it-single-slide-wrapper" key={subblock.id}>
                 <EditBlock
+                  showVideoCaption={this.props.data.showVideoCaption}
                   data={subblock}
                   index={subindex}
                   selected={this.isSubblockSelected(subindex)}

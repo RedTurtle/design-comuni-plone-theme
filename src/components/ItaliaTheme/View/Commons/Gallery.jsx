@@ -47,6 +47,7 @@ const Gallery = ({
     return {
       dots: true,
       infinite: true,
+      lazyLoad: true,
       speed: 500,
       slidesToShow: nItems < 3 ? nItems : 3,
       slidesToScroll: slideToScroll ?? 3,

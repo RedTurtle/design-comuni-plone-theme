@@ -393,6 +393,14 @@ body.cms-ui {
     }
   }
 
+  // Sidebar - campi editabili con draftJs
+  // - liste
+  #sidebar .sidebar-container .ui.form ul.public-DraftStyleDefault-ul {
+    li.public-DraftStyleDefault-unorderedListItem {
+      display: list-item;
+    }
+  }
+
   [data-rbd-draggable-context-id] {
     margin-bottom: 1rem;
   }

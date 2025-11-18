@@ -32,10 +32,13 @@ class EditBlock extends SubblockEdit {
     if (__SERVER__) {
       return <div />;
     }
-
     return (
       <Subblock subblock={this} className="subblock-edit">
-        <ViewBlock data={this.props.data} isEditMode={true} />
+        <ViewBlock
+          data={this.props.data}
+          showVideoCaption={this.props.showVideoCaption}
+          isEditMode={true}
+        />
         {(!this.props.data?.url || this.props.data?.url.length === 0) && (
           <div>{this.props.intl.formatMessage(messages.noVideoUrl)}</div>
         )}

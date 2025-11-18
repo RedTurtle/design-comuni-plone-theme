@@ -61,145 +61,67 @@ const BandoDates = ({ content }) => {
     ? viewDate(intl.locale, content.chiusura_procedimento_bando)
     : null;
 
+  const dates = [
+    {
+      date: effective,
+      label: intl.formatMessage(messages.effective),
+    },
+    {
+      date: apertura_bando,
+      label: intl.formatMessage(messages.apertura_bando),
+      show_hour: true,
+    },
+    {
+      date: scadenza_domande_bando,
+      label: intl.formatMessage(messages.scadenza_domande_bando),
+      show_hour: true,
+    },
+    {
+      date: scadenza_bando,
+      label: intl.formatMessage(messages.scadenza_bando),
+      show_hour: true,
+    },
+    {
+      date: chiusura_procedimento_bando,
+      label: intl.formatMessage(messages.chiusura_procedimento_bando),
+    },
+  ];
+
+  dates.sort((a, b) => a.date - b.date);
+
   return content ? (
-    <>
-      <div className="point-list-wrapper my-4 mb-5">
-        {effective && (
-          <div className="point-list">
-            <div className="point-list-aside point-list-warning">
-              <span className="point-date text-monospace">
-                {effective.format('DD')}
-              </span>
-              <span className="point-month text-monospace">
-                {effective.format('MMM')}/{effective.format('YY')}
-              </span>
+    <div className="point-list-wrapper my-4 mb-5">
+      {dates.map((item, index) => {
+        return (
+          item.date && (
+            <div className="point-list" key={index}>
+              <div className="point-list-aside point-list-warning">
+                <span className="point-date text-monospace">
+                  {item.date.format('DD')}
+                </span>
+                <span className="point-month text-monospace">
+                  {item.date.format('MMM')}/{item.date.format('YY')}
+                </span>
+              </div>
+              <div className="point-list-content">
+                <Card
+                  className="card card-teaser rounded shadow"
+                  noWrapper={true}
+                  tag="div"
+                >
+                  <CardBody tag="div" className={'card-body'}>
+                    <CardTitle tag="p">
+                      {item.show_hour && <>{item.date.format('HH:mm')} - </>}
+                      {item.label}
+                    </CardTitle>
+                  </CardBody>
+                </Card>
+              </div>
             </div>
-            <div className="point-list-content">
-              <Card
-                className="card card-teaser rounded shadow"
-                noWrapper={true}
-                tag="div"
-              >
-                <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="p">
-                    {intl.formatMessage(messages.effective)}
-                  </CardTitle>
-                </CardBody>
-              </Card>
-            </div>
-          </div>
-        )}
-
-        {apertura_bando && (
-          <div className="point-list">
-            <div className="point-list-aside point-list-warning">
-              <span className="point-date text-monospace">
-                {apertura_bando.format('DD')}
-              </span>
-              <span className="point-month text-monospace">
-                {apertura_bando.format('MMM')}/{apertura_bando.format('YY')}
-              </span>
-            </div>
-            <div className="point-list-content">
-              <Card
-                className="card card-teaser rounded shadow"
-                noWrapper={true}
-                tag="div"
-              >
-                <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="p">
-                    {`${apertura_bando.format('HH:mm')} - `}
-                    {intl.formatMessage(messages.apertura_bando)}
-                  </CardTitle>
-                </CardBody>
-              </Card>
-            </div>
-          </div>
-        )}
-
-        {scadenza_domande_bando && (
-          <div className="point-list">
-            <div className="point-list-aside point-list-warning">
-              <span className="point-date text-monospace">
-                {scadenza_domande_bando.format('DD')}
-              </span>
-              <span className="point-month text-monospace">
-                {scadenza_domande_bando.format('MMM')}/
-                {scadenza_domande_bando.format('YY')}
-              </span>
-            </div>
-            <div className="point-list-content">
-              <Card
-                className="card card-teaser rounded shadow"
-                noWrapper={true}
-                tag="div"
-              >
-                <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="p">
-                    {`${scadenza_domande_bando.format('HH:mm')} - `}
-                    {intl.formatMessage(messages.scadenza_domande_bando)}
-                  </CardTitle>
-                </CardBody>
-              </Card>
-            </div>
-          </div>
-        )}
-
-        {scadenza_bando && (
-          <div className="point-list">
-            <div className="point-list-aside point-list-warning">
-              <span className="point-date text-monospace">
-                {scadenza_bando.format('DD')}
-              </span>
-              <span className="point-month text-monospace">
-                {scadenza_bando.format('MMM')}/{scadenza_bando.format('YY')}
-              </span>
-            </div>
-            <div className="point-list-content">
-              <Card
-                className="card card-teaser rounded shadow"
-                noWrapper={true}
-                tag="div"
-              >
-                <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="p">
-                    {`${scadenza_bando.format('HH:mm')} - `}
-                    {intl.formatMessage(messages.scadenza_bando)}
-                  </CardTitle>
-                </CardBody>
-              </Card>
-            </div>
-          </div>
-        )}
-
-        {chiusura_procedimento_bando && (
-          <div className="point-list">
-            <div className="point-list-aside point-list-warning">
-              <span className="point-date text-monospace">
-                {chiusura_procedimento_bando.format('DD')}
-              </span>
-              <span className="point-month text-monospace">
-                {chiusura_procedimento_bando.format('MMM')}/
-                {chiusura_procedimento_bando.format('YY')}
-              </span>
-            </div>
-            <div className="point-list-content">
-              <Card
-                className="card card-teaser rounded shadow"
-                noWrapper={true}
-                tag="div"
-              >
-                <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="p">
-                    {intl.formatMessage(messages.chiusura_procedimento_bando)}
-                  </CardTitle>
-                </CardBody>
-              </Card>
-            </div>
-          </div>
-        )}
-      </div>
-    </>
+          )
+        );
+      })}
+    </div>
   ) : null;
 };
 

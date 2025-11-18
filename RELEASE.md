@@ -29,17 +29,122 @@
 ### Fix
 - ...
 -->
+
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Fix
+
+- Rimossi gli argomenti dalla fascia dei contenuti correlati in evidenza.
+
+## Versione 7.40.4 (31/07/2025)
+
+### Migliorie
+
+- Tra i messaggi di errore del sito è stata aggiunta la specifica all'utilizzo dell'adBlock potenzialmente attivo da parte dell'utente
+
+## Versione 7.40.1 (24/06/2025)
+
+### Migliorie
+
+- Nel blocco Card con Immagine ora è possibile formattare il testo al suo interno
+
+## Versione 7.40.0 (12/05/2025)
+
+### Novità
+
+- Nel blocco form è stata aggiunta la possibilità di consultare i dati compilati di ogni singolo form nella tab "Dati" all'interno del blocco, è possibile inoltre scaricare il file CSV o pulire i dati sempre dalla stessa sezione.
+
+## Versione 7.39.0 (30/04/2025)
+
+### Novità
+
+- Blocco form aggiornato, ora è possibile rendere visibili i vari campi solo quando vengono soddisfatte determinate condizioni create dal redattore.
+
+## Versione 7.33.2 (09/12/2024)
+
+### Fix
+
+- Sistemato lo scroll delle pagine con url con ancora, nel caso in cui la pagina abbia degli oggetti caricati separatamente. (es la vista di una UO).
+
+## Versione 7.33.1 (26/11/2024)
+
+### Fix
+
+- Sistemata la ricerca nel sito: ora viene mostrato un overlay di caricamento finchè non si viene rediretti alla pagina del risultato, in modo che l'utente capisca che la ricerca è in corso.
+
+## Versione 7.33.0 (31/10/2024)
+
+### Novità
+
+- Aggiunte le date di validità nel blocco Alert
+
+## Versione 7.31.3 (01/10/2024)
+
+### Fix
+
+- Risolto problema con l'anteprima dei video youtube sul blocco video galery
+
+## Versione 7.30.5 (27/08/2024)
+
+### Migliorie
+
+- Aggiunta una opzione scegliere se mostrare la didascalia nel blocco Video Gallery
+- Aggiunto la data di modifica nei documenti allegati del CT Bando
+  odifica nei documenti allegati del CT Bando
+
+## Versione 7.30.4 (26/08/2024)
+
+### Fix
+
+- Sistemato la mancanza di allineamento dentro la galleria d'immagine dentro i content types notizia, evento e luogo.
+
+## Versione 7.30.3 (12/08/2024)
+
+### Fix
+
+- Sistemato la mancanza di allineamento dentro la photogallery
+
+## Versione 7.29.1 (25/07/2024)
+
+### Migliorie
+
+- Aggiunte le date dentro i blocchi elenco.
+
+### Fix
+
+- Sistemato errore dentro a draftJS, l'elenco puntato non veniva stilizzato e l'icona del TextSize nella toolbar non si vedeva con il title applicato
+
+## Versione 7.29.0 (03/07/2024)
+
+### Migliorie
+
+- Aggiornamento volto-form-blocks
+
+### Fix
+
+- Aggiunto checkbox che espande i sotto-elementi nei filtri di ricerca
+
+## Versione 7.28.5 (26/06/2024)
+
+### Migliorie
+
+- Aggiornamento volto-form-blocks
+
 ## Versione 7.28.4 (25/06/2024)
 
 ### Novità
-* Aggiornato il Blocco Form con diverse proprietà aggiuntive:
-  * è possibile aggiungere un testo in header e in footer nell'email inviata,
-  * è stato inserito un nuovo livello di sicurezza OTP nel caso in cui venga scelta l'opzione dell'invio copia della mail,
-  * è stato aggiunto un messaggio personalizzabile da mostrare dopo l'invio del form,
-  * è possibile mostrare un pulsante per il reset dei campi della form,
-  * sono stati sistemati i messaggi d'errore dei campi,
-  * è stata aggiunta una legenda per i campi obbligatori.
 
+- Aggiornato il Blocco Form con diverse proprietà aggiuntive:
+  - è possibile aggiungere un testo in header e in footer nell'email inviata,
+  - è stato inserito un nuovo livello di sicurezza OTP nel caso in cui venga scelta l'opzione dell'invio copia della mail,
+  - è stato aggiunto un messaggio personalizzabile da mostrare dopo l'invio del form,
+  - è possibile mostrare un pulsante per il reset dei campi della form,
+  - sono stati sistemati i messaggi d'errore dei campi,
+  - è stata aggiunta una legenda per i campi obbligatori.
 
 ## Versione 7.28.2 (18/06/2024)
 
@@ -58,6 +163,7 @@
 - Migliorata l'accessibilità del bottone "Cerca".
 - Migliorata l'accessibilità del blocco Icone.
 - Migliorata l'accessibilità per la customer satisfaction.
+- Migliorata la visibilità della navigazione utilizando il mouse, adesso non si vede il focus quando un bottone/link è selezionato
 
 ### Fix
 

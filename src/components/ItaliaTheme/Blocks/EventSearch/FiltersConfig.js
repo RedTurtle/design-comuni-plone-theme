@@ -6,7 +6,7 @@ import DefaultFilters from 'design-comuni-plone-theme/components/ItaliaTheme/Blo
   componente da customizzare nel proprio sito per modificare/aggiungere tipologie di Filtri
   ***
  */
-const FiltersConfig = (dispatchFilter) => {
+const FiltersConfig = ({ data }) => {
   // const subsite = useSelector((state) => state.subsite?.data);
   const defaultFilters = DefaultFilters();
 

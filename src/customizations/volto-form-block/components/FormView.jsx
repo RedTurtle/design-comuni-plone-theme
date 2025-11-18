@@ -13,18 +13,19 @@ import {
   Alert,
   Progress,
 } from 'design-react-kit/dist/design-react-kit';
-// eslint-disable-next-line import/no-unresolved
 import { getFieldName } from 'volto-form-block/components/utils';
-// eslint-disable-next-line import/no-unresolved
 import Field from 'volto-form-block/components/Field';
 import {
   OTPWidget,
   OTP_FIELDNAME_EXTENDER,
   Button,
 } from 'volto-form-block/components/Widget';
-import { FormResult } from 'volto-form-block/components';
-// eslint-disable-next-line import/no-unresolved
 import config from '@plone/volto/registry';
+import { FormResult } from 'volto-form-block/components';
+import { evaluateAllConditions } from 'volto-form-block/helpers/conditions-list';
+
+/* Style */
+import 'volto-form-block/components/FormView.css';
 
 const messages = defineMessages({
   default_submit_label: {
@@ -130,64 +131,67 @@ const FormView = ({
   return (
     <div className="block form">
       <div className="public-ui">
-        <div className="p-4">
-          {data?.title && <h2>{data.title}</h2>}
-          {data?.description && (
-            <div className="block-description">{data.description}</div>
-          )}
-          <Card className="card-bg rounded py-3" noWrapper={false} tag="div">
-            <CardBody tag="div">
-              {formState.result ? (
-                <FormResult
-                  formState={formState}
-                  data={data}
-                  resetFormState={resetFormState}
-                />
-              ) : (
-                <form
-                  onSubmit={submit}
-                  noValidate
-                  autoComplete="off"
-                  method="post"
-                >
-                  {/* Controlla che ci siano campi obbligatori al suo interno e applica una legenda  */}
-                  {data.subblocks.some((item) => item.required === true) && (
-                    <legend className="text-muted text-end mb-3">
-                      <small>
-                        {intl.formatMessage(messages.legend_required)}
-                      </small>
-                    </legend>
-                  )}
-                  {data.static_fields && (
-                    <fieldset disabled>
-                      {data.static_fields?.map((field) => (
-                        <Row key={field.field_id} className="static-field">
-                          <Col className="py-2">
-                            <Field
-                              {...field}
-                              field_type={field.field_type || 'text'}
-                              name={
-                                'static_field_' +
-                                (field.field_id ??
-                                  field.name?.toLowerCase()?.replace(' ', ''))
-                              }
-                              value={field.value}
-                              onChange={() => {}}
-                              valid
-                              disabled
-                              formHasErrors={formErrors.length > 0}
-                            />
-                          </Col>
-                        </Row>
-                      ))}
-                    </fieldset>
-                  )}
-                  {data.subblocks.map((subblock, index) => {
-                    let name = getFieldName(subblock.label, subblock.id);
-                    const fields_to_send_with_value =
-                      getFieldsToSendWithValue(subblock);
+        {data?.title && <h2>{data.title}</h2>}
+        {data?.description && (
+          <div className="block-description">{data.description}</div>
+        )}
+        <Card className="card-bg rounded py-3" noWrapper={false} tag="div">
+          <CardBody tag="div">
+            {formState.result ? (
+              <FormResult
+                formState={formState}
+                data={data}
+                resetFormState={resetFormState}
+              />
+            ) : (
+              <form
+                onSubmit={submit}
+                noValidate
+                autoComplete="off"
+                method="post"
+              >
+                {/* Controlla che ci siano campi obbligatori al suo interno e applica una legenda  */}
+                {data.subblocks.some((item) => item.required === true) && (
+                  <legend className="text-muted text-end mb-3">
+                    <small>
+                      {intl.formatMessage(messages.legend_required)}
+                    </small>
+                  </legend>
+                )}
+                {data.static_fields && (
+                  <fieldset disabled>
+                    {data.static_fields?.map((field) => (
+                      <Row key={field.field_id} className="static-field">
+                        <Col className="py-2">
+                          <Field
+                            {...field}
+                            field_type={field.field_type || 'text'}
+                            name={
+                              'static_field_' +
+                              (field.field_id ??
+                                field.name?.toLowerCase()?.replace(' ', ''))
+                            }
+                            value={field.value}
+                            onChange={() => {}}
+                            valid
+                            disabled
+                            formHasErrors={formErrors.length > 0}
+                          />
+                        </Col>
+                      </Row>
+                    ))}
+                  </fieldset>
+                )}
+                {data.subblocks.map((subblock, index) => {
+                  let name = getFieldName(subblock.label, subblock.id);
+                  const fields_to_send_with_value =
+                    getFieldsToSendWithValue(subblock);
 
-                    return (
+                  return (
+                    evaluateAllConditions(
+                      subblock?.visibility_conditions,
+                      formData,
+                    ) && (
                       <Row key={'row' + index}>
                         <Col className="py-2">
                           <Field
@@ -212,11 +216,13 @@ const FormView = ({
                           />
                         </Col>
                       </Row>
-                    );
-                  })}
+                    )
+                  );
+                })}
 
-                  {/*OTP*/}
-                  {data.subblocks
+                {/*OTP*/}
+                {data.email_otp_verification ? (
+                  data.subblocks
                     .filter((subblock) => subblock.use_as_bcc)
                     .map((subblock, index) => {
                       const fieldName = getFieldName(
@@ -256,81 +262,83 @@ const FormView = ({
                           </Col>
                         </Row>
                       );
-                    })}
+                    })
+                ) : (
+                  <></>
+                )}
 
-                  {enableCaptcha && <>{captcha.render()}</>}
+                {enableCaptcha && <>{captcha.render()}</>}
 
-                  {formErrors.length > 0 && (
-                    <Alert
-                      color="danger"
-                      fade
-                      isOpen
-                      tag="div"
-                      transition={alertTransition}
-                    >
-                      <h4>{intl.formatMessage(messages.error)}</h4>
-                      <p>{intl.formatMessage(messages.form_errors)}</p>
-                    </Alert>
-                  )}
-                  {formState.error && (
-                    <Alert
-                      color="danger"
-                      fade
-                      isOpen
-                      tag="div"
-                      transition={alertTransition}
-                    >
-                      <h4>{intl.formatMessage(messages.error)}</h4>
-                      <p>{formState.error}</p>
-                    </Alert>
-                  )}
+                {formErrors.length > 0 && (
+                  <Alert
+                    color="danger"
+                    fade
+                    isOpen
+                    tag="div"
+                    transition={alertTransition}
+                  >
+                    <h4>{intl.formatMessage(messages.error)}</h4>
+                    <p>{intl.formatMessage(messages.form_errors)}</p>
+                  </Alert>
+                )}
+                {formState.error && (
+                  <Alert
+                    color="danger"
+                    fade
+                    isOpen
+                    tag="div"
+                    transition={alertTransition}
+                  >
+                    <h4>{intl.formatMessage(messages.error)}</h4>
+                    <p>{formState.error}</p>
+                  </Alert>
+                )}
 
-                  <Row>
-                    <Col align="center">
-                      {data?.show_cancel && (
-                        <Button
-                          color="secondary"
-                          type="button"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            resetFormState();
-                          }}
-                          className="mr-2"
-                        >
-                          {data.cancel_label ||
-                            intl.formatMessage(messages.default_cancel_label)}
-                        </Button>
-                      )}
+                <Row>
+                  <Col align="center">
+                    {data?.show_cancel && (
                       <Button
-                        color="primary"
-                        type="submit"
-                        disabled={
-                          (enableCaptcha &&
-                            !captcha?.props?.captchaToken?.current) ||
-                          formState.loading
-                        }
+                        color="secondary"
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          resetFormState();
+                        }}
+                        className="mr-2"
                       >
-                        {data.submit_label ||
-                          intl.formatMessage(messages.default_submit_label)}
-
-                        {formState.loading && (
-                          <span>
-                            <Progress
-                              indeterminate={true}
-                              role="progressbar"
-                              tag="div"
-                            />
-                          </span>
-                        )}
+                        {data.cancel_label ||
+                          intl.formatMessage(messages.default_cancel_label)}
                       </Button>
-                    </Col>
-                  </Row>
-                </form>
-              )}
-            </CardBody>
-          </Card>
-        </div>
+                    )}
+                    <Button
+                      color="primary"
+                      type="submit"
+                      disabled={
+                        (enableCaptcha &&
+                          !captcha?.props?.captchaToken?.current) ||
+                        formState.loading
+                      }
+                    >
+                      {data.submit_label ||
+                        intl.formatMessage(messages.default_submit_label)}
+
+                      {formState.loading && (
+                        <span>
+                          <Progress
+                            indeterminate={true}
+                            role="progressbar"
+                            tag="div"
+                          />
+                        </span>
+                      )}
+                    </Button>
+                  </Col>
+                </Row>
+              </form>
+            )}
+          </CardBody>
+        </Card>
       </div>
     </div>
   );

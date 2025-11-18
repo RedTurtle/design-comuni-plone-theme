@@ -19,7 +19,10 @@ const View = ({ data, block }) => {
       <Body data={data} nItems={data.subblocks?.length}>
         {data.subblocks.map((subblock, subindex) => (
           <div className="it-single-slide-wrapper" key={subindex}>
-            <ViewBlock data={subblock} />
+            <ViewBlock
+              data={subblock}
+              showVideoCaption={data.showVideoCaption}
+            />
           </div>
         ))}
       </Body>

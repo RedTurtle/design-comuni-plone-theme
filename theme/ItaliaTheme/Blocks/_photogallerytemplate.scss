@@ -116,7 +116,6 @@
 
   .slick-track {
     display: flex;
-    align-items: center;
   }
 
   @media (max-width: #{map-get($grid-breakpoints, md)}) {

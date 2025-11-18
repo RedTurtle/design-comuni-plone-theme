@@ -210,7 +210,10 @@ const SliderTemplate = ({
 }) => {
   const intl = useIntl();
   const [userAutoplay, setUserAutoplay] = useState(autoplay);
-  const nSlidesToShow = parseInt(slidesToShow);
+  const nSlidesToShow =
+    items.length < parseInt(slidesToShow)
+      ? items.length
+      : parseInt(slidesToShow);
   const Slider = reactSlick.default;
   const { slider, focusNext } = useSlider(userAutoplay);
   const toggleAutoplay = () => {
@@ -271,6 +274,7 @@ const SliderTemplate = ({
   const settings = {
     dots: show_dots,
     infinite: true,
+    lazyLoad: true,
     autoplay: autoplay,
     speed: 500,
     slidesToShow: nSlidesToShow,

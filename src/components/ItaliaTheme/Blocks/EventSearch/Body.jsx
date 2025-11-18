@@ -11,10 +11,11 @@ import cx from 'classnames';
 
 import { getQueryStringResults } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import CardWithImageTemplate from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/CardWithImageTemplate';
+
 import { Pagination } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { resetQuerystringResults } from 'design-comuni-plone-theme/actions';
 import FiltersConfig from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/EventSearch/FiltersConfig';
+import RenderItems from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/EventSearch/RenderItems';
 
 const messages = defineMessages({
   find: {
@@ -102,9 +103,9 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
       getQueryStringResults(
         subsite ? flattenToAppURL(subsite['@id']) : '',
         {
-          fullobjects: 1,
           query: query,
           b_size: b_size,
+          metadata_fields: '_all',
         },
         id + '_events_search',
         page,
@@ -140,7 +141,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
     return newState;
   };
 
-  const filtersConfig = FiltersConfig(null);
+  const filtersConfig = FiltersConfig({ data });
   const getInitialState = () => {
     return {
       filterOne: filtersConfig[data?.filter_one],
@@ -228,7 +229,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock }) => {
         items?.length > 0 ? (
           <div className="mt-4" ref={resultsRef} aria-live="polite">
             <div className="block listing">
-              <CardWithImageTemplate items={items} full_width={false} />
+              <RenderItems items={items} />
             </div>
             {querystringResults.total > b_size && (
               <Pagination

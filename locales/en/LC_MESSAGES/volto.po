@@ -729,6 +729,46 @@ msgstr ""
 msgid "advandedSectionsFilters"
 msgstr "Go to advanced search by sections"
 
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Pubblicazione attiva.
+msgid "alert_activeDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio
+msgid "alert_errorDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. E' scaduto il {date}.
+msgid "alert_expiredDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. Verà pubblicato il {date}
+msgid "alert_futureDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Scadrà il {date}
+msgid "alert_willExpire"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Periodo di visualizzazione
+msgid "alertblock_dateTitle"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Scadenza
+msgid "alertblock_endDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Inizio
+msgid "alertblock_startDate"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 # defaultMessage: Centrare i card
 msgid "alignCards"
@@ -1263,6 +1303,56 @@ msgstr "Remunerations"
 msgid "competenze"
 msgstr "Skills"
 
+#: overrideTranslations
+# defaultMessage: Contiene
+msgid "condition_contains"
+msgstr "Contains"
+
+#: overrideTranslations
+# defaultMessage: È maggiore o uguale
+msgid "condition_greater_or_equal"
+msgstr "Greater or equal"
+
+#: overrideTranslations
+# defaultMessage: È maggiore di
+msgid "condition_greater_than"
+msgstr "Greater than"
+
+#: overrideTranslations
+# defaultMessage: È vuoto
+msgid "condition_is_empty"
+msgstr "Is empty"
+
+#: overrideTranslations
+# defaultMessage: È uguale a
+msgid "condition_is_equal_to"
+msgstr "Is equal to"
+
+#: overrideTranslations
+# defaultMessage: Non è vuoto
+msgid "condition_is_not_empty"
+msgstr "Is not empty"
+
+#: overrideTranslations
+# defaultMessage: Non è uguale a
+msgid "condition_is_not_equal_to"
+msgstr "Is not equal to"
+
+#: overrideTranslations
+# defaultMessage: È minore o uguale
+msgid "condition_less_or_equal"
+msgstr "Less or equal"
+
+#: overrideTranslations
+# defaultMessage: È minore di
+msgid "condition_less_than"
+msgstr "Less than"
+
+#: overrideTranslations
+# defaultMessage: Non contiene
+msgid "condition_not_contains"
+msgstr "Not contains"
+
 #: components/ItaliaTheme/View/PersonaView/PersonaContatti
 # defaultMessage: Contatti
 msgid "contacts"
@@ -1677,6 +1767,16 @@ msgstr "Tax declaration"
 msgid "dirigente"
 msgstr "Manager"
 
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Mostra subito i risultati
+msgid "display_results_by_default"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Mostra subito i risultati della ricerca, senza che l'utente abbia gia applicato dei filtri
+msgid "display_results_by_default_description"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Documenti
 msgid "documenti"
@@ -2036,13 +2136,8 @@ msgid "gallery_close_preview"
 msgstr "Close preview"
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
-# defaultMessage: Titolo del video
+# defaultMessage: Didascalia del video
 msgid "gallery_video_title"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
-# defaultMessage: Non viene mostrato. Serve al redattore per identificare meglio il video all'interno della gallery.
-msgid "gallery_video_title_description"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
@@ -2154,6 +2249,11 @@ msgstr ""
 # defaultMessage: Iter del procedimento
 msgid "iter_del_procedimento"
 msgstr "Procedure of the procedure"
+
+#: components/ItaliaTheme/View/Commons/Attachment
+# defaultMessage: Ultimo agg.to:
+msgid "last_update"
+msgstr "Last update"
 
 #: components/ItaliaTheme/View/UOView/UOStructure
 # defaultMessage: Servizi o uffici di riferimento
@@ -2658,6 +2758,21 @@ msgstr "Remove topic"
 msgid "reperimento_modulistica"
 msgstr ""
 
+#: overrideTranslations
+# defaultMessage: Controlla la connessione internet, disattiva temporaneamente eventuali estensioni del browser (es. AdBlock), poi riprova.
+msgid "requestTimeout_adBlockMessage"
+msgstr "Check your internet connection, temporarily disable any browser extensions (e.g., AdBlock), then try again."
+
+#: overrideTranslations
+# defaultMessage: Attenzione
+msgid "requestTimeout_attention_adBlockMessage"
+msgstr "Attention"
+
+#: overrideTranslations
+# defaultMessage: si è verificato un problema.
+msgid "requestTimeout_problem_adBlockMessage"
+msgstr "a problem occurred."
+
 #: components/ItaliaTheme/View/UOView/UOStructure
 # defaultMessage: Responsabile
 msgid "responsabile"
@@ -3040,6 +3155,11 @@ msgstr "Search site"
 msgid "search_adv_filters"
 msgstr "Advanced filters"
 
+#: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
+# defaultMessage: Aspetto dei risultati
+msgid "search_bandi_variation"
+msgstr ""
+
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Tipologia
 msgid "search_content_types"
@@ -3256,6 +3376,11 @@ msgstr "Arrange on 4 columns"
 # defaultMessage: Condividi
 msgid "share"
 msgstr "Share"
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Mostra didascalie
+msgid "showVideoCaption"
+msgstr ""
 
 #: config/Blocks/ListingOptions/bandiInEvidenceTemplate
 # defaultMessage: Mostra la data di ultima modifica
@@ -3565,11 +3690,6 @@ msgstr "end"
 # defaultMessage: Termini del procedimento
 msgid "termini_del_procedimento"
 msgstr "Terms of the procedure"
-
-#: config/RichTextEditor/ToolbarButtons/TextSizeButton
-# defaultMessage: Dimensione del testo
-msgid "text-size-button"
-msgstr ""
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/TextFilter
 # defaultMessage: Inserisci un valore

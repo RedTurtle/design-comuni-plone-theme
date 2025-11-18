@@ -9,10 +9,13 @@
   .container .block {
     .searchSections {
       @if $subsite-secondary != $subsite-primary {
+        & {
+          color: $subsite-secondary-text;
+        }
+
         .searchSections-background {
           background-color: $subsite-secondary;
         }
-        color: $subsite-secondary-text;
 
         h2.text-secondary {
           color: $subsite-secondary-text !important;
@@ -32,6 +35,7 @@
             }
           }
         }
+
         .search-section-title {
           color: #fff;
         }
