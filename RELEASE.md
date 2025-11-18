@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Il blocco "Blocchi con icone" mostra sempre il colore del titolo correttamente, sia in modalità modifica che in modalità visualizzazione
+
 ## Versione 12.7.0 (12/11/2025)
 
 ### Novità
