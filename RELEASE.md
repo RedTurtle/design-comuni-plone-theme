@@ -53,7 +53,7 @@
 
 ### Fix
 
-- Lo sfondo del blocco elenco è ora del colore giusto anche in modalità di modifica.
+- Lo sfondo del blocco elenco viene ora visualizzato nella variante colore corretta sia in modalità visualizzazione che in modalità modifica
 
 ## Versione 12.7.0 (12/11/2025)
 
