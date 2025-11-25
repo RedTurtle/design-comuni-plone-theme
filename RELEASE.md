@@ -45,7 +45,7 @@
 
 ### Fix
 
-- sistemata la visualizzazione del messaggio dopo l'invio di un form.
+- Sistemata la visualizzazione del messaggio di ringraziamento dopo l'invio di un form.
 
 ## Versione 12.7.2 (21/11/2025)
 
