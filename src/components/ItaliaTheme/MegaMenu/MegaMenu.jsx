@@ -181,6 +181,8 @@ const MegaMenu = ({ item, pathname }) => {
     } else {
       let rows = Math.ceil(items.length / max_cols);
 
+      rows = rows === 0 ? 1 : rows;
+
       let col = 0;
 
       let row_counter = 1;
