@@ -41,10 +41,20 @@
 - ...
  -->
 
-## Versione x.x.x (x/x/x)
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
 
 ### Fix
 
+- Il blocco "Blocchi con icone" mostra sempre il colore del titolo correttamente, sia in modalità modifica che in modalità visualizzazione.
+- Lo sfondo del blocco elenco viene ora visualizzato nella variante colore corretta sia in modalità visualizzazione che in modalità modifica.
 - Sistemata la visualizzazione del messaggio di ringraziamento dopo l'invio di un form.
 
 ## Versione 12.7.2 (21/11/2025)
