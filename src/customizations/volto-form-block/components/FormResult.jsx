@@ -49,7 +49,6 @@ const replaceMessage = (text, sent_data) => {
     let idField = getFieldName(sent_data[i].label, sent_data[i].field_id);
 
     text = text.replaceAll('${' + idField + '}', sent_data[i].value ?? '');
-    console.log(sent_data[i], idField);
     i++;
   }
   text = text.replaceAll(/\$\{[^}]*\}/gm, ''); //replace empty fields with nothing
@@ -61,7 +60,6 @@ const FormResult = ({ formState, data, resetFormState }) => {
   const intl = useIntl();
   const displayThankYouInAlertMessageFormBlock =
     config.settings.siteProperties.displayThankYouInAlertMessageFormBlock;
-  console.log(data, formState);
   return (
     <Alert
       color={!formState.warning ? 'success' : 'warning'}
