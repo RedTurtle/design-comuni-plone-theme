@@ -47,7 +47,6 @@ const replaceMessage = (text, sent_data) => {
   let i = 0;
   while (i < sent_data.length) {
     let idField = getFieldName(sent_data[i].label, sent_data[i].field_id);
-
     text = text.replaceAll('${' + idField + '}', sent_data[i].value ?? '');
     i++;
   }
