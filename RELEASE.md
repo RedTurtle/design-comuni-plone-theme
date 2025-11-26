@@ -46,6 +46,8 @@
 ### Fix
 
 - sistemata la visualizzazione del messaggio dopo l'invio di un form.
+- sistemate le classi relative alla dimensione nel componente .genericcard
+
 ## Versione X.X.X (dd/mm/yyyy)
 
 ### Migliorie
