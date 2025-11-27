@@ -1,6 +1,13 @@
 .public-ui {
   .card {
     .card-body {
+      .card-title {
+        a {
+          overflow-wrap: anywhere;
+          word-break: break-word;
+          hyphens: auto; /* Aggiunge trattini quando spezza parole lunghe */
+        }
+      }
       .card-text {
         line-height: 1.5em;
       }
