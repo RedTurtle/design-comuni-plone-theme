@@ -134,6 +134,9 @@
         margin: 0;
         color: #fff;
         text-align: left;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        hyphens: auto;
       }
 
       a {
