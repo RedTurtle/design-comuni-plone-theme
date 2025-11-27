@@ -1,3 +1,8 @@
+/**
+ * Customizations
+ * - Add status indicator (circle) for private and pending items in ObjectBrowserNav
+ */
+
 import React from 'react';
 import { Button, Segment, Popup } from 'semantic-ui-react';
 import { useIntl, defineMessages } from 'react-intl';
