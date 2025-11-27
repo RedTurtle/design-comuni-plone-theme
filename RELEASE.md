@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Ora i titoli molto lunghi e senza spazi nelle card vengono spezzati automaticamente con un trattino (“-”) per evitare problemi di layout.
+
 ## Versione 12.7.3 (26/11/2025)
 
 ### Fix
