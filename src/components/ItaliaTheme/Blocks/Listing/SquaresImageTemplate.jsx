@@ -46,7 +46,7 @@ const SquaresImageTemplate = ({
                 key={index}
                 data-element={id_lighthouse}
               >
-                <span className="title fw-bold">
+                <span className="title fw-bold" title={item?.title}>
                   {item?.title.length > 56
                     ? `${item?.title.slice(0, 56)}…`
                     : item?.title}
