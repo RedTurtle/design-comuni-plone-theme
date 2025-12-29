@@ -89,7 +89,6 @@ const ObjectBrowserNav = ({
         };
       case 'intranet':
         return {
-          color: '#51aa55',
           status: intl.formatMessage(messages.intranet),
         };
       case 'published':
