@@ -31,6 +31,14 @@ const messages = defineMessages({
     id: 'Pending',
     defaultMessage: 'Pending',
   },
+  intranet: {
+    id: 'intranet',
+    defaultMessage: 'Intranet',
+  },
+  draft: {
+    id: 'draft',
+    defaultMessage: 'Draft',
+  },
   published: {
     id: 'Published',
     defaultMessage: 'Published',
@@ -62,6 +70,7 @@ const ObjectBrowserNav = ({
   };
 
   function getStatusData(type) {
+    console.log('getStatusData type:', type);
     switch (type) {
       case 'private':
         return {
@@ -72,6 +81,16 @@ const ObjectBrowserNav = ({
         return {
           color: '#f6a808',
           status: intl.formatMessage(messages.pending),
+        };
+      case 'draft':
+        return {
+          color: '#f6a808',
+          status: intl.formatMessage(messages.draft),
+        };
+      case 'intranet':
+        return {
+          color: '#51aa55',
+          status: intl.formatMessage(messages.intranet),
         };
       case 'published':
         return { status: intl.formatMessage(messages.published) };
