@@ -489,7 +489,7 @@ export default function applyConfig(voltoConfig) {
     },
     form: {
       ...config.blocks.blocksConfig.form,
-      enableConditionalFields: true,
+      enableConditionalFields: false,
       enableDatatableView: false,
     },
   };
