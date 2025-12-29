@@ -1,5 +1,42 @@
 # Changelog
 
+## [12.8.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.7.5...v12.8.0) (2025-12-29)
+
+
+### Features
+
+* updated volto-form-block to have input type number ([#1052](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1052)) ([461a6a9](https://github.com/RedTurtle/design-comuni-plone-theme/commit/461a6a9c71768027e3a36389302ffcda194633f4))
+
+
+### Documentation
+
+* updated publiccode and release log ([a554d41](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a554d41937aa0b373b3dce509ae4c1405a5a4dc3))
+
+## [12.7.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.7.4...v12.7.5) (2025-12-23)
+
+
+### Bug Fixes
+
+* initial block of Argomento CT ([#1053](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1053)) ([48e6d3c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/48e6d3ce79ddd42c46b23172a70a52d98b038ddc))
+
+
+### Documentation
+
+* updated publiccode and release log ([4678457](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4678457faf0179d9da75e70e8adb164bee3546c4))
+
+## [12.7.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.7.3...v12.7.4) (2025-12-15)
+
+
+### Bug Fixes
+
+* bando type in bando cards ([#1051](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1051)) ([3c17fbb](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3c17fbb002afc8d753a785314f2a7be286e9c81a))
+* hyphen and break word in card titles ([#1049](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1049)) ([4f94903](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4f94903bbbc7683774eb9e772b4f853dc7cd7276))
+
+
+### Documentation
+
+* updated publiccode and release log ([9f430f2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9f430f25b977aa58f3099ee6891cca3be9a1f62a))
+
 ## [12.7.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.7.2...v12.7.3) (2025-11-26)
 
 

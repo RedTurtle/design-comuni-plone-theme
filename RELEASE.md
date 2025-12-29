@@ -54,6 +54,24 @@
 ### Fix
 
 - ...
+## Versione 12.8.0 (29/12/2025)
+
+### Novità
+
+- Nel blocchi di tipo Form è ora possibile inserire campi di tipo Numero.
+
+## Versione 12.7.5 (23/12/2025)
+
+### Fix
+
+- Il blocco di testo inserito automaticamente durante la creazione dei CT Argomento è ora basato su Slate anziché su DraftJS.
+
+## Versione 12.7.4 (15/12/2025)
+
+### Fix
+
+- Ora i titoli molto lunghi e senza spazi nelle card vengono spezzati automaticamente con un trattino ("-") per evitare problemi di layout.
+- Le card del blocco elenco di tipo "Bandi" mostrano ora la tipologia bando correttamente.
 
 ## Versione 12.7.3 (26/11/2025)
 
