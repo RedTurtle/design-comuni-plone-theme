@@ -1,7 +1,7 @@
 // CUSTOMIZATION:
 // - added warning state to form
 // - backport for https://github.com/collective/volto-form-block/pull/122
-
+// - handle field errors coming from backend
 import React, { useState, useEffect, useReducer, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -141,7 +141,6 @@ const View = ({ data, id, path }) => {
 
   const [formState, setFormState] = useReducer(formStateReducer, initialState);
   const [formErrors, setFormErrors] = useState([]);
-  console.log(formErrors);
 
   const submitResults = useSelector(
     (state) => state.submitForm?.subrequests?.[id],
@@ -360,9 +359,15 @@ const View = ({ data, id, path }) => {
       let errorDescription = `${
         JSON.parse(submitResults.error.response?.text ?? '{}')?.message
       }`;
-      const fieldsErrors = JSON.parse(
-        submitResults.error.response?.text ?? '{}',
-      )?.fields_errors;
+
+      //CUSTOM: handle field errors coming from backend
+
+      let fieldsErrors = [];
+      if (errorDescription.startsWith('[')) {
+        fieldsErrors = JSON.parse(
+          errorDescription.replaceAll('"', '\\"').replaceAll("'", '"'),
+        );
+      }
 
       // fieldsErrors = [
       //   { field_id: '1767088715579', label: 'univoco', message: 'Errore' },
