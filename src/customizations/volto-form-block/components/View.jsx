@@ -356,17 +356,22 @@ const View = ({ data, id, path }) => {
           });
       }
     } else if (submitResults?.error) {
-      let errorDescription = `${
-        JSON.parse(submitResults.error.response?.text ?? '{}')?.message
-      }`;
-
       //CUSTOM: handle field errors coming from backend
-
       let fieldsErrors = [];
-      if (errorDescription.startsWith('[')) {
-        fieldsErrors = JSON.parse(
-          errorDescription.replaceAll('"', '\\"').replaceAll("'", '"'),
-        );
+      let errorDescription = '';
+
+      try {
+        errorDescription = `${
+          JSON.parse(submitResults.error.response?.text ?? '{}')?.message
+        }`;
+
+        if (errorDescription.startsWith('[')) {
+          fieldsErrors = JSON.parse(
+            errorDescription.replaceAll('"', '\\"').replaceAll("'", '"'),
+          );
+        }
+      } catch (e) {
+        errorDescription = 'Error parsing error response';
       }
 
       // fieldsErrors = [
