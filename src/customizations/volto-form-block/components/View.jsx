@@ -141,6 +141,7 @@ const View = ({ data, id, path }) => {
 
   const [formState, setFormState] = useReducer(formStateReducer, initialState);
   const [formErrors, setFormErrors] = useState([]);
+  console.log(formErrors);
 
   const submitResults = useSelector(
     (state) => state.submitForm?.subrequests?.[id],
@@ -359,8 +360,27 @@ const View = ({ data, id, path }) => {
       let errorDescription = `${
         JSON.parse(submitResults.error.response?.text ?? '{}')?.message
       }`;
+      const fieldsErrors = JSON.parse(
+        submitResults.error.response?.text ?? '{}',
+      )?.fields_errors;
 
-      setFormState({ type: FORM_STATES.error, error: errorDescription });
+      // fieldsErrors = [
+      //   { field_id: '1767088715579', label: 'univoco', message: 'Errore' },
+      // ];
+      if (fieldsErrors?.length > 0) {
+        const v = [];
+        fieldsErrors.forEach((fieldError) => {
+          v.push({
+            field: getFieldName(fieldError.label, fieldError.field_id),
+            message: fieldError.message,
+          });
+        });
+        setFormErrors(v);
+        setFormState({ type: FORM_STATES.error });
+      } else {
+        setFormErrors([]);
+        setFormState({ type: FORM_STATES.error, error: errorDescription });
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [submitResults]);
