@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Migliorato lo stile dell'indice della pagina, reso più attinente all'ultima versione delle linee guida.
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 12.8.0 (29/12/2025)
 
 ### Novità
