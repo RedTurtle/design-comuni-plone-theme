@@ -70,7 +70,6 @@ const ObjectBrowserNav = ({
   };
 
   function getStatusData(type) {
-    console.log('getStatusData type:', type);
     switch (type) {
       case 'private':
         return {
