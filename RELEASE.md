@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- I bottoni sulla barra degli strumenti ora rispettano il contrasto minimo previsto per i colori.
+
 ## Versione 12.9.0 (08/01/2026)
 
 ### Migliorie
