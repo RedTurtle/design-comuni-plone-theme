@@ -41,19 +41,16 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
-
-### Migliorie
-
-- ...
+## Versione 12.10.0 (27/01/2026)
 
 ### Novità
 
-- Ora è possibile aggiungere titoli in qualsiasi sezione dell’editor di testo
+- Ora è possibile aggiungere titoli in qualsiasi sezione dell'editor di testo.
 
 ### Fix
 
 - I testi per screen reader della barra degli strumenti ora riflettono correttamente lo stato corrente (espandi/riduci).
+- I pulsanti sulla barra degli strumenti ora rispettano il contrasto minimo previsto per i colori.
 
 ## Versione 12.9.0 (08/01/2026)
 
