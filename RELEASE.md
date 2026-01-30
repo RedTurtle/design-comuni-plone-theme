@@ -41,6 +41,22 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Modificato l'ordine dei pulsanti "Salva" e "Annulla" nella pagina di condivisione per migliorare l'accessibilità.
+
+  -->
+
 ## Versione 12.10.0 (27/01/2026)
 
 ### Novità
