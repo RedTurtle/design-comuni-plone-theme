@@ -17,6 +17,7 @@
 }
 
 input:focus-visible {
+  // only add border to input besides default double outline
   border: 2px solid $outer-focus-outline !important;
 }
 
@@ -36,6 +37,7 @@ input:focus-visible {
 //END BACKPORT
 
 .gdpr-privacy-show-banner:focus-visible {
+  // invert general :focus rule since button is always white
   outline: 2px solid $inner-focus-shadow !important;
   outline-offset: 2px;
 
