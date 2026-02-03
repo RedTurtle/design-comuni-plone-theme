@@ -1,3 +1,5 @@
+//BACKPORT to http://
+//START BACKPORT
 // Universal focus mixin
 @mixin universal-focus-style() {
   outline: $outer-focus-outline auto 2px !important;
@@ -22,14 +24,6 @@ input:focus-visible {
   border: 2px solid;
 }
 
-.gdpr-privacy-show-banner:focus-visible {
-  outline: 2px solid $inner-focus-shadow !important;
-  outline-offset: 2px;
-
-  border: none !important;
-  box-shadow: 0 0 0 2px $outer-focus-outline !important;
-}
-
 // Semantic UI checkbox focus styles
 .ui.checkbox input:focus-visible ~ label::before {
   @include universal-focus-style();
@@ -38,4 +32,13 @@ input:focus-visible {
 
 .ui.checkbox label::before {
   transition: none !important;
+}
+//END BACKPORT
+
+.gdpr-privacy-show-banner:focus-visible {
+  outline: 2px solid $inner-focus-shadow !important;
+  outline-offset: 2px;
+
+  border: none !important;
+  box-shadow: 0 0 0 2px $outer-focus-outline !important;
 }
