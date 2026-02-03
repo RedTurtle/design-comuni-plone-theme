@@ -53,7 +53,6 @@
 
 ### Fix
 
-- Modificato l'ordine dei pulsanti "Salva" e "Annulla" nella pagina di condivisione per migliorare l'accessibilità.
 - Migliorata la visualizzazione del focus nella pagina di condivisione - sharing page - per una migliore accessibilità
 
   -->
