@@ -1,4 +1,13 @@
-:focus:not(.focus--mouse),
+//BACKPORT to https://github.com/plone/volto/pull/7850
+//START BACKPORT
+// Universal focus mixin
+@mixin universal-focus-style() {
+  outline: $outer-focus-outline auto 2px !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px $inner-focus-shadow !important;
+}
+
+:focus-visible,
 %focus {
   outline: 2px solid $outer-focus-outline !important;
   outline-offset: 2px;
@@ -7,16 +16,27 @@
   box-shadow: 0 0 0 2px $inner-focus-shadow !important;
 }
 
-input:focus:not(.focus--mouse) {
+input:focus-visible {
   // only add border to input besides default double outline
   border: 2px solid $outer-focus-outline !important;
 }
 
-.skiplinks a:focus:not(.focus--mouse) {
+.skiplinks a:focus-visible {
   border: 2px solid;
 }
 
-.gdpr-privacy-show-banner:focus:not(.focus--mouse) {
+// Semantic UI checkbox focus styles
+.ui.checkbox input:focus-visible ~ label::before {
+  @include universal-focus-style();
+  outline-offset: 4px;
+}
+
+.ui.checkbox label::before {
+  transition: none !important;
+}
+//END BACKPORT
+
+.gdpr-privacy-show-banner:focus-visible {
   // invert general :focus rule since button is always white
   outline: 2px solid $inner-focus-shadow !important;
   outline-offset: 2px;

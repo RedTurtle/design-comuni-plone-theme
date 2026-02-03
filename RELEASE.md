@@ -41,6 +41,22 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Migliorata la visualizzazione del focus nella pagina di condivisione - sharing page - per una migliore accessibilità
+
+  -->
+
 ## Versione 12.10.0 (27/01/2026)
 
 ### Novità
