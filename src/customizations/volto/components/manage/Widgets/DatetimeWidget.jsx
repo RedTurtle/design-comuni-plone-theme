@@ -1,3 +1,20 @@
+/**
+ * DatetimeWidget component.
+ * @module components/manage/Widgets/DatetimeWidget
+ *
+ * https://github.com/plone/volto/blob/main/packages/volto/src/components/manage/Widgets/DatetimeWidget.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - accept calendar `openDirection` prop and use it in SingleDatePicker,
+ *   default to down if no openDirection is given
+ * - requirement aria attributes added to date and time inputs - To be backported https://github.com/plone/volto/pull/7494
+ */
+
+/**
+ * DatetimeWidget component.
+ * @module components/manage/Widgets/DatetimeWidget
+ */
+
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
@@ -203,10 +220,8 @@ const DatetimeWidgetComponent = (props) => {
       }
     }
 
-    // Aplica imediatamente
     applyAria();
 
-    // Cria observer apenas uma vez
     const observer = new MutationObserver(applyAria);
     observer.observe(document.body, { childList: true, subtree: true });
 
