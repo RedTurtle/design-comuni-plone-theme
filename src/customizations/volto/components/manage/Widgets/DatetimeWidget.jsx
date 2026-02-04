@@ -178,6 +178,7 @@ const DatetimeWidgetComponent = (props) => {
   const datetime = getInternalValue();
   const isDateOnly = getDateOnly();
 
+  //pezzo aggiunto per gestire aria-required - https://github.com/plone/volto/pull/7494
   useEffect(() => {
     const dateSelectors = [
       `#${id}-date`,
@@ -233,6 +234,7 @@ const DatetimeWidgetComponent = (props) => {
   if (id === 'end' && formData?.open_end) {
     return null;
   }
+  // fine pezzo aggiunto per gestire aria-required
 
   return (
     <FormFieldWrapper {...props}>
