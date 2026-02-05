@@ -1,13 +1,10 @@
 /**
  * FormFieldWrapper component.
  * @module components/manage/Widgets/FormFieldWrapper
+ * - Rifattorazione del componente FormFieldWrapper, con l'obiettivo di aggiornarlo alla versione 19 di Volto https://github.com/plone/volto/blob/main/packages/volto/src/components/manage/Widgets/FormFieldWrapper.jsx
+ * - aria-required e aria-invalid vengono aggiunti solo se il campo è richiesto e se ci sono errori, rispettivamente
  */
-import React, {
-  Component,
-  Children,
-  isValidElement,
-  cloneElement,
-} from 'react';
+import React, { Children, isValidElement, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Grid, Icon as IconOld, Label } from 'semantic-ui-react';
 import map from 'lodash/map';
@@ -64,11 +61,11 @@ const FormFieldWrapper = ({
 
   const wdg = (
     <>
-      {Children.map(this.props.children, (child) => {
+      {Children.map(children, (child) => {
         if (isValidElement(child) && required && child.type.name === 'Input') {
           return cloneElement(child, {
             'aria-required': true,
-            'aria-invalid': error && error.length > 0,
+            'aria-invalid': !!(error && error.length > 0),
           });
         }
         return child;
