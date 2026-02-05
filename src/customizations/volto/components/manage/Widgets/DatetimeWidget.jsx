@@ -178,6 +178,8 @@ const DatetimeWidgetComponent = (props) => {
   const datetime = getInternalValue();
   const isDateOnly = getDateOnly();
 
+  const renderWidget = !(id === 'end' && formData?.open_end);
+
   //pezzo aggiunto per gestire aria-required - https://github.com/plone/volto/pull/7494
   useEffect(() => {
     const dateSelectors = [
@@ -230,75 +232,73 @@ const DatetimeWidgetComponent = (props) => {
     return () => observer.disconnect();
   }, [props.required, id, isDateOnly]);
 
-  // If open_end is checked and this is the end field, don't render
-  if (id === 'end' && formData?.open_end) {
-    return null;
-  }
   // fine pezzo aggiunto per gestire aria-required
 
   return (
     <FormFieldWrapper {...props}>
-      <div className="date-time-widget-wrapper">
-        <div
-          className={cx('ui input date-input', {
-            'default-date': isDefault,
-          })}
-        >
-          <SingleDatePicker
-            date={datetime}
-            disabled={isDisabled}
-            onDateChange={onDateChange}
-            focused={focused}
-            numberOfMonths={1}
-            {...(noPastDates ? {} : { isOutsideRange: () => false })}
-            onFocusChange={onFocusChange}
-            noBorder
-            displayFormat={moment.default
-              .localeData(toBackendLang(lang))
-              .longDateFormat('L')}
-            navPrev={<PrevIcon />}
-            navNext={<NextIcon />}
-            id={`${id}-date`}
-            placeholder={intl.formatMessage(messages.date)}
-            openDirection={openDirection ?? 'down'}
-          />
-        </div>
-        {!isDateOnly && (
+      {renderWidget && (
+        <div className="date-time-widget-wrapper">
           <div
-            className={cx('ui input time-input', {
+            className={cx('ui input date-input', {
               'default-date': isDefault,
             })}
           >
-            <TimePicker
+            <SingleDatePicker
+              date={datetime}
               disabled={isDisabled}
-              defaultValue={datetime}
-              value={datetime}
-              onChange={onTimeChange}
-              allowEmpty={false}
-              showSecond={false}
-              use12Hours={lang === 'en'}
-              id={`${id}-time`}
-              format={moment.default
+              onDateChange={onDateChange}
+              focused={focused}
+              numberOfMonths={1}
+              {...(noPastDates ? {} : { isOutsideRange: () => false })}
+              onFocusChange={onFocusChange}
+              noBorder
+              displayFormat={moment.default
                 .localeData(toBackendLang(lang))
-                .longDateFormat('LT')}
-              placeholder={intl.formatMessage(messages.time)}
-              focusOnOpen
-              placement="bottomRight"
+                .longDateFormat('L')}
+              navPrev={<PrevIcon />}
+              navNext={<NextIcon />}
+              id={`${id}-date`}
+              placeholder={intl.formatMessage(messages.date)}
+              openDirection={openDirection ?? 'down'}
             />
           </div>
-        )}
-        {resettable && (
-          <button
-            type="button"
-            disabled={isDisabled || !datetime}
-            onClick={onResetDates}
-            className="item ui noborder button"
-            aria-label={intl.formatMessage(messages.clearDateTime)}
-          >
-            <Icon name={clearSVG} size="24px" className="close" />
-          </button>
-        )}
-      </div>
+          {!isDateOnly && (
+            <div
+              className={cx('ui input time-input', {
+                'default-date': isDefault,
+              })}
+            >
+              <TimePicker
+                disabled={isDisabled}
+                defaultValue={datetime}
+                value={datetime}
+                onChange={onTimeChange}
+                allowEmpty={false}
+                showSecond={false}
+                use12Hours={lang === 'en'}
+                id={`${id}-time`}
+                format={moment.default
+                  .localeData(toBackendLang(lang))
+                  .longDateFormat('LT')}
+                placeholder={intl.formatMessage(messages.time)}
+                focusOnOpen
+                placement="bottomRight"
+              />
+            </div>
+          )}
+          {resettable && (
+            <button
+              type="button"
+              disabled={isDisabled || !datetime}
+              onClick={onResetDates}
+              className="item ui noborder button"
+              aria-label={intl.formatMessage(messages.clearDateTime)}
+            >
+              <Icon name={clearSVG} size="24px" className="close" />
+            </button>
+          )}
+        </div>
+      )}
     </FormFieldWrapper>
   );
 };
