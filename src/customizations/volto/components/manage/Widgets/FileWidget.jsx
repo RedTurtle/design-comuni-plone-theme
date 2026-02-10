@@ -60,6 +60,10 @@ const messages = defineMessages({
     id: 'File is not of the accepted type {accept}',
     defaultMessage: 'File is not of the accepted type {accept}',
   },
+  requiredField: {
+    id: 'This field is required.',
+    defaultMessage: 'This is a required field.',
+  },
 });
 
 /**
@@ -202,15 +206,27 @@ const FileWidget = (props) => {
               </div>
             )}
 
-            <label className="label-file-widget-input">
+            <Button
+              className="label-file-widget-input"
+              aria-label={
+                props.required
+                  ? `${
+                      value
+                        ? intl.formatMessage(messages.replaceFile)
+                        : intl.formatMessage(messages.addNewFile)
+                    } (${intl.formatMessage(messages.requiredField)})`
+                  : null
+              }
+            >
               {value
                 ? intl.formatMessage(messages.replaceFile)
                 : intl.formatMessage(messages.addNewFile)}
-            </label>
+            </Button>
             <input
               {...getInputProps({
                 type: 'file',
                 style: { display: 'none' },
+                'aria-required': props.required,
               })}
               id={`field-${id}`}
               name={id}
@@ -220,6 +236,7 @@ const FileWidget = (props) => {
           </div>
         )}
       </Dropzone>
+
       <div className="field-file-name">
         {value && (
           <UniversalLink href={value.download} download={true}>
