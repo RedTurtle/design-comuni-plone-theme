@@ -208,13 +208,14 @@ const FileWidget = (props) => {
 
             <Button
               className="label-file-widget-input"
+              tabIndex={-1}
               aria-label={
                 props.required
                   ? `${
                       value
                         ? intl.formatMessage(messages.replaceFile)
                         : intl.formatMessage(messages.addNewFile)
-                    } (${intl.formatMessage(messages.requiredField)})`
+                    }. (${intl.formatMessage(messages.requiredField)})`
                   : null
               }
             >
