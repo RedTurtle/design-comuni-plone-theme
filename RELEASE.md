@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Fix
+
+- Sistemato un problema che si verificava durante l'incolla delle tabelle da un file word.
+
 ## Versione 12.10.1 (09/02/2026)
 
 ### Fix
