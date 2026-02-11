@@ -1,6 +1,9 @@
 /**
  * UrlWidget component.
  * @module components/manage/Widgets/UrlWidget
+ * Volto 19.x.x
+ * - Recreated the linkInvalid variable to correctly identify whether a link is valid or not.
+ * - Added the necessary ARIA attributes to the input.
  */
 
 import React, { useState } from 'react';
