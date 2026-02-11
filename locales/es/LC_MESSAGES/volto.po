@@ -265,6 +265,11 @@ msgstr "Etiqueta"
 msgid "Etichetta path filter"
 msgstr "Etiqueta"
 
+#: overrideTranslations
+# defaultMessage: Expand toolbar
+msgid "Expand toolbar"
+msgstr "Expandir barra de herramientas"
+
 #: components/ItaliaTheme/View/FAQ/FaqFolder/FaqFolderView
 # defaultMessage: Non ho trovato la risposta che cercavi
 msgid "Faq Folder: Nessun risultato trovato"

@@ -55,6 +55,7 @@
 
 ### Fix
 
+- I testi per screen reader della barra degli strumenti ora riflettono correttamente lo stato corrente (espandi/riduci).
 - I pulsanti sulla barra degli strumenti ora rispettano il contrasto minimo previsto per i colori.
 
 ## Versione 12.9.0 (08/01/2026)
