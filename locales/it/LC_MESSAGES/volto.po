@@ -369,6 +369,11 @@ msgstr "Iscriviti per ricevere la newsletter"
 msgid "L'evento non si terrà nelle seguenti date"
 msgstr "L'evento non si terrà nelle seguenti date"
 
+#: overrideTranslations
+# defaultMessage: This is a language independent field. Any value you enter here will overwrite the corresponding field of all members of the translation group when you save this form.
+msgid "Language independent icon title"
+msgstr "Questo è un campo indipendente dalla lingua. Qualsiasi valore inserito qui sovrascriverà il campo corrispondente di tutti i membri del gruppo di traduzione al momento del salvataggio del modulo."
+
 #: components/ItaliaTheme/Blocks/Calendar/ListingSidebar
 # defaultMessage: Link more
 msgid "Link more"

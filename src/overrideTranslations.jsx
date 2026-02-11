@@ -177,4 +177,10 @@ defineMessages({
     id: 'Published',
     defaultMessage: 'Published',
   },
+  //backport from volto 19 https://github.com/plone/volto/blob/main/packages/volto/src/components/manage/Widgets/FormFieldWrapper.jsx
+  language_independent_icon_title: {
+    id: 'Language independent icon title',
+    defaultMessage:
+      'This is a language independent field. Any value you enter here will overwrite the corresponding field of all members of the translation group when you save this form.',
+  },
 });
