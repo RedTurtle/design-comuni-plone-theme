@@ -1,6 +1,6 @@
 /**
  * RegistryImageWidget component.
- * @module packages/volto/src/components/manage/Widgets/RegistryImageWidget
+ * @module components/manage/Widgets/RegistryImageWidget
  * Volto version 19
  * - Diff from 17.x.x: added aria-label and aria-required to the file input and the button, to improve accessibility. The aria-label includes information about whether the field is required or not.
  * PR with Volto changes: https://github.com/plone/volto/pull/7494
