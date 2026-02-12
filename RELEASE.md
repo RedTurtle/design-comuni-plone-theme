@@ -41,6 +41,21 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Gestita la visualizzazione delle estensioni file nei link di download.
+- Abilitato il blocco "Callout" all'interno dei campi blocchi dei CT.
+
+### Novità
+
+- ...
+
+### Fix
+
+- I titoli nei dei campi di testo all'interno dei CT consentono di selezionare il testo e posizionare il cursore con il mouse in maniera corretta
+
 ## Versione 12.10.0 (27/01/2026)
 
 ### Novità
