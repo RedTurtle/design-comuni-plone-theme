@@ -55,6 +55,8 @@
 ### Fix
 
 - I titoli nei dei campi di testo all'interno dei CT consentono di selezionare il testo e posizionare il cursore con il mouse in maniera corretta
+- I bottoni inseriti tramite l'editor Slate nei sottositi hanno gli stili corretti
+
 ## Versione 12.10.1 (09/02/2026)
 
 ### Fix
