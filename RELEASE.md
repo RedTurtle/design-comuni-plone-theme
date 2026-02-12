@@ -55,6 +55,11 @@
 ### Fix
 
 - I titoli nei dei campi di testo all'interno dei CT consentono di selezionare il testo e posizionare il cursore con il mouse in maniera corretta
+## Versione 12.10.1 (09/02/2026)
+
+### Fix
+
+- Sistemato un problema di focus sull'edit dei campi con blocchi quando il campo contiene link a file/immagini.
 
 ## Versione 12.10.0 (27/01/2026)
 
