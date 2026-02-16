@@ -1,3 +1,10 @@
+## [7.41.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.7...v7.41.0) (2026-02-16)
+
+
+### Features
+
+* object browser search: filter results with only selectable types ([#1078](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1078)) ([2f6a8f6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2f6a8f6f6a9e01e420b74913e3914378ba1dc32e))
+
 ### [7.40.7](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.6...v7.40.7) (2025-11-03)
 
 
