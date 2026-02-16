@@ -30,11 +30,13 @@
 - ...
 -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 7.41.0 (16/02/2026)
 
 ### Migliorie
 
-- ...
+- Ora nella ricerca dei contenuti nell'obeject browser, vengono mostrati solo i risultati corrispondenti alla tipologia del contenuto linkabile nel campo.
+
+## Versione 7.40.7 (03/11/2025)
 
 ### Fix
 
