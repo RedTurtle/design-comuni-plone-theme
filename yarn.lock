@@ -8313,7 +8313,7 @@ __metadata:
     volto-secondarymenu: 4.1.1
     volto-site-settings: 0.4.4
     volto-slimheader: 0.1.2
-    volto-social-settings: 3.0.0
+    volto-social-settings: 3.1.2
     volto-subblocks: 2.1.0
     volto-subfooter: 3.1.1
     volto-subsites: 4.0.2
@@ -16479,12 +16479,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-social-settings@npm:3.0.0":
-  version: 3.0.0
-  resolution: "volto-social-settings@npm:3.0.0"
+"volto-social-settings@npm:3.1.2":
+  version: 3.1.2
+  resolution: "volto-social-settings@npm:3.1.2"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: 60ff28306d9accddad54303d2246f0e041fcb5e67a128feeff34543589b322fbb2c9874a479c71bfb1abfce230eed34eb379351ab6533fa0fac028239e0a0d56
+  checksum: ba544426a30764db3ee6575e456ce8b0d5e66e00e710cfc3c9e3241bf37027011d9141258788364e775b5210b111fe51ab678db281badb684b32dc3319a47d48
   languageName: node
   linkType: hard
 
