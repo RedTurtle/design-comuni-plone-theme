@@ -66,33 +66,38 @@ const SubFooterConfigurationForm = ({
   const intl = useIntl();
 
   const preventClick = (e) => {
-    e.preventDefault();
+    // only prevent default when the click is on a button
+    const btn = e.target?.closest && e.target.closest('button');
+
+    if (btn) {
+      e.preventDefault();
+    }
   };
 
   const preventEnter = (e) => {
     if (e.code === 'Enter') {
-      preventClick(e);
+      const btn = e.target?.closest && e.target.closest('button');
+      if (btn) {
+        preventClick(e);
+      }
     }
   };
 
   useEffect(() => {
-    document.querySelector('form.ui.form') &&
-      document
-        .querySelector('form.ui.form')
-        .addEventListener('click', preventClick);
+    const form = document.querySelector('form.ui.form');
+    form?.addEventListener('click', preventClick);
 
     document.querySelectorAll('form.ui.form input').forEach((item) => {
       item.addEventListener('keypress', preventEnter);
     });
 
     return () => {
-      document
-        .querySelector('form.ui.form')
-        .removeEventListener('click', preventClick);
+      form?.removeEventListener('click', preventClick);
       document.querySelectorAll('form.ui.form input').forEach((item) => {
-        item.removeEventListener('keypress', preventEnter);
+        item?.removeEventListener('keypress', preventEnter);
       });
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onChangeFormData = (id, value) => {
