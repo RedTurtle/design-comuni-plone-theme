@@ -46,6 +46,7 @@
 ### Fix
 
 - Sistemato un problema che si verificava durante l'incolla delle tabelle da un file word.
+- Rimosse chiamate doppie inutili a @footerColumns
 
 ## Versione 12.10.1 (09/02/2026)
 
