@@ -105,7 +105,9 @@ const BandiInEvidenceTemplate = (props) => {
                       className={cx('title', { 'wrap-title': wrap_title })}
                     >
                       <UniversalLink
-                        className="bando-title"
+                        className={cx('bando-title', {
+                          'wrap-title': wrap_title,
+                        })}
                         item={!isEditMode ? item : null}
                         href={isEditMode ? '#' : null}
                       >
