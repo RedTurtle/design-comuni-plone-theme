@@ -41,6 +41,24 @@
 - ...
  -->
 
+## Versione 12.11.0 (23/02/2026)
+
+### Fix
+
+- Sistemato un problema che si verificava durante l'incolla delle tabelle da un file word.
+- Rimosse chiamate doppie inutili.
+- Rimosso l'acapo automatico nei titoli delle card. Ora i titoli vanno a capo solo se espressamente configurato nel campo dedicato nelle impostazioni del template del blocco.
+
+### Novità
+
+- Nei template del blocco listing, è possibile scegliere con un flag, se mandare a capo automaticamente con un trattino i titoli troppo lunghi (per i casi in cui i titoli "sbordano" dalle card).
+
+## Versione 12.10.1 (09/02/2026)
+
+### Fix
+
+- Sistemato un problema di focus sull'edit dei campi con blocchi quando il campo contiene link a file/immagini.
+
 ## Versione 12.10.0 (27/01/2026)
 
 ### Novità
