@@ -688,6 +688,11 @@ msgstr ""
 msgid "Thank you."
 msgstr "Merci."
 
+#: overrideTranslations
+# defaultMessage: This is a required field.
+msgid "This field is required."
+msgstr "Ce champ est obligatoire"
+
 #: components/ItaliaTheme/Blocks/Accordion/Edit
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/IconBlocks/Edit

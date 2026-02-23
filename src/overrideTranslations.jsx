@@ -177,4 +177,9 @@ defineMessages({
     id: 'Published',
     defaultMessage: 'Published',
   },
+  //FileWidget
+  requiredField: {
+    id: 'This field is required.',
+    defaultMessage: 'This is a required field.',
+  },
 });
