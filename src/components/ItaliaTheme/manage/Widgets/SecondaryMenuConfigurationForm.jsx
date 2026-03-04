@@ -65,36 +65,40 @@ const SecondaryMenuConfigurationForm = ({
 }) => {
   const intl = useIntl();
 
-  const preventClick = (e) => {
-    // only prevent default when the click is on a button
-    const btn = e.target?.closest && e.target.closest('button');
-    if (btn) {
-      e.preventDefault();
-    }
-  };
-
-  const preventEnter = (e) => {
-    if (e.code === 'Enter') {
-      const btn = e.target?.closest && e.target.closest('button');
-      if (btn) preventClick(e);
-    }
-  };
-
   useEffect(() => {
+    // Get the main Volto HTML form
     const form = document.querySelector('form.ui.form');
-    form?.addEventListener('click', preventClick);
 
-    document.querySelectorAll('form.ui.form input').forEach((item) => {
-      item.addEventListener('keypress', preventEnter);
-    });
+    // Handler to block any type of submit
+    const preventSubmit = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+
+    // global handler to stop Enter from submitting inputs
+
+    const handleEnter = (e) => {
+      if (e.key === 'Enter') {
+        const targetForm = e.target.closest('form.ui.form');
+        if (targetForm) {
+          // block enter everywhere else to prevent unwanted submit
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }
+    };
+
+    // prevent native submits (click on buttons that have type submit, etc.)
+    form?.addEventListener('submit', preventSubmit, true);
+
+    // Block Enter outside blocks
+    document.addEventListener('keydown', handleEnter, true);
 
     return () => {
-      form?.removeEventListener('click', preventClick);
-      document.querySelectorAll('form.ui.form input').forEach((item) => {
-        item?.removeEventListener('keypress', preventEnter);
-      });
+      // Cleanup all listeners
+      form?.removeEventListener('submit', preventSubmit, true);
+      document.removeEventListener('keydown', handleEnter, true);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onChangeFormData = (id, value) => {

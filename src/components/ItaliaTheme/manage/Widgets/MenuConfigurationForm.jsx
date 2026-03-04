@@ -113,39 +113,63 @@ const MenuConfigurationForm = ({ id, menuItem, onChange, deleteMenuItem }) => {
     };
   }
 
-  const preventClick = (e) => {
-    // only prevent default when the click is on a button
-    const btn = e.target?.closest && e.target.closest('button');
+  // const preventClick = (e) => {
+  //   // only prevent default when the click is on a button
+  //   const btn = e.target?.closest && e.target.closest('button');
 
-    if (btn) {
-      e.preventDefault();
-    }
-  };
+  //   if (btn) {
+  //     e.preventDefault();
+  //   }
+  // };
 
-  const preventEnter = (e) => {
-    if (e.code === 'Enter') {
-      const btn = e.target?.closest && e.target.closest('button');
-      if (btn) {
-        preventClick(e);
-      }
-    }
-  };
+  // const preventEnter = (e) => {
+  //   if (e.code === 'Enter') {
+  //     const btn = e.target?.closest && e.target.closest('button');
+  //     if (btn) {
+  //       preventClick(e);
+  //     }
+  //   }
+  // };
 
   useEffect(() => {
+    // Get the main Volto HTML form
     const form = document.querySelector('form.ui.form');
-    form?.addEventListener('click', preventClick);
 
-    document.querySelectorAll('form.ui.form input').forEach((item) => {
-      item.addEventListener('keypress', preventEnter);
-    });
+    // Handler per bloccare submit espliciti o impliciti
+    const preventSubmit = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+
+    // Handler globale per bloccare Enter sugli input,
+    // tranne dentro menu-blocks-container
+    const handleEnter = (e) => {
+      if (e.key === 'Enter') {
+        const targetForm = e.target.closest('form.ui.form');
+        if (targetForm) {
+          const inBlocks = e.target.closest('.menu-blocks-container');
+          if (inBlocks) {
+            // Lascia Enter libero dentro i blocks (React/Volto crea nuovo blocco)
+            return;
+          }
+          // Blocca Enter altrove per evitare submit indesiderati
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }
+    };
+
+    // Blocca submit nativi (click su button con type submit, ecc.)
+    form?.addEventListener('submit', preventSubmit, true);
+
+    // Blocca Enter fuori dai blocks
+    document.addEventListener('keydown', handleEnter, true);
 
     return () => {
-      form?.removeEventListener('click', preventClick);
-      document.querySelectorAll('form.ui.form input').forEach((item) => {
-        item?.removeEventListener('keypress', preventEnter);
-      });
+      // Cleanup all listeners
+      form?.removeEventListener('submit', preventSubmit, true);
+      document.removeEventListener('keydown', handleEnter, true);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onChangeFormData = (id, value) => {
