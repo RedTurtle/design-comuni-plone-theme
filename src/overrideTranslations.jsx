@@ -177,4 +177,11 @@ defineMessages({
     id: 'Published',
     defaultMessage: 'Published',
   },
+  //BACKPORT of https://github.com/plone/volto/pull/7500
+  //start
+  expandToolbar: {
+    id: 'Expand toolbar',
+    defaultMessage: 'Expand toolbar',
+  },
+  //end
 });
