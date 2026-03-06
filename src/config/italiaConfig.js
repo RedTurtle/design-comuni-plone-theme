@@ -377,6 +377,7 @@ export default function applyConfig(voltoConfig) {
       'testo_riquadro_semplice',
       'testo_riquadro_immagine',
       'rssBlock',
+      'callout_block',
       config.settings.defaultBlockType,
       //se si aggiunge un nuovo blocco, verificare che in edit non ci siano bottoni che provocano il submit della form. Se succede, gestirli con e.prevenDefault() e.stopPropagation().
       // Se sono bottoni semantic basta mettere type="button"
@@ -446,6 +447,22 @@ export default function applyConfig(voltoConfig) {
     listing: {
       ...config.blocks.blocksConfig.listing,
       showLinkMore: true,
+      /** Per cambiare il valore di default di una prop dei un template, 
+       * settarlo nella variabile `defaultVariationProps`. 
+       * Se il nome della prop viene messo come chiave in `defaultVariationProps` è valido per tutti i template del sito che hanno quella prop. 
+       * Se invece viene specificato nella prop _variatons, vale solo per il template indicato. 
+       * 
+       * Quello indicato in _variations ha priorità sugli altri default. 
+       * Es:    
+      defaultVariationProps: {
+        wrap_title: false, //generico per tutti i template del sito. Puoi cambiarlo per singolo template nella prop _variations (vedi riga successiva)
+        _variations: {
+          simpleCard: {
+            wrap_title: true, //specifico per il template simpleCard, sovrascrive il wrap_title generico e quello di default
+          },
+        },
+      },
+      */
       blockSchema: schemaListing,
       variations: [
         ...config.blocks.blocksConfig.listing.variations,

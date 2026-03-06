@@ -41,6 +41,30 @@
 - ...
  -->
 
+## Versione 12.11.1 (25/02/2026)
+
+### Migliorie
+
+- Gestita la visualizzazione delle estensioni file nei link di download.
+- Abilitato il blocco "Callout" all'interno dei campi blocchi dei CT.
+
+### Fix
+
+- I titoli nei dei campi di testo all'interno dei CT consentono di selezionare il testo e posizionare il cursore con il mouse in maniera corretta
+- I bottoni inseriti tramite l'editor Slate nei sottositi hanno gli stili corretti
+
+## Versione 12.11.0 (23/02/2026)
+
+### Fix
+
+- Sistemato un problema che si verificava durante l'incolla delle tabelle da un file word.
+- Rimosse chiamate doppie inutili.
+- Rimosso l'acapo automatico nei titoli delle card. Ora i titoli vanno a capo solo se espressamente configurato nel campo dedicato nelle impostazioni del template del blocco.
+
+### Novità
+
+- Nei template del blocco listing, è possibile scegliere con un flag, se mandare a capo automaticamente con un trattino i titoli troppo lunghi (per i casi in cui i titoli "sbordano" dalle card).
+
 ## Versione 12.10.1 (09/02/2026)
 
 ### Fix
