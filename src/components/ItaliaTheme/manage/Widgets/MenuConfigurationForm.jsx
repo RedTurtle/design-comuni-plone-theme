@@ -113,56 +113,38 @@ const MenuConfigurationForm = ({ id, menuItem, onChange, deleteMenuItem }) => {
     };
   }
 
-  // const preventClick = (e) => {
-  //   // only prevent default when the click is on a button
-  //   const btn = e.target?.closest && e.target.closest('button');
-
-  //   if (btn) {
-  //     e.preventDefault();
-  //   }
-  // };
-
-  // const preventEnter = (e) => {
-  //   if (e.code === 'Enter') {
-  //     const btn = e.target?.closest && e.target.closest('button');
-  //     if (btn) {
-  //       preventClick(e);
-  //     }
-  //   }
-  // };
-
   useEffect(() => {
     // Get the main Volto HTML form
     const form = document.querySelector('form.ui.form');
 
-    // Handler per bloccare submit espliciti o impliciti
+    // Handler to block any type of submit
     const preventSubmit = (e) => {
       e.preventDefault();
       e.stopPropagation();
     };
 
-    // Handler globale per bloccare Enter sugli input,
-    // tranne dentro menu-blocks-container
+    // global handler to stop Enter from submitting inputs
+    // exception: menu-blocks-container (to add slate blocks)
     const handleEnter = (e) => {
       if (e.key === 'Enter') {
         const targetForm = e.target.closest('form.ui.form');
         if (targetForm) {
           const inBlocks = e.target.closest('.menu-blocks-container');
           if (inBlocks) {
-            // Lascia Enter libero dentro i blocks (React/Volto crea nuovo blocco)
+            // allow enter to add blocks (React/Volto create new blocks)
             return;
           }
-          // Blocca Enter altrove per evitare submit indesiderati
+          // block enter everywhere else to prevent unwanted submit
           e.preventDefault();
           e.stopPropagation();
         }
       }
     };
 
-    // Blocca submit nativi (click su button con type submit, ecc.)
+    // prevent native submits (click on buttons that have type submit, etc.)
     form?.addEventListener('submit', preventSubmit, true);
 
-    // Blocca Enter fuori dai blocks
+    // Block Enter outside blocks
     document.addEventListener('keydown', handleEnter, true);
 
     return () => {
