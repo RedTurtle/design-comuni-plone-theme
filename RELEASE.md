@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- I campi URL ora accettano anche i collegamenti che contengono ":", es. url di condivisione da Sharepoint
+
+### Novità
+
+- ...
+
+### Fix
+
+- ...
+
 ## Versione 12.11.2 (06/03/2026)
 
 ### Fix
