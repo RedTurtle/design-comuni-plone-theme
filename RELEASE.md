@@ -53,7 +53,8 @@
 
 ### Fix
 
-- ...
+- Le gallery di immagini nel dettaglio di un contenuto, ora mostrano tutte le immagini caricate (prima erano limitate 25).
+
 ## Versione 12.11.3 (10/03/2026)
 
 ### Fix
