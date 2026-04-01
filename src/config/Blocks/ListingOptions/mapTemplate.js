@@ -23,6 +23,10 @@ const messages = defineMessages({
     id: 'map_size_large',
     defaultMessage: 'Grande',
   },
+  zoom: {
+    id: 'zoom',
+    defaultMessage: 'Zoom',
+  },
 });
 
 export const addMapTemplateOptions = (schema, formData, intl, position = 1) => {
