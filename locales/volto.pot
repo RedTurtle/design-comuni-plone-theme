@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-02-23T13:41:44.207Z\n"
+"POT-Creation-Date: 2026-04-02T07:50:53.242Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -4685,4 +4685,9 @@ msgstr ""
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Si
 msgid "yes"
+msgstr ""
+
+#: config/Blocks/ListingOptions/mapTemplate
+# defaultMessage: Zoom
+msgid "zoom"
 msgstr ""
