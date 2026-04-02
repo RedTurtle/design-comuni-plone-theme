@@ -1,5 +1,23 @@
 # Changelog
 
+## [12.11.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.11.3...v12.11.4) (2026-04-02)
+
+
+### Bug Fixes
+
+* added missing message in the zoom option in the listing map option ([#1095](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1095)) ([2564f5f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2564f5fd65f1019c3701f4a2d693db2f2f813fa8))
+* admit colon char into url (fixed url regex check) ([#1089](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1089)) ([6497da3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6497da38db33891ac031c6b89f9213c9a7baee05))
+
+
+### Documentation
+
+* updated publiccode and release log ([185cb70](https://github.com/RedTurtle/design-comuni-plone-theme/commit/185cb70ea7b0485ff060c45ab286a4d22beb73fe))
+
+
+### Maintenance
+
+* locales ([2a1f9a8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2a1f9a83d57385a43f07ecd3eba6b1e512addbd0))
+
 ## [12.11.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.11.2...v12.11.3) (2026-03-10)
 
 
