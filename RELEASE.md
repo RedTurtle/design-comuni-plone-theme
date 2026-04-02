@@ -53,7 +53,8 @@
 
 ### Fix
 
-- ...
+- Risolto un errore nell'inserimento del blocco Elenco con visualizzazione a mappa.
+
 ## Versione 12.11.3 (10/03/2026)
 
 ### Fix
