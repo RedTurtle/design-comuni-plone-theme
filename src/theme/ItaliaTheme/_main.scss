@@ -18,8 +18,6 @@
   }
 }
 
-//
-
 .documentFirstHeading {
   border: none;
 
@@ -127,6 +125,12 @@ iframe {
   .text-larger {
     //.text-larger: stile applicabile da editor Slate
     font-size: 1.75em;
+  }
+
+  // fix to avoid overlapping of list marker with images when in float: left
+  #page-document > ul,
+  .richtext-blocks > ul {
+    display: flow-root;
   }
 }
 
