@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Quando un blocco elenco viene affiancato a un blocco immagine allineato a sinistra, l'immagine e l'elenco puntato vengono visualizzati correttamente senza sovrapporsi.
+
 ## Versione 12.11.4 (02/04/2026)
 
 ### Migliorie
