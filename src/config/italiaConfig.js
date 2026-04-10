@@ -243,15 +243,15 @@ export default function applyConfig(voltoConfig) {
 
       // PROPS PER LOGIN AGID
       loginAuthPage: {
-        it: 'Autenticazione',
+        it: 'Autenticazione', //titolo della sessione di login autenticato (SPID/CIE/CNS/default="Autenticazione")
         en: 'Authentication',
       },
       loginAuthDescription: {
-        it: 'Accedi con SPID o CIE, i sistemi Pubblici di Identità Digitale.',
+        it: 'Accedi con SPID o CIE, i sistemi Pubblici di Identità Digitale.', // SPID/CIE/CNS
         en: 'Log in with SPID or CIE, the public digital identity systems.',
       },
       loginAuthButtonText: {
-        it: 'Accedi con SPID o CIE',
+        it: 'Accedi con SPID o CIE', //SPID/CIE/CNS
         en: 'Login with SPID or CIE',
       },
       loginShowSpidActivationInfo: true, //se true, nella pagina di login mostra il testo con le indicazioni per attivare SPID.
