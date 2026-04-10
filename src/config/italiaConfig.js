@@ -237,9 +237,25 @@ export default function applyConfig(voltoConfig) {
       subsiteParentSiteTitle: 'io-Comune', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome del sito padre', 'en':'Parent site name'}. Se multilingua il default è comunque la stringa.
       amministrazioneTrasparenteUrl: '/amministrazione-trasparente',
       showNextGenerationEU: true,
-      // arLoginUrl: '/login?e=1',
-      // arLogoutUrl: '/logout?e=1',
-      // spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
+      arLoginUrl: '/login?e=1',
+      arLogoutUrl: '/logout?e=1',
+      spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
+
+      // PROPS PER LOGIN AGID
+      loginAuthPage: {
+        it: 'Autenticazione',
+        en: 'Authentication',
+      },
+      loginAuthDescription: {
+        it: 'Accedi con SPID o CIE, i sistemi Pubblici di Identità Digitale.',
+        en: 'Log in with SPID or CIE, the public digital identity systems.',
+      },
+      loginAuthButtonText: {
+        it: 'Accedi con SPID o CIE',
+        en: 'Login with SPID or CIE',
+      },
+      loginShowSpidActivationInfo: true, //se true, nella pagina di login mostra il testo con le indicazioni per attivare SPID.
+
       headerslimTertiaryMenu: {
         default: [
           //{ title: 'Contatti', url: '/it/contatti' },
