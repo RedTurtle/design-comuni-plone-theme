@@ -247,12 +247,12 @@ export default function applyConfig(voltoConfig) {
         en: 'Authentication',
       },
       loginAuthDescription: {
-        it: 'Accedi con SPID o CIE, i sistemi Pubblici di Identità Digitale.', // SPID/CIE/CNS
-        en: 'Log in with SPID or CIE, the public digital identity systems.',
+        it: 'Accedi con SPID, il sistema Pubblico di Identità Digitale.', // SPID/CIE/CNS
+        en: 'Log in with SPID, the public digital identity system.',
       },
       loginAuthButtonText: {
-        it: 'Accedi con SPID o CIE', //SPID/CIE/CNS
-        en: 'Login with SPID or CIE',
+        it: 'Accedi con SPID', //SPID/CIE/CNS
+        en: 'Login with SPID',
       },
       loginShowSpidActivationInfo: true, //se true, nella pagina di login mostra il testo con le indicazioni per attivare SPID.
 
