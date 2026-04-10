@@ -15,7 +15,6 @@ import { LoginAgidButtons } from 'design-comuni-plone-theme/components/ItaliaThe
 import { Button } from 'design-react-kit';
 import { useLocation } from 'react-router-dom';
 import { getBaseUrl } from '@plone/volto/helpers';
-import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   login: {
