@@ -66,7 +66,7 @@ const LoginAuthButton = ({ spidLoginUrl, qs, intl }) => (
         <span>{getSiteProperty('loginAuthButtonText', intl.locale)}</span>
       </Button>
 
-      {config.settings.siteProperties.showSpidActivationInfo && (
+      {config.settings.siteProperties.loginShowSpidActivationInfo && (
         <div>
           <UniversalLink href="https://www.spid.gov.it/cos-e-spid/come-attivare-spid">
             <small>{intl.formatMessage(messages.loginSpidHelp)}</small>
