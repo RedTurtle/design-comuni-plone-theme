@@ -21,11 +21,24 @@ body.cms-ui {
         }
 
         p {
+
           &,
           * {
             font-family: 'Lora', Georgia, serif !important; //as bootstrap-italia says
           }
         }
+      }
+    }
+  }
+}
+
+.public-ui {
+  .callout.note {
+    .btn-primary {
+      &,
+      * {
+        color: $primary-text;
+        fill: $primary-text;
       }
     }
   }
