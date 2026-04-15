@@ -4699,3 +4699,8 @@ msgstr ""
 # defaultMessage: Si
 msgid "yes"
 msgstr ""
+
+#: config/Blocks/ListingOptions/mapTemplate
+# defaultMessage: Zoom
+msgid "zoom"
+msgstr ""

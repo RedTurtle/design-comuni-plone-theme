@@ -4684,3 +4684,8 @@ msgstr "This event lasts all day"
 # defaultMessage: Si
 msgid "yes"
 msgstr "Yes"
+
+#: config/Blocks/ListingOptions/mapTemplate
+# defaultMessage: Zoom
+msgid "zoom"
+msgstr ""
