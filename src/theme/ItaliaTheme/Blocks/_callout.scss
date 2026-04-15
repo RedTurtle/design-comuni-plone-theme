@@ -30,3 +30,15 @@ body.cms-ui {
     }
   }
 }
+
+.public-ui {
+  .callout.note {
+    .btn-primary {
+      &,
+      * {
+        color: $primary-text;
+        fill: $primary-text;
+      }
+    }
+  }
+}
