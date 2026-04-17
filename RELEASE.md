@@ -45,11 +45,7 @@
 
 ### Migliorie
 
-- ...
-
-### Novità
-
-- ...
+- I testi della pagina di login (titolo, descrizione, testo del pulsante SPID e link informativo) sono ora personalizzabili a livello di tema, permettendo ai sottotemi di adattarli alle proprie esigenze.
 
 ### Fix
 
