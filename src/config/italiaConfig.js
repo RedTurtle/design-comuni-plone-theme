@@ -240,6 +240,22 @@ export default function applyConfig(voltoConfig) {
       // arLoginUrl: '/login?e=1',
       // arLogoutUrl: '/logout?e=1',
       // spidLogin: true, //se true, nella pagina di errore Unauthorized, mostra il pulsante per il login a Spid.
+
+      // PROPS PER LOGIN AGID
+      loginAuthPage: {
+        it: 'Autenticazione', //titolo della sessione di login autenticato (SPID/CIE/CNS/default="Autenticazione")
+        en: 'Authentication',
+      },
+      loginAuthDescription: {
+        it: 'Accedi con SPID, il sistema Pubblico di Identità Digitale.', // SPID/CIE/CNS
+        en: 'Log in with SPID, the public digital identity system.',
+      },
+      loginAuthButtonText: {
+        it: 'Accedi con SPID', //SPID/CIE/CNS
+        en: 'Login with SPID',
+      },
+      loginShowSpidActivationInfo: true, //se true, nella pagina di login mostra il testo con le indicazioni per attivare SPID.
+
       headerslimTertiaryMenu: {
         default: [
           //{ title: 'Contatti', url: '/it/contatti' },

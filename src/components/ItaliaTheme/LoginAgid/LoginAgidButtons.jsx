@@ -17,20 +17,13 @@ import {
 import { Icon as BaseIcon } from '@plone/volto/components';
 import { useLocation } from 'react-router-dom';
 import config from '@plone/volto/registry';
+import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
 import cieSVG from 'design-comuni-plone-theme/icons/entra_con_cie.svg';
 
 const messages = defineMessages({
   loginSpid: {
     id: 'login_spid',
     defaultMessage: 'SPID',
-  },
-  loginSpidDescription: {
-    id: 'login_spid_description',
-    defaultMessage: 'Log in with SPID, the public digital identity system.',
-  },
-  loginSpidButton: {
-    id: 'login_with_spid',
-    defaultMessage: 'Login with SPID',
   },
   loginSpidHelp: {
     id: 'login_spid_help',
@@ -39,14 +32,6 @@ const messages = defineMessages({
   loginCie: {
     id: 'login_cie',
     defaultMessage: 'CIE',
-  },
-  loginCieDescription: {
-    id: 'login_cie_description',
-    defaultMessage: 'Log in with CIE.',
-  },
-  loginCieButton: {
-    id: 'login_with_cie',
-    defaultMessage: 'Login with CIE',
   },
   loginCieHelp: {
     id: 'login_cie_help',
@@ -60,11 +45,11 @@ function useQueryV5() {
   return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
-const SpidButton = ({ spidLoginUrl, qs, intl }) => (
+const LoginAuthButton = ({ spidLoginUrl, qs, intl }) => (
   <div className="login-method">
-    <h2>{intl.formatMessage(messages.loginSpid)}</h2>
+    <h2>{getSiteProperty('loginAuthPage', intl.locale)}</h2>
     <p className="description">
-      {intl.formatMessage(messages.loginSpidDescription)}
+      {getSiteProperty('loginAuthDescription', intl.locale)}
     </p>
     <div className="authorized-spid-login mb-4">
       <Button
@@ -78,13 +63,16 @@ const SpidButton = ({ spidLoginUrl, qs, intl }) => (
         <span className="rounded-icon">
           <Icon color="primary" icon="it-user" padding={false} size="" />
         </span>
-        <span>{intl.formatMessage(messages.loginSpidButton)}</span>
+        <span>{getSiteProperty('loginAuthButtonText', intl.locale)}</span>
       </Button>
-      <div>
-        <UniversalLink href="https://www.spid.gov.it/cos-e-spid/come-attivare-spid">
-          <small>{intl.formatMessage(messages.loginSpidHelp)}</small>
-        </UniversalLink>
-      </div>
+
+      {config.settings.siteProperties.loginShowSpidActivationInfo && (
+        <div>
+          <UniversalLink href="https://www.spid.gov.it/cos-e-spid/come-attivare-spid">
+            <small>{intl.formatMessage(messages.loginSpidHelp)}</small>
+          </UniversalLink>
+        </div>
+      )}
     </div>
   </div>
 );
@@ -93,7 +81,7 @@ const CieButton = ({ cieLoginUrl, qs, intl }) => (
   <div className="login-method">
     <h2>{intl.formatMessage(messages.loginCie)}</h2>
     <p className="description">
-      {intl.formatMessage(messages.loginCieDescription)}
+      {getSiteProperty('loginAuthDescription', intl.locale)}
     </p>
     <div className="authorized-spid-login mb-4">
       <Button
@@ -106,7 +94,7 @@ const CieButton = ({ cieLoginUrl, qs, intl }) => (
         style={{
           padding: 0,
         }}
-        title={intl.formatMessage(messages.loginCieButton)}
+        title={getSiteProperty('loginAuthButtonText', intl.locale)}
       >
         <BaseIcon name={cieSVG} style={{ width: '100%', height: '100%' }} />
       </Button>
@@ -123,7 +111,7 @@ const ArButton = ({ arLoginUrl, intl }) => (
   <div className="login-method">
     <h2>{intl.formatMessage(messages.loginSpid)}</h2>
     <p className="description">
-      {intl.formatMessage(messages.loginSpidDescription)}
+      {getSiteProperty('loginAuthDescription', intl.locale)}
     </p>
     <div className="authorized-spid-login mb-4">
       <LoginButton baseLoginUrl={arLoginUrl}>
@@ -131,7 +119,7 @@ const ArButton = ({ arLoginUrl, intl }) => (
           <Icon color="primary" icon="it-user" padding={false} size="" />
         </span>
         <span className="d-none d-lg-block">
-          {intl.formatMessage(messages.loginSpidButton)}
+          {getSiteProperty('loginAuthButtonText', intl.locale)}
         </span>
       </LoginButton>
     </div>
@@ -155,7 +143,7 @@ const LoginAgidButtons = ({ origin }) => {
   return (
     <>
       {spidLoginUrl && (
-        <SpidButton intl={intl} qs={qs} spidLoginUrl={spidLoginUrl} />
+        <LoginAuthButton intl={intl} qs={qs} spidLoginUrl={spidLoginUrl} />
       )}
       {cieLoginUrl && (
         <CieButton intl={intl} qs={qs} cieLoginUrl={cieLoginUrl} />
