@@ -121,10 +121,20 @@ const PhotogalleryTemplate = ({
                 ? intl.formatMessage(messages.pause)
                 : intl.formatMessage(messages.play)
             }
+            aria-label={
+              autoplay
+                ? intl.formatMessage(messages.pause)
+                : intl.formatMessage(messages.play)
+            }
           >
             <Icon
               key={autoplay ? 'pause' : 'play'}
               icon={autoplay ? 'pause' : 'play'}
+              title={
+                autoplay
+                  ? intl.formatMessage(messages.pause)
+                  : intl.formatMessage(messages.play)
+              }
             />
           </button>
         </div>

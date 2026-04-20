@@ -334,11 +334,21 @@ const SliderTemplate = ({
                       ? intl.formatMessage(messages.pause)
                       : intl.formatMessage(messages.play)
                   }
+                  aria-label={
+                    userAutoplay
+                      ? intl.formatMessage(messages.pause)
+                      : intl.formatMessage(messages.play)
+                  }
                   tabIndex={0}
                 >
                   <Icon
                     key={userAutoplay ? 'pause' : 'play'}
                     icon={userAutoplay ? 'pause' : 'play'}
+                    title={
+                      autoplay
+                        ? intl.formatMessage(messages.pause)
+                        : intl.formatMessage(messages.play)
+                    }
                   />
                   <span>{userAutoplay ? 'pause' : 'play'}</span>
                 </button>
