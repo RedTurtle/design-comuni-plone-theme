@@ -27,7 +27,6 @@ const ListingImage = ({
         }
         aria-hidden="true"
         alt=""
-        title={item.title}
         role="presentation"
         imageField={item.image_field}
         useOriginal={useOriginal}
