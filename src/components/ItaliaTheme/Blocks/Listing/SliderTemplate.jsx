@@ -349,6 +349,7 @@ const SliderTemplate = ({
                         ? intl.formatMessage(messages.pause)
                         : intl.formatMessage(messages.play)
                     }
+                    aria-hidden={true}
                   />
                   <span>{userAutoplay ? 'pause' : 'play'}</span>
                 </button>

@@ -135,6 +135,7 @@ const PhotogalleryTemplate = ({
                   ? intl.formatMessage(messages.pause)
                   : intl.formatMessage(messages.play)
               }
+              aria-hidden={true}
             />
           </button>
         </div>
