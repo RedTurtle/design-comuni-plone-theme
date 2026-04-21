@@ -33,6 +33,25 @@ import {
 
 import { getDropdownMenuNavitems, getItemsByPath } from 'volto-dropdownmenu';
 
+const messages = defineMessages({
+  CloseMenu: {
+    id: 'close-menu',
+    defaultMessage: 'Chiudi menu',
+  },
+  toggleMenu: {
+    id: 'toggle-menu',
+    defaultMessage: '{action} il menu',
+  },
+  toggleMenu_open: {
+    id: 'toggleMenu_open',
+    defaultMessage: 'Apri',
+  },
+  toggleMenu_close: {
+    id: 'toggleMenu_close',
+    defaultMessage: 'Chiudi',
+  },
+});
+
 const Navigation = ({ pathname }) => {
   const intl = useIntl();
   const [collapseOpen, setCollapseOpen] = useState(false);
@@ -176,25 +195,6 @@ const Navigation = ({ pathname }) => {
     </Header>
   );
 };
-
-const messages = defineMessages({
-  CloseMenu: {
-    id: 'close-menu',
-    defaultMessage: 'Chiudi menu',
-  },
-  toggleMenu: {
-    id: 'toggle-menu',
-    defaultMessage: '{action} il menu',
-  },
-  toggleMenu_open: {
-    id: 'toggleMenu_open',
-    defaultMessage: 'Apri',
-  },
-  toggleMenu_close: {
-    id: 'toggleMenu_close',
-    defaultMessage: 'Chiudi',
-  },
-});
 
 Navigation.propTypes = {
   pathname: PropTypes.string.isRequired,
