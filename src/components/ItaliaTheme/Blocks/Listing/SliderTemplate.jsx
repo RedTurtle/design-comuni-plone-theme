@@ -78,7 +78,7 @@ function NextArrow(props) {
       onKeyDown={handleKeyboardUsers}
       id="sliderNextArrow"
     >
-      <Icon icon="chevron-right" key="chevron-right" />
+      <Icon icon="chevron-right" key="chevron-right" aria-hidden={true} />
       <span class="sr-only">{intl.formatMessage(messages.successivo)}</span>
     </button>
   );
@@ -121,7 +121,7 @@ function PrevArrow(props) {
       id="sliderPrevArrow"
       onKeyDown={handleKeyboardUsers}
     >
-      <Icon icon="chevron-left" key="chevron-left-prev" />
+      <Icon icon="chevron-left" key="chevron-left-prev" aria-hidden={true} />
       <span class="sr-only">{intl.formatMessage(messages.precedente)}</span>
     </button>
   );
