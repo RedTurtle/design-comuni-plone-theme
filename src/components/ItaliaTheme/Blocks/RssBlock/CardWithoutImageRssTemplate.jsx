@@ -109,6 +109,13 @@ const CardWithoutImageRssTemplate = ({
               <UniversalLink
                 href={flattenToAppURL(data.linkMore)}
                 className="btn btn-tertiary"
+                aria-label={
+                  data.title
+                    ? intl.formatMessage(messages.approfondisci) +
+                      ' ' +
+                      data.title
+                    : undefined
+                }
               >
                 {data.linkMoreTitle || intl.formatMessage(messages.view_all)}
               </UniversalLink>
