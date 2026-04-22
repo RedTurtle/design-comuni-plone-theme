@@ -115,7 +115,6 @@ function PrevArrow(props) {
       className={className}
       style={{ ...style }}
       onClick={handleClick}
-      title={intl.formatMessage(messages.precedente)}
       aria-label={intl.formatMessage(messages.precedente)}
       aria-hidden={false}
       id="sliderPrevArrow"
@@ -329,11 +328,6 @@ const SliderTemplate = ({
               <div className="play-pause-wrapper">
                 <button
                   onClick={toggleAutoplay}
-                  title={
-                    userAutoplay
-                      ? intl.formatMessage(messages.pause)
-                      : intl.formatMessage(messages.play)
-                  }
                   aria-label={
                     userAutoplay
                       ? intl.formatMessage(messages.pause)
@@ -344,11 +338,6 @@ const SliderTemplate = ({
                   <Icon
                     key={userAutoplay ? 'pause' : 'play'}
                     icon={userAutoplay ? 'pause' : 'play'}
-                    title={
-                      autoplay
-                        ? intl.formatMessage(messages.pause)
-                        : intl.formatMessage(messages.play)
-                    }
                     aria-hidden={true}
                   />
                   <span>{userAutoplay ? 'pause' : 'play'}</span>
