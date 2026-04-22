@@ -674,7 +674,6 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/Accordion/Block/ViewBlock
 #: components/ItaliaTheme/Blocks/ContactsBlock/Block/EditBlock
 #: components/ItaliaTheme/Blocks/IconBlocks/Block/EditBlock
-#: components/ItaliaTheme/Blocks/IconBlocks/Block/ViewBlock
 #: components/ItaliaTheme/Blocks/Listing/MapTemplate
 #: components/ItaliaTheme/Blocks/Listing/RibbonCardTemplate
 # defaultMessage: Vedi
@@ -842,6 +841,19 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar
 # defaultMessage: APPStore Link
 msgid "appStoreLink"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Block
+#: components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons
+#: components/ItaliaTheme/Blocks/HighlightedContent/Body
+#: components/ItaliaTheme/Blocks/IconBlocks/Block/ViewBlock
+#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
+#: components/ItaliaTheme/Blocks/Listing/CardWithSlideUpTextTemplate
+#: components/ItaliaTheme/Blocks/RssBlock/CardWithImageRssTemplate
+#: components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate
+#: components/ItaliaTheme/View/Commons/RelatedItemInEvidence/ItemInEvidence
+# defaultMessage: Approfondisci:
+msgid "approfondisci"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSlim/ArLogin
@@ -3852,6 +3864,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/BottomBody
 # defaultMessage: Vedi tutti
 msgid "view_all"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/BottomBody
+# defaultMessage: Vedi tutti gli argomenti
+msgid "view_all_argomenti"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/LocationsMap
