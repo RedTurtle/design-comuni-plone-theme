@@ -844,9 +844,11 @@ msgid "appStoreLink"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Block
+#: components/ItaliaTheme/Blocks/ContactsBlock/View
 #: components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons
 #: components/ItaliaTheme/Blocks/HighlightedContent/Body
 #: components/ItaliaTheme/Blocks/IconBlocks/Block/ViewBlock
+#: components/ItaliaTheme/Blocks/IconBlocks/View
 #: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
 #: components/ItaliaTheme/Blocks/Listing/CardWithSlideUpTextTemplate
 #: components/ItaliaTheme/Blocks/RssBlock/CardWithImageRssTemplate
