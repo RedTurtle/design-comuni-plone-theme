@@ -46,7 +46,11 @@ const StoresButtons = ({ data }) => {
           href={flattenToAppURL(data.moreHref)}
           aria-label={
             data.title &&
-            intl.formatMessage(messages.approfondisci) + ' ' + data.title
+            intl.formatMessage(messages.approfondisci) +
+              ' ' +
+              (data.title.length > 80
+                ? data.title.slice(0, 80) + '…'
+                : data.title)
           }
         />
       )}

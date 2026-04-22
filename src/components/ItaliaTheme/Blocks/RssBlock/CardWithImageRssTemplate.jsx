@@ -105,7 +105,9 @@ const CardWithImageRssTemplate = ({
                       item.title &&
                       intl.formatMessage(messages.approfondisci) +
                         ' ' +
-                        item.title
+                        (item.title.length > 80
+                          ? item.title.slice(0, 80) + '…'
+                          : item.title)
                     }
                   />
                 </Card>

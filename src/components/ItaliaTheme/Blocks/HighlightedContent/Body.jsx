@@ -108,7 +108,9 @@ const Body = (props) => {
                     content.title &&
                     intl.formatMessage(messages.approfondisci) +
                       ' ' +
-                      content.title
+                      (content.title.length > 80
+                        ? content.title.slice(0, 80) + '…'
+                        : content.title)
                   }
                 />
               )}

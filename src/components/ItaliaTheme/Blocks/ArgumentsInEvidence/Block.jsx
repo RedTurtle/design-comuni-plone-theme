@@ -79,7 +79,9 @@ const Block = ({
                 argument.title &&
                 intl.formatMessage(messages.approfondisci) +
                   ' ' +
-                  argument.title
+                  (argument.title.length > 80
+                    ? argument.title.slice(0, 80) + '…'
+                    : argument.title)
               }
             />
           )}

@@ -47,7 +47,9 @@ const ItemInEvidence = ({ content }) => {
               correlato_in_evidenza.title &&
               intl.formatMessage(messages.approfondisci) +
                 ' ' +
-                correlato_in_evidenza.title
+                (correlato_in_evidenza.title.length > 80
+                  ? correlato_in_evidenza.title.slice(0, 80) + '…'
+                  : correlato_in_evidenza.title)
             }
           />
         </CardBody>

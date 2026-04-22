@@ -71,7 +71,11 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
             text={data.linkMoreTitle || intl.formatMessage(messages.vedi)}
             aria-label={
               data.title &&
-              intl.formatMessage(messages.approfondisci) + ' ' + data.title
+              intl.formatMessage(messages.approfondisci) +
+                ' ' +
+                (data.title.length > 80
+                  ? data.title.slice(0, 80) + '…'
+                  : data.title)
             }
           />
         )}

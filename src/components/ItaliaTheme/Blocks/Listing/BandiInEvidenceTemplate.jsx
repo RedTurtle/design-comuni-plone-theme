@@ -256,10 +256,12 @@ const BandiInEvidenceTemplate = ({
                       href={isEditMode ? '#' : null}
                       text={intl.formatMessage(messages.vedi)}
                       aria-label={
-                        (item.title || item.id) &&
+                        item.title &&
                         intl.formatMessage(messages.approfondisci) +
                           ' ' +
-                          (item.title || item.id)
+                          (item.title.length > 80
+                            ? item.title.slice(0, 80) + '…'
+                            : item.title)
                       }
                     />
                   </div>
