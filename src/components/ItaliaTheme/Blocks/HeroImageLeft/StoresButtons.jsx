@@ -12,6 +12,10 @@ const messages = defineMessages({
     id: 'linkMore',
     defaultMessage: 'Link ad altro',
   },
+  approfondisci: {
+    id: 'approfondisci',
+    defaultMessage: 'Approfondisci:',
+  },
 });
 
 const StoresButtons = ({ data }) => {
@@ -34,13 +38,16 @@ const StoresButtons = ({ data }) => {
           </Button>
         )}
       </div>
-
       {data.moreHref && (
         <CardReadMore
           tag={UniversalLink}
           iconName="it-arrow-right"
           text={data.moreTitle || intl.formatMessage(messages.linkMore)}
           href={flattenToAppURL(data.moreHref)}
+          aria-label={
+            data.title &&
+            intl.formatMessage(messages.approfondisci) + ' ' + data.title
+          }
         />
       )}
     </div>

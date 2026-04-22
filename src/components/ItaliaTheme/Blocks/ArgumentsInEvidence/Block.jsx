@@ -26,6 +26,10 @@ const messages = defineMessages({
     id: 'select_argument_sidebar',
     defaultMessage: 'Seleziona un argomento nella barra a lato',
   },
+  approfondisci: {
+    id: 'approfondisci',
+    defaultMessage: 'Approfondisci:',
+  },
 });
 
 const Block = ({
@@ -71,6 +75,12 @@ const Block = ({
               tag="a"
               text={intl.formatMessage(messages.exploreArgument)}
               href={flattenToAppURL(argument['@id'])}
+              aria-label={
+                argument.title &&
+                intl.formatMessage(messages.approfondisci) +
+                  ' ' +
+                  argument.title
+              }
             />
           )}
         </CardBody>

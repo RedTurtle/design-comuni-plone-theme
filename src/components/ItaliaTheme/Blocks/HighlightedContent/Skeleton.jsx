@@ -40,6 +40,7 @@ const Skeleton = ({ content, pathname, block }) => {
                   iconName="it-arrow-right"
                   text=" "
                   to="#"
+                  aria-label={''}
                 />
               )}
             </CardBody>

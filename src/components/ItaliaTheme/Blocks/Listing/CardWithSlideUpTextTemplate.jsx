@@ -21,6 +21,10 @@ const messages = defineMessages({
     id: 'card_vedi',
     defaultMessage: 'Vedi',
   },
+  approfondisci: {
+    id: 'approfondisci',
+    defaultMessage: 'Approfondisci:',
+  },
 });
 
 const CardWithSlideUpTextTemplate = (props) => {
@@ -83,6 +87,12 @@ const CardWithSlideUpTextTemplate = (props) => {
                       href={isEditMode ? '#' : null}
                       text={intl.formatMessage(messages.vedi)}
                       className="justify-content-end"
+                      aria-label={
+                        item?.title &&
+                        intl.formatMessage(messages.approfondisci) +
+                          ' ' +
+                          item.title
+                      }
                     />
                   </div>
                 </div>

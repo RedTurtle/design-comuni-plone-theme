@@ -26,6 +26,10 @@ const messages = defineMessages({
     id: 'Vedi tutto',
     defaultMessage: 'Vedi tutto',
   },
+  approfondisci: {
+    id: 'approfondisci',
+    defaultMessage: 'Approfondisci:',
+  },
 });
 
 const CardWithoutImageRssTemplate = ({
@@ -87,6 +91,12 @@ const CardWithoutImageRssTemplate = ({
                     rel="noopener noreferrer"
                     href={item?.url}
                     text={intl.formatMessage(messages.readMore)}
+                    aria-label={
+                      item.title &&
+                      intl.formatMessage(messages.approfondisci) +
+                        ' ' +
+                        item.title
+                    }
                   />
                 </Card>
               </Col>

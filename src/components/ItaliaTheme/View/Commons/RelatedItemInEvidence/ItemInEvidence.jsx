@@ -16,6 +16,10 @@ const messages = defineMessages({
     id: 'explore',
     defaultMessage: 'Esplora',
   },
+  approfondisci: {
+    id: 'approfondisci',
+    defaultMessage: 'Approfondisci:',
+  },
 });
 
 /**
@@ -39,6 +43,12 @@ const ItemInEvidence = ({ content }) => {
             tag="a"
             text={intl.formatMessage(messages.explore)}
             href={flattenToAppURL(correlato_in_evidenza['@id'])}
+            aria-label={
+              correlato_in_evidenza.title &&
+              intl.formatMessage(messages.approfondisci) +
+                ' ' +
+                correlato_in_evidenza.title
+            }
           />
         </CardBody>
       </Card>

@@ -18,9 +18,9 @@ import {
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
-  vedi: {
-    id: 'Vedi',
-    defaultMessage: 'Vedi',
+  approfondisci: {
+    id: 'approfondisci',
+    defaultMessage: 'Approfondisci:',
   },
 });
 
@@ -70,9 +70,8 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
             href={data.href ?? '#'}
             text={data.linkMoreTitle || intl.formatMessage(messages.vedi)}
             aria-label={
-              data.linkMoreTitle
-                ? data.linkMoreTitle
-                : intl.formatMessage(messages.vedi) + ' ' + data.title
+              data.title &&
+              intl.formatMessage(messages.approfondisci) + ' ' + data.title
             }
           />
         )}

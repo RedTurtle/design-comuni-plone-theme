@@ -24,6 +24,10 @@ const messages = defineMessages({
     id: 'bando_vedi',
     defaultMessage: 'Vedi',
   },
+  approfondisci: {
+    id: 'approfondisci',
+    defaultMessage: 'Approfondisci:',
+  },
   pubblicazione: {
     id: 'bando_data_pubblicazione',
     defaultMessage: 'Pubblicato il',
@@ -251,6 +255,12 @@ const BandiInEvidenceTemplate = ({
                       item={!isEditMode ? item : null}
                       href={isEditMode ? '#' : null}
                       text={intl.formatMessage(messages.vedi)}
+                      aria-label={
+                        (item.title || item.id) &&
+                        intl.formatMessage(messages.approfondisci) +
+                          ' ' +
+                          (item.title || item.id)
+                      }
                     />
                   </div>
                 </CardBody>
