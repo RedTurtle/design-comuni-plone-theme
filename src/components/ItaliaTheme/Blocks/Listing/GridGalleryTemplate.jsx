@@ -103,7 +103,12 @@ const GridGalleryTemplate = ({
             );
           })}
         </div>
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-5" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          className="my-5"
+          blockTitle={title}
+        />
       </Container>
     </div>
   );

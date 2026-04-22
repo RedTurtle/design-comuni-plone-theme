@@ -97,7 +97,12 @@ const MapTemplate = ({
           intl.formatMessage(messages.no_markers)
         )}
 
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-5" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          className="my-5"
+          blockTitle={title}
+        />
       </Container>
     </div>
   );

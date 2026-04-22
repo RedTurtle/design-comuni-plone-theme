@@ -90,7 +90,12 @@ const AmministrazioneTrasparenteTablesTemplate = ({
           </tbody>
         </table>
 
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-4" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          className="my-4"
+          blockTitle={title}
+        />
       </Container>
     </div>
   );
