@@ -31,6 +31,12 @@ const messages = defineMessages({
  */
 const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
   const intl = useIntl();
+  const plainTitle = data.title?.blocks?.[0]?.text || null;
+  const cardReadMoreAriaLabel = plainTitle
+    ? intl.formatMessage(messages.approfondisci) +
+      ' ' +
+      (plainTitle.length > 80 ? plainTitle.slice(0, 80) + '…' : plainTitle)
+    : undefined;
   return (
     <Card
       className="card-bg rounded subblock-view"
@@ -69,14 +75,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
             tag={UniversalLink}
             href={data.href ?? '#'}
             text={data.linkMoreTitle || intl.formatMessage(messages.vedi)}
-            aria-label={
-              data.title &&
-              intl.formatMessage(messages.approfondisci) +
-                ' ' +
-                (data.title.length > 80
-                  ? data.title.slice(0, 80) + '…'
-                  : data.title)
-            }
+            aria-label={cardReadMoreAriaLabel}
           />
         )}
       </CardBody>
