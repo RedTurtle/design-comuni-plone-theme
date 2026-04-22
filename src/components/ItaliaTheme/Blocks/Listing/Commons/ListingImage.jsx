@@ -80,13 +80,10 @@ const ListingImage = ({
 };
 
 export const getListingImageBackground = (item = {}, size = 'listing') => {
-  let url = null;
-  if (item.image_field) {
-    url =
-      item.image_scales?.[item.image_field]?.[0]?.[size] ||
-      `${flattenToAppURL(item['@id'])}/@@images/${item.image_field}/${size}`;
-  }
-
-  return url;
+  const imageField = item.image_field || 'image';
+  const imageInfo = item.image_scales?.[imageField]?.[0];
+  if (!imageInfo) return null;
+  const download = imageInfo.scales?.[size]?.download || imageInfo.download;
+  return download ? `${flattenToAppURL(item['@id'])}/${download}` : null;
 };
 export default ListingImage;
