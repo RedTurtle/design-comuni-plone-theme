@@ -198,7 +198,7 @@ const CardWithImageTemplate = (props) => {
           title={linkTitle}
           href={linkHref}
           className="my-4"
-          blockTitle={title}
+          ariaLabel={title}
         />
       </Container>
     </div>

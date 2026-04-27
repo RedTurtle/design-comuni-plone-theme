@@ -11,24 +11,21 @@ const messages = defineMessages({
   },
 });
 
-export const ListingLinkMore = ({
-  title,
-  href,
-  className = '',
-  blockTitle,
-}) => {
+export const ListingLinkMore = ({ title, href, className = '', ariaLabel }) => {
   const intl = useIntl();
   const url = href?.[0]?.['@id'];
   const linkText = title || intl.formatMessage(messages.view_all);
-  const ariaLabel =
-    !title && blockTitle ? `${linkText} ${blockTitle}` : undefined;
+  // No custom button text: add aria-label with section title for context (es. "Vedi tutto Notizie").
+  // Custom button text: skip aria-label, editor is responsible for a descriptive text.
+  const ariaLabelTitle =
+    !title && ariaLabel ? `${linkText} ${ariaLabel}` : undefined;
 
   return url ? (
     <div className={`link-button text-center ${className}`}>
       <UniversalLink
         href={flattenToAppURL(url)}
         className="btn btn-tertiary"
-        aria-label={ariaLabel}
+        aria-label={ariaLabelTitle}
       >
         {linkText}
       </UniversalLink>
@@ -38,7 +35,7 @@ export const ListingLinkMore = ({
 
 ListingLinkMore.propTypes = {
   linkMore: PropTypes.object,
-  blockTitle: PropTypes.string,
+  ariaLabel: PropTypes.string,
 };
 
 export default ListingLinkMore;

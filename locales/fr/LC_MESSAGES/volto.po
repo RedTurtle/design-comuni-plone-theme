@@ -676,6 +676,7 @@ msgstr "Aller à la page"
 #: components/ItaliaTheme/Blocks/Accordion/Block/ViewBlock
 #: components/ItaliaTheme/Blocks/ContactsBlock/Block/EditBlock
 #: components/ItaliaTheme/Blocks/IconBlocks/Block/EditBlock
+#: components/ItaliaTheme/Blocks/IconBlocks/Block/ViewBlock
 #: components/ItaliaTheme/Blocks/Listing/MapTemplate
 #: components/ItaliaTheme/Blocks/Listing/RibbonCardTemplate
 # defaultMessage: Vedi
@@ -845,17 +846,7 @@ msgstr ""
 msgid "appStoreLink"
 msgstr ""
 
-#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/Block
-#: components/ItaliaTheme/Blocks/ContactsBlock/View
-#: components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons
-#: components/ItaliaTheme/Blocks/HighlightedContent/Body
-#: components/ItaliaTheme/Blocks/IconBlocks/Block/ViewBlock
-#: components/ItaliaTheme/Blocks/IconBlocks/View
-#: components/ItaliaTheme/Blocks/Listing/BandiInEvidenceTemplate
-#: components/ItaliaTheme/Blocks/Listing/CardWithSlideUpTextTemplate
-#: components/ItaliaTheme/Blocks/RssBlock/CardWithImageRssTemplate
-#: components/ItaliaTheme/Blocks/RssBlock/CardWithoutImageRssTemplate
-#: components/ItaliaTheme/View/Commons/RelatedItemInEvidence/ItemInEvidence
+#: helpers/redraftHelper
 # defaultMessage: Approfondisci:
 msgid "approfondisci"
 msgstr ""

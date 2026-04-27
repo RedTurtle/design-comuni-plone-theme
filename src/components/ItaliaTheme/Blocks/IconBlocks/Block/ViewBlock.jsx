@@ -6,10 +6,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import redraft from 'redraft';
+import { convertFromRaw } from 'draft-js';
 import { useIntl, defineMessages } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { getCardAriaLabel } from 'design-comuni-plone-theme/helpers';
 import {
   Card,
   CardBody,
@@ -18,9 +20,9 @@ import {
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
-  approfondisci: {
-    id: 'approfondisci',
-    defaultMessage: 'Approfondisci:',
+  vedi: {
+    id: 'Vedi',
+    defaultMessage: 'Vedi',
   },
 });
 
@@ -31,12 +33,8 @@ const messages = defineMessages({
  */
 const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
   const intl = useIntl();
-  const plainTitle = data.title?.blocks?.[0]?.text || null;
-  const cardReadMoreAriaLabel = plainTitle
-    ? intl.formatMessage(messages.approfondisci) +
-      ' ' +
-      (plainTitle.length > 80 ? plainTitle.slice(0, 80) + '…' : plainTitle)
-    : undefined;
+  const plainTitle = data.title ? convertFromRaw(data.title).getPlainText() : null;
+  const cardReadMoreAriaLabel = getCardAriaLabel(intl, plainTitle);
   return (
     <Card
       className="card-bg rounded subblock-view"

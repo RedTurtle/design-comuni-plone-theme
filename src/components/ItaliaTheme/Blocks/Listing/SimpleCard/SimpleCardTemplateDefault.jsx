@@ -234,7 +234,7 @@ const SimpleCardTemplateDefault = (props) => {
         title={linkTitle}
         href={linkHref}
         className="my-4"
-        blockTitle={title}
+        ariaLabel={title}
       />
     </div>
   );

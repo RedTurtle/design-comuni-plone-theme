@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'design-react-kit/dist/design-react-kit';
 import { defineMessages, useIntl } from 'react-intl';
+import { getCardAriaLabel } from 'design-comuni-plone-theme/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { UniversalLink } from '@plone/volto/components';
 import { CardReadMore } from 'design-react-kit/dist/design-react-kit';
@@ -11,10 +12,6 @@ const messages = defineMessages({
   linkMore: {
     id: 'linkMore',
     defaultMessage: 'Link ad altro',
-  },
-  approfondisci: {
-    id: 'approfondisci',
-    defaultMessage: 'Approfondisci:',
   },
 });
 
@@ -44,14 +41,7 @@ const StoresButtons = ({ data }) => {
           iconName="it-arrow-right"
           text={data.moreTitle || intl.formatMessage(messages.linkMore)}
           href={flattenToAppURL(data.moreHref)}
-          aria-label={
-            data.title &&
-            intl.formatMessage(messages.approfondisci) +
-              ' ' +
-              (data.title.length > 80
-                ? data.title.slice(0, 80) + '…'
-                : data.title)
-          }
+          aria-label={getCardAriaLabel(intl, data.title)}
         />
       )}
     </div>

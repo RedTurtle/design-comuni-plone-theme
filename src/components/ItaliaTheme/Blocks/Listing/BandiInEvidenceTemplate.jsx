@@ -17,16 +17,12 @@ import {
   ListingText,
   ListingLinkMore,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { viewDate } from 'design-comuni-plone-theme/helpers';
+import { viewDate, getCardAriaLabel } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   vedi: {
     id: 'bando_vedi',
     defaultMessage: 'Vedi',
-  },
-  approfondisci: {
-    id: 'approfondisci',
-    defaultMessage: 'Approfondisci:',
   },
   pubblicazione: {
     id: 'bando_data_pubblicazione',
@@ -255,14 +251,7 @@ const BandiInEvidenceTemplate = ({
                       item={!isEditMode ? item : null}
                       href={isEditMode ? '#' : null}
                       text={intl.formatMessage(messages.vedi)}
-                      aria-label={
-                        item.title &&
-                        intl.formatMessage(messages.approfondisci) +
-                          ' ' +
-                          (item.title.length > 80
-                            ? item.title.slice(0, 80) + '…'
-                            : item.title)
-                      }
+                      aria-label={getCardAriaLabel(intl, item.title)}
                     />
                   </div>
                 </CardBody>
@@ -275,7 +264,7 @@ const BandiInEvidenceTemplate = ({
           title={linkTitle}
           href={linkHref}
           className="my-4"
-          blockTitle={title}
+          ariaLabel={title}
         />
       </Container>
     </div>

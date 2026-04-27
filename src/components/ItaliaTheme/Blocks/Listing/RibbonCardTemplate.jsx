@@ -146,7 +146,7 @@ const RibbonCardTemplate = (props) => {
           title={linkTitle}
           href={linkHref}
           className="my-5"
-          blockTitle={title}
+          ariaLabel={title}
         />
       </Container>
     </div>

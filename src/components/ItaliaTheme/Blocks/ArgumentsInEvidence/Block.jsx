@@ -1,5 +1,6 @@
 import React from 'react';
-import { defineMessages } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
+import { getCardAriaLabel } from 'design-comuni-plone-theme/helpers';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import {
   Card,
@@ -25,10 +26,6 @@ const messages = defineMessages({
   select_argument_sidebar: {
     id: 'select_argument_sidebar',
     defaultMessage: 'Seleziona un argomento nella barra a lato',
-  },
-  approfondisci: {
-    id: 'approfondisci',
-    defaultMessage: 'Approfondisci:',
   },
 });
 
@@ -75,14 +72,7 @@ const Block = ({
               tag="a"
               text={intl.formatMessage(messages.exploreArgument)}
               href={flattenToAppURL(argument['@id'])}
-              aria-label={
-                argument.title &&
-                intl.formatMessage(messages.approfondisci) +
-                  ' ' +
-                  (argument.title.length > 80
-                    ? argument.title.slice(0, 80) + '…'
-                    : argument.title)
-              }
+              aria-label={getCardAriaLabel(intl, argument.title)}
             />
           )}
         </CardBody>

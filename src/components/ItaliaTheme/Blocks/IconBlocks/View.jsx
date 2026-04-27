@@ -6,21 +6,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import redraft from 'redraft';
-import { useIntl, defineMessages } from 'react-intl';
+import { convertFromRaw } from 'draft-js';
+import { useIntl } from 'react-intl';
 import ViewBlock from './Block/ViewBlock';
 import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
 import { flattenToAppURL, addAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
-import { checkRedraftHasContent } from 'design-comuni-plone-theme/helpers';
+import { checkRedraftHasContent, getCardAriaLabel } from 'design-comuni-plone-theme/helpers';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
 
-const messages = defineMessages({
-  approfondisci: {
-    id: 'approfondisci',
-    defaultMessage: 'Approfondisci:',
-  },
-});
 
 /**
  * View Accordion block class.
@@ -30,10 +25,10 @@ const messages = defineMessages({
 const AccordionView = ({ data, block }) => {
   const intl = useIntl();
   const id = new Date().getTime();
-  const blockPlainTitle = data.title?.blocks?.[0]?.text || null;
-  const linkMoreAriaLabel = blockPlainTitle
-    ? intl.formatMessage(messages.approfondisci) + ' ' + blockPlainTitle
-    : undefined;
+  const blockPlainTitle = data.title
+    ? convertFromRaw(data.title).getPlainText()
+    : null;
+  const linkMoreAriaLabel = getCardAriaLabel(intl, blockPlainTitle);
 
   return (
     <div className="block iconBlocks">
