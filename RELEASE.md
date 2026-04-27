@@ -41,17 +41,17 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 12.12.0 (27/04/2026)
 
 ### Migliorie
 
-- I testi della pagina di login (titolo, descrizione, testo del pulsante SPID e link informativo) sono ora personalizzabili a livello di tema, permettendo ai sottotemi di adattarli alle proprie esigenze.
+- I testi della pagina di login (titolo, descrizione, testo del pulsante SPID e link informativo) sono ora personalizzabili a livello di tema se necessario (è richiesto l'intervento di un sviluppatore).
 
 ### Fix
 
 - Quando un blocco elenco viene affiancato a un blocco immagine allineato a sinistra, l'immagine e l'elenco puntato vengono visualizzati correttamente senza sovrapporsi.
-- Sistemato il colore del testo di un link con stile bottone all'interno di un Callout di colore blu, mostrando il link di colore bianco e non blu.
-- Ripristinata la visualizzazione delle immagini nel blocco Elenco con variante "Quadratoni con immagine" (e nella variante "Card con testo in slide up"): le anteprime non apparivano più a causa di un URL immagine non più servito dal backend Plone 6 aggiornato.
+- Sistemato il colore del testo di un link con stile bottone all'interno di un Callout di colore blu.
+- Sistemata la visualizzazione delle immagini nel blocco elenco con variante "Quadratoni con immagine" (e nella variante "Card con testo in slide up").
 
 ## Versione 12.11.4 (02/04/2026)
 
