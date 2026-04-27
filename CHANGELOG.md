@@ -1,5 +1,31 @@
 # Changelog
 
+## [12.12.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.11.4...v12.12.0) (2026-04-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* testi della pagina di login configurabili via config.js (#1097)
+
+### Features
+
+* aggiunta classe matomo_download ai link file ([#1100](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1100)) ([f84c471](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f84c471e1e5a701cead781ddf138373a7b61594b))
+* testi della pagina di login configurabili via config.js ([#1097](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1097)) ([6fe7b1d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6fe7b1dc2cce06b403d7b108d457cc4df50016f8))
+
+
+### Bug Fixes
+
+* adjust btn link color to white when callout color is blue  ([#1099](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1099)) ([34d86e1](https://github.com/RedTurtle/design-comuni-plone-theme/commit/34d86e1ddbf6d0d43f17783ac3f2be9f5fec1752))
+* avoid bullet points overlapping with images ([#1096](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1096)) ([2f5209b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2f5209b54b4f18f6444ef470bf7e579a4b9389c8))
+* immagini con quadratoni background ([#1105](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1105)) ([821eb31](https://github.com/RedTurtle/design-comuni-plone-theme/commit/821eb313579f55159a4b30807d8f294dc93f0bc4))
+
+
+### Maintenance
+
+* **deps:** bump @xmldom/xmldom from 0.8.10 to 0.8.12 ([#1094](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1094)) ([8c9f8d6](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8c9f8d684d37a8ede14fcd4089e047e5a33615e4))
+* locales ([bc7ff78](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bc7ff784957439aa3e31e113ac9c0b311e86ffc5))
+* preparing release 12.12.0 ([2faed59](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2faed595a8951928ab3e238ef827e1067c7912bf))
+
 ## [12.11.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.11.3...v12.11.4) (2026-04-02)
 
 
