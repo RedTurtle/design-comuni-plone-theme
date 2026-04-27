@@ -2824,11 +2824,6 @@ msgid "login_cie"
 msgstr ""
 
 #: components/ItaliaTheme/LoginAgid/LoginAgidButtons
-# defaultMessage: Log in with CIE.
-msgid "login_cie_description"
-msgstr ""
-
-#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: How to activate CIE
 msgid "login_cie_help"
 msgstr ""
@@ -2845,23 +2840,8 @@ msgid "login_spid"
 msgstr ""
 
 #: components/ItaliaTheme/LoginAgid/LoginAgidButtons
-# defaultMessage: Log in with SPID, the public digital identity system.
-msgid "login_spid_description"
-msgstr ""
-
-#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: How to activate SPID
 msgid "login_spid_help"
-msgstr ""
-
-#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
-# defaultMessage: Login with CIE
-msgid "login_with_cie"
-msgstr ""
-
-#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
-# defaultMessage: Login with SPID
-msgid "login_with_spid"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderCenter
