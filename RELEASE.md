@@ -51,6 +51,7 @@
 
 - Quando un blocco elenco viene affiancato a un blocco immagine allineato a sinistra, l'immagine e l'elenco puntato vengono visualizzati correttamente senza sovrapporsi.
 - Sistemato il colore del testo di un link con stile bottone all'interno di un Callout di colore blu, mostrando il link di colore bianco e non blu.
+- Ripristinata la visualizzazione delle immagini nel blocco Elenco con variante "Quadratoni con immagine" (e nella variante "Card con testo in slide up"): le anteprime non apparivano più a causa di un URL immagine non più servito dal backend Plone 6 aggiornato.
 
 ## Versione 12.11.4 (02/04/2026)
 
