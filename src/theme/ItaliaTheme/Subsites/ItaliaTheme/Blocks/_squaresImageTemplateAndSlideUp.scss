@@ -11,9 +11,9 @@
     .squares-image-template .box {
       &:before {
         @if $subsite-light-theme {
-          background-color: $subsite-secondary;
+          background-color: rgba($subsite-secondary, 0.6);
         } @else {
-          background-color: $subsite-primary;
+          background-color: rgba($subsite-primary, 0.6);
         }
       }
       .title {
