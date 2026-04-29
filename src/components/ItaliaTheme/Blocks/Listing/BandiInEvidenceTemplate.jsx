@@ -17,7 +17,10 @@ import {
   ListingText,
   ListingLinkMore,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { viewDate } from 'design-comuni-plone-theme/helpers';
+import {
+  viewDate,
+  getReadMoreAriaLabel,
+} from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   vedi: {
@@ -251,6 +254,7 @@ const BandiInEvidenceTemplate = ({
                       item={!isEditMode ? item : null}
                       href={isEditMode ? '#' : null}
                       text={intl.formatMessage(messages.vedi)}
+                      aria-label={getReadMoreAriaLabel(intl, item.title)}
                     />
                   </div>
                 </CardBody>
@@ -259,7 +263,12 @@ const BandiInEvidenceTemplate = ({
           })}
         </div>
 
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-4" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          className="my-4"
+          ariaLabel={title}
+        />
       </Container>
     </div>
   );

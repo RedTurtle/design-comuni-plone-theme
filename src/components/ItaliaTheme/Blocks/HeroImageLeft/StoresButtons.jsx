@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'design-react-kit/dist/design-react-kit';
 import { defineMessages, useIntl } from 'react-intl';
+import { getReadMoreAriaLabel } from 'design-comuni-plone-theme/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { UniversalLink } from '@plone/volto/components';
 import { CardReadMore } from 'design-react-kit/dist/design-react-kit';
@@ -34,13 +35,13 @@ const StoresButtons = ({ data }) => {
           </Button>
         )}
       </div>
-
       {data.moreHref && (
         <CardReadMore
           tag={UniversalLink}
           iconName="it-arrow-right"
           text={data.moreTitle || intl.formatMessage(messages.linkMore)}
           href={flattenToAppURL(data.moreHref)}
+          aria-label={getReadMoreAriaLabel(intl, data.title)}
         />
       )}
     </div>

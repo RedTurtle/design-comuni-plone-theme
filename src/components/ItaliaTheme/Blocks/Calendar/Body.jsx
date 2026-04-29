@@ -352,6 +352,7 @@ const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
             href={data.linkHref}
             linkAlign={data.linkAlign}
             className="my-4"
+            ariaLabel={data.title}
           />
         </div>
       </Container>

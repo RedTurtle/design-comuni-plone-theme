@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
+import { getReadMoreAriaLabel } from 'design-comuni-plone-theme/helpers';
 import {
   Card,
   CardBody,
@@ -39,6 +40,7 @@ const ItemInEvidence = ({ content }) => {
             tag="a"
             text={intl.formatMessage(messages.explore)}
             href={flattenToAppURL(correlato_in_evidenza['@id'])}
+            aria-label={getReadMoreAriaLabel(intl, correlato_in_evidenza.title)}
           />
         </CardBody>
       </Card>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { defineMessages } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
+import { getReadMoreAriaLabel } from 'design-comuni-plone-theme/helpers';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import {
   Card,
@@ -71,6 +72,7 @@ const Block = ({
               tag="a"
               text={intl.formatMessage(messages.exploreArgument)}
               href={flattenToAppURL(argument['@id'])}
+              aria-label={getReadMoreAriaLabel(intl, argument.title)}
             />
           )}
         </CardBody>

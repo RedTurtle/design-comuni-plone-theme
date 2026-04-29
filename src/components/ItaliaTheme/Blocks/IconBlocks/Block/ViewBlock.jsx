@@ -6,10 +6,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import redraft from 'redraft';
+import { convertFromRaw } from 'draft-js';
 import { useIntl, defineMessages } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { getReadMoreAriaLabel } from 'design-comuni-plone-theme/helpers';
 import {
   Card,
   CardBody,
@@ -31,6 +33,10 @@ const messages = defineMessages({
  */
 const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
   const intl = useIntl();
+  const plainTitle = data.title
+    ? convertFromRaw(data.title).getPlainText()
+    : null;
+  const cardReadMoreAriaLabel = getReadMoreAriaLabel(intl, plainTitle);
   return (
     <Card
       className="card-bg rounded subblock-view"
@@ -69,11 +75,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
             tag={UniversalLink}
             href={data.href ?? '#'}
             text={data.linkMoreTitle || intl.formatMessage(messages.vedi)}
-            aria-label={
-              data.linkMoreTitle
-                ? data.linkMoreTitle
-                : intl.formatMessage(messages.vedi) + ' ' + data.title
-            }
+            aria-label={cardReadMoreAriaLabel}
           />
         )}
       </CardBody>

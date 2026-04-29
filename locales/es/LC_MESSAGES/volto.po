@@ -838,6 +838,11 @@ msgstr "Fecha de apertura"
 msgid "appStoreLink"
 msgstr "Enlace de la tienda de aplicaciones"
 
+#: helpers/redraftHelper
+# defaultMessage: Approfondisci:
+msgid "approfondisci"
+msgstr ""
+
 #: components/ItaliaTheme/Header/HeaderSlim/ArLogin
 # defaultMessage: Esci
 msgid "arLogout"
@@ -3847,6 +3852,11 @@ msgstr "Tu estás actualmente en un carrusel, para navegar usa las flechas izqui
 # defaultMessage: Vedi tutti
 msgid "view_all"
 msgstr "Ver todo"
+
+#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/BottomBody
+# defaultMessage: Vedi tutti gli argomenti
+msgid "view_all_argomenti"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/LocationsMap
 # defaultMessage: Vedi su Apple Maps

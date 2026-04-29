@@ -13,6 +13,10 @@ const messages = defineMessages({
     id: 'view_all',
     defaultMessage: 'Vedi tutti',
   },
+  view_all_argomenti: {
+    id: 'view_all_argomenti',
+    defaultMessage: 'Vedi tutti gli argomenti',
+  },
   otherArguments: {
     id: 'otherArguments',
     defaultMessage: 'ALTRI ARGOMENTI',
@@ -55,6 +59,7 @@ const BottomBody = ({ data, intl }) => {
           tag={UniversalLink}
           href="/argomenti"
           className="view-all text-decoration-none"
+          aria-label={intl?.formatMessage(messages.view_all_argomenti)}
         >
           {intl?.formatMessage(messages.view_all)}
         </Button>

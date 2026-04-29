@@ -6,11 +6,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import redraft from 'redraft';
+import { convertFromRaw } from 'draft-js';
+import { useIntl } from 'react-intl';
 import ViewBlock from './Block/ViewBlock';
 import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
 import { flattenToAppURL, addAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
-import { checkRedraftHasContent } from 'design-comuni-plone-theme/helpers';
+import {
+  checkRedraftHasContent,
+  getReadMoreAriaLabel,
+} from 'design-comuni-plone-theme/helpers';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
 
@@ -20,7 +25,12 @@ import cx from 'classnames';
  * @extends Component
  */
 const AccordionView = ({ data, block }) => {
+  const intl = useIntl();
   const id = new Date().getTime();
+  const blockPlainTitle = data.title
+    ? convertFromRaw(data.title).getPlainText()
+    : null;
+  const linkMoreAriaLabel = getReadMoreAriaLabel(intl, blockPlainTitle);
 
   return (
     <div className="block iconBlocks">
@@ -84,6 +94,7 @@ const AccordionView = ({ data, block }) => {
                 <UniversalLink
                   href={flattenToAppURL(data.href)}
                   className="btn btn-tertiary"
+                  aria-label={linkMoreAriaLabel}
                 >
                   {data.linkMoreTitle}
                 </UniversalLink>

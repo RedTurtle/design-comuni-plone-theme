@@ -142,7 +142,12 @@ const RibbonCardTemplate = (props) => {
             );
           })}
         </Row>
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-5" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          className="my-5"
+          ariaLabel={title}
+        />
       </Container>
     </div>
   );

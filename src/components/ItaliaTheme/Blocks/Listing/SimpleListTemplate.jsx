@@ -41,7 +41,12 @@ const SimpleListTemplate = ({
             </Col>
           </Row>
         )}
-        <ListingLinkMore title={linkTitle} href={linkHref} className="my-4" />
+        <ListingLinkMore
+          title={linkTitle}
+          href={linkHref}
+          className="my-4"
+          ariaLabel={title}
+        />
       </Container>
     </div>
   );

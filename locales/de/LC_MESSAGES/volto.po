@@ -844,6 +844,11 @@ msgstr ""
 msgid "appStoreLink"
 msgstr ""
 
+#: helpers/redraftHelper
+# defaultMessage: Approfondisci:
+msgid "approfondisci"
+msgstr ""
+
 #: components/ItaliaTheme/Header/HeaderSlim/ArLogin
 # defaultMessage: Esci
 msgid "arLogout"
@@ -3852,6 +3857,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/ArgumentsInEvidence/BottomBody
 # defaultMessage: Vedi tutti
 msgid "view_all"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/ArgumentsInEvidence/BottomBody
+# defaultMessage: Vedi tutti gli argomenti
+msgid "view_all_argomenti"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/LocationsMap
