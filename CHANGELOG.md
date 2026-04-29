@@ -1,5 +1,17 @@
 # Changelog
 
+## [12.12.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.0...v12.12.1) (2026-04-29)
+
+
+### Bug Fixes
+
+* overlay decreased ([#1109](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1109)) ([974328e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/974328ef28606a567b9f965b5c0ac0a76467ca75))
+
+
+### Maintenance
+
+* preparing release 12.12.1 ([4c8733a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4c8733a65b9df98502fd739453a6b36a14b2b2cb))
+
 ## [12.12.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.11.4...v12.12.0) (2026-04-27)
 
 
