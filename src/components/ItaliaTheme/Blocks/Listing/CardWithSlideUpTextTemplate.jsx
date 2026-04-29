@@ -7,7 +7,10 @@ import {
 
 import { UniversalLink } from '@plone/volto/components';
 
-import { getCalendarDate, getCardAriaLabel } from 'design-comuni-plone-theme/helpers';
+import {
+  getCalendarDate,
+  getReadMoreAriaLabel,
+} from 'design-comuni-plone-theme/helpers';
 import {
   ListingLinkMore,
   ListingCategory,
@@ -83,7 +86,7 @@ const CardWithSlideUpTextTemplate = (props) => {
                       href={isEditMode ? '#' : null}
                       text={intl.formatMessage(messages.vedi)}
                       className="justify-content-end"
-                      aria-label={getCardAriaLabel(intl, item?.title)}
+                      aria-label={getReadMoreAriaLabel(intl, item?.title)}
                     />
                   </div>
                 </div>

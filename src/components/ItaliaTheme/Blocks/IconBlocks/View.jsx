@@ -12,10 +12,12 @@ import ViewBlock from './Block/ViewBlock';
 import { Container, Row, Col } from 'design-react-kit/dist/design-react-kit';
 import { flattenToAppURL, addAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
-import { checkRedraftHasContent, getCardAriaLabel } from 'design-comuni-plone-theme/helpers';
+import {
+  checkRedraftHasContent,
+  getReadMoreAriaLabel,
+} from 'design-comuni-plone-theme/helpers';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
-
 
 /**
  * View Accordion block class.
@@ -28,7 +30,7 @@ const AccordionView = ({ data, block }) => {
   const blockPlainTitle = data.title
     ? convertFromRaw(data.title).getPlainText()
     : null;
-  const linkMoreAriaLabel = getCardAriaLabel(intl, blockPlainTitle);
+  const linkMoreAriaLabel = getReadMoreAriaLabel(intl, blockPlainTitle);
 
   return (
     <div className="block iconBlocks">

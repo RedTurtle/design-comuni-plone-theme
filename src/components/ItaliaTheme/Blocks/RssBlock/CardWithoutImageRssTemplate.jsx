@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
-import { getCardAriaLabel } from 'design-comuni-plone-theme/helpers';
+import { getReadMoreAriaLabel } from 'design-comuni-plone-theme/helpers';
 import cx from 'classnames';
 
 import {
@@ -27,7 +27,6 @@ const messages = defineMessages({
     id: 'Vedi tutto',
     defaultMessage: 'Vedi tutto',
   },
-
 });
 
 const CardWithoutImageRssTemplate = ({
@@ -89,7 +88,7 @@ const CardWithoutImageRssTemplate = ({
                     rel="noopener noreferrer"
                     href={item?.url}
                     text={intl.formatMessage(messages.readMore)}
-                    aria-label={getCardAriaLabel(intl, item.title)}
+                    aria-label={getReadMoreAriaLabel(intl, item.title)}
                   />
                 </Card>
               </Col>
@@ -100,7 +99,7 @@ const CardWithoutImageRssTemplate = ({
               <UniversalLink
                 href={flattenToAppURL(data.linkMore)}
                 className="btn btn-tertiary"
-                aria-label={getCardAriaLabel(intl, data.title)}
+                aria-label={getReadMoreAriaLabel(intl, data.title)}
               >
                 {data.linkMoreTitle || intl.formatMessage(messages.view_all)}
               </UniversalLink>

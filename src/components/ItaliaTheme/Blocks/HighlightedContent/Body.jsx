@@ -23,8 +23,10 @@ import {
   CardCategory,
   getItemIcon,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { viewDate, getCardAriaLabel } from 'design-comuni-plone-theme/helpers';
-
+import {
+  viewDate,
+  getReadMoreAriaLabel,
+} from 'design-comuni-plone-theme/helpers';
 
 const Body = (props) => {
   const { content, block } = props;
@@ -97,7 +99,7 @@ const Body = (props) => {
                   iconName="it-arrow-right"
                   text={block.moreTitle || 'Vedi tutte le notizie'}
                   href={flattenToAppURL(block.moreHref)}
-                  aria-label={getCardAriaLabel(intl, content.title)}
+                  aria-label={getReadMoreAriaLabel(intl, content.title)}
                 />
               )}
             </CardBody>

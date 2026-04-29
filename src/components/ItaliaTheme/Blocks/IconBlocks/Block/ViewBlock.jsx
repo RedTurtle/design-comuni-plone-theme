@@ -11,7 +11,7 @@ import { useIntl, defineMessages } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { getCardAriaLabel } from 'design-comuni-plone-theme/helpers';
+import { getReadMoreAriaLabel } from 'design-comuni-plone-theme/helpers';
 import {
   Card,
   CardBody,
@@ -33,8 +33,10 @@ const messages = defineMessages({
  */
 const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
   const intl = useIntl();
-  const plainTitle = data.title ? convertFromRaw(data.title).getPlainText() : null;
-  const cardReadMoreAriaLabel = getCardAriaLabel(intl, plainTitle);
+  const plainTitle = data.title
+    ? convertFromRaw(data.title).getPlainText()
+    : null;
+  const cardReadMoreAriaLabel = getReadMoreAriaLabel(intl, plainTitle);
   return (
     <Card
       className="card-bg rounded subblock-view"
