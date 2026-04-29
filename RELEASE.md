@@ -41,12 +41,6 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
-
-### Fix
-
-- Nei sottositi con tema scuro, le anteprime delle immagini nel blocco elenco con variante "Quadratoni con immagine" (e nella variante "Card con testo in slide up") sono ora di nuovo visibili: la sovrapposizione di colore è tornata semitrasparente, lasciando intravedere la foto sotto.
-
 ## Versione 12.12.0 (27/04/2026)
 
 ### Migliorie
