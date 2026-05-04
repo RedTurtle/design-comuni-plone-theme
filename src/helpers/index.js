@@ -13,6 +13,7 @@ export {
 export { contentFolderHasItems } from 'design-comuni-plone-theme/helpers/contentHelper';
 export { checkRedraftHasContent } from 'design-comuni-plone-theme/helpers/redraftHelper';
 export { getReadMoreAriaLabel } from 'design-comuni-plone-theme/helpers/getReadMoreAriaLabel';
+export { getPlainText } from 'design-comuni-plone-theme/helpers/getPlainText';
 export { getTableRowData } from 'design-comuni-plone-theme/helpers/amministrazioneTrasparenteHelper';
 export { getItemsByPath } from 'design-comuni-plone-theme/helpers/getItemsByPath';
 export {
