@@ -78,7 +78,7 @@ function NextArrow(props) {
       onKeyDown={handleKeyboardUsers}
       id="sliderNextArrow"
     >
-      <Icon icon="chevron-right" key="chevron-right" />
+      <Icon icon="chevron-right" key="chevron-right" aria-hidden={true} />
       <span class="sr-only">{intl.formatMessage(messages.successivo)}</span>
     </button>
   );
@@ -115,13 +115,12 @@ function PrevArrow(props) {
       className={className}
       style={{ ...style }}
       onClick={handleClick}
-      title={intl.formatMessage(messages.precedente)}
       aria-label={intl.formatMessage(messages.precedente)}
       aria-hidden={false}
       id="sliderPrevArrow"
       onKeyDown={handleKeyboardUsers}
     >
-      <Icon icon="chevron-left" key="chevron-left-prev" />
+      <Icon icon="chevron-left" key="chevron-left-prev" aria-hidden={true} />
       <span class="sr-only">{intl.formatMessage(messages.precedente)}</span>
     </button>
   );
@@ -329,7 +328,7 @@ const SliderTemplate = ({
               <div className="play-pause-wrapper">
                 <button
                   onClick={toggleAutoplay}
-                  title={
+                  aria-label={
                     userAutoplay
                       ? intl.formatMessage(messages.pause)
                       : intl.formatMessage(messages.play)
@@ -339,6 +338,7 @@ const SliderTemplate = ({
                   <Icon
                     key={userAutoplay ? 'pause' : 'play'}
                     icon={userAutoplay ? 'pause' : 'play'}
+                    aria-hidden={true}
                   />
                   <span>{userAutoplay ? 'pause' : 'play'}</span>
                 </button>
