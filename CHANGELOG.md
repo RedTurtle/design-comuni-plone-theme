@@ -1,5 +1,18 @@
 # Changelog
 
+## [12.12.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.1...v12.12.2) (2026-05-06)
+
+
+### Bug Fixes
+
+* b_size for gallery ([8e652b0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8e652b0ca9a6eee06a4404a79ff9d60def1f0b3d))
+
+
+### Maintenance
+
+* preparing release 12.12.2 ([388f9d3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/388f9d358f51f17740b3752b8f46079d42041c0b))
+* updated volto-taxonomy ([9c67642](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9c676424bc5338f3d76d33b84c6307fd5e792f44))
+
 ## [12.12.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.0...v12.12.1) (2026-04-29)
 
 
