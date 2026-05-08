@@ -116,7 +116,7 @@ const PhotogalleryTemplate = ({
         <div className="play-pause-wrapper">
           <button
             onClick={() => toggleAutoplay()}
-            title={
+            aria-label={
               autoplay
                 ? intl.formatMessage(messages.pause)
                 : intl.formatMessage(messages.play)
@@ -125,6 +125,7 @@ const PhotogalleryTemplate = ({
             <Icon
               key={autoplay ? 'pause' : 'play'}
               icon={autoplay ? 'pause' : 'play'}
+              aria-hidden={true}
             />
           </button>
         </div>

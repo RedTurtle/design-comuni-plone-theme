@@ -4,7 +4,7 @@ export default function PrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div className={className} style={{ ...style }} onClick={onClick}>
-      <Icon icon="chevron-left" key="chevron-left-prev" />
+      <Icon icon="chevron-left" key="chevron-left-prev" aria-hidden={true} />
     </div>
   );
 }
