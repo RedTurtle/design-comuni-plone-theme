@@ -829,7 +829,7 @@ msgstr "Apertura del bando"
 msgid "appStoreLink"
 msgstr ""
 
-#: helpers/redraftHelper
+#: helpers/getReadMoreAriaLabel
 # defaultMessage: Approfondisci:
 msgid "approfondisci"
 msgstr ""

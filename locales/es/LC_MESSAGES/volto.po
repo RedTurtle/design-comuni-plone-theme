@@ -838,7 +838,7 @@ msgstr "Fecha de apertura"
 msgid "appStoreLink"
 msgstr "Enlace de la tienda de aplicaciones"
 
-#: helpers/redraftHelper
+#: helpers/getReadMoreAriaLabel
 # defaultMessage: Approfondisci:
 msgid "approfondisci"
 msgstr ""
