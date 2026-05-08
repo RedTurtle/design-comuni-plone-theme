@@ -1,3 +1,22 @@
+## [7.42.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.41.0...v7.42.0) (2026-05-08)
+
+
+### Features
+
+* improve a11y on read-more links  ([#1104](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1104)) ([5c2b95e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5c2b95e5c60670c931f18073b29a3981dccc7d14))
+
+
+### Bug Fixes
+
+* hamburger menu button translation of aria-label ([#1103](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1103)) ([39cd670](https://github.com/RedTurtle/design-comuni-plone-theme/commit/39cd670ddcc8859efd428d55bc7e1d941498c964))
+* new getPlainText helper for Draft.js or string fields for readmore([#1110](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1110)) ([d34b68d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d34b68d57f3a30e82d20f1697c3995ddac5fbdcf))
+* removed title from img inside ListingImage for better a11y ([#1102](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1102)) ([27aa7fb](https://github.com/RedTurtle/design-comuni-plone-theme/commit/27aa7fbfae9335b28c741e212e78a857c42b4834))
+
+
+### Maintenance
+
+* locales ([31bb289](https://github.com/RedTurtle/design-comuni-plone-theme/commit/31bb289ba3ec064c5e16d51e32ae4919a0b5c442))
+
 ## [7.41.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v7.40.7...v7.41.0) (2026-02-16)
 
 
