@@ -48,7 +48,7 @@
 ### Fix
 
 - Impedire all'input numerico nel blocco Form di inserire caratteri alfabetici
- 
+- Mostrare l'anteprima del blocco Video una volta accettati i cookie 
 
 ## Versione 12.12.0 (27/04/2026)
 
