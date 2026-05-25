@@ -74,7 +74,7 @@ const messages = defineMessages({
   },
 });
 
-const getSelectAriaLiveMessages = (intl) => {
+export const getSelectAriaLiveMessages = (intl) => {
   return {
     guidance: (props) => {
       const { isSearchable, isMulti, isDisabled, tabSelectsValue, context } =
@@ -184,5 +184,3 @@ const getSelectAriaLiveMessages = (intl) => {
     },
   };
 };
-
-export default getSelectAriaLiveMessages;

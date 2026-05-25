@@ -30,7 +30,7 @@ import {
   MultiValueContainer,
 } from '@plone/volto/components/manage/Widgets/SelectStyling';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import getSelectAriaLiveMessages from 'design-comuni-plone-theme/helpers/translateAriaLiveMessages';
+import { getSelectAriaLiveMessages } from 'design-comuni-plone-theme/helpers/react-select';
 
 const messages = defineMessages({
   default: {
