@@ -1052,7 +1052,7 @@ msgstr "La velocidad de reproducción automática debe ser expresado en segundos
 msgid "autore"
 msgstr ""
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: Usa le frecce Su e Giu per scegliere un'opzione
 msgid "ay11_Use Up and Down to choose options"
 msgstr "Use Arriba y Abajo para elegir opciones"
@@ -1062,82 +1062,82 @@ msgstr "Use Arriba y Abajo para elegir opciones"
 msgid "ay11_select cancel"
 msgstr ""
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: deselezionata
 msgid "ay11_select deselected"
 msgstr "deseleccionado"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: disabilitato
 msgid "ay11_select disabled"
 msgstr "desactivado"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: evidenziato
 msgid "ay11_select focused"
 msgstr "subrayar"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: per la ricerca
 msgid "ay11_select for search term"
 msgstr "por término de búsqueda"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: è disabilitata. Seleziona un'altra opzione
 msgid "ay11_select is disabled. Select another option."
 msgstr "está desactivado. Seleccione otra opción."
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: opzione
 msgid "ay11_select option"
 msgstr "opción"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: selezionata
 msgid "ay11_select selected"
 msgstr "seleccionado"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: valore
 msgid "ay11_select value"
 msgstr "valor"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: Usa le frecce destra e sinistra per attivare o disattivare i valori evidenziati, premi Backspace per rimuovere il valore corrente evidenziato
 msgid "ay11_select_Use left and right to toggle between focused values, press Backspace to remove the currently focused value"
 msgstr "Use izquierda y derecha para alternar entre valores enfocados, presione Retroceso para eliminar el valor actualmente enfocado"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi Tab per selezionare l'opzione e uscire dal menu
 msgid "ay11_select__press Tab to select the option and exit the menu"
 msgstr "presione Tab para seleccionar la opción y salir del menú"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: digita per filtrare la lista
 msgid "ay11_select__type to refine list"
 msgstr "escriba para refinar la lista"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: è selezionato
 msgid "ay11_select_is_focused"
 msgstr "está resaltado"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi freccia giu per aprire il menu, premi Backspace per rimuovere il valore selezionato
 msgid "ay11_select_press Down to open the menu"
 msgstr "presiona la tecla Abajo para abrir el menú"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi Invio per selezionare l'opzione corrente
 msgid "ay11_select_press Enter to select the currently focused option"
 msgstr "presione la tecla Enter para seleccionar la opción enfocada actualmente"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi Esc per uscire dal menu
 msgid "ay11_select_press Escape to exit the menu"
 msgstr "presione la tecla Escape para salir del menú"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi la freccia a sinistra per evidenziare i valori selezionati
 msgid "ay11_select_press left to focus selected values"
 msgstr "presione la tecla izquierda para enfocar los valores seleccionados"
@@ -2986,7 +2986,7 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/Teaser/schema
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
 #: config/Blocks/ListingOptions/cardWithImageTemplate
-# defaultMessage: undefined
+# defaultMessage: Non alterare le dimensioni naturali dell'immagine
 msgid "natural_image_size"
 msgstr "No altere los tamaños naturales de las imágenes"
 
