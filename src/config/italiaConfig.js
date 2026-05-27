@@ -70,6 +70,9 @@ import {
 } from 'design-comuni-plone-theme/helpers/images';
 import ItaliaTeaserBody from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Teaser/ItaliaTeaserBody';
 
+import { registerSlotComponent } from 'design-comuni-plone-theme/helpers';
+import SlotDiProva from '../components/ItaliaTheme/SlotRenderer/SlotDiProva';
+
 const ReleaseLog = loadable(
   () => import('design-comuni-plone-theme/components/ReleaseLog/ReleaseLog'),
 );
@@ -595,6 +598,13 @@ export default function applyConfig(voltoConfig) {
       component: ReleaseLog,
     },
   ];
+
+  config.slots = config.slots ?? {};
+  registerSlotComponent({
+    slot: 'aboveContentTitle',
+    name: 'MyComp',
+    component: SlotDiProva,
+  });
 
   return config;
 }

@@ -24,6 +24,7 @@ import {
 import { defineMessages, useIntl } from 'react-intl';
 import { getLayoutFieldname } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
+import SlotRenderer from '../../SlotRenderer/SlotRenderer';
 
 const messages = defineMessages({
   unknownBlock: {
@@ -124,6 +125,7 @@ const PageView = ({ content, token, location, history }) => {
           </div>
 
           <TextOrBlocks content={content} />
+          <SlotRenderer name="aboveContentTitle" content={content} />
 
           {content.show_modified && <PageMetadata content={content} />}
         </div>

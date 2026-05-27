@@ -65,3 +65,4 @@ export {
   contentHasImage,
 } from 'design-comuni-plone-theme/helpers/images';
 export { getWidgetView } from 'design-comuni-plone-theme/helpers/getWidgetView';
+export { registerSlotComponent } from 'design-comuni-plone-theme/helpers/slots';
