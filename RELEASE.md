@@ -48,6 +48,49 @@
 - Impedito all'input numerico nel blocco Form di inserire caratteri alfabetici.
 - Rimosso il download dell'immagine di anteprima dei Video quando non sono ancora stati accettati i cookie.
 
+
+## Versione 12.12.1 (27/05/2026)
+
+### Novità
+- Nei template del blocco Elenco è ora possibile scegliere, tramite un’apposita opzione, se mandare automaticamente a capo con un trattino i titoli troppo lunghi, risolvendo i casi in cui i titoli uscivano dalle card.
+- È stata introdotta la possibilità di aggiungere titoli in qualsiasi sezione dell’editor di testo.
+- Nel blocco Form è ora possibile inserire campi di tipo Numero.
+- La visualizzazione del campo CIG dei Bandi nei blocchi Elenco è diventata opzionale.
+
+### Migliorie
+- È stata ottimizzata la visualizzazione delle estensioni dei file nei link di download.
+- È stato abilitato il blocco Callout all’interno dei campi a blocchi dei Content Type.
+- Lo stile dell’indice della pagina è stato migliorato e reso più coerente con l’ultima versione delle linee guida.
+- Nell’Object Browser è stata aggiunta la visualizzazione dello stato dei contenuti (privato), tramite indicatore ed etichetta, per migliorare la riconoscibilità e l’accessibilità degli elementi.
+
+### Fix
+- Nel template Slider del blocco Elenco è stato rimosso il link dagli elementi di tipo immagine.
+- È stato risolto un problema nei pannelli di controllo per cui, in alcuni casi, le checkbox non risultavano cliccabili.
+- I titoli dei campi di testo all’interno dei Content Type consentono ora di selezionare correttamente il testo e di posizionare il cursore con il mouse.
+- I pulsanti inseriti tramite l’editor Slate nei sottositi mostrano ora gli stili corretti.
+- È stato sistemato un problema che poteva verificarsi durante l’incolla di tabelle da file Word.
+- Sono state rimosse alcune chiamate doppie non necessarie (tech).
+- Il testo nei titoli delle card non va più a capo in automatico, a meno che questa opzione non sia espressamente configurata nelle impostazioni del template del blocco.
+- È stato risolto un problema di focus nella modifica dei campi con blocchi quando il campo contiene link a file o immagini.
+- I pulsanti sulla barra degli strumenti rispettano ora il contrasto minimo previsto per i colori.
+- I titoli molto lunghi e senza spazi nelle card vengono spezzati automaticamente con un trattino, evitando problemi di layout.
+- Le card del blocco Elenco di tipo Bandi mostrano ora correttamente la tipologia di bando.
+- Il blocco Blocchi con icone e lo sfondo del blocco Elenco mostrano sempre il colore e la variante corretti, sia in modalità modifica sia in modalità visualizzazione.
+- Sono stati sistemati il messaggio di ringraziamento dopo l’invio di un form e alcuni problemi relativi agli stili delle dimensioni dei font nelle card.
+- La variazione Allegati del blocco Elenco mostra la vista File quando l’utente è autenticato. Se l’utente è anonimo, mostra l’anteprima PDF, se selezionata e se il file è un PDF, oppure scarica il file negli altri casi.
+- I campi Obbligatorio e Univoco nelle impostazioni dei campi del blocco Form funzionano ora correttamente.
+- È stata rimossa l’icona dei link esterni sulle immagini per il blocco Card con immagine.
+- L’etichetta dei campi nel blocco Form va ora a capo se troppo lunga.
+- Lo stile blockquote dell’editor in versione scura garantisce sempre un contrasto adeguato del testo, migliorandone la leggibilità.
+- Le estensioni dei file sono state rimosse dalla variazione Card con testo animato del blocco Elenco.
+- Inserendo un blocco Griglia in pagina e salvando il blocco vuoto, la pagina non va più in crash.
+- L’editor di testo funziona regolarmente con i link esterni e il cursore non si sposta più alla fine del testo a ogni carattere inserito.
+- È stata sistemata la visualizzazione del blocco con le ulteriori informazioni all’interno del tipo di contenuto Evento.
+- Sono stati rimossi gli argomenti dalla fascia dei contenuti correlati in evidenza.
+- Il widget Contatti mantiene gli stili anche nelle pagine di back-office.
+- Il widget Contatti è ora visibile in tutte le rotte, comprese quelle del flusso prenotazioni e della ricerca.
+- È stato sistemato il paragrafo con stile callout nel campo Ulteriori informazioni dei vari Content Type.
+
 ## Versione 12.12.0 (27/04/2026)
 
 ### Migliorie
