@@ -41,14 +41,12 @@
 - ...
  -->
 
- 
- 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 12.12.3 (28/05/2026)
 
 ### Fix
 
-- Impedire all'input numerico nel blocco Form di inserire caratteri alfabetici
-- Mostrare l'anteprima del blocco Video una volta accettati i cookie 
+- Impedito all'input numerico nel blocco Form di inserire caratteri alfabetici.
+- Rimosso il download dell'immagine di anteprima dei Video quando non sono ancora stati accettati i cookie.
 
 ## Versione 12.12.0 (27/04/2026)
 
