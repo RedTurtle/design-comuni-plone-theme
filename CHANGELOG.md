@@ -1,5 +1,18 @@
 # Changelog
 
+## [12.12.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.2...v12.12.3) (2026-05-28)
+
+
+### Bug Fixes
+
+* create utils to translate aria-label for select input and widget ([#1117](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1117)) ([274688b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/274688bd7556644c108546625ec06275071667f7))
+* don't allow to use letter in form block numeric field on firefox ([#1113](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1113)) ([c945299](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c9452995392deac860037953e48391a6097c8ecc))
+
+
+### Maintenance
+
+* preparing release 12.12.3 ([bd4b965](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bd4b965e14ca64eeb5aedf7f3631104706c045c5))
+
 ## [12.12.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.1...v12.12.2) (2026-05-06)
 
 
