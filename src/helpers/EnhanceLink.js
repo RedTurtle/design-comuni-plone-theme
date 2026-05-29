@@ -16,7 +16,7 @@ const EnhanceLink = ({
 
   let size =
     enhanced_link_infos.getObjSize?.replaceAll('.', ',') ??
-    (enhanced_link_infos.size && enhanced_link_infos
+    (enhanced_link_infos?.size
       ? prettybytes(enhanced_link_infos.size, {
           locale: intl.locale,
         })?.toUpperCase()
