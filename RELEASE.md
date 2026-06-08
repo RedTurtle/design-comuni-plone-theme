@@ -41,15 +41,7 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
-
-### Migliorie
-
-- ...
-
-### Novità
-
-- ...
+## Versione 12.12.4 (08/06/2026)
 
 ### Fix
 
@@ -59,8 +51,8 @@
 
 ### Fix
 
-- Impedito all'input numerico nel blocco Form di inserire caratteri alfabetici.
-- Rimosso il download dell'immagine di anteprima dei Video quando non sono ancora stati accettati i cookie.
+- Nell'input numerico del blocco form, ora non è possibile inserire caratteri alfabetici.
+- Rimossa la visualizzazione (e quindi il download) dell'immagine di anteprima dei Video quando non sono ancora stati accettati i cookie.
 
 ## Versione 12.12.0 (27/04/2026)
 
@@ -72,7 +64,7 @@
 
 - Quando un blocco elenco viene affiancato a un blocco immagine allineato a sinistra, l'immagine e l'elenco puntato vengono visualizzati correttamente senza sovrapporsi.
 - Sistemato il colore del testo di un link con stile bottone all'interno di un Callout di colore blu.
-- Sistemata la visualizzazione delle immagini nel blocco elenco con variante "Quadratoni con immagine" (e nella variante "Card con testo in slide up").
+- Sistemata la visualizzazione delle immagini nel blocco elenco con variante "Quadratoni con immagine" (e nella variante "Card con testo in slide up"): in alcuni casi non venivano visualizzate correttamente.
 
 ## Versione 12.11.4 (02/04/2026)
 
@@ -82,7 +74,7 @@
 
 ### Fix
 
-- Risolto un errore nell'inserimento del blocco Elenco con visualizzazione a mappa.
+- Risolto un errore durante l'inserimento in pagina (in modalità di edit) del blocco Elenco con variazione Mappa.
 
 ## Versione 12.11.3 (10/03/2026)
 
@@ -94,31 +86,30 @@
 
 ### Fix
 
-- Sistemato un bug nelle checkbox dei pannelli di controllo che non erano cliccabili in alcuni casi.
+- Sistemato un bug nelle checkbox dei pannelli di controllo che in alcuni casi non erano cliccabili.
 
 ## Versione 12.11.1 (25/02/2026)
 
 ### Migliorie
 
-- Gestita la visualizzazione delle estensioni file nei link di download.
-- Abilitato il blocco "Callout" all'interno dei campi blocchi dei CT.
+- Gestita la visualizzazione delle estensioni file nei link di download: ora vengono mostrate correttamente anche per i file senza estensione.
+- Abilitato il blocco "Callout" all'interno dei campi a blocchi nell'edit di un CT.
 
 ### Fix
 
-- I titoli nei dei campi di testo all'interno dei CT consentono di selezionare il testo e posizionare il cursore con il mouse in maniera corretta
-- I bottoni inseriti tramite l'editor Slate nei sottositi hanno gli stili corretti
+- Ora i titoli nei dei campi di testo a blocchi dell'edit di un CT consentono di selezionare il testo e posizionare il cursore con il mouse in maniera corretta
+- I bottoni inseriti tramite l'editor Slate nei sottositi hanno ora gli stili corretti
 
 ## Versione 12.11.0 (23/02/2026)
 
 ### Fix
 
-- Sistemato un problema che si verificava durante l'incolla delle tabelle da un file word.
-- Rimosse chiamate doppie inutili.
+- Sistemato un problema (errore) che si verificava durante l'incolla delle tabelle da un file Word.
 - Rimosso l'acapo automatico nei titoli delle card. Ora i titoli vanno a capo solo se espressamente configurato nel campo dedicato nelle impostazioni del template del blocco.
 
 ### Novità
 
-- Nei template del blocco listing, è possibile scegliere con un flag, se mandare a capo automaticamente con un trattino i titoli troppo lunghi (per i casi in cui i titoli "sbordano" dalle card).
+- Nei template del blocco Elenco, è possibile scegliere con un flag, se mandare a capo automaticamente con un trattino i titoli troppo lunghi (per i casi in cui i titoli "sbordano" dalle card).
 
 ## Versione 12.10.1 (09/02/2026)
 
@@ -134,7 +125,7 @@
 
 ### Fix
 
-- I pulsanti sulla barra degli strumenti ora rispettano il contrasto minimo previsto per i colori.
+- I pulsanti sulla barra degli strumenti di sinistra ora rispettano il contrasto minimo di accessibilità previsto per i colori.
 
 ## Versione 12.9.0 (08/01/2026)
 
