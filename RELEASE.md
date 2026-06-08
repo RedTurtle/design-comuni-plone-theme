@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- I link ai file che non hanno informazioni sulla dimensione vengono ora visualizzati correttamente, senza mostrare spazi vuoti o causare errori.
+
 ## Versione 12.12.3 (28/05/2026)
 
 ### Fix
