@@ -1,5 +1,17 @@
 # Changelog
 
+## [12.12.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.3...v12.12.4) (2026-06-08)
+
+
+### Bug Fixes
+
+* fallback when size does not exist ([#1120](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1120)) ([5772c26](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5772c26bf8b9a504a7f0597e172362e5551cc93a))
+
+
+### Maintenance
+
+* preparing release 12.12.4 ([45e9c4c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/45e9c4c35f10e55450fd54d8ec252f709938a1f3))
+
 ## [12.12.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.2...v12.12.3) (2026-05-28)
 
 
