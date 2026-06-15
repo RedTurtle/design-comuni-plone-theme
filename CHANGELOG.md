@@ -1,5 +1,18 @@
 # Changelog
 
+## [12.12.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.4...v12.12.5) (2026-06-15)
+
+
+### Bug Fixes
+
+* render video when cookie consent accepted ([191263b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/191263bd1d6804bf05590116e007a1af1d19b478))
+
+
+### Maintenance
+
+* added RER contribution on release-.md ([655b62d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/655b62d97721425afecf6065fc8a580359e8d95c))
+* preparing release 12.12.5 ([7131f95](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7131f950caf2261c70187ca6493f34c836f38698))
+
 ## [12.12.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.3...v12.12.4) (2026-06-08)
 
 
