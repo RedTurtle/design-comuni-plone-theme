@@ -83,7 +83,7 @@ const TableTemplate = (props) => {
                   const raw = item[c.field];
                   let render_value = Array.isArray(raw)
                     ? raw.map((v) => v?.title ?? v).join(', ')
-                    : raw?.title ?? String(raw ?? '');
+                    : raw?.title ?? JSON.stringify(item[c.field]);
 
                   if (field_properties) {
                     const field = {
