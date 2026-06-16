@@ -1,5 +1,13 @@
 # Changelog
 
+## [12.12.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.5...v12.12.6) (2026-06-16)
+
+
+### Maintenance
+
+* preparing release 12.12.6 ([4b35398](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4b35398490f457d95e209d4bc54f4848c669428b))
+* updated volto-gdpr-privacy to fix conditionalEmbed when pref loaded and profiling not set ([e6b6d01](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e6b6d01c786407f4701d493ecc06bc87f564a726))
+
 ## [12.12.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.4...v12.12.5) (2026-06-15)
 
 
