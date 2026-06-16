@@ -1,12 +1,12 @@
 /*
  * Template a tabella
  */
-import React, { useEffect } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
-import { getCTSchema } from 'design-comuni-plone-theme/actions';
+// import { getCTSchema } from 'design-comuni-plone-theme/actions';
 import { Table, Container } from 'design-react-kit';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
@@ -79,8 +79,11 @@ const TableTemplate = (props) => {
                   const field_properties =
                     c.field_properties ??
                     ct_schema?.[c.ct]?.result?.properties?.[c.field] ??
-                    {};
-                  let render_value = JSON.stringify(item[c.field]);
+                    null;
+                  const raw = item[c.field];
+                  let render_value = Array.isArray(raw)
+                    ? raw.map((v) => v?.title ?? v).join(', ')
+                    : raw?.title ?? String(raw ?? '');
 
                   if (field_properties) {
                     const field = {
