@@ -2565,6 +2565,16 @@ msgid "gallery_close_preview"
 msgstr "Cerrar vista previa"
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine di copertina
+msgid "gallery_preview_image"
+msgstr "Imagen de portada"
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine mostrata in anteprima al posto della copertina di default del video.
+msgid "gallery_preview_image_description"
+msgstr "Imagen mostrada en la vista previa en lugar de la portada por defecto del video."
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Titolo del video
 msgid "gallery_video_title"
 msgstr "Título del vídeo"
