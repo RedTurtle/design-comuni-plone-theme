@@ -102,6 +102,13 @@ msgstr ""
 msgid "Callout"
 msgstr ""
 
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+#: components/manage/Contents/ContentsDeleteModal
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Cancel
+msgid "Cancel"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Vedi
@@ -144,6 +151,16 @@ msgstr "Cerca per argomento"
 # defaultMessage: Cerca per parola chiave
 msgid "Cerca per parola chiave"
 msgstr "Cerca per parola chiave"
+
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Change State
+msgid "Change State"
+msgstr "Cambia stato"
+
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Change workflow state recursively
+msgid "Change workflow state recursively"
+msgstr "Cambia stato ricorsivamente"
 
 #: overrideTranslations
 # defaultMessage: Pulisci i campi
@@ -192,6 +209,16 @@ msgstr "Contenuto"
 msgid "Current filters applied"
 msgstr "Filtri attualmente applicati"
 
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Cut selected items?
+msgid "Cut selected items?"
+msgstr "Vuoi tagliare gli elementi selezionati?"
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Cut this item?
+msgid "Cut this item?"
+msgstr "Vuoi tagliare questo elemento?"
+
 #: components/ItaliaTheme/View/Commons/Dates
 # defaultMessage: Date aggiuntive
 msgid "Date aggiuntive"
@@ -211,6 +238,27 @@ msgstr "Dal {start}"
 # defaultMessage: Dal {start} al {end}
 msgid "DateRangeFacetFilterListEntryDalAl"
 msgstr "Dal {start} al {end}"
+
+#: components/manage/Contents/ContentsRenameModal
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Default
+msgid "Default"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete selected items?
+msgid "Delete selected items?"
+msgstr "Vuoi eliminare gli elementi selezionati?"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete this item?
+msgid "Delete this item?"
+msgstr "Vuoi eliminare questo elemento?"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Deleting this item breaks {brokenReferences} {variation}.
+msgid "Deleting this item breaks {brokenReferences} {variation}."
+msgstr "Cancellando questo elemento si romperanno {brokenReferences} {variation}."
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/NumbersBlock/Edit
@@ -460,6 +508,11 @@ msgstr "Mostra lo sfondo del blocco"
 msgid "Mostra tutti gli argomenti"
 msgstr "Mostra tutti gli argomenti"
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Navigate to this item
+msgid "Navigate to this item"
+msgstr ""
+
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Nessun risultato ottenuto
 msgid "Nessun risultato ottenuto"
@@ -499,6 +552,21 @@ msgstr "Apri in un nuovo tab"
 # defaultMessage: Pagina
 msgid "Page"
 msgstr ""
+
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Paste
+msgid "Paste"
+msgstr "Incolla"
+
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Do you want to paste the item here?
+msgid "Paste item here?"
+msgstr "Vuoi incollare l'elemento qui?"
+
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Do you want to paste items here?
+msgid "Paste selected items?"
+msgstr "Vuoi incollare gli elementi qui?"
 
 #: components/ItaliaTheme/manage/Widgets/PathFiltersWidget
 #: config/Blocks/ListingOptions/utils
@@ -551,6 +619,16 @@ msgstr "Privato"
 # defaultMessage: Published
 msgid "Published"
 msgstr "Pubblicato"
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: Renaming items...
+msgid "Rename Items Loading Message"
+msgstr "Sto rinominando gli elementi..."
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: Rename items
+msgid "Rename items"
+msgstr "Rinomina"
 
 #: components/ItaliaTheme/manage/Widgets/FileWidget
 # defaultMessage: Rimuovi il file
@@ -608,6 +686,11 @@ msgstr "Seleziona tutti i tipi di contenuti o nessuno"
 msgid "Select all or none"
 msgstr "Seleziona tutti o nessuno"
 
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Select the transition to be used for modifying the items state.
+msgid "Select the transition to be used for modifying the items state."
+msgstr ""
+
 #: components/SelectInput/SelectInput
 # defaultMessage: Seleziona un'opzione
 msgid "SelectInput_default_label"
@@ -623,6 +706,11 @@ msgstr "Seleziona un file"
 msgid "Seleziona un'icona"
 msgstr "Seleziona un'icona nella barra a lato"
 
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: Short name
+msgid "Short name"
+msgstr "Nome breve"
+
 #: components/ItaliaTheme/Search/SearchCTs
 #: components/ItaliaTheme/Search/SearchTopics
 # defaultMessage: Mostra tutto
@@ -633,6 +721,16 @@ msgstr "Mostra tutto"
 # defaultMessage: Mostra tutti i tipi di contenuto
 msgid "Show all content types"
 msgstr "Mostra tutti i tipi di contenuto"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Some items are also a folder. By deleting them you will delete {containedItemsToDelete} {variation} inside the folders.
+msgid "Some items are also a folder. By deleting them you will delete {containedItemsToDelete} {variation} inside the folders."
+msgstr "Alcuni elementi sono anche cartelle. Eliminandoli eliminerai anche {containedItemsToDelete} {variation} all'interno delle cartelle."
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Some items are referenced by other contents. By deleting them {brokenReferences} {variation} will be broken.
+msgid "Some items are referenced by other contents. By deleting them {brokenReferences} {variation} will be broken."
+msgstr "Alcuni elementi sono referenziati da altri contenuti. Cancellandoli si romperanno {brokenReferences} {variation}."
 
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Sono occorsi degli errori
@@ -671,10 +769,26 @@ msgstr "Testo..."
 msgid "Thank you."
 msgstr "Grazie."
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: These items will have broken links
+msgid "These items will have broken links"
+msgstr "Questi elementi avranno dei collegamenti rotti"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: This item is also a folder. By deleting it you will delete {containedItemsToDelete} {variation} inside the folder.
+msgid "This item is also a folder. By deleting it you will delete {containedItemsToDelete} {variation} inside the folder."
+msgstr "Questo elemento è anche una cartella. Eliminandola eliminerai anche {containedItemsToDelete} {variation} in questa cartella."
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: This name will be displayed in the URL.
+msgid "This name will be displayed in the URL."
+msgstr "Questo nome sarà visualizzato nell'URL."
+
 #: components/ItaliaTheme/Blocks/Accordion/Edit
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/IconBlocks/Edit
 #: components/ItaliaTheme/Blocks/VideoGallery/Edit
+#: components/manage/Contents/ContentsRenameModal
 # defaultMessage: Titolo...
 msgid "Title"
 msgstr "Titolo"
@@ -807,15 +921,50 @@ msgstr "Video"
 msgid "VideoGalleryBlock"
 msgstr "Video gallery"
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: View links and references to this item
+msgid "View links and references to this item"
+msgstr "Visualizza collegamenti e riferimenti a questo elemento"
+
 #: overrideTranslations
 # defaultMessage: Visible only in view mode
 msgid "Visible only in view mode"
 msgstr "Visibile solamente in modalità visualizzazione"
 
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Updating workflow states...
+msgid "Workflow Change Loading Message"
+msgstr "Sto aggiornando gli stati..."
+
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Manda a capo il titolo con un trattino se è troppo lungo
 msgid "Wrap title"
 msgstr ""
+
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: You are changing workflow of more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are changing workflow of more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr "Per favore modifica lo stato di meno di {limit} elementi per volta. Altrimenti apri un ticket di assistenza tecnica."
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: You are copying more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are copying more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr "Per favore copia meno di {limit} elementi per volta. Altrimenti apri un ticket di assistenza tecnica."
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: You are cutting more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are deleting more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr "Per favore cancella meno di {limit} elementi per volta. Altrimenti apri un ticket di assistenza tecnica."
+
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: You are pasting more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are pasting more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr "Per favore incolla meno di {limit} elementi per volta. Altrimenti apri un ticket di assistenza tecnica."
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: You are renaming more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are renaming more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr "Per favore rinomina meno di {limit} elementi per volta. Altrimenti apri un ticket di assistenza tecnica."
 
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: You are trying to access a protected resource, please {login} first.
@@ -2698,6 +2847,16 @@ msgstr "Indice della pagina"
 msgid "insert_filter"
 msgstr "Inserire un filtro dal menù laterale per visualizzare i relativi risultati"
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: item
+msgid "item"
+msgstr "elemento"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: items
+msgid "items"
+msgstr "elementi"
+
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Iter del procedimento
@@ -2729,6 +2888,31 @@ msgstr "I campi contrassegnati da (*) sono obbligatori."
 # defaultMessage: Collegamento
 msgid "link"
 msgstr "Collegamento"
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Cut
+msgid "link-integrity: Cut"
+msgstr "Taglia"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete
+msgid "link-integrity: Delete"
+msgstr "Elimina"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete item and break links
+msgid "link-integrity: Delete item and break links"
+msgstr "Elimina questo elemento e rompi i collegamenti"
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Checking...
+msgid "link-integrity: loading"
+msgstr "Sto verificando..."
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Checking references...
+msgid "link-integrity: loading references"
+msgstr "Sto caricando i riferimenti..."
 
 #: components/ItaliaTheme/Header/HeaderCenter
 # defaultMessage: homepage
@@ -3189,6 +3373,11 @@ msgstr "Menu principale del sito"
 msgid "parteciperanno"
 msgstr "Parteciperanno"
 
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Checking...
+msgid "paste cheching: loading"
+msgstr "Sto verificando..."
+
 #: components/ItaliaTheme/View/EventoView/EventoPatrocinatoDa
 # defaultMessage: Patrocinato da
 msgid "patrocinato_da"
@@ -3287,6 +3476,21 @@ msgstr ""
 # defaultMessage: Tempo di lettura
 msgid "reading_time"
 msgstr "Tempo di lettura"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: reference
+msgid "reference"
+msgstr "riferimento"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: references
+msgid "references"
+msgstr "riferimenti"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: refers to
+msgid "refers to"
+msgstr "fa riferimento a"
 
 #: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks
 # defaultMessage: Documenti
