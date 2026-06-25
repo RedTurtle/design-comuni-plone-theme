@@ -8,23 +8,25 @@
  * - aggiunta la dimensione del file se il link punta a un file (enhanced_link_infos)
  * - aggiunto il parametro hideFileFormat per nascondere il formato del file dall'enhance link
  * - aggiunta la condizione su @@display-file e @download-file per gestire i casi in cui questi parametri vengono imposti a monte
+ * - aggiunta classe matomo_download sui link ai file
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useIntl, defineMessages } from 'react-intl';
-import { HashLink as Link } from 'react-router-hash-link';
-import { useSelector } from 'react-redux';
 import {
+  URLUtils,
   flattenToAppURL,
   isInternalURL,
-  URLUtils,
 } from '@plone/volto/helpers/Url/Url';
-import { matchPath } from 'react-router';
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { defineMessages, useIntl } from 'react-intl';
+
 import { EnhanceLink } from 'design-comuni-plone-theme/helpers';
-import cx from 'classnames';
+import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { HashLink as Link } from 'react-router-hash-link';
+import PropTypes from 'prop-types';
+import React from 'react';
 import config from '@plone/volto/registry';
+import cx from 'classnames';
+import { matchPath } from 'react-router';
+import { useSelector } from 'react-redux';
 
 const messages = defineMessages({
   opensInNewTab: {
@@ -200,7 +202,9 @@ const UniversalLink = ({
         href={flattenToAppURL(url)}
         download
         title={title}
-        className={className}
+        className={
+          className ? cx(className, 'matomo_download') : 'matomo_download'
+        }
         {...props}
         aria-label={aria_label}
       >
@@ -215,7 +219,9 @@ const UniversalLink = ({
         title={title}
         target="_blank"
         rel="noopener noreferrer"
-        className={className}
+        className={
+          className ? cx(className, 'matomo_download') : 'matomo_download'
+        }
         {...props}
         aria-label={aria_label}
       >
