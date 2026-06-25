@@ -49,7 +49,9 @@
 
 ### Novità
 
-- ...
+- Nella folder contents, ora viene mostrato un messaggio di avviso quando si sta cercando di spostare / cancellare / rinominare / cambiare lo stato di più di 300 elementi (o del numero configurabile a livello di applicazione dagli sviluppatori.) _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Migliorata l'accessibilità della folder content. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nella folder content, ora viene mostrato un messaggio di errore più coerente ed esplicativo quando si verifica un errore. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
 ### Fix
 
