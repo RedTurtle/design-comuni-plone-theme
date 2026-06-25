@@ -102,6 +102,13 @@ msgstr ""
 msgid "Callout"
 msgstr ""
 
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+#: components/manage/Contents/ContentsDeleteModal
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Cancel
+msgid "Cancel"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Vedi
@@ -144,6 +151,16 @@ msgstr "Search by topic"
 # defaultMessage: Cerca per parola chiave
 msgid "Cerca per parola chiave"
 msgstr "Search by keyword"
+
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Change State
+msgid "Change State"
+msgstr ""
+
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Change workflow state recursively
+msgid "Change workflow state recursively"
+msgstr ""
 
 #: overrideTranslations
 # defaultMessage: Pulisci i campi
@@ -192,6 +209,16 @@ msgstr "Content"
 msgid "Current filters applied"
 msgstr ""
 
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Cut selected items?
+msgid "Cut selected items?"
+msgstr ""
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Cut this item?
+msgid "Cut this item?"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/Dates
 # defaultMessage: Date aggiuntive
 msgid "Date aggiuntive"
@@ -211,6 +238,27 @@ msgstr "Starting from {start}"
 # defaultMessage: Dal {start} al {end}
 msgid "DateRangeFacetFilterListEntryDalAl"
 msgstr "Between {start} and {end}"
+
+#: components/manage/Contents/ContentsRenameModal
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Default
+msgid "Default"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete selected items?
+msgid "Delete selected items?"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete this item?
+msgid "Delete this item?"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Deleting this item breaks {brokenReferences} {variation}.
+msgid "Deleting this item breaks {brokenReferences} {variation}."
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/NumbersBlock/Edit
@@ -460,6 +508,11 @@ msgstr ""
 msgid "Mostra tutti gli argomenti"
 msgstr "Show all topics"
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Navigate to this item
+msgid "Navigate to this item"
+msgstr ""
+
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Nessun risultato ottenuto
 msgid "Nessun risultato ottenuto"
@@ -499,6 +552,21 @@ msgstr ""
 # defaultMessage: Pagina
 msgid "Page"
 msgstr "Page"
+
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Paste
+msgid "Paste"
+msgstr ""
+
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Do you want to paste the item here?
+msgid "Paste item here?"
+msgstr ""
+
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Do you want to paste items here?
+msgid "Paste selected items?"
+msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/PathFiltersWidget
 #: config/Blocks/ListingOptions/utils
@@ -550,6 +618,16 @@ msgstr ""
 #: overrideTranslations
 # defaultMessage: Published
 msgid "Published"
+msgstr ""
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: Renaming items...
+msgid "Rename Items Loading Message"
+msgstr ""
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: Rename items
+msgid "Rename items"
 msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/FileWidget
@@ -608,6 +686,11 @@ msgstr "Select all content types or none"
 msgid "Select all or none"
 msgstr "Select all or none"
 
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Select the transition to be used for modifying the items state.
+msgid "Select the transition to be used for modifying the items state."
+msgstr ""
+
 #: components/SelectInput/SelectInput
 # defaultMessage: Seleziona un'opzione
 msgid "SelectInput_default_label"
@@ -623,6 +706,11 @@ msgstr ""
 msgid "Seleziona un'icona"
 msgstr ""
 
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: Short name
+msgid "Short name"
+msgstr ""
+
 #: components/ItaliaTheme/Search/SearchCTs
 #: components/ItaliaTheme/Search/SearchTopics
 # defaultMessage: Mostra tutto
@@ -633,6 +721,16 @@ msgstr "Show all"
 # defaultMessage: Mostra tutti i tipi di contenuto
 msgid "Show all content types"
 msgstr "Show all content types"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Some items are also a folder. By deleting them you will delete {containedItemsToDelete} {variation} inside the folders.
+msgid "Some items are also a folder. By deleting them you will delete {containedItemsToDelete} {variation} inside the folders."
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Some items are referenced by other contents. By deleting them {brokenReferences} {variation} will be broken.
+msgid "Some items are referenced by other contents. By deleting them {brokenReferences} {variation} will be broken."
+msgstr ""
 
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Sono occorsi degli errori
@@ -671,10 +769,26 @@ msgstr ""
 msgid "Thank you."
 msgstr ""
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: These items will have broken links
+msgid "These items will have broken links"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: This item is also a folder. By deleting it you will delete {containedItemsToDelete} {variation} inside the folder.
+msgid "This item is also a folder. By deleting it you will delete {containedItemsToDelete} {variation} inside the folder."
+msgstr ""
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: This name will be displayed in the URL.
+msgid "This name will be displayed in the URL."
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Accordion/Edit
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/IconBlocks/Edit
 #: components/ItaliaTheme/Blocks/VideoGallery/Edit
+#: components/manage/Contents/ContentsRenameModal
 # defaultMessage: Titolo...
 msgid "Title"
 msgstr ""
@@ -807,14 +921,49 @@ msgstr "Video"
 msgid "VideoGalleryBlock"
 msgstr ""
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: View links and references to this item
+msgid "View links and references to this item"
+msgstr ""
+
 #: overrideTranslations
 # defaultMessage: Visible only in view mode
 msgid "Visible only in view mode"
 msgstr ""
 
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Updating workflow states...
+msgid "Workflow Change Loading Message"
+msgstr ""
+
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Manda a capo il titolo con un trattino se è troppo lungo
 msgid "Wrap title"
+msgstr ""
+
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: You are changing workflow of more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are changing workflow of more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr ""
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: You are copying more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are copying more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: You are cutting more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are deleting more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr ""
+
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: You are pasting more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are pasting more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr ""
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: You are renaming more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are renaming more then {limit} items. It's recommended to contact administrators to do this operation."
 msgstr ""
 
 #: components/ItaliaTheme/Unauthorized/Unauthorized
@@ -1043,7 +1192,7 @@ msgstr ""
 msgid "autore"
 msgstr "Author"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: Usa le frecce Su e Giu per scegliere un'opzione
 msgid "ay11_Use Up and Down to choose options"
 msgstr "Use Up and Down to choose options"
@@ -1053,82 +1202,82 @@ msgstr "Use Up and Down to choose options"
 msgid "ay11_select cancel"
 msgstr "Cancel"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: deselezionata
 msgid "ay11_select deselected"
 msgstr "deselected"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: disabilitato
 msgid "ay11_select disabled"
 msgstr "disabled"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: evidenziato
 msgid "ay11_select focused"
 msgstr "focused"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: per la ricerca
 msgid "ay11_select for search term"
 msgstr "for search term"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: è disabilitata. Seleziona un'altra opzione
 msgid "ay11_select is disabled. Select another option."
 msgstr "is disabled. Select another option."
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: opzione
 msgid "ay11_select option"
 msgstr "option"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: selezionata
 msgid "ay11_select selected"
 msgstr "selected"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: valore
 msgid "ay11_select value"
 msgstr "value"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: Usa le frecce destra e sinistra per attivare o disattivare i valori evidenziati, premi Backspace per rimuovere il valore corrente evidenziato
 msgid "ay11_select_Use left and right to toggle between focused values, press Backspace to remove the currently focused value"
 msgstr "Use left and right to toggle between focused values, press Backspace to remove the currently focused value"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi Tab per selezionare l'opzione e uscire dal menu
 msgid "ay11_select__press Tab to select the option and exit the menu"
 msgstr "press Tab to select the option and exit the menu"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: digita per filtrare la lista
 msgid "ay11_select__type to refine list"
 msgstr "type to refine list"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: è selezionato
 msgid "ay11_select_is_focused"
 msgstr "focused"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi freccia giu per aprire il menu, premi Backspace per rimuovere il valore selezionato
 msgid "ay11_select_press Down to open the menu"
 msgstr "press Down to open the menu"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi Invio per selezionare l'opzione corrente
 msgid "ay11_select_press Enter to select the currently focused option"
 msgstr "press Enter to select the currently focused option"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi Esc per uscire dal menu
 msgid "ay11_select_press Escape to exit the menu"
 msgstr "press Escape to exit the menu"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi la freccia a sinistra per evidenziare i valori selezionati
 msgid "ay11_select_press left to focus selected values"
 msgstr "press left to focus selected values"
@@ -2698,6 +2847,16 @@ msgstr "Page index"
 msgid "insert_filter"
 msgstr ""
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: item
+msgid "item"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: items
+msgid "items"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
 # defaultMessage: Iter del procedimento
@@ -2729,6 +2888,31 @@ msgstr "Fields marked with (*) are required."
 # defaultMessage: Collegamento
 msgid "link"
 msgstr "Link"
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Cut
+msgid "link-integrity: Cut"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete
+msgid "link-integrity: Delete"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete item and break links
+msgid "link-integrity: Delete item and break links"
+msgstr ""
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Checking...
+msgid "link-integrity: loading"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Checking references...
+msgid "link-integrity: loading references"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderCenter
 # defaultMessage: homepage
@@ -2977,7 +3161,7 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/Teaser/schema
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
 #: config/Blocks/ListingOptions/cardWithImageTemplate
-# defaultMessage: undefined
+# defaultMessage: Non alterare le dimensioni naturali dell'immagine
 msgid "natural_image_size"
 msgstr "Do not alter natural image sizes"
 
@@ -3189,6 +3373,11 @@ msgstr ""
 msgid "parteciperanno"
 msgstr "Will participate"
 
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Checking...
+msgid "paste cheching: loading"
+msgstr ""
+
 #: components/ItaliaTheme/View/EventoView/EventoPatrocinatoDa
 # defaultMessage: Patrocinato da
 msgid "patrocinato_da"
@@ -3287,6 +3476,21 @@ msgstr "Event collection:"
 # defaultMessage: Tempo di lettura
 msgid "reading_time"
 msgstr "Reading time"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: reference
+msgid "reference"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: references
+msgid "references"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: refers to
+msgid "refers to"
+msgstr ""
 
 #: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks
 # defaultMessage: Documenti
