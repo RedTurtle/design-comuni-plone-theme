@@ -1,5 +1,64 @@
 # Changelog
 
+## [12.12.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.5...v12.12.6) (2026-06-16)
+
+
+### Maintenance
+
+* preparing release 12.12.6 ([4b35398](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4b35398490f457d95e209d4bc54f4848c669428b))
+* updated volto-gdpr-privacy to fix conditionalEmbed when pref loaded and profiling not set ([e6b6d01](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e6b6d01c786407f4701d493ecc06bc87f564a726))
+
+## [12.12.5](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.4...v12.12.5) (2026-06-15)
+
+
+### Bug Fixes
+
+* render video when cookie consent accepted ([191263b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/191263bd1d6804bf05590116e007a1af1d19b478))
+
+
+### Maintenance
+
+* added RER contribution on release-.md ([655b62d](https://github.com/RedTurtle/design-comuni-plone-theme/commit/655b62d97721425afecf6065fc8a580359e8d95c))
+* preparing release 12.12.5 ([7131f95](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7131f950caf2261c70187ca6493f34c836f38698))
+
+## [12.12.4](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.3...v12.12.4) (2026-06-08)
+
+
+### Bug Fixes
+
+* fallback when size does not exist ([#1120](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1120)) ([5772c26](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5772c26bf8b9a504a7f0597e172362e5551cc93a))
+
+
+### Maintenance
+
+* preparing release 12.12.4 ([45e9c4c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/45e9c4c35f10e55450fd54d8ec252f709938a1f3))
+
+## [12.12.3](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.2...v12.12.3) (2026-05-28)
+
+
+### Bug Fixes
+
+* create utils to translate aria-label for select input and widget ([#1117](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1117)) ([274688b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/274688bd7556644c108546625ec06275071667f7))
+* don't allow to use letter in form block numeric field on firefox ([#1113](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1113)) ([c945299](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c9452995392deac860037953e48391a6097c8ecc))
+
+
+### Maintenance
+
+* preparing release 12.12.3 ([bd4b965](https://github.com/RedTurtle/design-comuni-plone-theme/commit/bd4b965e14ca64eeb5aedf7f3631104706c045c5))
+
+## [12.12.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.1...v12.12.2) (2026-05-06)
+
+
+### Bug Fixes
+
+* b_size for gallery ([8e652b0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8e652b0ca9a6eee06a4404a79ff9d60def1f0b3d))
+
+
+### Maintenance
+
+* preparing release 12.12.2 ([388f9d3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/388f9d358f51f17740b3752b8f46079d42041c0b))
+* updated volto-taxonomy ([9c67642](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9c676424bc5338f3d76d33b84c6307fd5e792f44))
+
 ## [12.12.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.0...v12.12.1) (2026-04-29)
 
 
