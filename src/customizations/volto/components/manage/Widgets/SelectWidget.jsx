@@ -30,6 +30,7 @@ import {
   MultiValueContainer,
 } from '@plone/volto/components/manage/Widgets/SelectStyling';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import { getSelectAriaLiveMessages } from 'design-comuni-plone-theme/helpers/react-select';
 
 const messages = defineMessages({
   default: {
@@ -76,6 +77,8 @@ const messages = defineMessages({
     id: 'No options',
     defaultMessage: 'No options',
   },
+  risultato: { id: 'select_risultato', defaultMessage: 'risultato' },
+  risultati: { id: 'select_risultati', defaultMessage: 'risultati' },
 });
 
 /**
@@ -149,6 +152,7 @@ class SelectWidget extends Component {
     onDelete: null,
     noValueOption: true,
     customOptionStyling: null,
+    ariaLabel: null,
   };
 
   /**
@@ -235,6 +239,7 @@ class SelectWidget extends Component {
           options={options}
           styles={customSelectStyles}
           theme={selectTheme}
+          aria-label={this.props.ariaLabel || this.props.title}
           components={{
             ...(options?.length > 25 && {
               MenuList,
@@ -265,6 +270,14 @@ class SelectWidget extends Component {
           }}
           onBlur={() => onBlur(id, normalizedValue)}
           isClearable
+          aria-live="polite"
+          ariaLiveMessages={getSelectAriaLiveMessages(intl)}
+          screenReaderStatus={({ count }) =>
+            `${count} ${count !== 1
+              ? intl.formatMessage(messages.risultati)
+              : intl.formatMessage(messages.risultato)
+            }`
+          }
         />
       </FormFieldWrapper>
     );

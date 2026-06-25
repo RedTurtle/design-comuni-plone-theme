@@ -16,9 +16,11 @@ const EnhanceLink = ({
 
   let size =
     enhanced_link_infos.getObjSize?.replaceAll('.', ',') ??
-    prettybytes(enhanced_link_infos.size, {
-      locale: intl.locale,
-    })?.toUpperCase();
+    (enhanced_link_infos?.size
+      ? prettybytes(enhanced_link_infos.size, {
+          locale: intl.locale,
+        })?.toUpperCase()
+      : undefined);
 
   if (enhanced_link_infos) {
     const viewFormat = getFileViewFormat(enhanced_link_infos);
@@ -30,7 +32,7 @@ const EnhanceLink = ({
             <span className="file-format">{viewFormat.label}</span> -{' '}
           </>
         )}
-        <span className="file-size">{size}</span>
+        {size && <span className="file-size">{size}</span>}
         {')'}
       </span>
     );
