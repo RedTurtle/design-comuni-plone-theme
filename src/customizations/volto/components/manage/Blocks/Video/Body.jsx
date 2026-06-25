@@ -11,6 +11,7 @@
  */
 
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Embed, Message } from 'semantic-ui-react';
@@ -27,18 +28,6 @@ import config from '@plone/volto/registry';
  * @extends Component
  */
 const Body = ({ data, isEditMode }) => {
-
-  const gdprPreferences = useSelector(
-    (state) => {
-      return state.gdprPrivacyConsent ? state.gdprPrivacyConsent?.preferences : [];
-    },
-  );
-
-  const embedAllowed =
-    gdprPreferences !== undefined &&
-    (gdprPreferences?.prof_VIMEO === true ||
-      gdprPreferences?.prof_YOUTUBE === true);
-
   const allowsExternals =
     data.allowExternals !== undefined
       ? !!data.allowExternals
@@ -100,7 +89,7 @@ const Body = ({ data, isEditMode }) => {
           })}
         >
           <ConditionalEmbed url={data.url}>
-            {embedAllowed && (data.url.match('youtu') ? (
+            {data.url.match('youtu') ? (
               <>
                 {data.url.match('list') ? (
                   <Embed
@@ -124,10 +113,11 @@ const Body = ({ data, isEditMode }) => {
                           isInternalURL(
                             data.url.replace(getParentUrl(apiPath), ''),
                           )
-                            ? `${data.url}${data.url.indexOf('@@download/file') < 0
-                              ? '/@@download/file'
-                              : ''
-                            }`
+                            ? `${data.url}${
+                                data.url.indexOf('@@download/file') < 0
+                                  ? '/@@download/file'
+                                  : ''
+                              }`
                             : data.url
                         }
                         controls
@@ -159,7 +149,7 @@ const Body = ({ data, isEditMode }) => {
                   </>
                 )}
               </>
-            ))}
+            )}
           </ConditionalEmbed>
         </div>
       )}

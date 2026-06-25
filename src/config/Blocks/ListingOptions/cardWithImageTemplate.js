@@ -14,7 +14,7 @@ const messages = defineMessages({
   },
   natural_image_size: {
     id: 'natural_image_size',
-    defineMessages: "Non alterare le dimensioni naturali dell'immagine",
+    defaultMessage: "Non alterare le dimensioni naturali dell'immagine",
   },
   show_topics: {
     id: 'show_topics',
