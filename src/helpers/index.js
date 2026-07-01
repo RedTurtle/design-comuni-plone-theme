@@ -37,6 +37,7 @@ export {
   videoUrlHelper,
   checkIfValidVideoLink,
 } from 'design-comuni-plone-theme/helpers/videoUrlHelper';
+export { useVideoEmbedFocus } from 'design-comuni-plone-theme/helpers/videoEmbedFocus';
 export {
   blockIsNotEmptyPlaceholder,
   SSRRenderHtml,
