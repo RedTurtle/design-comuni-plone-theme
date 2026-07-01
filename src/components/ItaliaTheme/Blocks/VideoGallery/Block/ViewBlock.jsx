@@ -130,7 +130,7 @@ const ViewBlock = ({ data, index, isEditMode = false }) => {
                         : data.url
                     }
                     controls
-                    poster={placeholder}
+                    poster={placeholder || undefined}
                     type="video/mp4"
                   />
                 ) : data.allowExternals ? (
