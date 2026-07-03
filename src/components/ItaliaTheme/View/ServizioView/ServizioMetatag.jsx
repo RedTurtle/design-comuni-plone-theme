@@ -1,8 +1,13 @@
 import { useIntl } from 'react-intl';
 import { Helmet, toPublicURL, isInternalURL } from '@plone/volto/helpers';
+import config from '@plone/volto/registry';
 import { SiteProperty } from 'volto-site-settings';
 import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
 import { richTextHasContent } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+
+const isVoltoSchemaorgInstalled = config.settings.addonsInfo.some(
+  (addon) => addon.name === '@redturtle/volto-schemaorg',
+);
 
 const fieldDataToPlainText = (field) => {
   return field.blocks_layout.items.reduce((accumulator, item, index) => {
@@ -20,6 +25,11 @@ const fieldDataToPlainText = (field) => {
 
 const ServizioMetatag = ({ content }) => {
   const intl = useIntl();
+
+  if (isVoltoSchemaorgInstalled) {
+    return null;
+  }
+
   let siteTitle = SiteProperty({
     property: 'site_title',
     getValue: true,
