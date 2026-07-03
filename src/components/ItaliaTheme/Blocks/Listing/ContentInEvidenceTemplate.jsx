@@ -23,6 +23,7 @@ import {
   getCalendarDate,
   getEventRecurrenceMore,
   getComponentWithFallback,
+  contentHasImage,
 } from 'design-comuni-plone-theme/helpers';
 import {
   ListingCategory,
@@ -33,8 +34,12 @@ import {
   ListingImage,
   RassegnaInfo,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { getVariationPropsDefaults } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
 
 const ContentInEvidenceTemplate = (props) => {
+  const defaultVariationProps = getVariationPropsDefaults(
+    'contentInEvidenceTemplate',
+  );
   const {
     items,
     title,
@@ -47,12 +52,13 @@ const ContentInEvidenceTemplate = (props) => {
     // linkmore_id_lighthouse,
     titleLine,
     rrule,
+    wrap_title = defaultVariationProps.wrap_title,
   } = props;
   const intl = useIntl();
 
   return (
     <div className="contentInEvidenceTemplate">
-      <Container>
+      <Container className="px-4 pt-3">
         {title && (
           <Row>
             <Col>
@@ -66,13 +72,7 @@ const ContentInEvidenceTemplate = (props) => {
           const date = getCalendarDate(item, rrule.rrulestr);
           const eventRecurrenceMore = getEventRecurrenceMore(item, isEditMode);
           const listingText = <ListingText item={item} />;
-          const image = ListingImage({
-            item,
-            className: 'item-image',
-            loading: 'eager',
-            sizes: '(max-width:425px) 400px, (max-width:767px) 520px, 650px',
-            showTitleAttr: false,
-          });
+          const hasImage = contentHasImage(item);
           const icon = getItemIcon(item);
           const BlockExtraTags = getComponentWithFallback({
             name: 'BlockExtraTags',
@@ -83,9 +83,16 @@ const ContentInEvidenceTemplate = (props) => {
             item?.parent?.['@type'] === 'Event' && item?.['@type'] === 'Event';
 
           return (
-            <Row key={item['@id']} className="content-in-evidence">
-              {image && (
-                <Col lg={{ size: 6, offset: 1, order: 2 }}>{image}</Col>
+            <Row key={item['@id']} className="content-in-evidence my-3">
+              {hasImage && (
+                <Col lg={{ size: 6, offset: 1, order: 2 }}>
+                  <ListingImage
+                    item={item}
+                    className="item-image"
+                    loading="eager"
+                    sizes="(max-width:425px) 400px, (max-width:767px) 520px, 650px"
+                  />
+                </Col>
               )}
               <Col lg={{ size: 5, order: 1 }}>
                 <Card>
@@ -99,9 +106,10 @@ const ContentInEvidenceTemplate = (props) => {
                     </CardCategory>
                     <CardTitle
                       tag="h2"
-                      className={`${
-                        isEventAppointment ? 'rassegna-appointment-title' : ''
-                      }`}
+                      className={cx('', {
+                        'rassegna-appointment-title': isEventAppointment,
+                        'wrap-title': wrap_title,
+                      })}
                     >
                       <UniversalLink item={item} data-element={id_lighthouse}>
                         {item.title}

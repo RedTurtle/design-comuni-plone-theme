@@ -7,9 +7,11 @@
  * - added ConditionalEmbed
  * - changed icon for preview with FontAwesome icon
  * - overhauled url checking, it would break on correct links and allow incorrect ones
+ * - video passed to ConditionalEmbed only when cookie are accepted, preventing the fetch when not accepted
  */
 
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Embed, Message } from 'semantic-ui-react';

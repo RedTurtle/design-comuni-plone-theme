@@ -7,6 +7,7 @@ import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { Button, Alert } from 'design-react-kit';
 import { getFieldName } from 'volto-form-block/components/utils';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   success: {
@@ -15,12 +16,12 @@ const messages = defineMessages({
   },
   success_warning: {
     id: 'form_submit_success_warning',
-    defaultMessage: "You've been added to the waiting list",
+    defaultMessage: 'Your registration is on the waiting list.',
   },
   success_warning_description: {
     id: 'form_submit_success_warning_description',
     defaultMessage:
-      "Your data has been submitted, but the subscription limit has been reached and you've been added to the waiting list.",
+      'Your data has been submitted successfully. However, the maximum number of registrations has been reached: your request has been placed on the waiting list.',
   },
   reset: {
     id: 'form_reset',
@@ -56,6 +57,8 @@ const replaceMessage = (text, sent_data) => {
 
 const FormResult = ({ formState, data, resetFormState }) => {
   const intl = useIntl();
+  const displayThankYouInAlertMessageFormBlock =
+    config.settings.siteProperties.displayThankYouInAlertMessageFormBlock;
   return (
     <Alert
       color={!formState.warning ? 'success' : 'warning'}
@@ -70,9 +73,17 @@ const FormResult = ({ formState, data, resetFormState }) => {
           : intl.formatMessage(messages.success_warning)}
       </h4>
       <br />
+      {/* Warning submit limit  */}
+      {formState.warning && (
+        <>
+          <p>{intl.formatMessage(messages.success_warning_description)}</p>
+        </>
+      )}
+
       {/* Custom message */}
-      {!formState.warning ? (
-        data.send_message && (
+      {data.send_message &&
+        (!formState.warning ||
+          (formState.warning && displayThankYouInAlertMessageFormBlock)) && (
           <>
             <p
               dangerouslySetInnerHTML={{
@@ -84,13 +95,7 @@ const FormResult = ({ formState, data, resetFormState }) => {
             />
             <br />
           </>
-        )
-      ) : (
-        <>
-          <p>{intl.formatMessage(messages.success_warning_description)}</p>
-        </>
-      )}
-
+        )}
       <Button
         color="primary"
         outline

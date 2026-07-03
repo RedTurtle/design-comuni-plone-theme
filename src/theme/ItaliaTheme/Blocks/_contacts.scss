@@ -3,18 +3,7 @@
     height: auto;
   }
 
-  .ui.basic.button.delete-button {
-    padding: 0.5rem;
-    text-align: center;
-
-    svg:not(:hover) {
-      fill: #fff !important;
-    }
-
-    &:hover {
-      border-radius: 100%;
-    }
-  }
+  @include blocks-with-bg-edit-buttons();
 
   .bg-primary {
     .block-header {
@@ -26,7 +15,7 @@
       .description h4,
       .description h5,
       .description h6,
-      .description a {
+      .description a:not(.btn) {
         color: $primary-text;
       }
     }
@@ -41,7 +30,8 @@
       .description h3,
       .description h4,
       .description h5,
-      .description h6 {
+      .description h6,
+      .description a:not(.btn) {
         color: $secondary-text;
       }
     }
@@ -74,10 +64,6 @@
     .card-wrapper {
       height: 100%;
     }
-
-    .ui.basic.button.delete-button {
-      padding: 0.36rem;
-    }
   }
 
   .button.add-element {
@@ -90,15 +76,15 @@
     }
 
     .contact-title {
+      margin-bottom: 1rem;
       font-size: 1.35rem;
       font-weight: bold;
       line-height: 1.4em;
-
-      margin-bottom: 1rem;
     }
 
     .contact-text {
       font-size: 0.9rem;
+
       .detached-slate-editor {
         margin-bottom: 1rem;
       }
@@ -106,32 +92,22 @@
 
     .contact-info {
       display: flex;
-
-      &:first-of-type {
-        align-items: center;
-
-        .icon-wrapper {
-          margin-top: 0;
-        }
-      }
-
-      &:not(:last-of-type) {
-        margin-bottom: 1rem;
-      }
+      align-items: center;
 
       [role='textbox'] {
         //slate editor
         width: 100%;
+
         &[data-slate-editor='true'] {
           min-height: 1em;
         }
       }
 
       .icon-wrapper {
-        margin-top: 0.2rem;
-        margin-right: 1rem;
         display: flex;
         align-items: center;
+        margin-top: 0.2rem;
+        margin-right: 1rem;
       }
 
       .tel {

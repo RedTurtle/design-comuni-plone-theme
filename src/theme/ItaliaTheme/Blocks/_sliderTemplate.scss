@@ -93,19 +93,21 @@
           width: 100%;
           padding: 0.7rem 1.2rem;
           margin: 0 auto;
+
           background-color: #3f4142e0;
-          font-size: 1.8rem;
-          font-weight: bold;
-          text-decoration: none;
+          color: $white;
 
           .slide-link {
             color: $white;
+            &:hover,
+            &:active {
+              text-decoration-line: underline;
+            }
           }
 
-          &:hover,
-          &:active {
-            text-decoration-line: underline;
-          }
+          font-size: 1.8rem;
+          font-weight: bold;
+          text-decoration: none;
 
           .icon {
             margin-left: 0.5em;

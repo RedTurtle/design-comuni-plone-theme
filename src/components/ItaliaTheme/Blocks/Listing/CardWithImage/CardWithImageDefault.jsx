@@ -21,6 +21,7 @@ import {
   getCalendarDate,
   getEventRecurrenceMore,
   getComponentWithFallback,
+  contentHasImage,
 } from 'design-comuni-plone-theme/helpers';
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
 
@@ -33,8 +34,12 @@ import {
   CardPersona,
   RassegnaInfo,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { getVariationPropsDefaults } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
 
 const CardWithImageDefault = (props) => {
+  const defaultVariationProps = getVariationPropsDefaults(
+    'cardWithImageTemplate',
+  );
   const {
     item,
     index,
@@ -50,6 +55,8 @@ const CardWithImageDefault = (props) => {
     natural_image_size = false,
     id_lighthouse,
     rrule,
+    title, // title of entire block
+    wrap_title = defaultVariationProps.wrap_title,
   } = props;
 
   const imagesToShow = set_four_columns ? 4 : 3;
@@ -61,10 +68,9 @@ const CardWithImageDefault = (props) => {
     : getEventRecurrenceMore(item, isEditMode);
   const listingText = show_description ? <ListingText item={item} /> : null;
 
-  const image = ListingImage({ item, showTitleAttr: false });
-
   const showImage =
-    (index < imagesToShow || always_show_image) && image != null;
+    contentHasImage(item) && (index < imagesToShow || always_show_image);
+
   const category = getCategory(item, show_type, show_section, props);
   const topics = show_topics ? item.tassonomia_argomenti : null;
 
@@ -72,7 +78,6 @@ const CardWithImageDefault = (props) => {
     name: 'BlockExtraTags',
     dependencies: ['CardWithImageDefault', item['@type']],
   }).component;
-
   const isEventAppointment =
     item?.parent?.['@type'] === 'Event' && item?.['@type'] === 'Event';
 
@@ -106,7 +111,7 @@ const CardWithImageDefault = (props) => {
               })}
             >
               <div className="img-responsive img-responsive-panoramic">
-                {image}
+                <ListingImage item={item} />
                 {item['@type'] === 'Event' && (
                   <CardCalendar
                     start={item.start}
@@ -124,10 +129,12 @@ const CardWithImageDefault = (props) => {
               </CardCategory>
             )}
             <CardTitle
-              tag="h3"
-              className={`${
-                isEventAppointment ? 'rassegna-appointment-title' : ''
-              }`}
+              tag={title ? 'h3' : 'h2'}
+              className={cx('', {
+                'rassegna-appointment-title': isEventAppointment,
+                h3: !title,
+                'wrap-title': wrap_title,
+              })}
             >
               <UniversalLink
                 item={!isEditMode ? item : null}
@@ -151,7 +158,7 @@ const CardWithImageDefault = (props) => {
             <BlockExtraTags {...props} item={item} itemIndex={index} />
             {topics?.length > 0 && (
               <div
-                className={cx('', {
+                className={cx('card-with-image-additional-links', {
                   'mb-3': eventRecurrenceMore,
                 })}
               >

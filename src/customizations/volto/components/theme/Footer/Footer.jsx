@@ -13,7 +13,10 @@ import {
   SubsiteFooter,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/';
 
-import { FeedbackForm } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import {
+  FeedbackForm,
+  ContactsBlock,
+} from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
 /**
  * Footer component class.
@@ -25,15 +28,25 @@ const Footer = () => {
   useGoogleAnalytics();
   const currentContent = useSelector((state) => state.content?.data);
   const contentType = currentContent ? currentContent['@type'] : null;
-  const noFeedbackFormFor = config.settings.siteProperties.noFeedbackFormFor || [];
+  const noFeedbackFormFor =
+    config.settings.siteProperties.noFeedbackFormFor || [];
+  const showFeedbackForm = config.settings.siteProperties
+    .enableNoFeedbackFormFor
+    ? contentType &&
+      !noFeedbackFormFor.includes(contentType) &&
+      config.settings.siteProperties.enableFeedbackForm
+    : true;
+
+  const showContactsBlock = config.settings.siteProperties.enableContactsBlock;
 
   return (
     <>
-      {contentType &&
-        !noFeedbackFormFor.includes(contentType) &&
-        config.settings.siteProperties.enableFeedbackForm && (
+      {showContactsBlock && <ContactsBlock />}
+      {showFeedbackForm && (
+        <div className="public-ui" id="customer-satisfaction-form">
           <FeedbackForm />
-        )}
+        </div>
+      )}
 
       <SubsiteFooter />
       <footer className="it-footer" id="footer">

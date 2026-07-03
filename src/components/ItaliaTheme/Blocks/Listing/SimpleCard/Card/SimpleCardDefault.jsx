@@ -26,6 +26,7 @@ import {
   getEventRecurrenceMore,
   getComponentWithFallback,
 } from 'design-comuni-plone-theme/helpers';
+import { getVariationPropsDefaults } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -42,7 +43,7 @@ const messages = defineMessages({
 
 const SimpleCardDefault = (props) => {
   const intl = useIntl();
-
+  const defaultVariationProps = getVariationPropsDefaults('simpleCard');
   moment.locale(intl.locale);
 
   const {
@@ -54,10 +55,12 @@ const SimpleCardDefault = (props) => {
     show_description = true,
     show_detail_link,
     detail_link_label,
+    wrap_title = defaultVariationProps.wrap_title,
     hide_dates,
     id_lighthouse,
     rrule,
     index,
+    title,
   } = props;
 
   const getItemClass = (item) => {
@@ -123,10 +126,12 @@ const SimpleCardDefault = (props) => {
           </CardCategory>
         )}
         <CardTitle
-          tag="h3"
-          className={`${
-            isEventAppointment ? 'rassegna-appointment-title' : ''
-          }`}
+          tag={title ? 'h3' : 'h2'}
+          className={cx('', {
+            'rassegna-appointment-title': isEventAppointment,
+            h3: !title,
+            'wrap-title': wrap_title,
+          })}
         >
           <UniversalLink
             item={!isEditMode ? item : null}
@@ -176,6 +181,7 @@ const SimpleCardDefault = (props) => {
               intl.formatMessage(messages.card_detail_label)
             }
             aria-hidden="true"
+            tabindex="-1"
           />
         )}
       </CardBody>

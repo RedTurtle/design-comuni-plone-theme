@@ -20,6 +20,17 @@
   &.very.basic {
     border: none;
 
+    th,
+    td {
+      &:first-of-type {
+        border-left: none;
+      }
+
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+
     tbody > tr {
       &:first-of-type {
         th,
@@ -28,28 +39,36 @@
         }
       }
 
-      &:last-of-type {
-        th,
-        td {
-          border-bottom: none;
-        }
-      }
-
       th,
       td {
-        &:first-of-type {
-          border-left: none;
-        }
-
-        &:last-of-type {
-          border-right: none;
-        }
+        border-bottom: none;
       }
+      border-width: 0;
     }
   }
 
   &.inverted {
     @extend .table-dark;
+    a {
+      color: color-contrast($primary);
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .blockquote,
+    .blockquote-card {
+      border-color: color-contrast($primary) !important;
+    }
+    .blockquote-card {
+      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+      &.dark {
+        background-color: color-contrast($primary);
+        color: $text-color;
+        a {
+          color: $link-color;
+        }
+      }
+    }
   }
 
   &:not(.inverted) {
@@ -64,4 +83,12 @@
       margin: 0;
     }
   }
+
+  .toolbar {
+    top: -3.34rem;
+  }
+}
+
+.cms-ui .ui.table th {
+  text-transform: none;
 }

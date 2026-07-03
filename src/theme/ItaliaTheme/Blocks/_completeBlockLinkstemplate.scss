@@ -1,12 +1,10 @@
 .complete-block-links-template {
-  margin: 40px 0;
-
   a {
     text-decoration: none;
   }
 
-  .col-item {
-    margin-bottom: 22px;
+  .row {
+    row-gap: 22px;
   }
 
   .image-container {
@@ -19,14 +17,6 @@
     margin: 18px 0px 0px 18px;
 
     background-color: $white;
-
-    .volto-image {
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
   }
 
   .card.card-bg {
@@ -53,5 +43,10 @@
 
   .no-external-if-link > .external-link {
     display: none;
+  }
+
+  img.responsive {
+    height: 100%;
+    object-fit: cover;
   }
 }

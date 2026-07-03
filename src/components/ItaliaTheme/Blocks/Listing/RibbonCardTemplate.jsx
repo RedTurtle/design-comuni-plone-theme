@@ -30,6 +30,7 @@ import {
   getComponentWithFallback,
 } from 'design-comuni-plone-theme/helpers';
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
+import { getVariationPropsDefaults } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
 
 const messages = defineMessages({
   default_detail_link: {
@@ -45,6 +46,7 @@ const messages = defineMessages({
 const RibbonCardTemplate = (props) => {
   const intl = useIntl();
   moment.locale(intl.locale);
+  const defaultVariationProps = getVariationPropsDefaults('ribbonCardTemplate');
 
   const {
     items,
@@ -60,15 +62,17 @@ const RibbonCardTemplate = (props) => {
     show_icon = true,
     show_description = true,
     show_type,
+    show_block_bg,
     hide_dates,
     id_lighthouse,
     titleLine,
     linkmore_id_lighthouse,
     rrule,
+    wrap_title = defaultVariationProps.wrap_title,
   } = props;
   return (
     <div className="ribbon-card-template">
-      <Container className="px-4">
+      <Container className="px-4 pt-3">
         {title && (
           <Row>
             <Col>
@@ -79,7 +83,7 @@ const RibbonCardTemplate = (props) => {
           </Row>
         )}
 
-        <Row className="mb-4">
+        <Row className={cx({ 'pb-3': show_block_bg })}>
           {items.map((item, index) => {
             const itemTitle = item.title || item.id;
             const showRibbon =
@@ -106,10 +110,10 @@ const RibbonCardTemplate = (props) => {
               item.parent?.['@type'] === 'Event' && item?.['@type'] === 'Event';
 
             return (
-              <Col lg={4} sm={12} key={index}>
+              <Col lg={4} sm={12} key={index} className="pb-3">
                 <Card
                   className={cx(
-                    `card-bg card-big align-items-top rounded shadow`,
+                    `card-bg card-big align-items-top rounded shadow mt-3`,
                     { show_detail_link: show_detail_link },
                   )}
                   noWrapper={false}
@@ -139,10 +143,12 @@ const RibbonCardTemplate = (props) => {
                   >
                     {date && <div className="dates">{date}</div>}
                     <CardTitle
-                      tag="h3"
-                      className={`${
-                        isEventAppointment ? 'rassegna-appointment-title' : ''
-                      }`}
+                      tag={title ? 'h3' : 'h2'}
+                      className={cx('', {
+                        'rassegna-appointment-title': isEventAppointment,
+                        h3: !title,
+                        'wrap-title': wrap_title,
+                      })}
                     >
                       <UniversalLink
                         item={!isEditMode ? item : null}
@@ -170,6 +176,7 @@ const RibbonCardTemplate = (props) => {
                           intl.formatMessage(messages.default_detail_link)
                         }
                         aria-hidden="true"
+                        tabindex="-1"
                       />
                     )}
                   </CardBody>

@@ -17,12 +17,11 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import {
   ListingImage,
   ListingLinkMore,
-  NextArrow,
-  PrevArrow,
   SingleSlideWrapper,
   CarouselWrapper,
   ButtonPlayPause,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { useSlider } from 'design-comuni-plone-theme/components/ItaliaTheme/Slider/slider';
 import { GalleryPreview } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const messages = defineMessages({
@@ -48,12 +47,21 @@ const PhotogalleryTemplate = ({
   reactSlick,
   titleLine,
   linkmore_id_lighthouse,
+  block,
 }) => {
   const intl = useIntl();
-  const slider = useRef(null);
+  //const slider = useRef(null);
   const [autoplay, setAutoplay] = useState(false);
   const [viewImageIndex, setViewImageIndex] = useState(null);
   const Slider = reactSlick.default;
+
+  const {
+    slider,
+    focusSlide,
+    SliderNextArrow,
+    SliderPrevArrow,
+    handleSlideKeydown,
+  } = useSlider(autoplay, setAutoplay, block);
 
   const toggleAutoplay = () => {
     if (!slider?.current) return;
@@ -69,6 +77,7 @@ const PhotogalleryTemplate = ({
   const settings = {
     dots: true,
     infinite: true,
+    lazyLoad: true,
     autoplay: autoplay,
     speed: 500,
     slidesToShow: items.length < 3 ? items.length : 3,
@@ -79,7 +88,7 @@ const PhotogalleryTemplate = ({
     pauseOnDotsHover: true,
     swipe: true,
     swipeToSlide: true,
-    focusOnSelect: true,
+    focusOnSelect: false,
     draggable: true,
     accessibility: true,
     responsive: [
@@ -108,8 +117,8 @@ const PhotogalleryTemplate = ({
         },
       },
     ],
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    nextArrow: <SliderNextArrow intl={intl} />,
+    prevArrow: <SliderPrevArrow intl={intl} />,
     appendDots: (dots) => (
       <div>
         <ButtonPlayPause
@@ -123,21 +132,22 @@ const PhotogalleryTemplate = ({
         </ul>
       </div>
     ),
+    afterChange: focusSlide, // Custom handling of focus for a11y
   };
 
   const getCaption = (item) => item.description ?? item.rights ?? null;
 
-  const figure = (image, item) => {
+  const figure = (imageProps, item) => {
     return (
       <figure className="img-wrapper volto-image responsive">
-        {image}
+        <ListingImage {...imageProps} />
         {getCaption(item) && <figcaption>{getCaption(item)}</figcaption>}
       </figure>
     );
   };
 
   return (
-    <div className="photogallery">
+    <div className="photogallery" id={'outside-slider-' + block}>
       <Container className="px-4">
         {title && (
           <Row>
@@ -148,11 +158,11 @@ const PhotogalleryTemplate = ({
             </Col>
           </Row>
         )}
-        <div className="slider-container px-4 px-md-0">
+        <div className="slider-container px-4 px-md-0" id={'slider_' + block}>
           <CarouselWrapper className="it-card-bg">
             <Slider {...settings} ref={slider}>
               {items.map((item, i) => {
-                const image = ListingImage({
+                const imageProps = {
                   item,
                   sizes: `(max-width:600px) 450px, (max-width:1024px) ${
                     items.length < 2 ? '1000' : '500'
@@ -164,7 +174,11 @@ const PhotogalleryTemplate = ({
                         : '450'
                   }px`,
                   noWrapLink: true,
-                });
+                  showDefault: true,
+                };
+                const nextIndex = i < items.length - 1 ? i + 1 : null;
+                const prevIndex = i > 0 ? i - 1 : null;
+
                 return (
                   <SingleSlideWrapper
                     className={cx('', {
@@ -172,14 +186,17 @@ const PhotogalleryTemplate = ({
                     })}
                     key={item['@id']}
                     index={i}
+                    onKeyDown={handleSlideKeydown(i, prevIndex, nextIndex)}
                   >
                     {!show_image_popup ? (
                       <UniversalLink
                         item={item}
                         openLinkInNewTab={true}
                         title={intl.formatMessage(messages.viewImage)}
+                        tabIndex={0}
+                        data-slide={i}
                       >
-                        {figure(image, item)}
+                        {figure(imageProps, item)}
                       </UniversalLink>
                     ) : (
                       <a
@@ -203,8 +220,10 @@ const PhotogalleryTemplate = ({
                         aria-label={`${intl.formatMessage(
                           messages.viewPreview,
                         )} ${item.title}`}
+                        tabIndex={0}
+                        data-slide={i}
                       >
-                        {figure(image, item)}
+                        {figure(imageProps, item)}
                       </a>
                     )}
                   </SingleSlideWrapper>

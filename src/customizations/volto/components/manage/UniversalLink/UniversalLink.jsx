@@ -7,22 +7,26 @@
  * - aggiunto title informativo per link esterni
  * - aggiunta la dimensione del file se il link punta a un file (enhanced_link_infos)
  * - aggiunto il parametro hideFileFormat per nascondere il formato del file dall'enhance link
+ * - aggiunta la condizione su @@display-file e @download-file per gestire i casi in cui questi parametri vengono imposti a monte
+ * - aggiunta classe matomo_download sui link ai file
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useIntl, defineMessages } from 'react-intl';
-import { HashLink as Link } from 'react-router-hash-link';
-import { useSelector } from 'react-redux';
 import {
+  URLUtils,
   flattenToAppURL,
   isInternalURL,
-  URLUtils,
 } from '@plone/volto/helpers/Url/Url';
-import { matchPath } from 'react-router';
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { defineMessages, useIntl } from 'react-intl';
+
 import { EnhanceLink } from 'design-comuni-plone-theme/helpers';
+import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { HashLink as Link } from 'react-router-hash-link';
+import PropTypes from 'prop-types';
+import React from 'react';
 import config from '@plone/volto/registry';
+import cx from 'classnames';
+import { matchPath } from 'react-router';
+import { useSelector } from 'react-redux';
 
 const messages = defineMessages({
   opensInNewTab: {
@@ -49,6 +53,7 @@ const UniversalLink = ({
   };
   //questo perchè il provider di intl non è sempre definito, ad esempio in slate_wysiwyg_box (Slate RichTextWidget)
   let intl = null;
+
   try {
     intl = useIntl();
     Object.keys(translations).forEach(
@@ -85,18 +90,21 @@ const UniversalLink = ({
       }
 
       //case: item of type 'File'
-      if (
-        !token &&
-        config.settings.downloadableObjects.includes(item['@type'])
-      ) {
-        url = `${url}/@@download/file`;
-      }
+      if (!url.includes('@@download') && !url.includes('@@display-file')) {
+        //se non è gia stato aggiunto il suffisso per il download nell'@id dell'item
+        if (
+          !token &&
+          config.settings.downloadableObjects.includes(item['@type'])
+        ) {
+          url = `${url}/@@download/file`;
+        }
 
-      if (
-        !token &&
-        config.settings.viewableInBrowserObjects.includes(item['@type'])
-      ) {
-        url = `${url}/@@display-file/file`;
+        if (
+          !token &&
+          config.settings.viewableInBrowserObjects.includes(item['@type'])
+        ) {
+          url = `${url}/@@display-file/file`;
+        }
       }
     }
   }
@@ -132,7 +140,9 @@ const UniversalLink = ({
     extended_children = enhanced_link.children;
     aria_label = enhanced_link.aria_label;
   }
-
+  const showExternalIcon =
+    !overrideMarkSpecialLinks &&
+    config.settings.siteProperties.markSpecialLinks;
   let tag = (
     <Link
       to={flattenToAppURL(url)}
@@ -167,22 +177,23 @@ const UniversalLink = ({
             : null
         }
         rel="noopener noreferrer"
-        className={className}
+        className={cx(className, {
+          'with-external-link-icon': showExternalIcon,
+        })}
         {...props}
         aria-label={aria_label}
       >
         {children}
-        {!overrideMarkSpecialLinks &&
-          config.settings.siteProperties.markSpecialLinks && (
-            <Icon
-              icon="it-external-link"
-              title={`${title ? title + ' - ' : ''}${intl?.formatMessage({
-                id: 'opensInNewTab',
-              })}`}
-              size="xs"
-              className="ms-1 align-sub external-link"
-            />
-          )}
+        {showExternalIcon && (
+          <Icon
+            icon="it-external-link"
+            title={`${title ? title + ' - ' : ''}${intl?.formatMessage({
+              id: 'opensInNewTab',
+            })}`}
+            size="xs"
+            className="ms-1 align-sub external-link"
+          />
+        )}
       </a>
     );
   } else if (isDownload) {
@@ -191,7 +202,9 @@ const UniversalLink = ({
         href={flattenToAppURL(url)}
         download
         title={title}
-        className={className}
+        className={
+          className ? cx(className, 'matomo_download') : 'matomo_download'
+        }
         {...props}
         aria-label={aria_label}
       >
@@ -206,7 +219,9 @@ const UniversalLink = ({
         title={title}
         target="_blank"
         rel="noopener noreferrer"
-        className={className}
+        className={
+          className ? cx(className, 'matomo_download') : 'matomo_download'
+        }
         {...props}
         aria-label={aria_label}
       >

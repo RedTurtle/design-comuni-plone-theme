@@ -10,7 +10,7 @@ const messages = defineMessages({
   show_pdf_desc: {
     id: 'show_pdf_desc',
     defaultMessage:
-      "Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata altrimenti vengono scaricati.",
+      "Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata. Se non impostato, i PDF vengono scaricati.",
   },
 });
 
@@ -26,7 +26,7 @@ export const addAttachmentCardTemplateOptions = (
     schema,
     formData,
     intl,
-    ['show_pdf_preview'],
+    ['show_pdf_preview', 'wrap_title'],
     {
       show_pdf_preview: {
         default: false,

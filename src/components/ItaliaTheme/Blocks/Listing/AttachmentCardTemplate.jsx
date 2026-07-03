@@ -1,8 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
+import { getVariationPropsDefaults } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
 import { Container, Card, CardBody, CardTitle } from 'design-react-kit';
 import {
   Icon,
@@ -20,23 +23,32 @@ const messages = defineMessages({
   },
 });
 
-const AttachmentCardTemplate = ({
-  items,
-  isEditMode,
-  linkTitle,
-  linkHref,
-  show_pdf_preview,
-  show_block_bg,
-  title,
-  id_lighthouse,
-  linkAlign,
-  titleLine,
-  linkmore_id_lighthouse,
-}) => {
+const AttachmentCardTemplate = (props) => {
+  const defaultVariationProps = getVariationPropsDefaults(
+    'attachmentCardTemplate',
+  );
+
+  const {
+    items,
+    isEditMode,
+    linkTitle,
+    linkHref,
+    show_pdf_preview,
+    show_block_bg,
+    title,
+    id_lighthouse,
+    linkAlign,
+    titleLine,
+    linkmore_id_lighthouse,
+    wrap_title = defaultVariationProps.wrap_title,
+  } = props;
+
   const intl = useIntl();
 
+  const token = useSelector((state) => state.userSession?.token);
+
   return (
-    <Container className="px-4">
+    <Container className="px-4 pt-3">
       <div className="simple-card-compact-template">
         {title && (
           <h2
@@ -52,16 +64,19 @@ const AttachmentCardTemplate = ({
           {items.map((item, index) => {
             let itemUrl = { ...item };
             //la parte qui sotto commentata non serve perchè gestisce gia tutto UniversalLink e in view si vedrebbe /@@download/file duplicato nell url
-            // if (item['@type'] === 'File') {
-            //   itemUrl = {
-            //     ...item,
-            //     file: item,
-            //     '@id':
-            //       show_pdf_preview && item?.mime_type === 'application/pdf'
-            //         ? item?.['@id'] + '/@@display-file/file'
-            //         : item?.['@id'] + '/@@download/file',
-            //   };
-            // }
+            if (
+              !token &&
+              item['@type'] === 'File' &&
+              item?.mime_type === 'application/pdf'
+            ) {
+              itemUrl = {
+                ...item,
+                file: item,
+                '@id': show_pdf_preview
+                  ? item?.['@id'] + '/@@display-file/file'
+                  : item?.['@id'] + '/@@download/file',
+              };
+            }
 
             return (
               <Card
@@ -81,7 +96,10 @@ const AttachmentCardTemplate = ({
                   />
                 )}
                 <CardBody tag="div">
-                  <CardTitle tag="h5" className="mb-0">
+                  <CardTitle
+                    tag="h5"
+                    className={cx('mb-0', { 'wrap-title': wrap_title })}
+                  >
                     <UniversalLink
                       item={!isEditMode ? itemUrl : null}
                       href={isEditMode ? '#' : null}

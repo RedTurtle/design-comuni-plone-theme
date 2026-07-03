@@ -11,6 +11,7 @@ const SelectFilter = ({
   onChange,
   placeholder,
   isSearchable = false,
+  optionsQuerySize = 25,
 }) => {
   const dispatch = useDispatch();
 
@@ -52,7 +53,12 @@ const SelectFilter = ({
         );
       }
     } else if (options.vocabulary) {
-      dispatch(getVocabulary({ vocabNameOrURL: options.vocabulary }));
+      dispatch(
+        getVocabulary({
+          vocabNameOrURL: options.vocabulary,
+          size: optionsQuerySize,
+        }),
+      );
     }
   }, []);
 
@@ -71,6 +77,7 @@ const SelectFilter = ({
         onChange={(opt) => {
           onChange(id, opt);
         }}
+        label={placeholder}
         options={select_options?.filter((opt) => !!opt.value?.toString()) ?? []}
         isClearable={options?.isClearable ?? true}
         isSearchable={isSearchable}

@@ -17,6 +17,14 @@ export FileWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/
 export PathFiltersWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/PathFiltersWidget';
 export LocationFiltersWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/LocationFiltersWidget';
 export CanaleDigitaleWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CanaleDigitaleWidget';
+export CTFieldsWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CTFieldsWidget';
+export CTTitleColumnWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/CTTitleColumnWidget';
+export BlocksViewWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/BlocksViewWidget';
+export PDCViewWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/PDCViewWidget';
+export DataGridWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/DataGridWidget';
+export ContactsConfigWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget';
+export ContactsConfigForm from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigForm';
+export ConditionallyRequiredDateWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/ConditionallyRequiredDateWidget';
 
 /********* ICONS ********* */
 export getItemIcon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/common/common';
@@ -69,6 +77,7 @@ export Breadcrumbs from 'design-comuni-plone-theme/components/ItaliaTheme/Breadc
 export FeedbackForm from 'design-comuni-plone-theme/components/ItaliaTheme/CustomerSatisfaction/FeedbackForm';
 export AnswersStep from 'design-comuni-plone-theme/components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep';
 export CommentsStep from 'design-comuni-plone-theme/components/ItaliaTheme/CustomerSatisfaction/Steps/CommentsStep';
+export ContactsBlock from 'design-comuni-plone-theme/components/ItaliaTheme/ContactsBlock/ContactsBlock';
 
 /********* BLOCKS ********* */
 export AlertSidebar from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Alert/Sidebar';

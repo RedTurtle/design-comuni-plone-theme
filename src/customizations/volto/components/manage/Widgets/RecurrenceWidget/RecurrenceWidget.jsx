@@ -441,8 +441,11 @@ class RecurrenceWidget extends Component {
               if (freq === FREQUENCES.YEARLY) {
                 formValues['yearly'] = 'byday';
               }
+              const weekday = this.getWeekday(value[0][0]);
+              weekday.n = value[0][1];
               formValues['weekdayOfTheMonth'] = value[0][0];
               formValues['weekdayOfTheMonthIndex'] = value[0][1];
+              formValues['byweekday'] = weekday;
             }
             break;
           case 'bymonth':
@@ -538,7 +541,7 @@ class RecurrenceWidget extends Component {
     }
     let exdates = Object.assign([], rruleSet.exdates());
     let rdates = Object.assign([], rruleSet.rdates());
-    if (field === 'dstart') dstart = value;
+    if (field === 'dtstart') dstart = value;
     else if (field === 'exdates') exdates = value;
     else if (field === 'rdates') rdates = value;
     else if (field === 'freq') {
@@ -625,7 +628,9 @@ class RecurrenceWidget extends Component {
     const byweekday =
       this.state?.rruleSet?.rrules().length > 0
         ? this.state.rruleSet.rrules()[0].origOptions.byweekday
-        : null;
+        : formValues.byweekday
+          ? formValues.byweekday
+          : null;
     const currWeekday = this.getWeekday(moment().day() - 1);
     const currMonth = moment().month() + 1;
 
@@ -990,6 +995,7 @@ class RecurrenceWidget extends Component {
                             )}
                             value={formValues.freq}
                             onChange={this.onChangeRule}
+                            noValueOption={false}
                           />
                           {OPTIONS.frequences[formValues.freq].interval && (
                             <IntervalField

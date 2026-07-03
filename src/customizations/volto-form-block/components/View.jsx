@@ -1,6 +1,7 @@
 // CUSTOMIZATION:
 // - added warning state to form
-
+// - backport for https://github.com/collective/volto-form-block/pull/122
+// - handle field errors coming from backend
 import React, { useState, useEffect, useReducer, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -8,7 +9,6 @@ import { useIntl, defineMessages } from 'react-intl';
 import { submitForm, resetOTP } from 'volto-form-block/actions';
 import { getFieldName } from 'volto-form-block/components/utils';
 import FormView from 'volto-form-block/components/FormView';
-import { formatDate } from '@plone/volto/helpers/Utils/Date';
 import config from '@plone/volto/registry';
 import { Captcha } from 'volto-form-block/components/Widget';
 import { isValidEmail } from 'volto-form-block/helpers/validators';
@@ -242,8 +242,8 @@ const View = ({ data, id, path }) => {
       .verify()
       .then(() => {
         if (isValidForm()) {
-          let attachments = {};
-          let captcha = {
+          const attachments = {};
+          const captcha = {
             provider: data.captcha,
             token: captchaToken.current,
           };
@@ -251,29 +251,34 @@ const View = ({ data, id, path }) => {
             captcha.value = formData[data.captcha_props.id]?.value ?? '';
           }
 
-          let formattedFormData = { ...formData };
+          const formattedFormData = { ...formData };
           data.subblocks.forEach((subblock) => {
-            let name = getFieldName(subblock.label, subblock.id);
+            const name = getFieldName(subblock.label, subblock.id);
             if (formattedFormData[name]?.value) {
               formattedFormData[name].field_id = subblock.field_id;
               const isAttachment =
                 config.blocks.blocksConfig.form.attachment_fields.includes(
                   subblock.field_type,
                 );
-              const isDate = subblock.field_type === 'date';
+              // const isDate = subblock.field_type === 'date';
 
               if (isAttachment) {
-                attachments[name] = formattedFormData[name].value;
+                attachments[name] = {
+                  ...formattedFormData[name].value,
+                  label: formattedFormData[name].label,
+                  field_id: subblock.field_id,
+                };
                 delete formattedFormData[name];
               }
 
-              if (isDate) {
-                formattedFormData[name].value = formatDate({
-                  date: formattedFormData[name].value,
-                  format: 'DD-MM-YYYY',
-                  locale: intl.locale,
-                });
-              }
+              // XXX: dates should be sent as ISO format, not DD-MM-YYYY !
+              // if (isDate) {
+              //   formattedFormData[name].value = formatDate({
+              //     date: formattedFormData[name].value,
+              //     format: 'DD-MM-YYYY',
+              //     locale: intl.locale,
+              //   });
+              // }
             }
           });
           dispatch(
@@ -323,7 +328,7 @@ const View = ({ data, id, path }) => {
 
   useEffect(() => {
     if (submitResults?.loaded) {
-      if (submitResults?.result?.data?.waiting_list) {
+      if (submitResults?.result?.waiting_list) {
         setFormState({
           type: FORM_STATES.warning,
           result: {
@@ -351,11 +356,41 @@ const View = ({ data, id, path }) => {
           });
       }
     } else if (submitResults?.error) {
-      let errorDescription = `${
-        JSON.parse(submitResults.error.response?.text ?? '{}')?.message
-      }`;
+      //CUSTOM: handle field errors coming from backend
+      let fieldsErrors = [];
+      let errorDescription = '';
 
-      setFormState({ type: FORM_STATES.error, error: errorDescription });
+      try {
+        errorDescription = `${
+          JSON.parse(submitResults.error.response?.text ?? '{}')?.message
+        }`;
+
+        if (errorDescription.startsWith('[')) {
+          fieldsErrors = JSON.parse(
+            errorDescription.replaceAll('"', '\\"').replaceAll("'", '"'),
+          );
+        }
+      } catch (e) {
+        errorDescription = 'Error parsing error response';
+      }
+
+      // fieldsErrors = [
+      //   { field_id: '1767088715579', label: 'univoco', message: 'Errore' },
+      // ];
+      if (fieldsErrors?.length > 0) {
+        const v = [];
+        fieldsErrors.forEach((fieldError) => {
+          v.push({
+            field: getFieldName(fieldError.label, fieldError.field_id),
+            message: fieldError.message,
+          });
+        });
+        setFormErrors(v);
+        setFormState({ type: FORM_STATES.error });
+      } else {
+        setFormErrors([]);
+        setFormState({ type: FORM_STATES.error, error: errorDescription });
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [submitResults]);

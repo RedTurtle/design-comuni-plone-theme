@@ -23,6 +23,10 @@ const messages = defineMessages({
     id: 'map_size_large',
     defaultMessage: 'Grande',
   },
+  zoom: {
+    id: 'zoom',
+    defaultMessage: 'Zoom',
+  },
 });
 
 export const addMapTemplateOptions = (schema, formData, intl, position = 1) => {
@@ -34,6 +38,16 @@ export const addMapTemplateOptions = (schema, formData, intl, position = 1) => {
     intl.formatMessage(messages.show_map_full_width),
     null,
     { type: 'boolean' },
+    pos,
+  );
+  pos++;
+
+  addSchemaField(
+    schema,
+    'zoom',
+    intl.formatMessage(messages.zoom),
+    null,
+    { type: 'number', default: 15 },
     pos,
   );
   pos++;

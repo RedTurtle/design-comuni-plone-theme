@@ -3,6 +3,7 @@
  * CUSTOMIZATIONS:
  *  - rimossi i bottoni di allinemento, textlarger e blockquote perchè non funzionano nel widget e non servono in questi campi
  *  - aggiunta la classe public-ui
+ *  - aggiunta la proprietà "fieldSet" per passare il nome del fieldset dentro SlateEditor. Quaste modifica è stata introdotta su volto 18: https://github.com/plone/volto/pull/6803
  */
 
 import React from 'react';
@@ -11,6 +12,7 @@ import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider, useSelector } from 'react-redux';
 import { defineMessages, injectIntl } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 
 import { FormFieldWrapper } from '@plone/volto/components';
 import SlateEditor from '@plone/volto-slate/editor/SlateEditor';
@@ -31,8 +33,7 @@ import '@plone/volto-slate/widgets/style.css';
 
 const messages = defineMessages({
   error: {
-    id:
-      'An error has occurred while editing "{name}" field. We have been notified and we are looking into it. Please save your work and retry. If the issue persists please contact the site administrator.',
+    id: 'An error has occurred while editing "{name}" field. We have been notified and we are looking into it. Please save your work and retry. If the issue persists please contact the site administrator.',
     defaultMessage:
       'An error has occurred while editing "{name}" field. We have been notified and we are looking into it. Please save your work and retry. If the issue persists please contact the site administrator.',
   },
@@ -44,6 +45,7 @@ const HtmlSlateWidget = (props) => {
     onChange,
     value,
     focus,
+    fieldSet,
     className,
     block,
     placeholder,
@@ -62,7 +64,11 @@ const HtmlSlateWidget = (props) => {
       const mockStore = configureStore();
       const html = ReactDOMServer.renderToStaticMarkup(
         <Provider store={mockStore({ userSession: { token } })}>
-          <MemoryRouter>{serializeNodes(value || [])}</MemoryRouter>
+          <MemoryRouter>
+            <IntlProvider locale={intl.locale}>
+              {serializeNodes(value || [])}
+            </IntlProvider>
+          </MemoryRouter>
         </Provider>,
       );
       //console.log('toHtml', value, ' ----> ', html);
@@ -99,17 +105,30 @@ const HtmlSlateWidget = (props) => {
     [editor],
   );
 
-  const valueFromHtml = React.useMemo(() => {
-    //console.log('fromhtml', value, '--->', fromHtml(value));
-    return fromHtml(value);
-  }, [value, fromHtml]);
+  // const valueFromHtml = React.useMemo(() => {
+  //   console.log('fromhtml', value, '--->', fromHtml(value));
+  //   return fromHtml(value);
+  // }, [value, fromHtml]);
 
-  const handleChange = React.useCallback(
-    (newValue) => {
-      onChange(id, toHtml(newValue));
-    },
-    [onChange, toHtml, id],
-  );
+  // fix for cursor moving at the end of text after each keystroke:
+  // useState does not trigger "fromHtml" at each keystroke like previous function did (110-113)
+  // that caused the internal Slate tree to re-render after each keystroke
+
+  // React does not replace slateValue unless you call setSlateValue() yourself.
+  // With useState Slate gets the same object reference between renders.
+  // As you type, only internal Slate ops change the document — React doesn’t rebuild it from HTML.
+
+  // hangleChange does call setSlateValue but:
+  // - The object identity of slateValue remains stable within Slate’s internal lifecycle
+  // - React re-renders, but Slate’s Editable sees the same node tree reference,
+  //   so it doesn’t reset the selection.
+
+  const [slateValue, setSlateValue] = React.useState(() => fromHtml(value));
+
+  const handleChange = (newValue) => {
+    setSlateValue(newValue);
+    onChange(id, toHtml(newValue));
+  };
 
   const handleClick = React.useCallback(() => {
     setSelected(true);
@@ -127,7 +146,7 @@ const HtmlSlateWidget = (props) => {
       <div
         className="slate_wysiwyg_box public-ui"
         role="textbox"
-        tabIndex="-1"
+        tabIndex={-1}
         style={{ boxSizing: 'initial' }}
         onClick={handleClick}
         onKeyDown={() => {}}
@@ -137,13 +156,15 @@ const HtmlSlateWidget = (props) => {
             className={className}
             id={id}
             name={id}
-            value={valueFromHtml}
+            value={slateValue}
+            fieldSet={fieldSet}
             onChange={handleChange}
             block={block}
             selected={selected}
             properties={properties}
             placeholder={placeholder}
             slateSettings={slateSettings}
+            editableProps={{ 'aria-multiline': 'true' }}
           />
         </ErrorBoundary>
       </div>

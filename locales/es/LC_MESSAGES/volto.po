@@ -111,6 +111,13 @@ msgstr ""
 msgid "Callout"
 msgstr ""
 
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+#: components/manage/Contents/ContentsDeleteModal
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Cancel
+msgid "Cancel"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Vedi
@@ -154,6 +161,16 @@ msgstr "Buscar por tema"
 msgid "Cerca per parola chiave"
 msgstr "Buscar por palabra clave"
 
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Change State
+msgid "Change State"
+msgstr ""
+
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Change workflow state recursively
+msgid "Change workflow state recursively"
+msgstr ""
+
 #: overrideTranslations
 # defaultMessage: Pulisci i campi
 msgid "Clear dates"
@@ -186,6 +203,7 @@ msgid "Content"
 msgstr "Contenido"
 
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Contenuto in primo piano
 msgid "Content in evidence"
 msgstr "Contenido destacado"
@@ -198,6 +216,16 @@ msgstr "Contenido"
 #: helpers/Translations/searchBlockExtendedTranslations
 # defaultMessage: Current filters applied
 msgid "Current filters applied"
+msgstr ""
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Cut selected items?
+msgid "Cut selected items?"
+msgstr ""
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Cut this item?
+msgid "Cut this item?"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/Dates
@@ -218,6 +246,27 @@ msgstr ""
 #: helpers/Translations/searchBlockExtendedTranslations
 # defaultMessage: Dal {start} al {end}
 msgid "DateRangeFacetFilterListEntryDalAl"
+msgstr ""
+
+#: components/manage/Contents/ContentsRenameModal
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Default
+msgid "Default"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete selected items?
+msgid "Delete selected items?"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete this item?
+msgid "Delete this item?"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Deleting this item breaks {brokenReferences} {variation}.
+msgid "Deleting this item breaks {brokenReferences} {variation}."
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
@@ -242,6 +291,11 @@ msgstr "Detalles del procedimiento"
 # defaultMessage: Dimensione della mappa
 msgid "Dimensione della mappa"
 msgstr "Tamaño de mapa"
+
+#: overrideTranslations
+# defaultMessage: Add border to inner columns
+msgid "Divide each row into separate cells"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 # defaultMessage: Download
@@ -294,6 +348,11 @@ msgstr "Ocultar"
 # defaultMessage: Nascondi tutti i tipi di contenuto
 msgid "Hide all content types"
 msgstr "Ocultar todos los tipos de contenido"
+
+#: overrideTranslations
+# defaultMessage: Hide headers
+msgid "Hide headers"
+msgstr ""
 
 #: components/ItaliaTheme/Breadcrumbs/Breadcrumbs
 # defaultMessage: Home
@@ -372,6 +431,7 @@ msgstr "El evento no se realizará en las siguientes fechas"
 msgid "Link more"
 msgstr "Enlace más"
 
+#: components/ItaliaTheme/Blocks/Teaser/schema
 #: components/ItaliaTheme/manage/Widgets/LinkToWidget
 # defaultMessage: Link a
 msgid "Link to"
@@ -379,12 +439,14 @@ msgstr "Enlazar a"
 
 #: components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Link ad altro
 msgid "LinkMore"
 msgstr "Enlaces a más"
 
 #: components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Testo per il link ad altro
 msgid "Linkto title"
 msgstr "Texto para el enlace a otra cosa"
@@ -408,6 +470,11 @@ msgstr "Lugar"
 # defaultMessage: Luogo
 msgid "Luogo location filter"
 msgstr "Lugar"
+
+#: overrideTranslations
+# defaultMessage: Make the table sortable
+msgid "Make the table sortable"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
 # defaultMessage: Medio
@@ -450,6 +517,11 @@ msgstr "Mostrar el fondo del bloque"
 msgid "Mostra tutti gli argomenti"
 msgstr "Mostrar todos los temas"
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Navigate to this item
+msgid "Navigate to this item"
+msgstr ""
+
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Nessun risultato ottenuto
 msgid "Nessun risultato ottenuto"
@@ -490,6 +562,21 @@ msgstr "Abrir en un nueva pestaña"
 msgid "Page"
 msgstr ""
 
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Paste
+msgid "Paste"
+msgstr ""
+
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Do you want to paste the item here?
+msgid "Paste item here?"
+msgstr ""
+
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Do you want to paste items here?
+msgid "Paste selected items?"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/PathFiltersWidget
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Filtro
@@ -500,6 +587,11 @@ msgstr "Filtrar"
 # defaultMessage: Seleziona per mettere in pausa lo slider
 msgid "Pause slider"
 msgstr "Pausa"
+
+#: overrideTranslations
+# defaultMessage: Pending
+msgid "Pending"
+msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/PathFiltersWidget
 #: config/Blocks/ListingOptions/utils
@@ -517,10 +609,35 @@ msgstr "Pequeño"
 msgid "Play slider"
 msgstr "Reproducir"
 
+#: components/ItaliaTheme/Blocks/Teaser/ItaliaTeaserBody
+# defaultMessage: Please choose an existing content as source for this element
+msgid "Please choose an existing content as source for this element"
+msgstr ""
+
 #: components/ItaliaTheme/Pagination/PaginationItem
 # defaultMessage: Pagina precedente
 msgid "Previous page"
 msgstr "Pagina anterior"
+
+#: overrideTranslations
+# defaultMessage: Private
+msgid "Private"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Published
+msgid "Published"
+msgstr ""
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: Renaming items...
+msgid "Rename Items Loading Message"
+msgstr ""
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: Rename items
+msgid "Rename items"
+msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/FileWidget
 # defaultMessage: Rimuovi il file
@@ -578,6 +695,16 @@ msgstr "Seleccione todos los tipos de contenido o ninguno"
 msgid "Select all or none"
 msgstr "Seleccionar todo o ninguno"
 
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Select the transition to be used for modifying the items state.
+msgid "Select the transition to be used for modifying the items state."
+msgstr ""
+
+#: components/SelectInput/SelectInput
+# defaultMessage: Seleziona un'opzione
+msgid "SelectInput_default_label"
+msgstr ""
+
 #: components/ItaliaTheme/manage/Widgets/FileWidget
 # defaultMessage: Seleziona un file
 msgid "Seleziona un file"
@@ -587,6 +714,11 @@ msgstr "Seleccione un archivo"
 # defaultMessage: Seleziona un'icona nella barra a lato
 msgid "Seleziona un'icona"
 msgstr "Seleccione un icono en la barra lateral"
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: Short name
+msgid "Short name"
+msgstr ""
 
 #: components/ItaliaTheme/Search/SearchCTs
 #: components/ItaliaTheme/Search/SearchTopics
@@ -599,6 +731,16 @@ msgstr "Mostrar todo"
 msgid "Show all content types"
 msgstr "Mostrar todos los tipos de contenido"
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Some items are also a folder. By deleting them you will delete {containedItemsToDelete} {variation} inside the folders.
+msgid "Some items are also a folder. By deleting them you will delete {containedItemsToDelete} {variation} inside the folders."
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Some items are referenced by other contents. By deleting them {brokenReferences} {variation} will be broken.
+msgid "Some items are referenced by other contents. By deleting them {brokenReferences} {variation} will be broken."
+msgstr ""
+
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: Sono occorsi degli errori
 msgid "Sono occorsi degli errori"
@@ -608,6 +750,21 @@ msgstr "Se produjeron algunos errores."
 # defaultMessage: Iscriviti
 msgid "Subscribe"
 msgstr "Suscribir"
+
+#: overrideTranslations
+# defaultMessage: Table block
+msgid "Table block"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Table color inverted
+msgid "Table color inverted"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Teaser
+msgid "Teaser"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/Accordion/Block/EditBlock
 #: components/ItaliaTheme/Blocks/ContactsBlock/Block/EditBlock
@@ -621,10 +778,26 @@ msgstr "Texto..."
 msgid "Thank you."
 msgstr "Gracias."
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: These items will have broken links
+msgid "These items will have broken links"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: This item is also a folder. By deleting it you will delete {containedItemsToDelete} {variation} inside the folder.
+msgid "This item is also a folder. By deleting it you will delete {containedItemsToDelete} {variation} inside the folder."
+msgstr ""
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: This name will be displayed in the URL.
+msgid "This name will be displayed in the URL."
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Accordion/Edit
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/IconBlocks/Edit
 #: components/ItaliaTheme/Blocks/VideoGallery/Edit
+#: components/manage/Contents/ContentsRenameModal
 # defaultMessage: Titolo...
 msgid "Title"
 msgstr "Título..."
@@ -642,6 +815,11 @@ msgstr "Título..."
 # defaultMessage: Titolo
 msgid "Titolo"
 msgstr "Título"
+
+#: components/ItaliaTheme/ScrollToTop/ScrollToTop
+# defaultMessage: Torna all'inizio della pagina
+msgid "Torna all'inizio della pagina"
+msgstr "Volver al inicio de la página"
 
 #: components/ItaliaTheme/manage/Widgets/FileWidget
 # defaultMessage: Trascina qui il file...
@@ -688,6 +866,11 @@ msgstr "Ingrese texto..."
 # defaultMessage: Type the title…
 msgid "Type the title…"
 msgstr "Ingrese el título..."
+
+#: components/ItaliaTheme/View/UOView/UOView
+# defaultMessage: Contenuto dell'unità organizzativa
+msgid "UOContent"
+msgstr ""
 
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: Unauthorized
@@ -747,6 +930,51 @@ msgstr "Vídeo"
 msgid "VideoGalleryBlock"
 msgstr "Galería de Vídeos"
 
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: View links and references to this item
+msgid "View links and references to this item"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Visible only in view mode
+msgid "Visible only in view mode"
+msgstr ""
+
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: Updating workflow states...
+msgid "Workflow Change Loading Message"
+msgstr ""
+
+#: config/Blocks/ListingOptions/utils
+# defaultMessage: Manda a capo il titolo con un trattino se è troppo lungo
+msgid "Wrap title"
+msgstr ""
+
+#: components/manage/Contents/ContentsWorkflowModal
+# defaultMessage: You are changing workflow of more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are changing workflow of more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr ""
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: You are copying more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are copying more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: You are cutting more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are deleting more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr ""
+
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: You are pasting more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are pasting more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr ""
+
+#: components/manage/Contents/ContentsRenameModal
+# defaultMessage: You are renaming more then {limit} items. It's recommended to contact administrators to do this operation.
+msgid "You are renaming more then {limit} items. It's recommended to contact administrators to do this operation."
+msgstr ""
+
 #: components/ItaliaTheme/Unauthorized/Unauthorized
 # defaultMessage: You are trying to access a protected resource, please {login} first.
 msgid "You are trying to access a protected resource, please {login} first."
@@ -781,6 +1009,16 @@ msgstr "Ver acciones"
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: {filterNumber} filtri attivati
 msgid "active_filters"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Add contacts item
+msgid "add_contacts_item"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Add contacts path
+msgid "add_contacts_path"
 msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
@@ -884,6 +1122,11 @@ msgstr "Área responsable"
 msgid "argoment"
 msgstr "Tema"
 
+#: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks
+# defaultMessage: Contenuto dell'argomento
+msgid "argomentoContent"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Listing/RibbonCardTemplate
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateCompact
 # defaultMessage: Icona {type}
@@ -933,6 +1176,11 @@ msgstr "Escrituras y documentos que acompañan a la solicitud"
 msgid "atto_nomina"
 msgstr "Acto de nombramiento"
 
+#: config/italiaConfig
+# defaultMessage: Login/Logout
+msgid "auth_ft"
+msgstr ""
+
 #: config/Blocks/ListingOptions/sliderTemplate
 # defaultMessage: Autoplay
 msgid "autoplay"
@@ -953,7 +1201,7 @@ msgstr "La velocidad de reproducción automática debe ser expresado en segundos
 msgid "autore"
 msgstr ""
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: Usa le frecce Su e Giu per scegliere un'opzione
 msgid "ay11_Use Up and Down to choose options"
 msgstr "Use Arriba y Abajo para elegir opciones"
@@ -963,82 +1211,82 @@ msgstr "Use Arriba y Abajo para elegir opciones"
 msgid "ay11_select cancel"
 msgstr ""
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: deselezionata
 msgid "ay11_select deselected"
 msgstr "deseleccionado"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: disabilitato
 msgid "ay11_select disabled"
 msgstr "desactivado"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: evidenziato
 msgid "ay11_select focused"
 msgstr "subrayar"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: per la ricerca
 msgid "ay11_select for search term"
 msgstr "por término de búsqueda"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: è disabilitata. Seleziona un'altra opzione
 msgid "ay11_select is disabled. Select another option."
 msgstr "está desactivado. Seleccione otra opción."
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: opzione
 msgid "ay11_select option"
 msgstr "opción"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: selezionata
 msgid "ay11_select selected"
 msgstr "seleccionado"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: valore
 msgid "ay11_select value"
 msgstr "valor"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: Usa le frecce destra e sinistra per attivare o disattivare i valori evidenziati, premi Backspace per rimuovere il valore corrente evidenziato
 msgid "ay11_select_Use left and right to toggle between focused values, press Backspace to remove the currently focused value"
 msgstr "Use izquierda y derecha para alternar entre valores enfocados, presione Retroceso para eliminar el valor actualmente enfocado"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi Tab per selezionare l'opzione e uscire dal menu
 msgid "ay11_select__press Tab to select the option and exit the menu"
 msgstr "presione Tab para seleccionar la opción y salir del menú"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: digita per filtrare la lista
 msgid "ay11_select__type to refine list"
 msgstr "escriba para refinar la lista"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: è selezionato
 msgid "ay11_select_is_focused"
 msgstr "está resaltado"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi freccia giu per aprire il menu, premi Backspace per rimuovere il valore selezionato
 msgid "ay11_select_press Down to open the menu"
 msgstr "presiona la tecla Abajo para abrir el menú"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi Invio per selezionare l'opzione corrente
 msgid "ay11_select_press Enter to select the currently focused option"
 msgstr "presione la tecla Enter para seleccionar la opción enfocada actualmente"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi Esc per uscire dal menu
 msgid "ay11_select_press Escape to exit the menu"
 msgstr "presione la tecla Escape para salir del menú"
 
-#: components/SelectInput/SelectInput
+#: helpers/react-select
 # defaultMessage: premi la freccia a sinistra per evidenziare i valori selezionati
 msgid "ay11_select_press left to focus selected values"
 msgstr "presione la tecla izquierda para enfocar los valores seleccionados"
@@ -1064,6 +1312,11 @@ msgstr "Fondo de bloque"
 # defaultMessage: Nessun filtro da mostrare. Seleziona i filtri di ricerca da mostrare dalla sidebar laterale.
 msgid "bandi_search_no_filters"
 msgstr "No hay filtros para mostrar. Seleccione yo filtros de búsqueda para mostrar desde la barra lateral."
+
+#: components/ItaliaTheme/View/BandoView/BandoView
+# defaultMessage: Contenuto del Bando
+msgid "bandoContent"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/BandoStatus
 # defaultMessage: Scaduto
@@ -1133,6 +1386,7 @@ msgstr "Mostrar el fondo del bloque"
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Colore di sfondo
 msgid "bg_color"
 msgstr "Color de fondo"
@@ -1344,6 +1598,7 @@ msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Primario
 msgid "color_primary"
 msgstr "Primario"
@@ -1354,6 +1609,7 @@ msgid "color_success"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Trasparente
 msgid "color_transparent"
 msgstr "Transparente"
@@ -1377,10 +1633,90 @@ msgstr "Compensaciones"
 msgid "competenze"
 msgstr "Habilidades"
 
+#: overrideTranslations
+# defaultMessage: Contiene
+msgid "condition_contains"
+msgstr "Contiene"
+
+#: overrideTranslations
+# defaultMessage: È maggiore o uguale
+msgid "condition_greater_or_equal"
+msgstr "Es mayor o igual a"
+
+#: overrideTranslations
+# defaultMessage: È maggiore di
+msgid "condition_greater_than"
+msgstr "Es mayor que"
+
+#: overrideTranslations
+# defaultMessage: È vuoto
+msgid "condition_is_empty"
+msgstr "Esta vacio"
+
+#: overrideTranslations
+# defaultMessage: È uguale a
+msgid "condition_is_equal_to"
+msgstr "Es lo mismo que"
+
+#: overrideTranslations
+# defaultMessage: Non è vuoto
+msgid "condition_is_not_empty"
+msgstr "No está vacío"
+
+#: overrideTranslations
+# defaultMessage: Non è uguale a
+msgid "condition_is_not_equal_to"
+msgstr "No es lo mismo que"
+
+#: overrideTranslations
+# defaultMessage: È minore o uguale
+msgid "condition_less_or_equal"
+msgstr "Es menor o igual a"
+
+#: overrideTranslations
+# defaultMessage: È minore di
+msgid "condition_less_than"
+msgstr "Es menos que"
+
+#: overrideTranslations
+# defaultMessage: Non contiene
+msgid "condition_not_contains"
+msgstr "No contiene"
+
+#: components/ItaliaTheme/ContactsBlock/ContactsBlock
+# defaultMessage: Contatta il comune
+msgid "contact_block_title"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Contact items
+msgid "contact_items_header"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaContatti
 # defaultMessage: Contatti
 msgid "contacts"
 msgstr "Contactos"
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigForm
+# defaultMessage: Contact
+msgid "contacts-config-contact"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigForm
+# defaultMessage: Delete contact
+msgid "contacts-config-delete-item"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigForm
+# defaultMessage: Icon name
+msgid "contacts-config-icon"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigForm
+# defaultMessage: Contact title
+msgid "contacts-config-title"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 # defaultMessage: Contatti
@@ -1537,8 +1873,7 @@ msgid "data_conclusione"
 msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
-#: components/ItaliaTheme/View/PersonaView/PersonaRuolo
-# defaultMessage: Ha fatto parte dell'organizzazione comunale come {incarico} fino al
+# defaultMessage: Data di fine dell'incarico
 msgid "data_conclusione_incarico"
 msgstr "Formó parte de la organización municipal hasta"
 
@@ -1600,6 +1935,26 @@ msgid "dateRangePicker_closeDatePicker"
 msgstr "Cerrar selector de fecha"
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: è selezionata
+msgid "dateRangePicker_dateIsSelected"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: è selezionata come data di fine
+msgid "dateRangePicker_dateIsSelectedAsEndDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: è selezionata come data di inizio
+msgid "dateRangePicker_dateIsSelectedAsStartDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
+# defaultMessage: non disponibile
+msgid "dateRangePicker_dateIsUnavailable"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
 # defaultMessage: Tasto invio
 msgid "dateRangePicker_enterKey"
 msgstr "Tecla Enter"
@@ -1635,14 +1990,14 @@ msgid "dateRangePicker_jumpToPrevMonth"
 msgstr "Mueva hacia atrás para cambiar al mes anterior."
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
-# defaultMessage: Naviga indietro per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date.
+# defaultMessage: Naviga indietro per interagire con il calendario e selezionare una data.
 msgid "dateRangePicker_keyboardBackwardNavigationInstructions"
-msgstr "Navegue hacia atrás para interactuar con el calendario y seleccione una fecha. Presiona la tecla del signo de interrogación para obtener los atajos de teclado para cambiar las fechas."
+msgstr "Navegue hacia atrás para interactuar con el calendario y seleccione una fecha."
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
-# defaultMessage: Naviga avanti per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date.
+# defaultMessage: Naviga avanti per interagire con il calendario e selezionare una data.
 msgid "dateRangePicker_keyboardForwardNavigationInstructions"
-msgstr "Navegue hacia adelante para interactuar con el calendario y seleccione una fecha. Presiona la tecla del signo de interrogación para obtener los atajos de teclado para cambiar las fechas."
+msgstr "Navegue hacia adelante para interactuar con el calendario y seleccione una fecha."
 
 #: components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter
 # defaultMessage: Tasti rapidi
@@ -1730,6 +2085,11 @@ msgstr "Fecha límite"
 msgid "deleghe"
 msgstr "Delegaciones"
 
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Delete
+msgid "delete_button"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Link rapidi
 msgid "desc"
@@ -1784,6 +2144,11 @@ msgstr ""
 # defaultMessage: Dirigente
 msgid "dirigente"
 msgstr "Dirigente"
+
+#: components/ItaliaTheme/View/DocumentoView/DocumentoView
+# defaultMessage: Contenuto del documento
+msgid "documentContent"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/RelatedItems
 # defaultMessage: Documenti e dati
@@ -2002,6 +2367,16 @@ msgstr ""
 msgid "emptySelection"
 msgstr "Seleccione un elemento en la barra lateral en para mostrarlo aquí"
 
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Add a contact item
+msgid "empty_active_contacts_item"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Add a contacts path
+msgid "empty_active_contacts_path"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/Dates
 # defaultMessage: Fine evento
 msgid "end"
@@ -2048,6 +2423,11 @@ msgstr "Estructuras políticas involucradas"
 msgid "event_url"
 msgstr "URL del evento"
 
+#: components/ItaliaTheme/View/EventoView/EventoView
+# defaultMessage: Contenuto dell'evento
+msgid "eventoContent"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/Events
 # defaultMessage: Appuntamenti
 msgid "events"
@@ -2063,6 +2443,11 @@ msgstr ""
 # defaultMessage: Il testo supera la lunghezza consigliata perciò verrà tagliato.
 msgid "exceeded_chars"
 msgstr "El texto excede la longitud recomendada"
+
+#: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderEventDates
+# defaultMessage: con alcune eccezioni. Per maggiori informazioni controllare la sezione dedicata.
+msgid "exceptionDates"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderDates
 # defaultMessage: Scadenza
@@ -2139,6 +2524,11 @@ msgstr ""
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Error
 msgid "feedback_error"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Feedback form
+msgid "feedback_form_aria_title"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
@@ -2287,12 +2677,12 @@ msgid "form_set_limit"
 msgstr ""
 
 #: overrideTranslations
-# defaultMessage: Sei stato inserito in lista d'attesa
+# defaultMessage: La tua iscrizione è in lista d'attesa
 msgid "form_submit_success_warning"
 msgstr ""
 
 #: overrideTranslations
-# defaultMessage: I tuoi dati sono stati inviati, ma è già stato raggiunto il limite di iscrizioni, sei stato inserito in lista d'attesa.
+# defaultMessage: I tuoi dati sono stati inviati correttamente. Tuttavia, è stato raggiunto il limite massimo di iscrizioni: la tua richiesta è stata inserita in lista d’attesa.
 msgid "form_submit_success_warning_description"
 msgstr ""
 
@@ -2395,6 +2785,11 @@ msgstr "Icono"
 msgid "iconDescription"
 msgstr "Puede seleccionar un icono de los propuestos en el menú desplegable o puede escribir/pegar el nombre de un icono 'fontawesome 5' en el campo de texto"
 
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: For a complete list of icon names, see:
+msgid "icon_list_help_text"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/Argument/ArgumentIcon
 # defaultMessage: Icona per l'argomento {topic_title}
 msgid "icon_title"
@@ -2436,6 +2831,11 @@ msgstr "Gastos de viajes y servicios"
 msgid "importi_viaggio"
 msgstr ""
 
+#: components/ItaliaTheme/View/Commons/RelatedItemInEvidence/RelatedItemInEvidence
+# defaultMessage: Contenuti in evidenza
+msgid "inEvidenceItems"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Listing/serviziAmministrazioneTrasparenteTemplate
 #: helpers/amministrazioneTrasparenteHelper
 # defaultMessage: incarico
@@ -2455,6 +2855,16 @@ msgstr "Índice de página"
 # defaultMessage: Inserire un filtro dal menù laterale per visualizzare i relativi risultati
 msgid "insert_filter"
 msgstr "Inserta un filtro del menú lateral para ver los resultados relacionados"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: item
+msgid "item"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: items
+msgid "items"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
@@ -2487,6 +2897,31 @@ msgstr ""
 # defaultMessage: Collegamento
 msgid "link"
 msgstr "Enlace"
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Cut
+msgid "link-integrity: Cut"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete
+msgid "link-integrity: Delete"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Delete item and break links
+msgid "link-integrity: Delete item and break links"
+msgstr ""
+
+#: components/manage/Contents/ContentsAffectedItemsOnCopyModal
+# defaultMessage: Checking...
+msgid "link-integrity: loading"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: Checking references...
+msgid "link-integrity: loading references"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderCenter
 # defaultMessage: homepage
@@ -2582,11 +3017,6 @@ msgid "login_cie"
 msgstr ""
 
 #: components/ItaliaTheme/LoginAgid/LoginAgidButtons
-# defaultMessage: Log in with CIE.
-msgid "login_cie_description"
-msgstr ""
-
-#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: How to activate CIE
 msgid "login_cie_help"
 msgstr ""
@@ -2603,24 +3033,9 @@ msgid "login_spid"
 msgstr ""
 
 #: components/ItaliaTheme/LoginAgid/LoginAgidButtons
-# defaultMessage: Log in with SPID, the public digital identity system.
-msgid "login_spid_description"
-msgstr ""
-
-#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
 # defaultMessage: How to activate SPID
 msgid "login_spid_help"
 msgstr ""
-
-#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
-# defaultMessage: Login with CIE
-msgid "login_with_cie"
-msgstr ""
-
-#: components/ItaliaTheme/LoginAgid/LoginAgidButtons
-# defaultMessage: Login with SPID
-msgid "login_with_spid"
-msgstr "Iniciar sesión con Spid"
 
 #: components/ItaliaTheme/Header/HeaderCenter
 # defaultMessage: Logo
@@ -2657,6 +3072,11 @@ msgstr ""
 # defaultMessage: Invia
 msgid "mailto"
 msgstr "Enviar"
+
+#: overrideTranslations
+# defaultMessage: Menu principale
+msgid "mainMenu"
+msgstr ""
 
 #: config/Blocks/ListingOptions/mapTemplate
 # defaultMessage: Grande
@@ -2711,6 +3131,11 @@ msgstr "Última actualización"
 msgid "modulistica"
 msgstr "Formularios"
 
+#: overrideTranslations
+# defaultMessage: As per the official information architecture outlined in measure 1.4.1, all forms must be properly uploaded in the designated section within Amministrazione > Documenti e Dati > Modulistica, and linked to the relevant service sheet. It is no longer possible to upload files and attachments directly into this container.
+msgid "modulistica_restraint"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/DownloadFileFormat
 # defaultMessage: Scarica il file
 msgid "modulo_download_file"
@@ -2731,12 +3156,28 @@ msgstr "Archivo principal"
 msgid "modulo_formati_alternativi"
 msgstr "Formatos alternativos"
 
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Move menu item down
+msgid "move_menu_item_down"
+msgstr ""
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Move menu item up
+msgid "move_menu_item_up"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/Teaser/schema
 #: components/ItaliaTheme/Blocks/TextCard/CardWithImage/Sidebar
 #: config/Blocks/ListingOptions/cardWithImageTemplate
-# defaultMessage: undefined
+# defaultMessage: Non alterare le dimensioni naturali dell'immagine
 msgid "natural_image_size"
 msgstr "No altere los tamaños naturales de las imágenes"
+
+#: components/ItaliaTheme/View/NewsItemView/NewsItemView
+# defaultMessage: Contenuto della notizia
+msgid "newsContent"
+msgstr ""
 
 #: components/ItaliaTheme/View/NewsItemView/NewsItemText
 # defaultMessage: Contenuto
@@ -2884,14 +3325,9 @@ msgstr "Hora de apertura"
 msgid "order_by"
 msgstr "Ordenado por"
 
-#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreInterno
+#: components/ItaliaTheme/View/EventoView/EventoOrganizzatoDa
 # defaultMessage: Organizzato da
 msgid "organizzato_da"
-msgstr ""
-
-#: components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno
-# defaultMessage: Organizzatore
-msgid "organizzatore"
 msgstr ""
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
@@ -2936,12 +3372,22 @@ msgstr "Esta página es administrada por"
 msgid "paginationLabel"
 msgstr ""
 
+#: components/ItaliaTheme/Header/ParentSiteMenu
+# defaultMessage: Main site menu
+msgid "parent_site_menu"
+msgstr ""
+
 #: components/ItaliaTheme/View/EventoView/EventoCosE
 # defaultMessage: Parteciperanno
 msgid "parteciperanno"
 msgstr "Participara"
 
-#: components/ItaliaTheme/View/EventoView/EventoUlterioriInformazioni
+#: components/manage/Contents/ContentsPasteModal
+# defaultMessage: Checking...
+msgid "paste cheching: loading"
+msgstr ""
+
+#: components/ItaliaTheme/View/EventoView/EventoPatrocinatoDa
 # defaultMessage: Patrocinato da
 msgid "patrocinato_da"
 msgstr "Patrocinado por"
@@ -2955,6 +3401,11 @@ msgstr "PEC"
 #: components/ItaliaTheme/View/IncaricoView/IncaricoPersone
 # defaultMessage: Persona
 msgid "persona"
+msgstr ""
+
+#: components/ItaliaTheme/View/PersonaView/PersonaView
+# defaultMessage: Contenuto del profilo della persona
+msgid "personaContent"
 msgstr ""
 
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
@@ -3034,6 +3485,21 @@ msgstr ""
 # defaultMessage: Tempo di lettura
 msgid "reading_time"
 msgstr "Tiempo de leer"
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: reference
+msgid "reference"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: references
+msgid "references"
+msgstr ""
+
+#: components/manage/Contents/ContentsDeleteModal
+# defaultMessage: refers to
+msgid "refers to"
+msgstr ""
 
 #: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks
 # defaultMessage: Documenti
@@ -3122,6 +3588,11 @@ msgstr "Derechos"
 # defaultMessage: Risultati indagini di customer satisfaction
 msgid "risultati_indagini_customer_satisfaction"
 msgstr "Resultados de la encuesta de satisfacción del cliente"
+
+#: components/ItaliaTheme/manage/Widgets/ContactsWidget/ContactsConfigWidget
+# defaultMessage: Root path
+msgid "root_path"
+msgstr ""
 
 #: overrideTranslations
 # defaultMessage: il giorno
@@ -3249,6 +3720,12 @@ msgstr "Buscar por todos los temas"
 # defaultMessage: Ricerca eventi
 msgid "searchBlock"
 msgstr "Búsqueda de eventos"
+
+#: components/ItaliaTheme/Blocks/EventSearch/Sidebar
+#: components/ItaliaTheme/Blocks/UOSearch/Sidebar
+# defaultMessage: Mostra l'immagine per tutti gli elementi
+msgid "searchBlock_always_show_image"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Sidebar
 #: components/ItaliaTheme/Blocks/EventSearch/Sidebar
@@ -3403,6 +3880,7 @@ msgstr "Buscar contenidos en"
 msgid "searchInSection"
 msgstr "Busca en la sección"
 
+#: components/ItaliaTheme/Header/HeaderSearch/HeaderSearch
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 # defaultMessage: Cerca nel sito
 msgid "searchLabel"
@@ -3645,6 +4123,11 @@ msgstr ""
 msgid "servizi_offerti"
 msgstr "Servicios"
 
+#: components/ItaliaTheme/View/ServizioView/ServizioView
+# defaultMessage: Contenuto del servizio
+msgid "servizioContent"
+msgstr ""
+
 #: components/ItaliaTheme/View/ServizioView/ServizioAccedi
 # defaultMessage: Accedi al servizio
 msgid "servizio_canale_digitale"
@@ -3716,7 +4199,13 @@ msgstr ""
 msgid "share"
 msgstr "Compartir"
 
+#: config/Blocks/ListingOptions/bandiInEvidenceTemplate
+# defaultMessage: Mostra il CIG
+msgid "show_cig"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Mostra la data
 msgid "show_date"
 msgstr "Mostrar fecha"
@@ -3773,7 +4262,7 @@ msgid "show_only_first_ribbon"
 msgstr "Mostrar la cinta solo en la primera tarjeta"
 
 #: config/Blocks/ListingOptions/attachmentCardTemplate
-# defaultMessage: Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata altrimenti vengono scaricati.
+# defaultMessage: Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata. Se non impostato, i PDF vengono scaricati.
 msgid "show_pdf_desc"
 msgstr "Le permite abrir la vista previa de todos los archivos PDF en esta lista en una pestaña separada, de lo contrario, se descargarán."
 
@@ -3788,6 +4277,7 @@ msgid "show_pointer_list"
 msgstr "Mostrar lista con viñetas"
 
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/Teaser/schema
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Mostra la sezione
 msgid "show_section"
@@ -3805,10 +4295,30 @@ msgid "show_topics"
 msgstr "Mostrar temas"
 
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/Teaser/schema
 #: config/Blocks/ListingOptions/utils
 # defaultMessage: Mostra il tipo
 msgid "show_type"
 msgstr "Mostrar tipo"
+
+#: components/ItaliaTheme/View/BandoView/BandoView
+#: components/ItaliaTheme/View/DocumentoView/DocumentoView
+#: components/ItaliaTheme/View/EventoView/EventoView
+#: components/ItaliaTheme/View/NewsItemView/NewsItemView
+#: components/ItaliaTheme/View/PaginaArgomentoView/PaginaArgomentoViewNoBlocks
+#: components/ItaliaTheme/View/PersonaView/PersonaView
+#: components/ItaliaTheme/View/ServizioView/ServizioView
+#: components/ItaliaTheme/View/UOView/UOView
+#: components/ItaliaTheme/View/VenueView/VenueView
+# defaultMessage: Indice della pagina
+msgid "sideMenuIndex"
+msgstr ""
+
+#: components/ItaliaTheme/View/Commons/SideMenu
+#: components/ItaliaTheme/View/Commons/SideMenuByTitles
+# defaultMessage: Navigazione della pagina
+msgid "sideMenuNavigation"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/TrasparenzaFields
 #: components/ItaliaTheme/View/TrasparenzaView/DettagliProcedimentiView
@@ -3831,6 +4341,11 @@ msgstr "Aquí puede seleccionar un aspecto diferente al predeterminado para la p
 msgid "simplecard_listing_appearance_oneforrow"
 msgstr ""
 
+#: config/italiaConfig
+# defaultMessage: Sitemap
+msgid "sitemap_ft"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Situazione patrimoniale
 msgid "situazione_patrimoniale"
@@ -3850,6 +4365,11 @@ msgstr "Ir al contenido"
 # defaultMessage: Skip to navigation
 msgid "skiplink-navigation"
 msgstr "Ir a navegación"
+
+#: components/ItaliaTheme/SkipLinks/SkipLinks
+# defaultMessage: Skiplinks
+msgid "skiplinks-description"
+msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 #: helpers/contentHelper
@@ -4027,6 +4547,46 @@ msgstr ""
 # defaultMessage: Con il supporto di
 msgid "supported_by"
 msgstr "Con el apoyo de"
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Colore delle righe alternato
+msgid "table_variation_alternate_rows"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Colonne della tabella
+msgid "table_variation_columns"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Colonna
+msgid "table_variaton_column"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Tipo di contenuto
+msgid "table_variaton_ct"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Campo
+msgid "table_variaton_field"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Titolo
+msgid "table_variaton_title"
+msgstr ""
+
+#: config/Blocks/ListingOptions/tableTemplate
+# defaultMessage: Titolo della colonna. Se vuoi, puoi modificare il titolo di default.
+msgid "table_variaton_title_description"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Listing/TableTemplate
+# defaultMessage: Titolo
+msgid "tabletemplate_column_title"
+msgstr ""
 
 #: components/ItaliaTheme/View/Commons/ContactLink
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
@@ -4247,10 +4807,20 @@ msgstr ""
 msgid "url"
 msgstr ""
 
+#: components/ItaliaTheme/Header/HeaderSlim/HeaderSlim
+# defaultMessage: Utility Menu
+msgid "utilityMenu"
+msgstr ""
+
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 # defaultMessage: Variazione situazione patrimoniale
 msgid "variazione_situazione_patrimoniale"
 msgstr "Cambio en el balance"
+
+#: components/ItaliaTheme/View/VenueView/VenueView
+# defaultMessage: Informazioni sulla struttura
+msgid "venueContent"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/BandiSearch/Body
 #: components/ItaliaTheme/Blocks/EventSearch/Body
@@ -4286,6 +4856,11 @@ msgstr "Ver en Google Maps"
 msgid "vincoli"
 msgstr "Restricciones"
 
+#: overrideTranslations
+# defaultMessage: Selezionare la voce "Salva i dati compilati" nella barra laterale per abilitare il salvataggio e la visualizzazione dei dati
+msgid "warning_enable_save"
+msgstr "Seleccione el elemento 'Guardar datos completados' en la barra lateral para habilitar el guardado y la visualización de datos."
+
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 #: helpers/contentHelper
 # defaultMessage: Whatsapp
@@ -4302,3 +4877,8 @@ msgstr "Este evento tiene lugar durante todo el día."
 # defaultMessage: Si
 msgid "yes"
 msgstr "Sí"
+
+#: config/Blocks/ListingOptions/mapTemplate
+# defaultMessage: Zoom
+msgid "zoom"
+msgstr ""

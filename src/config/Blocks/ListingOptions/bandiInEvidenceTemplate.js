@@ -11,6 +11,10 @@ const messages = defineMessages({
     id: 'show_tipologia',
     defaultMessage: 'Mostra la tipologia',
   },
+  show_cig: {
+    id: 'show_cig',
+    defaultMessage: 'Mostra il CIG',
+  },
 });
 
 export const addBandiInEvidenceTemplateOptions = (
@@ -25,7 +29,13 @@ export const addBandiInEvidenceTemplateOptions = (
     schema,
     formData,
     intl,
-    ['show_description', 'show_ente', 'show_tipologia'],
+    [
+      'show_description',
+      'show_ente',
+      'show_tipologia',
+      'show_cig',
+      'wrap_title',
+    ],
     {
       show_ente: {
         default: false,
@@ -35,6 +45,11 @@ export const addBandiInEvidenceTemplateOptions = (
         default: false,
         label: intl.formatMessage(messages.show_tipologia),
       },
+      show_cig: {
+        default: true,
+        label: intl.formatMessage(messages.show_cig),
+      },
+      wrap_title: { default: false },
     },
     pos,
   );

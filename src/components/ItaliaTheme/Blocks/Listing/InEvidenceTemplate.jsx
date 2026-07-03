@@ -23,6 +23,7 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import {
   getCalendarDate,
   getEventRecurrenceMore,
+  contentHasImage,
 } from 'design-comuni-plone-theme/helpers';
 import {
   CardCalendar,
@@ -36,8 +37,11 @@ import {
   RassegnaInfo,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
+import { getVariationPropsDefaults } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
 
 const InEvidenceTemplate = (props) => {
+  const defaultVariationProps = getVariationPropsDefaults('inEvidenceTemplate');
+
   const {
     items,
     title,
@@ -56,11 +60,12 @@ const InEvidenceTemplate = (props) => {
     id_lighthouse,
     linkmore_id_lighthouse,
     rrule,
+    wrap_title = defaultVariationProps.wrap_title,
   } = props;
 
   return (
     <div className="in-evidence">
-      <Container className="px-4">
+      <Container className="px-4 pt-3">
         {title && (
           <Row>
             <Col>
@@ -75,7 +80,7 @@ const InEvidenceTemplate = (props) => {
             </Col>
           </Row>
         )}
-        <div className="in-evidence-cards-wrapper mb-5">
+        <div className="in-evidence-cards-wrapper my-3 pb-2">
           {items.map((item, index) => {
             const icon = show_icon ? getItemIcon(item) : null;
             const date = hide_dates
@@ -87,11 +92,7 @@ const InEvidenceTemplate = (props) => {
             const listingText = show_description ? (
               <ListingText item={item} />
             ) : null;
-            const image = ListingImage({
-              item,
-              sizes: '(max-width:320px) 200px, 300px',
-              showTitleAttr: false,
-            });
+            const hasImage = contentHasImage(item);
             const category = getCategory(item, show_type, show_section, props);
             const topics = show_topics ? item.tassonomia_argomenti : null;
 
@@ -103,7 +104,7 @@ const InEvidenceTemplate = (props) => {
               <CardPersona
                 item={item}
                 className="listing-item card-bg"
-                showImage={image ? true : false}
+                showImage={hasImage}
                 show_description={show_description}
                 icon={icon}
                 isEditMode={isEditMode}
@@ -111,10 +112,13 @@ const InEvidenceTemplate = (props) => {
               />
             ) : (
               <Card key={index} className={cx('listing-item card-bg')}>
-                {index === 0 && image && (
+                {index === 0 && hasImage && (
                   <div className="img-responsive-wrapper">
                     <div className="img-responsive">
-                      {image}
+                      <ListingImage
+                        item={item}
+                        sizes="(max-width:320px) 200px, 300px"
+                      />
                       {item['@type'] === 'Event' && (
                         <CardCalendar start={item.start} end={item.end} />
                       )}
@@ -130,10 +134,12 @@ const InEvidenceTemplate = (props) => {
                     </CardCategory>
                   )}
                   <CardTitle
-                    tag="h3"
-                    className={`${
-                      isEventAppointment ? 'rassegna-appointment-title' : ''
-                    }`}
+                    tag={title ? 'h3' : 'h2'}
+                    className={cx('', {
+                      'rassegna-appointment-title': isEventAppointment,
+                      h3: !title,
+                      'wrap-title': wrap_title,
+                    })}
                   >
                     <UniversalLink
                       item={!isEditMode ? item : null}

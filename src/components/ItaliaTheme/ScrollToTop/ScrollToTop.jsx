@@ -13,6 +13,10 @@ const messages = defineMessages({
     id: 'Scroll to top',
     defaultMessage: 'Torna su',
   },
+  scrollToTopAriaLabel: {
+    id: "Torna all'inizio della pagina",
+    defaultMessage: "Torna all'inizio della pagina",
+  },
 });
 
 const ScrollToTop = () => {
@@ -49,8 +53,7 @@ const ScrollToTop = () => {
             size="sm"
             title={intl.formatMessage(messages.scrollToTop)}
             onClick={scrollToTop}
-            aria-hidden="true"
-            tabIndex={-1}
+            aria-label={intl.formatMessage(messages.scrollToTopAriaLabel)}
           >
             <Icon icon="it-arrow-up" padding={false} size="sm" />
           </Button>

@@ -58,8 +58,9 @@ const Field = ({
   label,
   description,
   name,
-  field_type,
   required,
+  field_type,
+  field_id,
   input_values,
   value,
   onChange,
@@ -70,6 +71,7 @@ const Field = ({
   errorMessage,
   id,
   reactSelect,
+  autocomplete,
 }) => {
   const intl = useIntl();
   const Select = reactSelect.default;
@@ -99,7 +101,6 @@ const Field = ({
       static_text_value = fromHtml(value);
     } //per retrocompatibilità con il vecchio widget che usava draftjs
   }
-
   return (
     <div className="field">
       {field_type === 'text' && (
@@ -117,6 +118,7 @@ const Field = ({
             onChange(name, e.target.value);
           }}
           value={value ?? ''}
+          autoComplete={autocomplete}
         />
       )}
       {field_type === 'textarea' && (
@@ -135,24 +137,54 @@ const Field = ({
             onChange(name, e.target.value);
           }}
           value={value ?? undefined}
+          autoComplete={autocomplete}
+        />
+      )}
+      {field_type === 'number' && (
+        <Input
+          id={name}
+          name={name}
+          label={getLabel()}
+          type="number"
+          required={required}
+          infoText={infoText}
+          disabled={disabled}
+          readOnly={disabled}
+          invalid={isInvalid() ? 'true' : null}
+          onChange={(e) => {
+            onChange(name, e.target.value);
+          }}
+          onKeyDown={(e) => {
+            if (
+              !/[0-9eE+\-.,]/.test(e.key) &&
+              e.key !== 'Backspace' &&
+              e.key !== 'Tab' &&
+              e.key !== 'ArrowLeft' &&
+              e.key !== 'ArrowRight' &&
+              e.key !== 'Delete'
+            ) {
+              e.preventDefault();
+            }
+          }}
+          value={value ?? ''}
+          autoComplete={autocomplete}
         />
       )}
       {field_type === 'select' && (
         <div className="form-group">
           <div
-            className={`bootstrap-select-wrapper ${
-              isInvalid() ? 'is-invalid' : ''
-            }`}
+            className={`bootstrap-select-wrapper ${isInvalid() ? 'is-invalid' : ''
+              }`}
           >
-            <label htmlFor={name}>{getLabel()}</label>
+            <label id={`${name}-label`} htmlFor={name}>
+              {getLabel()}
+            </label>
             <Select
               components={{
                 IndicatorSeparator: null,
                 DropdownIndicator,
               }}
-              id={name}
-              name={name}
-              label={getLabel()}
+              inputId={name}
               isSearchable={true}
               onChange={(v) => {
                 onChange(name, v.value);
@@ -160,12 +192,14 @@ const Field = ({
               options={[
                 ...(input_values?.map((v) => ({ value: v, label: v })) ?? []),
               ]}
+              aria-live="polite"
               isDisabled={disabled}
               placeholder={intl.formatMessage(messages.select_a_value)}
-              aria-label={intl.formatMessage(messages.select_a_value)}
+              aria-labelledby={`${name}-label`}
               classNamePrefix="react-select"
               className={isInvalid() ? 'is-invalid' : ''}
               value={value ? [{ value: value, label: value }] : []}
+              autoComplete={autocomplete}
             />
             {description && <small className="form-text">{description}</small>}
             {errorMessage && (
@@ -179,86 +213,91 @@ const Field = ({
       {field_type === 'single_choice' && (
         <div className="form-group">
           <div
-            className={`bootstrap-checkbox-radio-wrapper ${
-              isInvalid() ? 'is-invalid' : ''
-            }`}
+            className={`bootstrap-checkbox-radio-wrapper ${isInvalid() ? 'is-invalid' : ''
+              }`}
           >
-            <label className="active">{getLabel()}</label>
-            {input_values?.map((v, index) => (
-              <FormGroup check key={v + name + index}>
-                <Input
-                  id={v + name}
-                  name={name}
-                  type="radio"
-                  disabled={disabled}
-                  readOnly={disabled}
-                  onChange={(e) => {
-                    onChange(name, v);
-                  }}
-                  addon // Needed to avoid application of form-control class as of kit v4.0.2
-                  checked={value === v}
-                />
-                <Label for={v + name} check>
-                  {v}
-                </Label>
-              </FormGroup>
-            ))}
-            {description && <small className="form-text">{description}</small>}
-            {errorMessage && (
-              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
-                {errorMessage}
-              </div>
-            )}
+            <fieldset className="radio-group">
+              <legend>{getLabel()}</legend>
+              {input_values?.map((v, index) => (
+                <FormGroup check key={v + name + index}>
+                  <Input
+                    id={v + name}
+                    name={name}
+                    type="radio"
+                    disabled={disabled}
+                    readOnly={disabled}
+                    onChange={(e) => {
+                      onChange(name, v);
+                    }}
+                    addon // Needed to avoid application of form-control class as of kit v4.0.2
+                    checked={value === v}
+                  />
+                  <Label for={v + name} check>
+                    {v}
+                  </Label>
+                </FormGroup>
+              ))}
+              {description && (
+                <small className="form-text">{description}</small>
+              )}
+              {errorMessage && (
+                <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                  {errorMessage}
+                </div>
+              )}
+            </fieldset>
           </div>
         </div>
       )}
       {field_type === 'multiple_choice' && (
         <div className="form-group">
           <div
-            className={`bootstrap-checkbox-radio-wrapper ${
-              isInvalid() ? 'is-invalid' : ''
-            }`}
+            className={`bootstrap-checkbox-radio-wrapper ${isInvalid() ? 'is-invalid' : ''
+              }`}
           >
-            <label className="active">{getLabel()}</label>
-            {input_values?.map((v, index) => (
-              <FormGroup check key={v + name + index}>
-                <Input
-                  id={v + name}
-                  name={name}
-                  type="checkbox"
-                  checked={value?.indexOf(v) > -1}
-                  onChange={(e) => {
-                    let values = JSON.parse(JSON.stringify(value ?? []));
-                    if (e.target.checked) {
-                      values.push(v);
-                    } else {
-                      values.splice(values.indexOf(v), 1);
-                    }
-                    onChange(name, values);
-                  }}
-                  invalid={isInvalid() ? 'true' : null}
-                  addon // Needed to avoid application of form-control class as of kit v4.0.2
-                />
-                <Label for={v + name} check>
-                  {v}
-                </Label>
-              </FormGroup>
-            ))}
-            {description && <small className="form-text">{description}</small>}
-            {errorMessage && (
-              <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
-                {errorMessage}
-              </div>
-            )}
+            <fieldset className="checkbox-group">
+              <legend>{getLabel()}</legend>
+              {input_values?.map((v, index) => (
+                <FormGroup check key={v + name + index}>
+                  <Input
+                    id={v + name}
+                    name={name}
+                    type="checkbox"
+                    checked={value?.indexOf(v) > -1}
+                    onChange={(e) => {
+                      let values = JSON.parse(JSON.stringify(value ?? []));
+                      if (e.target.checked) {
+                        values.push(v);
+                      } else {
+                        values.splice(values.indexOf(v), 1);
+                      }
+                      onChange(name, values);
+                    }}
+                    invalid={isInvalid() ? 'true' : null}
+                    addon // Needed to avoid application of form-control class as of kit v4.0.2
+                  />
+                  <Label for={v + name} check>
+                    {v}
+                  </Label>
+                </FormGroup>
+              ))}
+              {description && (
+                <small className="form-text">{description}</small>
+              )}
+              {errorMessage && (
+                <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
+                  {errorMessage}
+                </div>
+              )}
+            </fieldset>
           </div>
         </div>
       )}
       {field_type === 'checkbox' && (
         <div className="form-group">
           <div
-            className={`bootstrap-checkbox-radio-wrapper ${
-              isInvalid() ? 'is-invalid' : ''
-            }`}
+            className={`bootstrap-checkbox-radio-wrapper ${isInvalid() ? 'is-invalid' : ''
+              }`}
           >
             <FormGroup check key={name}>
               <Input
@@ -301,6 +340,7 @@ const Field = ({
             onChange(name, e.target.value);
           }}
           value={value ?? ''}
+          autoComplete={autocomplete}
         />
       )}
       {field_type === 'attachment' && (
@@ -335,6 +375,7 @@ const Field = ({
             onChange(name, e.target.value);
           }}
           value={value ?? ''}
+          autoComplete={autocomplete}
         />
       )}
 
@@ -405,6 +446,7 @@ Field.propTypes = {
   value: PropTypes.any,
   formHasErrors: PropTypes.bool,
   onChange: PropTypes.func,
+  autoComplete: PropTypes.string,
 };
 
 export default injectLazyLibs('reactSelect')(Field);

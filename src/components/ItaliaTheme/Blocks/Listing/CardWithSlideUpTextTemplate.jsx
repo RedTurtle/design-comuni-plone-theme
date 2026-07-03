@@ -16,6 +16,7 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { getCategory } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/Commons/utils';
 import { defineMessages, useIntl } from 'react-intl';
+import { getVariationPropsDefaults } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
 
 const messages = defineMessages({
   vedi: {
@@ -26,7 +27,9 @@ const messages = defineMessages({
 
 const CardWithSlideUpTextTemplate = (props) => {
   const intl = useIntl();
-
+  const defaultVariationProps = getVariationPropsDefaults(
+    'cardSlideUpTextTemplate',
+  );
   const {
     items,
     title,
@@ -38,15 +41,19 @@ const CardWithSlideUpTextTemplate = (props) => {
     show_section,
     show_description = true,
     hide_dates = false,
+    show_block_bg,
     id_lighthouse,
     linkmore_id_lighthouse,
     titleLine,
     rrule,
+    wrap_title = defaultVariationProps.wrap_title,
   } = props;
+
+  const TitleTag = title ? 'h3' : 'h2';
 
   return (
     <div className="card-slide-text-template">
-      <Container>
+      <Container className="px-4 mt-3">
         <div className="title">
           {title && (
             <h2 className={cx('', { 'title-bottom-line': titleLine })}>
@@ -54,32 +61,34 @@ const CardWithSlideUpTextTemplate = (props) => {
             </h2>
           )}
         </div>
-        <div className="grid mb-3 mt-5">
+        <div className={cx('grid pt-3', { 'mb-3': show_block_bg })}>
           {items.map((item, index) => {
             const image = getListingImageBackground(item, 'large');
             const category = getCategory(item, show_type, show_section, props);
             const date = hide_dates
               ? null
               : getCalendarDate(item, rrule.rrulestr);
-            const title = item?.title || '';
+            const itemTitle = item?.title || '';
 
             const BlockExtraTags = getComponentWithFallback({
               name: 'BlockExtraTags',
               dependencies: ['CardWithSlideUpTextTemplate', item['@type']],
             }).component;
 
+            const cardItem = {
+              ...item,
+              enhanced_links_enabled: false,
+            };
+
             return (
-              <UniversalLink
-                item={!isEditMode ? item : null}
-                href={isEditMode ? '#' : null}
+              <div
+                className="listing-item box bg-img mb-2"
                 style={
                   image && {
                     backgroundImage: `url(${image})`,
                   }
                 }
-                className="listing-item box bg-img"
-                key={index}
-                data-element={id_lighthouse}
+                tabIndex={-1}
               >
                 <div className="bg-gradient"></div>
                 {(category || date) && (
@@ -89,14 +98,26 @@ const CardWithSlideUpTextTemplate = (props) => {
                     {date}
                   </div>
                 )}
-                <h3
-                  className={cx('title', {
-                    ellipsis: title.length > 50,
+                <UniversalLink
+                  item={!isEditMode ? cardItem : null}
+                  href={isEditMode ? '#' : null}
+                  key={index}
+                  data-element={id_lighthouse}
+                  className={cx('title-link', {
+                    'auto-margin-link': !category && !date,
                   })}
-                  title={title.length > 50 ? title : undefined}
                 >
-                  {title.substring(0, 50)}
-                </h3>
+                  <TitleTag
+                    className={cx('title', {
+                      h3: !title,
+                      ellipsis: itemTitle.length > 65,
+                      'wrap-title': wrap_title,
+                    })}
+                    title={itemTitle.length > 65 ? itemTitle : undefined}
+                  >
+                    {itemTitle.substring(0, 65)}
+                  </TitleTag>
+                </UniversalLink>
                 <div className="box-slide-up">
                   {show_description && item.description && (
                     <p>{item.description}</p>
@@ -105,13 +126,21 @@ const CardWithSlideUpTextTemplate = (props) => {
                   <CardReadMore
                     iconName="it-arrow-right"
                     tag={UniversalLink}
-                    item={!isEditMode ? item : null}
+                    item={!isEditMode ? cardItem : null}
                     href={isEditMode ? '#' : null}
                     text={intl.formatMessage(messages.vedi)}
                     className="justify-content-end"
+                    tabIndex={-1}
+                    aria-hidden="true"
                   />
                 </div>
-              </UniversalLink>
+                <UniversalLink
+                  item={!isEditMode ? cardItem : null}
+                  className="card-link"
+                  aria-hidden="true"
+                  tabIndex="-1"
+                ></UniversalLink>
+              </div>
             );
           })}
         </div>

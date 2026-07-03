@@ -13,6 +13,8 @@ import { modulisticaItems } from './modulisticaItems';
 import { originalQueryReducer } from './originalQueryReducer';
 import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 import { breadcrumbs } from './breadcrumbs';
+import { ctSchema } from './ctSchema';
+import { contacts } from './contacts';
 
 /**
  * Root reducer.
@@ -32,6 +34,8 @@ const reducers = {
   originalQuery: originalQueryReducer,
   searchBandiFilters: searchBandiFiltersReducer,
   breadcrumbs: breadcrumbs,
+  ct_schema: ctSchema,
+  contacts: contacts,
 };
 
 export default reducers;
