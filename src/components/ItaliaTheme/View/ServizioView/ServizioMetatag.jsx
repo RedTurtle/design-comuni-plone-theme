@@ -5,10 +5,6 @@ import { SiteProperty } from 'volto-site-settings';
 import { getSiteProperty } from 'design-comuni-plone-theme/helpers';
 import { richTextHasContent } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
-const isVoltoSchemaorgInstalled = config.settings.addonsInfo.some(
-  (addon) => addon.name === '@redturtle/volto-schemaorg',
-);
-
 const fieldDataToPlainText = (field) => {
   return field.blocks_layout.items.reduce((accumulator, item, index) => {
     if (field.blocks[item]['@type'] === 'text') {
@@ -25,6 +21,10 @@ const fieldDataToPlainText = (field) => {
 
 const ServizioMetatag = ({ content }) => {
   const intl = useIntl();
+
+  const isVoltoSchemaorgInstalled = config.settings.addonsInfo?.some(
+    (addon) => addon.name === '@redturtle/volto-schemaorg',
+  );
 
   if (isVoltoSchemaorgInstalled) {
     return null;
