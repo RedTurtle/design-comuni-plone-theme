@@ -1,12 +1,12 @@
 /*
  * Template a tabella
  */
-import React from 'react';
+import React, { useEffect } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
-// import { getCTSchema } from 'design-comuni-plone-theme/actions';
+import { getCTSchema } from 'design-comuni-plone-theme/actions';
 import { Table, Container } from 'design-react-kit';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
@@ -32,10 +32,29 @@ const TableTemplate = (props) => {
   } = props;
 
   const intl = useIntl();
+  const dispatch = useDispatch();
   const { views } = config.widgets;
 
   // necessario per gli edditor nel momento in cui aggiungono nuove colonne
   const ct_schema = useSelector((state) => state.ct_schema?.subrequests);
+
+  // Load the CT schema for columns that don't already carry persisted
+  // field_properties, so date/datetime widgets can format their values in
+  // view mode (otherwise the raw ISO value would be rendered).
+  useEffect(() => {
+    const cts = [
+      ...new Set(
+        (columns ?? [])
+          .filter((c) => !c.field_properties && c.ct)
+          .map((c) => c.ct),
+      ),
+    ];
+    cts.forEach((ct) => {
+      if (!ct_schema?.[ct]) {
+        dispatch(getCTSchema(ct));
+      }
+    });
+  }, [columns, ct_schema, dispatch]);
 
   let render_columns =
     (columns ?? []).filter((c) => c.field === 'title').length > 0
