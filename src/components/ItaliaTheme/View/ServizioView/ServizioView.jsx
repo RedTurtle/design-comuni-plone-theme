@@ -5,7 +5,6 @@
 
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import {
   PageHeader,
   ContentImage,
@@ -38,6 +37,7 @@ import {
   ContentTypeViewSections,
   useSideMenu,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import moment from 'moment';
 
 import { defineMessages, useIntl } from 'react-intl';
 
@@ -115,10 +115,9 @@ export const ServizioViewSectionsOrder = (props) => [
  * @params {object} content Content object.
  * @returns {string} Markup of the component.
  */
-const ServizioView = ({ content, moment }) => {
+const ServizioView = ({ content }) => {
   const intl = useIntl();
-  const Moment = moment.default;
-  Moment.locale(intl.locale);
+  moment.locale(intl.locale);
 
   const documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
@@ -154,7 +153,7 @@ const ServizioView = ({ content, moment }) => {
             {/* SEZIONI */}
             <ContentTypeViewSections
               content={content}
-              defaultSections={ServizioViewSectionsOrder({ moment: Moment })}
+              defaultSections={ServizioViewSectionsOrder({ moment: {default: moment } })}
             />
           </section>
         </div>
@@ -240,4 +239,4 @@ ServizioView.propTypes = {
   }),
 };
 
-export default injectLazyLibs(['moment'])(ServizioView);
+export default ServizioView;
