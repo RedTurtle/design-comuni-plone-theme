@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useIntl, defineMessages } from 'react-intl';
 
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import {
   viewDate,
