@@ -30,8 +30,13 @@ test('View renders all fields', async () => {
     </Provider>,
   );
   //campi sidebar
-  expect(screen.getByText(/Mostra lo sfondo del blocco/i)).toBeInTheDocument();
+  // CheckboxWidget is lazy-loaded via @loadable/component (Volto 18.35.0),
+  // so its content only appears after the initial synchronous render;
+  // findByText retries until the lazy chunk resolves.
   expect(
-    screen.getByText(/Mostra lo sfondo a tutta larghezza/i),
+    await screen.findByText(/Mostra lo sfondo del blocco/i),
+  ).toBeInTheDocument();
+  expect(
+    await screen.findByText(/Mostra lo sfondo a tutta larghezza/i),
   ).toBeInTheDocument();
 });
