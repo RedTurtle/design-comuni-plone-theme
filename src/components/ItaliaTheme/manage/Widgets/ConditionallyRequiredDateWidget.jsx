@@ -1,5 +1,5 @@
 import React from 'react';
-import { DatetimeWidget } from '@plone/volto/config/Widgets';
+import { DatetimeWidget } from '@plone/volto/components/manage/Widgets';
 
 const ConditionallyRequiredDateWidget = (props) => {
   const { value, formData, onChange, id, title, required, ...rest } = props;

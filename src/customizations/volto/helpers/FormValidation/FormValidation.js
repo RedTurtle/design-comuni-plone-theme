@@ -11,8 +11,9 @@
  * - Kept the pre-refactor `widgetValidation` object (`email`/`url`/`password`/`string`/`number`/
  *   `integer` validators, backed by local `isMaxPropertyValid`/`isMinPropertyValid` helpers)
  *   instead of adopting upstream's `config.getUtilities` validator-registry architecture; the
- *   upstream `format`/`widgetOptions.frontendOptions`/`behavior`/`blockType` validators and the
- *   `extractInvariantErrors` export are not present here.
+ *   upstream `format`/`widgetOptions.frontendOptions`/`behavior`/`blockType` validators are not
+ *   present here. `validationMessage` and `extractInvariantErrors` are still exported (copied
+ *   from upstream unchanged) since other Volto/addon modules import them by name from this path.
  * - `widgetValidation` is extended with `...CUSTOM_DGFIELD_VALIDATION` (imported from
  *   `design-comuni-plone-theme/helpers`): a pluggable per-datagridfield validator registry keyed
  *   by the CT schema field id (e.g. `timeline_tempi_scadenze: { isValid(value, itemObj, intlFunc) }`),
@@ -61,7 +62,12 @@ import config from '@plone/volto/registry';
  * @param {string | number} valueToCompare can compare '47' < 50
  * @param {Function} intlFunc
  */
-const validationMessage = (isValid, criterion, valueToCompare, intlFunc) =>
+export const validationMessage = (
+  isValid,
+  criterion,
+  valueToCompare,
+  intlFunc,
+) =>
   !isValid
     ? intlFunc(messages[criterion], {
         len: valueToCompare,
@@ -479,4 +485,14 @@ export const validateFileUploadSize = (file, intlFunc) => {
     );
   }
   return isValid;
+};
+
+/**
+ * Extract invariant errors given an array of errors.
+ * @param {Array} erros
+ */
+export const extractInvariantErrors = (erros) => {
+  return erros
+    .filter((errorItem) => !('field' in errorItem))
+    .map((errorItem) => errorItem['message']);
 };
