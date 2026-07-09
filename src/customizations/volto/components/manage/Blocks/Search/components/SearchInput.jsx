@@ -1,7 +1,10 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-  - added id to searchInput label to match aria-describedby tag
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/components/SearchInput.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling
+ * - added id to searchInput label to match aria-describedby tag
+ */
 import React, { useState } from 'react';
 import { Button, Icon, Input, Label } from 'design-react-kit';
 import { useIntl } from 'react-intl';
@@ -60,6 +63,7 @@ const SearchInput = (props) => {
       />
       {searchText && (
         <button
+          type="button"
           className="clear-icon bg-transparent"
           onClick={clearSearch}
           title={intl.formatMessage(commonSearchBlockMessages.clearSearch)}
@@ -79,6 +83,7 @@ const SearchInput = (props) => {
       {data.showSearchButton && (
         <div className="input-group-append">
           <Button
+            type="button"
             color="primary"
             tag="button"
             title={

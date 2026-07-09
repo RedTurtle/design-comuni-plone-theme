@@ -1,8 +1,10 @@
 /*
-Customizations:
-- remove unnecessary hasType check and hasType value in dependencies, supported content type is ALL for our use case
-- fix relative import
-*/
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Teaser/Body.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - remove unnecessary hasType check and hasType value in dependencies, supported content type is ALL for our use case
+ * - fix relative import
+ */
 
 import React from 'react';
 import PropTypes from 'prop-types';

@@ -1,6 +1,23 @@
-// CUSTOMIZATION:
-// - added unique parameter to fields to allow preventing users from using same value more than once in the same field e.g. submitting form with same email more than once
-/* eslint-disable import/no-anonymous-default-export */
+/*
+ * original: https://raw.githubusercontent.com/collective/volto-form-block/v3.17.1/src/fieldSchema.js
+ *
+ * CUSTOMIZATIONS:
+ * - added a `unique-${field_id}` boolean property (title/description from
+ *   the new `field_unique_title`/`field_unique_description` messages,
+ *   `send_to_backend: true`) to every field's fieldset, to let editors mark
+ *   a field's value as unique so the backend rejects a submission that
+ *   reuses a value already submitted for that field (e.g. preventing the
+ *   same email from submitting the form twice)
+ * - added an `autocomplete` string property (title/description from the new
+ *   `field_autocomplete`/`field_autocomplete_description` messages, with a
+ *   large `autocompleteValues` list of HTML `autocomplete` token choices and
+ *   a WCAG help link) shown in the fieldset for all field types except
+ *   `checkbox`, `attachment`, `single_choice`, `multiple_choice` and
+ *   `static_text`
+ * - replaced the inline `eslint-disable-next-line import/no-anonymous-default-export`
+ *   comment above the default export with a file-level eslint-disable for
+ *   the same rule
+ */
 import config from '@plone/volto/registry';
 import { defineMessages } from 'react-intl';
 import { useIntl } from 'react-intl';

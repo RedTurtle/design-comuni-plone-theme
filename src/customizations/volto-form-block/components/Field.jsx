@@ -1,9 +1,56 @@
 /**
  * Field
  * @module components/manage/Blocks/IconsBlocks/View
+ */
+
+/*
+ * original: https://raw.githubusercontent.com/collective/volto-form-block/v3.17.1/src/components/Field.jsx
  *
  * CUSTOMIZATIONS:
- * - customized to use design-react-kit elements instead semantic-ui elements
+ * - replaced the upstream `volto-form-block/components/Widget/*` widgets
+ *   (TextWidget, TextareaWidget, NumberWidget, SelectWidget, RadioWidget,
+ *   CheckboxListWidget, CheckboxWidget, DatetimeWidget, EmailWidget,
+ *   WysiwygWidget) with design-react-kit `Input`, `FormGroup` and `Label`
+ * - removed the `field_type === 'hidden'` case (HiddenWidget is no longer
+ *   rendered)
+ * - `select` field type renders a `react-select` `Select` directly (via
+ *   `injectLazyLibs('reactSelect')`) instead of `SelectWidget`, with a custom
+ *   `DropdownIndicator` showing an `Icon` "chevron-down"
+ *   (design-comuni-plone-theme) and manual `.bootstrap-select-wrapper` /
+ *   `<label>` / `aria-labelledby` markup
+ * - `single_choice`, `multiple_choice` and `checkbox` field types use manual
+ *   `<fieldset>`/`<legend>` markup with design-react-kit `FormGroup check` +
+ *   `Input`/`Label for=... check` (with `addon` to avoid the `form-control`
+ *   class added by kit v4.0.2) and a hand-rolled `invalid-feedback` block for
+ *   `errorMessage`, instead of `RadioWidget`/`CheckboxListWidget`/
+ *   `CheckboxWidget`
+ * - `date` field type uses design-react-kit `Input type="date"` instead of
+ *   `DatetimeWidget`
+ * - `attachment` field type uses
+ *   `design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/FileWidget`
+ *   instead of the upstream `volto-form-block/components/Widget/FileWidget`
+ * - `email`/`from` field types use design-react-kit `Input type="email"` and
+ *   force `required={true}` regardless of the field's own `required` prop,
+ *   instead of `EmailWidget`
+ * - `static_text` field type uses `TextEditorWidget`
+ *   (design-comuni-plone-theme) in edit mode and `TextBlockView`
+ *   (`@plone/volto-slate/blocks/Text`) in view mode, instead of
+ *   `WysiwygWidget`/`dangerouslySetInnerHTML`; added `fromHtml` conversion for
+ *   backward compatibility with the old draftjs-based value
+ * - added `getLabel()` (appends " *" to the label when `required`) and an
+ *   `infoText` helper combining `description`/`errorMessage`, since
+ *   design-react-kit `Input` takes a single `label`/`infoText` prop instead of
+ *   the separate `title`/`description`/`error` props used by the upstream
+ *   widgets
+ * - added a numeric-only `onKeyDown` filter on the `number` field
+ * - added an `autocomplete`/`autoComplete` prop threaded through the text,
+ *   textarea, number, select, date and email inputs (not present upstream)
+ * - translated the `select_a_value` default message to Italian ("Seleziona un
+ *   valore") and added the `static_field_placeholder`/`open_menu` messages
+ * - removed the `import 'volto-form-block/components/Field.css'` stylesheet
+ *   import
+ * - wrapped the export with `injectLazyLibs('reactSelect')(Field)` (needed to
+ *   inject the `reactSelect` lib used by the `select` field type)
  */
 
 import React, { useState } from 'react';

@@ -1,6 +1,11 @@
-/* CUSTOMIZATIONS:
-  - Use with more plone.app.querystring.date operations
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/utils.js
+ *
+ * CUSTOMIZATIONS:
+ * - Use with more plone.app.querystring.date operations (added lessThan and largerThan to DATE_OPERATIONS)
+ * - Added getBackgroundClass helper to compute background CSS classes for a block
+ * - Added useClickOutside hook to detect clicks outside a ref'd element
+ */
 import { useEffect } from 'react';
 
 export const NONVALUE_OPERATIONS = new Set([

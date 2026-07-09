@@ -1,8 +1,23 @@
 /**
  * Edit video block.
  * @module components/manage/Blocks/Title/Edit
+ *
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Video/Edit.jsx
+ *
  * CUSTOMIZATIONS:
  * - handle url validation and show users errors
+ * - rewritten as a class component (instead of the upstream functional
+ *   component) to hold local `url`/`error` state
+ * - validate the submitted url with `checkIfValidVideoLink` (repo helper),
+ *   honoring `data.allowExternals` / `config.settings.videoAllowExternalsDefault`,
+ *   before calling `onChangeBlock`
+ * - on an invalid url, keep the block empty, flag the Input as errored and
+ *   show a `VideoBlockInvalidLink` `Toast` error notification (via
+ *   `toastify`) instead of applying the url
+ * - import `Body` from the local `./Body` customization instead of
+ *   `@plone/volto/components/manage/Blocks/Video/Body`
+ * - replaced the upstream `withBlockExtensions` HOC with
+ *   `compose(injectIntl, injectLazyLibs(['toastify']))`
  */
 
 import React, { Component } from 'react';
@@ -12,12 +27,11 @@ import { Button, Input, Message } from 'semantic-ui-react';
 import cx from 'classnames';
 import { isEqual } from 'lodash';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import {
-  Icon,
-  SidebarPortal,
-  VideoSidebar,
-  Toast,
-} from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
+import VideoSidebar from '@plone/volto/components/manage/Blocks/Video/VideoSidebar';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
+import Image from '@plone/volto/components/theme/Image/Image';
 import clearSVG from '@plone/volto/icons/clear.svg';
 import aheadSVG from '@plone/volto/icons/ahead.svg';
 import videoBlockSVG from '@plone/volto/components/manage/Blocks/Video/block-video.svg';
@@ -203,7 +217,7 @@ class Edit extends Component {
         ) : (
           <Message>
             <center>
-              <img src={videoBlockSVG} alt="" />
+              <Image src={videoBlockSVG} alt="" />
               <div className="toolbar-inner">
                 <Input
                   onKeyDown={this.onKeyDownVariantMenuForm}
@@ -218,6 +232,7 @@ class Edit extends Component {
                 {this.state.url && (
                   <Button.Group>
                     <Button
+                      type="button"
                       basic
                       className="cancel"
                       onClick={(e) => {
@@ -231,6 +246,7 @@ class Edit extends Component {
                 )}
                 <Button.Group>
                   <Button
+                    type="button"
                     basic
                     primary
                     onClick={(e) => {

@@ -3,15 +3,40 @@
  * @module components/theme/Navigation/Navigation
  */
 
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/theme/Navigation/Navigation.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Complete rewrite of the navigation markup/behaviour on top of Bootstrap
+ *   Italia (design-react-kit): uses Header/HeaderContent/HeaderToggler/Nav
+ *   instead of semantic-ui-react's Menu, and a custom Collapse (from
+ *   design-comuni-plone-theme/components) + FocusLock for the mobile menu,
+ *   instead of the CSSTransition-based mobile-menu markup.
+ * - Sources menu items from the volto-dropdownmenu addon
+ *   (getDropdownMenuNavitems/getItemsByPath + state.dropdownMenuNavItems)
+ *   instead of the core state.navigation.items/getNavigation action
+ *   (getBaseUrl/hasApiExpander driven fetch removed).
+ * - Adds subsite support: renders a subsite logo/BrandText in the brand
+ *   wrapper and conditionally renders ParentSiteMenu (subsite) vs
+ *   TertiaryMenu (main site) based on state.subsite?.data.
+ * - Renders MegaMenu items, MenuSecondary and SocialHeader alongside the
+ *   main navigation, none of which exist in the upstream component.
+ * - Adds a document-level click listener (getAnchorTarget helper) that
+ *   closes the mobile menu/focus trap when a menu link is clicked.
+ * - Adds a custom close button for the mobile Collapse panel.
+ * - Renamed/changed i18n messages: closeMobileMenu/openMobileMenu replaced
+ *   by CloseMenu/toggleMenu/toggleMenu_open/toggleMenu_close/mainMenu.
+ */
+
 import React, { useEffect, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 import { Header, HeaderContent, HeaderToggler, Nav } from 'design-react-kit';
 
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import { Collapse } from 'design-comuni-plone-theme/components';
 import {

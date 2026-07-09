@@ -2,12 +2,15 @@
  * Body video block.
  * @module components/manage/Blocks/Video/Body
  *
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Video/Body.jsx
+ *
  * Customizations:
  * - support external sources for preview image
  * - added ConditionalEmbed
  * - changed icon for preview with FontAwesome icon
  * - overhauled url checking, it would break on correct links and allow incorrect ones
  * - video passed to ConditionalEmbed only when cookie are accepted, preventing the fetch when not accepted
+ * - added support for playing external (non-youtube/vimeo, non-mp4) video URLs directly via a <video> tag when allowed (data.allowExternals or config.settings.videoAllowExternalsDefault)
  */
 
 import React from 'react';
@@ -16,7 +19,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Embed, Message } from 'semantic-ui-react';
 import cx from 'classnames';
-import { isInternalURL, getParentUrl } from '@plone/volto/helpers';
+import { isInternalURL, getParentUrl } from '@plone/volto/helpers/Url/Url';
 import { videoUrlHelper } from 'design-comuni-plone-theme/helpers';
 import { ConditionalEmbed } from 'volto-gdpr-privacy';
 import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';

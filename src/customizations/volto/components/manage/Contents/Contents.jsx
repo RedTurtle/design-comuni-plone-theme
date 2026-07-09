@@ -1,10 +1,15 @@
 /**
+ * original: https://raw.githubusercontent.com/plone/volto/18.0.3/packages/volto/src/components/manage/Contents/Contents.jsx
+ *
  * CUSTOMIZATIONS:
  * - Print error from request when clipboardRequest has error.
- * - on copy, delete, paste, rename, workflow operation, check affectedItems to display a message if number is grather than config.settings?.content_op_max_affected_items (default=300).
+ * - Replaced Volto's built-in link-integrity delete confirmation (the <Confirm> dialog plus the componentDidUpdate/linkIntegrityCheck logic and related state/messages) with a custom ContentsDeleteModal component.
+ * - Added a custom ContentsPasteModal confirmation step for paste operations (new showPaste state, onPasteOk/onPasteCancel handlers), instead of pasting immediately on click.
+ * - on copy, delete, paste, rename, workflow operation, check affectedItems (via getCountAffectedItems/resetSearchContent and a new ContentsAffectedItemsOnCopyModal) to display a message if number is grather than config.settings?.content_op_max_affected_items (default=300).
+ * - Uses Portal from react-portal instead of createPortal from react-dom for the toolbar portal.
  * - added aria-live to Contents component with polite value.
  * - added aria-controls and aria-label to the search input
- * - wrapped the search results in a new <div> with id="contents-table-wrapper"
+ * - wrapped the search results in a new <div> with id="contents-table-wrapper", including a visually-hidden aria-live status span announcing the number of results
  */
 /**
  * Contents component.

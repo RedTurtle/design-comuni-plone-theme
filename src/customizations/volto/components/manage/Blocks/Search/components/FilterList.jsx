@@ -1,12 +1,20 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-  - Pass more useful props to components
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/components/FilterList.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling: replaced semantic-ui-react (Accordion/Button/Icon) markup with design-react-kit components and Bootstrap Italia classes (accordion-wrapper, accordion-header, accordion-content, etc.)
+ * - Added explicit ARIA attributes (aria-expanded, aria-controls, aria-labelledby, aria-hidden) on the accordion toggle/content for accessibility
+ * - Added click-outside handling (useClickOutside) to close the filter panel when clicking elsewhere
+ * - Wrapped the totalFilters count in useMemo and extended it to also account for active "toggleFacet" facets
+ * - Moved/restyled the "clear filters" button to the bottom of the filter list, using commonSearchBlockMessages.clearAllFilters for its aria-label/title
+ * - Pass more useful props to components: spread full props, intl and facetSettings into each FilterListComponent
+ * - Use injectIntl/compose instead of the useIntl hook, since intl is now received via props
+ */
 import React, { useMemo, useRef } from 'react';
 import { Button, Icon } from 'design-react-kit';
 import { defineMessages, injectIntl } from 'react-intl';
-import { isEmpty } from 'lodash';
-import { resolveExtension } from '@plone/volto/helpers';
+import isEmpty from 'lodash/isEmpty';
+import { resolveExtension } from '@plone/volto/helpers/Extensions';
 import cx from 'classnames';
 import { compose } from 'redux';
 import { useClickOutside } from '../utils';
@@ -51,6 +59,7 @@ const FilterList = (props) => {
   return totalFilters > 0 ? (
     <div className={'accordion-wrapper filter-listing'} ref={ref}>
       <button
+        type="button"
         onClick={() => {
           setIsOpened(!isOpened);
         }}
@@ -109,6 +118,7 @@ const FilterList = (props) => {
             );
           })}
           <Button
+            type="button"
             icon
             color="danger"
             size="md"

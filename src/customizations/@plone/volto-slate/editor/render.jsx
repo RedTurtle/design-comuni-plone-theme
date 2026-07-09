@@ -1,5 +1,21 @@
-// customization:
-// - Element component to render heading tags correctly
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto-slate/src/editor/render.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Import the Slate stylesheet via the absolute package path
+ *   (`@plone/volto-slate/editor/less/slate.less`) instead of the relative
+ *   `./less/slate.less`, since this shadow file lives in a different
+ *   directory tree than the original package.
+ * - `Element`: render heading tags (h1-h6) as native DOM elements with
+ *   `{...attributes}` and `{children}` directly, bypassing the elements
+ *   registry, to fix headings not receiving the Slate attributes (ref,
+ *   data-slate-*, contentEditable) they need to be editable.
+ * - `Element`: rebuilt the `attrs` object to spread all incoming
+ *   `attributes` and merge `element.styleName` into `className` (instead of
+ *   only using `styleName` and filtering attributes one by one); `children`
+ *   is now destructured and passed explicitly as JSX children instead of
+ *   flowing through `...rest`.
+ */
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { useLocation } from 'react-router-dom';
@@ -8,9 +24,12 @@ import { useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Node, Text } from 'slate';
 import cx from 'classnames';
-import { isEmpty, omit } from 'lodash';
-import { UniversalLink, Toast } from '@plone/volto/components';
-import { messages, addAppURL } from '@plone/volto/helpers';
+import isEmpty from 'lodash/isEmpty';
+import omit from 'lodash/omit';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
+import { messages } from '@plone/volto/helpers/MessageLabels/MessageLabels';
+import { addAppURL } from '@plone/volto/helpers/Url/Url';
 import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 import config from '@plone/volto/registry';
 import linkSVG from '@plone/volto/icons/link.svg';

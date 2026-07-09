@@ -1,5 +1,16 @@
-// CUSTOMIZATION:
-// - 196-202 - 230-262: added file upload restraint message as per agid regulations
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Contents/ContentsUploadModal.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - added file upload restraint message as per agid regulations: when the
+ *   destination path matches /servizi/.../modulistica/ and the folder does
+ *   not have "File"/"Modulo" as an addable type, the upload dropzone is
+ *   replaced by a "modulistica_restraint" warning message and uploads are
+ *   blocked (see the showFileRestraint check in render())
+ * - added getTypes action + connected `types` state (addable content types)
+ *   and a componentDidMount call to getTypes(), needed to compute the
+ *   showFileRestraint check above
+ */
 
 /**
  * Contents upload modal.
@@ -15,7 +26,6 @@ import {
   Dimmer,
   Header,
   Icon,
-  Image,
   Loader,
   Modal,
   Table,
@@ -23,13 +33,17 @@ import {
   TableCell,
 } from 'semantic-ui-react';
 import loadable from '@loadable/component';
-import { concat, filter, map } from 'lodash';
+import concat from 'lodash/concat';
+import filter from 'lodash/filter';
+import map from 'lodash/map';
 import filesize from 'filesize';
 import { readAsDataURL } from 'promise-file-reader';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import { FormattedRelativeDate } from '@plone/volto/components';
+import FormattedRelativeDate from '@plone/volto/components/theme/FormattedDate/FormattedRelativeDate';
 import { createContent, getTypes } from '@plone/volto/actions';
-import { validateFileUploadSize, getBaseUrl } from '@plone/volto/helpers';
+import { validateFileUploadSize } from '@plone/volto/helpers/FormValidation/FormValidation';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import Image from '@plone/volto/components/theme/Image/Image';
 
 const Dropzone = loadable(() => import('react-dropzone'));
 
@@ -310,7 +324,11 @@ class ContentsUploadModal extends Component {
                       </Table.Cell>
                       <Table.Cell>
                         {file.type.split('/')[0] === 'image' && (
-                          <Image src={file.preview} height={60} />
+                          <Image
+                            src={file.preview}
+                            height={60}
+                            className="ui image"
+                          />
                         )}
                       </Table.Cell>
                       <Table.Cell>

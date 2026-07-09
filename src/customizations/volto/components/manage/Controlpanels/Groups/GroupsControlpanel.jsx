@@ -1,6 +1,14 @@
-// CUSTOMIZATION:
-// - 124: Set AuthenticatedUsers roles as authenticatedRole for all groups
-// - 263: Changed updateGroupRole function to update all checkboxes when changing the AuthenticatedUsers checkboxes
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Controlpanels/Groups/GroupsControlpanel.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Removed manager-based role-assignment restrictions (getUser, jwtDecode, isManager, canAssignRole): all roles can now be assigned to every group regardless of the current user's permissions; also removed the isUserManager prop passed to RenderGroups.
+ * - Set AuthenticatedUsers roles as authenticatedRole for all groups (inherited roles are fetched in fetchData).
+ * - Changed updateGroupRole function to update all checkboxes when changing the AuthenticatedUsers checkboxes (unchecking a role on AuthenticatedUsers also removes it from all other groups).
+ * - Simplified the delete-group flow: removed the Dimmer/Loader shown while a delete is in progress, reset the delete state synchronously in onDeleteOk instead of waiting for deleteGroupRequest to succeed, and removed the "group deleted" success toast (onDeleteGroupSuccess).
+ * - Replaced React's createPortal with the Portal component from react-portal for rendering the toolbar.
+ * - Consolidated imports to use the @plone/volto/actions, @plone/volto/components and @plone/volto/helpers barrel exports instead of deep/direct import paths.
+ */
 
 /**
  * Users controlpanel container.
@@ -485,8 +493,9 @@ class GroupsControlpanel extends Component {
                       messages.addGroupsFormGroupNameTitle,
                     ),
                     type: 'string',
-                    description:
-                      'A unique identifier for the group. Can not be changed after creation.',
+                    description: this.props.intl.formatMessage(
+                      messages.addGroupsFormGroupNameDescription,
+                    ),
                   },
                   email: {
                     title: this.props.intl.formatMessage(

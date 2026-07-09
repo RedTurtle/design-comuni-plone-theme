@@ -2,33 +2,47 @@
  * History component.
  * @module components/manage/History/History
  */
-/* CUSTOMIZATIONS
-- Fix this god forsaken table layout
-- Remove useless and too long translation for version number,
-  a nice # as the table header for version number will do just fine
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/History/History.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Fix this god forsaken table layout
+ * - Remove useless and too long translation for version number,
+ *   a nice # as the table header for version number will do just fine
+ * - Drop the registry-driven Container override (config.getComponent('Container')),
+ *   always use the plain semantic-ui-react Container
+ * - Drop the processHistoryEntries() helper and its is_current marking of the
+ *   latest versioning entry; entries are processed inline in render() as before
+ * - Always show the "Revert to this revision" action for entries with a version
+ *   (drop the may_revert && !is_current guard)
+ */
 
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import { Helmet } from '@plone/volto/helpers';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Container, Dropdown, Icon, Segment, Table } from 'semantic-ui-react';
-import { concat, map, reverse, find } from 'lodash';
+import concat from 'lodash/concat';
+import map from 'lodash/map';
+import reverse from 'lodash/reverse';
+import find from 'lodash/find';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import { asyncConnect } from '@plone/volto/helpers';
+import { asyncConnect } from '@plone/volto/helpers/AsyncConnect';
 
+import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
+import IconNext from '@plone/volto/components/theme/Icon/Icon';
+import Toolbar from '@plone/volto/components/manage/Toolbar/Toolbar';
+import Forbidden from '@plone/volto/components/theme/Forbidden/Forbidden';
+import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorized';
 import {
-  FormattedDate,
-  Icon as IconNext,
-  Toolbar,
-  Forbidden,
-  Unauthorized,
-} from '@plone/volto/components';
-import { getHistory, revertHistory, listActions } from '@plone/volto/actions';
-import { getBaseUrl } from '@plone/volto/helpers';
+  getHistory,
+  revertHistory,
+} from '@plone/volto/actions/history/history';
+import { listActions } from '@plone/volto/actions/actions/actions';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 
 import backSVG from '@plone/volto/icons/back.svg';
 

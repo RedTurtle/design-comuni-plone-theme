@@ -1,12 +1,46 @@
-/*
-CUSTOMIZATIONS:
-- Added stores link
-- Added slate
-*/
-
 /**
  * Edit Hero block.
  * @module components/manage/Blocks/Image/Edit
+ */
+
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Image/Edit.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - This is not the current upstream Image block (which is a small function
+ *   component built around `ImageInput`/`ImageSidebar`/`withBlockExtensions`
+ *   and the `Image` component from the registry); it is a fork of an older,
+ *   pre-`withBlockExtensions` class-based version of that block, further
+ *   customized into a "hero" block with a title, a description and app
+ *   store links, rather than a plain image block.
+ * - Renders a raw `<img src=".../@@images/image">` instead of the
+ *   registry `Image` component, with no `image_field`/`image_scales`,
+ *   `size` (l/m/s) or `align` (full-width) handling.
+ * - The upload flow is the old manual one: an `onUploadImage` handler reads
+ *   the file with `readAsDataURL` and dispatches `createContent` to create
+ *   an `Image` content item directly, with a semantic-ui `Message`/`Button`
+ *   "browse" UI, instead of the current `ImageInput` (object browser +
+ *   drag/drop) widget.
+ * - Uses `HeroSidebar` (design-comuni-plone-theme/components/ItaliaTheme/
+ *   Blocks/HeroImageLeft/HeroSidebar) via `SidebarPortal` instead of the
+ *   upstream `ImageSidebar`.
+ * - Added an editable title (`h1`) and description (`p`), each rendered
+ *   with `TextEditorWidget` (design-comuni-plone-theme/components/
+ *   ItaliaTheme, Slate-based) bound to the block's `title`/`description`
+ *   data, with `currentFocused` state and `setSelected`/`focusNextField`/
+ *   `focusPrevField` callbacks to move focus between the two fields.
+ * - Added `StoresButtons` (design-comuni-plone-theme/components/
+ *   ItaliaTheme/Blocks/HeroImageLeft/StoresButtons), rendered with
+ *   `data={this.props.data}` below the title/description.
+ * - Added `handleKeyDownOwnFocusManagement` (design-comuni-plone-theme/
+ *   helpers/blocks) wired to a `keydown` listener on a `blockRef`/
+ *   `blockNode` wrapper div for custom focus handling between the Slate
+ *   fields.
+ * - Wrapped the block markup in an extra `.public-ui` div, and renders
+ *   `.block.hero` / `.hero-image` / `.hero-body` (with a `no-bg` modifier
+ *   driven by `data.show_block_bg`) instead of the upstream
+ *   `.block.image.align`/align modifier markup.
+ * - No `withBlockExtensions` wrapper, no link/`UniversalLink` support.
  */
 
 import React, { Component } from 'react';
@@ -15,17 +49,15 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { readAsDataURL } from 'promise-file-reader';
 import { Button, Dimmer, Loader, Message } from 'semantic-ui-react';
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import { defineMessages, injectIntl } from 'react-intl';
 import cx from 'classnames';
 import { handleKeyDownOwnFocusManagement } from 'design-comuni-plone-theme/helpers/blocks';
-import {
-  flattenToAppURL,
-  getBaseUrl,
-  validateFileUploadSize,
-} from '@plone/volto/helpers';
-import { createContent } from '@plone/volto/actions';
-import { Icon, SidebarPortal } from '@plone/volto/components';
+import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import { validateFileUploadSize } from '@plone/volto/helpers/FormValidation/FormValidation';
+import { createContent } from '@plone/volto/actions/content/content';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
 

@@ -1,16 +1,29 @@
 /**
  * Add link form.
  * @module components/manage/AnchorPlugin/components/LinkButton/AddLinkForm
- * Customizzato
+ */
+
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/AnchorPlugin/components/LinkButton/AddLinkForm.jsx
+ *
+ * CUSTOMIZATIONS:
  * - Aggiunta gestione data-element
  * - Aggiunte opzioni per la select del data-element
  * - Modificate icone ed elementi per stilizzare il tooltip del link
  * - passato l'item selezionato, oltre alla sua url, nella onchange
+ * - Rimosso il supporto alla prop objectBrowserPickerType: il pulsante per
+ *   aprire l'object browser è ora sempre visibile con mode fissa a "link"
+ * - Rimossi i messaggi e le aria-label di accessibilità (clear,
+ *   openObjectBrowser, submit) sui pulsanti
+ * - Aggiunto controllo di esistenza di this.input prima di richiamare
+ *   focus() in componentDidMount
+ * - Rimosso il metodo onSelectItem non più utilizzato
  */
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
+import { withRouter } from 'react-router';
 
 import cx from 'classnames';
 import {
@@ -18,9 +31,9 @@ import {
   isInternalURL,
   flattenToAppURL,
   URLUtils,
-} from '@plone/volto/helpers';
+} from '@plone/volto/helpers/Url/Url';
 
-import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
+import doesNodeContainClick from 'semantic-ui-react/dist/commonjs/lib/doesNodeContainClick';
 import { Input, Form, Button } from 'semantic-ui-react';
 import { defineMessages, injectIntl } from 'react-intl';
 
@@ -28,10 +41,9 @@ import clearSVG from '@plone/volto/icons/clear.svg';
 import navTreeSVG from '@plone/volto/icons/nav.svg';
 import aheadSVG from '@plone/volto/icons/ahead.svg';
 
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import withObjectBrowser from '@plone/volto/components/manage/Sidebar/ObjectBrowser';
-import { withRouter } from 'react-router';
-
-import { Icon, SelectWidget } from '@plone/volto/components';
+import SelectWidget from '@plone/volto/components/manage/Widgets/SelectWidget';
 
 const messages = defineMessages({
   placeholder: {
@@ -269,6 +281,7 @@ class AddLinkForm extends Component {
                 {value.length > 0 ? (
                   <Button.Group>
                     <Button
+                      type="button"
                       basic
                       className="cancel"
                       onClick={(e) => {
@@ -283,6 +296,7 @@ class AddLinkForm extends Component {
                 ) : (
                   <Button.Group>
                     <Button
+                      type="button"
                       basic
                       icon
                       onClick={(e) => {
