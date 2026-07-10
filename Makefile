@@ -83,7 +83,7 @@ build-frontend: ## Build frontend
 .PHONY: start-frontend
 start-frontend: ## Starts Docker frontend
 	@echo "$(GREEN)==> Start Docker-based Volto Frontend $(RESET)"
-	${DOCKER_COMPOSE} up addon-prod # -d
+	${DOCKER_COMPOSE} up addon-prod -d
 
 .PHONY: stop-frontend
 stop-frontend: ## Stop Docker frontend
