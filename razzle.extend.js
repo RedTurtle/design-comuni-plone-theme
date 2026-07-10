@@ -10,7 +10,7 @@ const lessLoaderFinder = makeLoaderFinder('less-loader');
 const babelLoaderFinder = makeLoaderFinder('babel-loader');
 
 const plugins = (defaultPlugins) => {
-  const newPlugins = defaultPlugins.filter((plugin) => plugin !== 'scss');
+  const newPlugins = defaultPlugins.filter((plugin) => plugin.name !== 'scss');
   newPlugins.push({
     name: 'scss',
     options: {
@@ -22,6 +22,12 @@ const plugins = (defaultPlugins) => {
             sourceMap: true,
             quiet: true,
             quietDeps: true,
+            silenceDeprecations: [
+              'import',
+              'global-builtin',
+              'color-functions',
+              'legacy-js-api',
+            ],
           },
         },
         prod: {
@@ -31,6 +37,12 @@ const plugins = (defaultPlugins) => {
             sourceMap: true,
             quiet: true,
             quietDeps: true,
+            silenceDeprecations: [
+              'import',
+              'global-builtin',
+              'color-functions',
+              'legacy-js-api',
+            ],
           },
         },
       },

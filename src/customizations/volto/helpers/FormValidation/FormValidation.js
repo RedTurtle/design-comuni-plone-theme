@@ -15,27 +15,38 @@
  *   present here. `validationMessage` and `extractInvariantErrors` are still exported (copied
  *   from upstream unchanged) since other Volto/addon modules import them by name from this path.
  * - `widgetValidation` is extended with `...CUSTOM_DGFIELD_VALIDATION` (imported from
- *   `design-comuni-plone-theme/helpers`): a pluggable per-datagridfield validator registry keyed
- *   by the CT schema field id (e.g. `timeline_tempi_scadenze: { isValid(value, itemObj, intlFunc) }`),
- *   letting each dataGridField widget register its own row-level validation.
+ *   `design-comuni-plone-theme/helpers/FormValidation/DataGridFormValidationHelpers`): a pluggable
+ *   per-datagridfield validator registry keyed by the CT schema field id (e.g.
+ *   `timeline_tempi_scadenze: { isValid(value, itemObj, intlFunc) }`), letting each dataGridField
+ *   widget register its own row-level validation.
  * - `validateFieldsPerFieldset`: resolves each field's validator key via `realWidgetType(field,
  *   fieldId)` and, when no built-in `widgetValidation` entry exists for it, falls back to
  *   `getSpecificDataGridFieldValidation(fieldId)` to look up the matching
- *   `CUSTOM_DGFIELD_VALIDATION` criteria (both from `design-comuni-plone-theme/helpers`).
+ *   `CUSTOM_DGFIELD_VALIDATION` criteria (both from
+ *   `design-comuni-plone-theme/helpers/FormValidation/DataGridFormValidationHelpers`).
  * - `validateRequiredFields`: also calls `serviceFormValidationHelper(schema, formData,
  *   touchedField, fields)` to make the `motivo_stato_servizio` field required only when the
  *   "Servizio" content type's `stato_servizio` marks the service as not fruibile, and
  *   `eventFormValidationHelper(schema, formData, touchedField, fields, errors, formatMessage)`
- *   for Evento-specific conditional required fields (both from `design-comuni-plone-theme/helpers`).
+ *   for Evento-specific conditional required fields (both from
+ *   `design-comuni-plone-theme/helpers/FormValidation/FormValidationHelpers`).
  * - `validateRequiredFields`: required fields with `widget === 'data_grid'` are validated by
  *   reading `dgfRequiredFields` from `schema.properties[requiredField].items.required` and
  *   flagging the field as empty if any row in `formData[requiredField]` is missing one of those
  *   sub-fields (dataGridField required-field support, e.g. `timeline_tempi_scadenze`, which only
  *   has one of five row fields actually required).
  * - Emptiness of required fields is computed via `getRealEmptyField(formData, touchedField,
- *   requiredField, type, widget)` (from `design-comuni-plone-theme/helpers`), adding support for
+ *   requiredField, type, widget)` (from
+ *   `design-comuni-plone-theme/helpers/FormValidation/FormValidationHelpers`), adding support for
  *   required fields with widget `"blocks"` (checking `blocks_layout` for actual text/table
  *   content) on top of the array/richtext/integer cases.
+ * - Imports these addon helpers directly from their source files rather than through the
+ *   `design-comuni-plone-theme/helpers` barrel: that barrel eagerly re-exports ~20 unrelated
+ *   helper modules, and since this file is itself loaded via Volto's own `helpers/index.js`
+ *   barrel (through the `@plone/volto/helpers/FormValidation/FormValidation` customization
+ *   alias), going through the addon barrel here created a circular require (addon barrel ->
+ *   this file -> addon barrel, still mid-evaluation) that crashed at runtime with
+ *   "Cannot read properties of undefined (reading 'CUSTOM_DGFIELD_VALIDATION')".
  */
 import map from 'lodash/map';
 import uniq from 'lodash/uniq';
@@ -49,10 +60,12 @@ import {
   serviceFormValidationHelper,
   eventFormValidationHelper,
   getRealEmptyField,
+} from 'design-comuni-plone-theme/helpers/FormValidation/FormValidationHelpers';
+import {
   getSpecificDataGridFieldValidation,
   realWidgetType,
   CUSTOM_DGFIELD_VALIDATION,
-} from 'design-comuni-plone-theme/helpers';
+} from 'design-comuni-plone-theme/helpers/FormValidation/DataGridFormValidationHelpers';
 import config from '@plone/volto/registry';
 
 /**
