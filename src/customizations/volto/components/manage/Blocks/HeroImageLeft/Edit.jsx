@@ -13,9 +13,9 @@
  *   pre-`withBlockExtensions` class-based version of that block, further
  *   customized into a "hero" block with a title, a description and app
  *   store links, rather than a plain image block.
- * - Renders a raw `<img src=".../@@images/image">` instead of the
- *   registry `Image` component, with no `image_field`/`image_scales`,
- *   `size` (l/m/s) or `align` (full-width) handling.
+ * - Renders `<Image src=".../@@images/image">` (a plain `src` URL, not
+ *   `item`/`imageField`), with no `image_field`/`image_scales`, `size`
+ *   (l/m/s) or `align` (full-width) handling.
  * - The upload flow is the old manual one: an `onUploadImage` handler reads
  *   the file with `readAsDataURL` and dispatches `createContent` to create
  *   an `Image` content item directly, with a semantic-ui `Message`/`Button`
@@ -57,6 +57,7 @@ import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { validateFileUploadSize } from '@plone/volto/helpers/FormValidation/FormValidation';
 import { createContent } from '@plone/volto/actions/content/content';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
+import Image from '@plone/volto/components/theme/Image/Image';
 import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
@@ -308,7 +309,7 @@ class EditComponent extends Component {
           <div className="block-inner-wrapper">
             {this.props.data.url ? (
               <div className="hero-image">
-                <img
+                <Image
                   src={`${flattenToAppURL(this.props.data.url)}/@@images/image`}
                   alt=""
                 />

@@ -11,6 +11,7 @@ import { contentHasImage } from 'design-comuni-plone-theme/helpers';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { UniversalLink } from '@plone/volto/components';
+import Image from '@plone/volto/components/theme/Image/Image';
 import cx from 'classnames';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { getVariationPropsDefaults } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
@@ -78,7 +79,7 @@ const GridGalleryTemplate = (props) => {
             }
             if (scale && item?.image?.scales?.[scale]) {
               image = (
-                <img
+                <Image
                   src={flattenToAppURL(item.image.scales[scale].download)}
                   width={item.image.scales[scale].width}
                   height={item.image.scales[scale].height}

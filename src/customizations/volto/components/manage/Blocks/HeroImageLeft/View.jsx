@@ -12,10 +12,10 @@
  *   `image_field`/`image_scales`, `size`/`align` classes and an optional
  *   `UniversalLink` wrapper for `data.href`); it is a fork of an older
  *   version of that block turned into a "hero" block.
- * - Renders a raw `<img src=".../@@images/image/teaser" aria-hidden="true"
- *   loading="lazy">` instead of the registry `Image` component, and has no
- *   `image_field`/`image_scales`, `size`, `align` or link/`UniversalLink`
- *   handling.
+ * - Renders `<Image src=".../@@images/image/teaser" aria-hidden="true"
+ *   loading="lazy">` (a plain `src` URL, not `item`/`imageField`), and has
+ *   no `image_field`/`image_scales`, `size`, `align` or
+ *   link/`UniversalLink` handling.
  * - Root markup is `.public-ui > .block.hero > .block-inner-wrapper`
  *   (with `.hero-image` around the image) instead of a single `<p
  *   className="block image align …">`.
@@ -32,6 +32,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import Image from '@plone/volto/components/theme/Image/Image';
 import StoresButtons from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons';
 
 /**
@@ -48,7 +49,7 @@ const View = ({ data }) => {
         <div className="block-inner-wrapper">
           {data.url && (
             <div className="hero-image">
-              <img
+              <Image
                 src={`${flattenToAppURL(data.url)}/@@images/image/teaser`}
                 alt=""
                 aria-hidden="true"

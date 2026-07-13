@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Message } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
+import ThemeImage from '@plone/volto/components/theme/Image/Image';
 import { isInternalURL, flattenToAppURL } from '@plone/volto/helpers';
 import {
   Row,
@@ -86,7 +87,7 @@ const ItaliaTeaserBody = (props) => {
       {!content && isEditMode && (
         <Message>
           <div className="teaser-item placeholder">
-            <img src={imageBlockSVG} alt="" />
+            <ThemeImage src={imageBlockSVG} alt="" />
             <p>{intl.formatMessage(messages.PleaseChooseContent)}</p>
           </div>
         </Message>

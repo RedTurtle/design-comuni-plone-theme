@@ -3,7 +3,7 @@
  * @module razzle.config
  */
 
-const makeLoaderFinder = require('razzle-dev-utils/makeLoaderFinder');
+const makeLoaderFinder = require('@plone/razzle-dev-utils/makeLoaderFinder');
 const fileLoaderFinder = makeLoaderFinder('file-loader');
 const urlLoaderFinder = makeLoaderFinder('url-loader');
 const lessLoaderFinder = makeLoaderFinder('less-loader');
@@ -86,7 +86,7 @@ const modify = (webpackConfig, { target, dev }, webpackObject) => {
 
   const urlLoader = webpackConfig.module.rules.find(urlLoaderFinder);
   urlLoader.exclude = [/\.(png|jpe?g)$/i, ...(urlLoader.exclude || [])];
-  // see: node_modules/razzle/config/createConfig.js
+  // see: node_modules/@plone/razzle/config/createConfig.js
   const IMG_LOADER = {
     test: /\.(png|jpe?g)$/i,
     use: [
