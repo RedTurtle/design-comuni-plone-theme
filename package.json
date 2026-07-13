@@ -204,15 +204,9 @@
   "peerDependencies": {
     "@plone/volto": "19.1.5"
   },
-  "pnpm": {
-    "overrides": {
-      "react": "18.2.0",
-      "react-dom": "18.2.0"
-    },
-    "onlyBuiltDependencies": [
-      "cypress",
-      "lightningcss-cli"
-    ]
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
-  "packageManager": "pnpm@10.20.0"
+  "packageManager": "yarn@3.2.3"
 }

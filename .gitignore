@@ -23,6 +23,11 @@ var
 
 locales/*.json
 
-# pnpm / locally-cloned Volto core (via mrs-developer)
-core/
-.pnpm-store/
+# Yarn 3
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
