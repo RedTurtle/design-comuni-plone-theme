@@ -1,6 +1,12 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/components/SelectFacetFilterListEntry.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling (design-react-kit Label/Icon/Button instead of semantic-ui-react)
+ * - Show the facet title (facetSettings.title / facetSettings?.field?.label) above the selected value(s), only when there is something selected
+ * - Resolve the selected value label via selectFacetStateToValue (using querystring indexes and facetSettings) instead of rendering the raw facet value
+ * - Add accessible aria-label/title on the remove buttons/icons via intl and commonSearchBlockMessages.clearFilter
+ */
 import React, { useMemo } from 'react';
 import { Label, Icon, Button } from 'design-react-kit';
 import { selectFacetStateToValue } from '@plone/volto/components/manage/Blocks/Search/components/base';

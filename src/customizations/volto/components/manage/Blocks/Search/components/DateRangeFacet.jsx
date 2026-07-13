@@ -1,7 +1,18 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-  - Use with more plone.app.querystring.date operations
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/components/DateRangeFacet.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling: replaced semantic-ui `Header`/`Icon` (and local left-key/right-key/clear SVG icons)
+ *   with the Bootstrap Italia `Icon` from `design-comuni-plone-theme/components/ItaliaTheme`
+ *   (icon-font classes it-chevron-left/it-chevron-right/it-close/it-arrow-right), an `h6` title
+ *   instead of `Header as="h4"`, accessible titles on the clear/arrow icons, a custom arrow icon
+ *   between the two date inputs, and `moment.localeData(lang)` directly instead of
+ *   `toBackendLang(lang)`
+ * - Use with more plone.app.querystring.date operations: rewrote `stateToValue`/`valueToQuery`
+ *   to individually support `date.largerThan`/`date.lessThan`/`date.between` operators (reading
+ *   the real operator from search state or from the URL hash query string via `query-string`),
+ *   instead of only handling a full start+end range
+ */
 import React, { useState } from 'react';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { defineMessages, injectIntl } from 'react-intl';

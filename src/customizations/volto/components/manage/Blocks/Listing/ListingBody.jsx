@@ -1,13 +1,15 @@
 /*
-CUSTOMIZATIONS:
--added skeleton
-- added additionalFilters
-- 'background class' and 'block class'
-- 'background class' and 'block class' logic for search block
-- search block integration
-- pass 'block'  prop to listing variation
-- added bg_color = "" if is a search block
-*/
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Listing/ListingBody.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - added skeleton
+ * - added additionalFilters
+ * - 'background class' and 'block class'
+ * - 'background class' and 'block class' logic for search block
+ * - search block integration
+ * - pass 'block' prop to listing variation
+ * - added bg_color = "" if is a search block
+ */
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import config from '@plone/volto/registry';

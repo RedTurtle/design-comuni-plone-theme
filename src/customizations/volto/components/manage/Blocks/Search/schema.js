@@ -1,9 +1,26 @@
-/* CUSTOMIZATIONS:
-  - Customized schema
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/schema.js
+ *
+ * CUSTOMIZATIONS:
+ * - Removed the upstream "Show sorting?" controls (showSortOn/sortOnOptions) and the
+ *   "views" fieldset (availableViews), which are not used by this theme's search block.
+ * - Removed the "advanced facet" toggle (advancedFacetTitle/advancedFacetDescription)
+ *   from FacetSchema.
+ * - Added a "usePloneRanking" boolean option (with description) to let editors fall back
+ *   to Plone's native relevance ranking instead of the default sort order.
+ * - Added a "show_block_bg" boolean option to toggle the block's background.
+ * - Added a new "columnText" fieldset/properties (columnTextTitle, columnText,
+ *   linkTitleColumn, linkHrefColumn) to show custom text/links in the side column.
+ * - Added an empty "listingTemplateOptions" fieldset, extendable via schemaEnhancer.
+ * - Added helper description texts (labelHelper, fieldHelper, facetWidgetHelper,
+ *   facetsHelper, columnTextTitleHelper, columnTextHelper) and changed the default
+ *   "Field" label to the Italian "Criterio".
+ * - Added `id: 'search'` to the schema and switched the utils import to the absolute
+ *   `@plone/volto/components/manage/Blocks/Search/utils` path required by the shadow file.
+ */
 import config from '@plone/volto/registry';
 import { defineMessages } from 'react-intl';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import {
   hasNonValueOperation,
   hasDateOperation,

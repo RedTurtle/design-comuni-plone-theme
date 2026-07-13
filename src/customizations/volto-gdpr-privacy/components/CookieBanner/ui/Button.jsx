@@ -1,6 +1,10 @@
 /*
+ * original: https://raw.githubusercontent.com/collective/volto-gdpr-privacy/v2.3.4/src/components/CookieBanner/ui/Button.jsx
+ *
  * CUSTOMIZATIONS:
- * - customized to use design-react-kit elements instead semantic-ui elements
+ * - customized to use design-react-kit's Button instead of semantic-ui-react's Button
+ * - map className modifiers to design-react-kit props: "primary" -> color="primary"; "close-button" -> color="link" + outline
+ * - strip the semantic-ui-only "basic" prop, unsupported by design-react-kit
  * */
 
 import React from 'react';

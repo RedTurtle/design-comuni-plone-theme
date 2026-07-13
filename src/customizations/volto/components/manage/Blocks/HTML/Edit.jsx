@@ -1,10 +1,17 @@
 /**
  * Edit html block.
  * @module components/manage/Blocks/HTML/Edit
+ */
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/HTML/Edit.jsx
  *
- * Customizations:
- * - added bgColor
- * - added showFullWidths
+ * CUSTOMIZATIONS:
+ * - added bgColor support (renders a `bg-light` className wrapper based on data.bgColor)
+ * - added showFullWidth support (renders a `full-width` className wrapper based on data.showFullWidth)
+ * - added custom Sidebar (design-comuni-plone-theme/components/ItaliaTheme/Blocks/HTML/Sidebar) via SidebarPortal
+ * - added toast error notification (injected `toastify` + `Toast` component) when prettify/preview formatting fails, replacing the upstream TODO comment
+ * - wrapped block content in additional container divs (`block html`, `public-ui`) instead of a Fragment
+ * - added `type="button"` to toolbar buttons
  */
 
 import { compose } from 'redux';
@@ -13,17 +20,18 @@ import PropTypes from 'prop-types';
 import { Button, Popup } from 'semantic-ui-react';
 import { defineMessages, injectIntl } from 'react-intl';
 import loadable from '@loadable/component';
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import cx from 'classnames';
 
-import { Icon, SidebarPortal } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import showSVG from '@plone/volto/icons/show.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
 import codeSVG from '@plone/volto/icons/code.svg';
 import indentSVG from '@plone/volto/icons/indent.svg';
 import Sidebar from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HTML/Sidebar';
-import { Toast } from '@plone/volto/components';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
 
 const Editor = loadable(() => import('react-simple-code-editor'));
 

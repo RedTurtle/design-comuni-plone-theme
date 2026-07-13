@@ -2,9 +2,12 @@
  * EndField component.
  * @module components/manage/Widgets/RecurrenceWidget/EndField
  *
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Widgets/RecurrenceWidget/EndField.jsx
  *
- *  * CUSTOMIZATIONS:
- * - added customization to have this changes https://github.com/plone/volto/pull/5555/files
+ * CUSTOMIZATIONS:
+ * - added local React state (occurrenceValue, untilValue) for the count/until fields, kept in sync with the count/until props via useEffect, instead of reading the props directly (see https://github.com/plone/volto/pull/5555/files)
+ * - count Input onChange: parses the typed value with parseInt and only calls onChange when a (truthy) value is present, instead of always calling onChange with the raw string value (or undefined when empty)
+ * - until DatetimeWidget: value is read from the local untilValue state instead of the until prop, and its onChange updates that local state, only forwarding to onChange when a value is present
  */
 
 import React, { useState, useEffect } from 'react';

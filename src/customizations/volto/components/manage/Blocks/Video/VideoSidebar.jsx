@@ -1,9 +1,29 @@
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Video/VideoSidebar.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Keeps the pre-schema-refactor custom sidebar UI instead of upstream's
+ *   VideoBlockSchema + BlockDataForm-driven form.
+ * - Adds a "Preview Image URL" field (data.preview_image) with an object
+ *   browser to pick a custom poster/preview image for the video.
+ * - Adds an "Allow Externals" checkbox (data.allowExternals), defaulting to
+ *   config.settings.videoAllowExternalsDefault.
+ * - Adds an "Alignment" control (AlignBlock) to set the block alignment
+ *   (data.align).
+ * - For .mp4 videos, adds a collapsible "Link Settings" accordion with a
+ *   "Link to" object-browser field (data.href) and an "Open in a new tab"
+ *   checkbox (data.openLinkInNewTab).
+ * - Adds a clear icon action on the video URL field to reset the block
+ *   (calls resetSubmitUrl and clears data.url).
+ */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'semantic-ui-react';
 import { Accordion, Grid, Segment } from 'semantic-ui-react';
 import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
-import { CheckboxWidget, Icon, TextWidget } from '@plone/volto/components';
+import CheckboxWidget from '@plone/volto/components/manage/Widgets/CheckboxWidget';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import TextWidget from '@plone/volto/components/manage/Widgets/TextWidget';
 import AlignBlock from '@plone/volto/components/manage/Sidebar/AlignBlock';
 
 import videoSVG from '@plone/volto/icons/videocamera.svg';

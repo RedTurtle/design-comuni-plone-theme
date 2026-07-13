@@ -2,46 +2,58 @@
  * Diff component.
  * @module components/manage/Diff/Diff
  */
-/* CUSTOMIZATIONS
-- Actually works and doesn't break down if user reloads page!
-  Or goes back in the browser...
-- Fixed all fetches to be in the correct order, and be done if we
-  have infos/props to dispatch them in order to not crash.
-- Added a nice loader, history requests take up to 6s to complete
-  in local environment, which is... meh.
-- Disable all dropdowns and buttons while loading. Fetch is long enough,
-  we don't want users cliking everywhere and complaining.
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Diff/Diff.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Actually works and doesn't break down if user reloads page!
+ *   Or goes back in the browser...
+ * - Fixed all fetches to be in the correct order, and be done if we
+ *   have infos/props to dispatch them in order to not crash.
+ * - Added a nice loader, history requests take up to 6s to complete
+ *   in local environment, which is... meh.
+ * - Disable all dropdowns and buttons while loading. Fetch is long enough,
+ *   we don't want users cliking everywhere and complaining.
+ * - Creates an internal Redux store (via configureStore + Api) on mount
+ *   (and whenever reduxState/pathname change) so DiffField can fully
+ *   render blocks-based content while diffing.
+ * - Removed the isEqual/getBlocksFieldname/getBlocksLayoutFieldname
+ *   special-casing for blocks: every fieldset field (including blocks)
+ *   is now rendered through the same DiffField, which receives
+ *   store/history/contentOne/contentTwo and handles the equality and
+ *   blocks diffing itself.
+ * - Only renders the diff UI once contentLoaded and the internal store
+ *   are ready (still short-circuits to Unauthorized on 401).
+ * - Minor UI tweaks: responsive Grid columns, extra description text,
+ *   smaller/compact buttons.
+ */
 
 import React, { Component } from 'react';
+import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import { Helmet } from '@plone/volto/helpers';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { filter, map } from 'lodash';
+import filter from 'lodash/filter';
+import map from 'lodash/map';
 import { Container, Button, Dropdown, Grid, Table } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
-import { Portal } from 'react-portal';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { updateGdprPrivacyConsent } from 'volto-gdpr-privacy/actions/gdprPrivacyConsent';
 import qs from 'query-string';
 import { createBrowserHistory } from 'history';
-import { Api } from '@plone/volto/helpers';
+import Api from '@plone/volto/helpers/Api/Api';
 import configureStore from '@plone/volto/store';
 
-import {
-  getDiff,
-  getSchema,
-  getHistory,
-  getContent,
-} from '@plone/volto/actions';
-import { getBaseUrl } from '@plone/volto/helpers';
-import {
-  FormattedDate,
-  Icon,
-  Toolbar,
-  Unauthorized,
-} from '@plone/volto/components';
+import { getDiff } from '@plone/volto/actions/diff/diff';
+import { getSchema } from '@plone/volto/actions/schema/schema';
+import { getHistory } from '@plone/volto/actions/history/history';
+import { getContent } from '@plone/volto/actions/content/content';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import Toolbar from '@plone/volto/components/manage/Toolbar/Toolbar';
+import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorized';
 import DiffField from './DiffField';
 
 import backSVG from '@plone/volto/icons/back.svg';
@@ -307,6 +319,7 @@ class Diff extends Component {
                   ],
                   (view) => (
                     <Button
+                      type="button"
                       key={view.id}
                       value={view.id}
                       active={this.props.view === view.id}
@@ -388,8 +401,8 @@ class Diff extends Component {
               }),
             )}
 
-          {this.state.isClient && (
-            <Portal node={document.getElementById('toolbar')}>
+          {this.state.isClient &&
+            createPortal(
               <Toolbar
                 pathname={this.props.pathname}
                 hideDefaultViewButtons
@@ -406,9 +419,9 @@ class Diff extends Component {
                     />
                   </Link>
                 }
-              />
-            </Portal>
-          )}
+              />,
+              document.getElementById('toolbar'),
+            )}
         </Container>
       )
     );

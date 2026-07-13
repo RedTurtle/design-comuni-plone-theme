@@ -8,9 +8,14 @@ services:
       args:
         ADDON_NAME: '${ADDON_NAME}'
         ADDON_PATH: '${ADDON_PATH}'
-        VOLTO_VERSION: ${VOLTO_VERSION:-17}
+        VOLTO_VERSION: ${VOLTO_VERSION:-18.35.0}
     volumes:
       - ${CURRENT_DIR}:/app/src/addons/${ADDON_PATH}/
+      # Prevent the host's local node_modules (if present, e.g. from running
+      # `yarn install` standalone in the addon repo for editor tooling) from
+      # shadowing the app-level dependencies already hoisted in the image.
+      # A stale/duplicate react copy here causes "Invalid hook call" errors.
+      - /app/src/addons/${ADDON_PATH}/node_modules
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
       RAZZLE_API_PATH: http://localhost:8080/Plone
@@ -34,7 +39,7 @@ services:
       args:
         ADDON_NAME: '${ADDON_NAME}'
         ADDON_PATH: '${ADDON_PATH}'
-        VOLTO_VERSION: ${VOLTO_VERSION:-17}
+        VOLTO_VERSION: ${VOLTO_VERSION:-18.35.0}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
       RAZZLE_API_PATH: http://localhost:8080/Plone

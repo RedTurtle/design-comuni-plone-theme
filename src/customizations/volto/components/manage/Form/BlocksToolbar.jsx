@@ -1,24 +1,31 @@
 /*
-CUSTOMIZATIONS:
-- pasteBlock: fix id handling on copy/cut/paste, which causes wrong css behavior
-  when getting classes in our custom listing templates, and criteria bugs.
-*/
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Form/BlocksToolbar.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - pasteBlock: fix id handling on copy/cut/paste, which causes wrong css behavior
+ *   when getting classes in our custom listing templates, and criteria bugs.
+ */
 
 import React from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { injectIntl } from 'react-intl';
+import { messages } from '@plone/volto/helpers/MessageLabels/MessageLabels';
 import {
-  messages,
   getBlocksFieldname,
   getBlocksLayoutFieldname,
-} from '@plone/volto/helpers';
-import { Icon } from '@plone/volto/components';
+} from '@plone/volto/helpers/Blocks/Blocks';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { Plug } from '@plone/volto/components/manage/Pluggable';
 import { load } from 'redux-localstorage-simple';
-import { isEqual, omit, without } from 'lodash';
+import isEqual from 'lodash/isEqual';
+import omit from 'lodash/omit';
+import without from 'lodash/without';
 import { cloneBlock } from 'design-comuni-plone-theme/helpers/blocks';
-import { setBlocksClipboard, resetBlocksClipboard } from '@plone/volto/actions';
+import {
+  setBlocksClipboard,
+  resetBlocksClipboard,
+} from '@plone/volto/actions/blocksClipboard/blocksClipboard';
 import config from '@plone/volto/registry';
 
 import copySVG from '@plone/volto/icons/copy.svg';

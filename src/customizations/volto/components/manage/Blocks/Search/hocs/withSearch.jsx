@@ -1,6 +1,28 @@
-/* CUSTOMIZATIONS:
-  - Read puntual comments in code
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/hocs/withSearch.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - useHashState mirrors the search block state to the URL hash fragment
+ *   (`location.hash` / `history.push({ hash })`) instead of the query string
+ *   (`location.search`), so it doesn't collide with other query params.
+ * - totalItems is looked up in querystringResults using a per-content
+ *   subrequestID (`properties.UID + '-' + id`) instead of the plain block
+ *   `id`, to avoid collisions when the same block id is reused across
+ *   different content items.
+ * - Simplified facets initial state: dropped upstream's usePrevious/isEqual
+ *   effect that re-syncs facets from urlQuery on navigation, and the
+ *   configuredFacets/queryData/multiFacets seeding logic; replaced with a
+ *   plain reduce over urlQuery that also recognizes boolean-operator facets.
+ * - Removed the removeSearchQuery helper/prop.
+ * - normalizeState keeps an explicit branch that strips the SearchableText
+ *   entry from query.query when searchText is falsy (see "Cani infami..."
+ *   comment below), and no longer dedupes already-configured facet fields
+ *   out of query.query (configuredFacets/queryWithoutFacet removed).
+ * - getInitialState no longer accepts sortOnParam/sortOrderParam overrides;
+ *   sort_on/sort_order always come from data.query.
+ *
+ * Read puntual comments in code for more details.
+ */
 import qs from 'query-string';
 import React from 'react';
 import { useSelector } from 'react-redux';
@@ -19,6 +41,7 @@ const SEARCH_ENDPOINT_FIELDS = [
   'limit',
   'sort_on',
   'sort_order',
+  'depth',
 ];
 
 const PAQO = 'plone.app.querystring.operation';
@@ -66,6 +89,7 @@ function getInitialState(data, facets, urlSearchText, id) {
     sort_order: data.query?.sort_order,
     b_size: data.query?.b_size,
     limit: data.query?.limit,
+    depth: data.query?.depth,
     block: id,
   };
 }
@@ -111,6 +135,7 @@ function normalizeState({
     sort_order: sortOrder || query.sort_order,
     b_size: query.b_size,
     limit: query.limit,
+    depth: query.depth,
     block: id,
   };
 

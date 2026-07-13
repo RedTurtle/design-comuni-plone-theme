@@ -1,5 +1,13 @@
-// CUSTOMIZATION:
-// - 97: changed condition check or uncheck Checkboxes
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Controlpanels/Groups/RenderGroups.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Converted the component from a functional component to a class component (extends Component, uses this.props instead of props).
+ * - Removed the canAssignRole check: the Checkbox is no longer disabled based on canAssignRole(isUserManager, role); it is now always enabled.
+ * - Removed the canDeleteGroup() gating: the "Delete" dropdown action is always rendered, instead of only when isUserManager is true or the group does not include the 'Manager' role.
+ * - Simplified the Checkbox "checked" logic: removed the special-case handling for the 'AuthenticatedUsers' group (isAuthGroup()); it now always uses group.roles.includes(role.id) to change condition to check or uncheck Checkboxes.
+ * - Changed the onChange value format from "${group.id}.${role.id}" (split on ".") to "${group.id}&role=${role.id}" (split on "&role=").
+ */
 /**
  * Users controlpanel groups.
  * @module components/manage/Controlpanels/UsersControlpanelGroups
@@ -10,7 +18,7 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { Dropdown, Table, Checkbox } from 'semantic-ui-react';
 import trashSVG from '@plone/volto/icons/delete.svg';
 import ploneSVG from '@plone/volto/icons/plone.svg';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 
 /**
  * UsersControlpanelGroups class.

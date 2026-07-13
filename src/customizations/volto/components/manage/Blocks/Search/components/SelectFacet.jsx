@@ -1,6 +1,16 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/components/SelectFacet.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling: replaced the lazy-loaded react-select (injectLazyLibs('reactSelect')) styled via
+ *   SelectStyling (Option, DropdownIndicator, MultiValueContainer, customSelectStyles, selectTheme)
+ *   with the `Select` component from `design-react-kit` (Bootstrap Italia)
+ * - Wrapped the select in a `<div className="select-facet">` with an `<h6 className="mb-3 columnTextTitle">`
+ *   title and a `bootstrap-select-wrapper` div, and added `aria-label`, `id` and `isSearchable` props
+ * - Changed the `base` helpers import from the relative `./base` to the absolute
+ *   `@plone/volto/components/manage/Blocks/Search/components/base` path
+ * - Removed the `injectLazyLibs('reactSelect')` HOC wrapper, exporting the component directly
+ */
 import React from 'react';
 import {
   selectFacetSchemaEnhancer,

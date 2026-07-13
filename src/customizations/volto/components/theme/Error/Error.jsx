@@ -1,7 +1,17 @@
 /**
  * @module components/theme/Error/Error
- * Customization:
- * - added logging of errors
+ *
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/theme/Error/Error.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - added Sentry error logging: lazily loads @sentry/browser and reports
+ *   errors to Sentry via a notifySentry() helper, passing the component
+ *   props as context
+ * - added console.error logging and a notifySentry() call for the
+ *   "undefined status" dev-mode CORS error branch
+ * - added an explicit branch for error.status.toString() === 'corsError'
+ *   that also logs to console and calls notifySentry() (upstream only
+ *   handled the undefined-status case)
  */
 
 import React from 'react';

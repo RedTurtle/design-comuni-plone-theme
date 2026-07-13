@@ -1,6 +1,20 @@
-/**
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/helpers/BodyClass/BodyClass.jsx
+ *
  * CUSTOMIZATIONS:
- * - handle bodyclass removal
+ * - Added a `remove` prop (PropTypes.bool, default `false`) to `BodyClass`.
+ * - Changed `reducePropsToState` to split `props.className` into individual
+ *   class tokens as soon as they are collected
+ *   (`classList.concat(props.className.split(' '))`) instead of pushing the
+ *   whole className string as a single entry, and to support removal: when
+ *   `props.remove` is true, the existing `classList` is filtered to drop
+ *   entries equal to `props.className` instead of being concatenated —
+ *   allowing a mounted `<BodyClass className="x" remove />` to remove a
+ *   previously-added body class.
+ * - Simplified `handleStateChangeOnClient` accordingly: it no longer needs
+ *   the upstream branch that splits space-separated class strings on the
+ *   fly, since `reducePropsToState` now always stores single-token class
+ *   names.
  */
 import { Component, Children } from 'react';
 import PropTypes from 'prop-types';

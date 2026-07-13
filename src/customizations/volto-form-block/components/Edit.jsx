@@ -1,10 +1,20 @@
 /**
  * Edit Form block.
  * @module components/ItaliaTheme/Blocks/Form/Edit
+ */
+
+/*
+ * original: https://raw.githubusercontent.com/collective/volto-form-block/v3.17.1/src/components/Edit.jsx
  *
  * CUSTOMIZATIONS:
  * - customized to use design-react-kit elements instead semantic-ui elements
  * - renamed menu item "Data" to "Dati"
+ * - hardcoded tab menu item labels ("Form"/"Dati") instead of using the
+ *   `form`/`data` i18n messages
+ * - translated the hardcoded warning strings (`warning_from`,
+ *   `warning_enable_save`) to Italian
+ * - import SidebarPortal from '@plone/volto/components' instead of the deep
+ *   path '@plone/volto/components/manage/Sidebar/SidebarPortal'
  */
 
 import React from 'react';

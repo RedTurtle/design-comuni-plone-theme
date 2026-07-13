@@ -1,6 +1,10 @@
-// CUSTOMIZATION:
-// - Added condition to check if the user can edit the link (18-21 and 24)
-// - Backported optimizations from volto 18 (lines 33-35 and more specific imports)
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/theme/View/LinkView.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Added condition to check if the user can edit the link (18-21 and 24)
+ * - Backported optimizations from volto 18 (lines 33-35 and more specific imports)
+ */
 
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';

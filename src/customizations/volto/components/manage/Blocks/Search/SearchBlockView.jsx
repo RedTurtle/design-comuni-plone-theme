@@ -1,16 +1,32 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-  - Add class .block.listing in listing body container div to use
-    existing listing template styles
-  - Inspired from
-    https://github.com/plone/volto/commit/211d9bea13119cc430db9d53a4740a860781ca2e
-    the way to handle search sort. If searchableText is setted, discard default sorting and uses plone's ranking only if is configured from sidebar. (Changed applyDefaults fn passing usePloneRanking)
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/SearchBlockView.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling: root wrapper className changed to `block search` +
+ *   `public-ui` (in edit mode) instead of including `selectedView`/`className`;
+ *   `id`/`className` props are no longer read/forwarded
+ * - Add class .block.listing in listing body container div to use
+ *   existing listing template styles
+ * - Inspired from
+ *   https://github.com/plone/volto/commit/211d9bea13119cc430db9d53a4740a860781ca2e
+ *   the way to handle search sort. If searchableText is setted, discard default sorting and uses plone's ranking only if is configured from sidebar. (Changed applyDefaults fn passing usePloneRanking, instead of upstream's unconditional skip-default-sort-on-text-search behavior)
+ * - Ported upstream's `blockQuery` support in applyDefaults() (a base query
+ *   from `data.query?.query`, merged with the facet-driven query, facets
+ *   winning on key collision) alongside the usePloneRanking override above
+ * - Fallback the Layout to the 'facetsRightSide' search variation when
+ *   variation.view is not set, and render nothing if no Layout is found
+ * - Scroll the results into view (smooth) when the query changes because of
+ *   user-applied filters, but not on the first load (added defaultListingBodyData
+ *   state and resultsRef)
+ * - Changed the HOCs composition order on export:
+ *   compose(withQueryString, withSearch()) instead of
+ *   withSearch()(withQueryString(...))
+ */
 
 import React, { useState } from 'react';
 
 import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBody';
-import { withBlockExtensions } from '@plone/volto/helpers';
+import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
 
 import {
   withQueryString,
@@ -18,7 +34,8 @@ import {
 } from '@plone/volto/components/manage/Blocks/Search/hocs';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
-import { isEqual, isFunction } from 'lodash';
+import isEqual from 'lodash/isEqual';
+import isFunction from 'lodash/isFunction';
 import { useSelector } from 'react-redux';
 import { compose } from 'redux';
 import { useEffect } from 'react';
