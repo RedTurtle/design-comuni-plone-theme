@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 ARG VOLTO_VERSION
-FROM plone/frontend-builder:${VOLTO_VERSION}-yarn as builder
+FROM plone/frontend-builder:${VOLTO_VERSION} as builder
 
 ARG ADDON_NAME
 ARG ADDON_PATH
@@ -33,7 +33,7 @@ RUN <<EOT
     rm -rf cache omelette .yarn/cache
 EOT
 
-FROM plone/frontend-prod-config:${VOLTO_VERSION}-yarn
+FROM plone/frontend-prod-config:${VOLTO_VERSION}
 
 LABEL maintainer="RedTurtle" \
       org.label-schema.name="design-comuni-plone-theme" \
