@@ -1,5 +1,17 @@
 # Changelog
 
+## [12.13.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.13.0...v12.13.1) (2026-07-08)
+
+
+### Bug Fixes
+
+* servizioview ssr ([#1127](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1127)) ([d17480e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d17480e405419450d0f47808179b20218778d02e))
+
+
+### Documentation
+
+* updated publiccode ([7707c49](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7707c49b520d8070ca1730e0abb89e2f4f10717f))
+
 ## [12.13.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.6...v12.13.0) (2026-06-25)
 
 
