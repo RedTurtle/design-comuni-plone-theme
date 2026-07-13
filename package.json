@@ -213,5 +213,6 @@
       "cypress",
       "lightningcss-cli"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.20.0"
 }
