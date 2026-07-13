@@ -13,6 +13,7 @@ const plugins = (defaultPlugins) => {
   const newPlugins = defaultPlugins.filter((plugin) => plugin.name !== 'scss');
   newPlugins.push({
     name: 'scss',
+    object: require('@plone/volto/webpack-plugins/webpack-scss-plugin'),
     options: {
       sass: {
         dev: {
