@@ -651,78 +651,6 @@ body.cms-ui {
     }
   }
 
-  #page-login {
-    .ui.text.container,
-    .ui.form input[type='text'],
-    .ui.form input[type='password'] {
-      font-family: $font-family-sans-serif;
-    }
-
-    .help {
-      a {
-        color: $link-color;
-
-        &:hover,
-        &:focus {
-          color: darken($link-color, 10%);
-          text-decoration: underline;
-        }
-      }
-    }
-
-    button#login-form-submit.ui.basic.button.primary {
-      color: $link-color !important;
-
-      &:hover,
-      &:focus {
-        color: darken($link-color, 10%) !important;
-      }
-    }
-
-    button#login-form-submit.ui.basic.button.primary,
-    a#login-form-cancel.ui.basic.button.secondary {
-      &:hover,
-      &:focus {
-        svg {
-          box-shadow: 0 0 0.5em rgba($neutral-2-b5, 0.5);
-        }
-      }
-    }
-
-    .ui.secondary.segment {
-      color: $text-color;
-    }
-
-    .row .column {
-      width: 100% !important;
-
-      label {
-        margin-top: 1rem;
-        margin-bottom: 0;
-      }
-
-      .wrapper {
-        min-height: 0;
-      }
-    }
-
-    .ui.text.container {
-      max-width: 600px !important;
-    }
-
-    .ui.segment.form {
-      padding-top: 1rem;
-    }
-  }
-
-  #page-password-reset {
-    &,
-    h1,
-    .ui.message .header {
-      font-family: $font-family-sans-serif;
-    }
-  }
-
   .objectbrowser-field {
     .selected-values {
       .ui.label {
@@ -780,6 +708,91 @@ body.cms-ui {
         align-items: center;
       }
     }
+  }
+}
+
+// Not scoped to body.cms-ui: /login and /passwordreset are classified as
+// public-ui by Volto's own nonContentRoutesPublic (see @plone/volto's
+// config/NonContentRoutesPublic.jsx), so these two pages never have the
+// cms-ui body class. #page-login/#page-password-reset are unique per-page
+// ids already, so styling them unconditionally is safe.
+.public-ui #page-login .row {
+  margin: 0;
+}
+
+#page-login {
+  .ui.text.container,
+  .ui.form input[type='text'],
+  .ui.form input[type='password'] {
+    font-family: $font-family-sans-serif;
+  }
+
+  .help {
+    a {
+      color: $link-color;
+
+      &:hover,
+      &:focus {
+        color: darken($link-color, 10%);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  button#login-form-submit.ui.basic.button.primary {
+    color: $link-color !important;
+
+    &:hover,
+    &:focus {
+      color: darken($link-color, 10%) !important;
+    }
+  }
+
+  button#login-form-submit.ui.basic.button.primary,
+  a#login-form-cancel.ui.basic.button.secondary {
+    &:hover,
+    &:focus {
+      svg {
+        box-shadow: 0 0 0.5em rgba($neutral-2-b5, 0.5);
+      }
+    }
+  }
+
+  .ui.secondary.segment {
+    color: $text-color;
+  }
+
+  // Matches the specificity of semantic-ui-less's own
+  // `.ui.grid > .row > [class*="X wide"].column` width rules (pulled in via
+  // vendor-overrides/cms-ui.semantic.less), which otherwise win over a plain
+  // `.row .column` despite !important on both sides.
+  .ui.grid > .row > [class].column {
+    width: 100% !important;
+
+    label {
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+
+    .wrapper {
+      min-height: 0;
+    }
+  }
+
+  .ui.text.container {
+    max-width: 600px !important;
+  }
+
+  .ui.segment.form {
+    padding-top: 1rem;
+  }
+}
+
+#page-password-reset {
+  &,
+  h1,
+  .ui.message .header {
+    font-family: $font-family-sans-serif;
   }
 }
 

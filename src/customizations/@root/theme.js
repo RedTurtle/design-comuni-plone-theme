@@ -13,10 +13,13 @@
  *
  * CUSTOMIZATIONS:
  * - Swapped which semantic-ui build is active: `semantic-ui-less/semantic.less`
- *   is now commented out and
+ *   is now commented out and this add-on's own fork of
  *   `@plone/volto/../theme/themes/pastanaga-cms-ui/extras/cms-ui.semantic.less`
+ *   (see `design-comuni-plone-theme/theme/vendor-overrides/cms-ui.semantic.less`)
  *   is imported instead, so the pastanaga-cms-ui container variant (Volto's
- *   toolbar/admin skin) is applied everywhere, not just in the toolbar.
+ *   toolbar/admin skin) is applied everywhere, not just in the toolbar - plus
+ *   on #page-login, since Volto 18.35 made /login `public-ui` by default but
+ *   its stock Login.jsx still relies on this semantic-ui component styling.
  * - Added `typeface-titillium-web`, `typeface-roboto-mono` and `typeface-lora`
  *   imports, needed by the Bootstrap Italia / design-comuni-plone-theme font
  *   stack.
@@ -24,7 +27,8 @@
  *   own Bootstrap Italia based theme entry point on top of Volto's base
  *   styles.
  */
-import '@plone/volto/../theme/themes/pastanaga-cms-ui/extras/cms-ui.semantic.less';
+import 'design-comuni-plone-theme/theme/vendor-overrides/cms-ui.semantic.less';
+// import '@plone/volto/../theme/themes/pastanaga-cms-ui/extras/cms-ui.semantic.less';
 // import 'semantic-ui-less/semantic.less';
 import '@plone/volto/../theme/themes/pastanaga/extras/extras.less';
 import 'typeface-titillium-web';
