@@ -31,7 +31,7 @@ jobs:
           build-args: |
             ADDON_NAME=design-comuni-plone-theme
             ADDON_PATH=design-comuni-plone-theme
-            VOLTO_VERSION=18.35.0
+            VOLTO_VERSION=19.1.5
 
       # - name: Deploy to rancher
       #   uses: redturtle/rancher-deploy-action@v0.2.0
