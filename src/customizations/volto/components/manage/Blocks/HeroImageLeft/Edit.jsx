@@ -4,38 +4,36 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Image/Edit.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Image/Edit.jsx
  *
  * CUSTOMIZATIONS:
- * - This is not the current upstream Image block (which is a small function
- *   component built around `ImageInput`/`ImageSidebar`/`withBlockExtensions`
- *   and the `Image` component from the registry); it is a fork of an older,
- *   pre-`withBlockExtensions` class-based version of that block, further
- *   customized into a "hero" block with a title, a description and app
- *   store links, rather than a plain image block.
- * - Renders `<Image src=".../@@images/image">` (a plain `src` URL, not
- *   `item`/`imageField`), with no `image_field`/`image_scales`, `size`
- *   (l/m/s) or `align` (full-width) handling.
- * - The upload flow is the old manual one: an `onUploadImage` handler reads
- *   the file with `readAsDataURL` and dispatches `createContent` to create
- *   an `Image` content item directly, with a semantic-ui `Message`/`Button`
- *   "browse" UI, instead of the current `ImageInput` (object browser +
- *   drag/drop) widget.
+ * - This is not the upstream Image block (a small function component with
+ *   plain align/size handling and no title/description/link fields); it is
+ *   the same file further customized into a "hero" block with a title, a
+ *   description and app store links, rather than a plain image block.
+ * - Adopted the current upstream image-editing pattern: `ImageInput`
+ *   (object browser + drag/drop + upload, from
+ *   `@plone/volto/components/manage/Widgets/ImageWidget`) instead of the
+ *   old manual `onUploadImage`/`readAsDataURL`/`createContent` upload-only
+ *   flow, and the `item`/`image_field`/`image_scales` responsive-image
+ *   pattern in place of a hardcoded `/@@images/image` URL. No `size`
+ *   (l/m/s) or `align` (full-width) handling - the hero image is always
+ *   full-width and rendered with `sizes="100vw"`.
+ * - Kept a simple inline "clear image" toolbar button (rather than
+ *   upstream's ImageSidebar-driven removal) since `HeroSidebar` doesn't
+ *   manage the image field itself.
  * - Uses `HeroSidebar` (design-comuni-plone-theme/components/ItaliaTheme/
  *   Blocks/HeroImageLeft/HeroSidebar) via `SidebarPortal` instead of the
  *   upstream `ImageSidebar`.
  * - Added an editable title (`h1`) and description (`p`), each rendered
  *   with `TextEditorWidget` (design-comuni-plone-theme/components/
  *   ItaliaTheme, Slate-based) bound to the block's `title`/`description`
- *   data, with `currentFocused` state and `setSelected`/`focusNextField`/
- *   `focusPrevField` callbacks to move focus between the two fields.
+ *   data, using the shared `useHandleDetachedBlockFocus` hook (design-
+ *   comuni-plone-theme/helpers/blocks, the same one used by Callout/Alert/
+ *   CTABlock/etc.) to move focus between the two fields.
  * - Added `StoresButtons` (design-comuni-plone-theme/components/
  *   ItaliaTheme/Blocks/HeroImageLeft/StoresButtons), rendered with
- *   `data={this.props.data}` below the title/description.
- * - Added `handleKeyDownOwnFocusManagement` (design-comuni-plone-theme/
- *   helpers/blocks) wired to a `keydown` listener on a `blockRef`/
- *   `blockNode` wrapper div for custom focus handling between the Slate
- *   fields.
+ *   `data={data}` below the title/description.
  * - Wrapped the block markup in an extra `.public-ui` div, and renders
  *   `.block.hero` / `.hero-image` / `.hero-body` (with a `no-bg` modifier
  *   driven by `data.show_block_bg`) instead of the upstream
@@ -43,28 +41,23 @@
  * - No `withBlockExtensions` wrapper, no link/`UniversalLink` support.
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { readAsDataURL } from 'promise-file-reader';
-import { Button, Dimmer, Loader, Message } from 'semantic-ui-react';
-import isEqual from 'lodash/isEqual';
-import { defineMessages, injectIntl } from 'react-intl';
+import { Button } from 'semantic-ui-react';
+import { defineMessages, useIntl } from 'react-intl';
 import cx from 'classnames';
-import { handleKeyDownOwnFocusManagement } from 'design-comuni-plone-theme/helpers/blocks';
-import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
-import { validateFileUploadSize } from '@plone/volto/helpers/FormValidation/FormValidation';
-import { createContent } from '@plone/volto/actions/content/content';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import Image from '@plone/volto/components/theme/Image/Image';
 import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
+import config from '@plone/volto/registry';
+import { ImageInput } from '@plone/volto/components/manage/Widgets/ImageWidget';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
 
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import StoresButtons from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons';
 import HeroSidebar from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar';
+import { useHandleDetachedBlockFocus } from 'design-comuni-plone-theme/helpers/blocks';
 
 const messages = defineMessages({
   title: {
@@ -75,340 +68,164 @@ const messages = defineMessages({
     id: 'Description',
     defaultMessage: 'Description',
   },
-  placeholder: {
-    id: 'Upload a new image',
-    defaultMessage: 'Upload a new image',
-  },
-  image: {
-    id: 'Image',
-    defaultMessage: 'Image',
-  },
-  browse: {
-    id: 'Browse',
-    defaultMessage: 'Browse',
-  },
-  uploading: {
-    id: 'Uploading image',
-    defaultMessage: 'Uploading image',
-  },
 });
 
 /**
- * Edit image block class.
- * @class Edit
- * @extends Component
+ * Edit hero image block.
+ * @function Edit
+ * @returns {string} Markup for the component.
  */
-class EditComponent extends Component {
-  /**
-   * Property types.
-   * @property {Object} propTypes Property types.
-   * @static
-   */
-  static propTypes = {
-    selected: PropTypes.bool.isRequired,
-    block: PropTypes.string.isRequired,
-    index: PropTypes.number.isRequired,
-    data: PropTypes.objectOf(PropTypes.any).isRequired,
-    content: PropTypes.objectOf(PropTypes.any),
-    request: PropTypes.shape({
-      loading: PropTypes.bool,
-      loaded: PropTypes.bool,
-    }).isRequired,
-    pathname: PropTypes.string.isRequired,
-    onChangeBlock: PropTypes.func.isRequired,
-    onSelectBlock: PropTypes.func.isRequired,
-    onDeleteBlock: PropTypes.func.isRequired,
-    onFocusPreviousBlock: PropTypes.func.isRequired,
-    onFocusNextBlock: PropTypes.func.isRequired,
-    handleKeyDown: PropTypes.func.isRequired,
-    createContent: PropTypes.func.isRequired,
-    editable: PropTypes.bool,
-  };
+const Edit = (props) => {
+  const { data, block, selected, onChangeBlock } = props;
+  const intl = useIntl();
+  const { selectedField, setSelectedField } = useHandleDetachedBlockFocus(
+    props,
+    'title',
+  );
+  const Image = config.getComponent({ name: 'Image' }).component;
 
-  /**
-   * Default properties
-   * @property {Object} defaultProps Default properties.
-   * @static
-   */
-  static defaultProps = {
-    editable: true,
-  };
-
-  /**
-   * Constructor
-   * @method constructor
-   * @param {Object} props Component properties
-   * @constructs Hero Image left edit
-   */
-  constructor(props) {
-    super(props);
-
-    this.onUploadImage = this.onUploadImage.bind(this);
-    this.state = {
-      uploading: false,
-    };
-
-    if (!__SERVER__) {
-      this.state = {
-        uploading: false,
-        currentFocused: 'title',
-      };
-    }
-  }
-  blockRef = React.createRef();
-
-  handleEnter = (e) => {
-    if (this.props.selected) {
-      handleKeyDownOwnFocusManagement(e, this.props);
-    }
-  };
-
-  /**
-   * Component did mount
-   * @method componentDidMount
-   * @returns {undefined}
-   */
-  componentDidMount() {
-    if (this.props.selected) {
-      this.setState(() => ({ currentFocused: 'title' }));
-    }
-
-    const blockNode = this.props.blockNode;
-
-    if (this.props.selected && this.node) {
-      this.node.focus();
-    }
-    if (blockNode && blockNode.current) {
-      blockNode.current.addEventListener('keydown', this.handleEnter, false);
-    } else if (this.blockRef && this.blockRef.current) {
-      this.blockRef.current.addEventListener(
-        'keydown',
-        this.handleEnter,
-        false,
-      );
-    }
-  }
-
-  /**
-   * Component will receive props
-   * @method componentWillReceiveProps
-   * @param {Object} nextProps Next properties
-   * @returns {undefined}
-   */
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (
-      this.props.request.loading &&
-      nextProps.request.loaded &&
-      this.state.uploading
-    ) {
-      this.setState({
-        uploading: false,
+  const handleChangeImage = React.useCallback(
+    (id, image, { image_field, image_scales } = {}) => {
+      const url = Array.isArray(image)
+        ? image?.[0]?.['@id']
+        : image
+          ? image['@id'] || image
+          : '';
+      onChangeBlock(block, {
+        ...data,
+        url: flattenToAppURL(url),
+        image_field,
+        image_scales,
       });
-      this.props.onChangeBlock(this.props.block, {
-        ...this.props.data,
-        url: nextProps.content['@id'],
-      });
-    }
+    },
+    [onChangeBlock, block, data],
+  );
 
-    if (nextProps.selected) {
-      if (!this.props.selected) {
-        this.setState({ currentFocused: 'title' });
-      }
-    } else {
-      this.setState({ currentFocused: null });
-    }
-  }
-  /**
-   * @param {*} nextProps
-   * @param {*} nextState
-   * @returns {boolean}
-   * @memberof Edit
-   */
-  shouldComponentUpdate(nextProps) {
-    return this.props.selected || !isEqual(this.props.data, nextProps.data);
+  if (__SERVER__) {
+    return <div />;
   }
 
-  /**
-   * Upload image handler
-   * @method onUploadImage
-   * @returns {undefined}
-   */
-  onUploadImage({ target }) {
-    const file = target.files[0];
-    if (!validateFileUploadSize(file, this.props.intl.formatMessage)) return;
-    this.setState({
-      uploading: true,
-    });
-    readAsDataURL(file).then((data) => {
-      const fields = data.match(/^data:(.*);(.*),(.*)$/);
-      this.props.createContent(
-        getBaseUrl(this.props.pathname),
-        {
-          '@type': 'Image',
-          image: {
-            data: fields[3],
-            encoding: fields[2],
-            'content-type': fields[1],
-            filename: file.name,
-          },
-        },
-        this.props.block,
-      );
-    });
-  }
-
-  /**
-   * Render method.
-   * @method render
-   * @returns {string} Markup for the component.
-   */
-  render() {
-    if (__SERVER__) {
-      return <div />;
-    }
-
-    const placeholder =
-      this.props.data.placeholder ||
-      this.props.intl.formatMessage(messages.placeholder);
-
-    return (
+  return (
+    <div className="public-ui" tabIndex="-1">
       <div
-        className="public-ui"
-        tabIndex="-1"
-        ref={(node) => {
-          if (node) {
-            this.blockRef.current = node;
-          }
-        }}
+        className={cx('block hero', {
+          selected,
+        })}
       >
-        <div
-          className={cx('block hero', {
-            selected: this.props.selected,
-          })}
-        >
-          {this.props.selected &&
-            this.props.editable &&
-            !!this.props.data.url && (
-              <div className="toolbar">
-                <Button.Group>
-                  <Button
-                    icon
-                    basic
-                    onClick={() =>
-                      this.props.onChangeBlock(this.props.block, {
-                        ...this.props.data,
-                        url: '',
-                      })
-                    }
-                  >
-                    <Icon name={clearSVG} size="24px" color="#e40166" />
-                  </Button>
-                </Button.Group>
-              </div>
-            )}
-          <div className="block-inner-wrapper">
-            {this.props.data.url ? (
-              <div className="hero-image">
-                <Image
-                  src={`${flattenToAppURL(this.props.data.url)}/@@images/image`}
-                  alt=""
-                />
-              </div>
-            ) : (
-              <div className="image-add">
-                <Message className="image-message">
-                  {this.state.uploading && (
-                    <Dimmer active>
-                      <Loader indeterminate>
-                        {this.props.intl.formatMessage(messages.uploading)}
-                      </Loader>
-                    </Dimmer>
-                  )}
-                  <center>
-                    <h4>{this.props.intl.formatMessage(messages.image)}</h4>
-                    {this.props.editable && (
-                      <>
-                        <p>{placeholder}</p>
-                        <p>
-                          <label className="ui button file">
-                            {this.props.intl.formatMessage(messages.browse)}
-                            <input
-                              type="file"
-                              onChange={this.onUploadImage}
-                              style={{ display: 'none' }}
-                            />
-                          </label>
-                        </p>
-                      </>
-                    )}
-                  </center>
-                </Message>
-              </div>
-            )}
-            <div
-              className={cx('hero-body', {
-                'no-bg': !this.props.data.show_block_bg,
-              })}
-            >
-              <div className="edit-title">
-                <h1>
-                  <TextEditorWidget
-                    {...this.props}
-                    showToolbar={false}
-                    data={this.props.data}
-                    fieldName="title"
-                    selected={this.state.currentFocused === 'title'}
-                    placeholder={this.props.intl.formatMessage(messages.title)}
-                    setSelected={(f) => {
-                      this.setState(() => ({ currentFocused: f }));
-                    }}
-                    focusNextField={() => {
-                      this.setState(() => ({ currentFocused: 'description' }));
-                    }}
-                  />
-                </h1>
-              </div>
-
-              <p>
-                <TextEditorWidget
-                  {...this.props}
-                  showToolbar={false}
-                  data={this.props.data}
-                  fieldName="description"
-                  selected={this.state.currentFocused === 'description'}
-                  placeholder={this.props.intl.formatMessage(
-                    messages.description,
-                  )}
-                  setSelected={(f) => {
-                    this.setState(() => ({ currentFocused: f }));
-                  }}
-                  focusPrevField={() => {
-                    this.setState(() => ({ currentFocused: 'title' }));
-                  }}
-                />
-              </p>
-
-              <StoresButtons data={this.props.data} />
+        {selected && !!data.url && (
+          <div className="toolbar">
+            <Button.Group>
+              <Button
+                icon
+                basic
+                onClick={() =>
+                  onChangeBlock(block, {
+                    ...data,
+                    url: '',
+                    image_field: undefined,
+                    image_scales: undefined,
+                  })
+                }
+              >
+                <Icon name={clearSVG} size="24px" color="#e40166" />
+              </Button>
+            </Button.Group>
+          </div>
+        )}
+        <div className="block-inner-wrapper">
+          {data.url ? (
+            <div className="hero-image">
+              <Image
+                item={
+                  data.image_scales
+                    ? {
+                        '@id': data.url,
+                        image_field: data.image_field,
+                        image_scales: data.image_scales,
+                      }
+                    : undefined
+                }
+                src={
+                  data.image_scales
+                    ? undefined
+                    : `${flattenToAppURL(data.url)}/@@images/image`
+                }
+                sizes="100vw"
+                alt=""
+                responsive={true}
+              />
             </div>
+          ) : (
+            <div className="image-add">
+              <ImageInput
+                onChange={handleChangeImage}
+                placeholderLinkInput={data.placeholder}
+                block={block}
+                id={block}
+                objectBrowserPickerType={'image'}
+              />
+            </div>
+          )}
+          <div
+            className={cx('hero-body', {
+              'no-bg': !data.show_block_bg,
+            })}
+          >
+            <div className="edit-title">
+              <h1>
+                <TextEditorWidget
+                  {...props}
+                  showToolbar={false}
+                  data={data}
+                  fieldName="title"
+                  selected={selected && selectedField === 'title'}
+                  placeholder={intl.formatMessage(messages.title)}
+                  setSelected={setSelectedField}
+                  focusNextField={() => setSelectedField('description')}
+                />
+              </h1>
+            </div>
+
+            <p>
+              <TextEditorWidget
+                {...props}
+                showToolbar={false}
+                data={data}
+                fieldName="description"
+                selected={selected && selectedField === 'description'}
+                placeholder={intl.formatMessage(messages.description)}
+                setSelected={setSelectedField}
+                focusPrevField={() => setSelectedField('title')}
+              />
+            </p>
+
+            <StoresButtons data={data} />
           </div>
         </div>
-        <SidebarPortal selected={this.props.selected}>
-          <HeroSidebar {...this.props} />
-        </SidebarPortal>
       </div>
-    );
-  }
-}
+      <SidebarPortal selected={selected}>
+        <HeroSidebar {...props} />
+      </SidebarPortal>
+    </div>
+  );
+};
 
-const Edit = EditComponent;
+/**
+ * Property types.
+ * @property {Object} propTypes Property types.
+ * @static
+ */
+Edit.propTypes = {
+  selected: PropTypes.bool.isRequired,
+  block: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+  data: PropTypes.objectOf(PropTypes.any).isRequired,
+  onChangeBlock: PropTypes.func.isRequired,
+  onSelectBlock: PropTypes.func.isRequired,
+  onDeleteBlock: PropTypes.func.isRequired,
+  onFocusPreviousBlock: PropTypes.func.isRequired,
+  onFocusNextBlock: PropTypes.func.isRequired,
+  handleKeyDown: PropTypes.func.isRequired,
+};
 
-export default compose(
-  injectIntl,
-  connect(
-    (state, ownProps) => ({
-      request: state.content.subrequests[ownProps.block] || {},
-      content: state.content.subrequests[ownProps.block]?.data,
-    }),
-    { createContent },
-  ),
-)(Edit);
+export default Edit;
