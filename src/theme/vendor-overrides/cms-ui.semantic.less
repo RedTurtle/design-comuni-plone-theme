@@ -12,6 +12,13 @@
  *   for that page without re-enabling semantic-ui styling site-wide.
  * - Rewrote the relative sibling imports as `~@plone/volto/../theme/...`
  *   absolute-style paths so this file can live outside its original folder.
+ * - Overrode `@spritePath` before importing the `flag` element: under pnpm,
+ *   semantic-ui-less's own definitions/elements/flag.less resolves its
+ *   background sprite via a relative path computed from its real location
+ *   inside node_modules/.pnpm/semantic-ui-less@.../node_modules/semantic-ui-less,
+ *   which webpack fails to resolve (the extra pnpm nesting depth breaks it;
+ *   this didn't happen with yarn's flat node_modules). Pointing @spritePath
+ *   at a local copy of the same image sidesteps that broken lookup.
  */
 
 @import '~@plone/volto/../theme/themes/pastanaga-cms-ui/extras/cms-ui.reset.less';
@@ -40,6 +47,7 @@
 // prettier-ignore
 .cms-ui, #toolbar, #page-login {
   & { @import "~semantic-ui-less/definitions/elements/divider"; }
+  @spritePath: "~design-comuni-plone-theme/theme/vendor-overrides/assets/images/flags.png";
   & { @import "~semantic-ui-less/definitions/elements/flag"; }
   & { @import "~semantic-ui-less/definitions/elements/header"; }
   & { @import "~semantic-ui-less/definitions/elements/icon"; }
