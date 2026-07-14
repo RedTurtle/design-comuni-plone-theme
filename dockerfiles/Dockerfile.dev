@@ -23,4 +23,5 @@ RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     set -e
     node helper.js
     CI=true pnpm install --fetch-timeout 600000 --shamefully-hoist --no-frozen-lockfile
+    pnpm build:deps
 EOT
