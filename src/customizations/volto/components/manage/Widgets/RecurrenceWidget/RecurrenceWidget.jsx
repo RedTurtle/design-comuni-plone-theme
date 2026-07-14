@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Widgets/RecurrenceWidget/RecurrenceWidget.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/RecurrenceWidget/RecurrenceWidget.jsx
  * (see also: https://github.com/RedTurtle/design-comuni-plone-theme/pull/741
  * for the rationale and manual QA behind these changes)
  *

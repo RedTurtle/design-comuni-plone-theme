@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/components/DateRangeFacetFilterListEntry.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/components/DateRangeFacetFilterListEntry.jsx
  *
  * CUSTOMIZATIONS:
  * - Agid styling: use design-react-kit components (Label, Icon, Button) instead of semantic-ui-react, and show the facet title/label above the value

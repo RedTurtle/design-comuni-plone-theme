@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Controlpanels/Groups/RenderGroups.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Controlpanels/Groups/RenderGroups.jsx
  *
  * CUSTOMIZATIONS:
  * - Converted the component from a functional component to a class component (extends Component, uses this.props instead of props).

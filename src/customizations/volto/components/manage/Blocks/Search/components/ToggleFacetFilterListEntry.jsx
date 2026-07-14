@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/components/ToggleFacetFilterListEntry.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/components/ToggleFacetFilterListEntry.jsx
  *
  * CUSTOMIZATIONS:
  * - Agid styling: use design-react-kit's Label/Icon/Button components instead of semantic-ui-react ones (icon "it-close" instead of "delete")

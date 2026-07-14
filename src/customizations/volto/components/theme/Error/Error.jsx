@@ -1,7 +1,7 @@
 /**
  * @module components/theme/Error/Error
  *
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/theme/Error/Error.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/Error/Error.jsx
  *
  * CUSTOMIZATIONS:
  * - added Sentry error logging: lazily loads @sentry/browser and reports

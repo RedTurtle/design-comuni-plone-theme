@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/helpers/BodyClass/BodyClass.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/helpers/BodyClass/BodyClass.jsx
  *
  * CUSTOMIZATIONS:
  * - Added a `remove` prop (PropTypes.bool, default `false`) to `BodyClass`.

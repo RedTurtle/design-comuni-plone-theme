@@ -3,7 +3,7 @@
  * @module components/manage/Diff/DiffField
  */
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Diff/DiffField.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Diff/DiffField.jsx
  *
  * CUSTOMIZATIONS:
  * - Overhaul all logic and html, use something that actually does the job

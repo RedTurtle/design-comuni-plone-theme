@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/layout/RightColumnFacets.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/layout/RightColumnFacets.jsx
  *
  * CUSTOMIZATIONS:
  * - Agid styling: replaced Semantic UI (Grid, Segment, Button) with design-react-kit

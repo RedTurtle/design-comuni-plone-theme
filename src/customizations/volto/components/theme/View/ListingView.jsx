@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/theme/View/ListingView.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/View/ListingView.jsx
  *
  * CUSTOMIZATIONS:
  * - Added folder title/header by rendering PageHeader instead of a bare heading

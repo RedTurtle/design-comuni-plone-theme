@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Listing/withQuerystringResults.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Listing/withQuerystringResults.jsx
  *
  * CUSTOMIZATIONS:
  * - get content from state.content.data and not from data.properties.content,

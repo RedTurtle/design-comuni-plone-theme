@@ -2,7 +2,7 @@
  * EndField component.
  * @module components/manage/Widgets/RecurrenceWidget/EndField
  *
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Widgets/RecurrenceWidget/EndField.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/RecurrenceWidget/EndField.jsx
  *
  * CUSTOMIZATIONS:
  * - added local React state (occurrenceValue, untilValue) for the count/until fields, kept in sync with the count/until props via useEffect, instead of reading the props directly (see https://github.com/plone/volto/pull/5555/files)

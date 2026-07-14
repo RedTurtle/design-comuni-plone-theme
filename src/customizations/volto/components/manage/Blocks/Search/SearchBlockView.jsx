@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/SearchBlockView.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/SearchBlockView.jsx
  *
  * CUSTOMIZATIONS:
  * - Agid styling: root wrapper className changed to `block search` +

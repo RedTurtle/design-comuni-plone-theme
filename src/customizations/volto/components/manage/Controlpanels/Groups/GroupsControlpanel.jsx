@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Controlpanels/Groups/GroupsControlpanel.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Controlpanels/Groups/GroupsControlpanel.jsx
  *
  * CUSTOMIZATIONS:
  * - Removed manager-based role-assignment restrictions (getUser, jwtDecode, isManager, canAssignRole): all roles can now be assigned to every group regardless of the current user's permissions; also removed the isUserManager prop passed to RenderGroups.

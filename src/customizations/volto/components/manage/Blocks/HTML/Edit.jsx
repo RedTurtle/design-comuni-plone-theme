@@ -3,7 +3,7 @@
  * @module components/manage/Blocks/HTML/Edit
  */
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/HTML/Edit.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/HTML/Edit.jsx
  *
  * CUSTOMIZATIONS:
  * - added bgColor support (renders a `bg-light` className wrapper based on data.bgColor)

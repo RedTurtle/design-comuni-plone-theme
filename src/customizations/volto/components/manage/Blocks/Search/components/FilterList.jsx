@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/components/FilterList.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/components/FilterList.jsx
  *
  * CUSTOMIZATIONS:
  * - Agid styling: replaced semantic-ui-react (Accordion/Button/Icon) markup with design-react-kit components and Bootstrap Italia classes (accordion-wrapper, accordion-header, accordion-content, etc.)

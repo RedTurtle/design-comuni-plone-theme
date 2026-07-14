@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Sidebar/ObjectBrowserNav.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Sidebar/ObjectBrowserNav.jsx
  *
  * CUSTOMIZATIONS:
  * - Add status indicator (circle) for private and pending items in ObjectBrowserNav

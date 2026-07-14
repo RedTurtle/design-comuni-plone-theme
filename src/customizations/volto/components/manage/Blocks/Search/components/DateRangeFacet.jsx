@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/components/DateRangeFacet.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/components/DateRangeFacet.jsx
  *
  * CUSTOMIZATIONS:
  * - Agid styling: replaced semantic-ui `Header`/`Icon` (and local left-key/right-key/clear SVG icons)

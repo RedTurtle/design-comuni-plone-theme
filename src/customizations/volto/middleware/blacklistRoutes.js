@@ -1,5 +1,5 @@
 /**
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/middleware/blacklistRoutes.js
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/middleware/blacklistRoutes.js
  * (backport of https://github.com/plone/volto/pull/4854)
  *
  * PR #4854 ("Strip `++api++` from location changes") was merged upstream in 2024, but the

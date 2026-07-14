@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/utils.js
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/utils.js
  *
  * CUSTOMIZATIONS:
  * - Use with more plone.app.querystring.date operations (added lessThan and largerThan to DATE_OPERATIONS)

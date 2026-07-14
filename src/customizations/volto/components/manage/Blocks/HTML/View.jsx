@@ -2,7 +2,7 @@
  * View html block.
  * @module components/manage/Blocks/HTML/View
  *
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/HTML/View.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/HTML/View.jsx
  *
  * CUSTOMIZATIONS:
  * - added ConditionalEmbed wrapper component

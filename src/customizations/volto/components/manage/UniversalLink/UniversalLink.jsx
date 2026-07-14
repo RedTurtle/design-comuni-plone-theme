@@ -2,7 +2,7 @@
  * UniversalLink
  * @module components/UniversalLink
  *
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/UniversalLink/UniversalLink.tsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/UniversalLink/UniversalLink.tsx
  *
  * CUSTOMIZATIONS:
  * - upstream ha convertito questo componente in TypeScript (UniversalLink.tsx), estraendo la funzione getUrl() e aggiungendo un hook di test (__test.renderCounter); questo file resta in JSX e non adotta la tipizzazione TS né l'estrazione di getUrl(), per preservare la logica custom sotto (enhance link, externalRoutes blacklisted, icona esterna, ecc.) senza un riscrittura completa

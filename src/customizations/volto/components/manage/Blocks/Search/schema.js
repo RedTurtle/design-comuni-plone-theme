@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/schema.js
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/schema.js
  *
  * CUSTOMIZATIONS:
  * - Removed the upstream "Show sorting?" controls (showSortOn/sortOnOptions) and the

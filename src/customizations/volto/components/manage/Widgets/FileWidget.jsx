@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Widgets/FileWidget.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/FileWidget.jsx
  *
  * CUSTOMIZATIONS:
  * - Import FormFieldWrapper together with Icon and UniversalLink from '@plone/volto/components' instead of a separate deep import

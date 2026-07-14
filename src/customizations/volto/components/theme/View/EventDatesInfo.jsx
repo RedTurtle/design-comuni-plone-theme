@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/theme/View/EventDatesInfo.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/View/EventDatesInfo.jsx
  *
  * CUSTOMIZATIONS:
  * - datesForDisplay: accept explicit start_date_format/end_date_format/start_time_format/end_time_format

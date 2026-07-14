@@ -1,5 +1,5 @@
 /**
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/reducers/navigation/navigation.js
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/reducers/navigation/navigation.js
  *
  * CUSTOMIZATIONS:
  * - `getRecursiveItems`: instead of spreading the whole upstream `item` (`{ url:

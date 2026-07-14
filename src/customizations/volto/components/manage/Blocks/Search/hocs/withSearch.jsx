@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/hocs/withSearch.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/hocs/withSearch.jsx
  *
  * CUSTOMIZATIONS:
  * - useHashState mirrors the search block state to the URL hash fragment

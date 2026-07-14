@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/AnchorPlugin/components/LinkButton/AddLinkForm.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/AnchorPlugin/components/LinkButton/AddLinkForm.jsx
  *
  * CUSTOMIZATIONS:
  * - Aggiunta gestione data-element
