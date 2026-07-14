@@ -25,10 +25,10 @@ RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     set -e
     node helper.js
     cp -a /app/packages/${ADDON_PATH}/public/. /app/core/packages/volto/public/
-    pnpm install --fetch-timeout 600000
+    pnpm install --fetch-timeout 600000 --shamefully-hoist
     pnpm build
     rm -rf node_modules
-    pnpm install --prod
+    pnpm install --prod --shamefully-hoist
 EOT
 
 FROM plone/frontend-prod-config:${VOLTO_VERSION}

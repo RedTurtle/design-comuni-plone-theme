@@ -22,5 +22,5 @@ COPY --chown=node:node dockerfiles/helper.js /app/
 RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     set -e
     node helper.js
-    pnpm install --fetch-timeout 600000
+    pnpm install --fetch-timeout 600000 --shamefully-hoist
 EOT
