@@ -29,7 +29,7 @@ RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     ln -sf /app/node_modules/webpack-image-resize-loader /app/core/packages/volto/node_modules/webpack-image-resize-loader
     pnpm build
     rm -rf node_modules
-    CI=true pnpm install --prod --shamefully-hoist --no-frozen-lockfile
+    CI=true pnpm install --prod --shamefully-hoist --no-frozen-lockfile --ignore-scripts
 EOT
 
 FROM plone/frontend-prod-config:${VOLTO_VERSION}
