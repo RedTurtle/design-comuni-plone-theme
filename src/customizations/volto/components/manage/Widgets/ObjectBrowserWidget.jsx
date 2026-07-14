@@ -3,7 +3,7 @@
  * @module components/manage/Widgets/ObjectBrowserWidget
  */
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Widgets/ObjectBrowserWidget.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/ObjectBrowserWidget.jsx
  *
  * CUSTOMIZATIONS:
  * - Gestione e uso di props.onBlur nel widget, unito (invece che sostituito)
@@ -314,6 +314,7 @@ export class ObjectBrowserWidgetComponent extends Component {
     this.props.openObjectBrowser({
       mode: this.props.mode,
       currentPath: this.props.initialPath || this.props.location.pathname,
+      initialPath: this.props.initialPath,
       propDataName: 'value',
       onSelectItem: (url, item) => {
         this.onChange(item);
@@ -414,6 +415,7 @@ export class ObjectBrowserWidgetComponent extends Component {
           {this.state.manualLinkInput && isEmpty(items) && (
             <Button.Group>
               <Button
+                type="button"
                 basic
                 className="cancel"
                 onClick={(e) => {
@@ -424,6 +426,7 @@ export class ObjectBrowserWidgetComponent extends Component {
                 <Icon name={clearSVG} size="18px" color="#e40166" />
               </Button>
               <Button
+                type="button"
                 basic
                 primary
                 disabled={!this.state.validURL}
@@ -438,6 +441,7 @@ export class ObjectBrowserWidgetComponent extends Component {
           )}
           {!this.state.manualLinkInput && (
             <Button
+              type="button"
               aria-label={this.props.intl.formatMessage(
                 messages.openObjectBrowser,
               )}

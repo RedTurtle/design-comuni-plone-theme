@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Listing/ListingBody.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Listing/ListingBody.jsx
  *
  * CUSTOMIZATIONS:
  * - added skeleton
@@ -14,6 +14,7 @@ import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import config from '@plone/volto/registry';
 import withQuerystringResults from '@plone/volto/components/manage/Blocks/Listing/withQuerystringResults';
+import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 import {
   Pagination,
   Skeleton,
@@ -42,6 +43,7 @@ const ListingBody = React.memo(
         listingRef,
         additionalFilters,
         block,
+        content,
       } = props;
 
       let ListingBodyTemplate;
@@ -122,6 +124,11 @@ const ListingBody = React.memo(
               ref={listingRef}
               aria-live="polite"
             >
+              <SlotRenderer
+                name="aboveListingItems"
+                content={content}
+                data={data}
+              />
               <ListingBodyTemplate
                 items={listingItems}
                 isEditMode={isEditMode}

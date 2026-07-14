@@ -9,7 +9,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/theme.js
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/theme.js
  *
  * CUSTOMIZATIONS:
  * - Swapped which semantic-ui build is active: `semantic-ui-less/semantic.less`

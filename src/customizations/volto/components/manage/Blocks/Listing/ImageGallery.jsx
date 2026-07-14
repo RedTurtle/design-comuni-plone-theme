@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Listing/ImageGallery.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Listing/ImageGallery.jsx
  *
  * CUSTOMIZATIONS:
  * - Build the gallery `original`/`thumbnail` image URLs from the
@@ -16,7 +16,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import loadable from '@loadable/component';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import {
+  addSubpathPrefix,
+  flattenToAppURL,
+} from '@plone/volto/helpers/Url/Url';
 import { Button } from 'semantic-ui-react';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import galleryLeftSVG from '@plone/volto/icons/left-key.svg';
@@ -92,13 +95,17 @@ const ImageGalleryTemplate = ({ items }) => {
   );
   const imagesInfo = renderItems.map((item) => {
     return {
-      original: flattenToAppURL(
-        item[config.settings.listingPreviewImageField]?.scales.large.download ||
-          '',
+      original: addSubpathPrefix(
+        flattenToAppURL(
+          item[config.settings.listingPreviewImageField]?.scales.large
+            .download || '',
+        ),
       ),
-      thumbnail: flattenToAppURL(
-        item[config.settings.listingPreviewImageField]?.scales.thumb.download ||
-          '',
+      thumbnail: addSubpathPrefix(
+        flattenToAppURL(
+          item[config.settings.listingPreviewImageField]?.scales.thumb
+            .download || '',
+        ),
       ),
       description: item.description ?? item.rights ?? null,
     };

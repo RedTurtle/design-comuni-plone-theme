@@ -1,5 +1,5 @@
 /**
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/actions/vocabularies/vocabularies.js
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/actions/vocabularies/vocabularies.js
  * (backport of https://github.com/plone/volto/pull/6236)
  *
  * CUSTOMIZATIONS:
@@ -9,6 +9,10 @@
  *   there and `vocabNameOrURL` differs from the resolved vocabulary name,
  *   use `flattenToAppURL(vocabNameOrURL)` as the request path instead of
  *   the default `/@vocabularies/${vocabulary}`.
+ * - Volto 19.1.5 shipped its own simpler equivalent natively (a plain
+ *   `vocabNameOrURL.includes('/')` check) - our contextualVocabularies-gated
+ *   version is kept since it's more precise (an explicit allowlist rather
+ *   than any URL-shaped string).
 
  * Vocabularies actions.
  * @module actions/vocabularies/vocabularies

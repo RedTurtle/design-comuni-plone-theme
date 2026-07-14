@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto-slate/src/editor/render.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto-slate/src/editor/render.jsx
  *
  * CUSTOMIZATIONS:
  * - Import the Slate stylesheet via the absolute package path

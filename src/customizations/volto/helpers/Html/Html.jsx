@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/helpers/Html/Html.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/helpers/Html/Html.jsx
  *
  * CUSTOMIZATIONS:
  * - Removed the `<link rel="icon" ...>`, `<link rel="apple-touch-icon" ...>` and
@@ -133,9 +133,6 @@ class Html extends Component {
                 }),
                 ...(publicURL && {
                   publicURL,
-                }),
-                ...(process.env.SITE_DEFAULT_LANGUAGE && {
-                  defaultLanguage: process.env.SITE_DEFAULT_LANGUAGE,
                 }),
               })};`,
             }}

@@ -1,9 +1,10 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/theme/View/LinkView.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/View/LinkView.jsx
  *
  * CUSTOMIZATIONS:
- * - Added condition to check if the user can edit the link (18-21 and 24)
- * - Backported optimizations from volto 18 (lines 33-35 and more specific imports)
+ * - Added condition to check if the user can edit the link (already matches
+ *   upstream 19.1.5's own userCanEdit-based fix, done independently here first)
+ * - Backported optimizations from volto 18 (more specific imports)
  */
 
 import { useEffect } from 'react';
@@ -74,12 +75,10 @@ LinkView.propTypes = {
     description: PropTypes.string,
     remoteUrl: PropTypes.string,
   }),
-  token: PropTypes.string,
 };
 
 LinkView.defaultProps = {
   content: null,
-  token: null,
 };
 
 export default LinkView;

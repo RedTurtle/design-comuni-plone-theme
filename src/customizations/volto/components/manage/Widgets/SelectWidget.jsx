@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Widgets/SelectWidget.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/SelectWidget.jsx
  *
  * CUSTOMIZATIONS:
  * - add ariaLabel prop and set aria-label (falling back to title) on the Select instead of aria-labelledby
@@ -276,6 +276,7 @@ class SelectWidget extends Component {
       <FormFieldWrapper {...this.props}>
         <Select
           id={`field-${id}`}
+          fieldTitle={this.props.title}
           key={choices}
           name={id}
           menuShouldScrollIntoView={false}
@@ -317,13 +318,14 @@ class SelectWidget extends Component {
             );
           }}
           onBlur={() => onBlur(id, value)}
-          isClearable={this.props.isClearable}
+          isClearable={!this.props.required && this.props.isClearable}
           aria-live="polite"
           ariaLiveMessages={getSelectAriaLiveMessages(intl)}
           screenReaderStatus={({ count }) =>
-            `${count} ${count !== 1
-              ? intl.formatMessage(messages.risultati)
-              : intl.formatMessage(messages.risultato)
+            `${count} ${
+              count !== 1
+                ? intl.formatMessage(messages.risultati)
+                : intl.formatMessage(messages.risultato)
             }`
           }
         />

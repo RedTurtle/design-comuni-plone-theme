@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/components/ToggleFacet.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/components/ToggleFacet.jsx
  *
  * CUSTOMIZATIONS:
  * - Agid styling: replaced semantic-ui-react Radio/Header with design-react-kit Toggle/FormGroup (Bootstrap Italia)
@@ -9,9 +9,22 @@
  */
 import React from 'react';
 import { Toggle, FormGroup } from 'design-react-kit';
+import { defineMessages, useIntl } from 'react-intl';
+
+const messages = defineMessages({
+  toggleOption: {
+    id: 'Toggle option',
+    defaultMessage: 'Toggle option',
+  },
+});
 
 const ToggleFacet = (props) => {
+  const intl = useIntl();
   const { facet, isEditMode, onChange, value } = props; // value, choices, isMulti, onChange,
+  const labelText =
+    facet?.title ??
+    facet?.field?.label ??
+    intl.formatMessage(messages.toggleOption);
 
   return (
     <div className="checkbox-facet">
@@ -21,6 +34,7 @@ const ToggleFacet = (props) => {
       <FormGroup check className="radio">
         <Toggle
           label={facet?.field?.label}
+          aria-label={labelText}
           checked={value || typeof value === 'string'}
           disabled={isEditMode}
           onChange={({ target }) => {

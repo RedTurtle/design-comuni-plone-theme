@@ -2,11 +2,13 @@
  * ObjectBrowserBody component.
  * @module components/manage/Sidebar/ObjectBrowserBody
  *
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Sidebar/ObjectBrowserBody.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Sidebar/ObjectBrowserBody.jsx
  *
  * CUSTOMIZATIONS:
  * - Tooltip on breadcrumbs
- * - Set initial search to current path instead of home '/'
+ * - Set initial search to current path instead of home '/' (currentFolder always
+ *   uses contextURL, regardless of mode - unlike upstream's defaultMultiplePath
+ *   ternary for that specific field)
  * - Fix searchable types in query applying selectableTypes from field config
  * - Use debounce in onSearch to keep requests low and avoid race conditions
  * - Added use of props.onBlur function when selecting an item
@@ -86,6 +88,7 @@ class ObjectBrowserBody extends Component {
     dataName: PropTypes.string,
     maximumSelectionSize: PropTypes.number,
     contextURL: PropTypes.string,
+    initialPath: PropTypes.string,
     searchableTypes: PropTypes.arrayOf(PropTypes.string),
     onlyFolderishSelectable: PropTypes.bool,
   };
@@ -114,17 +117,18 @@ class ObjectBrowserBody extends Component {
    */
   constructor(props) {
     super(props);
+    const defaultMultiplePath = props.initialPath || '/';
     this.state = {
       currentFolder: this.props.contextURL || '/',
       currentImageFolder:
         this.props.mode === 'multiple'
-          ? '/'
+          ? defaultMultiplePath
           : this.props.mode === 'image' && this.props.data?.url
             ? getParentURL(this.props.data.url)
             : '/',
       currentLinkFolder:
         this.props.mode === 'multiple'
-          ? '/'
+          ? defaultMultiplePath
           : this.props.mode === 'link' && this.props.data?.href
             ? getParentURL(this.props.data.href)
             : '/',

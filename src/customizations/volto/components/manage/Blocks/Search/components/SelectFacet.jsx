@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/src/components/manage/Blocks/Search/components/SelectFacet.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/components/SelectFacet.jsx
  *
  * CUSTOMIZATIONS:
  * - Agid styling: replaced the lazy-loaded react-select (injectLazyLibs('reactSelect')) styled via
@@ -12,6 +12,7 @@
  * - Removed the `injectLazyLibs('reactSelect')` HOC wrapper, exporting the component directly
  */
 import React from 'react';
+import { useIntl, defineMessages } from 'react-intl';
 import {
   selectFacetSchemaEnhancer,
   selectFacetStateToValue,
@@ -19,8 +20,20 @@ import {
 } from '@plone/volto/components/manage/Blocks/Search/components/base';
 import { Select } from 'design-react-kit';
 
+const messages = defineMessages({
+  selectOption: {
+    id: 'Select option',
+    defaultMessage: 'Select option',
+  },
+  select: {
+    id: 'Select…',
+    defaultMessage: 'Select…',
+  },
+});
+
 const SelectFacet = (props) => {
   const { facet, choices, isMulti, onChange, value, isEditMode } = props;
+  const intl = useIntl();
   const v = Array.isArray(value) && value.length === 0 ? null : value;
   return (
     <div className="select-facet">
@@ -34,8 +47,15 @@ const SelectFacet = (props) => {
         </label> */}
         {/* Cannot style with props because the kit is... the kit. Resorting to div[class*='-ValueContainer'] */}
         <Select
-          placeholder={facet?.title ?? (facet?.field?.label || 'select...')}
-          aria-label={facet?.title ?? (facet?.field?.label || 'select...')}
+          placeholder={
+            facet?.title ??
+            (facet?.field?.label || intl.formatMessage(messages.select))
+          }
+          aria-label={
+            facet?.title ??
+            facet?.field?.label ??
+            intl.formatMessage(messages.selectOption)
+          }
           id={facet['@id']}
           options={choices}
           isDisabled={isEditMode}
