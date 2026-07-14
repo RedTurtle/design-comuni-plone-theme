@@ -28,6 +28,16 @@ rootPackageJson.pnpm = {
     ...rootPackageJson.pnpm?.overrides,
     react: '18.2.0',
     'react-dom': '18.2.0',
+    // @eeacms/volto-taxonomy -> react-sortable-tree@2.8.0 ships a bundle
+    // that references both the old decorator API (DragSource/DropTarget/
+    // DragLayer) AND the newer context API (DndContext/DndProvider) from
+    // react-dnd. The only version actually in the tree is react-dnd@5.0.0
+    // (from volto-subblocks), which predates DndContext/DndProvider, so
+    // the build fails with "export 'DndContext' was not found in
+    // 'react-dnd'". 10.0.2 is the last react-dnd generation that still
+    // exports both APIs, so pin it globally - it should satisfy
+    // volto-subblocks' decorator usage too.
+    'react-dnd': '10.0.2',
   },
   // pnpm skips build scripts for untrusted deps by default. sharp (pulled in
   // by webpack-image-resize-loader, used for our own IMG_LOADER webpack

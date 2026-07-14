@@ -6,7 +6,6 @@ ARG ADDON_NAME
 ARG ADDON_PATH
 
 ENV NODE_OPTIONS "--max_old_space_size=4096"
-ENV CI true
 
 USER root
 
@@ -26,11 +25,11 @@ RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     set -e
     node helper.js
     cp -a /app/packages/${ADDON_PATH}/public/. /app/core/packages/volto/public/
-    pnpm install --fetch-timeout 600000 --shamefully-hoist --no-frozen-lockfile
+    CI=true pnpm install --fetch-timeout 600000 --shamefully-hoist --no-frozen-lockfile
     ln -sf /app/node_modules/webpack-image-resize-loader /app/core/packages/volto/node_modules/webpack-image-resize-loader
     pnpm build
     rm -rf node_modules
-    pnpm install --prod --shamefully-hoist --no-frozen-lockfile
+    CI=true pnpm install --prod --shamefully-hoist --no-frozen-lockfile
 EOT
 
 FROM plone/frontend-prod-config:${VOLTO_VERSION}
