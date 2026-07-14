@@ -2,21 +2,32 @@ const fs = require('fs');
 const path = require('path');
 
 const ADDON_NAME = process.env.ADDON_NAME || '';
-const ADDON_PATH = process.env.ADDON_PATH || '';
 
 const appFolder = path.resolve('/app');
-const packageJsonPath = path.resolve(appFolder, 'package.json');
+const voltoConfigPath = path.resolve(appFolder, 'volto.config.js');
+const rootPackageJsonPath = path.resolve(appFolder, 'package.json');
 
-const packageJson = JSON.parse(fs.readFileSync(packageJsonPath));
+fs.writeFileSync(
+  voltoConfigPath,
+  `const addons = ["${ADDON_NAME}"];
+const theme = "${ADDON_NAME}";
 
-packageJson.scripts = {
-  ...packageJson.scripts,
-  test: `RAZZLE_JEST_CONFIG=src/addons/${ADDON_PATH}/jest-addon.config.js razzle test --passWithNoTests`,
-  'cypress:open': `make test-acceptance-addon ADDONPATH=src/addons/${ADDON_PATH}`,
-  'cypress:run': `make test-acceptance-addon-headless ADDONPATH=src/addons/${ADDON_PATH}`,
-  'cypress:ci:full': `make full-test-acceptance-addon ADDONPATH=src/addons/${ADDON_PATH}`,
+module.exports = {
+  addons,
+  theme,
 };
+`,
+);
 
-packageJson.theme = ADDON_NAME;
-
-fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+// Yarn-only `resolutions` in the addon's package.json have no effect under
+// pnpm; pin the same versions via the workspace root's `pnpm.overrides`.
+const rootPackageJson = JSON.parse(fs.readFileSync(rootPackageJsonPath));
+rootPackageJson.pnpm = {
+  ...rootPackageJson.pnpm,
+  overrides: {
+    ...rootPackageJson.pnpm?.overrides,
+    react: '18.2.0',
+    'react-dom': '18.2.0',
+  },
+};
+fs.writeFileSync(rootPackageJsonPath, JSON.stringify(rootPackageJson, null, 2));

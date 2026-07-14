@@ -18,19 +18,17 @@ EOT
 
 USER node
 
-COPY --chown=node:node ./ /app/src/addons/${ADDON_PATH}/
+COPY --chown=node:node ./ /app/packages/${ADDON_PATH}/
 COPY --chown=node:node dockerfiles/helper.js /app/
 
-RUN <<EOT
+RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     set -e
-    /setupAddon
     node helper.js
-    rm -rf public
-    cp -a /app/src/addons/${ADDON_PATH}/public .
-    yarn install --network-timeout 1000000
-    yarn dedupe @popperjs/core
-    yarn build
-    rm -rf cache omelette .yarn/cache
+    cp -a /app/packages/${ADDON_PATH}/public/. /app/core/packages/volto/public/
+    pnpm install --fetch-timeout 600000 --config.node-linker=hoisted
+    pnpm build
+    rm -rf node_modules
+    pnpm install --prod --config.node-linker=hoisted
 EOT
 
 FROM plone/frontend-prod-config:${VOLTO_VERSION}
