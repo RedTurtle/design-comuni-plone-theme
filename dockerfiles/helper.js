@@ -29,5 +29,13 @@ rootPackageJson.pnpm = {
     react: '18.2.0',
     'react-dom': '18.2.0',
   },
+  // pnpm skips build scripts for untrusted deps by default. sharp (pulled in
+  // by webpack-image-resize-loader, used for our own IMG_LOADER webpack
+  // rule) needs its postinstall to compile/download its native binary, or
+  // any png/jpg import fails at build time with a missing sharp.node error.
+  onlyBuiltDependencies: [
+    ...(rootPackageJson.pnpm?.onlyBuiltDependencies || []),
+    'sharp',
+  ],
 };
 fs.writeFileSync(rootPackageJsonPath, JSON.stringify(rootPackageJson, null, 2));

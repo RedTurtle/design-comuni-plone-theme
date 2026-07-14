@@ -23,5 +23,6 @@ RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     set -e
     node helper.js
     CI=true pnpm install --fetch-timeout 600000 --shamefully-hoist --no-frozen-lockfile
+    ln -sf /app/node_modules/webpack-image-resize-loader /app/core/packages/volto/node_modules/webpack-image-resize-loader
     pnpm build:deps
 EOT

@@ -27,6 +27,7 @@ RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     node helper.js
     cp -a /app/packages/${ADDON_PATH}/public/. /app/core/packages/volto/public/
     pnpm install --fetch-timeout 600000 --shamefully-hoist --no-frozen-lockfile
+    ln -sf /app/node_modules/webpack-image-resize-loader /app/core/packages/volto/node_modules/webpack-image-resize-loader
     pnpm build
     rm -rf node_modules
     pnpm install --prod --shamefully-hoist --no-frozen-lockfile

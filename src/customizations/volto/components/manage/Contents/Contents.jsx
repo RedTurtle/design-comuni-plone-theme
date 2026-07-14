@@ -119,7 +119,7 @@ import sortUpSVG from '@plone/volto/icons/sort-up.svg';
 import downKeySVG from '@plone/volto/icons/down-key.svg';
 import moreSVG from '@plone/volto/icons/more.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
-import DropzoneContent from './DropZoneContent';
+import DropzoneContent from '@plone/volto/components/manage/Contents/DropZoneContent';
 
 const MAX_AFFECTED_ITEMS = 300;
 
