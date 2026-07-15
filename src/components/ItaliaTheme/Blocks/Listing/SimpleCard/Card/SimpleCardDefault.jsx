@@ -144,7 +144,10 @@ const SimpleCardDefault = (props) => {
         </CardTitle>
         {isEventAppointment && <RassegnaInfo eventoPadre={item.parent} />}
         {listingText && (
-          <CardText className={cx('', { 'mb-5': eventRecurrenceMore })}>
+          <CardText
+            tag="div"
+            className={cx('', { 'mb-5': eventRecurrenceMore })}
+          >
             {listingText}
             {showContentDateInListingFor.includes(type) && !hide_dates && (
               <div className="document-date mt-3">

@@ -25,13 +25,13 @@ import {
   flattenToAppURL,
   isInternalURL,
 } from '@plone/volto/helpers/Url/Url';
-import { defineMessages, useIntl } from 'react-intl';
+import { defineMessages, IntlContext } from 'react-intl';
 
 import { EnhanceLink } from 'design-comuni-plone-theme/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { HashLink as Link } from 'react-router-hash-link';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useContext } from 'react';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
 import { matchPath } from 'react-router';
@@ -65,16 +65,15 @@ const UniversalLink = React.memo(
     },
   };
   //questo perchè il provider di intl non è sempre definito, ad esempio in slate_wysiwyg_box (Slate RichTextWidget)
-  let intl = null;
+  //usiamo useContext direttamente invece di useIntl() perché quest'ultimo lancia un'eccezione
+  //quando il provider non è definito, e chiamare un hook dentro un try/catch causa un ordine
+  //degli hook instabile tra un render e l'altro
+  const intl = useContext(IntlContext);
 
-  try {
-    intl = useIntl();
+  if (intl) {
     Object.keys(translations).forEach(
       (k) => (translations[k].message = intl.formatMessage(messages[k])),
     );
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.log('Cannot use intl here. View default messages.', e);
   }
   const token = useSelector((state) => state.userSession?.token);
   const { openExternalLinkInNewTab } = config.settings;
