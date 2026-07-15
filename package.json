@@ -150,7 +150,7 @@
     "volto-blocks-widget": "3.4.8",
     "volto-data-grid-widget": "2.3.1",
     "volto-dropdownmenu": "4.1.6",
-    "volto-editablefooter": "5.1.11",
+    "volto-editablefooter": "github:RedTurtle/volto-editablefooter#fix/footer-top-hooks-order",
     "volto-feedback": "0.7.3",
     "volto-form-block": "3.17.1",
     "volto-gdpr-privacy": "2.3.4",
