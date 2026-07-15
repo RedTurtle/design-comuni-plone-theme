@@ -147,6 +147,16 @@ picture.volto-image.responsive img.full-width,
         font-size: 1.125rem;
         line-height: 1.625rem;
       }
+
+      &:has(.icon) {
+        display: flex;
+        align-items: flex-start;
+        column-gap: 8px;
+
+        .icon {
+          flex-shrink: 0;
+        }
+      }
     }
   }
 
