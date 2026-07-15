@@ -153,7 +153,7 @@
     "volto-editablefooter": "github:RedTurtle/volto-editablefooter#fix/footer-top-hooks-order",
     "volto-feedback": "0.7.3",
     "volto-form-block": "3.17.1",
-    "volto-gdpr-privacy": "2.3.4",
+    "volto-gdpr-privacy": "github:collective/volto-gdpr-privacy#fix/conditional-embed-hydration-mismatch",
     "volto-google-analytics": "2.0.0",
     "volto-multilingual-widget": "3.2.1",
     "volto-querywidget-with-browser": "0.4.4",

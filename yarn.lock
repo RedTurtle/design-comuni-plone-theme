@@ -8752,10 +8752,10 @@ __metadata:
     volto-blocks-widget: 3.4.8
     volto-data-grid-widget: 2.3.1
     volto-dropdownmenu: 4.1.6
-    volto-editablefooter: 5.1.11
+    volto-editablefooter: "github:RedTurtle/volto-editablefooter#fix/footer-top-hooks-order"
     volto-feedback: 0.7.3
     volto-form-block: 3.17.1
-    volto-gdpr-privacy: 2.3.4
+    volto-gdpr-privacy: "github:collective/volto-gdpr-privacy#fix/conditional-embed-hydration-mismatch"
     volto-google-analytics: 2.0.0
     volto-multilingual-widget: 3.2.1
     volto-querywidget-with-browser: 0.4.4
@@ -17176,13 +17176,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-editablefooter@npm:5.1.11":
+"volto-editablefooter@github:RedTurtle/volto-editablefooter#fix/footer-top-hooks-order":
   version: 5.1.11
-  resolution: "volto-editablefooter@npm:5.1.11"
+  resolution: "volto-editablefooter@https://github.com/RedTurtle/volto-editablefooter.git#commit=6942dc4f189cf191fcc94314187296522fcfaff0"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
     volto-blocks-widget: ">=3.4.0"
-  checksum: e979ea4bddf58d5506da2a16a1030e4f520d031b5d5f1c63b985333d0e47c0dc2dda9c786fe73d82c8059279e1450ed17e6abd7fac1d7d517a5c9e82127c0334
+  checksum: 5eb3712b5246c81f1aec79229793b2b59079bc8e7903873970bd9fef51efa878d0a7690f09bf6f0ec2c37bf84fcfd1cffe100edd48532a8d48ba6181a3cf3ae0
   languageName: node
   linkType: hard
 
@@ -17214,15 +17214,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-gdpr-privacy@npm:2.3.4":
+"volto-gdpr-privacy@github:collective/volto-gdpr-privacy#fix/conditional-embed-hydration-mismatch":
   version: 2.3.4
-  resolution: "volto-gdpr-privacy@npm:2.3.4"
+  resolution: "volto-gdpr-privacy@https://github.com/collective/volto-gdpr-privacy.git#commit=88473e61c38cbb2e46652c4045659716ac207808"
   dependencies:
     react-focus-lock: 2.9.4
     volto-multilingual-widget: 3.2.1
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: 13ce074ac4b239017979156e6c4cf2316c6ecde00a04d0e153fcb1ab182648a60d51bb0116f7c63e385c6a631ad9e595ffedc1bf1fdef9c7f14f1bd020f337c6
+  checksum: 6cd73fdb5f0ea050903c71e0e271b59d07d473b10f82e88bdfb7bb420f8bbdbf2500814e3d032aae104438e62737d81300ceff18af27542917c2f9be944f1155
   languageName: node
   linkType: hard
 
