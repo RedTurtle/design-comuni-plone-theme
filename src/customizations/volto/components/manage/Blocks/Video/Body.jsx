@@ -156,7 +156,16 @@ const Body = ({ data, isEditMode }) => {
                     {...embedSettings}
                   />
                 ) : (
-                  <VideoEmbed id={videoID} {...embedSettings} />
+                  <VideoEmbed
+                    id={videoID}
+                    placeholder={embedSettings.placeholder}
+                    defaultActive={embedSettings.defaultActive}
+                    autoplay={embedSettings.autoplay}
+                    aspectRatio={embedSettings.aspectRatio}
+                    title={embedSettings.title}
+                    source={embedSettings.source}
+                    url={embedSettings.url}
+                  />
                 )}
               </>
             ) : (

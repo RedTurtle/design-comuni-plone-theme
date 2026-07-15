@@ -52,8 +52,8 @@ const CardWithImageRssTemplate = ({
             </Row>
           )}
           <Row>
-            {items.map((item) => (
-              <Col lg={3} className="mb-3" key={item['@id']}>
+            {items.map((item, index) => (
+              <Col lg={3} className="mb-3" key={index}>
                 <Card className="card-bg" noWrapper={false} tag="div">
                   {item.enclosure?.url && (
                     <div className="img-responsive-wrapper">
