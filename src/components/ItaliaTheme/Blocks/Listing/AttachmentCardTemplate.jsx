@@ -80,6 +80,7 @@ const AttachmentCardTemplate = (props) => {
 
             return (
               <Card
+                key={item['@id'] ?? index}
                 className="card card-teaser shadow p-4 mt-3 rounded attachment"
                 noWrapper={true}
                 tag="div"
