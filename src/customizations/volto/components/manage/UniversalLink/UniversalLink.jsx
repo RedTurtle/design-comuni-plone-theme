@@ -148,7 +148,7 @@ const UniversalLink = React.memo(
   let extended_children = <></>;
 
   if (enhanced_link_infos) {
-    enhanced_link = EnhanceLink({ enhanced_link_infos, aria_label });
+    enhanced_link = EnhanceLink({ enhanced_link_infos, aria_label, intl });
     extended_children = enhanced_link.children;
     aria_label = enhanced_link.aria_label;
   }

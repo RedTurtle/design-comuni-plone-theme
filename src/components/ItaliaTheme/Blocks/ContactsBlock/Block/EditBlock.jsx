@@ -76,7 +76,7 @@ class EditBlock extends SubblockEdit {
           noWrapper={false}
           spacing
           tag="div"
-          ref={this.contact_item_ref}
+          innerRef={this.contact_item_ref}
           key={this.props.data.index}
         >
           <CardBody tag="div">

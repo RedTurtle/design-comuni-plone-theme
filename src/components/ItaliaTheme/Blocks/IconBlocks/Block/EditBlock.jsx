@@ -79,7 +79,7 @@ class EditBlock extends SubblockEdit {
           noWrapper={false}
           spacing
           tag="div"
-          ref={this.subblock_ref}
+          innerRef={this.subblock_ref}
           key={this.props.data.index}
         >
           <CardBody tag="div">
