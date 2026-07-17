@@ -17,9 +17,11 @@ const GenericAppExtras = (props) => {
   }
 
   const FORCE_PUBLIC_UI = ['/sitemap', '/search'];
-  const isPublicUI = FORCE_PUBLIC_UI.reduce(
-    (acc, route) => acc || new RegExp(route).test(`/${location.pathname}`),
-    false,
+  const normalizedPathname = `/${location.pathname}`.replace(/\/$/, '');
+  // endsWith (not a substring regex) so e.g. "/a-search-folder/contents" doesn't
+  // false-positive into public-ui just because its path contains "/search"
+  const isPublicUI = FORCE_PUBLIC_UI.some((route) =>
+    normalizedPathname.endsWith(route),
   );
 
   return (
