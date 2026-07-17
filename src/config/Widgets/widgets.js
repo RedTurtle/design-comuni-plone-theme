@@ -23,6 +23,7 @@ import {
   CanaleDigitaleWidget,
   CTFieldsWidget,
   CTTitleColumnWidget,
+  CTFieldPropertiesWidget,
   BlocksViewWidget,
   PDCViewWidget,
   DataGridWidget,
@@ -110,6 +111,7 @@ const getItaliaWidgets = (config) => {
       luoghi_correlati_evento: LuoghiCorrelatiEventoWidget,
       ct_fields: CTFieldsWidget,
       ct_title_column: CTTitleColumnWidget,
+      ct_field_properties: CTFieldPropertiesWidget,
     },
     views: {
       ...config.widgets.views,
