@@ -13,7 +13,11 @@
  *   large `autocompleteValues` list of HTML `autocomplete` token choices and
  *   a WCAG help link) shown in the fieldset for all field types except
  *   `checkbox`, `attachment`, `single_choice`, `multiple_choice` and
- *   `static_text`
+ *   `static_text`; the WCAG link is passed as a `{link}` message argument
+ *   (`field_autocomplete_description_link`), not an `<a>...</a>` message tag,
+ *   since react-intl's `formatMessage` always routes through
+ *   `formatHTMLMessage`, which needs a `DOMParser` (unavailable during SSR)
+ *   only when the message string itself contains an XML-style tag
  * - replaced the inline `eslint-disable-next-line import/no-anonymous-default-export`
  *   comment above the default export with a file-level eslint-disable for
  *   the same rule
@@ -112,7 +116,11 @@ const messages = defineMessages({
   field_autocomplete_description: {
     id: 'field_autocomplete_description',
     defaultMessage:
-      'This field adds the "autocomplete" attribute to the field. This allows to fill in the field automatically with the user info, if stored. For a complete list of these attributes and their use, visit <a>this page</a>',
+      'This field adds the "autocomplete" attribute to the field. This allows to fill in the field automatically with the user info, if stored. For a complete list of these attributes and their use, visit {link}',
+  },
+  field_autocomplete_description_link: {
+    id: 'field_autocomplete_description_link',
+    defaultMessage: 'this page',
   },
   field_autocomplete_name_complete: {
     id: 'field_autocomplete_name_complete',
@@ -515,13 +523,15 @@ export default (props) => {
         description: intl.formatMessage(
           messages.field_autocomplete_description,
           {
-            a: (...chunks) => (
+            link: (
               <a
                 href="https://www.w3.org/TR/WCAG21/#input-purposes"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {chunks}
+                {intl.formatMessage(
+                  messages.field_autocomplete_description_link,
+                )}
               </a>
             ),
           },
