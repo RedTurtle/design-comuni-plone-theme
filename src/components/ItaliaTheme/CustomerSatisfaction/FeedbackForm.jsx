@@ -15,13 +15,20 @@ import {
 import {
   getNumberOfSteps,
   getTranslatedQuestion,
-  HoneypotWidget,
   submitFeedback,
   resetSubmitFeedback,
   getFeedbackThreshold,
   isFeedbackEnabledForRoute,
   getStaticFeedbackRouteTitle,
 } from 'volto-feedback';
+// import the real component, NOT the loadable()-wrapped export from the
+// volto-feedback barrel: that one lives in the async "VoltoFeedbackView"
+// chunk, and when RAZZLE_HONEYPOT_FIELD is set the SSR renders the honeypot
+// <div class="hpt_widget"> synchronously while the client renders null until
+// the chunk loads — if hydration starts first, the trees diverge and React
+// throws the whole SSR markup away (hydration mismatch on every page, since
+// this form is on every public page)
+import HoneypotWidget from 'volto-feedback/components/widgets/HoneypotWidget/HoneypotWidget';
 import cx from 'classnames';
 import AnswersStep from './Steps/AnswersStep';
 import CommentsStep from './Steps/CommentsStep';
