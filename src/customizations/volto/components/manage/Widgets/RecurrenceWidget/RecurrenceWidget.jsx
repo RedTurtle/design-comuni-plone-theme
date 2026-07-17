@@ -1,7 +1,55 @@
 /**
  * RecurrenceWidget component.
  * @module components/manage/Widgets/RecurrenceWidget
- * See https://github.com/RedTurtle/design-comuni-plone-theme/pull/741 for notable changes and reasons
+ */
+
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/RecurrenceWidget/RecurrenceWidget.jsx
+ * (see also: https://github.com/RedTurtle/design-comuni-plone-theme/pull/741
+ * for the rationale and manual QA behind these changes)
+ *
+ * CUSTOMIZATIONS:
+ * - Split the single `rruleSet` state into `rruleSet` (the saved/committed
+ *   recurrence, shown in the closed widget and sent to the backend) and a
+ *   separate `editRruleSet` (the modal's working copy). `onChangeRule`,
+ *   `exclude`, `undoExclude` and `addDate` now operate on `editRruleSet`,
+ *   and `saveRrule` copies it back into `rruleSet` on Save — so in-progress
+ *   edits in the modal no longer leak into the widget/backend value until
+ *   confirmed, and are discarded if the modal is closed without saving.
+ * - Added `cleanRRuleObject`, used in `getFormValues` and `updateRruleSet`
+ *   to strip falsy/empty values (via lodash `omitBy`/`isNil`/`isArray`/
+ *   `isObject`/`isEmpty`, keeping dates/strings/booleans) from the raw
+ *   `rrule` options object before it's read into form values or fed back
+ *   into a new `RRule`, fixing recurrences that failed to generate because
+ *   of stray empty/undefined options.
+ * - Added support for open-ended events (`props.formData.open_end`):
+ *   `getFormValues`'s default `recurrenceEnds`, the `until` case, and
+ *   `getDefaultUntil` all now special-case `open_end` so no bogus "until"
+ *   date/time is forced onto events without an end date.
+ * - `updateRruleSet` now derives `dtstart` from `formData.start`/`end`
+ *   (comparing them and honoring `open_end`) instead of defaulting to
+ *   `new Date()`, and defaults `count` to 100 when neither `count` nor
+ *   `until` is set, to avoid generating hundreds of thousands of
+ *   occurrences and freezing the browser.
+ * - Fixed a typo/bug in the `bynweekday` case (`FREQUENCES.SMONTHLY` ->
+ *   `FREQUENCES.MONTHLY`) and made it also populate `formValues.byweekday`
+ *   from the parsed weekday; fixed `bymonth` to actually set
+ *   `formValues[option]`.
+ * - `changeField` now falls back to the current `formValues.byweekday`
+ *   (not just the committed `rruleSet`) when computing `byweekday`, and
+ *   force-sets `monthly: 'byweekday'` when `weekdayOfTheMonth` is present
+ *   without a `monthly` value (worked around a value that "goes missing").
+ * - `exclude()` now also handles `rdates`: toggling an already-added extra
+ *   date removes it from `rdates` instead of only ever appending to
+ *   `exdates`.
+ * - Added `noValueOption={false}` on the frequency `SelectWidget` and
+ *   `openDirection={'up'}` on the "add date" `DatetimeWidget`.
+ * - `getUTCDate` uses `date?.match(...)` to tolerate an undefined date.
+ * - Import paths for `Utils`/`IntervalField`/`ByDayField`/`EndField`/
+ *   `ByMonthField`/`ByYearField`/`Occurences` were changed from relative
+ *   (`./Utils`, ...) to absolute `@plone/volto/components/manage/Widgets/
+ *   RecurrenceWidget/...` paths, and `Icon`/`DatetimeWidget`/`SelectWidget`
+ *   are imported together from `@plone/volto/components`.
  */
 
 import React, { Component } from 'react';

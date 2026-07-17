@@ -38,6 +38,20 @@ import SiteSettingsExtras from 'design-comuni-plone-theme/components/ItaliaTheme
 
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
 
+// volto-form-block's own barrel (volto-form-block/components) wraps View/Edit
+// in loadable() under the "VoltoFormBlockView"/"VoltoFormBlockEdit" webpack
+// chunks; in view mode that caused a hydration mismatch (SSR always resolves
+// the loadable synchronously, but the client only renders it once the async
+// chunk has loaded, which isn't guaranteed by the time hydration starts).
+// Volto's customization-alias mechanism can't override the barrel itself
+// (it's imported as the bare `volto-form-block/components`, which never
+// matches an aliased `.../components/index` path), so instead we import the
+// plain, non-lazy components directly here and overwrite
+// blocksConfig.form.view/edit further down, after volto-form-block's own
+// applyConfig has already run.
+import FormBlockView from 'volto-form-block/components/View';
+import FormBlockEdit from 'volto-form-block/components/Edit';
+
 // CTs icons
 import faFileInvoiceSVG from 'design-comuni-plone-theme/icons/file-invoice.svg';
 import faFolderOpenSVG from 'design-comuni-plone-theme/icons/folder-open.svg';
@@ -130,14 +144,6 @@ export default function applyConfig(voltoConfig) {
     defaultPageSize: 24,
     navDepth: 2,
     cookieExpires: 15552000, //6 month
-    serverConfig: {
-      ...config.settings.serverConfig,
-      //criticalCssPath: 'node_modules/design-comuni-plone-theme/public/critical.css', //valido solo per i siti figli. Rimosso temporaneamente perchè fa un brutto effetto al caricamento della pagina
-      extractScripts: {
-        ...config.settings.serverConfig.extractScripts,
-        errorPages: true,
-      },
-    },
     /*
       Set to 100mb in BINARY bytes, not decimal, see volto/helpers/FormValidation.js.validateFileUploadSize error message
       ...
@@ -522,6 +528,10 @@ export default function applyConfig(voltoConfig) {
     },
     form: {
       ...config.blocks.blocksConfig.form,
+      // overrides volto-form-block's own loadable()-wrapped view/edit (see
+      // the FormBlockView/FormBlockEdit import comment above)
+      view: FormBlockView,
+      edit: FormBlockEdit,
       enableConditionalFields: false,
       enableDatatableView: false,
     },

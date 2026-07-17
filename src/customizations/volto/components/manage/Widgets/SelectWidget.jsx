@@ -1,23 +1,34 @@
 /**
  * SelectWidget component.
  * @module components/manage/Widgets/SelectWidget
- * Customizations:
- * - pass props.onBlur to Select component
+ */
+
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/SelectWidget.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - add ariaLabel prop and set aria-label (falling back to title) on the Select instead of aria-labelledby
+ * - add screen reader live region support: aria-live="polite", ariaLiveMessages (via getSelectAriaLiveMessages from design-comuni-plone-theme) and screenReaderStatus using new "risultato"/"risultati" i18n messages
  */
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { map } from 'lodash';
+import filter from 'lodash/filter';
+import map from 'lodash/map';
+import sortBy from 'lodash/sortBy';
 import { defineMessages, injectIntl } from 'react-intl';
 import {
   getVocabFromHint,
   getVocabFromField,
   getVocabFromItems,
-} from '@plone/volto/helpers';
-import { FormFieldWrapper } from '@plone/volto/components';
-import { getVocabulary, getVocabularyTokenTitle } from '@plone/volto/actions';
+} from '@plone/volto/helpers/Vocabularies/Vocabularies';
+import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
+import {
+  getVocabulary,
+  getVocabularyTokenTitle,
+} from '@plone/volto/actions/vocabularies/vocabularies';
 import { normalizeValue } from '@plone/volto/components/manage/Widgets/SelectUtils';
 
 import {
@@ -97,6 +108,7 @@ class SelectWidget extends Component {
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
     required: PropTypes.bool,
+    filterChoices: PropTypes.arrayOf(PropTypes.string),
     error: PropTypes.arrayOf(PropTypes.string),
     getVocabulary: PropTypes.func.isRequired,
     getVocabularyTokenTitle: PropTypes.func.isRequired,
@@ -126,6 +138,8 @@ class SelectWidget extends Component {
     customOptionStyling: PropTypes.any,
     isMulti: PropTypes.bool,
     placeholder: PropTypes.string,
+    sort: PropTypes.bool,
+    isClearable: PropTypes.bool,
   };
 
   /**
@@ -136,6 +150,7 @@ class SelectWidget extends Component {
   static defaultProps = {
     description: null,
     required: false,
+    filterChoices: null,
     items: {
       vocabulary: null,
     },
@@ -152,6 +167,8 @@ class SelectWidget extends Component {
     onDelete: null,
     noValueOption: true,
     customOptionStyling: null,
+    sort: false,
+    isClearable: true,
     ariaLabel: null,
   };
 
@@ -192,8 +209,16 @@ class SelectWidget extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    const { id, choices, value, intl, onChange, onBlur } = this.props;
-    const normalizedValue = normalizeValue(choices, value, intl);
+    const {
+      id,
+      choices,
+      value,
+      intl,
+      onChange,
+      onBlur,
+      filterChoices,
+      additionalChoices,
+    } = this.props;
     // Make sure that both disabled and isDisabled (from the DX layout feat work)
     const disabled = this.props.disabled || this.props.isDisabled;
     const Select = this.props.reactSelect.default;
@@ -220,6 +245,29 @@ class SelectWidget extends Component {
             : []),
         ];
 
+    if (additionalChoices) {
+      options = [
+        ...(options || []),
+        ...map(additionalChoices, (choice) => ({
+          value: choice.value,
+          label: intl.formatMessage({
+            id: choice.value,
+            defaultMessage: choice.label,
+          }),
+        })),
+      ];
+    }
+
+    if (filterChoices) {
+      options = filter(options, (item) => filterChoices.includes(item.value));
+    }
+
+    if (this.props.sort) {
+      options = sortBy(options, ['label']);
+    }
+
+    const normalizedValue = normalizeValue(options, value, intl);
+
     const isMulti = this.props.isMulti
       ? this.props.isMulti
       : id === 'roles' || id === 'groups' || this.props.type === 'array';
@@ -228,6 +276,7 @@ class SelectWidget extends Component {
       <FormFieldWrapper {...this.props}>
         <Select
           id={`field-${id}`}
+          fieldTitle={this.props.title}
           key={choices}
           name={id}
           menuShouldScrollIntoView={false}
@@ -268,14 +317,15 @@ class SelectWidget extends Component {
                 : undefined,
             );
           }}
-          onBlur={() => onBlur(id, normalizedValue)}
-          isClearable
+          onBlur={() => onBlur(id, value)}
+          isClearable={!this.props.required && this.props.isClearable}
           aria-live="polite"
           ariaLiveMessages={getSelectAriaLiveMessages(intl)}
           screenReaderStatus={({ count }) =>
-            `${count} ${count !== 1
-              ? intl.formatMessage(messages.risultati)
-              : intl.formatMessage(messages.risultato)
+            `${count} ${
+              count !== 1
+                ? intl.formatMessage(messages.risultati)
+                : intl.formatMessage(messages.risultato)
             }`
           }
         />

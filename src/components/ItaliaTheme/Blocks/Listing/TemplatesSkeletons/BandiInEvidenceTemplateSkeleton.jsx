@@ -50,7 +50,7 @@ const BandiInEvidenceTemplateSkeleton = ({
                           to={'#'}
                           text=""
                           aria-hidden="true"
-                          tabindex="-1"
+                          tabIndex="-1"
                         />
                       </div>
                     </CardBody>

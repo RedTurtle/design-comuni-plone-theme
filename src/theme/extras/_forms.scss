@@ -1,7 +1,8 @@
 $sidebarFormBg: #fafafa;
 
 #sidebar,
-.cms-ui {
+.cms-ui,
+#page-login {
   .ui.form {
     .ui.input input[type='email'],
     .ui.input input[type='number'],

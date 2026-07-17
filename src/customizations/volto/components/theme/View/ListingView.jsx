@@ -1,4 +1,13 @@
-// Customization: added folder title and bootstrap layout
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/View/ListingView.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Added folder title/header by rendering PageHeader instead of a bare heading
+ * - Replaced semantic-ui-react Container/Segment layout with bootstrap-based markup (div.ui.container.px-4, listing-item.my-4)
+ * - Removed the config.getComponent-driven Container/PreviewImage lookups from @plone/volto/registry
+ * - Replaced UniversalLink with react-router-dom's Link for item links
+ * - Replaced the registry PreviewImage with a custom ListingImage component, rendered conditionally via the contentHasImage helper
+ */
 
 /**
  * Document view component.

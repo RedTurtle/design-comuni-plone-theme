@@ -1,9 +1,14 @@
 /**
  * ObjectBrowserBody component.
  * @module components/manage/Sidebar/ObjectBrowserBody
- * Customization:
+ *
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Sidebar/ObjectBrowserBody.jsx
+ *
+ * CUSTOMIZATIONS:
  * - Tooltip on breadcrumbs
- * - Set initial search to current path instead of home '/'
+ * - Set initial search to current path instead of home '/' (currentFolder always
+ *   uses contextURL, regardless of mode - unlike upstream's defaultMultiplePath
+ *   ternary for that specific field)
  * - Fix searchable types in query applying selectableTypes from field config
  * - Use debounce in onSearch to keep requests low and avoid race conditions
  * - Added use of props.onBlur function when selecting an item
@@ -16,7 +21,8 @@ import { connect } from 'react-redux';
 import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
 import { Input, Segment, Breadcrumb } from 'semantic-ui-react';
 
-import { join, debounce } from 'lodash';
+import join from 'lodash/join';
+import debounce from 'lodash/debounce';
 
 // These absolute imports (without using the corresponding centralized index.js) are required
 // to cut circular import problems, this file should never use them. This is because of
@@ -82,7 +88,9 @@ class ObjectBrowserBody extends Component {
     dataName: PropTypes.string,
     maximumSelectionSize: PropTypes.number,
     contextURL: PropTypes.string,
+    initialPath: PropTypes.string,
     searchableTypes: PropTypes.arrayOf(PropTypes.string),
+    onlyFolderishSelectable: PropTypes.bool,
   };
 
   /**
@@ -98,6 +106,7 @@ class ObjectBrowserBody extends Component {
     selectableTypes: [],
     searchableTypes: null,
     maximumSelectionSize: null,
+    onlyFolderishSelectable: false,
   };
 
   /**
@@ -108,17 +117,18 @@ class ObjectBrowserBody extends Component {
    */
   constructor(props) {
     super(props);
+    const defaultMultiplePath = props.initialPath || '/';
     this.state = {
       currentFolder: this.props.contextURL || '/',
       currentImageFolder:
         this.props.mode === 'multiple'
-          ? '/'
+          ? defaultMultiplePath
           : this.props.mode === 'image' && this.props.data?.url
             ? getParentURL(this.props.data.url)
             : '/',
       currentLinkFolder:
         this.props.mode === 'multiple'
-          ? '/'
+          ? defaultMultiplePath
           : this.props.mode === 'link' && this.props.data?.href
             ? getParentURL(this.props.data.href)
             : '/',
@@ -311,7 +321,17 @@ class ObjectBrowserBody extends Component {
   };
 
   isSelectable = (item) => {
-    const { maximumSelectionSize, data, mode, selectableTypes } = this.props;
+    const {
+      maximumSelectionSize,
+      data,
+      mode,
+      selectableTypes,
+      onlyFolderishSelectable,
+    } = this.props;
+
+    if (onlyFolderishSelectable && !item.is_folderish) {
+      return false;
+    }
     if (
       maximumSelectionSize &&
       data &&

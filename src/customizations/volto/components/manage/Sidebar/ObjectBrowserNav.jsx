@@ -1,17 +1,24 @@
-/**
- * Customizations
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Sidebar/ObjectBrowserNav.jsx
+ *
+ * CUSTOMIZATIONS:
  * - Add status indicator (circle) for private and pending items in ObjectBrowserNav
+ * - Remove the "icons" grid view mode (`view === 'icons'` branch and the `view`
+ *   prop), rendering only the list-style item view regardless of the `view` prop
+ * - Show the item's review_state in the tooltip title of each list item
  */
 
 import React from 'react';
 import { Button, Segment, Popup } from 'semantic-ui-react';
 import { useIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
-import { flattenToAppURL, getContentIcon } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import { getContentIcon } from '@plone/volto/helpers/Content/Content';
 import config from '@plone/volto/registry';
 
 import rightArrowSVG from '@plone/volto/icons/right-key.svg';
-import { Circle, Icon } from '@plone/volto/components';
+import Circle from '@plone/volto/components/manage/Contents/circle';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import homeSVG from '@plone/volto/icons/home.svg';
 
 const messages = defineMessages({
@@ -57,7 +64,7 @@ const ObjectBrowserNav = ({
   const intl = useIntl();
   const isSelected = (item) => {
     let ret = false;
-    if (selected) {
+    if (selected && Array.isArray(selected)) {
       selected
         .filter((item) => item != null)
         .forEach((_item) => {
@@ -182,6 +189,7 @@ const ObjectBrowserNav = ({
               >
                 <Button.Group>
                   <Button
+                    type="button"
                     basic
                     icon
                     aria-label={`${intl.formatMessage(messages.browse)} ${

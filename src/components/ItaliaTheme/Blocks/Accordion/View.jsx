@@ -25,7 +25,7 @@ const AccordionView = ({ data, block }) => {
       <div className="public-ui">
         <div className="full-width section section-muted section-inset-shadow py-5">
           <Container className="px-md-4">
-            <Card className="card-bg rounded" noWrapper={false} space tag="div">
+            <Card className="card-bg rounded" noWrapper={false} spacing tag="div">
               <div className="block-header">
                 {data.title && <div className="title">{data.title}</div>}
                 {data.description && (

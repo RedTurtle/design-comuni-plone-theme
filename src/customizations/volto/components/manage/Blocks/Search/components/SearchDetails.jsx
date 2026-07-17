@@ -1,7 +1,15 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/components/SearchDetails.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling
+ * - Default `as` prop changed from `h4` to `p`
+ * - Added `aria-live="polite"` to the wrapping element for accessibility
+ * - Use the shared `commonSearchBlockMessages.searchedFor` message (from
+ *   design-comuni-plone-theme/helpers) instead of the local inline
+ *   `FormattedMessage` for "Searched for: <em>{searchedtext}</em>."
+ * - Wrap the total results count in `<b>` for bold display
+ */
 import { commonSearchBlockMessages } from 'design-comuni-plone-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 

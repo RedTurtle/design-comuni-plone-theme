@@ -1,13 +1,20 @@
 /*
-  CUSTOMIZATIONS
-  - Gestione di onBlur del campo alla chiusura del widget
-*/
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Sidebar/ObjectBrowser.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Gestione di onBlur del campo alla chiusura del widget: se l'ObjectBrowser
+ *   è aperto e i dati non sono vuoti, viene invocato this.props.onBlur con i
+ *   dati correnti prima di chiudere il popup
+ * - Semplificata la condizione che sceglie i dati da passare a
+ *   ObjectBrowserBody, rimuovendo il controllo aggiuntivo su
+ *   this.props[this.state.propDataName] (si usa solo this.state.propDataName)
+ */
 
 import React from 'react';
 import ObjectBrowserBody from '@plone/volto/components/manage/Sidebar/ObjectBrowserBody';
 import SidebarPopup from '@plone/volto/components/manage/Sidebar/SidebarPopup';
-import { getBaseUrl } from '@plone/volto/helpers';
-import { isEmpty } from 'lodash';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import isEmpty from 'lodash/isEmpty';
 
 const withObjectBrowser = (WrappedComponent) =>
   class extends React.Component {
@@ -64,6 +71,8 @@ const withObjectBrowser = (WrappedComponent) =>
       selectableTypes,
       maximumSelectionSize,
       currentPath,
+      initialPath,
+      onlyFolderishSelectable,
     } = {}) =>
       this.setState(() => ({
         isObjectBrowserOpen: true,
@@ -76,6 +85,8 @@ const withObjectBrowser = (WrappedComponent) =>
         selectableTypes,
         maximumSelectionSize,
         currentPath,
+        initialPath,
+        onlyFolderishSelectable,
       }));
 
     closeObjectBrowser = () => {
@@ -95,6 +106,10 @@ const withObjectBrowser = (WrappedComponent) =>
         this.state?.currentPath ||
         this.props.pathname ||
         this.props.location?.pathname;
+
+      let initialPath = this.state?.initialPath
+        ? getBaseUrl(this.state.initialPath)
+        : null;
 
       return (
         <>
@@ -119,6 +134,7 @@ const withObjectBrowser = (WrappedComponent) =>
                     : this.props.data
                 }
                 contextURL={getBaseUrl(contextURL)}
+                initialPath={initialPath}
                 closeObjectBrowser={this.closeObjectBrowser}
                 mode={this.state.mode}
                 onSelectItem={this.state.onSelectItem}
@@ -126,6 +142,7 @@ const withObjectBrowser = (WrappedComponent) =>
                 searchableTypes={this.state.searchableTypes}
                 selectableTypes={this.state.selectableTypes}
                 maximumSelectionSize={this.state.maximumSelectionSize}
+                onlyFolderishSelectable={this.state.onlyFolderishSelectable}
               />
             </SidebarPopup>
           </>

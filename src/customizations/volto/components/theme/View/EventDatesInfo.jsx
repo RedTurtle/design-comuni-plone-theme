@@ -1,3 +1,20 @@
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/View/EventDatesInfo.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - datesForDisplay: accept explicit start_date_format/end_date_format/start_time_format/end_time_format
+ *   params (instead of a shared moment lib param) and also compute sameMonth/sameYear
+ * - When: import moment directly and use useIntl instead of injectLazyLibs(['moment'])+useSelector+toBackendLang
+ *   to set the locale
+ * - When: accept start_date_format/end_date_format/start_time_format/end_time_format, start_label,
+ *   end_label and show_time props, with 'from'/'to' labels now overridable and time display toggleable
+ * - When: render distinct layouts for same day, same month/year, same year and different year cases
+ *   (upstream only distinguished sameDay vs not), and render as <span> instead of <p>
+ * - When: return null (instead of undefined) and log a console.warn when start/end dates are invalid
+ * - Recurrence: use useIntl + moment.locale(intl.locale) instead of injectLazyLibs-provided moment lib
+ *   to set the locale before building recurrence dates
+ * - Added "d-inline-flex" class to the start/end wrapper spans
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { List } from 'semantic-ui-react';

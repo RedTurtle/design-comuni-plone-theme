@@ -3,24 +3,37 @@
  * @module components/manage/Widgets/ObjectBrowserWidget
  */
 /*
-  CUSTOMIZATIONS
-  - Gestione e uso di props.onBlur nel widget
-  - Add default onBlur prop in case it's missing from Volto widgets
-*/
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/ObjectBrowserWidget.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Gestione e uso di props.onBlur nel widget, unito (invece che sostituito)
+ *   all'`onBlur={this.onSubmitManualLink}` aggiunto a monte in 18.35.0
+ *   sull'input del link manuale
+ * - Add default onBlur prop in case it's missing from Volto widgets
+ * - Rimossa la visualizzazione della miniatura immagine per gli item di tipo
+ *   immagine nella renderLabel (rimossi gli import di Image da
+ *   semantic-ui-react, includes da lodash e config da
+ *   @plone/volto/registry), mostrando sempre e solo il titolo dell'item
+ * - Uso di optional chaining (selectedItemAttrs?.length > 0) invece del
+ *   semplice check di verità su selectedItemAttrs
+ */
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
-import { compact, isArray, isEmpty, remove } from 'lodash';
+import compact from 'lodash/compact';
+import isArray from 'lodash/isArray';
+import isEmpty from 'lodash/isEmpty';
+import remove from 'lodash/remove';
 import { connect } from 'react-redux';
 import { Label, Popup, Button } from 'semantic-ui-react';
 import {
   flattenToAppURL,
   isInternalURL,
-  isUrl,
   normalizeUrl,
   removeProtocol,
 } from '@plone/volto/helpers/Url/Url';
+import { urlValidator } from '@plone/volto/helpers/FormValidation/validators';
 import { searchContent } from '@plone/volto/actions/search/search';
 import withObjectBrowser from '@plone/volto/components/manage/Sidebar/ObjectBrowser';
 import { defineMessages, injectIntl } from 'react-intl';
@@ -81,6 +94,7 @@ export class ObjectBrowserWidgetComponent extends Component {
     openObjectBrowser: PropTypes.func.isRequired,
     allowExternals: PropTypes.bool,
     placeholder: PropTypes.string,
+    onlyFolderishSelectable: PropTypes.bool,
   };
 
   /**
@@ -97,12 +111,14 @@ export class ObjectBrowserWidgetComponent extends Component {
     return: 'multiple',
     initialPath: '',
     allowExternals: false,
+    onlyFolderishSelectable: false,
     onBlur: () => {},
   };
 
   state = {
     manualLinkInput: '',
     validURL: false,
+    errors: [],
   };
 
   constructor(props) {
@@ -224,8 +240,17 @@ export class ObjectBrowserWidgetComponent extends Component {
   };
 
   validateManualLink = (url) => {
-    if (this.props.allowExternals) {
-      return isUrl(url);
+    if (this.props.allowExternals && !url.startsWith('/')) {
+      const error = urlValidator({
+        value: url,
+        formatMessage: this.props.intl.formatMessage,
+      });
+      if (error && url !== '') {
+        this.setState({ errors: [error] });
+      } else {
+        this.setState({ errors: [] });
+      }
+      return !Boolean(error);
     } else {
       return isInternalURL(url);
     }
@@ -289,6 +314,7 @@ export class ObjectBrowserWidgetComponent extends Component {
     this.props.openObjectBrowser({
       mode: this.props.mode,
       currentPath: this.props.initialPath || this.props.location.pathname,
+      initialPath: this.props.initialPath,
       propDataName: 'value',
       onSelectItem: (url, item) => {
         this.onChange(item);
@@ -299,6 +325,9 @@ export class ObjectBrowserWidgetComponent extends Component {
       maximumSelectionSize:
         this.props.widgetOptions?.pattern_options?.maximumSelectionSize ||
         this.props.maximumSelectionSize,
+      onlyFolderishSelectable:
+        this.props.widgetOptions?.pattern_options?.onlyFolderishSelectable ||
+        this.props.onlyFolderishSelectable,
     });
   };
 
@@ -339,6 +368,8 @@ export class ObjectBrowserWidgetComponent extends Component {
     return (
       <FormFieldWrapper
         {...this.props}
+        // At the moment, OBW handles its own errors and validation
+        error={this.state.errors}
         className={description ? 'help text' : 'text'}
       >
         <div
@@ -370,6 +401,7 @@ export class ObjectBrowserWidgetComponent extends Component {
                   onKeyDown={this.onKeyDownManualLink}
                   onChange={this.onManualLinkInput}
                   onBlur={({ target }) => {
+                    this.onSubmitManualLink();
                     this.props.onBlur(this.props.id, target.value);
                   }}
                   value={this.state.manualLinkInput}
@@ -383,6 +415,7 @@ export class ObjectBrowserWidgetComponent extends Component {
           {this.state.manualLinkInput && isEmpty(items) && (
             <Button.Group>
               <Button
+                type="button"
                 basic
                 className="cancel"
                 onClick={(e) => {
@@ -393,6 +426,7 @@ export class ObjectBrowserWidgetComponent extends Component {
                 <Icon name={clearSVG} size="18px" color="#e40166" />
               </Button>
               <Button
+                type="button"
                 basic
                 primary
                 disabled={!this.state.validURL}
@@ -407,6 +441,7 @@ export class ObjectBrowserWidgetComponent extends Component {
           )}
           {!this.state.manualLinkInput && (
             <Button
+              type="button"
               aria-label={this.props.intl.formatMessage(
                 messages.openObjectBrowser,
               )}

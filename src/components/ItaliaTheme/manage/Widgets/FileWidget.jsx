@@ -10,7 +10,7 @@ import { Dimmer, Button } from 'design-react-kit';
 import { readAsDataURL } from 'promise-file-reader';
 import { injectIntl, defineMessages, useIntl } from 'react-intl';
 import loadable from '@loadable/component';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import Image from '@plone/volto/components/theme/Image/Image';
 
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
@@ -79,6 +79,19 @@ const FileWidget = (props) => {
     }
   }, [value]);
 
+  const imgAttrs = React.useMemo(() => {
+    const data = {};
+    if (value?.download) {
+      data.item = {
+        '@id': value.download.substring(0, value.download.indexOf('/@@images')),
+        image: value,
+      };
+    } else if (value?.data) {
+      data.src = `data:${value['content-type']};${value.encoding},${value.data}`;
+    }
+    return data;
+  }, [value]);
+
   /**
    * Drop handler
    * @method onDrop
@@ -132,17 +145,13 @@ const FileWidget = (props) => {
             <div className="file-widget-dropzone" {...getRootProps()}>
               {isDragActive && <Dimmer></Dimmer>}
               {isImage ? (
-                <img
+                <Image
                   className="image-preview"
                   id={`field-${id}-image`}
-                  src={
-                    value?.download
-                      ? `${flattenToAppURL(value.download)}?id=${Date.now()}`
-                      : null
-                  }
                   alt=""
                   aria-hidden="true"
                   loading="lazy"
+                  {...imgAttrs}
                 />
               ) : (
                 <div className="dropzone-placeholder">

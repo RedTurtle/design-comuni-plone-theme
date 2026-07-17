@@ -1,7 +1,14 @@
 /**
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Grid/Edit.jsx
+ *
  * Customizations:
  * - make the block full-width and fix overlapping ui for
- *   some inner blocks like image using custom class
+ *   some inner blocks like image using custom class (wraps ContainerEdit in
+ *   a `gridBlock-container` div and adds `full-width` to the classnames)
+ * - track the selected inner block with local React state (`useState`)
+ *   instead of Redux (`useSelector`/`useDispatch` + `setUIState`)
+ * - import ContainerEdit via the `@plone/volto` public alias instead of the
+ *   relative `../Container/Edit` path
  */
 
 import PropTypes from 'prop-types';

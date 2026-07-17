@@ -2609,6 +2609,21 @@ msgid "feedback_unclear_proceeding"
 msgstr "A volte non capivo se stavo procedendo correttamente"
 
 #: overrideTranslations
+# defaultMessage: "Autocomplete" attribute
+msgid "field_autocomplete"
+msgstr "Attributo \"autocomplete\""
+
+#: overrideTranslations
+# defaultMessage: This field adds the "autocomplete" attribute to the field. This allows to fill in the field automatically with the user info, if stored. For a complete list of these attributes and their use, visit {link}
+msgid "field_autocomplete_description"
+msgstr "Questo campo aggiunge l'attributo \"autocomplete\" al campo. Questo permette di compilare automaticamente il campo con le informazioni dell'utente, se memorizzate. Per un elenco completo di questi attributi e del loro utilizzo, visita {link}"
+
+#: overrideTranslations
+# defaultMessage: this page
+msgid "field_autocomplete_description_link"
+msgstr "questa pagina"
+
+#: overrideTranslations
 # defaultMessage: Check this box if the value entered in this field can be used only once.
 msgid "field_unique_description"
 msgstr "Richiedi un valore univoco: il valore inserito dagli utenti in questo campo non può essere già stato utilizzato in altre compilazioni del form."

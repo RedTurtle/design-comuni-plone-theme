@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import SliderTemplate from '../../Listing/SliderTemplate';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-intl-redux';

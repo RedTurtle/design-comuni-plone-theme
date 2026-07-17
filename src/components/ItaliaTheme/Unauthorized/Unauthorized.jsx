@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Row, Col, Container } from 'design-react-kit';
 import { withServerErrorCode } from '@plone/volto/helpers/Utils/Utils';
-import { BodyClass } from '@plone/volto/helpers';
+import { BodyClass, isCmsUi } from '@plone/volto/helpers';
 import { useLocation } from 'react-router-dom';
 import { getBaseUrl } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
@@ -52,10 +52,20 @@ const Unauthorized = (props) => {
   const spidLogin = config.settings.siteProperties?.spidLogin;
   const came_from = `${getBaseUrl(location.pathname)}${location.search}`;
 
+  // Contents.jsx (and other admin views) render this component as a
+  // permission-check loading state before objectActions has loaded, even on
+  // cms-ui routes like /contents: don't force public-ui in that case, or the
+  // body briefly gets both public-ui and cms-ui until the real data arrives.
+  const isCmsUIRoute = isCmsUi(location.pathname);
+
   return (
     <div id="unauthorized-agid" className="view-wrapper">
-      <BodyClass className="public-ui" />
-      <BodyClass className="cms-ui" remove={true} />
+      {!isCmsUIRoute && (
+        <>
+          <BodyClass className="public-ui" />
+          <BodyClass className="cms-ui" remove={true} />
+        </>
+      )}
 
       <Container className="view-wrapper py-5">
         {spidLoginUrl || spidLogin ? (

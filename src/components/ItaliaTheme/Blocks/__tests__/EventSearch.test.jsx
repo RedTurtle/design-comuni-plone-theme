@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import View from '../EventSearch/View';
 import Body from '../EventSearch/Body';
 import configureStore from 'redux-mock-store';

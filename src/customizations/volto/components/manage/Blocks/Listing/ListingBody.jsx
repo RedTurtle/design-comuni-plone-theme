@@ -1,17 +1,20 @@
 /*
-CUSTOMIZATIONS:
--added skeleton
-- added additionalFilters
-- 'background class' and 'block class'
-- 'background class' and 'block class' logic for search block
-- search block integration
-- pass 'block'  prop to listing variation
-- added bg_color = "" if is a search block
-*/
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Listing/ListingBody.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - added skeleton
+ * - added additionalFilters
+ * - 'background class' and 'block class'
+ * - 'background class' and 'block class' logic for search block
+ * - search block integration
+ * - pass 'block' prop to listing variation
+ * - added bg_color = "" if is a search block
+ */
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import config from '@plone/volto/registry';
 import withQuerystringResults from '@plone/volto/components/manage/Blocks/Listing/withQuerystringResults';
+import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 import {
   Pagination,
   Skeleton,
@@ -40,6 +43,7 @@ const ListingBody = React.memo(
         listingRef,
         additionalFilters,
         block,
+        content,
       } = props;
 
       let ListingBodyTemplate;
@@ -120,6 +124,11 @@ const ListingBody = React.memo(
               ref={listingRef}
               aria-live="polite"
             >
+              <SlotRenderer
+                name="aboveListingItems"
+                content={content}
+                data={data}
+              />
               <ListingBodyTemplate
                 items={listingItems}
                 isEditMode={isEditMode}

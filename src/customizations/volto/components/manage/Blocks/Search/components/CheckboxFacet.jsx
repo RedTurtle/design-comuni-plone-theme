@@ -1,6 +1,10 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/components/CheckboxFacet.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling: use design-react-kit (Bootstrap Italia) components (Form, FormGroup, Input, Label) instead of semantic-ui-react's Checkbox/Header
+ * - Import selectFacet* helpers from '@plone/volto/components/manage/Blocks/Search/components/base' instead of the relative './base' path
+ */
 import React from 'react';
 import { Form, FormGroup, Input, Label } from 'design-react-kit';
 import {

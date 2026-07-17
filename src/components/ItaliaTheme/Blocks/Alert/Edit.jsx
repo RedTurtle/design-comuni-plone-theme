@@ -9,6 +9,7 @@ import cx from 'classnames';
 import { Container, Row, Col } from 'design-react-kit';
 
 import { SidebarPortal } from '@plone/volto/components';
+import Image from '@plone/volto/components/theme/Image/Image';
 import { defineMessages, useIntl } from 'react-intl';
 import { useHandleDetachedBlockFocus } from 'design-comuni-plone-theme/helpers/blocks';
 import {
@@ -54,7 +55,7 @@ const Edit = (props) => {
             <Row className="align-items-start">
               {data.image?.data && (
                 <Col sm={2} className="pb-3 image-col">
-                  <img
+                  <Image
                     src={`data:${data.image['content-type']};${data.image.encoding},${data.image.data}`}
                     alt=""
                     className={cx('left-image', [

@@ -1,20 +1,24 @@
 /**
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/reducers/navigation/navigation.js
+ *
+ * CUSTOMIZATIONS:
+ * - `getRecursiveItems`: instead of spreading the whole upstream `item` (`{ url:
+ *   flattenToAppURL(item['@id']), ...item, ...(item.items && {...}) }`), builds a fixed shape
+ *   `{ title, description, url, items }`. `url` is computed as `item.remoteUrl ??
+ *   flattenToAppURL(item['@id'])`, so `Link` content objects (which expose a `remoteUrl`) navigate
+ *   to their target URL instead of to the Link object's own Plone path.
+ * - Added a `show_in_footer` flag: `initialState.show_in_footer` defaults to `false`, and it is
+ *   populated from `action.result['@components'].navigation.show_in_footer` (on
+ *   `GET_CONTENT_SUCCESS` with the navigation expander) and from `action.result.show_in_footer`
+ *   (on `GET_NAVIGATION_SUCCESS`); it is reset to `false` on `GET_NAVIGATION_FAIL`.
+ *
  * Navigation reducer.
  * @module reducers/navigation/navigation
  */
 
-/*
- CUSTOMIZATIONS:
- - customized getRecursiveItems to use remoteUrl property for plone types 'Link' objects
- - added show_in_footer
- */
-
-import { map } from 'lodash';
-import {
-  flattenToAppURL,
-  getBaseUrl,
-  hasApiExpander,
-} from '@plone/volto/helpers';
+import map from 'lodash/map';
+import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
 
 import {
   GET_CONTENT,

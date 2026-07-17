@@ -14,7 +14,10 @@
 ) {
   .btn-tertiary {
     @include button-variant($subsite-tertiary, $subsite-tertiary-text);
-    color: $subsite-tertiary-text !important;
+
+    & {
+      color: $subsite-tertiary-text !important;
+    }
 
     svg {
       fill: $subsite-tertiary-text;

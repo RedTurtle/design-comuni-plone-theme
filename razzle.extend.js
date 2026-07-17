@@ -3,16 +3,36 @@
  * @module razzle.config
  */
 
-const makeLoaderFinder = require('razzle-dev-utils/makeLoaderFinder');
+const path = require('path');
+
+/**
+ * This file is required through the `design-comuni-plone-theme` symlink
+ * inside a consuming site's node_modules. Node resolves symlinked modules to
+ * their real filesystem path before processing further requires, so a plain
+ * `require('@plone/razzle-dev-utils/...')` here would search this repo's own
+ * (sibling, unrelated) directory tree instead of the consuming site's
+ * node_modules. Anchor the resolution to process.cwd() - razzle always runs
+ * with the site's root as the working directory - to find the real package.
+ */
+const makeLoaderFinder = require(
+  require.resolve('@plone/razzle-dev-utils/makeLoaderFinder', {
+    paths: [process.cwd()],
+  }),
+);
 const fileLoaderFinder = makeLoaderFinder('file-loader');
 const urlLoaderFinder = makeLoaderFinder('url-loader');
 const lessLoaderFinder = makeLoaderFinder('less-loader');
 const babelLoaderFinder = makeLoaderFinder('babel-loader');
 
 const plugins = (defaultPlugins) => {
-  const newPlugins = defaultPlugins.filter((plugin) => plugin !== 'scss');
+  const newPlugins = defaultPlugins.filter((plugin) => plugin.name !== 'scss');
   newPlugins.push({
     name: 'scss',
+    object: require(
+      require.resolve('@plone/volto/webpack-plugins/webpack-scss-plugin', {
+        paths: [process.cwd()],
+      }),
+    ),
     options: {
       sass: {
         dev: {
@@ -22,6 +42,12 @@ const plugins = (defaultPlugins) => {
             sourceMap: true,
             quiet: true,
             quietDeps: true,
+            silenceDeprecations: [
+              'import',
+              'global-builtin',
+              'color-functions',
+              'legacy-js-api',
+            ],
           },
         },
         prod: {
@@ -31,6 +57,12 @@ const plugins = (defaultPlugins) => {
             sourceMap: true,
             quiet: true,
             quietDeps: true,
+            silenceDeprecations: [
+              'import',
+              'global-builtin',
+              'color-functions',
+              'legacy-js-api',
+            ],
           },
         },
       },
@@ -74,7 +106,7 @@ const modify = (webpackConfig, { target, dev }, webpackObject) => {
 
   const urlLoader = webpackConfig.module.rules.find(urlLoaderFinder);
   urlLoader.exclude = [/\.(png|jpe?g)$/i, ...(urlLoader.exclude || [])];
-  // see: node_modules/razzle/config/createConfig.js
+  // see: node_modules/@plone/razzle/config/createConfig.js
   const IMG_LOADER = {
     test: /\.(png|jpe?g)$/i,
     use: [
@@ -104,6 +136,11 @@ const modify = (webpackConfig, { target, dev }, webpackObject) => {
 
   const lessLoader = webpackConfig.module.rules.find(lessLoaderFinder);
   lessLoader.include.push(/node_modules\/volto-data-grid-widget/);
+  // This addon is consumed through a plain filesystem symlink
+  // (site/src/addons/design-comuni-plone-theme -> this repo), not a
+  // node_modules one, so webpack's registry-derived include entries don't
+  // cover it; add its own real path explicitly.
+  lessLoader.include.push(path.resolve(__dirname));
 
   // See https://github.com/italia/design-react-kit/pull/885#issuecomment-1420886066
   const babelLoader = webpackConfig.module.rules.find(babelLoaderFinder);

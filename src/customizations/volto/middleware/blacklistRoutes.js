@@ -1,5 +1,21 @@
 /**
- * backport https://github.com/plone/volto/pull/4854
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/middleware/blacklistRoutes.js
+ * (backport of https://github.com/plone/volto/pull/4854)
+ *
+ * PR #4854 ("Strip `++api++` from location changes") was merged upstream in 2024, but the
+ * `/++api++` handling is no longer present in the 18.0.3 `blacklistRoutes.js` (it appears to have
+ * been reworked/relocated, e.g. towards `MultilingualRedirector`), so this file still diverges
+ * from current upstream rather than being a no-op.
+ *
+ * CUSTOMIZATIONS:
+ * - `pathname` is destructured with `let` (instead of `const`) so it can be reassigned below.
+ * - On `@@router/LOCATION_CHANGE`, if `pathname` starts with `/++api++`, strips that prefix from
+ *   `actionToSend.payload.location.pathname`, updates `pathname` accordingly, and calls
+ *   `window.history.replaceState(window.history.state, '', pathname)` so the browser URL no
+ *   longer shows the `++api++` traversal segment.
+ * - Dispatches the mutated `actionToSend` (rather than the original `action`) to `next(...)`, and
+ *   uses `route.url(actionToSend.payload)` instead of `route.url(action.payload)` when an
+ *   external route matches.
  */
 
 import config from '@plone/volto/registry';
