@@ -2707,6 +2707,16 @@ msgid "gallery_close_preview"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine di copertina
+msgid "gallery_preview_image"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine mostrata in anteprima al posto della copertina di default del video.
+msgid "gallery_preview_image_description"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Titolo del video
 msgid "gallery_video_title"
 msgstr ""
@@ -4792,6 +4802,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 # defaultMessage: Data di aggiornamento
 msgid "update_date"
+msgstr ""
+
+#: customizations/volto/components/manage/Contents/ContentsUploadModal
+# defaultMessage: An error has occurred while uploading files.
+msgid "upload_error"
 msgstr ""
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView

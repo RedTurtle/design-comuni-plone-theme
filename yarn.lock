@@ -7061,12 +7061,12 @@ __metadata:
   linkType: hard
 
 "brace-expansion@npm:^1.1.7":
-  version: 1.1.12
-  resolution: "brace-expansion@npm:1.1.12"
+  version: 1.1.13
+  resolution: "brace-expansion@npm:1.1.13"
   dependencies:
     balanced-match: ^1.0.0
     concat-map: 0.0.1
-  checksum: 12cb6d6310629e3048cadb003e1aca4d8c9bb5c67c3c321bafdd7e7a50155de081f78ea3e0ed92ecc75a9015e784f301efc8132383132f4f7904ad1ac529c562
+  checksum: b5f4329fdbe9d2e25fa250c8f866ebd054ba946179426e99b86dcccddabdb1d481f0e40ee5430032e62a7d0a6c2837605ace6783d015aa1d65d85ca72154d936
   languageName: node
   linkType: hard
 
@@ -8346,7 +8346,7 @@ __metadata:
     volto-editablefooter: 5.1.11
     volto-feedback: 0.7.2
     volto-form-block: 3.17.1
-    volto-gdpr-privacy: 2.3.4
+    volto-gdpr-privacy: 2.4.0
     volto-google-analytics: 2.0.0
     volto-multilingual-widget: 3.2.1
     volto-querywidget-with-browser: 0.4.4
@@ -16605,15 +16605,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-gdpr-privacy@npm:2.3.4":
-  version: 2.3.4
-  resolution: "volto-gdpr-privacy@npm:2.3.4"
+"volto-gdpr-privacy@npm:2.4.0":
+  version: 2.4.0
+  resolution: "volto-gdpr-privacy@npm:2.4.0"
   dependencies:
     react-focus-lock: 2.9.4
     volto-multilingual-widget: 3.2.1
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: 13ce074ac4b239017979156e6c4cf2316c6ecde00a04d0e153fcb1ab182648a60d51bb0116f7c63e385c6a631ad9e595ffedc1bf1fdef9c7f14f1bd020f337c6
+  checksum: 96a56a3647dc9510051804a0880816cc4b0d5575e043b2b71e7579a411c01a34576bd4d2104621f9fff20f579b6f8a590776014a401410ef9a242312ede8b0bf
   languageName: node
   linkType: hard
 
