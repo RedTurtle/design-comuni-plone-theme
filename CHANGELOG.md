@@ -1,5 +1,59 @@
 # Changelog
 
+## [12.14.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.13.1...v12.14.0) (2026-07-20)
+
+
+### Features
+
+* immagine copertina aggiunta e focus sistemato ([#1124](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1124)) ([7cc361a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7cc361a46f09e221b8bf7849612ea1a249b83567))
+* save table listing column field schema ([#1128](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1128)) ([8d1cf4c](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8d1cf4ce24b1d3fd7a24d83f44bc44f5ebdedf3e))
+
+
+### Bug Fixes
+
+* aggiunto toast all'errore durante upload massivo di file ([#1129](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1129)) ([d4abbb8](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d4abbb89061497df28225dc96387064ae29f99e9))
+* allineamento icona e titolo per card documenti ([#1131](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1131)) ([3276bcd](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3276bcd521d2e36d4b8152c6d402a4c945a58051))
+* hide bc from lrf and hp ([#1133](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1133)) ([c1e0296](https://github.com/RedTurtle/design-comuni-plone-theme/commit/c1e029694a9d36fbbcbffdca055d57a597bad913))
+* prevent event page crash when contact list is missing ([#1132](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1132)) ([a09aa45](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a09aa454009ea808e98702c4a2095851ed02788c))
+
+
+### Maintenance
+
+* disable custom schemaorg when @redturtle/volto-schemaorg is active ([#1126](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1126)) ([776762a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/776762ab9fecc0439cc0ce1264e39d22e58f8cdd))
+* locales ([0e33df4](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0e33df4861a892c604e4166cb83b2d2ae7d82704))
+* updated volto-gdpr-privacy to 2.3.5 ([6b5f22e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6b5f22eb3cd148e17698f0a96ebcc63564293544))
+* updated volto-gdpr-privacy to 2.4.0 ([2133735](https://github.com/RedTurtle/design-comuni-plone-theme/commit/21337350ab81ae8f48a4bfb380d019f0c4fb899a))
+
+## [12.13.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.13.0...v12.13.1) (2026-07-08)
+
+
+### Bug Fixes
+
+* servizioview ssr ([#1127](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1127)) ([d17480e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d17480e405419450d0f47808179b20218778d02e))
+
+
+### Documentation
+
+* updated publiccode ([7707c49](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7707c49b520d8070ca1730e0abb89e2f4f10717f))
+
+## [12.13.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.6...v12.13.0) (2026-06-25)
+
+
+### Features
+
+* link integrity in folder contents ([#1125](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1125)) ([8182582](https://github.com/RedTurtle/design-comuni-plone-theme/commit/81825820069ae0520e2201ab8e772c932739cb21))
+
+
+### Bug Fixes
+
+* listing variation 'Tabella' - rendering of fields with multiple values (ex. array of vocabulary items) ([#1123](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1123)) ([66684b2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/66684b2e3adf2da16cc1084aa6424c2da8340582))
+
+
+### Maintenance
+
+* **deps:** bump brace-expansion from 1.1.12 to 1.1.13 ([#1093](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1093)) ([d476063](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d476063bbcd0bf8e9bc89c449ad95c4a60359e23))
+* preparing release 12.13.0 ([af4a0c5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/af4a0c53ebc19fa68eba957c0ce14fdd28596b5c))
+
 ## [12.12.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.5...v12.12.6) (2026-06-16)
 
 

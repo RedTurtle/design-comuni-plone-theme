@@ -41,21 +41,32 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 12.14.0 (20/07/2026)
 
 ### Migliorie
 
-- ...
+- Durante il caricamento massivo di file, in caso di errore viene ora mostrato un avviso. _(**Origine / contributo**: Regione Emilia-Romagna)_ <!--us-69720-->
 
 ### Novità
 
-- Nella folder contents, ora viene mostrato un messaggio di avviso quando si sta cercando di spostare / cancellare / rinominare / cambiare lo stato di più di 300 elementi (o del numero configurabile a livello di applicazione dagli sviluppatori.) _(**Origine / contributo**: Regione Emilia-Romagna)_
-- Migliorata l'accessibilità della folder content. _(**Origine / contributo**: Regione Emilia-Romagna)_
-- Nella folder content, ora viene mostrato un messaggio di errore più coerente ed esplicativo quando si verifica un errore. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nel blocco Video e nel blocco Video Gallery, è stata aggiunta la possibilità di definire un'immagine di copertina per i video diversa da quella di default automatica.<!--us-76313-->
 
 ### Fix
 
-- Blocco Listing con template a tabella. Corretta la visualizzazione dei campi con valori multipli (es. "Destinatari") che causavano un errore di rendering. I valori vengono ora mostrati correttamente come etichette separate da virgola.
+- Risolto un errore nella pagina degli eventi che in alcuni casi ne impediva la visualizzazione. L'errore si verificava quando la sezione Contatti dell'evento riportava informazioni sull'organizzatore o sui sostenitori ma non conteneva alcun contatto in elenco. <!--us-76991 -->
+- Uniformato l'allineamento dell'icona e del titolo in tutte le card che mostrano allegati. <!--us-54701-->
+
+## Versione 12.13.0 (25/06/2026)
+
+### Migliorie
+
+- Nella folder contents, ora viene mostrato un messaggio di avviso quando si sta cercando di spostare / cancellare / rinominare / cambiare lo stato di più di 300 elementi (o del numero configurabile a livello di applicazione dagli sviluppatori.) _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nella folder content, ora viene mostrato un messaggio di errore più coerente ed esplicativo quando si verifica un errore. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Migliorata l'accessibilità della folder content. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+### Fix
+
+- Nel blocco Elenco con template a tabella è stata corretta la visualizzazione dei campi con valori multipli (es. "Destinatari") che causavano un errore di rendering. I valori vengono ora mostrati correttamente come valori separati da virgola.
 
 ## Versione 12.12.4 (08/06/2026)
 
