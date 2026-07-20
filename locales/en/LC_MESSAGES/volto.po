@@ -2705,6 +2705,16 @@ msgid "gallery_close_preview"
 msgstr "Close preview"
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine di copertina
+msgid "gallery_preview_image"
+msgstr "Gallery preview image"
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine mostrata in anteprima al posto della copertina di default del video.
+msgid "gallery_preview_image_description"
+msgstr "Image shown in preview instead of the default video cover."
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Titolo del video
 msgid "gallery_video_title"
 msgstr ""
@@ -4791,6 +4801,11 @@ msgstr "Type"
 # defaultMessage: Data di aggiornamento
 msgid "update_date"
 msgstr "Update date"
+
+#: customizations/volto/components/manage/Contents/ContentsUploadModal
+# defaultMessage: An error has occurred while uploading files.
+msgid "upload_error"
+msgstr "An error has occurred while uploading files."
 
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 #: helpers/contentHelper
