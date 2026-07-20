@@ -4,6 +4,10 @@ body.public-ui.contenttype-lrf {
   .documentFirstHeading {
     @include visually-hidden;
   }
+
+  #briciole {
+    display: none;
+  }
 }
 
 body.subsite.subsite-root {
