@@ -49,13 +49,24 @@
 
 ### Novità
 
-- Nella folder contents, ora viene mostrato un messaggio di avviso quando si sta cercando di spostare / cancellare / rinominare / cambiare lo stato di più di 300 elementi (o del numero configurabile a livello di applicazione dagli sviluppatori.) _(**Origine / contributo**: Regione Emilia-Romagna)_
-- Migliorata l'accessibilità della folder content. _(**Origine / contributo**: Regione Emilia-Romagna)_
-- Nella folder content, ora viene mostrato un messaggio di errore più coerente ed esplicativo quando si verifica un errore. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- ...
 
 ### Fix
 
-- Blocco Listing con template a tabella. Corretta la visualizzazione dei campi con valori multipli (es. "Destinatari") che causavano un errore di rendering. I valori vengono ora mostrati correttamente come etichette separate da virgola.
+- Risolto un errore nella pagina degli eventi che in alcuni casi ne impediva la visualizzazione. L'errore si verificava quando la sezione Contatti dell'evento riportava informazioni sull'organizzatore o sui sostenitori ma non conteneva alcun contatto in elenco.
+- Rimossa la sezione delle breadcrumbs dalla pagina principale.
+
+## Versione 12.13.0 (25/06/2026)
+
+### Migliorie
+
+- Nella folder contents, ora viene mostrato un messaggio di avviso quando si sta cercando di spostare / cancellare / rinominare / cambiare lo stato di più di 300 elementi (o del numero configurabile a livello di applicazione dagli sviluppatori.) _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nella folder content, ora viene mostrato un messaggio di errore più coerente ed esplicativo quando si verifica un errore. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Migliorata l'accessibilità della folder content. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+### Fix
+
+- Nel blocco Elenco con template a tabella è stata corretta la visualizzazione dei campi con valori multipli (es. "Destinatari") che causavano un errore di rendering. I valori vengono ora mostrati correttamente come valori separati da virgola.
 
 ## Versione 12.12.4 (08/06/2026)
 

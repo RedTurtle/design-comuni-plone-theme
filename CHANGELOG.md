@@ -1,5 +1,35 @@
 # Changelog
 
+## [12.13.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.13.0...v12.13.1) (2026-07-08)
+
+
+### Bug Fixes
+
+* servizioview ssr ([#1127](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1127)) ([d17480e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d17480e405419450d0f47808179b20218778d02e))
+
+
+### Documentation
+
+* updated publiccode ([7707c49](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7707c49b520d8070ca1730e0abb89e2f4f10717f))
+
+## [12.13.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.6...v12.13.0) (2026-06-25)
+
+
+### Features
+
+* link integrity in folder contents ([#1125](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1125)) ([8182582](https://github.com/RedTurtle/design-comuni-plone-theme/commit/81825820069ae0520e2201ab8e772c932739cb21))
+
+
+### Bug Fixes
+
+* listing variation 'Tabella' - rendering of fields with multiple values (ex. array of vocabulary items) ([#1123](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1123)) ([66684b2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/66684b2e3adf2da16cc1084aa6424c2da8340582))
+
+
+### Maintenance
+
+* **deps:** bump brace-expansion from 1.1.12 to 1.1.13 ([#1093](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1093)) ([d476063](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d476063bbcd0bf8e9bc89c449ad95c4a60359e23))
+* preparing release 12.13.0 ([af4a0c5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/af4a0c53ebc19fa68eba957c0ce14fdd28596b5c))
+
 ## [12.12.6](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.12.5...v12.12.6) (2026-06-16)
 
 

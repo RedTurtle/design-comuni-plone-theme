@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ConditionalEmbed } from 'volto-gdpr-privacy';
 import { Embed } from 'semantic-ui-react';
 import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { useVideoEmbedFocus } from 'design-comuni-plone-theme/helpers';
 import { defineMessages, injectIntl, useIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -34,11 +35,11 @@ const EmbeddedVideo = ({ video_url, title, id }) => {
     ? video_url.match(/^.*\.be\/(.*)/)?.[1]
     : video_url.match(/^.*\?v=(.*)$/)?.[1];
 
-  const ref = React.createRef();
+  const { wrapperRef, active, activate } = useVideoEmbedFocus();
   const onKeyDown = (e) => {
     if (e.nativeEvent.keyCode === 13) {
       //Enter
-      ref.current.handleClick();
+      activate();
     }
   };
 
@@ -53,18 +54,23 @@ const EmbeddedVideo = ({ video_url, title, id }) => {
         <FontAwesomeIcon icon={['fas', 'play']} />
       </div>
     ),
-    defaultActive: false,
+    active: active,
     autoplay: false,
     aspectRatio: '16:9',
     placeholder: 'https://img.youtube.com/vi/' + video_id + '/hqdefault.jpg',
     tabIndex: 0,
     onKeyPress: onKeyDown,
-    ref: ref,
+    onClick: activate,
     'aria-label': intl.formatMessage(messages.loadVideo),
   };
 
   return video_url ? (
-    <div key={id} className="embedded-video my4" id={`embedded-video-${id}`}>
+    <div
+      key={id}
+      ref={wrapperRef}
+      className="embedded-video my4"
+      id={`embedded-video-${id}`}
+    >
       <ConditionalEmbed url={video_url} key={'embedvideo' + id}>
         <Embed
           id={video_id}

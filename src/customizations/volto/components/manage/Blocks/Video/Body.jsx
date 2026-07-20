@@ -11,13 +11,15 @@
  */
 
 import React from 'react';
-import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Embed, Message } from 'semantic-ui-react';
 import cx from 'classnames';
 import { isInternalURL, getParentUrl } from '@plone/volto/helpers';
-import { videoUrlHelper } from 'design-comuni-plone-theme/helpers';
+import {
+  videoUrlHelper,
+  useVideoEmbedFocus,
+} from 'design-comuni-plone-theme/helpers';
 import { ConditionalEmbed } from 'volto-gdpr-privacy';
 import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
@@ -48,11 +50,11 @@ const Body = ({ data, isEditMode }) => {
       placeholder = computedPlaceholder;
     }
   }
-  const ref = React.createRef();
+  const { wrapperRef, active, activate } = useVideoEmbedFocus();
   const onKeyDown = (e) => {
     if (e.nativeEvent.keyCode === 13) {
       //Enter
-      ref.current.handleClick();
+      activate();
     }
   };
   const embedSettings = {
@@ -67,12 +69,12 @@ const Body = ({ data, isEditMode }) => {
         <FontAwesomeIcon icon={['fas', 'play']} />
       </div>
     ),
-    defaultActive: false,
+    active: active,
     autoplay: false,
     aspectRatio: '16:9',
     tabIndex: 0,
     onKeyPress: onKeyDown,
-    ref: ref,
+    onClick: activate,
   };
 
   let apiPath = config.settings.apiPath;
@@ -84,6 +86,7 @@ const Body = ({ data, isEditMode }) => {
     <>
       {data.url && (
         <div
+          ref={wrapperRef}
           className={cx('video-inner', {
             'full-width': data.align === 'full',
           })}
