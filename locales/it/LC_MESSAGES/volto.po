@@ -4802,11 +4802,6 @@ msgstr "Tipologia"
 msgid "update_date"
 msgstr "Data di aggiornamento"
 
-#: customizations/volto/components/manage/Contents/ContentsUploadModal
-# defaultMessage: An error has occurred while uploading files.
-msgid "upload_error"
-msgstr "Si è verificato un errore durante il caricamento dei file."
-
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 #: helpers/contentHelper
 # defaultMessage: Sito web
