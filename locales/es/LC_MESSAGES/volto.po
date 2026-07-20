@@ -4811,11 +4811,6 @@ msgstr "Tipo"
 msgid "update_date"
 msgstr ""
 
-#: customizations/volto/components/manage/Contents/ContentsUploadModal
-# defaultMessage: An error has occurred while uploading files.
-msgid "upload_error"
-msgstr "Se ha producido un error al subir los archivos."
-
 #: components/ItaliaTheme/View/PuntoDiContattoView/PuntoDiContattoView
 #: helpers/contentHelper
 # defaultMessage: Sito web

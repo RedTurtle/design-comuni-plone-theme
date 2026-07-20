@@ -41,20 +41,20 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 12.14.0 (20/07/2026)
 
 ### Migliorie
 
-- ...
+- Durante il caricamento massivo di file, in caso di errore viene ora mostrato un avviso. _(**Origine / contributo**: Regione Emilia-Romagna)_ <!--us-69720-->
 
 ### Novità
 
-- ...
+- Nel blocco Video e nel blocco Video Gallery, è stata aggiunta la possibilità di definire un'immagine di copertina per i video diversa da quella di default automatica.<!--us-76313-->
 
 ### Fix
 
-- Risolto un errore nella pagina degli eventi che in alcuni casi ne impediva la visualizzazione. L'errore si verificava quando la sezione Contatti dell'evento riportava informazioni sull'organizzatore o sui sostenitori ma non conteneva alcun contatto in elenco.
-- Rimossa la sezione delle breadcrumbs dalla pagina principale.
+- Risolto un errore nella pagina degli eventi che in alcuni casi ne impediva la visualizzazione. L'errore si verificava quando la sezione Contatti dell'evento riportava informazioni sull'organizzatore o sui sostenitori ma non conteneva alcun contatto in elenco. <!--us-76991 -->
+- Uniformato l'allineamento dell'icona e del titolo in tutte le card che mostrano allegati. <!--us-54701-->
 
 ## Versione 12.13.0 (25/06/2026)
 
