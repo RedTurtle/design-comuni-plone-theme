@@ -108,6 +108,7 @@ export default function applyConfig(voltoConfig) {
         'Loading CSS chunk',
         'Timeout (n)', //errori di recaptcha nella customer satisfaction
         'Uncaught (in promise) Timeout (n)', //errori di recaptcha nella customer satisfaction
+        'window.webkit.messageHandlers', //errore in-app browser Facebook/Instagram su iOS
       ],
       // https://docs.sentry.io/platforms/javascript/data-management/sensitive-data/
       // beforeSend(event) {
