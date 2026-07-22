@@ -41,19 +41,11 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 12.14.1 (22/07/2026)
 
 ### Migliorie
 
 - Migliorata l'accessibilità degli slider. Le tecnologie assistive ora segnalano quale slide è attualmente selezionata.
-
-### Novità
-
-- ...
-
-### Fix
-
-- ...
 
 ## Versione 12.14.0 (20/07/2026)
 
