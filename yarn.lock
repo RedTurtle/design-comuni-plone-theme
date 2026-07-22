@@ -8341,7 +8341,7 @@ __metadata:
     typeface-roboto-mono: 0.0.75
     typeface-titillium-web: 0.0.72
     volto-blocks-widget: 3.4.8
-    volto-data-grid-widget: 2.3.1
+    volto-data-grid-widget: 2.4.0
     volto-dropdownmenu: 4.1.6
     volto-editablefooter: 5.1.11
     volto-feedback: 0.7.2
@@ -16547,12 +16547,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-data-grid-widget@npm:2.3.1":
-  version: 2.3.1
-  resolution: "volto-data-grid-widget@npm:2.3.1"
+"volto-data-grid-widget@npm:2.4.0":
+  version: 2.4.0
+  resolution: "volto-data-grid-widget@npm:2.4.0"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: a464c7cbc7a4eef49bb0753c713fdd54842c425cb58dfb06c2debe85714ca5ca00e563bcefc00b21d4d3d05d225f16cf642b4a95197022953faf4f0071cdb0ea
+  checksum: ebb47d78eec2cd718004b213bfa0e22f2978b09758731e60ab473bc16271951929565abdeaf1452422973203cf0266896e6c3db54e559bd1953858cc470376e5
   languageName: node
   linkType: hard
 
