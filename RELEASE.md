@@ -54,6 +54,7 @@
 ### Fix
 
 - Corretto il menu di navigazione principale per le tecnologie assistive. Le voci di menu e i sottomenu ora vengono annunciati correttamente.
+- Il nome annunciato dalle tecnologie assistive per i link del menu ora corrisponde sempre al testo visibile, anche per il link Vedi tutto e per le voci di menu con etichetta personalizzata.
 
 ## Versione 12.14.1 (22/07/2026)
 
