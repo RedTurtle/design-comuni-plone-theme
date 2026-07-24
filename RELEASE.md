@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Corretto il menu di navigazione principale per le tecnologie assistive. Le voci di menu e i sottomenu ora vengono annunciati correttamente.
+
 ## Versione 12.14.1 (22/07/2026)
 
 ### Migliorie
