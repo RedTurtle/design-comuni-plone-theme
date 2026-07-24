@@ -149,6 +149,7 @@ const MegaMenu = ({ item, pathname }) => {
           tag={UniversalLink}
           data-element={item.id_lighthouse}
           active={isItemActive}
+          aria-label={item.title}
         >
           <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
           {isItemActive && (
@@ -270,6 +271,11 @@ const MegaMenu = ({ item, pathname }) => {
         }
       }
     }
+
+    const showMoreLabel =
+      item.showMoreText?.length > 0
+        ? item.showMoreText
+        : intl.formatMessage(messages.view_all);
 
     return (
       <NavItem
@@ -417,12 +423,9 @@ const MegaMenu = ({ item, pathname }) => {
                           className="list-item medium"
                           item={item.showMoreLink[0]}
                           onClick={() => setMenuStatus(false)}
+                          aria-label={`${showMoreLabel} ${item.title}`}
                         >
-                          <span>
-                            {item.showMoreText?.length > 0
-                              ? item.showMoreText
-                              : intl.formatMessage(messages.view_all)}
-                          </span>
+                          <span>{showMoreLabel}</span>
                           <Icon icon="it-arrow-right" />
                         </UniversalLink>
                       </li>
