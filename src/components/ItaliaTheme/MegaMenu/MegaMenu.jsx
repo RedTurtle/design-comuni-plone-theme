@@ -93,8 +93,9 @@ const MegaMenu = ({ item, pathname }) => {
       return;
     }
     const handleEscape = (e) => {
-      if (e.key === 'Escape' || e.key === 'Esc') {
+      if (e.key === 'Escape') {
         setMenuStatus(false);
+        // No ref: DropdownToggle ignores innerRef when inNavbar is true.
         document
           .querySelector(`[data-element="${item.id_lighthouse}"]`)
           ?.focus();
@@ -295,6 +296,7 @@ const MegaMenu = ({ item, pathname }) => {
               className={cx('megamenu-toggle-icon', { open: menuStatus })}
             />
           </DropdownToggle>
+          {/* role={undefined} removes reactstrap's hardcoded role="menu" */}
           <DropdownMenu flip tag="div" role={undefined}>
             <div className="text-end megamenu-close-button">
               <Button
@@ -306,8 +308,7 @@ const MegaMenu = ({ item, pathname }) => {
                   }
                 }}
                 title={intl.formatMessage(messages.closeMenu)}
-                // APG spec: on Tab menu closes, so remove it from focusable elements
-                // https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-navigation/
+                // Out of Tab order: Escape/outside click already close the menu
                 tabIndex="-1"
               >
                 <Icon icon="it-close" />
@@ -318,12 +319,17 @@ const MegaMenu = ({ item, pathname }) => {
                 <Row>
                   {childrenGroups.map((group, index) => (
                     <Col lg={12 / max_cols} key={'group_' + index}>
-                      <LinkList className="bordered" aria-label={item.title ?? ''}>
+                      <LinkList
+                        className="bordered"
+                        aria-label={item.title ?? ''}
+                      >
                         {group.map((child, idx) => {
                           return (
                             <li
                               key={child['@id'] + idx}
-                              ref={index === 0 && idx === 0 ? firstItemRef : null}
+                              ref={
+                                index === 0 && idx === 0 ? firstItemRef : null
+                              }
                             >
                               {child.showAsHeader ? (
                                 <h3
