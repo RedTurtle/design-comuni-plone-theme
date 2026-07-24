@@ -3,7 +3,7 @@
  * @module components/theme/Navigation/Navigation
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { map } from 'lodash';
 import cx from 'classnames';
@@ -80,6 +80,31 @@ const MegaMenu = ({ item, pathname }) => {
   const isItemActive = isActive(item, pathname);
 
   const [menuStatus, setMenuStatus] = useState(false);
+  const firstItemRef = useRef(null);
+
+  useEffect(() => {
+    if (menuStatus) {
+      firstItemRef.current?.querySelector('a')?.focus();
+    }
+  }, [menuStatus]);
+
+  useEffect(() => {
+    if (!menuStatus) {
+      return;
+    }
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        setMenuStatus(false);
+        document
+          .querySelector(`[data-element="${item.id_lighthouse}"]`)
+          ?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [menuStatus, item.id_lighthouse]);
 
   const getAnchorTarget = (nodeElement) => {
     if (nodeElement.nodeName === 'A') {
@@ -115,7 +140,7 @@ const MegaMenu = ({ item, pathname }) => {
 
   if (item.mode === 'simpleLink') {
     return item.linkUrl?.length > 0 ? (
-      <NavItem tag="li" active={isItemActive} role="none">
+      <NavItem tag="li" active={isItemActive}>
         <NavLink
           className={isItemActive ? 'focus--mouse' : ''}
           href={item.linkUrl === '' ? '/' : null}
@@ -123,7 +148,6 @@ const MegaMenu = ({ item, pathname }) => {
           tag={UniversalLink}
           data-element={item.id_lighthouse}
           active={isItemActive}
-          role="menuitem"
         >
           <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
           {isItemActive && (
@@ -251,7 +275,6 @@ const MegaMenu = ({ item, pathname }) => {
         tag="li"
         className={isItemActive ? 'focus--mouse megamenu' : 'megamenu'}
         active={isItemActive}
-        role="none"
       >
         <UncontrolledDropdown
           nav
@@ -261,7 +284,6 @@ const MegaMenu = ({ item, pathname }) => {
           toggle={() => setMenuStatus(!menuStatus)}
         >
           <DropdownToggle
-            role="menuitem"
             aria-haspopup
             color="secondary"
             nav
@@ -273,7 +295,7 @@ const MegaMenu = ({ item, pathname }) => {
               className={cx('megamenu-toggle-icon', { open: menuStatus })}
             />
           </DropdownToggle>
-          <DropdownMenu flip tag="div">
+          <DropdownMenu flip tag="div" role={undefined}>
             <div className="text-end megamenu-close-button">
               <Button
                 color="link"
@@ -296,14 +318,13 @@ const MegaMenu = ({ item, pathname }) => {
                 <Row>
                   {childrenGroups.map((group, index) => (
                     <Col lg={12 / max_cols} key={'group_' + index}>
-                      <LinkList
-                        className="bordered"
-                        role="menu"
-                        aria-label={item.title ?? ''}
-                      >
+                      <LinkList className="bordered" aria-label={item.title ?? ''}>
                         {group.map((child, idx) => {
                           return (
-                            <li key={child['@id'] + idx} role="none">
+                            <li
+                              key={child['@id'] + idx}
+                              ref={index === 0 && idx === 0 ? firstItemRef : null}
+                            >
                               {child.showAsHeader ? (
                                 <h3
                                   className={cx('list-item', {
@@ -319,7 +340,6 @@ const MegaMenu = ({ item, pathname }) => {
                                     condition={!!child['@id']}
                                     key={child['@id']}
                                     onClick={() => setMenuStatus(false)}
-                                    role="menuitem"
                                     aria-current="page"
                                   >
                                     <span>{child.title}</span>
@@ -339,7 +359,6 @@ const MegaMenu = ({ item, pathname }) => {
                                       true,
                                     ),
                                   })}
-                                  role="menuitem"
                                 >
                                   <span>{child.title}</span>
                                 </ConditionalLink>
@@ -386,13 +405,12 @@ const MegaMenu = ({ item, pathname }) => {
                 <Row>
                   <Col lg={8} />
                   <Col lg={4}>
-                    <LinkList role="menu" aria-label={item.showMoreText ?? ''}>
-                      <li className="it-more text-end" role="none">
+                    <LinkList aria-label={item.showMoreText ?? ''}>
+                      <li className="it-more text-end">
                         <UniversalLink
                           className="list-item medium"
                           item={item.showMoreLink[0]}
                           onClick={() => setMenuStatus(false)}
-                          role="menuitem"
                         >
                           <span>
                             {item.showMoreText?.length > 0
