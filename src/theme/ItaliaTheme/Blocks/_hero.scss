@@ -27,6 +27,7 @@
     img {
       object-fit: cover;
       width: 100%;
+      max-width: 100%;
     }
   }
 
@@ -133,19 +134,6 @@
 
       .read-more {
         margin-bottom: 1rem;
-      }
-    }
-  }
-}
-
-.block-editor-hero {
-  .block.hero {
-    .hero-image {
-      max-width: 50%;
-
-      img {
-        object-fit: cover;
-        max-width: 100%;
       }
     }
   }
