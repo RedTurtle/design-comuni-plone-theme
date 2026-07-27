@@ -7,7 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import StoresButtons from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons';
+import { toSlateValue } from 'design-comuni-plone-theme/helpers';
 
 /**
  * View image block class.
@@ -36,8 +38,10 @@ const View = ({ data }) => {
               'no-bg': !show_bg,
             })}
           >
-            {data.title && <h1>{data.title}</h1>}
-            {data.description && <p>{data.description}</p>}
+            {data.title && <h2>{data.title}</h2>}
+            {data.description && (
+              <TextBlockView data={{ value: toSlateValue(data.description) }} />
+            )}
             <StoresButtons data={data} />
           </div>
         </div>

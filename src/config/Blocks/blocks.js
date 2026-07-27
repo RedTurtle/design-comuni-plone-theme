@@ -65,9 +65,13 @@ import countDownSVG from 'design-comuni-plone-theme/icons/count-down.svg';
 import CountDownBlockView from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/CountDown/View';
 import CountDownBlockEdit from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/CountDown/Edit';
 
-import calloutSVG from '@plone/volto/icons/megaphone.svg';
+import calloutSVG from '@plone/volto/icons/hero.svg';
 import CalloutView from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Callout/View';
 import CalloutEdit from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Callout/Edit';
+
+import heroSVG from '@plone/volto/icons/hero.svg';
+import HeroView from 'design-comuni-plone-theme/customizations/volto/components/manage/Blocks/HeroImageLeft/View';
+import HeroEdit from 'design-comuni-plone-theme/customizations/volto/components/manage/Blocks/HeroImageLeft/Edit';
 
 import { cloneBlock } from 'design-comuni-plone-theme/helpers/blocks';
 import { italiaTeaserSchemaEnhancer } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Teaser/schema';
@@ -384,6 +388,22 @@ const italiaBlocks = {
     sidebarTab: 1,
     blockHasOwnFocusManagement: true,
   },
+    hero: {
+    id: 'hero',
+    title: 'Hero',
+    icon: heroSVG,
+    group: 'text',
+    view: HeroView,
+    edit: HeroEdit,
+    restricted: false,
+    mostUsed: false,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+    sidebarTab: 1,
+    blockHasOwnFocusManagement: true,
+  }
 };
 
 const getItaliaBlocks = (config) => {

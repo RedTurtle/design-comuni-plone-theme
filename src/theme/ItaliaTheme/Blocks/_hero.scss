@@ -14,14 +14,10 @@
   .hero-image {
     display: flex;
     overflow: hidden;
-    max-width: unset;
     height: unset;
-
-    max-height: unset;
-
-    flex: 0 1 50%;
-
+    flex: 1 1 50%;
     justify-content: center;
+    max-height: unset;
 
     picture {
       max-width: unset;
@@ -30,6 +26,7 @@
 
     img {
       object-fit: cover;
+      width: 100%;
     }
   }
 
@@ -144,11 +141,11 @@
 .block-editor-hero {
   .block.hero {
     .hero-image {
-      width: 450px;
-      max-height: 650px;
+      max-width: 50%;
 
       img {
-        object-fit: contain;
+        object-fit: cover;
+        max-width: 100%;
       }
     }
   }

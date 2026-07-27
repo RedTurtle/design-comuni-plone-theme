@@ -8,3 +8,16 @@ export const checkRichTextHasContent = (text) => {
   }
   return false;
 };
+
+/*
+  Convert string to Slate value
+*/
+export const stringToSlate = (text) => [
+  {
+    type: 'p',
+    children: [{ text: text || '' }],
+  },
+];
+
+export const toSlateValue = (value) =>
+  typeof value === 'string' ? stringToSlate(value) : value;
