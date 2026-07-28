@@ -1,6 +1,9 @@
 /**
  * View image block.
  * @module components/manage/Blocks/Hero/View
+
+CUSTOMIZATIONS:
+- render description as a plaintext (default from volto) or slate object (dcpt customization) 
  */
 
 import React from 'react';
