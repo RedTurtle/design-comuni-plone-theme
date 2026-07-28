@@ -95,17 +95,13 @@ const MegaMenu = ({ item, pathname }) => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
         setMenuStatus(false);
-        // No ref: DropdownToggle ignores innerRef when inNavbar is true.
-        document
-          .querySelector(`[data-element="${item.id_lighthouse}"]`)
-          ?.focus();
       }
     };
 
     document.addEventListener('keydown', handleEscape);
 
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [menuStatus, item.id_lighthouse]);
+  }, [menuStatus]);
 
   const getAnchorTarget = (nodeElement) => {
     if (nodeElement.nodeName === 'A') {
@@ -290,12 +286,7 @@ const MegaMenu = ({ item, pathname }) => {
           tag="div"
           toggle={() => setMenuStatus(!menuStatus)}
         >
-          <DropdownToggle
-            aria-haspopup
-            color="secondary"
-            nav
-            data-element={item.id_lighthouse}
-          >
+          <DropdownToggle aria-haspopup color="secondary" nav>
             <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
             <Icon
               icon="it-expand"
