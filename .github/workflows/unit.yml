@@ -12,5 +12,10 @@ jobs:
       - name: Main checkout
         uses: actions/checkout@v4
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Run unit tests
+        env:
+          COMPOSE_BAKE: 'true'
         run: make test-ci

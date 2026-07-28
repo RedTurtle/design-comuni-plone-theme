@@ -10,6 +10,10 @@
  * - added support for playing external (non-youtube/vimeo/peertube, non-mp4) video
  *   URLs directly via a <video> tag when allowed (data.allowExternals or
  *   config.settings.videoAllowExternalsDefault)
+ * - added useVideoEmbedFocus: once the placeholder/play button is activated it
+ *   disappears (replaced by the real <iframe>/<video>), which would otherwise
+ *   drop focus to <body>; this moves focus into the newly rendered player so
+ *   keyboard/screen-reader users don't lose context
  */
 
 import React from 'react';
@@ -19,6 +23,7 @@ import { Embed, Message } from 'semantic-ui-react';
 import cx from 'classnames';
 import { isInternalURL, flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import VideoEmbed from '@plone/volto/components/theme/VideoEmbed/VideoEmbed';
+import { useVideoEmbedFocus } from 'design-comuni-plone-theme/helpers';
 import { ConditionalEmbed } from 'volto-gdpr-privacy';
 import config from '@plone/volto/registry';
 
@@ -118,12 +123,29 @@ const Body = ({ data, isEditMode }) => {
     getVideoIDAndPlaceholder(data.url, peertubeInstances);
 
   placeholder = !placeholder ? thumbnailURL : placeholder;
+  const { wrapperRef, activate } = useVideoEmbedFocus();
   const ref = React.createRef();
   const onKeyDown = (e) => {
     if (e.nativeEvent.keyCode === 13) {
       ref.current.handleClick();
+      activate();
     }
   };
+
+  // VideoEmbed manages its own play button/state internally and doesn't
+  // expose an onClick prop, so we can't wire `activate` through props like
+  // embedSettings.onClick does for Embed below. Listening on the wrapper
+  // catches the bubbled click from VideoEmbed's real <button> too, without
+  // making this non-interactive wrapper itself a fake interactive element
+  // (which is what a JSX onClick here would do, and what jsx-a11y flags).
+  React.useEffect(() => {
+    const node = wrapperRef.current;
+    if (!node) {
+      return;
+    }
+    node.addEventListener('click', activate);
+    return () => node.removeEventListener('click', activate);
+  }, [wrapperRef, activate]);
 
   const embedSettings = {
     placeholder: placeholder,
@@ -132,6 +154,7 @@ const Body = ({ data, isEditMode }) => {
     aspectRatio: '16:9',
     tabIndex: 0,
     onKeyPress: onKeyDown,
+    onClick: activate,
     ref: ref,
     title: data.title,
     id: videoID,
@@ -143,6 +166,7 @@ const Body = ({ data, isEditMode }) => {
     <>
       {data.url && (
         <div
+          ref={wrapperRef}
           className={cx('video-inner', {
             'full-width': data.align === 'full',
           })}

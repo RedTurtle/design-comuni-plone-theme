@@ -8750,12 +8750,12 @@ __metadata:
     typeface-roboto-mono: 0.0.75
     typeface-titillium-web: 0.0.72
     volto-blocks-widget: 3.4.8
-    volto-data-grid-widget: 2.3.1
+    volto-data-grid-widget: 2.4.0
     volto-dropdownmenu: 4.1.6
     volto-editablefooter: "github:RedTurtle/volto-editablefooter#fix/footer-top-hooks-order"
     volto-feedback: 0.7.3
     volto-form-block: 3.17.1
-    volto-gdpr-privacy: "github:collective/volto-gdpr-privacy#fix/conditional-embed-hydration-mismatch"
+    volto-gdpr-privacy: 2.4.0
     volto-google-analytics: 2.0.0
     volto-multilingual-widget: 3.2.1
     volto-querywidget-with-browser: 0.4.4
@@ -17156,12 +17156,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-data-grid-widget@npm:2.3.1":
-  version: 2.3.1
-  resolution: "volto-data-grid-widget@npm:2.3.1"
+"volto-data-grid-widget@npm:2.4.0":
+  version: 2.4.0
+  resolution: "volto-data-grid-widget@npm:2.4.0"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: a464c7cbc7a4eef49bb0753c713fdd54842c425cb58dfb06c2debe85714ca5ca00e563bcefc00b21d4d3d05d225f16cf642b4a95197022953faf4f0071cdb0ea
+  checksum: ebb47d78eec2cd718004b213bfa0e22f2978b09758731e60ab473bc16271951929565abdeaf1452422973203cf0266896e6c3db54e559bd1953858cc470376e5
   languageName: node
   linkType: hard
 
@@ -17214,15 +17214,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-gdpr-privacy@github:collective/volto-gdpr-privacy#fix/conditional-embed-hydration-mismatch":
-  version: 2.3.4
-  resolution: "volto-gdpr-privacy@https://github.com/collective/volto-gdpr-privacy.git#commit=88473e61c38cbb2e46652c4045659716ac207808"
+"volto-gdpr-privacy@npm:2.4.0":
+  version: 2.4.0
+  resolution: "volto-gdpr-privacy@npm:2.4.0"
   dependencies:
     react-focus-lock: 2.9.4
     volto-multilingual-widget: 3.2.1
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: 6cd73fdb5f0ea050903c71e0e271b59d07d473b10f82e88bdfb7bb420f8bbdbf2500814e3d032aae104438e62737d81300ceff18af27542917c2f9be944f1155
+  checksum: 96a56a3647dc9510051804a0880816cc4b0d5575e043b2b71e7579a411c01a34576bd4d2104621f9fff20f579b6f8a590776014a401410ef9a242312ede8b0bf
   languageName: node
   linkType: hard
 

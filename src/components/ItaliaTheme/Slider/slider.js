@@ -1,8 +1,20 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, cloneElement } from 'react';
 import {
   NextArrow,
   PrevArrow,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+
+// Aggiunge aria-current al dot attivo dello slider così gli screen reader lo annunciano.
+export const decorateSliderDots = (dots) =>
+  dots.map((dot) => {
+    const isActive = (dot.props.className || '').includes('slick-active');
+    if (!isActive) return dot;
+
+    const button = dot.props.children;
+    return cloneElement(dot, {
+      children: cloneElement(button, { 'aria-current': 'true' }),
+    });
+  });
 
 export const useSlider = (userAutoplay, setUserAutoplay, block_id) => {
   const slider = useRef(null);
