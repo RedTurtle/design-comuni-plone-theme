@@ -1,7 +1,7 @@
 /*
 CUSTOMIZATIONS:
 - Added stores link
-- Added slate
+- Added slate to description field, and back compatibility for old values
 */
 
 /**
