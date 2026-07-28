@@ -408,7 +408,7 @@ const MegaMenu = ({ item, pathname }) => {
                 <Row>
                   <Col lg={8} />
                   <Col lg={4}>
-                    <LinkList aria-label={showMoreLabel}>
+                    <LinkList>
                       <li className="it-more text-end">
                         <UniversalLink
                           className="list-item medium"
