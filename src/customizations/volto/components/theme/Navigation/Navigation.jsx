@@ -175,7 +175,6 @@ const Navigation = ({ pathname }) => {
                 <Nav
                   data-element="main-navigation"
                   navbar
-                  role="menubar"
                   aria-label={intl.formatMessage(messages.mainMenu)}
                 >
                   {menu
