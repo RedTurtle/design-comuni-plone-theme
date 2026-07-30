@@ -2,8 +2,26 @@
 - usati i componenti di design-react-kit
 - disabilitato il captcha se nelle siteProperties del config è stato disabilitato.
 - aggiunta legenda per i campi obbligatori
+- rercaptcha (collective.rercaptcha) ha due modalità, decise dal flag
+  `show-button` esposto insieme agli altri dati del captcha
+  (`rercaptcha-data`):
+    - invisibile (default): il token si calcola al click su "Invia", non
+      prima. Il bottone deve restare cliccabile anche senza un token già
+      pronto, altrimenti non si sbloccherebbe mai (il click stesso è ciò
+      che avvia il calcolo, tramite la Promise di captcha.verify() in
+      View.jsx).
+    - bottone esplicito: l'utente calcola il token cliccando un bottone
+      dedicato prima di "Invia". In questo caso il pre-blocco va invece
+      mantenuto, esattamente come per gli altri captcha (es. hcaptcha a
+      checkbox): "Invia" deve restare disabilitato finché la verifica non
+      è completa.
+  Per tutti gli altri tipi di captcha il comportamento resta invariato.
+  NB: nome/valore del flag `show-button` sono provvisori, in attesa della
+  chiave definitiva dal backend: se cambia va aggiornata anche qui, oltre
+  che in RerCaptchaWidget.tsx (collective-rercaptcha).
 */
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
 import { Card, CardBody, Row, Col, Alert, Progress } from 'design-react-kit';
 import { getFieldName } from 'volto-form-block/components/utils';
@@ -82,6 +100,16 @@ const FormView = ({
 
   const enableCaptcha =
     config.settings.siteProperties.enableVoltoFormBlockCaptcha;
+
+  // requiresPreexistingToken: vale per tutti i captcha tranne rercaptcha in
+  // modalità invisibile (vedi nota in testa al file).
+  const rerCaptchaData = useSelector(
+    (state) => state.content?.data?.['@components']?.['rercaptcha-data'],
+  );
+  const rercaptchaShowsOwnButton = !!rerCaptchaData?.['show-button'];
+  const requiresPreexistingToken =
+    enableCaptcha &&
+    (data.captcha !== 'rercaptcha' || rercaptchaShowsOwnButton);
 
   const isValidField = (field) => {
     return formErrors?.filter((e) => e.field === field).length === 0;
@@ -309,7 +337,7 @@ const FormView = ({
                       color="primary"
                       type="submit"
                       disabled={
-                        (enableCaptcha &&
+                        (requiresPreexistingToken &&
                           !captcha?.props?.captchaToken?.current) ||
                         formState.loading
                       }
