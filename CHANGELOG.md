@@ -1,5 +1,23 @@
 # Changelog
 
+## [12.14.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.14.0...v12.14.1) (2026-07-22)
+
+
+### Bug Fixes
+
+* add aria-current to active slick dots ([#1135](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1135)) ([7082286](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7082286494ede84965d2dc397fa44fe50ee10962))
+
+
+### Maintenance
+
+* configured sentry to ignore facebook in-app browser errors ([#1136](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1136)) ([cf9f753](https://github.com/RedTurtle/design-comuni-plone-theme/commit/cf9f753a0009e081ba073d09f0106b41b56cec5d))
+* updated volto-data-grid-widget ([#1137](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1137)) ([4af7399](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4af739972eb46aefa7c0240c5230904f04911384))
+
+
+### Documentation
+
+* preparing release 12.14.1 ([2c18856](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2c18856453af998f2b13e956b5b9e97ada064256))
+
 ## [12.14.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.13.1...v12.14.0) (2026-07-20)
 
 

@@ -21,7 +21,10 @@ import {
   CarouselWrapper,
   ButtonPlayPause,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { useSlider } from 'design-comuni-plone-theme/components/ItaliaTheme/Slider/slider';
+import {
+  useSlider,
+  decorateSliderDots,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/Slider/slider';
 import { GalleryPreview } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 const messages = defineMessages({
@@ -128,7 +131,7 @@ const PhotogalleryTemplate = ({
         />
 
         <ul className="slick-dots" style={{ margin: '0px' }}>
-          {dots}
+          {decorateSliderDots(dots)}
         </ul>
       </div>
     ),
