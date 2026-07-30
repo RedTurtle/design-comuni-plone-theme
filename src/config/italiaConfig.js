@@ -407,7 +407,7 @@ export default function applyConfig(voltoConfig) {
     ],
 
     showRestricted: false,
-    voltoVersion: '17',
+    voltoVersion: '18',
   };
 
   config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
