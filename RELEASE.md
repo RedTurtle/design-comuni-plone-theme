@@ -41,6 +41,27 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Sistemata l'accessibilità del menu di navigazione principale del sito. Le voci di menu e i sottomenu ora vengono annunciati correttamente dalle tecnologie assistive.
+- Il nome annunciato dalle tecnologie assistive per i link del menu ora corrisponde sempre al testo visibile, anche per il link 'Vedi tutto'.
+
+## Versione 12.14.1 (22/07/2026)
+
+### Migliorie
+
+- Migliorata l'accessibilità degli slider. Le tecnologie assistive ora segnalano quale slide è attualmente selezionata.
+
 ## Versione 12.14.0 (20/07/2026)
 
 ### Migliorie
