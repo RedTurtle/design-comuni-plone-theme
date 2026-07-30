@@ -72,7 +72,7 @@ import CalloutEdit from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks
 import { cloneBlock } from 'design-comuni-plone-theme/helpers/blocks';
 import { italiaTeaserSchemaEnhancer } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Teaser/schema';
 
-const italiaBlocks = {
+const italiaBlocks = (config) => ({
   highlitedContent: {
     id: 'highlitedContent',
     title: 'Contenuto in primo piano',
@@ -384,7 +384,11 @@ const italiaBlocks = {
     sidebarTab: 1,
     blockHasOwnFocusManagement: true,
   },
-};
+  hero: {
+    ...config.blocks.blocksConfig.hero,
+    blockHasOwnFocusManagement: true,
+  },
+});
 
 const getItaliaBlocks = (config) => {
   config.blocks.blocksConfig.gridBlock.allowedBlocks =
@@ -392,6 +396,6 @@ const getItaliaBlocks = (config) => {
       (item) => !['teaser'].includes(item),
     );
   config.blocks.blocksConfig.teaser.schemaEnhancer = italiaTeaserSchemaEnhancer;
-  return italiaBlocks;
+  return italiaBlocks(config);
 };
 export default getItaliaBlocks;
