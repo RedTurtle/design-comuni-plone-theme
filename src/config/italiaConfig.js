@@ -407,6 +407,11 @@ export default function applyConfig(voltoConfig) {
     ],
 
     showRestricted: false,
+    // Must be the literal string '18' (not our actual Volto version) to make
+    // BlocksWidget use the eager createPortal Sidebar mount instead of the
+    // lazy one, otherwise BlocksForm crashes on Add/Edit of non-blocks
+    // content types with a blocks field (e.g. News/Event): see
+    // https://github.com/collective/volto-blocks-widget/issues/13
     voltoVersion: '18',
   };
 
