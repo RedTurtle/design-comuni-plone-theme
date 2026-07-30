@@ -17,7 +17,11 @@ export {
   contentFolderHasItems,
   renderPDCItemValue,
 } from 'design-comuni-plone-theme/helpers/contentHelper';
-export { checkRichTextHasContent } from 'design-comuni-plone-theme/helpers/richTextHelper';
+export {
+  checkRichTextHasContent,
+  stringToSlate,
+  toSlateValue,
+} from 'design-comuni-plone-theme/helpers/richTextHelper';
 export { getTableRowData } from 'design-comuni-plone-theme/helpers/amministrazioneTrasparenteHelper';
 export { getItemsByPath } from 'design-comuni-plone-theme/helpers/getItemsByPath';
 export {
