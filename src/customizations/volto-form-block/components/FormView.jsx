@@ -19,6 +19,9 @@
   NB: nome/valore del flag `show-button` sono provvisori, in attesa della
   chiave definitiva dal backend: se cambia va aggiornata anche qui, oltre
   che in RerCaptchaWidget.tsx (collective-rercaptcha).
+- rercaptcha si renderizza accanto al bottone di submit (a destra), non più
+  insieme agli altri campi del form: è l'unico tipo di captcha spostato,
+  gli altri restano dove sono sempre stati.
 */
 import React from 'react';
 import { useSelector } from 'react-redux';
@@ -289,7 +292,12 @@ const FormView = ({
                   <></>
                 )}
 
-                {enableCaptcha && <>{captcha.render()}</>}
+                {/* rercaptcha si renderizza accanto al bottone di submit,
+                    più sotto: qui restano tutti gli altri tipi di captcha,
+                    che non cambiano posizione */}
+                {enableCaptcha && data.captcha !== 'rercaptcha' && (
+                  <>{captcha.render()}</>
+                )}
 
                 {formErrors.length > 0 && (
                   <Alert
@@ -355,6 +363,12 @@ const FormView = ({
                         </span>
                       )}
                     </Button>
+                    {/* rercaptcha, se configurato, si affianca al bottone
+                        di submit (a destra) invece che comparire più in
+                        alto insieme agli altri campi del form */}
+                    {enableCaptcha && data.captcha === 'rercaptcha' && (
+                      <>{captcha.render()}</>
+                    )}
                   </Col>
                 </Row>
               </form>
