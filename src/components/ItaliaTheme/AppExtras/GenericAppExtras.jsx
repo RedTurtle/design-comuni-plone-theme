@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { BodyClass, hasBlocksData } from '@plone/volto/helpers';
@@ -14,8 +14,9 @@ const GenericAppExtras = (props) => {
   // (just hidden via CSS) to avoid a createPortal crash on Volto 19. That
   // Sidebar instance still fires its own `has-sidebar`/`has-sidebar-collapsed`
   // BodyClass on mount even while hidden, so the layout permanently reserves
-  // sidebar width on those forms. Force the classes off unless we're either
-  // on a genuinely block-editable content type (real Sidebar in use) or the
+  // sidebar width on those forms. Suppress the classes declaratively (via the
+  // customized BodyClass's order-independent `remove`) unless we're either on
+  // a genuinely block-editable content type (real Sidebar in use) or the
   // widget's field is actually focused (its Sidebar is actually visible).
   // See https://github.com/collective/volto-blocks-widget/issues/13
   const schemaProperties = useSelector(
@@ -27,24 +28,6 @@ const GenericAppExtras = (props) => {
   const isVisualContentType = hasBlocksData(schemaProperties || {});
   const shouldSuppressSidebarClass =
     !isVisualContentType && !blocksWidgetFieldSelected;
-  const shouldSuppressSidebarClassRef = useRef(shouldSuppressSidebarClass);
-  shouldSuppressSidebarClassRef.current = shouldSuppressSidebarClass;
-
-  useEffect(() => {
-    if (!__CLIENT__) return;
-    const enforce = () => {
-      if (shouldSuppressSidebarClassRef.current) {
-        document.body.classList.remove('has-sidebar', 'has-sidebar-collapsed');
-      }
-    };
-    enforce();
-    const observer = new MutationObserver(enforce);
-    observer.observe(document.body, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-    return () => observer.disconnect();
-  }, []);
 
   const subsite = useSelector((state) => state.subsite?.data);
   const subsiteLoadable =
@@ -67,6 +50,12 @@ const GenericAppExtras = (props) => {
         <>
           <BodyClass className="public-ui" />
           <BodyClass className="cms-ui" remove={true} />
+        </>
+      )}
+      {shouldSuppressSidebarClass && (
+        <>
+          <BodyClass className="has-sidebar" remove={true} />
+          <BodyClass className="has-sidebar-collapsed" remove={true} />
         </>
       )}
       <ScrollToTop />
