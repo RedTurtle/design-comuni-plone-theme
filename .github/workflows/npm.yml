@@ -24,7 +24,8 @@ jobs:
       - run: yarn
 
       - name: Release to npm
-        run: npm publish --provenance --access public
+        run: |
+          npm publish --provenance --access public --tag $(node -p "require('./package.json').version.includes('-') ? 'alpha' : 'latest'")
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

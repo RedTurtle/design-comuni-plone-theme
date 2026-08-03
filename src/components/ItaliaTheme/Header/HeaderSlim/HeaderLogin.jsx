@@ -67,9 +67,10 @@ const HeaderLogin = () => {
     dispatch(purgeMessages());
   };
 
-  const rolesBodyClasses = userLogged.roles?.length
+  const hasRoles = !!userLogged.roles?.length;
+  const rolesBodyClasses = hasRoles
     ? userLogged.roles.map((role) => `role-${role.toLowerCase()}`)
-    : ['no-user-roles'];
+    : [];
 
   // BBB: per retrocompatibilità con il vecchio config arLoginUrl
   const arLoginUrl = config.settings.siteProperties?.arLoginUrl;
@@ -87,7 +88,8 @@ const HeaderLogin = () => {
 
   return (
     <>
-      <BodyClass className={rolesBodyClasses.join(' ')} />
+      <BodyClass className="no-user-roles" remove={hasRoles} />
+      {hasRoles && <BodyClass className={rolesBodyClasses.join(' ')} />}
       {spidLoginUrl || arLoginUrl ? (
         !userId ? (
           <LoginButton

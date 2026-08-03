@@ -50,7 +50,7 @@ const Edit = (props) => {
           color="white"
           className="card-bg rounded"
           noWrapper={false}
-          space
+          spacing
           tag="div"
         >
           <CardBody>

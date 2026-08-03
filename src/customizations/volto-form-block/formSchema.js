@@ -1,5 +1,19 @@
-// CUSTOMIZATION:
-// - added field to set a subscription limit
+/*
+ * original: https://raw.githubusercontent.com/collective/volto-form-block/v3.17.1/src/formSchema.js
+ *
+ * CUSTOMIZATIONS:
+ * - added a `set_limit` boolean property (title from the new `set_limit`
+ *   message, default `false`) and a `limit` property (title from the new
+ *   `limit` message, default `-1`) to let editors cap the number of
+ *   submissions accepted for the form
+ * - `set_limit` is always shown in the `default` fieldset, right after
+ *   `show_cancel`/`cancel_label`; `limit` is shown conditionally, only when
+ *   `data?.set_limit` is truthy (mirroring how `cancel_label` is shown only
+ *   when `data?.show_cancel` is truthy)
+ * - reordered the `default` fieldset fields so `email_otp_verification`
+ *   comes before `mail_header`/`mail_footer`/`captcha` instead of after
+ *   `captcha`
+ */
 import { defineMessages } from 'react-intl';
 import { useIntl } from 'react-intl';
 

@@ -2,12 +2,15 @@
  * Diff field component.
  * @module components/manage/Diff/DiffField
  */
-/* CUSTOMIZATIONS
-- Overhaul all logic and html, use something that actually does the job
-- Still need to test dates, images not being shown correctly, might revert
-  to filename if the solution to this bug is not quick and easy
-- Backend has to fix history, RelList fields not appearing in response
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Diff/DiffField.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Overhaul all logic and html, use something that actually does the job
+ * - Still need to test dates, images not being shown correctly, might revert
+ *   to filename if the solution to this bug is not quick and easy
+ * - Backend has to fix history, RelList fields not appearing in response
+ */
 
 import React, { useMemo } from 'react';
 import { isEqual } from 'lodash';

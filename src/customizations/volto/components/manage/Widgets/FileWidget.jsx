@@ -1,5 +1,22 @@
-// CUSTOMIZATION:
-// - 177-179: Added link to download uploaded file
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/FileWidget.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Import FormFieldWrapper together with Icon and UniversalLink from '@plone/volto/components' instead of a separate deep import
+ * - Removed the `if (imagePreview)` guard before setting the image preview's src in the FileReader onload handler
+ *   (still relies on `document.getElementById('field-<id>-image')`; confirmed Volto's own `Image`
+ *   component renders a single plain `<img {...imageProps} />` and forwards the `id` prop onto it,
+ *   so this still works after adopting upstream's `Image`/`imgAttrs` swap below)
+ * - Removed `type="button"` from the delete-file Button
+ * - Ported upstream 18.35.0's rejected-file toast feedback (max size / accepted
+ *   type errors), the `maxSize`/`accept` Dropzone props and the a11y
+ *   drag-and-drop hint span
+ * - Ported upstream 18.35.0's swap from the semantic-ui-react `Image` + hand-built
+ *   `imgsrc` string to Volto's own themed `Image` component fed an `imgAttrs`
+ *   object (`item`/`image` for stored files, `src` for base64 previews); this
+ *   also drops the `?id=${Date.now()}` cache-busting query param this file used
+ *   to add, since there's no longer a standalone `imgsrc` string to cache-bust
+ */
 
 /**
  * FileWidget component.
@@ -8,14 +25,17 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Image, Dimmer } from 'semantic-ui-react';
+import { Button, Dimmer } from 'semantic-ui-react';
 import { readAsDataURL } from 'promise-file-reader';
 import { injectIntl } from 'react-intl';
 import deleteSVG from '@plone/volto/icons/delete.svg';
 import { Icon, FormFieldWrapper, UniversalLink } from '@plone/volto/components';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
+import Image from '@plone/volto/components/theme/Image/Image';
 import loadable from '@loadable/component';
-import { flattenToAppURL, validateFileUploadSize } from '@plone/volto/helpers';
+import { validateFileUploadSize } from '@plone/volto/helpers/FormValidation/FormValidation';
 import { defineMessages, useIntl } from 'react-intl';
+import { toast } from 'react-toastify';
 
 const imageMimetypes = [
   'image/png',
@@ -47,6 +67,19 @@ const messages = defineMessages({
   addNewFile: {
     id: 'Choose a file',
     defaultMessage: 'Choose a file',
+  },
+  maxSizeError: {
+    id: 'The file you uploaded exceeded the maximum allowed size of {size} bytes',
+    defaultMessage:
+      'The file you uploaded exceeded the maximum allowed size of {size} bytes',
+  },
+  acceptError: {
+    id: 'File is not of the accepted type {accept}',
+    defaultMessage: 'File is not of the accepted type {accept}',
+  },
+  dragAndDropActionA11y: {
+    id: 'Press Enter to browse files from your computer.',
+    defaultMessage: 'Press Enter to browse files from your computer.',
   },
 });
 
@@ -84,11 +117,18 @@ const FileWidget = (props) => {
     }
   }, [value]);
 
-  const imgsrc = value?.download
-    ? `${flattenToAppURL(value?.download)}`
-    : null || value?.data
-      ? `data:${value['content-type']};${value.encoding},${value.data}`
-      : null;
+  const imgAttrs = React.useMemo(() => {
+    const data = {};
+    if (value?.download) {
+      data.item = {
+        '@id': value.download.substring(0, value.download.indexOf('/@@images')),
+        image: value,
+      };
+    } else if (value?.data) {
+      data.src = `data:${value['content-type']};${value.encoding},${value.data}`;
+    }
+    return data;
+  }, [value]);
 
   /**
    * Drop handler
@@ -96,7 +136,33 @@ const FileWidget = (props) => {
    * @param {array} files File objects
    * @returns {undefined}
    */
-  const onDrop = (files) => {
+  const onDrop = (files, rejectedFiles) => {
+    rejectedFiles.forEach((file) => {
+      file.errors.forEach((err) => {
+        if (err.code === 'file-too-large') {
+          toast.error(
+            <Toast
+              error
+              title={intl.formatMessage(messages.maxSizeError, {
+                size: props.size,
+              })}
+            />,
+          );
+        }
+
+        if (err.code === 'file-invalid-type') {
+          toast.error(
+            <Toast
+              error
+              title={intl.formatMessage(messages.acceptError, {
+                accept: props.accept,
+              })}
+            />,
+          );
+        }
+      });
+    });
+    if (files.length < 1) return;
     const file = files[0];
     if (!validateFileUploadSize(file, intl.formatMessage)) return;
     readAsDataURL(file).then((data) => {
@@ -125,16 +191,19 @@ const FileWidget = (props) => {
 
   return (
     <FormFieldWrapper {...props}>
-      <Dropzone onDrop={onDrop}>
+      <Dropzone
+        onDrop={onDrop}
+        {...(props.size ? { maxSize: props.size } : {})}
+        {...(props.accept ? { accept: props.accept } : {})}
+      >
         {({ getRootProps, getInputProps, isDragActive }) => (
           <div className="file-widget-dropzone" {...getRootProps()}>
             {isDragActive && <Dimmer active></Dimmer>}
             {fileType ? (
               <Image
-                className="image-preview"
+                className="image-preview small ui image"
                 id={`field-${id}-image`}
-                size="small"
-                src={imgsrc}
+                {...imgAttrs}
               />
             ) : (
               <div className="dropzone-placeholder">
@@ -158,6 +227,9 @@ const FileWidget = (props) => {
               {value
                 ? intl.formatMessage(messages.replaceFile)
                 : intl.formatMessage(messages.addNewFile)}
+              <span className="visually-hidden">
+                {intl.formatMessage(messages.dragAndDropActionA11y)}
+              </span>
             </label>
             <input
               {...getInputProps({

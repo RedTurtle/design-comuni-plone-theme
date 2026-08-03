@@ -95,7 +95,7 @@ const AnswersStep = ({
                 checked={s === selectedAnswer}
                 value={s}
                 onChange={handleAnswerChange}
-                autocomplete="off"
+                autoComplete="off"
               />
               <Label
                 for={'positive-' + s}
@@ -145,6 +145,7 @@ const AnswersStep = ({
                 checked={s === selectedAnswer}
                 value={s}
                 onChange={handleAnswerChange}
+                autoComplete="off"
               />
               <Label
                 for={'negative-' + s}

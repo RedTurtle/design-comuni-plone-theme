@@ -1,26 +1,58 @@
 /**
- * Customizzazione:
- * - gestione campi required di tipo blocks
- * - gestione motivo dello stato di servizio che è required solo se il servizio non è fruibile
- * - gestione campi tipo dataGridField
- * - gestione timeline_tempi_scadenze nel servizio che ha solo un campo richiesto su 5
- * - aggiunta la possibilita' di avere validazioni pluggable per ogni campo con widget data_grid,
- *   aggiungi i tuoi dgfield e le funzioni di validazione sotto CUSTOM_DGFIELD_VALIDATION.
- *   Rispettare la convenzione con l'id del campo proveniente dallo schema del CT, ie:
- *   export const CUSTOM_DGFIELD_VALIDATION = {
-        timeline_tempi_scadenze: {
-          isValid: (value, itemObj, intlFunc) => {
-            const isValid = value.every((val, i) => val.title);
-            return !isValid
-              ? intlFunc(
-                  dgfieldValidationMessages.timeline_tempi_scadenze_validation_error,
-                )
-              : null;
-          },
-        },
-      };
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/helpers/FormValidation/FormValidation.jsx
+ *
+ * Upstream 18.0.3 renamed this file to `FormValidation.jsx` and rewrote
+ * `validateFieldsPerFieldset` around a pluggable `config.getUtilities({ type: 'validator', ... })`
+ * registry (validators dispatched by `format`, `fieldType`, `widget`, `behaviorName` and
+ * `blockType`), plus a new exported `extractInvariantErrors` helper. This customization predates
+ * that refactor and keeps the older, self-contained per-widget-type `widgetValidation` map instead.
+ *
+ * CUSTOMIZATIONS:
+ * - Kept the pre-refactor `widgetValidation` object (`email`/`url`/`password`/`string`/`number`/
+ *   `integer` validators, backed by local `isMaxPropertyValid`/`isMinPropertyValid` helpers)
+ *   instead of adopting upstream's `config.getUtilities` validator-registry architecture; the
+ *   upstream `format`/`widgetOptions.frontendOptions`/`behavior`/`blockType` validators are not
+ *   present here. `validationMessage` and `extractInvariantErrors` are still exported (copied
+ *   from upstream unchanged) since other Volto/addon modules import them by name from this path.
+ * - `widgetValidation` is extended with `...CUSTOM_DGFIELD_VALIDATION` (imported from
+ *   `design-comuni-plone-theme/helpers/FormValidation/DataGridFormValidationHelpers`): a pluggable
+ *   per-datagridfield validator registry keyed by the CT schema field id (e.g.
+ *   `timeline_tempi_scadenze: { isValid(value, itemObj, intlFunc) }`), letting each dataGridField
+ *   widget register its own row-level validation.
+ * - `validateFieldsPerFieldset`: resolves each field's validator key via `realWidgetType(field,
+ *   fieldId)` and, when no built-in `widgetValidation` entry exists for it, falls back to
+ *   `getSpecificDataGridFieldValidation(fieldId)` to look up the matching
+ *   `CUSTOM_DGFIELD_VALIDATION` criteria (both from
+ *   `design-comuni-plone-theme/helpers/FormValidation/DataGridFormValidationHelpers`).
+ * - `validateRequiredFields`: also calls `serviceFormValidationHelper(schema, formData,
+ *   touchedField, fields)` to make the `motivo_stato_servizio` field required only when the
+ *   "Servizio" content type's `stato_servizio` marks the service as not fruibile, and
+ *   `eventFormValidationHelper(schema, formData, touchedField, fields, errors, formatMessage)`
+ *   for Evento-specific conditional required fields (both from
+ *   `design-comuni-plone-theme/helpers/FormValidation/FormValidationHelpers`).
+ * - `validateRequiredFields`: required fields with `widget === 'data_grid'` are validated by
+ *   reading `dgfRequiredFields` from `schema.properties[requiredField].items.required` and
+ *   flagging the field as empty if any row in `formData[requiredField]` is missing one of those
+ *   sub-fields (dataGridField required-field support, e.g. `timeline_tempi_scadenze`, which only
+ *   has one of five row fields actually required).
+ * - Emptiness of required fields is computed via `getRealEmptyField(formData, touchedField,
+ *   requiredField, type, widget)` (from
+ *   `design-comuni-plone-theme/helpers/FormValidation/FormValidationHelpers`), adding support for
+ *   required fields with widget `"blocks"` (checking `blocks_layout` for actual text/table
+ *   content) on top of the array/richtext/integer cases.
+ * - Imports these addon helpers directly from their source files rather than through the
+ *   `design-comuni-plone-theme/helpers` barrel: that barrel eagerly re-exports ~20 unrelated
+ *   helper modules, and since this file is itself loaded via Volto's own `helpers/index.js`
+ *   barrel (through the `@plone/volto/helpers/FormValidation/FormValidation` customization
+ *   alias), going through the addon barrel here created a circular require (addon barrel ->
+ *   this file -> addon barrel, still mid-evaluation) that crashed at runtime with
+ *   "Cannot read properties of undefined (reading 'CUSTOM_DGFIELD_VALIDATION')".
  */
-import { map, uniq, keys, intersection, isEmpty } from 'lodash';
+import map from 'lodash/map';
+import uniq from 'lodash/uniq';
+import keys from 'lodash/keys';
+import intersection from 'lodash/intersection';
+import isEmpty from 'lodash/isEmpty';
 import { messages } from '@plone/volto/helpers/MessageLabels/MessageLabels';
 import { toast } from 'react-toastify';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
@@ -28,10 +60,12 @@ import {
   serviceFormValidationHelper,
   eventFormValidationHelper,
   getRealEmptyField,
+} from 'design-comuni-plone-theme/helpers/FormValidation/FormValidationHelpers';
+import {
   getSpecificDataGridFieldValidation,
   realWidgetType,
   CUSTOM_DGFIELD_VALIDATION,
-} from 'design-comuni-plone-theme/helpers';
+} from 'design-comuni-plone-theme/helpers/FormValidation/DataGridFormValidationHelpers';
 import config from '@plone/volto/registry';
 
 /**
@@ -41,7 +75,12 @@ import config from '@plone/volto/registry';
  * @param {string | number} valueToCompare can compare '47' < 50
  * @param {Function} intlFunc
  */
-const validationMessage = (isValid, criterion, valueToCompare, intlFunc) =>
+export const validationMessage = (
+  isValid,
+  criterion,
+  valueToCompare,
+  intlFunc,
+) =>
   !isValid
     ? intlFunc(messages[criterion], {
         len: valueToCompare,
@@ -459,4 +498,14 @@ export const validateFileUploadSize = (file, intlFunc) => {
     );
   }
   return isValid;
+};
+
+/**
+ * Extract invariant errors given an array of errors.
+ * @param {Array} erros
+ */
+export const extractInvariantErrors = (erros) => {
+  return erros
+    .filter((errorItem) => !('field' in errorItem))
+    .map((errorItem) => errorItem['message']);
 };

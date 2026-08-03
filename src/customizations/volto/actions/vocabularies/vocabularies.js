@@ -1,7 +1,18 @@
 /**
-
- * original from volto 17.18.2
- * backport https://github.com/plone/volto/pull/6236
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/actions/vocabularies/vocabularies.js
+ * (backport of https://github.com/plone/volto/pull/6236)
+ *
+ * CUSTOMIZATIONS:
+ * - Support contextual vocabularies in `getVocabulary` and
+ *   `getVocabularyTokenTitle`: compute a `vocabPath` using
+ *   `config.settings.contextualVocabularies`; when the vocabulary is listed
+ *   there and `vocabNameOrURL` differs from the resolved vocabulary name,
+ *   use `flattenToAppURL(vocabNameOrURL)` as the request path instead of
+ *   the default `/@vocabularies/${vocabulary}`.
+ * - Volto 19.1.5 shipped its own simpler equivalent natively (a plain
+ *   `vocabNameOrURL.includes('/')` check) - our contextualVocabularies-gated
+ *   version is kept since it's more precise (an explicit allowlist rather
+ *   than any URL-shaped string).
 
  * Vocabularies actions.
  * @module actions/vocabularies/vocabularies
@@ -12,7 +23,7 @@ import {
   GET_VOCABULARY_TOKEN_TITLE,
 } from '@plone/volto/constants/ActionTypes';
 import config from '@plone/volto/registry';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { getVocabName } from '@plone/volto/helpers/Vocabularies/Vocabularies';
 import qs from 'query-string';
 

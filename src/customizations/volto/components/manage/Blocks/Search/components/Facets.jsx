@@ -1,7 +1,19 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-  - Pass more useful props to components
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/components/Facets.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling: dropped the semantic-ui Button/Grid "advanced filters"
+ *   show/hide toggle UI (and the related `hidden`/`advancedFilters` state,
+ *   the `isAdvanced`/`visible` props passed to FacetWrapper, and the i18n
+ *   messages used for it)
+ * - Removed the `sortFacetChoices` export and the overridable
+ *   `defaultShowFacet`/`showFacet` extension mechanism; kept a single
+ *   non-overridable `showFacet` function and an inline `.sort()` using only
+ *   string localeCompare (no numeric-label sorting)
+ * - Pass more useful props to components: pass `searchData` through to
+ *   `stateToValue()` so custom facet widgets (e.g. dateRange) can know the
+ *   current operation
+ */
 import React from 'react';
 import { resolveExtension } from '@plone/volto/helpers/Extensions/withBlockExtensions';
 import config from '@plone/volto/registry';

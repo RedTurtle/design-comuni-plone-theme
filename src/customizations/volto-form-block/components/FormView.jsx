@@ -1,8 +1,29 @@
-/*Customizatinos:
-- usati i componenti di design-react-kit
-- disabilitato il captcha se nelle siteProperties del config è stato disabilitato.
-- aggiunta legenda per i campi obbligatori
-*/
+/*
+ * original: https://raw.githubusercontent.com/collective/volto-form-block/v3.17.1/src/components/FormView.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - replaced semantic-ui-react `Segment`/`Message`/`Grid`/`Form` with
+ *   design-react-kit `Card`/`CardBody`/`Row`/`Col`/`Alert`/`Progress`: form
+ *   validation errors and `formState.error` render as `Alert color="danger"`
+ *   with a fade `alertTransition` (150ms) instead of `Message error`; the
+ *   submit form is a plain `<form noValidate autoComplete="off" method="post">`
+ *   instead of semantic-ui `Form`; the loading spinner uses
+ *   `Progress indeterminate` instead of a percent-based semantic-ui `Progress`
+ * - the captcha (`captcha.render()`) is only rendered when
+ *   `config.settings.siteProperties.enableVoltoFormBlockCaptcha` is true, and
+ *   the submit button is additionally disabled while captcha is enabled but
+ *   not yet completed (`!captcha?.props?.captchaToken?.current`)
+ * - added a legend above the fields ("I campi contrassegnati da (*) sono
+ *   obbligatori.", `legend_required` message) shown when any
+ *   `data.subblocks` entry has `required === true`
+ * - static fields are wrapped in a disabled `<fieldset disabled>`
+ * - translated the default UI strings to Italian
+ *   (`default_submit_label` "Invia", `default_cancel_label` "Annulla",
+ *   `error` "Errore", `form_errors` "Attenzione! Alcuni campi inseriti sono
+ *   da controllare.") and added the `legend_required` message plus
+ *   `success`/`reset` messages (defined for reuse but not rendered in this
+ *   file)
+ */
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { Card, CardBody, Row, Col, Alert, Progress } from 'design-react-kit';

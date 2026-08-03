@@ -1,9 +1,10 @@
 import logoPNRR from './logo-eu-inverted.svg';
 import config from '@plone/volto/registry';
+import Image from '@plone/volto/components/theme/Image/Image';
 
 const FooterPNRRLogo = () => {
   return config.settings.siteProperties.showNextGenerationEU ? (
-    <img
+    <Image
       src={logoPNRR}
       width="167"
       height="41"

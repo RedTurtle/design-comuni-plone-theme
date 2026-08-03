@@ -4,6 +4,7 @@ import config from '@plone/volto/registry';
 import { isInternalURL, flattenToAppURL } from '@plone/volto/helpers';
 import { EnhanceLink } from 'design-comuni-plone-theme/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { useIntl } from 'react-intl';
 
 const ViewLink = ({
   url,
@@ -35,6 +36,7 @@ const ViewLink = ({
 
 export const LinkElement = (props) => {
   const { attributes, children, element, mode = 'edit' } = props;
+  const intl = useIntl();
 
   // If no URL, just render children without wrapping in <a>/<button>
   if (!element.data?.url) {
@@ -52,6 +54,7 @@ export const LinkElement = (props) => {
           ...element.data.enhanced_link_infos, //{mime_type: 'image/png', getObjSize: '1.3 MB'}
           filename: element.data.url,
         },
+        intl,
       })
     : null;
 

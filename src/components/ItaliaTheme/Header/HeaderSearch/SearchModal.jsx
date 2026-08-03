@@ -31,9 +31,10 @@ import {
   Spinner,
 } from 'design-react-kit';
 
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import Icon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/Icon';
 import { getSearchFilters } from 'design-comuni-plone-theme/actions';
-import { SearchUtils, Checkbox } from 'design-comuni-plone-theme/components';
+import SearchUtils from 'design-comuni-plone-theme/components/ItaliaTheme/Search/utils';
+import Checkbox from 'design-comuni-plone-theme/components/Checkbox';
 
 const {
   defaultOptions,

@@ -23,7 +23,7 @@ const TextCardView = ({ data, id, block }) => {
           color="white"
           className="card-bg rounded"
           noWrapper={false}
-          space
+          spacing
           tag="div"
         >
           <CardBody>

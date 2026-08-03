@@ -135,16 +135,23 @@ const Actions = (props) => {
               };
             return (
               // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/menu_role#:~:text=within%20the%20menu-,tabindex,-attribute
+              // LinkListItem renders an <a> by default: for 'mailto' the link
+              // attributes are passed to LinkListItem itself instead of
+              // nesting another <a> inside it, since <a> cannot contain <a>
+              // (the browser silently drops the nested tag, causing a
+              // hydration mismatch between the raw SSR markup and the DOM it
+              // actually parses into)
               <LinkListItem
                 key={item.id}
                 role="menuitem"
                 tabIndex={-1}
                 onKeyDown={handleKeyDown}
+                {...(item.id === 'mailto' ? buttonProps : {})}
               >
                 {item.id === 'print' && (
                   <Button {...buttonProps}>{icon}</Button>
                 )}
-                {item.id === 'mailto' && <a {...buttonProps}>{icon}</a>}
+                {item.id === 'mailto' && icon}
               </LinkListItem>
             );
           })}

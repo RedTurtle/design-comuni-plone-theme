@@ -2,13 +2,22 @@
  * UniversalLink
  * @module components/UniversalLink
  *
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/UniversalLink/UniversalLink.tsx
+ *
  * CUSTOMIZATIONS:
- * - aggiunto icona per link esterni
+ * - upstream ha convertito questo componente in TypeScript (UniversalLink.tsx), estraendo la funzione getUrl() e aggiungendo un hook di test (__test.renderCounter); questo file resta in JSX e non adotta la tipizzazione TS né l'estrazione di getUrl(), per preservare la logica custom sotto (enhance link, externalRoutes blacklisted, icona esterna, ecc.) senza un riscrittura completa
+ * - aggiunto ref forwarding tramite React.forwardRef + React.memo (come upstream), per permettere ai chiamanti di ottenere un ref sull'elemento renderizzato; nessun cambio di comportamento visibile
+ * - aggiunto icona per link esterni (icona it-external-link, mostrata se markSpecialLinks è abilitato e overrideMarkSpecialLinks è false)
  * - aggiunto title informativo per link esterni
+ * - il comportamento di apertura in nuova tab dei link esterni ora segue config.settings.openExternalLinkInNewTab quando openLinkInNewTab non è esplicitamente impostato (in origine si apriva sempre in una nuova tab)
+ * - rimossa la classe CSS "external" applicata di default ai link esterni, sostituita dalla classe condizionale "with-external-link-icon"
  * - aggiunta la dimensione del file se il link punta a un file (enhanced_link_infos)
  * - aggiunto il parametro hideFileFormat per nascondere il formato del file dall'enhance link
  * - aggiunta la condizione su @@display-file e @download-file per gestire i casi in cui questi parametri vengono imposti a monte
  * - aggiunta classe matomo_download sui link ai file
+ * - aggiunto il supporto per le externalRoutes "blacklisted" (config.settings.externalRoutes) che forzano un url a essere trattato come link esterno
+ * - aggiunto il calcolo di aria-label da props['aria-label'] o item.title, applicato a tutti i tag generati
+ * - rimossa la gestione speciale di item['@id'] === '' che restituiva config.settings.publicURL (ora un '@id' vuoto genera l'errore "Invalid item" e usa url='#')
  */
 
 import {
@@ -16,13 +25,13 @@ import {
   flattenToAppURL,
   isInternalURL,
 } from '@plone/volto/helpers/Url/Url';
-import { defineMessages, useIntl } from 'react-intl';
+import { defineMessages, IntlContext } from 'react-intl';
 
 import { EnhanceLink } from 'design-comuni-plone-theme/helpers';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { HashLink as Link } from 'react-router-hash-link';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useContext } from 'react';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
 import { matchPath } from 'react-router';
@@ -34,34 +43,37 @@ const messages = defineMessages({
     defaultMessage: 'Apre in un nuovo tab',
   },
 });
-const UniversalLink = ({
-  href,
-  item = null,
-  openLinkInNewTab,
-  download = false,
-  children,
-  className = null,
-  title = null,
-  overrideMarkSpecialLinks = false,
-  hideFileFormat = false,
-  ...props
-}) => {
+const UniversalLink = React.memo(
+  React.forwardRef(function UniversalLink(
+    {
+      href,
+      item = null,
+      openLinkInNewTab,
+      download = false,
+      children,
+      className = null,
+      title = null,
+      overrideMarkSpecialLinks = false,
+      hideFileFormat = false,
+      ...props
+    },
+    ref,
+  ) {
   let translations = {
     opensInNewTab: {
       defaultMessage: messages.opensInNewTab.defaultMessage,
     },
   };
   //questo perchè il provider di intl non è sempre definito, ad esempio in slate_wysiwyg_box (Slate RichTextWidget)
-  let intl = null;
+  //usiamo useContext direttamente invece di useIntl() perché quest'ultimo lancia un'eccezione
+  //quando il provider non è definito, e chiamare un hook dentro un try/catch causa un ordine
+  //degli hook instabile tra un render e l'altro
+  const intl = useContext(IntlContext);
 
-  try {
-    intl = useIntl();
+  if (intl) {
     Object.keys(translations).forEach(
       (k) => (translations[k].message = intl.formatMessage(messages[k])),
     );
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.log('Cannot use intl here. View default messages.', e);
   }
   const token = useSelector((state) => state.userSession?.token);
   const { openExternalLinkInNewTab } = config.settings;
@@ -136,7 +148,7 @@ const UniversalLink = ({
   let extended_children = <></>;
 
   if (enhanced_link_infos) {
-    enhanced_link = EnhanceLink({ enhanced_link_infos, aria_label });
+    enhanced_link = EnhanceLink({ enhanced_link_infos, aria_label, intl });
     extended_children = enhanced_link.children;
     aria_label = enhanced_link.aria_label;
   }
@@ -152,6 +164,7 @@ const UniversalLink = ({
       smooth={config.settings.hashLinkSmoothScroll}
       {...props}
       aria-label={aria_label}
+      ref={ref}
     >
       {children}
       {extended_children}
@@ -182,6 +195,7 @@ const UniversalLink = ({
         })}
         {...props}
         aria-label={aria_label}
+        ref={ref}
       >
         {children}
         {showExternalIcon && (
@@ -207,6 +221,7 @@ const UniversalLink = ({
         }
         {...props}
         aria-label={aria_label}
+        ref={ref}
       >
         {children}
         {extended_children}
@@ -224,6 +239,7 @@ const UniversalLink = ({
         }
         {...props}
         aria-label={aria_label}
+        ref={ref}
       >
         {children}
         {extended_children}
@@ -231,7 +247,8 @@ const UniversalLink = ({
     );
   }
   return tag;
-};
+  }),
+);
 
 UniversalLink.propTypes = {
   href: PropTypes.string,

@@ -75,14 +75,14 @@ const Icon = ({ icon, title, className, size }) => {
   }, [icon]);
 
   const iconSize = getIconMapSizeConfig(size);
+  const sizeStyle = iconSize ? { width: iconSize, height: iconSize } : {};
 
   // Placeholder that is shown while the icon is loading
   if (iconState.loading) {
     return (
       <span
         style={{
-          width: iconSize,
-          height: iconSize,
+          ...sizeStyle,
           backgroundColor: 'transparent',
         }}
         className={className}
@@ -98,7 +98,7 @@ const Icon = ({ icon, title, className, size }) => {
         viewBox={iconState.icon.attributes?.viewBox}
         width={iconState.icon.attributes?.width}
         height={iconState.icon.attributes?.height}
-        style={{ height: iconSize, width: iconSize }}
+        style={sizeStyle}
         className={className}
         aria-hidden="true"
         dangerouslySetInnerHTML={{

@@ -1,10 +1,27 @@
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Listing/ImageGallery.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Build the gallery `original`/`thumbnail` image URLs from the
+ *   `config.settings.listingPreviewImageField` image scales
+ *   (`.scales.large.download` / `.scales.thumb.download`) instead of the
+ *   hardcoded `@@images/<image_field>/large|thumb` endpoint.
+ * - Removed the `content.image_field` requirement from the items filter, so
+ *   items are only filtered by `config.settings.imageObjects` type.
+ * - Added a `description` field to each gallery item, taken from
+ *   `item.description` (falling back to `item.rights`), to be shown in the
+ *   gallery captions.
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import loadable from '@loadable/component';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import {
+  addSubpathPrefix,
+  flattenToAppURL,
+} from '@plone/volto/helpers/Url/Url';
 import { Button } from 'semantic-ui-react';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import galleryLeftSVG from '@plone/volto/icons/left-key.svg';
 import galleryRightSVG from '@plone/volto/icons/right-key.svg';
 import galleryPlaySVG from '@plone/volto/icons/play.svg';
@@ -18,6 +35,7 @@ const ImageGallery = loadable(() => import('react-image-gallery'));
 const renderLeftNav = (onClick, disabled) => {
   return (
     <Button
+      type="button"
       className="image-gallery-icon image-gallery-left-nav primary basic"
       disabled={disabled}
       onClick={onClick}
@@ -29,6 +47,7 @@ const renderLeftNav = (onClick, disabled) => {
 const renderRightNav = (onClick, disabled) => {
   return (
     <Button
+      type="button"
       className="image-gallery-icon image-gallery-right-nav primary basic"
       disabled={disabled}
       onClick={onClick}
@@ -76,13 +95,17 @@ const ImageGalleryTemplate = ({ items }) => {
   );
   const imagesInfo = renderItems.map((item) => {
     return {
-      original: flattenToAppURL(
-        item[config.settings.listingPreviewImageField]?.scales.large.download ||
-          '',
+      original: addSubpathPrefix(
+        flattenToAppURL(
+          item[config.settings.listingPreviewImageField]?.scales.large
+            .download || '',
+        ),
       ),
-      thumbnail: flattenToAppURL(
-        item[config.settings.listingPreviewImageField]?.scales.thumb.download ||
-          '',
+      thumbnail: addSubpathPrefix(
+        flattenToAppURL(
+          item[config.settings.listingPreviewImageField]?.scales.thumb
+            .download || '',
+        ),
       ),
       description: item.description ?? item.rights ?? null,
     };

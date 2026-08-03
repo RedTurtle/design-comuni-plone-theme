@@ -1,7 +1,22 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-  - added resultsRef
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/layout/LeftColumnFacets.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling: replaced semantic-ui-react Grid/Segment layout with design-react-kit
+ *   Container/Row/Col/Icon components and Bootstrap Italia CSS classes
+ * - added resultsRef, wrapping the results/count/sort area and children in a
+ *   `results-wrapper` div
+ * - added a left sidebar column (showColumn) rendering columnTextTitle, columnText
+ *   (RichText) and a "read more" link (linkTitleColumn/linkHrefColumn) alongside the facets
+ * - added a wrapping div using getBackgroundClass(data.show_block_bg, data.bg_color) to
+ *   support block background color/style options
+ * - removed the SortOn and ViewSwitcher UI (sort-on select and view switcher) present upstream
+ * - removed the explicit search submit Button/searchButtonText message; search is triggered
+ *   without a dedicated button
+ * - simplified FacetWrapper (plain Col instead of Segment with advanced-facet/
+ *   advanced-facet-hidden classes), dropping "advanced facet" visibility toggling
+ * - passed an extra `searchData` prop through to the Facets component
+ */
 import React from 'react';
 import {
   SearchInput,

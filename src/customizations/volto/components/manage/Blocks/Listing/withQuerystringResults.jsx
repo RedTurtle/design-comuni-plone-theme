@@ -1,18 +1,21 @@
 /*
-CUSTOMIZATIONS:
-- get content from state.content.data and not from data.properties.content,
-- added listingRef to scroll to start of listing, and not to start of page
-- added additional filters
-- added additional fields to pass to @querystring-search (config.settings.querystringAdditionalFields)
-- usedeepCompareEffect and integrate custom logic for searchBlock to make it work with our implementation
-- used [subrequestID] instead [id] of block, as id of subrequest to avoid block unload on duplicate contents with blocks with same id's. Volto's pr: https://github.com/plone/volto/pull/5071
-*/
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Listing/withQuerystringResults.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - get content from state.content.data and not from data.properties.content,
+ * - added listingRef to scroll to start of listing, and not to start of page
+ * - added additional filters
+ * - added additional fields to pass to @querystring-search (config.settings.querystringAdditionalFields)
+ * - usedeepCompareEffect and integrate custom logic for searchBlock to make it work with our implementation
+ * - used [subrequestID] instead [id] of block, as id of subrequest to avoid block unload on duplicate contents with blocks with same id's. Volto's pr: https://github.com/plone/volto/pull/5071
+ */
 import React, { createRef, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { getContent, getQueryStringResults } from '@plone/volto/actions';
+import { getContent } from '@plone/volto/actions/content/content';
+import { getQueryStringResults } from '@plone/volto/actions/querystringsearch/querystringsearch';
 import { useDispatch, useSelector } from 'react-redux';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
+import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
 import { setOriginalQuery } from 'design-comuni-plone-theme/actions';
