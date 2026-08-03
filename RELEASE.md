@@ -41,20 +41,13 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
-
-### Migliorie
-
-- ...
-
-### Novità
-
-- ...
+## Versione 12.14.2 (30/07/2026)
 
 ### Fix
 
-- Sistemata l'accessibilità del menu di navigazione principale del sito. Le voci di menu e i sottomenu ora vengono annunciati correttamente dalle tecnologie assistive.
-- Il nome annunciato dalle tecnologie assistive per i link del menu ora corrisponde sempre al testo visibile, anche per il link 'Vedi tutto'.
+- Sistemato il blocco Hero: ora il titolo del blocco è un H2, ed è possibile formattare il testo della descrizione. _(**Origine / contributo**: Regione Emilia-Romagna)_ <!--us-72598-->
+- Sistemata l'accessibilità del menu di navigazione principale del sito. Le voci di menu e i sottomenu ora vengono annunciati correttamente dalle tecnologie assistive.<!--us-64950-->
+- Il nome annunciato dalle tecnologie assistive per i link del menu ora corrisponde sempre al testo visibile, anche per il link 'Vedi tutto'. <!--us-64950-->
 
 ## Versione 12.14.1 (22/07/2026)
 

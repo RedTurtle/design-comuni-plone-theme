@@ -25,12 +25,17 @@
  * - Uses `HeroSidebar` (design-comuni-plone-theme/components/ItaliaTheme/
  *   Blocks/HeroImageLeft/HeroSidebar) via `SidebarPortal` instead of the
  *   upstream `ImageSidebar`.
- * - Added an editable title (`h1`) and description (`p`), each rendered
- *   with `TextEditorWidget` (design-comuni-plone-theme/components/
- *   ItaliaTheme, Slate-based) bound to the block's `title`/`description`
- *   data, using the shared `useHandleDetachedBlockFocus` hook (design-
- *   comuni-plone-theme/helpers/blocks, the same one used by Callout/Alert/
- *   CTABlock/etc.) to move focus between the two fields.
+ * - Added an editable title (`h2`) and description, each rendered with
+ *   `TextEditorWidget` (design-comuni-plone-theme/components/ItaliaTheme,
+ *   Slate-based) bound to the block's `title`/`description` data, using
+ *   the shared `useHandleDetachedBlockFocus` hook (design-comuni-plone-
+ *   theme/helpers/blocks, the same one used by Callout/Alert/CTABlock/
+ *   etc.) to move focus between the two fields. The description field has
+ *   its Slate toolbar enabled (`showToolbar={true}`) so it can be
+ *   formatted like a normal rich-text field; `toSlateValue` (design-
+ *   comuni-plone-theme/helpers) converts pre-existing plain-string
+ *   `description` values (saved before this change) into a Slate value on
+ *   the fly, so older Hero blocks keep rendering/editing correctly.
  * - Added `StoresButtons` (design-comuni-plone-theme/components/
  *   ItaliaTheme/Blocks/HeroImageLeft/StoresButtons), rendered with
  *   `data={data}` below the title/description.
@@ -58,6 +63,7 @@ import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaThe
 import StoresButtons from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons';
 import HeroSidebar from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar';
 import { useHandleDetachedBlockFocus } from 'design-comuni-plone-theme/helpers/blocks';
+import { toSlateValue } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   title: {
@@ -172,7 +178,7 @@ const Edit = (props) => {
             })}
           >
             <div className="edit-title">
-              <h1>
+              <h2>
                 <TextEditorWidget
                   {...props}
                   showToolbar={false}
@@ -183,14 +189,17 @@ const Edit = (props) => {
                   setSelected={setSelectedField}
                   focusNextField={() => setSelectedField('description')}
                 />
-              </h1>
+              </h2>
             </div>
 
             <p>
               <TextEditorWidget
                 {...props}
-                showToolbar={false}
-                data={data}
+                showToolbar={true}
+                data={{
+                  ...data,
+                  description: toSlateValue(data.description),
+                }}
                 fieldName="description"
                 selected={selected && selectedField === 'description'}
                 placeholder={intl.formatMessage(messages.description)}

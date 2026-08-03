@@ -1,5 +1,28 @@
 # Changelog
 
+## [12.14.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.14.1...v12.14.2) (2026-07-30)
+
+
+### Bug Fixes
+
+* hero block title changed from h1 to h2, spacing and text description moved to slate ([#1140](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1140)) ([6ccbace](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6ccbace8a38b9c05bb6a6e79828e425214e4d840))
+* remove ARIA menu roles from navigation megamenu ([#1139](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1139)) ([e18f3ce](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e18f3cec9c5da81b2487d408e7d5cf7e6f820dd9))
+
+
+### Maintenance
+
+* **deps:** bump @tootallnate/once from 2.0.0 to 2.0.1 ([#1115](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1115)) ([9f79135](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9f791357121bff6d1e2d71effaa107c52e7be6b1))
+* **deps:** bump @xmldom/xmldom from 0.8.12 to 0.8.13 ([#1107](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1107)) ([4cc2e50](https://github.com/RedTurtle/design-comuni-plone-theme/commit/4cc2e50f47183b8e603f67e20b15b6610fc50f50))
+* **deps:** bump brace-expansion from 1.1.13 to 1.1.16 ([#1134](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1134)) ([d2195de](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d2195dee3c9595ef38873c68528defcdc289335c))
+* **deps:** bump js-yaml from 4.1.0 to 4.2.0 ([#1121](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1121)) ([e7b53a0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e7b53a01e0e6d38c51a3612b2cad841cf4a241d8))
+* **deps:** bump qs from 6.14.1 to 6.15.2 ([#1118](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1118)) ([0b5ef9e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/0b5ef9e94aa658ca8619d58773866a022e31ae2b))
+* updated volto-editablefooter to 5.1.12 ([#1138](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1138)) ([6036659](https://github.com/RedTurtle/design-comuni-plone-theme/commit/60366598177f79d6552fb7d6f95a48bbeb7eded8))
+
+
+### Documentation
+
+* release.md ([64c5807](https://github.com/RedTurtle/design-comuni-plone-theme/commit/64c5807f07f43982c5613d5a380ce45f2646ea49))
+
 ## [12.14.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.14.0...v12.14.1) (2026-07-22)
 
 

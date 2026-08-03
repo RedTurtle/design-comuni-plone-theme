@@ -20,8 +20,12 @@
  *   (with `.hero-image` around the image) instead of a single `<p
  *   className="block image align …">`.
  * - Added a `.hero-body` div (with a `no-bg` modifier when
- *   `data.show_block_bg` is falsy) rendering `data.title` as an `h1` and
- *   `data.description` as a `p`.
+ *   `data.show_block_bg` is falsy) rendering `data.title` as an `h2`.
+ *   `data.description` is rendered with `TextBlockView` (@plone/volto-
+ *   slate/blocks/Text) instead of a plain `p`, so it supports the Slate
+ *   formatting entered in Edit.jsx; `toSlateValue` (design-comuni-plone-
+ *   theme/helpers) converts pre-existing plain-string `description`
+ *   values (saved before this change) into a Slate value on the fly.
  * - Added `StoresButtons` (design-comuni-plone-theme/components/
  *   ItaliaTheme/Blocks/HeroImageLeft/StoresButtons), rendered with
  *   `data={data}` below the title/description.
@@ -33,7 +37,9 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import StoresButtons from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons';
+import { toSlateValue } from 'design-comuni-plone-theme/helpers';
 
 /**
  * View image block class.
@@ -78,8 +84,10 @@ const View = ({ data }) => {
               'no-bg': !show_bg,
             })}
           >
-            {data.title && <h1>{data.title}</h1>}
-            {data.description && <p>{data.description}</p>}
+            {data.title && <h2>{data.title}</h2>}
+            {data.description && (
+              <TextBlockView data={{ value: toSlateValue(data.description) }} />
+            )}
             <StoresButtons data={data} />
           </div>
         </div>
