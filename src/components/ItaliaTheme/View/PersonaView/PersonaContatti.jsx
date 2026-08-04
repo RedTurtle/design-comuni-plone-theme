@@ -15,12 +15,16 @@ const messages = defineMessages({
 const PersonaContatti = ({ content }) => {
   const intl = useIntl();
 
-  return content?.contact_info?.length > 0 ? (
+  const contacts = (content?.contact_info ?? []).filter(
+    (contact) => contact?.value_punto_contatto?.length > 0,
+  );
+
+  return contacts.length > 0 ? (
     <RichTextSection
       title={intl.formatMessage(messages.contacts)}
       tag_id="contacts"
     >
-      {content.contact_info.map((contact) => (
+      {contacts.map((contact) => (
         <ContactsCard contact={contact} key={contact['@id']} />
       ))}
     </RichTextSection>
