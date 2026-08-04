@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Risolto un errore nella pagina delle persone che mostrava la sezione Contatti vuota. L'errore si verificava quando era presente un punto di contatto senza alcun valore compilato. <!--us-77265-->
+
 ## Versione 12.14.2 (30/07/2026)
 
 ### Fix
