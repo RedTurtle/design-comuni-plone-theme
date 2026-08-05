@@ -27,7 +27,7 @@ Inoltre, io-Comune permetterà l’integrazione con IO, l'app ufficiale dei serv
       
 ### Certificato e sicuro, si affida ad un CMS open source
       
-Puoi  utilizzare io-Comune in totale sicurezza perché ha seguito con successo il [percorso di qualificazione per i fornitori di Software as a Service](https://catalogocloud.agid.gov.it/service/1085) della PA (SaaS).
+Puoi  utilizzare io-Comune in totale sicurezza perché ha seguito con successo il [percorso di qualificazione per i fornitori di Software as a Service](https://www.acn.gov.it/portale/w/sa-5959) della PA (SaaS).
 
 Questo ti garantisce un servizio di qualità e libertà di cambiare piattaforma senza vincoli di lock-in.
 
