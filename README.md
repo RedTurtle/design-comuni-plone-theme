@@ -123,6 +123,8 @@ Si veda ad esempio:
 - [Unione Val d'Enza](https://www.unionevaldenza.it/)
 - [Unione Val di Bisenzio](https://www.bisenzio.it/)
 
+Per l'elenco completo consulta la scheda sul [Catalogo del software opensource](https://catalogo-software.developers.italia.it/software/346e2758-d8fa-4bea-b148-ef1fc4fce32e#)
+
 ## Riferimenti
 
 * [Documentazione tecnica per lo sviluppo del tema](DEVELOPMENT.md)
