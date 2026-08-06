@@ -1392,6 +1392,7 @@ msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Colore di sfondo
 msgid "bg_color"
@@ -1592,6 +1593,11 @@ msgstr ""
 msgid "color_default"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Nessuno
+msgid "color_none"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 # defaultMessage: Note
 msgid "color_note"
@@ -1604,9 +1610,15 @@ msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Primario
 msgid "color_primary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Secondario
+msgid "color_secondary"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
@@ -4203,6 +4215,11 @@ msgstr ""
 #: config/Blocks/ListingOptions/cardWithImageTemplate
 # defaultMessage: Disponi su 4 colonne
 msgid "set_four_columns"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Disponi su 3 colonne
+msgid "set_three_columns"
 msgstr ""
 
 #: components/ItaliaTheme/View/ServizioView/ServizioUlterioriInformazioni
