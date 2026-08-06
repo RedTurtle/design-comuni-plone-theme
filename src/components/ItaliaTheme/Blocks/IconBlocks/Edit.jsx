@@ -125,7 +125,11 @@ class Edit extends SubblocksEdit {
     return (
       <div className="public-ui" tabIndex="-1" ref={this.nodeF}>
         <div
-          className="full-width section py-5"
+          className={`full-width section py-5 ${
+            this.props.data.bg_color === 'none'
+              ? ''
+              : 'bg-' + (this.props.data.bg_color ?? 'primary')
+          }`}
           role="form"
           aria-label={this.props.blocksConfig[this.props.type].title}
         >
@@ -198,7 +202,11 @@ class Edit extends SubblocksEdit {
             <SubblocksWrapper node={this.node}>
               <Row>
                 {this.state.subblocks.map((subblock, subindex) => (
-                  <Col lg="4" xl="3" key={subblock.id}>
+                  <Col
+                    lg="4"
+                    xl={this.props.data.set_three_columns ? '4' : '3'}
+                    key={subblock.id}
+                  >
                     <EditBlock
                       {...this.props}
                       data={subblock}

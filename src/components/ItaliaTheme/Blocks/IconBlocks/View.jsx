@@ -24,7 +24,11 @@ const IconsBlockView = ({ data, block }) => {
   return (
     <div className="block iconBlocks">
       <div className="public-ui">
-        <div className="full-width section py-5">
+        <div
+          className={`full-width section py-5 ${
+            data.bg_color === 'none' ? '' : 'bg-' + (data.bg_color ?? 'primary')
+          }`}
+        >
           {data.background?.[0] ? (
             <div className="background-image">
               <Image
@@ -53,7 +57,11 @@ const IconsBlockView = ({ data, block }) => {
             </div>
             <Row>
               {data.subblocks.map((subblock, index) => (
-                <Col lg="4" xl="3" key={subblock.id}>
+                <Col
+                  lg="4"
+                  xl={data.set_three_columns ? '4' : '3'}
+                  key={subblock.id}
+                >
                   <ViewBlock
                     data={subblock}
                     key={index}
