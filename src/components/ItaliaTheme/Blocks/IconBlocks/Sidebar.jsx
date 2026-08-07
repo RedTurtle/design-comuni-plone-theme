@@ -5,7 +5,7 @@ import { Segment, Accordion } from 'semantic-ui-react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import {
   TextWidget,
-  CheckboxWidget,
+  SelectWidget,
   Icon,
   ObjectBrowserWidget,
 } from '@plone/volto/components';
@@ -49,9 +49,9 @@ const messages = defineMessages({
     id: 'color_secondary',
     defaultMessage: 'Secondario',
   },
-  set_three_columns: {
-    id: 'set_three_columns',
-    defaultMessage: 'Disponi su 3 colonne',
+  columns: {
+    id: 'columns',
+    defaultMessage: 'Numero di colonne',
   },
 });
 
@@ -111,13 +111,21 @@ const Sidebar = ({
             }
             colors={bg_colors}
           />
-          <CheckboxWidget
-            id="set_three_columns"
-            title={intl.formatMessage(messages.set_three_columns)}
-            value={data.set_three_columns ?? false}
+          <SelectWidget
+            id="columns"
+            title={intl.formatMessage(messages.columns)}
+            required={false}
+            intl={intl}
+            value={`${data.columns ?? 4}`}
             onChange={(id, value) =>
-              onChangeBlock(block, { ...data, [id]: value })
+              onChangeBlock(block, { ...data, [id]: Number(value) })
             }
+            choices={[
+              ['2', '2 colonne'],
+              ['3', '3 colonne'],
+              ['4', '4 colonne'],
+              ['6', '6 colonne'],
+            ]}
           />
           <TextWidget
             id="linkMoreTitle"
