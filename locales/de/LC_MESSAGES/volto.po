@@ -1638,6 +1638,11 @@ msgstr ""
 msgid "color_warning"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Numero di colonne
+msgid "columns"
+msgstr ""
+
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
@@ -4215,11 +4220,6 @@ msgstr ""
 #: config/Blocks/ListingOptions/cardWithImageTemplate
 # defaultMessage: Disponi su 4 colonne
 msgid "set_four_columns"
-msgstr ""
-
-#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
-# defaultMessage: Disponi su 3 colonne
-msgid "set_three_columns"
 msgstr ""
 
 #: components/ItaliaTheme/View/ServizioView/ServizioUlterioriInformazioni

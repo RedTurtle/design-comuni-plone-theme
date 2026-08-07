@@ -1640,6 +1640,11 @@ msgstr ""
 msgid "color_warning"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Numero di colonne
+msgid "columns"
+msgstr ""
+
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
@@ -4218,11 +4223,6 @@ msgstr "Aller à d'autres options de recherche"
 # defaultMessage: Disponi su 4 colonne
 msgid "set_four_columns"
 msgstr "Disposer sur 4 colonnes"
-
-#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
-# defaultMessage: Disponi su 3 colonne
-msgid "set_three_columns"
-msgstr ""
 
 #: components/ItaliaTheme/View/ServizioView/ServizioUlterioriInformazioni
 # defaultMessage: Settore merceologico
