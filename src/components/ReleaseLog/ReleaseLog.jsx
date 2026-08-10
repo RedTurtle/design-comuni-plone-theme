@@ -28,18 +28,26 @@ const ReleaseLog = () => {
   let ReleaseDCPT = null;
   let ReleaseIoCittadino = null;
   let ReleaseIoPrenoto = null;
+  // Template literals below (rather than string literals) keep webpack from
+  // statically resolving - and build-time hard-failing on - the packages
+  // that aren't installed; it falls through to the catch at runtime instead,
+  // same as it would for any other genuinely missing module.
   try {
-    ReleaseDCPT = require('design-comuni-plone-theme/../RELEASE.md');
+    ReleaseDCPT = require(`${'design-comuni-plone-theme'}/../RELEASE.md`);
   } catch {
     console.log("design-comuni-plone-theme/../RELEASE.md doesn't exists");
   }
   try {
-    ReleaseIoCittadino = require('@redturtle/volto-io-cittadino/../RELEASE.md');
+    ReleaseIoCittadino = require(
+      `${'@redturtle/volto-io-cittadino'}/../RELEASE.md`,
+    );
   } catch {
     console.log("@redturtle/volto-io-cittadino/../RELEASE.md doesn't exists");
   }
   try {
-    ReleaseIoPrenoto = require('@redturtle/volto-io-prenoto/../RELEASE.md');
+    ReleaseIoPrenoto = require(
+      `${'@redturtle/volto-io-prenoto'}/../RELEASE.md`,
+    );
   } catch {
     console.log("@redturtle/volto-io-prenoto/../RELEASE.md doesn't exists");
   }

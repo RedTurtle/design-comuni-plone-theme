@@ -1,5 +1,16 @@
-// CUSTOMIZATION:
-// - 112-113 reset subscription limit to default when set_limit is not active
+/*
+ * original: https://raw.githubusercontent.com/collective/volto-form-block/v3.17.1/src/components/Sidebar.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - added `if (data.set_limit === false) data.limit = -1;` right after the
+ *   `send_email` default: when the "limit subscriptions" toggle is switched
+ *   off in the sidebar, the stored `data.limit` is reset to `-1` (unlimited)
+ *   instead of keeping whatever numeric limit was previously configured
+ * - `import 'volto-form-block/components/Sidebar.css'` (package-relative)
+ *   instead of the upstream relative `import './Sidebar.css'`, since this
+ *   file lives under src/customizations and has no local Sidebar.css of its
+ *   own
+ */
 
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';

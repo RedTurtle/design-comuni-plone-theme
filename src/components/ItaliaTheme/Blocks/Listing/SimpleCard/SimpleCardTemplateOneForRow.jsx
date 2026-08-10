@@ -237,7 +237,10 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
                   </UniversalLink>
                 </CardTitle>
                 {listingText && (
-                  <CardText className={cx('', { 'mb-5': eventRecurrenceMore })}>
+                  <CardText
+                    tag="div"
+                    className={cx('', { 'mb-5': eventRecurrenceMore })}
+                  >
                     {listingText}
                     {(type === 'Modulo' || type === 'Documento') && (
                       <div className="document-date mt-3">

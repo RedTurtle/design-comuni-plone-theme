@@ -10,10 +10,11 @@
 ) {
   .container .block {
     .searchSections {
+      color: $subsite-primary-text;
+
       .searchSections-background {
         background-color: $subsite-primary-a0;
       }
-      color: $subsite-primary-text;
       @if $subsite-secondary != $subsite-primary {
         h2.text-secondary {
           color: $subsite-secondary-text !important;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { useIntl, defineMessages } from 'react-intl';
@@ -15,14 +15,20 @@ import {
 import {
   getNumberOfSteps,
   getTranslatedQuestion,
-  HoneypotWidget,
-  GoogleReCaptchaWidget,
   submitFeedback,
   resetSubmitFeedback,
   getFeedbackThreshold,
   isFeedbackEnabledForRoute,
   getStaticFeedbackRouteTitle,
 } from 'volto-feedback';
+// import the real component, NOT the loadable()-wrapped export from the
+// volto-feedback barrel: that one lives in the async "VoltoFeedbackView"
+// chunk, and when RAZZLE_HONEYPOT_FIELD is set the SSR renders the honeypot
+// <div class="hpt_widget"> synchronously while the client renders null until
+// the chunk loads — if hydration starts first, the trees diverge and React
+// throws the whole SSR markup away (hydration mismatch on every page, since
+// this form is on every public page)
+import HoneypotWidget from 'volto-feedback/components/widgets/HoneypotWidget/HoneypotWidget';
 import cx from 'classnames';
 import AnswersStep from './Steps/AnswersStep';
 import CommentsStep from './Steps/CommentsStep';
@@ -133,9 +139,7 @@ const FeedbackForm = ({ title, pathname }) => {
   const [step, setStep] = useState(0);
   const [invalidForm, setInvalidForm] = useState(true);
   const [formData, setFormData] = useState({});
-  const captcha = !!process.env.RAZZLE_RECAPTCHA_KEY ? 'GoogleReCaptcha' : null;
   const submitResults = useSelector((state) => state.submitFeedback);
-  const [validToken, setValidToken] = useState(null);
   const threshold = getFeedbackThreshold();
   const fieldHoney = __CLIENT__
     ? window.env.RAZZLE_HONEYPOT_FIELD
@@ -173,7 +177,6 @@ const FeedbackForm = ({ title, pathname }) => {
   };
 
   useEffect(() => {
-    setValidToken(null);
     setSatisfaction(null);
     return () => {
       dispatch(resetSubmitFeedback());
@@ -220,15 +223,6 @@ const FeedbackForm = ({ title, pathname }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
-  const onVerifyCaptcha = useCallback(
-    (token) => {
-      if (satisfaction !== null && !validToken) {
-        setValidToken(token);
-      }
-    },
-    [satisfaction, setValidToken, validToken],
-  );
-
   const resetFormData = () => {
     setFormData({
       [fieldHoney]: '',
@@ -246,7 +240,6 @@ const FeedbackForm = ({ title, pathname }) => {
       content = intl.formatMessage(content);
     const data = {
       ...formData,
-      ...(captcha && { 'g-recaptcha-response': validToken }),
       answer: getTranslatedQuestion(intl, formData.answer),
       content,
     };
@@ -256,13 +249,6 @@ const FeedbackForm = ({ title, pathname }) => {
 
   if (!isFeedbackEnabledForRoute(path)) {
     return null;
-  }
-
-  let action = path?.length > 1 ? path.replace(/\//g, '') : path;
-  if (action?.length > 0) {
-    action = action?.replace(/-/g, '_');
-  } else {
-    action = 'homepage';
   }
 
   return (
@@ -347,11 +333,6 @@ const FeedbackForm = ({ title, pathname }) => {
                       <HoneypotWidget
                         updateFormData={updateFormData}
                         field={fieldHoney}
-                      />
-                      <GoogleReCaptchaWidget
-                        key={action}
-                        onVerify={onVerifyCaptcha}
-                        action={action}
                       />
                       <div
                         className={cx(

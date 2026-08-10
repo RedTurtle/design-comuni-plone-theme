@@ -1,13 +1,19 @@
-/**
- * DatetimeWidget component.
- * @module components/manage/Widgets/DatetimeWidget
- *
- * https://github.com/plone/volto/blob/16.x.x/src/components/manage/Widgets/DatetimeWidget.jsx
- * https://github.com/plone/volto/blob/7ec45f7b4d46233236c651f39a951bad8e389184/src/components/manage/Widgets/DatetimeWidget.jsx
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/DatetimeWidget.jsx
  *
  * CUSTOMIZATIONS:
+ * - kept as a class component (this shadow predates and was never migrated to
+ *   the hooks-based functional-component rewrite that upstream Volto already
+ *   uses as of 18.0.3)
  * - accept calendar `openDirection` prop and use it in SingleDatePicker,
  *   default to down if no openDirection is given
+ * - ported (as class-component equivalents) upstream additions from 18.35.0:
+ *   hide the whole widget when `id === 'end'` and `formData.open_end` is set,
+ *   force date-only when `id` is `start`/`end` and `formData.whole_day` is
+ *   set, pass `required` to SingleDatePicker, set aria-required on the
+ *   rc-time-picker input via a MutationObserver (componentDidMount /
+ *   componentDidUpdate / componentWillUnmount instead of useEffect), and add
+ *   an aria-label to the reset button
  */
 /**
  * DatetimeWidget component.
@@ -20,8 +26,9 @@ import { defineMessages, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import loadable from '@loadable/component';
 import cx from 'classnames';
-import { Icon, FormFieldWrapper } from '@plone/volto/components';
-import { parseDateTime, toBackendLang } from '@plone/volto/helpers';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
+import { parseDateTime, toBackendLang } from '@plone/volto/helpers/Utils/Utils';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
 import leftKey from '@plone/volto/icons/left-key.svg';
@@ -42,6 +49,10 @@ const messages = defineMessages({
   time: {
     id: 'Time',
     defaultMessage: 'Time',
+  },
+  clearDateTime: {
+    id: 'Clear date/time',
+    defaultMessage: 'Clear date and time',
   },
 });
 
@@ -106,6 +117,7 @@ export class DatetimeWidgetComponent extends Component {
   constructor(props) {
     super(props);
     this.moment = props.moment.default;
+    this.timeInputRef = React.createRef();
 
     this.state = {
       focused: false,
@@ -120,6 +132,39 @@ export class DatetimeWidgetComponent extends Component {
     };
   }
 
+  // aria-required for the time input (rc-time-picker has no aria props);
+  // rc-time-picker is lazy-loaded, so a MutationObserver is needed to catch
+  // when it mounts its input, mirroring upstream's useEffect-based approach
+  applyTimeAria = () => {
+    const input = this.timeInputRef.current?.querySelector('input');
+    if (!input) return;
+    if (this.props.required) input.setAttribute('aria-required', 'true');
+    else input.removeAttribute('aria-required');
+  };
+
+  setupTimeAriaObserver = () => {
+    if (this.timeAriaObserver || !this.timeInputRef.current) return;
+    this.timeAriaObserver = new MutationObserver(this.applyTimeAria);
+    this.timeAriaObserver.observe(this.timeInputRef.current, {
+      childList: true,
+      subtree: true,
+    });
+  };
+
+  componentDidMount() {
+    this.applyTimeAria();
+    this.setupTimeAriaObserver();
+  }
+
+  componentDidUpdate() {
+    this.applyTimeAria();
+    this.setupTimeAriaObserver();
+  }
+
+  componentWillUnmount() {
+    this.timeAriaObserver?.disconnect();
+  }
+
   getInternalValue() {
     return parseDateTime(
       toBackendLang(this.props.lang),
@@ -130,7 +175,12 @@ export class DatetimeWidgetComponent extends Component {
   }
 
   getDateOnly() {
-    return this.props.dateOnly || this.props.widget === 'date';
+    return (
+      this.props.dateOnly ||
+      this.props.widget === 'date' ||
+      ((this.props.id === 'start' || this.props.id === 'end') &&
+        this.props.formData?.whole_day)
+    );
   }
 
   /**
@@ -190,7 +240,7 @@ export class DatetimeWidgetComponent extends Component {
   onFocusChange = ({ focused }) => this.setState({ focused });
 
   render() {
-    const { id, resettable, intl, reactDates, widgetOptions, lang } =
+    const { id, resettable, intl, reactDates, widgetOptions, lang, formData } =
       this.props;
     const noPastDates =
       this.props.noPastDates || widgetOptions?.pattern_options?.noPastDates;
@@ -198,68 +248,75 @@ export class DatetimeWidgetComponent extends Component {
     const datetime = this.getInternalValue();
     const dateOnly = this.getDateOnly();
     const { SingleDatePicker } = reactDates;
+    const renderWidget = !(id === 'end' && formData?.open_end);
 
     return (
       <FormFieldWrapper {...this.props}>
-        <div className="date-time-widget-wrapper">
-          <div
-            className={cx('ui input date-input', {
-              'default-date': this.state.isDefault,
-            })}
-          >
-            <SingleDatePicker
-              date={datetime}
-              disabled={this.props.isDisabled}
-              onDateChange={this.onDateChange}
-              focused={this.state.focused}
-              numberOfMonths={1}
-              {...(noPastDates ? {} : { isOutsideRange: () => false })}
-              onFocusChange={this.onFocusChange}
-              noBorder
-              displayFormat={moment
-                .localeData(toBackendLang(lang))
-                .longDateFormat('L')}
-              navPrev={<PrevIcon />}
-              navNext={<NextIcon />}
-              id={`${id}-date`}
-              placeholder={intl.formatMessage(messages.date)}
-              openDirection={this.props.openDirection ?? 'down'}
-            />
-          </div>
-          {!dateOnly && (
+        {renderWidget && (
+          <div className="date-time-widget-wrapper">
             <div
-              className={cx('ui input time-input', {
+              className={cx('ui input date-input', {
                 'default-date': this.state.isDefault,
               })}
             >
-              <TimePicker
+              <SingleDatePicker
+                date={datetime}
                 disabled={this.props.isDisabled}
-                defaultValue={datetime}
-                value={datetime}
-                onChange={this.onTimeChange}
-                allowEmpty={false}
-                showSecond={false}
-                use12Hours={lang === 'en'}
-                id={`${id}-time`}
-                format={moment
+                onDateChange={this.onDateChange}
+                focused={this.state.focused}
+                numberOfMonths={1}
+                {...(noPastDates ? {} : { isOutsideRange: () => false })}
+                onFocusChange={this.onFocusChange}
+                noBorder
+                required={this.props.required}
+                displayFormat={moment
                   .localeData(toBackendLang(lang))
-                  .longDateFormat('LT')}
-                placeholder={intl.formatMessage(messages.time)}
-                focusOnOpen
-                placement="bottomRight"
+                  .longDateFormat('L')}
+                navPrev={<PrevIcon />}
+                navNext={<NextIcon />}
+                id={`${id}-date`}
+                placeholder={intl.formatMessage(messages.date)}
+                openDirection={this.props.openDirection ?? 'down'}
               />
             </div>
-          )}
-          {resettable && (
-            <button
-              disabled={this.props.isDisabled || !datetime}
-              onClick={() => this.onResetDates()}
-              className="item ui noborder button"
-            >
-              <Icon name={clearSVG} size="24px" className="close" />
-            </button>
-          )}
-        </div>
+            {!dateOnly && (
+              <div
+                ref={this.timeInputRef}
+                className={cx('ui input time-input', {
+                  'default-date': this.state.isDefault,
+                })}
+              >
+                <TimePicker
+                  disabled={this.props.isDisabled}
+                  defaultValue={datetime}
+                  value={datetime}
+                  onChange={this.onTimeChange}
+                  allowEmpty={false}
+                  showSecond={false}
+                  use12Hours={lang === 'en'}
+                  id={`${id}-time`}
+                  format={moment
+                    .localeData(toBackendLang(lang))
+                    .longDateFormat('LT')}
+                  placeholder={intl.formatMessage(messages.time)}
+                  focusOnOpen
+                  placement="bottomRight"
+                />
+              </div>
+            )}
+            {resettable && (
+              <button
+                type="button"
+                disabled={this.props.isDisabled || !datetime}
+                onClick={() => this.onResetDates()}
+                className="item ui noborder button"
+                aria-label={intl.formatMessage(messages.clearDateTime)}
+              >
+                <Icon name={clearSVG} size="24px" className="close" />
+              </button>
+            )}
+          </div>
+        )}
       </FormFieldWrapper>
     );
   }
@@ -283,6 +340,7 @@ DatetimeWidgetComponent.propTypes = {
   wrapped: PropTypes.bool,
   resettable: PropTypes.bool,
   openDirection: PropTypes.oneOf(['up', 'down']),
+  formData: PropTypes.object,
 };
 
 /**

@@ -3,16 +3,32 @@
  * @module components/theme/Header/Header
  */
 
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/Header/Header.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Replaced the semantic-ui-react Segment/Container markup with the Italia
+ *   design system header, composed from HeaderSlim, HeaderCenter and
+ *   SubsiteHeader (design-comuni-plone-theme/components/ItaliaTheme) and
+ *   Headers (design-react-kit), wrapped in a `.public-ui` div plus an empty
+ *   `#portal-header-image` placeholder div.
+ * - Dropped the Anontools, LanguageSelector, Logo and SearchWidget usage
+ *   (kept only as commented-out imports) since they are rendered elsewhere
+ *   in the Italia theme header components.
+ * - Removed the token/useSelector logic (anonymous tools were previously
+ *   shown based on `!token`); no longer needed since Anontools is not
+ *   rendered here.
+ * - Removed the `content` prop and the `Header.defaultProps` block.
+ */
+
 import React /*, { useEffect, useState } */ from 'react';
 
 import PropTypes from 'prop-types';
 
-import {
-  /* Anontools,
-  Logo,*/
-  Navigation,
-  /* SearchWidget,*/
-} from '@plone/volto/components';
+/* import Anontools from '@plone/volto/components/theme/Anontools/Anontools'; */
+/* import Logo from '@plone/volto/components/theme/Logo/Logo'; */
+import Navigation from '@plone/volto/components/theme/Navigation/Navigation';
+/* import SearchWidget from '@plone/volto/components/theme/SearchWidget/SearchWidget'; */
 
 import {
   HeaderSlim,

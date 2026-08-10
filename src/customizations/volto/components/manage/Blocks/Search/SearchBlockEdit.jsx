@@ -1,14 +1,23 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-  - Use a limited templates subsets
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/SearchBlockEdit.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Use absolute imports (@plone/volto/components/manage/Blocks/Search/...) instead of
+ *   relative imports for SearchBlockView, schema and hocs
+ * - Use a limited templates subset: filter the available listing variations with
+ *   config.settings.searchBlockTemplates before building the "Results template" schema field
+ *   and before resolving the active item's schemaEnhancer
+ * - sortOnOptions removed in schema customization, removed the code that was 
+ *   setting schema.properties.sortOnOptions.items
+ */
 import React, { useEffect } from 'react';
 import { defineMessages } from 'react-intl';
 import { compose } from 'redux';
 
-import { SidebarPortal, BlockDataForm } from '@plone/volto/components';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
+import { BlockDataForm } from '@plone/volto/components/manage/Form';
 import { addExtensionFieldToSchema } from '@plone/volto/helpers/Extensions/withBlockSchemaEnhancer';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
 import { SearchBlockViewComponent } from '@plone/volto/components/manage/Blocks/Search/SearchBlockView';
@@ -17,7 +26,7 @@ import {
   withSearch,
   withQueryString,
 } from '@plone/volto/components/manage/Blocks/Search/hocs';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 const messages = defineMessages({
   template: {
@@ -29,10 +38,13 @@ const messages = defineMessages({
 const SearchBlockEdit = (props) => {
   const {
     block,
+    blocksErrors,
     onChangeBlock,
     data,
     selected,
     intl,
+    navRoot,
+    contentType,
     onTriggerSearch,
     querystring = {},
   } = props;
@@ -56,7 +68,6 @@ const SearchBlockEdit = (props) => {
   let activeItem = listingVariations.find(
     (item) => item.id === data.listingBodyTemplate,
   );
-
   const listingSchemaEnhancer = activeItem?.schemaEnhancer;
   if (listingSchemaEnhancer)
     schema = listingSchemaEnhancer({
@@ -64,13 +75,26 @@ const SearchBlockEdit = (props) => {
       data,
       intl,
     });
+  // sortOnOptions removed in schema customization
+  // schema.properties.sortOnOptions.items = {
+  //   choices: Object.keys(sortable_indexes).map((k) => [
+  //     k,
+  //     sortable_indexes[k].title,
+  //   ]),
+  // };
 
   const { query = {} } = data || {};
   // We don't need deep compare here, as this is just json serializable data.
   const deepQuery = JSON.stringify(query);
+
   useEffect(() => {
-    onTriggerSearch();
-  }, [deepQuery, onTriggerSearch]);
+    onTriggerSearch(
+      '',
+      data?.facets,
+      data?.query?.sort_on,
+      data?.query?.sort_order,
+    );
+  }, [deepQuery, onTriggerSearch, data]);
 
   return (
     <>
@@ -90,6 +114,9 @@ const SearchBlockEdit = (props) => {
           }}
           onChangeBlock={onChangeBlock}
           formData={data}
+          navRoot={navRoot}
+          contentType={contentType}
+          errors={blocksErrors}
         />
       </SidebarPortal>
     </>

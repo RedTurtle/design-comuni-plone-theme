@@ -1,19 +1,74 @@
 /**
  * Field
  * @module components/manage/Blocks/IconsBlocks/View
- *
- * CUSTOMIZATIONS:
- * - customized to use design-react-kit elements instead semantic-ui elements
  */
 
-import React, { useState } from 'react';
+/*
+ * original: https://raw.githubusercontent.com/collective/volto-form-block/v3.17.1/src/components/Field.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - replaced the upstream `volto-form-block/components/Widget/*` widgets
+ *   (TextWidget, TextareaWidget, NumberWidget, SelectWidget, RadioWidget,
+ *   CheckboxListWidget, CheckboxWidget, DatetimeWidget, EmailWidget,
+ *   WysiwygWidget) with design-react-kit `Input`, `FormGroup` and `Label`
+ * - removed the `field_type === 'hidden'` case (HiddenWidget is no longer
+ *   rendered)
+ * - `select` field type renders a `react-select` `Select` directly instead of
+ *   `SelectWidget`, with a custom `DropdownIndicator` showing an `Icon`
+ *   "chevron-down" (design-comuni-plone-theme) and manual
+ *   `.bootstrap-select-wrapper` / `<label>` / `aria-labelledby` markup; the
+ *   `reactSelect` lib is read via `useLazyLibs(['reactSelect'])` scoped to
+ *   just this branch, guarded by a post-mount `mounted` flag (the lib's
+ *   "loaded" Redux flag can already be true on the client's first hydration
+ *   pass, e.g. from a warm chunk cache, while SSR never has it loaded) —
+ *   NOT by wrapping the whole `Field` export in `injectLazyLibs`, which is
+ *   what an earlier version of this customization did and caused every
+ *   field type (not just `select`) to render `null` during SSR, producing a
+ *   hydration mismatch on every form field
+ * - `single_choice`, `multiple_choice` and `checkbox` field types use manual
+ *   `<fieldset>`/`<legend>` markup with design-react-kit `FormGroup check` +
+ *   `Input`/`Label for=... check` (with `addon` to avoid the `form-control`
+ *   class added by kit v4.0.2) and a hand-rolled `invalid-feedback` block for
+ *   `errorMessage`, instead of `RadioWidget`/`CheckboxListWidget`/
+ *   `CheckboxWidget`
+ * - `date` field type uses design-react-kit `Input type="date"` instead of
+ *   `DatetimeWidget`
+ * - `attachment` field type uses
+ *   `design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/FileWidget`
+ *   instead of the upstream `volto-form-block/components/Widget/FileWidget`
+ * - `email`/`from` field types use design-react-kit `Input type="email"` and
+ *   force `required={true}` regardless of the field's own `required` prop,
+ *   instead of `EmailWidget`
+ * - `static_text` field type uses `TextEditorWidget`
+ *   (design-comuni-plone-theme) in edit mode and `TextBlockView`
+ *   (`@plone/volto-slate/blocks/Text`) in view mode, instead of
+ *   `WysiwygWidget`/`dangerouslySetInnerHTML`; added `fromHtml` conversion for
+ *   backward compatibility with the old draftjs-based value
+ * - added `getLabel()` (appends " *" to the label when `required`) and an
+ *   `infoText` helper combining `description`/`errorMessage`, since
+ *   design-react-kit `Input` takes a single `label`/`infoText` prop instead of
+ *   the separate `title`/`description`/`error` props used by the upstream
+ *   widgets
+ * - added a numeric-only `onKeyDown` filter on the `number` field
+ * - added an `autocomplete`/`autoComplete` prop threaded through the text,
+ *   textarea, number, select, date and email inputs (not present upstream)
+ * - translated the `select_a_value` default message to Italian ("Seleziona un
+ *   valore") and added the `static_field_placeholder`/`open_menu` messages
+ * - removed the `import 'volto-form-block/components/Field.css'` stylesheet
+ *   import
+ */
+
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
 import { Input, FormGroup, Label } from 'design-react-kit';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import FileWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/FileWidget';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import {
+  injectLazyLibs,
+  useLazyLibs,
+} from '@plone/volto/helpers/Loadable/Loadable';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
@@ -70,11 +125,20 @@ const Field = ({
   formHasErrors = false,
   errorMessage,
   id,
-  reactSelect,
   autocomplete,
 }) => {
   const intl = useIntl();
-  const Select = reactSelect.default;
+  // reactSelect is only needed by the 'select' field type below: reading it
+  // via the hook (instead of wrapping the whole Field export in
+  // injectLazyLibs) keeps every other field type rendering immediately and
+  // identically on the server and on the client's first hydration pass.
+  // `mounted` additionally guards the 'select' branch itself, since
+  // `reactSelect`'s "loaded" flag can already be true by the client's first
+  // render (e.g. warm chunk cache) while SSR never has it loaded.
+  const { reactSelect } = useLazyLibs(['reactSelect']);
+  const Select = reactSelect?.default;
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const [selected, setSelected] = useState(false);
 
@@ -179,28 +243,30 @@ const Field = ({
             <label id={`${name}-label`} htmlFor={name}>
               {getLabel()}
             </label>
-            <Select
-              components={{
-                IndicatorSeparator: null,
-                DropdownIndicator,
-              }}
-              inputId={name}
-              isSearchable={true}
-              onChange={(v) => {
-                onChange(name, v.value);
-              }}
-              options={[
-                ...(input_values?.map((v) => ({ value: v, label: v })) ?? []),
-              ]}
-              aria-live="polite"
-              isDisabled={disabled}
-              placeholder={intl.formatMessage(messages.select_a_value)}
-              aria-labelledby={`${name}-label`}
-              classNamePrefix="react-select"
-              className={isInvalid() ? 'is-invalid' : ''}
-              value={value ? [{ value: value, label: value }] : []}
-              autoComplete={autocomplete}
-            />
+            {mounted && Select && (
+              <Select
+                components={{
+                  IndicatorSeparator: null,
+                  DropdownIndicator,
+                }}
+                inputId={name}
+                isSearchable={true}
+                onChange={(v) => {
+                  onChange(name, v.value);
+                }}
+                options={[
+                  ...(input_values?.map((v) => ({ value: v, label: v })) ?? []),
+                ]}
+                aria-live="polite"
+                isDisabled={disabled}
+                placeholder={intl.formatMessage(messages.select_a_value)}
+                aria-labelledby={`${name}-label`}
+                classNamePrefix="react-select"
+                className={isInvalid() ? 'is-invalid' : ''}
+                value={value ? [{ value: value, label: value }] : []}
+                autoComplete={autocomplete}
+              />
+            )}
             {description && <small className="form-text">{description}</small>}
             {errorMessage && (
               <div className="invalid-feedback form-feedback just-validate-error-label form-text form-feedback just-validate-error-label">
@@ -449,4 +515,4 @@ Field.propTypes = {
   autoComplete: PropTypes.string,
 };
 
-export default injectLazyLibs('reactSelect')(Field);
+export default Field;

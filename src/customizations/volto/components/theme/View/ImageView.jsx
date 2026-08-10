@@ -3,18 +3,16 @@
  * @module components/theme/View/ImageView
  *
  * CUSTOMIZATIONS:
- * - il link sotto l'immagine ora punta a @@download/image invece che a @@images/image
- *   (che serve l'immagine inline): tramite UniversalLink, che riconosce "@@download"
- *   nell'url e aggiunge l'attributo `download`, il click avvia il download nativo
- *   del browser invece di aprire l'immagine in una nuova scheda senza contesto
+ * - aggiunto l'attributo `download` al link sotto l'immagine: senza, il click
+ *   apre l'immagine a piena risoluzione in una nuova scheda senza contesto;
+ *   con `download` il browser scarica il file nativamente
  */
 
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Container as SemanticContainer } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
 import prettybytes from 'pretty-bytes';
-import { UniversalLink } from '@plone/volto/components';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
 /**
@@ -27,6 +25,7 @@ const ImageView = ({ content }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
+  const width = config.settings.layout.defaultContainerWidth;
 
   return (
     <Container className="view-wrapper">
@@ -38,12 +37,13 @@ const ImageView = ({ content }) => {
         <p className="documentDescription">{content.description}</p>
       )}
       {content?.image?.download && (
-        <UniversalLink href={`${content['@id']}/@@download/image`}>
+        <a href={flattenToAppURL(content.image.download)} download>
           <Image
             item={content}
             imageField="image"
             alt={content.title}
             responsive={true}
+            sizes={`auto, (max-width: ${width}px) 100vw, ${width}px`}
           />
           <figcaption>
             <FormattedMessage
@@ -57,7 +57,7 @@ const ImageView = ({ content }) => {
               defaultMessage="Click to download full sized image"
             />
           </figcaption>
-        </UniversalLink>
+        </a>
       )}
     </Container>
   );

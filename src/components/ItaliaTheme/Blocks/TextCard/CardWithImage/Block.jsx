@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { useHandleDetachedBlockFocus } from 'design-comuni-plone-theme/helpers/blocks';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
+import Image from '@plone/volto/components/theme/Image/Image';
 import cx from 'classnames';
 
 const messages = defineMessages({
@@ -33,7 +34,7 @@ const renderImage = (image, showImage, sizeNatural, altText = '') =>
         })}
       >
         <figure className="img-wrapper">
-          <img
+          <Image
             src={`data:${image['content-type']};${image.encoding},${image.data}`}
             alt={altText}
             aria-hidden="true"

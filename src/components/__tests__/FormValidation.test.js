@@ -29,13 +29,15 @@ describe('FormValidation', () => {
     // Tests copied over from Volto
     it('validates incorrect url', () => {
       formData.url = 'foo';
-      expect(
-        FormValidation.validateFieldsPerFieldset({
-          schema,
-          formData,
-          formatMessage,
-        }),
-      ).toEqual({ url: [messages.isValidURL.defaultMessage] });
+      const { url } = FormValidation.validateFieldsPerFieldset({
+        schema,
+        formData,
+        formatMessage,
+      });
+      // Volto 18.35.0 attaches an extra `title` property (not an array
+      // index) to the errors array, used to highlight the erroring tab;
+      // Array.from strips it so this only asserts on the error message.
+      expect(Array.from(url)).toEqual([messages.isValidURL.defaultMessage]);
     });
     it('validates url', () => {
       formData.url = 'https://plone.org/';
