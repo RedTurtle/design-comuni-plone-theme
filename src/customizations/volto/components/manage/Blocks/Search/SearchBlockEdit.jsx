@@ -7,6 +7,8 @@
  * - Use a limited templates subset: filter the available listing variations with
  *   config.settings.searchBlockTemplates before building the "Results template" schema field
  *   and before resolving the active item's schemaEnhancer
+ * - sortOnOptions removed in schema customization, removed the code that was 
+ *   setting schema.properties.sortOnOptions.items
  */
 import React, { useEffect } from 'react';
 import { defineMessages } from 'react-intl';
@@ -73,12 +75,13 @@ const SearchBlockEdit = (props) => {
       data,
       intl,
     });
-  schema.properties.sortOnOptions.items = {
-    choices: Object.keys(sortable_indexes).map((k) => [
-      k,
-      sortable_indexes[k].title,
-    ]),
-  };
+  // sortOnOptions removed in schema customization
+  // schema.properties.sortOnOptions.items = {
+  //   choices: Object.keys(sortable_indexes).map((k) => [
+  //     k,
+  //     sortable_indexes[k].title,
+  //   ]),
+  // };
 
   const { query = {} } = data || {};
   // We don't need deep compare here, as this is just json serializable data.
