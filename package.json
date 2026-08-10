@@ -148,7 +148,7 @@
     "typeface-roboto-mono": "0.0.75",
     "typeface-titillium-web": "0.0.72",
     "volto-blocks-widget": "3.4.8",
-    "volto-data-grid-widget": "2.4.0",
+    "volto-data-grid-widget": "2.4.1",
     "volto-dropdownmenu": "4.1.6",
     "volto-editablefooter": "github:RedTurtle/volto-editablefooter#fix/footer-top-hooks-order",
     "volto-feedback": "0.7.3",

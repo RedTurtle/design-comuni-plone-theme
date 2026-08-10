@@ -96,11 +96,7 @@ description:
 
 
 
-      io-Comune è la soluzione versatile e facile da usare per garantire ai
-
-      cittadini un rapido accesso ai contenuti e ai servizi del tuo Comune, sia
-
-      dal PC che da mobile.
+      io-Comune è la soluzione versatile e facile da usare per garantire ai cittadini un rapido accesso ai contenuti e ai servizi del tuo Comune, sia dal PC che da mobile.
 
 
 
@@ -108,13 +104,7 @@ description:
 
 
 
-      io-Comune segue le linee guida ufficiali per il design dei siti web dei
-
-      Comuni italiani: layout grafico, architettura informativa, struttura dei
-
-      contenuti e flussi di navigazione rispecchiano gli standard definiti da
-
-      AgID.
+      io-Comune segue le linee guida ufficiali per il design dei siti web dei Comuni italiani: layout grafico, architettura informativa, struttura dei contenuti e flussi di navigazione rispecchiano gli standard definiti da AgID.
 
 
 
@@ -122,13 +112,7 @@ description:
 
 
 
-      io-Comune integra componenti e flussi di navigazione suggeriti da AgID con
-
-      l'esperienza ventennale di RedTurtle nella gestione di complesse basi
-
-      informative per darti la migliore esperienza di fruizione e portarti
-
-      velocemente al contenuto desiderato.
+      io-Comune integra componenti e flussi di navigazione suggeriti da AgID con l'esperienza ventennale di RedTurtle nella gestione di complesse basi informative per darti la migliore esperienza di fruizione e portarti velocemente al contenuto desiderato.
 
 
 
@@ -136,15 +120,8 @@ description:
 
 
 
-      io-Comune supporta nativamente le piattaforme abilitanti, come la
-
-      componente di autenticazione SPID e il sistema di pagamento pagoPA.
-
-
-
-      Inoltre, io-Comune permetterà l’integrazione con IO, l'app ufficiale dei
-
-      servizi pubblici, per poter dialogare con i cittadini anche dal telefono.
+      io-Comune supporta nativamente le piattaforme abilitanti, come la componente di autenticazione SPID e il sistema di pagamento pagoPA.
+      Inoltre, io-Comune permetterà l’integrazione con IO, l'app ufficiale dei servizi pubblici, per poter dialogare con i cittadini anche dal telefono.
 
 
 
@@ -152,41 +129,14 @@ description:
 
 
 
-      Puoi acquistare e utilizzare io-Comune in totale sicurezza perché ha
-
-      seguito con successo il [percorso di qualificazione per i fornitori di Software as a Service (SaaS) della PA](https://catalogocloud.acn.gov.it/service/1085).
-
-
-
-      Questo ti garantisce un servizio di qualità e libertà di cambiare
-
-      piattaforma senza vincoli di lock-in.
-
-
-
-      io-Comune è una piattaforma disponibile nel cloud certificato della PA. In
-
-      particolare il servizio viene erogato sulla piattaforma certificata IaaS
-
-      (Infrastructure as a Service) Amazon Web Services presso la server farm di
-
-      Milano, offrendo tutta la robustezza e sicurezza necessaria.
-
-
-
-      io-Comune è basato sul [CMS Open Source Plone](https://www.redturtle.it/plone/): il CMS facile da usare,
-
-      estensibile e che vanta il miglior “security track record”, usato per
-
-      servire migliaia di utenti in ambito PA. Usato da piccoli Enti e anche da
-
-      grandi PA come la Regione Emilia Romagna, l’Università di Bologna e la
-
-      Guardia di Finanza per centinaia di siti.
+      Puoi acquistare e utilizzare io-Comune in totale sicurezza perché ha seguito con successo il [percorso di qualificazione per i fornitori di Software as a Service (SaaS) della PA](https://catalogocloud.acn.gov.it/service/1085).
+      Questo ti garantisce un servizio di qualità e libertà di cambiare piattaforma senza vincoli di lock-in.
+      io-Comune è una piattaforma disponibile nel cloud certificato della PA. In particolare il servizio viene erogato sulla piattaforma certificata IaaS (Infrastructure as a Service) Amazon Web Services presso la server farm di Milano, offrendo tutta la robustezza e sicurezza necessaria.
+      io-Comune è basato sul [CMS Open Source Plone](https://www.redturtle.it/plone/): il CMS facile da usare, estensibile e che vanta il miglior “security track record”, usato per servire migliaia di utenti in ambito PA. Usato da piccoli Enti e anche da grandi PA come la Regione Emilia Romagna, l’Università di Bologna e la Guardia di Finanza per centinaia di siti.
     shortDescription: |-
       Crea con semplicità il nuovo sito del tuo Comune o Ente Pubblico: conforme
 
-      alle nuove linee guida AgID, accessibile a tutti.
+      alle nuove linee guida di Designers Italia, accessibile a tutti.
 developmentStatus: stable
 intendedAudience:
   countries:
@@ -232,21 +182,26 @@ softwareType: standalone/web
 softwareVersion: 12.14.2
 url: 'https://github.com/italia/design-comuni-plone-theme'
 usedBy:
+  - ASL Roma 5
+  - ASP Circondario Imolese
   - ASP Comuni Modenesi Area Nord
+  - ASP Pianura Est
+  - AVEPA – Agenzia Veneta per i Pagamenti
   - Azienda Ospedaliero-Universitaria di Ferrara
   - Azienda Speciale Cavriago Servizi
-  - Biblioteche Pianura Est
-  - ASP Comuni Modenesi Area Nord
-  - ASP Circondario Imolese
-  - Azienda Ospedaliero-Universitaria di Ferrara
-  - AUSL Romagna
+  - Azienda USL della Romagna
+  - Azienda USL di Piacenza
   - Biblioteca comunale di Imola
   - Biblioteche Pianura Est
-  - Camera di Commercio dell'Umbria
+  - Camera di Commercio dell’Emilia
+  - Camera di Commercio dell’Umbria
   - Camera di Commercio di Padova
-  - Camera di Commercio dell'Emilia
+  - Camera di Commercio di Verona
+  - Comando Generale della Guardia di Finanza
   - Comune della Spezia
+  - Comune di Argelato
   - Comune di Bastiglia
+  - Comune di Bentivoglio
   - Comune di Bibbiano
   - Comune di Bomporto
   - Comune di Borgo Tossignano
@@ -257,28 +212,33 @@ usedBy:
   - Comune di Casalfiumanese
   - Comune di Castel del Rio
   - Comune di Castel Guelfo di Bologna
+  - Comune di Castel Maggiore
+  - Comune di Castel San Pietro Terme
   - Comune di Castelfranco Emilia
+  - Comune di Castello d’Argile
+  - Comune di Cava de’ Tirreni
   - Comune di Cavezzo
   - Comune di Cavriago
-  - Comune di Cavriago - Centro culturale Mavarta
-  - Comune di Cavriago - Centro culturale Multiplo
+  - Comune di Cavriago – Centro culturale Mavarta
+  - Comune di Cavriago – Centro culturale Multiplo
   - Comune di Concordia sul Secchia
   - Comune di Dozza
-  - Comune di Gattatico
   - Comune di Finale Emilia
   - Comune di Fiorano Modenese
   - Comune di Fontanelice
   - Comune di Formigine
   - Comune di Frassinoro
+  - Comune di Gattatico
   - Comune di Imola
-  - Comune di Imola - siti tematici della rete civica
+  - Comune di Imola – siti tematici della rete civica
   - Comune di Lignano Sabbiadoro
   - Comune di Maranello
+  - Comune di Medicina
   - Comune di Medolla
   - Comune di Mirandola
-  - Comune di Mirandola - Centro la Raganella
+  - Comune di Mirandola – Centro La Raganella
   - Comune di Modena
-  - Comune di Modena - siti tematici della rete civica
+  - Comune di Modena – siti tematici della rete civica
   - Comune di Montecchio Emilia
   - Comune di Montefiorino
   - Comune di Mordano
@@ -286,38 +246,49 @@ usedBy:
   - Comune di Novellara
   - Comune di Palagano
   - Comune di Parma
-  - Comune di Parma - siti tematici del Comune di Parma
-  - Comune di Piacenza
-  - Comune di Prignano
+  - Comune di Parma – siti tematici del Comune di Parma
+  - Comune di Pieve di Cento
+  - Comune di Prignano sulla Secchia
   - Comune di Ravarino
   - Comune di Reggio Emilia
   - Comune di Rolo
+  - Comune di Russi
   - Comune di San Cesario sul Panaro
+  - Comune di San Donato Milanese
   - Comune di San Felice sul Panaro
+  - Comune di San Giorgio di Piano
   - Comune di San Lazzaro di Savena
-  - Comune di San Lazzaro di Savena - Mediateca
-  - Comune di San Lazzaro di Savena - Sportello Sociale
-  - Comune di San Polo d'Enza
+  - Comune di San Lazzaro di Savena – Mediateca
+  - Comune di San Lazzaro di Savena – Museo della Preistoria “Luigi Donini”
+  - Comune di San Lazzaro di Savena – Sportello Sociale
+  - Comune di San Pietro in Casale
+  - Comune di San Polo d’Enza
   - Comune di San Possidonio
   - Comune di San Prospero
-  - Comune di Santilario d'Enza
+  - Comune di Sant’Ilario d’Enza
   - Comune di Sassuolo
+  - Comune di Serrenti
   - Comune di Toscolano Maderno
   - Comune di Vaiano
   - Comune di Vernio
   - Comune di Vibo Valentia
-  - Comando Generale della Guardia di Finanza
-  - NNB Ispra Ambiente
+  - Ente Ospedaliero Ospedali Galliera
+  - Ente Ospedaliero Ospedali Galliera – Albo professionisti
+  - Ente Ospedaliero Ospedali Galliera – Bilancio Sociale
+  - Ente Ospedaliero Ospedali Galliera – IBMDR
+  - ER.GO – Azienda regionale per il diritto agli studi superiori
+  - ISPRA – Network Nazionale della Biodiversità (NNB)
   - Nuovo Circondario Imolese
-  - Ospedali Galliera
-  - Ospedali Galliera - Bilancio Sociale
   - Provincia di Pisa
   - Provincia di Varese
   - Regione Emilia-Romagna
-  - Regione Liguria - S3 Monitoraggio
+  - Regione Liguria – S3 Monitoraggio
+  - UCMAN – Unione dei Comuni Modenesi Area Nord
   - Unione Bassa Reggiana
-  - Unione Comuni Distretto Ceramico
-  - UCMAN (Unione dei Comuni Modenesi Area Nord)
   - Unione Comuni del Sorbara
-  - Unione Val d'Enza
+  - Unione dei Comuni del Distretto Ceramico
+  - Unione dei Comuni del Distretto Ceramico – Welfare
+  - Unione Reno Galliera
+  - Unione Val d’Enza
   - Unione Val di Bisenzio
+  - Unioncamere Emilia-Romagna

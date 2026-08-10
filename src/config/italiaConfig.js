@@ -225,6 +225,10 @@ export default function applyConfig(voltoConfig) {
     defaultExcludedFromSearch: {
       portalTypes: ['Image', 'File'],
     },
+    search: {
+      baseUrl: '/search',
+      ...(config.settings.search ?? {}),
+    },
     italiaThemeViewsConfig: {
       ...(config.settings.italiaThemeViewsConfig ?? {}),
       imagePosition: 'afterHeader', // possible values: afterHeader, documentBody
