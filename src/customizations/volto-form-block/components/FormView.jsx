@@ -16,15 +16,16 @@
       checkbox): "Invia" deve restare disabilitato finché la verifica non
       è completa.
   Per tutti gli altri tipi di captcha il comportamento resta invariato.
-  NB: nome/valore del flag `show-button` sono provvisori, in attesa della
-  chiave definitiva dal backend: se cambia va aggiornata anche qui, oltre
-  che in RerCaptchaWidget.tsx (collective-rercaptcha).
+  Il flag è letto tramite useRerCaptchaShowButton() (collective-rercaptcha),
+  unico punto che sa come si chiama davvero: se cambia nome non tocca
+  questo file.
 - rercaptcha si renderizza accanto al bottone di submit (a destra), non più
   insieme agli altri campi del form: è l'unico tipo di captcha spostato,
   gli altri restano dove sono sempre stati.
 */
 import React from 'react';
-import { useSelector } from 'react-redux';
+// eslint-disable-next-line import/no-unresolved
+import { useRerCaptchaShowButton } from '@regioneer/volto-collective-rercaptcha/hooks/useRerCaptchaShowButton';
 import { useIntl, defineMessages } from 'react-intl';
 import { Card, CardBody, Row, Col, Alert, Progress } from 'design-react-kit';
 import { getFieldName } from 'volto-form-block/components/utils';
@@ -106,10 +107,7 @@ const FormView = ({
 
   // requiresPreexistingToken: vale per tutti i captcha tranne rercaptcha in
   // modalità invisibile (vedi nota in testa al file).
-  const rerCaptchaData = useSelector(
-    (state) => state.content?.data?.['@components']?.['rercaptcha-data'],
-  );
-  const rercaptchaShowsOwnButton = !!rerCaptchaData?.['show-button'];
+  const rercaptchaShowsOwnButton = useRerCaptchaShowButton();
   const requiresPreexistingToken =
     enableCaptcha &&
     (data.captcha !== 'rercaptcha' || rercaptchaShowsOwnButton);
