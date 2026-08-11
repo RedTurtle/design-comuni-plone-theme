@@ -16,16 +16,21 @@
       checkbox): "Invia" deve restare disabilitato finché la verifica non
       è completa.
   Per tutti gli altri tipi di captcha il comportamento resta invariato.
-  Il flag è letto tramite useRerCaptchaShowButton() (collective-rercaptcha),
-  unico punto che sa come si chiama davvero: se cambia nome non tocca
-  questo file.
+  Il flag è letto direttamente da Redux (state.content.data['@components']
+  ['rercaptcha-data']), non tramite un import da
+  @regioneer/volto-collective-rercaptcha: questo tema è un pacchetto
+  generico, distribuito e buildato da solo, e non deve avere una
+  dipendenza rigida da un addon captcha specifico (un import statico
+  romperebbe la build di chiunque usi questo tema senza avere anche
+  collective-rercaptcha installato). NB: nome/valore del flag `show-button`
+  provvisori, in attesa della chiave definitiva dal backend: se cambia va
+  aggiornata anche qui.
 - rercaptcha si renderizza accanto al bottone di submit (a destra), non più
   insieme agli altri campi del form: è l'unico tipo di captcha spostato,
   gli altri restano dove sono sempre stati.
 */
 import React from 'react';
-// eslint-disable-next-line import/no-unresolved
-import { useRerCaptchaShowButton } from '@regioneer/volto-collective-rercaptcha/hooks/useRerCaptchaShowButton';
+import { useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
 import { Card, CardBody, Row, Col, Alert, Progress } from 'design-react-kit';
 import { getFieldName } from 'volto-form-block/components/utils';
@@ -107,7 +112,10 @@ const FormView = ({
 
   // requiresPreexistingToken: vale per tutti i captcha tranne rercaptcha in
   // modalità invisibile (vedi nota in testa al file).
-  const rercaptchaShowsOwnButton = useRerCaptchaShowButton();
+  const rerCaptchaData = useSelector(
+    (state) => state.content?.data?.['@components']?.['rercaptcha-data'],
+  );
+  const rercaptchaShowsOwnButton = !!rerCaptchaData?.['show-button'];
   const requiresPreexistingToken =
     enableCaptcha &&
     (data.captcha !== 'rercaptcha' || rercaptchaShowsOwnButton);
