@@ -30,24 +30,34 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: rgba(
-        $primary,
-        0.85
-      ); // serve per fare la trasparenza sull'immagine di sfondo.
       content: '';
     }
+  }
 
-    &.no-image {
-      &:after {
-        background-color: $primary;
-      }
+  .bg-primary .background-image {
+    &:after {
+      // serve per fare la trasparenza sull'immagine di sfondo.
+      background-color: rgba($primary, 0.85);
+    }
+
+    &.no-image:after {
+      background-color: $primary;
+    }
+  }
+
+  .bg-secondary .background-image {
+    &:after {
+      background-color: rgba($secondary, 0.85);
+    }
+
+    &.no-image:after {
+      background-color: $secondary;
     }
   }
 
   .block-header {
     .title {
       margin: 1rem 0 2rem 0;
-      color: #fff;
       font-size: 2.35rem;
       font-weight: bold;
       line-height: 3rem;
@@ -55,25 +65,43 @@
 
       h2 {
         margin: 0px;
-        color: #fff;
       }
     }
 
     .description {
       margin-bottom: 2rem;
-      color: #fff;
       line-height: 1.65em;
       text-align: center;
+    }
+  }
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      a:not(.btn) {
-        color: #fff;
-      }
+  .bg-primary .block-header {
+    .title,
+    .title h2,
+    .description,
+    .description h1,
+    .description h2,
+    .description h3,
+    .description h4,
+    .description h5,
+    .description h6,
+    .description a:not(.btn) {
+      color: $primary-text;
+    }
+  }
+
+  .bg-secondary .block-header {
+    .title,
+    .title h2,
+    .description,
+    .description h1,
+    .description h2,
+    .description h3,
+    .description h4,
+    .description h5,
+    .description h6,
+    .description a:not(.btn) {
+      color: $secondary-text;
     }
   }
 

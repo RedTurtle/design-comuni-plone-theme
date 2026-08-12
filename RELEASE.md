@@ -49,7 +49,7 @@
 
 ### Novità
 
-- ...
+- Nel blocco "Blocchi con icone" è ora possibile scegliere il numero di colonne (2, 3, 4 o 6) e un colore di sfondo (Nessuno, Primario, Secondario).
 
 ### Fix
 
