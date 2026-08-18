@@ -54,7 +54,7 @@
 ### Fix
 
 - Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina.
-- Corretto il percorso di navigazione (breadcrumb) nelle sezioni che si aggiornano senza ricaricare la pagina (ad es. aree private): non si accumula più mostrando tutte le sezioni visitate, e indica sempre correttamente la sezione in cui ci si trova.
+- Corretto il percorso di navigazione (breadcrumb) nelle sezioni che si aggiornano senza ricaricare la pagina: non si accumula più mostrando tutte le sezioni visitate, e indica sempre correttamente la sezione in cui ci si trova.
 
 ## Versione 12.14.2 (30/07/2026)
 
