@@ -18,7 +18,24 @@ const messages = defineMessages({
     id: 'feedback_answers_header_negative',
     defaultMessage: 'Where did you encounter the biggest problems?',
   },
+  required: {
+    id: 'feedback_field_required',
+    defaultMessage: 'required',
+  },
+  required_hint: {
+    id: 'feedback_answers_required_hint',
+    defaultMessage: 'Select an option to proceed',
+  },
 });
+
+const RequiredTitle = ({ children, intl }) => (
+  <>
+    {children}
+    <span className="required-marker">
+      {` (${intl.formatMessage(messages.required)}) *`}
+    </span>
+  </>
+);
 
 const AnswersStep = ({
   updateFormData,
@@ -72,7 +89,11 @@ const AnswersStep = ({
         data-element={'feedback-rating-positive'}
       >
         <FormHeader
-          title={intl.formatMessage(messages.header_positive)}
+          title={
+            <RequiredTitle intl={intl}>
+              {intl.formatMessage(messages.header_positive)}
+            </RequiredTitle>
+          }
           step={step + 1}
           totalSteps={totalSteps}
           className={'answers-header'}
@@ -81,7 +102,7 @@ const AnswersStep = ({
           }
         />
 
-        <Form className="answers-form">
+        <Form className="answers-form" role="radiogroup" aria-required="true">
           {state?.map((s, i) => (
             <FormGroup
               check
@@ -96,6 +117,7 @@ const AnswersStep = ({
                 value={s}
                 onChange={handleAnswerChange}
                 autocomplete="off"
+                required
               />
               <Label
                 for={'positive-' + s}
@@ -108,6 +130,9 @@ const AnswersStep = ({
             </FormGroup>
           ))}
         </Form>
+        <p className="answers-required-hint small mb-0">
+          {intl.formatMessage(messages.required_hint)}
+        </p>
       </fieldset>
       <fieldset
         id="vf-more-negative"
@@ -122,7 +147,11 @@ const AnswersStep = ({
         data-element={'feedback-rating-negative'}
       >
         <FormHeader
-          title={intl.formatMessage(messages.header_negative)}
+          title={
+            <RequiredTitle intl={intl}>
+              {intl.formatMessage(messages.header_negative)}
+            </RequiredTitle>
+          }
           step={step + 1}
           totalSteps={totalSteps}
           className={'answers-header'}
@@ -131,7 +160,7 @@ const AnswersStep = ({
           }
         />
 
-        <Form className="answers-form">
+        <Form className="answers-form" role="radiogroup" aria-required="true">
           {state?.map((s, i) => (
             <FormGroup
               check
@@ -145,6 +174,7 @@ const AnswersStep = ({
                 checked={s === selectedAnswer}
                 value={s}
                 onChange={handleAnswerChange}
+                required
               />
               <Label
                 for={'negative-' + s}
@@ -157,6 +187,9 @@ const AnswersStep = ({
             </FormGroup>
           ))}
         </Form>
+        <p className="answers-required-hint small mb-0">
+          {intl.formatMessage(messages.required_hint)}
+        </p>
       </fieldset>
     </>
   );
