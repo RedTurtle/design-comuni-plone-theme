@@ -54,6 +54,7 @@
 ### Fix
 
 - Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina.
+- Nel form della soddisfazione del cittadino (customer satisfaction), la domanda obbligatoria del secondo passaggio ora viene segnalata come tale sia visivamente che alle tecnologie assistive, con un messaggio che indica la necessità di scegliere un'opzione per proseguire. Il pulsante finale del form ora si chiama "Invia" invece di "Avanti".
 
 ## Versione 12.14.2 (30/07/2026)
 
