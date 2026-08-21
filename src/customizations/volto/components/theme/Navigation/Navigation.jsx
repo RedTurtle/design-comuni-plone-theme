@@ -26,6 +26,7 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import { getDropdownMenuNavitems, getItemsByPath } from 'volto-dropdownmenu';
+import { getItemsByPath as getSlimHeaderItemsByPath } from 'volto-slimheader';
 import FocusLock from 'react-focus-lock';
 
 const Navigation = ({ pathname }) => {
@@ -48,6 +49,13 @@ const Navigation = ({ pathname }) => {
   }, [dispatch]);
 
   const menu = getItemsByPath(items, pathname);
+
+  const slimHeader = useSelector((state) => state.slimHeader?.result);
+  const hasSubsiteSlimItems =
+    subsite &&
+    (getSlimHeaderItemsByPath(slimHeader, pathname)?.filter(
+      (item) => item.visible,
+    )?.length ?? 0) > 0;
 
   const getAnchorTarget = (nodeElement) => {
     if (nodeElement.nodeName === 'A') {
@@ -166,14 +174,14 @@ const Navigation = ({ pathname }) => {
                 {/* Secondary Menu */}
                 <MenuSecondary pathname={pathname} />
 
-                {/* Headerslim Menu - main site */}
-                {!subsite && <TertiaryMenu />}
+                {/* Headerslim Menu - parent site (if subsite has no config) */}
+                {!hasSubsiteSlimItems && <ParentSiteMenu />}
 
                 {/* Social Links */}
                 <SocialHeader />
 
-                {/* Headerslim Menu - parent site (if subsite) */}
-                {subsite && <ParentSiteMenu />}
+                {/* Headerslim Menu - configuration */}
+                <TertiaryMenu />
               </div>
               <div className="close-div" style={closeButtonStyle}>
                 <button
