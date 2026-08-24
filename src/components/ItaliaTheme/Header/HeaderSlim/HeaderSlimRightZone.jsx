@@ -6,7 +6,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { getItemsByPath } from 'volto-slimheader';
+import { getItemsByPath } from 'design-comuni-plone-theme/helpers';
 
 import {
   ParentSiteMenu,
@@ -22,13 +22,14 @@ const HeaderSlimRightZone = () => {
 
   const hasSubsiteSlimItems =
     subsite &&
-    (getItemsByPath(slimHeader, pathname)?.filter((item) => item.visible)
+    (getItemsByPath(slimHeader, pathname, false)?.filter((item) => item.visible)
       ?.length ?? 0) > 0;
-
   return (
     <>
-      {!hasSubsiteSlimItems && <ParentSiteMenu />}
-      <TertiaryMenu />
+      {!subsite || hasSubsiteSlimItems ? 
+        <TertiaryMenu /> : 
+        <ParentSiteMenu />
+      }
       <LanguageSelector />
       <HeaderLogin />
     </>
