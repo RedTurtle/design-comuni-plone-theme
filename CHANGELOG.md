@@ -1,5 +1,35 @@
 # Changelog
 
+## [12.15.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.14.2...v12.15.0) (2026-08-24)
+
+
+### Features
+
+* aggiunge opzioni colonne (3/4) e colore di sfondo (Nessuno/Prim… ([#1153](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1153)) ([b5bf09e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b5bf09ec2ea97791a910601bf9d23dc5264bde98))
+* make the search page baseUrl configurable via config.settings.search, defaulting to /search ([#1145](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1145)) ([3221227](https://github.com/RedTurtle/design-comuni-plone-theme/commit/3221227873c020783740404ea6fca420cb337789))
+
+
+### Bug Fixes
+
+* close date picker on Escape when focus is inside the calendar US[#55026](https://github.com/RedTurtle/design-comuni-plone-theme/issues/55026) ([#1160](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1160)) ([ca27827](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ca2782709fd179f5b91eba6d9b19194a8bcb77d6))
+* display configured slimheader for subsites. Display parentsite menu if no slimheader is configured for subsite path ([#1161](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1161)) ([ffe6799](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ffe67999d0c536cb0b1894cf5b8e59cf160c5a67))
+* il link di download immagine punta a @@download/image invece di … ([#1147](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1147)) ([5b6e761](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5b6e761f5c3de9de2fa3e2f5cf9988ec9c6dffc5))
+
+
+### Documentation
+
+* Update publiccode.yml description ([#1146](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1146)) ([f1f0167](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f1f01672014148a01d18b119d759f8a4ef8e7536))
+
+
+### Maintenance
+
+* bump volto-data-grid-widget to 2.4.1 ([#1152](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1152)) ([e77934b](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e77934b3e6d20b8325bd95ee213808e185d30f59))
+* **deps:** bump brace-expansion from 1.1.16 to 1.1.18 ([#1142](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1142)) ([9a473af](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9a473afa968e60209444cb0bb06e17a86003a0b4))
+* preparing release 12.15.0 ([6d43e7f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6d43e7faaaf0b9fa3abf8aa421ff800c25145aaf))
+* Update publiccode.yml usedBy ([#1148](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1148)) ([fd3a61f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/fd3a61fe99fc10c9649cad566b4246adf58d8810))
+* Update README.md link catalogo software opensource ([#1149](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1149)) ([a1d0e20](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a1d0e20dead5e4ddb3accc332de3a7091f0814b1))
+* Update RELEASE.md ([e252fca](https://github.com/RedTurtle/design-comuni-plone-theme/commit/e252fcac20f35d8bd6ba0eb391f911043f47ca34))
+
 ## [12.14.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.14.1...v12.14.2) (2026-07-30)
 
 
