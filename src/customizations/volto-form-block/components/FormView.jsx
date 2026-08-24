@@ -25,9 +25,12 @@
   collective-rercaptcha installato). NB: nome/valore del flag `show-button`
   provvisori, in attesa della chiave definitiva dal backend: se cambia va
   aggiornata anche qui.
-- rercaptcha si renderizza accanto al bottone di submit (a destra), non più
-  insieme agli altri campi del form: è l'unico tipo di captcha spostato,
-  gli altri restano dove sono sempre stati.
+- rercaptcha si renderizza accanto al bottone di submit, a sinistra e prima
+  nel DOM (non più insieme agli altri campi del form): è l'unico tipo di
+  captcha spostato, gli altri restano dove sono sempre stati. Deve stare
+  prima nel DOM, non solo a sinistra visivamente, altrimenti con la sola
+  tastiera il Tab dopo aver spuntato la checkbox del captcha (modalità
+  bottone) esce dal form invece di raggiungere "Invia".
 */
 import React from 'react';
 import { useSelector } from 'react-redux';
@@ -347,6 +350,16 @@ const FormView = ({
                           intl.formatMessage(messages.default_cancel_label)}
                       </Button>
                     )}
+                    {/* rercaptcha, se configurato, si affianca al bottone
+                        di submit (a sinistra, prima nel DOM) invece che
+                        comparire più in alto insieme agli altri campi del
+                        form: va prima del bottone anche nel DOM, non solo
+                        visivamente, altrimenti con la sola tastiera il Tab
+                        dopo aver spuntato la checkbox esce dal form invece
+                        di raggiungere "Invia" */}
+                    {enableCaptcha && data.captcha === 'rercaptcha' && (
+                      <>{captcha.render()}</>
+                    )}
                     <Button
                       color="primary"
                       type="submit"
@@ -369,12 +382,6 @@ const FormView = ({
                         </span>
                       )}
                     </Button>
-                    {/* rercaptcha, se configurato, si affianca al bottone
-                        di submit (a destra) invece che comparire più in
-                        alto insieme agli altri campi del form */}
-                    {enableCaptcha && data.captcha === 'rercaptcha' && (
-                      <>{captcha.render()}</>
-                    )}
                   </Col>
                 </Row>
               </form>
