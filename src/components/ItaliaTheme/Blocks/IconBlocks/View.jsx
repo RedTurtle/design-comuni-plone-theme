@@ -20,11 +20,16 @@ import config from '@plone/volto/registry';
 const IconsBlockView = ({ data, block }) => {
   const id = new Date().getTime();
   const Image = config.getComponent({ name: 'Image' }).component;
+  const xlColumns = `${12 / (data.columns ?? 4)}`;
 
   return (
     <div className="block iconBlocks">
       <div className="public-ui">
-        <div className="full-width section py-5">
+        <div
+          className={`full-width section py-5 ${
+            data.bg_color === 'none' ? '' : 'bg-' + (data.bg_color ?? 'primary')
+          }`}
+        >
           {data.background?.[0] ? (
             <div className="background-image">
               <Image
@@ -53,7 +58,7 @@ const IconsBlockView = ({ data, block }) => {
             </div>
             <Row>
               {data.subblocks.map((subblock, index) => (
-                <Col lg="4" xl="3" key={subblock.id}>
+                <Col lg="4" xl={xlColumns} key={subblock.id}>
                   <ViewBlock
                     data={subblock}
                     key={index}

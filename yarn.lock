@@ -7061,12 +7061,12 @@ __metadata:
   linkType: hard
 
 "brace-expansion@npm:^1.1.7":
-  version: 1.1.16
-  resolution: "brace-expansion@npm:1.1.16"
+  version: 1.1.18
+  resolution: "brace-expansion@npm:1.1.18"
   dependencies:
     balanced-match: ^1.0.0
     concat-map: 0.0.1
-  checksum: 11ab2d5b39d61bc0d0de9240a5d08a5f210a5650885ca4876271ef5996b4c5d172d697b501d673fe099ab721aa8bf0348507ad23a6148e169856209d2f9cab94
+  checksum: aa84023a4118f9185b6f8c71ca3467c945878b141ba340261de209676442f81b08db5b7c7c119707cdecb7322fcfcdb71d8ffea55db9d1aad673d7c65469211f
   languageName: node
   linkType: hard
 
@@ -8341,7 +8341,7 @@ __metadata:
     typeface-roboto-mono: 0.0.75
     typeface-titillium-web: 0.0.72
     volto-blocks-widget: 3.4.8
-    volto-data-grid-widget: 2.4.0
+    volto-data-grid-widget: 2.4.1
     volto-dropdownmenu: 4.1.6
     volto-editablefooter: 5.1.12
     volto-feedback: 0.7.2
@@ -16547,12 +16547,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-data-grid-widget@npm:2.4.0":
-  version: 2.4.0
-  resolution: "volto-data-grid-widget@npm:2.4.0"
+"volto-data-grid-widget@npm:2.4.1":
+  version: 2.4.1
+  resolution: "volto-data-grid-widget@npm:2.4.1"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: ebb47d78eec2cd718004b213bfa0e22f2978b09758731e60ab473bc16271951929565abdeaf1452422973203cf0266896e6c3db54e559bd1953858cc470376e5
+  checksum: 33100448b026160ff387a872dd5a52d73ea8ba64967bec4a1a074ae672548f7641329940e8c30cd82e95c50303c5d30f3de000f46714c092e6895b19193595f6
   languageName: node
   linkType: hard
 

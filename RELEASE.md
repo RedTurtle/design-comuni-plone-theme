@@ -47,6 +47,21 @@
 ### Fix
 
 - Nei sottositi, le voci configurate nel pannello di controllo per lo slim header vengono ora mostrate correttamente. 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- Nel blocco "Blocchi con icone" è ora possibile scegliere il numero di colonne (2, 3, 4 o 6) e un colore di sfondo (Nessuno, Primario, Secondario).
+
+### Fix
+
+- Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina.
+- Nei campi data e data + ora, il tasto Esc adesso chiude sempre il calendario. Prima non funzionava se il focus da tastiera era già entrato dentro al calendario.
+
 ## Versione 12.14.2 (30/07/2026)
 
 ### Fix
@@ -75,6 +90,7 @@
 
 - Risolto un errore nella pagina degli eventi che in alcuni casi ne impediva la visualizzazione. L'errore si verificava quando la sezione Contatti dell'evento riportava informazioni sull'organizzatore o sui sostenitori ma non conteneva alcun contatto in elenco. <!--us-76991 -->
 - Uniformato l'allineamento dell'icona e del titolo in tutte le card che mostrano allegati. <!--us-54701-->
+- Rimosse le breadcrumbs dalla pagina principale
 
 ## Versione 12.13.0 (25/06/2026)
 
