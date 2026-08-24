@@ -41,6 +41,12 @@
 - ...
  -->
 
+
+ ## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Nei sottositi, le voci configurate nel pannello di controllo per lo slim header vengono ora mostrate correttamente. 
 ## Versione 12.14.2 (30/07/2026)
 
 ### Fix
