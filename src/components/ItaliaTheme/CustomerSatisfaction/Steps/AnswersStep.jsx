@@ -105,14 +105,14 @@ const AnswersStep = ({
           }
         />
 
-        <fieldset
-          className="answers-form-group"
-          role="radiogroup"
-          aria-required="true"
-          aria-labelledby="answers-title-positive"
-          aria-describedby="answers-required-hint-positive"
-        >
-          <Form className="answers-form">
+        <Form className="answers-form">
+          <fieldset
+            className="answers-form-group"
+            role="radiogroup"
+            aria-required="true"
+            aria-labelledby="answers-title-positive"
+            aria-describedby="answers-required-hint-positive"
+          >
             {state?.map((s, i) => (
               <FormGroup
                 check
@@ -139,8 +139,8 @@ const AnswersStep = ({
                 </Label>
               </FormGroup>
             ))}
-          </Form>
-        </fieldset>
+          </fieldset>
+        </Form>
         <p
           id="answers-required-hint-positive"
           className="answers-required-hint small mb-0"
@@ -174,14 +174,14 @@ const AnswersStep = ({
           }
         />
 
-        <fieldset
-          className="answers-form-group"
-          role="radiogroup"
-          aria-required="true"
-          aria-labelledby="answers-title-negative"
-          aria-describedby="answers-required-hint-negative"
-        >
-          <Form className="answers-form">
+        <Form className="answers-form">
+          <fieldset
+            className="answers-form-group"
+            role="radiogroup"
+            aria-required="true"
+            aria-labelledby="answers-title-negative"
+            aria-describedby="answers-required-hint-negative"
+          >
             {state?.map((s, i) => (
               <FormGroup
                 check
@@ -208,8 +208,8 @@ const AnswersStep = ({
                 </Label>
               </FormGroup>
             ))}
-          </Form>
-        </fieldset>
+          </fieldset>
+        </Form>
         <p
           id="answers-required-hint-negative"
           className="answers-required-hint small mb-0"
