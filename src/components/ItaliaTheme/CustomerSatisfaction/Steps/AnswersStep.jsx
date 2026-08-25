@@ -32,7 +32,7 @@ const RequiredTitle = ({ children, intl }) => (
   <>
     {children}
     <span className="required-marker">
-      {` (${intl.formatMessage(messages.required)}) *`}
+      <span aria-hidden="true">*</span> <span class="visually-hidden">${intl.formatMessage(messages.required)}</span>
     </span>
   </>
 );
