@@ -2497,7 +2497,7 @@ msgstr "Quali sono stati gli aspetti che hai preferito?"
 #: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
 # defaultMessage: Select an option to proceed
 msgid "feedback_answers_required_hint"
-msgstr "Scegliere un'opzione per proseguire"
+msgstr "Scegli un'opzione per proseguire"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: The instructions were clear

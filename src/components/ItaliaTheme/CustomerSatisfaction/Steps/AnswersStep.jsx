@@ -28,13 +28,16 @@ const messages = defineMessages({
   },
 });
 
-const RequiredTitle = ({ children, intl }) => (
-  <>
+const RequiredTitle = ({ children, intl, id }) => (
+  <span id={id}>
     {children}
     <span className="required-marker">
-      <span aria-hidden="true">*</span> <span class="visually-hidden">${intl.formatMessage(messages.required)}</span>
+      <span aria-hidden="true">*</span>{' '}
+      <span className="visually-hidden">
+        {intl.formatMessage(messages.required)}
+      </span>
     </span>
-  </>
+  </span>
 );
 
 const AnswersStep = ({
@@ -90,7 +93,7 @@ const AnswersStep = ({
       >
         <FormHeader
           title={
-            <RequiredTitle intl={intl}>
+            <RequiredTitle intl={intl} id="answers-title-positive">
               {intl.formatMessage(messages.header_positive)}
             </RequiredTitle>
           }
@@ -106,11 +109,9 @@ const AnswersStep = ({
           className="answers-form-group"
           role="radiogroup"
           aria-required="true"
+          aria-labelledby="answers-title-positive"
           aria-describedby="answers-required-hint-positive"
         >
-          <legend className="visually-hidden">
-            {intl.formatMessage(messages.header_positive)}
-          </legend>
           <Form className="answers-form">
             {state?.map((s, i) => (
               <FormGroup
@@ -161,7 +162,7 @@ const AnswersStep = ({
       >
         <FormHeader
           title={
-            <RequiredTitle intl={intl}>
+            <RequiredTitle intl={intl} id="answers-title-negative">
               {intl.formatMessage(messages.header_negative)}
             </RequiredTitle>
           }
@@ -177,11 +178,9 @@ const AnswersStep = ({
           className="answers-form-group"
           role="radiogroup"
           aria-required="true"
+          aria-labelledby="answers-title-negative"
           aria-describedby="answers-required-hint-negative"
         >
-          <legend className="visually-hidden">
-            {intl.formatMessage(messages.header_negative)}
-          </legend>
           <Form className="answers-form">
             {state?.map((s, i) => (
               <FormGroup
