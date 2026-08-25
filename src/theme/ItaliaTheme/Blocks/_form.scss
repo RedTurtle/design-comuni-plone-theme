@@ -312,7 +312,13 @@
     .dt-wrapper {
       button.ui.button {
         width: auto;
-        padding: 1.2rem;
+        height: auto;
+        padding: 15px;
+        font-size: 15px;
+
+        .icon {
+          height: 20px;
+        }
       }
 
       .dt-wrapper-table .ui.table {
