@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Risolto un errore nel blocco elenco e negli altri blocchi con paginazione (ricerca, elenco uffici, articoli correlati) che generava una lista di paginazione duplicata nel codice della pagina. La duplicazione non era visibile a schermo ma rendeva il markup non valido e problematico per le tecnologie assistive.
+
 ## Versione 12.15.0 (24/08/2026)
 
 ### Novità
