@@ -54,7 +54,6 @@
 ### Fix
 
 - Risolto un errore nel blocco elenco e negli altri blocchi con paginazione (ricerca, elenco uffici, articoli correlati) che generava una lista di paginazione duplicata nel codice della pagina. La duplicazione non era visibile a schermo ma rendeva il markup non valido e problematico per le tecnologie assistive.
-## Versione x.x.x (xx/xx/xxxx)
 
 - Migliorata l'accessibilità del form di soddisfazione del cittadino (customer satisfaction): ora la domanda obbligatoria del secondo passaggio viene segnalata come tale sia visivamente che alle tecnologie assistive, con un messaggio che indica la necessità di scegliere un'opzione per proseguire. Inoltre il pulsante per l'invio della valutazione ha ora etichetta "Invia" invece di "Avanti". _(**Origine / contributo**: Regione Emilia-Romagna)_
 
