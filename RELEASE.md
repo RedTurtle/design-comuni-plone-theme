@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Fix
+
+- Migliorata l'accessibilità del form di soddisfazione del cittadino (customer satisfaction): ora la domanda obbligatoria del secondo passaggio viene segnalata come tale sia visivamente che alle tecnologie assistive, con un messaggio che indica la necessità di scegliere un'opzione per proseguire. Inoltre il pulsante per l'invio della valutazione ha ora etichetta "Invia" invece di "Avanti". _(**Origine / contributo**: Regione Emilia-Romagna)_
+
 ## Versione 12.15.0 (24/08/2026)
 
 ### Novità
@@ -50,7 +56,6 @@
 ### Fix
 
 - Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina.
-- Nel form della soddisfazione del cittadino (customer satisfaction), la domanda obbligatoria del secondo passaggio ora viene segnalata come tale sia visivamente che alle tecnologie assistive, con un messaggio che indica la necessità di scegliere un'opzione per proseguire. Il pulsante finale del form ora si chiama "Invia" invece di "Avanti".
 - Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina. _(**Origine / contributo**: Regione Emilia-Romagna)_
 - Nei campi data e data + ora, il tasto Esc adesso chiude sempre il calendario. Prima non funzionava se il focus da tastiera era già entrato dentro al calendario. _(**Origine / contributo**: Regione Emilia-Romagna)_
 - Nei sottositi, le voci configurate nel pannello di controllo per lo slim header vengono ora mostrate correttamente.
