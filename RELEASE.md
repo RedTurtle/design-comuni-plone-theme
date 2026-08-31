@@ -55,7 +55,7 @@
 
 ### Fix
 
-- Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina.
+- Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina. _(**Origine / contributo**: Regione Emilia-Romagna)_
 - Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina. _(**Origine / contributo**: Regione Emilia-Romagna)_
 - Nei campi data e data + ora, il tasto Esc adesso chiude sempre il calendario. Prima non funzionava se il focus da tastiera era già entrato dentro al calendario. _(**Origine / contributo**: Regione Emilia-Romagna)_
 - Nei sottositi, le voci configurate nel pannello di controllo per lo slim header vengono ora mostrate correttamente.
