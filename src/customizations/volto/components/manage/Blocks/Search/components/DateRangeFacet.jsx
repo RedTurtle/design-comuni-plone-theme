@@ -1,17 +1,16 @@
 /* CUSTOMIZATIONS:
   - Agid styling
   - Use with more plone.app.querystring.date operations
+  - Add custom date format (e.g. dd/mm/yyyy)
+  - Use DataFilter 
 */
-import React, { useState } from 'react';
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import React from 'react';
 import { defineMessages, injectIntl } from 'react-intl';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { compose } from 'redux';
-import { connect } from 'react-redux';
 import qs from 'query-string';
-
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
+import moment from 'moment';
+import DateFilter from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter';
 
 const messages = defineMessages({
   startDate: {
@@ -22,104 +21,36 @@ const messages = defineMessages({
     id: 'End Date',
     defaultMessage: 'End Date',
   },
-  clearDates: {
-    id: 'Clear dates',
-    defaultMessage: 'Pulisci i campi',
-  },
 });
 
-const PrevIcon = () => (
-  <div
-    className="prev-icon"
-    style={{
-      color: '#000',
-      left: '22px',
-      padding: '5px',
-      position: 'absolute',
-      top: '15px',
-    }}
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-    tabIndex="0"
-  >
-    <Icon icon="it-chevron-left" size="30px" />
-  </div>
-);
-const NextIcon = () => (
-  <div
-    className="next-icon"
-    style={{
-      color: '#000',
-      right: '22px',
-      padding: '5px',
-      position: 'absolute',
-      top: '15px',
-    }}
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-    tabIndex="0"
-  >
-    <Icon icon="it-chevron-right" size="30px" />
-  </div>
-);
-
-const customArrowIcon = (props) => {
-  const { intl } = props;
-  return (
-    <Icon icon="it-arrow-right" title={intl.formatMessage(messages.endDate)} />
-  );
-};
-
-const CloseIcon = (props) => {
-  const { intl } = props;
-  return (
-    <Icon
-      icon="it-close"
-      size="24px"
-      className="close"
-      title={intl.formatMessage(messages.clearDates)}
-    />
-  );
-};
-
 const DateRangeFacet = (props) => {
-  const { facet, isEditMode, onChange, value, reactDates, intl, lang } = props;
+  const { facet, isEditMode, onChange, value, intl } = props;
   const moment = props.moment.default;
-  const { DateRangePicker } = reactDates;
-  const [focused, setFocused] = useState(null);
+
+  const startDate = value && value[0] ? moment(value[0]) : null;
+  const endDate = value && value[1] ? moment(value[1]) : null;
+
   return (
     <div className="daterange-facet">
       <h6 className="mb-3 columnTextTitle">
         {facet?.title ?? facet?.field?.label}
       </h6>
-      <div className="date-time-widget-wrapper">
-        <div className="date-input">
-          <DateRangePicker
-            startDate={value && value[0] ? moment(value[0]) : null}
-            startDateId={`${facet['@id']}-start-date`}
-            startDatePlaceholderText={intl.formatMessage(messages.startDate)}
-            endDate={value && value[1] ? moment(value[1]) : null}
-            endDateId={`${facet['@id']}-end-date`}
-            endDatePlaceholderText={intl.formatMessage(messages.endDate)}
-            numberOfMonths={1}
-            disabled={isEditMode}
-            noBorder
-            showClearDates
-            customCloseIcon={<CloseIcon {...props} />}
-            displayFormat={moment.localeData(lang).longDateFormat('L')}
-            focusedInput={focused}
-            onFocusChange={(focusedInput) => setFocused(focusedInput)}
-            onDatesChange={({ startDate, endDate }) => {
-              onChange(facet.field.value, [
-                startDate ? startDate.format('YYYY-MM-DD') : null,
-                endDate ? endDate.format('YYYY-MM-DD') : null,
-              ]);
-            }}
-            isOutsideRange={() => false}
-            navPrev={<PrevIcon />}
-            navNext={<NextIcon />}
-            customArrowIcon={customArrowIcon(props)}
-          />
-        </div>
-      </div>
+      <DateFilter
+        id={facet.field.value}
+        blockID={facet['@id']}
+        value={{ startDate, endDate }}
+        startLabel={intl.formatMessage(messages.startDate)}
+        endLabel={intl.formatMessage(messages.endDate)}
+        showClearDates={true}
+        disabled={isEditMode}
+        isOutsideRange={() => false}
+        onChange={(_id, { start, end }) => {
+          onChange(facet.field.value, [
+            start ? start.format('YYYY-MM-DD') : null,
+            end ? end.format('YYYY-MM-DD') : null,
+          ]);
+        }}
+      />
     </div>
   );
 };
@@ -167,34 +98,42 @@ DateRangeFacet.valueToQuery = ({ value, facet }) => {
       v: value,
     };
   } else if (Array.isArray(value)) {
-    if (value[0] && !value[1])
+    const date_fmt = 'YYYY-MM-DD HH:mm';
+    if (value[0] && !value[1]) {
+      const start = moment(value[0]).startOf('day').utc().format(date_fmt);
       return {
         i: facet.field.value,
         o: 'plone.app.querystring.operation.date.largerThan',
-        v: value[0],
+        v: start,
       };
-    else if (!value[0] && value[1])
+    } else if (!value[0] && value[1]) {
+      const end = moment(value[1])
+        .add(1, 'd')
+        .startOf('day')
+        .utc()
+        .format(date_fmt);
       return {
         i: facet.field.value,
         o: 'plone.app.querystring.operation.date.lessThan',
-        v: value[1],
+        v: end,
       };
-    else if (!value[0] && !value[1]) return null;
-    else
+    } else if (!value[0] && !value[1]) return null;
+    else {
+      const start = moment(value[0]).startOf('day').utc().format(date_fmt);
+      const end = moment(value[1])
+        .add(1, 'd')
+        .startOf('day')
+        .utc()
+        .format(date_fmt);
       return {
         i: facet.field.value,
         o: 'plone.app.querystring.operation.date.between',
-        v: value,
+        v: [start, end],
       };
+    }
   }
 
   return null;
 };
 
-export default compose(
-  injectLazyLibs(['reactDates', 'moment']),
-  connect((state) => ({
-    lang: state.intl.locale,
-  })),
-  injectIntl,
-)(DateRangeFacet);
+export default compose(injectLazyLibs(['moment']), injectIntl)(DateRangeFacet);

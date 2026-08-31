@@ -41,9 +41,12 @@
 - ...
  -->
 
+
 ## Versione X.X.X (dd/mm/yyyy)
 
 ### Migliorie
+
+- Nel blocco "Cerca", il filtro per intervallo di date ora usa lo stesso calendario già in uso nel blocco di ricerca bandi/pubblicazioni; inoltre, il filtro per data adesso include l'intera giornata finale selezionata.  _(**Origine / contributo**: Regione Emilia-Romagna)_
 
 - ...
 
