@@ -48,7 +48,7 @@ const CommentsStep = ({
         'd-none': step !== 1,
       })}
       data-step={step}
-      aria-expanded={step === 1}
+      data-expanded={step === 1}
       aria-hidden={step !== 1}
     >
       <FormHeader

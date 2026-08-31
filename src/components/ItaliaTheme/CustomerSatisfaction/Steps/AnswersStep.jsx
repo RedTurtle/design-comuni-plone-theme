@@ -82,12 +82,12 @@ const AnswersStep = ({
       <fieldset
         id="vf-more-positive"
         className="answers-step"
+        aria-hidden={
+          userFeedback === null || userFeedback < threshold || step !== 0
+        }
         data-step={step}
         data-expanded={
           userFeedback !== null && userFeedback > threshold && step === 0
-        }
-        aria-hidden={
-          userFeedback === null || userFeedback < threshold || step !== 0
         }
         data-element={'feedback-rating-positive'}
       >
@@ -109,7 +109,6 @@ const AnswersStep = ({
           <fieldset
             className="answers-form-group"
             role="radiogroup"
-            aria-required="true"
             aria-labelledby="answers-title-positive"
             aria-describedby="answers-required-hint-positive"
           >
@@ -151,12 +150,12 @@ const AnswersStep = ({
       <fieldset
         id="vf-more-negative"
         className="answers-step"
+        aria-hidden={
+          userFeedback === null || userFeedback > threshold || step !== 0
+        }
         data-step={step}
         data-expanded={
           userFeedback !== null && userFeedback < threshold && step === 0
-        }
-        aria-hidden={
-          userFeedback === null || userFeedback > threshold || step !== 0
         }
         data-element={'feedback-rating-negative'}
       >
@@ -178,7 +177,6 @@ const AnswersStep = ({
           <fieldset
             className="answers-form-group"
             role="radiogroup"
-            aria-required="true"
             aria-labelledby="answers-title-negative"
             aria-describedby="answers-required-hint-negative"
           >
