@@ -2509,6 +2509,11 @@ msgstr ""
 msgid "feedback_answers_header_positive"
 msgstr ""
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: Select an option to proceed
+msgid "feedback_answers_required_hint"
+msgstr ""
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: The instructions were clear
 msgid "feedback_clear_instructions"
@@ -2549,6 +2554,11 @@ msgstr ""
 msgid "feedback_error"
 msgstr ""
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: required
+msgid "feedback_field_required"
+msgstr ""
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Feedback form
 msgid "feedback_form_aria_title"
@@ -2562,6 +2572,11 @@ msgstr ""
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Previous
 msgid "feedback_form_button_prev"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Send
+msgid "feedback_form_button_send"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm

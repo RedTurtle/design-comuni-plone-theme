@@ -2494,6 +2494,11 @@ msgstr "Dove hai incontrato le maggiori difficoltà?"
 msgid "feedback_answers_header_positive"
 msgstr "Quali sono stati gli aspetti che hai preferito?"
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: Select an option to proceed
+msgid "feedback_answers_required_hint"
+msgstr "Scegli un'opzione per proseguire"
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: The instructions were clear
 msgid "feedback_clear_instructions"
@@ -2534,6 +2539,11 @@ msgstr "Le indicazioni erano complete"
 msgid "feedback_error"
 msgstr "Errore"
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: required
+msgid "feedback_field_required"
+msgstr "obbligatoria"
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Feedback form
 msgid "feedback_form_aria_title"
@@ -2548,6 +2558,11 @@ msgstr "Avanti"
 # defaultMessage: Previous
 msgid "feedback_form_button_prev"
 msgstr "Indietro"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Send
+msgid "feedback_form_button_send"
+msgstr "Invia"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: No
