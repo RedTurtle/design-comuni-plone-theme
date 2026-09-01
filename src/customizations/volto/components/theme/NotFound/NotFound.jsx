@@ -11,8 +11,17 @@ import { Container } from 'semantic-ui-react';
 import { withServerErrorCode } from '@plone/volto/helpers/Utils/Utils';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNavigation } from '@plone/volto/actions';
+import { Helmet } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
+import { defineMessages, useIntl } from 'react-intl';
+
+const messages = defineMessages({
+  pageNotFound: {
+    id: '404-pageNotFoundTitle',
+    defaultMessage: 'Error 404 - Page not found',
+  },
+});
 /**
  * Not found function.
  * @function NotFound
@@ -20,6 +29,7 @@ import config from '@plone/volto/registry';
  */
 const NotFound = () => {
   const dispatch = useDispatch();
+  const intl = useIntl();
   const lang = useSelector((state) => state.intl.locale);
 
   const navigationRootPath = config.settings.isMultilingual
@@ -32,6 +42,7 @@ const NotFound = () => {
 
   return (
     <Container className="view-wrapper">
+      <Helmet title={intl.formatMessage(messages.pageNotFound)} />
       <BodyClass className="page-not-found" />
       <h1>
         <FormattedMessage
