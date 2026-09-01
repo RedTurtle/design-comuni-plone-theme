@@ -41,28 +41,22 @@
 - ...
  -->
 
-
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 12.15.1 (01/09/2026)
 
 ### Migliorie
 
-- Nel blocco "Cerca", il filtro per intervallo di date ora usa lo stesso calendario già in uso nel blocco di ricerca bandi/pubblicazioni; inoltre, il filtro per data adesso include l'intera giornata finale selezionata.  _(**Origine / contributo**: Regione Emilia-Romagna)_
-
-- ...
-
-### Novità
-
-- ...
+- Nel blocco "Cerca", il filtro per intervallo di date ora usa lo stesso calendario già in uso nel blocco di ricerca bandi/pubblicazioni; inoltre, il filtro per data adesso include l'intera giornata finale selezionata. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
 ### Fix
 
-- Risolto un errore nel blocco CTA che generava un titolo vuoto nella pagina quando il campo titolo non veniva compilato. Il titolo vuoto risultava presente nel codice della pagina e creava confusione per le tecnologie assistive.
+- Risolto un errore nel blocco CTA che generava un titolo vuoto nella pagina quando il campo titolo non veniva compilato.
 
 - Risolto un errore di struttra html nelle paginazioni che generava una lista duplicata nel codice della pagina. La duplicazione non era visibile a schermo ma rendeva il markup non valido e problematico per le tecnologie assistive.
 
 - Migliorata l'accessibilità del form di soddisfazione del cittadino (customer satisfaction): ora la domanda obbligatoria del secondo passaggio viene segnalata come tale sia visivamente che alle tecnologie assistive, con un messaggio che indica la necessità di scegliere un'opzione per proseguire. Inoltre il pulsante per l'invio della valutazione ha ora etichetta "Invia" invece di "Avanti". _(**Origine / contributo**: Regione Emilia-Romagna)_
 
 - Risolto un problema di gerarchia dei titoli nel blocco Accordion. Il titolo del blocco e il titolo di ogni voce dell'accordion ora si adattano alla struttura della pagina, migliorando la navigazione con le tecnologie assistive.
+
 - Accessibilità: Risolto un problema di gerarchia dei titoli nel template "Allegati" del blocco elenco. Il titolo di ogni scheda allegato ora si adatta alla struttura della pagina invece di usare sempre lo stesso livello fisso, migliorando la navigazione con le tecnologie assistive.
 
 ## Versione 12.15.0 (24/08/2026)
