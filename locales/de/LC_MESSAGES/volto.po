@@ -26,6 +26,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
+#: overrideTranslations
+# defaultMessage: Error 404 - Page not found
+msgid "404-pageNotFoundTitle"
+msgstr ""
+
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
 # defaultMessage: Accedi all'area personale
 msgid "Accedi all'area personale"

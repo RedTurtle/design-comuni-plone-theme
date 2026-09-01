@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: overrideTranslations
+# defaultMessage: Error 404 - Page not found
+msgid "404-pageNotFoundTitle"
+msgstr ""
+
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
 # defaultMessage: Accedi all'area personale
 msgid "Accedi all'area personale"
