@@ -62,6 +62,7 @@
 
 - Migliorata l'accessibilità del form di soddisfazione del cittadino (customer satisfaction): ora la domanda obbligatoria del secondo passaggio viene segnalata come tale sia visivamente che alle tecnologie assistive, con un messaggio che indica la necessità di scegliere un'opzione per proseguire. Inoltre il pulsante per l'invio della valutazione ha ora etichetta "Invia" invece di "Avanti". _(**Origine / contributo**: Regione Emilia-Romagna)_
 
+- Risolto un problema di gerarchia dei titoli nel blocco Accordion. Il titolo del blocco e il titolo di ogni voce dell'accordion ora si adattano alla struttura della pagina, migliorando la navigazione con le tecnologie assistive.
 - Accessibilità: Risolto un problema di gerarchia dei titoli nel template "Allegati" del blocco elenco. Il titolo di ogni scheda allegato ora si adatta alla struttura della pagina invece di usare sempre lo stesso livello fisso, migliorando la navigazione con le tecnologie assistive.
 
 ## Versione 12.15.0 (24/08/2026)

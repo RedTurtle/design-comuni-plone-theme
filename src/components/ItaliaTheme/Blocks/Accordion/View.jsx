@@ -27,7 +27,7 @@ const AccordionView = ({ data, block }) => {
           <Container className="px-md-4">
             <Card className="card-bg rounded" noWrapper={false} space tag="div">
               <div className="block-header">
-                {data.title && <div className="title">{data.title}</div>}
+                {data.title && <h2 className="title">{data.title}</h2>}
                 {data.description && (
                   <div className="description">
                     <TextBlockView data={{ value: data.description }} />
@@ -45,6 +45,7 @@ const AccordionView = ({ data, block }) => {
                     key={index}
                     id={id}
                     index={index}
+                    headerTag={data.title ? 'h3' : 'h2'}
                   />
                 ))}
               </CardBody>
