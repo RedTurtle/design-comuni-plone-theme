@@ -41,6 +41,10 @@
 - ...
  -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+- Ora in un pannello di controllo, se si clicca sul pulsante "Annulla" nella toolbar torna sempre alla pagina principale dei pannelli di controllo. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
 ## Versione 12.15.1 (01/09/2026)
 
 ### Migliorie
