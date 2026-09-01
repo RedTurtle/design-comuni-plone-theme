@@ -86,7 +86,7 @@
     .description h5,
     .description h6,
     .description a:not(.btn) {
-      color: $primary-text;
+      color: $primary-text;    
     }
   }
 
@@ -138,13 +138,14 @@
 
       .icon-placeholder {
         display: inline-block;
-        width: 6rem;
-        height: 6rem;
-        padding: 0.5rem 1rem;
+        width: 4rem;
+        height: 4rem;
+        padding: 0.7rem 0.5rem;
         border-radius: 100%;
         background-color: #ededed;
-        font-size: 0.8rem;
+        font-size: 0.68rem;
         vertical-align: middle;
+        line-height: 1;
       }
 
       .icon {
