@@ -555,6 +555,11 @@ export default function applyConfig(voltoConfig) {
     showEditBlocksInBabelView: true,
   };
 
+  config.blocks.blocksConfig.text = {
+    ...config.blocks.blocksConfig.slate,
+    id: 'text',
+  };
+
   //per avere la conf dei blocchi anche nel blocco grid, altrimenti nel blocco grid prende la conf base di volto.
   config.blocks.blocksConfig.gridBlock = {
     ...config.blocks.blocksConfig.gridBlock,
