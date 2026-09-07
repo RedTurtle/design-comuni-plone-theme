@@ -1,6 +1,23 @@
 .rssBlock {
   .card {
     .card-body {
+      .card-title {
+        margin-bottom: 10px !important;
+
+        a {
+          @include rem-size(font-size, 24);
+          @include rem-size(line-height, 26);
+          display: inline-block;
+          font-weight: 700;
+          text-decoration: none;
+
+          &:hover,
+          &:active {
+            text-decoration: underline;
+          }
+        }
+      }
+
       .source-title {
         margin-bottom: $card-category-m-bottom;
         color: $card-p-color;
@@ -44,5 +61,15 @@
         }
       }
     }
+  }
+}
+
+.section-blocco-rss #sidebar .rss-widget {
+  .four.wide.column {
+    width: 70% !important;
+  }
+
+  .eight.wide.column {
+    width: 30% !important;
   }
 }
