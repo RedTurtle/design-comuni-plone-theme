@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
+import { useClient } from '@plone/volto/hooks/client/useClient';
 import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 import {
   richTextHasContent,
@@ -26,6 +27,11 @@ const messages = defineMessages({
 
 const VenueWhere = ({ content }) => {
   const intl = useIntl();
+  // La mappa esiste solo nel browser, ma non si puo' condizionarla a
+  // `__CLIENT__`: quella e' gia' vera al primo render del client, quindi il
+  // client emetterebbe markup che il server non ha e l'idratazione fallirebbe.
+  // `useClient()` diventa vera solo dopo il mount.
+  const isClient = useClient();
 
   return (content.geolocation?.latitude && content.geolocation?.longitude) ||
     content.street ||
@@ -41,7 +47,11 @@ const VenueWhere = ({ content }) => {
           <CardTitle>
             <h3 className="h5 card-title">{content.title}</h3>
           </CardTitle>
-          <CardText>
+          {/* `CardText` renderizza un <p>: senza `tag` il <p> qui sotto sarebbe
+              annidato in un altro <p>, il parser del browser chiuderebbe il
+              primo e il DOM dell'SSR non corrisponderebbe piu' all'albero di
+              React, facendo fallire l'idratazione. */}
+          <CardText tag="div">
             <p>
               {[content.street, content.city]
                 .filter((v) => v !== null)
@@ -56,7 +66,7 @@ const VenueWhere = ({ content }) => {
           </CardText>
         </CardBody>
       </Card>
-      {__CLIENT__ &&
+      {isClient &&
         content.geolocation?.latitude &&
         content.geolocation?.longitude && (
           <OSMMap
