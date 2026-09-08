@@ -5,6 +5,7 @@
 
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
+import { useClient } from '@plone/volto/hooks/client/useClient';
 
 import {
   ContentImage,
@@ -68,6 +69,12 @@ const EventoView = ({ content, location }) => {
   let documentBody = createRef();
   const intl = useIntl();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
+  // Il SideMenu si costruisce leggendo il DOM, quindi esiste solo nel browser,
+  // ma non si puo' condizionarlo a `__CLIENT__`: quella e' gia' vera al primo
+  // render del client, quindi il client emetterebbe markup che il server non ha
+  // e l'idratazione fallirebbe, facendo ricostruire da zero l'intero root.
+  // `useClient()` diventa vera solo dopo il mount.
+  const isClient = useClient();
 
   return (
     <>
@@ -89,7 +96,7 @@ const EventoView = ({ content, location }) => {
             className="col-lg-4"
             aria-label={intl.formatMessage(messages.sideMenuIndex)}
           >
-            {__CLIENT__ && (
+            {isClient && (
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
             )}
           </aside>
