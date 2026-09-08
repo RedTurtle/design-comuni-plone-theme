@@ -49,6 +49,15 @@
 
 ### Migliorie
 
+- Nel blocco "Cerca", il filtro per intervallo di date ora usa lo stesso calendario già in uso nel blocco di ricerca bandi/pubblicazioni; inoltre, il filtro per data adesso include l'intera giornata finale selezionata.  _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+- Nel blocco "RSS" è stato uniformato lo stile della card a quella del blocco "Elenco", con la possibilità di decidere se mostrare la data
+e la descrizione della card. Inoltre, è possibile scegliere se mostrare 3 o 4 card per riga. Sono state fatte anche alcune migliorie di aspetto nella sidebar che gestisce il blocco.
+
+
+### Novità
+
+- ...
 - Nel blocco "Cerca", il filtro per intervallo di date ora usa lo stesso calendario già in uso nel blocco di ricerca bandi/pubblicazioni; inoltre, il filtro per data adesso include l'intera giornata finale selezionata. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
 ### Fix
