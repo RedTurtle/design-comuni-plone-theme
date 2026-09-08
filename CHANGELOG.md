@@ -1,5 +1,28 @@
 # Changelog
 
+## [12.15.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.15.0...v12.15.1) (2026-09-01)
+
+
+### Bug Fixes
+
+* a11y for customer satisfaction: mark question as required and rename submit button ([#1159](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1159)) ([d4c432f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d4c432f467f429a78a8901e3db83112ecf4d5924))
+* cms-ui: btn no-background changed color to white ([#1174](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1174)) ([725043a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/725043a50a870e376d7c48e001de5fce86f112a4))
+* head title in 404 page ([6a5fcbc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/6a5fcbc0f258e0348890b5ff26c4ebc302d8c579))
+* hide empty title heading in CTA block - bug[#77793](https://github.com/RedTurtle/design-comuni-plone-theme/issues/77793) ([#1171](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1171)) ([36e7fa2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/36e7fa210b7fd37c9394f4917a0057342adbeb37))
+* icon blocks bg image vs color ([2b0e667](https://github.com/RedTurtle/design-comuni-plone-theme/commit/2b0e667273e34c2ff944960a769e5bec7b29e653))
+* remove duplicated pagination ul in pagination component bug[#77794](https://github.com/RedTurtle/design-comuni-plone-theme/issues/77794) ([#1170](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1170)) ([548fbfd](https://github.com/RedTurtle/design-comuni-plone-theme/commit/548fbfda40b02aba7b46fc927a8792f227b37b98))
+* translations ([33d1292](https://github.com/RedTurtle/design-comuni-plone-theme/commit/33d1292e1a4e6f7165aa4658ea051f5e45164ead))
+* use date range filter with a11y improvements also in searach block - Us77695 ([#1169](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1169)) ([8570d90](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8570d90a7b95eb0b73c655f46ea74921c9f5369c))
+* use dynamic heading level in Accordion block title ([#1173](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1173)) ([9599081](https://github.com/RedTurtle/design-comuni-plone-theme/commit/959908140673884a64681603bedfd6ef673cc008))
+* use dynamic heading tag in attachment card title - bug[#77797](https://github.com/RedTurtle/design-comuni-plone-theme/issues/77797) ([#1172](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1172)) ([b752180](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b75218050139896564cd8eb340779b31966f1071))
+
+
+### Maintenance
+
+* preparing release 12.15.1 ([8a8c068](https://github.com/RedTurtle/design-comuni-plone-theme/commit/8a8c0687316084466d1c7abcb6c7ae3ff8908c6b))
+* publiccode ([d4de7e0](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d4de7e0943024aa3d63d7c887538976ed26a48b4))
+* **sentry:** ignore more errors from external or vendor sources ([#1175](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1175)) ([dfe8876](https://github.com/RedTurtle/design-comuni-plone-theme/commit/dfe8876054632397e799b2cd6cc600f85a6914a5))
+
 ## [12.15.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.14.2...v12.15.0) (2026-08-24)
 
 

@@ -109,6 +109,10 @@ export default function applyConfig(voltoConfig) {
         'Timeout (n)', //errori di recaptcha nella customer satisfaction
         'Uncaught (in promise) Timeout (n)', //errori di recaptcha nella customer satisfaction
         'window.webkit.messageHandlers', //errore in-app browser Facebook/Instagram su iOS
+        'Failed to connect to MetaMask',
+        'Java object is gone', // navigation_performance_logger_android
+        'Java exception was raised during method invocation', // navigation_performance_logger_android
+        'can\'t access property "_leaflet_pos", t is undefined', // leaflet/dist/leaflet-src
       ],
       // https://docs.sentry.io/platforms/javascript/data-management/sensitive-data/
       // beforeSend(event) {
@@ -468,7 +472,7 @@ export default function applyConfig(voltoConfig) {
     listing: {
       ...config.blocks.blocksConfig.listing,
       showLinkMore: true,
-      /** Per cambiare il valore di default di una prop dei un template, 
+      /** Per cambiare il valore di default di una prop dei un template,
        * settarlo nella variabile `defaultVariationProps`. 
        * Se il nome della prop viene messo come chiave in `defaultVariationProps` è valido per tutti i template del sito che hanno quella prop. 
        * Se invece viene specificato nella prop _variatons, vale solo per il template indicato. 

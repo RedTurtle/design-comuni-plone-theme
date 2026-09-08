@@ -31,13 +31,15 @@ const messages = defineMessages({
  * @class ViewBlock
  * @extends Component
  */
-const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
+const ViewBlock = ({ data, isOpen, toggle, id, index, headerTag }) => {
   const intl = useIntl();
+  // heading level adapts depending on whether the block itself has a title
+  const HeaderTag = headerTag;
 
   return (
     <div className="accordion-item subblock-view">
       {data.title && (
-        <h3 className="accordion-header">
+        <HeaderTag className="accordion-header">
           <button
             onClick={toggle()}
             aria-expanded={isOpen}
@@ -57,7 +59,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
 
             {data.title}
           </button>
-        </h3>
+        </HeaderTag>
       )}
 
       {data.text && (
@@ -95,6 +97,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
  */
 ViewBlock.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
+  headerTag: PropTypes.string.isRequired,
 };
 
 export default ViewBlock;
