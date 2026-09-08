@@ -780,6 +780,10 @@ body.cms-ui {
   }
 }
 
+body #a11yTrigger.a11y-trigger.a11y-pos-bottom-left {
+  margin-left: calc(100vw - 100px) !important;
+}
+
 body.has-toolbar {
   #toolbar .toolbar-content.show {
     z-index: 9;
