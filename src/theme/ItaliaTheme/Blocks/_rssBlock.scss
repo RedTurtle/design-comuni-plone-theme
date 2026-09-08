@@ -2,8 +2,6 @@
   .card {
     .card-body {
       .card-title {
-        margin-bottom: 10px !important;
-
         a {
           @include rem-size(font-size, 24);
           @include rem-size(line-height, 26);

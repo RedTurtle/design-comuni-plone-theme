@@ -66,7 +66,7 @@ const CardWithoutImageRssTemplate = ({
                       )}
                       {!data.hide_date && (item.pubDate || item.date) && (
                         <span className="data d-inline-flex">
-                          <span className="event-when same-day">
+                          <span className="event-when">
                             <span className="start-date">
                               {getViewDate(
                                 item.pubDate || item.date,
@@ -77,7 +77,7 @@ const CardWithoutImageRssTemplate = ({
                         </span>
                       )}
                     </div>
-                    <CardTitle tag="h3">
+                    <CardTitle tag="h3" className="mb-3">
                       <UniversalLink href={item?.url} title={item.title}>
                         {item.title}
                       </UniversalLink>
