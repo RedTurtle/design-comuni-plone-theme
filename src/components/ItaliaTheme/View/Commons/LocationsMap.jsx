@@ -1,6 +1,7 @@
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import { useClient } from '@plone/volto/hooks/client/useClient';
 import { OSMMap } from 'volto-venue';
 import PropTypes from 'prop-types';
 import { UniversalLink } from '@plone/volto/components';
@@ -29,6 +30,13 @@ const messages = defineMessages({
 
 const LocationsMap = ({ center, locations }) => {
   const intl = useIntl();
+  // The map only exists in the browser, but it cannot be gated on
+  // `__CLIENT__`: that is already true on the very first client render, so the
+  // client would emit a <div> the server markup does not have, hydration would
+  // fail and React would rebuild the whole root from scratch. `useClient()`
+  // only turns true after the mount, so the first render matches the SSR one
+  // and the map enters on the next commit.
+  const isClient = useClient();
   const venues = locations.map((location) => {
     let url = flattenToAppURL(location['@id']);
     return {
@@ -114,7 +122,7 @@ const LocationsMap = ({ center, locations }) => {
 
   return venuesData?.length > 0 ? (
     <>
-      {__CLIENT__ && (
+      {isClient && (
         <OSMMap
           center={[venuesData[0].latitude, venuesData[0].longitude]}
           markers={venuesData}

@@ -5,6 +5,7 @@
 
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
+import { useClient } from '@plone/volto/hooks/client/useClient';
 
 import {
   ContentImage,
@@ -68,6 +69,12 @@ const EventoView = ({ content, location }) => {
   let documentBody = createRef();
   const intl = useIntl();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
+  // The SideMenu is built by reading the DOM, so it only exists in the browser,
+  // but it cannot be gated on `__CLIENT__`: that is already true on the very
+  // first client render, so the client would emit markup the server does not
+  // have and hydration would fail, rebuilding the whole root from scratch.
+  // `useClient()` only turns true after the mount.
+  const isClient = useClient();
 
   return (
     <>
@@ -89,7 +96,7 @@ const EventoView = ({ content, location }) => {
             className="col-lg-4"
             aria-label={intl.formatMessage(messages.sideMenuIndex)}
           >
-            {__CLIENT__ && (
+            {isClient && (
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
             )}
           </aside>
