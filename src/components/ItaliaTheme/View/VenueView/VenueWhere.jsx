@@ -27,10 +27,10 @@ const messages = defineMessages({
 
 const VenueWhere = ({ content }) => {
   const intl = useIntl();
-  // La mappa esiste solo nel browser, ma non si puo' condizionarla a
-  // `__CLIENT__`: quella e' gia' vera al primo render del client, quindi il
-  // client emetterebbe markup che il server non ha e l'idratazione fallirebbe.
-  // `useClient()` diventa vera solo dopo il mount.
+  // The map only exists in the browser, but it cannot be gated on
+  // `__CLIENT__`: that is already true on the very first client render, so the
+  // client would emit markup the server does not have and hydration would
+  // fail. `useClient()` only turns true after the mount.
   const isClient = useClient();
 
   return (content.geolocation?.latitude && content.geolocation?.longitude) ||
@@ -47,10 +47,10 @@ const VenueWhere = ({ content }) => {
           <CardTitle>
             <h3 className="h5 card-title">{content.title}</h3>
           </CardTitle>
-          {/* `CardText` renderizza un <p>: senza `tag` il <p> qui sotto sarebbe
-              annidato in un altro <p>, il parser del browser chiuderebbe il
-              primo e il DOM dell'SSR non corrisponderebbe piu' all'albero di
-              React, facendo fallire l'idratazione. */}
+          {/* `CardText` renders a <p>: without `tag` the <p> below would be
+              nested inside another <p>, the browser parser would close the
+              outer one and the SSR DOM would stop matching React's tree,
+              breaking hydration. */}
           <CardText tag="div">
             <p>
               {[content.street, content.city]

@@ -30,12 +30,12 @@ const messages = defineMessages({
 
 const LocationsMap = ({ center, locations }) => {
   const intl = useIntl();
-  // La mappa esiste solo nel browser, ma non si puo' condizionarla a
-  // `__CLIENT__`: quella e' gia' vera al primo render del client, quindi il
-  // client emetterebbe un <div> che il markup del server non ha, l'idratazione
-  // fallirebbe e React ricostruirebbe da zero l'intero root. `useClient()`
-  // diventa vera solo dopo il mount, cosi' il primo render combacia con l'SSR e
-  // la mappa entra al commit successivo.
+  // The map only exists in the browser, but it cannot be gated on
+  // `__CLIENT__`: that is already true on the very first client render, so the
+  // client would emit a <div> the server markup does not have, hydration would
+  // fail and React would rebuild the whole root from scratch. `useClient()`
+  // only turns true after the mount, so the first render matches the SSR one
+  // and the map enters on the next commit.
   const isClient = useClient();
   const venues = locations.map((location) => {
     let url = flattenToAppURL(location['@id']);

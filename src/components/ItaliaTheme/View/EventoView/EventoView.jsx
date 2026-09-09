@@ -69,11 +69,11 @@ const EventoView = ({ content, location }) => {
   let documentBody = createRef();
   const intl = useIntl();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
-  // Il SideMenu si costruisce leggendo il DOM, quindi esiste solo nel browser,
-  // ma non si puo' condizionarlo a `__CLIENT__`: quella e' gia' vera al primo
-  // render del client, quindi il client emetterebbe markup che il server non ha
-  // e l'idratazione fallirebbe, facendo ricostruire da zero l'intero root.
-  // `useClient()` diventa vera solo dopo il mount.
+  // The SideMenu is built by reading the DOM, so it only exists in the browser,
+  // but it cannot be gated on `__CLIENT__`: that is already true on the very
+  // first client render, so the client would emit markup the server does not
+  // have and hydration would fail, rebuilding the whole root from scratch.
+  // `useClient()` only turns true after the mount.
   const isClient = useClient();
 
   return (
