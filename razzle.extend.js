@@ -72,6 +72,27 @@ const plugins = (defaultPlugins) => {
 };
 
 const modify = (webpackConfig, { target, dev }, webpackObject) => {
+  // volto-blocks-widget (since 3.4.10) does
+  // `import voltoPackage from '@plone/volto/package.json'`, but from Volto 19
+  // on the generic `@plone/volto` alias points at the `src` folder, where no
+  // package.json exists: the import stops resolving and the build dies with
+  // "Can't resolve '@plone/volto/package.json'".
+  // Add an exact-match alias BEFORE the generic one - order matters, webpack
+  // takes the first key that matches. The target is derived from the generic
+  // alias itself rather than from require.resolve, so it works both with Volto
+  // in node_modules and in the monorepo of the plone/frontend-builder image,
+  // and stays correct on Volto versions whose alias already points at the
+  // package root.
+  const voltoAlias = webpackConfig.resolve?.alias?.['@plone/volto'];
+  if (voltoAlias && !webpackConfig.resolve.alias['@plone/volto/package.json$']) {
+    const voltoRoot =
+      path.basename(voltoAlias) === 'src' ? path.dirname(voltoAlias) : voltoAlias;
+    webpackConfig.resolve.alias = {
+      '@plone/volto/package.json$': path.join(voltoRoot, 'package.json'),
+      ...webpackConfig.resolve.alias,
+    };
+  }
+
   const fileLoader = webpackConfig.module.rules.find(fileLoaderFinder);
   fileLoader.exclude = [
     /bootstrap-italia\/src\/svg\/.*\.svg$/,
