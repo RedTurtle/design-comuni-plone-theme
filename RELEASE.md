@@ -50,7 +50,6 @@
 e la descrizione della card. Inoltre, è possibile scegliere se mostrare 3 o 4 card per riga.
 
 
-
 ## Versione 12.15.1 (01/09/2026)
 
 ### Migliorie
