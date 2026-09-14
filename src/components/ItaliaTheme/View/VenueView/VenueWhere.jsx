@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
+import { useClient } from '@plone/volto/hooks/client/useClient';
 import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 import {
   richTextHasContent,
@@ -26,6 +27,11 @@ const messages = defineMessages({
 
 const VenueWhere = ({ content }) => {
   const intl = useIntl();
+  // The map only exists in the browser, but it cannot be gated on
+  // `__CLIENT__`: that is already true on the very first client render, so the
+  // client would emit markup the server does not have and hydration would
+  // fail. `useClient()` only turns true after the mount.
+  const isClient = useClient();
 
   return (content.geolocation?.latitude && content.geolocation?.longitude) ||
     content.street ||
@@ -41,7 +47,11 @@ const VenueWhere = ({ content }) => {
           <CardTitle>
             <h3 className="h5 card-title">{content.title}</h3>
           </CardTitle>
-          <CardText>
+          {/* `CardText` renders a <p>: without `tag` the <p> below would be
+              nested inside another <p>, the browser parser would close the
+              outer one and the SSR DOM would stop matching React's tree,
+              breaking hydration. */}
+          <CardText tag="div">
             <p>
               {[content.street, content.city]
                 .filter((v) => v !== null)
@@ -56,7 +66,7 @@ const VenueWhere = ({ content }) => {
           </CardText>
         </CardBody>
       </Card>
-      {__CLIENT__ &&
+      {isClient &&
         content.geolocation?.latitude &&
         content.geolocation?.longitude && (
           <OSMMap
