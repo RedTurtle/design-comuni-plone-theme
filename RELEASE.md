@@ -57,7 +57,6 @@ e la descrizione della card. Inoltre, è possibile scegliere se mostrare 3 o 4 c
 
 ### Novità
 
-- ...
 - Nel blocco "Cerca", il filtro per intervallo di date ora usa lo stesso calendario già in uso nel blocco di ricerca bandi/pubblicazioni; inoltre, il filtro per data adesso include l'intera giornata finale selezionata. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
 ### Fix
