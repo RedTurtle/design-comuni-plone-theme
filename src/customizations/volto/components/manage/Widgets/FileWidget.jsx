@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/FileWidget.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Widgets/FileWidget.jsx
  *
  * CUSTOMIZATIONS:
  * - Import FormFieldWrapper together with Icon and UniversalLink from '@plone/volto/components' instead of a separate deep import
@@ -16,6 +16,16 @@
  *   object (`item`/`image` for stored files, `src` for base64 previews); this
  *   also drops the `?id=${Date.now()}` cache-busting query param this file used
  *   to add, since there's no longer a standalone `imgsrc` string to cache-bust
+ * - Ported upstream 19.4.1's reworded `editFile`/`fileDrag`/`dragAndDropActionA11y`
+ *   copy and its new `dragAndDropReplaceA11y` message, branching the single hidden
+ *   `<span>` between the two based on `value` (upstream branches within a larger
+ *   `statusTextA11y` array this file never adopted — see note below)
+ *
+ * NOT ported (pre-existing gap, predates this file's 19.1.5 baseline, out of scope
+ * for a version bump — would need its own re-diff pass): upstream's `fieldSet` prop,
+ * the `role="button"`/`aria-labelledby`/`aria-describedby` restructuring of the
+ * dropzone div, the combined `statusTextA11y`/`errorTextA11y` spans, and
+ * `aria-required`/`aria-invalid` on the input.
  */
 
 /**
@@ -54,11 +64,13 @@ const messages = defineMessages({
   },
   editFile: {
     id: 'Drop file here to replace the existing file',
-    defaultMessage: 'Drop file here to replace the existing file',
+    defaultMessage:
+      'File upload area. Press Enter or click to replace the existing file.',
   },
   fileDrag: {
     id: 'Drop file here to upload a new file',
-    defaultMessage: 'Drop file here to upload a new file',
+    defaultMessage:
+      'File upload area. Press Enter or click to open the file browser.',
   },
   replaceFile: {
     id: 'Replace existing file',
@@ -79,7 +91,13 @@ const messages = defineMessages({
   },
   dragAndDropActionA11y: {
     id: 'Press Enter to browse files from your computer.',
-    defaultMessage: 'Press Enter to browse files from your computer.',
+    defaultMessage:
+      'File upload area. Press Enter or click to open the file browser.',
+  },
+  dragAndDropReplaceA11y: {
+    id: 'File upload area. Press Enter or click to replace the existing file',
+    defaultMessage:
+      'File upload area. Press Enter or click to replace the existing file.',
   },
 });
 
@@ -228,7 +246,9 @@ const FileWidget = (props) => {
                 ? intl.formatMessage(messages.replaceFile)
                 : intl.formatMessage(messages.addNewFile)}
               <span className="visually-hidden">
-                {intl.formatMessage(messages.dragAndDropActionA11y)}
+                {value
+                  ? intl.formatMessage(messages.dragAndDropReplaceA11y)
+                  : intl.formatMessage(messages.dragAndDropActionA11y)}
               </span>
             </label>
             <input

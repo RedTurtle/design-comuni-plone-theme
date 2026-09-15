@@ -2,7 +2,7 @@
  * Body video block.
  * @module components/manage/Blocks/Video/Body
  *
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Video/Body.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Video/Body.jsx
  *
  * Customizations:
  * - added ConditionalEmbed: video is only passed to the embed (and thus fetched)

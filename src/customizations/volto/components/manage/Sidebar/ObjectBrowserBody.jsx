@@ -2,7 +2,7 @@
  * ObjectBrowserBody component.
  * @module components/manage/Sidebar/ObjectBrowserBody
  *
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Sidebar/ObjectBrowserBody.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Sidebar/ObjectBrowserBody.jsx
  *
  * CUSTOMIZATIONS:
  * - Tooltip on breadcrumbs
@@ -10,7 +10,6 @@
  *   uses contextURL, regardless of mode - unlike upstream's defaultMultiplePath
  *   ternary for that specific field)
  * - Fix searchable types in query applying selectableTypes from field config
- * - Use debounce in onSearch to keep requests low and avoid race conditions
  * - Added use of props.onBlur function when selecting an item
  */
 
@@ -155,6 +154,11 @@ class ObjectBrowserBody extends Component {
           : this.props.searchableTypes || this.props.selectableTypes || null,
     };
     this.searchInputRef = React.createRef();
+    // Debounce the live-search dispatch so rapid keystrokes do not produce a
+    // burst of overlapping requests whose responses may resolve out of order
+    // (an older, less-filtered response arriving after the latest one would
+    // visually "reset" the list to look unfiltered).
+    this.debouncedSearch = debounce(this.doSearch, 300);
   }
 
   /**
@@ -164,6 +168,17 @@ class ObjectBrowserBody extends Component {
    */
   componentDidMount() {
     this.initialSearch(this.props.mode);
+  }
+
+  /**
+   * Component will unmount
+   * @method componentWillUnmount
+   * @returns {undefined}
+   */
+  componentWillUnmount() {
+    if (this.debouncedSearch) {
+      this.debouncedSearch.cancel();
+    }
   }
 
   initialSearch = (mode) => {
@@ -226,8 +241,7 @@ class ObjectBrowserBody extends Component {
       },
     );
 
-  onSearch = (e) => {
-    const text = flattenToAppURL(e.target.value);
+  doSearch = (text) => {
     if (text.startsWith('/')) {
       this.setState({ currentFolder: text });
       this.props.searchContent(
@@ -252,7 +266,11 @@ class ObjectBrowserBody extends Component {
       );
     }
   };
-  debouncedSearch = debounce((e) => this.onSearch(e), 250);
+
+  onSearch = (e) => {
+    const text = flattenToAppURL(e.target.value);
+    this.debouncedSearch(text);
+  };
 
   onSelectItem = (item) => {
     const url = item['@id'];
@@ -441,7 +459,7 @@ class ObjectBrowserBody extends Component {
             <Input
               className="search"
               ref={this.searchInputRef}
-              onChange={this.debouncedSearch}
+              onChange={this.onSearch}
               placeholder={this.props.intl.formatMessage(
                 messages.SearchInputPlaceholder,
               )}

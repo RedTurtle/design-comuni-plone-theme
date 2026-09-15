@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Listing/withQuerystringResults.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Listing/withQuerystringResults.jsx
  *
  * CUSTOMIZATIONS:
  * - get content from state.content.data and not from data.properties.content,
@@ -16,6 +16,10 @@ import { getQueryStringResults } from '@plone/volto/actions/querystringsearch/qu
 import { useDispatch, useSelector } from 'react-redux';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import {
+  computeTotalPages,
+  computeVisibleTotal,
+} from '@plone/volto/helpers/Pagination/Pagination';
 import config from '@plone/volto/registry';
 
 import { setOriginalQuery } from 'design-comuni-plone-theme/actions';
@@ -47,6 +51,7 @@ const getAdaptedQuery = (querystring, b_size, variation) => {
       : { metadata_fields: '_all' },
     {
       b_size: b_size,
+      offset: querystring?.offset || 0,
     },
     ...copyFields.map((name) =>
       Object.keys(querystring).includes(name)
@@ -109,18 +114,24 @@ export default function withQuerystringResults(WrappedComponent) {
       ? querystringResults?.[subrequestID]?.items || []
       : folderItems;
 
-    const showAsFolderListing = !hasQuery && content?.items_total > b_size;
-    const showAsQueryListing =
-      hasQuery && querystringResults?.[subrequestID]?.total > b_size;
+    // The backend counts the items the offset skips in its total, but the
+    // listing never shows them. Everything the user sees — the page count and
+    // the result counter — is about the items past the offset.
+    const subrequestTotal = querystringResults?.[subrequestID]?.total;
+    const visibleTotal = computeVisibleTotal(
+      subrequestTotal,
+      querystring?.offset,
+    );
 
-    const itemsTotal = showAsFolderListing
-      ? content.items_total
-      : querystringResults?.[subrequestID]?.total;
+    const showAsFolderListing = !hasQuery && content?.items_total > b_size;
+    const showAsQueryListing = hasQuery && visibleTotal > b_size;
+
+    const itemsTotal = showAsFolderListing ? content.items_total : visibleTotal;
 
     const totalPages = showAsFolderListing
-      ? Math.ceil(content.items_total / b_size)
+      ? computeTotalPages(content.items_total, b_size)
       : showAsQueryListing
-        ? Math.ceil(querystringResults[subrequestID].total / b_size)
+        ? computeTotalPages(visibleTotal, b_size)
         : 0;
 
     const prevBatch = showAsFolderListing
@@ -286,7 +297,7 @@ export default function withQuerystringResults(WrappedComponent) {
             ? handleContentPaginationChange(e, { activePage })
             : handleQueryPaginationChange(e, { activePage });
         }}
-        total={querystringResults?.[subrequestID]?.total}
+        total={subrequestTotal === undefined ? undefined : visibleTotal}
         batch_size={b_size}
         currentPage={currentPage}
         totalPages={totalPages}

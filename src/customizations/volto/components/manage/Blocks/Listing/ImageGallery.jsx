@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Listing/ImageGallery.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Listing/ImageGallery.jsx
  *
  * CUSTOMIZATIONS:
  * - Build the gallery `original`/`thumbnail` image URLs from the

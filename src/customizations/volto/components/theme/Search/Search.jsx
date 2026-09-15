@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/Search/Search.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/theme/Search/Search.jsx
  *
  * CUSTOMIZATIONS:
  * - Completely replace Volto's default Search page implementation with the

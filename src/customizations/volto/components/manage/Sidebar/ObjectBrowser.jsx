@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Sidebar/ObjectBrowser.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Sidebar/ObjectBrowser.jsx
  *
  * CUSTOMIZATIONS:
  * - Gestione di onBlur del campo alla chiusura del widget: se l'ObjectBrowser
