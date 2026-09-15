@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/helpers/Html/Html.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/helpers/Html/Html.jsx
  *
  * CUSTOMIZATIONS:
  * - Removed the `<link rel="icon" ...>`, `<link rel="apple-touch-icon" ...>` and

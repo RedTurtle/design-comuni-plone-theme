@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Grid/View.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Grid/View.jsx
  *
  * CUSTOMIZATIONS:
  * - used design-react-kit Grid component (Row/Col) instead of semantic-ui-react's Grid

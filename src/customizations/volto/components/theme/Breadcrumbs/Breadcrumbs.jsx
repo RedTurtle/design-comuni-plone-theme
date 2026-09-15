@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/Breadcrumbs/Breadcrumbs.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/theme/Breadcrumbs/Breadcrumbs.jsx
  *
  * CUSTOMIZATIONS:
  * - Replaced the semantic-ui-react Segment/Breadcrumb/Icon markup (home.svg

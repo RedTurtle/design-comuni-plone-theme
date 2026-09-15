@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/Footer/Footer.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/theme/Footer/Footer.jsx
  *
  * CUSTOMIZATIONS:
  * - Completely replaced the default semantic-ui based footer markup (Segment/List with

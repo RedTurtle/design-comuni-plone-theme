@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/components/ToggleFacet.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Search/components/ToggleFacet.jsx
  *
  * CUSTOMIZATIONS:
  * - Agid styling: replaced semantic-ui-react Radio/Header with design-react-kit Toggle/FormGroup (Bootstrap Italia)

@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Controlpanels/Controlpanel.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Controlpanels/Controlpanel.jsx
  *
  * CUSTOMIZATIONS:
  * - `onCancel` pushes to `/controlpanel` instead of `history.goBack()`, so the Back/Cancel

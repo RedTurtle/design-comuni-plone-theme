@@ -2,7 +2,7 @@
  * Edit video block.
  * @module components/manage/Blocks/Title/Edit
  *
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Video/Edit.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Video/Edit.jsx
  *
  * CUSTOMIZATIONS:
  * - handle url validation and show users errors

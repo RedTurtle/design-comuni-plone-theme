@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/Navigation/Navigation.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/theme/Navigation/Navigation.jsx
  *
  * CUSTOMIZATIONS:
  * - Complete rewrite of the navigation markup/behaviour on top of Bootstrap
