@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-08-03T15:54:04.001Z\n"
+"POT-Creation-Date: 2026-09-15T09:42:35.369Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -12,6 +12,11 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
+
+#. Default: "Error 404 - Page not found"
+#: overrideTranslations
+msgid "404-pageNotFoundTitle"
+msgstr ""
 
 #. Default: "Accedi all'area personale"
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
@@ -1380,6 +1385,7 @@ msgstr ""
 #. Default: "Colore di sfondo"
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 msgid "bg_color"
 msgstr ""
@@ -1579,6 +1585,11 @@ msgstr ""
 msgid "color_default"
 msgstr ""
 
+#. Default: "Nessuno"
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+msgid "color_none"
+msgstr ""
+
 #. Default: "Note"
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 msgid "color_note"
@@ -1592,8 +1603,14 @@ msgstr ""
 #. Default: "Primario"
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 msgid "color_primary"
+msgstr ""
+
+#. Default: "Secondario"
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+msgid "color_secondary"
 msgstr ""
 
 #. Default: "Success"
@@ -1611,6 +1628,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/Alert/Sidebar
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 msgid "color_warning"
+msgstr ""
+
+#. Default: "Numero di colonne"
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+msgid "columns"
 msgstr ""
 
 #. Default: "Compensi"
@@ -2479,6 +2501,11 @@ msgstr ""
 msgid "feedback_answers_header_positive"
 msgstr ""
 
+#. Default: "Select an option to proceed"
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+msgid "feedback_answers_required_hint"
+msgstr ""
+
 #. Default: "The instructions were clear"
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 msgid "feedback_clear_instructions"
@@ -2519,6 +2546,11 @@ msgstr ""
 msgid "feedback_error"
 msgstr ""
 
+#. Default: "required"
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+msgid "feedback_field_required"
+msgstr ""
+
 #. Default: "Feedback form"
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 msgid "feedback_form_aria_title"
@@ -2532,6 +2564,11 @@ msgstr ""
 #. Default: "Previous"
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 msgid "feedback_form_button_prev"
+msgstr ""
+
+#. Default: "Send"
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+msgid "feedback_form_button_send"
 msgstr ""
 
 #. Default: "No"

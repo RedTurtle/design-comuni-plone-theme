@@ -88,25 +88,23 @@ class Pagination extends Component {
         className="justify-content-center mt-5"
         aria-label={this.props.intl.formatMessage(messages.paginationLabel)}
       >
-        <ul className="pagination">
-          {map(items, ({ active, type, value }) => (
-            <React.Fragment key={value + type}>
-              {['firstItem', 'lastItem'].indexOf(type) < 0 && (
-                <PaginationItem
-                  active={active}
-                  disabled={this.props.disabled}
-                  onClick={this.handleItemClick}
-                  type={type}
-                  ellipsisItem={ellipsisItem}
-                  isPrevButtonInactive={inactivePrevButton}
-                  isForwButtonInactive={inactiveForwButton}
-                >
-                  {value}
-                </PaginationItem>
-              )}
-            </React.Fragment>
-          ))}
-        </ul>
+        {map(items, ({ active, type, value }) => (
+          <React.Fragment key={value + type}>
+            {['firstItem', 'lastItem'].indexOf(type) < 0 && (
+              <PaginationItem
+                active={active}
+                disabled={this.props.disabled}
+                onClick={this.handleItemClick}
+                type={type}
+                ellipsisItem={ellipsisItem}
+                isPrevButtonInactive={inactivePrevButton}
+                isForwButtonInactive={inactiveForwButton}
+              >
+                {value}
+              </PaginationItem>
+            )}
+          </React.Fragment>
+        ))}
       </Pager>
     );
   }

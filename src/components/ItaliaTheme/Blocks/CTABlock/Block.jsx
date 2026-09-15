@@ -62,25 +62,27 @@ const Block = (props) => {
       )}
       <Container tag="div" className="px-3 px-md-4">
         <div className="cta-tile-text">
-          <h2 className="title mt-0" id={block + 'title'}>
-            {inEditMode ? (
-              <TextEditorWidget
-                {...otherProps}
-                showToolbar={false}
-                data={data}
-                fieldName="cta_title"
-                selected={selected && selectedField === 'cta_title'}
-                setSelected={setSelectedField}
-                block={block}
-                placeholder={intl.formatMessage(messages.cta_title)}
-                focusNextField={() => {
-                  setSelectedField('cta_content');
-                }}
-              />
-            ) : (
-              title
-            )}
-          </h2>
+          {(inEditMode || title) && (
+            <h2 className="title mt-0" id={block + 'title'}>
+              {inEditMode ? (
+                <TextEditorWidget
+                  {...otherProps}
+                  showToolbar={false}
+                  data={data}
+                  fieldName="cta_title"
+                  selected={selected && selectedField === 'cta_title'}
+                  setSelected={setSelectedField}
+                  block={block}
+                  placeholder={intl.formatMessage(messages.cta_title)}
+                  focusNextField={() => {
+                    setSelectedField('cta_content');
+                  }}
+                />
+              ) : (
+                title
+              )}
+            </h2>
+          )}
 
           {inEditMode ? (
             <TextEditorWidget

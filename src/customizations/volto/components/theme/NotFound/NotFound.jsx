@@ -18,6 +18,8 @@
  *   wrapping a FormattedMessage id/defaultMessage "Site Administration" —
  *   so the 404 page no longer offers that "Site Administration" contact
  *   link.
+ * - Added `<Helmet title={intl.formatMessage(messages.pageNotFound)} />` to set
+ *   the browser tab title on the 404 page, instead of leaving it unset.
  */
 
 import { useEffect } from 'react';
@@ -31,8 +33,17 @@ import {
 } from '@plone/volto/helpers/Utils/Utils';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNavigation } from '@plone/volto/actions/navigation/navigation';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import config from '@plone/volto/registry';
 
+import { defineMessages, useIntl } from 'react-intl';
+
+const messages = defineMessages({
+  pageNotFound: {
+    id: '404-pageNotFoundTitle',
+    defaultMessage: 'Error 404 - Page not found',
+  },
+});
 /**
  * Not found function.
  * @function NotFound
@@ -40,6 +51,7 @@ import config from '@plone/volto/registry';
  */
 const NotFound = () => {
   const dispatch = useDispatch();
+  const intl = useIntl();
   const lang = useSelector((state) => state.intl.locale);
   const isMultilingual = useSelector(
     (state) => state.site.data.features?.multilingual,
@@ -53,6 +65,7 @@ const NotFound = () => {
 
   return (
     <Container className="view-wrapper">
+      <Helmet title={intl.formatMessage(messages.pageNotFound)} />
       <BodyClass className="page-not-found" />
       <h1>
         <FormattedMessage
