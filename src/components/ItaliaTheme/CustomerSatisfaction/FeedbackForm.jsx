@@ -71,6 +71,10 @@ const messages = defineMessages({
     id: 'feedback_form_button_next',
     defaultMessage: 'Next',
   },
+  send: {
+    id: 'feedback_form_button_send',
+    defaultMessage: 'Send',
+  },
   prev: {
     id: 'feedback_form_button_prev',
     defaultMessage: 'Previous',
@@ -389,7 +393,7 @@ const FeedbackForm = ({ title, pathname }) => {
                                 sendFormData();
                             }}
                           >
-                            {intl.formatMessage(messages.next)}
+                            {intl.formatMessage(messages.send)}
                           </button>
                         )}
                       </div>
