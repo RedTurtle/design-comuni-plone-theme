@@ -18,7 +18,27 @@ const messages = defineMessages({
     id: 'feedback_answers_header_negative',
     defaultMessage: 'Where did you encounter the biggest problems?',
   },
+  required: {
+    id: 'feedback_field_required',
+    defaultMessage: 'required',
+  },
+  required_hint: {
+    id: 'feedback_answers_required_hint',
+    defaultMessage: 'Select an option to proceed',
+  },
 });
+
+const RequiredTitle = ({ children, intl, id }) => (
+  <span id={id}>
+    {children}
+    <span className="required-marker">
+      <span aria-hidden="true">*</span>{' '}
+      <span className="visually-hidden">
+        {intl.formatMessage(messages.required)}
+      </span>
+    </span>
+  </span>
+);
 
 const AnswersStep = ({
   updateFormData,
@@ -62,17 +82,21 @@ const AnswersStep = ({
       <fieldset
         id="vf-more-positive"
         className="answers-step"
-        data-step={step}
-        aria-expanded={
-          userFeedback !== null && userFeedback > threshold && step === 0
-        }
         aria-hidden={
           userFeedback === null || userFeedback < threshold || step !== 0
+        }
+        data-step={step}
+        data-expanded={
+          userFeedback !== null && userFeedback > threshold && step === 0
         }
         data-element={'feedback-rating-positive'}
       >
         <FormHeader
-          title={intl.formatMessage(messages.header_positive)}
+          title={
+            <RequiredTitle intl={intl} id="answers-title-positive">
+              {intl.formatMessage(messages.header_positive)}
+            </RequiredTitle>
+          }
           step={step + 1}
           totalSteps={totalSteps}
           className={'answers-header'}
@@ -82,47 +106,65 @@ const AnswersStep = ({
         />
 
         <Form className="answers-form">
-          {state?.map((s, i) => (
-            <FormGroup
-              check
-              key={'positive-' + s}
-              className="border-bottom border-light mb-4"
-            >
-              <input
-                name="answer-input-positive"
-                id={'positive-' + s}
-                type="radio"
-                checked={s === selectedAnswer}
-                value={s}
-                onChange={handleAnswerChange}
-                autocomplete="off"
-              />
-              <Label
-                for={'positive-' + s}
+          <fieldset
+            className="answers-form-group"
+            role="radiogroup"
+            aria-labelledby="answers-title-positive"
+            aria-describedby="answers-required-hint-positive"
+          >
+            {state?.map((s, i) => (
+              <FormGroup
                 check
-                className="mb-4"
-                data-element="feedback-rating-answer"
+                key={'positive-' + s}
+                className="border-bottom border-light mb-4"
               >
-                {getTranslatedQuestion(intl, s)}
-              </Label>
-            </FormGroup>
-          ))}
+                <input
+                  name="answer-input-positive"
+                  id={'positive-' + s}
+                  type="radio"
+                  checked={s === selectedAnswer}
+                  value={s}
+                  onChange={handleAnswerChange}
+                  autocomplete="off"
+                  required
+                />
+                <Label
+                  for={'positive-' + s}
+                  check
+                  className="mb-4"
+                  data-element="feedback-rating-answer"
+                >
+                  {getTranslatedQuestion(intl, s)}
+                </Label>
+              </FormGroup>
+            ))}
+          </fieldset>
         </Form>
+        <p
+          id="answers-required-hint-positive"
+          className="answers-required-hint small mb-0"
+        >
+          {intl.formatMessage(messages.required_hint)}
+        </p>
       </fieldset>
       <fieldset
         id="vf-more-negative"
         className="answers-step"
-        data-step={step}
-        aria-expanded={
-          userFeedback !== null && userFeedback < threshold && step === 0
-        }
         aria-hidden={
           userFeedback === null || userFeedback > threshold || step !== 0
+        }
+        data-step={step}
+        data-expanded={
+          userFeedback !== null && userFeedback < threshold && step === 0
         }
         data-element={'feedback-rating-negative'}
       >
         <FormHeader
-          title={intl.formatMessage(messages.header_negative)}
+          title={
+            <RequiredTitle intl={intl} id="answers-title-negative">
+              {intl.formatMessage(messages.header_negative)}
+            </RequiredTitle>
+          }
           step={step + 1}
           totalSteps={totalSteps}
           className={'answers-header'}
@@ -132,31 +174,46 @@ const AnswersStep = ({
         />
 
         <Form className="answers-form">
-          {state?.map((s, i) => (
-            <FormGroup
-              check
-              key={'negative-' + s}
-              className="border-bottom border-light mb-4"
-            >
-              <input
-                name="answer-input-negative"
-                id={'negative-' + s}
-                type="radio"
-                checked={s === selectedAnswer}
-                value={s}
-                onChange={handleAnswerChange}
-              />
-              <Label
-                for={'negative-' + s}
+          <fieldset
+            className="answers-form-group"
+            role="radiogroup"
+            aria-labelledby="answers-title-negative"
+            aria-describedby="answers-required-hint-negative"
+          >
+            {state?.map((s, i) => (
+              <FormGroup
                 check
-                className="mb-4"
-                data-element="feedback-rating-answer"
+                key={'negative-' + s}
+                className="border-bottom border-light mb-4"
               >
-                {getTranslatedQuestion(intl, s)}
-              </Label>
-            </FormGroup>
-          ))}
+                <input
+                  name="answer-input-negative"
+                  id={'negative-' + s}
+                  type="radio"
+                  checked={s === selectedAnswer}
+                  value={s}
+                  onChange={handleAnswerChange}
+                  autocomplete="off"
+                  required
+                />
+                <Label
+                  for={'negative-' + s}
+                  check
+                  className="mb-4"
+                  data-element="feedback-rating-answer"
+                >
+                  {getTranslatedQuestion(intl, s)}
+                </Label>
+              </FormGroup>
+            ))}
+          </fieldset>
         </Form>
+        <p
+          id="answers-required-hint-negative"
+          className="answers-required-hint small mb-0"
+        >
+          {intl.formatMessage(messages.required_hint)}
+        </p>
       </fieldset>
     </>
   );

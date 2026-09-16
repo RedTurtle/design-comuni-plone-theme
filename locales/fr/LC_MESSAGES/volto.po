@@ -28,6 +28,11 @@ msgstr ""
 "X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
 "X-Generator: Poedit 2.2.3\n"
 
+#: overrideTranslations
+# defaultMessage: Error 404 - Page not found
+msgid "404-pageNotFoundTitle"
+msgstr ""
+
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
 # defaultMessage: Accedi all'area personale
 msgid "Accedi all'area personale"
@@ -2511,6 +2516,11 @@ msgstr ""
 msgid "feedback_answers_header_positive"
 msgstr ""
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: Select an option to proceed
+msgid "feedback_answers_required_hint"
+msgstr ""
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: The instructions were clear
 msgid "feedback_clear_instructions"
@@ -2551,6 +2561,11 @@ msgstr ""
 msgid "feedback_error"
 msgstr ""
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: required
+msgid "feedback_field_required"
+msgstr ""
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Feedback form
 msgid "feedback_form_aria_title"
@@ -2564,6 +2579,11 @@ msgstr ""
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Previous
 msgid "feedback_form_button_prev"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Send
+msgid "feedback_form_button_send"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm

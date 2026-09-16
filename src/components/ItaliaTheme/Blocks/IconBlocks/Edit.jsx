@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { defineMessages } from 'react-intl';
-import { Container, Row, Col } from 'design-react-kit';
+import { Row, Col } from 'design-react-kit';
 
 import { SidebarPortal } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
@@ -20,8 +20,7 @@ import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaThe
 
 import EditBlock from './Block/EditBlock';
 import Sidebar from './Sidebar';
-
-import config from '@plone/volto/registry';
+import Wrapper from './Wrapper';
 
 const messages = defineMessages({
   addItem: {
@@ -120,145 +119,123 @@ class Edit extends SubblocksEdit {
     if (__SERVER__) {
       return <div />;
     }
-    const Image = config.getComponent({ name: 'Image' }).component;
     const xlColumns = `${12 / (this.props.data.columns ?? 4)}`;
 
     return (
-      <div className="public-ui" tabIndex="-1" ref={this.nodeF}>
-        <div
-          className={`full-width section py-5 ${
-            this.props.data.bg_color === 'none'
-              ? ''
-              : 'bg-' + (this.props.data.bg_color ?? 'primary')
-          }`}
-          role="form"
-          aria-label={this.props.blocksConfig[this.props.type].title}
-        >
-          {this.props.data.background?.[0] ? (
-            <div className="background-image">
-              <Image
-                item={this.props.data.background[0]}
-                alt=""
-                role={null}
-                responsive={true}
-                sizes="100vw"
-              />
-            </div>
-          ) : (
-            <div className="background-image no-image"></div>
-          )}
+      <Wrapper
+        data={this.props.data}
+        wrapperProps={{ tabIndex: '-1', ref: this.nodeF }}
+        containerProps={{
+          role: 'form',
+          'aria-label': this.props.blocksConfig[this.props.type].title,
+        }}
+      >
+        <div className="block-header">
+          <div className="title">
+            <TextEditorWidget
+              {...this.props}
+              showToolbar={false}
+              data={this.props.data}
+              key={'title'}
+              fieldName="title"
+              selected={this.state.selectedField === 'title'}
+              setSelected={(f) => {
+                this.setState({
+                  selectedField: f,
+                  subIndexSelected: -1,
+                });
+                if (!this.props.selected) {
+                  //a11y - per il focus del blocco da tastiera
+                  this.props.onSelectBlock(this.props.block);
+                }
+              }}
+              placeholder={this.props.intl.formatMessage(messages.title)}
+              focusNextField={() => {
+                this.setState({ selectedField: 'description' });
+              }}
+            />
+          </div>
 
-          <Container className="px-md-4">
-            <div className="block-header">
-              <div className="title">
-                <TextEditorWidget
-                  {...this.props}
-                  showToolbar={false}
-                  data={this.props.data}
-                  key={'title'}
-                  fieldName="title"
-                  selected={this.state.selectedField === 'title'}
-                  setSelected={(f) => {
-                    this.setState({
-                      selectedField: f,
-                      subIndexSelected: -1,
-                    });
-                    if (!this.props.selected) {
-                      //a11y - per il focus del blocco da tastiera
-                      this.props.onSelectBlock(this.props.block);
-                    }
-                  }}
-                  placeholder={this.props.intl.formatMessage(messages.title)}
-                  focusNextField={() => {
-                    this.setState({ selectedField: 'description' });
-                  }}
-                />
-              </div>
-
-              <div className="description">
-                <TextEditorWidget
-                  {...this.props}
-                  showToolbar={true}
-                  data={this.props.data}
-                  fieldName="description"
-                  selected={this.state.selectedField === 'description'}
-                  setSelected={(f) => {
-                    this.setState({
-                      selectedField: f,
-                      subIndexSelected: -1,
-                    });
-                  }}
-                  placeholder={this.props.intl.formatMessage(
-                    messages.description,
-                  )}
-                  focusPrevField={() => {
-                    this.setState({ selectedField: 'title' });
-                  }}
-                  focusNextField={() => {
-                    this.setState({ selectedField: null, subIndexSelected: 0 });
-                  }}
-                />
-              </div>
-            </div>
-            <SubblocksWrapper node={this.node}>
-              <Row>
-                {this.state.subblocks.map((subblock, subindex) => (
-                  <Col lg="4" xl={xlColumns} key={subblock.id}>
-                    <EditBlock
-                      {...this.props}
-                      data={subblock}
-                      index={subindex}
-                      blockIndex={this.props.index}
-                      selected={this.isSubblockSelected(subindex)}
-                      {...this.subblockProps}
-                      onChangeFocus={this.onSubblockChangeFocus}
-                      isFirst={subindex === 0}
-                      isLast={subindex === this.state.subblocks?.length - 1}
-                      openObjectBrowser={this.props.openObjectBrowser}
-                      onFocusPreviousBlock={() => {
-                        this.setState({
-                          selectedField: 'description',
-                          subIndexSelected: -1,
-                        });
-                      }}
-                    />
-                  </Col>
-                ))}
-
-                {this.props.selected && (
-                  <Col md={3}>
-                    {this.renderAddBlockButton(
-                      this.props.intl.formatMessage(messages.addItem),
-                    )}
-                  </Col>
-                )}
-              </Row>
-            </SubblocksWrapper>
-            {this.props.data.href && this.props.data.linkMoreTitle && (
-              <div className="link-button text-center my-4">
-                <UniversalLink
-                  href={flattenToAppURL(this.props.data.href)}
-                  className="btn btn-tertiary"
-                >
-                  {this.props.data.linkMoreTitle}
-                </UniversalLink>
-              </div>
-            )}
-            <SidebarPortal selected={this.props.selected || false}>
-              <Sidebar
-                {...this.props}
-                data={this.props.data}
-                block={this.props.block}
-                onChangeBlock={this.props.onChangeBlock}
-                onChangeSubBlock={this.onChangeSubblocks}
-                selected={this.state.subIndexSelected}
-                setSelected={this.onSubblockChangeFocus}
-                openObjectBrowser={this.props.openObjectBrowser}
-              />
-            </SidebarPortal>
-          </Container>
+          <div className="description">
+            <TextEditorWidget
+              {...this.props}
+              showToolbar={true}
+              data={this.props.data}
+              fieldName="description"
+              selected={this.state.selectedField === 'description'}
+              setSelected={(f) => {
+                this.setState({
+                  selectedField: f,
+                  subIndexSelected: -1,
+                });
+              }}
+              placeholder={this.props.intl.formatMessage(messages.description)}
+              focusPrevField={() => {
+                this.setState({ selectedField: 'title' });
+              }}
+              focusNextField={() => {
+                this.setState({ selectedField: null, subIndexSelected: 0 });
+              }}
+            />
+          </div>
         </div>
-      </div>
+        <SubblocksWrapper node={this.node}>
+          <Row>
+            {this.state.subblocks.map((subblock, subindex) => (
+              <Col lg="4" xl={xlColumns} key={subblock.id}>
+                <EditBlock
+                  {...this.props}
+                  data={subblock}
+                  index={subindex}
+                  blockIndex={this.props.index}
+                  selected={this.isSubblockSelected(subindex)}
+                  {...this.subblockProps}
+                  onChangeFocus={this.onSubblockChangeFocus}
+                  isFirst={subindex === 0}
+                  isLast={subindex === this.state.subblocks?.length - 1}
+                  openObjectBrowser={this.props.openObjectBrowser}
+                  onFocusPreviousBlock={() => {
+                    this.setState({
+                      selectedField: 'description',
+                      subIndexSelected: -1,
+                    });
+                  }}
+                />
+              </Col>
+            ))}
+
+            {this.props.selected && (
+              <Col md={3}>
+                {this.renderAddBlockButton(
+                  this.props.intl.formatMessage(messages.addItem),
+                )}
+              </Col>
+            )}
+          </Row>
+        </SubblocksWrapper>
+        {this.props.data.href && this.props.data.linkMoreTitle && (
+          <div className="link-button text-center my-4">
+            <UniversalLink
+              href={flattenToAppURL(this.props.data.href)}
+              className="btn btn-tertiary"
+            >
+              {this.props.data.linkMoreTitle}
+            </UniversalLink>
+          </div>
+        )}
+        <SidebarPortal selected={this.props.selected || false}>
+          <Sidebar
+            {...this.props}
+            data={this.props.data}
+            block={this.props.block}
+            onChangeBlock={this.props.onChangeBlock}
+            onChangeSubBlock={this.onChangeSubblocks}
+            selected={this.state.subIndexSelected}
+            setSelected={this.onSubblockChangeFocus}
+            openObjectBrowser={this.props.openObjectBrowser}
+          />
+        </SidebarPortal>
+      </Wrapper>
     );
   }
 }

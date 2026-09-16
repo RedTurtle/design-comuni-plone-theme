@@ -446,6 +446,11 @@ body.cms-ui {
       background-color: transparent;
     }
 
+    .button.none,
+    .button.none.active {
+      background-color: $white;
+    }
+
     .button.primary,
     .button.primary.active {
       background-color: $primary;

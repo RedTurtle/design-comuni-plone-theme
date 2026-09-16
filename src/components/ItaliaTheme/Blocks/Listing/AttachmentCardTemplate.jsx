@@ -97,7 +97,7 @@ const AttachmentCardTemplate = (props) => {
                 )}
                 <CardBody tag="div">
                   <CardTitle
-                    tag="h5"
+                    tag={title ? 'h3' : 'h2'}
                     className={cx('mb-0', { 'wrap-title': wrap_title })}
                   >
                     <UniversalLink
