@@ -1,11 +1,16 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/components/DateRangeFacetFilterListEntry.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Search/components/DateRangeFacetFilterListEntry.jsx
  *
  * CUSTOMIZATIONS:
  * - Agid styling: use design-react-kit components (Label, Icon, Button) instead of semantic-ui-react, and show the facet title/label above the value
  * - Support plone.app.querystring.date operations (date.largerThan, date.lessThan, date.between) by reading searchData.query and formatting the resulting start/end dates with moment (loaded lazily via injectLazyLibs), instead of the generic Yes/No boolean label
  * - Use commonSearchBlockMessages (DateRangeFacetFilterListEntryDal/Al/DalAl, clearFilter) for i18n instead of the local yes/no messages
  * - Add aria-label/title to the clear filter button and icon for accessibility
+ * - Parse `queryIndex.v` as a UTC timestamp and convert it to local time before formatting
+ *   (`moment.utc(v).local()`), and subtract a day from the "end" bound
+ *   (`date.lessThan`/the end of a `date.between`), instead of formatting the raw value with
+ *   local `moment()` — matches the UTC day-boundary (start of day / end of day + 1) that
+ *   `DateRangeFacet.valueToQuery` now sends, so the label shows the day the user actually picked
  */
 import React, { useMemo } from 'react';
 import { Label, Icon, Button } from 'design-react-kit';
@@ -30,14 +35,21 @@ function DateRangeFacetFilterListEntry(props) {
   }, [data, facet]);
   const dateRangeLabel = useMemo(() => {
     const queryIndex = searchData?.query?.find((q) => q.i === facet);
+    const parseRangeStart = (v) => (v ? moment.utc(v).local() : null);
+    const parseRangeEnd = (v) =>
+      v ? moment.utc(v).local().subtract(1, 'day') : null;
+
     let start, end;
     if (queryIndex) {
       if (queryIndex.o.includes('date.largerThan'))
-        [start, end] = [queryIndex.v, null];
+        [start, end] = [parseRangeStart(queryIndex.v), null];
       else if (queryIndex.o.includes('date.lessThan'))
-        [start, end] = [null, queryIndex.v];
+        [start, end] = [null, parseRangeEnd(queryIndex.v)];
       else if (queryIndex.o.includes('date.between'))
-        [start, end] = queryIndex.v;
+        [start, end] = [
+          parseRangeStart(queryIndex.v[0]),
+          parseRangeEnd(queryIndex.v[1]),
+        ];
     }
 
     let label;
@@ -46,15 +58,15 @@ function DateRangeFacetFilterListEntry(props) {
         label = `${intl.formatMessage(
           commonSearchBlockMessages.DateRangeFacetFilterListEntryDalAl,
           {
-            start: moment(start).locale(intl.locale).format('DD-MM-YYYY'),
-            end: moment(end).locale(intl.locale).format('DD-MM-YYYY'),
+            start: start.locale(intl.locale).format('DD-MM-YYYY'),
+            end: end.locale(intl.locale).format('DD-MM-YYYY'),
           },
         )}`;
       else
         label = `${intl.formatMessage(
           commonSearchBlockMessages.DateRangeFacetFilterListEntryDal,
           {
-            start: moment(start).locale(intl.locale).format('DD-MM-YYYY'),
+            start: start.locale(intl.locale).format('DD-MM-YYYY'),
           },
         )}`;
     } else {
@@ -62,7 +74,7 @@ function DateRangeFacetFilterListEntry(props) {
         label = `${intl.formatMessage(
           commonSearchBlockMessages.DateRangeFacetFilterListEntryAl,
           {
-            end: moment(end).locale(intl.locale).format('DD-MM-YYYY'),
+            end: end.locale(intl.locale).format('DD-MM-YYYY'),
           },
         )}`;
     }

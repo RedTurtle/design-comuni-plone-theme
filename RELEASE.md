@@ -41,20 +41,47 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione x.x.x (xx/xx/xxxx)
 
 ### Migliorie
 
-- ...
+- Ora in un pannello di controllo, se si clicca sul pulsante "Annulla" nella toolbar torna sempre alla pagina principale dei pannelli di controllo. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
-### Novità
+- Nel blocco "RSS" è stato uniformato lo stile della card a quella del blocco "Elenco", con la possibilità di decidere se mostrare la data
+  e la descrizione della card. Inoltre, è possibile scegliere se mostrare 3 o 4 card per riga.
 
-- ...
+## Versione 12.15.1 (01/09/2026)
+
+### Migliorie
+
+- Nel blocco "Cerca", il filtro per intervallo di date ora usa lo stesso calendario già in uso nel blocco di ricerca bandi/pubblicazioni; inoltre, il filtro per data adesso include l'intera giornata finale selezionata. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
 ### Fix
 
 - Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina.
 - Corretto il percorso di navigazione (breadcrumb) nelle sezioni che si aggiornano senza ricaricare la pagina: non si accumula più mostrando tutte le sezioni visitate, e indica sempre correttamente la sezione in cui ci si trova.
+- Risolto un errore nel blocco CTA che generava un titolo vuoto nella pagina quando il campo titolo non veniva compilato.
+
+- Risolto un errore di struttra html nelle paginazioni che generava una lista duplicata nel codice della pagina. La duplicazione non era visibile a schermo ma rendeva il markup non valido e problematico per le tecnologie assistive.
+
+- Migliorata l'accessibilità del form di soddisfazione del cittadino (customer satisfaction): ora la domanda obbligatoria del secondo passaggio viene segnalata come tale sia visivamente che alle tecnologie assistive, con un messaggio che indica la necessità di scegliere un'opzione per proseguire. Inoltre il pulsante per l'invio della valutazione ha ora etichetta "Invia" invece di "Avanti". _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+- Risolto un problema di gerarchia dei titoli nel blocco Accordion. Il titolo del blocco e il titolo di ogni voce dell'accordion ora si adattano alla struttura della pagina, migliorando la navigazione con le tecnologie assistive.
+
+- Accessibilità: Risolto un problema di gerarchia dei titoli nel template "Allegati" del blocco elenco. Il titolo di ogni scheda allegato ora si adatta alla struttura della pagina invece di usare sempre lo stesso livello fisso, migliorando la navigazione con le tecnologie assistive.
+
+## Versione 12.15.0 (24/08/2026)
+
+### Novità
+
+- Nel blocco "Blocchi con icone" è ora possibile scegliere il numero di colonne (2, 3, 4 o 6) e un colore di sfondo (Nessuno, Primario, Secondario).
+
+### Fix
+
+- Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nei campi data e data + ora, il tasto Esc adesso chiude sempre il calendario. Prima non funzionava se il focus da tastiera era già entrato dentro al calendario. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nei sottositi, le voci configurate nel pannello di controllo per lo slim header vengono ora mostrate correttamente.
 
 ## Versione 12.14.2 (30/07/2026)
 

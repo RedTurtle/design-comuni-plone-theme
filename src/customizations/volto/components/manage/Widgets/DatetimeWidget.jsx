@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/DatetimeWidget.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Widgets/DatetimeWidget.jsx
  *
  * CUSTOMIZATIONS:
  * - kept as a class component (this shadow predates and was never migrated to
@@ -14,6 +14,9 @@
  *   rc-time-picker input via a MutationObserver (componentDidMount /
  *   componentDidUpdate / componentWillUnmount instead of useEffect), and add
  *   an aria-label to the reset button
+ * - close the calendar on Escape even when focus is inside it, using a
+ *   capture-phase keydown listener (react-dates' DayPicker stops
+ *   propagation on keydown, so a bubble-phase listener never sees it)
  */
 /**
  * DatetimeWidget component.
@@ -239,6 +242,12 @@ export class DatetimeWidgetComponent extends Component {
    */
   onFocusChange = ({ focused }) => this.setState({ focused });
 
+  onWrapperKeyDownCapture = (e) => {
+    if (e.key === 'Escape') {
+      this.setState({ focused: false });
+    }
+  };
+
   render() {
     const { id, resettable, intl, reactDates, widgetOptions, lang, formData } =
       this.props;
@@ -258,6 +267,7 @@ export class DatetimeWidgetComponent extends Component {
               className={cx('ui input date-input', {
                 'default-date': this.state.isDefault,
               })}
+              onKeyDownCapture={this.onWrapperKeyDownCapture}
             >
               <SingleDatePicker
                 date={datetime}

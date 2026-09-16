@@ -3,11 +3,19 @@ import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Segment, Accordion } from 'semantic-ui-react';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { TextWidget, Icon, ObjectBrowserWidget } from '@plone/volto/components';
+import {
+  TextWidget,
+  SelectWidget,
+  Icon,
+  ObjectBrowserWidget,
+} from '@plone/volto/components';
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
 
-import { LinkToWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import {
+  LinkToWidget,
+  ColorListWidget,
+} from 'design-comuni-plone-theme/components/ItaliaTheme';
 import IconWidget from 'design-comuni-plone-theme/components/ItaliaTheme/manage/Widgets/IconWidget';
 import { defaultIconWidgetOptions } from 'design-comuni-plone-theme/helpers/index';
 import config from '@plone/volto/registry';
@@ -25,6 +33,26 @@ const messages = defineMessages({
     id: 'backgroundImage',
     defaultMessage: 'Immagine di sfondo',
   },
+  bg_color: {
+    id: 'bg_color',
+    defaultMessage: 'Colore di sfondo',
+  },
+  color_none: {
+    id: 'color_none',
+    defaultMessage: 'Nessuno',
+  },
+  color_primary: {
+    id: 'color_primary',
+    defaultMessage: 'Primario',
+  },
+  color_secondary: {
+    id: 'color_secondary',
+    defaultMessage: 'Secondario',
+  },
+  columns: {
+    id: 'columns',
+    defaultMessage: 'Numero di colonne',
+  },
 });
 
 const Sidebar = ({
@@ -37,6 +65,14 @@ const Sidebar = ({
   openObjectBrowser,
 }) => {
   const intl = useIntl();
+  const bg_colors = [
+    { name: 'none', label: intl.formatMessage(messages.color_none) },
+    { name: 'primary', label: intl.formatMessage(messages.color_primary) },
+    {
+      name: 'secondary',
+      label: intl.formatMessage(messages.color_secondary),
+    },
+  ];
 
   return (
     <Segment.Group raised>
@@ -65,6 +101,31 @@ const Sidebar = ({
             onChange={(id, value) =>
               onChangeBlock(block, { ...data, [id]: value })
             }
+          />
+          <ColorListWidget
+            id="bg_color"
+            title={intl.formatMessage(messages.bg_color)}
+            value={data.bg_color ?? 'primary'}
+            onChange={(id, value) =>
+              onChangeBlock(block, { ...data, [id]: value })
+            }
+            colors={bg_colors}
+          />
+          <SelectWidget
+            id="columns"
+            title={intl.formatMessage(messages.columns)}
+            required={false}
+            intl={intl}
+            value={`${data.columns ?? 4}`}
+            onChange={(id, value) =>
+              onChangeBlock(block, { ...data, [id]: Number(value) })
+            }
+            choices={[
+              ['2', '2 colonne'],
+              ['3', '3 colonne'],
+              ['4', '4 colonne'],
+              ['6', '6 colonne'],
+            ]}
           />
           <TextWidget
             id="linkMoreTitle"

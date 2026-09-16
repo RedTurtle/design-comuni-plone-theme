@@ -4,6 +4,19 @@ body.cms-ui {
   font-size: 16px;
   line-height: 1.5;
 
+
+  .ui.secondary.attached.pointing.vertical.menu {
+    .active.item {
+      width: 100%;
+      margin-left: 4px;
+    }
+
+    .item {
+      text-align: start;
+      width: 100%;
+    }
+  }
+
   :focus:not(.focus--mouse),
   input[type='checkbox']:focus + label:before {
     outline: 2px solid #000 !important;
@@ -447,6 +460,11 @@ body.cms-ui {
     .button.transparent,
     .button.transparent.active {
       background-color: transparent;
+    }
+
+    .button.none,
+    .button.none.active {
+      background-color: $white;
     }
 
     .button.primary,

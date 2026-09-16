@@ -1,5 +1,5 @@
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Search/SearchBlockEdit.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Search/SearchBlockEdit.jsx
  *
  * CUSTOMIZATIONS:
  * - Use absolute imports (@plone/volto/components/manage/Blocks/Search/...) instead of
@@ -7,8 +7,12 @@
  * - Use a limited templates subset: filter the available listing variations with
  *   config.settings.searchBlockTemplates before building the "Results template" schema field
  *   and before resolving the active item's schemaEnhancer
- * - sortOnOptions removed in schema customization, removed the code that was 
+ * - sortOnOptions removed in schema customization, removed the code that was
  *   setting schema.properties.sortOnOptions.items
+ * - Pass block={block} to BlockDataForm: the original core code omits it, so
+ *   InlineForm's mount effect (which re-syncs schema defaults via
+ *   onChangeFormData) calls onChangeBlock(undefined, data), writing a spurious
+ *   "undefined" key into the blocks map on every sidebar mount/unmount.
  */
 import React, { useEffect } from 'react';
 import { defineMessages } from 'react-intl';
@@ -105,6 +109,7 @@ const SearchBlockEdit = (props) => {
       />
       <SidebarPortal selected={selected}>
         <BlockDataForm
+          block={block}
           schema={schema}
           onChangeField={(id, value) => {
             onChangeBlock(block, {

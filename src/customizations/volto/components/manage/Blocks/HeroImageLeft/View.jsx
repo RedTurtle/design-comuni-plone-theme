@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Blocks/Image/View.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Image/View.jsx
  *
  * CUSTOMIZATIONS:
  * - Like the sibling Edit.jsx, this is not the upstream Image View (a

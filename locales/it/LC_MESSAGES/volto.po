@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "Error 404 - Page not found"
+#: overrideTranslations
+msgid "404-pageNotFoundTitle"
+msgstr ""
+
 #. Default: "Accedi all'area personale"
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
 msgid "Accedi all'area personale"
@@ -1378,6 +1383,7 @@ msgstr "Mostra lo sfondo del blocco"
 #. Default: "Colore di sfondo"
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 msgid "bg_color"
 msgstr "Colore di sfondo"
@@ -1577,6 +1583,11 @@ msgstr "Rosso"
 msgid "color_default"
 msgstr ""
 
+#. Default: "Nessuno"
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+msgid "color_none"
+msgstr ""
+
 #. Default: "Note"
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 msgid "color_note"
@@ -1590,9 +1601,15 @@ msgstr "Arancione"
 #. Default: "Primario"
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 msgid "color_primary"
 msgstr "Colore primario"
+
+#. Default: "Secondario"
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+msgid "color_secondary"
+msgstr ""
 
 #. Default: "Success"
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
@@ -1610,6 +1627,11 @@ msgstr "Trasparente"
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 msgid "color_warning"
 msgstr "Giallo"
+
+#. Default: "Numero di colonne"
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+msgid "columns"
+msgstr ""
 
 #. Default: "Compensi"
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
@@ -2477,6 +2499,11 @@ msgstr "Dove hai incontrato le maggiori difficoltà?"
 msgid "feedback_answers_header_positive"
 msgstr "Quali sono stati gli aspetti che hai preferito?"
 
+#. Default: "Select an option to proceed"
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+msgid "feedback_answers_required_hint"
+msgstr ""
+
 #. Default: "The instructions were clear"
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 msgid "feedback_clear_instructions"
@@ -2517,6 +2544,11 @@ msgstr "Le indicazioni erano complete"
 msgid "feedback_error"
 msgstr "Errore"
 
+#. Default: "required"
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+msgid "feedback_field_required"
+msgstr ""
+
 #. Default: "Feedback form"
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 msgid "feedback_form_aria_title"
@@ -2531,6 +2563,11 @@ msgstr "Avanti"
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 msgid "feedback_form_button_prev"
 msgstr "Indietro"
+
+#. Default: "Send"
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+msgid "feedback_form_button_send"
+msgstr ""
 
 #. Default: "No"
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm

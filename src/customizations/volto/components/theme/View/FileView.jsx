@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/View/FileView.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/theme/View/FileView.jsx
  *
  * CUSTOMIZATIONS:
  * - changed card layout: replaced the registry-based Semantic UI Container with

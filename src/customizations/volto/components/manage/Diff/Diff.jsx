@@ -3,7 +3,7 @@
  * @module components/manage/Diff/Diff
  */
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Diff/Diff.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Diff/Diff.jsx
  *
  * CUSTOMIZATIONS:
  * - Actually works and doesn't break down if user reloads page! Or goes back in the

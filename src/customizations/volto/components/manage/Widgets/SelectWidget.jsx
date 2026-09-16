@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/SelectWidget.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Widgets/SelectWidget.jsx
  *
  * CUSTOMIZATIONS:
  * - add ariaLabel prop and set aria-label (falling back to title) on the Select instead of aria-labelledby

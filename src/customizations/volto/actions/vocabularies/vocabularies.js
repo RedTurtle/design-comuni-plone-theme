@@ -1,5 +1,5 @@
 /**
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/actions/vocabularies/vocabularies.js
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/actions/vocabularies/vocabularies.js
  * (backport of https://github.com/plone/volto/pull/6236)
  *
  * CUSTOMIZATIONS:

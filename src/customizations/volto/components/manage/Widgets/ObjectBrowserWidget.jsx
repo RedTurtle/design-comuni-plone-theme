@@ -3,7 +3,7 @@
  * @module components/manage/Widgets/ObjectBrowserWidget
  */
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/manage/Widgets/ObjectBrowserWidget.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Widgets/ObjectBrowserWidget.jsx
  *
  * CUSTOMIZATIONS:
  * - Gestione e uso di props.onBlur nel widget, unito (invece che sostituito)

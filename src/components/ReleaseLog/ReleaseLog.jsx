@@ -33,21 +33,19 @@ const ReleaseLog = () => {
   // that aren't installed; it falls through to the catch at runtime instead,
   // same as it would for any other genuinely missing module.
   try {
-    ReleaseDCPT = require(`${'design-comuni-plone-theme'}/../RELEASE.md`);
+    ReleaseDCPT = require(`${'design-comuni-plone-theme'}/../RELEASE.md`).default;
   } catch {
     console.log("design-comuni-plone-theme/../RELEASE.md doesn't exists");
   }
   try {
     ReleaseIoCittadino = require(
-      `${'@redturtle/volto-io-cittadino'}/../RELEASE.md`,
-    );
+      `${'@redturtle/volto-io-cittadino'}/../RELEASE.md`,).default;
   } catch {
     console.log("@redturtle/volto-io-cittadino/../RELEASE.md doesn't exists");
   }
   try {
     ReleaseIoPrenoto = require(
-      `${'@redturtle/volto-io-prenoto'}/../RELEASE.md`,
-    );
+      `${'@redturtle/volto-io-prenoto'}/../RELEASE.md`,).default;
   } catch {
     console.log("@redturtle/volto-io-prenoto/../RELEASE.md doesn't exists");
   }

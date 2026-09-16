@@ -4,7 +4,7 @@
  */
 
 /*
- * original: https://raw.githubusercontent.com/plone/volto/19.1.5/packages/volto/src/components/theme/Navigation/Navigation.jsx
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/theme/Navigation/Navigation.jsx
  *
  * CUSTOMIZATIONS:
  * - Complete rewrite of the navigation markup/behaviour on top of Bootstrap
@@ -17,8 +17,13 @@
  *   instead of the core state.navigation.items/getNavigation action
  *   (getBaseUrl/hasApiExpander driven fetch removed).
  * - Adds subsite support: renders a subsite logo/BrandText in the brand
- *   wrapper and conditionally renders ParentSiteMenu (subsite) vs
- *   TertiaryMenu (main site) based on state.subsite?.data.
+ *   wrapper and conditionally renders ParentSiteMenu vs TertiaryMenu based on
+ *   state.subsite?.data. On a subsite, ParentSiteMenu (the main site's
+ *   slimheader menu) only renders when the subsite itself has no visible
+ *   slimheader items for the current path (checked via
+ *   design-comuni-plone-theme/helpers' getItemsByPath against
+ *   state.slimHeader?.result); otherwise (main site, or a subsite that does
+ *   have its own slimheader items) TertiaryMenu renders instead.
  * - Renders MegaMenu items, MenuSecondary and SocialHeader alongside the
  *   main navigation, none of which exist in the upstream component.
  * - Adds a document-level click listener (getAnchorTarget helper) that
@@ -51,6 +56,7 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import { getDropdownMenuNavitems, getItemsByPath } from 'volto-dropdownmenu';
+import { getItemsByPath as getSlimHeaderItemsByPath } from 'design-comuni-plone-theme/helpers';
 import FocusLock from 'react-focus-lock';
 
 const Navigation = ({ pathname }) => {
@@ -73,6 +79,13 @@ const Navigation = ({ pathname }) => {
   }, [dispatch]);
 
   const menu = getItemsByPath(items, pathname);
+
+  const slimHeader = useSelector((state) => state.slimHeader?.result);
+  const hasSubsiteSlimItems =
+    subsite &&
+    (getSlimHeaderItemsByPath(slimHeader, pathname, false)?.filter(
+      (item) => item.visible,
+    )?.length ?? 0) > 0;
 
   const getAnchorTarget = (nodeElement) => {
     if (nodeElement.nodeName === 'A') {
@@ -191,14 +204,14 @@ const Navigation = ({ pathname }) => {
                 {/* Secondary Menu */}
                 <MenuSecondary pathname={pathname} />
 
-                {/* Headerslim Menu - main site */}
-                {!subsite && <TertiaryMenu />}
+                {/* Headerslim Menu - parent site (if subsite has no config) */}
+                {subsite && !hasSubsiteSlimItems && <ParentSiteMenu />}
 
                 {/* Social Links */}
                 <SocialHeader />
 
-                {/* Headerslim Menu - parent site (if subsite) */}
-                {subsite && <ParentSiteMenu />}
+                {/* Headerslim Menu - configuration */}
+                {(!subsite || hasSubsiteSlimItems) && <TertiaryMenu />}
               </div>
               <div className="close-div" style={closeButtonStyle}>
                 <button
