@@ -43,7 +43,16 @@
 
 ## Versione x.x.x (xx/xx/xxxx)
 
+### Migliorie
+
 - Ora in un pannello di controllo, se si clicca sul pulsante "Annulla" nella toolbar torna sempre alla pagina principale dei pannelli di controllo. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+- Nel blocco "RSS" è stato uniformato lo stile della card a quella del blocco "Elenco", con la possibilità di decidere se mostrare la data
+  e la descrizione della card. Inoltre, è possibile scegliere se mostrare 3 o 4 card per riga.
+
+- Nel form di soddisfazione del cittadino (customer satisfaction) è stato tolto l'asterisco dalla domanda obbligatoria: l'obbligatorietà resta indicata dal messaggio "Scegli un'opzione per proseguire" sotto le risposte e continua a essere comunicata alle tecnologie assistive. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+
 
 ## Versione 12.15.1 (01/09/2026)
 
