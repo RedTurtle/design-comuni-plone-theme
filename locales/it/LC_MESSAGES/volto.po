@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: overrideTranslations
+# defaultMessage: Error 404 - Page not found
+msgid "404-pageNotFoundTitle"
+msgstr "Pagina non trovata"
+
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
 # defaultMessage: Accedi all'area personale
 msgid "Accedi all'area personale"
@@ -1377,6 +1382,7 @@ msgstr "Mostra lo sfondo del blocco"
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Colore di sfondo
 msgid "bg_color"
@@ -1577,6 +1583,11 @@ msgstr "Rosso"
 msgid "color_default"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Nessuno
+msgid "color_none"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 # defaultMessage: Note
 msgid "color_note"
@@ -1589,10 +1600,16 @@ msgstr "Arancione"
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Primario
 msgid "color_primary"
 msgstr "Colore primario"
+
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Secondario
+msgid "color_secondary"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 # defaultMessage: Success
@@ -1610,6 +1627,11 @@ msgstr "Trasparente"
 # defaultMessage: Giallo
 msgid "color_warning"
 msgstr "Giallo"
+
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Numero di colonne
+msgid "columns"
+msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
 #: components/ItaliaTheme/View/PersonaView/PersonaDocumenti
@@ -2477,6 +2499,11 @@ msgstr "Dove hai incontrato le maggiori difficoltà?"
 msgid "feedback_answers_header_positive"
 msgstr "Quali sono stati gli aspetti che hai preferito?"
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: Select an option to proceed
+msgid "feedback_answers_required_hint"
+msgstr "Scegli un'opzione per proseguire"
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: The instructions were clear
 msgid "feedback_clear_instructions"
@@ -2517,6 +2544,11 @@ msgstr "Le indicazioni erano complete"
 msgid "feedback_error"
 msgstr "Errore"
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: required
+msgid "feedback_field_required"
+msgstr "obbligatoria"
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Feedback form
 msgid "feedback_form_aria_title"
@@ -2531,6 +2563,11 @@ msgstr "Avanti"
 # defaultMessage: Previous
 msgid "feedback_form_button_prev"
 msgstr "Indietro"
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Send
+msgid "feedback_form_button_send"
+msgstr "Invia"
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: No
@@ -2703,6 +2740,16 @@ msgstr "Galleria di immagini"
 # defaultMessage: Chiudi l'anteprima
 msgid "gallery_close_preview"
 msgstr "Chiudi l'anteprima"
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine di copertina
+msgid "gallery_preview_image"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine mostrata in anteprima al posto della copertina di default del video.
+msgid "gallery_preview_image_description"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Titolo del video

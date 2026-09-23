@@ -1,5 +1,8 @@
 // CUSTOMIZATION:
 // - 196-202 - 230-262: added file upload restraint message as per agid regulations
+// - added error toast when the upload request fails (e.g. an alias with the
+//   same id already exists in this location); the modal stays open so the
+//   user can remove or rename the conflicting file and retry
 
 /**
  * Contents upload modal.
@@ -27,9 +30,10 @@ import { concat, filter, map } from 'lodash';
 import filesize from 'filesize';
 import { readAsDataURL } from 'promise-file-reader';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import { FormattedRelativeDate } from '@plone/volto/components';
+import { FormattedRelativeDate, Toast } from '@plone/volto/components';
 import { createContent, getTypes } from '@plone/volto/actions';
 import { validateFileUploadSize, getBaseUrl } from '@plone/volto/helpers';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
 const Dropzone = loadable(() => import('react-dropzone'));
 
@@ -42,6 +46,14 @@ const messages = defineMessages({
     id: '{count, plural, one {Upload {count} file} other {Upload {count} files}}',
     defaultMessage:
       '{count, plural, one {Upload {count} file} other {Upload {count} files}}',
+  },
+  error: {
+    id: 'Error',
+    defaultMessage: 'Error',
+  },
+  uploadError: {
+    id: 'upload_error',
+    defaultMessage: 'An error has occurred while uploading files.',
   },
 });
 
@@ -100,6 +112,18 @@ class ContentsUploadModal extends Component {
       this.setState({
         files: [],
       });
+    }
+    if (this.props.request.loading && nextProps.request.error) {
+      const msgBody =
+        nextProps.request.error?.response?.body?.message ||
+        this.props.intl.formatMessage(messages.uploadError);
+      this.props.toastify.toast.error(
+        <Toast
+          error
+          title={this.props.intl.formatMessage(messages.error)}
+          content={msgBody}
+        />,
+      );
     }
   }
 
@@ -365,6 +389,7 @@ class ContentsUploadModal extends Component {
 
 export default compose(
   injectIntl,
+  injectLazyLibs(['toastify']),
   connect(
     (state) => ({
       request: state.content.subrequests?.[SUBREQUEST] || {},

@@ -138,8 +138,6 @@ const focusNext = (props) => {
     }
   }
 
-  props.event.preventDefault();
-  props.event.stopPropagation();
   let isAtEnd = false;
 
   if (showToolbar) {
@@ -161,11 +159,15 @@ const focusNext = (props) => {
 
   //move to next field
   if (focusNextField) {
+    props.event.preventDefault();
+    props.event.stopPropagation();
     focusNextField();
     return false;
   }
 
   if (isAtEnd) {
+    props.event.preventDefault();
+    props.event.stopPropagation();
     if (props.event.key === 'Enter' || props.event.keyCode === 13) {
       onSelectBlock(onAddBlock(config.settings.defaultBlockType, index + 1));
       return false;
@@ -178,7 +180,7 @@ const focusNext = (props) => {
     }
   }
 
-  //handle SlateEditor arrow-down key
+  //handle SlateEditor arrow-down key and let to move the cursor down within the text
   return goDown(props);
 };
 

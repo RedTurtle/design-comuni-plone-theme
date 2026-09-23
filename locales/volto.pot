@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-06-25T09:35:45.600Z\n"
+"POT-Creation-Date: 2026-09-01T09:26:05.572Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -12,6 +12,11 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
+
+#: overrideTranslations
+# defaultMessage: Error 404 - Page not found
+msgid "404-pageNotFoundTitle"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
 # defaultMessage: Accedi all'area personale
@@ -1379,6 +1384,7 @@ msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Colore di sfondo
 msgid "bg_color"
@@ -1579,6 +1585,11 @@ msgstr ""
 msgid "color_default"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Nessuno
+msgid "color_none"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 # defaultMessage: Note
 msgid "color_note"
@@ -1591,9 +1602,15 @@ msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Primario
 msgid "color_primary"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Secondario
+msgid "color_secondary"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
@@ -1611,6 +1628,11 @@ msgstr ""
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 # defaultMessage: Giallo
 msgid "color_warning"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Numero di colonne
+msgid "columns"
 msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
@@ -2479,6 +2501,11 @@ msgstr ""
 msgid "feedback_answers_header_positive"
 msgstr ""
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: Select an option to proceed
+msgid "feedback_answers_required_hint"
+msgstr ""
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: The instructions were clear
 msgid "feedback_clear_instructions"
@@ -2519,6 +2546,11 @@ msgstr ""
 msgid "feedback_error"
 msgstr ""
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: required
+msgid "feedback_field_required"
+msgstr ""
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Feedback form
 msgid "feedback_form_aria_title"
@@ -2532,6 +2564,11 @@ msgstr ""
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Previous
 msgid "feedback_form_button_prev"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Send
+msgid "feedback_form_button_send"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
@@ -2704,6 +2741,16 @@ msgstr ""
 #: components/ItaliaTheme/GalleryPreview/GalleryPreview
 # defaultMessage: Chiudi l'anteprima
 msgid "gallery_close_preview"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine di copertina
+msgid "gallery_preview_image"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine mostrata in anteprima al posto della copertina di default del video.
+msgid "gallery_preview_image_description"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar

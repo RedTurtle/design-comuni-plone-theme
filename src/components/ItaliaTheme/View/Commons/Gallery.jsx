@@ -13,7 +13,10 @@ import {
   SingleSlideWrapper,
   CarouselWrapper,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { useSlider } from 'design-comuni-plone-theme/components/ItaliaTheme/Slider/slider';
+import {
+  useSlider,
+  decorateSliderDots,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/Slider/slider';
 
 import PropTypes from 'prop-types';
 import { contentFolderHasItems } from 'design-comuni-plone-theme/helpers';
@@ -64,6 +67,9 @@ const Gallery = ({
       slidesToScroll: slideToScroll ?? 3,
       nextArrow: <SliderNextArrow intl={intl} />,
       prevArrow: <SliderPrevArrow intl={intl} />,
+      appendDots: (dots) => (
+        <ul className="slick-dots">{decorateSliderDots(dots)}</ul>
+      ),
       responsive: [
         {
           breakpoint: 1024,

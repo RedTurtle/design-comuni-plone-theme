@@ -8,6 +8,9 @@
  * CUSTOMIZATIONS:
  * - accept calendar `openDirection` prop and use it in SingleDatePicker,
  *   default to down if no openDirection is given
+ * - close the calendar on Escape even when focus is inside it, using a
+ *   capture-phase keydown listener (react-dates' DayPicker stops
+ *   propagation on keydown, so a bubble-phase listener never sees it)
  */
 /**
  * DatetimeWidget component.
@@ -189,6 +192,12 @@ export class DatetimeWidgetComponent extends Component {
    */
   onFocusChange = ({ focused }) => this.setState({ focused });
 
+  onWrapperKeyDownCapture = (e) => {
+    if (e.key === 'Escape') {
+      this.setState({ focused: false });
+    }
+  };
+
   render() {
     const { id, resettable, intl, reactDates, widgetOptions, lang } =
       this.props;
@@ -206,6 +215,7 @@ export class DatetimeWidgetComponent extends Component {
             className={cx('ui input date-input', {
               'default-date': this.state.isDefault,
             })}
+            onKeyDownCapture={this.onWrapperKeyDownCapture}
           >
             <SingleDatePicker
               date={datetime}

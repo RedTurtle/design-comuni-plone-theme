@@ -9,7 +9,10 @@ import { Embed } from 'semantic-ui-react';
 import { isInternalURL, getParentUrl } from '@plone/volto/helpers';
 import { ConditionalEmbed } from 'volto-gdpr-privacy';
 import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { videoUrlHelper } from 'design-comuni-plone-theme/helpers';
+import {
+  videoUrlHelper,
+  useVideoEmbedFocus,
+} from 'design-comuni-plone-theme/helpers';
 import { useIntl, defineMessages } from 'react-intl';
 import config from '@plone/volto/registry';
 
@@ -64,11 +67,11 @@ const ViewBlock = ({ data, index, isEditMode = false }) => {
     }
   }
 
-  const ref = React.createRef();
+  const { wrapperRef, active, activate } = useVideoEmbedFocus();
   const onKeyDown = (e) => {
     if (e.nativeEvent.keyCode === 13) {
       //Enter
-      ref.current.handleClick();
+      activate();
     }
   };
 
@@ -83,18 +86,18 @@ const ViewBlock = ({ data, index, isEditMode = false }) => {
         <FontAwesomeIcon icon={['fas', 'play']} />
       </div>
     ),
-    defaultActive: false,
+    active: active,
     autoplay: false,
     aspectRatio: '16:9',
     placeholder: placeholder,
     tabIndex: 0,
     onKeyPress: onKeyDown,
-    ref: ref,
+    onClick: activate,
     'aria-label': intl.formatMessage(messages.loadVideo),
   };
 
   return data?.url ? (
-    <div className="video-wrapper">
+    <div className="video-wrapper" ref={wrapperRef}>
       <ConditionalEmbed url={!isEditMode ? data.url : null}>
         {data.url.match('youtu') ? (
           <>
@@ -127,6 +130,7 @@ const ViewBlock = ({ data, index, isEditMode = false }) => {
                         : data.url
                     }
                     controls
+                    poster={placeholder || undefined}
                     type="video/mp4"
                   />
                 ) : data.allowExternals ? (

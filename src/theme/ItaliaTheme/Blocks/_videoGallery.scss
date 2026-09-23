@@ -34,6 +34,23 @@
     }
   }
 
+  // The generic slider styles add a misaligned 1px border on the focused
+  // slide (see Views/_slider.scss). For the video gallery the slide content
+  // is offset by the embed padding, so that border cuts through the cover
+  // image. Replace it with an outline that hugs the visible video.
+  .it-single-slide-wrapper:focus {
+    border: none;
+
+    .video-wrapper {
+      .ui.embed img.placeholder,
+      .ui.embed iframe,
+      > video {
+        outline: 2px solid $outer-focus-outline;
+        outline-offset: 2px;
+      }
+    }
+  }
+
   .video-wrapper {
     .ui.embed {
       position: relative;

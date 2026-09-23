@@ -19,6 +19,7 @@ import {
   setOriginalQuery,
 } from 'design-comuni-plone-theme/actions';
 import Item from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Calendar/Item';
+import { decorateSliderDots } from 'design-comuni-plone-theme/components/ItaliaTheme/Slider/slider';
 import { viewDate } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
@@ -176,6 +177,9 @@ const Body = ({ data, block, inEditMode, path, onChangeBlock, reactSlick }) => {
     infinite: false,
     initialSlide: 0,
     dotsClass: 'slick-dots dot',
+    appendDots: (dots) => (
+      <ul className="slick-dots dot">{decorateSliderDots(dots)}</ul>
+    ),
     lazyLoad: true,
     afterChange: (current, next) => setActivePage(current),
     responsive: [

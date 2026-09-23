@@ -20,6 +20,11 @@ msgstr ""
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 "X-Generator: Poedit 2.2.1\n"
 
+#: overrideTranslations
+# defaultMessage: Error 404 - Page not found
+msgid "404-pageNotFoundTitle"
+msgstr ""
+
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
 # defaultMessage: Accedi all'area personale
 msgid "Accedi all'area personale"
@@ -1386,6 +1391,7 @@ msgstr "Mostrar el fondo del bloque"
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Colore di sfondo
 msgid "bg_color"
@@ -1586,6 +1592,11 @@ msgstr ""
 msgid "color_default"
 msgstr ""
 
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Nessuno
+msgid "color_none"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 # defaultMessage: Note
 msgid "color_note"
@@ -1598,10 +1609,16 @@ msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Sidebar
 #: components/ItaliaTheme/Blocks/HighlightedContent/Sidebar
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
 #: components/ItaliaTheme/Blocks/Teaser/schema
 # defaultMessage: Primario
 msgid "color_primary"
 msgstr "Primario"
+
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Secondario
+msgid "color_secondary"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 # defaultMessage: Success
@@ -1618,6 +1635,11 @@ msgstr "Transparente"
 #: components/ItaliaTheme/Blocks/Callout/Sidebar
 # defaultMessage: Giallo
 msgid "color_warning"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/IconBlocks/Sidebar
+# defaultMessage: Numero di colonne
+msgid "columns"
 msgstr ""
 
 #: components/ItaliaTheme/View/IncaricoView/IncaricoView
@@ -2486,6 +2508,11 @@ msgstr ""
 msgid "feedback_answers_header_positive"
 msgstr ""
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: Select an option to proceed
+msgid "feedback_answers_required_hint"
+msgstr ""
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: The instructions were clear
 msgid "feedback_clear_instructions"
@@ -2526,6 +2553,11 @@ msgstr ""
 msgid "feedback_error"
 msgstr ""
 
+#: components/ItaliaTheme/CustomerSatisfaction/Steps/AnswersStep
+# defaultMessage: required
+msgid "feedback_field_required"
+msgstr ""
+
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Feedback form
 msgid "feedback_form_aria_title"
@@ -2539,6 +2571,11 @@ msgstr ""
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 # defaultMessage: Previous
 msgid "feedback_form_button_prev"
+msgstr ""
+
+#: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
+# defaultMessage: Send
+msgid "feedback_form_button_send"
 msgstr ""
 
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
@@ -2712,6 +2749,16 @@ msgstr "Galería de imágenes"
 # defaultMessage: Chiudi l'anteprima
 msgid "gallery_close_preview"
 msgstr "Cerrar vista previa"
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine di copertina
+msgid "gallery_preview_image"
+msgstr "Imagen de portada"
+
+#: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
+# defaultMessage: Immagine mostrata in anteprima al posto della copertina di default del video.
+msgid "gallery_preview_image_description"
+msgstr "Imagen mostrada en la vista previa en lugar de la portada por defecto del video."
 
 #: components/ItaliaTheme/Blocks/VideoGallery/Sidebar
 # defaultMessage: Titolo del video

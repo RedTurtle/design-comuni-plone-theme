@@ -25,14 +25,21 @@ function DateRangeFacetFilterListEntry(props) {
   }, [data, facet]);
   const dateRangeLabel = useMemo(() => {
     const queryIndex = searchData?.query?.find((q) => q.i === facet);
+    const parseRangeStart = (v) => (v ? moment.utc(v).local() : null);
+    const parseRangeEnd = (v) =>
+      v ? moment.utc(v).local().subtract(1, 'day') : null;
+
     let start, end;
     if (queryIndex) {
       if (queryIndex.o.includes('date.largerThan'))
-        [start, end] = [queryIndex.v, null];
+        [start, end] = [parseRangeStart(queryIndex.v), null];
       else if (queryIndex.o.includes('date.lessThan'))
-        [start, end] = [null, queryIndex.v];
+        [start, end] = [null, parseRangeEnd(queryIndex.v)];
       else if (queryIndex.o.includes('date.between'))
-        [start, end] = queryIndex.v;
+        [start, end] = [
+          parseRangeStart(queryIndex.v[0]),
+          parseRangeEnd(queryIndex.v[1]),
+        ];
     }
 
     let label;
@@ -41,15 +48,15 @@ function DateRangeFacetFilterListEntry(props) {
         label = `${intl.formatMessage(
           commonSearchBlockMessages.DateRangeFacetFilterListEntryDalAl,
           {
-            start: moment(start).locale(intl.locale).format('DD-MM-YYYY'),
-            end: moment(end).locale(intl.locale).format('DD-MM-YYYY'),
+            start: start.locale(intl.locale).format('DD-MM-YYYY'),
+            end: end.locale(intl.locale).format('DD-MM-YYYY'),
           },
         )}`;
       else
         label = `${intl.formatMessage(
           commonSearchBlockMessages.DateRangeFacetFilterListEntryDal,
           {
-            start: moment(start).locale(intl.locale).format('DD-MM-YYYY'),
+            start: start.locale(intl.locale).format('DD-MM-YYYY'),
           },
         )}`;
     } else {
@@ -57,7 +64,7 @@ function DateRangeFacetFilterListEntry(props) {
         label = `${intl.formatMessage(
           commonSearchBlockMessages.DateRangeFacetFilterListEntryAl,
           {
-            end: moment(end).locale(intl.locale).format('DD-MM-YYYY'),
+            end: end.locale(intl.locale).format('DD-MM-YYYY'),
           },
         )}`;
     }

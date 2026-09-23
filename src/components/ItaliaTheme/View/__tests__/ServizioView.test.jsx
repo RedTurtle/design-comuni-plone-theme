@@ -56,6 +56,8 @@ const mock_mandatory = {
   '@type': 'Servizio',
   UID: '3643564b4346478d9d3de790943f3d03',
   id: 'visita-veterinaria-gratis',
+  area: [],
+  items: [],
   a_chi_si_rivolge: {
     blocks: {
       '2851114d-2489-4ea3-9b46-062cf6437418': {
@@ -341,6 +343,11 @@ const mock_mandatory = {
     },
   },
   description: 'Fai visitare il tuo cucciolo',
+  parent: {
+    '@id': 'http://localhost:3000/servizi',
+    '@type': 'Document',
+    title: 'Servizi',
+  },
   title: 'Visita veterinaria gratis',
   tassonomia_argomenti: [
     {
@@ -1250,6 +1257,9 @@ const store = mockStore({
   intl: {
     locale: 'en',
     messages: {},
+  },
+  site: {
+    data: {},
   },
   content: {
     subrequests: {

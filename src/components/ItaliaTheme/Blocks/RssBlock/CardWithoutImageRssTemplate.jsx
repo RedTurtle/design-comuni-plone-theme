@@ -8,7 +8,6 @@ import {
   CardBody,
   CardTitle,
   CardText,
-  CardReadMore,
   Row,
   Col,
 } from 'design-react-kit';
@@ -36,6 +35,7 @@ const CardWithoutImageRssTemplate = ({
 }) => {
   const intl = useIntl();
   const titleID = data?.title ? data.title.replace(/[^A-Z0-9]+/gi, '_') : '';
+  const colLg = 12 / (data.cards_per_row ?? 4);
 
   return (
     <div className={cx('', { 'public-ui': isEditMode })} aria-live="polite">
@@ -52,7 +52,7 @@ const CardWithoutImageRssTemplate = ({
           )}
           <Row>
             {items.map((item, index) => (
-              <Col lg={3} className="mb-3" key={index}>
+              <Col lg={colLg} className="mb-3" key={index}>
                 <Card noWrapper={false} tag="div" className="card-bg">
                   <CardBody tag="div">
                     <div className="category-top">
@@ -64,33 +64,35 @@ const CardWithoutImageRssTemplate = ({
                           <span className="mx-1">&mdash;</span>
                         </>
                       )}
-                      {(item.pubDate || item.date) && (
-                        <span>
-                          {getViewDate(item.pubDate || item.date, intl.locale)}
+                      {!data.hide_date && (item.pubDate || item.date) && (
+                        <span className="data d-inline-flex">
+                          <span className="event-when">
+                            <span className="start-date">
+                              {getViewDate(
+                                item.pubDate || item.date,
+                                intl.locale,
+                              )}
+                            </span>
+                          </span>
                         </span>
                       )}
                     </div>
-                    <CardTitle tag="h3" className="h6">
-                      {item.title}
+                    <CardTitle tag="h3" className="mb-3">
+                      <UniversalLink href={item?.url} title={item.title}>
+                        {item.title}
+                      </UniversalLink>
                     </CardTitle>
                     {item?.source?.length > 0 && (
                       <div className="source-title">
                         <span className="source">{item.source}</span>
                       </div>
                     )}
-                    <CardText tag="p" className="font-serif">
-                      {item.contentSnippet}
-                    </CardText>
+                    {data.show_description && (
+                      <CardText tag="p" className="font-serif">
+                        {item.contentSnippet}
+                      </CardText>
+                    )}
                   </CardBody>
-                  <CardReadMore
-                    iconName="it-arrow-right"
-                    className="ms-4"
-                    tag="a"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={item?.url}
-                    text={intl.formatMessage(messages.readMore)}
-                  />
                 </Card>
               </Col>
             ))}

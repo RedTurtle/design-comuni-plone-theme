@@ -127,6 +127,10 @@ const SliderTemplate = ({
             function () {
               return null;
             };
+          // Inerte finché i dot restano aria-hidden, creato per coerenza.
+          const isActive = (item.props.className || '').includes(
+            'slick-active',
+          );
           return (
             <El
               key={index}
@@ -147,6 +151,7 @@ const SliderTemplate = ({
                 aria-label={intl.formatMessage(messages.slideDot, {
                   index: index + 1,
                 })}
+                {...(isActive ? { 'aria-current': 'true' } : {})}
               />
             </El>
           );
