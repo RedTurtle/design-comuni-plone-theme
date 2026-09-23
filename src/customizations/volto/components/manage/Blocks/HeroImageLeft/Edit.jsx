@@ -1,7 +1,7 @@
 /*
 CUSTOMIZATIONS:
 - Added stores link
-- Added slate
+- Added slate to description field, and back compatibility for old values
 */
 
 /**
@@ -32,6 +32,7 @@ import clearSVG from '@plone/volto/icons/clear.svg';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import StoresButtons from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HeroImageLeft/StoresButtons';
 import HeroSidebar from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/HeroImageLeft/HeroSidebar';
+import { toSlateValue } from 'design-comuni-plone-theme/helpers';
 
 const messages = defineMessages({
   title: {
@@ -125,7 +126,7 @@ class EditComponent extends Component {
   blockRef = React.createRef();
 
   handleEnter = (e) => {
-    if (this.props.selected) {
+    if (this.props.selected && !this.state.currentFocused) {
       handleKeyDownOwnFocusManagement(e, this.props);
     }
   };
@@ -318,7 +319,7 @@ class EditComponent extends Component {
               })}
             >
               <div className="edit-title">
-                <h1>
+                <h2>
                   <TextEditorWidget
                     {...this.props}
                     showToolbar={false}
@@ -333,14 +334,17 @@ class EditComponent extends Component {
                       this.setState(() => ({ currentFocused: 'description' }));
                     }}
                   />
-                </h1>
+                </h2>
               </div>
 
               <p>
                 <TextEditorWidget
                   {...this.props}
-                  showToolbar={false}
-                  data={this.props.data}
+                  showToolbar={true}
+                  data={{
+                    ...this.props.data,
+                    description: toSlateValue(this.props.data.description),
+                  }}
                   fieldName="description"
                   selected={this.state.currentFocused === 'description'}
                   placeholder={this.props.intl.formatMessage(

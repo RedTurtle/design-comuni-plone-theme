@@ -14,6 +14,7 @@ import {
   NextArrow,
   PrevArrow,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { decorateSliderDots } from 'design-comuni-plone-theme/components/ItaliaTheme/Slider/slider';
 import { Container } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 
@@ -28,6 +29,9 @@ const Body = ({ data, children, nItems = 0, reactSlick }) => {
 
   const settings = {
     dots: true,
+    appendDots: (dots) => (
+      <ul className="slick-dots">{decorateSliderDots(dots)}</ul>
+    ),
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     infinite: true,

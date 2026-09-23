@@ -238,7 +238,7 @@ const getSearchParamsURL = (
 
   let text = searchableText ? { SearchableText: searchableText } : null;
 
-  baseUrl += '/search';
+  baseUrl += config.settings.search?.baseUrl ?? '/search';
 
   if (getObject) {
     let obj = {

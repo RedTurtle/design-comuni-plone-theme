@@ -3,7 +3,7 @@
  * @module components/theme/Navigation/Navigation
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { map } from 'lodash';
 import cx from 'classnames';
@@ -80,6 +80,28 @@ const MegaMenu = ({ item, pathname }) => {
   const isItemActive = isActive(item, pathname);
 
   const [menuStatus, setMenuStatus] = useState(false);
+  const firstItemRef = useRef(null);
+
+  useEffect(() => {
+    if (menuStatus) {
+      firstItemRef.current?.querySelector('a')?.focus();
+    }
+  }, [menuStatus]);
+
+  useEffect(() => {
+    if (!menuStatus) {
+      return;
+    }
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        setMenuStatus(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [menuStatus]);
 
   const getAnchorTarget = (nodeElement) => {
     if (nodeElement.nodeName === 'A') {
@@ -115,7 +137,7 @@ const MegaMenu = ({ item, pathname }) => {
 
   if (item.mode === 'simpleLink') {
     return item.linkUrl?.length > 0 ? (
-      <NavItem tag="li" active={isItemActive} role="none">
+      <NavItem tag="li" active={isItemActive}>
         <NavLink
           className={isItemActive ? 'focus--mouse' : ''}
           href={item.linkUrl === '' ? '/' : null}
@@ -123,7 +145,7 @@ const MegaMenu = ({ item, pathname }) => {
           tag={UniversalLink}
           data-element={item.id_lighthouse}
           active={isItemActive}
-          role="menuitem"
+          aria-label={item.title}
         >
           <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
           {isItemActive && (
@@ -246,12 +268,16 @@ const MegaMenu = ({ item, pathname }) => {
       }
     }
 
+    const showMoreLabel =
+      item.showMoreText?.length > 0
+        ? item.showMoreText
+        : intl.formatMessage(messages.view_all);
+
     return (
       <NavItem
         tag="li"
         className={isItemActive ? 'focus--mouse megamenu' : 'megamenu'}
         active={isItemActive}
-        role="none"
       >
         <UncontrolledDropdown
           nav
@@ -260,20 +286,15 @@ const MegaMenu = ({ item, pathname }) => {
           tag="div"
           toggle={() => setMenuStatus(!menuStatus)}
         >
-          <DropdownToggle
-            role="menuitem"
-            aria-haspopup
-            color="secondary"
-            nav
-            data-element={item.id_lighthouse}
-          >
+          <DropdownToggle aria-haspopup color="secondary" nav>
             <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
             <Icon
               icon="it-expand"
               className={cx('megamenu-toggle-icon', { open: menuStatus })}
             />
           </DropdownToggle>
-          <DropdownMenu flip tag="div">
+          {/* role={undefined} removes reactstrap's hardcoded role="menu" */}
+          <DropdownMenu flip tag="div" role={undefined}>
             <div className="text-end megamenu-close-button">
               <Button
                 color="link"
@@ -284,8 +305,7 @@ const MegaMenu = ({ item, pathname }) => {
                   }
                 }}
                 title={intl.formatMessage(messages.closeMenu)}
-                // APG spec: on Tab menu closes, so remove it from focusable elements
-                // https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-navigation/
+                // Out of Tab order: Escape/outside click already close the menu
                 tabIndex="-1"
               >
                 <Icon icon="it-close" />
@@ -298,12 +318,16 @@ const MegaMenu = ({ item, pathname }) => {
                     <Col lg={12 / max_cols} key={'group_' + index}>
                       <LinkList
                         className="bordered"
-                        role="menu"
                         aria-label={item.title ?? ''}
                       >
                         {group.map((child, idx) => {
                           return (
-                            <li key={child['@id'] + idx} role="none">
+                            <li
+                              key={child['@id'] + idx}
+                              ref={
+                                index === 0 && idx === 0 ? firstItemRef : null
+                              }
+                            >
                               {child.showAsHeader ? (
                                 <h3
                                   className={cx('list-item', {
@@ -319,7 +343,6 @@ const MegaMenu = ({ item, pathname }) => {
                                     condition={!!child['@id']}
                                     key={child['@id']}
                                     onClick={() => setMenuStatus(false)}
-                                    role="menuitem"
                                     aria-current="page"
                                   >
                                     <span>{child.title}</span>
@@ -339,7 +362,6 @@ const MegaMenu = ({ item, pathname }) => {
                                       true,
                                     ),
                                   })}
-                                  role="menuitem"
                                 >
                                   <span>{child.title}</span>
                                 </ConditionalLink>
@@ -386,19 +408,15 @@ const MegaMenu = ({ item, pathname }) => {
                 <Row>
                   <Col lg={8} />
                   <Col lg={4}>
-                    <LinkList role="menu" aria-label={item.showMoreText ?? ''}>
-                      <li className="it-more text-end" role="none">
+                    <LinkList>
+                      <li className="it-more text-end">
                         <UniversalLink
                           className="list-item medium"
                           item={item.showMoreLink[0]}
                           onClick={() => setMenuStatus(false)}
-                          role="menuitem"
+                          aria-label={`${showMoreLabel} ${item.title}`}
                         >
-                          <span>
-                            {item.showMoreText?.length > 0
-                              ? item.showMoreText
-                              : intl.formatMessage(messages.view_all)}
-                          </span>
+                          <span>{showMoreLabel}</span>
                           <Icon icon="it-arrow-right" />
                         </UniversalLink>
                       </li>

@@ -21,14 +21,14 @@ const EventoContatti = ({ content }) => {
   const intl = useIntl();
 
   return richTextHasContent(content?.organizzato_da_esterno) ||
-    content?.organizzato_da_interno.length > 0 ||
+    content?.organizzato_da_interno?.length > 0 ||
     content?.supportato_da?.length > 0 ||
     content?.contact_info?.length > 0 ? (
     <RichTextSection
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
     >
-      {content.contact_info.map((contact) => (
+      {content.contact_info?.map((contact) => (
         <ContactsCard contact={contact} key={contact['@id']} />
       ))}
 

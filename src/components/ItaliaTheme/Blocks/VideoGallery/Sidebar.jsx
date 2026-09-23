@@ -5,6 +5,8 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { Icon, TextWidget, CheckboxWidget } from '@plone/volto/components';
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
+import clearSVG from '@plone/volto/icons/clear.svg';
+import navTreeSVG from '@plone/volto/icons/nav.svg';
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -29,6 +31,15 @@ const messages = defineMessages({
     id: 'gallery_video_title_description',
     defaultMessage:
       "Non viene mostrato. Serve al redattore per identificare meglio il video all'interno della gallery.",
+  },
+  preview_image: {
+    id: 'gallery_preview_image',
+    defaultMessage: 'Immagine di copertina',
+  },
+  preview_image_description: {
+    id: 'gallery_preview_image_description',
+    defaultMessage:
+      'Immagine mostrata in anteprima al posto della copertina di default del video.',
   },
   allowExternals: {
     id: 'Allow Externals',
@@ -149,6 +160,37 @@ const Sidebar = ({
                           [name]: value,
                         });
                       }}
+                    />
+
+                    <TextWidget
+                      id="preview_image"
+                      title={intl.formatMessage(messages.preview_image)}
+                      description={intl.formatMessage(
+                        messages.preview_image_description,
+                      )}
+                      required={false}
+                      value={subblock.preview_image?.split('/').slice(-1)[0]}
+                      icon={subblock.preview_image ? clearSVG : navTreeSVG}
+                      iconAction={
+                        subblock.preview_image
+                          ? () => {
+                              onChangeSubBlock(index, {
+                                ...subblock,
+                                preview_image: '',
+                              });
+                            }
+                          : () =>
+                              openObjectBrowser({
+                                mode: 'image',
+                                onSelectItem: (url) => {
+                                  onChangeSubBlock(index, {
+                                    ...subblock,
+                                    preview_image: url,
+                                  });
+                                },
+                              })
+                      }
+                      onChange={() => {}}
                     />
                   </Accordion.Content>
                 </div>

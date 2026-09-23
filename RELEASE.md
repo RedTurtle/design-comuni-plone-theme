@@ -41,21 +41,91 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione x.x.x (xx/xx/xxxx)
 
 ### Migliorie
 
-- ...
+- Ora in un pannello di controllo, se si clicca sul pulsante "Annulla" nella toolbar torna sempre alla pagina principale dei pannelli di controllo. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
-### Novità
+- Nel blocco "RSS" è stato uniformato lo stile della card a quella del blocco "Elenco", con la possibilità di decidere se mostrare la data
+  e la descrizione della card. Inoltre, è possibile scegliere se mostrare 3 o 4 card per riga.
 
-- Nella folder contents, ora viene mostrato un messaggio di avviso quando si sta cercando di spostare / cancellare / rinominare / cambiare lo stato di più di 300 elementi (o del numero configurabile a livello di applicazione dagli sviluppatori.) _(**Origine / contributo**: Regione Emilia-Romagna)_
-- Migliorata l'accessibilità della folder content. _(**Origine / contributo**: Regione Emilia-Romagna)_
-- Nella folder content, ora viene mostrato un messaggio di errore più coerente ed esplicativo quando si verifica un errore. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nel form di soddisfazione del cittadino (customer satisfaction) è stato tolto l'asterisco dalla domanda obbligatoria: l'obbligatorietà resta indicata dal messaggio "Scegli un'opzione per proseguire" sotto le risposte e continua a essere comunicata alle tecnologie assistive. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+
+
+## Versione 12.15.1 (01/09/2026)
+
+### Migliorie
+
+- Nel blocco "Cerca", il filtro per intervallo di date ora usa lo stesso calendario già in uso nel blocco di ricerca bandi/pubblicazioni; inoltre, il filtro per data adesso include l'intera giornata finale selezionata. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
 ### Fix
 
-- Blocco Listing con template a tabella. Corretta la visualizzazione dei campi con valori multipli (es. "Destinatari") che causavano un errore di rendering. I valori vengono ora mostrati correttamente come etichette separate da virgola.
+- Risolto un errore nel blocco CTA che generava un titolo vuoto nella pagina quando il campo titolo non veniva compilato.
+
+- Risolto un errore di struttra html nelle paginazioni che generava una lista duplicata nel codice della pagina. La duplicazione non era visibile a schermo ma rendeva il markup non valido e problematico per le tecnologie assistive.
+
+- Migliorata l'accessibilità del form di soddisfazione del cittadino (customer satisfaction): ora la domanda obbligatoria del secondo passaggio viene segnalata come tale sia visivamente che alle tecnologie assistive, con un messaggio che indica la necessità di scegliere un'opzione per proseguire. Inoltre il pulsante per l'invio della valutazione ha ora etichetta "Invia" invece di "Avanti". _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+- Risolto un problema di gerarchia dei titoli nel blocco Accordion. Il titolo del blocco e il titolo di ogni voce dell'accordion ora si adattano alla struttura della pagina, migliorando la navigazione con le tecnologie assistive.
+
+- Accessibilità: Risolto un problema di gerarchia dei titoli nel template "Allegati" del blocco elenco. Il titolo di ogni scheda allegato ora si adatta alla struttura della pagina invece di usare sempre lo stesso livello fisso, migliorando la navigazione con le tecnologie assistive.
+
+## Versione 12.15.0 (24/08/2026)
+
+### Novità
+
+- Nel blocco "Blocchi con icone" è ora possibile scegliere il numero di colonne (2, 3, 4 o 6) e un colore di sfondo (Nessuno, Primario, Secondario).
+
+### Fix
+
+- Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nei campi data e data + ora, il tasto Esc adesso chiude sempre il calendario. Prima non funzionava se il focus da tastiera era già entrato dentro al calendario. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nei sottositi, le voci configurate nel pannello di controllo per lo slim header vengono ora mostrate correttamente.
+
+## Versione 12.14.2 (30/07/2026)
+
+### Fix
+
+- Sistemato il blocco Hero: ora il titolo del blocco è un H2, ed è possibile formattare il testo della descrizione. _(**Origine / contributo**: Regione Emilia-Romagna)_ <!--us-72598-->
+- Sistemata l'accessibilità del menu di navigazione principale del sito. Le voci di menu e i sottomenu ora vengono annunciati correttamente dalle tecnologie assistive.<!--us-64950-->
+- Il nome annunciato dalle tecnologie assistive per i link del menu ora corrisponde sempre al testo visibile, anche per il link 'Vedi tutto'. <!--us-64950-->
+
+## Versione 12.14.1 (22/07/2026)
+
+### Migliorie
+
+- Migliorata l'accessibilità degli slider. Le tecnologie assistive ora segnalano quale slide è attualmente selezionata.
+
+## Versione 12.14.0 (20/07/2026)
+
+### Migliorie
+
+- Durante il caricamento massivo di file, in caso di errore viene ora mostrato un avviso. _(**Origine / contributo**: Regione Emilia-Romagna)_ <!--us-69720-->
+
+### Novità
+
+- Nel blocco Video e nel blocco Video Gallery, è stata aggiunta la possibilità di definire un'immagine di copertina per i video diversa da quella di default automatica.<!--us-76313-->
+
+### Fix
+
+- Risolto un errore nella pagina degli eventi che in alcuni casi ne impediva la visualizzazione. L'errore si verificava quando la sezione Contatti dell'evento riportava informazioni sull'organizzatore o sui sostenitori ma non conteneva alcun contatto in elenco. <!--us-76991 -->
+- Uniformato l'allineamento dell'icona e del titolo in tutte le card che mostrano allegati. <!--us-54701-->
+- Rimosse le breadcrumbs dalla pagina principale
+
+## Versione 12.13.0 (25/06/2026)
+
+### Migliorie
+
+- Nella folder contents, ora viene mostrato un messaggio di avviso quando si sta cercando di spostare / cancellare / rinominare / cambiare lo stato di più di 300 elementi (o del numero configurabile a livello di applicazione dagli sviluppatori.) _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nella folder content, ora viene mostrato un messaggio di errore più coerente ed esplicativo quando si verifica un errore. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Migliorata l'accessibilità della folder content. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+### Fix
+
+- Nel blocco Elenco con template a tabella è stata corretta la visualizzazione dei campi con valori multipli (es. "Destinatari") che causavano un errore di rendering. I valori vengono ora mostrati correttamente come valori separati da virgola.
 
 ## Versione 12.12.4 (08/06/2026)
 

@@ -9,6 +9,10 @@ services:
         ADDON_NAME: '${ADDON_NAME}'
         ADDON_PATH: '${ADDON_PATH}'
         VOLTO_VERSION: ${VOLTO_VERSION:-17}
+      cache_from:
+        - type=gha
+      cache_to:
+        - type=gha,mode=max
     volumes:
       - ${CURRENT_DIR}:/app/src/addons/${ADDON_PATH}/
     environment:
