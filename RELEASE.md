@@ -52,6 +52,8 @@
 
 - Nel form di soddisfazione del cittadino (customer satisfaction) è stato tolto l'asterisco dalla domanda obbligatoria: l'obbligatorietà resta indicata dal messaggio "Scegli un'opzione per proseguire" sotto le risposte e continua a essere comunicata alle tecnologie assistive. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
+
+
 ## Versione 12.15.1 (01/09/2026)
 
 ### Migliorie
