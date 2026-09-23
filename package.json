@@ -169,7 +169,7 @@
     "webpack-image-resize-loader": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.19.6",
+    "@babel/core": "7.29.6",
     "@babel/eslint-parser": "7.23.3",
     "@babel/plugin-syntax-export-namespace-from": "^7.8.3",
     "@commitlint/cli": "17.6.6",
