@@ -8749,7 +8749,7 @@ __metadata:
     typeface-lora: 0.0.72
     typeface-roboto-mono: 0.0.75
     typeface-titillium-web: 0.0.72
-    volto-blocks-widget: "github:collective/volto-blocks-widget"
+    volto-blocks-widget: 3.4.11
     volto-data-grid-widget: 2.4.1
     volto-dropdownmenu: 4.1.6
     volto-editablefooter: "github:RedTurtle/volto-editablefooter#fix/footer-top-hooks-order"
@@ -17147,12 +17147,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-blocks-widget@github:collective/volto-blocks-widget":
-  version: 3.4.10
-  resolution: "volto-blocks-widget@https://github.com/collective/volto-blocks-widget.git#commit=af3dec2574d895ae3c74617b10c93bc1e8db1f4b"
+"volto-blocks-widget@npm:3.4.11":
+  version: 3.4.11
+  resolution: "volto-blocks-widget@npm:3.4.11"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: 82b45a3a4a4529fd91f3fef911b16166554f6201244af56365952e649f7f9332006e990bc52a6c1adf54892974d128b86cf36c56f8de42b25040ce6c872ee400
+  checksum: 06a53223b121fe3c23dec75e2c2a36de1ef1efee9be19c612e3e9bea8b9d60790c45075488c80d113255d8c7494c66a54f4d2f76858100764d0becbcc2581350
   languageName: node
   linkType: hard
 
