@@ -86,7 +86,7 @@ const CardWithImageRssTemplate = ({
                         getViewDate(item.pubDate || item.date, intl.locale)
                       }
                     >
-                      {item?.categories?.[0]?._}
+                      {item?.categories?.[0]}
                     </CardCategory>
                     <CardTitle tag="h3" className="mb-3">
                       <UniversalLink href={item?.url} title={item.title}>
