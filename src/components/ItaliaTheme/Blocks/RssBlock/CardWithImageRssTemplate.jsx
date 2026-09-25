@@ -14,6 +14,7 @@ import {
 
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
+import { CardCategory } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import { getViewDate } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/utils';
 
@@ -58,40 +59,37 @@ const CardWithImageRssTemplate = ({
                   {item.enclosure?.url && (
                     <div className="img-responsive-wrapper">
                       <div className="img-responsive img-responsive-panoramic">
-                        <figure className="img-wrapper">
-                          <img
-                            aria-hidden="true"
-                            alt={item.title}
-                            src={item.enclosure.url}
-                            loading="lazy"
-                          />
-                        </figure>
+                        <UniversalLink
+                          href={item?.url}
+                          overrideMarkSpecialLinks={true}
+                          tabIndex={-1}
+                          aria-hidden="true"
+                        >
+                          <figure className="img-wrapper">
+                            <img
+                              aria-hidden="true"
+                              alt={item.title}
+                              src={item.enclosure.url}
+                              loading="lazy"
+                            />
+                          </figure>
+                        </UniversalLink>
                       </div>
                     </div>
                   )}
                   <CardBody tag="div" className="px-4">
-                    <div className="category-top">
-                      {item?.categories?.length > 0 && item.categories[0]._ && (
-                        <>
-                          <span className="category">
-                            {item.categories[0]._}
-                          </span>
-                          <span className="mx-1">&mdash;</span>
-                        </>
-                      )}
-                      {!data.hide_date && (
-                        <span className="data d-inline-flex">
-                          <span className="event-when">
-                            <span className="start-date">
-                              {getViewDate(
-                                item.pubDate || item.date,
-                                intl.locale,
-                              )}
-                            </span>
-                          </span>
-                        </span>
-                      )}{' '}
-                    </div>
+                    <CardCategory
+                      iconName="it-rss"
+                      date={
+                        !data.hide_date &&
+                        (item.pubDate || item.date) &&
+                        getViewDate(item.pubDate || item.date, intl.locale)
+                      }
+                    >
+                      {item?.categories
+                        ?.map((cat) => (typeof cat === 'string' ? cat : cat?._))
+                        .join(', ')}
+                    </CardCategory>
                     <CardTitle tag="h3" className="mb-3">
                       <UniversalLink href={item?.url} title={item.title}>
                         {item.title}
@@ -103,9 +101,7 @@ const CardWithImageRssTemplate = ({
                       </div>
                     )}
                     {data.show_description && (
-                      <CardText tag="p" className="font-serif">
-                        {item.contentSnippet}
-                      </CardText>
+                      <CardText tag="p">{item.contentSnippet}</CardText>
                     )}
                   </CardBody>
                 </Card>
