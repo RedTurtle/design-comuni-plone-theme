@@ -64,7 +64,9 @@ const CardWithoutImageRssTemplate = ({
                         getViewDate(item.pubDate || item.date, intl.locale)
                       }
                     >
-                      {item?.categories?.[0]}
+                      {item?.categories
+                        ?.map((cat) => (typeof cat === 'string' ? cat : cat?._))
+                        .join(', ')}
                     </CardCategory>
                     <CardTitle tag="h3" className="mb-3">
                       <UniversalLink href={item?.url} title={item.title}>
