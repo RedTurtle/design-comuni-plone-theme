@@ -13,7 +13,7 @@ module.exports = {
     '<rootDir>/src/addons/design-comuni-plone-theme/project',
   ],
   transformIgnorePatterns: [
-    'node_modules/(?!(volto-slate|@plone/volto|@plone/registry|design-react-kit|volto-))',
+    'node_modules/(?!(volto-slate|@plone/volto|@plone/registry|design-react-kit|volto-|query-string|decode-uri-component|filter-obj|split-on-first|uuid))',
   ],
   moduleNameMapper: {
     '\\.(css|less|scss|sass|svg)$': 'identity-obj-proxy',
