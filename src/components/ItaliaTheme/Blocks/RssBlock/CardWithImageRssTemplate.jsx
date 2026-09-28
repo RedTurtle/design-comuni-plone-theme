@@ -87,7 +87,7 @@ const CardWithImageRssTemplate = ({
                       }
                     >
                       {item?.categories
-                        ?.map((cat) => (typeof cat === 'string' ? cat : cat?._))
+                        ?.map((cat) => (typeof cat === 'string' ? cat : JSON.stringify(cat)))
                         .join(', ')}
                     </CardCategory>
                     <CardTitle tag="h3" className="mb-3">
