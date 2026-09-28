@@ -16,6 +16,17 @@
         }
       }
 
+      .categoryicon-top .icon {
+        margin-right: 0;
+      }
+
+      .card-text {
+        color: $gray-secondary;
+        font-family: $font-family-sans-serif;
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+
       .source-title {
         margin-bottom: $card-category-m-bottom;
         color: $card-p-color;
