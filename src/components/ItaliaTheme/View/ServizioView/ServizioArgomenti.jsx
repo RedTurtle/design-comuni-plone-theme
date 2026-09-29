@@ -24,9 +24,9 @@ const ServizioArgomenti = ({ content }) => {
 
   return content?.tassonomia_argomenti?.length > 0 ? (
     <div className="mt-0 mb-5 servizio-arguments">
-      <h5>
+      <h2 className="h5">
         <small>{intl.formatMessage(messages.service_topics)}</small>
-      </h5>
+      </h2>
       <div className="d-flex flex-wrap gap-2 mb-3">
         {content.tassonomia_argomenti.map((item, i) => (
           <a
