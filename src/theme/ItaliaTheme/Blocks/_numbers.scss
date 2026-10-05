@@ -72,11 +72,20 @@
     }
   }
 
+  // Le colonne dei numeri si allargano in base al contenuto, così il numero
+  // non va mai a capo.
+  .block-number-col {
+    flex: 1 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+
   .block-number {
     .subblock-title {
-      font-size: 5.5rem;
+      font-size: clamp(2.5rem, 8vw, 5.5rem);
       font-weight: 500;
       line-height: 1em;
+      white-space: nowrap;
 
       .simple-text-editor-widget {
         font-family: $font-family-monospace !important;
@@ -105,10 +114,6 @@
     }
 
     .block-number {
-      .subblock-title {
-        font-size: 5rem;
-      }
-
       .subblock-text {
         font-size: 1.2rem;
         line-height: 1.35rem;

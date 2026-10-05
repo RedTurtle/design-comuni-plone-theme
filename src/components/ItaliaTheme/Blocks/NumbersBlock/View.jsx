@@ -70,7 +70,12 @@ const NumbersView = ({ data, block }) => {
               </Col>
 
               {data.subblocks.map((subblock, index) => (
-                <Col sm="6" lg="4" key={subblock.id}>
+                <Col
+                  sm="6"
+                  lg="4"
+                  key={subblock.id}
+                  className="block-number-col"
+                >
                   <ViewBlock
                     data={subblock}
                     key={index}

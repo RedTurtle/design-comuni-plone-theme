@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Il blocco numberi è ora ottimizzato per il mobile: i numeri non vengono più tagliati fuori dal blocco.
+
 ## Versione 12.16.0 (23/09/2026)
 
 ### Migliorie
