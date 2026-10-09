@@ -53,7 +53,7 @@
 
 ### Fix
 
-- Il blocco numberi è ora ottimizzato per il mobile: i numeri non vengono più tagliati fuori dal blocco.
+- Nel blocco "Numeri" è stata aggiunta l'opzione "Abilita layout fluido": va attivata quando i numeri sono lunghi (più di 4-5 caratteri) e adatta la larghezza delle colonne al numero, evitando che vada a capo. Di default il layout resta invariato.
 
 ## Versione 12.16.0 (23/09/2026)
 
