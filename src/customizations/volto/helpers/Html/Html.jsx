@@ -13,6 +13,9 @@
  * - Added `<meta property="og:type" content="website" />`.
  * - Added `shrink-to-fit=no` to the `viewport` meta content (upstream only sets
  *   `width=device-width, initial-scale=1`).
+ * - Removed the `generator` meta (information disclosure).
+ * - `window.env` without the env vars read only by the server and `window.__data`
+ *   without the backend internal URLs (see helpers/ssr).
  */
 
 import React, { Component } from 'react';
@@ -23,6 +26,10 @@ import join from 'lodash/join';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import { runtimeConfig } from '@plone/volto/runtime_config';
 import config from '@plone/volto/registry';
+import {
+  getPublicRuntimeConfig,
+  serializeState,
+} from 'design-comuni-plone-theme/helpers/ssr';
 
 const CRITICAL_CSS_TEMPLATE = `function alter() {
   document.querySelectorAll("head link[rel='prefetch']").forEach(function(el) { el.rel = 'stylesheet'});
@@ -125,7 +132,7 @@ class Html extends Component {
           <script
             dangerouslySetInnerHTML={{
               __html: `window.env = ${serialize({
-                ...runtimeConfig,
+                ...getPublicRuntimeConfig(runtimeConfig),
                 // Seamless mode requirement, the client need to know where the API is located
                 // if not set in the API_PATH
                 ...(apiPath && {
@@ -150,7 +157,6 @@ class Html extends Component {
            */}
 
           <meta property="og:type" content="website" />
-          <meta name="generator" content="Plone 6 - https://plone.org" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -207,8 +213,12 @@ class Html extends Component {
 
           <script
             dangerouslySetInnerHTML={{
-              __html: `window.__data=${serialize(
+              __html: `window.__data=${serializeState(
                 loadReducers(store.getState()),
+                {
+                  internalApiPath: config.settings.internalApiPath,
+                  apiPath: apiPath || config.settings.apiPath,
+                },
               )};`,
             }}
             charSet="UTF-8"
