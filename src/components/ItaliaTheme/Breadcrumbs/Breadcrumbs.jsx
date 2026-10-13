@@ -50,15 +50,18 @@ const Breadcrumbs = ({ pathname }) => {
   });
 
   // Funzione per fare match di routes
-  const getMatchingRoute = (p) =>
-    matchPath(location.pathname, p) !== null ||
-    matchPath(location.pathname, p.replace('**/', '')) !== null;
+  const getMatchingRoute = (p, exact) =>
+    matchPath(location.pathname, { path: p, exact: !!exact }) !== null ||
+    matchPath(location.pathname, {
+      path: p.replace('**/', ''),
+      exact: !!exact,
+    }) !== null;
 
   // Funzione per riconoscere se siamo in una route statica
   const getCurrentPathFromAddonRoutes = () =>
     config.addonRoutes.find((route) => {
       const paths = typeof route.path === 'string' ? [route.path] : route.path;
-      return paths.find(getMatchingRoute);
+      return paths.find((p) => getMatchingRoute(p, route.exact));
     }) || {};
 
   // Gestione delle rotte statiche. Se definito nel config della rotta un breadcrumbs_title, lo aggiungo alle breadcrumbs
@@ -70,10 +73,13 @@ const Breadcrumbs = ({ pathname }) => {
       items[items.length - 1].url !== location.pathname) ||
     (items.length === 0 && bcLoaded && route.breadcrumbs_title)
   ) {
-    items.push({
-      url: location.pathname,
-      title: intl.formatMessage(route.breadcrumbs_title),
-    });
+    items = [
+      ...items,
+      {
+        url: location.pathname,
+        title: intl.formatMessage(route.breadcrumbs_title),
+      },
+    ];
   }
   /** fine della gestione delle rotte statiche */
 
