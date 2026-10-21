@@ -447,7 +447,7 @@ const Search = () => {
               >
                 {Object.keys(sections)?.length > 0 && (
                   <div className="pt-4 pt-lg-0">
-                    <h6 className="text-uppercase">
+                    <h2 className="h6 text-uppercase">
                       {intl.formatMessage(messages.sections)}
 
                       <span
@@ -464,7 +464,7 @@ const Search = () => {
                       >
                         {activeSections}
                       </span>
-                    </h6>
+                    </h2>
                     <div className="mt-4">
                       <SearchSections
                         sections={sections}
@@ -483,7 +483,7 @@ const Search = () => {
                         : 'pt-4 pt-lg-0'
                     }
                   >
-                    <h6 className="text-uppercase">
+                    <h2 className="h6 text-uppercase">
                       {intl.formatMessage(messages.topics)}
 
                       <span
@@ -500,7 +500,7 @@ const Search = () => {
                       >
                         {activeTopics}
                       </span>
-                    </h6>
+                    </h2>
                     <div className="form-check mt-4">
                       <SearchTopics
                         topics={topics}
@@ -530,7 +530,7 @@ const Search = () => {
                     </Button>
                     <Collapse isOpen={advFiltersOpen} id="advFilters">
                       <div className="p-3 shadow-sm bg-white">
-                        <h6 className="text-uppercase">
+                        <h2 className="h6 text-uppercase">
                           {intl.formatMessage(messages.content_types)}
 
                           <span
@@ -547,7 +547,7 @@ const Search = () => {
                           >
                             {activePortalTypes}
                           </span>
-                        </h6>
+                        </h2>
                         <div className="form-checck mt-4">
                           <SearchCTs
                             portalTypes={portalTypes}
@@ -563,9 +563,9 @@ const Search = () => {
                 {values(options).filter((o) => o !== null && o !== undefined)
                   .length > 0 && (
                   <div className="pt-4 pt-lg-5">
-                    <h6 className="text-uppercase">
+                    <h2 className="h6 text-uppercase">
                       {intl.formatMessage(messages.options)}
-                    </h6>
+                    </h2>
                     {options.activeContent !== undefined && (
                       <div className="form-check mt-4">
                         <Toggle
