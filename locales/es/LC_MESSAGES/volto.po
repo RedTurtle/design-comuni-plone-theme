@@ -272,6 +272,11 @@ msgstr ""
 msgid "Deleting this item breaks {brokenReferences} {variation}."
 msgstr ""
 
+#. Default: "Profondità di ricerca"
+#: overrideTranslations
+msgid "Depth"
+msgstr ""
+
 #. Default: "Descrizione..."
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/NumbersBlock/Edit
@@ -554,6 +559,11 @@ msgstr "Número"
 #: components/ItaliaTheme/Header/SocialHeader
 msgid "Nuova scheda"
 msgstr "- abrir en una nueva pestaña"
+
+#. Default: "Salta i primi N. risultati"
+#: overrideTranslations
+msgid "Offset"
+msgstr ""
 
 #. Default: "Apri in un nuovo tab"
 #: components/ItaliaTheme/manage/Widgets/LinkToWidget

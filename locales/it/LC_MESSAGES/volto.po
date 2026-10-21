@@ -265,6 +265,11 @@ msgstr "Vuoi eliminare questo elemento?"
 msgid "Deleting this item breaks {brokenReferences} {variation}."
 msgstr "Cancellando questo elemento si romperanno {brokenReferences} {variation}."
 
+#. Default: "Profondità di ricerca"
+#: overrideTranslations
+msgid "Depth"
+msgstr ""
+
 #. Default: "Descrizione..."
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/NumbersBlock/Edit
@@ -547,6 +552,11 @@ msgstr "Numero"
 #: components/ItaliaTheme/Header/SocialHeader
 msgid "Nuova scheda"
 msgstr "- apri in nuova scheda"
+
+#. Default: "Salta i primi N. risultati"
+#: overrideTranslations
+msgid "Offset"
+msgstr ""
 
 #. Default: "Apri in un nuovo tab"
 #: components/ItaliaTheme/manage/Widgets/LinkToWidget
