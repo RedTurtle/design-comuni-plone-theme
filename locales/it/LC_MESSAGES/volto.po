@@ -268,7 +268,7 @@ msgstr "Cancellando questo elemento si romperanno {brokenReferences} {variation}
 #. Default: "Profondità di ricerca"
 #: overrideTranslations
 msgid "Depth"
-msgstr ""
+msgstr "Profondità di ricerca"
 
 #. Default: "Descrizione..."
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
@@ -556,7 +556,7 @@ msgstr "- apri in nuova scheda"
 #. Default: "Salta i primi N. risultati"
 #: overrideTranslations
 msgid "Offset"
-msgstr ""
+msgstr "Salta i primi N. risultati"
 
 #. Default: "Apri in un nuovo tab"
 #: components/ItaliaTheme/manage/Widgets/LinkToWidget
