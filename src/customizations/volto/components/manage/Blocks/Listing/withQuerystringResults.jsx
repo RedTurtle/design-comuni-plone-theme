@@ -8,6 +8,8 @@
  * - added additional fields to pass to @querystring-search (config.settings.querystringAdditionalFields)
  * - usedeepCompareEffect and integrate custom logic for searchBlock to make it work with our implementation
  * - used [subrequestID] instead [id] of block, as id of subrequest to avoid block unload on duplicate contents with blocks with same id's. Volto's pr: https://github.com/plone/volto/pull/5071
+ * - added _cache_key param in @querystring-search (based on UID and modify date of current content) to invalidate Varnish cache when content has been modified (both in normal query and for variation imageGallery)
+ *
  */
 import React, { createRef, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -219,6 +221,14 @@ export default function withQuerystringResults(WrappedComponent) {
         });
       }
 
+      // cache key basata su UID e data di modifica del contenuto, per la cache
+      // di Varnish (rer-theme); calcolata qui perché serve in entrambi i rami
+      // sotto (query normale e variation imageGallery)
+      const modifiedDate = content.modified
+        ? Math.floor(new Date(content.modified).getTime() / 1000)
+        : '';
+      const cachekey = `${content.UID}_${modifiedDate}`;
+
       if (_dataQuerystring?.query?.length > 0 || additionalFilters.length > 0) {
         let query = [
           ...(originalQuery && additionalFilters.length > 0
@@ -245,14 +255,14 @@ export default function withQuerystringResults(WrappedComponent) {
         if (page !== currentPage) {
           setCurrentPage(page);
         }
-        dispatch(
-          getQueryStringResults(
-            path,
-            getAdaptedQuery(_querystring, b_size, data.variation),
-            subrequestID,
-            page,
-          ),
+        const queryParams = getAdaptedQuery(
+          _querystring,
+          b_size,
+          data.variation,
         );
+        queryParams['_cache_key'] = cachekey;
+
+        dispatch(getQueryStringResults(path, queryParams, subrequestID, page));
       } else if (
         ((!data.variation && data.template === 'imageGallery') ||
           data.variation === 'imageGallery') &&
@@ -271,6 +281,7 @@ export default function withQuerystringResults(WrappedComponent) {
                   v: '',
                 },
               ],
+              _cache_key: cachekey,
             },
             subrequestID,
           ),
