@@ -47,6 +47,8 @@
 
 - Nella pagina dei risultati di ricerca è stata corretta la gerarchia dei titoli.
 
+- Migliorata l'accessibilità della pagina dei risultati di ricerca.
+
 ## Versione 12.16.1 (20/10/2026)
 
 ### Novità
