@@ -52,6 +52,16 @@ import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/l
 import FormBlockView from 'volto-form-block/components/View';
 import FormBlockEdit from 'volto-form-block/components/Edit';
 
+// Volto 18 removed the `hero` block from core (plone/volto#5846), so the
+// HeroImageLeft View/Edit under customizations/volto no longer shadow
+// anything: the addon registry aliases a customization only if the original
+// Volto file still exists. They are imported directly and the block is
+// registered below, otherwise existing hero blocks render as "Unknown Block".
+import heroSVG from '@plone/volto/icons/hero.svg';
+import BlockSettingsSchema from '@plone/volto/components/manage/Blocks/Block/Schema';
+import HeroView from 'design-comuni-plone-theme/customizations/volto/components/manage/Blocks/HeroImageLeft/View';
+import HeroEdit from 'design-comuni-plone-theme/customizations/volto/components/manage/Blocks/HeroImageLeft/Edit';
+
 // CTs icons
 import faFileInvoiceSVG from 'design-comuni-plone-theme/icons/file-invoice.svg';
 import faFolderOpenSVG from 'design-comuni-plone-theme/icons/folder-open.svg';
@@ -509,9 +519,20 @@ export default function applyConfig(voltoConfig) {
       listing_items_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       getAsyncData: null, // questo disabilita il ssr dei listing perché rallenta vistosamente la pagina (per ora continuiamo con rendertron)
     },
+    // Same entry Volto 17 registered in core, minus `blockSchema`: the
+    // sidebar is HeroSidebar. Volto reads `blockHasOwnFocusManagement`, not
+    // `hasOwnFocusManagement`.
     hero: {
-      ...config.blocks.blocksConfig.hero,
-      hasOwnFocusManagement: true,
+      id: 'hero',
+      title: 'Hero',
+      icon: heroSVG,
+      group: 'common',
+      view: HeroView,
+      edit: HeroEdit,
+      schema: BlockSettingsSchema,
+      restricted: false,
+      mostUsed: false,
+      blockHasOwnFocusManagement: true,
       sidebarTab: 1,
     },
     html: {
