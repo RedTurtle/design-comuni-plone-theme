@@ -9,6 +9,10 @@ import cx from 'classnames';
 import { Container, Row, Col } from 'design-react-kit';
 //import { isCmsUi } from '@plone/volto/helpers';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
+import BlockImage, {
+  hasBlockImage,
+  ALERT_IMAGE_SIZES,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Common/BlockImage';
 
 /**
  * View Alert block class.
@@ -23,16 +27,17 @@ const View = ({ data, id }) => {
       <div className={cx('full-width', 'bg-alert-' + background_color)}>
         <Container className="p-4 pt-5 pb-5">
           <Row className="align-items-start">
-            {data.image?.data && (
+            {hasBlockImage(data.image) && (
               <Col sm={2} className="pb-3 image-col">
-                <img
-                  src={`data:${data.image['content-type']};${data.image.encoding},${data.image.data}`}
+                <BlockImage
+                  image={data.image}
                   alt=""
                   aria-hidden="true"
                   className={cx('left-image', [
                     data.sizeImage ? 'size-' + data.sizeImage : 'size-l',
                   ])}
                   loading="lazy"
+                  sizes={ALERT_IMAGE_SIZES}
                 />
               </Col>
             )}

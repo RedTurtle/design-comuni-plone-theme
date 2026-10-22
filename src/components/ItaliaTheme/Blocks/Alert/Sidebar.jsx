@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Segment } from 'semantic-ui-react';
 import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
-import { FileWidget } from '@plone/volto/components';
 import { ColorListWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import ImageSizeWidget from '@plone/volto/components/manage/Widgets/ImageSizeWidget';
+import ImageWidget from '@plone/volto/components/manage/Widgets/ImageWidget';
+import {
+  getImageItem,
+  toImageValue,
+  LegacyImageNotice,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Common/BlockImage';
 
 const messages = defineMessages({
   Color: {
@@ -79,14 +84,17 @@ class Sidebar extends Component {
             }}
             colors={bg_colors}
           />
-          <FileWidget
+          <LegacyImageNotice image={this.props.data.image} />
+          <ImageWidget
             id="image"
+            block={this.props.block}
             title={this.props.intl.formatMessage(messages.Image)}
-            value={this.props.data.image}
-            onChange={(name, value) => {
+            value={getImageItem(this.props.data.image)?.['@id']}
+            hideLinkPicker={true}
+            onChange={(name, url, extra) => {
               this.props.onChangeBlock(this.props.block, {
                 ...this.props.data,
-                image: value,
+                image: toImageValue(url, extra),
               });
             }}
           />
