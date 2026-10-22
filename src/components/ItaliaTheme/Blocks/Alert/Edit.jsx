@@ -15,6 +15,10 @@ import {
   AlertSidebar,
   TextEditorWidget,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import BlockImage, {
+  hasBlockImage,
+  ALERT_IMAGE_SIZES,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Common/BlockImage';
 
 const messages = defineMessages({
   content_placeholder: {
@@ -52,14 +56,16 @@ const Edit = (props) => {
         <Row className={cx('full-width p-5', 'bg-alert-' + data.bg_color)}>
           <Container className="ui">
             <Row className="align-items-start">
-              {data.image?.data && (
+              {hasBlockImage(data.image) && (
                 <Col sm={2} className="pb-3 image-col">
-                  <img
-                    src={`data:${data.image['content-type']};${data.image.encoding},${data.image.data}`}
+                  <BlockImage
+                    image={data.image}
                     alt=""
                     className={cx('left-image', [
                       data.sizeImage ? 'size-' + data.sizeImage : 'size-l',
                     ])}
+                    loading="lazy"
+                    sizes={ALERT_IMAGE_SIZES}
                   />
                 </Col>
               )}

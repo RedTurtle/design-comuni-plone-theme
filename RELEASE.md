@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- Nei blocchi "Card con immagine" e "Alert" l'immagine ora si carica dal computer o si sceglie tra quelle già presenti nel sito, e viene salvata come contenuto Immagine dentro la pagina invece di essere incorporata nella pagina stessa. In questo modo le pagine sono molto più leggere e l'immagine viene mostrata con miniature ottimizzate per le diverse dimensioni dello schermo. Le immagini inserite in precedenza continuano a vedersi come prima; nella barra laterale di modifica del blocco un avviso segnala che sono nel vecchio formato e possono essere sostituite caricandone o selezionandone una nuova.
+
 ## Versione 12.16.1 (20/10/2026)
 
 ### Novità
