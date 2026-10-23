@@ -92,7 +92,7 @@ export default function SearchTopics({
               onChange={(e) =>
                 setTopicChecked(topicId, e.currentTarget.checked)
               }
-              aria-controls="search-results"
+              aria-controls="search-results-region"
               aria-describedby="live-input-description"
               aria-label={
                 intl.formatMessage(messages.searchTopic) +

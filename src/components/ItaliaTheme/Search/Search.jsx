@@ -423,13 +423,13 @@ const Search = () => {
                         />
                       </Button>
                     }
-                    aria-controls="search-results"
+                    aria-controls="search-results-region"
                     aria-describedby="live-input-description"
                   />
                 </Col>
               </Row>
               <Skiplink tag="div">
-                <SkiplinkItem href={`#$"search-results"`} tag="a">
+                <SkiplinkItem href="#search-results-region" tag="a">
                   {intl.formatMessage(messages.skipToSearchResults)}
                 </SkiplinkItem>
               </Skiplink>
@@ -603,7 +603,7 @@ const Search = () => {
                           )}
                           id="options-active-content"
                           checked={options.activeContent}
-                          aria-controls="search-results"
+                          aria-controls="search-results-region"
                           aria-describedby="live-input-description"
                           onChange={(e) => {
                             const checked = e.currentTarget?.checked ?? false;
@@ -708,7 +708,7 @@ const Search = () => {
                         defaultValue={sortOnOptions.find(
                           (o) => o.value === 'relevance',
                         )}
-                        ariaControls="search-results"
+                        ariaControls="search-results-region"
                         ariaDescribedby="live-input-description"
                       />
                     </Col>
@@ -716,7 +716,7 @@ const Search = () => {
                 </div>
 
                 <div
-                  id="search-results"
+                  id="search-results-region"
                   role="region"
                   aria-label={intl.formatMessage(messages.searchResults)}
                   tabIndex="-1"

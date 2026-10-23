@@ -62,7 +62,7 @@ export default function SearchSections({
                   setSections,
                 )
               }
-              aria-controls="search-results"
+              aria-controls="search-results-region"
               aria-describedby="live-input-description"
               aria-label={
                 intl.formatMessage(messages.searchInSection) +
@@ -136,7 +136,7 @@ export default function SearchSections({
                         setSections,
                       )
                     }
-                    aria-controls="search-results"
+                    aria-controls="search-results-region"
                     aria-describedby="live-input-description"
                     aria-label={
                       intl.formatMessage(messages.searchInSection) +
