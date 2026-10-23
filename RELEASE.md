@@ -50,6 +50,8 @@
 - Nel blocco "RSS" è stato uniformato lo stile della card a quella del blocco "Elenco", con la possibilità di decidere se mostrare la data
   e la descrizione della card. Inoltre, è possibile scegliere se mostrare 3 o 4 card per riga.
 
+- Nei blocchi "Card con immagine" e "Alert" l'immagine ora si carica dal computer o si sceglie tra quelle già presenti nel sito, e viene salvata come contenuto Immagine dentro la pagina invece di essere incorporata nella pagina stessa. In questo modo le pagine sono molto più leggere e l'immagine viene mostrata con miniature ottimizzate per le diverse dimensioni dello schermo. Le immagini inserite in precedenza continuano a vedersi come prima; nella barra laterale di modifica del blocco un avviso segnala che sono nel vecchio formato e possono essere sostituite caricandone o selezionandone una nuova.
+
 ## Versione 12.15.1 (01/09/2026)
 
 ### Migliorie
