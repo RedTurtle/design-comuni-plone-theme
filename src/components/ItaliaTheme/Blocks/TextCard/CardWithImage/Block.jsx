@@ -7,8 +7,10 @@ import PropTypes from 'prop-types';
 import { TextEditorWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { useHandleDetachedBlockFocus } from 'design-comuni-plone-theme/helpers/blocks';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
-import Image from '@plone/volto/components/theme/Image/Image';
 import cx from 'classnames';
+import BlockImage, {
+  hasBlockImage,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Common/BlockImage';
 
 const messages = defineMessages({
   image_card_title: {
@@ -25,8 +27,22 @@ const messages = defineMessages({
   },
 });
 
-const renderImage = (image, showImage, sizeNatural, altText = '') =>
-  showImage && image ? (
+// The image column is 1/3 (s), 1/2 (m) or 2/3 (l) of the card;
+// below lg the card is stacked and the image takes the full width.
+const IMAGE_SIZES = {
+  s: '(max-width: 991px) 100vw, 440px',
+  m: '(max-width: 991px) 100vw, 660px',
+  l: '(max-width: 991px) 100vw, 880px',
+};
+
+const renderImage = (
+  image,
+  showImage,
+  sizeNatural,
+  altText = '',
+  sizeImage = 's',
+) =>
+  showImage && hasBlockImage(image) ? (
     <div className="img-responsive-wrapper">
       <div
         className={cx({
@@ -34,11 +50,12 @@ const renderImage = (image, showImage, sizeNatural, altText = '') =>
         })}
       >
         <figure className="img-wrapper">
-          <Image
-            src={`data:${image['content-type']};${image.encoding},${image.data}`}
+          <BlockImage
+            image={image}
             alt={altText}
             aria-hidden="true"
             loading="lazy"
+            sizes={IMAGE_SIZES[sizeImage] ?? IMAGE_SIZES.s}
           />
         </figure>
       </div>
@@ -95,6 +112,7 @@ const Block = (props) => {
                       hasImage,
                       data?.sizeNatural,
                       data?.altText,
+                      data?.sizeImage,
                     )}
                   </Col>
                 )}
@@ -153,6 +171,7 @@ const Block = (props) => {
                     hasImage,
                     data?.sizeNatural,
                     data?.altText,
+                    data?.sizeImage,
                   )}
                 </Col>
                 <div

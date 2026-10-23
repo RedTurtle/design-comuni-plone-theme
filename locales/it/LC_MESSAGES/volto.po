@@ -1403,6 +1403,11 @@ msgstr "Colore di sfondo"
 msgid "biografia"
 msgstr "Biografia"
 
+#. Default: "Immagine nel vecchio formato: caricane o selezionane una per sostituirla."
+#: components/ItaliaTheme/Blocks/Common/BlockImage
+msgid "blockImage_legacy_notice"
+msgstr "Immagine nel vecchio formato: caricane o selezionane una per sostituirla."
+
 #. Default: "Colore di sfondo"
 #: config/Blocks/ListingOptions/defaultOptions
 msgid "block_bg_color"

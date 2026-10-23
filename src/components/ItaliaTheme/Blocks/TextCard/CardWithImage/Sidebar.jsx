@@ -5,12 +5,17 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { defineMessages, useIntl } from 'react-intl';
 
 import {
-  FileWidget,
   CheckboxWidget,
   FormFieldWrapper,
   TextWidget,
 } from '@plone/volto/components';
 import ImageSizeWidget from '@plone/volto/components/manage/Widgets/ImageSizeWidget';
+import ImageWidget from '@plone/volto/components/manage/Widgets/ImageWidget';
+import {
+  getImageItem,
+  toImageValue,
+  LegacyImageNotice,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Common/BlockImage';
 
 const messages = defineMessages({
   cardImage: {
@@ -66,12 +71,19 @@ const Sidebar = ({ data, block, onChangeBlock }) => {
       </header>
       <Accordion className="form">
         <Accordion.Content active={true}>
-          <FileWidget
-            id="CardImage"
+          <LegacyImageNotice image={data.image} />
+          <ImageWidget
+            id="image"
+            block={block}
             title={intl.formatMessage(messages.cardImage)}
-            value={data.image}
-            onChange={(name, value) => {
-              onChangeBlock({ ...data, image: value, showImage: !!value });
+            value={getImageItem(data.image)?.['@id']}
+            hideLinkPicker={true}
+            onChange={(name, url, extra) => {
+              onChangeBlock({
+                ...data,
+                image: toImageValue(url, extra),
+                showImage: !!url,
+              });
             }}
           />
           <CheckboxWidget
