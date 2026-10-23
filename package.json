@@ -2,7 +2,7 @@
   "name": "design-comuni-plone-theme",
   "description": "Volto Theme for Italia design guidelines",
   "license": "GPL-v3",
-  "version": "12.16.1",
+  "version": "12.16.2",
   "main": "src/index.js",
   "repository": {
     "type": "git",
@@ -202,7 +202,7 @@
     "stylelint-prettier": "4.0.2"
   },
   "peerDependencies": {
-    "@plone/volto": "17.22.3"
+    "@plone/volto": "17.23.1"
   },
   "packageManager": "yarn@3.2.3"
 }
