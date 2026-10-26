@@ -343,7 +343,15 @@ const MegaMenu = ({ item, pathname }) => {
                                     condition={!!child['@id']}
                                     key={child['@id']}
                                     onClick={() => setMenuStatus(false)}
-                                    aria-current="page"
+                                    aria-current={
+                                      isChildActive(
+                                        flattenToAppURL(child['@id']),
+                                        pathname,
+                                        true,
+                                      )
+                                        ? 'page'
+                                        : undefined
+                                    }
                                   >
                                     <span>{child.title}</span>
                                   </ConditionalLink>

@@ -139,7 +139,7 @@ const Navigation = ({ pathname }) => {
           >
             <FocusLock disabled={!focusTrapActive}>
               <div className="menu-wrapper">
-                <div className="it-brand-wrapper" role="navigation">
+                <div className="it-brand-wrapper">
                   <UniversalLink
                     href={
                       subsite?.['@id'] ? flattenToAppURL(subsite['@id']) : '/'
@@ -155,11 +155,7 @@ const Navigation = ({ pathname }) => {
                   </UniversalLink>
                 </div>
                 {/* Main Menu */}
-                <Nav
-                  data-element="main-navigation"
-                  navbar
-                  aria-label={intl.formatMessage(messages.mainMenu)}
-                >
+                <Nav data-element="main-navigation" navbar>
                   {menu
                     ?.filter((item) => item.visible)
                     ?.map((item, index) => (

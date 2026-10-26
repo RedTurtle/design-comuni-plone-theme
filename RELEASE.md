@@ -48,6 +48,10 @@
 
 - Nel blocco RSS aggiunto un checkbox per scegliere se mostrare la categoria nelle card. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
+### Fix
+
+- Migliorata l'accessibilità della navigazione: rimossi i ruoli ARIA "menubar"/"menuitem" dal menu secondario e il punto di riferimento di navigazione attorno al logo nell'header. Nel megamenu, i titoli di sezione vengono indicati come "pagina corrente" solo quando lo sono davvero.
+
 
 ## Versione 12.16.1 (20/10/2026)
 
