@@ -48,6 +48,12 @@
 
 - Nel blocco RSS aggiunto un checkbox per scegliere se mostrare la categoria nelle card. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
+- Le pagine scritte in una lingua diversa dall'italiano (campo "Lingua" del contenuto) ora dichiarano la propria lingua, così le tecnologie assistive leggono il testo con la pronuncia corretta. Per le lingue che si scrivono da destra a sinistra (arabo, urdu, persiano, ebraico...) il testo del contenuto viene mostrato da destra a sinistra. Intestazione, briciole di pane e piè di pagina restano in italiano. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+### Fix
+
+- La lingua impostata su un contenuto non veniva indicata nella pagina, che risultava sempre nella lingua del sito: ora vale per tutti i tipi di contenuto (pagine, notizie, servizi...). _(**Origine / contributo**: Regione Emilia-Romagna)_
+
 
 ## Versione 12.16.1 (20/10/2026)
 

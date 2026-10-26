@@ -112,7 +112,8 @@ iframe {
 
   p.callout {
     max-width: none;
-    border-left-width: 0.4rem;
+    // logical: the thick border goes on the right in rtl text
+    border-inline-start-width: 0.4rem;
 
     p,
     .public-DraftStyleDefault-block {

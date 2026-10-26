@@ -17,3 +17,9 @@
   }
   //end
 }
+
+// The toolbar is fixed with no horizontal inset, so it follows the direction
+// of <html>: on pages in rtl languages keep it on the left like in the CMS UI.
+html[dir='rtl'] #toolbar .toolbar {
+  left: 0;
+}
