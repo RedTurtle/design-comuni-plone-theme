@@ -162,6 +162,7 @@ const Navigation = ({ pathname }) => {
                       <MegaMenu
                         item={item}
                         pathname={pathname}
+                        index={index}
                         key={index + 'mm'}
                       />
                     ))}

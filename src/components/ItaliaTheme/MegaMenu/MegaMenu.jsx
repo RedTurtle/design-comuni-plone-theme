@@ -73,20 +73,112 @@ const isChildActive = (itemUrl, pathname, exact = false) => {
   return pathname.indexOf(itemUrl) > -1;
 };
 
-const MegaMenu = ({ item, pathname }) => {
+const MegaMenu = ({ item, pathname, index = 0 }) => {
   const intl = useIntl();
   const blocksFieldname = getBlocksFieldname(item);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(item);
   const isItemActive = isActive(item, pathname);
 
   const [menuStatus, setMenuStatus] = useState(false);
-  const firstItemRef = useRef(null);
+  const pendingFocus = useRef(null);
+
+  const toggleId = `megamenu-toggle-${index}`;
+  const panelId = `megamenu-panel-${index}`;
+
+  const getPanel = () => document.getElementById(panelId);
+  const getPanelLinks = () => [
+    ...(getPanel()?.querySelectorAll('.link-list a[href]') ?? []),
+  ];
+
+  const focusLink = (position) => {
+    const links = getPanelLinks();
+    const link = position === 'last' ? links[links.length - 1] : links[0];
+    link?.focus();
+  };
 
   useEffect(() => {
-    if (menuStatus) {
-      firstItemRef.current?.querySelector('a')?.focus();
+    if (!menuStatus) {
+      return;
+    }
+    if (pendingFocus.current) {
+      focusLink(pendingFocus.current);
+      pendingFocus.current = null;
+    } else {
+      getPanel()?.focus();
     }
   }, [menuStatus]);
+
+  const closeAndFocusToggle = () => {
+    setMenuStatus(false);
+    document.getElementById(toggleId)?.focus();
+  };
+
+  const onToggleKeyDown = (e) => {
+    e.stopPropagation();
+    switch (e.key) {
+      case ' ':
+        e.preventDefault();
+        setMenuStatus(!menuStatus);
+        break;
+      case 'ArrowDown':
+      case 'ArrowUp':
+        e.preventDefault();
+        if (menuStatus) {
+          focusLink(e.key === 'ArrowUp' ? 'last' : 'first');
+        } else {
+          pendingFocus.current = e.key === 'ArrowUp' ? 'last' : 'first';
+          setMenuStatus(true);
+        }
+        break;
+      case 'Escape':
+        if (menuStatus) {
+          e.preventDefault();
+          setMenuStatus(false);
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
+  const onPanelKeyDown = (e) => {
+    e.stopPropagation();
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeAndFocusToggle();
+      return;
+    }
+    if (
+      /input|textarea|select/i.test(e.target.tagName) ||
+      e.target.isContentEditable
+    ) {
+      return;
+    }
+    const links = getPanelLinks();
+    const currentIndex = links.indexOf(e.target);
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        links[Math.min(currentIndex + 1, links.length - 1)]?.focus();
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        links[
+          currentIndex < 0 ? links.length - 1 : Math.max(currentIndex - 1, 0)
+        ]?.focus();
+        break;
+      case 'Home':
+        e.preventDefault();
+        focusLink('first');
+        break;
+      case 'End':
+        e.preventDefault();
+        focusLink('last');
+        break;
+      default:
+        break;
+    }
+  };
 
   useEffect(() => {
     if (!menuStatus) {
@@ -286,15 +378,30 @@ const MegaMenu = ({ item, pathname }) => {
           tag="div"
           toggle={() => setMenuStatus(!menuStatus)}
         >
-          <DropdownToggle aria-haspopup color="secondary" nav>
+          <DropdownToggle
+            aria-haspopup
+            color="secondary"
+            nav
+            role="button"
+            id={toggleId}
+            aria-controls={menuStatus ? panelId : undefined}
+            onKeyDown={onToggleKeyDown}
+          >
             <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
             <Icon
               icon="it-expand"
               className={cx('megamenu-toggle-icon', { open: menuStatus })}
             />
           </DropdownToggle>
-          {/* role={undefined} removes reactstrap's hardcoded role="menu" */}
-          <DropdownMenu flip tag="div" role={undefined}>
+          {/* role="region" replaces reactstrap's hardcoded role="menu" */}
+          <DropdownMenu
+            flip
+            tag="div"
+            role="region"
+            id={panelId}
+            aria-labelledby={toggleId}
+            onKeyDown={onPanelKeyDown}
+          >
             <div className="text-end megamenu-close-button">
               <Button
                 color="link"
@@ -322,12 +429,7 @@ const MegaMenu = ({ item, pathname }) => {
                       >
                         {group.map((child, idx) => {
                           return (
-                            <li
-                              key={child['@id'] + idx}
-                              ref={
-                                index === 0 && idx === 0 ? firstItemRef : null
-                              }
-                            >
+                            <li key={child['@id'] + idx}>
                               {child.showAsHeader ? (
                                 <h3
                                   className={cx('list-item', {
@@ -442,6 +544,7 @@ const MegaMenu = ({ item, pathname }) => {
 
 MegaMenu.propTypes = {
   pathname: PropTypes.string.isRequired,
+  index: PropTypes.number,
   item: PropTypes.shape({
     title: PropTypes.string,
     url: PropTypes.string,
