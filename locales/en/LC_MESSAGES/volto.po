@@ -3962,12 +3962,12 @@ msgstr ""
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: I risultati della ricerca verranno aggiornati in base al testo inserito nel campo di ricerca e ai filtri selezionati
 msgid "search_live_input_description"
-msgstr ""
+msgstr "Search results will be updated based on the text entered in the search field and the selected filters"
 
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: {start}-{end} di {total} risultati
 msgid "search_results_range"
-msgstr ""
+msgstr "{start}-{end} of {total} results"
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Dove cercare

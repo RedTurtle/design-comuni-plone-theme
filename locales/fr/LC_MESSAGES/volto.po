@@ -3979,12 +3979,12 @@ msgstr ""
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: I risultati della ricerca verranno aggiornati in base al testo inserito nel campo di ricerca e ai filtri selezionati
 msgid "search_live_input_description"
-msgstr ""
+msgstr "Les résultats de la recherche seront mis à jour en fonction du texte saisi dans le champ de recherche et des filtres sélectionnés"
 
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: {start}-{end} di {total} risultati
 msgid "search_results_range"
-msgstr ""
+msgstr "{start}-{end} sur {total} résultats"
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Dove cercare
