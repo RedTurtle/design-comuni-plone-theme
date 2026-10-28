@@ -41,6 +41,11 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Migliorata l'accessibilità della pagina dei risultati di ricerca.
 
  ## Versione X.X.X (dd/mm/yyyy)
 
