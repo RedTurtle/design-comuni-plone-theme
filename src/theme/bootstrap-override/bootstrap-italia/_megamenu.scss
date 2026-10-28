@@ -41,6 +41,14 @@
 
     .link-list-wrapper {
       .link-list {
+        &.megamenu-link-list {
+          @media (min-width: #{map-get($grid-breakpoints, lg)}) {
+            display: grid;
+            column-gap: $grid-gutter-width;
+            grid-auto-flow: column;
+          }
+        }
+
         &.bordered {
           li {
             border-bottom: 1px solid rgba($link-color, 0.2);
@@ -78,23 +86,13 @@
               }
             }
             @media (min-width: #{map-get($grid-breakpoints, lg)}) {
-              &:not(:first-of-type) {
+              &:not(:first-of-type):not(.column-start) {
                 h3 {
                   margin-top: 2em !important;
                 }
               }
             }
           }
-        }
-      }
-    }
-
-    .megamenu-close-button {
-      button {
-        &:active,
-        &:focus {
-          outline: 1px dotted;
-          outline: 5px auto -webkit-focus-ring-color;
         }
       }
     }

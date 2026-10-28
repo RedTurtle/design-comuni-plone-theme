@@ -92,12 +92,6 @@ const Navigation = ({ pathname }) => {
       document.body.removeEventListener('click', blocksClickListener);
   }, []);
 
-  const closeButtonStyle = collapseOpen
-    ? {
-        display: 'block',
-      }
-    : { display: 'none' };
-
   return (
     <Header theme="" type="navbar">
       {menu?.length > 0 ? (
@@ -155,7 +149,11 @@ const Navigation = ({ pathname }) => {
                   </UniversalLink>
                 </div>
                 {/* Main Menu */}
-                <Nav data-element="main-navigation" navbar>
+                <Nav
+                  data-element="main-navigation"
+                  navbar
+                  aria-label={intl.formatMessage(messages.mainMenu)}
+                >
                   {menu
                     ?.filter((item) => item.visible)
                     ?.map((item, index) => (
@@ -180,21 +178,6 @@ const Navigation = ({ pathname }) => {
                 {/* Headerslim Menu - configuration */}
                 {(!subsite || hasSubsiteSlimItems) && <TertiaryMenu />}
               </div>
-              <div className="close-div" style={closeButtonStyle}>
-                <button
-                  className="btn close-menu"
-                  type="button"
-                  title={intl.formatMessage(messages.CloseMenu)}
-                  onClick={() => setCollapseOpen(!collapseOpen)}
-                >
-                  <Icon
-                    color="white"
-                    icon="it-close-big"
-                    padding={false}
-                    title={intl.formatMessage(messages.CloseMenu)}
-                  />
-                </button>
-              </div>
             </FocusLock>
           </Collapse>
         </HeaderContent>
@@ -204,10 +187,6 @@ const Navigation = ({ pathname }) => {
 };
 
 const messages = defineMessages({
-  CloseMenu: {
-    id: 'close-menu',
-    defaultMessage: 'Chiudi menu',
-  },
   toggleMenu: {
     id: 'toggle-menu',
     defaultMessage: '{action} il menu',

@@ -3,7 +3,7 @@
  * @module components/theme/Navigation/Navigation
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { map } from 'lodash';
 import cx from 'classnames';
@@ -13,7 +13,6 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  Button,
   Row,
   Col,
   LinkList,
@@ -29,6 +28,7 @@ import {
 import { UniversalLink, ConditionalLink } from '@plone/volto/components';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
+import { useMegaMenuKeyboard } from 'design-comuni-plone-theme/components/ItaliaTheme/MegaMenu/utils';
 
 const messages = defineMessages({
   menu_selected: {
@@ -38,10 +38,6 @@ const messages = defineMessages({
   view_all: {
     id: 'Vedi tutto',
     defaultMessage: 'Vedi tutto',
-  },
-  closeMenu: {
-    id: 'dropdownmenu-close-menu-button',
-    defaultMessage: 'Close menu',
   },
 });
 
@@ -80,120 +76,16 @@ const MegaMenu = ({ item, pathname, index = 0 }) => {
   const isItemActive = isActive(item, pathname);
 
   const [menuStatus, setMenuStatus] = useState(false);
-  const pendingFocus = useRef(null);
 
   const toggleId = `megamenu-toggle-${index}`;
   const panelId = `megamenu-panel-${index}`;
 
-  const getPanel = () => document.getElementById(panelId);
-  const getPanelLinks = () => [
-    ...(getPanel()?.querySelectorAll('.link-list a[href]') ?? []),
-  ];
-
-  const focusLink = (position) => {
-    const links = getPanelLinks();
-    const link = position === 'last' ? links[links.length - 1] : links[0];
-    link?.focus();
-  };
-
-  useEffect(() => {
-    if (!menuStatus) {
-      return;
-    }
-    if (pendingFocus.current) {
-      focusLink(pendingFocus.current);
-      pendingFocus.current = null;
-    } else {
-      getPanel()?.focus();
-    }
-  }, [menuStatus]);
-
-  const closeAndFocusToggle = () => {
-    setMenuStatus(false);
-    document.getElementById(toggleId)?.focus();
-  };
-
-  const onToggleKeyDown = (e) => {
-    e.stopPropagation();
-    switch (e.key) {
-      case ' ':
-        e.preventDefault();
-        setMenuStatus(!menuStatus);
-        break;
-      case 'ArrowDown':
-      case 'ArrowUp':
-        e.preventDefault();
-        if (menuStatus) {
-          focusLink(e.key === 'ArrowUp' ? 'last' : 'first');
-        } else {
-          pendingFocus.current = e.key === 'ArrowUp' ? 'last' : 'first';
-          setMenuStatus(true);
-        }
-        break;
-      case 'Escape':
-        if (menuStatus) {
-          e.preventDefault();
-          setMenuStatus(false);
-        }
-        break;
-      default:
-        break;
-    }
-  };
-
-  const onPanelKeyDown = (e) => {
-    e.stopPropagation();
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      closeAndFocusToggle();
-      return;
-    }
-    if (
-      /input|textarea|select/i.test(e.target.tagName) ||
-      e.target.isContentEditable
-    ) {
-      return;
-    }
-    const links = getPanelLinks();
-    const currentIndex = links.indexOf(e.target);
-    switch (e.key) {
-      case 'ArrowDown':
-        e.preventDefault();
-        links[Math.min(currentIndex + 1, links.length - 1)]?.focus();
-        break;
-      case 'ArrowUp':
-        e.preventDefault();
-        links[
-          currentIndex < 0 ? links.length - 1 : Math.max(currentIndex - 1, 0)
-        ]?.focus();
-        break;
-      case 'Home':
-        e.preventDefault();
-        focusLink('first');
-        break;
-      case 'End':
-        e.preventDefault();
-        focusLink('last');
-        break;
-      default:
-        break;
-    }
-  };
-
-  useEffect(() => {
-    if (!menuStatus) {
-      return;
-    }
-    const handleEscape = (e) => {
-      if (e.key === 'Escape') {
-        setMenuStatus(false);
-      }
-    };
-
-    document.addEventListener('keydown', handleEscape);
-
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [menuStatus]);
+  const { onToggleKeyDown, onPanelKeyDown } = useMegaMenuKeyboard({
+    menuStatus,
+    setMenuStatus,
+    toggleId,
+    panelId,
+  });
 
   const getAnchorTarget = (nodeElement) => {
     if (nodeElement.nodeName === 'A') {
@@ -360,6 +252,8 @@ const MegaMenu = ({ item, pathname, index = 0 }) => {
       }
     }
 
+    const megamenuRows = Math.max(1, ...childrenGroups.map((g) => g.length));
+
     const showMoreLabel =
       item.showMoreText?.length > 0
         ? item.showMoreText
@@ -402,87 +296,75 @@ const MegaMenu = ({ item, pathname, index = 0 }) => {
             aria-labelledby={toggleId}
             onKeyDown={onPanelKeyDown}
           >
-            <div className="text-end megamenu-close-button">
-              <Button
-                color="link"
-                onClick={() => setMenuStatus(false)}
-                onKeyDown={(e) => {
-                  if (e.keyCode === 13) {
-                    setMenuStatus(false);
-                  }
-                }}
-                title={intl.formatMessage(messages.closeMenu)}
-                // Out of Tab order: Escape/outside click already close the menu
-                tabIndex="-1"
-              >
-                <Icon icon="it-close" />
-              </Button>
-            </div>
             <Row>
               <Col lg={hasBlocks ? 6 : 12}>
-                <Row>
-                  {childrenGroups.map((group, index) => (
-                    <Col lg={12 / max_cols} key={'group_' + index}>
-                      <LinkList
-                        className="bordered"
-                        aria-label={item.title ?? ''}
-                      >
-                        {group.map((child, idx) => {
-                          return (
-                            <li key={child['@id'] + idx}>
-                              {child.showAsHeader ? (
-                                <h3
-                                  className={cx('list-item', {
-                                    active: isChildActive(
-                                      flattenToAppURL(child['@id']),
-                                      pathname,
-                                    ),
-                                  })}
-                                >
-                                  <ConditionalLink
-                                    item={child}
-                                    title={child.title}
-                                    condition={!!child['@id']}
-                                    key={child['@id']}
-                                    onClick={() => setMenuStatus(false)}
-                                    aria-current={
-                                      isChildActive(
-                                        flattenToAppURL(child['@id']),
-                                        pathname,
-                                        true,
-                                      )
-                                        ? 'page'
-                                        : undefined
-                                    }
-                                  >
-                                    <span>{child.title}</span>
-                                  </ConditionalLink>
-                                </h3>
-                              ) : (
-                                <ConditionalLink
-                                  item={child}
-                                  title={child.title}
-                                  condition={!!child['@id']}
-                                  key={child['@id']}
-                                  onClick={() => setMenuStatus(false)}
-                                  className={cx('list-item', {
-                                    active: isChildActive(
-                                      flattenToAppURL(child['@id']),
-                                      pathname,
-                                      true,
-                                    ),
-                                  })}
-                                >
-                                  <span>{child.title}</span>
-                                </ConditionalLink>
-                              )}
-                            </li>
-                          );
-                        })}
-                      </LinkList>
-                    </Col>
-                  ))}
-                </Row>
+                <LinkList
+                  className="bordered megamenu-link-list"
+                  aria-label={item.title ?? ''}
+                  style={{
+                    gridTemplateColumns: `repeat(${max_cols}, minmax(0, 1fr))`,
+                    gridTemplateRows: `repeat(${megamenuRows}, auto)`,
+                  }}
+                >
+                  {childrenGroups.map((group, colIndex) =>
+                    group.map((child, idx) => {
+                      return (
+                        <li
+                          key={child['@id'] + colIndex + '_' + idx}
+                          className={cx({ 'column-start': idx === 0 })}
+                          style={{ gridColumn: colIndex + 1, gridRow: idx + 1 }}
+                        >
+                          {child.showAsHeader ? (
+                            <h3
+                              className={cx('list-item', {
+                                active: isChildActive(
+                                  flattenToAppURL(child['@id']),
+                                  pathname,
+                                ),
+                              })}
+                            >
+                              <ConditionalLink
+                                item={child}
+                                title={child.title}
+                                condition={!!child['@id']}
+                                key={child['@id']}
+                                onClick={() => setMenuStatus(false)}
+                                aria-current={
+                                  isChildActive(
+                                    flattenToAppURL(child['@id']),
+                                    pathname,
+                                    true,
+                                  )
+                                    ? 'page'
+                                    : undefined
+                                }
+                              >
+                                <span>{child.title}</span>
+                              </ConditionalLink>
+                            </h3>
+                          ) : (
+                            <ConditionalLink
+                              item={child}
+                              title={child.title}
+                              condition={!!child['@id']}
+                              key={child['@id']}
+                              onClick={() => setMenuStatus(false)}
+                              className={cx('list-item', {
+                                active: isChildActive(
+                                  flattenToAppURL(child['@id']),
+                                  pathname,
+                                  true,
+                                ),
+                              })}
+                            >
+                              <span>{child.title}</span>
+                            </ConditionalLink>
+                          )}
+                        </li>
+                      );
+                    }),
+                  )}
+                </LinkList>
               </Col>
               {hasBlocks && (
                 <Col lg={6} className="m-4 m-lg-0 dropdownmenu-blocks-column">
