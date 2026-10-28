@@ -3934,10 +3934,20 @@ msgstr ""
 msgid "searchBlock_venue_filter"
 msgstr "Lieu"
 
+#: components/ItaliaTheme/Search/SearchSections
+# defaultMessage: Collassa il gruppo {title}
+msgid "searchCollapseGroup"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/SearchSectionForm
 # defaultMessage: Cerca contenuti in
 msgid "searchContentIn"
 msgstr "Rechercher du contenu dans"
+
+#: components/ItaliaTheme/Search/SearchSections
+# defaultMessage: Espandi il gruppo {title}
+msgid "searchExpandGroup"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 #: components/ItaliaTheme/Search/SearchSections
@@ -3975,6 +3985,16 @@ msgstr "Date de fin"
 # defaultMessage: Search icon
 msgid "search_icon"
 msgstr ""
+
+#: components/ItaliaTheme/Search/Search
+# defaultMessage: I risultati della ricerca verranno aggiornati in base al testo inserito nel campo di ricerca e ai filtri selezionati
+msgid "search_live_input_description"
+msgstr "Les résultats de la recherche seront mis à jour en fonction du texte saisi dans le champ de recherche et des filtres sélectionnés"
+
+#: components/ItaliaTheme/Search/Search
+# defaultMessage: {start}-{end} di {total} risultati
+msgid "search_results_range"
+msgstr "{start}-{end} sur {total} résultats"
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Dove cercare

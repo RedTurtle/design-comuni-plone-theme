@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
@@ -137,11 +137,20 @@ const SelectInput = ({
   reactSelect,
   labelledby,
   defaultValue,
+  ariaControls,
+  ariaDescribedby,
 }) => {
   const intl = useIntl();
   const labelDefined =
     label || intl.formatMessage(messages.SelectInput_default_label);
   const Select = reactSelect.default;
+
+  useEffect(() => {
+    const input = document.getElementById(id);
+    if (ariaControls) input?.setAttribute('aria-controls', ariaControls);
+    if (ariaDescribedby)
+      input?.setAttribute('aria-describedby', ariaDescribedby);
+  }, [id, ariaControls, ariaDescribedby]);
 
   return (
     <div className="bootstrap-select-wrapper">
@@ -203,6 +212,8 @@ SelectInput.propTypes = {
   isClearable: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.object).isRequired,
+  ariaControls: PropTypes.string,
+  ariaDescribedby: PropTypes.string,
 };
 
 export default injectLazyLibs('reactSelect')(SelectInput);
