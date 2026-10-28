@@ -45,8 +45,6 @@
 
 ### Fix
 
-- Nella pagina dei risultati di ricerca è stata corretta la gerarchia dei titoli.
-
 - Migliorata l'accessibilità della pagina dei risultati di ricerca.
 
  ## Versione X.X.X (dd/mm/yyyy)
