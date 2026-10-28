@@ -14,6 +14,14 @@ const messages = defineMessages({
     id: 'searchInSection',
     defaultMessage: 'Cerca nella sezione',
   },
+  collapseGroup: {
+    id: 'searchCollapseGroup',
+    defaultMessage: 'Collassa il gruppo {title}',
+  },
+  expandGroup: {
+    id: 'searchExpandGroup',
+    defaultMessage: 'Espandi il gruppo {title}',
+  },
 });
 
 export default function SearchSections({
@@ -41,6 +49,10 @@ export default function SearchSections({
       ...prevCollapse,
       [groupId]: !prevCollapse[groupId],
     }));
+  };
+
+  const groupExpanded = (groupId) => {
+    return collapse[groupId] !== undefined && !collapse[groupId];
   };
 
   return (
@@ -99,10 +111,17 @@ export default function SearchSections({
                     toggleCollapseGroup(groupId);
                   }}
                   data-toggle="collapse"
-                  aria-expanded={
-                    collapse[groupId] !== undefined && !collapse[groupId]
-                  }
+                  aria-expanded={groupExpanded(groupId)}
                   aria-controls={`section${groupId}Collapse`}
+                  aria-label={
+                    groupExpanded(groupId)
+                      ? intl.formatMessage(messages.collapseGroup, {
+                          title: sections[groupId].title,
+                        })
+                      : intl.formatMessage(messages.expandGroup, {
+                          title: sections[groupId].title,
+                        })
+                  }
                 >
                   <Icon
                     color="primary"
