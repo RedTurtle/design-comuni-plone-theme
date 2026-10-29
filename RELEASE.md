@@ -48,6 +48,10 @@
 
 - Nel blocco RSS aggiunto un checkbox per scegliere se mostrare la categoria nelle card. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
+### Novità
+
+- Nel blocco "Alert" è possibile impostare un periodo di visualizzazione (data e ora di inizio e di scadenza): fuori da quel periodo l'alert non viene mostrato ai visitatori, mentre chi può modificare la pagina vede sopra l'alert se è programmato, attivo o scaduto. La funzionalità era già presente nella versione 7.x del tema.
+
 
 ## Versione 12.16.1 (20/10/2026)
 

@@ -1022,6 +1022,46 @@ msgstr "Aggiungi un percorso per il blocco contatti"
 msgid "advandedSectionsFilters"
 msgstr "Vai alla ricerca per sezioni avanzata"
 
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Pubblicazione attiva.
+msgid "alert_activeDate"
+msgstr "Pubblicazione attiva."
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio.
+msgid "alert_errorDate"
+msgstr "Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio."
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. E' scaduto il {date}.
+msgid "alert_expiredDate"
+msgstr "Non visibile. E' scaduto il {date}."
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. Verrà pubblicato il {date}.
+msgid "alert_futureDate"
+msgstr "Non visibile. Verrà pubblicato il {date}."
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Scadrà il {date}.
+msgid "alert_willExpire"
+msgstr "Scadrà il {date}."
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Periodo di visualizzazione
+msgid "alertblock_dateTitle"
+msgstr "Periodo di visualizzazione"
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Scadenza
+msgid "alertblock_endDate"
+msgstr "Scadenza"
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Inizio
+msgid "alertblock_startDate"
+msgstr "Inizio"
+
 #: components/ItaliaTheme/Blocks/Listing/schema
 # defaultMessage: Allinea bottone a destra
 msgid "alignButton"
