@@ -46,6 +46,7 @@
 ### Fix
 
 - Migliorata l'accessibilità della pagina dei risultati di ricerca.
+- Le pagine dei Servizi che hanno date nella sezione "Tempi e scadenze" ora si aprono correttamente, senza mostrare la pagina di errore.
 
  ## Versione X.X.X (dd/mm/yyyy)
 
