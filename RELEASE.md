@@ -58,6 +58,10 @@
 - Migliorata l'accessibilità della navigazione: rimossi i ruoli ARIA "menubar"/"menuitem" dal menu secondario e il punto di riferimento di navigazione attorno al logo nell'header. Nel megamenu, i titoli di sezione vengono indicati come "pagina corrente" solo quando lo sono davvero.
 - Nel megamenu i link di ogni voce sono ora in un'unica lista, suddivisa in colonne solo graficamente, così gli screen reader la annunciano come un solo elenco.
 - Migliorata la navigazione da tastiera nel megamenu e rimosso il pulsante di chiusura "X" dal menu principale.
+### Novità
+
+- Nel blocco "Alert" è possibile impostare un periodo di visualizzazione (data e ora di inizio e di scadenza): fuori da quel periodo l'alert non viene mostrato ai visitatori. Se non viene impostato nessun periodo, l'alert è sempre visibile.
+
 
 ## Versione 12.16.1 (20/10/2026)
 
