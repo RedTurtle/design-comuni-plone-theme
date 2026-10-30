@@ -93,10 +93,10 @@ const Navigation = ({ pathname }) => {
   }, []);
 
   const closeButtonStyle = collapseOpen
-    ? {
-        display: 'block',
-      }
-    : { display: 'none' };
+  ? {
+      display: 'block',
+    }
+  : { display: 'none' };
 
   return (
     <Header theme="" type="navbar">
@@ -139,7 +139,7 @@ const Navigation = ({ pathname }) => {
           >
             <FocusLock disabled={!focusTrapActive}>
               <div className="menu-wrapper">
-                <div className="it-brand-wrapper" role="navigation">
+                <div className="it-brand-wrapper">
                   <UniversalLink
                     href={
                       subsite?.['@id'] ? flattenToAppURL(subsite['@id']) : '/'
@@ -166,6 +166,7 @@ const Navigation = ({ pathname }) => {
                       <MegaMenu
                         item={item}
                         pathname={pathname}
+                        index={index}
                         key={index + 'mm'}
                       />
                     ))}
@@ -183,6 +184,7 @@ const Navigation = ({ pathname }) => {
                 {/* Headerslim Menu - configuration */}
                 {(!subsite || hasSubsiteSlimItems) && <TertiaryMenu />}
               </div>
+
               <div className="close-div" style={closeButtonStyle}>
                 <button
                   className="btn close-menu"
@@ -207,10 +209,6 @@ const Navigation = ({ pathname }) => {
 };
 
 const messages = defineMessages({
-  CloseMenu: {
-    id: 'close-menu',
-    defaultMessage: 'Chiudi menu',
-  },
   toggleMenu: {
     id: 'toggle-menu',
     defaultMessage: '{action} il menu',
@@ -226,6 +224,10 @@ const messages = defineMessages({
   mainMenu: {
     id: 'mainMenu',
     defaultMessage: 'Menu principale',
+  },
+  CloseMenu: {
+    id: 'CloseMenu',
+    defaultMessage: 'Chiudi menu',
   },
 });
 

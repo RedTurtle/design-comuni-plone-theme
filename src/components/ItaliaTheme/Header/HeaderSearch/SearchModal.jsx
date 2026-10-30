@@ -34,6 +34,7 @@ import {
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { getSearchFilters } from 'design-comuni-plone-theme/actions';
 import { SearchUtils, Checkbox } from 'design-comuni-plone-theme/components';
+import { useSiteLanguage } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 const {
   defaultOptions,
@@ -174,6 +175,9 @@ const messages = defineMessages({
 
 const SearchModal = ({ closeModal, show }) => {
   const intl = useIntl();
+  // the modal is rendered in <body>: keep the site language when the page
+  // content is in another one
+  const siteLanguage = useSiteLanguage();
 
   const dispatch = useDispatch();
   const location = useLocation();
@@ -336,6 +340,8 @@ const SearchModal = ({ closeModal, show }) => {
     <Modal
       wrapClassName="public-ui"
       id="search-modal"
+      lang={siteLanguage.lang}
+      dir={siteLanguage.dir}
       isOpen={show}
       toggle={closeModal}
       role="alertdialog"
