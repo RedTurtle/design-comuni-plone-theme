@@ -1039,6 +1039,46 @@ msgstr ""
 msgid "advandedSectionsFilters"
 msgstr "Aller à la recherche avancée par rubrique"
 
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Pubblicazione attiva.
+msgid "alert_activeDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio.
+msgid "alert_errorDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. E' scaduto il {date}.
+msgid "alert_expiredDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Non visibile. Verrà pubblicato il {date}.
+msgid "alert_futureDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+# defaultMessage: Scadrà il {date}.
+msgid "alert_willExpire"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Periodo di visualizzazione
+msgid "alertblock_dateTitle"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Scadenza
+msgid "alertblock_endDate"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+# defaultMessage: Inizio
+msgid "alertblock_startDate"
+msgstr ""
+
 #: components/ItaliaTheme/Blocks/Listing/schema
 # defaultMessage: Allinea bottone a destra
 msgid "alignButton"
@@ -3934,10 +3974,20 @@ msgstr ""
 msgid "searchBlock_venue_filter"
 msgstr "Lieu"
 
+#: components/ItaliaTheme/Search/SearchSections
+# defaultMessage: Collassa il gruppo {title}
+msgid "searchCollapseGroup"
+msgstr ""
+
 #: components/ItaliaTheme/View/Commons/SearchSectionForm
 # defaultMessage: Cerca contenuti in
 msgid "searchContentIn"
 msgstr "Rechercher du contenu dans"
+
+#: components/ItaliaTheme/Search/SearchSections
+# defaultMessage: Espandi il gruppo {title}
+msgid "searchExpandGroup"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSearch/SearchModal
 #: components/ItaliaTheme/Search/SearchSections
@@ -3975,6 +4025,16 @@ msgstr "Date de fin"
 # defaultMessage: Search icon
 msgid "search_icon"
 msgstr ""
+
+#: components/ItaliaTheme/Search/Search
+# defaultMessage: I risultati della ricerca verranno aggiornati in base al testo inserito nel campo di ricerca e ai filtri selezionati
+msgid "search_live_input_description"
+msgstr "Les résultats de la recherche seront mis à jour en fonction du texte saisi dans le champ de recherche et des filtres sélectionnés"
+
+#: components/ItaliaTheme/Search/Search
+# defaultMessage: {start}-{end} di {total} risultati
+msgid "search_results_range"
+msgstr "{start}-{end} sur {total} résultats"
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Dove cercare
