@@ -18,6 +18,7 @@ import {
   ContactsBlock,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
+import { useSiteLanguage } from 'design-comuni-plone-theme/helpers/contentLanguage';
 /**
  * Footer component class.
  * @class Footer
@@ -26,6 +27,8 @@ import config from '@plone/volto/registry';
 
 const Footer = () => {
   useGoogleAnalytics();
+  // site chrome keeps the site language when the content is in another one
+  const siteLanguage = useSiteLanguage();
   const currentContent = useSelector((state) => state.content?.data);
   const contentType = currentContent ? currentContent['@type'] : null;
   const noFeedbackFormFor =
@@ -43,13 +46,23 @@ const Footer = () => {
     <>
       {showContactsBlock && <ContactsBlock />}
       {showFeedbackForm && (
-        <div className="public-ui" id="customer-satisfaction-form">
+        <div
+          className="public-ui"
+          id="customer-satisfaction-form"
+          lang={siteLanguage.lang}
+          dir={siteLanguage.dir}
+        >
           <FeedbackForm />
         </div>
       )}
 
       <SubsiteFooter />
-      <footer className="it-footer" id="footer">
+      <footer
+        className="it-footer"
+        id="footer"
+        lang={siteLanguage.lang}
+        dir={siteLanguage.dir}
+      >
         <FooterMain />
         <FooterSmall />
       </footer>

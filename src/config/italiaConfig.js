@@ -35,6 +35,8 @@ import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/A
 import PageLoader from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/PageLoader';
 import TrackFocus from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/TrackFocus';
 import SiteSettingsExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/SiteSettingsExtras';
+import HtmlLangDir from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HtmlLangDir';
+import { RTL_LANGUAGES } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
 
@@ -129,6 +131,8 @@ export default function applyConfig(voltoConfig) {
     isFooterCollapsed: false, // false(default) -> vedere il footer automatico esploso | true -> implodere il footer menu automatico
     supportedLanguages: ['it'],
     defaultLanguage: 'it',
+    // languages written right to left: pages in these languages get dir="rtl"
+    rtlLanguages: RTL_LANGUAGES,
     verticalFormTabs: true,
     showTags: false,
     showSelfRegistration: false,
@@ -357,6 +361,10 @@ export default function applyConfig(voltoConfig) {
       {
         match: '',
         component: SiteSettingsExtras,
+      },
+      {
+        match: '',
+        component: HtmlLangDir,
       },
     ],
 
