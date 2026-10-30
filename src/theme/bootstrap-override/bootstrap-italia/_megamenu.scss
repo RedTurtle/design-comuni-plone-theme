@@ -34,10 +34,6 @@
   }
 
   .dropdown-menu {
-    &[role='region']:focus {
-      box-shadow: none;
-      outline: none;
-    }
 
     .link-list-wrapper {
       .link-list {

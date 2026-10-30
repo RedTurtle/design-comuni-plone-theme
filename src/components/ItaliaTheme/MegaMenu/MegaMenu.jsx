@@ -295,6 +295,7 @@ const MegaMenu = ({ item, pathname, index = 0 }) => {
             id={panelId}
             aria-labelledby={toggleId}
             onKeyDown={onPanelKeyDown}
+            className="no-focus--mouse"
           >
             <Row>
               <Col lg={hasBlocks ? 6 : 12}>

@@ -11,6 +11,7 @@ export const useMegaMenuKeyboard = ({
   panelId,
 }) => {
   const pendingFocus = useRef(null);
+  const openedWithKeyboard = useRef(false);
 
   const getPanel = () => document.getElementById(panelId);
   const getPanelLinks = () => [
@@ -25,6 +26,10 @@ export const useMegaMenuKeyboard = ({
 
   useEffect(() => {
     if (!menuStatus) {
+      openedWithKeyboard.current = false;
+      return;
+    }
+    if (!openedWithKeyboard.current) {
       return;
     }
     if (pendingFocus.current) {
@@ -36,7 +41,7 @@ export const useMegaMenuKeyboard = ({
   }, [menuStatus]);
 
   useEffect(() => {
-    if (!menuStatus) {
+    if (!menuStatus || !openedWithKeyboard.current) {
       return;
     }
     const handleEscape = (e) => {
@@ -57,6 +62,9 @@ export const useMegaMenuKeyboard = ({
 
   const onToggleKeyDown = (e) => {
     e.stopPropagation();
+    if (['Enter', ' ', 'ArrowDown', 'ArrowUp'].includes(e.key)) {
+      openedWithKeyboard.current = true;
+    }
     switch (e.key) {
       case ' ':
         e.preventDefault();
