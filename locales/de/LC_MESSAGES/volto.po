@@ -2339,11 +2339,6 @@ msgstr ""
 msgid "dropdownmenu-blocks-description"
 msgstr ""
 
-#: components/ItaliaTheme/MegaMenu/MegaMenu
-# defaultMessage: Close menu
-msgid "dropdownmenu-close-menu-button"
-msgstr ""
-
 #: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
 # defaultMessage: Delete menu item
 msgid "dropdownmenu-deletemenuitem"

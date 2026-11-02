@@ -2324,11 +2324,6 @@ msgstr "Blocchi"
 msgid "dropdownmenu-blocks-description"
 msgstr "Aggiungi i blocchi che verranno mostrati nel megamenu"
 
-#: components/ItaliaTheme/MegaMenu/MegaMenu
-# defaultMessage: Close menu
-msgid "dropdownmenu-close-menu-button"
-msgstr "Chiudi il menu"
-
 #: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
 # defaultMessage: Delete menu item
 msgid "dropdownmenu-deletemenuitem"
