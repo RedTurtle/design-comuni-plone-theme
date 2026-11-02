@@ -41,14 +41,7 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
-
-### Fix
-
-- Migliorata l'accessibilità della pagina dei risultati di ricerca.
-- Le pagine dei Servizi che hanno date nella sezione "Tempi e scadenze" ora si aprono correttamente, senza mostrare la pagina di errore.
-
- ## Versione X.X.X (dd/mm/yyyy)
+## Versione 12.17.0 (02/11/2026)
 
 ### Migliorie
 
@@ -60,6 +53,8 @@
 - Nel megamenu i link di ogni voce sono ora in un'unica lista, suddivisa in colonne solo graficamente, così gli screen reader la annunciano come un solo elenco.
 - Migliorata la navigazione da tastiera nel megamenu e rimosso il pulsante di chiusura "X" dal menu principale.
 - Le pagine scritte in una lingua diversa dall'italiano (campo "Lingua" del contenuto) ora dichiarano la propria lingua, così le tecnologie assistive leggono il testo con la pronuncia corretta. Per le lingue che si scrivono da destra a sinistra (arabo, urdu, persiano, ebraico...) il testo del contenuto viene mostrato da destra a sinistra. Intestazione, briciole di pane e piè di pagina restano nella lingua corrente del sito. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Migliorata l'accessibilità della pagina dei risultati di ricerca.
+- Le pagine dei Servizi che hanno date nella sezione "Tempi e scadenze" ora si aprono correttamente, senza mostrare la pagina di errore.
 
 ### Novità
 

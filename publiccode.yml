@@ -120,7 +120,7 @@ platforms:
   - web
 releaseDate: '2026-10-22'
 softwareType: standalone/web
-softwareVersion: 12.16.2
+softwareVersion: 12.17.0
 url: 'https://github.com/italia/design-comuni-plone-theme'
 usedBy:
   - ASL Roma 5
