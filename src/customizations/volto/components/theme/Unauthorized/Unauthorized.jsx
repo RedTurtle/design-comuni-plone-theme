@@ -9,10 +9,11 @@ import { Unauthorized as UnauthorizedItalia } from 'design-comuni-plone-theme/co
 /**
  * unauthorized function.
  * @function Unauthorized
+ * @param {Object} props Props passed by Volto's View (staticContext, error, ...)
  * @returns {string} Markup of the unauthorized page.
  */
-const Unauthorized = () => {
-  return <UnauthorizedItalia />;
+const Unauthorized = (props) => {
+  return <UnauthorizedItalia {...props} />;
 };
 
 export default Unauthorized;
