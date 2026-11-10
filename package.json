@@ -200,7 +200,7 @@
     "stylelint-prettier": "4.0.2"
   },
   "peerDependencies": {
-    "@plone/volto": "19.4.1"
+    "@plone/volto": "19.7.0"
   },
   "resolutions": {
     "react": "18.2.0",
