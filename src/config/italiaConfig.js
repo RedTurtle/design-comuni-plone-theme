@@ -158,6 +158,15 @@ export default function applyConfig(voltoConfig) {
       }
     */
     maxFileUploadSize: 104857600,
+    // Reducers not serialized in the SSR HTML (window.__data): reduces page size
+    initialReducersBlacklist: [
+      ...(config.settings.initialReducersBlacklist ?? []),
+      // 'intl',
+      'reduxAsyncConnect',
+      // 'navroot',
+      // 'dropdownMenuNavItems', // leaving this as docs as enabling this would break the site
+      // 'content', // leaving this as docs as enabling this would break the site
+    ],
     querystringAdditionalFields: [],
     searchBlockTemplates: [
       'simpleCard',
