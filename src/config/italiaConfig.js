@@ -92,6 +92,40 @@ const messages = defineMessages({
   },
 });
 
+/**
+ * Reducers not serialized in the SSR HTML (window.__data), to reduce the page size.
+ *
+ * Can be configured at runtime (server side, no rebuild needed) with the
+ * SSR_HYDRATION_BLACKLIST env variable, a comma separated list of reducers:
+ * - not set: defaults to `reduxAsyncConnect`
+ * - empty or `none`: no reducers are added to the blacklist
+ * - `reduxAsyncConnect,navroot`: those reducers are added to the blacklist
+ *
+ * Notes: `intl` needs the locales to be preloaded in the client, otherwise labels
+ * are not translated at hydration. `content` and `dropdownMenuNavItems` can't be
+ * used as they would break the site.
+ */
+const DEFAULT_SSR_HYDRATION_BLACKLIST = ['reduxAsyncConnect'];
+
+export const getInitialReducersBlacklist = (current = []) => {
+  const env =
+    typeof process !== 'undefined'
+      ? process.env?.SSR_HYDRATION_BLACKLIST
+      : undefined;
+
+  let names = DEFAULT_SSR_HYDRATION_BLACKLIST;
+  if (typeof env === 'string') {
+    names =
+      env.trim().toLowerCase() === 'none'
+        ? []
+        : env
+            .split(',')
+            .map((name) => name.trim())
+            .filter(Boolean);
+  }
+  return [...new Set([...(current ?? []), ...names])];
+};
+
 export default function applyConfig(voltoConfig) {
   let config = applyItaliaSlateConfig(voltoConfig);
 
@@ -158,15 +192,9 @@ export default function applyConfig(voltoConfig) {
       }
     */
     maxFileUploadSize: 104857600,
-    // Reducers not serialized in the SSR HTML (window.__data): reduces page size
-    initialReducersBlacklist: [
-      ...(config.settings.initialReducersBlacklist ?? []),
-      // 'intl',
-      'reduxAsyncConnect',
-      // 'navroot',
-      // 'dropdownMenuNavItems', // leaving this as docs as enabling this would break the site
-      // 'content', // leaving this as docs as enabling this would break the site
-    ],
+    initialReducersBlacklist: getInitialReducersBlacklist(
+      config.settings.initialReducersBlacklist,
+    ),
     querystringAdditionalFields: [],
     searchBlockTemplates: [
       'simpleCard',
