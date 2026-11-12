@@ -6,8 +6,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { flattenHTMLToAppURL, isCmsUi } from '@plone/volto/helpers';
-import { richTextHasContent } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { isCmsUi } from '@plone/volto/helpers';
+import {
+  richTextHasContent,
+  RichTextHtml,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { useSiteLanguage } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 const SubsiteFooter = () => {
@@ -24,11 +27,7 @@ const SubsiteFooter = () => {
     >
       <div className="text">
         <div className="container px-md-4">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: flattenHTMLToAppURL(subsite.subsite_footer.data),
-            }}
-          />
+          <RichTextHtml html={subsite.subsite_footer.data} />
         </div>
       </div>
     </div>

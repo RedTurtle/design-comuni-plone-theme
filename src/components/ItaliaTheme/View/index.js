@@ -5,6 +5,8 @@ export {
   RichTextRender,
   richTextHasContent,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/RichTextRender';
+export RichTextHtml from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/RichTextHtml';
+export { parseRichTextHtml } from 'design-comuni-plone-theme/components/ItaliaTheme/View/Commons/RichTextHtml';
 export {
   useSideMenu,
   useReadingTime,
