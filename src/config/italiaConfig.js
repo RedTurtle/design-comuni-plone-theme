@@ -155,6 +155,7 @@ export default function applyConfig(voltoConfig) {
     defaultLanguage: 'it',
     verticalFormTabs: true,
     showTags: false,
+    showRelatedItems: false,
     showSelfRegistration: false,
     useEmailAsLogin: false,
     defaultPageSize: 24,
