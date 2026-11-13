@@ -1,5 +1,53 @@
 # Changelog
 
+## [12.17.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.16.2...v12.17.0) (2026-11-02)
+
+
+### Features
+
+* add validity dates to Alert block ([#1215](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1215)) ([a223d7a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/a223d7a8ec7392b522a59a7fa94c4074ed77122c)), closes [#795](https://github.com/RedTurtle/design-comuni-plone-theme/issues/795)
+* added checkbox to hide category in rss block ([#1208](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1208)) ([638774a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/638774a4169165afd9073f677e6e72fec712c19a))
+* set lang and dir on <html> from the content language ([#1213](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1213)) ([904f0dc](https://github.com/RedTurtle/design-comuni-plone-theme/commit/904f0dc38d0bd80a6335e2488f0feb7aa992d021))
+
+
+### Bug Fixes
+
+* a11y in search-results page ([#1206](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1206)) ([44b87d5](https://github.com/RedTurtle/design-comuni-plone-theme/commit/44b87d590e49e29403f4be82b7f27fbc7cacab7d))
+* locales ([9b2796a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/9b2796a176cfbb1fe16fcdb1c978d9c26c33be38))
+* menu and megamenu a11y ([#1214](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1214)) ([03baec2](https://github.com/RedTurtle/design-comuni-plone-theme/commit/03baec289557da51f84ea684acbc2120a06469e6))
+* simplify moment prop passing in ServizioView component ([#1212](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1212)) ([23c8c54](https://github.com/RedTurtle/design-comuni-plone-theme/commit/23c8c5499c54a1ba45f7d53813dd5108aa36cf86))
+
+
+### Documentation
+
+* updated publiccode and release log ([b7a64a3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b7a64a3b6b4fede107e3cf423cec1a1714c34fe6))
+
+## [12.16.2](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.16.1...v12.16.2) (2026-10-22)
+
+
+### Maintenance
+
+* preparing releae ([854f75f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/854f75f89b9d1419a1f0fce620a587fba30fa849))
+* update volto to 17.23.1 ([#1205](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1205)) ([68e538a](https://github.com/RedTurtle/design-comuni-plone-theme/commit/68e538a809720c82bf61f8fa6d40b4af220ba824))
+
+## [12.16.1](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.16.0...v12.16.1) (2026-10-20)
+
+
+### Bug Fixes
+
+* a11y heading levels for topics  ([#1196](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1196)) ([7a26035](https://github.com/RedTurtle/design-comuni-plone-theme/commit/7a26035783035e630e9503d956feeca1d48479b3))
+* a11y on sliders ([061135f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/061135f1993ad8284e366010e6a5b4941c6d0aff))
+* changed link requested by client ([#1193](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1193)) ([b70ad9f](https://github.com/RedTurtle/design-comuni-plone-theme/commit/b70ad9f10117c9c39bad6769c379549c7549e9f8))
+* don't expose backend details in the SSR html ([#1202](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1202)) ([ad500e3](https://github.com/RedTurtle/design-comuni-plone-theme/commit/ad500e33e57edac50d4c867ea6154c4be88b7c53))
+* NumbersBlock numbers no longer wrap, fluid font-size with clamp ([#1198](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1198)) ([f269940](https://github.com/RedTurtle/design-comuni-plone-theme/commit/f26994010b67a95757f9f00ede4e913cedab5101))
+* RSS listing block templates improvements to be like CardTemplate blocks ([#1195](https://github.com/RedTurtle/design-comuni-plone-theme/issues/1195)) ([40f9d03](https://github.com/RedTurtle/design-comuni-plone-theme/commit/40f9d037cf34d971178b729e78a995e127de491a))
+
+
+### Maintenance
+
+* locales ([d3dca0e](https://github.com/RedTurtle/design-comuni-plone-theme/commit/d3dca0e1136f22a0fb164b52e418422f3ebadaa0))
+* preparing release 12.16.1 ([5dc8c15](https://github.com/RedTurtle/design-comuni-plone-theme/commit/5dc8c159e6576ef8cb549de63856bea3406e149d))
+
 ## [12.16.0](https://github.com/RedTurtle/design-comuni-plone-theme/compare/v12.15.1...v12.16.0) (2026-09-23)
 
 

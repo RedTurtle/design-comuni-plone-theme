@@ -58,7 +58,7 @@ $accordion-icon-color: #7fb2e5;
 
             p {
               margin: 0;
-              text-align: left;
+              text-align: start;
             }
 
             button {
@@ -85,7 +85,7 @@ $accordion-icon-color: #7fb2e5;
                 color: $primary;
                 font-size: 1.2rem;
                 font-weight: bold;
-                text-align: left;
+                text-align: start;
 
                 .icon {
                   flex-shrink: 0;

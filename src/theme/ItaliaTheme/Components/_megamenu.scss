@@ -34,19 +34,3 @@
     }
   }
 }
-
-.megamenu-close-button {
-  @media (max-width: 767px) {
-    button {
-      position: absolute !important;
-      overflow: hidden !important;
-      width: 1px !important;
-      height: 1px !important;
-      padding: 0 !important;
-      border: 0 !important;
-      margin: -1px !important;
-      clip: rect(0, 0, 0, 0) !important;
-      white-space: nowrap !important;
-    }
-  }
-}

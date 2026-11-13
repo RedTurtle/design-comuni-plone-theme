@@ -10,7 +10,7 @@ import { find, map } from 'lodash';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
-import { Helmet, flattenToAppURL, langmap } from '@plone/volto/helpers';
+import { flattenToAppURL, langmap } from '@plone/volto/helpers';
 import {
   Row,
   Col,
@@ -48,7 +48,13 @@ const LanguageSelector = (props) => {
     (state) => state.content.data?.['@components']?.translations?.items,
   );
 
-  return config.settings.isMultilingual ? (
+  // lang/dir on <html> are set by the HtmlLangDir appExtra: forcing the
+  // default language here would hide the language of the content.
+  if (!config.settings.isMultilingual) {
+    return null;
+  }
+
+  return (
     <UncontrolledDropdown nav tag="div">
       <DropdownToggle aria-haspopup caret color="secondary" nav>
         {languagesISO392[currentLang]}
@@ -84,10 +90,6 @@ const LanguageSelector = (props) => {
         </Row>
       </DropdownMenu>
     </UncontrolledDropdown>
-  ) : (
-    <Helmet>
-      <html lang={config.settings.defaultLanguage} />
-    </Helmet>
   );
 };
 

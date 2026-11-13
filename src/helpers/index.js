@@ -70,3 +70,11 @@ export {
   contentHasImage,
 } from 'design-comuni-plone-theme/helpers/images';
 export { getWidgetView } from 'design-comuni-plone-theme/helpers/getWidgetView';
+export {
+  RTL_LANGUAGES,
+  getContentLanguage,
+  getLanguageDirection,
+  getPageLanguage,
+  getSiteLanguage,
+  useSiteLanguage,
+} from 'design-comuni-plone-theme/helpers/contentLanguage';

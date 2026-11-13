@@ -11,6 +11,7 @@ import { Container, Row, Col } from 'design-react-kit';
 import { SidebarPortal } from '@plone/volto/components';
 import { defineMessages, useIntl } from 'react-intl';
 import { useHandleDetachedBlockFocus } from 'design-comuni-plone-theme/helpers/blocks';
+import AlertWrapper from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Alert/AlertWrapper';
 import {
   AlertSidebar,
   TextEditorWidget,
@@ -44,40 +45,44 @@ const Edit = (props) => {
     <div />
   ) : (
     <div className="public-ui" tabIndex="-1">
-      <div
-        className={cx('alertblock', {
-          selected: selected,
-        })}
-      >
-        <Row className={cx('full-width p-5', 'bg-alert-' + data.bg_color)}>
-          <Container className="ui">
-            <Row className="align-items-start">
-              {data.image?.data && (
-                <Col sm={2} className="pb-3 image-col">
-                  <img
-                    src={`data:${data.image['content-type']};${data.image.encoding},${data.image.data}`}
-                    alt=""
-                    className={cx('left-image', [
-                      data.sizeImage ? 'size-' + data.sizeImage : 'size-l',
-                    ])}
+      <AlertWrapper data={data} isEditMode>
+        <div
+          className={cx('alertblock', {
+            selected: selected,
+          })}
+        >
+          <Row className={cx('full-width p-5', 'bg-alert-' + data.bg_color)}>
+            <Container className="ui">
+              <Row className="align-items-start">
+                {data.image?.data && (
+                  <Col sm={2} className="pb-3 image-col">
+                    <img
+                      src={`data:${data.image['content-type']};${data.image.encoding},${data.image.data}`}
+                      alt=""
+                      className={cx('left-image', [
+                        data.sizeImage ? 'size-' + data.sizeImage : 'size-l',
+                      ])}
+                    />
+                  </Col>
+                )}
+                <Col>
+                  <TextEditorWidget
+                    {...props}
+                    data={data}
+                    fieldName="text"
+                    selected={selected && selectedField === 'text'}
+                    setSelected={setSelectedField}
+                    placeholder={intl.formatMessage(
+                      messages.content_placeholder,
+                    )}
+                    showToolbar={true}
                   />
                 </Col>
-              )}
-              <Col>
-                <TextEditorWidget
-                  {...props}
-                  data={data}
-                  fieldName="text"
-                  selected={selected && selectedField === 'text'}
-                  setSelected={setSelectedField}
-                  placeholder={intl.formatMessage(messages.content_placeholder)}
-                  showToolbar={true}
-                />
-              </Col>
-            </Row>
-          </Container>
-        </Row>
-      </div>
+              </Row>
+            </Container>
+          </Row>
+        </div>
+      </AlertWrapper>
       <SidebarPortal selected={selected}>
         <AlertSidebar {...props} />
       </SidebarPortal>

@@ -14,6 +14,10 @@
  * - Rimosso il meta generator (information disclosure)
  * - window.env senza le variabili lette solo dal server e window.__data senza
  *   gli url interni del backend (vedi helpers/ssr)
+ * - Render the dir attribute set with Helmet on <html> (see HtmlLangDir),
+ *   not only lang
+ * - #toolbar and #sidebar keep the site language/direction: the CMS UI must
+ *   not follow a content in another language (e.g. rtl)
  */
 
 import React, { Component } from 'react';
@@ -24,6 +28,10 @@ import { join } from 'lodash';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import { runtimeConfig } from '@plone/volto/runtime_config';
 import config from '@plone/volto/registry';
+import {
+  getLanguageDirection,
+  getSiteLanguage,
+} from 'design-comuni-plone-theme/helpers/contentLanguage';
 import {
   getPublicRuntimeConfig,
   serializeState,
@@ -109,9 +117,11 @@ class Html extends Component {
     const head = Helmet.rewind();
     const bodyClass = join(BodyClass.rewind(), ' ');
     const htmlAttributes = head.htmlAttributes.toComponent();
+    const siteLang = getSiteLanguage(store.getState().intl?.locale);
+    const siteDir = getLanguageDirection(siteLang);
 
     return (
-      <html lang={htmlAttributes.lang}>
+      <html lang={htmlAttributes.lang} dir={htmlAttributes.dir}>
         <head>
           <meta charSet="utf-8" />
           {head.base.toComponent()}
@@ -198,9 +208,21 @@ class Html extends Component {
           ) : undefined}
         </head>
         <body className={bodyClass}>
-          <div role="navigation" aria-label="Toolbar" id="toolbar" />
+          <div
+            role="navigation"
+            aria-label="Toolbar"
+            id="toolbar"
+            lang={siteLang}
+            dir={siteDir}
+          />
           <div id="main" dangerouslySetInnerHTML={{ __html: markup }} />
-          <div role="complementary" aria-label="Sidebar" id="sidebar" />
+          <div
+            role="complementary"
+            aria-label="Sidebar"
+            id="sidebar"
+            lang={siteLang}
+            dir={siteDir}
+          />
 
           <script
             dangerouslySetInnerHTML={{

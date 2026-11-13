@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Button } from 'design-react-kit';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { useSiteLanguage } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 const messages = defineMessages({
   scrollToTop: {
@@ -21,6 +22,8 @@ const messages = defineMessages({
 
 const ScrollToTop = () => {
   const intl = useIntl();
+  // site chrome keeps the site language when the content is in another one
+  const siteLanguage = useSiteLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -47,7 +50,11 @@ const ScrollToTop = () => {
   return (
     <>
       {isVisible && (
-        <div className="public-ui scroll-to-top">
+        <div
+          className="public-ui scroll-to-top"
+          lang={siteLanguage.lang}
+          dir={siteLanguage.dir}
+        >
           <Button
             color="tertiary"
             size="sm"

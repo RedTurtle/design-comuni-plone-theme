@@ -23,6 +23,24 @@
 @import 'bootstrap-italia/src/scss/custom/mixins/text-emphasis';
 //
 @import 'bootstrap/scss/utilities';
+// .text-start/.text-end follow the text direction (pages in rtl languages):
+// same output as left/right in ltr
+$utilities: map-merge(
+  $utilities,
+  (
+    'text-align':
+      map-merge(
+        map-get($utilities, 'text-align'),
+        (
+          values: (
+            start: start,
+            end: end,
+            center: center,
+          ),
+        )
+      ),
+  )
+);
 
 @import 'bootstrap/scss/root';
 

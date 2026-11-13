@@ -25,6 +25,17 @@
 
 .public-ui,
 body.cms-ui .public-ui {
+  // Validity status shown to editors above alerts with startDate/endDate
+  .alert-info-dates {
+    padding: 0.25rem 1rem;
+    border: 1px solid $black;
+    margin: 0 0 0.5rem;
+    background-color: $white;
+    color: $body-color;
+    font-size: 1rem;
+    text-align: center;
+  }
+
   .block.alertblock,
   .alertblock {
     .full-width {
