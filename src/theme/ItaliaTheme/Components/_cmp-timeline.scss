@@ -10,13 +10,14 @@
   }
 
   .info-text {
+    color: get-color(light, grey);
+    font-weight: 600;
+    line-height: 1.5;
+
     // @include font(16, 18);
     @include media-breakpoint-down(lg) {
       font-size: rfs-fluid-value(1rem);
     }
-    color: get-color(light, grey);
-    font-weight: 600;
-    line-height: 1.5;
 
     @include media-breakpoint-up(md) {
       line-height: 1.56;
@@ -35,21 +36,21 @@
   }
 
   .title-xxlarge-regular {
+    font-weight: 400;
+    line-height: 1;
     font-size: 2.222222rem;
     @include media-breakpoint-down(md) {
       font-size: rfs-fluid-value(2.222222rem);
     }
-    font-weight: 400;
-    line-height: 1;
   }
 
   .title-medium-2 {
+    font-weight: 400;
+    line-height: 1.2;
     font-size: 1.5rem;
     @include media-breakpoint-down(md) {
       font-size: rfs-fluid-value(1.5rem);
     }
-    font-weight: 400;
-    line-height: 1.2;
   }
 }
 

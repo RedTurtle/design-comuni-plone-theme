@@ -1,18 +1,27 @@
 /*
-CUSTOMIZATIONS:
-- get content from state.content.data and not from data.properties.content,
-- added listingRef to scroll to start of listing, and not to start of page
-- added additional filters
-- added additional fields to pass to @querystring-search (config.settings.querystringAdditionalFields)
-- usedeepCompareEffect and integrate custom logic for searchBlock to make it work with our implementation
-- used [subrequestID] instead [id] of block, as id of subrequest to avoid block unload on duplicate contents with blocks with same id's. Volto's pr: https://github.com/plone/volto/pull/5071
-*/
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Listing/withQuerystringResults.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - get content from state.content.data and not from data.properties.content,
+ * - added listingRef to scroll to start of listing, and not to start of page
+ * - added additional filters
+ * - added additional fields to pass to @querystring-search (config.settings.querystringAdditionalFields)
+ * - usedeepCompareEffect and integrate custom logic for searchBlock to make it work with our implementation
+ * - used [subrequestID] instead [id] of block, as id of subrequest to avoid block unload on duplicate contents with blocks with same id's. Volto's pr: https://github.com/plone/volto/pull/5071
+ * - added _cache_key param in @querystring-search (based on UID and modify date of current content) to invalidate Varnish cache when content has been modified (both in normal query and for variation imageGallery)
+ *
+ */
 import React, { createRef, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { getContent, getQueryStringResults } from '@plone/volto/actions';
+import { getContent } from '@plone/volto/actions/content/content';
+import { getQueryStringResults } from '@plone/volto/actions/querystringsearch/querystringsearch';
 import { useDispatch, useSelector } from 'react-redux';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
+import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import {
+  computeTotalPages,
+  computeVisibleTotal,
+} from '@plone/volto/helpers/Pagination/Pagination';
 import config from '@plone/volto/registry';
 
 import { setOriginalQuery } from 'design-comuni-plone-theme/actions';
@@ -44,6 +53,7 @@ const getAdaptedQuery = (querystring, b_size, variation) => {
       : { metadata_fields: '_all' },
     {
       b_size: b_size,
+      offset: querystring?.offset || 0,
     },
     ...copyFields.map((name) =>
       Object.keys(querystring).includes(name)
@@ -106,18 +116,24 @@ export default function withQuerystringResults(WrappedComponent) {
       ? querystringResults?.[subrequestID]?.items || []
       : folderItems;
 
-    const showAsFolderListing = !hasQuery && content?.items_total > b_size;
-    const showAsQueryListing =
-      hasQuery && querystringResults?.[subrequestID]?.total > b_size;
+    // The backend counts the items the offset skips in its total, but the
+    // listing never shows them. Everything the user sees — the page count and
+    // the result counter — is about the items past the offset.
+    const subrequestTotal = querystringResults?.[subrequestID]?.total;
+    const visibleTotal = computeVisibleTotal(
+      subrequestTotal,
+      querystring?.offset,
+    );
 
-    const itemsTotal = showAsFolderListing
-      ? content.items_total
-      : querystringResults?.[subrequestID]?.total;
+    const showAsFolderListing = !hasQuery && content?.items_total > b_size;
+    const showAsQueryListing = hasQuery && visibleTotal > b_size;
+
+    const itemsTotal = showAsFolderListing ? content.items_total : visibleTotal;
 
     const totalPages = showAsFolderListing
-      ? Math.ceil(content.items_total / b_size)
+      ? computeTotalPages(content.items_total, b_size)
       : showAsQueryListing
-        ? Math.ceil(querystringResults[subrequestID].total / b_size)
+        ? computeTotalPages(visibleTotal, b_size)
         : 0;
 
     const prevBatch = showAsFolderListing
@@ -205,6 +221,14 @@ export default function withQuerystringResults(WrappedComponent) {
         });
       }
 
+      // cache key basata su UID e data di modifica del contenuto, per la cache
+      // di Varnish (rer-theme); calcolata qui perché serve in entrambi i rami
+      // sotto (query normale e variation imageGallery)
+      const modifiedDate = content.modified
+        ? Math.floor(new Date(content.modified).getTime() / 1000)
+        : '';
+      const cachekey = `${content.UID}_${modifiedDate}`;
+
       if (_dataQuerystring?.query?.length > 0 || additionalFilters.length > 0) {
         let query = [
           ...(originalQuery && additionalFilters.length > 0
@@ -231,14 +255,14 @@ export default function withQuerystringResults(WrappedComponent) {
         if (page !== currentPage) {
           setCurrentPage(page);
         }
-        dispatch(
-          getQueryStringResults(
-            path,
-            getAdaptedQuery(_querystring, b_size, data.variation),
-            subrequestID,
-            page,
-          ),
+        const queryParams = getAdaptedQuery(
+          _querystring,
+          b_size,
+          data.variation,
         );
+        queryParams['_cache_key'] = cachekey;
+
+        dispatch(getQueryStringResults(path, queryParams, subrequestID, page));
       } else if (
         ((!data.variation && data.template === 'imageGallery') ||
           data.variation === 'imageGallery') &&
@@ -257,6 +281,7 @@ export default function withQuerystringResults(WrappedComponent) {
                   v: '',
                 },
               ],
+              _cache_key: cachekey,
             },
             subrequestID,
           ),
@@ -283,7 +308,7 @@ export default function withQuerystringResults(WrappedComponent) {
             ? handleContentPaginationChange(e, { activePage })
             : handleQueryPaginationChange(e, { activePage });
         }}
-        total={querystringResults?.[subrequestID]?.total}
+        total={subrequestTotal === undefined ? undefined : visibleTotal}
         batch_size={b_size}
         currentPage={currentPage}
         totalPages={totalPages}

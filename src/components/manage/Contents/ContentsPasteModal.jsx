@@ -34,7 +34,8 @@ const messages = defineMessages({
 });
 
 const ContentsPasteModal = (props) => {
-  const { itemsToPaste = [], open, onCancel, onOk, limit } = props;
+  const { items, open, onCancel, onOk, limit } = props;
+  const itemsList = items ?? [];
   const intl = useIntl();
   const affectedItems = useSelector(
     (state) => state.search?.subrequests?.affected_items_paste?.total ?? 0,
@@ -51,7 +52,7 @@ const ContentsPasteModal = (props) => {
         confirmButton={intl.formatMessage(messages.paste)}
         cancelButton={intl.formatMessage(messages.cancel)}
         header={
-          itemsToPaste.length === 1
+          itemsList.length === 1
             ? intl.formatMessage(messages.pasteConfirmSingleItem)
             : intl.formatMessage(messages.pasteConfirmMultipleItems)
         }
@@ -83,13 +84,13 @@ const ContentsPasteModal = (props) => {
 };
 
 ContentsPasteModal.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      UID: PropTypes.string,
-    }),
-  ).isRequired,
+  items: PropTypes.arrayOf(PropTypes.string),
   open: PropTypes.bool.isRequired,
   onOk: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
+};
+
+ContentsPasteModal.defaultProps = {
+  items: null,
 };
 export default ContentsPasteModal;

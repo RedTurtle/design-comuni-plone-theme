@@ -1,0 +1,106 @@
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/18.35.0/packages/volto/theme/themes/pastanaga-cms-ui/extras/cms-ui.semantic.less
+ *
+ * CUSTOMIZATIONS:
+ * - Added `#page-login` to the component-scoping selectors below. Volto's
+ *   stock Login.jsx is built from raw semantic-ui-react components (Segment,
+ *   Form, Grid, Input, Button) and always rendered inside the cms-ui scope.
+ *   Since Volto 18.35's nonContentRoutesPublic makes /login `public-ui` by
+ *   default, it fell outside `.cms-ui, #toolbar` and lost this base
+ *   component styling entirely. #page-login is the id Login.jsx always
+ *   renders regardless of body class, so it's a safe anchor to restore just
+ *   for that page without re-enabling semantic-ui styling site-wide.
+ * - Rewrote the relative sibling imports as `~@plone/volto/../theme/...`
+ *   absolute-style paths so this file can live outside its original folder.
+ * - Overrode `@spritePath` before importing the `flag` element: under pnpm,
+ *   semantic-ui-less's own definitions/elements/flag.less resolves its
+ *   background sprite via a relative path computed from its real location
+ *   inside node_modules/.pnpm/semantic-ui-less@.../node_modules/semantic-ui-less,
+ *   which webpack fails to resolve (the extra pnpm nesting depth breaks it;
+ *   this didn't happen with yarn's flat node_modules). Pointing @spritePath
+ *   at a local copy of the same image sidesteps that broken lookup.
+ */
+
+@import '~@plone/volto/../theme/themes/pastanaga-cms-ui/extras/cms-ui.reset.less';
+@import '~@plone/volto/../theme/themes/pastanaga-cms-ui/extras/cms-ui.site.less';
+
+// prettier-ignore
+.cms-ui, #page-login {
+
+  /* Elements */
+  & { @import "~semantic-ui-less/definitions/elements/button"; }
+}
+// prettier-ignore
+.cms-ui, #toolbar, #page-login {
+  /* Global - OVERRIDDEN ABOVE */
+  // & { @import "~semantic-ui-less/definitions/globals/reset"; }
+  // & { @import "~semantic-ui-less/definitions/globals/site"; }
+
+  /* Elements */
+  & { @import "~semantic-ui-less/definitions/elements/container"; }
+}
+
+& {
+  @import '~@plone/volto/../theme/themes/pastanaga-cms-ui/extras/cms-ui.elements.container.less';
+}
+
+// prettier-ignore
+.cms-ui, #toolbar, #page-login {
+  & { @import "~semantic-ui-less/definitions/elements/divider"; }
+  @spritePath: "~design-comuni-plone-theme/theme/vendor-overrides/assets/images/flags.png";
+  & { @import "~semantic-ui-less/definitions/elements/flag"; }
+  & { @import "~semantic-ui-less/definitions/elements/header"; }
+  & { @import "~semantic-ui-less/definitions/elements/icon"; }
+  & { @import "~semantic-ui-less/definitions/elements/image"; }
+  & { @import "~semantic-ui-less/definitions/elements/input"; }
+  & { @import "~semantic-ui-less/definitions/elements/label"; }
+  & { @import "~semantic-ui-less/definitions/elements/list"; }
+  & { @import "~semantic-ui-less/definitions/elements/loader"; }
+  & { @import "~semantic-ui-less/definitions/elements/placeholder"; }
+  & { @import "~semantic-ui-less/definitions/elements/rail"; }
+  & { @import "~semantic-ui-less/definitions/elements/reveal"; }
+  & { @import "~semantic-ui-less/definitions/elements/segment"; }
+  & { @import "~semantic-ui-less/definitions/elements/step"; }
+
+  /* Collections */
+  & { @import "~semantic-ui-less/definitions/collections/breadcrumb"; }
+  & { @import "~semantic-ui-less/definitions/collections/form"; }
+  & { @import "~semantic-ui-less/definitions/collections/grid"; }
+  & { @import "~semantic-ui-less/definitions/collections/menu"; }
+  & { @import "~semantic-ui-less/definitions/collections/message"; }
+  & { @import "~semantic-ui-less/definitions/collections/table"; }
+
+  /* Views */
+  & { @import "~semantic-ui-less/definitions/views/ad"; }
+  & { @import "~semantic-ui-less/definitions/views/card"; }
+  & { @import "~semantic-ui-less/definitions/views/comment"; }
+  & { @import "~semantic-ui-less/definitions/views/feed"; }
+  & { @import "~semantic-ui-less/definitions/views/item"; }
+  & { @import "~semantic-ui-less/definitions/views/statistic"; }
+
+  /* Modules */
+  & { @import "~semantic-ui-less/definitions/modules/accordion"; }
+  & { @import "~semantic-ui-less/definitions/modules/checkbox"; }
+  & { @import "~semantic-ui-less/definitions/modules/dimmer"; }
+  & { @import "~semantic-ui-less/definitions/modules/dropdown"; }
+  & { @import "~semantic-ui-less/definitions/modules/embed"; }
+  & { @import "~semantic-ui-less/definitions/modules/modal"; }
+  & { @import "~semantic-ui-less/definitions/modules/nag"; }
+  & { @import "~semantic-ui-less/definitions/modules/popup"; }
+  & { @import "~semantic-ui-less/definitions/modules/progress"; }
+  & { @import "~semantic-ui-less/definitions/modules/rating"; }
+  & { @import "~semantic-ui-less/definitions/modules/search"; }
+  & { @import "~semantic-ui-less/definitions/modules/shape"; }
+  & { @import "~semantic-ui-less/definitions/modules/sidebar"; }
+  & { @import "~semantic-ui-less/definitions/modules/sticky"; }
+  & { @import "~semantic-ui-less/definitions/modules/tab"; }
+  & { @import "~semantic-ui-less/definitions/modules/transition"; }
+}
+
+// prettier-ignore
+.cms-ui{
+
+  /* Pastanaga extras */
+  & { @import '~@plone/volto/../theme/themes/pastanaga/extras/sidebar.less'; }
+
+}

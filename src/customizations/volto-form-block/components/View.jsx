@@ -1,7 +1,25 @@
-// CUSTOMIZATION:
-// - added warning state to form
-// - backport for https://github.com/collective/volto-form-block/pull/122
-// - handle field errors coming from backend
+/*
+ * original: https://raw.githubusercontent.com/collective/volto-form-block/v3.17.1/src/components/View.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - added a `warning` form state: `initialState.warning`, `FORM_STATES.warning`
+ *   and a `formStateReducer` case that sets `{ result: action.result, warning: true }`
+ *   (the `loading`/`error`/`success` branches now also reset `warning: null`)
+ * - backport of https://github.com/collective/volto-form-block/pull/122: on
+ *   successful submit, if `submitResults.result.waiting_list` is truthy,
+ *   dispatch `FORM_STATES.warning` instead of `FORM_STATES.success`, so the
+ *   form can show a "waiting list" warning instead of the success message
+ * - handle field-level errors coming from the backend: in the
+ *   `submitResults?.error` branch, the JSON error message is parsed and, if
+ *   it starts with `[`, treated as an array of `{ field_id, label, message }`
+ *   entries; each is mapped via `getFieldName(label, field_id)` and passed to
+ *   `setFormErrors`, setting `FORM_STATES.error` without a global error
+ *   message; otherwise it falls back to the original single
+ *   `errorDescription` message
+ * - added an inert, commented-out `isDate`/`formatDate` snippet as a
+ *   placeholder for future ISO date formatting (no functional effect)
+ */
+
 import React, { useState, useEffect, useReducer, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';

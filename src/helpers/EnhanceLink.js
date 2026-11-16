@@ -2,15 +2,14 @@ import React from 'react';
 import prettybytes from 'pretty-bytes';
 import cx from 'classnames';
 import { getFileViewFormat } from 'design-comuni-plone-theme/helpers';
-import { useIntl } from 'react-intl';
 
 const EnhanceLink = ({
   enhanced_link_infos,
   hideFileFormat = false,
   className,
   aria_label,
+  intl,
 }) => {
-  const intl = useIntl();
   let children = <></>;
   let aria_label_extended = null;
 
@@ -18,7 +17,7 @@ const EnhanceLink = ({
     enhanced_link_infos.getObjSize?.replaceAll('.', ',') ??
     (enhanced_link_infos?.size
       ? prettybytes(enhanced_link_infos.size, {
-          locale: intl.locale,
+          locale: intl?.locale,
         })?.toUpperCase()
       : undefined);
 

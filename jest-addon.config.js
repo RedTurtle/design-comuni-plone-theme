@@ -13,7 +13,7 @@ module.exports = {
     '<rootDir>/src/addons/design-comuni-plone-theme/project',
   ],
   transformIgnorePatterns: [
-    'node_modules/(?!(volto-slate|@plone/volto|design-react-kit|volto-))',
+    'node_modules/(?!(volto-slate|@plone/volto|@plone/registry|design-react-kit|volto-))',
   ],
   moduleNameMapper: {
     '\\.(css|less|scss|sass|svg)$': 'identity-obj-proxy',
@@ -21,7 +21,7 @@ module.exports = {
     '@plone/volto/babel': '<rootDir>/node_modules/@plone/volto/babel',
     '@plone/volto/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
     '@plone/volto-slate/(.*)$':
-      '<rootDir>/node_modules/@plone/volto/packages/volto-slate/src/$1',
+      '<rootDir>/node_modules/@plone/volto-slate/src/$1',
     '@package/(.*)$': '<rootDir>/src/$1',
     '@root/(.*)$': '<rootDir>/src/$1',
     '~/(.*)$': '<rootDir>/src/$1',
@@ -56,8 +56,9 @@ module.exports = {
     },
   },
   setupFiles: [
+    './src/addons/design-comuni-plone-theme/test-setup-crypto-polyfill.js',
     '@plone/volto/test-setup-globals.js',
-    '@plone/volto/test-setup-config.js',
+    '@plone/volto/test-setup-config.jsx',
     './src/addons/design-comuni-plone-theme/test-setup-config.js',
   ],
   globalSetup: '@plone/volto/global-test-setup.js',

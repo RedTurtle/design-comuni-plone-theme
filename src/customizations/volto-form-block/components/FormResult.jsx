@@ -1,8 +1,23 @@
 /*
-CUSTOMIZATIONS:
-- used design-react-kit components to render form result
-- added warning message when subscription limit (if set) has been exceeded
-*/
+ * original: https://raw.githubusercontent.com/collective/volto-form-block/v3.17.1/src/components/FormResult.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - replaced semantic-ui-react `Message`/`Button` with design-react-kit
+ *   `Alert`/`Button`, adding an `alertTransition` fade config (150ms) passed
+ *   to `Alert`'s `transition` prop
+ * - added a warning message when the subscription limit (if set) has been
+ *   exceeded: `Alert`'s `color` switches between "success" and "warning"
+ *   based on `formState.warning`, and shows the new `success_warning` heading
+ *   plus `success_warning_description` text
+ * - added `displayThankYouInAlertMessageFormBlock` (read from
+ *   `config.settings.siteProperties`) to control whether the custom
+ *   `data.send_message` text is also shown when the form is in the warning
+ *   (waiting-list) state
+ * - dropped the fallback `formState.result.message` paragraph that upstream
+ *   shows when `data.send_message` is not set
+ * - the reset `Button` uses `color="primary" outline` instead of the
+ *   semantic-ui `secondary` prop
+ */
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { Button, Alert } from 'design-react-kit';

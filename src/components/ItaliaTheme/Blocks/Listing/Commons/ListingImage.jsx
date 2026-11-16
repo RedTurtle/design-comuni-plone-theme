@@ -1,5 +1,6 @@
 import { UniversalLink } from '@plone/volto/components';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
+import ThemeImage from '@plone/volto/components/theme/Image/Image';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { contentHasImage } from 'design-comuni-plone-theme/helpers';
 import config from '@plone/volto/registry';
@@ -28,7 +29,7 @@ const ListingImage = ({
     if (showDefault) {
       return (
         <ListingImageWrapper item={item} noWrapLink={noWrapLink}>
-          <img
+          <ThemeImage
             src={DefaultImageSVG}
             alt=""
             sizes={sizes}

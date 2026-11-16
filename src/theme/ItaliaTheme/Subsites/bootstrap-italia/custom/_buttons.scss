@@ -42,7 +42,10 @@
         $active-border: darken($subsite-button-primary-text, 12.5%)
       );
     }
-    color: $subsite-button-primary-text !important;
+
+    & {
+      color: $subsite-button-primary-text !important;
+    }
 
     .icon {
       color: $subsite-button-primary-text;
@@ -78,7 +81,10 @@
       $active-background: lighten($subsite-button-secondary, 10%),
       $active-border: darken($subsite-button-secondary-text, 12.5%)
     );
-    color: $subsite-button-secondary-text;
+
+    & {
+      color: $subsite-button-secondary-text;
+    }
 
     .icon {
       color: $subsite-button-secondary-text;

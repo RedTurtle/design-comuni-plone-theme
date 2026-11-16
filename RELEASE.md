@@ -41,6 +41,31 @@
 - ...
  -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Migliorie
+
+- Ora in un pannello di controllo, se si clicca sul pulsante "Annulla" nella toolbar torna sempre alla pagina principale dei pannelli di controllo. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+- Nel blocco "RSS" è stato uniformato lo stile della card a quella del blocco "Elenco", con la possibilità di decidere se mostrare la data
+  e la descrizione della card. Inoltre, è possibile scegliere se mostrare 3 o 4 card per riga.
+
+- Nei blocchi "Card con immagine" e "Alert" l'immagine ora si carica dal computer o si sceglie tra quelle già presenti nel sito, e viene salvata come contenuto Immagine dentro la pagina invece di essere incorporata nella pagina stessa. In questo modo le pagine sono molto più leggere e l'immagine viene mostrata con miniature ottimizzate per le diverse dimensioni dello schermo. Le immagini inserite in precedenza continuano a vedersi come prima; nella barra laterale di modifica del blocco un avviso segnala che sono nel vecchio formato e possono essere sostituite caricandone o selezionandone una nuova.
+
+### Fix
+
+- Nel blocco "Icone" con immagine di sfondo, il colore di sfondo scelto viene usato per definite il colore del titolo e della descrizione per essere leggibile. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+## Versione 12.15.1 (01/09/2026)
+
+### Migliorie
+
+- Nel blocco "Cerca", il filtro per intervallo di date ora usa lo stesso calendario già in uso nel blocco di ricerca bandi/pubblicazioni; inoltre, il filtro per data adesso include l'intera giornata finale selezionata. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+### Fix
+
+- Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina.
+- Corretto il percorso di navigazione (breadcrumb) nelle sezioni che si aggiornano senza ricaricare la pagina: non si accumula più mostrando tutte le sezioni visitate, e indica sempre correttamente la sezione in cui ci si trova.
 ## Versione 12.17.0 (02/11/2026)
 
 ### Migliorie

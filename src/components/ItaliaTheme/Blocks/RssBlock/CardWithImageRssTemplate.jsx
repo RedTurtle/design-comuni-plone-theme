@@ -14,6 +14,7 @@ import {
 
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
+import Image from '@plone/volto/components/theme/Image/Image';
 import { CardCategory } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import { getViewDate } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/utils';
@@ -53,8 +54,8 @@ const CardWithImageRssTemplate = ({
             </Row>
           )}
           <Row>
-            {items.map((item) => (
-              <Col lg={colLg} className="mb-3" key={item['@id']}>
+            {items.map((item, index) => (
+              <Col lg={colLg} className="mb-3" key={index}>
                 <Card className="card-bg" noWrapper={false} tag="div">
                   {item.enclosure?.url && (
                     <div className="img-responsive-wrapper">

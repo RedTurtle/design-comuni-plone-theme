@@ -82,9 +82,7 @@ const CardWithoutImageRssTemplate = ({
                       </div>
                     )}
                     {data.show_description && (
-                      <CardText tag="p">
-                        {item.contentSnippet}
-                      </CardText>
+                      <CardText tag="p">{item.contentSnippet}</CardText>
                     )}
                   </CardBody>
                 </Card>

@@ -181,4 +181,12 @@ defineMessages({
     id: '404-pageNotFoundTitle',
     defaultMessage: 'Error 404 - Page not found',
   },
+  depth: {
+    id: 'Depth',
+    defaultMessage: 'Profondità di ricerca',
+  },
+  offset: {
+    id: 'Offset',
+    defaultMessage: 'Salta i primi N. risultati',
+  },
 });
