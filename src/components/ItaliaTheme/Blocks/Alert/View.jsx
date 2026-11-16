@@ -13,6 +13,7 @@ import BlockImage, {
   hasBlockImage,
   ALERT_IMAGE_SIZES,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Common/BlockImage';
+import AlertWrapper from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Alert/AlertWrapper';
 
 /**
  * View Alert block class.
@@ -23,31 +24,33 @@ const View = ({ data, id }) => {
   const background_color = data.bg_color ?? data.color; // backwards compatibility with previous background-color variable name 'color'
 
   return (
-    <section role="alert" className="block alertblock">
-      <div className={cx('full-width', 'bg-alert-' + background_color)}>
-        <Container className="p-4 pt-5 pb-5">
-          <Row className="align-items-start">
-            {hasBlockImage(data.image) && (
-              <Col sm={2} className="pb-3 image-col">
-                <BlockImage
-                  image={data.image}
-                  alt=""
-                  aria-hidden="true"
-                  className={cx('left-image', [
-                    data.sizeImage ? 'size-' + data.sizeImage : 'size-l',
-                  ])}
-                  loading="lazy"
-                  sizes={ALERT_IMAGE_SIZES}
-                />
+    <AlertWrapper data={data}>
+      <section role="alert" className="block alertblock">
+        <div className={cx('full-width', 'bg-alert-' + background_color)}>
+          <Container className="p-4 pt-5 pb-5">
+            <Row className="align-items-start">
+              {hasBlockImage(data.image) && (
+                <Col sm={2} className="pb-3 image-col">
+                  <BlockImage
+                    image={data.image}
+                    alt=""
+                    aria-hidden="true"
+                    className={cx('left-image', [
+                      data.sizeImage ? 'size-' + data.sizeImage : 'size-l',
+                    ])}
+                    loading="lazy"
+                    sizes={ALERT_IMAGE_SIZES}
+                  />
+                </Col>
+              )}
+              <Col>
+                <TextBlockView id={id} data={{ value: data.text }} />
               </Col>
-            )}
-            <Col>
-              <TextBlockView id={id} data={{ value: data.text }} />
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    </section>
+            </Row>
+          </Container>
+        </div>
+      </section>
+    </AlertWrapper>
   );
 };
 

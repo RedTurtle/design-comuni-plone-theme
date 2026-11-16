@@ -5,7 +5,19 @@ body.public-ui {
   font-family: $font-family-base;
   font-weight: $font-weight-base;
   line-height: $line-height-base;
-  text-align: left; // 3
+  // start instead of left, so the text follows dir="rtl" (same in ltr)
+  text-align: start; // 3
 
   @include font-size($font-size-base);
+}
+
+// Bootstrap reboot indents lists with padding-left: the logical padding
+// moves the indent to the right in rtl content. In ltr the result is the
+// same as the reboot (the later declaration of the pair wins).
+.public-ui {
+  ol,
+  ul {
+    padding-left: 0;
+    padding-inline-start: 2rem;
+  }
 }

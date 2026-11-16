@@ -7,6 +7,7 @@ import { UniversalLink } from '@plone/volto/components';
 import { getBaseUrl } from '@plone/volto/helpers';
 import { getContacts } from 'design-comuni-plone-theme/actions';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { useSiteLanguage } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 const messages = defineMessages({
   contact_block_title: {
@@ -17,6 +18,8 @@ const messages = defineMessages({
 
 const ContactsBlock = () => {
   const intl = useIntl();
+  // site chrome keeps the site language when the content is in another one
+  const siteLanguage = useSiteLanguage();
   const { pathname } = useLocation();
   const dispatch = useDispatch();
 
@@ -32,7 +35,11 @@ const ContactsBlock = () => {
   const isContactsLoaded = contacts.loaded;
 
   return contactsItems.length > 0 ? (
-    <section className="public-ui contacts-block bg-light">
+    <section
+      className="public-ui contacts-block bg-light"
+      lang={siteLanguage.lang}
+      dir={siteLanguage.dir}
+    >
       <Container>
         <Row className="d-flex justify-content-center">
           <Col xs={12} lg={6} xl={6} xxl={6}>

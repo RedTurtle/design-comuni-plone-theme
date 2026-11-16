@@ -16,6 +16,8 @@
  * - Removed the `generator` meta (information disclosure).
  * - `window.env` without the env vars read only by the server and `window.__data`
  *   without the backend internal URLs (see helpers/ssr).
+ * - #toolbar and #sidebar keep the site language/direction: the CMS UI must
+ *   not follow a content in another language (e.g. rtl)
  */
 
 import React, { Component } from 'react';
@@ -26,6 +28,10 @@ import join from 'lodash/join';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import { runtimeConfig } from '@plone/volto/runtime_config';
 import config from '@plone/volto/registry';
+import {
+  getLanguageDirection,
+  getSiteLanguage,
+} from 'design-comuni-plone-theme/helpers/contentLanguage';
 import {
   getPublicRuntimeConfig,
   serializeState,
@@ -111,9 +117,11 @@ class Html extends Component {
     const head = Helmet.rewind();
     const bodyClass = join(BodyClass.rewind(), ' ');
     const htmlAttributes = head.htmlAttributes.toComponent();
+    const siteLang = getSiteLanguage(store.getState().intl?.locale);
+    const siteDir = getLanguageDirection(siteLang);
 
     return (
-      <html lang={htmlAttributes.lang}>
+      <html lang={htmlAttributes.lang} dir={htmlAttributes.dir}>
         <head>
           <meta charSet="utf-8" />
           {head.base.toComponent()}
@@ -207,9 +215,21 @@ class Html extends Component {
           ) : undefined}
         </head>
         <body className={bodyClass}>
-          <div role="navigation" aria-label="Toolbar" id="toolbar" />
+          <div
+            role="navigation"
+            aria-label="Toolbar"
+            id="toolbar"
+            lang={siteLang}
+            dir={siteDir}
+          />
           <div id="main" dangerouslySetInnerHTML={{ __html: markup }} />
-          <div role="complementary" aria-label="Sidebar" id="sidebar" />
+          <div
+            role="complementary"
+            aria-label="Sidebar"
+            id="sidebar"
+            lang={siteLang}
+            dir={siteDir}
+          />
 
           <script
             dangerouslySetInnerHTML={{
