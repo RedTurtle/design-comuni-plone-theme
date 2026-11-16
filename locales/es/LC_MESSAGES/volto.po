@@ -3581,6 +3581,11 @@ msgstr ""
 msgid "quartiere"
 msgstr "Vecindario"
 
+#. Default: "Profondità di ricerca"
+#: customizations/volto/components/manage/Widgets/QueryWidget
+msgid "query-widget-depth"
+msgstr ""
+
 #. Default: "Rassegna:"
 #: components/ItaliaTheme/Blocks/Listing/Commons/RassegnaInfo
 msgid "rassegna_label"
