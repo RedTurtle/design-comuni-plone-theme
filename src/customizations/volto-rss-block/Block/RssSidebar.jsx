@@ -196,6 +196,7 @@ const RssSidebar = ({ data, block, onChangeBlock, required = false }) => {
             });
           }}
         />
+
         <CheckboxWidget
           id="show_description"
           title={intl.formatMessage(messages.show_description)}
