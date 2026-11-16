@@ -31,11 +31,9 @@ const messages = defineMessages({
 const RequiredTitle = ({ children, intl, id }) => (
   <span id={id}>
     {children}
-    <span className="required-marker">
-      <span aria-hidden="true">*</span>{' '}
-      <span className="visually-hidden">
-        {intl.formatMessage(messages.required)}
-      </span>
+    <span className="visually-hidden">
+      {' '}
+      {intl.formatMessage(messages.required)}
     </span>
   </span>
 );
@@ -125,7 +123,7 @@ const AnswersStep = ({
                   checked={s === selectedAnswer}
                   value={s}
                   onChange={handleAnswerChange}
-                  autoComplete="off"
+                  autocomplete="off"
                   required
                 />
                 <Label
@@ -193,7 +191,7 @@ const AnswersStep = ({
                   checked={s === selectedAnswer}
                   value={s}
                   onChange={handleAnswerChange}
-                  autoComplete="off"
+                  autocomplete="off"
                   required
                 />
                 <Label

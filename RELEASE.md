@@ -66,6 +66,54 @@
 
 - Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina.
 - Corretto il percorso di navigazione (breadcrumb) nelle sezioni che si aggiornano senza ricaricare la pagina: non si accumula più mostrando tutte le sezioni visitate, e indica sempre correttamente la sezione in cui ci si trova.
+## Versione 12.17.0 (02/11/2026)
+
+### Migliorie
+
+- Nel blocco RSS aggiunto un checkbox per scegliere se mostrare la categoria nelle card. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+### Fix
+
+- Migliorata l'accessibilità della navigazione: rimossi i ruoli ARIA "menubar"/"menuitem" dal menu secondario e il punto di riferimento di navigazione attorno al logo nell'header. Nel megamenu, i titoli di sezione vengono indicati come "pagina corrente" solo quando lo sono davvero.
+- Nel megamenu i link di ogni voce sono ora in un'unica lista, suddivisa in colonne solo graficamente, così gli screen reader la annunciano come un solo elenco.
+- Migliorata la navigazione da tastiera nel megamenu e rimosso il pulsante di chiusura "X" dal menu principale.
+- Le pagine scritte in una lingua diversa dall'italiano (campo "Lingua" del contenuto) ora dichiarano la propria lingua, così le tecnologie assistive leggono il testo con la pronuncia corretta. Per le lingue che si scrivono da destra a sinistra (arabo, urdu, persiano, ebraico...) il testo del contenuto viene mostrato da destra a sinistra. Intestazione, briciole di pane e piè di pagina restano nella lingua corrente del sito. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Migliorata l'accessibilità della pagina dei risultati di ricerca.
+- Le pagine dei Servizi che hanno date nella sezione "Tempi e scadenze" ora si aprono correttamente, senza mostrare la pagina di errore.
+
+### Novità
+
+- Nel blocco "Alert" è possibile impostare un periodo di visualizzazione (data e ora di inizio e di scadenza): fuori da quel periodo l'alert non viene mostrato ai visitatori. Se non viene impostato nessun periodo, l'alert è sempre visibile.
+
+
+## Versione 12.16.1 (20/10/2026)
+
+### Novità
+
+- Nel blocco "Numeri" è stata aggiunta l'opzione "Abilita layout fluido": va attivata quando i numeri sono lunghi (più di 4-5 caratteri) e permette di adattare la larghezza delle colonne al numero, evitando che quest'ultimo vada a capo. Di default il layout resta invariato.
+
+### Fix
+
+- Sistemato il link per la ricerca delle icone sul sito di FontAwesome. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+## Versione 12.16.0 (23/09/2026)
+
+### Migliorie
+
+- Ora in un pannello di controllo, se si clicca sul pulsante "Annulla" nella toolbar, si torna sempre alla pagina principale dei pannelli di controllo. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+- Nel blocco "RSS" è stato uniformato lo stile della card a quella del template "Card semplice" del blocco Elenco, con la possibilità di decidere se mostrare la data e la descrizione nella card. Inoltre, è possibile scegliere se mostrare 3 o 4 card per riga. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+- Nel form di soddisfazione del cittadino (customer satisfaction) è stato tolto l'asterisco dalla domanda obbligatoria: l'obbligatorietà resta indicata dal messaggio "Scegli un'opzione per proseguire" sotto le risposte e continua a essere comunicata alle tecnologie assistive. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+## Versione 12.15.1 (01/09/2026)
+
+### Migliorie
+
+- Nel blocco "Cerca", il filtro per intervallo di date ora usa lo stesso calendario già in uso nel blocco di ricerca bandi/pubblicazioni; inoltre, il filtro per data adesso include l'intera giornata finale selezionata. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+### Fix
+
 - Risolto un errore nel blocco CTA che generava un titolo vuoto nella pagina quando il campo titolo non veniva compilato.
 
 - Risolto un errore di struttra html nelle paginazioni che generava una lista duplicata nel codice della pagina. La duplicazione non era visibile a schermo ma rendeva il markup non valido e problematico per le tecnologie assistive.

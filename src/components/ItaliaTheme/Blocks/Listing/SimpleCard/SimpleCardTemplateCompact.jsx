@@ -10,6 +10,7 @@ import {
   getItemIcon,
   ListingLinkMore,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import { getComponentWithFallback } from 'design-comuni-plone-theme/helpers';
 
 import { getVariationPropsDefaults } from 'design-comuni-plone-theme/config/Blocks/ListingOptions/utils';
 
@@ -54,42 +55,50 @@ const SimpleCardTemplateCompact = (props) => {
         </Row>
       )}
       <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 mb-3">
-        {items.map((item, index) => (
-          <Card
-            className="align-items-center rounded shadow"
-            noWrapper
-            teaser
-            key={index}
-          >
-            {show_icon && (
-              <div className="icon-argument-container">
-                <Icon
-                  icon={getItemIcon(item)}
-                  title={intl.formatMessage(messages.argumentIcon, {
-                    type: item.design_italia_meta_type,
+        {items.map((item, index) => {
+          const BlockExtraTags = getComponentWithFallback({
+            name: 'BlockExtraTags',
+            dependencies: ['SimpleCardTemplateCompact', item['@type']],
+          }).component;
+
+          return (
+            <Card
+              className="align-items-center rounded shadow"
+              noWrapper
+              teaser
+              key={index}
+            >
+              {show_icon && (
+                <div className="icon-argument-container">
+                  <Icon
+                    icon={getItemIcon(item)}
+                    title={intl.formatMessage(messages.argumentIcon, {
+                      type: item.design_italia_meta_type,
+                    })}
+                  />
+                </div>
+              )}
+              <CardBody>
+                <CardTitle
+                  tag={title ? 'h3' : 'h2'}
+                  className={cx('', {
+                    h3: !title,
+                    'wrap-title': wrap_title,
                   })}
-                />
-              </div>
-            )}
-            <CardBody>
-              <CardTitle
-                tag={title ? 'h3' : 'h2'}
-                className={cx('', {
-                  h3: !title,
-                  'wrap-title': wrap_title,
-                })}
-              >
-                <UniversalLink
-                  item={!isEditMode ? item : null}
-                  href={isEditMode ? '#' : null}
-                  data-element={id_lighthouse}
                 >
-                  {item.title || item.id}
-                </UniversalLink>
-              </CardTitle>
-            </CardBody>
-          </Card>
-        ))}
+                  <UniversalLink
+                    item={!isEditMode ? item : null}
+                    href={isEditMode ? '#' : null}
+                    data-element={id_lighthouse}
+                  >
+                    {item.title || item.id}
+                  </UniversalLink>
+                </CardTitle>
+                <BlockExtraTags {...props} item={item} itemIndex={index} />
+              </CardBody>
+            </Card>
+          );
+        })}
       </div>
 
       <ListingLinkMore

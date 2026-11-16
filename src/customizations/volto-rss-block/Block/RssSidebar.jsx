@@ -6,6 +6,7 @@
  * - added a `show_description` CheckboxWidget to show the description in the card
  * - added a `cards_per_row` SelectWidget to choose 3 or 4 cards per row
  * - added a `rss-widget` CSS class to the limit NumberWidget
+ * - added hide_categories checkbox to hide the categories in the card
  * - `RssStyle`/`sidebar.css` imported from the `volto-rss-block` package instead of the
  *   relative `./RssStyle`/`./sidebar.css`, since this shadow lives outside that package
  */
@@ -65,6 +66,13 @@ const messages = defineMessages({
     id: 'rss_hide_date',
     defaultMessage: 'Nascondi data nella card',
   },
+<<<<<<< HEAD
+=======
+  hide_categories: {
+    id: 'rss_hide_categories',
+    defaultMessage: 'Nascondi categorie nella card',
+  },
+>>>>>>> main
   show_description: {
     id: 'rss_show_description',
     defaultMessage: 'Mostra descrizione nella card',
@@ -116,8 +124,11 @@ const RssSidebar = ({ data, block, onChangeBlock, required = false }) => {
         ...newData,
       });
     }
+<<<<<<< HEAD
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
+=======
+>>>>>>> main
   }, []);
 
   function handleAccClick(e, titleProps) {
@@ -181,6 +192,20 @@ const RssSidebar = ({ data, block, onChangeBlock, required = false }) => {
           }}
         />
         <CheckboxWidget
+<<<<<<< HEAD
+=======
+          id="hide_categories"
+          title={intl.formatMessage(messages.hide_categories)}
+          value={data.hide_categories ? data.hide_categories : false}
+          onChange={(id, value) => {
+            onChangeBlock(block, {
+              ...data,
+              [id]: value,
+            });
+          }}
+        />
+        <CheckboxWidget
+>>>>>>> main
           id="show_description"
           title={intl.formatMessage(messages.show_description)}
           value={data.show_description ? data.show_description : false}

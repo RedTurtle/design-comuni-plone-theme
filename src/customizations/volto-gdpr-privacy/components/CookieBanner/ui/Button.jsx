@@ -5,15 +5,18 @@
  * - customized to use design-react-kit's Button instead of semantic-ui-react's Button
  * - map className modifiers to design-react-kit props: "primary" -> color="primary"; "close-button" -> color="link" + outline
  * - strip the semantic-ui-only "basic" prop, unsupported by design-react-kit
+ * - keep the site language/direction when the page content is in another one
  * */
 
 import React from 'react';
 
 import { Button as DesignButton } from 'design-react-kit';
+import { useSiteLanguage } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 /*This component facilitates the customization of buttons*/
 
 const Button = (props) => {
+  const siteLanguage = useSiteLanguage();
   let { className, ...otherProps } = props;
   className = (className || '') + ' gdpr-privacy-banner-button';
   if (props.className?.indexOf('primary') >= 0) {
@@ -27,7 +30,7 @@ const Button = (props) => {
   delete otherProps.basic;
 
   otherProps.className = className;
-  return <DesignButton {...otherProps} />;
+  return <DesignButton {...siteLanguage} {...otherProps} />;
 };
 
 export default Button;

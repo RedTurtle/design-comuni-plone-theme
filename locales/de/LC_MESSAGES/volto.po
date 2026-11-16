@@ -1037,6 +1037,46 @@ msgstr ""
 msgid "advandedSectionsFilters"
 msgstr ""
 
+#. Default: "Pubblicazione attiva."
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+msgid "alert_activeDate"
+msgstr ""
+
+#. Default: "Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio."
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+msgid "alert_errorDate"
+msgstr ""
+
+#. Default: "Non visibile. E' scaduto il {date}."
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+msgid "alert_expiredDate"
+msgstr ""
+
+#. Default: "Non visibile. Verrà pubblicato il {date}."
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+msgid "alert_futureDate"
+msgstr ""
+
+#. Default: "Scadrà il {date}."
+#: components/ItaliaTheme/Blocks/Alert/AlertWrapper
+msgid "alert_willExpire"
+msgstr ""
+
+#. Default: "Periodo di visualizzazione"
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+msgid "alertblock_dateTitle"
+msgstr ""
+
+#. Default: "Scadenza"
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+msgid "alertblock_endDate"
+msgstr ""
+
+#. Default: "Inizio"
+#: components/ItaliaTheme/Blocks/Alert/Sidebar
+msgid "alertblock_startDate"
+msgstr ""
+
 #. Default: "Allinea bottone a destra"
 #: components/ItaliaTheme/Blocks/Listing/schema
 msgid "alignButton"
@@ -2304,11 +2344,6 @@ msgstr ""
 msgid "dropdownmenu-blocks-description"
 msgstr ""
 
-#. Default: "Close menu"
-#: components/ItaliaTheme/MegaMenu/MegaMenu
-msgid "dropdownmenu-close-menu-button"
-msgstr ""
-
 #. Default: "Delete menu item"
 #: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
 msgid "dropdownmenu-deletemenuitem"
@@ -3286,6 +3321,16 @@ msgstr ""
 msgid "numbers_block"
 msgstr ""
 
+#. Default: "Abilita layout fluido"
+#: components/ItaliaTheme/Blocks/NumbersBlock/Sidebar
+msgid "numbers_block_fluid_layout"
+msgstr ""
+
+#. Default: "Abilita questa impostazione se hai numeri lunghi (con più di 4-5 caratteri) per adattare la larghezza delle colonne al numero"
+#: components/ItaliaTheme/Blocks/NumbersBlock/Sidebar
+msgid "numbers_block_fluid_layout_description"
+msgstr ""
+
 #. Default: "Numero del comunicato stampa"
 #: components/ItaliaTheme/View/Commons/PageHeader/PageHeaderNewsItem
 msgid "numero_progressivo_cs"
@@ -3927,9 +3972,19 @@ msgstr ""
 msgid "searchBlock_venue_filter"
 msgstr ""
 
+#. Default: "Collassa il gruppo {title}"
+#: components/ItaliaTheme/Search/SearchSections
+msgid "searchCollapseGroup"
+msgstr ""
+
 #. Default: "Cerca contenuti in"
 #: components/ItaliaTheme/View/Commons/SearchSectionForm
 msgid "searchContentIn"
+msgstr ""
+
+#. Default: "Espandi il gruppo {title}"
+#: components/ItaliaTheme/Search/SearchSections
+msgid "searchExpandGroup"
 msgstr ""
 
 #. Default: "Cerca nella sezione"
@@ -3968,6 +4023,16 @@ msgstr ""
 #: components/ItaliaTheme/View/FAQ/FaqFolder/SearchBar
 msgid "search_icon"
 msgstr ""
+
+#. Default: "I risultati della ricerca verranno aggiornati in base al testo inserito nel campo di ricerca e ai filtri selezionati"
+#: components/ItaliaTheme/Search/Search
+msgid "search_live_input_description"
+msgstr "Die Suchergebnisse werden anhand des in das Suchfeld eingegebenen Textes und der ausgewählten Filter aktualisiert"
+
+#. Default: "{start}-{end} di {total} risultati"
+#: components/ItaliaTheme/Search/Search
+msgid "search_results_range"
+msgstr "{start}-{end} von {total} Ergebnissen"
 
 #. Default: "Dove cercare"
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
