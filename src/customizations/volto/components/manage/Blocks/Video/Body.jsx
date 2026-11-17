@@ -14,6 +14,9 @@
  *   disappears (replaced by the real <iframe>/<video>), which would otherwise
  *   drop focus to <body>; this moves focus into the newly rendered player so
  *   keyboard/screen-reader users don't lose context
+ * - YouTube URLs that none of the upstream cases recognize (e.g. /embed/ID,
+ *   /v/ID) fall back to videoUrlHelper, as in 12.x: otherwise the video ID is
+ *   null and the player renders as an empty, invisible box
  */
 
 import React from 'react';
@@ -23,7 +26,10 @@ import { Embed, Message } from 'semantic-ui-react';
 import cx from 'classnames';
 import { isInternalURL, flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import VideoEmbed from '@plone/volto/components/theme/VideoEmbed/VideoEmbed';
-import { useVideoEmbedFocus } from 'design-comuni-plone-theme/helpers';
+import {
+  useVideoEmbedFocus,
+  videoUrlHelper,
+} from 'design-comuni-plone-theme/helpers';
 import { ConditionalEmbed } from 'volto-gdpr-privacy';
 import config from '@plone/volto/registry';
 
@@ -64,6 +70,8 @@ const getVideoIDAndPlaceholder = (url, peertubeInstances) => {
         videoID = url.match(/^.*\?v=(.*)$/)[1];
       } else if (url.match('shorts')) {
         videoID = url.match(/^.*\/shorts\/(.*)/)[1];
+      } else {
+        videoID = videoUrlHelper(url)[0];
       }
 
       if (videoID) {
