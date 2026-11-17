@@ -2617,7 +2617,7 @@ msgstr "Indietro"
 #. Default: "Send"
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
 msgid "feedback_form_button_send"
-msgstr ""
+msgstr "Invia"
 
 #. Default: "No"
 #: components/ItaliaTheme/CustomerSatisfaction/FeedbackForm
