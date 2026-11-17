@@ -20,7 +20,7 @@ const focusPrev = (props) => {
   const getBlockProps = props.editor.getBlockProps;
   const {
     focusPrevField,
-    showToolbar,
+    showToolbar = true,
     onFocusPreviousBlock,
     block,
     blockNode,
@@ -115,7 +115,7 @@ const focusNext = (props) => {
   const getBlockProps = props.editor.getBlockProps;
   const {
     focusNextField,
-    showToolbar,
+    showToolbar = true,
     onFocusNextBlock,
     onSelectBlock,
     onAddBlock,
@@ -187,7 +187,7 @@ const focusNext = (props) => {
 const breakInSimpleTextEditor = (props) => {
   //disable break and softBreak (props.event.shiftKey) in SimpleTextEditorWidget
   const getBlockProps = props.editor.getBlockProps;
-  const { showToolbar, focusNextField } = getBlockProps
+  const { showToolbar = true, focusNextField } = getBlockProps
     ? getBlockProps()
     : { showToolbar: true };
   if (props.event.key === 'Enter' && !showToolbar) {
@@ -205,7 +205,7 @@ const breakInSimpleTextEditor = (props) => {
 
 const handleBreak = (props) => {
   const getBlockProps = props.editor.getBlockProps;
-  const { showToolbar } = getBlockProps
+  const { showToolbar = true } = getBlockProps
     ? getBlockProps()
     : { showToolbar: true };
 

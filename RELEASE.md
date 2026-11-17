@@ -56,6 +56,8 @@
 
 - Nel blocco "Icone" con immagine di sfondo, il colore di sfondo scelto viene usato per definite il colore del titolo e della descrizione per essere leggibile. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
+- All'interno del blocco "Griglia", premendo invio in un blocco "Testo" si crea un nuovo paragrafo nella stessa colonna, invece di creare una nuova colonna. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
 ## Versione 12.15.1 (01/09/2026)
 
 ### Migliorie
