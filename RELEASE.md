@@ -55,7 +55,6 @@
 ### Fix
 
 - Nel blocco "Icone" con immagine di sfondo, il colore di sfondo scelto viene usato per definite il colore del titolo e della descrizione per essere leggibile. _(**Origine / contributo**: Regione Emilia-Romagna)_
-- Nella Customer satisfaction il pulsante "Send" è ora tradotto in italiano. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
 ## Versione 12.15.1 (01/09/2026)
 
