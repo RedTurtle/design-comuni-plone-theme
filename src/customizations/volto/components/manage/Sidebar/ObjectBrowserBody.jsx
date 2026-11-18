@@ -11,6 +11,9 @@
  *   ternary for that specific field)
  * - Fix searchable types in query applying selectableTypes from field config
  * - Added use of props.onBlur function when selecting an item
+ * - Close the object browser after a single click selection in link and image
+ *   mode: upstream's stopSelecting `else` branch also runs for non-multiple
+ *   modes and resets it to false, and image mode only closed on double click
  */
 
 import React, { Component } from 'react';
@@ -371,6 +374,7 @@ class ObjectBrowserBody extends Component {
       }
       if (config.settings.imageObjects.includes(item['@type'])) {
         this.onSelectItem(item);
+        this.props.closeObjectBrowser();
       }
     } else {
       if (this.isSelectable(item)) {
@@ -387,15 +391,14 @@ class ObjectBrowserBody extends Component {
             );
           this.onSelectItem(item);
           let length = this.props.data ? this.props.data.length : 0;
+          // Single selection modes always stop here; multiple mode stops
+          // only when the selection reaches maximumSelectionSize.
           let stopSelecting = this.props.mode !== 'multiple';
-          if (isDeselecting && !stopSelecting)
+          if (!stopSelecting)
             stopSelecting =
               this.props.maximumSelectionSize > 0 &&
-              length - 1 >= this.props.maximumSelectionSize;
-          else
-            stopSelecting =
-              this.props.maximumSelectionSize > 0 &&
-              length + 1 >= this.props.maximumSelectionSize;
+              (isDeselecting ? length - 1 : length + 1) >=
+                this.props.maximumSelectionSize;
           if (stopSelecting) {
             this.props.closeObjectBrowser();
           }
