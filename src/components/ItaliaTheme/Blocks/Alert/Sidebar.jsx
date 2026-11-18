@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Segment } from 'semantic-ui-react';
 import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
+import { DatetimeWidget } from '@plone/volto/components';
 import { ColorListWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import ImageSizeWidget from '@plone/volto/components/manage/Widgets/ImageSizeWidget';
 import ImageWidget from '@plone/volto/components/manage/Widgets/ImageWidget';
@@ -35,6 +36,18 @@ const messages = defineMessages({
   CardImageSize: {
     id: 'CardImageSize',
     defaultMessage: 'Dimensione immagine',
+  },
+  alertblock_startDate: {
+    id: 'alertblock_startDate',
+    defaultMessage: 'Inizio',
+  },
+  alertblock_endDate: {
+    id: 'alertblock_endDate',
+    defaultMessage: 'Scadenza',
+  },
+  alertblock_dateTitle: {
+    id: 'alertblock_dateTitle',
+    defaultMessage: 'Periodo di visualizzazione',
   },
 });
 
@@ -108,6 +121,35 @@ class Sidebar extends Component {
               });
             }}
             value={this.props.data.sizeImage}
+          />
+        </Segment>
+        <Segment className="form">
+          <header className="header pulled">
+            <h2>
+              {this.props.intl.formatMessage(messages.alertblock_dateTitle)}
+            </h2>
+          </header>
+          <DatetimeWidget
+            id="startDate"
+            title={this.props.intl.formatMessage(messages.alertblock_startDate)}
+            value={this.props.data.startDate}
+            onChange={(name, value) => {
+              this.props.onChangeBlock(this.props.block, {
+                ...this.props.data,
+                [name]: value,
+              });
+            }}
+          />
+          <DatetimeWidget
+            id="endDate"
+            title={this.props.intl.formatMessage(messages.alertblock_endDate)}
+            value={this.props.data.endDate}
+            onChange={(name, value) => {
+              this.props.onChangeBlock(this.props.block, {
+                ...this.props.data,
+                [name]: value,
+              });
+            }}
           />
         </Segment>
       </Segment.Group>

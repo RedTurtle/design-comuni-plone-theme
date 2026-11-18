@@ -122,6 +122,7 @@ export default function SearchCTs({
               checked={cts[ctId].value}
               onChange={(e) => setCtChecked(ctId, e.currentTarget.checked)}
               aria-controls="search-results-region"
+              aria-describedby="live-input-description"
               aria-label={
                 intl.formatMessage(messages.searchCTOf) + ' ' + cts[ctId].label
               }

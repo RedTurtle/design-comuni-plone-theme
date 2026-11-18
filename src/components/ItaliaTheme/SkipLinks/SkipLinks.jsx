@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { Skiplink, SkiplinkItem } from 'design-react-kit';
+import { useSiteLanguage } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 const messages = defineMessages({
   mainView: {
@@ -23,6 +24,8 @@ const messages = defineMessages({
 
 const SkipLinks = () => {
   const intl = useIntl();
+  // site chrome keeps the site language when the content is in another one
+  const siteLanguage = useSiteLanguage();
 
   // funzione per rimuovere .visually-hidden dagli skiplinks
   // per correggere bug di design-react-kit che li nasconde
@@ -35,7 +38,7 @@ const SkipLinks = () => {
   }, []);
 
   return (
-    <div className="public-ui">
+    <div className="public-ui" lang={siteLanguage.lang} dir={siteLanguage.dir}>
       <Skiplink
         tag="div"
         role="complementary"

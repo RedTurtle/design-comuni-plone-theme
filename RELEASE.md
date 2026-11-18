@@ -47,6 +47,34 @@
 
 - Nei blocchi "Card con immagine" e "Alert" l'immagine ora si carica dal computer o si sceglie tra quelle già presenti nel sito, e viene salvata come contenuto Immagine dentro la pagina invece di essere incorporata nella pagina stessa. In questo modo le pagine sono molto più leggere e l'immagine viene mostrata con miniature ottimizzate per le diverse dimensioni dello schermo. Le immagini inserite in precedenza continuano a vedersi come prima; nella barra laterale di modifica del blocco un avviso segnala che sono nel vecchio formato e possono essere sostituite caricandone o selezionandone una nuova.
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Nel blocco "Icone" con immagine di sfondo, il colore di sfondo scelto viene usato per definire il colore del titolo e della descrizione per essere leggibile. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+
+
+## Versione 12.17.0 (02/11/2026)
+
+### Migliorie
+
+- Nel blocco RSS aggiunto un checkbox per scegliere se mostrare la categoria nelle card. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+### Fix
+
+- Migliorata l'accessibilità della navigazione: rimossi i ruoli ARIA "menubar"/"menuitem" dal menu secondario e il punto di riferimento di navigazione attorno al logo nell'header. Nel megamenu, i titoli di sezione vengono indicati come "pagina corrente" solo quando lo sono davvero.
+- Nel megamenu i link di ogni voce sono ora in un'unica lista, suddivisa in colonne solo graficamente, così gli screen reader la annunciano come un solo elenco.
+- Migliorata la navigazione da tastiera nel megamenu e rimosso il pulsante di chiusura "X" dal menu principale.
+- Le pagine scritte in una lingua diversa dall'italiano (campo "Lingua" del contenuto) ora dichiarano la propria lingua, così le tecnologie assistive leggono il testo con la pronuncia corretta. Per le lingue che si scrivono da destra a sinistra (arabo, urdu, persiano, ebraico...) il testo del contenuto viene mostrato da destra a sinistra. Intestazione, briciole di pane e piè di pagina restano nella lingua corrente del sito. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Migliorata l'accessibilità della pagina dei risultati di ricerca.
+- Le pagine dei Servizi che hanno date nella sezione "Tempi e scadenze" ora si aprono correttamente, senza mostrare la pagina di errore.
+
+### Novità
+
+- Nel blocco "Alert" è possibile impostare un periodo di visualizzazione (data e ora di inizio e di scadenza): fuori da quel periodo l'alert non viene mostrato ai visitatori. Se non viene impostato nessun periodo, l'alert è sempre visibile.
+
+
 ## Versione 12.16.1 (20/10/2026)
 
 ### Novità

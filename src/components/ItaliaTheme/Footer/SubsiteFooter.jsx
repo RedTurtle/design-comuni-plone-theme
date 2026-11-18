@@ -8,13 +8,20 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { flattenHTMLToAppURL, isCmsUi } from '@plone/volto/helpers';
 import { richTextHasContent } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { useSiteLanguage } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 const SubsiteFooter = () => {
   const location = useLocation();
   const isCmsUI = isCmsUi(location.pathname);
   const subsite = useSelector((state) => state.subsite?.data);
+  // site chrome keeps the site language when the content is in another one
+  const siteLanguage = useSiteLanguage();
   return richTextHasContent(subsite?.subsite_footer) ? (
-    <div className={`subsite-footer ${isCmsUI ? 'public-ui' : ''}`}>
+    <div
+      className={`subsite-footer ${isCmsUI ? 'public-ui' : ''}`}
+      lang={siteLanguage.lang}
+      dir={siteLanguage.dir}
+    >
       <div className="text">
         <div className="container px-md-4">
           <div
