@@ -55,7 +55,6 @@
 ### Fix
 
 - Nel blocco "Icone" con immagine di sfondo, il colore di sfondo scelto viene usato per definite il colore del titolo e della descrizione per essere leggibile. _(**Origine / contributo**: Regione Emilia-Romagna)_
-- Nel blocco "Elenco", per il criterio "Posizione" con posizione relativa ora è possibile impostare anche la "Profondità di ricerca", come avviene per la posizione assoluta. Il campo compare dopo aver scelto il percorso. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
 ## Versione 12.15.1 (01/09/2026)
 
