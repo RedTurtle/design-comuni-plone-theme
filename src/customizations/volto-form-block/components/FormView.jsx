@@ -17,12 +17,9 @@
       è completa.
   Per tutti gli altri tipi di captcha il comportamento resta invariato.
   Il flag è letto direttamente da Redux (state.content.data['@components']
-  ['rercaptcha-data']), non tramite un import da
-  @regioneer/volto-collective-rercaptcha: questo tema è un pacchetto
-  generico, distribuito e buildato da solo, e non deve avere una
-  dipendenza rigida da un addon captcha specifico (un import statico
-  romperebbe la build di chiunque usi questo tema senza avere anche
-  collective-rercaptcha installato). NB: nome/valore del flag `show-button`
+  ['rercaptcha-data']), per evitare di inserire qui una dipendenza diretta con l'addon 
+  @regioneer/volto-collective-rercaptcha che verrà installato solo al bisogno.
+  NB: nome/valore del flag `show-button`
   provvisori, in attesa della chiave definitiva dal backend: se cambia va
   aggiornata anche qui.
 - rercaptcha si renderizza accanto al bottone di submit, a sinistra e prima
