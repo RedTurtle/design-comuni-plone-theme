@@ -34,7 +34,7 @@ const Attachment = ({
       tag="div"
     >
       <Icon
-        icon={iconClass}
+        icon={icon}
         alt={intl.formatMessage(messages.attachment)}
         title={intl.formatMessage(messages.attachment)}
       />
