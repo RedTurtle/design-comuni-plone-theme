@@ -3574,6 +3574,11 @@ msgstr "Data di pubblicazione"
 msgid "quartiere"
 msgstr "Quartiere"
 
+#. Default: "Profondità di ricerca"
+#: customizations/volto/components/manage/Widgets/QueryWidget
+msgid "query-widget-depth"
+msgstr "Profondità di ricerca"
+
 #. Default: "Rassegna:"
 #: components/ItaliaTheme/Blocks/Listing/Commons/RassegnaInfo
 msgid "rassegna_label"
