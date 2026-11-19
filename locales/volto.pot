@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-10-28T11:04:05.963Z\n"
+"POT-Creation-Date: 2026-11-02T14:39:24.337Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -2324,11 +2324,6 @@ msgstr ""
 #: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
 # defaultMessage: Add some blocks to show in dropdown menu.
 msgid "dropdownmenu-blocks-description"
-msgstr ""
-
-#: components/ItaliaTheme/MegaMenu/MegaMenu
-# defaultMessage: Close menu
-msgid "dropdownmenu-close-menu-button"
 msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/MenuConfigurationForm
