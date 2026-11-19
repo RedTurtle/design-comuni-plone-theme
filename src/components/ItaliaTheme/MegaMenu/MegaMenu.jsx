@@ -3,7 +3,7 @@
  * @module components/theme/Navigation/Navigation
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { map } from 'lodash';
 import cx from 'classnames';
@@ -13,7 +13,6 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  Button,
   Row,
   Col,
   LinkList,
@@ -29,6 +28,7 @@ import {
 import { UniversalLink, ConditionalLink } from '@plone/volto/components';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import config from '@plone/volto/registry';
+import { useMegaMenuKeyboard } from 'design-comuni-plone-theme/components/ItaliaTheme/MegaMenu/utils';
 
 const messages = defineMessages({
   menu_selected: {
@@ -38,10 +38,6 @@ const messages = defineMessages({
   view_all: {
     id: 'Vedi tutto',
     defaultMessage: 'Vedi tutto',
-  },
-  closeMenu: {
-    id: 'dropdownmenu-close-menu-button',
-    defaultMessage: 'Close menu',
   },
 });
 
@@ -73,35 +69,23 @@ const isChildActive = (itemUrl, pathname, exact = false) => {
   return pathname.indexOf(itemUrl) > -1;
 };
 
-const MegaMenu = ({ item, pathname }) => {
+const MegaMenu = ({ item, pathname, index = 0 }) => {
   const intl = useIntl();
   const blocksFieldname = getBlocksFieldname(item);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(item);
   const isItemActive = isActive(item, pathname);
 
   const [menuStatus, setMenuStatus] = useState(false);
-  const firstItemRef = useRef(null);
 
-  useEffect(() => {
-    if (menuStatus) {
-      firstItemRef.current?.querySelector('a')?.focus();
-    }
-  }, [menuStatus]);
+  const toggleId = `megamenu-toggle-${index}`;
+  const panelId = `megamenu-panel-${index}`;
 
-  useEffect(() => {
-    if (!menuStatus) {
-      return;
-    }
-    const handleEscape = (e) => {
-      if (e.key === 'Escape') {
-        setMenuStatus(false);
-      }
-    };
-
-    document.addEventListener('keydown', handleEscape);
-
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [menuStatus]);
+  const { onToggleKeyDown, onPanelKeyDown } = useMegaMenuKeyboard({
+    menuStatus,
+    setMenuStatus,
+    toggleId,
+    panelId,
+  });
 
   const getAnchorTarget = (nodeElement) => {
     if (nodeElement.nodeName === 'A') {
@@ -268,6 +252,8 @@ const MegaMenu = ({ item, pathname }) => {
       }
     }
 
+    const megamenuRows = Math.max(1, ...childrenGroups.map((g) => g.length));
+
     const showMoreLabel =
       item.showMoreText?.length > 0
         ? item.showMoreText
@@ -286,93 +272,100 @@ const MegaMenu = ({ item, pathname }) => {
           tag="div"
           toggle={() => setMenuStatus(!menuStatus)}
         >
-          <DropdownToggle aria-haspopup color="secondary" nav>
+          <DropdownToggle
+            aria-haspopup
+            color="secondary"
+            nav
+            role="button"
+            id={toggleId}
+            aria-controls={menuStatus ? panelId : undefined}
+            onKeyDown={onToggleKeyDown}
+          >
             <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
             <Icon
               icon="it-expand"
               className={cx('megamenu-toggle-icon', { open: menuStatus })}
             />
           </DropdownToggle>
-          {/* role={undefined} removes reactstrap's hardcoded role="menu" */}
-          <DropdownMenu flip tag="div" role={undefined}>
-            <div className="text-end megamenu-close-button">
-              <Button
-                color="link"
-                onClick={() => setMenuStatus(false)}
-                onKeyDown={(e) => {
-                  if (e.keyCode === 13) {
-                    setMenuStatus(false);
-                  }
-                }}
-                title={intl.formatMessage(messages.closeMenu)}
-                // Out of Tab order: Escape/outside click already close the menu
-                tabIndex="-1"
-              >
-                <Icon icon="it-close" />
-              </Button>
-            </div>
+          {/* role="region" replaces reactstrap's hardcoded role="menu" */}
+          <DropdownMenu
+            flip
+            tag="div"
+            role="region"
+            id={panelId}
+            aria-labelledby={toggleId}
+            onKeyDown={onPanelKeyDown}
+            className="no-focus--mouse"
+          >
             <Row>
               <Col lg={hasBlocks ? 6 : 12}>
-                <Row>
-                  {childrenGroups.map((group, index) => (
-                    <Col lg={12 / max_cols} key={'group_' + index}>
-                      <LinkList
-                        className="bordered"
-                        aria-label={item.title ?? ''}
-                      >
-                        {group.map((child, idx) => {
-                          return (
-                            <li
-                              key={child['@id'] + idx}
-                              ref={
-                                index === 0 && idx === 0 ? firstItemRef : null
-                              }
+                <LinkList
+                  className="bordered megamenu-link-list"
+                  aria-label={item.title ?? ''}
+                  style={{
+                    gridTemplateColumns: `repeat(${max_cols}, minmax(0, 1fr))`,
+                    gridTemplateRows: `repeat(${megamenuRows}, auto)`,
+                  }}
+                >
+                  {childrenGroups.map((group, colIndex) =>
+                    group.map((child, idx) => {
+                      return (
+                        <li
+                          key={child['@id'] + colIndex + '_' + idx}
+                          className={cx({ 'column-start': idx === 0 })}
+                          style={{ gridColumn: colIndex + 1, gridRow: idx + 1 }}
+                        >
+                          {child.showAsHeader ? (
+                            <h3
+                              className={cx('list-item', {
+                                active: isChildActive(
+                                  flattenToAppURL(child['@id']),
+                                  pathname,
+                                ),
+                              })}
                             >
-                              {child.showAsHeader ? (
-                                <h3
-                                  className={cx('list-item', {
-                                    active: isChildActive(
-                                      flattenToAppURL(child['@id']),
-                                      pathname,
-                                    ),
-                                  })}
-                                >
-                                  <ConditionalLink
-                                    item={child}
-                                    title={child.title}
-                                    condition={!!child['@id']}
-                                    key={child['@id']}
-                                    onClick={() => setMenuStatus(false)}
-                                    aria-current="page"
-                                  >
-                                    <span>{child.title}</span>
-                                  </ConditionalLink>
-                                </h3>
-                              ) : (
-                                <ConditionalLink
-                                  item={child}
-                                  title={child.title}
-                                  condition={!!child['@id']}
-                                  key={child['@id']}
-                                  onClick={() => setMenuStatus(false)}
-                                  className={cx('list-item', {
-                                    active: isChildActive(
-                                      flattenToAppURL(child['@id']),
-                                      pathname,
-                                      true,
-                                    ),
-                                  })}
-                                >
-                                  <span>{child.title}</span>
-                                </ConditionalLink>
-                              )}
-                            </li>
-                          );
-                        })}
-                      </LinkList>
-                    </Col>
-                  ))}
-                </Row>
+                              <ConditionalLink
+                                item={child}
+                                title={child.title}
+                                condition={!!child['@id']}
+                                key={child['@id']}
+                                onClick={() => setMenuStatus(false)}
+                                aria-current={
+                                  isChildActive(
+                                    flattenToAppURL(child['@id']),
+                                    pathname,
+                                    true,
+                                  )
+                                    ? 'page'
+                                    : undefined
+                                }
+                              >
+                                <span>{child.title}</span>
+                              </ConditionalLink>
+                            </h3>
+                          ) : (
+                            <ConditionalLink
+                              item={child}
+                              title={child.title}
+                              condition={!!child['@id']}
+                              key={child['@id']}
+                              onClick={() => setMenuStatus(false)}
+                              className={cx('list-item', {
+                                active: isChildActive(
+                                  flattenToAppURL(child['@id']),
+                                  pathname,
+                                  true,
+                                ),
+                              })}
+                            >
+                              <span>{child.title}</span>
+                            </ConditionalLink>
+                          )}
+                        </li>
+                      );
+                    }),
+                  )}
+                </LinkList>
               </Col>
               {hasBlocks && (
                 <Col lg={6} className="m-4 m-lg-0 dropdownmenu-blocks-column">
@@ -434,6 +427,7 @@ const MegaMenu = ({ item, pathname }) => {
 
 MegaMenu.propTypes = {
   pathname: PropTypes.string.isRequired,
+  index: PropTypes.number,
   item: PropTypes.shape({
     title: PropTypes.string,
     url: PropTypes.string,

@@ -70,7 +70,7 @@ const IconWidget = ({ id, value, defaultOptions, onChange, reactSelect }) => {
         <span className="ms-4">
           <a
             target="_blank"
-            href="https://fontawesome.com/v6/search?ic=free-collection"
+            href="https://fontawesome.com/v6/search?ic=free-collection&f=classic&s=solid"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={'arrow-right'} />

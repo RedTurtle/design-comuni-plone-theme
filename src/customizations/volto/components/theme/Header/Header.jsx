@@ -20,8 +20,11 @@ import {
   SubsiteHeader,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { Headers } from 'design-react-kit';
+import { useSiteLanguage } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 const Header = ({ pathname }) => {
+  // site chrome keeps the site language when the content is in another one
+  const siteLanguage = useSiteLanguage();
   // const [mini, setMini] = useState(false);
 
   // const handleScroll = () => {
@@ -35,7 +38,11 @@ const Header = ({ pathname }) => {
 
   return (
     <>
-      <div className="public-ui">
+      <div
+        className="public-ui"
+        lang={siteLanguage.lang}
+        dir={siteLanguage.dir}
+      >
         <header>
           {/* <div
         className="sticky-placeholder"
