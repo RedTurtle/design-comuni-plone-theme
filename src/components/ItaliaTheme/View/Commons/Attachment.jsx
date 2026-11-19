@@ -17,7 +17,7 @@ const Attachment = ({
   description,
   download_url,
   item = {},
-  iconClass = 'it-clip',
+  icon = 'it-clip',
 }) => {
   const intl = useIntl();
   let _item = { ...item };
