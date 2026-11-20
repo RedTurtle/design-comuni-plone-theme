@@ -48,12 +48,11 @@
 - Nei blocchi "Card con immagine" e "Alert" l'immagine ora si carica dal computer o si sceglie tra quelle già presenti nel sito, e viene salvata come contenuto Immagine dentro la pagina invece di essere incorporata nella pagina stessa. In questo modo le pagine sono molto più leggere e l'immagine viene mostrata con miniature ottimizzate per le diverse dimensioni dello schermo. Le immagini inserite in precedenza continuano a vedersi come prima; nella barra laterale di modifica del blocco un avviso segnala che sono nel vecchio formato e possono essere sostituite caricandone o selezionandone una nuova.
 
 ## Versione X.X.X (dd/mm/yyyy)
+## Versione 12.17.1 (19/11/2026)
 
 ### Fix
 
 - Nel blocco "Icone" con immagine di sfondo, il colore di sfondo scelto viene usato per definire il colore del titolo e della descrizione per essere leggibile. _(**Origine / contributo**: Regione Emilia-Romagna)_
-
-
 
 ## Versione 12.17.0 (02/11/2026)
 
@@ -74,7 +73,6 @@
 
 - Nel blocco "Alert" è possibile impostare un periodo di visualizzazione (data e ora di inizio e di scadenza): fuori da quel periodo l'alert non viene mostrato ai visitatori. Se non viene impostato nessun periodo, l'alert è sempre visibile.
 
-
 ## Versione 12.16.1 (20/10/2026)
 
 ### Novità
@@ -84,6 +82,7 @@
 ### Fix
 
 - Sistemato il link per la ricerca delle icone sul sito di FontAwesome. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Sistemato il livello di intestazione dei titoli per la sezione 'Argomenti' del tipo di contenuto Servizio. 
 
 ## Versione 12.16.0 (23/09/2026)
 
