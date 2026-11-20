@@ -3,13 +3,14 @@
  * Volto persists it in localStorage, but every tab rewrites it with its own
  * state on each redux action: a tab opened before the copy (even a view page)
  * wiped it, and Paste disappeared in the editor. It is an appExtra so that
- * every tab listens, not only the ones with an open editor.
+ * every tab of a logged-in user listens, not only the ones with an open
+ * editor; anonymous users can't edit, so nothing is mounted for them.
  *
  * Author: Giulio Malaguti
  * Last modified: 2026-11-20
  */
-import { useEffect } from 'react';
-import { useDispatch, useStore } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import { load } from 'redux-localstorage-simple';
 import isEqual from 'lodash/isEqual';
 import config from '@plone/volto/registry';
@@ -28,7 +29,7 @@ export const loadBlocksClipboard = () =>
   load({ states: getClipboardStates(), disableWarnings: true })
     ?.blocksClipboard || {};
 
-const BlocksClipboardSync = () => {
+const ClipboardStorageListener = () => {
   const dispatch = useDispatch();
   const store = useStore();
 
@@ -52,6 +53,11 @@ const BlocksClipboardSync = () => {
   }, [dispatch, store]);
 
   return null;
+};
+
+const BlocksClipboardSync = () => {
+  const token = useSelector((state) => state.userSession?.token);
+  return token ? <ClipboardStorageListener /> : null;
 };
 
 export default BlocksClipboardSync;

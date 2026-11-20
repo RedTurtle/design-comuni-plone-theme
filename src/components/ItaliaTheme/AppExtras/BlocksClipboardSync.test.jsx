@@ -1,12 +1,13 @@
 /**
- * Tests for BlocksClipboardSync: the blocks clipboard follows the changes made
- * to it by other tabs, and changes to unrelated localStorage keys leave it alone.
+ * Tests for BlocksClipboardSync: for logged-in users the blocks clipboard
+ * follows the changes made to it by other tabs, and changes to unrelated
+ * localStorage keys leave it alone; anonymous users get no listener.
  *
  * Author: Giulio Malaguti
  * Last modified: 2026-11-20
  */
 import React from 'react';
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import config from '@plone/volto/registry';
@@ -29,9 +30,13 @@ const changeFromOtherTab = (key, value) => {
   );
 };
 
-const renderWithClipboard = (initialClipboard) => {
-  const store = createStore(combineReducers({ blocksClipboard }), {
+const userSession = (state = { token: null }, action) =>
+  action.type === 'SET_TOKEN' ? { token: action.token } : state;
+
+const renderWithClipboard = (initialClipboard, token = 'jwt-token') => {
+  const store = createStore(combineReducers({ blocksClipboard, userSession }), {
     blocksClipboard: initialClipboard,
+    userSession: { token },
   });
   const view = render(
     <Provider store={store}>
@@ -77,9 +82,17 @@ describe('BlocksClipboardSync', () => {
     expect(store.getState().blocksClipboard).toEqual({ copy: copiedBlocks });
   });
 
-  it('stops listening once unmounted', () => {
-    const { store, unmount } = renderWithClipboard({});
-    unmount();
+  it('does not listen for anonymous users', () => {
+    const { store } = renderWithClipboard({}, null);
+    changeFromOtherTab(COPY_KEY, copiedBlocks);
+    expect(store.getState().blocksClipboard).toEqual({});
+  });
+
+  it('stops listening after logout', () => {
+    const { store } = renderWithClipboard({});
+    act(() => {
+      store.dispatch({ type: 'SET_TOKEN', token: null });
+    });
     changeFromOtherTab(COPY_KEY, copiedBlocks);
     expect(store.getState().blocksClipboard).toEqual({});
   });
