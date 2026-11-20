@@ -36,6 +36,7 @@ import PageLoader from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtr
 import TrackFocus from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/TrackFocus';
 import SiteSettingsExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/SiteSettingsExtras';
 import HtmlLangDir from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HtmlLangDir';
+import BlocksClipboardSync from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/BlocksClipboardSync';
 import { RTL_LANGUAGES } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
@@ -419,6 +420,10 @@ export default function applyConfig(voltoConfig) {
       {
         match: '',
         component: HtmlLangDir,
+      },
+      {
+        match: '',
+        component: BlocksClipboardSync,
       },
     ],
 

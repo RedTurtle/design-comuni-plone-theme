@@ -4,6 +4,11 @@
  * CUSTOMIZATIONS:
  * - pasteBlock: fix id handling on copy/cut/paste, which causes wrong css behavior
  *   when getting classes in our custom listing templates, and criteria bugs.
+ * - removed the 'storage' listener (loadFromStorage): it loaded the wrong key
+ *   ('blocksClipboard' instead of 'blocksClipboard.copy/.cut'), so any
+ *   localStorage change from another tab emptied the clipboard, and it was
+ *   never removed on unmount. Cross-tab sync is done by
+ *   AppExtras/BlocksClipboardSync.
  */
 
 import React from 'react';
@@ -17,8 +22,6 @@ import {
 } from '@plone/volto/helpers/Blocks/Blocks';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { Plug } from '@plone/volto/components/manage/Pluggable';
-import { load } from 'redux-localstorage-simple';
-import isEqual from 'lodash/isEqual';
 import omit from 'lodash/omit';
 import without from 'lodash/without';
 import { cloneBlock } from 'design-comuni-plone-theme/helpers/blocks';
@@ -40,23 +43,8 @@ export class BlocksToolbarComponent extends React.Component {
     this.copyBlocksToClipboard = this.copyBlocksToClipboard.bind(this);
     this.cutBlocksToClipboard = this.cutBlocksToClipboard.bind(this);
     this.deleteBlocks = this.deleteBlocks.bind(this);
-    this.loadFromStorage = this.loadFromStorage.bind(this);
     this.pasteBlocks = this.pasteBlocks.bind(this);
     this.setBlocksClipboard = this.setBlocksClipboard.bind(this);
-  }
-
-  loadFromStorage() {
-    const clipboard = load({ states: ['blocksClipboard'] })?.blocksClipboard;
-    if (!isEqual(clipboard, this.props.blocksClipboard))
-      this.props.setBlocksClipboard(clipboard || {});
-  }
-
-  componentDidMount() {
-    window.addEventListener('storage', this.loadFromStorage, true);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('storage', this.loadFromStorage);
   }
 
   deleteBlocks() {
