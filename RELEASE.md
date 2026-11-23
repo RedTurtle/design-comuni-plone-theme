@@ -55,6 +55,7 @@
 ### Fix
 
 - Nel blocco "Icone" con immagine di sfondo, il colore di sfondo scelto viene usato per definite il colore del titolo e della descrizione per essere leggibile. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- I blocchi copiati o tagliati restano disponibili da incollare anche se nel browser sono aperte altre schede dello stesso sito: prima bastava navigare in un'altra scheda perché il pulsante "Incolla" sparisse. _(**Origine / contributo**: Regione Emilia-Romagna)_
 
 ## Versione 12.15.1 (01/09/2026)
 
