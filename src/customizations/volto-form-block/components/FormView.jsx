@@ -23,8 +23,18 @@
  *   da controllare.") and added the `legend_required` message plus
  *   `success`/`reset` messages (defined for reuse but not rendered in this
  *   file)
+ * - rercaptcha (collective.rercaptcha): the `show-button` flag of
+ *   `@components['rercaptcha-data']` picks its mode. Invisible (default): the
+ *   token is computed when "Invia" is clicked (captcha.verify() in View.jsx),
+ *   so the button must stay clickable without a token. Explicit button: the
+ *   submit stays disabled until the check is done, like every other captcha.
+ *   The flag is read from Redux, not from @regioneer/volto-collective-rercaptcha,
+ *   so this theme doesn't depend on that add-on
+ * - rercaptcha (only) is rendered next to the submit button, before it in the
+ *   DOM too: otherwise, keyboard-only, Tab after its checkbox leaves the form
  */
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
 import { Card, CardBody, Row, Col, Alert, Progress } from 'design-react-kit';
 import { getFieldName } from 'volto-form-block/components/utils';
@@ -103,6 +113,15 @@ const FormView = ({
 
   const enableCaptcha =
     config.settings.siteProperties.enableVoltoFormBlockCaptcha;
+
+  // Every captcha except rercaptcha in invisible mode (see the header)
+  const rerCaptchaData = useSelector(
+    (state) => state.content?.data?.['@components']?.['rercaptcha-data'],
+  );
+  const rercaptchaShowsOwnButton = !!rerCaptchaData?.['show-button'];
+  const requiresPreexistingToken =
+    enableCaptcha &&
+    (data.captcha !== 'rercaptcha' || rercaptchaShowsOwnButton);
 
   const isValidField = (field) => {
     return formErrors?.filter((e) => e.field === field).length === 0;
@@ -282,7 +301,10 @@ const FormView = ({
                   <></>
                 )}
 
-                {enableCaptcha && <>{captcha.render()}</>}
+                {/* rercaptcha is rendered next to the submit button */}
+                {enableCaptcha && data.captcha !== 'rercaptcha' && (
+                  <>{captcha.render()}</>
+                )}
 
                 {formErrors.length > 0 && (
                   <Alert
@@ -326,11 +348,15 @@ const FormView = ({
                           intl.formatMessage(messages.default_cancel_label)}
                       </Button>
                     )}
+                    {/* Before the button in the DOM too, for the tab order */}
+                    {enableCaptcha && data.captcha === 'rercaptcha' && (
+                      <>{captcha.render()}</>
+                    )}
                     <Button
                       color="primary"
                       type="submit"
                       disabled={
-                        (enableCaptcha &&
+                        (requiresPreexistingToken &&
                           !captcha?.props?.captchaToken?.current) ||
                         formState.loading
                       }
