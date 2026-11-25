@@ -18,6 +18,9 @@
  *   `errorDescription` message
  * - added an inert, commented-out `isDate`/`formatDate` snippet as a
  *   placeholder for future ISO date formatting (no functional effect)
+ * - the regular fields are validated before captcha.verify(), so an invalid
+ *   submit never starts a captcha check (rercaptcha's invisible mode computes
+ *   the token inside verify())
  */
 
 import React, { useState, useEffect, useReducer, useRef } from 'react';
@@ -170,13 +173,14 @@ const View = ({ data, id, path }) => {
   };
 
   useEffect(() => {
+    // Fields only: the captcha hasn't been (re)computed yet while editing
     if (formErrors.length > 0) {
-      isValidForm();
+      isValidForm({ skipCaptcha: true });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formData]);
 
-  const isValidForm = () => {
+  const isValidForm = ({ skipCaptcha = false } = {}) => {
     const v = [];
     data.subblocks.forEach((subblock, index) => {
       const name = getFieldName(subblock.label, subblock.id);
@@ -243,7 +247,7 @@ const View = ({ data, id, path }) => {
       }
     });
 
-    if (data.captcha && !captchaToken.current) {
+    if (!skipCaptcha && data.captcha && !captchaToken.current) {
       v.push({
         field: 'captcha',
         message: intl.formatMessage(messages.requiredFieldMessage),
@@ -256,6 +260,13 @@ const View = ({ data, id, path }) => {
 
   const submit = (e) => {
     e.preventDefault();
+
+    // Fields first: an invalid submit must not start captcha.verify()
+    if (!isValidForm({ skipCaptcha: true })) {
+      setFormState({ type: FORM_STATES.error });
+      return;
+    }
+
     captcha
       .verify()
       .then(() => {
