@@ -115,7 +115,7 @@ class Edit extends SubblocksEdit {
       <div className="public-ui" tabIndex="-1" ref={this.nodeF}>
         <div className="full-width section section-muted section-inset-shadow py-5 is-edit-mode">
           <Container className="px-md-4">
-            <Card className="card-bg rounded" noWrapper={false} space tag="div">
+            <Card className="card-bg rounded" noWrapper={false} spacing tag="div">
               <div className="block-header">
                 <div className="title">
                   <TextEditorWidget

@@ -14,7 +14,7 @@ msgstr ""
 #: overrideTranslations
 # defaultMessage: Error 404 - Page not found
 msgid "404-pageNotFoundTitle"
-msgstr "Pagina non trovata"
+msgstr ""
 
 #: components/ItaliaTheme/Header/HeaderSlim/HeaderLogin
 # defaultMessage: Accedi all'area personale
@@ -264,6 +264,11 @@ msgstr "Vuoi eliminare questo elemento?"
 # defaultMessage: Deleting this item breaks {brokenReferences} {variation}.
 msgid "Deleting this item breaks {brokenReferences} {variation}."
 msgstr "Cancellando questo elemento si romperanno {brokenReferences} {variation}."
+
+#: overrideTranslations
+# defaultMessage: Profondità di ricerca
+msgid "Depth"
+msgstr "Profondità di ricerca"
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
 #: components/ItaliaTheme/Blocks/NumbersBlock/Edit
@@ -547,6 +552,11 @@ msgstr "Numero"
 # defaultMessage: - apri in nuova scheda
 msgid "Nuova scheda"
 msgstr "- apri in nuova scheda"
+
+#: overrideTranslations
+# defaultMessage: Salta i primi N. risultati
+msgid "Offset"
+msgstr "Salta i primi N. risultati"
 
 #: components/ItaliaTheme/manage/Widgets/LinkToWidget
 # defaultMessage: Apri in un nuovo tab
@@ -1432,6 +1442,11 @@ msgstr "Colore di sfondo"
 # defaultMessage: Biografia
 msgid "biografia"
 msgstr "Biografia"
+
+#: components/ItaliaTheme/Blocks/Common/BlockImage
+# defaultMessage: Immagine nel vecchio formato: caricane o selezionane una per sostituirla.
+msgid "blockImage_legacy_notice"
+msgstr "Immagine nel vecchio formato: caricane o selezionane una per sostituirla."
 
 #: config/Blocks/ListingOptions/defaultOptions
 # defaultMessage: Colore di sfondo

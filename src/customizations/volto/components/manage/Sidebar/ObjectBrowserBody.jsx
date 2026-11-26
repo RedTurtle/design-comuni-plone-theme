@@ -1,12 +1,19 @@
 /**
  * ObjectBrowserBody component.
  * @module components/manage/Sidebar/ObjectBrowserBody
- * Customization:
+ *
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Sidebar/ObjectBrowserBody.jsx
+ *
+ * CUSTOMIZATIONS:
  * - Tooltip on breadcrumbs
- * - Set initial search to current path instead of home '/'
+ * - Set initial search to current path instead of home '/' (currentFolder always
+ *   uses contextURL, regardless of mode - unlike upstream's defaultMultiplePath
+ *   ternary for that specific field)
  * - Fix searchable types in query applying selectableTypes from field config
- * - Use debounce in onSearch to keep requests low and avoid race conditions
  * - Added use of props.onBlur function when selecting an item
+ * - Close the object browser after a single click selection in link and image
+ *   mode: upstream's stopSelecting `else` branch also runs for non-multiple
+ *   modes and resets it to false, and image mode only closed on double click
  */
 
 import React, { Component } from 'react';
@@ -16,7 +23,8 @@ import { connect } from 'react-redux';
 import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
 import { Input, Segment, Breadcrumb } from 'semantic-ui-react';
 
-import { join, debounce } from 'lodash';
+import join from 'lodash/join';
+import debounce from 'lodash/debounce';
 
 // These absolute imports (without using the corresponding centralized index.js) are required
 // to cut circular import problems, this file should never use them. This is because of
@@ -82,7 +90,9 @@ class ObjectBrowserBody extends Component {
     dataName: PropTypes.string,
     maximumSelectionSize: PropTypes.number,
     contextURL: PropTypes.string,
+    initialPath: PropTypes.string,
     searchableTypes: PropTypes.arrayOf(PropTypes.string),
+    onlyFolderishSelectable: PropTypes.bool,
   };
 
   /**
@@ -98,6 +108,7 @@ class ObjectBrowserBody extends Component {
     selectableTypes: [],
     searchableTypes: null,
     maximumSelectionSize: null,
+    onlyFolderishSelectable: false,
   };
 
   /**
@@ -108,17 +119,18 @@ class ObjectBrowserBody extends Component {
    */
   constructor(props) {
     super(props);
+    const defaultMultiplePath = props.initialPath || '/';
     this.state = {
       currentFolder: this.props.contextURL || '/',
       currentImageFolder:
         this.props.mode === 'multiple'
-          ? '/'
+          ? defaultMultiplePath
           : this.props.mode === 'image' && this.props.data?.url
             ? getParentURL(this.props.data.url)
             : '/',
       currentLinkFolder:
         this.props.mode === 'multiple'
-          ? '/'
+          ? defaultMultiplePath
           : this.props.mode === 'link' && this.props.data?.href
             ? getParentURL(this.props.data.href)
             : '/',
@@ -145,6 +157,11 @@ class ObjectBrowserBody extends Component {
           : this.props.searchableTypes || this.props.selectableTypes || null,
     };
     this.searchInputRef = React.createRef();
+    // Debounce the live-search dispatch so rapid keystrokes do not produce a
+    // burst of overlapping requests whose responses may resolve out of order
+    // (an older, less-filtered response arriving after the latest one would
+    // visually "reset" the list to look unfiltered).
+    this.debouncedSearch = debounce(this.doSearch, 300);
   }
 
   /**
@@ -154,6 +171,17 @@ class ObjectBrowserBody extends Component {
    */
   componentDidMount() {
     this.initialSearch(this.props.mode);
+  }
+
+  /**
+   * Component will unmount
+   * @method componentWillUnmount
+   * @returns {undefined}
+   */
+  componentWillUnmount() {
+    if (this.debouncedSearch) {
+      this.debouncedSearch.cancel();
+    }
   }
 
   initialSearch = (mode) => {
@@ -216,8 +244,7 @@ class ObjectBrowserBody extends Component {
       },
     );
 
-  onSearch = (e) => {
-    const text = flattenToAppURL(e.target.value);
+  doSearch = (text) => {
     if (text.startsWith('/')) {
       this.setState({ currentFolder: text });
       this.props.searchContent(
@@ -242,7 +269,11 @@ class ObjectBrowserBody extends Component {
       );
     }
   };
-  debouncedSearch = debounce((e) => this.onSearch(e), 250);
+
+  onSearch = (e) => {
+    const text = flattenToAppURL(e.target.value);
+    this.debouncedSearch(text);
+  };
 
   onSelectItem = (item) => {
     const url = item['@id'];
@@ -311,7 +342,17 @@ class ObjectBrowserBody extends Component {
   };
 
   isSelectable = (item) => {
-    const { maximumSelectionSize, data, mode, selectableTypes } = this.props;
+    const {
+      maximumSelectionSize,
+      data,
+      mode,
+      selectableTypes,
+      onlyFolderishSelectable,
+    } = this.props;
+
+    if (onlyFolderishSelectable && !item.is_folderish) {
+      return false;
+    }
     if (
       maximumSelectionSize &&
       data &&
@@ -333,6 +374,7 @@ class ObjectBrowserBody extends Component {
       }
       if (config.settings.imageObjects.includes(item['@type'])) {
         this.onSelectItem(item);
+        this.props.closeObjectBrowser();
       }
     } else {
       if (this.isSelectable(item)) {
@@ -349,15 +391,14 @@ class ObjectBrowserBody extends Component {
             );
           this.onSelectItem(item);
           let length = this.props.data ? this.props.data.length : 0;
+          // Single selection modes always stop here; multiple mode stops
+          // only when the selection reaches maximumSelectionSize.
           let stopSelecting = this.props.mode !== 'multiple';
-          if (isDeselecting && !stopSelecting)
+          if (!stopSelecting)
             stopSelecting =
               this.props.maximumSelectionSize > 0 &&
-              length - 1 >= this.props.maximumSelectionSize;
-          else
-            stopSelecting =
-              this.props.maximumSelectionSize > 0 &&
-              length + 1 >= this.props.maximumSelectionSize;
+              (isDeselecting ? length - 1 : length + 1) >=
+                this.props.maximumSelectionSize;
           if (stopSelecting) {
             this.props.closeObjectBrowser();
           }
@@ -421,7 +462,7 @@ class ObjectBrowserBody extends Component {
             <Input
               className="search"
               ref={this.searchInputRef}
-              onChange={this.debouncedSearch}
+              onChange={this.onSearch}
               placeholder={this.props.intl.formatMessage(
                 messages.SearchInputPlaceholder,
               )}

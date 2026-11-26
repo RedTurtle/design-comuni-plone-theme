@@ -1,13 +1,3 @@
-# Translation of plone.pot to French
-# French Translation Team <plone-i18n@lists.sourceforge.net>, 2003-2006.
-# Sebastien Douche <sdouche@gmail.com>, 2005-2007.
-# Encolpe Degoute <encolpe.degoute@ingeniweb.com>, 2006, 2007, 2008.
-# Gilles Lenfant <gilles.lenfant@ingeniweb.com>, 2008.
-# Encolpe Degoute <encolpe@gmail.com>, 2008.
-# Vincent Fretin <vincent.fretin@gmail.com>, 2009.
-# Kevin Deldycke <kevin@deldycke.com>, 2009.
-# JeanMichel FRANCOIS <toutpt@gmail.com>, 2010.
-# Denis Bitouzé <denis.bitouze@univ-littoral.fr>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: volto-fr\n"
@@ -280,6 +270,11 @@ msgstr ""
 #: components/manage/Contents/ContentsDeleteModal
 # defaultMessage: Deleting this item breaks {brokenReferences} {variation}.
 msgid "Deleting this item breaks {brokenReferences} {variation}."
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Profondità di ricerca
+msgid "Depth"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
@@ -563,6 +558,11 @@ msgstr ""
 #: components/ItaliaTheme/Header/SocialHeader
 # defaultMessage: - apri in nuova scheda
 msgid "Nuova scheda"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Salta i primi N. risultati
+msgid "Offset"
 msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/LinkToWidget
@@ -1449,6 +1449,11 @@ msgstr ""
 # defaultMessage: Biografia
 msgid "biografia"
 msgstr "Biographie"
+
+#: components/ItaliaTheme/Blocks/Common/BlockImage
+# defaultMessage: Immagine nel vecchio formato: caricane o selezionane una per sostituirla.
+msgid "blockImage_legacy_notice"
+msgstr ""
 
 #: config/Blocks/ListingOptions/defaultOptions
 # defaultMessage: Colore di sfondo
@@ -4024,12 +4029,12 @@ msgstr ""
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: I risultati della ricerca verranno aggiornati in base al testo inserito nel campo di ricerca e ai filtri selezionati
 msgid "search_live_input_description"
-msgstr "Les résultats de la recherche seront mis à jour en fonction du texte saisi dans le champ de recherche et des filtres sélectionnés"
+msgstr ""
 
 #: components/ItaliaTheme/Search/Search
 # defaultMessage: {start}-{end} di {total} risultati
 msgid "search_results_range"
-msgstr "{start}-{end} sur {total} résultats"
+msgstr ""
 
 #: components/ItaliaTheme/Blocks/SearchSections/SideBar
 # defaultMessage: Dove cercare

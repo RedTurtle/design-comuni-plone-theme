@@ -32,7 +32,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index, blockHasTitle }) => {
     <Card
       className="card-bg rounded subblock-view"
       noWrapper={false}
-      space
+      spacing
       tag="div"
     >
       <CardBody tag="div">

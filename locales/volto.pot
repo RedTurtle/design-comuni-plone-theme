@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-11-02T14:39:24.337Z\n"
+"POT-Creation-Date: 2026-11-26T11:00:57.689Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -265,6 +265,11 @@ msgstr ""
 #: components/manage/Contents/ContentsDeleteModal
 # defaultMessage: Deleting this item breaks {brokenReferences} {variation}.
 msgid "Deleting this item breaks {brokenReferences} {variation}."
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Profondità di ricerca
+msgid "Depth"
 msgstr ""
 
 #: components/ItaliaTheme/Blocks/ContactsBlock/Edit
@@ -548,6 +553,11 @@ msgstr ""
 #: components/ItaliaTheme/Header/SocialHeader
 # defaultMessage: - apri in nuova scheda
 msgid "Nuova scheda"
+msgstr ""
+
+#: overrideTranslations
+# defaultMessage: Salta i primi N. risultati
+msgid "Offset"
 msgstr ""
 
 #: components/ItaliaTheme/manage/Widgets/LinkToWidget
@@ -1433,6 +1443,11 @@ msgstr ""
 #: components/ItaliaTheme/View/PersonaView/PersonaRuolo
 # defaultMessage: Biografia
 msgid "biografia"
+msgstr ""
+
+#: components/ItaliaTheme/Blocks/Common/BlockImage
+# defaultMessage: Immagine nel vecchio formato: caricane o selezionane una per sostituirla.
+msgid "blockImage_legacy_notice"
 msgstr ""
 
 #: config/Blocks/ListingOptions/defaultOptions

@@ -36,9 +36,34 @@ import PageLoader from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtr
 import TrackFocus from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/TrackFocus';
 import SiteSettingsExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/SiteSettingsExtras';
 import HtmlLangDir from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HtmlLangDir';
+import BlocksClipboardSync from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/BlocksClipboardSync';
 import { RTL_LANGUAGES } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
+
+// volto-form-block's own barrel (volto-form-block/components) wraps View/Edit
+// in loadable() under the "VoltoFormBlockView"/"VoltoFormBlockEdit" webpack
+// chunks; in view mode that caused a hydration mismatch (SSR always resolves
+// the loadable synchronously, but the client only renders it once the async
+// chunk has loaded, which isn't guaranteed by the time hydration starts).
+// Volto's customization-alias mechanism can't override the barrel itself
+// (it's imported as the bare `volto-form-block/components`, which never
+// matches an aliased `.../components/index` path), so instead we import the
+// plain, non-lazy components directly here and overwrite
+// blocksConfig.form.view/edit further down, after volto-form-block's own
+// applyConfig has already run.
+import FormBlockView from 'volto-form-block/components/View';
+import FormBlockEdit from 'volto-form-block/components/Edit';
+
+// Volto 18 removed the `hero` block from core (plone/volto#5846), so the
+// HeroImageLeft View/Edit under customizations/volto no longer shadow
+// anything: the addon registry aliases a customization only if the original
+// Volto file still exists. They are imported directly and the block is
+// registered below, otherwise existing hero blocks render as "Unknown Block".
+import heroSVG from '@plone/volto/icons/hero.svg';
+import BlockSettingsSchema from '@plone/volto/components/manage/Blocks/Block/Schema';
+import HeroView from 'design-comuni-plone-theme/customizations/volto/components/manage/Blocks/HeroImageLeft/View';
+import HeroEdit from 'design-comuni-plone-theme/customizations/volto/components/manage/Blocks/HeroImageLeft/Edit';
 
 // CTs icons
 import faFileInvoiceSVG from 'design-comuni-plone-theme/icons/file-invoice.svg';
@@ -169,19 +194,12 @@ export default function applyConfig(voltoConfig) {
     rtlLanguages: RTL_LANGUAGES,
     verticalFormTabs: true,
     showTags: false,
+    showRelatedItems: false,
     showSelfRegistration: false,
     useEmailAsLogin: false,
     defaultPageSize: 24,
     navDepth: 2,
     cookieExpires: 15552000, //6 month
-    serverConfig: {
-      ...config.settings.serverConfig,
-      //criticalCssPath: 'node_modules/design-comuni-plone-theme/public/critical.css', //valido solo per i siti figli. Rimosso temporaneamente perchè fa un brutto effetto al caricamento della pagina
-      extractScripts: {
-        ...config.settings.serverConfig.extractScripts,
-        errorPages: true,
-      },
-    },
     /*
       Set to 100mb in BINARY bytes, not decimal, see volto/helpers/FormValidation.js.validateFileUploadSize error message
       ...
@@ -403,6 +421,10 @@ export default function applyConfig(voltoConfig) {
         match: '',
         component: HtmlLangDir,
       },
+      {
+        match: '',
+        component: BlocksClipboardSync,
+      },
     ],
 
     'volto-editablefooter': {
@@ -455,7 +477,12 @@ export default function applyConfig(voltoConfig) {
     ],
 
     showRestricted: false,
-    voltoVersion: '17',
+    // Must be the literal string '18' (not our actual Volto version) to make
+    // BlocksWidget use the eager createPortal Sidebar mount instead of the
+    // lazy one, otherwise BlocksForm crashes on Add/Edit of non-blocks
+    // content types with a blocks field (e.g. News/Event): see
+    // https://github.com/collective/volto-blocks-widget/issues/13
+    voltoVersion: '18',
   };
 
   config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
@@ -543,9 +570,20 @@ export default function applyConfig(voltoConfig) {
       listing_items_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       getAsyncData: null, // questo disabilita il ssr dei listing perché rallenta vistosamente la pagina (per ora continuiamo con rendertron)
     },
+    // Same entry Volto 17 registered in core, minus `blockSchema`: the
+    // sidebar is HeroSidebar. Volto reads `blockHasOwnFocusManagement`, not
+    // `hasOwnFocusManagement`.
     hero: {
-      ...config.blocks.blocksConfig.hero,
-      hasOwnFocusManagement: true,
+      id: 'hero',
+      title: 'Hero',
+      icon: heroSVG,
+      group: 'common',
+      view: HeroView,
+      edit: HeroEdit,
+      schema: BlockSettingsSchema,
+      restricted: false,
+      mostUsed: false,
+      blockHasOwnFocusManagement: true,
       sidebarTab: 1,
     },
     html: {
@@ -577,6 +615,10 @@ export default function applyConfig(voltoConfig) {
     },
     form: {
       ...config.blocks.blocksConfig.form,
+      // overrides volto-form-block's own loadable()-wrapped view/edit (see
+      // the FormBlockView/FormBlockEdit import comment above)
+      view: FormBlockView,
+      edit: FormBlockEdit,
       enableConditionalFields: false,
       enableDatatableView: false,
     },

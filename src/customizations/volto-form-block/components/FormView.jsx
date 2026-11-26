@@ -1,34 +1,38 @@
-/*Customizatinos:
-- usati i componenti di design-react-kit
-- disabilitato il captcha se nelle siteProperties del config è stato disabilitato.
-- aggiunta legenda per i campi obbligatori
-- rercaptcha (collective.rercaptcha) ha due modalità, decise dal flag
-  `show-button` esposto insieme agli altri dati del captcha
-  (`rercaptcha-data`):
-    - invisibile (default): il token si calcola al click su "Invia", non
-      prima. Il bottone deve restare cliccabile anche senza un token già
-      pronto, altrimenti non si sbloccherebbe mai (il click stesso è ciò
-      che avvia il calcolo, tramite la Promise di captcha.verify() in
-      View.jsx).
-    - bottone esplicito: l'utente calcola il token cliccando un bottone
-      dedicato prima di "Invia". In questo caso il pre-blocco va invece
-      mantenuto, esattamente come per gli altri captcha (es. hcaptcha a
-      checkbox): "Invia" deve restare disabilitato finché la verifica non
-      è completa.
-  Per tutti gli altri tipi di captcha il comportamento resta invariato.
-  Il flag è letto direttamente da Redux (state.content.data['@components']
-  ['rercaptcha-data']), per evitare di inserire qui una dipendenza diretta con l'addon 
-  @regioneer/volto-collective-rercaptcha che verrà installato solo al bisogno.
-  NB: nome/valore del flag `show-button`
-  provvisori, in attesa della chiave definitiva dal backend: se cambia va
-  aggiornata anche qui.
-- rercaptcha si renderizza accanto al bottone di submit, a sinistra e prima
-  nel DOM (non più insieme agli altri campi del form): è l'unico tipo di
-  captcha spostato, gli altri restano dove sono sempre stati. Deve stare
-  prima nel DOM, non solo a sinistra visivamente, altrimenti con la sola
-  tastiera il Tab dopo aver spuntato la checkbox del captcha (modalità
-  bottone) esce dal form invece di raggiungere "Invia".
-*/
+/*
+ * original: https://raw.githubusercontent.com/collective/volto-form-block/v3.17.1/src/components/FormView.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - replaced semantic-ui-react `Segment`/`Message`/`Grid`/`Form` with
+ *   design-react-kit `Card`/`CardBody`/`Row`/`Col`/`Alert`/`Progress`: form
+ *   validation errors and `formState.error` render as `Alert color="danger"`
+ *   with a fade `alertTransition` (150ms) instead of `Message error`; the
+ *   submit form is a plain `<form noValidate autoComplete="off" method="post">`
+ *   instead of semantic-ui `Form`; the loading spinner uses
+ *   `Progress indeterminate` instead of a percent-based semantic-ui `Progress`
+ * - the captcha (`captcha.render()`) is only rendered when
+ *   `config.settings.siteProperties.enableVoltoFormBlockCaptcha` is true, and
+ *   the submit button is additionally disabled while captcha is enabled but
+ *   not yet completed (`!captcha?.props?.captchaToken?.current`)
+ * - added a legend above the fields ("I campi contrassegnati da (*) sono
+ *   obbligatori.", `legend_required` message) shown when any
+ *   `data.subblocks` entry has `required === true`
+ * - static fields are wrapped in a disabled `<fieldset disabled>`
+ * - translated the default UI strings to Italian
+ *   (`default_submit_label` "Invia", `default_cancel_label` "Annulla",
+ *   `error` "Errore", `form_errors` "Attenzione! Alcuni campi inseriti sono
+ *   da controllare.") and added the `legend_required` message plus
+ *   `success`/`reset` messages (defined for reuse but not rendered in this
+ *   file)
+ * - rercaptcha (collective.rercaptcha): the `show-button` flag of
+ *   `@components['rercaptcha-data']` picks its mode. Invisible (default): the
+ *   token is computed when "Invia" is clicked (captcha.verify() in View.jsx),
+ *   so the button must stay clickable without a token. Explicit button: the
+ *   submit stays disabled until the check is done, like every other captcha.
+ *   The flag is read from Redux, not from @regioneer/volto-collective-rercaptcha,
+ *   so this theme doesn't depend on that add-on
+ * - rercaptcha (only) is rendered next to the submit button, before it in the
+ *   DOM too: otherwise, keyboard-only, Tab after its checkbox leaves the form
+ */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';

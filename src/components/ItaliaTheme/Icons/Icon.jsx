@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import DesignIcon from './DesignIcon';
 import TelegramSVG from './svg/TelegramSVG';
 import XTwitterSVG from './svg/XTwitterSVG';
-import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import FontAwesomeIcon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/FontAwesomeIcon';
 
 const Icon = (props) => {
   const { icon, className, color, size, padding, ...rest } = props;

@@ -3,6 +3,7 @@
  */
 
 /*
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/theme/Unauthorized/Unauthorized.jsx
  *
  * CUSTOMIZATIONS:
  * - Replaced the whole default Volto markup (Container, FormattedMessage

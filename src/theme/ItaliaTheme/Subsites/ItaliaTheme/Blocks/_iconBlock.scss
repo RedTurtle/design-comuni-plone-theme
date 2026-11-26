@@ -17,11 +17,24 @@
         background-color: transparentize($subsite-primary, 0.5);
       }
     }
+
+    .full-width.has-bg-image {
+      &.bg-primary,
+      &.bg-secondary {
+        background-color: transparent !important;
+      }
+
+      .background-image:after {
+        background-color: transparentize($subsite-primary, 0.5);
+      }
+    }
+
     .block-header {
       @if $subsite-light-theme {
         .title {
           color: $subsite-primary-text;
         }
+
         .description {
           color: $subsite-primary-text;
         }
@@ -29,11 +42,13 @@
         .title {
           color: color-contrast($subsite-primary-text);
         }
+
         .description {
           color: color-contrast($subsite-primary-text);
         }
       }
     }
+
     .iconblock-icon svg {
       fill: $subsite-secondary;
     }

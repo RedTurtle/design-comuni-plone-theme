@@ -1,7 +1,17 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-  - Use with more plone.app.querystring.date operations
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Search/components/DateRangeFacetFilterListEntry.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling: use design-react-kit components (Label, Icon, Button) instead of semantic-ui-react, and show the facet title/label above the value
+ * - Support plone.app.querystring.date operations (date.largerThan, date.lessThan, date.between) by reading searchData.query and formatting the resulting start/end dates with moment (loaded lazily via injectLazyLibs), instead of the generic Yes/No boolean label
+ * - Use commonSearchBlockMessages (DateRangeFacetFilterListEntryDal/Al/DalAl, clearFilter) for i18n instead of the local yes/no messages
+ * - Add aria-label/title to the clear filter button and icon for accessibility
+ * - Parse `queryIndex.v` as a UTC timestamp and convert it to local time before formatting
+ *   (`moment.utc(v).local()`), and subtract a day from the "end" bound
+ *   (`date.lessThan`/the end of a `date.between`), instead of formatting the raw value with
+ *   local `moment()` — matches the UTC day-boundary (start of day / end of day + 1) that
+ *   `DateRangeFacet.valueToQuery` now sends, so the label shows the day the user actually picked
+ */
 import React, { useMemo } from 'react';
 import { Label, Icon, Button } from 'design-react-kit';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';

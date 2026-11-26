@@ -20,7 +20,7 @@ import {
   LinkListItem,
   UncontrolledDropdown,
 } from 'design-react-kit';
-import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
+import Icon from 'design-comuni-plone-theme/components/ItaliaTheme/Icons/Icon';
 import config from '@plone/volto/registry';
 
 const languagesISO392 = {

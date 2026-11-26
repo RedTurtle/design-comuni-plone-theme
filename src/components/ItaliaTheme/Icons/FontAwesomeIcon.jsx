@@ -2,13 +2,12 @@
  * Icon component.
  * @module components/ItaliaTheme/Icons/SectionIcon
  */
-import React, { useMemo } from 'react';
-import { v4 as uuid } from 'uuid';
+import React, { useId } from 'react';
 import { fontAwesomeAliases } from 'design-comuni-plone-theme/helpers/index';
 
 const FontAwesomeIcon = (props) => {
   const { className, icon, prefix, title } = props;
-  const iconID = useMemo(() => uuid(), []);
+  const iconID = useId();
   const [loadedIcon, setLoadedIcon] = React.useState({
     module: null,
     iconName: '',
@@ -36,12 +35,12 @@ const FontAwesomeIcon = (props) => {
       prefixKey === 'fab'
         ? 'brands'
         : prefixKey === 'far'
-        ? 'regular'
-        : prefixKey === 'fas'
-        ? 'solid'
-        : prefixKey != null
-        ? prefixKey
-        : 'solid',
+          ? 'regular'
+          : prefixKey === 'fas'
+            ? 'solid'
+            : prefixKey != null
+              ? prefixKey
+              : 'solid',
       iconName,
     ];
   };

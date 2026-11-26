@@ -1,9 +1,15 @@
-// CUSTOMIZATION:
-// - added hide_date checkbox to hide the date in the card 
-// - added show_description checkbox to show the description in the card
-// - added cards_per_row select to choose 3 or 4 cards per row
-// - added hide_categories checkbox to hide the categories in the card
-
+/*
+ * original: https://raw.githubusercontent.com/RedTurtle/volto-rss-block/v3.0.0/src/Block/RssSidebar.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - added a `hide_date` CheckboxWidget to hide the date in the card
+ * - added a `show_description` CheckboxWidget to show the description in the card
+ * - added a `cards_per_row` SelectWidget to choose 3 or 4 cards per row
+ * - added a `rss-widget` CSS class to the limit NumberWidget
+ * - added hide_categories checkbox to hide the categories in the card
+ * - `RssStyle`/`sidebar.css` imported from the `volto-rss-block` package instead of the
+ *   relative `./RssStyle`/`./sidebar.css`, since this shadow lives outside that package
+ */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Segment, Accordion, Button } from 'semantic-ui-react';
@@ -115,6 +121,8 @@ const RssSidebar = ({ data, block, onChangeBlock, required = false }) => {
         ...newData,
       });
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleAccClick(e, titleProps) {
@@ -188,6 +196,7 @@ const RssSidebar = ({ data, block, onChangeBlock, required = false }) => {
             });
           }}
         />
+
         <CheckboxWidget
           id="show_description"
           title={intl.formatMessage(messages.show_description)}

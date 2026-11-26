@@ -1,9 +1,19 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-  - Use with more plone.app.querystring.date operations
-  - Add custom date format (e.g. dd/mm/yyyy)
-  - Use DataFilter 
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Search/components/DateRangeFacet.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling: renders the shared `DateFilter` component
+ *   (`design-comuni-plone-theme/components/ItaliaTheme/Blocks/Common/SearchFilters/DateFilter`)
+ *   instead of upstream's semantic-ui `DateRangePicker`/`Header`/`Icon`
+ * - Use with more plone.app.querystring.date operations: rewrote `stateToValue`/`valueToQuery`
+ *   to individually support `date.largerThan`/`date.lessThan`/`date.between` operators (reading
+ *   the real operator from search state or from the URL hash query string via `query-string`),
+ *   instead of only handling a full start+end range
+ * - `valueToQuery` normalizes each bound to a UTC day boundary (start of day / end of day + 1,
+ *   formatted `YYYY-MM-DD HH:mm`) before sending it to plone.app.querystring, instead of passing
+ *   the raw picked date through, so a selected day is not off by the viewer's timezone
+ * - Custom date format (e.g. dd/mm/yyyy) via `DateFilter`
+ */
 import React from 'react';
 import { defineMessages, injectIntl } from 'react-intl';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';

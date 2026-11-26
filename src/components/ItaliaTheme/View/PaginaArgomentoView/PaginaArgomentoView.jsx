@@ -4,8 +4,8 @@
  */
 
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { useLocation } from 'react-router-dom';
-import { Portal } from 'react-portal';
 import cx from 'classnames';
 
 import { UniversalLink } from '@plone/volto/components';
@@ -132,11 +132,7 @@ const PaginaArgomentoView = ({ content }) => {
           )}
           {content?.image && (
             <>
-              <Portal
-                node={
-                  __CLIENT__ && document.getElementById('portal-header-image')
-                }
-              >
+              {createPortal(
                 <div>
                   <Image
                     item={content}
@@ -146,8 +142,9 @@ const PaginaArgomentoView = ({ content }) => {
                     responsive={true}
                     sizes="100vw"
                   />
-                </div>
-              </Portal>
+                </div>,
+                __CLIENT__ && document.getElementById('portal-header-image'),
+              )}
               <BodyClass className="has-image" />
             </>
           )}
