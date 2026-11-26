@@ -5,8 +5,8 @@
     max-height: 0;
   }
 
-  .feedback-form #vf-more-positive[aria-expanded='true'],
-  .feedback-form #vf-more-negative[aria-expanded='true'] {
+  .feedback-form #vf-more-positive[data-expanded='true'],
+  .feedback-form #vf-more-negative[data-expanded='true'] {
     max-height: 800px;
   }
 
@@ -88,6 +88,11 @@
 
     .answers-form .form-check:last-of-type {
       margin-bottom: 0;
+    }
+
+    .answers-required-hint {
+      padding: 0 0.875rem 0.875rem;
+      color: #5c6f82;
     }
 
     .card-wrapper[data-element='feedback'] {

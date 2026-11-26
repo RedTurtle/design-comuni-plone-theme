@@ -35,11 +35,11 @@ const ResultItem = ({ item, index, section, searchableText }) => {
     <Card noWrapper={true} className="mt-3 mb-3">
       <CardBody className="shadow-sm px-4 pt-4 pb-4 rounded">
         {section}
-        <h4 className="card-title">
+        <h2 className="card-title h4">
           <UniversalLink item={item}>
             <Marker highlight={searchableText} text={item.title} />
           </UniversalLink>
-        </h4>
+        </h2>
         <p className="text-paragraph">
           <Marker highlight={searchableText} text={item.description} />
         </p>

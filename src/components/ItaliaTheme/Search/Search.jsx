@@ -154,19 +154,38 @@ const messages = defineMessages({
     id: 'active_filters',
     defaultMessage: '{filterNumber} filtri attivati',
   },
+  liveInputDescription: {
+    id: 'search_live_input_description',
+    defaultMessage:
+      'I risultati della ricerca verranno aggiornati in base al testo inserito nel campo di ricerca e ai filtri selezionati',
+  },
+  resultsRange: {
+    id: 'search_results_range',
+    defaultMessage: '{start}-{end} di {total} risultati',
+  },
 });
 
 const searchOrderDict = {
   relevance: {},
   Date: {
     sort_on: 'Date',
+    // explicit: without use_site_search_settings @search sorts ascending
+    sort_order: 'reverse',
   },
   sortable_title: {
     sort_on: 'sortable_title',
   },
 };
 
-const Search = () => {
+// The props let an add-on mount this page on its own filters endpoint
+// (action + reducer key) and search every type, outside the site settings.
+const Search = ({
+  getFilters = getSearchFilters,
+  filtersStateKey = 'searchFilters',
+  useSiteSearchSettings = true,
+  defaultExcludedPortalTypes = config.settings.defaultExcludedFromSearch
+    ?.portalTypes ?? [],
+}) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const location = useLocation();
@@ -251,10 +270,10 @@ const Search = () => {
     setCurrentPage(activePage?.children ?? 1);
   };
 
-  const searchFilters = useSelector((state) => state.searchFilters.result);
+  const searchFilters = useSelector((state) => state[filtersStateKey]?.result);
   useEffect(() => {
     if (!searchFilters || Object.keys(searchFilters).length === 0)
-      dispatch(getSearchFilters());
+      dispatch(getFilters());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -273,7 +292,7 @@ const Search = () => {
       setPortalTypes(
         parseFetchedPortalTypes(
           searchFilters.portal_types,
-          config.settings.defaultExcludedFromSearch?.portalTypes,
+          defaultExcludedPortalTypes,
           location,
         ),
       );
@@ -327,6 +346,7 @@ const Search = () => {
       subsite,
       intl.locale,
       true,
+      useSiteSearchSettings,
     );
 
     !isEmpty(searchResults.result) &&
@@ -354,11 +374,30 @@ const Search = () => {
   }, 0);
   let activeTopics = values(topics).filter((t) => t.value).length;
   let activePortalTypes = values(portalTypes).filter((ct) => ct.value).length;
+
+  const total = searchResults.result?.items_total ?? 0;
+  const start = (currentPage - 1) * config.settings.defaultPageSize + 1;
+  const resultsAnnouncement =
+    searchResults.loadingResults ||
+    searchResults.hasError ||
+    isEmpty(searchResults.result)
+      ? ''
+      : total > 0
+        ? intl.formatMessage(messages.resultsRange, {
+            start,
+            end: start + searchResults.result.items.length - 1,
+            total,
+          })
+        : intl.formatMessage(messages.no_results);
+
   return (
     <>
       <Helmet title={intl.formatMessage(messages.searchResults)} />
 
       <div className="public-ui search-view" id="view">
+        <span id="live-input-description" className="visually-hidden">
+          {intl.formatMessage(messages.liveInputDescription)}
+        </span>
         <Container className="px-4 my-4">
           <Row>
             <Col>
@@ -396,6 +435,7 @@ const Search = () => {
                       </Button>
                     }
                     aria-controls="search-results-region"
+                    aria-describedby="live-input-description"
                   />
                 </Col>
               </Row>
@@ -408,7 +448,7 @@ const Search = () => {
                 <div className="row pb-3">
                   <div className="col-6">
                     {searchResults?.result?.items_total > 0 && (
-                      <small aria-live="polite">
+                      <small aria-hidden="true">
                         {intl.formatMessage(messages.foundNResults, {
                           total: searchResults.result.items_total,
                         })}
@@ -447,7 +487,7 @@ const Search = () => {
               >
                 {Object.keys(sections)?.length > 0 && (
                   <div className="pt-4 pt-lg-0">
-                    <h6 className="text-uppercase">
+                    <h2 className="h6 text-uppercase">
                       {intl.formatMessage(messages.sections)}
 
                       <span
@@ -464,7 +504,7 @@ const Search = () => {
                       >
                         {activeSections}
                       </span>
-                    </h6>
+                    </h2>
                     <div className="mt-4">
                       <SearchSections
                         sections={sections}
@@ -483,7 +523,7 @@ const Search = () => {
                         : 'pt-4 pt-lg-0'
                     }
                   >
-                    <h6 className="text-uppercase">
+                    <h2 className="h6 text-uppercase">
                       {intl.formatMessage(messages.topics)}
 
                       <span
@@ -500,7 +540,7 @@ const Search = () => {
                       >
                         {activeTopics}
                       </span>
-                    </h6>
+                    </h2>
                     <div className="form-check mt-4">
                       <SearchTopics
                         topics={topics}
@@ -530,7 +570,7 @@ const Search = () => {
                     </Button>
                     <Collapse isOpen={advFiltersOpen} id="advFilters">
                       <div className="p-3 shadow-sm bg-white">
-                        <h6 className="text-uppercase">
+                        <h2 className="h6 text-uppercase">
                           {intl.formatMessage(messages.content_types)}
 
                           <span
@@ -547,7 +587,7 @@ const Search = () => {
                           >
                             {activePortalTypes}
                           </span>
-                        </h6>
+                        </h2>
                         <div className="form-checck mt-4">
                           <SearchCTs
                             portalTypes={portalTypes}
@@ -563,9 +603,9 @@ const Search = () => {
                 {values(options).filter((o) => o !== null && o !== undefined)
                   .length > 0 && (
                   <div className="pt-4 pt-lg-5">
-                    <h6 className="text-uppercase">
+                    <h2 className="h6 text-uppercase">
                       {intl.formatMessage(messages.options)}
-                    </h6>
+                    </h2>
                     {options.activeContent !== undefined && (
                       <div className="form-check mt-4">
                         <Toggle
@@ -575,6 +615,7 @@ const Search = () => {
                           id="options-active-content"
                           checked={options.activeContent}
                           aria-controls="search-results-region"
+                          aria-describedby="live-input-description"
                           onChange={(e) => {
                             const checked = e.currentTarget?.checked ?? false;
                             setOptions((opts) => ({
@@ -643,19 +684,22 @@ const Search = () => {
             </aside>
 
             <Col lg={9} tag="section" className="py-lg-5">
-              <div
-                className="search-results-wrapper"
-                id="search-results-region"
-                aria-live="polite"
-              >
+              <div className="search-results-wrapper">
                 <div className="d-block ordering-widget">
                   <Row className="pb-3 border-bottom">
                     <Col xs={6} className="align-self-center">
-                      <p className="d-none d-lg-block" aria-live="polite">
+                      <p className="d-none d-lg-block" aria-hidden="true">
                         {intl.formatMessage(messages.foundNResults, {
                           total: searchResults?.result?.items_total || 0,
                         })}
                       </p>
+                      <div
+                        aria-live="polite"
+                        aria-atomic="true"
+                        className="visually-hidden"
+                      >
+                        {resultsAnnouncement}
+                      </div>
                       <p className="d-block d-lg-none mb-0 text-end">
                         {intl.formatMessage(messages.orderBy)}
                       </p>
@@ -675,53 +719,67 @@ const Search = () => {
                         defaultValue={sortOnOptions.find(
                           (o) => o.value === 'relevance',
                         )}
+                        ariaControls="search-results-region"
+                        ariaDescribedby="live-input-description"
                       />
                     </Col>
                   </Row>
                 </div>
 
-                {searchResults.loadingResults ||
-                (!searchResults.hasError && isEmpty(searchResults.result)) ? (
-                  <div className="searchSpinnerWrapper">
-                    <Spinner active />
-                  </div>
-                ) : searchResults?.result?.items_total > 0 ? (
-                  <>
-                    <Row>
-                      {searchResults?.result?.items?.map((item, index) => (
-                        <Col md={12} key={item['@id']} className="p-0">
-                          <SearchResultItem
-                            item={item}
-                            index={index}
-                            searchableText={searchableText}
-                            section={getSectionFromId(item['@id'])}
-                          />
-                        </Col>
-                      ))}
-                    </Row>
-                    {searchResults?.result?.batching && (
-                      <Pagination
-                        activePage={currentPage}
-                        totalPages={Math.ceil(
-                          (searchResults?.result?.items_total ?? 0) /
-                            config.settings.defaultPageSize,
-                        )}
-                        onPageChange={handleQueryPaginationChange}
-                      />
-                    )}
-                  </>
-                ) : searchResults.error ? (
-                  <Alert color="danger">
-                    <strong>{intl.formatMessage(messages.attenzione)}</strong>{' '}
-                    {intl.formatMessage(messages.errors_occured)}
-                  </Alert>
-                ) : (
-                  !searchResults?.hasError &&
-                  !isEmpty(searchResults?.result) &&
-                  searchResults.result?.items.length === 0 && (
-                    <p>{intl.formatMessage(messages.no_results)}</p>
-                  )
-                )}
+                <div
+                  id="search-results-region"
+                  role="region"
+                  aria-label={intl.formatMessage(messages.searchResults)}
+                  tabIndex="-1"
+                >
+                  {searchResults.loadingResults ||
+                  (!searchResults.hasError && isEmpty(searchResults.result)) ? (
+                    <div className="searchSpinnerWrapper">
+                      <Spinner active />
+                    </div>
+                  ) : searchResults?.result?.items_total > 0 ? (
+                    <>
+                      <Row tag="ul" role="list" className="list-unstyled mb-0">
+                        {searchResults?.result?.items?.map((item, index) => (
+                          <Col
+                            tag="li"
+                            md={12}
+                            key={item['@id']}
+                            className="p-0"
+                          >
+                            <SearchResultItem
+                              item={item}
+                              index={index}
+                              searchableText={searchableText}
+                              section={getSectionFromId(item['@id'])}
+                            />
+                          </Col>
+                        ))}
+                      </Row>
+                      {searchResults?.result?.batching && (
+                        <Pagination
+                          activePage={currentPage}
+                          totalPages={Math.ceil(
+                            (searchResults?.result?.items_total ?? 0) /
+                              config.settings.defaultPageSize,
+                          )}
+                          onPageChange={handleQueryPaginationChange}
+                        />
+                      )}
+                    </>
+                  ) : searchResults.error ? (
+                    <Alert color="danger">
+                      <strong>{intl.formatMessage(messages.attenzione)}</strong>{' '}
+                      {intl.formatMessage(messages.errors_occured)}
+                    </Alert>
+                  ) : (
+                    !searchResults?.hasError &&
+                    !isEmpty(searchResults?.result) &&
+                    searchResults.result?.items.length === 0 && (
+                      <p>{intl.formatMessage(messages.no_results)}</p>
+                    )
+                  )}
+                </div>
               </div>
             </Col>
           </Row>

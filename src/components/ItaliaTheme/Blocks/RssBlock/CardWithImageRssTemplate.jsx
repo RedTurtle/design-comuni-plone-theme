@@ -7,13 +7,14 @@ import {
   Card,
   CardBody,
   CardTitle,
-  CardReadMore,
+  CardText,
   Row,
   Col,
 } from 'design-react-kit';
 
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
+import { CardCategory } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import { getViewDate } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/RssBlock/utils';
 
@@ -37,6 +38,7 @@ const CardWithImageRssTemplate = ({
 }) => {
   const intl = useIntl();
   const titleID = data?.title ? data.title.replace(/[^A-Z0-9]+/gi, '_') : '';
+  const colLg = 12 / (data.cards_per_row ?? 4);
   return (
     <div className={cx('', { 'public-ui': isEditMode })} aria-live="polite">
       {items?.length > 0 ? (
@@ -52,54 +54,59 @@ const CardWithImageRssTemplate = ({
           )}
           <Row>
             {items.map((item) => (
-              <Col lg={3} className="mb-3" key={item['@id']}>
+              <Col lg={colLg} className="mb-3" key={item['@id']}>
                 <Card className="card-bg" noWrapper={false} tag="div">
                   {item.enclosure?.url && (
                     <div className="img-responsive-wrapper">
                       <div className="img-responsive img-responsive-panoramic">
-                        <figure className="img-wrapper">
-                          <img
-                            aria-hidden="true"
-                            alt={item.title}
-                            src={item.enclosure.url}
-                            loading="lazy"
-                          />
-                        </figure>
+                        <UniversalLink
+                          href={item?.url}
+                          overrideMarkSpecialLinks={true}
+                          tabIndex={-1}
+                          aria-hidden="true"
+                        >
+                          <figure className="img-wrapper">
+                            <img
+                              aria-hidden="true"
+                              alt={item.title}
+                              src={item.enclosure.url}
+                              loading="lazy"
+                            />
+                          </figure>
+                        </UniversalLink>
                       </div>
                     </div>
                   )}
                   <CardBody tag="div" className="px-4">
-                    <div className="category-top">
-                      {item?.categories?.length > 0 && item.categories[0]._ && (
-                        <>
-                          <span className="category">
-                            {item.categories[0]._}
-                          </span>
-                          <span className="mx-1">&mdash;</span>
-                        </>
-                      )}
-                      <span>
-                        {getViewDate(item.pubDate || item.date, intl.locale)}
-                      </span>{' '}
-                    </div>
-                    <CardTitle tag="h3" className="h6">
-                      {item.title}
+                    <CardCategory
+                      iconName="it-rss"
+                      date={
+                        !data.hide_date &&
+                        (item.pubDate || item.date) &&
+                        getViewDate(item.pubDate || item.date, intl.locale)
+                      }
+                    >
+                      {!data.hide_categories &&
+                        item?.categories
+                          ?.map((cat) =>
+                            typeof cat === 'string' ? cat : JSON.stringify(cat),
+                          )
+                          .join(', ')}
+                    </CardCategory>
+                    <CardTitle tag="h3" className="mb-3">
+                      <UniversalLink href={item?.url} title={item.title}>
+                        {item.title}
+                      </UniversalLink>
                     </CardTitle>
                     {item?.source?.length > 0 && (
                       <div className="source-title">
                         <span className="source">{item.source}</span>
                       </div>
                     )}
+                    {data.show_description && (
+                      <CardText tag="p">{item.contentSnippet}</CardText>
+                    )}
                   </CardBody>
-                  <CardReadMore
-                    iconName="it-arrow-right"
-                    className="ms-4"
-                    tag="a"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={item?.url}
-                    text={intl.formatMessage(messages.readMore)}
-                  />
                 </Card>
               </Col>
             ))}

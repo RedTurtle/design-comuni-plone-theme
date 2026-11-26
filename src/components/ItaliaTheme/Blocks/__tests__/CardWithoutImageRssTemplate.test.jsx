@@ -162,9 +162,11 @@ test('View renders all fields', async () => {
     screen.getByText(/Riforma fiscale, piano Meloni sull’evasione:/i),
   ).toBeInTheDocument();
 
-  //link card
+  //link card (il titolo della card è ora il link)
   expect(
-    screen.getAllByRole('link', { name: /Read more/i }).length,
+    screen.getAllByRole('link', {
+      name: /Riforma fiscale, piano Meloni sull’evasione:/i,
+    }).length,
   ).toBeGreaterThan(0);
 
   //link ad altro

@@ -2,7 +2,7 @@
   "name": "design-comuni-plone-theme",
   "description": "Volto Theme for Italia design guidelines",
   "license": "GPL-v3",
-  "version": "12.14.2",
+  "version": "12.17.1",
   "main": "src/index.js",
   "repository": {
     "type": "git",
@@ -148,7 +148,7 @@
     "typeface-roboto-mono": "0.0.75",
     "typeface-titillium-web": "0.0.72",
     "volto-blocks-widget": "3.4.8",
-    "volto-data-grid-widget": "2.4.0",
+    "volto-data-grid-widget": "2.4.1",
     "volto-dropdownmenu": "4.1.6",
     "volto-editablefooter": "5.1.12",
     "volto-feedback": "0.7.2",
@@ -188,7 +188,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "husky": "8.0.2",
     "lint-staged": "13.0.3",
-    "postcss": "8.4.31",
+    "postcss": "8.5.23",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-less": "6.0.0",
     "postcss-load-config": "4.0.2",
@@ -202,7 +202,7 @@
     "stylelint-prettier": "4.0.2"
   },
   "peerDependencies": {
-    "@plone/volto": "17.22.3"
+    "@plone/volto": "17.23.1"
   },
   "packageManager": "yarn@3.2.3"
 }

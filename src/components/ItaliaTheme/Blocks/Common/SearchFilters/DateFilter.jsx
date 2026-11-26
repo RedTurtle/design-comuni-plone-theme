@@ -234,16 +234,9 @@ const DateFilter = (props) => {
         setFocusedDateInput(null);
       }
     }
-
-    if (e.key === 'Escape') {
-      setFocusedDateInput(null);
-    }
   };
   const endDateListener = (e) => {
     if (e.key === 'Tab' && !e.shiftKey) {
-      setFocusedDateInput(null);
-    }
-    if (e.key === 'Escape') {
       setFocusedDateInput(null);
     }
   };
@@ -288,10 +281,19 @@ const DateFilter = (props) => {
     };
   }, []);
 
+  const handleWrapperKeyDownCapture = (e) => {
+    if (e.key === 'Escape') {
+      setFocusedDateInput(null);
+    }
+  };
+
   const WrapperDate = legendLabel ? 'fielset' : 'div';
 
   return (
-    <div className="me-lg-3 my-2 my-lg-1 filter-wrapper date-filter">
+    <div
+      className="me-lg-3 my-2 my-lg-1 filter-wrapper date-filter"
+      onKeyDownCapture={handleWrapperKeyDownCapture}
+    >
       <WrapperDate>
         {legendLabel && <legend>{legendLabel}</legend>}
         <DateRangePicker

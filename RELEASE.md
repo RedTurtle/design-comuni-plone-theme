@@ -41,6 +41,83 @@
 - ...
  -->
 
+## Versione 12.17.1 (19/11/2026)
+
+### Fix
+
+- Nel blocco "Icone" con immagine di sfondo, il colore di sfondo scelto viene usato per definire il colore del titolo e della descrizione per essere leggibile. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+## Versione 12.17.0 (02/11/2026)
+
+### Migliorie
+
+- Nel blocco RSS aggiunto un checkbox per scegliere se mostrare la categoria nelle card. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+### Fix
+
+- Migliorata l'accessibilità della navigazione: rimossi i ruoli ARIA "menubar"/"menuitem" dal menu secondario e il punto di riferimento di navigazione attorno al logo nell'header. Nel megamenu, i titoli di sezione vengono indicati come "pagina corrente" solo quando lo sono davvero.
+- Nel megamenu i link di ogni voce sono ora in un'unica lista, suddivisa in colonne solo graficamente, così gli screen reader la annunciano come un solo elenco.
+- Migliorata la navigazione da tastiera nel megamenu e rimosso il pulsante di chiusura "X" dal menu principale.
+- Le pagine scritte in una lingua diversa dall'italiano (campo "Lingua" del contenuto) ora dichiarano la propria lingua, così le tecnologie assistive leggono il testo con la pronuncia corretta. Per le lingue che si scrivono da destra a sinistra (arabo, urdu, persiano, ebraico...) il testo del contenuto viene mostrato da destra a sinistra. Intestazione, briciole di pane e piè di pagina restano nella lingua corrente del sito. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Migliorata l'accessibilità della pagina dei risultati di ricerca.
+- Le pagine dei Servizi che hanno date nella sezione "Tempi e scadenze" ora si aprono correttamente, senza mostrare la pagina di errore.
+
+### Novità
+
+- Nel blocco "Alert" è possibile impostare un periodo di visualizzazione (data e ora di inizio e di scadenza): fuori da quel periodo l'alert non viene mostrato ai visitatori. Se non viene impostato nessun periodo, l'alert è sempre visibile.
+
+## Versione 12.16.1 (20/10/2026)
+
+### Novità
+
+- Nel blocco "Numeri" è stata aggiunta l'opzione "Abilita layout fluido": va attivata quando i numeri sono lunghi (più di 4-5 caratteri) e permette di adattare la larghezza delle colonne al numero, evitando che quest'ultimo vada a capo. Di default il layout resta invariato.
+
+### Fix
+
+- Sistemato il link per la ricerca delle icone sul sito di FontAwesome. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Sistemato il livello di intestazione dei titoli per la sezione 'Argomenti' del tipo di contenuto Servizio. 
+
+## Versione 12.16.0 (23/09/2026)
+
+### Migliorie
+
+- Ora in un pannello di controllo, se si clicca sul pulsante "Annulla" nella toolbar, si torna sempre alla pagina principale dei pannelli di controllo. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+- Nel blocco "RSS" è stato uniformato lo stile della card a quella del template "Card semplice" del blocco Elenco, con la possibilità di decidere se mostrare la data e la descrizione nella card. Inoltre, è possibile scegliere se mostrare 3 o 4 card per riga. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+- Nel form di soddisfazione del cittadino (customer satisfaction) è stato tolto l'asterisco dalla domanda obbligatoria: l'obbligatorietà resta indicata dal messaggio "Scegli un'opzione per proseguire" sotto le risposte e continua a essere comunicata alle tecnologie assistive. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+## Versione 12.15.1 (01/09/2026)
+
+### Migliorie
+
+- Nel blocco "Cerca", il filtro per intervallo di date ora usa lo stesso calendario già in uso nel blocco di ricerca bandi/pubblicazioni; inoltre, il filtro per data adesso include l'intera giornata finale selezionata. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+### Fix
+
+- Risolto un errore nel blocco CTA che generava un titolo vuoto nella pagina quando il campo titolo non veniva compilato.
+
+- Risolto un errore di struttra html nelle paginazioni che generava una lista duplicata nel codice della pagina. La duplicazione non era visibile a schermo ma rendeva il markup non valido e problematico per le tecnologie assistive.
+
+- Migliorata l'accessibilità del form di soddisfazione del cittadino (customer satisfaction): ora la domanda obbligatoria del secondo passaggio viene segnalata come tale sia visivamente che alle tecnologie assistive, con un messaggio che indica la necessità di scegliere un'opzione per proseguire. Inoltre il pulsante per l'invio della valutazione ha ora etichetta "Invia" invece di "Avanti". _(**Origine / contributo**: Regione Emilia-Romagna)_
+
+- Risolto un problema di gerarchia dei titoli nel blocco Accordion. Il titolo del blocco e il titolo di ogni voce dell'accordion ora si adattano alla struttura della pagina, migliorando la navigazione con le tecnologie assistive.
+
+- Accessibilità: Risolto un problema di gerarchia dei titoli nel template "Allegati" del blocco elenco. Il titolo di ogni scheda allegato ora si adatta alla struttura della pagina invece di usare sempre lo stesso livello fisso, migliorando la navigazione con le tecnologie assistive.
+
+## Versione 12.15.0 (24/08/2026)
+
+### Novità
+
+- Nel blocco "Blocchi con icone" è ora possibile scegliere il numero di colonne (2, 3, 4 o 6) e un colore di sfondo (Nessuno, Primario, Secondario).
+
+### Fix
+
+- Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nei campi data e data + ora, il tasto Esc adesso chiude sempre il calendario. Prima non funzionava se il focus da tastiera era già entrato dentro al calendario. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Nei sottositi, le voci configurate nel pannello di controllo per lo slim header vengono ora mostrate correttamente.
+
 ## Versione 12.14.2 (30/07/2026)
 
 ### Fix
@@ -69,6 +146,7 @@
 
 - Risolto un errore nella pagina degli eventi che in alcuni casi ne impediva la visualizzazione. L'errore si verificava quando la sezione Contatti dell'evento riportava informazioni sull'organizzatore o sui sostenitori ma non conteneva alcun contatto in elenco. <!--us-76991 -->
 - Uniformato l'allineamento dell'icona e del titolo in tutte le card che mostrano allegati. <!--us-54701-->
+- Rimosse le breadcrumbs dalla pagina principale
 
 ## Versione 12.13.0 (25/06/2026)
 

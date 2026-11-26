@@ -177,4 +177,8 @@ defineMessages({
     id: 'Published',
     defaultMessage: 'Published',
   },
+  pageNotFound: {
+    id: '404-pageNotFoundTitle',
+    defaultMessage: 'Error 404 - Page not found',
+  },
 });

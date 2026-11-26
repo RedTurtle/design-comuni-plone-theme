@@ -93,6 +93,7 @@ export default function SearchTopics({
                 setTopicChecked(topicId, e.currentTarget.checked)
               }
               aria-controls="search-results-region"
+              aria-describedby="live-input-description"
               aria-label={
                 intl.formatMessage(messages.searchTopic) +
                 ' ' +

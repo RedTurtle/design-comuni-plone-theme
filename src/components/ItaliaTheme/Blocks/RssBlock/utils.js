@@ -9,7 +9,7 @@ export const getViewDate = (date, locale) => {
   try {
     let m = moment(date);
     if (m.isValid()) {
-      d = m.format('DD-MMM-Y');
+      d = m.format('DD MMM YYYY');
     } else {
     }
   } catch (e) {}

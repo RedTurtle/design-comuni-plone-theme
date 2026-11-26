@@ -26,6 +26,7 @@ import {
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 
 import { getDropdownMenuNavitems, getItemsByPath } from 'volto-dropdownmenu';
+import { getItemsByPath as getSlimHeaderItemsByPath } from 'design-comuni-plone-theme/helpers';
 import FocusLock from 'react-focus-lock';
 
 const Navigation = ({ pathname }) => {
@@ -48,6 +49,13 @@ const Navigation = ({ pathname }) => {
   }, [dispatch]);
 
   const menu = getItemsByPath(items, pathname);
+
+  const slimHeader = useSelector((state) => state.slimHeader?.result);
+  const hasSubsiteSlimItems =
+    subsite &&
+    (getSlimHeaderItemsByPath(slimHeader, pathname, false)?.filter(
+      (item) => item.visible,
+    )?.length ?? 0) > 0;
 
   const getAnchorTarget = (nodeElement) => {
     if (nodeElement.nodeName === 'A') {
@@ -85,10 +93,10 @@ const Navigation = ({ pathname }) => {
   }, []);
 
   const closeButtonStyle = collapseOpen
-    ? {
-        display: 'block',
-      }
-    : { display: 'none' };
+  ? {
+      display: 'block',
+    }
+  : { display: 'none' };
 
   return (
     <Header theme="" type="navbar">
@@ -131,7 +139,7 @@ const Navigation = ({ pathname }) => {
           >
             <FocusLock disabled={!focusTrapActive}>
               <div className="menu-wrapper">
-                <div className="it-brand-wrapper" role="navigation">
+                <div className="it-brand-wrapper">
                   <UniversalLink
                     href={
                       subsite?.['@id'] ? flattenToAppURL(subsite['@id']) : '/'
@@ -158,6 +166,7 @@ const Navigation = ({ pathname }) => {
                       <MegaMenu
                         item={item}
                         pathname={pathname}
+                        index={index}
                         key={index + 'mm'}
                       />
                     ))}
@@ -166,15 +175,16 @@ const Navigation = ({ pathname }) => {
                 {/* Secondary Menu */}
                 <MenuSecondary pathname={pathname} />
 
-                {/* Headerslim Menu - main site */}
-                {!subsite && <TertiaryMenu />}
+                {/* Headerslim Menu - parent site (if subsite has no config) */}
+                {subsite && !hasSubsiteSlimItems && <ParentSiteMenu />}
 
                 {/* Social Links */}
                 <SocialHeader />
 
-                {/* Headerslim Menu - parent site (if subsite) */}
-                {subsite && <ParentSiteMenu />}
+                {/* Headerslim Menu - configuration */}
+                {(!subsite || hasSubsiteSlimItems) && <TertiaryMenu />}
               </div>
+
               <div className="close-div" style={closeButtonStyle}>
                 <button
                   className="btn close-menu"
@@ -199,10 +209,6 @@ const Navigation = ({ pathname }) => {
 };
 
 const messages = defineMessages({
-  CloseMenu: {
-    id: 'close-menu',
-    defaultMessage: 'Chiudi menu',
-  },
   toggleMenu: {
     id: 'toggle-menu',
     defaultMessage: '{action} il menu',
@@ -218,6 +224,10 @@ const messages = defineMessages({
   mainMenu: {
     id: 'mainMenu',
     defaultMessage: 'Menu principale',
+  },
+  CloseMenu: {
+    id: 'CloseMenu',
+    defaultMessage: 'Chiudi menu',
   },
 });
 

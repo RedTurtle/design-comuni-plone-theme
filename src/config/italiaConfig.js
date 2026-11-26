@@ -35,6 +35,8 @@ import GenericAppExtras from 'design-comuni-plone-theme/components/ItaliaTheme/A
 import PageLoader from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/PageLoader';
 import TrackFocus from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/TrackFocus';
 import SiteSettingsExtras from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/SiteSettingsExtras';
+import HtmlLangDir from 'design-comuni-plone-theme/components/ItaliaTheme/AppExtras/HtmlLangDir';
+import { RTL_LANGUAGES } from 'design-comuni-plone-theme/helpers/contentLanguage';
 
 import { loadables as ItaliaLoadables } from 'design-comuni-plone-theme/config/loadables';
 
@@ -64,6 +66,7 @@ import applyItaliaSlateConfig from 'design-comuni-plone-theme/config/Slate/confi
 import { schemaListing } from 'design-comuni-plone-theme/components/ItaliaTheme/Blocks/Listing/schema.js';
 
 import reducers from 'design-comuni-plone-theme/reducers';
+import sanitizeApiErrors from 'design-comuni-plone-theme/middleware/sanitizeApiErrors';
 import {
   FALLBACK_IMAGE_SRC,
   FALLBACK_IMAGE_SRC_MAX_W,
@@ -89,6 +92,40 @@ const messages = defineMessages({
   },
 });
 
+/**
+ * Reducers not serialized in the SSR HTML (window.__data), to reduce the page size.
+ *
+ * Can be configured at runtime (server side, no rebuild needed) with the
+ * SSR_HYDRATION_BLACKLIST env variable, a comma separated list of reducers:
+ * - not set: defaults to `reduxAsyncConnect`
+ * - empty or `none`: no reducers are added to the blacklist
+ * - `reduxAsyncConnect,navroot`: those reducers are added to the blacklist
+ *
+ * Notes: `intl` needs the locales to be preloaded in the client, otherwise labels
+ * are not translated at hydration. `content` and `dropdownMenuNavItems` can't be
+ * used as they would break the site.
+ */
+const DEFAULT_SSR_HYDRATION_BLACKLIST = ['reduxAsyncConnect'];
+
+export const getInitialReducersBlacklist = (current = []) => {
+  const env =
+    typeof process !== 'undefined'
+      ? process.env?.SSR_HYDRATION_BLACKLIST
+      : undefined;
+
+  let names = DEFAULT_SSR_HYDRATION_BLACKLIST;
+  if (typeof env === 'string') {
+    names =
+      env.trim().toLowerCase() === 'none'
+        ? []
+        : env
+            .split(',')
+            .map((name) => name.trim())
+            .filter(Boolean);
+  }
+  return [...new Set([...(current ?? []), ...names])];
+};
+
 export default function applyConfig(voltoConfig) {
   let config = applyItaliaSlateConfig(voltoConfig);
 
@@ -109,6 +146,10 @@ export default function applyConfig(voltoConfig) {
         'Timeout (n)', //errori di recaptcha nella customer satisfaction
         'Uncaught (in promise) Timeout (n)', //errori di recaptcha nella customer satisfaction
         'window.webkit.messageHandlers', //errore in-app browser Facebook/Instagram su iOS
+        'Failed to connect to MetaMask',
+        'Java object is gone', // navigation_performance_logger_android
+        'Java exception was raised during method invocation', // navigation_performance_logger_android
+        'can\'t access property "_leaflet_pos", t is undefined', // leaflet/dist/leaflet-src
       ],
       // https://docs.sentry.io/platforms/javascript/data-management/sensitive-data/
       // beforeSend(event) {
@@ -124,6 +165,8 @@ export default function applyConfig(voltoConfig) {
     isFooterCollapsed: false, // false(default) -> vedere il footer automatico esploso | true -> implodere il footer menu automatico
     supportedLanguages: ['it'],
     defaultLanguage: 'it',
+    // languages written right to left: pages in these languages get dir="rtl"
+    rtlLanguages: RTL_LANGUAGES,
     verticalFormTabs: true,
     showTags: false,
     showSelfRegistration: false,
@@ -149,6 +192,9 @@ export default function applyConfig(voltoConfig) {
       }
     */
     maxFileUploadSize: 104857600,
+    initialReducersBlacklist: getInitialReducersBlacklist(
+      config.settings.initialReducersBlacklist,
+    ),
     querystringAdditionalFields: [],
     searchBlockTemplates: [
       'simpleCard',
@@ -218,6 +264,10 @@ export default function applyConfig(voltoConfig) {
     //defaultBlockType: 'text',
     defaultExcludedFromSearch: {
       portalTypes: ['Image', 'File'],
+    },
+    search: {
+      baseUrl: '/search',
+      ...(config.settings.search ?? {}),
     },
     italiaThemeViewsConfig: {
       ...(config.settings.italiaThemeViewsConfig ?? {}),
@@ -349,6 +399,10 @@ export default function applyConfig(voltoConfig) {
         match: '',
         component: SiteSettingsExtras,
       },
+      {
+        match: '',
+        component: HtmlLangDir,
+      },
     ],
 
     'volto-editablefooter': {
@@ -464,7 +518,7 @@ export default function applyConfig(voltoConfig) {
     listing: {
       ...config.blocks.blocksConfig.listing,
       showLinkMore: true,
-      /** Per cambiare il valore di default di una prop dei un template, 
+      /** Per cambiare il valore di default di una prop dei un template,
        * settarlo nella variabile `defaultVariationProps`. 
        * Se il nome della prop viene messo come chiave in `defaultVariationProps` è valido per tutti i template del sito che hanno quella prop. 
        * Se invece viene specificato nella prop _variatons, vale solo per il template indicato. 
@@ -578,6 +632,16 @@ export default function applyConfig(voltoConfig) {
     ...config.addonReducers,
     ...reducers,
   };
+
+  // MIDDLEWARE
+  //in coda allo stack: deve vedere le azioni _FAIL generate dal middleware api.
+  //Solo in produzione: in sviluppo gli errori completi in window.__data servono per il debug
+  if (process.env.NODE_ENV === 'production') {
+    config.settings.storeExtenders = [
+      ...(config.settings.storeExtenders ?? []),
+      (stack) => [...stack, sanitizeApiErrors],
+    ];
+  }
 
   // ROUTES
   config.addonRoutes = [
