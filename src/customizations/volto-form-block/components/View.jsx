@@ -173,7 +173,9 @@ const View = ({ data, id, path }) => {
   };
 
   useEffect(() => {
-    // Fields only: the captcha hasn't been (re)computed yet while editing
+    // Rivalida solo i campi mentre l'utente corregge: il captcha non è
+    // ancora stato (ri)calcolato a questo punto, quindi non deve comparire
+    // come mancante.
     if (formErrors.length > 0) {
       isValidForm({ skipCaptcha: true });
     }
@@ -261,7 +263,8 @@ const View = ({ data, id, path }) => {
   const submit = (e) => {
     e.preventDefault();
 
-    // Fields first: an invalid submit must not start captcha.verify()
+    // Campi normali prima, captcha dopo: un submit già invalido non deve
+    // far partire captcha.verify().
     if (!isValidForm({ skipCaptcha: true })) {
       setFormState({ type: FORM_STATES.error });
       return;

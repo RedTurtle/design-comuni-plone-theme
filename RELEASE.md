@@ -67,6 +67,12 @@
 
 - Nella vista di dettaglio di un'Immagine, il link "Clicca per scaricare l'immagine in dimensione originale" ora avvia correttamente il download del file, invece di aprire l'immagine in una nuova pagina.
 - Corretto il percorso di navigazione (breadcrumb) nelle sezioni che si aggiornano senza ricaricare la pagina: non si accumula più mostrando tutte le sezioni visitate, e indica sempre correttamente la sezione in cui ci si trova.
+## Versione 12.17.1 (19/11/2026)
+
+### Fix
+
+- Nel blocco "Icone" con immagine di sfondo, il colore di sfondo scelto viene usato per definire il colore del titolo e della descrizione per essere leggibile. _(**Origine / contributo**: Regione Emilia-Romagna)_
+
 ## Versione 12.17.0 (02/11/2026)
 
 ### Migliorie
@@ -86,7 +92,6 @@
 
 - Nel blocco "Alert" è possibile impostare un periodo di visualizzazione (data e ora di inizio e di scadenza): fuori da quel periodo l'alert non viene mostrato ai visitatori. Se non viene impostato nessun periodo, l'alert è sempre visibile.
 
-
 ## Versione 12.16.1 (20/10/2026)
 
 ### Novità
@@ -96,6 +101,7 @@
 ### Fix
 
 - Sistemato il link per la ricerca delle icone sul sito di FontAwesome. _(**Origine / contributo**: Regione Emilia-Romagna)_
+- Sistemato il livello di intestazione dei titoli per la sezione 'Argomenti' del tipo di contenuto Servizio.
 
 ## Versione 12.16.0 (23/09/2026)
 

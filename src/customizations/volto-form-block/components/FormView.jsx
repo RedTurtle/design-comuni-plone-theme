@@ -114,7 +114,8 @@ const FormView = ({
   const enableCaptcha =
     config.settings.siteProperties.enableVoltoFormBlockCaptcha;
 
-  // Every captcha except rercaptcha in invisible mode (see the header)
+  // requiresPreexistingToken: vale per tutti i captcha tranne rercaptcha in
+  // modalità invisibile (vedi nota in testa al file).
   const rerCaptchaData = useSelector(
     (state) => state.content?.data?.['@components']?.['rercaptcha-data'],
   );
@@ -301,7 +302,9 @@ const FormView = ({
                   <></>
                 )}
 
-                {/* rercaptcha is rendered next to the submit button */}
+                {/* rercaptcha si renderizza accanto al bottone di submit,
+                    più sotto: qui restano tutti gli altri tipi di captcha,
+                    che non cambiano posizione */}
                 {enableCaptcha && data.captcha !== 'rercaptcha' && (
                   <>{captcha.render()}</>
                 )}
@@ -348,7 +351,13 @@ const FormView = ({
                           intl.formatMessage(messages.default_cancel_label)}
                       </Button>
                     )}
-                    {/* Before the button in the DOM too, for the tab order */}
+                    {/* rercaptcha, se configurato, si affianca al bottone
+                        di submit (a sinistra, prima nel DOM) invece che
+                        comparire più in alto insieme agli altri campi del
+                        form: va prima del bottone anche nel DOM, non solo
+                        visivamente, altrimenti con la sola tastiera il Tab
+                        dopo aver spuntato la checkbox esce dal form invece
+                        di raggiungere "Invia" */}
                     {enableCaptcha && data.captcha === 'rercaptcha' && (
                       <>{captcha.render()}</>
                     )}
